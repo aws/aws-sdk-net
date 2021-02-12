@@ -37,7 +37,8 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// The simulation does not perform the API operations; it only checks the authorization
-    /// to determine if the simulated policies allow or deny the operations.
+    /// to determine if the simulated policies allow or deny the operations. You can simulate
+    /// resources that don't exist in your account.
     /// </para>
     ///  
     /// <para>
@@ -55,6 +56,11 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters
     /// to paginate the results.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
+    /// IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SimulateCustomPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -197,7 +203,7 @@ namespace Amazon.IdentityManagement.Model
         /// maximum permissions that an IAM entity can have. You can input only one permissions
         /// boundary when you pass a policy to this operation. For more information about permissions
         /// boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-        /// Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is
+        /// boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is
         /// specified as a string that contains the complete, valid JSON text of a permissions
         /// boundary policy.
         /// </para>
@@ -289,7 +295,8 @@ namespace Amazon.IdentityManagement.Model
         /// not provided, then the value defaults to <code>*</code> (all resources). Each API
         /// in the <code>ActionNames</code> parameter is evaluated for each resource in this list.
         /// The simulation determines the access result (allowed or denied) of each combination
-        /// and reports it in the response.
+        /// and reports it in the response. You can simulate resources that don't exist in your
+        /// account.
         /// </para>
         ///  
         /// <para>
@@ -305,7 +312,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         public List<string> ResourceArns
@@ -338,7 +345,7 @@ namespace Amazon.IdentityManagement.Model
         /// as a resource. If the EC2 scenario includes VPC, then you must supply the network-interface
         /// resource. If it includes an IP subnet, then you must specify the subnet resource.
         /// For more information on the EC2 scenario options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a> in the <i>Amazon EC2 User Guide</i>.
+        /// platforms</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -71,6 +71,7 @@ namespace Amazon.IdentityManagement.Model
     public partial class CreateOpenIDConnectProviderRequest : AmazonIdentityManagementServiceRequest
     {
         private List<string> _clientIDList = new List<string>();
+        private List<Tag> _tags = new List<Tag>();
         private List<string> _thumbprintList = new List<string>();
         private string _url;
 
@@ -106,6 +107,34 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider.
+        /// Each tag consists of a key name and an associated value. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ThumbprintList. 
         /// <para>
         /// A list of server certificate thumbprints for the OpenID Connect (OIDC) identity provider's
@@ -130,7 +159,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about obtaining the OIDC provider's thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-        /// the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
+        /// the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -84,8 +84,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The list of tags that are currently attached to the user. Each tag consists of a key
-        /// name and an associated value. If no tags are attached to the specified user, the response
-        /// contains an empty list.
+        /// name and an associated value. If no tags are attached to the specified resource, the
+        /// response contains an empty list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=50)]

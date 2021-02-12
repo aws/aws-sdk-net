@@ -43,9 +43,9 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Note:</b> This API discloses information about the permissions granted to other
-    /// users. If you do not want users to see other user's permissions, then consider allowing
-    /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
+    ///  <b>Note:</b> This operation discloses information about the permissions granted to
+    /// other users. If you do not want users to see other user's permissions, then consider
+    /// allowing them to use <a>GetContextKeysForCustomPolicy</a> instead.
     /// </para>
     ///  
     /// <para>
@@ -114,7 +114,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

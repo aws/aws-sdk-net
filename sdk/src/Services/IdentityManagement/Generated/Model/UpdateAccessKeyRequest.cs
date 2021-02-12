@@ -43,7 +43,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For information about rotating keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-    /// Keys and Certificates</a> in the <i>IAM User Guide</i>.
+    /// keys and certificates</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class UpdateAccessKeyRequest : AmazonIdentityManagementServiceRequest
@@ -61,7 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates UpdateAccessKeyRequest with the parameterized properties
         /// </summary>
         /// <param name="accessKeyId">The access key ID of the secret access key you want to update. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</param>
-        /// <param name="status"> The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.</param>
+        /// <param name="status"> The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for programmatic calls to AWS, while <code>Inactive</code> means that the key cannot be used.</param>
         public UpdateAccessKeyRequest(string accessKeyId, StatusType status)
         {
             _accessKeyId = accessKeyId;
@@ -97,8 +97,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         ///  The status you want to assign to the secret access key. <code>Active</code> means
-        /// that the key can be used for API calls to AWS, while <code>Inactive</code> means that
-        /// the key cannot be used.
+        /// that the key can be used for programmatic calls to AWS, while <code>Inactive</code>
+        /// means that the key cannot be used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

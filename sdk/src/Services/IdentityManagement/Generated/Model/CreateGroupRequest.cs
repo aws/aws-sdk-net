@@ -34,9 +34,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// The number and size of IAM resources in an AWS account are limited. For more information,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-    /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+    ///  For information about the number of groups you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+    /// and STS quotas</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateGroupRequest : AmazonIdentityManagementServiceRequest
@@ -87,7 +86,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         ///  The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>

@@ -166,7 +166,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RequireLowercaseCharacters. 
         /// <para>
-        /// Specifies whether to require lowercase characters for IAM user passwords.
+        /// Specifies whether IAM user passwords must contain at least one lowercase character
+        /// (a to z).
         /// </para>
         /// </summary>
         public bool RequireLowercaseCharacters
@@ -184,7 +185,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RequireNumbers. 
         /// <para>
-        /// Specifies whether to require numbers for IAM user passwords.
+        /// Specifies whether IAM user passwords must contain at least one numeric character (0
+        /// to 9).
         /// </para>
         /// </summary>
         public bool RequireNumbers
@@ -202,7 +204,11 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RequireSymbols. 
         /// <para>
-        /// Specifies whether to require symbols for IAM user passwords.
+        /// Specifies whether IAM user passwords must contain at least one of the following symbols:
+        /// </para>
+        ///  
+        /// <para>
+        /// ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
         /// </para>
         /// </summary>
         public bool RequireSymbols
@@ -220,7 +226,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RequireUppercaseCharacters. 
         /// <para>
-        /// Specifies whether to require uppercase characters for IAM user passwords.
+        /// Specifies whether IAM user passwords must contain at least one uppercase character
+        /// (A to Z).
         /// </para>
         /// </summary>
         public bool RequireUppercaseCharacters

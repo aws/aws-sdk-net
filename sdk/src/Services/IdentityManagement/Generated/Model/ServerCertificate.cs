@@ -42,6 +42,7 @@ namespace Amazon.IdentityManagement.Model
         private string _certificateBody;
         private string _certificateChain;
         private ServerCertificateMetadata _serverCertificateMetadata;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -114,6 +115,27 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetServerCertificateMetadata()
         {
             return this._serverCertificateMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that are attached to the server certificate. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

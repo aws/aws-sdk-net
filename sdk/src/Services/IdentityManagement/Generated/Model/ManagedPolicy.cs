@@ -39,7 +39,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// policies and inline policies</a> in the <i>IAM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class ManagedPolicy
@@ -54,6 +54,7 @@ namespace Amazon.IdentityManagement.Model
         private int? _permissionsBoundaryUsageCount;
         private string _policyId;
         private string _policyName;
+        private List<Tag> _tags = new List<Tag>();
         private DateTime? _updateDate;
 
         /// <summary>
@@ -177,7 +178,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -202,7 +203,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-        /// Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+        /// boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public int PermissionsBoundaryUsageCount
@@ -225,7 +226,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=16, Max=128)]
@@ -258,6 +259,27 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPolicyName()
         {
             return this._policyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that are attached to the instance profile. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

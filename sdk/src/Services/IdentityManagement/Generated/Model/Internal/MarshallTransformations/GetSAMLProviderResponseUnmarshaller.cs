@@ -93,6 +93,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         response.SAMLMetadataDocument = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Tags/member", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Tags.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ValidUntil", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

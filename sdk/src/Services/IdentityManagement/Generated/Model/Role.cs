@@ -51,7 +51,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         ///  The Amazon Resource Name (ARN) specifying the role. For more information about ARNs
         /// and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i> guide. 
+        /// identifiers</a> in the <i>IAM User Guide</i> guide. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -150,7 +150,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         ///  The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>. 
+        /// identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -174,7 +174,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-        /// Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+        /// boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public AttachedPermissionsBoundary PermissionsBoundary
@@ -194,7 +194,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         ///  The stable and unique string identifying the role. For more information about IDs,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>. 
+        /// identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=16, Max=128)]
@@ -218,7 +218,7 @@ namespace Amazon.IdentityManagement.Model
         /// reported for the trailing 400 days. This period can be shorter if your Region began
         /// supporting these features within the last year. The role might have been used more
         /// than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-        /// Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+        /// where data is tracked</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public RoleLastUsed RoleLastUsed
@@ -255,9 +255,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags that are attached to the specified role. For more information about
-        /// tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
-        /// IAM Identities</a> in the <i>IAM User Guide</i>.
+        /// A list of tags that are attached to the role. For more information about tagging,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

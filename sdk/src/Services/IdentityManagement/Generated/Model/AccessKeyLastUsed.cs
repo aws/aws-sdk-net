@@ -98,7 +98,7 @@ namespace Amazon.IdentityManagement.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information about AWS Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-        /// and Endpoints</a> in the Amazon Web Services General Reference.
+        /// and endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

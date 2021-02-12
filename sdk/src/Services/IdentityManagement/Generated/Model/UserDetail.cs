@@ -126,7 +126,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -150,7 +150,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-        /// Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+        /// boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public AttachedPermissionsBoundary PermissionsBoundary
@@ -168,9 +168,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags that are associated with the specified user. For more information about
-        /// tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
-        /// IAM Identities</a> in the <i>IAM User Guide</i>.
+        /// A list of tags that are associated with the user. For more information about tagging,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -191,7 +191,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The stable and unique string identifying the user. For more information about IDs,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=16, Max=128)]

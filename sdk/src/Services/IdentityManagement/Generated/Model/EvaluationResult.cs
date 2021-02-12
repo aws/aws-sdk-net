@@ -106,7 +106,7 @@ namespace Amazon.IdentityManagement.Model
         /// When you make a cross-account request, AWS evaluates the request in the trusting account
         /// and the trusted account. The request is allowed only if both evaluations return <code>true</code>.
         /// For more information about how policies are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
-        /// Policies Within a Single Account</a>.
+        /// policies within a single account</a>.
         /// </para>
         ///  
         /// <para>

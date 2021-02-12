@@ -37,12 +37,12 @@ namespace Amazon.IdentityManagement.Model
     /// This operation creates a policy version with a version identifier of <code>v1</code>
     /// and sets v1 as the policy's default version. For more information about policy versions,
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-    /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+    /// for managed policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about managed policies in general, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+    /// policies and inline policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreatePolicyRequest : AmazonIdentityManagementServiceRequest
@@ -51,6 +51,7 @@ namespace Amazon.IdentityManagement.Model
         private string _path;
         private string _policyDocument;
         private string _policyName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -88,7 +89,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -185,6 +186,34 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPolicyName()
         {
             return this._policyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that you want to attach to the new IAM customer managed policy. Each
+        /// tag consists of a key name and an associated value. For more information about tagging,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

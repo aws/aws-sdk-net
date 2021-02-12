@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     /// API operations and AWS resources to determine the policies' effective permissions.
     /// The entity can be an IAM user, group, or role. If you specify a user, then the simulation
     /// also includes all of the policies that are attached to groups that the user belongs
-    /// to.
+    /// to. You can simulate resources that don't exist in your account.
     /// 
     ///  
     /// <para>
@@ -54,9 +54,9 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Note:</b> This API discloses information about the permissions granted to other
-    /// users. If you do not want users to see other user's permissions, then consider allowing
-    /// them to use <a>SimulateCustomPolicy</a> instead.
+    ///  <b>Note:</b> This operation discloses information about the permissions granted to
+    /// other users. If you do not want users to see other user's permissions, then consider
+    /// allowing them to use <a>SimulateCustomPolicy</a> instead.
     /// </para>
     ///  
     /// <para>
@@ -69,6 +69,11 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// If the output is long, you can use the <code>MaxItems</code> and <code>Marker</code>
     /// parameters to paginate the results.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
+    /// IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SimulatePrincipalPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -133,7 +138,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -229,7 +234,7 @@ namespace Amazon.IdentityManagement.Model
         /// an entity and you pass in a different permissions boundary policy using this parameter,
         /// then the new permissions boundary policy is used for the simulation. For more information
         /// about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-        /// Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is
+        /// boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is
         /// specified as a string containing the complete, valid JSON text of a permissions boundary
         /// policy.
         /// </para>
@@ -319,7 +324,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -342,7 +347,8 @@ namespace Amazon.IdentityManagement.Model
         /// not provided, then the value defaults to <code>*</code> (all resources). Each API
         /// in the <code>ActionNames</code> parameter is evaluated for each resource in this list.
         /// The simulation determines the access result (allowed or denied) of each combination
-        /// and reports it in the response.
+        /// and reports it in the response. You can simulate resources that don't exist in your
+        /// account.
         /// </para>
         ///  
         /// <para>
@@ -353,7 +359,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         public List<string> ResourceArns
@@ -386,7 +392,7 @@ namespace Amazon.IdentityManagement.Model
         /// volume as a resource. If the EC2 scenario includes VPC, then you must supply the network
         /// interface resource. If it includes an IP subnet, then you must specify the subnet
         /// resource. For more information on the EC2 scenario options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a> in the <i>Amazon EC2 User Guide</i>.
+        /// platforms</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

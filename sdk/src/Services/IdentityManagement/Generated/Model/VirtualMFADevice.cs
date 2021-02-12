@@ -37,6 +37,7 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? _enableDate;
         private MemoryStream _qrCodePNG;
         private string _serialNumber;
+        private List<Tag> _tags = new List<Tag>();
         private User _user;
 
         /// <summary>
@@ -115,6 +116,27 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetSerialNumber()
         {
             return this._serialNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that are attached to the virtual MFA device. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

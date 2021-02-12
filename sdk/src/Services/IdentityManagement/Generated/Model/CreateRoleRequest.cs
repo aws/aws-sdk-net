@@ -30,11 +30,11 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRole operation.
-    /// Creates a new role for your AWS account. For more information about roles, go to <a
+    /// Creates a new role for your AWS account. For more information about roles, see <a
     /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
-    /// Roles</a>. The number and size of IAM resources in an AWS account are limited. For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-    /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+    /// roles</a>. For information about quotas for role names and the number of roles you
+    /// can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+    /// and STS quotas</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class CreateRoleRequest : AmazonIdentityManagementServiceRequest
     {
@@ -134,7 +134,7 @@ namespace Amazon.IdentityManagement.Model
         /// API operations or the <code>assume-role*</code> CLI operations but does not apply
         /// when you use those operations to create a console URL. For more information, see <a
         /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
-        /// Roles</a> in the <i>IAM User Guide</i>.
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3600, Max=43200)]
@@ -229,15 +229,14 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags that you want to attach to the newly created role. Each tag consists
-        /// of a key name and an associated value. For more information about tagging, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a>
-        /// in the <i>IAM User Guide</i>.
+        /// A list of tags that you want to attach to the new role. Each tag consists of a key
+        /// name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If any one of the tags is invalid or if you exceed the allowed number of tags per
-        /// role, then the entire request fails and the role is not created.
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created.
         /// </para>
         ///  </note>
         /// </summary>

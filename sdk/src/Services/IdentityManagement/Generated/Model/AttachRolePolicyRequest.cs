@@ -42,9 +42,10 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Use this API to attach a <i>managed</i> policy to a role. To embed an inline policy
-    /// in a role, use <a>PutRolePolicy</a>. For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+    /// Use this operation to attach a <i>managed</i> policy to a role. To embed an inline
+    /// policy in a role, use <a>PutRolePolicy</a>. For more information about policies, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// policies and inline policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachRolePolicyRequest : AmazonIdentityManagementServiceRequest
@@ -60,7 +61,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

@@ -34,6 +34,7 @@ namespace Amazon.IdentityManagement.Model
     public partial class UploadServerCertificateResponse : AmazonWebServiceResponse
     {
         private ServerCertificateMetadata _serverCertificateMetadata;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ServerCertificateMetadata. 
@@ -52,6 +53,27 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetServerCertificateMetadata()
         {
             return this._serverCertificateMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that are attached to the new IAM server certificate. The returned list
+        /// of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

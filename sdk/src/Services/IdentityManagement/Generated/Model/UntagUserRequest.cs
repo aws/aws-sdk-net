@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UntagUser operation.
     /// Removes the specified tags from the user. For more information about tagging, see
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-    /// Identities</a> in the <i>IAM User Guide</i>.
+    /// resources</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class UntagUserRequest : AmazonIdentityManagementServiceRequest
     {

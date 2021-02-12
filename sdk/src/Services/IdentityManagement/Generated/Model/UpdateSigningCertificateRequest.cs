@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates UpdateSigningCertificateRequest with the parameterized properties
         /// </summary>
         /// <param name="certificateId">The ID of the signing certificate you want to update. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</param>
-        /// <param name="status"> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for API calls to AWS <code>Inactive</code> means that the certificate cannot be used.</param>
+        /// <param name="status"> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.</param>
         public UpdateSigningCertificateRequest(string certificateId, StatusType status)
         {
             _certificateId = certificateId;
@@ -93,8 +93,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         ///  The status you want to assign to the certificate. <code>Active</code> means that
-        /// the certificate can be used for API calls to AWS <code>Inactive</code> means that
-        /// the certificate cannot be used.
+        /// the certificate can be used for programmatic calls to AWS <code>Inactive</code> means
+        /// that the certificate cannot be used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

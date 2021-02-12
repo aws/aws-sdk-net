@@ -39,8 +39,8 @@ namespace Amazon.IdentityManagement.Model
     /// all STS requests go to a single endpoint at <code>https://sts.amazonaws.com</code>.
     /// AWS recommends using Regional STS endpoints to reduce latency, build in redundancy,
     /// and increase session token availability. For information about Regional endpoints
-    /// for STS, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">AWS
-    /// Regions and Endpoints</a> in the <i>AWS General Reference</i>.
+    /// for STS, see <a href="https://docs.aws.amazon.com/general/latest/gr/sts.html">AWS
+    /// AWS Security Token Service endpoints and quotas</a> in the <i>AWS General Reference</i>.
     /// </para>
     ///  
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.IdentityManagement.Model
     /// (Hong Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens
     /// are longer and might affect systems where you temporarily store tokens. For information,
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-    /// and Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+    /// and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -74,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+        /// and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

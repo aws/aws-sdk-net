@@ -36,13 +36,12 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// This operation affects all users, groups, and roles that the policy is attached to.
-    /// To list the users, groups, and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a>
-    /// API.
+    /// To list the users, groups, and roles that the policy is attached to, use <a>ListEntitiesForPolicy</a>.
     /// </para>
     ///  
     /// <para>
     /// For information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+    /// policies and inline policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SetDefaultPolicyVersionRequest : AmazonIdentityManagementServiceRequest
@@ -59,7 +58,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -83,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+        /// for managed policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

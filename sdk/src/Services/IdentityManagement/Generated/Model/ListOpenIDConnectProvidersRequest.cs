@@ -32,6 +32,15 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the ListOpenIDConnectProviders operation.
     /// Lists information about the IAM OpenID Connect (OIDC) provider resource objects defined
     /// in the AWS account.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// IAM resource-listing operations return a subset of the available attributes for the
+    /// resource. For example, this operation does not return tags, even though they are an
+    /// attribute of the returned object. To view all of the information for an OIDC provider,
+    /// see <a>GetOpenIDConnectProvider</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListOpenIDConnectProvidersRequest : AmazonIdentityManagementServiceRequest
     {

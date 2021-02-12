@@ -43,7 +43,7 @@ namespace Amazon.IdentityManagement.Model
     /// policies, access control lists, AWS Organizations policies, IAM permissions boundaries,
     /// and AWS STS assume role policies. It only applies permissions policy logic. For more
     /// about the evaluation of policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
-    /// Policies</a> in the <i>IAM User Guide</i>.
+    /// policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For more information about service and action last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
-    /// Permissions Using Service Last Accessed Data</a> in the <i>IAM User Guide</i>.
+    /// permissions using service last accessed data</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetServiceLastAccessedDetailsRequest : AmazonIdentityManagementServiceRequest

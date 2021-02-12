@@ -34,9 +34,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// The number and size of IAM resources in an AWS account are limited. For more information,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-    /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+    ///  For information about quotas for the number of IAM users you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+    /// and STS quotas</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateUserRequest : AmazonIdentityManagementServiceRequest
@@ -64,7 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         ///  The path for the user name. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -114,15 +113,14 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags that you want to attach to the newly created user. Each tag consists
-        /// of a key name and an associated value. For more information about tagging, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a>
-        /// in the <i>IAM User Guide</i>.
+        /// A list of tags that you want to attach to the new user. Each tag consists of a key
+        /// name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If any one of the tags is invalid or if you exceed the allowed number of tags per
-        /// user, then the entire request fails and the user is not created.
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created.
         /// </para>
         ///  </note>
         /// </summary>

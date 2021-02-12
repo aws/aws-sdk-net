@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-    /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+    /// for managed policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreatePolicyVersionRequest : AmazonIdentityManagementServiceRequest
@@ -61,7 +61,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -138,7 +138,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+        /// for managed policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public bool SetAsDefault

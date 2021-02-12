@@ -1024,6 +1024,23 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListInstanceProfileTagsRequest.InstanceProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListInstanceProfileTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListInstanceProfileTagsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListMFADevicesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
@@ -1039,6 +1056,39 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListMFADeviceTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListMFADeviceTagsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListMFADeviceTagsRequest.SerialNumber</property>
+    <min>9</min>
+    <max>256</max>
+    <pattern>[\w+=/:,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListOpenIDConnectProviderTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListOpenIDConnectProviderTagsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListOpenIDConnectProviderTagsRequest.OpenIDConnectProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPoliciesRequest.Marker</property>
@@ -1067,6 +1117,22 @@
     <min>1</min>
     <max>320</max>
     <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListPolicyTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListPolicyTagsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListPolicyTagsRequest.PolicyArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPolicyVersionsRequest.Marker</property>
@@ -1136,6 +1202,22 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListSAMLProviderTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListSAMLProviderTagsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListSAMLProviderTagsRequest.SAMLProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListServerCertificatesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
@@ -1151,6 +1233,23 @@
     <min>1</min>
     <max>512</max>
     <pattern>\u002F[\u0021-\u007F]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServerCertificateTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServerCertificateTagsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServerCertificateTagsRequest.ServerCertificateName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListServiceSpecificCredentialsRequest.UserName</property>
@@ -1479,9 +1578,42 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.TagInstanceProfileRequest.InstanceProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.TagMFADeviceRequest.SerialNumber</property>
+    <min>9</min>
+    <max>256</max>
+    <pattern>[\w+=/:,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.TagOpenIDConnectProviderRequest.OpenIDConnectProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.TagPolicyRequest.PolicyArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.TagRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.TagSAMLProviderRequest.SAMLProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.TagServerCertificateRequest.ServerCertificateName</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1491,9 +1623,42 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UntagInstanceProfileRequest.InstanceProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UntagMFADeviceRequest.SerialNumber</property>
+    <min>9</min>
+    <max>256</max>
+    <pattern>[\w+=/:,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UntagOpenIDConnectProviderRequest.OpenIDConnectProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UntagPolicyRequest.PolicyArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UntagRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UntagSAMLProviderRequest.SAMLProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UntagServerCertificateRequest.ServerCertificateName</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>

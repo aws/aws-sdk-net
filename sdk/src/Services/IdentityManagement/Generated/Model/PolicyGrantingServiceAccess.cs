@@ -55,7 +55,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This field is null for managed policies. For more information about these policy types,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -81,7 +81,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This field is null for managed policies. For more information about these policy types,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public PolicyOwnerEntityType EntityType
@@ -135,7 +135,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property PolicyType. 
         /// <para>
         /// The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

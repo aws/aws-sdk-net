@@ -34,14 +34,14 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// You cannot delete the default version from a policy using this API. To delete the
-    /// default version from a policy, use <a>DeletePolicy</a>. To find out which version
+    /// You cannot delete the default version from a policy using this operation. To delete
+    /// the default version from a policy, use <a>DeletePolicy</a>. To find out which version
     /// of a policy is marked as the default version, use <a>ListPolicyVersions</a>.
     /// </para>
     ///  
     /// <para>
     /// For information about versions for managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-    /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+    /// for managed policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeletePolicyVersionRequest : AmazonIdentityManagementServiceRequest
@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -88,7 +88,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+        /// for managed policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

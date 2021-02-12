@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     ///  You should understand the implications of changing a group's path or name. For more
     /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-    /// Users and Groups</a> in the <i>IAM User Guide</i>.
+    /// users and groups</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </important> <note> 
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
     /// allows them to update both groups. If the principal has permission to update the <code>Managers</code>
     /// group, but not the <code>MGRs</code> group, then the update fails. For more information
     /// about permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-    /// Management</a>. 
+    /// management</a>. 
     /// </para>
     ///  </note>
     /// </summary>

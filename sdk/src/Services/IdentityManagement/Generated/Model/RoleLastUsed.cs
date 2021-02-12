@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     /// reported for the trailing 400 days. This period can be shorter if your Region began
     /// supporting these features within the last year. The role might have been used more
     /// than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-    /// Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+    /// where data is tracked</a> in the <i>IAM User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This field is null if the role has not been used within the IAM tracking period. For
         /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-        /// Where Data Is Tracked</a> in the <i>IAM User Guide</i>. 
+        /// where data is tracked</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         public DateTime LastUsedDate

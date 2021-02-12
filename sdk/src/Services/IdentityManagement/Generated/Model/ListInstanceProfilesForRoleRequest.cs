@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// Lists the instance profiles that have the specified associated IAM role. If there
     /// are none, the operation returns an empty list. For more information about instance
     /// profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-    /// Instance Profiles</a>.
+    /// instance profiles</a>.
     /// 
     ///  
     /// <para>

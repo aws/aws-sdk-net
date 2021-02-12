@@ -39,7 +39,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// policies and inline policies</a> in the <i>IAM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class PolicyRole
@@ -52,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The stable and unique string identifying the role. For more information about IDs,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=16, Max=128)]

@@ -74,7 +74,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -119,25 +119,23 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Adds the specified IAM role to the specified instance profile. An instance profile
-        /// can contain only one role. (The number and size of IAM resources in an AWS account
-        /// are limited. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-        /// and STS Quotas</a> in the <i>IAM User Guide</i>.) You can remove the existing role
-        /// and then add a different role to an instance profile. You must then wait for the change
-        /// to appear across all of AWS because of <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
+        /// can contain only one role, and this quota cannot be increased. You can remove the
+        /// existing role and then add a different role to an instance profile. You must then
+        /// wait for the change to appear across all of AWS because of <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
         /// consistency</a>. To force the change, you must <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">disassociate
         /// the instance profile</a> and then <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate
         /// the instance profile</a>, or you can stop your instance and then restart it.
         /// 
         ///  <note> 
         /// <para>
-        /// The caller of this API must be granted the <code>PassRole</code> permission on the
-        /// IAM role by a permissions policy.
+        /// The caller of this operation must be granted the <code>PassRole</code> permission
+        /// on the IAM role by a permissions policy.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about roles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>. For more information about instance profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with roles</a>. For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// instance profiles</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddRoleToInstanceProfile service method.</param>
@@ -148,7 +146,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -205,7 +203,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the AddUserToGroup service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -253,13 +251,13 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You use this API to attach a managed policy to a group. To embed an inline policy
+        /// You use this operation to attach a managed policy to a group. To embed an inline policy
         /// in a group, use <a>PutGroupPolicy</a>.
         /// </para>
         ///  
         /// <para>
         /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachGroupPolicy service method.</param>
@@ -271,7 +269,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -331,9 +329,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// Use this API to attach a <i>managed</i> policy to a role. To embed an inline policy
-        /// in a role, use <a>PutRolePolicy</a>. For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// Use this operation to attach a <i>managed</i> policy to a role. To embed an inline
+        /// policy in a role, use <a>PutRolePolicy</a>. For more information about policies, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachRolePolicy service method.</param>
@@ -345,7 +344,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -403,13 +402,13 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You use this API to attach a <i>managed</i> policy to a user. To embed an inline policy
-        /// in a user, use <a>PutUserPolicy</a>.
+        /// You use this operation to attach a <i>managed</i> policy to a user. To embed an inline
+        /// policy in a user, use <a>PutUserPolicy</a>.
         /// </para>
         ///  
         /// <para>
         /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachUserPolicy service method.</param>
@@ -421,7 +420,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -469,14 +468,17 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Changes the password of the IAM user who is calling this operation. The AWS account
-        /// root user password is not affected by this operation.
+        /// Changes the password of the IAM user who is calling this operation. This operation
+        /// can be performed using the AWS CLI, the AWS API, or the <b>My Security Credentials</b>
+        /// page in the AWS Management Console. The AWS account root user password is not affected
+        /// by this operation.
         /// 
         ///  
         /// <para>
-        /// To change the password for a different user, see <a>UpdateLoginProfile</a>. For more
-        /// information about modifying passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-        /// Passwords</a> in the <i>IAM User Guide</i>.
+        /// Use <a>UpdateLoginProfile</a> to use the AWS CLI, the AWS API, or the <b>Users</b>
+        /// page in the IAM console to change the password for any IAM user. For more information
+        /// about modifying passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+        /// passwords</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangePassword service method.</param>
@@ -493,7 +495,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -553,9 +555,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// The number and size of IAM resources in an AWS account are limited. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+        ///  For information about quotas on the number of keys you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -570,7 +571,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the CreateAccessKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -595,9 +596,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// The number and size of IAM resources in an AWS account are limited. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+        ///  For information about quotas on the number of keys you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -613,7 +613,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the CreateAccessKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -659,7 +659,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Creates an alias for your AWS account. For information about using an AWS account
         /// alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
+        /// an alias for your AWS account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAlias service method.</param>
         /// 
@@ -669,7 +669,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -713,9 +713,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// The number and size of IAM resources in an AWS account are limited. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+        ///  For information about the number of groups you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
@@ -726,7 +725,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -770,26 +769,32 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new instance profile. For information about instance profiles, go to <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// Creates a new instance profile. For information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entities">About
+        /// instance profiles</a>.
         /// 
         ///  
         /// <para>
-        /// The number and size of IAM resources in an AWS account are limited. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+        ///  For information about the number of instance profiles you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// object quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile service method.</param>
         /// 
         /// <returns>The response from the CreateInstanceProfile service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -829,10 +834,21 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a password for the specified user, giving the user the ability to access
-        /// AWS services through the AWS Management Console. For more information about managing
-        /// passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-        /// Passwords</a> in the <i>IAM User Guide</i>.
+        /// Creates a password for the specified IAM user. A password allows an IAM user to access
+        /// AWS services through the AWS Management Console.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the AWS CLI, the AWS API, or the <b>Users</b> page in the IAM console
+        /// to create a password for any IAM user. Use <a>ChangePassword</a> to update your own
+        /// existing password in the <b>My Security Credentials</b> page in the AWS Management
+        /// Console.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about managing passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+        /// passwords</a> in the <i>IAM User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoginProfile service method.</param>
         /// 
@@ -842,7 +858,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -931,6 +947,10 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateOpenIDConnectProvider service method.</param>
         /// 
         /// <returns>The response from the CreateOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
@@ -940,7 +960,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -987,17 +1007,21 @@ namespace Amazon.IdentityManagement
         /// This operation creates a policy version with a version identifier of <code>v1</code>
         /// and sets v1 as the policy's default version. For more information about policy versions,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+        /// for managed policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about managed policies in general, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
         /// 
         /// <returns>The response from the CreatePolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
@@ -1007,7 +1031,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -1065,7 +1089,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+        /// for managed policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicyVersion service method.</param>
@@ -1077,7 +1101,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -1125,11 +1149,11 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new role for your AWS account. For more information about roles, go to <a
+        /// Creates a new role for your AWS account. For more information about roles, see <a
         /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
-        /// Roles</a>. The number and size of IAM resources in an AWS account are limited. For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+        /// roles</a>. For information about quotas for role names and the number of roles you
+        /// can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRole service method.</param>
         /// 
@@ -1147,7 +1171,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -1218,13 +1242,17 @@ namespace Amazon.IdentityManagement
         ///  </note> 
         /// <para>
         ///  For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
-        /// SAML 2.0 Federated Users to Access the AWS Management Console</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-        /// SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>.
+        /// SAML 2.0 federated users to access the AWS Management Console</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+        /// SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSAMLProvider service method.</param>
         /// 
         /// <returns>The response from the CreateSAMLProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
@@ -1234,7 +1262,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1280,7 +1308,7 @@ namespace Amazon.IdentityManagement
         /// your AWS resources into an unknown state. Allowing the service to control the role
         /// helps improve service stability and proper cleanup when a service and its role are
         /// no longer needed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">Using
-        /// Service-Linked Roles</a> in the <i>IAM User Guide</i>. 
+        /// service-linked roles</a> in the <i>IAM User Guide</i>. 
         /// 
         ///  
         /// <para>
@@ -1297,7 +1325,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1352,7 +1380,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// The only supported service at this time is AWS CodeCommit.
+        /// You can create service-specific credentials for AWS CodeCommit and Amazon Keyspaces
+        /// (for Apache Cassandra).
         /// </para>
         ///  
         /// <para>
@@ -1361,7 +1390,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about service-specific credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using
-        /// IAM with AWS CodeCommit: Git Credentials, SSH Keys, and AWS Access Keys</a> in the
+        /// IAM with AWS CodeCommit: Git credentials, SSH keys, and AWS access keys</a> in the
         /// <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -1370,7 +1399,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the CreateServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1418,9 +1447,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// The number and size of IAM resources in an AWS account are limited. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+        ///  For information about quotas for the number of IAM users you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -1439,7 +1467,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1485,14 +1513,13 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Creates a new virtual MFA device for the AWS account. After creating the virtual MFA,
         /// use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more information
-        /// about creating and working with virtual MFA devices, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-        /// a Virtual MFA Device</a> in the <i>IAM User Guide</i>.
+        /// about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+        /// a virtual MFA device</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// The number and size of IAM resources in an AWS account are limited. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+        /// For information about the maximum number of MFA devices you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1506,12 +1533,20 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualMFADevice service method.</param>
         /// 
         /// <returns>The response from the CreateVirtualMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1556,9 +1591,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// For more information about creating and working with virtual MFA devices, go to <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Enabling
-        /// a Virtual Multi-factor Authentication (MFA) Device</a> in the <i>IAM User Guide</i>.
+        /// For more information about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Enabling
+        /// a virtual multi-factor authentication (MFA) device</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeactivateMFADevice service method.</param>
@@ -1572,7 +1606,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1631,7 +1665,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteAccessKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1677,14 +1711,14 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Deletes the specified AWS account alias. For information about using an AWS account
         /// alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
+        /// an alias for your AWS account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAlias service method.</param>
         /// 
         /// <returns>The response from the DeleteAccountAlias service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1734,7 +1768,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1754,7 +1788,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1810,7 +1844,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1861,7 +1895,7 @@ namespace Amazon.IdentityManagement
         /// A group can also have managed policies attached to it. To detach a managed policy
         /// from a group, use <a>DetachGroupPolicy</a>. For more information about policies, refer
         /// to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroupPolicy service method.</param>
@@ -1869,7 +1903,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteGroupPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1924,8 +1958,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about instance profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// instance profiles</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile service method.</param>
@@ -1937,7 +1971,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -1984,6 +2018,13 @@ namespace Amazon.IdentityManagement
         /// Deletes the password for the specified IAM user, which terminates the user's ability
         /// to access AWS services through the AWS Management Console.
         /// 
+        ///  
+        /// <para>
+        /// You can use the AWS CLI, the AWS API, or the <b>Users</b> page in the IAM console
+        /// to delete a password for any IAM user. You can use <a>ChangePassword</a> to update,
+        /// but not delete, your own password in the <b>My Security Credentials</b> page in the
+        /// AWS Management Console.
+        /// </para>
         ///  <important> 
         /// <para>
         ///  Deleting a user's password does not prevent a user from accessing AWS through the
@@ -2005,7 +2046,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2124,9 +2165,8 @@ namespace Amazon.IdentityManagement
         ///  <ul> <li> 
         /// <para>
         /// Detach the policy from all users, groups, and roles that the policy is attached to,
-        /// using the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or <a>DetachRolePolicy</a>
-        /// API operations. To list all the users, groups, and roles that a policy is attached
-        /// to, use <a>ListEntitiesForPolicy</a>.
+        /// using <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or <a>DetachRolePolicy</a>.
+        /// To list all the users, groups, and roles that a policy is attached to, use <a>ListEntitiesForPolicy</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2138,12 +2178,12 @@ namespace Amazon.IdentityManagement
         ///  </li> <li> 
         /// <para>
         /// Delete the policy (this automatically deletes the policy's default version) using
-        /// this API.
+        /// this operation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
@@ -2159,7 +2199,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2207,14 +2247,14 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You cannot delete the default version from a policy using this API. To delete the
-        /// default version from a policy, use <a>DeletePolicy</a>. To find out which version
+        /// You cannot delete the default version from a policy using this operation. To delete
+        /// the default version from a policy, use <a>DeletePolicy</a>. To find out which version
         /// of a policy is marked as the default version, use <a>ListPolicyVersions</a>.
         /// </para>
         ///  
         /// <para>
         /// For information about versions for managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+        /// for managed policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicyVersion service method.</param>
@@ -2230,7 +2270,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2275,8 +2315,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Deletes the specified role. The role must not have any policies attached. For more
-        /// information about roles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>.
+        /// information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with roles</a>.
         /// 
         ///  <important> 
         /// <para>
@@ -2299,7 +2339,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2417,7 +2457,7 @@ namespace Amazon.IdentityManagement
         /// A role can also have managed policies attached to it. To detach a managed policy from
         /// a role, use <a>DetachRolePolicy</a>. For more information about policies, refer to
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRolePolicy service method.</param>
@@ -2425,7 +2465,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteRolePolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2499,7 +2539,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2548,7 +2588,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about working with server certificates, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-        /// with Server Certificates</a> in the <i>IAM User Guide</i>. This topic also includes
+        /// with server certificates</a> in the <i>IAM User Guide</i>. This topic also includes
         /// a list of AWS services that can use the server certificates that you manage with IAM.
         /// </para>
         ///  <important> 
@@ -2558,7 +2598,7 @@ namespace Amazon.IdentityManagement
         /// the deletion of bound certificates, it may continue to use the certificates. This
         /// could cause Elastic Load Balancing to stop accepting traffic. We recommend that you
         /// remove the reference to the certificate from Elastic Load Balancing before using this
-        /// command to delete the certificate. For more information, go to <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html">DeleteLoadBalancerListeners</a>
+        /// command to delete the certificate. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html">DeleteLoadBalancerListeners</a>
         /// in the <i>Elastic Load Balancing API Reference</i>.
         /// </para>
         ///  </important>
@@ -2572,7 +2612,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2627,17 +2667,17 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you submit a deletion request for a service-linked role whose linked service is
         /// still accessing a resource, then the deletion task fails. If it fails, the <a>GetServiceLinkedRoleDeletionStatus</a>
-        /// API operation returns the reason for the failure, usually including the resources
-        /// that must be deleted. To delete the service-linked role, you must first remove those
-        /// resources from the linked service and then submit the deletion request again. Resources
-        /// are specific to the service that is linked to the role. For more information about
-        /// removing resources from a service, see the <a href="http://docs.aws.amazon.com/">AWS
-        /// documentation</a> for your service.
+        /// operation returns the reason for the failure, usually including the resources that
+        /// must be deleted. To delete the service-linked role, you must first remove those resources
+        /// from the linked service and then submit the deletion request again. Resources are
+        /// specific to the service that is linked to the role. For more information about removing
+        /// resources from a service, see the <a href="http://docs.aws.amazon.com/">AWS documentation</a>
+        /// for your service.
         /// </para>
         ///  
         /// <para>
         /// For more information about service-linked roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Roles
-        /// Terms and Concepts: AWS Service-Linked Role</a> in the <i>IAM User Guide</i>.
+        /// terms and concepts: AWS service-linked role</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole service method.</param>
@@ -2645,7 +2685,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteServiceLinkedRole service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2748,7 +2788,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteSigningCertificate service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -2799,7 +2839,7 @@ namespace Amazon.IdentityManagement
         /// The SSH public key deleted by this operation is used only for authenticating the associated
         /// IAM user to an AWS CodeCommit repository. For more information about using SSH keys
         /// to authenticate to an AWS CodeCommit repository, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
-        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// up AWS CodeCommit for SSH connections</a> in the <i>AWS CodeCommit User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSSHPublicKey service method.</param>
@@ -2847,7 +2887,7 @@ namespace Amazon.IdentityManagement
         /// Deletes the specified IAM user. Unlike the AWS Management Console, when you delete
         /// a user programmatically, you must delete the items attached to the user manually,
         /// or the deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting
-        /// an IAM User</a>. Before attempting to delete a user, remove the following items:
+        /// an IAM user</a>. Before attempting to delete a user, remove the following items:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -2900,7 +2940,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -3005,7 +3045,7 @@ namespace Amazon.IdentityManagement
         /// A user can also have managed policies attached to it. To detach a managed policy from
         /// a user, use <a>DetachUserPolicy</a>. For more information about policies, refer to
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserPolicy service method.</param>
@@ -3013,7 +3053,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the DeleteUserPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -3075,7 +3115,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -3124,8 +3164,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// A group can also have inline policies embedded with it. To delete an inline policy,
-        /// use the <a>DeleteGroupPolicy</a> API. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// use <a>DeleteGroupPolicy</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachGroupPolicy service method.</param>
@@ -3137,7 +3177,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -3186,8 +3226,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// A role can also have inline policies embedded with it. To delete an inline policy,
-        /// use the <a>DeleteRolePolicy</a> API. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// use <a>DeleteRolePolicy</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachRolePolicy service method.</param>
@@ -3199,7 +3239,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -3254,8 +3294,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// A user can also have inline policies embedded with it. To delete an inline policy,
-        /// use the <a>DeleteUserPolicy</a> API. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// use <a>DeleteUserPolicy</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachUserPolicy service method.</param>
@@ -3267,7 +3307,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -3333,7 +3373,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -3379,13 +3419,13 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Generates a credential report for the AWS account. For more information about the
         /// credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>IAM User Guide</i>.
+        /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the GenerateCredentialReport service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3396,14 +3436,14 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Generates a credential report for the AWS account. For more information about the
         /// credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>IAM User Guide</i>.
+        /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateCredentialReport service method.</param>
         /// 
         /// <returns>The response from the GenerateCredentialReport service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3449,12 +3489,12 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// To call this operation, you must be signed in using your AWS Organizations master
+        /// To call this operation, you must be signed in using your AWS Organizations management
         /// account credentials. You can use your long-term IAM user or root user credentials,
         /// or temporary credentials from assuming an IAM role. SCPs must be enabled for your
         /// organization root. You must have the required IAM and AWS Organizations permissions.
         /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Refining
-        /// Permissions Using Service Last Accessed Data</a> in the <i>IAM User Guide</i>.
+        /// permissions using service last accessed data</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3474,7 +3514,7 @@ namespace Amazon.IdentityManagement
         /// that the policy allows to account principals in the entity or the entity's children.
         /// For important information about the data, reporting period, permissions required,
         /// troubleshooting, and supported Regions see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
-        /// Permissions Using Service Last Accessed Data</a> in the <i>IAM User Guide</i>.
+        /// permissions using service last accessed data</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -3485,7 +3525,7 @@ namespace Amazon.IdentityManagement
         /// request might have been denied. Refer to your CloudTrail logs as the authoritative
         /// source for information about all API calls and whether they were successful or denied
         /// access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
-        /// IAM Events with CloudTrail</a> in the <i>IAM User Guide</i>.
+        /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3506,21 +3546,21 @@ namespace Amazon.IdentityManagement
         ///  <b>Root</b> – When you specify the organizations root as the entity, the resulting
         /// report lists all of the services allowed by SCPs that are attached to your root. For
         /// each service, the report includes data for all accounts in your organization except
-        /// the master account, because the master account is not limited by SCPs.
+        /// the management account, because the management account is not limited by SCPs.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>OU</b> – When you specify an organizational unit (OU) as the entity, the resulting
         /// report lists all of the services allowed by SCPs that are attached to the OU and its
         /// parents. For each service, the report includes data for all accounts in the OU or
-        /// its children. This data excludes the master account, because the master account is
-        /// not limited by SCPs.
+        /// its children. This data excludes the management account, because the management account
+        /// is not limited by SCPs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Master account</b> – When you specify the master account, the resulting report
-        /// lists all AWS services, because the master account is not limited by SCPs. For each
-        /// service, the report includes data for only the master account.
+        ///  <b>management account</b> – When you specify the management account, the resulting
+        /// report lists all AWS services, because the management account is not limited by SCPs.
+        /// For each service, the report includes data for only the management account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3539,9 +3579,9 @@ namespace Amazon.IdentityManagement
         ///  <b>Root</b> – When you specify the root entity and a policy ID, the resulting report
         /// lists all of the services that are allowed by the specified SCP. For each service,
         /// the report includes data for all accounts in your organization to which the SCP applies.
-        /// This data excludes the master account, because the master account is not limited by
-        /// SCPs. If the SCP is not attached to any entities in the organization, then the report
-        /// will return a list of services with no data.
+        /// This data excludes the management account, because the management account is not limited
+        /// by SCPs. If the SCP is not attached to any entities in the organization, then the
+        /// report will return a list of services with no data.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3549,16 +3589,16 @@ namespace Amazon.IdentityManagement
         /// all of the services that are allowed by the specified SCP. For each service, the report
         /// includes data for all accounts in the OU or its children to which the SCP applies.
         /// This means that other accounts outside the OU that are affected by the SCP might not
-        /// be included in the data. This data excludes the master account, because the master
+        /// be included in the data. This data excludes the management account, because the management
         /// account is not limited by SCPs. If the SCP is not attached to the OU or one of its
         /// children, the report will return a list of services with no data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Master account</b> – When you specify the master account, the resulting report
-        /// lists all AWS services, because the master account is not limited by SCPs. If you
-        /// specify a policy ID in the CLI or API, the policy is ignored. For each service, the
-        /// report includes data for only the master account.
+        ///  <b>management account</b> – When you specify the management account, the resulting
+        /// report lists all AWS services, because the management account is not limited by SCPs.
+        /// If you specify a policy ID in the CLI or API, the policy is ignored. For each service,
+        /// the report includes data for only the management account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3576,12 +3616,12 @@ namespace Amazon.IdentityManagement
         /// policies, resource-based policies, access control lists, IAM permissions boundaries,
         /// and STS assume role policies. It only applies SCP logic. For more about the evaluation
         /// of policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
-        /// Policies</a> in the <i>IAM User Guide</i>.
+        /// policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
         /// For more information about service last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
-        /// Policy Scope by Viewing User Activity</a> in the <i>IAM User Guide</i>.
+        /// policy scope by viewing user activity</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateOrganizationsAccessReport service method.</param>
@@ -3631,7 +3671,7 @@ namespace Amazon.IdentityManagement
         /// usually appears within four hours. IAM reports activity for the last 365 days, or
         /// less if your Region began supporting this feature within the last year. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-        /// Where Data Is Tracked</a>.
+        /// where data is tracked</a>.
         /// 
         ///  <important> 
         /// <para>
@@ -3642,7 +3682,7 @@ namespace Amazon.IdentityManagement
         /// has been compromised, because the request might have been denied. Refer to your CloudTrail
         /// logs as the authoritative source for information about all API calls and whether they
         /// were successful or denied access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
-        /// IAM Events with CloudTrail</a> in the <i>IAM User Guide</i>.
+        /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3688,12 +3728,12 @@ namespace Amazon.IdentityManagement
         /// policies, access control lists, AWS Organizations policies, IAM permissions boundaries,
         /// and AWS STS assume role policies. It only applies permissions policy logic. For more
         /// about the evaluation of policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
-        /// Policies</a> in the <i>IAM User Guide</i>.
+        /// policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
         /// For more information about service and action last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
-        /// Permissions Using Service Last Accessed Data</a> in the <i>IAM User Guide</i>.
+        /// permissions using service last accessed data</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateServiceLastAccessedDetails service method.</param>
@@ -3785,13 +3825,13 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Retrieves information about all IAM users, groups, roles, and policies in your AWS
-        /// account, including their relationships to one another. Use this API to obtain a snapshot
-        /// of the configuration of IAM permissions (users, groups, roles, and policies) in your
-        /// account.
+        /// account, including their relationships to one another. Use this operation to obtain
+        /// a snapshot of the configuration of IAM permissions (users, groups, roles, and policies)
+        /// in your account.
         /// 
         ///  <note> 
         /// <para>
-        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <code>decode</code> method of
         /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
@@ -3844,9 +3884,10 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves the password policy for the AWS account. For more information about using
-        /// a password policy, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a>.
+        /// Retrieves the password policy for the AWS account. This tells you the complexity requirements
+        /// and mandatory rotation periods for the IAM user passwords in your account. For more
+        /// information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// an IAM password policy</a>.
         /// </summary>
         /// 
         /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
@@ -3861,9 +3902,10 @@ namespace Amazon.IdentityManagement
         GetAccountPasswordPolicyResponse GetAccountPasswordPolicy();
 
         /// <summary>
-        /// Retrieves the password policy for the AWS account. For more information about using
-        /// a password policy, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a>.
+        /// Retrieves the password policy for the AWS account. This tells you the complexity requirements
+        /// and mandatory rotation periods for the IAM user passwords in your account. For more
+        /// information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// an IAM password policy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountPasswordPolicy service method.</param>
         /// 
@@ -3914,9 +3956,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// The number and size of IAM resources in an AWS account are limited. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+        ///  For information about IAM quotas, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -3932,9 +3973,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// The number and size of IAM resources in an AWS account are limited. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-        /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+        ///  For information about IAM quotas, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSummary service method.</param>
@@ -4072,9 +4112,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        ///  <b>Note:</b> This API discloses information about the permissions granted to other
-        /// users. If you do not want users to see other user's permissions, then consider allowing
-        /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        ///  <b>Note:</b> This operation discloses information about the permissions granted to
+        /// other users. If you do not want users to see other user's permissions, then consider
+        /// allowing them to use <a>GetContextKeysForCustomPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -4084,7 +4124,7 @@ namespace Amazon.IdentityManagement
         /// what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
-        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</param>
         /// 
         /// <returns>The response from the GetContextKeysForPrincipalPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
@@ -4112,9 +4152,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        ///  <b>Note:</b> This API discloses information about the permissions granted to other
-        /// users. If you do not want users to see other user's permissions, then consider allowing
-        /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        ///  <b>Note:</b> This operation discloses information about the permissions granted to
+        /// other users. If you do not want users to see other user's permissions, then consider
+        /// allowing them to use <a>GetContextKeysForCustomPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -4124,7 +4164,7 @@ namespace Amazon.IdentityManagement
         /// what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
-        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</param>
         /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following: <ul> <li> Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range </li> <li> The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>) </li> <li> The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) </li> </ul></param>
         /// 
         /// <returns>The response from the GetContextKeysForPrincipalPolicy service method, as returned by IdentityManagementService.</returns>
@@ -4153,9 +4193,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        ///  <b>Note:</b> This API discloses information about the permissions granted to other
-        /// users. If you do not want users to see other user's permissions, then consider allowing
-        /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        ///  <b>Note:</b> This operation discloses information about the permissions granted to
+        /// other users. If you do not want users to see other user's permissions, then consider
+        /// allowing them to use <a>GetContextKeysForCustomPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -4213,7 +4253,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves a credential report for the AWS account. For more information about the
         /// credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>IAM User Guide</i>.
+        /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the GetCredentialReport service method, as returned by IdentityManagementService.</returns>
@@ -4221,7 +4261,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the most recent credential report has expired. To
         /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
         /// about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>IAM User Guide</i>.
+        /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
         /// The request was rejected because the credential report does not exist. To generate
@@ -4239,7 +4279,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves a credential report for the AWS account. For more information about the
         /// credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>IAM User Guide</i>.
+        /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCredentialReport service method.</param>
         /// 
@@ -4248,7 +4288,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the most recent credential report has expired. To
         /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
         /// about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>IAM User Guide</i>.
+        /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
         /// The request was rejected because the credential report does not exist. To generate
@@ -4348,7 +4388,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <note> 
         /// <para>
-        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <code>decode</code> method of
         /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
@@ -4364,7 +4404,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGroupPolicy service method.</param>
@@ -4415,7 +4455,7 @@ namespace Amazon.IdentityManagement
         /// Retrieves information about the specified instance profile, including the instance
         /// profile's path, GUID, ARN, and role. For more information about instance profiles,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a> in the <i>IAM User Guide</i>.
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInstanceProfile service method.</param>
         /// 
@@ -4462,7 +4502,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves the user name and password-creation date for the specified IAM user. If
+        /// Retrieves the user name and password creation date for the specified IAM user. If
         /// the user has not been assigned a password, the operation returns a 404 (<code>NoSuchEntity</code>)
         /// error.
         /// </summary>
@@ -4574,10 +4614,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// To call this operation, you must be signed in to the master account in your organization.
+        /// To call this operation, you must be signed in to the management account in your organization.
         /// SCPs must be enabled for your organization root. You must have permissions to perform
         /// this operation. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Refining
-        /// Permissions Using Service Last Accessed Data</a> in the <i>IAM User Guide</i>.
+        /// permissions using service last accessed data</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4637,20 +4677,20 @@ namespace Amazon.IdentityManagement
         /// Retrieves information about the specified managed policy, including the policy's default
         /// version and the total number of IAM users, groups, and roles to which the policy is
         /// attached. To retrieve the list of the specific users, groups, and roles that the policy
-        /// is attached to, use the <a>ListEntitiesForPolicy</a> API. This API returns metadata
+        /// is attached to, use <a>ListEntitiesForPolicy</a>. This operation returns metadata
         /// about the policy. To retrieve the actual policy document for a specific version of
         /// the policy, use <a>GetPolicyVersion</a>.
         /// 
         ///  
         /// <para>
-        /// This API retrieves information about managed policies. To retrieve information about
-        /// an inline policy that is embedded with an IAM user, group, or role, use the <a>GetUserPolicy</a>,
-        /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.
+        /// This operation retrieves information about managed policies. To retrieve information
+        /// about an inline policy that is embedded with an IAM user, group, or role, use <a>GetUserPolicy</a>,
+        /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a>.
         /// </para>
         ///  
         /// <para>
         /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
@@ -4707,7 +4747,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <note> 
         /// <para>
-        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <code>decode</code> method of
         /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
@@ -4719,19 +4759,19 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// This API retrieves information about managed policies. To retrieve information about
-        /// an inline policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
-        /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.
+        /// This operation retrieves information about managed policies. To retrieve information
+        /// about an inline policy that is embedded in a user, group, or role, use <a>GetUserPolicy</a>,
+        /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the types of policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+        /// for managed policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicyVersion service method.</param>
@@ -4786,11 +4826,11 @@ namespace Amazon.IdentityManagement
         /// Retrieves information about the specified role, including the role's path, GUID, ARN,
         /// and the role's trust policy that grants permission to assume the role. For more information
         /// about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>.
+        /// with roles</a>.
         /// 
         ///  <note> 
         /// <para>
-        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <code>decode</code> method of
         /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
@@ -4848,7 +4888,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <note> 
         /// <para>
-        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <code>decode</code> method of
         /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
@@ -4863,12 +4903,12 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-        /// Roles to Delegate Permissions and Federate Identities</a>.
+        /// roles to delegate permissions and federate identities</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRolePolicy service method.</param>
@@ -4980,7 +5020,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about working with server certificates, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-        /// with Server Certificates</a> in the <i>IAM User Guide</i>. This topic includes a list
+        /// with server certificates</a> in the <i>IAM User Guide</i>. This topic includes a list
         /// of AWS services that can use the server certificates that you manage with IAM.
         /// </para>
         /// </summary>
@@ -5042,7 +5082,7 @@ namespace Amazon.IdentityManagement
         /// policies, access control lists, AWS Organizations policies, IAM permissions boundaries,
         /// and AWS STS assume role policies. It only applies permissions policy logic. For more
         /// about the evaluation of policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
-        /// Policies</a> in the <i>IAM User Guide</i>.
+        /// policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5091,7 +5131,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about service and action last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
-        /// Permissions Using Service Last Accessed Data</a> in the <i>IAM User Guide</i>.
+        /// permissions using service last accessed data</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceLastAccessedDetails service method.</param>
@@ -5217,8 +5257,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves the status of your service-linked role deletion. After you use the <a>DeleteServiceLinkedRole</a>
-        /// API operation to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code>
+        /// Retrieves the status of your service-linked role deletion. After you use <a>DeleteServiceLinkedRole</a>
+        /// to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code>
         /// parameter in <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of
         /// the deletion. If the deletion fails, this operation returns the reason that it failed,
         /// if that information is returned by the service.
@@ -5279,7 +5319,7 @@ namespace Amazon.IdentityManagement
         /// The SSH public key retrieved by this operation is used only for authenticating the
         /// associated IAM user to an AWS CodeCommit repository. For more information about using
         /// SSH keys to authenticate to an AWS CodeCommit repository, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
-        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// up AWS CodeCommit for SSH connections</a> in the <i>AWS CodeCommit User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSSHPublicKey service method.</param>
@@ -5334,7 +5374,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID used to sign the request to this API.
+        /// the AWS access key ID used to sign the request to this operation.
         /// </para>
         /// </summary>
         /// 
@@ -5356,7 +5396,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID used to sign the request to this API.
+        /// the AWS access key ID used to sign the request to this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUser service method.</param>
@@ -5409,7 +5449,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <note> 
         /// <para>
-        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <code>decode</code> method of
         /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
@@ -5424,7 +5464,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUserPolicy service method.</param>
@@ -5576,7 +5616,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the AWS account (Note: you can have only one).
         /// For information about using an AWS account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
+        /// an alias for your AWS account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
@@ -5589,7 +5629,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the AWS account (Note: you can have only one).
         /// For information about using an AWS account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
+        /// an alias for your AWS account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// 
@@ -5637,9 +5677,9 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// An IAM group can also have inline policies embedded with it. To list the inline policies
-        /// for a group, use the <a>ListGroupPolicies</a> API. For information about policies,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// for a group, use <a>ListGroupPolicies</a>. For information about policies, see <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5704,9 +5744,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// An IAM role can also have inline policies embedded with it. To list the inline policies
-        /// for a role, use the <a>ListRolePolicies</a> API. For information about policies, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// for a role, use <a>ListRolePolicies</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5771,9 +5810,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// An IAM user can also have inline policies embedded with it. To list the inline policies
-        /// for a user, use the <a>ListUserPolicies</a> API. For information about policies, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// for a user, use <a>ListUserPolicies</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5905,7 +5943,7 @@ namespace Amazon.IdentityManagement
         /// An IAM group can also have managed policies attached to it. To list the managed policies
         /// that are attached to a group, use <a>ListAttachedGroupPolicies</a>. For more information
         /// about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6080,10 +6118,17 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the instance profiles that have the specified path prefix. If there are none,
         /// the operation returns an empty list. For more information about instance profiles,
-        /// go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// instance profiles</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for an instance profile,
+        /// see <a>GetInstanceProfile</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters.
@@ -6100,10 +6145,17 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the instance profiles that have the specified path prefix. If there are none,
         /// the operation returns an empty list. For more information about instance profiles,
-        /// go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// instance profiles</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for an instance profile,
+        /// see <a>GetInstanceProfile</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters.
@@ -6153,7 +6205,7 @@ namespace Amazon.IdentityManagement
         /// Lists the instance profiles that have the specified associated IAM role. If there
         /// are none, the operation returns an empty list. For more information about instance
         /// profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        /// instance profiles</a>.
         /// 
         ///  
         /// <para>
@@ -6202,6 +6254,55 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListInstanceProfileTags
+
+
+        /// <summary>
+        /// Lists the tags that are attached to the specified IAM instance profile. The returned
+        /// list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfileTags service method.</param>
+        /// 
+        /// <returns>The response from the ListInstanceProfileTags service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfileTags">REST API Reference for ListInstanceProfileTags Operation</seealso>
+        ListInstanceProfileTagsResponse ListInstanceProfileTags(ListInstanceProfileTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceProfileTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfileTags operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstanceProfileTags
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfileTags">REST API Reference for ListInstanceProfileTags Operation</seealso>
+        IAsyncResult BeginListInstanceProfileTags(ListInstanceProfileTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInstanceProfileTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceProfileTags.</param>
+        /// 
+        /// <returns>Returns a  ListInstanceProfileTagsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfileTags">REST API Reference for ListInstanceProfileTags Operation</seealso>
+        ListInstanceProfileTagsResponse EndListInstanceProfileTags(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListMFADevices
 
 
@@ -6209,7 +6310,7 @@ namespace Amazon.IdentityManagement
         /// Lists the MFA devices for an IAM user. If the request includes a IAM user name, then
         /// this operation lists all the MFA devices associated with the specified user. If you
         /// do not specify a user name, IAM determines the user name implicitly based on the AWS
-        /// access key ID signing the request for this API.
+        /// access key ID signing the request for this operation.
         /// 
         ///  
         /// <para>
@@ -6233,7 +6334,7 @@ namespace Amazon.IdentityManagement
         /// Lists the MFA devices for an IAM user. If the request includes a IAM user name, then
         /// this operation lists all the MFA devices associated with the specified user. If you
         /// do not specify a user name, IAM determines the user name implicitly based on the AWS
-        /// access key ID signing the request for this API.
+        /// access key ID signing the request for this operation.
         /// 
         ///  
         /// <para>
@@ -6282,12 +6383,75 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListMFADeviceTags
+
+
+        /// <summary>
+        /// Lists the tags that are attached to the specified IAM virtual multi-factor authentication
+        /// (MFA) device. The returned list of tags is sorted by tag key. For more information
+        /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMFADeviceTags service method.</param>
+        /// 
+        /// <returns>The response from the ListMFADeviceTags service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADeviceTags">REST API Reference for ListMFADeviceTags Operation</seealso>
+        ListMFADeviceTagsResponse ListMFADeviceTags(ListMFADeviceTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMFADeviceTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMFADeviceTags operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMFADeviceTags
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADeviceTags">REST API Reference for ListMFADeviceTags Operation</seealso>
+        IAsyncResult BeginListMFADeviceTags(ListMFADeviceTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMFADeviceTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMFADeviceTags.</param>
+        /// 
+        /// <returns>Returns a  ListMFADeviceTagsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADeviceTags">REST API Reference for ListMFADeviceTags Operation</seealso>
+        ListMFADeviceTagsResponse EndListMFADeviceTags(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListOpenIDConnectProviders
 
 
         /// <summary>
         /// Lists information about the IAM OpenID Connect (OIDC) provider resource objects defined
         /// in the AWS account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for an OIDC provider,
+        /// see <a>GetOpenIDConnectProvider</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOpenIDConnectProviders service method.</param>
         /// 
@@ -6326,6 +6490,66 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListOpenIDConnectProviderTags
+
+
+        /// <summary>
+        /// Lists the tags that are attached to the specified OpenID Connect (OIDC)-compatible
+        /// identity provider. The returned list of tags is sorted by tag key. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc.html">About
+        /// web identity federation</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpenIDConnectProviderTags service method.</param>
+        /// 
+        /// <returns>The response from the ListOpenIDConnectProviderTags service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviderTags">REST API Reference for ListOpenIDConnectProviderTags Operation</seealso>
+        ListOpenIDConnectProviderTagsResponse ListOpenIDConnectProviderTags(ListOpenIDConnectProviderTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOpenIDConnectProviderTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOpenIDConnectProviderTags operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOpenIDConnectProviderTags
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviderTags">REST API Reference for ListOpenIDConnectProviderTags Operation</seealso>
+        IAsyncResult BeginListOpenIDConnectProviderTags(ListOpenIDConnectProviderTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOpenIDConnectProviderTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOpenIDConnectProviderTags.</param>
+        /// 
+        /// <returns>Returns a  ListOpenIDConnectProviderTagsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviderTags">REST API Reference for ListOpenIDConnectProviderTags Operation</seealso>
+        ListOpenIDConnectProviderTagsResponse EndListOpenIDConnectProviderTags(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPolicies
 
 
@@ -6348,8 +6572,16 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for a customer manged
+        /// policy, see <a>GetPolicy</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListPolicies service method, as returned by IdentityManagementService.</returns>
@@ -6378,8 +6610,16 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for a customer manged
+        /// policy, see <a>GetPolicy</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
         /// 
@@ -6432,7 +6672,7 @@ namespace Amazon.IdentityManagement
         /// access control lists, AWS Organizations policies, IAM permissions boundaries, and
         /// AWS STS assume role policies. It only applies permissions policy logic. For more about
         /// the evaluation of policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
-        /// Policies</a> in the <i>IAM User Guide</i>.
+        /// policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6462,7 +6702,7 @@ namespace Amazon.IdentityManagement
         /// inline policy, it returns the policy name and the entity to which it is attached.
         /// Inline policies do not have an ARN. For more information about these policy types,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6513,6 +6753,60 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListPolicyTags
+
+
+        /// <summary>
+        /// Lists the tags that are attached to the specified IAM customer managed policy. The
+        /// returned list of tags is sorted by tag key. For more information about tagging, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+        /// resources</a> in the <i>IAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyTags service method.</param>
+        /// 
+        /// <returns>The response from the ListPolicyTags service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyTags">REST API Reference for ListPolicyTags Operation</seealso>
+        ListPolicyTagsResponse ListPolicyTags(ListPolicyTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicyTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyTags operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyTags
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyTags">REST API Reference for ListPolicyTags Operation</seealso>
+        IAsyncResult BeginListPolicyTags(ListPolicyTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPolicyTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicyTags.</param>
+        /// 
+        /// <returns>Returns a  ListPolicyTagsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyTags">REST API Reference for ListPolicyTags Operation</seealso>
+        ListPolicyTagsResponse EndListPolicyTags(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPolicyVersions
 
 
@@ -6523,7 +6817,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyVersions service method.</param>
@@ -6582,7 +6876,7 @@ namespace Amazon.IdentityManagement
         /// An IAM role can also have managed policies attached to it. To list the managed policies
         /// that are attached to a role, use <a>ListAttachedRolePolicies</a>. For more information
         /// about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6637,10 +6931,16 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM roles that have the specified path prefix. If there are none, the operation
-        /// returns an empty list. For more information about roles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>.
+        /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with roles</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for a role, see <a>GetRole</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters.
@@ -6656,10 +6956,16 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM roles that have the specified path prefix. If there are none, the operation
-        /// returns an empty list. For more information about roles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>.
+        /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with roles</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for a role, see <a>GetRole</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters.
@@ -6708,7 +7014,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the tags that are attached to the specified role. The returned list of tags
         /// is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
-        /// IAM Identities</a> in the <i>IAM User Guide</i>.
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoleTags service method.</param>
         /// 
@@ -6755,14 +7061,17 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the SAML provider resource objects defined in IAM in the account.
+        /// Lists the SAML provider resource objects defined in IAM in the account. IAM resource-listing
+        /// operations return a subset of the available attributes for the resource. For example,
+        /// this operation does not return tags, even though they are an attribute of the returned
+        /// object. To view all of the information for a SAML provider, see <a>GetSAMLProvider</a>.
         /// 
-        ///  <note> 
+        ///  <important> 
         /// <para>
         ///  This operation requires <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
         /// Version 4</a>.
         /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// 
         /// <returns>The response from the ListSAMLProviders service method, as returned by IdentityManagementService.</returns>
@@ -6773,14 +7082,17 @@ namespace Amazon.IdentityManagement
         ListSAMLProvidersResponse ListSAMLProviders();
 
         /// <summary>
-        /// Lists the SAML provider resource objects defined in IAM in the account.
+        /// Lists the SAML provider resource objects defined in IAM in the account. IAM resource-listing
+        /// operations return a subset of the available attributes for the resource. For example,
+        /// this operation does not return tags, even though they are an attribute of the returned
+        /// object. To view all of the information for a SAML provider, see <a>GetSAMLProvider</a>.
         /// 
-        ///  <note> 
+        ///  <important> 
         /// <para>
         ///  This operation requires <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
         /// Version 4</a>.
         /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSAMLProviders service method.</param>
         /// 
@@ -6819,6 +7131,66 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListSAMLProviderTags
+
+
+        /// <summary>
+        /// Lists the tags that are attached to the specified Security Assertion Markup Language
+        /// (SAML) identity provider. The returned list of tags is sorted by tag key. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+        /// SAML 2.0-based federation</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSAMLProviderTags service method.</param>
+        /// 
+        /// <returns>The response from the ListSAMLProviderTags service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviderTags">REST API Reference for ListSAMLProviderTags Operation</seealso>
+        ListSAMLProviderTagsResponse ListSAMLProviderTags(ListSAMLProviderTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSAMLProviderTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSAMLProviderTags operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSAMLProviderTags
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviderTags">REST API Reference for ListSAMLProviderTags Operation</seealso>
+        IAsyncResult BeginListSAMLProviderTags(ListSAMLProviderTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSAMLProviderTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSAMLProviderTags.</param>
+        /// 
+        /// <returns>Returns a  ListSAMLProviderTagsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviderTags">REST API Reference for ListSAMLProviderTags Operation</seealso>
+        ListSAMLProviderTagsResponse EndListSAMLProviderTags(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListServerCertificates
 
 
@@ -6834,9 +7206,17 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about working with server certificates, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-        /// with Server Certificates</a> in the <i>IAM User Guide</i>. This topic also includes
+        /// with server certificates</a> in the <i>IAM User Guide</i>. This topic also includes
         /// a list of AWS services that can use the server certificates that you manage with IAM.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for a servercertificate,
+        /// see <a>GetServerCertificate</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListServerCertificates service method, as returned by IdentityManagementService.</returns>
@@ -6858,9 +7238,17 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about working with server certificates, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-        /// with Server Certificates</a> in the <i>IAM User Guide</i>. This topic also includes
+        /// with server certificates</a> in the <i>IAM User Guide</i>. This topic also includes
         /// a list of AWS services that can use the server certificates that you manage with IAM.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for a servercertificate,
+        /// see <a>GetServerCertificate</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServerCertificates service method.</param>
         /// 
@@ -6899,6 +7287,65 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListServerCertificateTags
+
+
+        /// <summary>
+        /// Lists the tags that are attached to the specified IAM server certificate. The returned
+        /// list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For certificates in a Region supported by AWS Certificate Manager (ACM), we recommend
+        /// that you don't use IAM server certificates. Instead, use ACM to provision, manage,
+        /// and deploy your server certificates. For more information about IAM server certificates,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with server certificates</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServerCertificateTags service method.</param>
+        /// 
+        /// <returns>The response from the ListServerCertificateTags service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificateTags">REST API Reference for ListServerCertificateTags Operation</seealso>
+        ListServerCertificateTagsResponse ListServerCertificateTags(ListServerCertificateTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServerCertificateTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServerCertificateTags operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServerCertificateTags
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificateTags">REST API Reference for ListServerCertificateTags Operation</seealso>
+        IAsyncResult BeginListServerCertificateTags(ListServerCertificateTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServerCertificateTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServerCertificateTags.</param>
+        /// 
+        /// <returns>Returns a  ListServerCertificateTagsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificateTags">REST API Reference for ListServerCertificateTags Operation</seealso>
+        ListServerCertificateTagsResponse EndListServerCertificateTags(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListServiceSpecificCredentials
 
 
@@ -6908,7 +7355,7 @@ namespace Amazon.IdentityManagement
         /// credentials returned by this operation are used only for authenticating the IAM user
         /// to a specific service. For more information about using service-specific credentials
         /// to authenticate to an AWS service, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set
-        /// Up service-specific credentials</a> in the AWS CodeCommit User Guide.
+        /// up service-specific credentials</a> in the AWS CodeCommit User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceSpecificCredentials service method.</param>
         /// 
@@ -6966,7 +7413,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request for this API. This operation
+        /// based on the AWS access key ID used to sign the request for this operation. This operation
         /// works for access keys under the AWS account. Consequently, you can use this operation
         /// to manage AWS account root user credentials even if the AWS account has no associated
         /// users.
@@ -6996,7 +7443,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request for this API. This operation
+        /// based on the AWS access key ID used to sign the request for this operation. This operation
         /// works for access keys under the AWS account. Consequently, you can use this operation
         /// to manage AWS account root user credentials even if the AWS account has no associated
         /// users.
@@ -7055,7 +7502,7 @@ namespace Amazon.IdentityManagement
         /// The SSH public keys returned by this operation are used only for authenticating the
         /// IAM user to an AWS CodeCommit repository. For more information about using SSH keys
         /// to authenticate to an AWS CodeCommit repository, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
-        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// up AWS CodeCommit for SSH connections</a> in the <i>AWS CodeCommit User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -7112,7 +7559,7 @@ namespace Amazon.IdentityManagement
         /// An IAM user can also have managed policies attached to it. To list the managed policies
         /// that are attached to a user, use <a>ListAttachedUserPolicies</a>. For more information
         /// about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -7170,7 +7617,13 @@ namespace Amazon.IdentityManagement
         /// the operation returns all users in the AWS account. If there are none, the operation
         /// returns an empty list.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for a user, see <a>GetUser</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters.
@@ -7189,7 +7642,13 @@ namespace Amazon.IdentityManagement
         /// the operation returns all users in the AWS account. If there are none, the operation
         /// returns an empty list.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for a user, see <a>GetUser</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters.
@@ -7236,9 +7695,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the tags that are attached to the specified user. The returned list of tags
+        /// Lists the tags that are attached to the specified IAM user. The returned list of tags
         /// is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
-        /// IAM Identities</a> in the <i>IAM User Guide</i>.
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserTags service method.</param>
         /// 
@@ -7290,7 +7749,14 @@ namespace Amazon.IdentityManagement
         /// MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
         /// or <code>Any</code>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for a virtual MFA
+        /// device, see <a>ListVirtualMFADevices</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters.
@@ -7307,7 +7773,14 @@ namespace Amazon.IdentityManagement
         /// MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
         /// or <code>Any</code>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// IAM resource-listing operations return a subset of the available attributes for the
+        /// resource. For example, this operation does not return tags, even though they are an
+        /// attribute of the returned object. To view all of the information for a virtual MFA
+        /// device, see <a>ListVirtualMFADevices</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters.
@@ -7358,20 +7831,20 @@ namespace Amazon.IdentityManagement
         /// A user can also have managed policies attached to it. To attach a managed policy to
         /// a group, use <a>AttachGroupPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
         /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For information about limits on the number of inline policies that you can embed in
-        /// a group, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// For information about the maximum number of inline policies that you can embed in
+        /// a group, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Because policy documents can be large, you should use POST rather than GET when calling
         /// <code>PutGroupPolicy</code>. For general information about using the Query API with
-        /// IAM, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-        /// Query Requests</a> in the <i>IAM User Guide</i>.
+        /// IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// query requests</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7380,7 +7853,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the PutGroupPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -7443,7 +7916,7 @@ namespace Amazon.IdentityManagement
         /// Policies used as permissions boundaries do not provide permissions. You must also
         /// attach a permissions policy to the role. To learn how the effective permissions for
         /// a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
-        /// JSON Policy Evaluation Logic</a> in the IAM User Guide. 
+        /// JSON policy evaluation logic</a> in the IAM User Guide. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -7513,28 +7986,28 @@ namespace Amazon.IdentityManagement
         /// When you embed an inline policy in a role, the inline policy is used as part of the
         /// role's access (permissions) policy. The role's trust policy is created at the same
         /// time as the role, using <a>CreateRole</a>. You can update a role's trust policy using
-        /// <a>UpdateAssumeRolePolicy</a>. For more information about IAM roles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-        /// Roles to Delegate Permissions and Federate Identities</a>.
+        /// <a>UpdateAssumeRolePolicy</a>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
+        /// roles to delegate permissions and federate identities</a>.
         /// </para>
         ///  
         /// <para>
         /// A role can also have a managed policy attached to it. To attach a managed policy to
         /// a role, use <a>AttachRolePolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
         /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For information about limits on the number of inline policies that you can embed with
-        /// a role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// For information about the maximum number of inline policies that you can embed with
+        /// a role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Because policy documents can be large, you should use POST rather than GET when calling
         /// <code>PutRolePolicy</code>. For general information about using the Query API with
-        /// IAM, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-        /// Query Requests</a> in the <i>IAM User Guide</i>.
+        /// IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// query requests</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7543,7 +8016,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the PutRolePolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -7608,7 +8081,7 @@ namespace Amazon.IdentityManagement
         /// Policies that are used as permissions boundaries do not provide permissions. You must
         /// also attach a permissions policy to the user. To learn how the effective permissions
         /// for a user are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
-        /// JSON Policy Evaluation Logic</a> in the IAM User Guide. 
+        /// JSON policy evaluation logic</a> in the IAM User Guide. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -7672,20 +8145,20 @@ namespace Amazon.IdentityManagement
         /// An IAM user can also have a managed policy attached to it. To attach a managed policy
         /// to a user, use <a>AttachUserPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
         /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For information about limits on the number of inline policies that you can embed in
-        /// a user, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
+        /// For information about the maximum number of inline policies that you can embed in
+        /// a user, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Because policy documents can be large, you should use POST rather than GET when calling
         /// <code>PutUserPolicy</code>. For general information about using the Query API with
-        /// IAM, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-        /// Query Requests</a> in the <i>IAM User Guide</i>.
+        /// IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// query requests</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7694,7 +8167,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the PutUserPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -7811,9 +8284,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </important> 
         /// <para>
-        ///  For more information about IAM roles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>. For more information about instance profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>.
+        ///  For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with roles</a>. For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// instance profiles</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromInstanceProfile service method.</param>
@@ -7821,7 +8294,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the RemoveRoleFromInstanceProfile service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -7878,7 +8351,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the RemoveUserFromGroup service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -7972,9 +8445,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// For more information about creating and working with virtual MFA devices, go to <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-        /// a Virtual MFA Device</a> in the <i>IAM User Guide</i>.
+        /// For more information about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+        /// a virtual MFA device</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResyncMFADevice service method.</param>
@@ -7986,7 +8458,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -8036,13 +8508,12 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// This operation affects all users, groups, and roles that the policy is attached to.
-        /// To list the users, groups, and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a>
-        /// API.
+        /// To list the users, groups, and roles that the policy is attached to, use <a>ListEntitiesForPolicy</a>.
         /// </para>
         ///  
         /// <para>
         /// For information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDefaultPolicyVersion service method.</param>
@@ -8054,7 +8525,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -8107,8 +8578,8 @@ namespace Amazon.IdentityManagement
         /// all STS requests go to a single endpoint at <code>https://sts.amazonaws.com</code>.
         /// AWS recommends using Regional STS endpoints to reduce latency, build in redundancy,
         /// and increase session token availability. For information about Regional endpoints
-        /// for STS, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">AWS
-        /// Regions and Endpoints</a> in the <i>AWS General Reference</i>.
+        /// for STS, see <a href="https://docs.aws.amazon.com/general/latest/gr/sts.html">AWS
+        /// AWS Security Token Service endpoints and quotas</a> in the <i>AWS General Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -8119,7 +8590,7 @@ namespace Amazon.IdentityManagement
         /// (Hong Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens
         /// are longer and might affect systems where you temporarily store tokens. For information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+        /// and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8175,7 +8646,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// The simulation does not perform the API operations; it only checks the authorization
-        /// to determine if the simulated policies allow or deny the operations.
+        /// to determine if the simulated policies allow or deny the operations. You can simulate
+        /// resources that don't exist in your account.
         /// </para>
         ///  
         /// <para>
@@ -8193,6 +8665,11 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters
         /// to paginate the results.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
+        /// IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SimulateCustomPolicy service method.</param>
@@ -8245,7 +8722,7 @@ namespace Amazon.IdentityManagement
         /// API operations and AWS resources to determine the policies' effective permissions.
         /// The entity can be an IAM user, group, or role. If you specify a user, then the simulation
         /// also includes all of the policies that are attached to groups that the user belongs
-        /// to.
+        /// to. You can simulate resources that don't exist in your account.
         /// 
         ///  
         /// <para>
@@ -8265,9 +8742,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        ///  <b>Note:</b> This API discloses information about the permissions granted to other
-        /// users. If you do not want users to see other user's permissions, then consider allowing
-        /// them to use <a>SimulateCustomPolicy</a> instead.
+        ///  <b>Note:</b> This operation discloses information about the permissions granted to
+        /// other users. If you do not want users to see other user's permissions, then consider
+        /// allowing them to use <a>SimulateCustomPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -8280,6 +8757,11 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the output is long, you can use the <code>MaxItems</code> and <code>Marker</code>
         /// parameters to paginate the results.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
+        /// IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SimulatePrincipalPolicy service method.</param>
@@ -8328,6 +8810,389 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  TagInstanceProfile
+
+
+        /// <summary>
+        /// Adds one or more tags to an IAM instance profile. If a tag with the same key name
+        /// already exists, then that tag is overwritten with the new value.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a key name and an associated value. By assigning tags to your
+        /// resources, you can do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Administrative grouping and discovery</b> - Attach tags to resources to aid in
+        /// organization and search. For example, you could search for all resources with the
+        /// key name <i>Project</i> and the value <i>MyImportantProject</i>. Or search for all
+        /// resources with the key name <i>Cost Center</i> and the value <i>41200</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        /// You can use tags to restrict access to only an IAM instance profile that has a specified
+        /// tag attached. For examples of policies that show how to use tags to control access,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+        /// access using IAM tags</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created. For more information
+        /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS always interprets the tag <code>Value</code> as a single string. If you need to
+        /// store an array, you can store comma-separated values in the string. However, you must
+        /// interpret the value in your code.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the TagInstanceProfile service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagInstanceProfile">REST API Reference for TagInstanceProfile Operation</seealso>
+        TagInstanceProfileResponse TagInstanceProfile(TagInstanceProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagInstanceProfile operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagInstanceProfile">REST API Reference for TagInstanceProfile Operation</seealso>
+        IAsyncResult BeginTagInstanceProfile(TagInstanceProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  TagInstanceProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagInstanceProfile">REST API Reference for TagInstanceProfile Operation</seealso>
+        TagInstanceProfileResponse EndTagInstanceProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagMFADevice
+
+
+        /// <summary>
+        /// Adds one or more tags to an IAM virtual multi-factor authentication (MFA) device.
+        /// If a tag with the same key name already exists, then that tag is overwritten with
+        /// the new value.
+        /// 
+        ///  
+        /// <para>
+        /// A tag consists of a key name and an associated value. By assigning tags to your resources,
+        /// you can do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Administrative grouping and discovery</b> - Attach tags to resources to aid in
+        /// organization and search. For example, you could search for all resources with the
+        /// key name <i>Project</i> and the value <i>MyImportantProject</i>. Or search for all
+        /// resources with the key name <i>Cost Center</i> and the value <i>41200</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        /// You can use tags to restrict access to only an IAM virtual MFA device that has a specified
+        /// tag attached. For examples of policies that show how to use tags to control access,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+        /// access using IAM tags</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created. For more information
+        /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS always interprets the tag <code>Value</code> as a single string. If you need to
+        /// store an array, you can store comma-separated values in the string. However, you must
+        /// interpret the value in your code.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagMFADevice service method.</param>
+        /// 
+        /// <returns>The response from the TagMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagMFADevice">REST API Reference for TagMFADevice Operation</seealso>
+        TagMFADeviceResponse TagMFADevice(TagMFADeviceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagMFADevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagMFADevice operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagMFADevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagMFADevice">REST API Reference for TagMFADevice Operation</seealso>
+        IAsyncResult BeginTagMFADevice(TagMFADeviceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagMFADevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagMFADevice.</param>
+        /// 
+        /// <returns>Returns a  TagMFADeviceResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagMFADevice">REST API Reference for TagMFADevice Operation</seealso>
+        TagMFADeviceResponse EndTagMFADevice(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagOpenIDConnectProvider
+
+
+        /// <summary>
+        /// Adds one or more tags to an OpenID Connect (OIDC)-compatible identity provider. For
+        /// more information about these providers, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc.html">About
+        /// web identity federation</a>. If a tag with the same key name already exists, then
+        /// that tag is overwritten with the new value.
+        /// 
+        ///  
+        /// <para>
+        /// A tag consists of a key name and an associated value. By assigning tags to your resources,
+        /// you can do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Administrative grouping and discovery</b> - Attach tags to resources to aid in
+        /// organization and search. For example, you could search for all resources with the
+        /// key name <i>Project</i> and the value <i>MyImportantProject</i>. Or search for all
+        /// resources with the key name <i>Cost Center</i> and the value <i>41200</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        /// You can use tags to restrict access to only an OIDC provider that has a specified
+        /// tag attached. For examples of policies that show how to use tags to control access,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+        /// access using IAM tags</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created. For more information
+        /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS always interprets the tag <code>Value</code> as a single string. If you need to
+        /// store an array, you can store comma-separated values in the string. However, you must
+        /// interpret the value in your code.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagOpenIDConnectProvider service method.</param>
+        /// 
+        /// <returns>The response from the TagOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagOpenIDConnectProvider">REST API Reference for TagOpenIDConnectProvider Operation</seealso>
+        TagOpenIDConnectProviderResponse TagOpenIDConnectProvider(TagOpenIDConnectProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagOpenIDConnectProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagOpenIDConnectProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagOpenIDConnectProvider">REST API Reference for TagOpenIDConnectProvider Operation</seealso>
+        IAsyncResult BeginTagOpenIDConnectProvider(TagOpenIDConnectProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagOpenIDConnectProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagOpenIDConnectProvider.</param>
+        /// 
+        /// <returns>Returns a  TagOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagOpenIDConnectProvider">REST API Reference for TagOpenIDConnectProvider Operation</seealso>
+        TagOpenIDConnectProviderResponse EndTagOpenIDConnectProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagPolicy
+
+
+        /// <summary>
+        /// Adds one or more tags to an IAM customer managed policy. If a tag with the same key
+        /// name already exists, then that tag is overwritten with the new value.
+        /// 
+        ///  
+        /// <para>
+        /// A tag consists of a key name and an associated value. By assigning tags to your resources,
+        /// you can do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Administrative grouping and discovery</b> - Attach tags to resources to aid in
+        /// organization and search. For example, you could search for all resources with the
+        /// key name <i>Project</i> and the value <i>MyImportantProject</i>. Or search for all
+        /// resources with the key name <i>Cost Center</i> and the value <i>41200</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        /// You can use tags to restrict access to only an IAM customer managed policy that has
+        /// a specified tag attached. For examples of policies that show how to use tags to control
+        /// access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+        /// access using IAM tags</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created. For more information
+        /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS always interprets the tag <code>Value</code> as a single string. If you need to
+        /// store an array, you can store comma-separated values in the string. However, you must
+        /// interpret the value in your code.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagPolicy service method.</param>
+        /// 
+        /// <returns>The response from the TagPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagPolicy">REST API Reference for TagPolicy Operation</seealso>
+        TagPolicyResponse TagPolicy(TagPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagPolicy">REST API Reference for TagPolicy Operation</seealso>
+        IAsyncResult BeginTagPolicy(TagPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagPolicy.</param>
+        /// 
+        /// <returns>Returns a  TagPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagPolicy">REST API Reference for TagPolicy Operation</seealso>
+        TagPolicyResponse EndTagPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagRole
 
 
@@ -8350,12 +9215,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Access control</b> - Reference tags in IAM user-based and resource-based policies.
-        /// You can use tags to restrict access to only an IAM user or role that has a specified
-        /// tag attached. You can also restrict access to only those resources that have a certain
-        /// tag attached. For examples of policies that show how to use tags to control access,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
-        /// Access Using IAM Tags</a> in the <i>IAM User Guide</i>.
+        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        /// You can use tags to restrict access to only an IAM role that has a specified tag attached.
+        /// You can also restrict access to only those resources that have a certain tag attached.
+        /// For examples of policies that show how to use tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+        /// access using IAM tags</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8364,9 +9228,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        /// Make sure that you have no invalid tags and that you do not exceed the allowed number
-        /// of tags per role. In either case, the entire request fails and <i>no</i> tags are
-        /// added to the role.
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created. For more information
+        /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8377,7 +9242,7 @@ namespace Amazon.IdentityManagement
         ///  </li> </ul> </note> 
         /// <para>
         /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
-        /// IAM Identities</a> in the <i>IAM User Guide</i>.
+        /// IAM identities</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagRole service method.</param>
@@ -8393,7 +9258,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -8433,6 +9298,211 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  TagSAMLProvider
+
+
+        /// <summary>
+        /// Adds one or more tags to a Security Assertion Markup Language (SAML) identity provider.
+        /// For more information about these providers, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+        /// SAML 2.0-based federation </a>. If a tag with the same key name already exists, then
+        /// that tag is overwritten with the new value.
+        /// 
+        ///  
+        /// <para>
+        /// A tag consists of a key name and an associated value. By assigning tags to your resources,
+        /// you can do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Administrative grouping and discovery</b> - Attach tags to resources to aid in
+        /// organization and search. For example, you could search for all resources with the
+        /// key name <i>Project</i> and the value <i>MyImportantProject</i>. Or search for all
+        /// resources with the key name <i>Cost Center</i> and the value <i>41200</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        /// You can use tags to restrict access to only a SAML identity provider that has a specified
+        /// tag attached. For examples of policies that show how to use tags to control access,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+        /// access using IAM tags</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created. For more information
+        /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS always interprets the tag <code>Value</code> as a single string. If you need to
+        /// store an array, you can store comma-separated values in the string. However, you must
+        /// interpret the value in your code.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagSAMLProvider service method.</param>
+        /// 
+        /// <returns>The response from the TagSAMLProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagSAMLProvider">REST API Reference for TagSAMLProvider Operation</seealso>
+        TagSAMLProviderResponse TagSAMLProvider(TagSAMLProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagSAMLProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagSAMLProvider operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagSAMLProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagSAMLProvider">REST API Reference for TagSAMLProvider Operation</seealso>
+        IAsyncResult BeginTagSAMLProvider(TagSAMLProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagSAMLProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagSAMLProvider.</param>
+        /// 
+        /// <returns>Returns a  TagSAMLProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagSAMLProvider">REST API Reference for TagSAMLProvider Operation</seealso>
+        TagSAMLProviderResponse EndTagSAMLProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagServerCertificate
+
+
+        /// <summary>
+        /// Adds one or more tags to an IAM server certificate. If a tag with the same key name
+        /// already exists, then that tag is overwritten with the new value.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For certificates in a Region supported by AWS Certificate Manager (ACM), we recommend
+        /// that you don't use IAM server certificates. Instead, use ACM to provision, manage,
+        /// and deploy your server certificates. For more information about IAM server certificates,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with server certificates</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// A tag consists of a key name and an associated value. By assigning tags to your resources,
+        /// you can do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Administrative grouping and discovery</b> - Attach tags to resources to aid in
+        /// organization and search. For example, you could search for all resources with the
+        /// key name <i>Project</i> and the value <i>MyImportantProject</i>. Or search for all
+        /// resources with the key name <i>Cost Center</i> and the value <i>41200</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        /// You can use tags to restrict access to only a server certificate that has a specified
+        /// tag attached. For examples of policies that show how to use tags to control access,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+        /// access using IAM tags</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Cost allocation</b> - Use tags to help track which individuals and teams are using
+        /// which AWS resources.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created. For more information
+        /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS always interprets the tag <code>Value</code> as a single string. If you need to
+        /// store an array, you can store comma-separated values in the string. However, you must
+        /// interpret the value in your code.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagServerCertificate service method.</param>
+        /// 
+        /// <returns>The response from the TagServerCertificate service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagServerCertificate">REST API Reference for TagServerCertificate Operation</seealso>
+        TagServerCertificateResponse TagServerCertificate(TagServerCertificateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagServerCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagServerCertificate operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagServerCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagServerCertificate">REST API Reference for TagServerCertificate Operation</seealso>
+        IAsyncResult BeginTagServerCertificate(TagServerCertificateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagServerCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagServerCertificate.</param>
+        /// 
+        /// <returns>Returns a  TagServerCertificateResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagServerCertificate">REST API Reference for TagServerCertificate Operation</seealso>
+        TagServerCertificateResponse EndTagServerCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagUser
 
 
@@ -8454,12 +9524,12 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Access control</b> - Reference tags in IAM user-based and resource-based policies.
-        /// You can use tags to restrict access to only an IAM requesting user or to a role that
-        /// has a specified tag attached. You can also restrict access to only those resources
-        /// that have a certain tag attached. For examples of policies that show how to use tags
-        /// to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
-        /// Access Using IAM Tags</a> in the <i>IAM User Guide</i>.
+        ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+        /// You can use tags to restrict access to only an IAM requesting user that has a specified
+        /// tag attached. You can also restrict access to only those resources that have a certain
+        /// tag attached. For examples of policies that show how to use tags to control access,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+        /// access using IAM tags</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8468,9 +9538,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        /// Make sure that you have no invalid tags and that you do not exceed the allowed number
-        /// of tags per role. In either case, the entire request fails and <i>no</i> tags are
-        /// added to the role.
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created. For more information
+        /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8481,7 +9552,7 @@ namespace Amazon.IdentityManagement
         ///  </li> </ul> </note> 
         /// <para>
         /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
-        /// IAM Identities</a> in the <i>IAM User Guide</i>.
+        /// IAM identities</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagUser service method.</param>
@@ -8497,7 +9568,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -8537,13 +9608,242 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  UntagInstanceProfile
+
+
+        /// <summary>
+        /// Removes the specified tags from the IAM instance profile. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the UntagInstanceProfile service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagInstanceProfile">REST API Reference for UntagInstanceProfile Operation</seealso>
+        UntagInstanceProfileResponse UntagInstanceProfile(UntagInstanceProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagInstanceProfile operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagInstanceProfile">REST API Reference for UntagInstanceProfile Operation</seealso>
+        IAsyncResult BeginUntagInstanceProfile(UntagInstanceProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  UntagInstanceProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagInstanceProfile">REST API Reference for UntagInstanceProfile Operation</seealso>
+        UntagInstanceProfileResponse EndUntagInstanceProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagMFADevice
+
+
+        /// <summary>
+        /// Removes the specified tags from the IAM virtual multi-factor authentication (MFA)
+        /// device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagMFADevice service method.</param>
+        /// 
+        /// <returns>The response from the UntagMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagMFADevice">REST API Reference for UntagMFADevice Operation</seealso>
+        UntagMFADeviceResponse UntagMFADevice(UntagMFADeviceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagMFADevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagMFADevice operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagMFADevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagMFADevice">REST API Reference for UntagMFADevice Operation</seealso>
+        IAsyncResult BeginUntagMFADevice(UntagMFADeviceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagMFADevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagMFADevice.</param>
+        /// 
+        /// <returns>Returns a  UntagMFADeviceResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagMFADevice">REST API Reference for UntagMFADevice Operation</seealso>
+        UntagMFADeviceResponse EndUntagMFADevice(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagOpenIDConnectProvider
+
+
+        /// <summary>
+        /// Removes the specified tags from the specified OpenID Connect (OIDC)-compatible identity
+        /// provider in IAM. For more information about OIDC providers, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc.html">About
+        /// web identity federation</a>. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagOpenIDConnectProvider service method.</param>
+        /// 
+        /// <returns>The response from the UntagOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagOpenIDConnectProvider">REST API Reference for UntagOpenIDConnectProvider Operation</seealso>
+        UntagOpenIDConnectProviderResponse UntagOpenIDConnectProvider(UntagOpenIDConnectProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagOpenIDConnectProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagOpenIDConnectProvider operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagOpenIDConnectProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagOpenIDConnectProvider">REST API Reference for UntagOpenIDConnectProvider Operation</seealso>
+        IAsyncResult BeginUntagOpenIDConnectProvider(UntagOpenIDConnectProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagOpenIDConnectProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagOpenIDConnectProvider.</param>
+        /// 
+        /// <returns>Returns a  UntagOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagOpenIDConnectProvider">REST API Reference for UntagOpenIDConnectProvider Operation</seealso>
+        UntagOpenIDConnectProviderResponse EndUntagOpenIDConnectProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagPolicy
+
+
+        /// <summary>
+        /// Removes the specified tags from the customer managed policy. For more information
+        /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UntagPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagPolicy">REST API Reference for UntagPolicy Operation</seealso>
+        UntagPolicyResponse UntagPolicy(UntagPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagPolicy">REST API Reference for UntagPolicy Operation</seealso>
+        IAsyncResult BeginUntagPolicy(UntagPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagPolicy.</param>
+        /// 
+        /// <returns>Returns a  UntagPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagPolicy">REST API Reference for UntagPolicy Operation</seealso>
+        UntagPolicyResponse EndUntagPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UntagRole
 
 
         /// <summary>
         /// Removes the specified tags from the role. For more information about tagging, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-        /// Identities</a> in the <i>IAM User Guide</i>.
+        /// resources</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagRole service method.</param>
         /// 
@@ -8590,13 +9890,138 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  UntagSAMLProvider
+
+
+        /// <summary>
+        /// Removes the specified tags from the specified Security Assertion Markup Language (SAML)
+        /// identity provider in IAM. For more information about these providers, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc.html">About
+        /// web identity federation</a>. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagSAMLProvider service method.</param>
+        /// 
+        /// <returns>The response from the UntagSAMLProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagSAMLProvider">REST API Reference for UntagSAMLProvider Operation</seealso>
+        UntagSAMLProviderResponse UntagSAMLProvider(UntagSAMLProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagSAMLProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagSAMLProvider operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagSAMLProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagSAMLProvider">REST API Reference for UntagSAMLProvider Operation</seealso>
+        IAsyncResult BeginUntagSAMLProvider(UntagSAMLProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagSAMLProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagSAMLProvider.</param>
+        /// 
+        /// <returns>Returns a  UntagSAMLProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagSAMLProvider">REST API Reference for UntagSAMLProvider Operation</seealso>
+        UntagSAMLProviderResponse EndUntagSAMLProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagServerCertificate
+
+
+        /// <summary>
+        /// Removes the specified tags from the IAM server certificate. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For certificates in a Region supported by AWS Certificate Manager (ACM), we recommend
+        /// that you don't use IAM server certificates. Instead, use ACM to provision, manage,
+        /// and deploy your server certificates. For more information about IAM server certificates,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with server certificates</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagServerCertificate service method.</param>
+        /// 
+        /// <returns>The response from the UntagServerCertificate service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagServerCertificate">REST API Reference for UntagServerCertificate Operation</seealso>
+        UntagServerCertificateResponse UntagServerCertificate(UntagServerCertificateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagServerCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagServerCertificate operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagServerCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagServerCertificate">REST API Reference for UntagServerCertificate Operation</seealso>
+        IAsyncResult BeginUntagServerCertificate(UntagServerCertificateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagServerCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagServerCertificate.</param>
+        /// 
+        /// <returns>Returns a  UntagServerCertificateResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagServerCertificate">REST API Reference for UntagServerCertificate Operation</seealso>
+        UntagServerCertificateResponse EndUntagServerCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UntagUser
 
 
         /// <summary>
         /// Removes the specified tags from the user. For more information about tagging, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-        /// Identities</a> in the <i>IAM User Guide</i>.
+        /// resources</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagUser service method.</param>
         /// 
@@ -8660,7 +10085,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For information about rotating keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-        /// Keys and Certificates</a> in the <i>IAM User Guide</i>.
+        /// keys and certificates</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessKey service method.</param>
@@ -8668,7 +10093,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the UpdateAccessKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -8726,14 +10151,14 @@ namespace Amazon.IdentityManagement
         ///  </li> </ul> </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a> in the <i>IAM User Guide</i>.
+        /// an IAM password policy</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -8764,7 +10189,7 @@ namespace Amazon.IdentityManagement
         ///  </li> </ul> </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a> in the <i>IAM User Guide</i>.
+        /// an IAM password policy</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPasswordPolicy service method.</param>
@@ -8772,7 +10197,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -8822,15 +10247,15 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Updates the policy that grants an IAM entity permission to assume a role. This is
         /// typically referred to as the "role trust policy". For more information about roles,
-        /// go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-        /// Roles to Delegate Permissions and Federate Identities</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
+        /// roles to delegate permissions and federate identities</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssumeRolePolicy service method.</param>
         /// 
         /// <returns>The response from the UpdateAssumeRolePolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
@@ -8890,7 +10315,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         ///  You should understand the implications of changing a group's path or name. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-        /// Users and Groups</a> in the <i>IAM User Guide</i>.
+        /// users and groups</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -8900,7 +10325,7 @@ namespace Amazon.IdentityManagement
         /// allows them to update both groups. If the principal has permission to update the <code>Managers</code>
         /// group, but not the <code>MGRs</code> group, then the update fails. For more information
         /// about permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// Management</a>. 
+        /// management</a>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -8912,7 +10337,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -8956,13 +10381,15 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Changes the password for the specified IAM user.
+        /// Changes the password for the specified IAM user. You can use the AWS CLI, the AWS
+        /// API, or the <b>Users</b> page in the IAM console to change the password for any IAM
+        /// user. Use <a>ChangePassword</a> to change your own password in the <b>My Security
+        /// Credentials</b> page in the AWS Management Console.
         /// 
         ///  
         /// <para>
-        /// IAM users can change their own passwords by calling <a>ChangePassword</a>. For more
-        /// information about modifying passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-        /// Passwords</a> in the <i>IAM User Guide</i>.
+        /// For more information about modifying passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+        /// passwords</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoginProfile service method.</param>
@@ -8976,7 +10403,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -9226,7 +10653,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -9275,14 +10702,14 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about working with server certificates, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-        /// with Server Certificates</a> in the <i>IAM User Guide</i>. This topic also includes
+        /// with server certificates</a> in the <i>IAM User Guide</i>. This topic also includes
         /// a list of AWS services that can use the server certificates that you manage with IAM.
         /// </para>
         ///  <important> 
         /// <para>
         /// You should understand the implications of changing a server certificate's path or
         /// name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs_manage.html#RenamingServerCerts">Renaming
-        /// a Server Certificate</a> in the <i>IAM User Guide</i>.
+        /// a server certificate</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -9292,7 +10719,7 @@ namespace Amazon.IdentityManagement
         /// must have a policy that allows them to update both certificates. If the principal
         /// has permission to update the <code>ProductionCert</code> group, but not the <code>ProdCert</code>
         /// certificate, then the update fails. For more information about permissions, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a>
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a>
         /// in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
@@ -9305,7 +10732,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -9413,7 +10840,7 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the UpdateSigningCertificate service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -9466,7 +10893,7 @@ namespace Amazon.IdentityManagement
         /// The SSH public key affected by this operation is used only for authenticating the
         /// associated IAM user to an AWS CodeCommit repository. For more information about using
         /// SSH keys to authenticate to an AWS CodeCommit repository, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
-        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// up AWS CodeCommit for SSH connections</a> in the <i>AWS CodeCommit User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSSHPublicKey service method.</param>
@@ -9517,8 +10944,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         ///  You should understand the implications of changing an IAM user's path or name. For
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming">Renaming
-        /// an IAM User</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html">Renaming
-        /// an IAM Group</a> in the <i>IAM User Guide</i>.
+        /// an IAM user</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html">Renaming
+        /// an IAM group</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -9526,7 +10953,7 @@ namespace Amazon.IdentityManagement
         /// source object and the target object. For example, to change Bob to Robert, the entity
         /// making the request must have permission on Bob and Robert, or must have permission
         /// on all (*). For more information about permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
-        /// and Policies</a>. 
+        /// and policies</a>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -9548,7 +10975,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
@@ -9608,31 +11035,39 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about working with server certificates, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-        /// with Server Certificates</a> in the <i>IAM User Guide</i>. This topic includes a list
+        /// with server certificates</a> in the <i>IAM User Guide</i>. This topic includes a list
         /// of AWS services that can use the server certificates that you manage with IAM.
         /// </para>
         ///  
         /// <para>
-        /// For information about the number of server certificates you can upload, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html">Limitations
-        /// on IAM Entities and Objects</a> in the <i>IAM User Guide</i>.
+        /// For information about the number of server certificates you can upload, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// and STS quotas</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Because the body of the public key certificate, private key, and the certificate chain
         /// can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
-        /// For information about setting up signatures and authorization through the API, go
-        /// to <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
-        /// about using the Query API with IAM, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html">Calling
-        /// the API by Making HTTP Query Requests</a> in the <i>IAM User Guide</i>.
+        /// For information about setting up signatures and authorization through the API, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// AWS API requests</a> in the <i>AWS General Reference</i>. For general information
+        /// about using the Query API with IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html">Calling
+        /// the API by making HTTP query requests</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadServerCertificate service method.</param>
         /// 
         /// <returns>The response from the UploadServerCertificate service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.KeyPairMismatchException">
         /// The request was rejected because the public key certificate and the private key do
@@ -9640,7 +11075,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedCertificateException">
         /// The request was rejected because the certificate was malformed or expired. The error
@@ -9685,10 +11120,15 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Uploads an X.509 signing certificate and associates it with the specified IAM user.
-        /// Some AWS services use X.509 signing certificates to validate requests that are signed
+        /// Some AWS services require you to use certificates to validate requests that are signed
         /// with a corresponding private key. When you upload the certificate, its default status
         /// is <code>Active</code>.
         /// 
+        ///  
+        /// <para>
+        /// For information about when you would use an X.509 signing certificate, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Managing
+        /// server certificates in IAM</a> in the <i>IAM User Guide</i>.
+        /// </para>
         ///  
         /// <para>
         /// If the <code>UserName</code> is not specified, the IAM user name is determined implicitly
@@ -9700,10 +11140,10 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Because the body of an X.509 certificate can be large, you should use POST rather
         /// than GET when calling <code>UploadSigningCertificate</code>. For information about
-        /// setting up signatures and authorization through the API, go to <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-        /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
-        /// about using the Query API with IAM, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-        /// Query Requests</a> in the <i>IAM User Guide</i>.
+        /// setting up signatures and authorization through the API, see <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// AWS API requests</a> in the <i>AWS General Reference</i>. For general information
+        /// about using the Query API with IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// query requests</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9722,7 +11162,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.MalformedCertificateException">
         /// The request was rejected because the certificate was malformed or expired. The error
@@ -9777,7 +11217,7 @@ namespace Amazon.IdentityManagement
         /// The SSH public key uploaded by this operation can be used only for authenticating
         /// the associated IAM user to an AWS CodeCommit repository. For more information about
         /// using SSH keys to authenticate to an AWS CodeCommit repository, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
-        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// up AWS CodeCommit for SSH connections</a> in the <i>AWS CodeCommit User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadSSHPublicKey service method.</param>
@@ -9792,7 +11232,7 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limitations. The error message describes the limit exceeded.
+        /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.

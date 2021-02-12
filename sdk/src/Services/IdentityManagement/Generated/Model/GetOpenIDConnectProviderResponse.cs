@@ -35,6 +35,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private List<string> _clientIDList = new List<string>();
         private DateTime? _createDate;
+        private List<Tag> _tags = new List<Tag>();
         private List<string> _thumbprintList = new List<string>();
         private string _url;
 
@@ -74,6 +75,27 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetCreateDate()
         {
             return this._createDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that are attached to the specified IAM OIDC provider. The returned
+        /// list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

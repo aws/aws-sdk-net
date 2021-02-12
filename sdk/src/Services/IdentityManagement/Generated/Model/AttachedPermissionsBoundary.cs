@@ -39,7 +39,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-    /// Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+    /// boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachedPermissionsBoundary

@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+    /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
     /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
     /// text. For example, if you use Java, you can use the <code>decode</code> method of
     /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
@@ -47,19 +47,19 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// This API retrieves information about managed policies. To retrieve information about
-    /// an inline policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
-    /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.
+    /// This operation retrieves information about managed policies. To retrieve information
+    /// about an inline policy that is embedded in a user, group, or role, use <a>GetUserPolicy</a>,
+    /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a>.
     /// </para>
     ///  
     /// <para>
     /// For more information about the types of policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+    /// policies and inline policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-    /// for Managed Policies</a> in the <i>IAM User Guide</i>.
+    /// for managed policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetPolicyVersionRequest : AmazonIdentityManagementServiceRequest
@@ -75,7 +75,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

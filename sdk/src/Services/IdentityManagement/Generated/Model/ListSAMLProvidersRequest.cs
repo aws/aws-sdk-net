@@ -30,14 +30,17 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSAMLProviders operation.
-    /// Lists the SAML provider resource objects defined in IAM in the account.
+    /// Lists the SAML provider resource objects defined in IAM in the account. IAM resource-listing
+    /// operations return a subset of the available attributes for the resource. For example,
+    /// this operation does not return tags, even though they are an attribute of the returned
+    /// object. To view all of the information for a SAML provider, see <a>GetSAMLProvider</a>.
     /// 
-    ///  <note> 
+    ///  <important> 
     /// <para>
     ///  This operation requires <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>.
     /// </para>
-    ///  </note>
+    ///  </important>
     /// </summary>
     public partial class ListSAMLProvidersRequest : AmazonIdentityManagementServiceRequest
     {

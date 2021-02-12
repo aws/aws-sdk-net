@@ -35,7 +35,14 @@ namespace Amazon.IdentityManagement.Model
     /// MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
     /// or <code>Any</code>.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// IAM resource-listing operations return a subset of the available attributes for the
+    /// resource. For example, this operation does not return tags, even though they are an
+    /// attribute of the returned object. To view all of the information for a virtual MFA
+    /// device, see <a>ListVirtualMFADevices</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
     /// parameters.

@@ -46,23 +46,23 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For more information about working with server certificates, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-    /// with Server Certificates</a> in the <i>IAM User Guide</i>. This topic includes a list
+    /// with server certificates</a> in the <i>IAM User Guide</i>. This topic includes a list
     /// of AWS services that can use the server certificates that you manage with IAM.
     /// </para>
     ///  
     /// <para>
-    /// For information about the number of server certificates you can upload, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html">Limitations
-    /// on IAM Entities and Objects</a> in the <i>IAM User Guide</i>.
+    /// For information about the number of server certificates you can upload, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+    /// and STS quotas</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
     /// Because the body of the public key certificate, private key, and the certificate chain
     /// can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
-    /// For information about setting up signatures and authorization through the API, go
-    /// to <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-    /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
-    /// about using the Query API with IAM, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html">Calling
-    /// the API by Making HTTP Query Requests</a> in the <i>IAM User Guide</i>.
+    /// For information about setting up signatures and authorization through the API, see
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// AWS API requests</a> in the <i>AWS General Reference</i>. For general information
+    /// about using the Query API with IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html">Calling
+    /// the API by making HTTP query requests</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -73,6 +73,7 @@ namespace Amazon.IdentityManagement.Model
         private string _path;
         private string _privateKey;
         private string _serverCertificateName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -177,7 +178,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// The path for the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -274,6 +275,34 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetServerCertificateName()
         {
             return this._serverCertificateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that you want to attach to the new IAM server certificate resource.
+        /// Each tag consists of a key name and an associated value. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -48,12 +48,11 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Access control</b> - Reference tags in IAM user-based and resource-based policies.
-    /// You can use tags to restrict access to only an IAM user or role that has a specified
-    /// tag attached. You can also restrict access to only those resources that have a certain
-    /// tag attached. For examples of policies that show how to use tags to control access,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
-    /// Access Using IAM Tags</a> in the <i>IAM User Guide</i>.
+    ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+    /// You can use tags to restrict access to only an IAM role that has a specified tag attached.
+    /// You can also restrict access to only those resources that have a certain tag attached.
+    /// For examples of policies that show how to use tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+    /// access using IAM tags</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -62,9 +61,10 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> </ul> <note> <ul> <li> 
     /// <para>
-    /// Make sure that you have no invalid tags and that you do not exceed the allowed number
-    /// of tags per role. In either case, the entire request fails and <i>no</i> tags are
-    /// added to the role.
+    /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+    /// then the entire request fails and the resource is not created. For more information
+    /// about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+    /// IAM resources</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -75,7 +75,7 @@ namespace Amazon.IdentityManagement.Model
     ///  </li> </ul> </note> 
     /// <para>
     /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
-    /// IAM Identities</a> in the <i>IAM User Guide</i>.
+    /// IAM identities</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class TagRoleRequest : AmazonIdentityManagementServiceRequest
@@ -86,7 +86,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of the role that you want to add tags to.
+        /// The name of the IAM role to which you want to add tags.
         /// </para>
         ///  
         /// <para>
@@ -111,8 +111,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags that you want to attach to the role. Each tag consists of a key name
-        /// and an associated value. You can specify this with a JSON string.
+        /// The list of tags that you want to attach to the IAM role. Each tag consists of a key
+        /// name and an associated value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=50)]

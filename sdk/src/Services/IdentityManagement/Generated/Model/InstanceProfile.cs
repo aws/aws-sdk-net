@@ -61,13 +61,14 @@ namespace Amazon.IdentityManagement.Model
         private string _instanceProfileName;
         private string _path;
         private List<Role> _roles = new List<Role>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) specifying the instance profile. For more information
         /// about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>. 
+        /// identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -107,7 +108,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         ///  The stable and unique string identifying the instance profile. For more information
         /// about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>. 
+        /// identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=16, Max=128)]
@@ -146,7 +147,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         ///  The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>. 
+        /// identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -179,6 +180,27 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetRoles()
         {
             return this._roles != null && this._roles.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that are attached to the instance profile. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -32,14 +32,13 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the CreateVirtualMFADevice operation.
     /// Creates a new virtual MFA device for the AWS account. After creating the virtual MFA,
     /// use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more information
-    /// about creating and working with virtual MFA devices, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-    /// a Virtual MFA Device</a> in the <i>IAM User Guide</i>.
+    /// about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+    /// a virtual MFA device</a> in the <i>IAM User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// The number and size of IAM resources in an AWS account are limited. For more information,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
-    /// and STS Quotas</a> in the <i>IAM User Guide</i>.
+    /// For information about the maximum number of MFA devices you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+    /// and STS quotas</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  <important> 
     /// <para>
@@ -53,13 +52,14 @@ namespace Amazon.IdentityManagement.Model
     public partial class CreateVirtualMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
         private string _path;
+        private List<Tag> _tags = new List<Tag>();
         private string _virtualMFADeviceName;
 
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
         ///  The path for the virtual MFA device. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -85,6 +85,34 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPath()
         {
             return this._path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that you want to attach to the new IAM virtual MFA device. Each tag
+        /// consists of a key name and an associated value. For more information about tagging,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM resources</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed maximum number of tags,
+        /// then the entire request fails and the resource is not created.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

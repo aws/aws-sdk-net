@@ -46,10 +46,10 @@ namespace Amazon.IdentityManagement.Model
         /// May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last
         /// sign-in</a> dates shown in the IAM console and password last used dates in the <a
         /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
-        /// credential report</a>, and returned by this GetUser API. If users signed in during
-        /// the affected time, the password last used date that is returned is the date the user
-        /// last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08
-        /// PDT, the returned password last used date is accurate.
+        /// credential report</a>, and returned by this operation. If users signed in during the
+        /// affected time, the password last used date that is returned is the date the user last
+        /// signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT,
+        /// the returned password last used date is accurate.
         /// </para>
         ///  
         /// <para>

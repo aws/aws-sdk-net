@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLoginProfile operation.
-    /// Retrieves the user name and password-creation date for the specified IAM user. If
+    /// Retrieves the user name and password creation date for the specified IAM user. If
     /// the user has not been assigned a password, the operation returns a 404 (<code>NoSuchEntity</code>)
     /// error.
     /// </summary>

@@ -91,6 +91,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.Roles.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("Tags/member", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

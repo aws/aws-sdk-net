@@ -75,7 +75,7 @@ namespace Amazon.IdentityManagement.Model
         /// API operations or the <code>assume-role*</code> CLI operations but does not apply
         /// when you use those operations to create a console URL. For more information, see <a
         /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
-        /// Roles</a> in the <i>IAM User Guide</i>.
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3600, Max=43200)]

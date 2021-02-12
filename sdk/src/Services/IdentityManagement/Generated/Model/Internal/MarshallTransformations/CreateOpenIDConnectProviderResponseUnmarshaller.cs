@@ -87,6 +87,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         response.OpenIDConnectProviderArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Tags/member", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Tags.Add(item);
+                        continue;
+                    }
                 } 
            }
 
@@ -112,6 +119,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModification"))
+                {
+                    return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EntityAlreadyExists"))
                 {
                     return EntityAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
