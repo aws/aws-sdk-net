@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListActionTypes Request Marshaller
+    /// GetActionType Request Marshaller
     /// </summary>       
-    public class ListActionTypesRequestMarshaller : IMarshaller<IRequest, ListActionTypesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetActionTypeRequestMarshaller : IMarshaller<IRequest, GetActionTypeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListActionTypesRequest)input);
+            return this.Marshall((GetActionTypeRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListActionTypesRequest publicRequest)
+        public IRequest Marshall(GetActionTypeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodePipeline");
-            string target = "CodePipeline_20150709.ListActionTypes";
+            string target = "CodePipeline_20150709.GetActionType";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
@@ -68,22 +68,28 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionOwnerFilter())
+                if(publicRequest.IsSetCategory())
                 {
-                    context.Writer.WritePropertyName("actionOwnerFilter");
-                    context.Writer.Write(publicRequest.ActionOwnerFilter);
+                    context.Writer.WritePropertyName("category");
+                    context.Writer.Write(publicRequest.Category);
                 }
 
-                if(publicRequest.IsSetNextToken())
+                if(publicRequest.IsSetOwner())
                 {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("owner");
+                    context.Writer.Write(publicRequest.Owner);
                 }
 
-                if(publicRequest.IsSetRegionFilter())
+                if(publicRequest.IsSetProvider())
                 {
-                    context.Writer.WritePropertyName("regionFilter");
-                    context.Writer.Write(publicRequest.RegionFilter);
+                    context.Writer.WritePropertyName("provider");
+                    context.Writer.Write(publicRequest.Provider);
+                }
+
+                if(publicRequest.IsSetVersion())
+                {
+                    context.Writer.WritePropertyName("version");
+                    context.Writer.Write(publicRequest.Version);
                 }
 
         
@@ -95,9 +101,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListActionTypesRequestMarshaller _instance = new ListActionTypesRequestMarshaller();        
+        private static GetActionTypeRequestMarshaller _instance = new GetActionTypeRequestMarshaller();        
 
-        internal static ListActionTypesRequestMarshaller GetInstance()
+        internal static GetActionTypeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +111,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListActionTypesRequestMarshaller Instance
+        public static GetActionTypeRequestMarshaller Instance
         {
             get
             {

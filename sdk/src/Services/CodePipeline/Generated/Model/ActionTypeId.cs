@@ -116,7 +116,7 @@ namespace Amazon.CodePipeline.Model
         /// Action Types and Providers in CodePipeline</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=1, Max=35)]
         public string Provider
         {
             get { return this._provider; }

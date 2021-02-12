@@ -27,7 +27,7 @@
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.CreateCustomActionTypeRequest.Provider</property>
     <min>1</min>
-    <max>25</max>
+    <max>35</max>
     <pattern>[0-9A-Za-z_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -39,7 +39,7 @@
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.DeleteCustomActionTypeRequest.Provider</property>
     <min>1</min>
-    <max>25</max>
+    <max>35</max>
     <pattern>[0-9A-Za-z_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -95,6 +95,22 @@
     <min>1</min>
     <max>100</max>
     <pattern>[A-Za-z0-9.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.GetActionTypeRequest.Owner</property>
+    <pattern>AWS|ThirdParty</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.GetActionTypeRequest.Provider</property>
+    <min>1</min>
+    <max>35</max>
+    <pattern>[0-9A-Za-z_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.GetActionTypeRequest.Version</property>
+    <min>1</min>
+    <max>9</max>
+    <pattern>[0-9A-Za-z_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.GetJobDetailsRequest.JobId</property>
@@ -171,6 +187,11 @@
     <property>Amazon.CodePipeline.Model.ListActionTypesRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListActionTypesRequest.RegionFilter</property>
+    <min>4</min>
+    <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ListActionTypesResponse.NextToken</property>
@@ -535,9 +556,34 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeArtifactDetails.MaximumCount</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeArtifactDetails.MinimumCount</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeDeclaration.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeExecutor.JobTimeout</property>
+    <min>60</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeExecutor.PolicyStatementsTemplate</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionTypeId.Provider</property>
     <min>1</min>
-    <max>25</max>
+    <max>35</max>
     <pattern>[0-9A-Za-z_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -545,6 +591,32 @@
     <min>1</min>
     <max>9</max>
     <pattern>[0-9A-Za-z_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeIdentifier.Owner</property>
+    <pattern>AWS|ThirdParty</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeIdentifier.Provider</property>
+    <min>1</min>
+    <max>35</max>
+    <pattern>[0-9A-Za-z_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeIdentifier.Version</property>
+    <min>1</min>
+    <max>9</max>
+    <pattern>[0-9A-Za-z_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeProperty.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeProperty.Name</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionTypeSettings.EntityUrlTemplate</property>
@@ -563,6 +635,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionTypeSettings.ThirdPartyConfigurationUrl</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeUrls.ConfigurationUrl</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeUrls.EntityUrlTemplate</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeUrls.ExecutionUrlTemplate</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionTypeUrls.RevisionUrlTemplate</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
@@ -721,6 +813,12 @@
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.JobDetails.Id</property>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.LambdaExecutorConfiguration.LambdaFunctionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:aws(-[\w]+)*:lambda:.+:[0-9]{12}:function:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ListWebhookItem.Url</property>

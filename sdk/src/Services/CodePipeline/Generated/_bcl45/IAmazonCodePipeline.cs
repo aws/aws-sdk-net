@@ -1034,6 +1034,50 @@ namespace Amazon.CodePipeline
 
         #endregion
         
+        #region  GetActionType
+
+
+        /// <summary>
+        /// Returns information about an action type created for an external provider, where the
+        /// action is to be used by customers of the external provider. The action can have been
+        /// created with any supported integration model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetActionType service method.</param>
+        /// 
+        /// <returns>The response from the GetActionType service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ActionTypeNotFoundException">
+        /// The specified action type cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType">REST API Reference for GetActionType Operation</seealso>
+        GetActionTypeResponse GetActionType(GetActionTypeRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about an action type created for an external provider, where the
+        /// action is to be used by customers of the external provider. The action can have been
+        /// created with any supported integration model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetActionType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetActionType service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ActionTypeNotFoundException">
+        /// The specified action type cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType">REST API Reference for GetActionType Operation</seealso>
+        Task<GetActionTypeResponse> GetActionTypeAsync(GetActionTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetJobDetails
 
 
@@ -3000,6 +3044,58 @@ namespace Amazon.CodePipeline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateActionType
+
+
+        /// <summary>
+        /// Updates an action type that has been created with any supported integration model,
+        /// where the action type is to be used by customers of the action type provider. Use
+        /// a JSON file with the action definition and <code>UpdateActionType</code> to provide
+        /// the full structure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActionType service method.</param>
+        /// 
+        /// <returns>The response from the UpdateActionType service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ActionTypeNotFoundException">
+        /// The specified action type cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.RequestFailedException">
+        /// The request has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType">REST API Reference for UpdateActionType Operation</seealso>
+        UpdateActionTypeResponse UpdateActionType(UpdateActionTypeRequest request);
+
+
+
+        /// <summary>
+        /// Updates an action type that has been created with any supported integration model,
+        /// where the action type is to be used by customers of the action type provider. Use
+        /// a JSON file with the action definition and <code>UpdateActionType</code> to provide
+        /// the full structure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActionType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateActionType service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ActionTypeNotFoundException">
+        /// The specified action type cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.RequestFailedException">
+        /// The request has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType">REST API Reference for UpdateActionType Operation</seealso>
+        Task<UpdateActionTypeResponse> UpdateActionTypeAsync(UpdateActionTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

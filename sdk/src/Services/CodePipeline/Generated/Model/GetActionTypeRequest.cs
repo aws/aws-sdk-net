@@ -29,30 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteCustomActionType operation.
-    /// Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails
-    /// after the action is marked for deletion. Used for custom actions only.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// To re-create a custom action after it has been deleted you must use a string in the
-    /// version field that has never been used before. This string can be an incremented version
-    /// number, for example. To restore a deleted custom action, use a JSON file that is identical
-    /// to the deleted action, including the original string in the version field.
-    /// </para>
-    ///  </important>
+    /// Container for the parameters to the GetActionType operation.
+    /// Returns information about an action type created for an external provider, where the
+    /// action is to be used by customers of the external provider. The action can have been
+    /// created with any supported integration model.
     /// </summary>
-    public partial class DeleteCustomActionTypeRequest : AmazonCodePipelineRequest
+    public partial class GetActionTypeRequest : AmazonCodePipelineRequest
     {
         private ActionCategory _category;
+        private string _owner;
         private string _provider;
         private string _version;
 
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of the custom action that you want to delete, such as source or deploy.
+        /// A category defines what kind of action can be taken in the stage. Valid categories
+        /// are limited to one of the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Source</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Build</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Test</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Deploy</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Approval</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Invoke</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ActionCategory Category
@@ -68,9 +87,31 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The creator of an action type that has been created with any supported integration
+        /// model. There are two valid values for the <code>owner</code> field in the action type
+        /// category: <code>AWS</code> and <code>ThirdParty</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The provider of the service used in the custom action, such as AWS CodeDeploy.
+        /// The provider of the action type being called. The provider name is specified when
+        /// the action type is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]
@@ -89,7 +130,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the custom action to delete.
+        /// A string that describes the action type version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=9)]

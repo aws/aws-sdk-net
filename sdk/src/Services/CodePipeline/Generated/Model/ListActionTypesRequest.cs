@@ -36,6 +36,7 @@ namespace Amazon.CodePipeline.Model
     {
         private ActionOwner _actionOwnerFilter;
         private string _nextToken;
+        private string _regionFilter;
 
         /// <summary>
         /// Gets and sets the property ActionOwnerFilter. 
@@ -73,6 +74,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionFilter. 
+        /// <para>
+        /// The Region to filter on for the list of action types.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=30)]
+        public string RegionFilter
+        {
+            get { return this._regionFilter; }
+            set { this._regionFilter = value; }
+        }
+
+        // Check to see if RegionFilter property is set
+        internal bool IsSetRegionFilter()
+        {
+            return this._regionFilter != null;
         }
 
     }

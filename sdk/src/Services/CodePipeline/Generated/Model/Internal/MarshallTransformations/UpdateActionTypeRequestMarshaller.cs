@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListActionTypes Request Marshaller
+    /// UpdateActionType Request Marshaller
     /// </summary>       
-    public class ListActionTypesRequestMarshaller : IMarshaller<IRequest, ListActionTypesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateActionTypeRequestMarshaller : IMarshaller<IRequest, UpdateActionTypeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListActionTypesRequest)input);
+            return this.Marshall((UpdateActionTypeRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListActionTypesRequest publicRequest)
+        public IRequest Marshall(UpdateActionTypeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodePipeline");
-            string target = "CodePipeline_20150709.ListActionTypes";
+            string target = "CodePipeline_20150709.UpdateActionType";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
@@ -68,22 +68,15 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionOwnerFilter())
+                if(publicRequest.IsSetActionType())
                 {
-                    context.Writer.WritePropertyName("actionOwnerFilter");
-                    context.Writer.Write(publicRequest.ActionOwnerFilter);
-                }
+                    context.Writer.WritePropertyName("actionType");
+                    context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
+                    var marshaller = ActionTypeDeclarationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ActionType, context);
 
-                if(publicRequest.IsSetRegionFilter())
-                {
-                    context.Writer.WritePropertyName("regionFilter");
-                    context.Writer.Write(publicRequest.RegionFilter);
+                    context.Writer.WriteObjectEnd();
                 }
 
         
@@ -95,9 +88,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListActionTypesRequestMarshaller _instance = new ListActionTypesRequestMarshaller();        
+        private static UpdateActionTypeRequestMarshaller _instance = new UpdateActionTypeRequestMarshaller();        
 
-        internal static ListActionTypesRequestMarshaller GetInstance()
+        internal static UpdateActionTypeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +98,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListActionTypesRequestMarshaller Instance
+        public static UpdateActionTypeRequestMarshaller Instance
         {
             get
             {
