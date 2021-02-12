@@ -47,6 +47,7 @@ namespace Amazon.AppSync.Model
         private string _name;
         private string _requestMappingTemplate;
         private string _responseMappingTemplate;
+        private SyncConfig _syncConfig;
 
         /// <summary>
         /// Gets and sets the property ApiId. 
@@ -180,6 +181,21 @@ namespace Amazon.AppSync.Model
         internal bool IsSetResponseMappingTemplate()
         {
             return this._responseMappingTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncConfig.
+        /// </summary>
+        public SyncConfig SyncConfig
+        {
+            get { return this._syncConfig; }
+            set { this._syncConfig = value; }
+        }
+
+        // Check to see if SyncConfig property is set
+        internal bool IsSetSyncConfig()
+        {
+            return this._syncConfig != null;
         }
 
     }

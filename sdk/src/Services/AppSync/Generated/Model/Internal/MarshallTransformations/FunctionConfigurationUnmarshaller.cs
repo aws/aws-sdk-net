@@ -112,6 +112,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResponseMappingTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("syncConfig", targetDepth))
+                {
+                    var unmarshaller = SyncConfigUnmarshaller.Instance;
+                    unmarshalledObject.SyncConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

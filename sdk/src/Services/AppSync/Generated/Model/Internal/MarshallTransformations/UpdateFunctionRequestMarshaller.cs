@@ -108,6 +108,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResponseMappingTemplate);
                 }
 
+                if(publicRequest.IsSetSyncConfig())
+                {
+                    context.Writer.WritePropertyName("syncConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SyncConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SyncConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
