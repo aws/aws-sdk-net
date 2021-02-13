@@ -480,11 +480,11 @@
     "AgentParameterField":{
       "type":"string",
       "enum":[
-        "MaxStackDepth",
-        "MemoryUsageLimitPercent",
-        "MinimumTimeForReportingInMilliseconds",
+        "SamplingIntervalInMilliseconds",
         "ReportingIntervalInMilliseconds",
-        "SamplingIntervalInMilliseconds"
+        "MinimumTimeForReportingInMilliseconds",
+        "MemoryUsageLimitPercent",
+        "MaxStackDepth"
       ]
     },
     "AgentParameters":{
@@ -511,9 +511,9 @@
     "AggregationPeriod":{
       "type":"string",
       "enum":[
-        "P1D",
+        "PT5M",
         "PT1H",
-        "PT5M"
+        "P1D"
       ]
     },
     "Anomalies":{
@@ -705,8 +705,8 @@
     "ComputePlatform":{
       "type":"string",
       "enum":[
-        "AWSLambda",
-        "Default"
+        "Default",
+        "AWSLambda"
       ]
     },
     "ConfigureAgentRequest":{
@@ -861,8 +861,8 @@
     "FeedbackType":{
       "type":"string",
       "enum":[
-        "Negative",
-        "Positive"
+        "Positive",
+        "Negative"
       ]
     },
     "FindingsReportId":{
@@ -1446,15 +1446,15 @@
     "MetadataField":{
       "type":"string",
       "enum":[
+        "ComputePlatform",
         "AgentId",
         "AwsRequestId",
-        "ComputePlatform",
         "ExecutionEnvironment",
         "LambdaFunctionArn",
         "LambdaMemoryLimitInMB",
-        "LambdaPreviousExecutionTimeInMilliseconds",
         "LambdaRemainingTimeInMilliseconds",
-        "LambdaTimeGapBetweenInvokesInMilliseconds"
+        "LambdaTimeGapBetweenInvokesInMilliseconds",
+        "LambdaPreviousExecutionTimeInMilliseconds"
       ]
     },
     "Metric":{
@@ -1497,8 +1497,8 @@
     "OrderBy":{
       "type":"string",
       "enum":[
-        "TimestampAscending",
-        "TimestampDescending"
+        "TimestampDescending",
+        "TimestampAscending"
       ]
     },
     "PaginationToken":{

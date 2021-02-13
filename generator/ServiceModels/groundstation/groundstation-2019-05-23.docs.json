@@ -238,7 +238,7 @@
         "DataflowEndpointGroupList$member": null
       }
     },
-    "DataflowEndpointmtuInteger": {
+    "DataflowEndpointMtuInteger": {
       "base": null,
       "refs": {
         "DataflowEndpoint$mtu": "<p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>"

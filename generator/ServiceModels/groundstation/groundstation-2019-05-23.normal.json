@@ -541,7 +541,8 @@
         },
         "endpointDetails":{"shape":"EndpointDetails"}
       },
-      "documentation":"<p>Details for certain <code>Config</code> object types in a contact.</p>"
+      "documentation":"<p>Details for certain <code>Config</code> object types in a contact.</p>",
+      "union":true
     },
     "ConfigIdResponse":{
       "type":"structure",
@@ -615,7 +616,8 @@
           "documentation":"<p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>"
         }
       },
-      "documentation":"<p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>"
+      "documentation":"<p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>",
+      "union":true
     },
     "ContactData":{
       "type":"structure",
@@ -822,7 +824,7 @@
           "documentation":"<p>Socket address of a dataflow endpoint.</p>"
         },
         "mtu":{
-          "shape":"DataflowEndpointmtuInteger",
+          "shape":"DataflowEndpointMtuInteger",
           "documentation":"<p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>"
         },
         "name":{
@@ -880,7 +882,7 @@
       },
       "documentation":"<p>Item in a list of <code>DataflowEndpoint</code> groups.</p>"
     },
-    "DataflowEndpointmtuInteger":{
+    "DataflowEndpointMtuInteger":{
       "type":"integer",
       "box":true,
       "max":1500,
