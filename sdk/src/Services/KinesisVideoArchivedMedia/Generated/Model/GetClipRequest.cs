@@ -40,7 +40,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  
     /// <para>
-    /// As a prerequsite to using GetCLip API, you must obtain an endpoint using <code>GetDataEndpoint</code>,
+    /// As a prerequisite to using GetCLip API, you must obtain an endpoint using <code>GetDataEndpoint</code>,
     /// specifying GET_CLIP for<code/> the <code>APIName</code> parameter. 
     /// </para>
     ///  

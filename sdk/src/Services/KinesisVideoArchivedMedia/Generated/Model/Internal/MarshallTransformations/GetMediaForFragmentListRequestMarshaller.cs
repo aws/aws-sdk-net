@@ -77,6 +77,12 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetStreamARN())
+                {
+                    context.Writer.WritePropertyName("StreamARN");
+                    context.Writer.Write(publicRequest.StreamARN);
+                }
+
                 if(publicRequest.IsSetStreamName())
                 {
                     context.Writer.WritePropertyName("StreamName");

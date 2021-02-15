@@ -89,6 +89,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     public partial class GetMediaForFragmentListRequest : AmazonKinesisVideoArchivedMediaRequest
     {
         private List<string> _fragments = new List<string>();
+        private string _streamARN;
         private string _streamName;
 
         /// <summary>
@@ -112,12 +113,33 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamName. 
+        /// Gets and sets the property StreamARN. 
         /// <para>
-        /// The name of the stream from which to retrieve fragment media.
+        /// The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media.
+        /// Specify either this parameter or the <code>StreamName</code> parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=1024)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamName. 
+        /// <para>
+        /// The name of the stream from which to retrieve fragment media. Specify either this
+        /// parameter or the <code>StreamARN</code> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }
