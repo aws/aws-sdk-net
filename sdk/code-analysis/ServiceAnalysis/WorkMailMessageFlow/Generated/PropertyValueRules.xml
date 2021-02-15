@@ -6,4 +6,28 @@
     <max>120</max>
     <pattern>[a-z0-9\-]*</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMailMessageFlow.Model.PutRawMessageContentRequest.MessageId</property>
+    <min>1</min>
+    <max>120</max>
+    <pattern>[a-z0-9\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMailMessageFlow.Model.S3Reference.Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[a-z0-9][a-z0-9\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMailMessageFlow.Model.S3Reference.Key</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9\-/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMailMessageFlow.Model.S3Reference.ObjectVersion</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
 </property-value-rules>
