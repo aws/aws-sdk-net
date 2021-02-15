@@ -87,6 +87,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.InputDevices = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputPartnerIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.InputPartnerIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputSourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

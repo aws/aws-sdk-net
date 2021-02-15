@@ -39,6 +39,7 @@ namespace Amazon.MediaLive.Model
         private string _id;
         private InputClass _inputClass;
         private List<InputDeviceSettings> _inputDevices = new List<InputDeviceSettings>();
+        private List<string> _inputPartnerIds = new List<string>();
         private InputSourceType _inputSourceType;
         private List<MediaConnectFlow> _mediaConnectFlows = new List<MediaConnectFlow>();
         private string _name;
@@ -145,6 +146,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputDevices()
         {
             return this._inputDevices != null && this._inputDevices.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputPartnerIds. A list of IDs for all Inputs which are
+        /// partners of this one.
+        /// </summary>
+        public List<string> InputPartnerIds
+        {
+            get { return this._inputPartnerIds; }
+            set { this._inputPartnerIds = value; }
+        }
+
+        // Check to see if InputPartnerIds property is set
+        internal bool IsSetInputPartnerIds()
+        {
+            return this._inputPartnerIds != null && this._inputPartnerIds.Count > 0; 
         }
 
         /// <summary>

@@ -1090,6 +1090,78 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  CreatePartnerInput
+
+        /// <summary>
+        /// Create a partner input
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartnerInput service method.</param>
+        /// 
+        /// <returns>The response from the CreatePartnerInput service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput">REST API Reference for CreatePartnerInput Operation</seealso>
+        public virtual CreatePartnerInputResponse CreatePartnerInput(CreatePartnerInputRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePartnerInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePartnerInputResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePartnerInputResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePartnerInput operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartnerInput operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePartnerInput
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput">REST API Reference for CreatePartnerInput Operation</seealso>
+        public virtual IAsyncResult BeginCreatePartnerInput(CreatePartnerInputRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePartnerInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePartnerInputResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePartnerInput operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePartnerInput.</param>
+        /// 
+        /// <returns>Returns a  CreatePartnerInputResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput">REST API Reference for CreatePartnerInput Operation</seealso>
+        public virtual CreatePartnerInputResponse EndCreatePartnerInput(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePartnerInputResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateTags
 
         /// <summary>
