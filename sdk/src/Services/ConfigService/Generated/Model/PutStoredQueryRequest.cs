@@ -31,8 +31,8 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the PutStoredQuery operation.
     /// Saves a new query or updates an existing saved query. The <code>QueryName</code> must
-    /// be unique for an AWS account in an AWS Region. You can create upto 300 queries in
-    /// an AWS account in an AWS Region.
+    /// be unique for a single AWS account and a single AWS Region. You can create upto 300
+    /// queries in a single AWS account and a single AWS Region.
     /// </summary>
     public partial class PutStoredQueryRequest : AmazonConfigServiceRequest
     {
@@ -45,6 +45,13 @@ namespace Amazon.ConfigService.Model
         /// A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code>
         /// and <code>Expression</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you are creating a query, you must provide a query name and an expression. When
+        /// you are updating a query, you must provide a query name but updating the description
+        /// is optional.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public StoredQuery StoredQuery

@@ -82,7 +82,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property QueryArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-id.
+        /// Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

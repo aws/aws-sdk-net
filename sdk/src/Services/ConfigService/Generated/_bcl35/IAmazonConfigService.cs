@@ -94,6 +94,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">REST API Reference for BatchGetAggregateResourceConfig Operation</seealso>
         BatchGetAggregateResourceConfigResponse BatchGetAggregateResourceConfig(BatchGetAggregateResourceConfigRequest request);
@@ -155,6 +167,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
         BatchGetResourceConfigResponse BatchGetResourceConfig(BatchGetResourceConfigRequest request);
@@ -705,13 +729,37 @@ namespace Amazon.ConfigService
         /// You specified one or more organization config rules that do not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -817,13 +865,37 @@ namespace Amazon.ConfigService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -1090,6 +1162,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteResourceConfig">REST API Reference for DeleteResourceConfig Operation</seealso>
         DeleteResourceConfigResponse DeleteResourceConfig(DeleteResourceConfigRequest request);
@@ -1173,7 +1257,7 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the stored query for an AWS account in an AWS Region.
+        /// Deletes the stored query for a single AWS account and a single AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStoredQuery service method.</param>
         /// 
@@ -1183,6 +1267,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">REST API Reference for DeleteStoredQuery Operation</seealso>
         DeleteStoredQueryResponse DeleteStoredQuery(DeleteStoredQueryRequest request);
@@ -1345,6 +1441,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">REST API Reference for DescribeAggregateComplianceByConfigRules Operation</seealso>
         DescribeAggregateComplianceByConfigRulesResponse DescribeAggregateComplianceByConfigRules(DescribeAggregateComplianceByConfigRulesRequest request);
@@ -2290,13 +2398,37 @@ namespace Amazon.ConfigService
         /// You specified one or more organization config rules that do not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
@@ -2363,13 +2495,37 @@ namespace Amazon.ConfigService
         /// You specified one or more organization config rules that do not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
@@ -2441,13 +2597,37 @@ namespace Amazon.ConfigService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">REST API Reference for DescribeOrganizationConformancePacks Operation</seealso>
@@ -2520,13 +2700,37 @@ namespace Amazon.ConfigService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">REST API Reference for DescribeOrganizationConformancePackStatuses Operation</seealso>
@@ -2860,6 +3064,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">REST API Reference for GetAggregateComplianceDetailsByConfigRule Operation</seealso>
         GetAggregateComplianceDetailsByConfigRuleResponse GetAggregateComplianceDetailsByConfigRule(GetAggregateComplianceDetailsByConfigRuleRequest request);
@@ -2921,6 +3137,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
         GetAggregateConfigRuleComplianceSummaryResponse GetAggregateConfigRuleComplianceSummary(GetAggregateConfigRuleComplianceSummaryRequest request);
@@ -2983,6 +3211,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">REST API Reference for GetAggregateDiscoveredResourceCounts Operation</seealso>
         GetAggregateDiscoveredResourceCountsResponse GetAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request);
@@ -3036,6 +3276,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">REST API Reference for GetAggregateResourceConfig Operation</seealso>
         GetAggregateResourceConfigResponse GetAggregateResourceConfig(GetAggregateResourceConfigRequest request);
@@ -3438,6 +3690,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">REST API Reference for GetDiscoveredResourceCounts Operation</seealso>
         GetDiscoveredResourceCountsResponse GetDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request);
@@ -3491,13 +3755,37 @@ namespace Amazon.ConfigService
         /// You specified one or more organization config rules that do not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
@@ -3558,13 +3846,37 @@ namespace Amazon.ConfigService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">REST API Reference for GetOrganizationConformancePackDetailedStatus Operation</seealso>
@@ -3646,6 +3958,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         GetResourceConfigHistoryResponse GetResourceConfigHistory(GetResourceConfigHistoryRequest request);
@@ -3692,6 +4016,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">REST API Reference for GetStoredQuery Operation</seealso>
         GetStoredQueryResponse GetStoredQuery(GetStoredQueryRequest request);
@@ -3756,6 +4092,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">REST API Reference for ListAggregateDiscoveredResources Operation</seealso>
         ListAggregateDiscoveredResourcesResponse ListAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request);
@@ -3827,6 +4175,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request);
@@ -3863,7 +4223,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// List the stored queries for an AWS account in an AWS Region. The default is 100.
+        /// Lists the stored queries for a single AWS account and a single AWS Region. The default
+        /// is 100.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStoredQueries service method.</param>
         /// 
@@ -3874,6 +4235,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">REST API Reference for ListStoredQueries Operation</seealso>
         ListStoredQueriesResponse ListStoredQueries(ListStoredQueriesRequest request);
@@ -3927,6 +4300,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -4187,15 +4572,29 @@ namespace Amazon.ConfigService
         /// Creates and updates the configuration aggregator with the selected source accounts
         /// and regions. The source account can be individual account(s) or an organization.
         /// 
+        ///  
+        /// <para>
+        ///  <code>accountIds</code> that are passed will be replaced with existing accounts.
+        /// If you want to add additional accounts into the aggregator, call <code>DescribeAggregator</code>
+        /// to get the previous accounts and then append new ones.
+        /// </para>
         ///  <note> 
         /// <para>
         /// AWS Config should be enabled in source accounts and regions you want to aggregate.
         /// </para>
         ///  
         /// <para>
-        /// If your source type is an organization, you must be signed in to the master account
-        /// and all features must be enabled in your organization. AWS Config calls <code>EnableAwsServiceAccess</code>
-        /// API to enable integration between AWS Config and AWS Organizations. 
+        /// If your source type is an organization, you must be signed in to the management account
+        /// or a registered delegated administrator and all the features must be enabled in your
+        /// organization. If the caller is a management account, AWS Config calls <code>EnableAwsServiceAccess</code>
+        /// API to enable integration between AWS Config and AWS Organizations. If the caller
+        /// is a registered delegated administrator, AWS Config calls <code>ListDelegatedAdministrators</code>
+        /// API to verify whether the caller is a valid delegated administrator.
+        /// </para>
+        ///  
+        /// <para>
+        /// To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
+        /// a Delegated Administrator</a> in the AWS Config developer guide. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -4224,13 +4623,37 @@ namespace Amazon.ConfigService
         /// Organization is no longer available.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -4515,6 +4938,9 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.InvalidS3KeyPrefixException">
         /// The specified Amazon S3 key prefix is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidS3KmsKeyArnException">
+        /// The specified Amazon KMS Key ARN is not valid.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidSNSTopicARNException">
         /// The specified Amazon SNS topic does not exist.
         /// </exception>
@@ -4615,7 +5041,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// 
+        /// Add or updates the evaluations for process checks. This API checks if the rule is
+        /// a process check when the name of the AWS Config rule is provided.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutExternalEvaluation service method.</param>
         /// 
@@ -4760,13 +5187,37 @@ namespace Amazon.ConfigService
         /// Organization is no longer available.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -4815,6 +5266,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">REST API Reference for PutOrganizationConfigRule Operation</seealso>
         PutOrganizationConfigRuleResponse PutOrganizationConfigRule(PutOrganizationConfigRuleRequest request);
@@ -4938,13 +5401,37 @@ namespace Amazon.ConfigService
         /// Organization is no longer available.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
-        /// an exception if APIs are called from member accounts. All APIs must be called from
-        /// organization master account.
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your AWS Organization management
+        /// account or the delegated administrator role changed. Delete this aggregator and create
+        /// a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous AWS Organization and AWS
+        /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
+        /// and create a new one with the current AWS Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for AWS Config with permissions to
+        /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
+        /// registers delagated administrator for AWS Config service principle name before the
+        /// delegated administrator creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
+        /// APIs must be called from organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -4996,6 +5483,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">REST API Reference for PutOrganizationConformancePack Operation</seealso>
         PutOrganizationConformancePackResponse PutOrganizationConformancePack(PutOrganizationConformancePackRequest request);
@@ -5128,7 +5627,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
-        /// This API adds a new exception or updates an exisiting exception for a specific resource
+        /// This API adds a new exception or updates an existing exception for a specific resource
         /// with a specific AWS Config rule. 
         /// 
         ///  <note> 
@@ -5284,6 +5783,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutResourceConfig">REST API Reference for PutResourceConfig Operation</seealso>
         PutResourceConfigResponse PutResourceConfig(PutResourceConfigRequest request);
@@ -5380,8 +5891,8 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Saves a new query or updates an existing saved query. The <code>QueryName</code> must
-        /// be unique for an AWS account in an AWS Region. You can create upto 300 queries in
-        /// an AWS account in an AWS Region.
+        /// be unique for a single AWS account and a single AWS Region. You can create upto 300
+        /// queries in a single AWS account and a single AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStoredQuery service method.</param>
         /// 
@@ -5396,6 +5907,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">REST API Reference for PutStoredQuery Operation</seealso>
         PutStoredQueryResponse PutStoredQuery(PutStoredQueryRequest request);
@@ -5936,6 +6459,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -5982,6 +6517,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);

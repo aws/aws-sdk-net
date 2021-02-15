@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// 
+    /// Identifies an AWS resource and indicates whether it complies with the AWS Config rule
+    /// that it was evaluated against.
     /// </summary>
     public partial class ExternalEvaluation
     {
@@ -40,7 +41,11 @@ namespace Amazon.ConfigService.Model
         private DateTime? _orderingTimestamp;
 
         /// <summary>
-        /// Gets and sets the property Annotation.
+        /// Gets and sets the property Annotation. 
+        /// <para>
+        /// Supplementary information about the reason of compliance. For example, this task was
+        /// completed on a specific date.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string Annotation
@@ -56,7 +61,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComplianceResourceId.
+        /// Gets and sets the property ComplianceResourceId. 
+        /// <para>
+        /// The evaluated compliance resource ID. AWS Config accepts only AWS account ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=768)]
         public string ComplianceResourceId
@@ -72,7 +80,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComplianceResourceType.
+        /// Gets and sets the property ComplianceResourceType. 
+        /// <para>
+        /// The evaluated compliance resource type. AWS Config accepts <code>AWS::::Account</code>
+        /// resource type.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string ComplianceResourceType
@@ -88,7 +100,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ComplianceType.
+        /// Gets and sets the property ComplianceType. 
+        /// <para>
+        /// The compliance of the AWS resource. The valid values are <code>COMPLIANT, NON_COMPLIANT,
+        /// </code> and <code>NOT_APPLICABLE</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ComplianceType ComplianceType
@@ -104,7 +120,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrderingTimestamp.
+        /// Gets and sets the property OrderingTimestamp. 
+        /// <para>
+        /// The time when the compliance was recorded. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime OrderingTimestamp

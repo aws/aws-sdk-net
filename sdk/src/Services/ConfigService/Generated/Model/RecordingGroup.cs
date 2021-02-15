@@ -152,8 +152,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// Before you can set this option to <code>true</code>, you must set the <code>allSupported</code>
-        /// option to <code>false</code>.
+        /// To record all configuration changes, you must set the <code>allSupported</code> option
+        /// to <code>false</code>.
         /// </para>
         ///  
         /// <para>

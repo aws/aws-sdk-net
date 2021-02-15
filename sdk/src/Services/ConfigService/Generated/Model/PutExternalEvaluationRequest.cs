@@ -30,7 +30,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutExternalEvaluation operation.
-    /// 
+    /// Add or updates the evaluations for process checks. This API checks if the rule is
+    /// a process check when the name of the AWS Config rule is provided.
     /// </summary>
     public partial class PutExternalEvaluationRequest : AmazonConfigServiceRequest
     {
@@ -38,7 +39,10 @@ namespace Amazon.ConfigService.Model
         private ExternalEvaluation _externalEvaluation;
 
         /// <summary>
-        /// Gets and sets the property ConfigRuleName.
+        /// Gets and sets the property ConfigRuleName. 
+        /// <para>
+        /// The name of the AWS Config rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigRuleName
@@ -54,7 +58,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalEvaluation.
+        /// Gets and sets the property ExternalEvaluation. 
+        /// <para>
+        /// An <code>ExternalEvaluation</code> object that provides details about compliance.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ExternalEvaluation ExternalEvaluation

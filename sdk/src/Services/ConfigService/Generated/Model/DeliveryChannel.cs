@@ -38,6 +38,7 @@ namespace Amazon.ConfigService.Model
         private string _name;
         private string _s3BucketName;
         private string _s3KeyPrefix;
+        private string _s3KmsKeyArn;
         private string _snsTopicARN;
 
         /// <summary>
@@ -124,6 +125,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetS3KeyPrefix()
         {
             return this._s3KeyPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) customer managed
+        /// key (CMK) used to encrypt objects delivered by AWS Config. Must belong to the same
+        /// Region as the destination S3 bucket.
+        /// </para>
+        /// </summary>
+        public string S3KmsKeyArn
+        {
+            get { return this._s3KmsKeyArn; }
+            set { this._s3KmsKeyArn = value; }
+        }
+
+        // Check to see if S3KmsKeyArn property is set
+        internal bool IsSetS3KmsKeyArn()
+        {
+            return this._s3KmsKeyArn != null;
         }
 
         /// <summary>

@@ -29,72 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
-    /// following reasons:
-    /// 
-    ///  <ul> <li> 
-    /// <para>
-    /// No permission to call <code>EnableAWSServiceAccess</code> API
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The configuration aggregator cannot be updated because your AWS Organization management
-    /// account or the delegated administrator role changed. Delete this aggregator and create
-    /// a new one with the current AWS Organization.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The configuration aggregator is associated with a previous AWS Organization and AWS
-    /// Config cannot aggregate data with current AWS Organization. Delete this aggregator
-    /// and create a new one with the current AWS Organization.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// You are not a registered delegated administrator for AWS Config with permissions to
-    /// call <code>ListDelegatedAdministrators</code> API. Ensure that the management account
-    /// registers delagated administrator for AWS Config service principle name before the
-    /// delegated administrator creates an aggregator.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-    /// APIs, AWS Config throws an exception if APIs are called from member accounts. All
-    /// APIs must be called from organization master account.
-    /// </para>
+    /// The specified Amazon KMS Key ARN is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class OrganizationAccessDeniedException : AmazonConfigServiceException
+    public partial class InvalidS3KmsKeyArnException : AmazonConfigServiceException
     {
 
         /// <summary>
-        /// Constructs a new OrganizationAccessDeniedException with the specified error
+        /// Constructs a new InvalidS3KmsKeyArnException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public OrganizationAccessDeniedException(string message) 
+        public InvalidS3KmsKeyArnException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of OrganizationAccessDeniedException
+        /// Construct instance of InvalidS3KmsKeyArnException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public OrganizationAccessDeniedException(string message, Exception innerException) 
+        public InvalidS3KmsKeyArnException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of OrganizationAccessDeniedException
+        /// Construct instance of InvalidS3KmsKeyArnException
         /// </summary>
         /// <param name="innerException"></param>
-        public OrganizationAccessDeniedException(Exception innerException) 
+        public InvalidS3KmsKeyArnException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of OrganizationAccessDeniedException
+        /// Construct instance of InvalidS3KmsKeyArnException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -102,30 +71,30 @@ namespace Amazon.ConfigService.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public OrganizationAccessDeniedException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidS3KmsKeyArnException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of OrganizationAccessDeniedException
+        /// Construct instance of InvalidS3KmsKeyArnException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public OrganizationAccessDeniedException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidS3KmsKeyArnException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the OrganizationAccessDeniedException class with serialized data.
+        /// Constructs a new instance of the InvalidS3KmsKeyArnException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected OrganizationAccessDeniedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected InvalidS3KmsKeyArnException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

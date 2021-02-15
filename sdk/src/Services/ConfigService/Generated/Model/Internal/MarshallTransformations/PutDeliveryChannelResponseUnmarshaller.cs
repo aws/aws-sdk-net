@@ -81,6 +81,10 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 {
                     return InvalidS3KeyPrefixExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3KmsKeyArnException"))
+                {
+                    return InvalidS3KmsKeyArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSNSTopicARNException"))
                 {
                     return InvalidSNSTopicARNExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

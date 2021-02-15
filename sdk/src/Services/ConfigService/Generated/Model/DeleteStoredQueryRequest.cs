@@ -30,7 +30,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStoredQuery operation.
-    /// Deletes the stored query for an AWS account in an AWS Region.
+    /// Deletes the stored query for a single AWS account and a single AWS Region.
     /// </summary>
     public partial class DeleteStoredQueryRequest : AmazonConfigServiceRequest
     {

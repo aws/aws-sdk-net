@@ -74,6 +74,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.S3KeyPrefix);
             }
 
+            if(requestObject.IsSetS3KmsKeyArn())
+            {
+                context.Writer.WritePropertyName("s3KmsKeyArn");
+                context.Writer.Write(requestObject.S3KmsKeyArn);
+            }
+
             if(requestObject.IsSetSnsTopicARN())
             {
                 context.Writer.WritePropertyName("snsTopicARN");

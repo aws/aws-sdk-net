@@ -97,8 +97,13 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryS3Bucket. 
         /// <para>
-        /// AWS Config stores intermediate files while processing conformance pack template.
+        /// Amazon S3 bucket where AWS Config stores conformance pack templates.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is optional.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=63)]
         public string DeliveryS3Bucket
@@ -118,6 +123,11 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The prefix for the Amazon S3 bucket. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is optional.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
         public string DeliveryS3KeyPrefix

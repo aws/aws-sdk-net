@@ -30,6 +30,18 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// The requested action is not valid.
+    /// 
+    ///  
+    /// <para>
+    /// For PutStoredQuery, you will see this exception if there are missing required fields
+    /// or if the input value fails the validation, or if you are trying to create more than
+    /// 300 queries.
+    /// </para>
+    ///  
+    /// <para>
+    /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+    /// if there are missing required fields or if the input value fails the validation.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

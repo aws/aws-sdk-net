@@ -88,6 +88,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3KmsKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3KmsKeyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("snsTopicARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
