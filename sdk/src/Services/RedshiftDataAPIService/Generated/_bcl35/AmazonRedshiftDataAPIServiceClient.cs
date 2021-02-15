@@ -37,6 +37,14 @@ namespace Amazon.RedshiftDataAPIService
     ///
     /// You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables.
     /// You can run individual SQL statements, which are committed if the statement succeeds.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// For more information about the Amazon Redshift Data API, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using
+    /// the Amazon Redshift Data API</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// 
+    /// </para>
     /// </summary>
     public partial class AmazonRedshiftDataAPIServiceClient : AmazonServiceClient, IAmazonRedshiftDataAPIService
     {
@@ -462,6 +470,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
         /// 
         /// <returns>The response from the ExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
+        /// The number of active statements exceeds the limit.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ExecuteStatementException">
         /// The SQL statement encountered an environmental error while running.
         /// </exception>

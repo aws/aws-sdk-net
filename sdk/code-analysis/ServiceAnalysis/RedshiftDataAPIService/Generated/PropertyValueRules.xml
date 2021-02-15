@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.DescribeTableRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.StatementName</property>
     <min>0</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.ListDatabasesRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.ListSchemasRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListStatementsRequest.MaxResults</property>
@@ -14,6 +29,11 @@
     <property>Amazon.RedshiftDataAPIService.Model.ListStatementsRequest.StatementName</property>
     <min>0</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.ListTablesRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.StatementData.StatementName</property>

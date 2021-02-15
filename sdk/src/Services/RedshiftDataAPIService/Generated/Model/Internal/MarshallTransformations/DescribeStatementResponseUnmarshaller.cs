@@ -87,6 +87,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     response.Error = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HasResultSet", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.HasResultSet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

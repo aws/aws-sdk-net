@@ -37,6 +37,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private bool? _roleLevel;
         private string _statementName;
         private StatusString _status;
 
@@ -81,6 +82,26 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleLevel. 
+        /// <para>
+        /// A value that filters which statements to return in the response. If true, all statements
+        /// run by the caller's IAM role are returned. If false, only statements run by the caller's
+        /// IAM role in the current IAM session are returned. The default is true. 
+        /// </para>
+        /// </summary>
+        public bool RoleLevel
+        {
+            get { return this._roleLevel.GetValueOrDefault(); }
+            set { this._roleLevel = value; }
+        }
+
+        // Check to see if RoleLevel property is set
+        internal bool IsSetRoleLevel()
+        {
+            return this._roleLevel.HasValue; 
         }
 
         /// <summary>

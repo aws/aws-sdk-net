@@ -39,6 +39,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _dbUser;
         private long? _duration;
         private string _error;
+        private bool? _hasResultSet;
         private string _id;
         private string _queryString;
         private long? _redshiftPid;
@@ -156,6 +157,25 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetError()
         {
             return this._error != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasResultSet. 
+        /// <para>
+        /// A value that indicates whether the statement has a result set. The result set can
+        /// be empty. 
+        /// </para>
+        /// </summary>
+        public bool HasResultSet
+        {
+            get { return this._hasResultSet.GetValueOrDefault(); }
+            set { this._hasResultSet = value; }
+        }
+
+        // Check to see if HasResultSet property is set
+        internal bool IsSetHasResultSet()
+        {
+            return this._hasResultSet.HasValue; 
         }
 
         /// <summary>

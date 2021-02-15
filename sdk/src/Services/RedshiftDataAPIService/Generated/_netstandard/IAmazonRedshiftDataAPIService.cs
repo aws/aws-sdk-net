@@ -33,6 +33,14 @@ namespace Amazon.RedshiftDataAPIService
     ///
     /// You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables.
     /// You can run individual SQL statements, which are committed if the statement succeeds.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// For more information about the Amazon Redshift Data API, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using
+    /// the Amazon Redshift Data API</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// 
+    /// </para>
     /// </summary>
 #if NETSTANDARD13
     [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
@@ -167,6 +175,9 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the ExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
+        /// The number of active statements exceeds the limit.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ExecuteStatementException">
         /// The SQL statement encountered an environmental error while running.
         /// </exception>

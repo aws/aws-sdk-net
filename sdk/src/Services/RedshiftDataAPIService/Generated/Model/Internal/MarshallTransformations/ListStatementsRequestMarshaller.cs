@@ -80,6 +80,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetRoleLevel())
+                {
+                    context.Writer.WritePropertyName("RoleLevel");
+                    context.Writer.Write(publicRequest.RoleLevel);
+                }
+
                 if(publicRequest.IsSetStatementName())
                 {
                     context.Writer.WritePropertyName("StatementName");
