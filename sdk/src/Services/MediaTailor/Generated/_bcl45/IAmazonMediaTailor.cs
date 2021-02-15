@@ -44,6 +44,10 @@ namespace Amazon.MediaTailor
     public partial interface IAmazonMediaTailor : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaTailorPaginatorFactory Paginators { get; }
 
         
         #region  DeletePlaybackConfiguration

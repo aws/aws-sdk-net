@@ -46,6 +46,12 @@ namespace Amazon.MediaTailor
 #endif
     public partial interface IAmazonMediaTailor : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaTailorPaginatorFactory Paginators { get; }
+#endif
                 
         #region  DeletePlaybackConfiguration
 

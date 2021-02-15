@@ -105,6 +105,28 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetConfigurationAliases())
+                {
+                    context.Writer.WritePropertyName("ConfigurationAliases");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestConfigurationAliasesKvp in publicRequest.ConfigurationAliases)
+                    {
+                        context.Writer.WritePropertyName(publicRequestConfigurationAliasesKvp.Key);
+                        var publicRequestConfigurationAliasesValue = publicRequestConfigurationAliasesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestConfigurationAliasesValueKvp in publicRequestConfigurationAliasesValue)
+                        {
+                            context.Writer.WritePropertyName(publicRequestConfigurationAliasesValueKvp.Key);
+                            var publicRequestConfigurationAliasesValueValue = publicRequestConfigurationAliasesValueKvp.Value;
+
+                                context.Writer.Write(publicRequestConfigurationAliasesValueValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDashConfiguration())
                 {
                     context.Writer.WritePropertyName("DashConfiguration");

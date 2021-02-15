@@ -38,6 +38,7 @@ namespace Amazon.MediaTailor.Model
         private AvailSuppression _availSuppression;
         private Bumper _bumper;
         private CdnConfiguration _cdnConfiguration;
+        private Dictionary<string, Dictionary<string, string>> _configurationAliases = new Dictionary<string, Dictionary<string, string>>();
         private DashConfigurationForPut _dashConfiguration;
         private LivePreRollConfiguration _livePreRollConfiguration;
         private ManifestProcessingRules _manifestProcessingRules;
@@ -124,6 +125,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetCdnConfiguration()
         {
             return this._cdnConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationAliases. 
+        /// <para>
+        /// Predefined aliases for dynamic variables.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, Dictionary<string, string>> ConfigurationAliases
+        {
+            get { return this._configurationAliases; }
+            set { this._configurationAliases = value; }
+        }
+
+        // Check to see if ConfigurationAliases property is set
+        internal bool IsSetConfigurationAliases()
+        {
+            return this._configurationAliases != null && this._configurationAliases.Count > 0; 
         }
 
         /// <summary>

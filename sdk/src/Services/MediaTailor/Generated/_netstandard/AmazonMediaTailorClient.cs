@@ -214,6 +214,24 @@ namespace Amazon.MediaTailor
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IMediaTailorPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaTailorPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaTailorPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

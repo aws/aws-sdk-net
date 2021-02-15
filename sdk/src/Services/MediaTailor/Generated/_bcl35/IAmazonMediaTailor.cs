@@ -43,6 +43,12 @@ namespace Amazon.MediaTailor
     {
 
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaTailorPaginatorFactory Paginators { get; }
+#endif
 
 
         

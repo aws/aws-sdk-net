@@ -51,6 +51,22 @@ namespace Amazon.MediaTailor
     public partial class AmazonMediaTailorClient : AmazonServiceClient, IAmazonMediaTailor
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaTailorMetadata();
+        private IMediaTailorPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaTailorPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaTailorPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>
