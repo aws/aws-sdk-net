@@ -36,6 +36,7 @@ namespace Amazon.Pinpoint.Model
     {
         private string _body;
         private MessageType _messageType;
+        private string _originationNumber;
         private string _senderId;
 
         /// <summary>
@@ -74,6 +75,27 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMessageType()
         {
             return this._messageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginationNumber. 
+        /// <para>
+        /// The long code to send the SMS message from. This value should be one of the dedicated
+        /// long codes that's assigned to your AWS account. Although it isn't required, we recommend
+        /// that you specify the long code using an E.164 format to ensure prompt and accurate
+        /// delivery of the message. For example, +12065550100.
+        /// </para>
+        /// </summary>
+        public string OriginationNumber
+        {
+            get { return this._originationNumber; }
+            set { this._originationNumber = value; }
+        }
+
+        // Check to see if OriginationNumber property is set
+        internal bool IsSetOriginationNumber()
+        {
+            return this._originationNumber != null;
         }
 
         /// <summary>
