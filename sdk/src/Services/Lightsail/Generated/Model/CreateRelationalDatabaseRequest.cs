@@ -353,7 +353,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RelationalDatabaseName. 
         /// <para>
-        /// The name to use for your new database.
+        /// The name to use for your new Lightsail database resource.
         /// </para>
         ///  
         /// <para>

@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancerTlsCertificate operation.
-    /// Creates a Lightsail load balancer TLS certificate.
+    /// Creates an SSL/TLS certificate for an Amazon Lightsail load balancer.
     /// 
     ///  
     /// <para>

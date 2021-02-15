@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the SetIpAddressType operation.
-    /// Sets the IP address type for a Amazon Lightsail resource.
+    /// Sets the IP address type for an Amazon Lightsail resource.
     /// 
     ///  
     /// <para>

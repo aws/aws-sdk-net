@@ -1026,13 +1026,14 @@ namespace Amazon.Lightsail
         #region  CreateCertificate
 
         /// <summary>
-        /// Creates an SSL/TLS certificate for a Amazon Lightsail content delivery network (CDN)
-        /// distribution.
+        /// Creates an SSL/TLS certificate for an Amazon Lightsail content delivery network (CDN)
+        /// distribution and a container service.
         /// 
         ///  
         /// <para>
-        /// After the certificate is created, use the <code>AttachCertificateToDistribution</code>
-        /// action to attach the certificate to your distribution.
+        /// After the certificate is valid, use the <code>AttachCertificateToDistribution</code>
+        /// action to use the certificate and its domains with your distribution. Or use the <code>UpdateContainerService</code>
+        /// action to use the certificate and its domains with your container service.
         /// </para>
         ///  <important> 
         /// <para>
@@ -2659,7 +2660,7 @@ namespace Amazon.Lightsail
         #region  CreateLoadBalancerTlsCertificate
 
         /// <summary>
-        /// Creates a Lightsail load balancer TLS certificate.
+        /// Creates an SSL/TLS certificate for an Amazon Lightsail load balancer.
         /// 
         ///  
         /// <para>
@@ -11367,8 +11368,9 @@ namespace Amazon.Lightsail
         /// <para>
         /// This action is not required if you install and use the Lightsail Control (lightsailctl)
         /// plugin to push container images to your Lightsail container service. For more information,
-        /// see <a href="amazon-lightsail-pushing-container-images">Pushing and managing container
-        /// images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev Guide</i>.
+        /// see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
+        /// and managing container images on your Amazon Lightsail container services</a> in the
+        /// <i>Lightsail Dev Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -11729,7 +11731,7 @@ namespace Amazon.Lightsail
         #region  SetIpAddressType
 
         /// <summary>
-        /// Sets the IP address type for a Amazon Lightsail resource.
+        /// Sets the IP address type for an Amazon Lightsail resource.
         /// 
         ///  
         /// <para>

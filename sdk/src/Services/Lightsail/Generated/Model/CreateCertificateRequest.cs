@@ -30,13 +30,14 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCertificate operation.
-    /// Creates an SSL/TLS certificate for a Amazon Lightsail content delivery network (CDN)
-    /// distribution.
+    /// Creates an SSL/TLS certificate for an Amazon Lightsail content delivery network (CDN)
+    /// distribution and a container service.
     /// 
     ///  
     /// <para>
-    /// After the certificate is created, use the <code>AttachCertificateToDistribution</code>
-    /// action to attach the certificate to your distribution.
+    /// After the certificate is valid, use the <code>AttachCertificateToDistribution</code>
+    /// action to use the certificate and its domains with your distribution. Or use the <code>UpdateContainerService</code>
+    /// action to use the certificate and its domains with your container service.
     /// </para>
     ///  <important> 
     /// <para>
