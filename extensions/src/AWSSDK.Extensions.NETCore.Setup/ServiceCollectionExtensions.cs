@@ -43,6 +43,17 @@ namespace Microsoft.Extensions.DependencyInjection
             collection.Add(new ServiceDescriptor(typeof(AWSOptions), options));
             return collection;
         }
+        
+        public static IServiceCollection AddAWSService<TService>(this IServiceCollection collection, AWSOptions options, Action<IClientConfig> configureClient, ServiceLifetime lifetime = ServiceLifetime.Singleton) 
+            where TService : IAmazonService
+        {
+            Func<IServiceProvider, object> factory =
+                new ClientFactory(typeof(TService),configureClient, options).CreateServiceClient;
+
+            var descriptor = new ServiceDescriptor(typeof(TService), factory, lifetime);
+            collection.Add(descriptor);
+            return collection;
+        }
 
         /// <summary>
         /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
