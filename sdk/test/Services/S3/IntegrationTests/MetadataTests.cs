@@ -27,7 +27,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static readonly Dictionary<string, string> metadata = new Dictionary<string, string>(StringComparer.Ordinal)
         {
             { "date", DateTime.Now.ToFileTime().ToString() },
-            { "test", "true" }
+            { "test", "true" },
+            { "aaa", "aaa" },
+            { "a-a-a", "adada" },
+            { "a|a|a", "apapa" },
+            { "a^a^a", "acaca" },
+            { "a_a_a", "apapa" },
+            { "a~a~a", "apapa" }
         };
         private static readonly Dictionary<string, string> unicodeMetadata = new Dictionary<string, string>(StringComparer.Ordinal)
         {

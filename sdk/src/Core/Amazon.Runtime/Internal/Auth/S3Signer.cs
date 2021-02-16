@@ -151,7 +151,9 @@ namespace Amazon.Runtime.Internal.Auth
         static string BuildCanonicalizedHeaders(IDictionary<string, string> headers)
         {
             var sb = new StringBuilder(256);
-            foreach (var key in headers.Keys.OrderBy(x => x, StringComparer.OrdinalIgnoreCase))
+
+            // Refer "Constructing the CanonicalizedAmzHeaders element" section at https://docs.aws.amazon.com/AmazonS3/latest/userguide/RESTAuthentication.html. Steps 1 and Steps 2 requires all headers to be in lowercase and lexicographically sorted by header name. StringComparer.OrdinalIgnoreCase incorrectly places '_' after lowercase chracters.
+            foreach (var key in headers.Keys.OrderBy(x => x.ToLowerInvariant(), StringComparer.Ordinal))
             {
                 var lowerKey = key.ToLowerInvariant();
                 if (!lowerKey.StartsWith("x-amz-", StringComparison.Ordinal))
