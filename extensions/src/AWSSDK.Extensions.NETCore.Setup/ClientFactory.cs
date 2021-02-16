@@ -38,6 +38,7 @@ namespace Amazon.Extensions.NETCore.Setup
 
         Type _serviceInterfaceType;
         AWSOptions _awsOptions;
+        Action<IClientConfig> _configureClient;
 
         /// <summary>
         /// Constructs an instance of the ClientFactory
@@ -47,6 +48,13 @@ namespace Amazon.Extensions.NETCore.Setup
         {
             _serviceInterfaceType = type;
             _awsOptions = awsOptions;
+        }
+        
+        internal ClientFactory(Type type, Action<IClientConfig> configureClient, AWSOptions awsOptions)
+        {
+            _serviceInterfaceType = type;
+            _awsOptions = awsOptions;
+            _configureClient = configureClient;
         }
 
         /// <summary>
@@ -72,7 +80,7 @@ namespace Amazon.Extensions.NETCore.Setup
                 }
             }
 
-            var client = CreateServiceClient(logger, _serviceInterfaceType, options);
+            var client = CreateServiceClient(logger, _serviceInterfaceType, options, _configureClient);
 
             return client;
         }
@@ -83,10 +91,10 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="provider">The dependency injection provider.</param>
         /// <returns>The AWS service client</returns>
-        internal static IAmazonService CreateServiceClient(ILogger logger, Type serviceInterfaceType, AWSOptions options)
+        internal static IAmazonService CreateServiceClient(ILogger logger, Type serviceInterfaceType, AWSOptions options, Action<IClientConfig> configureClient = null)
         {
             var credentials = CreateCredentials(logger, options);
-            var config = CreateConfig(serviceInterfaceType, options);
+            var config = CreateConfig(serviceInterfaceType, options, configureClient);
             var client = CreateClient(serviceInterfaceType, credentials, config);
             return client as IAmazonService;
         }
@@ -166,7 +174,7 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        private static ClientConfig CreateConfig(Type serviceInterfaceType, AWSOptions options)
+        private static ClientConfig CreateConfig(Type serviceInterfaceType, AWSOptions options, Action<IClientConfig> configureClient = null)
         {
             var configTypeName = serviceInterfaceType.Namespace + "." + serviceInterfaceType.Name.Substring(1) + "Config";
             var configType = serviceInterfaceType.GetTypeInfo().Assembly.GetType(configTypeName);
@@ -204,6 +212,8 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.RegionEndpoint = options.Region;
             }
+            
+            configureClient?.Invoke(config);
 
             return config;
         }

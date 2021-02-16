@@ -83,9 +83,9 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <typeparam name="T">The service interface that a service client will be created for.</typeparam>
         /// <returns>The service client that implements the service interface.</returns>
-        public T CreateServiceClient<T>() where T : IAmazonService
+        public T CreateServiceClient<T>(Action<IClientConfig> configureClient = null) where T : IAmazonService
         {
-            return (T)ClientFactory.CreateServiceClient(null, typeof(T), this);
+            return (T)ClientFactory.CreateServiceClient(null, typeof(T), this, configureClient: configureClient);
         }
     }
 }
