@@ -107,6 +107,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetConcurrentBuildLimit())
+                {
+                    context.Writer.WritePropertyName("concurrentBuildLimit");
+                    context.Writer.Write(publicRequest.ConcurrentBuildLimit);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

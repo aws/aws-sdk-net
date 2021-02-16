@@ -60,11 +60,6 @@ namespace Amazon.CodeBuild.Model
         /// The publicly-accessible URL through which you can access the build badge for your
         /// project. 
         /// </para>
-        ///  
-        /// <para>
-        /// The publicly accessible URL through which you can access the build badge for your
-        /// project. 
-        /// </para>
         /// </summary>
         public string BadgeRequestUrl
         {

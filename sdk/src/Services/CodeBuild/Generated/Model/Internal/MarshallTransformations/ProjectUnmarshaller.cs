@@ -94,6 +94,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cache = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("concurrentBuildLimit", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ConcurrentBuildLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("created", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

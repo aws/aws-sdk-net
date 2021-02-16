@@ -38,6 +38,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectBadge _badge;
         private ProjectBuildBatchConfig _buildBatchConfig;
         private ProjectCache _cache;
+        private int? _concurrentBuildLimit;
         private DateTime? _created;
         private string _description;
         private string _encryptionKey;
@@ -150,6 +151,30 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConcurrentBuildLimit. 
+        /// <para>
+        /// The maximum number of concurrent builds that are allowed for this project.
+        /// </para>
+        ///  
+        /// <para>
+        /// New builds are only started if the current number of builds is less than or equal
+        /// to this limit. If the current build count meets this limit, new builds are throttled
+        /// and are not run.
+        /// </para>
+        /// </summary>
+        public int ConcurrentBuildLimit
+        {
+            get { return this._concurrentBuildLimit.GetValueOrDefault(); }
+            set { this._concurrentBuildLimit = value; }
+        }
+
+        // Check to see if ConcurrentBuildLimit property is set
+        internal bool IsSetConcurrentBuildLimit()
+        {
+            return this._concurrentBuildLimit.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Created. 
         /// <para>
         /// When the build project was created, expressed in Unix time format.
@@ -200,7 +225,7 @@ namespace Amazon.CodeBuild.Model
         ///  </note> 
         /// <para>
         /// You can specify either the Amazon Resource Name (ARN) of the CMK or, if available,
-        /// the CMK's alias (using the format <code>alias/&lt;alias-name&gt;</code>).
+        /// the CMK's alias (using the format <code>alias/&lt;alias-name&gt;</code>). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
