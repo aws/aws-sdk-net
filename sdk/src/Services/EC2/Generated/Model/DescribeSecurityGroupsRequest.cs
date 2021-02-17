@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>egress.ip-permission.group-name</code> - The name of a security group that
-        /// has been referenced in an outbound security group rule.
+        /// is referenced in an outbound security group rule.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -92,8 +92,8 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound security
-        /// group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
-        /// number).
+        /// group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number,
+        /// or -1 for all protocols).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -130,8 +130,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ip-permission.group-name</code> - The name of a security group that has been
-        /// referenced in an inbound security group rule.
+        ///  <code>ip-permission.group-name</code> - The name of a security group that is referenced
+        /// in an inbound security group rule.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -146,7 +146,8 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ip-permission.protocol</code> - The IP protocol for an inbound security group
-        /// rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol number).
+        /// rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code>, a protocol number,
+        /// or -1 for all protocols).
         /// </para>
         ///  </li> <li> 
         /// <para>

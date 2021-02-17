@@ -311,8 +311,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RequesterId. 
         /// <para>
-        /// The ID of the entity that launched the instance on your behalf (for example, AWS Management
-        /// Console or Auto Scaling).
+        /// The alias or AWS account ID of the principal or service that created the network interface.
         /// </para>
         /// </summary>
         public string RequesterId

@@ -39,7 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssignedIpv6Addresses. 
         /// <para>
-        /// The IPv6 addresses assigned to the network interface.
+        /// The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
+        /// that were assigned to the network interface before the request are not included.
         /// </para>
         /// </summary>
         public List<string> AssignedIpv6Addresses

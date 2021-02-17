@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CertificateS3ObjectKey. 
         /// <para>
         /// The Amazon S3 object key where the certificate, certificate chain, and encrypted private
-        /// key bundle are stored. The object key is formatted as follows: <code>certificate_arn</code>/<code>role_arn</code>.
+        /// key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
         /// </para>
         /// </summary>
         public string CertificateS3ObjectKey

@@ -342,7 +342,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to apply to the image being imported.
+        /// The tags to apply to the import image task during creation.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications

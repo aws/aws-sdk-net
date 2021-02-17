@@ -42,10 +42,31 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI
-    /// from a snapshot of a root device volume. You specify the snapshot using the block
-    /// device mapping. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
-    /// a Linux instance from a backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// If needed, you can deregister an AMI at any time. Any modifications you make to an
+    /// AMI backed by an instance store volume invalidates its registration. If you make changes
+    /// to an image, deregister the previous image and register the new image.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Register a snapshot of a root device volume</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from
+    /// a snapshot of a root device volume. You specify the snapshot using a block device
+    /// mapping. You can't set the encryption state of the volume using the block device mapping.
+    /// If the snapshot is encrypted, or encryption by default is enabled, the root volume
+    /// of an instance launched from the AMI is encrypted.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
+    /// a Linux AMI from a snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
+    /// encryption with EBS-backed AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>AWS Marketplace product codes</b> 
     /// </para>
     ///  
     /// <para>
@@ -80,12 +101,6 @@ namespace Amazon.EC2.Model
     /// Instance. For information about how to obtain the platform details and billing information
     /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
     /// billing information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// If needed, you can deregister an AMI at any time. Any modifications you make to an
-    /// AMI backed by an instance store volume invalidates its registration. If you make changes
-    /// to an image, deregister the previous image and register the new image.
     /// </para>
     /// </summary>
     public partial class RegisterImageRequest : AmazonEC2Request
@@ -163,6 +178,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
         /// The block device mapping entries.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the
+        /// encryption state of the volume.
         /// </para>
         ///  
         /// <para>

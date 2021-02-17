@@ -220,7 +220,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to apply to the snapshot being imported.
+        /// The tags to apply to the import snapshot task during creation.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications

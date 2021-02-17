@@ -31,50 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// A filter name and value pair that is used to return a more specific list of results
     /// from a describe operation. Filters can be used to match a set of resources by specific
-    /// criteria, such as tags, attributes, or IDs. The filters supported by a describe operation
-    /// are documented with the describe operation. For example:
-    /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>DescribeAvailabilityZones</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeImages</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeInstances</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeKeyPairs</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeSecurityGroups</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeSnapshots</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeSubnets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeTags</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeVolumes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeVpcs</a> 
-    /// </para>
-    ///  </li> </ul>
+    /// criteria, such as tags, attributes, or IDs.
     /// </summary>
     public partial class Filter
     {

@@ -445,7 +445,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IamInstanceProfile. 
         /// <para>
-        /// The IAM instance profile.
+        /// The name or Amazon Resource Name (ARN) of an IAM instance profile.
         /// </para>
         /// </summary>
         public IamInstanceProfileSpecification IamInstanceProfile

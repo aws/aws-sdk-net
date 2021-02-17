@@ -113,10 +113,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required for <code>io1</code> and <code>io2</code> volumes. The
-        /// default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported
-        /// for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-        /// volumes.
+        /// This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code>
+        /// volumes only. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
+        /// <code>sc1</code>, or <code>standard</code> volumes.
         /// </para>
         /// </summary>
         public int Iops
@@ -194,12 +193,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property VolumeSize. 
         /// <para>
         /// The size of the volume, in GiBs. You must specify either a snapshot ID or a volume
-        /// size. If you specify a snapshot, the default is the snapshot size. You can specify
-        /// a volume size that is equal to or larger than the snapshot size.
-        /// </para>
-        ///  
-        /// <para>
-        /// The following are the supported volumes sizes for each volume type:
+        /// size. The following are the supported volumes sizes for each volume type:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -234,7 +228,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. The default is <code>gp2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
         /// EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

@@ -131,13 +131,9 @@ namespace Amazon.EC2.Model
         /// <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a>
         /// to set the VPC attributes.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// Private DNS is not supported for Amazon S3 interface endpoints.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// Default: <code>true</code> for supported endpoints
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool PrivateDnsEnabled

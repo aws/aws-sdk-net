@@ -211,7 +211,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to the image being exported.
+        /// Any tags assigned to the export image task.
         /// </para>
         /// </summary>
         public List<Tag> Tags

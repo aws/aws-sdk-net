@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ExportTask. 
         /// <para>
-        /// Information about the instance export task.
+        /// Information about the export instance task.
         /// </para>
         /// </summary>
         public ExportTask ExportTask

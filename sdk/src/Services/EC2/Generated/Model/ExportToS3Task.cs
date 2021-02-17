@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the format and location for an instance export task.
+    /// Describes the format and location for the export task.
     /// </summary>
     public partial class ExportToS3Task
     {
