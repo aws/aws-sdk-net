@@ -113,21 +113,25 @@ namespace Amazon.LookoutforVision
     {
 
         /// <summary>
-        /// Constant FAILED for ModelHostingStatus
+        /// Constant HOSTED for ModelHostingStatus
         /// </summary>
-        public static readonly ModelHostingStatus FAILED = new ModelHostingStatus("FAILED");
+        public static readonly ModelHostingStatus HOSTED = new ModelHostingStatus("HOSTED");
         /// <summary>
-        /// Constant RUNNING for ModelHostingStatus
+        /// Constant HOSTING_FAILED for ModelHostingStatus
         /// </summary>
-        public static readonly ModelHostingStatus RUNNING = new ModelHostingStatus("RUNNING");
+        public static readonly ModelHostingStatus HOSTING_FAILED = new ModelHostingStatus("HOSTING_FAILED");
         /// <summary>
-        /// Constant STARTING for ModelHostingStatus
+        /// Constant STARTING_HOSTING for ModelHostingStatus
         /// </summary>
-        public static readonly ModelHostingStatus STARTING = new ModelHostingStatus("STARTING");
+        public static readonly ModelHostingStatus STARTING_HOSTING = new ModelHostingStatus("STARTING_HOSTING");
         /// <summary>
-        /// Constant STOPPED for ModelHostingStatus
+        /// Constant STOPPING_HOSTING for ModelHostingStatus
         /// </summary>
-        public static readonly ModelHostingStatus STOPPED = new ModelHostingStatus("STOPPED");
+        public static readonly ModelHostingStatus STOPPING_HOSTING = new ModelHostingStatus("STOPPING_HOSTING");
+        /// <summary>
+        /// Constant SYSTEM_UPDATING for ModelHostingStatus
+        /// </summary>
+        public static readonly ModelHostingStatus SYSTEM_UPDATING = new ModelHostingStatus("SYSTEM_UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

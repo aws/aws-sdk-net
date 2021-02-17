@@ -663,11 +663,6 @@ namespace Amazon.LookoutforVision
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// It might take a while to delete the dataset. To check the current status, check the
-        /// <code>Status</code> field in the response from a call to <a>DescribeDataset</a>. 
-        /// </para>
-        ///  
-        /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code>
         /// operation.
         /// </para>
@@ -731,11 +726,6 @@ namespace Amazon.LookoutforVision
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// It might take a while to delete the dataset. To check the current status, check the
-        /// <code>Status</code> field in the response from a call to <a>DescribeDataset</a>. 
-        /// </para>
-        ///  
-        /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code>
         /// operation.
         /// </para>
@@ -787,6 +777,12 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
+        /// It might take a few seconds to delete a model. To determine if a model has been deleted,
+        /// call <a>ListProjects</a> and check if the version of the model (<code>ModelVersion</code>)
+        /// is in the <code>Models</code> array. 
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code>
         /// operation.
         /// </para>
@@ -829,6 +825,12 @@ namespace Amazon.LookoutforVision
         /// Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop
         /// a running model, use the <a>StopModel</a> operation.
         /// 
+        ///  
+        /// <para>
+        /// It might take a few seconds to delete a model. To determine if a model has been deleted,
+        /// call <a>ListProjects</a> and check if the version of the model (<code>ModelVersion</code>)
+        /// is in the <code>Models</code> array. 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code>
@@ -1771,6 +1773,10 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
+        /// A model is ready to use when its status is <code>HOSTED</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Once the model is running, you can detect custom labels in new images by calling <a>DetectAnomalies</a>.
         /// </para>
         ///  <note> 
@@ -1826,6 +1832,10 @@ namespace Amazon.LookoutforVision
         /// Starts the running of the version of an Amazon Lookout for Vision model. Starting
         /// a model takes a while to complete. To check the current state of the model, use <a>DescribeModel</a>.
         /// 
+        ///  
+        /// <para>
+        /// A model is ready to use when its status is <code>HOSTED</code>.
+        /// </para>
         ///  
         /// <para>
         /// Once the model is running, you can detect custom labels in new images by calling <a>DetectAnomalies</a>.
@@ -1887,9 +1897,13 @@ namespace Amazon.LookoutforVision
 
 
         /// <summary>
-        /// Stops a running model. The operation might take a while to complete. To check the
-        /// current status, call <a>DescribeModel</a>. 
+        /// Stops the hosting of a running model. The operation might take a while to complete.
+        /// To check the current status, call <a>DescribeModel</a>. 
         /// 
+        ///  
+        /// <para>
+        /// After the model hosting stops, the <code>Status</code> of the model is <code>TRAINED</code>.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:StopModel</code>
@@ -1931,9 +1945,13 @@ namespace Amazon.LookoutforVision
 
 
         /// <summary>
-        /// Stops a running model. The operation might take a while to complete. To check the
-        /// current status, call <a>DescribeModel</a>. 
+        /// Stops the hosting of a running model. The operation might take a while to complete.
+        /// To check the current status, call <a>DescribeModel</a>. 
         /// 
+        ///  
+        /// <para>
+        /// After the model hosting stops, the <code>Status</code> of the model is <code>TRAINED</code>.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:StopModel</code>

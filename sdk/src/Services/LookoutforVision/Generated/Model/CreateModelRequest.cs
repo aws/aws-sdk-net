@@ -115,9 +115,10 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK)
-        /// to use for encypting the model. If this parameter is not specified, the model is encrypted
-        /// by a key that AWS owns and manages.
+        /// The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
+        /// The key is used to encrypt training and test images copied into the service for model
+        /// training. Your source images are unaffected. If this parameter is not specified, the
+        /// copied images are encrypted by a key that AWS owns and manages.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

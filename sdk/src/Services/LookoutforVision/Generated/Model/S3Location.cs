@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
-    /// Information about the location of a manifest file.
+    /// Information about the location training output.
     /// </summary>
     public partial class S3Location
     {
@@ -39,7 +39,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The S3 bucket that contain the manifest file.
+        /// The S3 bucket that contains the training output.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
@@ -58,7 +58,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The path and name of the manifest file with the S3 bucket.
+        /// The path of the folder, within the S3 bucket, that contains the training output.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

@@ -54,11 +54,6 @@ namespace Amazon.LookoutforVision.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// It might take a while to delete the dataset. To check the current status, check the
-    /// <code>Status</code> field in the response from a call to <a>DescribeDataset</a>. 
-    /// </para>
-    ///  
-    /// <para>
     /// This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code>
     /// operation.
     /// </para>

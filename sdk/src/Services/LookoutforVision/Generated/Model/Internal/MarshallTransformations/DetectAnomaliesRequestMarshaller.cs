@@ -77,7 +77,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
         
             if(publicRequest.IsSetContentType())
-                request.Headers["content-type"] = publicRequest.ContentType;
+                request.Headers["Content-Type"] = publicRequest.ContentType;
 
             return request;
         }
