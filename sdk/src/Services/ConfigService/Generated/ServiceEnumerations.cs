@@ -417,6 +417,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ConformancePackComplianceType COMPLIANT = new ConformancePackComplianceType("COMPLIANT");
         /// <summary>
+        /// Constant INSUFFICIENT_DATA for ConformancePackComplianceType
+        /// </summary>
+        public static readonly ConformancePackComplianceType INSUFFICIENT_DATA = new ConformancePackComplianceType("INSUFFICIENT_DATA");
+        /// <summary>
         /// Constant NON_COMPLIANT for ConformancePackComplianceType
         /// </summary>
         public static readonly ConformancePackComplianceType NON_COMPLIANT = new ConformancePackComplianceType("NON_COMPLIANT");
