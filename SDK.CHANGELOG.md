@@ -1,3 +1,11 @@
+### 3.5.111.0 (2021-02-17 19:12 UTC)
+* ConfigService (3.5.5.0)
+	* Added INSUFFICIENT_DATA in ConformancePackComplianceType.
+* EC2 (3.5.31.5)
+	* This release includes a new filter for describe-vpc-endpoint-services.
+* LookoutforVision (3.5.2.0)
+	* This release for Amazon Lookout for Vision includes documentation updates and a correction to the Status field returned in the response from StartModel and StopModel.
+
 ### 3.5.110.0 (2021-02-16 19:13 UTC)
 * CodeBuild (3.5.4.0)
 	* This release provides per-project limits for the number of concurrent builds
