@@ -118,8 +118,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DeploymentTargets. 
         /// <para>
-        /// [<code>Service-managed</code> permissions] The AWS Organizations accounts affected
-        /// by the stack operation.
+        /// [Service-managed permissions] The AWS Organizations accounts affected by the stack
+        /// operation.
         /// </para>
         /// </summary>
         public DeploymentTargets DeploymentTargets
@@ -300,9 +300,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>QUEUED</code>: [<code>Service-managed</code> permissions] For automatic deployments
-        /// that require a sequence of operations, the operation is queued to be performed. For
-        /// more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
+        ///  <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
+        /// require a sequence of operations, the operation is queued to be performed. For more
+        /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
         /// set operation status codes</a> in the AWS CloudFormation User Guide.
         /// </para>
         ///  </li> <li> 

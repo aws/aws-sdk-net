@@ -62,7 +62,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TypeSummaries. 
         /// <para>
         /// A list of <code>TypeSummary</code> structures that contain information about the specified
-        /// types.
+        /// extensions.
         /// </para>
         /// </summary>
         public List<TypeSummary> TypeSummaries

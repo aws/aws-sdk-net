@@ -58,6 +58,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCallAs())
+                {
+                    request.Parameters.Add("CallAs", StringUtils.FromString(publicRequest.CallAs));
+                }
                 if(publicRequest.IsSetStackSetName())
                 {
                     request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));

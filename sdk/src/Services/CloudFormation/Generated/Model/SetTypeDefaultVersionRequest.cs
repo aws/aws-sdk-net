@@ -30,8 +30,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the SetTypeDefaultVersion operation.
-    /// Specify the default version of a type. The default version of a type will be used
-    /// in CloudFormation operations.
+    /// Specify the default version of an extension. The default version of an extension will
+    /// be used in CloudFormation operations.
     /// </summary>
     public partial class SetTypeDefaultVersionRequest : AmazonCloudFormationRequest
     {
@@ -43,7 +43,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the type for which you want version summary information.
+        /// The Amazon Resource Name (ARN) of the extension for which you want version summary
+        /// information.
         /// </para>
         ///  
         /// <para>
@@ -67,7 +68,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The kind of type.
+        /// The kind of extension.
         /// </para>
         ///  
         /// <para>
@@ -90,7 +91,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the type.
+        /// The name of the extension.
         /// </para>
         ///  
         /// <para>
@@ -114,8 +115,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The ID of a specific version of the type. The version ID is the value at the end of
-        /// the Amazon Resource Name (ARN) assigned to the type version when it is registered.
+        /// The ID of a specific version of the extension. The version ID is the value at the
+        /// end of the Amazon Resource Name (ARN) assigned to the extension version when it is
+        /// registered.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

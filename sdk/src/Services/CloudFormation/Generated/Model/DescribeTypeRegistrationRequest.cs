@@ -30,8 +30,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTypeRegistration operation.
-    /// Returns information about a type's registration, including its current status and
-    /// type and version identifiers.
+    /// Returns information about an extension's registration, including its current status
+    /// and type and version identifiers.
     /// 
     ///  
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// Once the registration request has completed, use <code> <a>DescribeType</a> </code>
-    /// to return detailed informaiton about a type.
+    /// to return detailed information about an extension.
     /// </para>
     /// </summary>
     public partial class DescribeTypeRegistrationRequest : AmazonCloudFormationRequest

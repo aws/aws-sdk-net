@@ -36,6 +36,7 @@ namespace Amazon.CloudFormation.Model
     {
         private string _administrationRoleARN;
         private AutoDeployment _autoDeployment;
+        private CallAs _callAs;
         private List<string> _capabilities = new List<string>();
         private string _clientRequestToken;
         private string _description;
@@ -93,6 +94,52 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAutoDeployment()
         {
             return this._autoDeployment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CallAs. 
+        /// <para>
+        /// [Service-managed permissions] Specifies whether you are acting as an account administrator
+        /// in the organization's management account or as a delegated administrator in a member
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To create a stack set with service-managed permissions while signed in to the management
+        /// account, specify <code>SELF</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a stack set with service-managed permissions while signed in to a delegated
+        /// administrator account, specify <code>DELEGATED_ADMIN</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your AWS account must be registered as a delegated admin in the management account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+        /// a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Stack sets with service-managed permissions are created in the management account,
+        /// including stack sets that are created by delegated administrators.
+        /// </para>
+        /// </summary>
+        public CallAs CallAs
+        {
+            get { return this._callAs; }
+            set { this._callAs = value; }
+        }
+
+        // Check to see if CallAs property is set
+        internal bool IsSetCallAs()
+        {
+            return this._callAs != null;
         }
 
         /// <summary>
@@ -419,8 +466,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateURL. 
         /// <para>
         /// The location of the file that contains the template body. The URL must point to a
-        /// template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+        /// template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a
+        /// Systems Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the AWS CloudFormation User Guide.
         /// </para>
         ///  

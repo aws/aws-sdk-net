@@ -663,19 +663,26 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Removes a type or type version from active use in the CloudFormation registry. If
-        /// a type or type version is deregistered, it cannot be used in CloudFormation operations.
+        /// Marks an extension or extension version as <code>DEPRECATED</code> in the CloudFormation
+        /// registry, removing it from active use. Deprecated extensions or extension versions
+        /// cannot be used in CloudFormation operations.
         /// 
         ///  
         /// <para>
-        /// To deregister a type, you must individually deregister all registered versions of
-        /// that type. If a type has only a single registered version, deregistering that version
-        /// results in the type itself being deregistered. 
+        /// To deregister an entire extension, you must individually deregister all active versions
+        /// of that extension. If an extension has only a single active version, deregistering
+        /// that version results in the extension itself being deregistered and marked as deprecated
+        /// in the registry. 
         /// </para>
         ///  
         /// <para>
-        /// You cannot deregister the default version of a type, unless it is the only registered
-        /// version of that type, in which case the type itself is deregistered as well. 
+        /// You cannot deregister the default version of an extension if there are other active
+        /// version of that extension. If you do deregister the default version of an extension,
+        /// the textensionype itself is deregistered as well and marked as deprecated. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To view the deprecation status of an extension or extension version, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterType service method.</param>
@@ -1289,13 +1296,13 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns detailed information about a type that has been registered.
+        /// Returns detailed information about an extension that has been registered.
         /// 
         ///  
         /// <para>
         /// If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
-        /// about that specific type version. Otherwise, it returns information about the default
-        /// type version.
+        /// about that specific extension version. Otherwise, it returns information about the
+        /// default extension version.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeType service method.</param>
@@ -1342,8 +1349,8 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns information about a type's registration, including its current status and
-        /// type and version identifiers.
+        /// Returns information about an extension's registration, including its current status
+        /// and type and version identifiers.
         /// 
         ///  
         /// <para>
@@ -1354,7 +1361,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// Once the registration request has completed, use <code> <a>DescribeType</a> </code>
-        /// to return detailed informaiton about a type.
+        /// to return detailed information about an extension.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTypeRegistration service method.</param>
@@ -1549,7 +1556,7 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use <code> <a>DescribeStackSet</a> </code> to return detailed informaiton about the
+        /// Use <code> <a>DescribeStackSet</a> </code> to return detailed information about the
         /// stack set, including detailed information about the last <i>completed</i> drift operation
         /// performed on the stack set. (Information about drift operations that are in progress
         /// is not included.)
@@ -2275,6 +2282,26 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns summary information about stack sets that are associated with the user.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// [Self-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code>
+        /// while signed in to your AWS account, <code>ListStackSets</code> returns all self-managed
+        /// stack sets in your AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code>
+        /// while signed in to the organization's management account, <code>ListStackSets</code>
+        /// returns all stack sets in the management account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
+        /// while signed in to your member account, <code>ListStackSets</code> returns all stack
+        /// sets with service-managed permissions in the management account.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackSets service method.</param>
         /// 
@@ -2314,7 +2341,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns a list of registration tokens for the specified type(s).
+        /// Returns a list of registration tokens for the specified extension(s).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTypeRegistrations service method.</param>
         /// 
@@ -2357,7 +2384,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns summary information about types that have been registered with CloudFormation.
+        /// Returns summary information about extension that have been registered with CloudFormation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTypes service method.</param>
         /// 
@@ -2400,7 +2427,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns summary information about the versions of a type.
+        /// Returns summary information about the versions of an extension.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTypeVersions service method.</param>
         /// 
@@ -2497,32 +2524,32 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Registers a type with the CloudFormation service. Registering a type makes it available
-        /// for use in CloudFormation templates in your AWS account, and includes:
+        /// Registers an extension with the CloudFormation service. Registering an extension makes
+        /// it available for use in CloudFormation templates in your AWS account, and includes:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Validating the resource schema
+        /// Validating the extension schema
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Determining which handlers have been specified for the resource
+        /// Determining which handlers, if any, have been specified for the extension
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Making the resource type available for use in your account
+        /// Making the extension available for use in your account
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on how to develop types and ready them for registeration, see
-        /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
+        /// For more information on how to develop extensions and ready them for registeration,
+        /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
         /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can have a maximum of 50 resource type versions registered at a time. This maximum
-        /// is per account and per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
-        /// to deregister specific resource type versions if necessary.
+        /// You can have a maximum of 50 resource extension versions registered at a time. This
+        /// maximum is per account and per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
+        /// to deregister specific extension versions if necessary.
         /// </para>
         ///  
         /// <para>
@@ -2612,8 +2639,8 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Specify the default version of a type. The default version of a type will be used
-        /// in CloudFormation operations.
+        /// Specify the default version of an extension. The default version of an extension will
+        /// be used in CloudFormation operations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTypeDefaultVersion service method.</param>
         /// 

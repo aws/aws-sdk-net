@@ -73,6 +73,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         request.Parameters.Add("AutoDeployment" + "." + "RetainStacksOnAccountRemoval", StringUtils.FromBool(publicRequest.AutoDeployment.RetainStacksOnAccountRemoval));
                     }
                 }
+                if(publicRequest.IsSetCallAs())
+                {
+                    request.Parameters.Add("CallAs", StringUtils.FromString(publicRequest.CallAs));
+                }
                 if(publicRequest.IsSetCapabilities())
                 {
                     int publicRequestlistValueIndex = 1;

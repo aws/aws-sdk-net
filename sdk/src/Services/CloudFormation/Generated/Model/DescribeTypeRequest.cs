@@ -30,13 +30,13 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeType operation.
-    /// Returns detailed information about a type that has been registered.
+    /// Returns detailed information about an extension that has been registered.
     /// 
     ///  
     /// <para>
     /// If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
-    /// about that specific type version. Otherwise, it returns information about the default
-    /// type version.
+    /// about that specific extension version. Otherwise, it returns information about the
+    /// default extension version.
     /// </para>
     /// </summary>
     public partial class DescribeTypeRequest : AmazonCloudFormationRequest
@@ -49,7 +49,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the type.
+        /// The Amazon Resource Name (ARN) of the extension.
         /// </para>
         ///  
         /// <para>
@@ -73,11 +73,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The kind of type. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Currently the only valid value is <code>RESOURCE</code>.
+        /// The kind of extension. 
         /// </para>
         ///  
         /// <para>
@@ -100,7 +96,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the type.
+        /// The name of the extension.
         /// </para>
         ///  
         /// <para>
@@ -124,14 +120,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The ID of a specific version of the type. The version ID is the value at the end of
-        /// the Amazon Resource Name (ARN) assigned to the type version when it is registered.
+        /// The ID of a specific version of the extension. The version ID is the value at the
+        /// end of the Amazon Resource Name (ARN) assigned to the extension version when it is
+        /// registered.
         /// </para>
         ///  
         /// <para>
         /// If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
-        /// about that specific type version. Otherwise, it returns information about the default
-        /// type version.
+        /// about that specific extension version. Otherwise, it returns information about the
+        /// default extension version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

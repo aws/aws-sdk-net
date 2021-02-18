@@ -30,32 +30,32 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterType operation.
-    /// Registers a type with the CloudFormation service. Registering a type makes it available
-    /// for use in CloudFormation templates in your AWS account, and includes:
+    /// Registers an extension with the CloudFormation service. Registering an extension makes
+    /// it available for use in CloudFormation templates in your AWS account, and includes:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Validating the resource schema
+    /// Validating the extension schema
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Determining which handlers have been specified for the resource
+    /// Determining which handlers, if any, have been specified for the extension
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Making the resource type available for use in your account
+    /// Making the extension available for use in your account
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information on how to develop types and ready them for registeration, see
-    /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
+    /// For more information on how to develop extensions and ready them for registeration,
+    /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
     /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// You can have a maximum of 50 resource type versions registered at a time. This maximum
-    /// is per account and per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
-    /// to deregister specific resource type versions if necessary.
+    /// You can have a maximum of 50 resource extension versions registered at a time. This
+    /// maximum is per account and per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
+    /// to deregister specific extension versions if necessary.
     /// </para>
     ///  
     /// <para>
@@ -78,8 +78,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// A unique identifier that acts as an idempotency key for this registration request.
         /// Specifying a client request token prevents CloudFormation from generating more than
-        /// one version of a type from the same registeration request, even if the request is
-        /// submitted multiple times. 
+        /// one version of an extension from the same registeration request, even if the request
+        /// is submitted multiple times. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -99,13 +99,13 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking
-        /// the resource provider. If your resource type calls AWS APIs in any of its handlers,
-        /// you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// the extension. If your extension calls AWS APIs in any of its handlers, you must create
+        /// an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
         /// execution role</a> </i> that includes the necessary permissions to call those AWS
         /// APIs, and provision that execution role in your account. When CloudFormation needs
-        /// to invoke the resource provider handler, CloudFormation assumes this execution role
-        /// to create a temporary session token, which it then passes to the resource provider
-        /// handler, thereby supplying your resource provider with the appropriate credentials.
+        /// to invoke the extension handler, CloudFormation assumes this execution role to create
+        /// a temporary session token, which it then passes to the extension handler, thereby
+        /// supplying your extension with the appropriate credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -124,7 +124,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LoggingConfig. 
         /// <para>
-        /// Specifies logging configuration information for a type.
+        /// Specifies logging configuration information for an extension.
         /// </para>
         /// </summary>
         public LoggingConfig LoggingConfig
@@ -142,19 +142,19 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property SchemaHandlerPackage. 
         /// <para>
-        /// A url to the S3 bucket containing the schema handler package that contains the schema,
-        /// event handlers, and associated files for the type you want to register.
+        /// A url to the S3 bucket containing the extension project package that contains the
+        /// neccessary files for the extension you want to register.
         /// </para>
         ///  
         /// <para>
-        /// For information on generating a schema handler package for the type you want to register,
-        /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
+        /// For information on generating a schema handler package for the extension you want
+        /// to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
         /// in the <i>CloudFormation CLI User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The user registering the resource provider type must be able to access the the schema
-        /// handler package in the S3 bucket. That is, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// The user registering the extension must be able to access the package in the S3 bucket.
+        /// That is, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
         /// Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and Access
         /// Management User Guide</i>.
@@ -177,11 +177,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The kind of type.
-        /// </para>
-        ///  
-        /// <para>
-        /// Currently, the only valid value is <code>RESOURCE</code>.
+        /// The kind of extension.
         /// </para>
         /// </summary>
         public RegistryType Type
@@ -199,16 +195,16 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the type being registered.
+        /// The name of the extension being registered.
         /// </para>
         ///  
         /// <para>
-        /// We recommend that type names adhere to the following pattern: <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
+        /// We recommend that extension names adhere to the following pattern: <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The following organization namespaces are reserved and cannot be used in your resource
-        /// type names:
+        /// The following organization namespaces are reserved and cannot be used in your extension
+        /// names:
         /// </para>
         ///  <ul> <li> 
         /// <para>

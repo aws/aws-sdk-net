@@ -58,6 +58,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCallAs())
+                {
+                    request.Parameters.Add("CallAs", StringUtils.FromString(publicRequest.CallAs));
+                }
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));

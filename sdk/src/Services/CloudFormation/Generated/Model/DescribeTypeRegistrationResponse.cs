@@ -41,7 +41,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the type registration request.
+        /// The description of the extension registration request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ProgressStatus. 
         /// <para>
-        /// The current status of the type registration request.
+        /// The current status of the extension registration request.
         /// </para>
         /// </summary>
         public RegistrationStatus ProgressStatus
@@ -78,7 +78,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the type being registered.
+        /// The Amazon Resource Name (ARN) of the extension being registered.
         /// </para>
         ///  
         /// <para>
@@ -102,7 +102,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of this specific version of the type being registered.
+        /// The Amazon Resource Name (ARN) of this specific version of the extension being registered.
         /// </para>
         ///  
         /// <para>

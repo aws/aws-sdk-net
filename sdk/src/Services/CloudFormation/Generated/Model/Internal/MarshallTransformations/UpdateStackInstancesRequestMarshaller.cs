@@ -67,6 +67,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetCallAs())
+                {
+                    request.Parameters.Add("CallAs", StringUtils.FromString(publicRequest.CallAs));
+                }
                 if(publicRequest.IsSetDeploymentTargets())
                 {
                     if(publicRequest.DeploymentTargets.IsSetAccounts())

@@ -44,8 +44,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// [<code>Self-managed</code> permissions] The name of the AWS account for this operation
-        /// result.
+        /// [Self-managed permissions] The name of the AWS account for this operation result.
         /// </para>
         /// </summary>
         public string Account
@@ -82,8 +81,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitId. 
         /// <para>
-        /// [<code>Service-managed</code> permissions] The organization root ID or organizational
-        /// unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.
+        /// [Service-managed permissions] The organization root ID or organizational unit (OU)
+        /// IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.
         /// </para>
         /// </summary>
         public string OrganizationalUnitId

@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTypeVersions operation.
-    /// Returns summary information about the versions of a type.
+    /// Returns summary information about the versions of an extension.
     /// </summary>
     public partial class ListTypeVersionsRequest : AmazonCloudFormationRequest
     {
@@ -44,7 +44,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the type for which you want version summary information.
+        /// The Amazon Resource Name (ARN) of the extension for which you want version summary
+        /// information.
         /// </para>
         ///  
         /// <para>
@@ -68,7 +69,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DeprecatedStatus. 
         /// <para>
-        /// The deprecation status of the type versions that you want to get summary information
+        /// The deprecation status of the extension versions that you want to get summary information
         /// about.
         /// </para>
         ///  
@@ -77,12 +78,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LIVE</code>: The type version is registered and can be used in CloudFormation
+        ///  <code>LIVE</code>: The extension version is registered and can be used in CloudFormation
         /// operations, dependent on its provisioning behavior and visibility scope.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEPRECATED</code>: The type version has been deregistered and can no longer
+        ///  <code>DEPRECATED</code>: The extension version has been deregistered and can no longer
         /// be used in CloudFormation operations. 
         /// </para>
         ///  </li> </ul> 
@@ -150,11 +151,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The kind of the type.
-        /// </para>
-        ///  
-        /// <para>
-        /// Currently the only valid value is <code>RESOURCE</code>.
+        /// The kind of the extension.
         /// </para>
         ///  
         /// <para>
@@ -177,7 +174,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the type for which you want version summary information.
+        /// The name of the extension for which you want version summary information.
         /// </para>
         ///  
         /// <para>

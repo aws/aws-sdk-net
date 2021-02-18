@@ -45,9 +45,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AutoDeployment. 
         /// <para>
-        /// [<code>Service-managed</code> permissions] Describes whether StackSets automatically
-        /// deploys to AWS Organizations accounts that are added to a target organizational unit
-        /// (OU).
+        /// [Service-managed permissions] Describes whether StackSets automatically deploys to
+        /// AWS Organizations accounts that are added to a target organizational unit (OU).
         /// </para>
         /// </summary>
         public AutoDeployment AutoDeployment

@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTypeRegistrations operation.
-    /// Returns a list of registration tokens for the specified type(s).
+    /// Returns a list of registration tokens for the specified extension(s).
     /// </summary>
     public partial class ListTypeRegistrationsRequest : AmazonCloudFormationRequest
     {
@@ -89,7 +89,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RegistrationStatusFilter. 
         /// <para>
-        /// The current status of the type registration request.
+        /// The current status of the extension registration request.
         /// </para>
         ///  
         /// <para>
@@ -111,11 +111,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The kind of type.
-        /// </para>
-        ///  
-        /// <para>
-        /// Currently the only valid value is <code>RESOURCE</code>.
+        /// The kind of extension.
         /// </para>
         ///  
         /// <para>
@@ -138,7 +134,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the type.
+        /// The Amazon Resource Name (ARN) of the extension.
         /// </para>
         ///  
         /// <para>
@@ -162,7 +158,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the type.
+        /// The name of the extension.
         /// </para>
         ///  
         /// <para>

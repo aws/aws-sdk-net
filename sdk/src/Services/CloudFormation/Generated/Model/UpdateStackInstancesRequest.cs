@@ -60,6 +60,7 @@ namespace Amazon.CloudFormation.Model
     public partial class UpdateStackInstancesRequest : AmazonCloudFormationRequest
     {
         private List<string> _accounts = new List<string>();
+        private CallAs _callAs;
         private DeploymentTargets _deploymentTargets;
         private string _operationId;
         private StackSetOperationPreferences _operationPreferences;
@@ -70,9 +71,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [<code>Self-managed</code> permissions] The names of one or more AWS accounts for
-        /// which you want to update parameter values for stack instances. The overridden parameter
-        /// values will be applied to all stack instances in the specified accounts and Regions.
+        /// [Self-managed permissions] The names of one or more AWS accounts for which you want
+        /// to update parameter values for stack instances. The overridden parameter values will
+        /// be applied to all stack instances in the specified accounts and Regions.
         /// </para>
         ///  
         /// <para>
@@ -92,13 +93,53 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CallAs. 
+        /// <para>
+        /// [Service-managed permissions] Specifies whether you are acting as an account administrator
+        /// in the organization's management account or as a delegated administrator in a member
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are signed in to the management account, specify <code>SELF</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your AWS account must be registered as a delegated administrator in the management
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+        /// a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CallAs CallAs
+        {
+            get { return this._callAs; }
+            set { this._callAs = value; }
+        }
+
+        // Check to see if CallAs property is set
+        internal bool IsSetCallAs()
+        {
+            return this._callAs != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeploymentTargets. 
         /// <para>
-        /// [<code>Service-managed</code> permissions] The AWS Organizations accounts for which
-        /// you want to update parameter values for stack instances. If your update targets OUs,
-        /// the overridden parameter values only apply to the accounts that are currently in the
-        /// target OUs and their child OUs. Accounts added to the target OUs and their child OUs
-        /// in the future won't use the overridden values.
+        /// [Service-managed permissions] The AWS Organizations accounts for which you want to
+        /// update parameter values for stack instances. If your update targets OUs, the overridden
+        /// parameter values only apply to the accounts that are currently in the target OUs and
+        /// their child OUs. Accounts added to the target OUs and their child OUs in the future
+        /// won't use the overridden values.
         /// </para>
         ///  
         /// <para>

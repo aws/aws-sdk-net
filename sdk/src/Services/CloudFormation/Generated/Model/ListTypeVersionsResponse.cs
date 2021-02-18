@@ -62,7 +62,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TypeVersionSummaries. 
         /// <para>
         /// A list of <code>TypeVersionSummary</code> structures that contain information about
-        /// the specified type's versions.
+        /// the specified extension's versions.
         /// </para>
         /// </summary>
         public List<TypeVersionSummary> TypeVersionSummaries
