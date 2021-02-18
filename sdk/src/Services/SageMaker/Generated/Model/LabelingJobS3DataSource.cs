@@ -39,6 +39,29 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ManifestS3Uri. 
         /// <para>
         /// The Amazon S3 location of the manifest file that describes the input data objects.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The input manifest file referenced in <code>ManifestS3Uri</code> must contain one
+        /// of the following keys: <code>source-ref</code> or <code>source</code>. The value of
+        /// the keys are interpreted as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>source-ref</code>: The source of the object is the Amazon S3 object specified
+        /// in the value. Use this value when the object is a binary object, such as an image.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>source</code>: The source of the object is the value. Use this value when the
+        /// object is a text value.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you are a new user of Ground Truth, it is recommended you review <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use
+        /// an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to
+        /// create an input manifest file.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

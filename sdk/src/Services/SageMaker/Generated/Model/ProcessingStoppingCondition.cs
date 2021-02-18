@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies a time limit for how long the processing job is allowed to run.
+    /// Configures conditions under which the processing job should be stopped, such as how
+    /// long the processing job has been running. After the condition is met, the processing
+    /// job is stopped.
     /// </summary>
     public partial class ProcessingStoppingCondition
     {

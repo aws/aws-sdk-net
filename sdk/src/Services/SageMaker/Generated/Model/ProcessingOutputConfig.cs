@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The output configuration for the processing job.
+    /// Configuration for uploading output from the processing container.
     /// </summary>
     public partial class ProcessingOutputConfig
     {
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// List of output configurations for the processing job.
+        /// An array of outputs configuring the data to upload from the processing container.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]

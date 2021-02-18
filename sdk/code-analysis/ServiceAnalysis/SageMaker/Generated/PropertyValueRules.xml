@@ -719,6 +719,11 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreatePresignedDomainUrlRequest.ExpiresInSeconds</property>
+    <min>5</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreatePresignedDomainUrlRequest.SessionExpirationDurationInSeconds</property>
     <min>1800</min>
     <max>43200</max>
@@ -5459,7 +5464,6 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskAvailabilityLifetimeInSeconds</property>
     <min>60</min>
-    <max>864000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskDescription</property>
@@ -5470,7 +5474,6 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskTimeLimitInSeconds</property>
     <min>30</min>
-    <max>604800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskTitle</property>

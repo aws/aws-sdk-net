@@ -3326,9 +3326,10 @@ namespace Amazon.SageMaker
         /// 
         ///  <note> 
         /// <para>
-        /// The URL that you get from a call to <code>CreatePresignedDomainUrl</code> is valid
-        /// only for 5 minutes. If you try to use the URL after the 5-minute limit expires, you
-        /// are directed to the AWS console sign-in page.
+        /// The URL that you get from a call to <code>CreatePresignedDomainUrl</code> has a default
+        /// timeout of 5 minutes. You can configure this value using <code>ExpiresInSeconds</code>.
+        /// If you try to use the URL after the timeout limit expires, you are directed to the
+        /// AWS console sign-in page.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3358,9 +3359,10 @@ namespace Amazon.SageMaker
         /// 
         ///  <note> 
         /// <para>
-        /// The URL that you get from a call to <code>CreatePresignedDomainUrl</code> is valid
-        /// only for 5 minutes. If you try to use the URL after the 5-minute limit expires, you
-        /// are directed to the AWS console sign-in page.
+        /// The URL that you get from a call to <code>CreatePresignedDomainUrl</code> has a default
+        /// timeout of 5 minutes. You can configure this value using <code>ExpiresInSeconds</code>.
+        /// If you try to use the URL after the timeout limit expires, you are directed to the
+        /// AWS console sign-in page.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10714,6 +10716,35 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Lists training jobs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time,
+        /// the <code>MaxResults</code> number of training jobs are first retrieved ignoring the
+        /// <code>StatusEquals</code> parameter and then they are filtered by the <code>StatusEquals</code>
+        /// parameter, which is returned as a response. For example, if <code>ListTrainingJobs</code>
+        /// is invoked with the following parameters:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Then, 100 trainings jobs with any status including those other than <code>InProgress</code>
+        /// are selected first (sorted according the creation time, from the latest to the oldest)
+        /// and those with status <code>InProgress</code> are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can quickly test the API using the following AWS CLI code.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws sagemaker list-training-jobs --max-results 100 --status-equals InProgress</code>
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrainingJobs service method.</param>
         /// 
@@ -10731,6 +10762,35 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Lists training jobs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time,
+        /// the <code>MaxResults</code> number of training jobs are first retrieved ignoring the
+        /// <code>StatusEquals</code> parameter and then they are filtered by the <code>StatusEquals</code>
+        /// parameter, which is returned as a response. For example, if <code>ListTrainingJobs</code>
+        /// is invoked with the following parameters:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Then, 100 trainings jobs with any status including those other than <code>InProgress</code>
+        /// are selected first (sorted according the creation time, from the latest to the oldest)
+        /// and those with status <code>InProgress</code> are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can quickly test the API using the following AWS CLI code.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws sagemaker list-training-jobs --max-results 100 --status-equals InProgress</code>
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrainingJobs service method.</param>
         /// <param name="cancellationToken">

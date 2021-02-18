@@ -68,7 +68,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// Sets the environment variables in the Docker container.
+        /// The environment variables to set in the Docker container. Up to 100 key and values
+        /// entries in the map are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -102,7 +103,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NetworkConfig. 
         /// <para>
-        /// Networking options for a processing job.
+        /// Networking options for a processing job, such as whether to allow inbound and outbound
+        /// network calls to and from processing containers, and the VPC subnets and security
+        /// groups to use for VPC-enabled processing jobs.
         /// </para>
         /// </summary>
         public NetworkConfig NetworkConfig
@@ -120,7 +123,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProcessingInputs. 
         /// <para>
-        /// List of input configurations for the processing job.
+        /// An array of inputs configuring the data to download into the processing container.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

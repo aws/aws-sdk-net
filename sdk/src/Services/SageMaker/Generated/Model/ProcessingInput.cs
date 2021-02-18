@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InputName. 
         /// <para>
-        /// The name of the inputs for the processing job.
+        /// The name for the processing job input.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +99,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3Input. 
         /// <para>
-        /// Configuration for processing job inputs in Amazon S3.
+        /// Configuration for downloading input data from Amazon S3 into the processing container.
         /// </para>
         /// </summary>
         public ProcessingS3Input S3Input

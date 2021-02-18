@@ -39,7 +39,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
         /// The name of the Amazon SageMaker FeatureGroup to use as the destination for processing
-        /// job output.
+        /// job output. Note that your processing script is responsible for putting records into
+        /// your Feature Store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

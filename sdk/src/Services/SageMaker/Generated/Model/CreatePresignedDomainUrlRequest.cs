@@ -38,15 +38,17 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The URL that you get from a call to <code>CreatePresignedDomainUrl</code> is valid
-    /// only for 5 minutes. If you try to use the URL after the 5-minute limit expires, you
-    /// are directed to the AWS console sign-in page.
+    /// The URL that you get from a call to <code>CreatePresignedDomainUrl</code> has a default
+    /// timeout of 5 minutes. You can configure this value using <code>ExpiresInSeconds</code>.
+    /// If you try to use the URL after the timeout limit expires, you are directed to the
+    /// AWS console sign-in page.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class CreatePresignedDomainUrlRequest : AmazonSageMakerRequest
     {
         private string _domainId;
+        private int? _expiresInSeconds;
         private int? _sessionExpirationDurationInSeconds;
         private string _userProfileName;
 
@@ -70,9 +72,28 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpiresInSeconds. 
+        /// <para>
+        /// The number of seconds until the pre-signed URL expires. This value defaults to 300.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=300)]
+        public int ExpiresInSeconds
+        {
+            get { return this._expiresInSeconds.GetValueOrDefault(); }
+            set { this._expiresInSeconds = value; }
+        }
+
+        // Check to see if ExpiresInSeconds property is set
+        internal bool IsSetExpiresInSeconds()
+        {
+            return this._expiresInSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SessionExpirationDurationInSeconds. 
         /// <para>
-        /// The session expiration duration in seconds.
+        /// The session expiration duration in seconds. This value defaults to 43200.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1800, Max=43200)]

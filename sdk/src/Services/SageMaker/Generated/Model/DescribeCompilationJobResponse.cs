@@ -71,8 +71,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompilationJobArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform
-        /// the model compilation job.
+        /// The Amazon Resource Name (ARN) of the model compilation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -291,7 +290,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the model compilation job.
+        /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform
+        /// the model compilation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

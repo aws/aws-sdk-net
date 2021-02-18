@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration for processing job inputs in Amazon S3.
+    /// Configuration for downloading input data from Amazon S3 into the processing container.
     /// </summary>
     public partial class ProcessingS3Input
     {
@@ -43,10 +43,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LocalPath. 
         /// <para>
-        /// The local path to the Amazon S3 bucket where you want Amazon SageMaker to download
-        /// the inputs to run a processing job. <code>LocalPath</code> is an absolute path to
-        /// the input data. This is a required parameter when <code>AppManaged</code> is <code>False</code>
-        /// (default).
+        /// The local path in your container where you want Amazon SageMaker to write input data
+        /// to. <code>LocalPath</code> is an absolute path to the input data and must begin with
+        /// <code>/opt/ml/processing/</code>. <code>LocalPath</code> is a required parameter when
+        /// <code>AppManaged</code> is <code>False</code> (default).
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -65,7 +65,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3CompressionType. 
         /// <para>
-        /// Whether to use <code>Gzip</code> compression for Amazon S3 storage.
+        /// Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing
+        /// container. <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified
+        /// as the <code>S3InputMode</code>. In <code>Pipe</code> mode, Amazon SageMaker streams
+        /// input data from the source directly to your container without using the EBS volume.
         /// </para>
         /// </summary>
         public ProcessingS3CompressionType S3CompressionType
@@ -83,7 +86,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3DataDistributionType. 
         /// <para>
-        /// Whether the data stored in Amazon S3 is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>.
+        /// Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>,
+        /// or whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard
+        /// of data to each processing instance.
         /// </para>
         /// </summary>
         public ProcessingS3DataDistributionType S3DataDistributionType
@@ -125,13 +130,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3InputMode. 
         /// <para>
-        /// Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code>
-        /// mode, Amazon SageMaker copies the data from the input source onto the local Amazon
-        /// Elastic Block Store (Amazon EBS) volumes before starting your training algorithm.
-        /// This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker
-        /// streams input data from the source directly to your algorithm without using the EBS
-        /// volume.This is a required parameter when <code>AppManaged</code> is <code>False</code>
-        /// (default).
+        /// Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon
+        /// SageMaker copies the data from the input source onto the local ML storage volume before
+        /// starting your processing container. This is the most commonly used input mode. In
+        /// <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly
+        /// to your processing container into named pipes without using the ML storage volume.
         /// </para>
         /// </summary>
         public ProcessingS3InputMode S3InputMode
@@ -149,8 +152,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The URI for the Amazon S3 storage where you want Amazon SageMaker to download the
-        /// artifacts needed to run a processing job.
+        /// The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a
+        /// processing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

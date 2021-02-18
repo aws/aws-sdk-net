@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration for processing job outputs in Amazon S3.
+    /// Configuration for uploading output data to Amazon S3 from the processing container.
     /// </summary>
     public partial class ProcessingS3Output
     {
@@ -40,9 +40,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LocalPath. 
         /// <para>
-        /// The local path to the Amazon S3 bucket where you want Amazon SageMaker to save the
-        /// results of an processing job. <code>LocalPath</code> is an absolute path to the input
-        /// data.
+        /// The local path of a directory where you want Amazon SageMaker to upload its contents
+        /// to Amazon S3. <code>LocalPath</code> is an absolute path to a directory containing
+        /// output files. This directory will be created by the platform and exist when your container's
+        /// entrypoint is invoked.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

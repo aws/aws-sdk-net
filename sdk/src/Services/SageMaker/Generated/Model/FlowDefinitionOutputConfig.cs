@@ -60,6 +60,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon S3 path where the object containing human output will be made available.
         /// </para>
+        ///  
+        /// <para>
+        /// To learn more about the format of Amazon A2I output data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon
+        /// A2I Output Data</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
         public string S3OutputPath

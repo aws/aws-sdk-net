@@ -74,6 +74,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DomainId);
                 }
 
+                if(publicRequest.IsSetExpiresInSeconds())
+                {
+                    context.Writer.WritePropertyName("ExpiresInSeconds");
+                    context.Writer.Write(publicRequest.ExpiresInSeconds);
+                }
+
                 if(publicRequest.IsSetSessionExpirationDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("SessionExpirationDurationInSeconds");

@@ -48,6 +48,22 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the human task user interface.
         /// </para>
+        ///  
+        /// <para>
+        /// You can use standard HTML and Crowd HTML Elements to create a custom worker task template.
+        /// You use this template to create a human task UI.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn how to create a custom HTML template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create
+        /// Custom Worker Task Template</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn how to create a human task UI, which is a worker task template that can be
+        /// used in a flow definition, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create
+        /// and Delete a Worker Task Templates</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
         public string HumanTaskUiArn
@@ -160,7 +176,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TaskTimeLimitInSeconds. 
         /// <para>
         /// The amount of time that a worker has to complete a task. The default value is 3,600
-        /// seconds (1 hour)
+        /// seconds (1 hour).
         /// </para>
         /// </summary>
         [AWSProperty(Min=30, Max=28800)]
@@ -198,7 +214,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property WorkteamArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of a team of workers.
+        /// Amazon Resource Name (ARN) of a team of workers. To learn more about the types of
+        /// workforces and work teams you can create and use with Amazon A2I, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create
+        /// and Manage Workforces</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
