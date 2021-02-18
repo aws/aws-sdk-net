@@ -71,7 +71,10 @@ namespace Amazon.Util
 
         private static Dictionary<string, string> _cache = new Dictionary<string, string>();
 
-        private static bool useNullToken = false; 
+        private static bool useNullToken = false;
+
+        private static ReaderWriterLockSlim metadataLock = new ReaderWriterLockSlim(); // Lock to control getting metadata across multiple threads.
+        private static readonly TimeSpan metadataLockTimeout = TimeSpan.FromMilliseconds(5000);
 
         /// <summary>
         /// </summary>
@@ -492,10 +495,74 @@ namespace Amazon.Util
         {
             try
             {
-                if (force || !_cache.ContainsKey(path))
-                    _cache[path] = GetData(path);
+                // Try to acquire read lock if there is no need to force get the metadata. The thread would be blocked if another thread has write lock.
+                if (!force)
+                {
+                    if (metadataLock.TryEnterReadLock(metadataLockTimeout))
+                    {
+                        try
+                        {
+                            if (_cache.ContainsKey(path))
+                            {
+                                return _cache[path];
+                            }
+                        }
+                        finally
+                        {
+                            metadataLock.ExitReadLock();
+                        }
+                    }
+                    else
+                    {
+                        Logger.GetLogger(typeof(EC2InstanceMetadata)).InfoFormat("Unable to acquire read lock to access cache.");
+                    }
+                }
 
-                return _cache[path];
+                // If there is no metadata cached or it needs to force get the metadata. Try to acquire write lock.
+                if (metadataLock.TryEnterWriteLock(metadataLockTimeout))
+                {
+                    try
+                    {
+                        // Check if metadata is cached again in case other thread might have already fetched it.
+                        if (force || !_cache.ContainsKey(path))
+                        {
+                            _cache[path] = GetData(path);
+                        }
+                    }
+                    finally
+                    {
+                        metadataLock.ExitWriteLock();
+                    }
+                }
+                else
+                {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).InfoFormat("Unable to acquire write lock to modify cache.");
+                }
+
+                // Try to acquire read lock. The thread would be blocked if another thread has write lock.
+                if (metadataLock.TryEnterReadLock(metadataLockTimeout))
+                {
+                    try
+                    {
+                        if (_cache.ContainsKey(path))
+                        {
+                            return _cache[path];
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    finally
+                    {
+                        metadataLock.ExitReadLock();
+                    }
+                }
+                else
+                {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).InfoFormat("Unable to acquire read lock to access cache.");
+                    return null;
+                }
             }
             catch
             {
