@@ -35,7 +35,7 @@ namespace Amazon.S3
         private bool forcePathStyle = false;
         private bool useAccelerateEndpoint = false;
         private S3UsEast1RegionalEndpointValue? s3UsEast1RegionalEndpointValue;
-        private readonly RegionEndpoint legacyUSEast1GlobalRegion = RegionEndpoint.USEast1;
+        private readonly string legacyUSEast1GlobalRegionSystemName = RegionEndpoint.USEast1.SystemName;
 
         private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
          
@@ -95,7 +95,7 @@ namespace Amazon.S3
                     if (!this._useArnRegion.HasValue)
                     {
                         // To maintain consistency with buckets default UseArnRegion to true when client configured for us-east-1.
-                        this._useArnRegion = this.RegionEndpoint == RegionEndpoint.USEast1;
+                        this._useArnRegion = this.RegionEndpoint?.SystemName == RegionEndpoint.USEast1.SystemName;
                     }
                 }
 
@@ -151,7 +151,7 @@ namespace Amazon.S3
             }
 
             var actual = this.RegionEndpoint;
-            if (actual == legacyUSEast1GlobalRegion && !UseAccelerateEndpoint && !UseDualstackEndpoint
+            if (actual?.SystemName == legacyUSEast1GlobalRegionSystemName && !UseAccelerateEndpoint && !UseDualstackEndpoint
                 && USEast1RegionalEndpointValue == S3UsEast1RegionalEndpointValue.Regional)
             {
                 actual = RegionEndpoint.GetBySystemName("us-east-1-regional");

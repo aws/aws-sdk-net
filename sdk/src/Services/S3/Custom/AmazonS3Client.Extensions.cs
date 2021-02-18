@@ -109,7 +109,7 @@ namespace Amazon.S3
                 }
 
                 var fallbackToSigV2 = useSigV2Fallback && !AWSConfigsS3.UseSigV4SetExplicitly;
-                if (endpoint == RegionEndpoint.USEast1 && fallbackToSigV2)
+                if (endpoint?.SystemName == RegionEndpoint.USEast1.SystemName && fallbackToSigV2)
                 {
                     aws4Signing = false;
                 }

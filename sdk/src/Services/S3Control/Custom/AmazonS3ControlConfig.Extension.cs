@@ -55,7 +55,7 @@ namespace Amazon.S3Control
                     if (!this._useArnRegion.HasValue)
                     {
                         // To maintain consistency with buckets default UseArnRegion to true when client configured for us-east-1.
-                        this._useArnRegion = this.RegionEndpoint == RegionEndpoint.USEast1;
+                        this._useArnRegion = this.RegionEndpoint?.SystemName == RegionEndpoint.USEast1.SystemName;
                     }
                 }
 
