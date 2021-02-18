@@ -466,7 +466,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Simple Storage Service (Amazon S3), this does not apply.
+        /// For Amazon S3, this does not apply.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -549,8 +549,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents
-        /// the build input ZIP file to use.
+        /// For Amazon S3: the version ID of the object that represents the build input ZIP file
+        /// to use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

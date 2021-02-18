@@ -45,9 +45,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and
-        /// object key that contains the PEM-encoded certificate for the build project. For more
-        /// information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+        /// The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded
+        /// certificate for the build project. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
         /// in the <i>AWS CodeBuild User Guide</i>.
         /// </para>
         /// </summary>

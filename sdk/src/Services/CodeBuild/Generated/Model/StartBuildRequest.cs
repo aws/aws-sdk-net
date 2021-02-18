@@ -700,7 +700,7 @@ namespace Amazon.CodeBuild.Model
         /// code you want to build. If a branch name is specified, the branch's HEAD commit ID
         /// is used. If not specified, the default branch's HEAD commit ID is used.
         /// </para>
-        ///  </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> 
+        ///  </dd> <dt>Amazon S3</dt> <dd> 
         /// <para>
         /// The version ID of the object that represents the build input ZIP file to use.
         /// </para>

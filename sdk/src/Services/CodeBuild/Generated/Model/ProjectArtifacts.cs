@@ -65,8 +65,8 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property EncryptionDisabled. 
         /// <para>
         ///  Set to true if you do not want your output artifacts encrypted. This option is valid
-        /// only if your artifacts type is Amazon Simple Storage Service (Amazon S3). If this
-        /// is set with another artifacts type, an invalidInputException is thrown. 
+        /// only if your artifacts type is Amazon S3. If this is set with another artifacts type,
+        /// an invalidInputException is thrown. 
         /// </para>
         /// </summary>
         public bool EncryptionDisabled
@@ -350,8 +350,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code>: The build project stores build output in Amazon Simple Storage Service
-        /// (Amazon S3).
+        ///  <code>S3</code>: The build project stores build output in Amazon S3.
         /// </para>
         ///  </li> </ul>
         /// </summary>

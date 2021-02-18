@@ -70,6 +70,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("bucketOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("encryptionDisabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

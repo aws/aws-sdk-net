@@ -191,8 +191,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one
-        /// of the following. 
+        /// For source code in an Amazon S3 input bucket, one of the following. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -329,8 +328,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3)
-        /// input bucket.
+        ///  <code>S3</code>: The source code is in an Amazon S3 input bucket.
         /// </para>
         ///  </li> </ul>
         /// </summary>

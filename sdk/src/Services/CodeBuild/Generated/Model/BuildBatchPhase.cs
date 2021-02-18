@@ -44,7 +44,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property Contexts. 
         /// <para>
         /// Additional information about the batch build phase. Especially to help troubleshoot
-        /// a failed btach build.
+        /// a failed batch build.
         /// </para>
         /// </summary>
         public List<PhaseContext> Contexts

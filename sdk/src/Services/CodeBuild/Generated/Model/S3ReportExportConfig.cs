@@ -34,6 +34,7 @@ namespace Amazon.CodeBuild.Model
     public partial class S3ReportExportConfig
     {
         private string _bucket;
+        private string _bucketOwner;
         private bool? _encryptionDisabled;
         private string _encryptionKey;
         private ReportPackagingType _packaging;
@@ -56,6 +57,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetBucket()
         {
             return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketOwner. 
+        /// <para>
+        /// The AWS account identifier of the owner of the Amazon S3 bucket. This allows report
+        /// data to be exported to an Amazon S3 bucket that is owned by an account other than
+        /// the account running the build.
+        /// </para>
+        /// </summary>
+        public string BucketOwner
+        {
+            get { return this._bucketOwner; }
+            set { this._bucketOwner = value; }
+        }
+
+        // Check to see if BucketOwner property is set
+        internal bool IsSetBucketOwner()
+        {
+            return this._bucketOwner != null;
         }
 
         /// <summary>
