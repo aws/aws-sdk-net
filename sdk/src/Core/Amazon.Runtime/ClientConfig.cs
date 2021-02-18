@@ -124,12 +124,19 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// <para>
         /// Gets and sets the RegionEndpoint property.  The region constant that 
         /// determines the endpoint to use.
         /// 
         /// Setting this property to null will force the SDK to recalculate the
         /// RegionEndpoint value based on App/WebConfig, environment variables,
         /// profile, etc.
+        /// </para>
+        /// <para>
+        /// RegionEndpoint and ServiceURL are mutually exclusive properties. 
+        /// Whichever property is set last will cause the other to automatically 
+        /// be reset to null.
+        /// </para>
         /// </summary>
         public RegionEndpoint RegionEndpoint
         {
@@ -159,10 +166,17 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// <para>
         /// Gets and sets of the ServiceURL property.
         /// This is an optional property; change it
         /// only if you want to try a different service
         /// endpoint.
+        /// </para>
+        /// <para>
+        /// RegionEndpoint and ServiceURL are mutually exclusive properties. 
+        /// Whichever property is set last will cause the other to automatically 
+        /// be reset to null.
+        /// </para>
         /// </summary>
         public string ServiceURL
         {
