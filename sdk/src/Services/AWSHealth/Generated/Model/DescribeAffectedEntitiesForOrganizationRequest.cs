@@ -45,14 +45,21 @@ namespace Amazon.AWSHealth.Model
     /// <para>
     /// Before you can call this operation, you must first enable AWS Health to work with
     /// AWS Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
-    /// operation from your organization's master account. 
+    /// operation from your organization's management account.
     /// </para>
-    ///  <note> 
+    ///  <note> <ul> <li> 
     /// <para>
     /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
     /// the next request to return more results.
     /// </para>
-    ///  </note>
+    ///  </li> <li> 
+    /// <para>
+    /// This operation doesn't support resource-level permissions. You can't use this operation
+    /// to allow or deny access to specific AWS Health events. For more information, see <a
+    /// href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource-
+    /// and action-based conditions</a> in the <i>AWS Health User Guide</i>.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class DescribeAffectedEntitiesForOrganizationRequest : AmazonAWSHealthRequest
     {

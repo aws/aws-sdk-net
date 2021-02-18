@@ -41,12 +41,18 @@ namespace Amazon.AWSHealth.Model
     /// At least one event ARN is required. Results are sorted by the <code>lastUpdatedTime</code>
     /// of the entity, starting with the most recent.
     /// </para>
-    ///  <note> 
+    ///  <note> <ul> <li> 
     /// <para>
     /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
     /// the next request to return more results.
     /// </para>
-    ///  </note>
+    ///  </li> <li> 
+    /// <para>
+    /// This operation supports resource-level permissions. You can use this operation to
+    /// allow or deny access to specific AWS Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource-
+    /// and action-based conditions</a> in the <i>AWS Health User Guide</i>.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class DescribeAffectedEntitiesRequest : AmazonAWSHealthRequest
     {
