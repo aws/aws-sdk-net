@@ -1,3 +1,13 @@
+### 3.5.112.0 (2021-02-18 19:20 UTC)
+* AWSHealth (3.5.0.71)
+	* Documentation updates for health
+* CloudFormation (3.5.3.0)
+	* Adding the 'callAs' parameter to all CloudFormation StackSets APIs except getTemplateSummary to support creating and managing service-managed StackSets with AWS Organizations Delegated Administrators
+* CodeBuild (3.5.5.0)
+	* AWS CodeBuild now allows you to specify a separate bucket owner as part of the S3 destination in a report group.
+* SageMaker (3.5.10.0)
+	* This release adds expires-in-seconds parameter to the CreatePresignedDomainUrl API for support of a configurable TTL.
+
 ### 3.5.111.0 (2021-02-17 19:12 UTC)
 * ConfigService (3.5.5.0)
 	* Added INSUFFICIENT_DATA in ConformancePackComplianceType.
