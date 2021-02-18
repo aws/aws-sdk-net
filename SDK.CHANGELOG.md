@@ -1,3 +1,16 @@
+### 3.5.113.0 (2021-02-18 22:12 UTC)
+* S3 (3.5.8.6)
+	* Updated to use new Core, version 3.5.3.0
+	* Fixes an issue where S3.Utils.AmazonS3Uri.IsAmazonS3Endpoint throws InvalidOperationException for relative URIs; Support for reloading RegionEndpoint data (endpoints.json)
+* S3Control (3.5.5.6)
+	* Updated to use new Core, version 3.5.3.0
+	* Support for reloading RegionEndpoint data (endpoints.json)
+* SecurityToken (3.5.1.51)
+	* Updated to use new Core, version 3.5.3.0
+	* Support for reloading RegionEndpoint data (endpoints.json)
+* Core 3.5.3.0
+	* Elaborated API documentation for ClientConfig RegionEndpoint and ServiceURL properties; Fixes EC2InstanceMetadata threading issue; Support for reloading RegionEndpoint data (endpoints.json)
+
 ### 3.5.112.0 (2021-02-18 19:20 UTC)
 * AWSHealth (3.5.0.71)
 	* Documentation updates for health
