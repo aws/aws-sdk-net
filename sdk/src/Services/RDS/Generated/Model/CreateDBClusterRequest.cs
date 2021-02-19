@@ -410,7 +410,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>postgresql</code> and <code>upgrade</code>. 
+        /// Possible value is <code>postgresql</code>. 
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports

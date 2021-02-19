@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         private bool? _allowMajorVersionUpgrade;
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
+        private string _awsBackupRecoveryPointArn;
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
         private bool? _certificateRotationRestart;
@@ -202,6 +203,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this._autoMinorVersionUpgrade.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsBackupRecoveryPointArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=43, Max=350)]
+        public string AwsBackupRecoveryPointArn
+        {
+            get { return this._awsBackupRecoveryPointArn; }
+            set { this._awsBackupRecoveryPointArn = value; }
+        }
+
+        // Check to see if AwsBackupRecoveryPointArn property is set
+        internal bool IsSetAwsBackupRecoveryPointArn()
+        {
+            return this._awsBackupRecoveryPointArn != null;
         }
 
         /// <summary>

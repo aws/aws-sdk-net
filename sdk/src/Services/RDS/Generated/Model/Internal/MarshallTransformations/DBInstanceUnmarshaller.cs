@@ -79,6 +79,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AwsBackupRecoveryPointArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AwsBackupRecoveryPointArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("BackupRetentionPeriod", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
