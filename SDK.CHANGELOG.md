@@ -1,3 +1,12 @@
+### 3.5.114.0 (2021-02-19 19:13 UTC)
+* RDS (3.5.13.0)
+	* Added awsBackupRecoveryPointArn in ModifyDBInstanceRequest and in the response of ModifyDBInstance.
+* Core 3.5.3.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.113.0 (2021-02-18 22:12 UTC)
 * S3 (3.5.8.6)
 	* Updated to use new Core, version 3.5.3.0
