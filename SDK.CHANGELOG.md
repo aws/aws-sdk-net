@@ -1,3 +1,9 @@
+### 3.5.115.0 (2021-02-22 19:21 UTC)
+* SageMaker (3.5.11.0)
+	* Amazon SageMaker now supports core dump for SageMaker Endpoints and direct invocation of a single container in a SageMaker Endpoint that hosts multiple containers.
+* SageMakerRuntime (3.5.2.0)
+	* SageMaker Runtime now supports a new TargetContainerHostname header to invoke a model in a specific container if the endpoint hosts multiple containers and is configured to use direct invocation.
+
 ### 3.5.114.0 (2021-02-19 19:13 UTC)
 * RDS (3.5.13.0)
 	* Added awsBackupRecoveryPointArn in ModifyDBInstanceRequest and in the response of ModifyDBInstance.
