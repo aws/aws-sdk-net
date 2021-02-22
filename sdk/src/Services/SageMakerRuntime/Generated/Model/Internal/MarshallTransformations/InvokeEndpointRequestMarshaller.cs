@@ -81,6 +81,9 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetInferenceId())
                 request.Headers["X-Amzn-SageMaker-Inference-Id"] = publicRequest.InferenceId;
         
+            if(publicRequest.IsSetTargetContainerHostname())
+                request.Headers["X-Amzn-SageMaker-Target-Container-Hostname"] = publicRequest.TargetContainerHostname;
+        
             if(publicRequest.IsSetTargetModel())
                 request.Headers["X-Amzn-SageMaker-Target-Model"] = publicRequest.TargetModel;
         

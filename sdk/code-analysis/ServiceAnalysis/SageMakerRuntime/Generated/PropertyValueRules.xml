@@ -27,6 +27,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointRequest.TargetContainerHostname</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointRequest.TargetModel</property>
     <min>1</min>
     <max>1024</max>

@@ -74,6 +74,7 @@ namespace Amazon.SageMakerRuntime.Model
         private string _customAttributes;
         private string _endpointName;
         private string _inferenceId;
+        private string _targetContainerHostname;
         private string _targetModel;
         private string _targetVariant;
 
@@ -218,6 +219,26 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetInferenceId()
         {
             return this._inferenceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetContainerHostname. 
+        /// <para>
+        /// If the endpoint hosts multiple containers and is configured to use direct invocation,
+        /// this parameter specifies the host name of the container to invoke.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string TargetContainerHostname
+        {
+            get { return this._targetContainerHostname; }
+            set { this._targetContainerHostname = value; }
+        }
+
+        // Check to see if TargetContainerHostname property is set
+        internal bool IsSetTargetContainerHostname()
+        {
+            return this._targetContainerHostname != null;
         }
 
         /// <summary>
