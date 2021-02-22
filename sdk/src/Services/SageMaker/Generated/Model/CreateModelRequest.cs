@@ -79,6 +79,7 @@ namespace Amazon.SageMaker.Model
         private List<ContainerDefinition> _containers = new List<ContainerDefinition>();
         private bool? _enableNetworkIsolation;
         private string _executionRoleArn;
+        private InferenceExecutionConfig _inferenceExecutionConfig;
         private string _modelName;
         private ContainerDefinition _primaryContainer;
         private List<Tag> _tags = new List<Tag>();
@@ -149,6 +150,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceExecutionConfig. 
+        /// <para>
+        /// Specifies details of how containers in a multi-container endpoint are called.
+        /// </para>
+        /// </summary>
+        public InferenceExecutionConfig InferenceExecutionConfig
+        {
+            get { return this._inferenceExecutionConfig; }
+            set { this._inferenceExecutionConfig = value; }
+        }
+
+        // Check to see if InferenceExecutionConfig property is set
+        internal bool IsSetInferenceExecutionConfig()
+        {
+            return this._inferenceExecutionConfig != null;
         }
 
         /// <summary>

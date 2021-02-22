@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class ProductionVariant
     {
         private ProductionVariantAcceleratorType _acceleratorType;
+        private ProductionVariantCoreDumpConfig _coreDumpConfig;
         private int? _initialInstanceCount;
         private float? _initialVariantWeight;
         private ProductionVariantInstanceType _instanceType;
@@ -61,6 +62,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAcceleratorType()
         {
             return this._acceleratorType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CoreDumpConfig. 
+        /// <para>
+        /// Specifies configuration for a core dump from the model container when the process
+        /// crashes.
+        /// </para>
+        /// </summary>
+        public ProductionVariantCoreDumpConfig CoreDumpConfig
+        {
+            get { return this._coreDumpConfig; }
+            set { this._coreDumpConfig = value; }
+        }
+
+        // Check to see if CoreDumpConfig property is set
+        internal bool IsSetCoreDumpConfig()
+        {
+            return this._coreDumpConfig != null;
         }
 
         /// <summary>

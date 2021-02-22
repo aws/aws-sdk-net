@@ -75,6 +75,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ExecutionRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InferenceExecutionConfig", targetDepth))
+                {
+                    var unmarshaller = InferenceExecutionConfigUnmarshaller.Instance;
+                    response.InferenceExecutionConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -96,6 +96,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExecutionRoleArn);
                 }
 
+                if(publicRequest.IsSetInferenceExecutionConfig())
+                {
+                    context.Writer.WritePropertyName("InferenceExecutionConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InferenceExecutionConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InferenceExecutionConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetModelName())
                 {
                     context.Writer.WritePropertyName("ModelName");

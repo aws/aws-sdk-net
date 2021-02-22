@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.AcceleratorType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CoreDumpConfig", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantCoreDumpConfigUnmarshaller.Instance;
+                    unmarshalledObject.CoreDumpConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InitialInstanceCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

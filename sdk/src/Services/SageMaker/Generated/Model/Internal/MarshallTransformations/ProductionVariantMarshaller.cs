@@ -51,6 +51,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AcceleratorType);
             }
 
+            if(requestObject.IsSetCoreDumpConfig())
+            {
+                context.Writer.WritePropertyName("CoreDumpConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProductionVariantCoreDumpConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CoreDumpConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInitialInstanceCount())
             {
                 context.Writer.WritePropertyName("InitialInstanceCount");
