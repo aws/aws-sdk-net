@@ -68,7 +68,10 @@ namespace Amazon.S3Control.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The AWS account ID associated with the S3 Batch Operations job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
         public string AccountId
