@@ -29,7 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The row-level security configuration for the dataset.
+    /// Information about a dataset that contains permissions for row-level security (RLS).
+    /// The permissions dataset maps fields to users or groups. For more information, see
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html">Using
+    /// Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Amazon QuickSight
+    /// User Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code>
+    /// is not supported for new RLS datasets.
+    /// </para>
     /// </summary>
     public partial class RowLevelPermissionDataSet
     {
@@ -40,7 +50,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the permission dataset.
+        /// The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +69,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace associated with the row-level permissions dataset.
+        /// The namespace associated with the dataset that contains permissions for RLS.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -78,7 +88,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PermissionPolicy. 
         /// <para>
-        /// Permission policy.
+        /// The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code>
+        /// is included for backward compatibility only.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

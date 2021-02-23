@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceArn. 
         /// <para>
-        /// The amazon Resource Name (ARN) for the data source.
+        /// The Amazon Resource Name (ARN) for the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
