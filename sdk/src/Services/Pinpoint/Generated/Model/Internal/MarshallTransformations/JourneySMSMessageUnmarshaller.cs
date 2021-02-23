@@ -64,6 +64,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EntityId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EntityId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MessageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SenderId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TemplateId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TemplateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

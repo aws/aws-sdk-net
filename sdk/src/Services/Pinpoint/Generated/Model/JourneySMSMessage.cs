@@ -34,9 +34,30 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class JourneySMSMessage
     {
+        private string _entityId;
         private MessageType _messageType;
         private string _originationNumber;
         private string _senderId;
+        private string _templateId;
+
+        /// <summary>
+        /// Gets and sets the property EntityId. 
+        /// <para>
+        /// The entity ID or Principal Entity (PE) id received from the regulatory body for sending
+        /// SMS in your country.
+        /// </para>
+        /// </summary>
+        public string EntityId
+        {
+            get { return this._entityId; }
+            set { this._entityId = value; }
+        }
+
+        // Check to see if EntityId property is set
+        internal bool IsSetEntityId()
+        {
+            return this._entityId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MessageType. 
@@ -97,6 +118,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSenderId()
         {
             return this._senderId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateId. 
+        /// <para>
+        /// The template ID received from the regulatory body for sending SMS in your country.
+        /// </para>
+        /// </summary>
+        public string TemplateId
+        {
+            get { return this._templateId; }
+            set { this._templateId = value; }
+        }
+
+        // Check to see if TemplateId property is set
+        internal bool IsSetTemplateId()
+        {
+            return this._templateId != null;
         }
 
     }

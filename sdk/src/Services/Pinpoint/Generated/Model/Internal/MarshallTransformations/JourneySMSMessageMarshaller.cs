@@ -45,6 +45,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JourneySMSMessage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEntityId())
+            {
+                context.Writer.WritePropertyName("EntityId");
+                context.Writer.Write(requestObject.EntityId);
+            }
+
             if(requestObject.IsSetMessageType())
             {
                 context.Writer.WritePropertyName("MessageType");
@@ -61,6 +67,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SenderId");
                 context.Writer.Write(requestObject.SenderId);
+            }
+
+            if(requestObject.IsSetTemplateId())
+            {
+                context.Writer.WritePropertyName("TemplateId");
+                context.Writer.Write(requestObject.TemplateId);
             }
 
         }

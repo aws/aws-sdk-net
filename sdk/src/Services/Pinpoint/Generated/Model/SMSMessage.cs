@@ -35,12 +35,14 @@ namespace Amazon.Pinpoint.Model
     public partial class SMSMessage
     {
         private string _body;
+        private string _entityId;
         private string _keyword;
         private string _mediaUrl;
         private MessageType _messageType;
         private string _originationNumber;
         private string _senderId;
         private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
+        private string _templateId;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -58,6 +60,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetBody()
         {
             return this._body != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntityId. 
+        /// <para>
+        /// The entity ID or Principal Entity (PE) id received from the regulatory body for sending
+        /// SMS in your country.
+        /// </para>
+        /// </summary>
+        public string EntityId
+        {
+            get { return this._entityId; }
+            set { this._entityId = value; }
+        }
+
+        // Check to see if EntityId property is set
+        internal bool IsSetEntityId()
+        {
+            return this._entityId != null;
         }
 
         /// <summary>
@@ -174,6 +195,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSubstitutions()
         {
             return this._substitutions != null && this._substitutions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateId. 
+        /// <para>
+        /// The template ID received from the regulatory body for sending SMS in your country.
+        /// </para>
+        /// </summary>
+        public string TemplateId
+        {
+            get { return this._templateId; }
+            set { this._templateId = value; }
+        }
+
+        // Check to see if TemplateId property is set
+        internal bool IsSetTemplateId()
+        {
+            return this._templateId != null;
         }
 
     }
