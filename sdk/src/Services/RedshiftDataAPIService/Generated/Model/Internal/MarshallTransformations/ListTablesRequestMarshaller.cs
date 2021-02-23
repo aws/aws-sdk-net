@@ -74,6 +74,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClusterIdentifier);
                 }
 
+                if(publicRequest.IsSetConnectedDatabase())
+                {
+                    context.Writer.WritePropertyName("ConnectedDatabase");
+                    context.Writer.Write(publicRequest.ConnectedDatabase);
+                }
+
                 if(publicRequest.IsSetDatabase())
                 {
                     context.Writer.WritePropertyName("Database");

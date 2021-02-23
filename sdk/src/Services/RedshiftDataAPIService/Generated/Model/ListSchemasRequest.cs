@@ -50,6 +50,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     public partial class ListSchemasRequest : AmazonRedshiftDataAPIServiceRequest
     {
         private string _clusterIdentifier;
+        private string _connectedDatabase;
         private string _database;
         private string _dbUser;
         private int? _maxResults;
@@ -78,10 +79,30 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectedDatabase. 
+        /// <para>
+        /// A database name. The connected database is specified when you connect with your authentication
+        /// credentials. 
+        /// </para>
+        /// </summary>
+        public string ConnectedDatabase
+        {
+            get { return this._connectedDatabase; }
+            set { this._connectedDatabase = value; }
+        }
+
+        // Check to see if ConnectedDatabase property is set
+        internal bool IsSetConnectedDatabase()
+        {
+            return this._connectedDatabase != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Database. 
         /// <para>
-        /// The name of the database. This parameter is required when authenticating using temporary
-        /// credentials. 
+        /// The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code>
+        /// is not specified, this is also the database to connect to with your authentication
+        /// credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
