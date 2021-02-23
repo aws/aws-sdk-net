@@ -31,11 +31,22 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the DescribeScalingActivities operation.
     /// Describes one or more scaling activities for the specified Auto Scaling group.
+    /// 
+    ///  
+    /// <para>
+    /// To view the scaling activities from the Amazon EC2 Auto Scaling console, choose the
+    /// <b>Activity</b> tab of the Auto Scaling group. When scaling events occur, you see
+    /// scaling activity messages in the <b>Activity history</b>. For more information, see
+    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-verify-scaling-activity.html">Verifying
+    /// a scaling activity for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
+    /// User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeScalingActivitiesRequest : AmazonAutoScalingRequest
     {
         private List<string> _activityIds = new List<string>();
         private string _autoScalingGroupName;
+        private bool? _includeDeletedGroups;
         private int? _maxRecords;
         private string _nextToken;
 
@@ -77,6 +88,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this._autoScalingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeDeletedGroups. 
+        /// <para>
+        /// Indicates whether to include scaling activity from deleted Auto Scaling groups.
+        /// </para>
+        /// </summary>
+        public bool IncludeDeletedGroups
+        {
+            get { return this._includeDeletedGroups.GetValueOrDefault(); }
+            set { this._includeDeletedGroups = value; }
+        }
+
+        // Check to see if IncludeDeletedGroups property is set
+        internal bool IsSetIncludeDeletedGroups()
+        {
+            return this._includeDeletedGroups.HasValue; 
         }
 
         /// <summary>

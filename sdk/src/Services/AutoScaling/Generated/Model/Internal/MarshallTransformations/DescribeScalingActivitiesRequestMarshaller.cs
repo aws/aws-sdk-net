@@ -71,6 +71,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+                if(publicRequest.IsSetIncludeDeletedGroups())
+                {
+                    request.Parameters.Add("IncludeDeletedGroups", StringUtils.FromBool(publicRequest.IncludeDeletedGroups));
+                }
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));

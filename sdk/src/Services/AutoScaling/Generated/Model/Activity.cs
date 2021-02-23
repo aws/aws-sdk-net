@@ -35,7 +35,9 @@ namespace Amazon.AutoScaling.Model
     public partial class Activity
     {
         private string _activityId;
+        private string _autoScalingGroupARN;
         private string _autoScalingGroupName;
+        private string _autoScalingGroupState;
         private string _cause;
         private string _description;
         private string _details;
@@ -65,6 +67,25 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoScalingGroupARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Auto Scaling group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
+        public string AutoScalingGroupARN
+        {
+            get { return this._autoScalingGroupARN; }
+            set { this._autoScalingGroupARN = value; }
+        }
+
+        // Check to see if AutoScalingGroupARN property is set
+        internal bool IsSetAutoScalingGroupARN()
+        {
+            return this._autoScalingGroupARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
         /// The name of the Auto Scaling group.
@@ -81,6 +102,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this._autoScalingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoScalingGroupState. 
+        /// <para>
+        /// The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public string AutoScalingGroupState
+        {
+            get { return this._autoScalingGroupState; }
+            set { this._autoScalingGroupState = value; }
+        }
+
+        // Check to see if AutoScalingGroupState property is set
+        internal bool IsSetAutoScalingGroupState()
+        {
+            return this._autoScalingGroupState != null;
         }
 
         /// <summary>

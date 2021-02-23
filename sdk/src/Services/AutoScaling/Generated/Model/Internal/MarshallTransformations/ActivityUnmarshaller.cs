@@ -60,10 +60,22 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.ActivityId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AutoScalingGroupARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutoScalingGroupARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AutoScalingGroupName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AutoScalingGroupState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutoScalingGroupState = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Cause", targetDepth))
