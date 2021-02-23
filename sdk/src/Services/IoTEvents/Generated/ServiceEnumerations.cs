@@ -25,6 +25,114 @@ namespace Amazon.IoTEvents
 {
 
     /// <summary>
+    /// Constants used for properties of type AnalysisResultLevel.
+    /// </summary>
+    public class AnalysisResultLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for AnalysisResultLevel
+        /// </summary>
+        public static readonly AnalysisResultLevel ERROR = new AnalysisResultLevel("ERROR");
+        /// <summary>
+        /// Constant INFO for AnalysisResultLevel
+        /// </summary>
+        public static readonly AnalysisResultLevel INFO = new AnalysisResultLevel("INFO");
+        /// <summary>
+        /// Constant WARNING for AnalysisResultLevel
+        /// </summary>
+        public static readonly AnalysisResultLevel WARNING = new AnalysisResultLevel("WARNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisResultLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisResultLevel FindValue(string value)
+        {
+            return FindValue<AnalysisResultLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisResultLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalysisStatus.
+    /// </summary>
+    public class AnalysisStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus COMPLETE = new AnalysisStatus("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus FAILED = new AnalysisStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus RUNNING = new AnalysisStatus("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisStatus FindValue(string value)
+        {
+            return FindValue<AnalysisStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DetectorModelVersionStatus.
     /// </summary>
     public class DetectorModelVersionStatus : ConstantClass

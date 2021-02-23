@@ -622,6 +622,77 @@ namespace Amazon.IoTEvents
 
         #endregion
         
+        #region  DescribeDetectorModelAnalysis
+
+
+        /// <summary>
+        /// Retrieves execution information about a detector model analysis
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModelAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDetectorModelAnalysis service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis">REST API Reference for DescribeDetectorModelAnalysis Operation</seealso>
+        public virtual DescribeDetectorModelAnalysisResponse DescribeDetectorModelAnalysis(DescribeDetectorModelAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDetectorModelAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDetectorModelAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDetectorModelAnalysisResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves execution information about a detector model analysis
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModelAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDetectorModelAnalysis service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis">REST API Reference for DescribeDetectorModelAnalysis Operation</seealso>
+        public virtual Task<DescribeDetectorModelAnalysisResponse> DescribeDetectorModelAnalysisAsync(DescribeDetectorModelAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDetectorModelAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDetectorModelAnalysisResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDetectorModelAnalysisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeInput
 
 
@@ -766,6 +837,77 @@ namespace Amazon.IoTEvents
             options.ResponseUnmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeLoggingOptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDetectorModelAnalysisResults
+
+
+        /// <summary>
+        /// Retrieves one or more analysis results of the detector model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDetectorModelAnalysisResults service method.</param>
+        /// 
+        /// <returns>The response from the GetDetectorModelAnalysisResults service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">REST API Reference for GetDetectorModelAnalysisResults Operation</seealso>
+        public virtual GetDetectorModelAnalysisResultsResponse GetDetectorModelAnalysisResults(GetDetectorModelAnalysisResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDetectorModelAnalysisResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDetectorModelAnalysisResultsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDetectorModelAnalysisResultsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves one or more analysis results of the detector model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDetectorModelAnalysisResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDetectorModelAnalysisResults service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">REST API Reference for GetDetectorModelAnalysisResults Operation</seealso>
+        public virtual Task<GetDetectorModelAnalysisResultsResponse> GetDetectorModelAnalysisResultsAsync(GetDetectorModelAnalysisResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDetectorModelAnalysisResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDetectorModelAnalysisResultsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDetectorModelAnalysisResultsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1135,6 +1277,79 @@ namespace Amazon.IoTEvents
             options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutLoggingOptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartDetectorModelAnalysis
+
+
+        /// <summary>
+        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
+        /// detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDetectorModelAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the StartDetectorModelAnalysis service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis">REST API Reference for StartDetectorModelAnalysis Operation</seealso>
+        public virtual StartDetectorModelAnalysisResponse StartDetectorModelAnalysis(StartDetectorModelAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDetectorModelAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDetectorModelAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StartDetectorModelAnalysisResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
+        /// detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDetectorModelAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDetectorModelAnalysis service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis">REST API Reference for StartDetectorModelAnalysis Operation</seealso>
+        public virtual Task<StartDetectorModelAnalysisResponse> StartDetectorModelAnalysisAsync(StartDetectorModelAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDetectorModelAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDetectorModelAnalysisResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartDetectorModelAnalysisResponse>(request, options, cancellationToken);
         }
 
         #endregion

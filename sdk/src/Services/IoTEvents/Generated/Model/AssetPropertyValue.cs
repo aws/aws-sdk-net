@@ -34,23 +34,26 @@ namespace Amazon.IoTEvents.Model
     /// 
     ///  
     /// <para>
-    /// For parameters that are string data type, you can specify the following options: 
+    /// You must use expressions for all parameters in <code>AssetPropertyValue</code>. The
+    /// expressions accept literals, operators, functions, references, and substitution templates.
+    /// </para>
+    ///  <p class="title"> <b>Examples</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use a string. For example, the <code>quality</code> value can be <code>'GOOD'</code>.
+    /// For literal values, the expressions must contain single quotes. For example, the value
+    /// for the <code>quality</code> parameter can be <code>'GOOD'</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use an expression. For example, the <code>quality</code> value can be <code>$input.TemperatureInput.sensorData.quality</code>
-    /// .
+    /// For references, you must specify either variables or input values. For example, the
+    /// value for the <code>quality</code> parameter can be <code>$input.TemperatureInput.sensorData.quality</code>.
     /// </para>
-    ///  
+    ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
     /// in the <i>AWS IoT Events Developer Guide</i>.
     /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AssetPropertyValue
     {
@@ -61,8 +64,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Quality. 
         /// <para>
-        /// The quality of the asset property value. The value must be <code>GOOD</code>, <code>BAD</code>,
-        /// or <code>UNCERTAIN</code>. You can also specify an expression.
+        /// The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>,
+        /// or <code>'UNCERTAIN'</code>.
         /// </para>
         /// </summary>
         public string Quality

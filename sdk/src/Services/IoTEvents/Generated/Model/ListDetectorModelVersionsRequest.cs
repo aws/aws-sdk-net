@@ -61,7 +61,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return at one time.
+        /// The maximum number of results to be returned per request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
@@ -80,7 +80,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results.
+        /// The token that you can use to return the next set of results.
         /// </para>
         /// </summary>
         public string NextToken

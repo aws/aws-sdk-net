@@ -30,21 +30,67 @@ namespace Amazon.IoTEvents.Model
 {
     /// <summary>
     /// Defines an action to write to the Amazon DynamoDB table that you created. The default
-    /// action payload contains all attribute-value pairs that have the information about
-    /// the detector model instance and the event that triggered the action. You can also
-    /// customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+    /// action payload contains all the information about the detector model instance and
+    /// the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
     /// A separate column of the DynamoDB table receives one attribute-value pair in the payload
     /// that you specify.
     /// 
-    ///  <important> 
+    ///  
     /// <para>
-    /// The <code>type</code> value for <code>Payload</code> must be <code>JSON</code>.
+    /// You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The
+    /// expressions accept literals, operators, functions, references, and substitution templates.
     /// </para>
-    ///  </important> 
+    ///  <p class="title"> <b>Examples</b> 
+    /// </para>
+    ///  <ul> <li> 
     /// <para>
-    /// You can use expressions for parameters that are strings. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
+    /// For literal values, the expressions must contain single quotes. For example, the value
+    /// for the <code>tableName</code> parameter can be <code>'GreenhouseTemperatureTable'</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For references, you must specify either variables or input values. For example, the
+    /// value for the <code>tableName</code> parameter can be <code>$variable.ddbtableName</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a substitution template, you must use <code>${}</code>, and the template must
+    /// be in single quotes. A substitution template can also contain a combination of literals,
+    /// operators, functions, references, and substitution templates.
+    /// </para>
+    ///  
+    /// <para>
+    /// In the following example, the value for the <code>contentExpression</code> parameter
+    /// in <code>Payload</code> uses a substitution template. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>'{\"sensorID\": \"${$input.GreenhouseInput.sensor_id}\", \"temperature\": \"${$input.GreenhouseInput.temperature
+    /// * 9 / 5 + 32}\"}'</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a string concatenation, you must use <code>+</code>. A string concatenation can
+    /// also contain a combination of literals, operators, functions, references, and substitution
+    /// templates.
+    /// </para>
+    ///  
+    /// <para>
+    /// In the following example, the value for the <code>tableName</code> parameter uses
+    /// a string concatenation. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
     /// in the <i>AWS IoT Events Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.
     /// </para>
     /// </summary>
     public partial class DynamoDBv2Action

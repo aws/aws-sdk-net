@@ -329,6 +329,61 @@ namespace Amazon.IoTEvents
 
         #endregion
         
+        #region  DescribeDetectorModelAnalysis
+
+
+        /// <summary>
+        /// Retrieves execution information about a detector model analysis
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModelAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDetectorModelAnalysis service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis">REST API Reference for DescribeDetectorModelAnalysis Operation</seealso>
+        DescribeDetectorModelAnalysisResponse DescribeDetectorModelAnalysis(DescribeDetectorModelAnalysisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDetectorModelAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModelAnalysis operation on AmazonIoTEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDetectorModelAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis">REST API Reference for DescribeDetectorModelAnalysis Operation</seealso>
+        IAsyncResult BeginDescribeDetectorModelAnalysis(DescribeDetectorModelAnalysisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDetectorModelAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDetectorModelAnalysis.</param>
+        /// 
+        /// <returns>Returns a  DescribeDetectorModelAnalysisResult from IoTEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis">REST API Reference for DescribeDetectorModelAnalysis Operation</seealso>
+        DescribeDetectorModelAnalysisResponse EndDescribeDetectorModelAnalysis(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeInput
 
 
@@ -439,6 +494,61 @@ namespace Amazon.IoTEvents
         /// <returns>Returns a  DescribeLoggingOptionsResult from IoTEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeLoggingOptions">REST API Reference for DescribeLoggingOptions Operation</seealso>
         DescribeLoggingOptionsResponse EndDescribeLoggingOptions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDetectorModelAnalysisResults
+
+
+        /// <summary>
+        /// Retrieves one or more analysis results of the detector model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDetectorModelAnalysisResults service method.</param>
+        /// 
+        /// <returns>The response from the GetDetectorModelAnalysisResults service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">REST API Reference for GetDetectorModelAnalysisResults Operation</seealso>
+        GetDetectorModelAnalysisResultsResponse GetDetectorModelAnalysisResults(GetDetectorModelAnalysisResultsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDetectorModelAnalysisResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDetectorModelAnalysisResults operation on AmazonIoTEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDetectorModelAnalysisResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">REST API Reference for GetDetectorModelAnalysisResults Operation</seealso>
+        IAsyncResult BeginGetDetectorModelAnalysisResults(GetDetectorModelAnalysisResultsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDetectorModelAnalysisResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDetectorModelAnalysisResults.</param>
+        /// 
+        /// <returns>Returns a  GetDetectorModelAnalysisResultsResult from IoTEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">REST API Reference for GetDetectorModelAnalysisResults Operation</seealso>
+        GetDetectorModelAnalysisResultsResponse EndGetDetectorModelAnalysisResults(IAsyncResult asyncResult);
 
         #endregion
         
@@ -721,6 +831,62 @@ namespace Amazon.IoTEvents
         /// <returns>Returns a  PutLoggingOptionsResult from IoTEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         PutLoggingOptionsResponse EndPutLoggingOptions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartDetectorModelAnalysis
+
+
+        /// <summary>
+        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
+        /// detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDetectorModelAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the StartDetectorModelAnalysis service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis">REST API Reference for StartDetectorModelAnalysis Operation</seealso>
+        StartDetectorModelAnalysisResponse StartDetectorModelAnalysis(StartDetectorModelAnalysisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDetectorModelAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDetectorModelAnalysis operation on AmazonIoTEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDetectorModelAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis">REST API Reference for StartDetectorModelAnalysis Operation</seealso>
+        IAsyncResult BeginStartDetectorModelAnalysis(StartDetectorModelAnalysisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDetectorModelAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDetectorModelAnalysis.</param>
+        /// 
+        /// <returns>Returns a  StartDetectorModelAnalysisResult from IoTEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis">REST API Reference for StartDetectorModelAnalysis Operation</seealso>
+        StartDetectorModelAnalysisResponse EndStartDetectorModelAnalysis(IAsyncResult asyncResult);
 
         #endregion
         

@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// This is the response object from the ListDetectorModelVersions operation.
+    /// This is the response object from the GetDetectorModelAnalysisResults operation.
     /// </summary>
-    public partial class ListDetectorModelVersionsResponse : AmazonWebServiceResponse
+    public partial class GetDetectorModelAnalysisResultsResponse : AmazonWebServiceResponse
     {
-        private List<DetectorModelVersionSummary> _detectorModelVersionSummaries = new List<DetectorModelVersionSummary>();
+        private List<AnalysisResult> _analysisResults = new List<AnalysisResult>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DetectorModelVersionSummaries. 
+        /// Gets and sets the property AnalysisResults. 
         /// <para>
-        /// Summary information about the detector model versions.
+        /// Contains information about one or more analysis results.
         /// </para>
         /// </summary>
-        public List<DetectorModelVersionSummary> DetectorModelVersionSummaries
+        public List<AnalysisResult> AnalysisResults
         {
-            get { return this._detectorModelVersionSummaries; }
-            set { this._detectorModelVersionSummaries = value; }
+            get { return this._analysisResults; }
+            set { this._analysisResults = value; }
         }
 
-        // Check to see if DetectorModelVersionSummaries property is set
-        internal bool IsSetDetectorModelVersionSummaries()
+        // Check to see if AnalysisResults property is set
+        internal bool IsSetAnalysisResults()
         {
-            return this._detectorModelVersionSummaries != null && this._detectorModelVersionSummaries.Count > 0; 
+            return this._analysisResults != null && this._analysisResults.Count > 0; 
         }
 
         /// <summary>

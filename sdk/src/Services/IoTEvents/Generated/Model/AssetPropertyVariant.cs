@@ -32,30 +32,50 @@ namespace Amazon.IoTEvents.Model
     /// A structure that contains an asset property value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html">Variant</a>
     /// in the <i>AWS IoT SiteWise API Reference</i>.
     /// 
-    ///  <important> 
+    ///  
+    /// <para>
+    /// You must use expressions for all parameters in <code>AssetPropertyVariant</code>.
+    /// The expressions accept literals, operators, functions, references, and substitution
+    /// templates.
+    /// </para>
+    ///  <p class="title"> <b>Examples</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For literal values, the expressions must contain single quotes. For example, the value
+    /// for the <code>integerValue</code> parameter can be <code>'100'</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For references, you must specify either variables or parameters. For example, the
+    /// value for the <code>booleanValue</code> parameter can be <code>$variable.offline</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a substitution template, you must use <code>${}</code>, and the template must
+    /// be in single quotes. A substitution template can also contain a combination of literals,
+    /// operators, functions, references, and substitution templates. 
+    /// </para>
+    ///  
+    /// <para>
+    /// In the following example, the value for the <code>doubleValue</code> parameter uses
+    /// a substitution template. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>'${$input.TemperatureInput.sensorData.temperature * 6 / 5 + 32}'</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
+    /// in the <i>AWS IoT Events Developer Guide</i>.
+    /// </para>
+    ///  
     /// <para>
     /// You must specify one of the following value types, depending on the <code>dataType</code>
     /// of the specified asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html">AssetProperty</a>
     /// in the <i>AWS IoT SiteWise API Reference</i>.
     /// </para>
-    ///  </important> 
-    /// <para>
-    /// For parameters that are string data type, you can specify the following options:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Use a string. For example, the <code>doubleValue</code> value can be <code>'47.9'</code>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Use an expression. For example, the <code>doubleValue</code> value can be <code>$input.TemperatureInput.sensorData.temperature</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
-    /// in the <i>AWS IoT Events Developer Guide</i>.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AssetPropertyVariant
     {
@@ -67,9 +87,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property BooleanValue. 
         /// <para>
-        /// The asset property value is a Boolean value that must be <code>TRUE</code> or <code>FALSE</code>.
-        /// You can also specify an expression. If you use an expression, the evaluated result
-        /// should be a Boolean value.
+        /// The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>.
+        /// You must use an expression, and the evaluated result should be a Boolean value.
         /// </para>
         /// </summary>
         public string BooleanValue
@@ -87,8 +106,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property DoubleValue. 
         /// <para>
-        /// The asset property value is a double. You can also specify an expression. If you use
-        /// an expression, the evaluated result should be a double.
+        /// The asset property value is a double. You must use an expression, and the evaluated
+        /// result should be a double.
         /// </para>
         /// </summary>
         public string DoubleValue
@@ -106,8 +125,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property IntegerValue. 
         /// <para>
-        /// The asset property value is an integer. You can also specify an expression. If you
-        /// use an expression, the evaluated result should be an integer.
+        /// The asset property value is an integer. You must use an expression, and the evaluated
+        /// result should be an integer.
         /// </para>
         /// </summary>
         public string IntegerValue
@@ -125,8 +144,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property StringValue. 
         /// <para>
-        /// The asset property value is a string. You can also specify an expression. If you use
-        /// an expression, the evaluated result should be a string.
+        /// The asset property value is a string. You must use an expression, and the evaluated
+        /// result should be a string.
         /// </para>
         /// </summary>
         public string StringValue

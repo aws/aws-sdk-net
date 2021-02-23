@@ -32,29 +32,49 @@ namespace Amazon.IoTEvents.Model
     /// Sends information about the detector model instance and the event that triggered the
     /// action to a specified asset property in AWS IoT SiteWise.
     /// 
-    ///  <important> 
+    ///  
     /// <para>
-    /// You must specify either <code>propertyAlias</code> or both <code>assetId</code> and
-    /// <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.
+    /// You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The
+    /// expressions accept literals, operators, functions, references, and substitutions templates.
     /// </para>
-    ///  </important> 
-    /// <para>
-    /// For parameters that are string data type, you can specify the following options: 
+    ///  <p class="title"> <b>Examples</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use a string. For example, the <code>propertyAlias</code> value can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.
+    /// For literal values, the expressions must contain single quotes. For example, the value
+    /// for the <code>propertyAlias</code> parameter can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use an expression. For example, the <code>propertyAlias</code> value can be <code>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/${$input.TemperatureInput.sensorData.turbineID}/temperature'</code>.
+    /// For references, you must specify either variables or input values. For example, the
+    /// value for the <code>assetId</code> parameter can be <code>$input.TurbineInput.assetId1</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a substitution template, you must use <code>${}</code>, and the template must
+    /// be in single quotes. A substitution template can also contain a combination of literals,
+    /// operators, functions, references, and substitution templates.
+    /// </para>
+    ///  
+    /// <para>
+    /// In the following example, the value for the <code>propertyAlias</code> parameter uses
+    /// a substitution template. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/
+    /// ${$input.TemperatureInput.sensorData.turbineID}/temperature'</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You must specify either <code>propertyAlias</code> or both <code>assetId</code> and
+    /// <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
     /// in the <i>AWS IoT Events Developer Guide</i>.
     /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class IotSiteWiseAction
     {
@@ -67,7 +87,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the asset that has the specified property. You can specify an expression.
+        /// The ID of the asset that has the specified property.
         /// </para>
         /// </summary>
         public string AssetId
@@ -86,8 +106,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property EntryId. 
         /// <para>
         /// A unique identifier for this entry. You can use the entry ID to track which data entry
-        /// causes an error in case of failure. The default is a new unique identifier. You can
-        /// also specify an expression.
+        /// causes an error in case of failure. The default is a new unique identifier.
         /// </para>
         /// </summary>
         public string EntryId
@@ -105,7 +124,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property PropertyAlias. 
         /// <para>
-        /// The alias of the asset property. You can also specify an expression.
+        /// The alias of the asset property.
         /// </para>
         /// </summary>
         public string PropertyAlias
@@ -123,7 +142,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property PropertyId. 
         /// <para>
-        /// The ID of the asset property. You can specify an expression.
+        /// The ID of the asset property.
         /// </para>
         /// </summary>
         public string PropertyId

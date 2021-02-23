@@ -29,36 +29,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// This is the response object from the ListDetectorModelVersions operation.
+    /// Container for the parameters to the GetDetectorModelAnalysisResults operation.
+    /// Retrieves one or more analysis results of the detector model.
     /// </summary>
-    public partial class ListDetectorModelVersionsResponse : AmazonWebServiceResponse
+    public partial class GetDetectorModelAnalysisResultsRequest : AmazonIoTEventsRequest
     {
-        private List<DetectorModelVersionSummary> _detectorModelVersionSummaries = new List<DetectorModelVersionSummary>();
+        private string _analysisId;
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DetectorModelVersionSummaries. 
+        /// Gets and sets the property AnalysisId. 
         /// <para>
-        /// Summary information about the detector model versions.
+        /// The ID of the analysis result that you want to retrieve.
         /// </para>
         /// </summary>
-        public List<DetectorModelVersionSummary> DetectorModelVersionSummaries
+        [AWSProperty(Required=true)]
+        public string AnalysisId
         {
-            get { return this._detectorModelVersionSummaries; }
-            set { this._detectorModelVersionSummaries = value; }
+            get { return this._analysisId; }
+            set { this._analysisId = value; }
         }
 
-        // Check to see if DetectorModelVersionSummaries property is set
-        internal bool IsSetDetectorModelVersionSummaries()
+        // Check to see if AnalysisId property is set
+        internal bool IsSetAnalysisId()
         {
-            return this._detectorModelVersionSummaries != null && this._detectorModelVersionSummaries.Count > 0; 
+            return this._analysisId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to be returned per request.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token that you can use to return the next set of results, or <code>null</code>
-        /// if there are no more results.
+        /// The token that you can use to return the next set of results.
         /// </para>
         /// </summary>
         public string NextToken
