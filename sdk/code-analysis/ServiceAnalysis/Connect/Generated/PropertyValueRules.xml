@@ -1063,7 +1063,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.MediaConcurrency.Concurrency</property>
     <min>1</min>
-    <max>5</max>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.OutboundCallerConfig.OutboundCallerIdName</property>

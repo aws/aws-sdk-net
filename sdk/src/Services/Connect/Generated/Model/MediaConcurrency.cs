@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// The number of contacts an agent can have on a channel simultaneously.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public int Concurrency
         {
             get { return this._concurrency.GetValueOrDefault(); }
