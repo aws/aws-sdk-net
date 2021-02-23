@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
+        private bool? _excludeColumnSchema;
         private string _expression;
         private int? _maxResults;
         private string _nextToken;
@@ -79,6 +80,21 @@ namespace Amazon.Glue.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludeColumnSchema.
+        /// </summary>
+        public bool ExcludeColumnSchema
+        {
+            get { return this._excludeColumnSchema.GetValueOrDefault(); }
+            set { this._excludeColumnSchema = value; }
+        }
+
+        // Check to see if ExcludeColumnSchema property is set
+        internal bool IsSetExcludeColumnSchema()
+        {
+            return this._excludeColumnSchema.HasValue; 
         }
 
         /// <summary>

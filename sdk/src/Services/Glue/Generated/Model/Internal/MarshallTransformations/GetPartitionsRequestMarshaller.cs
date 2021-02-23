@@ -80,6 +80,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatabaseName);
                 }
 
+                if(publicRequest.IsSetExcludeColumnSchema())
+                {
+                    context.Writer.WritePropertyName("ExcludeColumnSchema");
+                    context.Writer.Write(publicRequest.ExcludeColumnSchema);
+                }
+
                 if(publicRequest.IsSetExpression())
                 {
                     context.Writer.WritePropertyName("Expression");

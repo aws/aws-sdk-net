@@ -765,7 +765,7 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.GetDatabasesRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetDataCatalogEncryptionSettingsRequest.CatalogId</property>
@@ -1105,7 +1105,7 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.GetTablesRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetTableVersionRequest.CatalogId</property>
@@ -1140,7 +1140,7 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.GetTableVersionsRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetTableVersionsRequest.TableName</property>
@@ -1196,7 +1196,7 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.GetUserDefinedFunctionsRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetUserDefinedFunctionsRequest.Pattern</property>

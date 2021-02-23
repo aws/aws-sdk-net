@@ -106,7 +106,7 @@ namespace Amazon.Glue.Model
         /// The maximum number of tables to return in a single response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
