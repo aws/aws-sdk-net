@@ -1,3 +1,26 @@
+### 3.5.116.0 (2021-02-23 19:15 UTC)
+* AutoScaling (3.5.4.0)
+	* Adds a new optional IncludeDeletedGroups parameter to the DescribeScalingActivities API.
+* Connect (3.5.6.7)
+	* Documentation updates for AWS Connect (MediaConcurrency Limit).
+* Glue (3.5.11.0)
+	* Updating the page size for Glue catalog getter APIs.
+* IoTEvents (3.5.1.0)
+	* This release adds an Analyze feature to AWS IoT Events that lets customers analyze their detector models for runtime issues.
+* Pinpoint (3.5.4.0)
+	* Enables AWS Pinpoint customers to use Entity Id and Template Id when sending SMS message. These parameters can be obtained from the regulatory body of the country where you are trying to send the SMS.
+* QuickSight (3.5.11.3)
+	* Documentation updates for QuickSight Row Level Security
+* RedshiftDataAPIService (3.5.2.0)
+	* This release adds an additional parameter 'ConnectedDatabase' into ListSchemasRequest, ListTablesRequest and DescribeTableRequest to support the metadata sharing across databases.
+* S3Control (3.5.5.8)
+	* Documentation updates for s3-control
+* Core 3.5.3.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.115.0 (2021-02-22 19:21 UTC)
 * SageMaker (3.5.11.0)
 	* Amazon SageMaker now supports core dump for SageMaker Endpoints and direct invocation of a single container in a SageMaker Endpoint that hosts multiple containers.
