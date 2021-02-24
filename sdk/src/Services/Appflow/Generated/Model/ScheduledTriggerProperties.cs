@@ -35,6 +35,7 @@ namespace Amazon.Appflow.Model
     public partial class ScheduledTriggerProperties
     {
         private DataPullMode _dataPullMode;
+        private DateTime? _firstExecutionFrom;
         private DateTime? _scheduleEndTime;
         private string _scheduleExpression;
         private long? _scheduleOffset;
@@ -58,6 +59,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetDataPullMode()
         {
             return this._dataPullMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirstExecutionFrom.
+        /// </summary>
+        public DateTime FirstExecutionFrom
+        {
+            get { return this._firstExecutionFrom.GetValueOrDefault(); }
+            set { this._firstExecutionFrom = value; }
+        }
+
+        // Check to see if FirstExecutionFrom property is set
+        internal bool IsSetFirstExecutionFrom()
+        {
+            return this._firstExecutionFrom.HasValue; 
         }
 
         /// <summary>

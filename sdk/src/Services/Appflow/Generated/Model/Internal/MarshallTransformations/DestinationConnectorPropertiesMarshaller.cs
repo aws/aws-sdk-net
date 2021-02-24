@@ -45,6 +45,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DestinationConnectorProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomerProfiles())
+            {
+                context.Writer.WritePropertyName("CustomerProfiles");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomerProfilesDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomerProfiles, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEventBridge())
             {
                 context.Writer.WritePropertyName("EventBridge");
@@ -52,6 +63,28 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = EventBridgeDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventBridge, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetHoneycode())
+            {
+                context.Writer.WritePropertyName("Honeycode");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HoneycodeDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Honeycode, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLookoutMetrics())
+            {
+                context.Writer.WritePropertyName("LookoutMetrics");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LookoutMetricsDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.LookoutMetrics, context);
 
                 context.Writer.WriteObjectEnd();
             }

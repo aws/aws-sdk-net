@@ -64,10 +64,28 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomerProfiles", targetDepth))
+                {
+                    var unmarshaller = CustomerProfilesDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.CustomerProfiles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EventBridge", targetDepth))
                 {
                     var unmarshaller = EventBridgeDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.EventBridge = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Honeycode", targetDepth))
+                {
+                    var unmarshaller = HoneycodeDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.Honeycode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LookoutMetrics", targetDepth))
+                {
+                    var unmarshaller = LookoutMetricsDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.LookoutMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Redshift", targetDepth))

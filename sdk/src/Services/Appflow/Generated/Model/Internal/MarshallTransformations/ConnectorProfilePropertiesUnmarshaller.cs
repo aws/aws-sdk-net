@@ -88,6 +88,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.GoogleAnalytics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Honeycode", targetDepth))
+                {
+                    var unmarshaller = HoneycodeConnectorProfilePropertiesUnmarshaller.Instance;
+                    unmarshalledObject.Honeycode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InforNexus", targetDepth))
                 {
                     var unmarshaller = InforNexusConnectorProfilePropertiesUnmarshaller.Instance;

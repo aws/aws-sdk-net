@@ -181,6 +181,10 @@ namespace Amazon.Appflow
         /// </summary>
         public static readonly ConnectorType Amplitude = new ConnectorType("Amplitude");
         /// <summary>
+        /// Constant CustomerProfiles for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType CustomerProfiles = new ConnectorType("CustomerProfiles");
+        /// <summary>
         /// Constant Datadog for ConnectorType
         /// </summary>
         public static readonly ConnectorType Datadog = new ConnectorType("Datadog");
@@ -197,9 +201,17 @@ namespace Amazon.Appflow
         /// </summary>
         public static readonly ConnectorType Googleanalytics = new ConnectorType("Googleanalytics");
         /// <summary>
+        /// Constant Honeycode for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType Honeycode = new ConnectorType("Honeycode");
+        /// <summary>
         /// Constant Infornexus for ConnectorType
         /// </summary>
         public static readonly ConnectorType Infornexus = new ConnectorType("Infornexus");
+        /// <summary>
+        /// Constant LookoutMetrics for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType LookoutMetrics = new ConnectorType("LookoutMetrics");
         /// <summary>
         /// Constant Marketo for ConnectorType
         /// </summary>

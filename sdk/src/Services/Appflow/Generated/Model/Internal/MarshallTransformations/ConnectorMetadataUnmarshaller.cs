@@ -70,6 +70,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.Amplitude = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomerProfiles", targetDepth))
+                {
+                    var unmarshaller = CustomerProfilesMetadataUnmarshaller.Instance;
+                    unmarshalledObject.CustomerProfiles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Datadog", targetDepth))
                 {
                     var unmarshaller = DatadogMetadataUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = GoogleAnalyticsMetadataUnmarshaller.Instance;
                     unmarshalledObject.GoogleAnalytics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Honeycode", targetDepth))
+                {
+                    var unmarshaller = HoneycodeMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Honeycode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InforNexus", targetDepth))

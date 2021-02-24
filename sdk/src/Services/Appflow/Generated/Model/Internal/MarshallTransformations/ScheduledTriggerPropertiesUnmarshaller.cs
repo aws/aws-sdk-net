@@ -70,6 +70,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataPullMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("firstExecutionFrom", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.FirstExecutionFrom = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scheduleEndTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

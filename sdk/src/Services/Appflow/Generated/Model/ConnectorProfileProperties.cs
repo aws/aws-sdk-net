@@ -37,6 +37,7 @@ namespace Amazon.Appflow.Model
         private DatadogConnectorProfileProperties _datadog;
         private DynatraceConnectorProfileProperties _dynatrace;
         private GoogleAnalyticsConnectorProfileProperties _googleAnalytics;
+        private HoneycodeConnectorProfileProperties _honeycode;
         private InforNexusConnectorProfileProperties _inforNexus;
         private MarketoConnectorProfileProperties _marketo;
         private RedshiftConnectorProfileProperties _redshift;
@@ -119,6 +120,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetGoogleAnalytics()
         {
             return this._googleAnalytics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Honeycode.
+        /// </summary>
+        public HoneycodeConnectorProfileProperties Honeycode
+        {
+            get { return this._honeycode; }
+            set { this._honeycode = value; }
+        }
+
+        // Check to see if Honeycode property is set
+        internal bool IsSetHoneycode()
+        {
+            return this._honeycode != null;
         }
 
         /// <summary>

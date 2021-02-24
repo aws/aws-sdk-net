@@ -294,6 +294,16 @@
     <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.CustomerProfilesDestinationProperties.DomainName</property>
+    <max>64</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.CustomerProfilesDestinationProperties.ObjectTypeName</property>
+    <max>255</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.DatadogConnectorProfileCredentials.ApiKey</property>
     <max>256</max>
     <pattern>\S+</pattern>
@@ -411,6 +421,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GoogleAnalyticsSourceProperties.Object</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.HoneycodeConnectorProfileCredentials.AccessToken</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.HoneycodeConnectorProfileCredentials.RefreshToken</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.HoneycodeDestinationProperties.Object</property>
     <max>512</max>
     <pattern>\S+</pattern>
   </property-value-rule>

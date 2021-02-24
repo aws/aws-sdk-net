@@ -89,6 +89,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHoneycode())
+            {
+                context.Writer.WritePropertyName("Honeycode");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HoneycodeConnectorProfilePropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Honeycode, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInforNexus())
             {
                 context.Writer.WritePropertyName("InforNexus");

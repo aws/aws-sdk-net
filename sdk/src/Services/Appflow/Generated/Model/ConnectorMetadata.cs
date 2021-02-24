@@ -35,10 +35,12 @@ namespace Amazon.Appflow.Model
     public partial class ConnectorMetadata
     {
         private AmplitudeMetadata _amplitude;
+        private CustomerProfilesMetadata _customerProfiles;
         private DatadogMetadata _datadog;
         private DynatraceMetadata _dynatrace;
         private EventBridgeMetadata _eventBridge;
         private GoogleAnalyticsMetadata _googleAnalytics;
+        private HoneycodeMetadata _honeycode;
         private InforNexusMetadata _inforNexus;
         private MarketoMetadata _marketo;
         private RedshiftMetadata _redshift;
@@ -69,6 +71,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetAmplitude()
         {
             return this._amplitude != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerProfiles.
+        /// </summary>
+        public CustomerProfilesMetadata CustomerProfiles
+        {
+            get { return this._customerProfiles; }
+            set { this._customerProfiles = value; }
+        }
+
+        // Check to see if CustomerProfiles property is set
+        internal bool IsSetCustomerProfiles()
+        {
+            return this._customerProfiles != null;
         }
 
         /// <summary>
@@ -141,6 +158,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetGoogleAnalytics()
         {
             return this._googleAnalytics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Honeycode.
+        /// </summary>
+        public HoneycodeMetadata Honeycode
+        {
+            get { return this._honeycode; }
+            set { this._honeycode = value; }
+        }
+
+        // Check to see if Honeycode property is set
+        internal bool IsSetHoneycode()
+        {
+            return this._honeycode != null;
         }
 
         /// <summary>

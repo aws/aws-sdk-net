@@ -33,12 +33,30 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class DestinationConnectorProperties
     {
+        private CustomerProfilesDestinationProperties _customerProfiles;
         private EventBridgeDestinationProperties _eventBridge;
+        private HoneycodeDestinationProperties _honeycode;
+        private LookoutMetricsDestinationProperties _lookoutMetrics;
         private RedshiftDestinationProperties _redshift;
         private S3DestinationProperties _s3;
         private SalesforceDestinationProperties _salesforce;
         private SnowflakeDestinationProperties _snowflake;
         private UpsolverDestinationProperties _upsolver;
+
+        /// <summary>
+        /// Gets and sets the property CustomerProfiles.
+        /// </summary>
+        public CustomerProfilesDestinationProperties CustomerProfiles
+        {
+            get { return this._customerProfiles; }
+            set { this._customerProfiles = value; }
+        }
+
+        // Check to see if CustomerProfiles property is set
+        internal bool IsSetCustomerProfiles()
+        {
+            return this._customerProfiles != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EventBridge. 
@@ -56,6 +74,36 @@ namespace Amazon.Appflow.Model
         internal bool IsSetEventBridge()
         {
             return this._eventBridge != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Honeycode.
+        /// </summary>
+        public HoneycodeDestinationProperties Honeycode
+        {
+            get { return this._honeycode; }
+            set { this._honeycode = value; }
+        }
+
+        // Check to see if Honeycode property is set
+        internal bool IsSetHoneycode()
+        {
+            return this._honeycode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LookoutMetrics.
+        /// </summary>
+        public LookoutMetricsDestinationProperties LookoutMetrics
+        {
+            get { return this._lookoutMetrics; }
+            set { this._lookoutMetrics = value; }
+        }
+
+        // Check to see if LookoutMetrics property is set
+        internal bool IsSetLookoutMetrics()
+        {
+            return this._lookoutMetrics != null;
         }
 
         /// <summary>

@@ -51,6 +51,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DataPullMode);
             }
 
+            if(requestObject.IsSetFirstExecutionFrom())
+            {
+                context.Writer.WritePropertyName("firstExecutionFrom");
+                context.Writer.Write(requestObject.FirstExecutionFrom);
+            }
+
             if(requestObject.IsSetScheduleEndTime())
             {
                 context.Writer.WritePropertyName("scheduleEndTime");
