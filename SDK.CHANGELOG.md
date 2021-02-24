@@ -1,3 +1,15 @@
+### 3.5.117.0 (2021-02-24 19:43 UTC)
+* Appflow (3.5.4.0)
+	* # Adding 'Amazon Honeycode' , 'Amazon Lookout for Metrics' and  'Amazon Connect Customer Profiles' as Destinations.
+* ComputeOptimizer (3.5.3.18)
+	* Documentation updates for Compute Optimizer
+* ECRPublic (3.5.1.0)
+	* This release adds support for AWS tags on Amazon ECR Public repositories.
+* Elasticsearch (3.5.6.0)
+	* Amazon Elasticsearch Service now supports Auto-Tune, which monitors performance metrics and automatically optimizes domains
+* MediaPackageVod (3.5.1.0)
+	* AWS Elemental MediaPackage provides access logs that capture detailed information about requests sent to a customer's MediaPackage VOD packaging group.
+
 ### 3.5.116.0 (2021-02-23 19:15 UTC)
 * AutoScaling (3.5.4.0)
 	* Adds a new optional IncludeDeletedGroups parameter to the DescribeScalingActivities API.
