@@ -42,6 +42,20 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// The name of the utilization metric.
         /// </para>
+        ///  
+        /// <para>
+        /// The following utilization metrics are available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Duration</code> - The amount of time that your function code spends processing
+        /// an event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Memory</code> - The amount of memory used per invocation.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public LambdaFunctionMetricName Name
         {
