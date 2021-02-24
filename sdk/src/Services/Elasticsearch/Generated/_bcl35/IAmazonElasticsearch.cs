@@ -748,6 +748,61 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  DescribeDomainAutoTunes
+
+
+        /// <summary>
+        /// Provides scheduled Auto-Tune action details for the Elasticsearch domain, such as
+        /// Auto-Tune action type, description, severity, and scheduled date.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainAutoTunes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDomainAutoTunes service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
+        DescribeDomainAutoTunesResponse DescribeDomainAutoTunes(DescribeDomainAutoTunesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDomainAutoTunes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainAutoTunes operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomainAutoTunes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
+        IAsyncResult BeginDescribeDomainAutoTunes(DescribeDomainAutoTunesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDomainAutoTunes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomainAutoTunes.</param>
+        /// 
+        /// <returns>Returns a  DescribeDomainAutoTunesResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
+        DescribeDomainAutoTunesResponse EndDescribeDomainAutoTunes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeElasticsearchDomain
 
 

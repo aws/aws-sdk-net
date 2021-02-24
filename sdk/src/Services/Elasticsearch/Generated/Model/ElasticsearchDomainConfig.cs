@@ -36,6 +36,7 @@ namespace Amazon.Elasticsearch.Model
         private AccessPoliciesStatus _accessPolicies;
         private AdvancedOptionsStatus _advancedOptions;
         private AdvancedSecurityOptionsStatus _advancedSecurityOptions;
+        private AutoTuneOptionsStatus _autoTuneOptions;
         private CognitoOptionsStatus _cognitoOptions;
         private DomainEndpointOptionsStatus _domainEndpointOptions;
         private EBSOptionsStatus _ebsOptions;
@@ -100,6 +101,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetAdvancedSecurityOptions()
         {
             return this._advancedSecurityOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoTuneOptions. 
+        /// <para>
+        /// Specifies <code>AutoTuneOptions</code> for the domain. 
+        /// </para>
+        /// </summary>
+        public AutoTuneOptionsStatus AutoTuneOptions
+        {
+            get { return this._autoTuneOptions; }
+            set { this._autoTuneOptions = value; }
+        }
+
+        // Check to see if AutoTuneOptions property is set
+        internal bool IsSetAutoTuneOptions()
+        {
+            return this._autoTuneOptions != null;
         }
 
         /// <summary>

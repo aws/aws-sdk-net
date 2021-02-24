@@ -1177,6 +1177,77 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  DescribeDomainAutoTunes
+
+
+        /// <summary>
+        /// Provides scheduled Auto-Tune action details for the Elasticsearch domain, such as
+        /// Auto-Tune action type, description, severity, and scheduled date.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainAutoTunes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDomainAutoTunes service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
+        public virtual DescribeDomainAutoTunesResponse DescribeDomainAutoTunes(DescribeDomainAutoTunesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainAutoTunesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainAutoTunesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDomainAutoTunesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides scheduled Auto-Tune action details for the Elasticsearch domain, such as
+        /// Auto-Tune action type, description, severity, and scheduled date.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainAutoTunes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDomainAutoTunes service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
+        public virtual Task<DescribeDomainAutoTunesResponse> DescribeDomainAutoTunesAsync(DescribeDomainAutoTunesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainAutoTunesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainAutoTunesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDomainAutoTunesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeElasticsearchDomain
 
 

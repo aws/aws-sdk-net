@@ -43,6 +43,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Elasticsearch")]
+        public void DescribeDomainAutoTunesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDomainAutoTunesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeDomainAutoTunesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeDomainAutoTunesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeDomainAutoTunes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeDomainAutoTunes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Elasticsearch")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeDomainAutoTunesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDomainAutoTunesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeDomainAutoTunesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeDomainAutoTunes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeDomainAutoTunes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Elasticsearch")]
         public void DescribeInboundCrossClusterSearchConnectionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeInboundCrossClusterSearchConnectionsRequest>();

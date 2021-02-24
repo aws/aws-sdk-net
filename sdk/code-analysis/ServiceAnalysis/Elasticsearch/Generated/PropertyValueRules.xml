@@ -43,6 +43,16 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DescribeDomainAutoTunesRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DescribeDomainAutoTunesRequest.MaxResults</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DescribeElasticsearchDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -199,6 +209,10 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.AutoTuneStatus.UpdateVersion</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CognitoOptions.IdentityPoolId</property>
     <min>1</min>
     <max>55</max>
@@ -249,6 +263,11 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.Duration.Value</property>
+    <min>1</min>
+    <max>24</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ElasticsearchDomainStatus.DomainId</property>

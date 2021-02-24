@@ -27,6 +27,11 @@ namespace Amazon.Elasticsearch.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeDomainAutoTunes operation
+        ///</summary>
+        IDescribeDomainAutoTunesPaginator DescribeDomainAutoTunes(DescribeDomainAutoTunesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeInboundCrossClusterSearchConnections operation
         ///</summary>
         IDescribeInboundCrossClusterSearchConnectionsPaginator DescribeInboundCrossClusterSearchConnections(DescribeInboundCrossClusterSearchConnectionsRequest request);

@@ -82,6 +82,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdvancedSecurityOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutoTuneOptions", targetDepth))
+                {
+                    var unmarshaller = AutoTuneOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.AutoTuneOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CognitoOptions", targetDepth))
                 {
                     var unmarshaller = CognitoOptionsStatusUnmarshaller.Instance;

@@ -37,6 +37,7 @@ namespace Amazon.Elasticsearch.Model
         private Dictionary<string, string> _advancedOptions = new Dictionary<string, string>();
         private AdvancedSecurityOptions _advancedSecurityOptions;
         private string _arn;
+        private AutoTuneOptionsOutput _autoTuneOptions;
         private CognitoOptions _cognitoOptions;
         private bool? _created;
         private bool? _deleted;
@@ -130,6 +131,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetARN()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoTuneOptions. 
+        /// <para>
+        /// The current status of the Elasticsearch domain's Auto-Tune options.
+        /// </para>
+        /// </summary>
+        public AutoTuneOptionsOutput AutoTuneOptions
+        {
+            get { return this._autoTuneOptions; }
+            set { this._autoTuneOptions = value; }
+        }
+
+        // Check to see if AutoTuneOptions property is set
+        internal bool IsSetAutoTuneOptions()
+        {
+            return this._autoTuneOptions != null;
         }
 
         /// <summary>

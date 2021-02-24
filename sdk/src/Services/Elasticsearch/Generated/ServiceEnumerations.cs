@@ -25,6 +25,180 @@ namespace Amazon.Elasticsearch
 {
 
     /// <summary>
+    /// Constants used for properties of type AutoTuneDesiredState.
+    /// </summary>
+    public class AutoTuneDesiredState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AutoTuneDesiredState
+        /// </summary>
+        public static readonly AutoTuneDesiredState DISABLED = new AutoTuneDesiredState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AutoTuneDesiredState
+        /// </summary>
+        public static readonly AutoTuneDesiredState ENABLED = new AutoTuneDesiredState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoTuneDesiredState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoTuneDesiredState FindValue(string value)
+        {
+            return FindValue<AutoTuneDesiredState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoTuneDesiredState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoTuneState.
+    /// </summary>
+    public class AutoTuneState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE_IN_PROGRESS for AutoTuneState
+        /// </summary>
+        public static readonly AutoTuneState DISABLE_IN_PROGRESS = new AutoTuneState("DISABLE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DISABLED for AutoTuneState
+        /// </summary>
+        public static readonly AutoTuneState DISABLED = new AutoTuneState("DISABLED");
+        /// <summary>
+        /// Constant DISABLED_AND_ROLLBACK_COMPLETE for AutoTuneState
+        /// </summary>
+        public static readonly AutoTuneState DISABLED_AND_ROLLBACK_COMPLETE = new AutoTuneState("DISABLED_AND_ROLLBACK_COMPLETE");
+        /// <summary>
+        /// Constant DISABLED_AND_ROLLBACK_ERROR for AutoTuneState
+        /// </summary>
+        public static readonly AutoTuneState DISABLED_AND_ROLLBACK_ERROR = new AutoTuneState("DISABLED_AND_ROLLBACK_ERROR");
+        /// <summary>
+        /// Constant DISABLED_AND_ROLLBACK_IN_PROGRESS for AutoTuneState
+        /// </summary>
+        public static readonly AutoTuneState DISABLED_AND_ROLLBACK_IN_PROGRESS = new AutoTuneState("DISABLED_AND_ROLLBACK_IN_PROGRESS");
+        /// <summary>
+        /// Constant DISABLED_AND_ROLLBACK_SCHEDULED for AutoTuneState
+        /// </summary>
+        public static readonly AutoTuneState DISABLED_AND_ROLLBACK_SCHEDULED = new AutoTuneState("DISABLED_AND_ROLLBACK_SCHEDULED");
+        /// <summary>
+        /// Constant ENABLE_IN_PROGRESS for AutoTuneState
+        /// </summary>
+        public static readonly AutoTuneState ENABLE_IN_PROGRESS = new AutoTuneState("ENABLE_IN_PROGRESS");
+        /// <summary>
+        /// Constant ENABLED for AutoTuneState
+        /// </summary>
+        public static readonly AutoTuneState ENABLED = new AutoTuneState("ENABLED");
+        /// <summary>
+        /// Constant ERROR for AutoTuneState
+        /// </summary>
+        public static readonly AutoTuneState ERROR = new AutoTuneState("ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoTuneState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoTuneState FindValue(string value)
+        {
+            return FindValue<AutoTuneState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoTuneState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoTuneType.
+    /// </summary>
+    public class AutoTuneType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SCHEDULED_ACTION for AutoTuneType
+        /// </summary>
+        public static readonly AutoTuneType SCHEDULED_ACTION = new AutoTuneType("SCHEDULED_ACTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoTuneType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoTuneType FindValue(string value)
+        {
+            return FindValue<AutoTuneType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoTuneType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentStatus.
     /// </summary>
     public class DeploymentStatus : ConstantClass
@@ -946,6 +1120,206 @@ namespace Amazon.Elasticsearch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReservedElasticsearchInstancePaymentOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RollbackOnDisable.
+    /// </summary>
+    public class RollbackOnDisable : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT_ROLLBACK for RollbackOnDisable
+        /// </summary>
+        public static readonly RollbackOnDisable DEFAULT_ROLLBACK = new RollbackOnDisable("DEFAULT_ROLLBACK");
+        /// <summary>
+        /// Constant NO_ROLLBACK for RollbackOnDisable
+        /// </summary>
+        public static readonly RollbackOnDisable NO_ROLLBACK = new RollbackOnDisable("NO_ROLLBACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RollbackOnDisable(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RollbackOnDisable FindValue(string value)
+        {
+            return FindValue<RollbackOnDisable>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RollbackOnDisable(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScheduledAutoTuneActionType.
+    /// </summary>
+    public class ScheduledAutoTuneActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JVM_HEAP_SIZE_TUNING for ScheduledAutoTuneActionType
+        /// </summary>
+        public static readonly ScheduledAutoTuneActionType JVM_HEAP_SIZE_TUNING = new ScheduledAutoTuneActionType("JVM_HEAP_SIZE_TUNING");
+        /// <summary>
+        /// Constant JVM_YOUNG_GEN_TUNING for ScheduledAutoTuneActionType
+        /// </summary>
+        public static readonly ScheduledAutoTuneActionType JVM_YOUNG_GEN_TUNING = new ScheduledAutoTuneActionType("JVM_YOUNG_GEN_TUNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduledAutoTuneActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduledAutoTuneActionType FindValue(string value)
+        {
+            return FindValue<ScheduledAutoTuneActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduledAutoTuneActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScheduledAutoTuneSeverityType.
+    /// </summary>
+    public class ScheduledAutoTuneSeverityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for ScheduledAutoTuneSeverityType
+        /// </summary>
+        public static readonly ScheduledAutoTuneSeverityType HIGH = new ScheduledAutoTuneSeverityType("HIGH");
+        /// <summary>
+        /// Constant LOW for ScheduledAutoTuneSeverityType
+        /// </summary>
+        public static readonly ScheduledAutoTuneSeverityType LOW = new ScheduledAutoTuneSeverityType("LOW");
+        /// <summary>
+        /// Constant MEDIUM for ScheduledAutoTuneSeverityType
+        /// </summary>
+        public static readonly ScheduledAutoTuneSeverityType MEDIUM = new ScheduledAutoTuneSeverityType("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduledAutoTuneSeverityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduledAutoTuneSeverityType FindValue(string value)
+        {
+            return FindValue<ScheduledAutoTuneSeverityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduledAutoTuneSeverityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimeUnit.
+    /// </summary>
+    public class TimeUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOURS for TimeUnit
+        /// </summary>
+        public static readonly TimeUnit HOURS = new TimeUnit("HOURS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimeUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimeUnit FindValue(string value)
+        {
+            return FindValue<TimeUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimeUnit(string value)
         {
             return FindValue(value);
         }

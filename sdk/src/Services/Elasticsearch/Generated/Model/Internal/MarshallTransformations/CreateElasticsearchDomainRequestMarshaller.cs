@@ -97,6 +97,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAutoTuneOptions())
+                {
+                    context.Writer.WritePropertyName("AutoTuneOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoTuneOptionsInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoTuneOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCognitoOptions())
                 {
                     context.Writer.WritePropertyName("CognitoOptions");

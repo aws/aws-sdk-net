@@ -88,6 +88,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutoTuneOptions", targetDepth))
+                {
+                    var unmarshaller = AutoTuneOptionsOutputUnmarshaller.Instance;
+                    unmarshalledObject.AutoTuneOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CognitoOptions", targetDepth))
                 {
                     var unmarshaller = CognitoOptionsUnmarshaller.Instance;
