@@ -44,6 +44,64 @@ namespace Amazon.MediaPackageVod
 
 
         
+        #region  ConfigureLogs
+
+
+        /// <summary>
+        /// Changes the packaging group's properities to configure log subscription
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogs service method.</param>
+        /// 
+        /// <returns>The response from the ConfigureLogs service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ConfigureLogs">REST API Reference for ConfigureLogs Operation</seealso>
+        ConfigureLogsResponse ConfigureLogs(ConfigureLogsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfigureLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogs operation on AmazonMediaPackageVodClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfigureLogs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ConfigureLogs">REST API Reference for ConfigureLogs Operation</seealso>
+        IAsyncResult BeginConfigureLogs(ConfigureLogsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ConfigureLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfigureLogs.</param>
+        /// 
+        /// <returns>Returns a  ConfigureLogsResult from MediaPackageVod.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ConfigureLogs">REST API Reference for ConfigureLogs Operation</seealso>
+        ConfigureLogsResponse EndConfigureLogs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateAsset
 
 

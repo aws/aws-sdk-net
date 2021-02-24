@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreatePackagingGroup Request Marshaller
+    /// ConfigureLogs Request Marshaller
     /// </summary>       
-    public class CreatePackagingGroupRequestMarshaller : IMarshaller<IRequest, CreatePackagingGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ConfigureLogsRequestMarshaller : IMarshaller<IRequest, ConfigureLogsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreatePackagingGroupRequest)input);
+            return this.Marshall((ConfigureLogsRequest)input);
         }
 
         /// <summary>
@@ -52,31 +52,23 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreatePackagingGroupRequest publicRequest)
+        public IRequest Marshall(ConfigureLogsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaPackageVod");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-07";            
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/packaging_groups";
+            if (!publicRequest.IsSetId())
+                throw new AmazonMediaPackageVodException("Request object does not have required field Id set");
+            request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/packaging_groups/{id}/configure_logs";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorization())
-                {
-                    context.Writer.WritePropertyName("authorization");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AuthorizationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Authorization, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetEgressAccessLogs())
                 {
                     context.Writer.WritePropertyName("egressAccessLogs");
@@ -85,26 +77,6 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     var marshaller = EgressAccessLogsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.EgressAccessLogs, context);
 
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
                     context.Writer.WriteObjectEnd();
                 }
 
@@ -117,9 +89,9 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreatePackagingGroupRequestMarshaller _instance = new CreatePackagingGroupRequestMarshaller();        
+        private static ConfigureLogsRequestMarshaller _instance = new ConfigureLogsRequestMarshaller();        
 
-        internal static CreatePackagingGroupRequestMarshaller GetInstance()
+        internal static ConfigureLogsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -127,7 +99,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePackagingGroupRequestMarshaller Instance
+        public static ConfigureLogsRequestMarshaller Instance
         {
             get
             {

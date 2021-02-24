@@ -82,6 +82,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("egressAccessLogs", targetDepth))
+                {
+                    var unmarshaller = EgressAccessLogsUnmarshaller.Instance;
+                    unmarshalledObject.EgressAccessLogs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

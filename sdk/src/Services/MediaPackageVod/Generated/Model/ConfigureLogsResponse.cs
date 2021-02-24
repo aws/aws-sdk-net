@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
-    /// This is the response object from the CreatePackagingGroup operation.
+    /// This is the response object from the ConfigureLogs operation.
     /// </summary>
-    public partial class CreatePackagingGroupResponse : AmazonWebServiceResponse
+    public partial class ConfigureLogsResponse : AmazonWebServiceResponse
     {
         private string _arn;
         private Authorization _authorization;

@@ -36,6 +36,7 @@ namespace Amazon.MediaPackageVod.Model
         private string _arn;
         private Authorization _authorization;
         private string _domainName;
+        private EgressAccessLogs _egressAccessLogs;
         private string _id;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -83,6 +84,21 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EgressAccessLogs.
+        /// </summary>
+        public EgressAccessLogs EgressAccessLogs
+        {
+            get { return this._egressAccessLogs; }
+            set { this._egressAccessLogs = value; }
+        }
+
+        // Check to see if EgressAccessLogs property is set
+        internal bool IsSetEgressAccessLogs()
+        {
+            return this._egressAccessLogs != null;
         }
 
         /// <summary>

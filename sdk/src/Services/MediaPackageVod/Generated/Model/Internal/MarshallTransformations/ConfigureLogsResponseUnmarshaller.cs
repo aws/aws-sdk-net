@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreatePackagingGroup operation
+    /// Response Unmarshaller for ConfigureLogs operation
     /// </summary>  
-    public class CreatePackagingGroupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ConfigureLogsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreatePackagingGroupResponse response = new CreatePackagingGroupResponse();
+            ConfigureLogsResponse response = new ConfigureLogsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -138,9 +138,9 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             return new AmazonMediaPackageVodException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreatePackagingGroupResponseUnmarshaller _instance = new CreatePackagingGroupResponseUnmarshaller();        
+        private static ConfigureLogsResponseUnmarshaller _instance = new ConfigureLogsResponseUnmarshaller();        
 
-        internal static CreatePackagingGroupResponseUnmarshaller GetInstance()
+        internal static ConfigureLogsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -148,7 +148,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePackagingGroupResponseUnmarshaller Instance
+        public static ConfigureLogsResponseUnmarshaller Instance
         {
             get
             {

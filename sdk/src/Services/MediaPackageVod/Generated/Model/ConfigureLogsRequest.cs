@@ -29,30 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreatePackagingGroup operation.
-    /// Creates a new MediaPackage VOD PackagingGroup resource.
+    /// Container for the parameters to the ConfigureLogs operation.
+    /// Changes the packaging group's properities to configure log subscription
     /// </summary>
-    public partial class CreatePackagingGroupRequest : AmazonMediaPackageVodRequest
+    public partial class ConfigureLogsRequest : AmazonMediaPackageVodRequest
     {
-        private Authorization _authorization;
         private EgressAccessLogs _egressAccessLogs;
         private string _id;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property Authorization.
-        /// </summary>
-        public Authorization Authorization
-        {
-            get { return this._authorization; }
-            set { this._authorization = value; }
-        }
-
-        // Check to see if Authorization property is set
-        internal bool IsSetAuthorization()
-        {
-            return this._authorization != null;
-        }
 
         /// <summary>
         /// Gets and sets the property EgressAccessLogs.
@@ -70,7 +53,7 @@ namespace Amazon.MediaPackageVod.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The ID of the PackagingGroup.
+        /// Gets and sets the property Id. The ID of a MediaPackage VOD PackagingGroup resource.
         /// </summary>
         [AWSProperty(Required=true)]
         public string Id
@@ -83,21 +66,6 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetId()
         {
             return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags.
-        /// </summary>
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
