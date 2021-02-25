@@ -691,6 +691,30 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListImagePackagesRequest.ImageBuildVersionArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListImagePackagesRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListImagePackagesRequest.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListImagePackagesResponse.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListImagePackagesResponse.RequestId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelineImagesRequest.ImagePipelineArn</property>
     <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$</pattern>
   </property-value-rule>
@@ -1292,6 +1316,16 @@
     <pattern>^[0-9]+\.[0-9]+\.[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImagePackage.PackageName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImagePackage.PackageVersion</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImagePipeline.Arn</property>
     <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
@@ -1418,7 +1452,8 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.InfrastructureConfiguration.InstanceProfileName</property>
     <min>1</min>
-    <max>1024</max>
+    <max>256</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.InfrastructureConfiguration.KeyPair</property>
@@ -1447,6 +1482,12 @@
     <property>Amazon.Imagebuilder.Model.InfrastructureConfigurationSummary.Description</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.InfrastructureConfigurationSummary.InstanceProfileName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.InfrastructureConfigurationSummary.Name</property>
@@ -1481,6 +1522,12 @@
     <property>Amazon.Imagebuilder.Model.Schedule.ScheduleExpression</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.Schedule.Timezone</property>
+    <min>3</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9]{2,}(?:\/[a-zA-z0-9-_+]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.TargetContainerRepository.RepositoryName</property>

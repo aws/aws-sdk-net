@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Schedule Object
+    /// Response Unmarshaller for ImagePackage Object
     /// </summary>  
-    public class ScheduleUnmarshaller : IUnmarshaller<Schedule, XmlUnmarshallerContext>, IUnmarshaller<Schedule, JsonUnmarshallerContext>
+    public class ImagePackageUnmarshaller : IUnmarshaller<ImagePackage, XmlUnmarshallerContext>, IUnmarshaller<ImagePackage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Schedule IUnmarshaller<Schedule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImagePackage IUnmarshaller<ImagePackage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Schedule Unmarshall(JsonUnmarshallerContext context)
+        public ImagePackage Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Schedule unmarshalledObject = new Schedule();
+            ImagePackage unmarshalledObject = new ImagePackage();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("pipelineExecutionStartCondition", targetDepth))
+                if (context.TestExpression("packageName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionStartCondition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PackageName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("scheduleExpression", targetDepth))
+                if (context.TestExpression("packageVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timezone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Timezone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PackageVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ScheduleUnmarshaller _instance = new ScheduleUnmarshaller();        
+        private static ImagePackageUnmarshaller _instance = new ImagePackageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduleUnmarshaller Instance
+        public static ImagePackageUnmarshaller Instance
         {
             get
             {

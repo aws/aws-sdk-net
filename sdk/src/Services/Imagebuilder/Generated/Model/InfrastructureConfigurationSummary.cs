@@ -37,6 +37,8 @@ namespace Amazon.Imagebuilder.Model
         private string _dateCreated;
         private string _dateUpdated;
         private string _description;
+        private string _instanceProfileName;
+        private List<string> _instanceTypes = new List<string>();
         private string _name;
         private Dictionary<string, string> _resourceTags = new Dictionary<string, string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -112,6 +114,43 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceProfileName. 
+        /// <para>
+        /// The instance profile of the infrastructure configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string InstanceProfileName
+        {
+            get { return this._instanceProfileName; }
+            set { this._instanceProfileName = value; }
+        }
+
+        // Check to see if InstanceProfileName property is set
+        internal bool IsSetInstanceProfileName()
+        {
+            return this._instanceProfileName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceTypes. 
+        /// <para>
+        /// The instance types of the infrastructure configuration.
+        /// </para>
+        /// </summary>
+        public List<string> InstanceTypes
+        {
+            get { return this._instanceTypes; }
+            set { this._instanceTypes = value; }
+        }
+
+        // Check to see if InstanceTypes property is set
+        internal bool IsSetInstanceTypes()
+        {
+            return this._instanceTypes != null && this._instanceTypes.Count > 0; 
         }
 
         /// <summary>

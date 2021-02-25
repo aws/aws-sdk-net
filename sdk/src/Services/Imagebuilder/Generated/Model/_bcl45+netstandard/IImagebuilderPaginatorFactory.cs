@@ -52,6 +52,11 @@ namespace Amazon.Imagebuilder.Model
         IListImageBuildVersionsPaginator ListImageBuildVersions(ListImageBuildVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListImagePackages operation
+        ///</summary>
+        IListImagePackagesPaginator ListImagePackages(ListImagePackagesRequest request);
+
+        /// <summary>
         /// Paginator for ListImagePipelineImages operation
         ///</summary>
         IListImagePipelineImagesPaginator ListImagePipelineImages(ListImagePipelineImagesRequest request);

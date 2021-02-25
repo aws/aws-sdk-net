@@ -57,6 +57,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ScheduleExpression);
             }
 
+            if(requestObject.IsSetTimezone())
+            {
+                context.Writer.WritePropertyName("timezone");
+                context.Writer.Write(requestObject.Timezone);
+            }
+
         }
 
         /// <summary>

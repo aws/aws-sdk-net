@@ -77,6 +77,14 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Paginator for ListImagePackages operation
+        ///</summary>
+        public IListImagePackagesPaginator ListImagePackages(ListImagePackagesRequest request) 
+        {
+            return new ListImagePackagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListImagePipelineImages operation
         ///</summary>
         public IListImagePipelineImagesPaginator ListImagePipelineImages(ListImagePipelineImagesRequest request) 

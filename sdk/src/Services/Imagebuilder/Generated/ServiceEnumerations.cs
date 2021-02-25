@@ -223,6 +223,10 @@ namespace Amazon.Imagebuilder
         /// </summary>
         public static readonly EbsVolumeType Gp2 = new EbsVolumeType("gp2");
         /// <summary>
+        /// Constant Gp3 for EbsVolumeType
+        /// </summary>
+        public static readonly EbsVolumeType Gp3 = new EbsVolumeType("gp3");
+        /// <summary>
         /// Constant Io1 for EbsVolumeType
         /// </summary>
         public static readonly EbsVolumeType Io1 = new EbsVolumeType("io1");

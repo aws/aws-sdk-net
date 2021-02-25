@@ -3227,6 +3227,101 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  ListImagePackages
+
+
+        /// <summary>
+        /// List the Packages that are associated with an Image Build Version, as determined by
+        /// AWS Systems Manager Inventory at build time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImagePackages service method.</param>
+        /// 
+        /// <returns>The response from the ListImagePackages service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have made a request for an action that is not supported by the service.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
+        /// At least one of the resources referenced by your request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">REST API Reference for ListImagePackages Operation</seealso>
+        public virtual ListImagePackagesResponse ListImagePackages(ListImagePackagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImagePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImagePackagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListImagePackagesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List the Packages that are associated with an Image Build Version, as determined by
+        /// AWS Systems Manager Inventory at build time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImagePackages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImagePackages service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have made a request for an action that is not supported by the service.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
+        /// At least one of the resources referenced by your request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">REST API Reference for ListImagePackages Operation</seealso>
+        public virtual Task<ListImagePackagesResponse> ListImagePackagesAsync(ListImagePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImagePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImagePackagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListImagePackagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListImagePipelineImages
 
 

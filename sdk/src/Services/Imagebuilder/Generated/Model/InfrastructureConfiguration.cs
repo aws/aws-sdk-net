@@ -128,7 +128,7 @@ namespace Amazon.Imagebuilder.Model
         /// The instance profile of the infrastructure configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=256)]
         public string InstanceProfileName
         {
             get { return this._instanceProfileName; }

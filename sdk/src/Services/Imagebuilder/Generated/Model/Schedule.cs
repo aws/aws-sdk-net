@@ -36,6 +36,7 @@ namespace Amazon.Imagebuilder.Model
     {
         private PipelineExecutionStartCondition _pipelineExecutionStartCondition;
         private string _scheduleExpression;
+        private string _timezone;
 
         /// <summary>
         /// Gets and sets the property PipelineExecutionStartCondition. 
@@ -85,6 +86,27 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetScheduleExpression()
         {
             return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timezone. 
+        /// <para>
+        /// The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles"
+        /// in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
+        /// If not specified this defaults to UTC.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=100)]
+        public string Timezone
+        {
+            get { return this._timezone; }
+            set { this._timezone = value; }
+        }
+
+        // Check to see if Timezone property is set
+        internal bool IsSetTimezone()
+        {
+            return this._timezone != null;
         }
 
     }
