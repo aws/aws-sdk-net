@@ -153,6 +153,64 @@ namespace Amazon.GlueDataBrew
 
 
     /// <summary>
+    /// Constants used for properties of type InputFormat.
+    /// </summary>
+    public class InputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for InputFormat
+        /// </summary>
+        public static readonly InputFormat CSV = new InputFormat("CSV");
+        /// <summary>
+        /// Constant EXCEL for InputFormat
+        /// </summary>
+        public static readonly InputFormat EXCEL = new InputFormat("EXCEL");
+        /// <summary>
+        /// Constant JSON for InputFormat
+        /// </summary>
+        public static readonly InputFormat JSON = new InputFormat("JSON");
+        /// <summary>
+        /// Constant PARQUET for InputFormat
+        /// </summary>
+        public static readonly InputFormat PARQUET = new InputFormat("PARQUET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputFormat FindValue(string value)
+        {
+            return FindValue<InputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobRunState.
     /// </summary>
     public class JobRunState : ConstantClass

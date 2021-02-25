@@ -64,6 +64,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("HeaderRow", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HeaderRow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SheetIndexes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);

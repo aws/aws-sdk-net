@@ -34,8 +34,28 @@ namespace Amazon.GlueDataBrew.Model
     /// </summary>
     public partial class ExcelOptions
     {
+        private bool? _headerRow;
         private List<int> _sheetIndexes = new List<int>();
         private List<string> _sheetNames = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property HeaderRow. 
+        /// <para>
+        /// A variable that specifies whether the first row in the file will be parsed as the
+        /// header. If false, column names will be auto-generated.
+        /// </para>
+        /// </summary>
+        public bool HeaderRow
+        {
+            get { return this._headerRow.GetValueOrDefault(); }
+            set { this._headerRow = value; }
+        }
+
+        // Check to see if HeaderRow property is set
+        internal bool IsSetHeaderRow()
+        {
+            return this._headerRow.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SheetIndexes. 

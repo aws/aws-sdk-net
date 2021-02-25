@@ -51,6 +51,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Delimiter);
             }
 
+            if(requestObject.IsSetHeaderRow())
+            {
+                context.Writer.WritePropertyName("HeaderRow");
+                context.Writer.Write(requestObject.HeaderRow);
+            }
+
         }
 
         /// <summary>

@@ -69,6 +69,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFormat())
+                {
+                    context.Writer.WritePropertyName("Format");
+                    context.Writer.Write(publicRequest.Format);
+                }
+
                 if(publicRequest.IsSetFormatOptions())
                 {
                     context.Writer.WritePropertyName("FormatOptions");

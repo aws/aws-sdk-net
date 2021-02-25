@@ -70,6 +70,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     unmarshalledObject.Delimiter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HeaderRow", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HeaderRow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

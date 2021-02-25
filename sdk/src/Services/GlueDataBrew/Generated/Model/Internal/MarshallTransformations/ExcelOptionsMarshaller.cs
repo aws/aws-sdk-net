@@ -45,6 +45,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExcelOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetHeaderRow())
+            {
+                context.Writer.WritePropertyName("HeaderRow");
+                context.Writer.Write(requestObject.HeaderRow);
+            }
+
             if(requestObject.IsSetSheetIndexes())
             {
                 context.Writer.WritePropertyName("SheetIndexes");

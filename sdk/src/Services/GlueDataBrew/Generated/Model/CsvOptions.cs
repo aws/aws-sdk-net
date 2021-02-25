@@ -35,6 +35,7 @@ namespace Amazon.GlueDataBrew.Model
     public partial class CsvOptions
     {
         private string _delimiter;
+        private bool? _headerRow;
 
         /// <summary>
         /// Gets and sets the property Delimiter. 
@@ -53,6 +54,25 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetDelimiter()
         {
             return this._delimiter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HeaderRow. 
+        /// <para>
+        /// A variable that specifies whether the first row in the file will be parsed as the
+        /// header. If false, column names will be auto-generated.
+        /// </para>
+        /// </summary>
+        public bool HeaderRow
+        {
+            get { return this._headerRow.GetValueOrDefault(); }
+            set { this._headerRow = value; }
+        }
+
+        // Check to see if HeaderRow property is set
+        internal bool IsSetHeaderRow()
+        {
+            return this._headerRow.HasValue; 
         }
 
     }

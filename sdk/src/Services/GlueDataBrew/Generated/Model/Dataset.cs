@@ -36,6 +36,7 @@ namespace Amazon.GlueDataBrew.Model
         private string _accountId;
         private DateTime? _createDate;
         private string _createdBy;
+        private InputFormat _format;
         private FormatOptions _formatOptions;
         private Input _input;
         private string _lastModifiedBy;
@@ -98,6 +99,24 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetCreatedBy()
         {
             return this._createdBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// Specifies the file format of a dataset created from an S3 file or folder.
+        /// </para>
+        /// </summary>
+        public InputFormat Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
         /// <summary>
