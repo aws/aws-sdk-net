@@ -1,3 +1,15 @@
+### 3.5.118.0 (2021-02-25 19:13 UTC)
+* Detective (3.5.2.0)
+	* Changed "master account" to "administrator account." A new AdministratorId field replaces the deprecated MasterId field. Added an option to disable email notifications for member account invitations.
+* GlueDataBrew (3.5.4.0)
+	* This SDK release adds two new dataset features: 1) support for specifying the file format for a dataset, and 2) support for specifying whether the first row of a CSV or Excel file contains a header.
+* Imagebuilder (3.5.4.0)
+	* This release introduces a new API (ListImagePackages) for listing packages installed on an image, and adds support for GP3 volume types, and for specifying a time zone in an image pipeline schedule.
+* Lightsail (3.5.2.15)
+	* Documentation updates for Lightsail
+* Transfer (3.5.3.0)
+	* Corrected the upper limit for TestIdentityProvider input lengths to 1024 characters
+
 ### 3.5.117.0 (2021-02-24 19:43 UTC)
 * Appflow (3.5.4.0)
 	* # Adding 'Amazon Honeycode' , 'Amazon Lookout for Metrics' and  'Amazon Connect Customer Profiles' as Destinations.
