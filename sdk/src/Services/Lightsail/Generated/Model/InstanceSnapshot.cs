@@ -238,6 +238,11 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// The progress of the snapshot.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Progress
         {

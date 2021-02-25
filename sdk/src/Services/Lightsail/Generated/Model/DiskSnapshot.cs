@@ -217,7 +217,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Progress. 
         /// <para>
-        /// The progress of the disk snapshot operation.
+        /// The progress of the snapshot.
         /// </para>
         /// </summary>
         public string Progress
