@@ -290,7 +290,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.TestIdentityProviderRequest.UserPassword</property>
-    <max>2048</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.TestIdentityProviderResponse.Url</property>
