@@ -30,13 +30,13 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGraphs operation.
-    /// Returns the list of behavior graphs that the calling account is a master of. This
-    /// operation can only be called by a master account.
+    /// Returns the list of behavior graphs that the calling account is an administrator account
+    /// of. This operation can only be called by an administrator account.
     /// 
     ///  
     /// <para>
-    /// Because an account can currently only be the master of one behavior graph within a
-    /// Region, the results always contain a single graph.
+    /// Because an account can currently only be the administrator of one behavior graph within
+    /// a Region, the results always contain a single behavior graph.
     /// </para>
     /// </summary>
     public partial class ListGraphsRequest : AmazonDetectiveRequest

@@ -31,13 +31,15 @@ namespace Amazon.Detective.Model
     /// <summary>
     /// Container for the parameters to the CreateMembers operation.
     /// Sends a request to invite the specified AWS accounts to be member accounts in the
-    /// behavior graph. This operation can only be called by the master account for a behavior
-    /// graph. 
+    /// behavior graph. This operation can only be called by the administrator account for
+    /// a behavior graph. 
     /// 
     ///  
     /// <para>
-    ///  <code>CreateMembers</code> verifies the accounts and then sends invitations to the
-    /// verified accounts.
+    ///  <code>CreateMembers</code> verifies the accounts and then invites the verified accounts.
+    /// The administrator can optionally specify to not send invitation emails to the member
+    /// accounts. This would be used when the administrator manages their member accounts
+    /// centrally.
     /// </para>
     ///  
     /// <para>
@@ -51,7 +53,7 @@ namespace Amazon.Detective.Model
     /// <para>
     /// The accounts that <code>CreateMembers</code> was able to start the verification for.
     /// This list includes member accounts that are being verified, that have passed verification
-    /// and are being sent an invitation, and that have failed verification.
+    /// and are to be invited, and that have failed verification.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -63,6 +65,7 @@ namespace Amazon.Detective.Model
     public partial class CreateMembersRequest : AmazonDetectiveRequest
     {
         private List<Account> _accounts = new List<Account>();
+        private bool? _disableEmailNotification;
         private string _graphArn;
         private string _message;
 
@@ -85,6 +88,26 @@ namespace Amazon.Detective.Model
         internal bool IsSetAccounts()
         {
             return this._accounts != null && this._accounts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableEmailNotification. 
+        /// <para>
+        /// if set to <code>true</code>, then the member accounts do not receive email notifications.
+        /// By default, this is set to <code>false</code>, and the member accounts receive email
+        /// notifications.
+        /// </para>
+        /// </summary>
+        public bool DisableEmailNotification
+        {
+            get { return this._disableEmailNotification.GetValueOrDefault(); }
+            set { this._disableEmailNotification = value; }
+        }
+
+        // Check to see if DisableEmailNotification property is set
+        internal bool IsSetDisableEmailNotification()
+        {
+            return this._disableEmailNotification.HasValue; 
         }
 
         /// <summary>

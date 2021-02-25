@@ -34,6 +34,7 @@ namespace Amazon.Detective.Model
     public partial class MemberDetail
     {
         private string _accountId;
+        private string _administratorId;
         private MemberDisabledReason _disabledReason;
         private string _emailAddress;
         private string _graphArn;
@@ -61,6 +62,25 @@ namespace Amazon.Detective.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdministratorId. 
+        /// <para>
+        /// The AWS account identifier of the administrator account for the behavior graph.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AdministratorId
+        {
+            get { return this._administratorId; }
+            set { this._administratorId = value; }
+        }
+
+        // Check to see if AdministratorId property is set
+        internal bool IsSetAdministratorId()
+        {
+            return this._administratorId != null;
         }
 
         /// <summary>
@@ -157,9 +177,14 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property MasterId. 
         /// <para>
-        /// The AWS account identifier of the master account for the behavior graph.
+        /// Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS account identifier of the administrator account for the behavior graph.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated, use AdministratorId instead.")]
         [AWSProperty(Min=12, Max=12)]
         public string MasterId
         {

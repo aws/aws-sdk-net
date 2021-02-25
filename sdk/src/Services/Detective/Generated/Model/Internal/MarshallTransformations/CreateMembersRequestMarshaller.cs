@@ -82,6 +82,12 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDisableEmailNotification())
+                {
+                    context.Writer.WritePropertyName("DisableEmailNotification");
+                    context.Writer.Write(publicRequest.DisableEmailNotification);
+                }
+
                 if(publicRequest.IsSetGraphArn())
                 {
                     context.Writer.WritePropertyName("GraphArn");

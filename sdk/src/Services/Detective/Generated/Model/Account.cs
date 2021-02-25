@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// An AWS account that is the master of or a member of a behavior graph.
+    /// An AWS account that is the administrator account of or a member of a behavior graph.
     /// </summary>
     public partial class Account
     {

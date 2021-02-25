@@ -35,7 +35,7 @@ namespace Amazon.Detective.Model
     /// 
     ///  
     /// <para>
-    ///  <code>DeleteGraph</code> can only be called by the master account for a behavior
+    ///  <code>DeleteGraph</code> can only be called by the administrator account for a behavior
     /// graph.
     /// </para>
     /// </summary>

@@ -39,7 +39,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property GraphList. 
         /// <para>
-        /// A list of behavior graphs that the account is a master for.
+        /// A list of behavior graphs that the account is an administrator account for.
         /// </para>
         /// </summary>
         public List<Graph> GraphList
