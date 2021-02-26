@@ -44,6 +44,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (getObjectTaggingRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getObjectTaggingRequest.ExpectedBucketOwner));
+            if (getObjectTaggingRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(getObjectTaggingRequest.RequestPayer));
 
             request.UseQueryString = true;
 

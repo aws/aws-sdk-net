@@ -4228,10 +4228,15 @@ namespace Amazon.S3
         #region  GetBucketEncryption
 
         /// <summary>
-        /// Returns the default encryption configuration for an Amazon S3 bucket. For information
-        /// about the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-        /// S3 Default Bucket Encryption</a>.
+        /// Returns the default encryption configuration for an Amazon S3 bucket. If the bucket
+        /// does not have a default encryption configuration, GetBucketEncryption returns <code>ServerSideEncryptionConfigurationNotFoundError</code>.
         /// 
+        /// 
+        ///  
+        /// <para>
+        /// For information about the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// S3 Default Bucket Encryption</a>.
+        /// </para>
         ///  
         /// <para>
         ///  To use this operation, you must have permission to perform the <code>s3:GetEncryptionConfiguration</code>
@@ -6859,7 +6864,9 @@ namespace Amazon.S3
         /// <para>
         /// A <code>HEAD</code> request has the same options as a <code>GET</code> operation on
         /// an object. The response is identical to the <code>GET</code> response except that
-        /// there is no response body.
+        /// there is no response body. Because of this, if the <code>HEAD</code> request generates
+        /// an error, it returns a generic <code>404 Not Found</code> or <code>403 Forbidden</code>
+        /// code. It is not possible to retrieve the exact exception beyond these error codes.
         /// </para>
         ///  
         /// <para>
@@ -6884,7 +6891,7 @@ namespace Amazon.S3
         /// For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
         /// Encryption (Using Customer-Provided Encryption Keys)</a>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
@@ -6892,7 +6899,11 @@ namespace Amazon.S3
         /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
         /// BadRequest error.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        ///  The last modified property in this case is the creation date of the object.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
@@ -6995,7 +7006,9 @@ namespace Amazon.S3
         /// <para>
         /// A <code>HEAD</code> request has the same options as a <code>GET</code> operation on
         /// an object. The response is identical to the <code>GET</code> response except that
-        /// there is no response body.
+        /// there is no response body. Because of this, if the <code>HEAD</code> request generates
+        /// an error, it returns a generic <code>404 Not Found</code> or <code>403 Forbidden</code>
+        /// code. It is not possible to retrieve the exact exception beyond these error codes.
         /// </para>
         ///  
         /// <para>
@@ -7020,7 +7033,7 @@ namespace Amazon.S3
         /// For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
         /// Encryption (Using Customer-Provided Encryption Keys)</a>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
@@ -7028,7 +7041,11 @@ namespace Amazon.S3
         /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
         /// BadRequest error.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        ///  The last modified property in this case is the creation date of the object.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
@@ -7133,7 +7150,9 @@ namespace Amazon.S3
         /// <para>
         /// A <code>HEAD</code> request has the same options as a <code>GET</code> operation on
         /// an object. The response is identical to the <code>GET</code> response except that
-        /// there is no response body.
+        /// there is no response body. Because of this, if the <code>HEAD</code> request generates
+        /// an error, it returns a generic <code>404 Not Found</code> or <code>403 Forbidden</code>
+        /// code. It is not possible to retrieve the exact exception beyond these error codes.
         /// </para>
         ///  
         /// <para>
@@ -7158,7 +7177,7 @@ namespace Amazon.S3
         /// For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
         /// Encryption (Using Customer-Provided Encryption Keys)</a>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
         /// not be sent for GET requests if your object uses server-side encryption with CMKs
@@ -7166,7 +7185,11 @@ namespace Amazon.S3
         /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
         /// BadRequest error.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        ///  The last modified property in this case is the creation date of the object.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// Request headers are limited to 8 KB in size. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
         /// Request Headers</a>.
@@ -7386,6 +7409,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html">DeleteObjectTagging</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -7665,9 +7693,15 @@ namespace Amazon.S3
         /// <summary>
         /// This operation is useful to determine if a bucket exists and you have permission to
         /// access it. The operation returns a <code>200 OK</code> if the bucket exists and you
-        /// have permission to access it. Otherwise, the operation might return responses such
-        /// as <code>404 Not Found</code> and <code>403 Forbidden</code>. 
+        /// have permission to access it.
         /// 
+        ///  
+        /// <para>
+        /// If the bucket does not exist or you do not have permission to access it, the <code>HEAD</code>
+        /// request returns a generic <code>404 Not Found</code> or <code>403 Forbidden</code>
+        /// code. A message body is not included, so you cannot determine the exception beyond
+        /// these error codes.
+        /// </para>
         ///  
         /// <para>
         /// To use this operation, you must have permissions to perform the <code>s3:ListBucket</code>
@@ -9349,6 +9383,8 @@ namespace Amazon.S3
         /// parameters as selection criteria to return a subset of the objects in a bucket. A
         /// <code>200 OK</code> response can contain valid or invalid XML. Make sure to design
         /// your application to parse the contents of the response and handle it appropriately.
+        /// Objects are returned sorted in an ascending order of the respective key names in the
+        /// list.
         /// 
         ///  
         /// <para>
@@ -10818,7 +10854,8 @@ namespace Amazon.S3
         #region  PutBucketIntelligentTieringConfiguration
 
         /// <summary>
-        /// Puts a S3 Intelligent-Tiering configuration to the specified bucket.
+        /// Puts a S3 Intelligent-Tiering configuration to the specified bucket. You can have
+        /// up to 1,000 S3 Intelligent-Tiering configurations per bucket.
         /// 
         ///  
         /// <para>
@@ -10861,7 +10898,48 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You only need S3 Intelligent-Tiering enabled on a bucket if you want to automatically
+        /// move objects stored in the S3 Intelligent-Tiering storage class to the Archive Access
+        /// or Deep Archive Access tier.
+        /// </para>
+        ///  </note> <p class="title"> <b>Special Errors</b> 
+        /// </para>
+        ///  <ul> <li> <p class="title"> <b>HTTP 400 Bad Request Error</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Code:</i> InvalidArgument
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Cause:</i> Invalid Argument
+        /// </para>
+        ///  </li> </ul> </li> <li> <p class="title"> <b>HTTP 400 Bad Request Error</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Code:</i> TooManyConfigurations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Cause:</i> You are attempting to create a new configuration but have already reached
+        /// the 1,000-configuration limit. 
+        /// </para>
+        ///  </li> </ul> </li> <li> <p class="title"> <b>HTTP 403 Forbidden Error</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Code:</i> AccessDenied
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Cause:</i> You are not the owner of the specified bucket, or you do not have the
+        /// <code>s3:PutIntelligentTieringConfiguration</code> bucket permission to set the configuration
+        /// on the bucket. 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketIntelligentTieringConfiguration service method.</param>
         /// 
@@ -13526,6 +13604,11 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html">DeleteObjectTagging</a>
         /// 
         /// </para>
         ///  </li> </ul>
