@@ -301,6 +301,26 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.UpdateStudioRequest.DefaultS3Location</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.UpdateStudioRequest.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.UpdateStudioRequest.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.UpdateStudioRequest.StudioId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.UpdateStudioSessionMappingRequest.IdentityId</property>
     <min>0</min>
     <max>256</max>

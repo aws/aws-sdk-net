@@ -50,7 +50,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceFleetType. 
         /// <para>
-        /// The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
+        /// The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

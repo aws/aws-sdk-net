@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The Amazon Resource Name of the cluster.
+        /// The Amazon Resource Name (ARN) of the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -58,7 +58,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property JobFlowId. 
         /// <para>
-        /// An unique identifier for the job flow.
+        /// A unique identifier for the job flow.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

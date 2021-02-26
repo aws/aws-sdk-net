@@ -453,7 +453,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+        /// "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
         /// </para>
         ///  </li> <li> 
         /// <para>

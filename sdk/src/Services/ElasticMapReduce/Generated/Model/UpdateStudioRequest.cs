@@ -29,40 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Details for an Amazon EMR Studio, including ID, Name, VPC, and Description. The details
-    /// do not include subnets, IAM roles, security groups, or tags associated with the Studio.
+    /// Container for the parameters to the UpdateStudio operation.
+    /// Updates an Amazon EMR Studio configuration, including attributes such as name, description,
+    /// and subnets.
     /// </summary>
-    public partial class StudioSummary
+    public partial class UpdateStudioRequest : AmazonElasticMapReduceRequest
     {
-        private DateTime? _creationTime;
+        private string _defaultS3Location;
         private string _description;
         private string _name;
         private string _studioId;
-        private string _url;
-        private string _vpcId;
+        private List<string> _subnetIds = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property CreationTime. 
+        /// Gets and sets the property DefaultS3Location. 
         /// <para>
-        /// The time when the Amazon EMR Studio was created.
+        /// A default Amazon S3 location to back up Workspaces and notebook files for the Amazon
+        /// EMR Studio. A Studio user can select an alternative Amazon S3 location when creating
+        /// a Workspace.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        [AWSProperty(Min=0, Max=10280)]
+        public string DefaultS3Location
         {
-            get { return this._creationTime.GetValueOrDefault(); }
-            set { this._creationTime = value; }
+            get { return this._defaultS3Location; }
+            set { this._defaultS3Location = value; }
         }
 
-        // Check to see if CreationTime property is set
-        internal bool IsSetCreationTime()
+        // Check to see if DefaultS3Location property is set
+        internal bool IsSetDefaultS3Location()
         {
-            return this._creationTime.HasValue; 
+            return this._defaultS3Location != null;
         }
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The detailed description of the Amazon EMR Studio.
+        /// A detailed description to assign to the Amazon EMR Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -81,7 +84,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Amazon EMR Studio.
+        /// A descriptive name for the Amazon EMR Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -100,10 +103,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The ID of the Amazon EMR Studio.
+        /// The ID of the Amazon EMR Studio to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string StudioId
         {
             get { return this._studioId; }
@@ -117,41 +120,24 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Url. 
+        /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The unique access URL of the Amazon EMR Studio.
+        /// A list of subnet IDs to associate with the Amazon EMR Studio. The list can include
+        /// new subnet IDs, but must also include all of the subnet IDs previously associated
+        /// with the Studio. The list order does not matter. A Studio can have a maximum of 5
+        /// subnets. The subnets must belong to the same VPC as the Studio. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string Url
+        public List<string> SubnetIds
         {
-            get { return this._url; }
-            set { this._url = value; }
+            get { return this._subnetIds; }
+            set { this._subnetIds = value; }
         }
 
-        // Check to see if Url property is set
-        internal bool IsSetUrl()
+        // Check to see if SubnetIds property is set
+        internal bool IsSetSubnetIds()
         {
-            return this._url != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VpcId. 
-        /// <para>
-        /// The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string VpcId
-        {
-            get { return this._vpcId; }
-            set { this._vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this._vpcId != null;
+            return this._subnetIds != null && this._subnetIds.Count > 0; 
         }
 
     }

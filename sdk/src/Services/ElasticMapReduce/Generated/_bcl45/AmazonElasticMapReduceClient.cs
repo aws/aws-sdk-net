@@ -274,7 +274,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the AddInstanceFleet service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -307,7 +307,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the AddInstanceFleet service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -493,7 +493,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the AddTags service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -522,7 +522,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the AddTags service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -613,7 +613,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the CreateSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -640,7 +640,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the CreateSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -661,21 +661,13 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new Amazon EMR Studio.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStudio service method.</param>
         /// 
         /// <returns>The response from the CreateStudio service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -692,15 +684,7 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new Amazon EMR Studio.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStudio service method.</param>
         /// <param name="cancellationToken">
@@ -709,7 +693,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the CreateStudio service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -730,16 +714,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>,
         /// and applies a session policy to refine Studio permissions for that user or group.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStudioSessionMapping service method.</param>
         /// 
@@ -763,16 +739,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>,
         /// and applies a session policy to refine Studio permissions for that user or group.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStudioSessionMapping service method.</param>
         /// <param name="cancellationToken">
@@ -809,7 +777,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DeleteSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -835,7 +803,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DeleteSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -856,21 +824,13 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Removes an Amazon EMR Studio from the Studio metadata store.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStudio service method.</param>
         /// 
         /// <returns>The response from the DeleteStudio service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -887,15 +847,7 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Removes an Amazon EMR Studio from the Studio metadata store.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStudio service method.</param>
         /// <param name="cancellationToken">
@@ -904,7 +856,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DeleteStudio service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -925,15 +877,7 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Removes a user or group from an Amazon EMR Studio.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStudioSessionMapping service method.</param>
         /// 
@@ -957,15 +901,7 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Removes a user or group from an Amazon EMR Studio.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStudioSessionMapping service method.</param>
         /// <param name="cancellationToken">
@@ -1002,7 +938,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeCluster service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1022,7 +958,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeCluster service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1048,7 +984,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeCluster service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1070,7 +1006,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeCluster service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1371,7 +1307,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1397,7 +1333,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1423,7 +1359,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeStep service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1442,7 +1378,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeStep service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1467,7 +1403,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeStep service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1488,7 +1424,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeStep service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1509,22 +1445,14 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio
         /// access URL, and so on.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStudio service method.</param>
         /// 
         /// <returns>The response from the DescribeStudio service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1541,16 +1469,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio
         /// access URL, and so on.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStudio service method.</param>
         /// <param name="cancellationToken">
@@ -1559,7 +1479,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the DescribeStudio service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1588,7 +1508,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the GetBlockPublicAccessConfiguration service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1616,7 +1536,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the GetBlockPublicAccessConfiguration service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1678,16 +1598,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Fetches mapping details for the specified Amazon EMR Studio and identity (user or
         /// group).
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStudioSessionMapping service method.</param>
         /// 
@@ -1711,16 +1623,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Fetches mapping details for the specified Amazon EMR Studio and identity (user or
         /// group).
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStudioSessionMapping service method.</param>
         /// <param name="cancellationToken">
@@ -1756,7 +1660,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListBootstrapActions service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1775,7 +1679,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListBootstrapActions service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1800,7 +1704,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListBootstrapActions service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1821,7 +1725,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListBootstrapActions service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1851,7 +1755,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListClusters service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1874,7 +1778,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListClusters service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1903,7 +1807,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListClusters service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1928,7 +1832,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListClusters service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1962,7 +1866,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListInstanceFleets service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -1995,7 +1899,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListInstanceFleets service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2021,7 +1925,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListInstanceGroups service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2040,7 +1944,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListInstanceGroups service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2065,7 +1969,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListInstanceGroups service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2086,7 +1990,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListInstanceGroups service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2114,7 +2018,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListInstances service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2135,7 +2039,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListInstances service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2162,7 +2066,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListInstances service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2185,7 +2089,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListInstances service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2276,7 +2180,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListSecurityConfigurations service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2305,7 +2209,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListSecurityConfigurations service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2328,12 +2232,12 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
         /// with the request of filter by <code>StepStates</code>. You can specify a maximum of
-        /// ten <code>stepIDs</code>.
+        /// 10 <code>stepIDs</code>.
         /// </summary>
         /// 
         /// <returns>The response from the ListSteps service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2348,13 +2252,13 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
         /// with the request of filter by <code>StepStates</code>. You can specify a maximum of
-        /// ten <code>stepIDs</code>.
+        /// 10 <code>stepIDs</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSteps service method.</param>
         /// 
         /// <returns>The response from the ListSteps service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2373,7 +2277,7 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
         /// with the request of filter by <code>StepStates</code>. You can specify a maximum of
-        /// ten <code>stepIDs</code>.
+        /// 10 <code>stepIDs</code>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2381,7 +2285,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListSteps service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2395,7 +2299,7 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
         /// with the request of filter by <code>StepStates</code>. You can specify a maximum of
-        /// ten <code>stepIDs</code>.
+        /// 10 <code>stepIDs</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSteps service method.</param>
         /// <param name="cancellationToken">
@@ -2404,7 +2308,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListSteps service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2425,22 +2329,14 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns a list of all Amazon EMR Studios associated with the AWS account. The list
         /// includes details such as ID, Studio Access URL, and creation time for each Studio.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
         /// 
         /// <returns>The response from the ListStudios service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2457,16 +2353,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns a list of all Amazon EMR Studios associated with the AWS account. The list
         /// includes details such as ID, Studio Access URL, and creation time for each Studio.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
         /// <param name="cancellationToken">
@@ -2475,7 +2363,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ListStudios service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2496,16 +2384,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Returns a list of all user or group session mappings for the EMR Studio specified
+        /// Returns a list of all user or group session mappings for the Amazon EMR Studio specified
         /// by <code>StudioId</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudioSessionMappings service method.</param>
         /// 
@@ -2529,16 +2409,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Returns a list of all user or group session mappings for the EMR Studio specified
+        /// Returns a list of all user or group session mappings for the Amazon EMR Studio specified
         /// by <code>StudioId</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudioSessionMappings service method.</param>
         /// <param name="cancellationToken">
@@ -2641,7 +2513,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ModifyInstanceFleet service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2676,7 +2548,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the ModifyInstanceFleet service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2805,7 +2677,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the PutBlockPublicAccessConfiguration service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2833,7 +2705,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the PutBlockPublicAccessConfiguration service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -2999,7 +2871,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the RemoveTags service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -3033,7 +2905,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the RemoveTags service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -3339,7 +3211,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the StartNotebookExecution service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -3365,7 +3237,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>The response from the StartNotebookExecution service method, as returned by ElasticMapReduce.</returns>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the EMR service.
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
         /// </exception>
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
@@ -3508,20 +3380,67 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  UpdateStudio
+
+
+        /// <summary>
+        /// Updates an Amazon EMR Studio configuration, including attributes such as name, description,
+        /// and subnets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStudio service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudio">REST API Reference for UpdateStudio Operation</seealso>
+        public virtual UpdateStudioResponse UpdateStudio(UpdateStudioRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStudioResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStudioResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an Amazon EMR Studio configuration, including attributes such as name, description,
+        /// and subnets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStudio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudio">REST API Reference for UpdateStudio Operation</seealso>
+        public virtual Task<UpdateStudioResponse> UpdateStudioAsync(UpdateStudioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStudioResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateStudioResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateStudioSessionMapping
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Updates the session policy attached to the user or group for the specified Amazon
         /// EMR Studio.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStudioSessionMapping service method.</param>
         /// 
@@ -3545,16 +3464,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-        /// change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Updates the session policy attached to the user or group for the specified Amazon
         /// EMR Studio.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStudioSessionMapping service method.</param>
         /// <param name="cancellationToken">

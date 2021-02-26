@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListStudios operation.
-    /// Returns a list of all Amazon EMR Studios associated with the AWS account. The list
-    /// includes details such as ID, Studio Access URL, and creation time for each Studio.
+    /// This is the response object from the UpdateStudio operation.
     /// </summary>
-    public partial class ListStudiosRequest : AmazonElasticMapReduceRequest
+    public partial class UpdateStudioResponse : AmazonWebServiceResponse
     {
-        private string _marker;
-
-        /// <summary>
-        /// Gets and sets the property Marker. 
-        /// <para>
-        /// The pagination token that indicates the set of results to retrieve.
-        /// </para>
-        /// </summary>
-        public string Marker
-        {
-            get { return this._marker; }
-            set { this._marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this._marker != null;
-        }
 
     }
 }

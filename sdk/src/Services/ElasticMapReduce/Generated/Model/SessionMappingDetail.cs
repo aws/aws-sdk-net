@@ -82,7 +82,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property IdentityName. 
         /// <para>
-        /// The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+        /// The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
         /// and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
         /// in the <i>AWS SSO Identity Store API Reference</i>.
         /// </para>
@@ -103,7 +103,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property IdentityType. 
         /// <para>
-        /// Specifies whether the identity mapped to the Studio is a user or a group.
+        /// Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.
         /// </para>
         /// </summary>
         public IdentityType IdentityType

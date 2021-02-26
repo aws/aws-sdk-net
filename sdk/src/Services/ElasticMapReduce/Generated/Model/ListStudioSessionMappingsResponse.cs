@@ -58,7 +58,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property SessionMappings. 
         /// <para>
         /// A list of session mapping summary objects. Each object includes session mapping details
-        /// such as creation time, identity type (user or group), and Studio ID.
+        /// such as creation time, identity type (user or group), and Amazon EMR Studio ID.
         /// </para>
         /// </summary>
         public List<SessionMappingSummary> SessionMappings

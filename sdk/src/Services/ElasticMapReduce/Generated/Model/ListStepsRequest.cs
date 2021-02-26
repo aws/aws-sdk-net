@@ -32,7 +32,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// Container for the parameters to the ListSteps operation.
     /// Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
     /// with the request of filter by <code>StepStates</code>. You can specify a maximum of
-    /// ten <code>stepIDs</code>.
+    /// 10 <code>stepIDs</code>.
     /// </summary>
     public partial class ListStepsRequest : AmazonElasticMapReduceRequest
     {

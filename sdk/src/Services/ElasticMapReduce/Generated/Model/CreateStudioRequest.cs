@@ -30,15 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStudio operation.
-    /// <note> 
-    /// <para>
-    /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-    /// change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Creates a new Amazon EMR Studio.
-    /// </para>
     /// </summary>
     public partial class CreateStudioRequest : AmazonElasticMapReduceRequest
     {
@@ -77,11 +69,12 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property DefaultS3Location. 
         /// <para>
-        /// The default Amazon S3 location to back up EMR Studio Workspaces and notebook files.
-        /// A Studio user can select an alternative Amazon S3 location when creating a Workspace.
+        /// The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+        /// files. A Studio user can select an alternative Amazon S3 location when creating a
+        /// Workspace.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10280)]
+        [AWSProperty(Required=true, Min=0, Max=10280)]
         public string DefaultS3Location
         {
             get { return this._defaultS3Location; }
@@ -97,7 +90,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A detailed description of the Studio.
+        /// A detailed description of the Amazon EMR Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -176,9 +169,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// A list of subnet IDs to associate with the Studio. The subnets must belong to the
-        /// VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of
-        /// the specified subnets.
+        /// A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a
+        /// maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>.
+        /// Studio users can create a Workspace in any of the specified subnets.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -197,9 +190,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags to associate with the Studio. Tags are user-defined key-value pairs
-        /// that consist of a required key string with a maximum of 128 characters, and an optional
-        /// value string with a maximum of 256 characters.
+        /// A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value
+        /// pairs that consist of a required key string with a maximum of 128 characters, and
+        /// an optional value string with a maximum of 256 characters.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -217,9 +210,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property UserRole. 
         /// <para>
-        /// The IAM user role that will be assumed by users and groups logged in to a Studio.
-        /// The permissions attached to this IAM role can be scoped down for each user or group
-        /// using session policies.
+        /// The IAM user role that will be assumed by users and groups logged in to an Amazon
+        /// EMR Studio. The permissions attached to this IAM role can be scoped down for each
+        /// user or group using session policies.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10280)]

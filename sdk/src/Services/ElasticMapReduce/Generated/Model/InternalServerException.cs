@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// This exception occurs when there is an internal failure in the EMR service.
+    /// This exception occurs when there is an internal failure in the Amazon EMR service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

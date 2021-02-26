@@ -30,15 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStudio operation.
-    /// <note> 
-    /// <para>
-    /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
-    /// change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Removes an Amazon EMR Studio from the Studio metadata store.
-    /// </para>
     /// </summary>
     public partial class DeleteStudioRequest : AmazonElasticMapReduceRequest
     {

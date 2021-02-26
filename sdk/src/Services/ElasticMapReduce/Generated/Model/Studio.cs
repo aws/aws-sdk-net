@@ -52,7 +52,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AuthMode. 
         /// <para>
-        /// Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
+        /// Specifies whether the Amazon EMR Studio authenticates users using single sign-on (SSO)
+        /// or IAM.
         /// </para>
         /// </summary>
         public AuthMode AuthMode
@@ -108,7 +109,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The detailed description of the EMR Studio.
+        /// The detailed description of the Amazon EMR Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -148,7 +149,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the EMR Studio.
+        /// The name of the Amazon EMR Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -186,7 +187,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StudioArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the EMR Studio.
+        /// The Amazon Resource Name (ARN) of the Amazon EMR Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -205,7 +206,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The ID of the EMR Studio.
+        /// The ID of the Amazon EMR Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -298,7 +299,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the VPC associated with the EMR Studio.
+        /// The ID of the VPC associated with the Amazon EMR Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
