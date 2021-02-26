@@ -851,6 +851,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType DesiredSize = new UpdateParamType("DesiredSize");
         /// <summary>
+        /// Constant EncryptionConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType EncryptionConfig = new UpdateParamType("EncryptionConfig");
+        /// <summary>
         /// Constant EndpointPrivateAccess for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType EndpointPrivateAccess = new UpdateParamType("EndpointPrivateAccess");
@@ -1006,6 +1010,10 @@ namespace Amazon.EKS
         /// Constant AddonUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType AddonUpdate = new UpdateType("AddonUpdate");
+        /// <summary>
+        /// Constant AssociateEncryptionConfig for UpdateType
+        /// </summary>
+        public static readonly UpdateType AssociateEncryptionConfig = new UpdateType("AssociateEncryptionConfig");
         /// <summary>
         /// Constant AssociateIdentityProviderConfig for UpdateType
         /// </summary>

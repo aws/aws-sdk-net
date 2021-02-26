@@ -57,6 +57,76 @@ namespace Amazon.EKS
 
 
         
+        #region  AssociateEncryptionConfig
+
+
+        /// <summary>
+        /// Associate encryption configuration to an existing cluster.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this API to enable encryption on existing clusters which do not have encryption
+        /// already enabled. This allows you to implement a defense-in-depth security strategy
+        /// without migrating applications to new EKS clusters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEncryptionConfig service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">REST API Reference for AssociateEncryptionConfig Operation</seealso>
+        AssociateEncryptionConfigResponse AssociateEncryptionConfig(AssociateEncryptionConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEncryptionConfig operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateEncryptionConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">REST API Reference for AssociateEncryptionConfig Operation</seealso>
+        IAsyncResult BeginAssociateEncryptionConfig(AssociateEncryptionConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateEncryptionConfig.</param>
+        /// 
+        /// <returns>Returns a  AssociateEncryptionConfigResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">REST API Reference for AssociateEncryptionConfig Operation</seealso>
+        AssociateEncryptionConfigResponse EndAssociateEncryptionConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateIdentityProviderConfig
 
 
@@ -233,32 +303,9 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
-        /// parameters to enable or disable public and private access to your cluster's Kubernetes
-        /// API server endpoint. By default, public access is enabled, and private access is disabled.
-        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-        /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use the <code>logging</code> parameter to enable or disable exporting the
-        /// Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster
-        /// control plane logs aren't exported to CloudWatch Logs. For more information, see <a
-        /// href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-        /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon
-        /// CloudWatch Pricing</a>.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Cluster creation typically takes between 10 and 15 minutes. After you create an Amazon
-        /// EKS cluster, you must configure your Kubernetes tooling to communicate with the API
-        /// server and launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
+        /// Cluster creation typically takes several minutes. After you create an Amazon EKS cluster,
+        /// you must configure your Kubernetes tooling to communicate with the API server and
+        /// launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
         /// Cluster Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
         /// Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
