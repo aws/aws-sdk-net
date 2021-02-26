@@ -1,3 +1,13 @@
+### 3.5.119.0 (2021-02-26 19:13 UTC)
+* EKS (3.5.5.0)
+	* Amazon EKS now supports adding KMS envelope encryption to existing clusters to enhance security for secrets
+* ElasticMapReduce (3.5.4.0)
+	* Added UpdateStudio API that allows updating a few attributes of an EMR Studio.
+* S3 (3.5.9.0)
+	* Add RequestPayer to GetObjectTagging and PutObjectTagging.
+* SSOAdmin (3.5.2.0)
+	* Relax constraint on List* API pagination tokens to include underscore character
+
 ### 3.5.118.0 (2021-02-25 19:13 UTC)
 * Detective (3.5.2.0)
 	* Changed "master account" to "administrator account." A new AdministratorId field replaces the deprecated MasterId field. Added an option to disable email notifications for member account invitations.
