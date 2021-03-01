@@ -1,3 +1,18 @@
+### 3.5.120.0 (2021-03-01 19:14 UTC)
+* AlexaForBusiness (3.5.1.0)
+	* Added support for optional tags in CreateAddressBook, CreateConferenceProvider, CreateContact, CreateGatewayGroup, CreateNetworkProfile and RegisterAVSDevice APIs.
+* CodePipeline (3.5.4.0)
+	* Added a new field to the ListPipelines API to allow maximum search results of 1000
+* EKS (3.5.6.0)
+	* Adding new error code AdmissionRequestDenied for Addons in EKS
+* SimpleSystemsManagement (3.5.10.0)
+	* Add Support for Patch Manger Baseline Override parameter.
+* Core 3.5.3.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.119.0 (2021-02-26 19:13 UTC)
 * EKS (3.5.5.0)
 	* Amazon EKS now supports adding KMS envelope encryption to existing clusters to enhance security for secrets
