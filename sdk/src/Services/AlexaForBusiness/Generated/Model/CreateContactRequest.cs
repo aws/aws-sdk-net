@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         private string _phoneNumber;
         private List<PhoneNumber> _phoneNumbers = new List<PhoneNumber>();
         private List<SipAddress> _sipAddresses = new List<SipAddress>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -175,6 +176,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetSipAddresses()
         {
             return this._sipAddresses != null && this._sipAddresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be added to the specified resource. Do not provide system tags.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

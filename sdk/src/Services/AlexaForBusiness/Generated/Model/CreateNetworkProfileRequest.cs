@@ -43,6 +43,7 @@ namespace Amazon.AlexaForBusiness.Model
         private string _nextPassword;
         private NetworkSecurityType _securityType;
         private string _ssid;
+        private List<Tag> _tags = new List<Tag>();
         private List<string> _trustAnchors = new List<string>();
 
         /// <summary>
@@ -214,6 +215,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetSsid()
         {
             return this._ssid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be added to the specified resource. Do not provide system tags. 
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -2590,6 +2590,16 @@ namespace Amazon.AlexaForBusiness
         /// <summary>
         /// Determines the details for the room from which a skill request was invoked. This operation
         /// is used by skill developers.
+        /// 
+        ///  
+        /// <para>
+        /// To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When
+        /// the skill is using an AWS Lambda function, the skill is automatically authorized when
+        /// you publish your skill as a private skill to your AWS account. Skills that are hosted
+        /// using a custom web service must be manually authorized. To get your skill authorized,
+        /// contact AWS Support with your AWS account ID that queries the ResolveRoom API and
+        /// skill ID. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResolveRoom service method.</param>
         /// 
@@ -2605,6 +2615,16 @@ namespace Amazon.AlexaForBusiness
         /// <summary>
         /// Determines the details for the room from which a skill request was invoked. This operation
         /// is used by skill developers.
+        /// 
+        ///  
+        /// <para>
+        /// To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When
+        /// the skill is using an AWS Lambda function, the skill is automatically authorized when
+        /// you publish your skill as a private skill to your AWS account. Skills that are hosted
+        /// using a custom web service must be manually authorized. To get your skill authorized,
+        /// contact AWS Support with your AWS account ID that queries the ResolveRoom API and
+        /// skill ID. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResolveRoom service method.</param>
         /// <param name="cancellationToken">

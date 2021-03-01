@@ -40,6 +40,7 @@ namespace Amazon.AlexaForBusiness.Model
         private IPDialIn _ipDialIn;
         private MeetingSetting _meetingSetting;
         private PSTNDialIn _pstnDialIn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -151,6 +152,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetPSTNDialIn()
         {
             return this._pstnDialIn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be added to the specified resource. Do not provide system tags.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

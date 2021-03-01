@@ -40,6 +40,7 @@ namespace Amazon.AlexaForBusiness.Model
         private string _deviceSerialNumber;
         private string _productId;
         private string _roomArn;
+        private List<Tag> _tags = new List<Tag>();
         private string _userCode;
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property RoomArn. 
         /// <para>
-        /// The ARN of the room with which to associate your AVS device.
+        /// The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
         /// </para>
         /// </summary>
         public string RoomArn
@@ -135,6 +136,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetRoomArn()
         {
             return this._roomArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be added to the specified resource. Do not provide system tags.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
