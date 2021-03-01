@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// The request has failed because of an unknown error, exception, or failure.
+    /// The request failed because of an unknown error, exception, or failure.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

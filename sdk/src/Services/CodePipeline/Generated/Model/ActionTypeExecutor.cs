@@ -64,8 +64,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property JobTimeout. 
         /// <para>
-        /// The timeout in seconds for the job. An action execution can consist of multiple jobs.
-        /// This is the timeout for a single job, and not for the entire action execution.
+        /// The timeout in seconds for the job. An action execution can have multiple jobs. This
+        /// is the timeout for a single job, not the entire action execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=43200)]
@@ -85,13 +85,12 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property PolicyStatementsTemplate. 
         /// <para>
         /// The policy statement that specifies the permissions in the CodePipeline customer’s
-        /// account that are needed to successfully run an action execution.
+        /// account that are needed to successfully run an action.
         /// </para>
         ///  
         /// <para>
-        /// To grant permission to another account, specify the account ID as the Principal. For
-        /// AWS services, the Principal is a domain-style identifier defined by the service, like
-        /// <code>codepipeline.amazonaws.com</code>.
+        /// To grant permission to another account, specify the account ID as the Principal, a
+        /// domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -115,9 +114,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The integration model used to create and update the action type, such as the Lambda
-        /// integration model. Each integration type has a related action engine, or executor.
-        /// The available executor types are <code>Lambda</code> and <code>JobWorker</code>.
+        /// The integration model used to create and update the action type, <code>Lambda</code>
+        /// or <code>JobWorker</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

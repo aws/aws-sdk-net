@@ -34,7 +34,29 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ListPipelinesRequest : AmazonCodePipelineRequest
     {
+        private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of pipelines to return in a single call. To retrieve the remaining
+        /// pipelines, make another call with the returned nextToken value. The minimum value
+        /// you can specify is 1. The maximum accepted value is 1000.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 

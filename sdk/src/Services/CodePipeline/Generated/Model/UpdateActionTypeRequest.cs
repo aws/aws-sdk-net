@@ -30,10 +30,10 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateActionType operation.
-    /// Updates an action type that has been created with any supported integration model,
-    /// where the action type is to be used by customers of the action type provider. Use
-    /// a JSON file with the action definition and <code>UpdateActionType</code> to provide
-    /// the full structure.
+    /// Updates an action type that was created with any supported integration model, where
+    /// the action type is to be used by customers of the action type provider. Use a JSON
+    /// file with the action definition and <code>UpdateActionType</code> to provide the full
+    /// structure.
     /// </summary>
     public partial class UpdateActionTypeRequest : AmazonCodePipelineRequest
     {

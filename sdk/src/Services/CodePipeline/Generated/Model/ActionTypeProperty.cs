@@ -83,7 +83,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The property name. This represents a field name that is displayed to users.
+        /// The property name that is displayed to users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -102,8 +102,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property NoEcho. 
         /// <para>
-        /// Determines whether the field value entered by the customer is logged. If <code>noEcho</code>
-        /// is <code>true</code>, the value is not shown in CloudTrail logs for the action execution.
+        /// Whether to omit the field value entered by the customer in the log. If <code>true</code>,
+        /// the value is not saved in CloudTrail logs for the action execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

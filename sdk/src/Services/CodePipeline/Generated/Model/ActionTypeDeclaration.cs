@@ -85,8 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The action ID is composed of the action category, owner, provider, and version of
-        /// the action type to be updated.
+        /// The action category, owner, provider, and version of the action type to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

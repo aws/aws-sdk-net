@@ -31,8 +31,8 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Container for the parameters to the GetActionType operation.
     /// Returns information about an action type created for an external provider, where the
-    /// action is to be used by customers of the external provider. The action can have been
-    /// created with any supported integration model.
+    /// action is to be used by customers of the external provider. The action can be created
+    /// with any supported integration model.
     /// </summary>
     public partial class GetActionTypeRequest : AmazonCodePipelineRequest
     {
@@ -44,8 +44,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// A category defines what kind of action can be taken in the stage. Valid categories
-        /// are limited to one of the following values:
+        /// Defines what kind of action can be taken in the stage. The following are the valid
+        /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -89,9 +89,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The creator of an action type that has been created with any supported integration
-        /// model. There are two valid values for the <code>owner</code> field in the action type
-        /// category: <code>AWS</code> and <code>ThirdParty</code>.
+        /// The creator of an action type that was created with any supported integration model.
+        /// There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

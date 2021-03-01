@@ -40,9 +40,9 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property MaximumCount. 
         /// <para>
-        /// The maximum allowed number of artifacts that can be used with the actiontype. For
-        /// example, you should specify a minimum and maximum of zero input artifacts for an action
-        /// type with a category of <code>source</code>.
+        /// The maximum number of artifacts that can be used with the actiontype. For example,
+        /// you should specify a minimum and maximum of zero input artifacts for an action type
+        /// with a category of <code>source</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
@@ -61,9 +61,9 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property MinimumCount. 
         /// <para>
-        /// The minimum allowed number of artifacts that can be used with the action type. For
-        /// example, you should specify a minimum and maximum of zero input artifacts for an action
-        /// type with a category of <code>source</code>.
+        /// The minimum number of artifacts that can be used with the action type. For example,
+        /// you should specify a minimum and maximum of zero input artifacts for an action type
+        /// with a category of <code>source</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]

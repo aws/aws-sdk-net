@@ -41,8 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// A category defines what kind of action can be taken in the stage. Valid categories
-        /// are limited to one of the following values:
+        /// Defines what kind of action can be taken in the stage, one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -86,8 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The creator of the action type being called. There are two valid values for the <code>owner</code>
-        /// field: <code>AWS</code> and <code>ThirdParty</code>.
+        /// The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -908,8 +908,8 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Returns information about an action type created for an external provider, where the
-        /// action is to be used by customers of the external provider. The action can have been
-        /// created with any supported integration model.
+        /// action is to be used by customers of the external provider. The action can be created
+        /// with any supported integration model.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetActionType service method.</param>
         /// 
@@ -2599,10 +2599,10 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Updates an action type that has been created with any supported integration model,
-        /// where the action type is to be used by customers of the action type provider. Use
-        /// a JSON file with the action definition and <code>UpdateActionType</code> to provide
-        /// the full structure.
+        /// Updates an action type that was created with any supported integration model, where
+        /// the action type is to be used by customers of the action type provider. Use a JSON
+        /// file with the action definition and <code>UpdateActionType</code> to provide the full
+        /// structure.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateActionType service method.</param>
         /// 
@@ -2611,7 +2611,7 @@ namespace Amazon.CodePipeline
         /// The specified action type cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.RequestFailedException">
-        /// The request has failed because of an unknown error, exception, or failure.
+        /// The request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
