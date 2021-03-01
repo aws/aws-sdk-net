@@ -35,6 +35,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AddonIssueCode AccessDenied = new AddonIssueCode("AccessDenied");
         /// <summary>
+        /// Constant AdmissionRequestDenied for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode AdmissionRequestDenied = new AddonIssueCode("AdmissionRequestDenied");
+        /// <summary>
         /// Constant ClusterUnreachable for AddonIssueCode
         /// </summary>
         public static readonly AddonIssueCode ClusterUnreachable = new AddonIssueCode("ClusterUnreachable");
@@ -386,6 +390,10 @@ namespace Amazon.EKS
         /// Constant AccessDenied for ErrorCode
         /// </summary>
         public static readonly ErrorCode AccessDenied = new ErrorCode("AccessDenied");
+        /// <summary>
+        /// Constant AdmissionRequestDenied for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode AdmissionRequestDenied = new ErrorCode("AdmissionRequestDenied");
         /// <summary>
         /// Constant ClusterUnreachable for ErrorCode
         /// </summary>
