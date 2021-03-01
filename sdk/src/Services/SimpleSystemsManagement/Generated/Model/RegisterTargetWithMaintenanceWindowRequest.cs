@@ -144,7 +144,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The targets to register with the maintenance window. In other words, the instances
         /// to run commands on when the maintenance window runs.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If a single maintenance window task is registered with multiple targets, its task
+        /// invocations occur sequentially and not in parallel. If your task must run on multiple
+        /// targets at the same time, register a task for each target individually and assign
+        /// each task the same priority level.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can specify targets using instance IDs, resource group names, or tags that have
         /// been applied to instances.

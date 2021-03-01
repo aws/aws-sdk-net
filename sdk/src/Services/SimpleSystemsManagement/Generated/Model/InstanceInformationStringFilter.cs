@@ -46,6 +46,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
         /// Key"
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code>
+        /// or <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123,
+        /// tag:al!, tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:,
+        /// tagKey, abc:keyname.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public string Key

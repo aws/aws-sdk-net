@@ -68,6 +68,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBaselineOverride())
+                {
+                    context.Writer.WritePropertyName("BaselineOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BaselineOverrideMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BaselineOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInstanceId())
                 {
                     context.Writer.WritePropertyName("InstanceId");

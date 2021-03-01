@@ -35,8 +35,27 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetDeployablePatchSnapshotForInstanceRequest : AmazonSimpleSystemsManagementRequest
     {
+        private BaselineOverride _baselineOverride;
         private string _instanceId;
         private string _snapshotId;
+
+        /// <summary>
+        /// Gets and sets the property BaselineOverride. 
+        /// <para>
+        /// Defines the basic information about a patch baseline override.
+        /// </para>
+        /// </summary>
+        public BaselineOverride BaselineOverride
+        {
+            get { return this._baselineOverride; }
+            set { this._baselineOverride = value; }
+        }
+
+        // Check to see if BaselineOverride property is set
+        internal bool IsSetBaselineOverride()
+        {
+            return this._baselineOverride != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 

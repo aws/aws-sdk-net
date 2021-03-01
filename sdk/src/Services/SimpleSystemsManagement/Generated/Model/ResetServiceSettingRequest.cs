@@ -60,7 +60,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property SettingId. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can
-        /// be <code>/ssm/parameter-store/default-parameter-tier</code>, <code>/ssm/parameter-store/high-throughput-enabled</code>,
+        /// be <code>/ssm/automation/customer-script-log-destination</code>, <code>/ssm/automation/customer-script-log-group-name</code>,
+        /// <code>/ssm/parameter-store/default-parameter-tier</code>, <code>/ssm/parameter-store/high-throughput-enabled</code>,
         /// or <code>/ssm/managed-instance/activation-tier</code>. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
         /// </para>
         /// </summary>

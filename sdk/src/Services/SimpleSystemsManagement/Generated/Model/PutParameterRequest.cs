@@ -198,8 +198,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+        /// Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition, the slash character ( / ) is used to delineate hierarchies in parameter
+        /// names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -211,9 +216,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-        /// requirements and constraints for parameter names</a> in the <i>AWS Systems Manager
-        /// User Guide</i>.
+        /// For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+        /// Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
