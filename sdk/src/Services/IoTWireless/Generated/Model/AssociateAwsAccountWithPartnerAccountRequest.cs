@@ -36,6 +36,7 @@ namespace Amazon.IoTWireless.Model
     {
         private string _clientRequestToken;
         private SidewalkAccountInfo _sidewalk;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -76,6 +77,26 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetSidewalk()
         {
             return this._sidewalk != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags attached to the specified resource. Tags are metadata that can be used to
+        /// manage a resource
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

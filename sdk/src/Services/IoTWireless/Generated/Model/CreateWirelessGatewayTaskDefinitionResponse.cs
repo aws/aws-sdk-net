@@ -33,7 +33,26 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class CreateWirelessGatewayTaskDefinitionResponse : AmazonWebServiceResponse
     {
+        private string _arn;
         private string _id;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name of the resource.
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 

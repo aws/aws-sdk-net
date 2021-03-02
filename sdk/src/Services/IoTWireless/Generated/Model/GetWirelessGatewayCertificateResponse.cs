@@ -58,8 +58,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property LoRaWANNetworkServerCertificateId. 
         /// <para>
-        /// The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer
-        /// endpoint.
+        /// The ID of the certificate that is associated with the wireless gateway and used for
+        /// the LoRaWANNetworkServer endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

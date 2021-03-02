@@ -34,6 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class SidewalkAccountInfoWithFingerprint
     {
         private string _amazonId;
+        private string _arn;
         private string _fingerprint;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetAmazonId()
         {
             return this._amazonId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name of the resource.
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
         }
 
         /// <summary>
