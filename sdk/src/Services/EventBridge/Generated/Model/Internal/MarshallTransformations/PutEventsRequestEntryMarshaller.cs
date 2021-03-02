@@ -86,6 +86,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Time);
             }
 
+            if(requestObject.IsSetTraceHeader())
+            {
+                context.Writer.WritePropertyName("TraceHeader");
+                context.Writer.Write(requestObject.TraceHeader);
+            }
+
         }
 
         /// <summary>

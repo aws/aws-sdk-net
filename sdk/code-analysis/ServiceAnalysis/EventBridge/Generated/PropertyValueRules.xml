@@ -714,6 +714,11 @@
     <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.PutEventsRequestEntry.TraceHeader</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.PutPartnerEventsRequestEntry.Source</property>
     <min>1</min>
     <max>256</max>
@@ -729,13 +734,13 @@
     <property>Amazon.EventBridge.Model.RedshiftDataParameters.Database</property>
     <min>1</min>
     <max>64</max>
-    <pattern>([a-zA-Z0-9]+)|(\$(\.[\w_-]+(\[(\d+|\*)\])*)*)</pattern>
+    <pattern>([a-zA-Z0-9_+.-@]+)|(\$(\.[\w_-]+(\[(\d+|\*)\])*)*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.RedshiftDataParameters.DbUser</property>
     <min>1</min>
     <max>128</max>
-    <pattern>([a-zA-Z0-9]+)|(\$(\.[\w_-]+(\[(\d+|\*)\])*)*)</pattern>
+    <pattern>([a-zA-Z0-9_+.-@]+)|(\$(\.[\w_-]+(\[(\d+|\*)\])*)*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.RedshiftDataParameters.SecretManagerArn</property>
