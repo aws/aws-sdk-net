@@ -1,3 +1,17 @@
+### 3.5.121.0 (2021-03-02 19:14 UTC)
+* ComputeOptimizer (3.5.3.20)
+	* Documentation updates for Compute Optimizer
+* DataSync (3.5.3.0)
+	* Additional API Support to update NFS/SMB/ObjectStorage locations
+* DirectConnect (3.5.0.74)
+	* Doc only update for AWS Direct Connect that fixes several customer-reported issues
+* EventBridge (3.5.5.0)
+	* Adds TraceHeader to PutEventsRequestEntry to support AWS X-Ray trace-ids on events generated using the PutEvents operation.
+* IoTWireless (3.5.3.0)
+	* Add ARN & Tags for PartnerAccount related APIs and WirelessGatewayTaskDefinition related APIs
+* ManagedBlockchain (3.5.3.10)
+	* Updates for Ethereum general availability release.
+
 ### 3.5.120.0 (2021-03-01 19:14 UTC)
 * AlexaForBusiness (3.5.1.0)
 	* Added support for optional tags in CreateAddressBook, CreateConferenceProvider, CreateContact, CreateGatewayGroup, CreateNetworkProfile and RegisterAVSDevice APIs.
