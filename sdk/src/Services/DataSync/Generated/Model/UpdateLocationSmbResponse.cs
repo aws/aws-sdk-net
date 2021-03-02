@@ -29,32 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLocationFsxWindows operation.
-    /// Returns metadata, such as the path information about an Amazon FSx for Windows File
-    /// Server location.
+    /// This is the response object from the UpdateLocationSmb operation.
     /// </summary>
-    public partial class DescribeLocationFsxWindowsRequest : AmazonDataSyncRequest
+    public partial class UpdateLocationSmbResponse : AmazonWebServiceResponse
     {
-        private string _locationArn;
-
-        /// <summary>
-        /// Gets and sets the property LocationArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=128)]
-        public string LocationArn
-        {
-            get { return this._locationArn; }
-            set { this._locationArn = value; }
-        }
-
-        // Check to see if LocationArn property is set
-        internal bool IsSetLocationArn()
-        {
-            return this._locationArn != null;
-        }
 
     }
 }

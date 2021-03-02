@@ -43,7 +43,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that the FSx for Windows location was created.
+        /// The time that the FSx for Windows File Server location was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -61,7 +61,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The name of the Windows domain that the FSx for Windows server belongs to.
+        /// The name of the Windows domain that the FSx for Windows File Server belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -80,7 +80,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the FSx for Windows location that was described.
+        /// The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was
+        /// described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -99,7 +100,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URL of the FSx for Windows location that was described.
+        /// The URL of the FSx for Windows File Server location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4356)]
@@ -119,7 +120,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
         /// The Amazon Resource Names (ARNs) of the security groups that are configured for the
-        /// FSx for Windows file system.
+        /// FSx for Windows File Server file system.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -139,7 +140,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property User. 
         /// <para>
         /// The user who has the permissions to access files and folders in the FSx for Windows
-        /// file system.
+        /// File Server file system.
         /// </para>
         /// </summary>
         [AWSProperty(Max=104)]

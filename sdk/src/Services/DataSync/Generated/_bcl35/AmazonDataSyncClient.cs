@@ -463,7 +463,7 @@ namespace Amazon.DataSync
         #region  CreateLocationFsxWindows
 
         /// <summary>
-        /// Creates an endpoint for an Amazon FSx for Windows file system.
+        /// Creates an endpoint for an Amazon FSx for Windows File Server file system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxWindows service method.</param>
         /// 
@@ -772,26 +772,35 @@ namespace Amazon.DataSync
         #region  CreateTask
 
         /// <summary>
-        /// Creates a task. A task is a set of two locations (source and destination) and a set
-        /// of Options that you use to control the behavior of a task. If you don't specify Options
-        /// when you create a task, AWS DataSync populates them with service defaults.
+        /// Creates a task.
         /// 
         ///  
         /// <para>
-        /// When you create a task, it first enters the CREATING state. During CREATING AWS DataSync
-        /// attempts to mount the on-premises Network File System (NFS) location. The task transitions
-        /// to the AVAILABLE state without waiting for the AWS location to become mounted. If
-        /// required, AWS DataSync mounts the AWS location before each task execution.
+        /// A task includes a source location and a destination location, and a configuration
+        /// that specifies how data is transferred. A task always transfers data from the source
+        /// location to the destination location. The configuration specifies options such as
+        /// task scheduling, bandwidth limits, etc. A task is the complete definition of a data
+        /// transfer.
         /// </para>
         ///  
         /// <para>
-        /// If an agent that is associated with a source (NFS) location goes offline, the task
-        /// transitions to the UNAVAILABLE status. If the status of the task remains in the CREATING
-        /// status for more than a few minutes, it means that your agent might be having trouble
-        /// mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail. Mount
-        /// issues are often caused by either a misconfigured firewall or a mistyped NFS server
-        /// hostname.
+        /// When you create a task that transfers data between AWS services in different AWS Regions,
+        /// one of the two locations that you specify must reside in the Region where DataSync
+        /// is being used. The other location must be specified in a different Region.
         /// </para>
+        ///  
+        /// <para>
+        /// You can transfer data between commercial AWS Regions except for China, or between
+        /// AWS GovCloud (US-East and US-West) Regions.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you use DataSync to copy files or objects between AWS Regions, you pay for data
+        /// transfer between Regions. This is billed as data transfer OUT from your source Region
+        /// to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data
+        /// Transfer pricing</a>. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTask service method.</param>
         /// 
@@ -1156,7 +1165,8 @@ namespace Amazon.DataSync
         #region  DescribeLocationFsxWindows
 
         /// <summary>
-        /// Returns metadata, such as the path information about an Amazon FSx for Windows location.
+        /// Returns metadata, such as the path information about an Amazon FSx for Windows File
+        /// Server location.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxWindows service method.</param>
         /// 
@@ -2148,6 +2158,191 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  UpdateLocationNfs
+
+        /// <summary>
+        /// Updates some of the parameters of a previously created location for Network File System
+        /// (NFS) access. For information about creating an NFS location, see <a>create-nfs-location</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationNfs service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationNfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">REST API Reference for UpdateLocationNfs Operation</seealso>
+        public virtual UpdateLocationNfsResponse UpdateLocationNfs(UpdateLocationNfsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLocationNfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLocationNfsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLocationNfsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationNfs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationNfs operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationNfs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">REST API Reference for UpdateLocationNfs Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLocationNfs(UpdateLocationNfsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLocationNfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLocationNfsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationNfs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationNfs.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationNfsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">REST API Reference for UpdateLocationNfs Operation</seealso>
+        public virtual UpdateLocationNfsResponse EndUpdateLocationNfs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLocationNfsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateLocationObjectStorage
+
+        /// <summary>
+        /// Updates some of the parameters of a previously created location for self-managed object
+        /// storage server access. For information about creating a self-managed object storage
+        /// location, see <a>create-object-location</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationObjectStorage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationObjectStorage service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">REST API Reference for UpdateLocationObjectStorage Operation</seealso>
+        public virtual UpdateLocationObjectStorageResponse UpdateLocationObjectStorage(UpdateLocationObjectStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLocationObjectStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLocationObjectStorageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLocationObjectStorageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationObjectStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationObjectStorage operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationObjectStorage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">REST API Reference for UpdateLocationObjectStorage Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLocationObjectStorage(UpdateLocationObjectStorageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLocationObjectStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLocationObjectStorageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationObjectStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationObjectStorage.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationObjectStorageResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">REST API Reference for UpdateLocationObjectStorage Operation</seealso>
+        public virtual UpdateLocationObjectStorageResponse EndUpdateLocationObjectStorage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLocationObjectStorageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateLocationSmb
+
+        /// <summary>
+        /// Updates some of the parameters of a previously created location for Server Message
+        /// Block (SMB) file system access. For information about creating an SMB location, see
+        /// <a>create-smb-location</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationSmb service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationSmb service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">REST API Reference for UpdateLocationSmb Operation</seealso>
+        public virtual UpdateLocationSmbResponse UpdateLocationSmb(UpdateLocationSmbRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLocationSmbRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLocationSmbResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLocationSmbResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationSmb operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationSmb operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationSmb
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">REST API Reference for UpdateLocationSmb Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLocationSmb(UpdateLocationSmbRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLocationSmbRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLocationSmbResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationSmb operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationSmb.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationSmbResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">REST API Reference for UpdateLocationSmb Operation</seealso>
+        public virtual UpdateLocationSmbResponse EndUpdateLocationSmb(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLocationSmbResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateTask
 
         /// <summary>
@@ -2216,7 +2411,7 @@ namespace Amazon.DataSync
         ///  
         /// <para>
         /// You can modify bandwidth throttling for a task execution that is running or queued.
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
         /// Bandwidth Throttling for a Task Execution</a>.
         /// </para>
         ///  <note> 

@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationFsxWindows operation.
-    /// Creates an endpoint for an Amazon FSx for Windows file system.
+    /// Creates an endpoint for an Amazon FSx for Windows File Server file system.
     /// </summary>
     public partial class CreateLocationFsxWindowsRequest : AmazonDataSyncRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The name of the Windows domain that the FSx for Windows server belongs to.
+        /// The name of the Windows domain that the FSx for Windows File Server belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -64,7 +64,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FsxFilesystemArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the FSx for Windows file system.
+        /// The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -84,7 +84,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Password. 
         /// <para>
         /// The password of the user who has the permissions to access files and folders in the
-        /// FSx for Windows file system.
+        /// FSx for Windows File Server file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=104)]
@@ -104,7 +104,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
         /// The Amazon Resource Names (ARNs) of the security groups that are to use to configure
-        /// the FSx for Windows file system.
+        /// the FSx for Windows File Server file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -124,8 +124,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Subdirectory. 
         /// <para>
         /// A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows
-        /// file system is used to read data from the Amazon FSx for Windows source location or
-        /// write data to the FSx for Windows destination.
+        /// File Server file system is used to read data from the Amazon FSx for Windows File
+        /// Server source location or write data to the FSx for Windows File Server destination.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -166,7 +166,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property User. 
         /// <para>
         /// The user who has the permissions to access files and folders in the FSx for Windows
-        /// file system.
+        /// File Server file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=104)]
