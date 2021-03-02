@@ -30,13 +30,53 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDirectConnectGatewayAssociations operation.
-    /// Lists the associations between your Direct Connect gateways and virtual private gateways.
-    /// You must specify a Direct Connect gateway, a virtual private gateway, or both. If
-    /// you specify a Direct Connect gateway, the response contains all virtual private gateways
-    /// associated with the Direct Connect gateway. If you specify a virtual private gateway,
-    /// the response contains all Direct Connect gateways associated with the virtual private
-    /// gateway. If you specify both, the response contains the association between the Direct
-    /// Connect gateway and the virtual private gateway.
+    /// Lists the associations between your Direct Connect gateways and virtual private gateways
+    /// and transit gateways. You must specify one of the following:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// A Direct Connect gateway
+    /// </para>
+    ///  
+    /// <para>
+    /// The response contains all virtual private gateways and transit gateways associated
+    /// with the Direct Connect gateway.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A virtual private gateway
+    /// </para>
+    ///  
+    /// <para>
+    /// The response contains the Direct Connect gateway.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A transit gateway
+    /// </para>
+    ///  
+    /// <para>
+    /// The response contains the Direct Connect gateway.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A Direct Connect gateway and a virtual private gateway
+    /// </para>
+    ///  
+    /// <para>
+    /// The response contains the association between the Direct Connect gateway and virtual
+    /// private gateway.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A Direct Connect gateway and a transit gateway
+    /// </para>
+    ///  
+    /// <para>
+    /// The response contains the association between the Direct Connect gateway and transit
+    /// gateway.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeDirectConnectGatewayAssociationsRequest : AmazonDirectConnectRequest
     {
@@ -146,7 +186,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualGatewayId. 
         /// <para>
-        /// The ID of the virtual private gateway.
+        /// The ID of the virtual private gateway or transit gateway.
         /// </para>
         /// </summary>
         public string VirtualGatewayId
