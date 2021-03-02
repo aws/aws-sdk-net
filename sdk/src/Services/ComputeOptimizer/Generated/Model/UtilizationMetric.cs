@@ -141,19 +141,20 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The following statistics are available:
+        /// The Compute Optimizer API, AWS Command Line Interface (AWS CLI), and SDKs return utilization
+        /// metrics using only the <code>Maximum</code> statistic, which is the highest value
+        /// observed during the specified period.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>Average</code> - This is the value of Sum / SampleCount during the specified
-        /// period, or the average value observed during the specified period.
+        /// The Compute Optimizer console displays graphs for some utilization metrics using the
+        /// <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code>
+        /// during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing
+        /// resource recommendations</a> in the <i>AWS Compute Optimizer User Guide</i>. You can
+        /// also get averaged utilization metric data for your resources using Amazon CloudWatch.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon
+        /// CloudWatch User Guide</a>.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public MetricStatistic Statistic
         {

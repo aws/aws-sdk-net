@@ -34,10 +34,26 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// For example, it returns the number of Amazon EC2 instances in an account that are
-    /// under-provisioned, over-provisioned, or optimized. It also returns the number of Auto
-    /// Scaling groups in an account that are not optimized, or optimized.
+    /// It returns the number of:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Amazon EC2 instances in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
+    /// or <code>Optimized</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetRecommendationSummariesRequest : AmazonComputeOptimizerRequest
     {
