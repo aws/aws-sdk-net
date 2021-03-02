@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Attributes of an Ethereum node. Ethereum on Managed Blockchain is in preview release
-    /// and is subject to change.
+    /// Attributes of an Ethereum node.
     /// </summary>
     public partial class NodeEthereumAttributes
     {

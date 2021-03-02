@@ -130,7 +130,7 @@ namespace Amazon.ManagedBlockchain.Model
         ///  
         /// <para>
         /// When specifying tags during creation, you can specify multiple key-value pairs in
-        /// a single request, with an overall maximum of 50 added to each resource.
+        /// a single request, with an overall maximum of 50 tags added to each resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

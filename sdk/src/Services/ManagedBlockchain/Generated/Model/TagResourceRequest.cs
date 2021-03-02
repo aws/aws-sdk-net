@@ -82,7 +82,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The tags to assign to the specified resource. Tag values can be empty, for example,
         /// <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs in a single
-        /// request, with an overall maximum of 50 added to each resource.
+        /// request, with an overall maximum of 50 tags added to each resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

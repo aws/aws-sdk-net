@@ -40,8 +40,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// Gets and sets the property Ethereum. 
         /// <para>
         /// Attributes of an Ethereum network for Managed Blockchain resources participating in
-        /// an Ethereum network. Ethereum on Managed Blockchain is in preview release and is subject
-        /// to change.
+        /// an Ethereum network. 
         /// </para>
         /// </summary>
         public NetworkEthereumAttributes Ethereum

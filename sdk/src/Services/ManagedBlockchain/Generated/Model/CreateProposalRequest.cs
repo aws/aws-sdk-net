@@ -160,8 +160,9 @@ namespace Amazon.ManagedBlockchain.Model
         ///  
         /// <para>
         /// When specifying tags during creation, you can specify multiple key-value pairs in
-        /// a single request, with an overall maximum of 50 added to each resource. If the proposal
-        /// is for a network invitation, the invitation inherits the tags added to the proposal.
+        /// a single request, with an overall maximum of 50 tags added to each resource. If the
+        /// proposal is for a network invitation, the invitation inherits the tags added to the
+        /// proposal.
         /// </para>
         ///  
         /// <para>
