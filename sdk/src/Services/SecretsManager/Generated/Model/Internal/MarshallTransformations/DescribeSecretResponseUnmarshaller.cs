@@ -111,6 +111,18 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     response.OwningService = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PrimaryRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PrimaryRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReplicationStatus", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReplicationStatusType, ReplicationStatusTypeUnmarshaller>(ReplicationStatusTypeUnmarshaller.Instance);
+                    response.ReplicationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RotationEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

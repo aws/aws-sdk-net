@@ -30,10 +30,46 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ValidateResourcePolicy operation.
-    /// Validates the JSON text of the resource-based policy document attached to the specified
-    /// secret. The JSON request string input and response output displays formatted code
-    /// with white space and line breaks for better readability. Submit your input as a single
-    /// line JSON string. A resource-based policy is optional.
+    /// Validates that the resource policy does not grant a wide range of IAM principals access
+    /// to your secret. The JSON request string input and response output displays formatted
+    /// code with white space and line breaks for better readability. Submit your input as
+    /// a single line JSON string. A resource-based policy is optional for secrets.
+    /// 
+    ///  
+    /// <para>
+    /// The API performs three checks when validating the secret:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Sends a call to <a href="https://aws.amazon.com/blogs/security/protect-sensitive-data-in-the-cloud-with-automated-reasoning-zelkova/">Zelkova</a>,
+    /// an automated reasoning engine, to ensure your Resource Policy does not allow broad
+    /// access to your secret.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Checks for correct syntax in a policy.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Verifies the policy does not lock out a caller.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Minimum Permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You must have the permissions required to access the following APIs:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>secretsmanager:PutResourcePolicy</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>secretsmanager:ValidateResourcePolicy</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ValidateResourcePolicyRequest : AmazonSecretsManagerRequest
     {
@@ -43,7 +79,11 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
-        /// Identifies the Resource Policy attached to the secret.
+        /// A JSON-formatted string constructed according to the grammar and syntax for an AWS
+        /// resource-based policy. The policy in the string identifies who can access or manage
+        /// this secret and its versions. For information on how to format a JSON parameter for
+        /// the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+        /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.publi
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20480)]
@@ -62,8 +102,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        ///  The identifier for the secret that you want to validate a resource policy. You can
-        /// specify either the Amazon Resource Name (ARN) or the friendly name of the secret.
+        ///  (Optional) The identifier of the secret with the resource-based policy you want to
+        /// validate. You can specify either the Amazon Resource Name (ARN) or the friendly name
+        /// of the secret.
         /// </para>
         ///  <note> 
         /// <para>

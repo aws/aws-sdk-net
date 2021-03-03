@@ -62,7 +62,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To delete the resource-based policy that's attached to a secret, use <a>DeleteResourcePolicy</a>.
+    /// To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -79,8 +79,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property BlockPublicPolicy. 
         /// <para>
-        /// Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad
-        /// access to your secret.
+        /// (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then
+        /// you block resource-based policies that allow broad access to the secret.
         /// </para>
         /// </summary>
         public bool BlockPublicPolicy
@@ -98,10 +98,10 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
-        /// A JSON-formatted string that's constructed according to the grammar and syntax for
-        /// an AWS resource-based policy. The policy in the string identifies who can access or
-        /// manage this secret and its versions. For information on how to format a JSON parameter
-        /// for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+        /// A JSON-formatted string constructed according to the grammar and syntax for an AWS
+        /// resource-based policy. The policy in the string identifies who can access or manage
+        /// this secret and its versions. For information on how to format a JSON parameter for
+        /// the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
         /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
         /// </para>
         /// </summary>
@@ -121,8 +121,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret that you want to attach the resource-based policy to. You can
-        /// specify either the ARN or the friendly name of the secret.
+        /// Specifies the secret that you want to attach the resource-based policy. You can specify
+        /// either the ARN or the friendly name of the secret.
         /// </para>
         ///  <note> 
         /// <para>

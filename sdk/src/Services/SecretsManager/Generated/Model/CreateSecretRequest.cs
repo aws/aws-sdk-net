@@ -141,13 +141,35 @@ namespace Amazon.SecretsManager.Model
     /// </summary>
     public partial class CreateSecretRequest : AmazonSecretsManagerRequest
     {
+        private List<ReplicaRegionType> _addReplicaRegions = new List<ReplicaRegionType>();
         private string _clientRequestToken;
         private string _description;
+        private bool? _forceOverwriteReplicaSecret;
         private string _kmsKeyId;
         private string _name;
         private MemoryStream _secretBinary;
         private string _secretString;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property AddReplicaRegions. 
+        /// <para>
+        /// (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates
+        /// the KMSKeyID objects to the list of regions specified in the parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ReplicaRegionType> AddReplicaRegions
+        {
+            get { return this._addReplicaRegions; }
+            set { this._addReplicaRegions = value; }
+        }
+
+        // Check to see if AddReplicaRegions property is set
+        internal bool IsSetAddReplicaRegions()
+        {
+            return this._addReplicaRegions != null && this._addReplicaRegions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -186,7 +208,7 @@ namespace Amazon.SecretsManager.Model
         ///  </li> <li> 
         /// <para>
         /// If a version with this value already exists and that version's <code>SecretString</code>
-        /// and <code>SecretBinary</code> values are different from those in the request then
+        /// and <code>SecretBinary</code> values are different from those in the request, then
         /// the request fails because you cannot modify an existing version. Instead, use <a>PutSecretValue</a>
         /// to create a new version.
         /// </para>
@@ -225,6 +247,25 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceOverwriteReplicaSecret. 
+        /// <para>
+        /// (Optional) If set, the replication overwrites a secret with the same name in the destination
+        /// region.
+        /// </para>
+        /// </summary>
+        public bool ForceOverwriteReplicaSecret
+        {
+            get { return this._forceOverwriteReplicaSecret.GetValueOrDefault(); }
+            set { this._forceOverwriteReplicaSecret = value; }
+        }
+
+        // Check to see if ForceOverwriteReplicaSecret property is set
+        internal bool IsSetForceOverwriteReplicaSecret()
+        {
+            return this._forceOverwriteReplicaSecret.HasValue; 
         }
 
         /// <summary>

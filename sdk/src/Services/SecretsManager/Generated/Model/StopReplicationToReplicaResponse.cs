@@ -29,17 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// This is the response object from the PutResourcePolicy operation.
+    /// This is the response object from the StopReplicationToReplica operation.
     /// </summary>
-    public partial class PutResourcePolicyResponse : AmazonWebServiceResponse
+    public partial class StopReplicationToReplicaResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private string _name;
 
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN of the secret retrieved by the resource-based policy.
+        /// Response <code>StopReplicationToReplica</code> of a secret, based on the <code>ARN,</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -53,25 +52,6 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetARN()
         {
             return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The friendly name of the secret retrieved by the resource-based policy.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=512)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
         }
 
     }

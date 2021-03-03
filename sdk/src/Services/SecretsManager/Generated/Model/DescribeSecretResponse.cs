@@ -43,6 +43,8 @@ namespace Amazon.SecretsManager.Model
         private DateTime? _lastRotatedDate;
         private string _name;
         private string _owningService;
+        private string _primaryRegion;
+        private List<ReplicationStatusType> _replicationStatus = new List<ReplicationStatusType>();
         private bool? _rotationEnabled;
         private string _rotationLambdaARN;
         private RotationRulesType _rotationRules;
@@ -71,7 +73,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date that the secret was created.
+        /// The date you created the secret.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -193,8 +195,12 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property LastRotatedDate. 
         /// <para>
-        /// The most recent date and time that the Secrets Manager rotation process was successfully
-        /// completed. This value is null if the secret has never rotated.
+        /// The last date and time that the rotation process for this secret was invoked.
+        /// </para>
+        ///  
+        /// <para>
+        /// The most recent date and time that the Secrets Manager rotation process successfully
+        /// completed. If the secret doesn't rotate, Secrets Manager returns a null value.
         /// </para>
         /// </summary>
         public DateTime LastRotatedDate
@@ -248,6 +254,44 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrimaryRegion. 
+        /// <para>
+        /// Specifies the primary region for secret replication. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string PrimaryRegion
+        {
+            get { return this._primaryRegion; }
+            set { this._primaryRegion = value; }
+        }
+
+        // Check to see if PrimaryRegion property is set
+        internal bool IsSetPrimaryRegion()
+        {
+            return this._primaryRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationStatus. 
+        /// <para>
+        /// Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code>
+        /// or <code>InSync</code>.<code>P</code> 
+        /// </para>
+        /// </summary>
+        public List<ReplicationStatusType> ReplicationStatus
+        {
+            get { return this._replicationStatus; }
+            set { this._replicationStatus = value; }
+        }
+
+        // Check to see if ReplicationStatus property is set
+        internal bool IsSetReplicationStatus()
+        {
+            return this._replicationStatus != null && this._replicationStatus.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RotationEnabled. 
         /// <para>
         /// Specifies whether automatic rotation is enabled for this secret.
@@ -293,7 +337,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RotationRules. 
         /// <para>
-        /// A structure that contains the rotation configuration for this secret.
+        /// A structure with the rotation configuration for this secret.
         /// </para>
         /// </summary>
         public RotationRulesType RotationRules

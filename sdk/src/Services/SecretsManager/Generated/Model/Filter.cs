@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// Allows you to filter your list of secrets.
+    /// Allows you to add filters when you use the search function in Secrets Manager.
     /// </summary>
     public partial class Filter
     {
@@ -58,6 +58,11 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property Values. 
         /// <para>
         /// Filters your list of secrets by a specific value.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can prefix your search value with an exclamation mark (<code>!</code>) in order
+        /// to perform negation filters. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

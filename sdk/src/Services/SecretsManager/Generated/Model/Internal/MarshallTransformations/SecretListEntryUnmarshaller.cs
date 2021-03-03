@@ -124,6 +124,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwningService = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PrimaryRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrimaryRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RotationEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

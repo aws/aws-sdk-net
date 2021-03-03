@@ -29,49 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// This is the response object from the PutResourcePolicy operation.
+    /// (Optional) Custom type consisting of a <code>Region</code> (required) and the <code>KmsKeyId</code>
+    /// which can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.
     /// </summary>
-    public partial class PutResourcePolicyResponse : AmazonWebServiceResponse
+    public partial class ReplicaRegionType
     {
-        private string _arn;
-        private string _name;
+        private string _kmsKeyId;
+        private string _region;
 
         /// <summary>
-        /// Gets and sets the property ARN. 
+        /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN of the secret retrieved by the resource-based policy.
+        /// Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string ARN
+        [AWSProperty(Min=0, Max=2048)]
+        public string KmsKeyId
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
         }
 
-        // Check to see if ARN property is set
-        internal bool IsSetARN()
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
         {
-            return this._arn != null;
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Region. 
         /// <para>
-        /// The friendly name of the secret retrieved by the resource-based policy.
+        /// Describes a single instance of Region objects.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
-        public string Name
+        [AWSProperty(Min=1, Max=128)]
+        public string Region
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._region; }
+            set { this._region = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
         {
-            return this._name != null;
+            return this._region != null;
         }
 
     }

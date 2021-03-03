@@ -29,18 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteSecret operation.
+    /// This is the response object from the RemoveRegionsFromReplication operation.
     /// </summary>
-    public partial class DeleteSecretResponse : AmazonWebServiceResponse
+    public partial class RemoveRegionsFromReplicationResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private DateTime? _deletionDate;
-        private string _name;
+        private List<ReplicationStatusType> _replicationStatus = new List<ReplicationStatusType>();
 
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN of the secret that is now scheduled for deletion.
+        /// The secret <code>ARN</code> removed from replication regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -57,42 +56,22 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeletionDate. 
+        /// Gets and sets the property ReplicationStatus. 
         /// <para>
-        /// The date and time after which this secret can be deleted by Secrets Manager and can
-        /// no longer be restored. This value is the date and time of the delete request plus
-        /// the number of days specified in <code>RecoveryWindowInDays</code>.
+        /// Describes the remaining replication status after you remove regions from the replication
+        /// list.
         /// </para>
         /// </summary>
-        public DateTime DeletionDate
+        public List<ReplicationStatusType> ReplicationStatus
         {
-            get { return this._deletionDate.GetValueOrDefault(); }
-            set { this._deletionDate = value; }
+            get { return this._replicationStatus; }
+            set { this._replicationStatus = value; }
         }
 
-        // Check to see if DeletionDate property is set
-        internal bool IsSetDeletionDate()
+        // Check to see if ReplicationStatus property is set
+        internal bool IsSetReplicationStatus()
         {
-            return this._deletionDate.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The friendly name of the secret currently scheduled for deletion.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
+            return this._replicationStatus != null && this._replicationStatus.Count > 0; 
         }
 
     }

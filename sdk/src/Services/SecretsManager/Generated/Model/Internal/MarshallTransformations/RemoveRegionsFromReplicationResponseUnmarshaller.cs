@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteResourcePolicy operation
+    /// Response Unmarshaller for RemoveRegionsFromReplication operation
     /// </summary>  
-    public class DeleteResourcePolicyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RemoveRegionsFromReplicationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteResourcePolicyResponse response = new DeleteResourcePolicyResponse();
+            RemoveRegionsFromReplicationResponse response = new RemoveRegionsFromReplicationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -57,10 +57,10 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     response.ARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("ReplicationStatus", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ReplicationStatusType, ReplicationStatusTypeUnmarshaller>(ReplicationStatusTypeUnmarshaller.Instance);
+                    response.ReplicationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,9 +106,9 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             return new AmazonSecretsManagerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteResourcePolicyResponseUnmarshaller _instance = new DeleteResourcePolicyResponseUnmarshaller();        
+        private static RemoveRegionsFromReplicationResponseUnmarshaller _instance = new RemoveRegionsFromReplicationResponseUnmarshaller();        
 
-        internal static DeleteResourcePolicyResponseUnmarshaller GetInstance()
+        internal static RemoveRegionsFromReplicationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +116,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteResourcePolicyResponseUnmarshaller Instance
+        public static RemoveRegionsFromReplicationResponseUnmarshaller Instance
         {
             get
             {

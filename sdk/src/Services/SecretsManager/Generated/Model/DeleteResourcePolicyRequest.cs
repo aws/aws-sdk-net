@@ -54,7 +54,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To retrieve the current resource-based policy that's attached to a secret, use <a>GetResourcePolicy</a>.
+    /// To retrieve the current resource-based policy attached to a secret, use <a>GetResourcePolicy</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>

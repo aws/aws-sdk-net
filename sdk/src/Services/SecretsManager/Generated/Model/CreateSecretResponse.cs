@@ -35,6 +35,7 @@ namespace Amazon.SecretsManager.Model
     {
         private string _arn;
         private string _name;
+        private List<ReplicationStatusType> _replicationStatus = new List<ReplicationStatusType>();
         private string _versionId;
 
         /// <summary>
@@ -82,6 +83,25 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationStatus. 
+        /// <para>
+        /// Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code>
+        /// or <code>InSync</code>.
+        /// </para>
+        /// </summary>
+        public List<ReplicationStatusType> ReplicationStatus
+        {
+            get { return this._replicationStatus; }
+            set { this._replicationStatus = value; }
+        }
+
+        // Check to see if ReplicationStatus property is set
+        internal bool IsSetReplicationStatus()
+        {
+            return this._replicationStatus != null && this._replicationStatus.Count > 0; 
         }
 
         /// <summary>

@@ -43,6 +43,10 @@ namespace Amazon.SecretsManager
         /// </summary>
         public static readonly FilterNameStringType Name = new FilterNameStringType("name");
         /// <summary>
+        /// Constant PrimaryRegion for FilterNameStringType
+        /// </summary>
+        public static readonly FilterNameStringType PrimaryRegion = new FilterNameStringType("primary-region");
+        /// <summary>
         /// Constant TagKey for FilterNameStringType
         /// </summary>
         public static readonly FilterNameStringType TagKey = new FilterNameStringType("tag-key");
@@ -130,6 +134,60 @@ namespace Amazon.SecretsManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatusType.
+    /// </summary>
+    public class StatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for StatusType
+        /// </summary>
+        public static readonly StatusType Failed = new StatusType("Failed");
+        /// <summary>
+        /// Constant InProgress for StatusType
+        /// </summary>
+        public static readonly StatusType InProgress = new StatusType("InProgress");
+        /// <summary>
+        /// Constant InSync for StatusType
+        /// </summary>
+        public static readonly StatusType InSync = new StatusType("InSync");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatusType FindValue(string value)
+        {
+            return FindValue<StatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatusType(string value)
         {
             return FindValue(value);
         }

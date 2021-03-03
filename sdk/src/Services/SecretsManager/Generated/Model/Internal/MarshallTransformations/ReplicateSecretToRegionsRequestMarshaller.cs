@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateSecret Request Marshaller
+    /// ReplicateSecretToRegions Request Marshaller
     /// </summary>       
-    public class CreateSecretRequestMarshaller : IMarshaller<IRequest, CreateSecretRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ReplicateSecretToRegionsRequestMarshaller : IMarshaller<IRequest, ReplicateSecretToRegionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateSecretRequest)input);
+            return this.Marshall((ReplicateSecretToRegionsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateSecretRequest publicRequest)
+        public IRequest Marshall(ReplicateSecretToRegionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecretsManager");
-            string target = "secretsmanager.CreateSecret";
+            string target = "secretsmanager.ReplicateSecretToRegions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-17";            
@@ -84,67 +84,16 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
                 if(publicRequest.IsSetForceOverwriteReplicaSecret())
                 {
                     context.Writer.WritePropertyName("ForceOverwriteReplicaSecret");
                     context.Writer.Write(publicRequest.ForceOverwriteReplicaSecret);
                 }
 
-                if(publicRequest.IsSetKmsKeyId())
+                if(publicRequest.IsSetSecretId())
                 {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSecretBinary())
-                {
-                    context.Writer.WritePropertyName("SecretBinary");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.SecretBinary));
-                }
-
-                if(publicRequest.IsSetSecretString())
-                {
-                    context.Writer.WritePropertyName("SecretString");
-                    context.Writer.Write(publicRequest.SecretString);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("SecretId");
+                    context.Writer.Write(publicRequest.SecretId);
                 }
 
         
@@ -156,9 +105,9 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateSecretRequestMarshaller _instance = new CreateSecretRequestMarshaller();        
+        private static ReplicateSecretToRegionsRequestMarshaller _instance = new ReplicateSecretToRegionsRequestMarshaller();        
 
-        internal static CreateSecretRequestMarshaller GetInstance()
+        internal static ReplicateSecretToRegionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -166,7 +115,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateSecretRequestMarshaller Instance
+        public static ReplicateSecretToRegionsRequestMarshaller Instance
         {
             get
             {

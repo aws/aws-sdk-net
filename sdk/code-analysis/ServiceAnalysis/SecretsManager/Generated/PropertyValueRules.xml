@@ -124,6 +124,12 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DescribeSecretResponse.PrimaryRegion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([a-z]+-)+\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.DescribeSecretResponse.RotationLambdaARN</property>
     <min>0</min>
     <max>2048</max>
@@ -304,6 +310,26 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.RemoveRegionsFromReplicationRequest.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.RemoveRegionsFromReplicationResponse.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ReplicateSecretToRegionsRequest.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ReplicateSecretToRegionsResponse.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.RestoreSecretRequest.SecretId</property>
     <min>1</min>
     <max>2048</max>
@@ -347,6 +373,16 @@
     <property>Amazon.SecretsManager.Model.RotateSecretResponse.VersionId</property>
     <min>32</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.StopReplicationToReplicaRequest.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.StopReplicationToReplicaResponse.ARN</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.TagResourceRequest.SecretId</property>
@@ -443,6 +479,33 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ReplicaRegionType.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ReplicaRegionType.Region</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([a-z]+-)+\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ReplicationStatusType.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ReplicationStatusType.Region</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([a-z]+-)+\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ReplicationStatusType.StatusMessage</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.RotationRulesType.AutomaticallyAfterDays</property>
     <min>1</min>
     <max>1000</max>
@@ -470,6 +533,12 @@
     <property>Amazon.SecretsManager.Model.SecretListEntry.OwningService</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.SecretListEntry.PrimaryRegion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([a-z]+-)+\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.SecretListEntry.RotationLambdaARN</property>

@@ -30,7 +30,7 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSecret operation.
-    /// Deletes an entire secret and all of its versions. You can optionally include a recovery
+    /// Deletes an entire secret and all of the versions. You can optionally include a recovery
     /// window during which you can restore the secret. If you don't specify a recovery window
     /// value, the operation defaults to 30 days. Secrets Manager attaches a <code>DeletionDate</code>
     /// stamp to the secret that specifies the end of the recovery window. At the end of the
@@ -43,17 +43,17 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
-    /// You cannot access the encrypted secret information in any secret that is scheduled
-    /// for deletion. If you need to access that information, you must cancel the deletion
-    /// with <a>RestoreSecret</a> and then retrieve the information.
+    /// You cannot access the encrypted secret information in any secret scheduled for deletion.
+    /// If you need to access that information, you must cancel the deletion with <a>RestoreSecret</a>
+    /// and then retrieve the information.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
     /// There is no explicit operation to delete a version of a secret. Instead, remove all
     /// staging labels from the <code>VersionStage</code> field of a version. That marks the
     /// version as deprecated and allows Secrets Manager to delete it as needed. Versions
-    /// that do not have any staging labels do not show up in <a>ListSecretVersionIds</a>
-    /// unless you specify <code>IncludeDeprecated</code>.
+    /// without any staging labels do not show up in <a>ListSecretVersionIds</a> unless you
+    /// specify <code>IncludeDeprecated</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -113,7 +113,14 @@ namespace Amazon.SecretsManager.Model
         /// Use this parameter with caution. This parameter causes the operation to skip the normal
         /// waiting period before the permanent deletion that AWS would normally impose with the
         /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code>
-        /// parameter, then you have no opportunity to recover the secret. It is permanently lost.
+        /// parameter, then you have no opportunity to recover the secret. You lose the secret
+        /// permanently.
+        /// </para>
+        ///  </important> <important> 
+        /// <para>
+        /// If you use this parameter and include a previously deleted or nonexistent secret,
+        /// the operation does not return the error <code>ResourceNotFoundException</code> in
+        /// order to correctly handle retries.
         /// </para>
         ///  </important>
         /// </summary>
@@ -132,13 +139,13 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RecoveryWindowInDays. 
         /// <para>
-        /// (Optional) Specifies the number of days that Secrets Manager waits before it can delete
-        /// the secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
+        /// (Optional) Specifies the number of days that Secrets Manager waits before Secrets
+        /// Manager can delete the secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
         /// parameter in the same API call.
         /// </para>
         ///  
         /// <para>
-        /// This value can range from 7 to 30 days. The default value is 30.
+        /// This value can range from 7 to 30 days with a default value of 30.
         /// </para>
         /// </summary>
         public long RecoveryWindowInDays
@@ -156,8 +163,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret that you want to delete. You can specify either the Amazon Resource
-        /// Name (ARN) or the friendly name of the secret.
+        /// Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN)
+        /// or the friendly name of the secret.
         /// </para>
         ///  <note> 
         /// <para>

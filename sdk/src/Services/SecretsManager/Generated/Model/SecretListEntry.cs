@@ -45,6 +45,7 @@ namespace Amazon.SecretsManager.Model
         private DateTime? _lastRotatedDate;
         private string _name;
         private string _owningService;
+        private string _primaryRegion;
         private bool? _rotationEnabled;
         private string _rotationLambdaARN;
         private RotationRulesType _rotationRules;
@@ -195,7 +196,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property LastRotatedDate. 
         /// <para>
-        /// The last date and time that the rotation process for this secret was invoked.
+        /// The most recent date and time that the Secrets Manager rotation process was successfully
+        /// completed. This value is null if the secret hasn't ever rotated.
         /// </para>
         /// </summary>
         public DateTime LastRotatedDate
@@ -249,6 +251,25 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetOwningService()
         {
             return this._owningService != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryRegion. 
+        /// <para>
+        /// The Region where Secrets Manager originated the secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string PrimaryRegion
+        {
+            get { return this._primaryRegion; }
+            set { this._primaryRegion = value; }
+        }
+
+        // Check to see if PrimaryRegion property is set
+        internal bool IsSetPrimaryRegion()
+        {
+            return this._primaryRegion != null;
         }
 
         /// <summary>

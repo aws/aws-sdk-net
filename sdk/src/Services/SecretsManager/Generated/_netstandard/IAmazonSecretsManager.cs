@@ -398,7 +398,7 @@ namespace Amazon.SecretsManager
         /// The request failed because it would exceed one of the Secrets Manager internal limits.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// The policy document that you provided isn't valid.
+        /// You provided a resource-based policy with syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.PreconditionNotMetException">
         /// The request failed because you did not complete all the prerequisite steps.
@@ -443,7 +443,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To retrieve the current resource-based policy that's attached to a secret, use <a>GetResourcePolicy</a>.
+        /// To retrieve the current resource-based policy attached to a secret, use <a>GetResourcePolicy</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -459,6 +459,9 @@ namespace Amazon.SecretsManager
         /// <returns>The response from the DeleteResourcePolicy service method, as returned by SecretsManager.</returns>
         /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// You provided an invalid value for a parameter.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
@@ -491,7 +494,7 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Deletes an entire secret and all of its versions. You can optionally include a recovery
+        /// Deletes an entire secret and all of the versions. You can optionally include a recovery
         /// window during which you can restore the secret. If you don't specify a recovery window
         /// value, the operation defaults to 30 days. Secrets Manager attaches a <code>DeletionDate</code>
         /// stamp to the secret that specifies the end of the recovery window. At the end of the
@@ -504,17 +507,17 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// You cannot access the encrypted secret information in any secret that is scheduled
-        /// for deletion. If you need to access that information, you must cancel the deletion
-        /// with <a>RestoreSecret</a> and then retrieve the information.
+        /// You cannot access the encrypted secret information in any secret scheduled for deletion.
+        /// If you need to access that information, you must cancel the deletion with <a>RestoreSecret</a>
+        /// and then retrieve the information.
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
         /// There is no explicit operation to delete a version of a secret. Instead, remove all
         /// staging labels from the <code>VersionStage</code> field of a version. That marks the
         /// version as deprecated and allows Secrets Manager to delete it as needed. Versions
-        /// that do not have any staging labels do not show up in <a>ListSecretVersionIds</a>
-        /// unless you specify <code>IncludeDeprecated</code>.
+        /// without any staging labels do not show up in <a>ListSecretVersionIds</a> unless you
+        /// specify <code>IncludeDeprecated</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1018,7 +1021,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To delete the resource-based policy that's attached to a secret, use <a>DeleteResourcePolicy</a>.
+        /// To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1057,10 +1060,11 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// The policy document that you provided isn't valid.
+        /// You provided a resource-based policy with syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.PublicPolicyException">
-        /// The resource policy did not prevent broad access to the secret.
+        /// The BlockPublicPolicy parameter is set to true and the resource policy did not prevent
+        /// broad access to the secret.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -1093,15 +1097,13 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If another version of this secret already exists, then this operation does not automatically
-        /// move any staging labels other than those that you explicitly specify in the <code>VersionStages</code>
-        /// parameter.
+        /// If you do not specify a value for VersionStages then Secrets Manager automatically
+        /// moves the staging label <code>AWSCURRENT</code> to this new version.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If this operation moves the staging label <code>AWSCURRENT</code> from another version
-        /// to this version (because you included it in the <code>StagingLabels</code> parameter)
-        /// then Secrets Manager also automatically moves the staging label <code>AWSPREVIOUS</code>
+        /// to this version, then Secrets Manager also automatically moves the staging label <code>AWSPREVIOUS</code>
         /// to the version that <code>AWSCURRENT</code> was removed from.
         /// </para>
         ///  </li> <li> 
@@ -1222,6 +1224,97 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">REST API Reference for PutSecretValue Operation</seealso>
         Task<PutSecretValueResponse> PutSecretValueAsync(PutSecretValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveRegionsFromReplication
+
+
+
+        /// <summary>
+        /// Remove regions from replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRegionsFromReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveRegionsFromReplication service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// You provided an invalid value for a parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// We can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">REST API Reference for RemoveRegionsFromReplication Operation</seealso>
+        Task<RemoveRegionsFromReplicationResponse> RemoveRegionsFromReplicationAsync(RemoveRegionsFromReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ReplicateSecretToRegions
+
+
+
+        /// <summary>
+        /// Converts an existing secret to a multi-Region secret and begins replication the secret
+        /// to a list of new regions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplicateSecretToRegions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReplicateSecretToRegions service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// You provided an invalid value for a parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// We can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">REST API Reference for ReplicateSecretToRegions Operation</seealso>
+        Task<ReplicateSecretToRegionsResponse> ReplicateSecretToRegionsAsync(ReplicateSecretToRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1417,6 +1510,52 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">REST API Reference for RotateSecret Operation</seealso>
         Task<RotateSecretResponse> RotateSecretAsync(RotateSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopReplicationToReplica
+
+
+
+        /// <summary>
+        /// Removes the secret from replication and promotes the secret to a regional secret in
+        /// the replica Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopReplicationToReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopReplicationToReplica service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// You provided an invalid value for a parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// We can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">REST API Reference for StopReplicationToReplica Operation</seealso>
+        Task<StopReplicationToReplicaResponse> StopReplicationToReplicaAsync(StopReplicationToReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1756,7 +1895,7 @@ namespace Amazon.SecretsManager
         /// The request failed because it would exceed one of the Secrets Manager internal limits.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// The policy document that you provided isn't valid.
+        /// You provided a resource-based policy with syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.PreconditionNotMetException">
         /// The request failed because you did not complete all the prerequisite steps.
@@ -1876,10 +2015,46 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Validates the JSON text of the resource-based policy document attached to the specified
-        /// secret. The JSON request string input and response output displays formatted code
-        /// with white space and line breaks for better readability. Submit your input as a single
-        /// line JSON string. A resource-based policy is optional.
+        /// Validates that the resource policy does not grant a wide range of IAM principals access
+        /// to your secret. The JSON request string input and response output displays formatted
+        /// code with white space and line breaks for better readability. Submit your input as
+        /// a single line JSON string. A resource-based policy is optional for secrets.
+        /// 
+        ///  
+        /// <para>
+        /// The API performs three checks when validating the secret:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Sends a call to <a href="https://aws.amazon.com/blogs/security/protect-sensitive-data-in-the-cloud-with-automated-reasoning-zelkova/">Zelkova</a>,
+        /// an automated reasoning engine, to ensure your Resource Policy does not allow broad
+        /// access to your secret.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Checks for correct syntax in a policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Verifies the policy does not lock out a caller.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Minimum Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You must have the permissions required to access the following APIs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>secretsmanager:PutResourcePolicy</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>secretsmanager:ValidateResourcePolicy</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1912,7 +2087,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// The policy document that you provided isn't valid.
+        /// You provided a resource-based policy with syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
