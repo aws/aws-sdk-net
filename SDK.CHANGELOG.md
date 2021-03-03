@@ -1,3 +1,21 @@
+### 3.5.122.0 (2021-03-03 19:20 UTC)
+* CertificateManager (3.5.1.0)
+	* Adds 2 new APIs to add and retrieve account configuration in AWS Certificate Manager.
+* CloudWatchEvents (3.5.5.0)
+	* Adds TraceHeader to PutEventsRequestEntry to support AWS X-Ray trace-ids on events generated using the PutEvents operation.
+* CodeBuild (3.5.6.0)
+	* AWS CodeBuild now supports Session Manager debugging for batch builds.
+* Elasticsearch (3.5.7.0)
+	* AWS ElasticSearch Feature : Support for adding tags in elastic search domain during domain creation
+* ForecastService (3.5.4.0)
+	* Added new StopResource operation that stops Amazon Forecast resource jobs that are in progress.
+* Macie2 (3.5.9.4)
+	* This release of the Amazon Macie API includes miscellaneous updates and improvements to the documentation.
+* SecretsManager (3.5.1.0)
+	* Added support for multi-Region secrets APIs ReplicateSecretToRegions, RemoveRegionsFromReplication, and StopReplicationToReplica
+* WellArchitected (3.5.1.0)
+	* This release supports tagging on AWS Well-Architected workloads.
+
 ### 3.5.121.0 (2021-03-02 19:14 UTC)
 * ComputeOptimizer (3.5.3.20)
 	* Documentation updates for Compute Optimizer
