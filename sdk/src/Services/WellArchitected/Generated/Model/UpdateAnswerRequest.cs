@@ -30,7 +30,7 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAnswer operation.
-    /// Update the answer.
+    /// Update the answer to a specific question in a workload review.
     /// </summary>
     public partial class UpdateAnswerRequest : AmazonWellArchitectedRequest
     {

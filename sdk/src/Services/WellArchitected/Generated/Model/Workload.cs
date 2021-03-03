@@ -51,6 +51,7 @@ namespace Amazon.WellArchitected.Model
         private DateTime? _reviewRestrictionDate;
         private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
         private string _shareInvitationId;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updatedAt;
         private string _workloadArn;
         private string _workloadId;
@@ -345,6 +346,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetShareInvitationId()
         {
             return this._shareInvitationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags associated with the workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
