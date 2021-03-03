@@ -39,6 +39,7 @@ namespace Amazon.CloudWatchEvents.Model
         private List<string> _resources = new List<string>();
         private string _source;
         private DateTime? _time;
+        private string _traceHeader;
 
         /// <summary>
         /// Gets and sets the property Detail. 
@@ -152,6 +153,31 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetTime()
         {
             return this._time.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceHeader. 
+        /// <para>
+        /// An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains
+        /// the trace-id associated with the event.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+        /// header</a> in the AWS X-Ray Developer Guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public string TraceHeader
+        {
+            get { return this._traceHeader; }
+            set { this._traceHeader = value; }
+        }
+
+        // Check to see if TraceHeader property is set
+        internal bool IsSetTraceHeader()
+        {
+            return this._traceHeader != null;
         }
 
     }
