@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies a condition for filtering the results of a query for the quotas and usage
-    /// data that applies to one or more Amazon Macie accounts.
+    /// Specifies a condition for filtering the results of a query for quota and usage data
+    /// for one or more Amazon Macie accounts.
     /// </summary>
     public partial class UsageStatisticsFilter
     {
@@ -103,8 +103,7 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li></ul> <ul><li>
         /// <para>
-        /// total - A string that represents the current, estimated month-to-date cost for an
-        /// account.
+        /// total - A string that represents the current estimated cost for an account.
         /// </para>
         /// </li></ul>
         /// </summary>

@@ -41,7 +41,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property EncryptionType. 
         /// <para>
         /// The server-side encryption algorithm that's used when storing data in the bucket or
-        /// object. If encryption is disabled for the bucket or object, this value is NONE.
+        /// object. If default encryption is disabled for the bucket or the object isn't encrypted
+        /// using server-side encryption, this value is NONE.
         /// </para>
         /// </summary>
         public EncryptionType EncryptionType
@@ -59,9 +60,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property KmsMasterKeyId. 
         /// <para>
-        /// The unique identifier for the AWS Key Management Service (AWS KMS) master key that's
-        /// used to encrypt the bucket or object. This value is null if AWS KMS isn't used to
-        /// encrypt the bucket or object.
+        /// The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management
+        /// Service (AWS KMS) customer master key (CMK) that's used to encrypt data in the bucket
+        /// or the object. If an AWS KMS CMK isn't used, this value is null.
         /// </para>
         /// </summary>
         public string KmsMasterKeyId

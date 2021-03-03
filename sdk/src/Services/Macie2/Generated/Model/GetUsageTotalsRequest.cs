@@ -39,10 +39,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property TimeRange. 
         /// <para>
-        /// The time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the
-        /// current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you
-        /// don’t specify a value for this parameter, Amazon Macie provides aggregated usage data
-        /// for the preceding 30 days.
+        /// The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE,
+        /// for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+        /// If you don't specify a value for this parameter, Amazon Macie provides aggregated
+        /// usage data for the preceding 30 days.
         /// </para>
         /// </summary>
         public string TimeRange

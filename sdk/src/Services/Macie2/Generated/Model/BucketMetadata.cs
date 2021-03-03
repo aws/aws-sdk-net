@@ -154,6 +154,12 @@ namespace Amazon.Macie2.Model
         /// the bucket. These objects use a supported storage class and have a file name extension
         /// for a supported file or storage format.
         /// </para>
+        ///  
+        /// <para>
+        /// If versioning is enabled for the bucket, Macie calculates this value based on the
+        /// size of the latest version of each applicable object in the bucket. This value doesn't
+        /// reflect the storage size of all versions of each applicable object in the bucket.
+        /// </para>
         /// </summary>
         public long ClassifiableSizeInBytes
         {
@@ -190,7 +196,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property LastUpdated. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently
-        /// retrieved data about the bucket from Amazon S3.
+        /// retrieved both bucket and object metadata from Amazon S3 for the bucket.
         /// </para>
         /// </summary>
         public DateTime LastUpdated
@@ -361,6 +367,12 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The total storage size, in bytes, of the bucket.
         /// </para>
+        ///  
+        /// <para>
+        /// If versioning is enabled for the bucket, Amazon Macie calculates this value based
+        /// on the size of the latest version of each object in the bucket. This value doesn't
+        /// reflect the storage size of all versions of each object in the bucket.
+        /// </para>
         /// </summary>
         public long SizeInBytes
         {
@@ -378,6 +390,12 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property SizeInBytesCompressed. 
         /// <para>
         /// The total compressed storage size, in bytes, of the bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// If versioning is enabled for the bucket, Macie calculates this value based on the
+        /// size of the latest version of each object in the bucket. This value doesn't reflect
+        /// the storage size of all versions of each object in the bucket.
         /// </para>
         /// </summary>
         public long SizeInBytesCompressed

@@ -39,7 +39,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AutoEnable. 
         /// <para>
-        /// Specifies whether Amazon Macie is enabled automatically for each account, when the
+        /// Specifies whether to enable Amazon Macie automatically for each account, when the
         /// account is added to the AWS organization.
         /// </para>
         /// </summary>

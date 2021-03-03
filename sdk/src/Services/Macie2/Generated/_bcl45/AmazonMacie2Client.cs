@@ -2074,6 +2074,8 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// (Deprecated) Disassociates a member account from its Amazon Macie administrator account.
+        /// This operation has been replaced by the <link  linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
         /// 
@@ -2118,6 +2120,8 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// (Deprecated) Disassociates a member account from its Amazon Macie administrator account.
+        /// This operation has been replaced by the <link  linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
         /// <param name="cancellationToken">
@@ -3315,7 +3319,8 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// (Deprecated) Retrieves information about the Amazon Macie administrator account for
-        /// an account.
+        /// an account. This operation has been replaced by the <link  linkend="GetAdministratorAccount">GetAdministratorAccount</link>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
         /// 
@@ -3360,7 +3365,8 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// (Deprecated) Retrieves information about the Amazon Macie administrator account for
-        /// an account.
+        /// an account. This operation has been replaced by the <link  linkend="GetAdministratorAccount">GetAdministratorAccount</link>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
         /// <param name="cancellationToken">

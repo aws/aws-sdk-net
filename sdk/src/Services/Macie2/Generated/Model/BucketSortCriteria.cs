@@ -39,8 +39,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the property to sort the results by. This value can be the name of any
-        /// property that Amazon Macie defines as bucket metadata, such as bucketName or accountId.
+        /// The name of the bucket property to sort the results by. This value can be one of the
+        /// following properties that Amazon Macie defines as bucket metadata: accountId, bucketName,
+        /// classifiableObjectCount, classifiableSizeInBytes, objectCount, or sizeInBytes.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -58,9 +59,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property OrderBy. 
         /// <para>
-        /// The sort order to apply to the results, based on the value for the property specified
-        /// by the attributeName property. Valid values are: ASC, sort the results in ascending
-        /// order; and, DESC, sort the results in descending order.
+        /// The sort order to apply to the results, based on the value specified by the attributeName
+        /// property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort
+        /// the results in descending order.
         /// </para>
         /// </summary>
         public OrderBy OrderBy

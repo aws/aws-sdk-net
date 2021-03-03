@@ -43,9 +43,10 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// If this value exceeds the number of days in a certain month, Macie runs the job on
-        /// the last day of that month. For example, if this value is 31 and a month has only
-        /// 30 days, Macie runs the job on day 30 of that month.
+        /// If this value exceeds the number of days in a certain month, Macie doesn't run the
+        /// job that month. Macie runs the job only during months that have the specified day.
+        /// For example, if this value is 31 and a month has only 30 days, Macie doesn't run the
+        /// job that month. To run the job every month, specify a value that's less than 29.
         /// </para>
         /// </summary>
         public int DayOfMonth

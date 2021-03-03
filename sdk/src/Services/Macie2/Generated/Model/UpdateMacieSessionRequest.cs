@@ -58,9 +58,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies whether to change the status of the account. Valid values are: ENABLED,
-        /// resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie
-        /// activities for the account.
+        /// Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon
+        /// Macie activities for the account; and, PAUSED, suspend all Macie activities for the
+        /// account.
         /// </para>
         /// </summary>
         public MacieStatus Status
