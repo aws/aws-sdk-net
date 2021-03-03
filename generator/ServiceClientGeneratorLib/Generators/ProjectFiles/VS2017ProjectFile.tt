@@ -31,7 +31,7 @@
     if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
     {
 #>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
 <#
     }
     if (this.Project.TargetFrameworks.Contains("netcoreapp3.1"))
@@ -61,6 +61,14 @@
 #>
     <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
     <FrameworkPathOverride><#=this.Project.FrameworkPathOverride #></FrameworkPathOverride>
+<#
+    }
+
+    if (this.Project.TargetFrameworks.Contains("net35"))
+    {
+#>
+    <!-- workaround per https://github.com/dotnet/msbuild/issues/5985 -->
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
 <#
     }
 
