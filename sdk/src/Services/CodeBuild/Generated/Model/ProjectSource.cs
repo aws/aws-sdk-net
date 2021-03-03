@@ -280,7 +280,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        ///  An identifier for this project source. 
+        /// An identifier for this project source. The identifier can only contain alphanumeric
+        /// characters and underscores, and must be less than 128 characters in length. 
         /// </para>
         /// </summary>
         public string SourceIdentifier
@@ -328,7 +329,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code>: The source code is in an Amazon S3 input bucket.
+        ///  <code>S3</code>: The source code is in an Amazon S3 bucket.
         /// </para>
         ///  </li> </ul>
         /// </summary>

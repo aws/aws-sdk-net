@@ -43,6 +43,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectCache _cache;
         private bool? _complete;
         private string _currentPhase;
+        private bool? _debugSessionEnabled;
         private string _encryptionKey;
         private DateTime? _endTime;
         private ProjectEnvironment _environment;
@@ -242,6 +243,27 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetCurrentPhase()
         {
             return this._currentPhase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugSessionEnabled.  
+        /// <para>
+        /// Specifies if session debugging is enabled for this batch build. For more information,
+        /// see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+        /// a running build in Session Manager</a>. Batch session debugging is not supported for
+        /// matrix batch builds.
+        /// </para>
+        /// </summary>
+        public bool DebugSessionEnabled
+        {
+            get { return this._debugSessionEnabled.GetValueOrDefault(); }
+            set { this._debugSessionEnabled = value; }
+        }
+
+        // Check to see if DebugSessionEnabled property is set
+        internal bool IsSetDebugSessionEnabled()
+        {
+            return this._debugSessionEnabled.HasValue; 
         }
 
         /// <summary>

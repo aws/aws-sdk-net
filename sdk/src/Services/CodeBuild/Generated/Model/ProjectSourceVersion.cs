@@ -39,7 +39,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        /// An identifier for a source in the build project.
+        /// An identifier for a source in the build project. The identifier can only contain alphanumeric
+        /// characters and underscores, and must be less than 128 characters in length. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
