@@ -78,8 +78,30 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property LastModificationTime. 
         /// <para>
-        /// When the last successful export job finished.
+        /// The last time the resource was modified. The timestamp depends on the status of the
+        /// job:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_STOPPING</code> - The current timestamp.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_STOPPED</code> - When the job stopped.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DateTime LastModificationTime
         {
@@ -179,27 +201,17 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code> 
+        ///  <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> 
+        ///  <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_FAILED</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DELETE_PENDING</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DELETE_IN_PROGRESS</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DELETE_FAILED</code> 
+        ///  <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -2695,6 +2695,103 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  StopResource
+
+        /// <summary>
+        /// Stops a resource.
+        /// 
+        ///  
+        /// <para>
+        /// The resource undergoes the following states: <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>.
+        /// You cannot resume a resource once it has been stopped.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation can be applied to the following resources (and their corresponding
+        /// child resources):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Dataset Import Job
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Predictor Job
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Forecast Job
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Forecast Export Job
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Predictor Backtest Export Job
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopResource service method.</param>
+        /// 
+        /// <returns>The response from the StopResource service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">REST API Reference for StopResource Operation</seealso>
+        public virtual StopResourceResponse StopResource(StopResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopResourceResponseUnmarshaller.Instance;
+
+            return Invoke<StopResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopResource operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">REST API Reference for StopResource Operation</seealso>
+        public virtual IAsyncResult BeginStopResource(StopResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopResource.</param>
+        /// 
+        /// <returns>Returns a  StopResourceResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">REST API Reference for StopResource Operation</seealso>
+        public virtual StopResourceResponse EndStopResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>

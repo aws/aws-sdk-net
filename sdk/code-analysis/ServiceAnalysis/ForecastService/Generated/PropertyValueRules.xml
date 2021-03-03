@@ -420,6 +420,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.StopResourceRequest.ResourceArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.TagResourceRequest.ResourceArn</property>
     <max>256</max>
   </property-value-rule>
