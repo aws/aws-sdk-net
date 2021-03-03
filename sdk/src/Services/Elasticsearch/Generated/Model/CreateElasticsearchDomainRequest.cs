@@ -50,6 +50,7 @@ namespace Amazon.Elasticsearch.Model
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
         private SnapshotOptions _snapshotOptions;
+        private List<Tag> _tagList = new List<Tag>();
         private VPCOptions _vpcOptions;
 
         /// <summary>
@@ -317,6 +318,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetSnapshotOptions()
         {
             return this._snapshotOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList. 
+        /// <para>
+        /// A list of <code>Tag</code> added during domain creation.
+        /// </para>
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
         /// <summary>
