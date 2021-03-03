@@ -66,7 +66,7 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the certificate. For more information about ARNs,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -110,8 +110,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time at which the certificate was requested. This value exists only when the certificate
-        /// type is <code>AMAZON_ISSUED</code>. 
+        /// The time at which the certificate was requested.
         /// </para>
         /// </summary>
         public DateTime CreatedAt

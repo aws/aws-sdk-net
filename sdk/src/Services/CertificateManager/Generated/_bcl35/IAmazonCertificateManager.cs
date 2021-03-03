@@ -31,13 +31,10 @@ namespace Amazon.CertificateManager
     ///
     /// AWS Certificate Manager 
     /// <para>
-    /// Welcome to the AWS Certificate Manager (ACM) API documentation.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications.
-    /// For general information about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">
-    /// <i>AWS Certificate Manager User Guide</i> </a>.
+    /// You can use AWS Certificate Manager (ACM) to manage SSL/TLS certificates for your
+    /// AWS-based websites and applications. For more information about using ACM, see the
+    /// <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+    /// User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCertificateManager : IAmazonService, IDisposable
@@ -100,6 +97,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
         /// A specified tag did not comply with an existing tag policy and was rejected.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
         /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
@@ -150,7 +150,7 @@ namespace Amazon.CertificateManager
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</param>
         /// 
         /// <returns>The response from the DeleteCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -231,7 +231,7 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Returns detailed metadata about the specified ACM certificate.
         /// </summary>
-        /// <param name="certificateArn">The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</param>
         /// 
         /// <returns>The response from the DescribeCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -350,6 +350,52 @@ namespace Amazon.CertificateManager
 
         #endregion
         
+        #region  GetAccountConfiguration
+
+
+        /// <summary>
+        /// Returns the account configuration options associated with an AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountConfiguration service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration">REST API Reference for GetAccountConfiguration Operation</seealso>
+        GetAccountConfigurationResponse GetAccountConfiguration(GetAccountConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountConfiguration operation on AmazonCertificateManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration">REST API Reference for GetAccountConfiguration Operation</seealso>
+        IAsyncResult BeginGetAccountConfiguration(GetAccountConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetAccountConfigurationResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration">REST API Reference for GetAccountConfiguration Operation</seealso>
+        GetAccountConfigurationResponse EndGetAccountConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetCertificate
 
 
@@ -359,7 +405,7 @@ namespace Amazon.CertificateManager
         /// subordinate CAs. All of the certificates are base64 encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a>
         /// to decode the certificates and inspect individual fields.
         /// </summary>
-        /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</param>
         /// 
         /// <returns>The response from the GetCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -459,6 +505,10 @@ namespace Amazon.CertificateManager
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// The private key must be no larger than 5 KB (5,120 bytes).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// If the certificate you are importing is not self-signed, you must enter its certificate
         /// chain.
         /// </para>
@@ -487,14 +537,14 @@ namespace Amazon.CertificateManager
         ///  </li> <li> 
         /// <para>
         /// To import a new certificate, omit the <code>CertificateArn</code> argument. Include
-        /// this argument only when you want to replace a previously imported certifica
+        /// this argument only when you want to replace a previously imported certificate.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// When you import a certificate by using the CLI, you must specify the certificate,
-        /// the certificate chain, and the private key by their file names preceded by <code>file://</code>.
+        /// the certificate chain, and the private key by their file names preceded by <code>fileb://</code>.
         /// For example, you can specify a certificate saved in the <code>C:\temp</code> folder
-        /// as <code>file://C:\temp\certificate_to_import.pem</code>. If you are making an HTTP
+        /// as <code>fileb://C:\temp\certificate_to_import.pem</code>. If you are making an HTTP
         /// or HTTPS Query request, include these arguments as BLOBs. 
         /// </para>
         ///  </li> <li> 
@@ -518,6 +568,9 @@ namespace Amazon.CertificateManager
         /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
         /// 
         /// <returns>The response from the ImportCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
+        /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
         /// An input parameter was invalid.
         /// </exception>
@@ -679,6 +732,67 @@ namespace Amazon.CertificateManager
 
         #endregion
         
+        #region  PutAccountConfiguration
+
+
+        /// <summary>
+        /// Adds or modifies account-level configurations in ACM. 
+        /// 
+        ///  
+        /// <para>
+        /// The supported configuration option is <code>DaysBeforeExpiry</code>. This option specifies
+        /// the number of days prior to certificate expiration when ACM starts generating <code>EventBridge</code>
+        /// events. ACM sends one event per day per certificate until the certificate expires.
+        /// By default, accounts receive events starting 45 days before certificate expiration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountConfiguration service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/PutAccountConfiguration">REST API Reference for PutAccountConfiguration Operation</seealso>
+        PutAccountConfigurationResponse PutAccountConfiguration(PutAccountConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccountConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountConfiguration operation on AmazonCertificateManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccountConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/PutAccountConfiguration">REST API Reference for PutAccountConfiguration Operation</seealso>
+        IAsyncResult BeginPutAccountConfiguration(PutAccountConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccountConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccountConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutAccountConfigurationResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/PutAccountConfiguration">REST API Reference for PutAccountConfiguration Operation</seealso>
+        PutAccountConfigurationResponse EndPutAccountConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RemoveTagsFromCertificate
 
 
@@ -715,6 +829,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
         /// A specified tag did not comply with an existing tag policy and was rejected.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
         RemoveTagsFromCertificateResponse RemoveTagsFromCertificate(RemoveTagsFromCertificateRequest request);
 
@@ -750,7 +867,7 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Renews an eligable ACM certificate. At this time, only exported private certificates
+        /// Renews an eligible ACM certificate. At this time, only exported private certificates
         /// can be renewed with this operation. In order to renew your ACM PCA certificates with
         /// ACM, you must first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant
         /// the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing

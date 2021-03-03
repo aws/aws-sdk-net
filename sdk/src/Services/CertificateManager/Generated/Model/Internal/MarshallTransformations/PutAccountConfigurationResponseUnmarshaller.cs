@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RemoveTagsFromCertificate operation
+    /// Response Unmarshaller for PutAccountConfiguration operation
     /// </summary>  
-    public class RemoveTagsFromCertificateResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutAccountConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RemoveTagsFromCertificateResponse response = new RemoveTagsFromCertificateResponse();
+            PutAccountConfigurationResponse response = new PutAccountConfigurationResponse();
 
 
             return response;
@@ -69,37 +69,29 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArnException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                 {
-                    return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagException"))
-                {
-                    return InvalidTagExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TagPolicyException"))
-                {
-                    return TagPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonCertificateManagerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static RemoveTagsFromCertificateResponseUnmarshaller _instance = new RemoveTagsFromCertificateResponseUnmarshaller();        
+        private static PutAccountConfigurationResponseUnmarshaller _instance = new PutAccountConfigurationResponseUnmarshaller();        
 
-        internal static RemoveTagsFromCertificateResponseUnmarshaller GetInstance()
+        internal static PutAccountConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +99,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RemoveTagsFromCertificateResponseUnmarshaller Instance
+        public static PutAccountConfigurationResponseUnmarshaller Instance
         {
             get
             {

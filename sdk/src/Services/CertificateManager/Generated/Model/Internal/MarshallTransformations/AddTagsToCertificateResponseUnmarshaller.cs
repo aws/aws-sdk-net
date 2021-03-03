@@ -89,6 +89,10 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 {
                     return TagPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                {
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
                 {
                     return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
