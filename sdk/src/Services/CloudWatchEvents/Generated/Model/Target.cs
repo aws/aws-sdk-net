@@ -140,13 +140,16 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property HttpParameters. 
         /// <para>
-        /// Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+        /// Contains the HTTP parameters to use when the target is a API Gateway REST endpoint
+        /// or EventBridge ApiDestination.
         /// </para>
         ///  
         /// <para>
-        /// If you specify an API Gateway REST API as a target, you can use this parameter to
-        /// specify headers, path parameter, query string keys/values as part of your target invoking
-        /// request.
+        /// If you specify an API Gateway REST API or EventBridge ApiDestination as a target,
+        /// you can use this parameter to specify headers, path parameters, and query string keys/values
+        /// as part of your target invoking request. If you're using ApiDestinations, the corresponding
+        /// Connection can also have these values configured. In case of any conflicting keys,
+        /// values from the Connection take precedence.
         /// </para>
         /// </summary>
         public HttpParameters HttpParameters

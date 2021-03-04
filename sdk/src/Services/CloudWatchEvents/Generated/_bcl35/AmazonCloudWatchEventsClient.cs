@@ -398,6 +398,74 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  CreateApiDestination
+
+        /// <summary>
+        /// Creates an API destination, which is an HTTP invocation endpoint configured as a target
+        /// for events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiDestination service method.</param>
+        /// 
+        /// <returns>The response from the CreateApiDestination service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination">REST API Reference for CreateApiDestination Operation</seealso>
+        public virtual CreateApiDestinationResponse CreateApiDestination(CreateApiDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApiDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateApiDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiDestination operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApiDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination">REST API Reference for CreateApiDestination Operation</seealso>
+        public virtual IAsyncResult BeginCreateApiDestination(CreateApiDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateApiDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApiDestination.</param>
+        /// 
+        /// <returns>Returns a  CreateApiDestinationResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination">REST API Reference for CreateApiDestination Operation</seealso>
+        public virtual CreateApiDestinationResponse EndCreateApiDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateApiDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateArchive
 
         /// <summary>
@@ -471,6 +539,71 @@ namespace Amazon.CloudWatchEvents
         public virtual CreateArchiveResponse EndCreateArchive(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateArchiveResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateConnection
+
+        /// <summary>
+        /// Creates a connection. A connection defines the authorization type and credentials
+        /// to use for authorization with an API destination HTTP endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnection service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
+        public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnection operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
+        public virtual IAsyncResult BeginCreateConnection(CreateConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnection.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectionResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
+        public virtual CreateConnectionResponse EndCreateConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateConnectionResponse>(asyncResult);
         }
 
         #endregion
@@ -739,6 +872,133 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  DeauthorizeConnection
+
+        /// <summary>
+        /// Removes all authorization parameters from the connection. This lets you remove the
+        /// secret from the connection so you can reuse it without having to create a new connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeauthorizeConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeauthorizeConnection service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection">REST API Reference for DeauthorizeConnection Operation</seealso>
+        public virtual DeauthorizeConnectionResponse DeauthorizeConnection(DeauthorizeConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeauthorizeConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeauthorizeConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeauthorizeConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeauthorizeConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeauthorizeConnection operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeauthorizeConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection">REST API Reference for DeauthorizeConnection Operation</seealso>
+        public virtual IAsyncResult BeginDeauthorizeConnection(DeauthorizeConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeauthorizeConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeauthorizeConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeauthorizeConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeauthorizeConnection.</param>
+        /// 
+        /// <returns>Returns a  DeauthorizeConnectionResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection">REST API Reference for DeauthorizeConnection Operation</seealso>
+        public virtual DeauthorizeConnectionResponse EndDeauthorizeConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeauthorizeConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteApiDestination
+
+        /// <summary>
+        /// Deletes the specified API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiDestination service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApiDestination service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination">REST API Reference for DeleteApiDestination Operation</seealso>
+        public virtual DeleteApiDestinationResponse DeleteApiDestination(DeleteApiDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApiDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApiDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiDestination operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApiDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination">REST API Reference for DeleteApiDestination Operation</seealso>
+        public virtual IAsyncResult BeginDeleteApiDestination(DeleteApiDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApiDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApiDestination.</param>
+        /// 
+        /// <returns>Returns a  DeleteApiDestinationResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination">REST API Reference for DeleteApiDestination Operation</seealso>
+        public virtual DeleteApiDestinationResponse EndDeleteApiDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApiDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteArchive
 
         /// <summary>
@@ -798,6 +1058,69 @@ namespace Amazon.CloudWatchEvents
         public virtual DeleteArchiveResponse EndDeleteArchive(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteArchiveResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteConnection
+
+        /// <summary>
+        /// Deletes a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnection.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectionResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        public virtual DeleteConnectionResponse EndDeleteConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConnectionResponse>(asyncResult);
         }
 
         #endregion
@@ -1022,6 +1345,66 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  DescribeApiDestination
+
+        /// <summary>
+        /// Retrieves details about an API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApiDestination service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApiDestination service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination">REST API Reference for DescribeApiDestination Operation</seealso>
+        public virtual DescribeApiDestinationResponse DescribeApiDestination(DescribeApiDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApiDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApiDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeApiDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApiDestination operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApiDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination">REST API Reference for DescribeApiDestination Operation</seealso>
+        public virtual IAsyncResult BeginDescribeApiDestination(DescribeApiDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApiDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeApiDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApiDestination.</param>
+        /// 
+        /// <returns>Returns a  DescribeApiDestinationResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination">REST API Reference for DescribeApiDestination Operation</seealso>
+        public virtual DescribeApiDestinationResponse EndDescribeApiDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeApiDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeArchive
 
         /// <summary>
@@ -1081,6 +1464,66 @@ namespace Amazon.CloudWatchEvents
         public virtual DescribeArchiveResponse EndDescribeArchive(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeArchiveResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeConnection
+
+        /// <summary>
+        /// Retrieves details about a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnection service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnection service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
+        public virtual DescribeConnectionResponse DescribeConnection(DescribeConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnection operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
+        public virtual IAsyncResult BeginDescribeConnection(DescribeConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnection.</param>
+        /// 
+        /// <returns>Returns a  DescribeConnectionResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
+        public virtual DescribeConnectionResponse EndDescribeConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConnectionResponse>(asyncResult);
         }
 
         #endregion
@@ -1577,6 +2020,63 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  ListApiDestinations
+
+        /// <summary>
+        /// Retrieves a list of API destination in the account in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApiDestinations service method.</param>
+        /// 
+        /// <returns>The response from the ListApiDestinations service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations">REST API Reference for ListApiDestinations Operation</seealso>
+        public virtual ListApiDestinationsResponse ListApiDestinations(ListApiDestinationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApiDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApiDestinationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApiDestinationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApiDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApiDestinations operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApiDestinations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations">REST API Reference for ListApiDestinations Operation</seealso>
+        public virtual IAsyncResult BeginListApiDestinations(ListApiDestinationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApiDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApiDestinationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApiDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApiDestinations.</param>
+        /// 
+        /// <returns>Returns a  ListApiDestinationsResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations">REST API Reference for ListApiDestinations Operation</seealso>
+        public virtual ListApiDestinationsResponse EndListApiDestinations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListApiDestinationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListArchives
 
         /// <summary>
@@ -1634,6 +2134,63 @@ namespace Amazon.CloudWatchEvents
         public virtual ListArchivesResponse EndListArchives(IAsyncResult asyncResult)
         {
             return EndInvoke<ListArchivesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListConnections
+
+        /// <summary>
+        /// Retrieves a list of connections from the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnections service method.</param>
+        /// 
+        /// <returns>The response from the ListConnections service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections">REST API Reference for ListConnections Operation</seealso>
+        public virtual ListConnectionsResponse ListConnections(ListConnectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnections operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections">REST API Reference for ListConnections Operation</seealso>
+        public virtual IAsyncResult BeginListConnections(ListConnectionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnections.</param>
+        /// 
+        /// <returns>Returns a  ListConnectionsResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections">REST API Reference for ListConnections Operation</seealso>
+        public virtual ListConnectionsResponse EndListConnections(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConnectionsResponse>(asyncResult);
         }
 
         #endregion
@@ -2660,6 +3217,10 @@ namespace Amazon.CloudWatchEvents
         /// <para>
         /// Redshift Clusters to invoke Data API ExecuteStatement on
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom/SaaS HTTPS APIs via EventBridge API Destinations
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Creating rules with built-in targets is supported only in the AWS Management Console.
@@ -3293,6 +3854,73 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  UpdateApiDestination
+
+        /// <summary>
+        /// Updates an API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiDestination service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApiDestination service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination">REST API Reference for UpdateApiDestination Operation</seealso>
+        public virtual UpdateApiDestinationResponse UpdateApiDestination(UpdateApiDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApiDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApiDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiDestination operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApiDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination">REST API Reference for UpdateApiDestination Operation</seealso>
+        public virtual IAsyncResult BeginUpdateApiDestination(UpdateApiDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateApiDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApiDestination.</param>
+        /// 
+        /// <returns>Returns a  UpdateApiDestinationResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination">REST API Reference for UpdateApiDestination Operation</seealso>
+        public virtual UpdateApiDestinationResponse EndUpdateApiDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateApiDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateArchive
 
         /// <summary>
@@ -3359,6 +3987,73 @@ namespace Amazon.CloudWatchEvents
         public virtual UpdateArchiveResponse EndUpdateArchive(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateArchiveResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateConnection
+
+        /// <summary>
+        /// Updates settings for a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnection service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
+        public virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnection operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConnection(UpdateConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnection.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectionResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
+        public virtual UpdateConnectionResponse EndUpdateConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConnectionResponse>(asyncResult);
         }
 
         #endregion

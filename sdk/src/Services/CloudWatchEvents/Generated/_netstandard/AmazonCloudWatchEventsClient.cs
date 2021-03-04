@@ -364,6 +364,54 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  CreateApiDestination
+
+        internal virtual CreateApiDestinationResponse CreateApiDestination(CreateApiDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApiDestinationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an API destination, which is an HTTP invocation endpoint configured as a target
+        /// for events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateApiDestination service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination">REST API Reference for CreateApiDestination Operation</seealso>
+        public virtual Task<CreateApiDestinationResponse> CreateApiDestinationAsync(CreateApiDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateApiDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateArchive
 
         internal virtual CreateArchiveResponse CreateArchive(CreateArchiveRequest request)
@@ -417,6 +465,51 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = CreateArchiveResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateArchiveResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateConnection
+
+        internal virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a connection. A connection defines the authorization type and credentials
+        /// to use for authorization with an API destination HTTP endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnection service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
+        public virtual Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -625,6 +718,93 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  DeauthorizeConnection
+
+        internal virtual DeauthorizeConnectionResponse DeauthorizeConnection(DeauthorizeConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeauthorizeConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeauthorizeConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeauthorizeConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes all authorization parameters from the connection. This lets you remove the
+        /// secret from the connection so you can reuse it without having to create a new connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeauthorizeConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeauthorizeConnection service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection">REST API Reference for DeauthorizeConnection Operation</seealso>
+        public virtual Task<DeauthorizeConnectionResponse> DeauthorizeConnectionAsync(DeauthorizeConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeauthorizeConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeauthorizeConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeauthorizeConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteApiDestination
+
+        internal virtual DeleteApiDestinationResponse DeleteApiDestination(DeleteApiDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApiDestinationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApiDestination service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination">REST API Reference for DeleteApiDestination Operation</seealso>
+        public virtual Task<DeleteApiDestinationResponse> DeleteApiDestinationAsync(DeleteApiDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteApiDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteArchive
 
         internal virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
@@ -664,6 +844,49 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteArchiveResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteConnection
+
+        internal virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -828,6 +1051,46 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  DescribeApiDestination
+
+        internal virtual DescribeApiDestinationResponse DescribeApiDestination(DescribeApiDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApiDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApiDestinationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details about an API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApiDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApiDestination service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination">REST API Reference for DescribeApiDestination Operation</seealso>
+        public virtual Task<DescribeApiDestinationResponse> DescribeApiDestinationAsync(DescribeApiDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApiDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeApiDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeArchive
 
         internal virtual DescribeArchiveResponse DescribeArchive(DescribeArchiveRequest request)
@@ -867,6 +1130,46 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = DescribeArchiveResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeArchiveResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeConnection
+
+        internal virtual DescribeConnectionResponse DescribeConnection(DescribeConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details about a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnection service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
+        public virtual Task<DescribeConnectionResponse> DescribeConnectionAsync(DescribeConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1223,6 +1526,43 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  ListApiDestinations
+
+        internal virtual ListApiDestinationsResponse ListApiDestinations(ListApiDestinationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApiDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApiDestinationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApiDestinationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of API destination in the account in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApiDestinations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApiDestinations service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations">REST API Reference for ListApiDestinations Operation</seealso>
+        public virtual Task<ListApiDestinationsResponse> ListApiDestinationsAsync(ListApiDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApiDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApiDestinationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListApiDestinationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListArchives
 
         internal virtual ListArchivesResponse ListArchives(ListArchivesRequest request)
@@ -1260,6 +1600,43 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = ListArchivesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListArchivesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListConnections
+
+        internal virtual ListConnectionsResponse ListConnections(ListConnectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of connections from the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnections service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections">REST API Reference for ListConnections Operation</seealso>
+        public virtual Task<ListConnectionsResponse> ListConnectionsAsync(ListConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConnectionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2045,6 +2422,10 @@ namespace Amazon.CloudWatchEvents
         /// <para>
         /// Redshift Clusters to invoke Data API ExecuteStatement on
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom/SaaS HTTPS APIs via EventBridge API Destinations
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Creating rules with built-in targets is supported only in the AWS Management Console.
@@ -2527,6 +2908,53 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  UpdateApiDestination
+
+        internal virtual UpdateApiDestinationResponse UpdateApiDestination(UpdateApiDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApiDestinationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApiDestination service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination">REST API Reference for UpdateApiDestination Operation</seealso>
+        public virtual Task<UpdateApiDestinationResponse> UpdateApiDestinationAsync(UpdateApiDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateApiDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateArchive
 
         internal virtual UpdateArchiveResponse UpdateArchive(UpdateArchiveRequest request)
@@ -2573,6 +3001,53 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = UpdateArchiveResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateArchiveResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateConnection
+
+        internal virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates settings for a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnection service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
+        public virtual Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
