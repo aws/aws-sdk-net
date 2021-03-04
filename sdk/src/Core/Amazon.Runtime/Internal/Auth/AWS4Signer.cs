@@ -738,14 +738,15 @@ namespace Amazon.Runtime.Internal.Auth
         /// <remarks>For AWS4 signing, all headers are considered viable for inclusion</remarks>
         protected static IDictionary<string, string> SortAndPruneHeaders(IEnumerable<KeyValuePair<string, string>> requestHeaders)
         {
-            var sortedHeaders = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            // Refer https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html. (Step #4: "Build the canonical headers list by sorting the (lowercase) headers by character code"). StringComparer.OrdinalIgnoreCase incorrectly places '_' after lowercase chracters.
+            var sortedHeaders = new SortedDictionary<string, string>(StringComparer.Ordinal);
             foreach (var header in requestHeaders)
             {
                 if (_headersToIgnoreWhenSigning.Contains(header.Key))
                 {
                     continue;
                 }
-                sortedHeaders.Add(header.Key, header.Value);
+                sortedHeaders.Add(header.Key.ToLowerInvariant(), header.Value);
             }
             
             return sortedHeaders;
