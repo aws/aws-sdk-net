@@ -199,6 +199,14 @@ using Amazon.Runtime.Internal.Util;
 				request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+			
 				}
+                if(member.IsIdempotent)
+	            {
+#>
+            else            
+                request.Parameters.Add("<#=member.MarshallLocationName#>", System.Guid.NewGuid().ToString());
+                
+<#+ 
+	            }
 			}
 		}
 	}

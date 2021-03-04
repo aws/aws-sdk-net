@@ -64,6 +64,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetClientRequestToken())
                 request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
+            else            
+                request.Parameters.Add("ClientRequestToken", System.Guid.NewGuid().ToString());
+                
             request.ResourcePath = "/workloads/{WorkloadId}";
             request.MarshallerVersion = 2;
             request.UseQueryString = true;
