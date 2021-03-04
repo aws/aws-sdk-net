@@ -42,6 +42,7 @@ namespace Amazon.MWAA.Model
         private string _kmsKey;
         private LoggingConfigurationInput _loggingConfiguration;
         private int? _maxWorkers;
+        private int? _minWorkers;
         private string _name;
         private NetworkConfiguration _networkConfiguration;
         private string _pluginsS3ObjectVersion;
@@ -217,6 +218,29 @@ namespace Amazon.MWAA.Model
         internal bool IsSetMaxWorkers()
         {
             return this._maxWorkers.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinWorkers. 
+        /// <para>
+        /// The minimum number of workers that you want to run in your environment. MWAA scales
+        /// the number of Apache Airflow workers and the Fargate containers that run your tasks
+        /// up to the number you specify in the <code>MaxWorkers</code> field. When there are
+        /// no more tasks running, and no more in the queue, MWAA disposes of the extra containers
+        /// leaving the worker count you specify in the <code>MinWorkers</code> field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MinWorkers
+        {
+            get { return this._minWorkers.GetValueOrDefault(); }
+            set { this._minWorkers = value; }
+        }
+
+        // Check to see if MinWorkers property is set
+        internal bool IsSetMinWorkers()
+        {
+            return this._minWorkers.HasValue; 
         }
 
         /// <summary>

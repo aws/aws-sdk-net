@@ -41,6 +41,7 @@ namespace Amazon.MWAA.Model
         private string _executionRoleArn;
         private LoggingConfigurationInput _loggingConfiguration;
         private int? _maxWorkers;
+        private int? _minWorkers;
         private string _name;
         private UpdateNetworkConfigurationInput _networkConfiguration;
         private string _pluginsS3ObjectVersion;
@@ -166,7 +167,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property MaxWorkers. 
         /// <para>
-        /// The Maximum Workers to update of your Amazon MWAA environment.
+        /// The maximum number of workers to update of your Amazon MWAA environment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -180,6 +181,25 @@ namespace Amazon.MWAA.Model
         internal bool IsSetMaxWorkers()
         {
             return this._maxWorkers.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinWorkers. 
+        /// <para>
+        /// The minimum number of workers to update of your Amazon MWAA environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MinWorkers
+        {
+            get { return this._minWorkers.GetValueOrDefault(); }
+            set { this._minWorkers = value; }
+        }
+
+        // Check to see if MinWorkers property is set
+        internal bool IsSetMinWorkers()
+        {
+            return this._minWorkers.HasValue; 
         }
 
         /// <summary>

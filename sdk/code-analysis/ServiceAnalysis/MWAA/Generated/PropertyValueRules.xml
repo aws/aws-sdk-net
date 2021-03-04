@@ -46,6 +46,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MWAA.Model.CreateEnvironmentRequest.MinWorkers</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.Name</property>
     <min>1</min>
     <max>80</max>
@@ -77,7 +81,7 @@
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.SourceBucketArn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>^arn:aws(-[a-z]+)?:s3:::airflow-[a-z0-9.\-]+$</pattern>
+    <pattern>^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.WeeklyMaintenanceWindowStart</property>
@@ -182,6 +186,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.MinWorkers</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.Name</property>
     <min>1</min>
     <max>80</max>
@@ -213,7 +221,7 @@
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.SourceBucketArn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>^arn:aws(-[a-z]+)?:s3:::airflow-[a-z0-9.\-]+$</pattern>
+    <pattern>^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.WeeklyMaintenanceWindowStart</property>
@@ -267,6 +275,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MWAA.Model.Environment.MinWorkers</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.Name</property>
     <min>1</min>
     <max>80</max>
@@ -304,7 +316,7 @@
     <property>Amazon.MWAA.Model.Environment.SourceBucketArn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>^arn:aws(-[a-z]+)?:s3:::airflow-[a-z0-9.\-]+$</pattern>
+    <pattern>^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.WebserverUrl</property>

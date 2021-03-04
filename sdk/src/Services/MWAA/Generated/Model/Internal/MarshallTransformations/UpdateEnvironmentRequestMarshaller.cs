@@ -124,6 +124,12 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxWorkers);
                 }
 
+                if(publicRequest.IsSetMinWorkers())
+                {
+                    context.Writer.WritePropertyName("MinWorkers");
+                    context.Writer.Write(publicRequest.MinWorkers);
+                }
+
                 if(publicRequest.IsSetNetworkConfiguration())
                 {
                     context.Writer.WritePropertyName("NetworkConfiguration");
