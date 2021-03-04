@@ -176,6 +176,62 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  CreateApiDestination
+
+
+        /// <summary>
+        /// Creates an API destination, which is an HTTP invocation endpoint configured as a target
+        /// for events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiDestination service method.</param>
+        /// 
+        /// <returns>The response from the CreateApiDestination service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateApiDestination">REST API Reference for CreateApiDestination Operation</seealso>
+        CreateApiDestinationResponse CreateApiDestination(CreateApiDestinationRequest request);
+
+
+
+        /// <summary>
+        /// Creates an API destination, which is an HTTP invocation endpoint configured as a target
+        /// for events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateApiDestination service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateApiDestination">REST API Reference for CreateApiDestination Operation</seealso>
+        Task<CreateApiDestinationResponse> CreateApiDestinationAsync(CreateApiDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateArchive
 
 
@@ -247,6 +303,56 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">REST API Reference for CreateArchive Operation</seealso>
         Task<CreateArchiveResponse> CreateArchiveAsync(CreateArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateConnection
+
+
+        /// <summary>
+        /// Creates a connection. A connection defines the authorization type and credentials
+        /// to use for authorization with an API destination HTTP endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
+        CreateConnectionResponse CreateConnection(CreateConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Creates a connection. A connection defines the authorization type and credentials
+        /// to use for authorization with an API destination HTTP endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
+        Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -538,6 +644,100 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  DeauthorizeConnection
+
+
+        /// <summary>
+        /// Removes all authorization parameters from the connection. This lets you remove the
+        /// secret from the connection so you can reuse it without having to create a new connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeauthorizeConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeauthorizeConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeauthorizeConnection">REST API Reference for DeauthorizeConnection Operation</seealso>
+        DeauthorizeConnectionResponse DeauthorizeConnection(DeauthorizeConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Removes all authorization parameters from the connection. This lets you remove the
+        /// secret from the connection so you can reuse it without having to create a new connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeauthorizeConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeauthorizeConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeauthorizeConnection">REST API Reference for DeauthorizeConnection Operation</seealso>
+        Task<DeauthorizeConnectionResponse> DeauthorizeConnectionAsync(DeauthorizeConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteApiDestination
+
+
+        /// <summary>
+        /// Deletes the specified API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiDestination service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApiDestination service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteApiDestination">REST API Reference for DeleteApiDestination Operation</seealso>
+        DeleteApiDestinationResponse DeleteApiDestination(DeleteApiDestinationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApiDestination service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteApiDestination">REST API Reference for DeleteApiDestination Operation</seealso>
+        Task<DeleteApiDestinationResponse> DeleteApiDestinationAsync(DeleteApiDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteArchive
 
 
@@ -581,6 +781,52 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteConnection
+
+
+        /// <summary>
+        /// Deletes a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -784,6 +1030,46 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  DescribeApiDestination
+
+
+        /// <summary>
+        /// Retrieves details about an API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApiDestination service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApiDestination service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeApiDestination">REST API Reference for DescribeApiDestination Operation</seealso>
+        DescribeApiDestinationResponse DescribeApiDestination(DescribeApiDestinationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves details about an API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApiDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApiDestination service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeApiDestination">REST API Reference for DescribeApiDestination Operation</seealso>
+        Task<DescribeApiDestinationResponse> DescribeApiDestinationAsync(DescribeApiDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeArchive
 
 
@@ -827,6 +1113,46 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive">REST API Reference for DescribeArchive Operation</seealso>
         Task<DescribeArchiveResponse> DescribeArchiveAsync(DescribeArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeConnection
+
+
+        /// <summary>
+        /// Retrieves details about a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnection service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
+        DescribeConnectionResponse DescribeConnection(DescribeConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves details about a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
+        Task<DescribeConnectionResponse> DescribeConnectionAsync(DescribeConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1254,6 +1580,40 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  ListApiDestinations
+
+
+        /// <summary>
+        /// Retrieves a list of API destination in the account in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApiDestinations service method.</param>
+        /// 
+        /// <returns>The response from the ListApiDestinations service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListApiDestinations">REST API Reference for ListApiDestinations Operation</seealso>
+        ListApiDestinationsResponse ListApiDestinations(ListApiDestinationsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of API destination in the account in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApiDestinations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApiDestinations service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListApiDestinations">REST API Reference for ListApiDestinations Operation</seealso>
+        Task<ListApiDestinationsResponse> ListApiDestinationsAsync(ListApiDestinationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListArchives
 
 
@@ -1293,6 +1653,40 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives">REST API Reference for ListArchives Operation</seealso>
         Task<ListArchivesResponse> ListArchivesAsync(ListArchivesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListConnections
+
+
+        /// <summary>
+        /// Retrieves a list of connections from the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnections service method.</param>
+        /// 
+        /// <returns>The response from the ListConnections service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListConnections">REST API Reference for ListConnections Operation</seealso>
+        ListConnectionsResponse ListConnections(ListConnectionsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of connections from the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnections service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListConnections">REST API Reference for ListConnections Operation</seealso>
+        Task<ListConnectionsResponse> ListConnectionsAsync(ListConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2171,6 +2565,10 @@ namespace Amazon.EventBridge
         /// <para>
         /// Redshift Clusters to invoke Data API ExecuteStatement on
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom/SaaS HTTPS APIs via EventBridge API Destinations
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Creating rules with built-in targets is supported only in the AWS Management Console.
@@ -2380,6 +2778,10 @@ namespace Amazon.EventBridge
         ///  </li> <li> 
         /// <para>
         /// Redshift Clusters to invoke Data API ExecuteStatement on
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom/SaaS HTTPS APIs via EventBridge API Destinations
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2958,6 +3360,60 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  UpdateApiDestination
+
+
+        /// <summary>
+        /// Updates an API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiDestination service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApiDestination service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateApiDestination">REST API Reference for UpdateApiDestination Operation</seealso>
+        UpdateApiDestinationResponse UpdateApiDestination(UpdateApiDestinationRequest request);
+
+
+
+        /// <summary>
+        /// Updates an API destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApiDestination service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateApiDestination">REST API Reference for UpdateApiDestination Operation</seealso>
+        Task<UpdateApiDestinationResponse> UpdateApiDestinationAsync(UpdateApiDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateArchive
 
 
@@ -3015,6 +3471,60 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive">REST API Reference for UpdateArchive Operation</seealso>
         Task<UpdateArchiveResponse> UpdateArchiveAsync(UpdateArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateConnection
+
+
+        /// <summary>
+        /// Updates settings for a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
+        UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Updates settings for a connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
+        Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

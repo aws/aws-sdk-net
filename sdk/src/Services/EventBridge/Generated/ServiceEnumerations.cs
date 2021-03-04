@@ -25,6 +25,126 @@ namespace Amazon.EventBridge
 {
 
     /// <summary>
+    /// Constants used for properties of type ApiDestinationHttpMethod.
+    /// </summary>
+    public class ApiDestinationHttpMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE for ApiDestinationHttpMethod
+        /// </summary>
+        public static readonly ApiDestinationHttpMethod DELETE = new ApiDestinationHttpMethod("DELETE");
+        /// <summary>
+        /// Constant GET for ApiDestinationHttpMethod
+        /// </summary>
+        public static readonly ApiDestinationHttpMethod GET = new ApiDestinationHttpMethod("GET");
+        /// <summary>
+        /// Constant HEAD for ApiDestinationHttpMethod
+        /// </summary>
+        public static readonly ApiDestinationHttpMethod HEAD = new ApiDestinationHttpMethod("HEAD");
+        /// <summary>
+        /// Constant OPTIONS for ApiDestinationHttpMethod
+        /// </summary>
+        public static readonly ApiDestinationHttpMethod OPTIONS = new ApiDestinationHttpMethod("OPTIONS");
+        /// <summary>
+        /// Constant PATCH for ApiDestinationHttpMethod
+        /// </summary>
+        public static readonly ApiDestinationHttpMethod PATCH = new ApiDestinationHttpMethod("PATCH");
+        /// <summary>
+        /// Constant POST for ApiDestinationHttpMethod
+        /// </summary>
+        public static readonly ApiDestinationHttpMethod POST = new ApiDestinationHttpMethod("POST");
+        /// <summary>
+        /// Constant PUT for ApiDestinationHttpMethod
+        /// </summary>
+        public static readonly ApiDestinationHttpMethod PUT = new ApiDestinationHttpMethod("PUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApiDestinationHttpMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApiDestinationHttpMethod FindValue(string value)
+        {
+            return FindValue<ApiDestinationHttpMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApiDestinationHttpMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApiDestinationState.
+    /// </summary>
+    public class ApiDestinationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ApiDestinationState
+        /// </summary>
+        public static readonly ApiDestinationState ACTIVE = new ApiDestinationState("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for ApiDestinationState
+        /// </summary>
+        public static readonly ApiDestinationState INACTIVE = new ApiDestinationState("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApiDestinationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApiDestinationState FindValue(string value)
+        {
+            return FindValue<ApiDestinationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApiDestinationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ArchiveState.
     /// </summary>
     public class ArchiveState : ConstantClass
@@ -134,6 +254,184 @@ namespace Amazon.EventBridge
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssignPublicIp(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionAuthorizationType.
+    /// </summary>
+    public class ConnectionAuthorizationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API_KEY for ConnectionAuthorizationType
+        /// </summary>
+        public static readonly ConnectionAuthorizationType API_KEY = new ConnectionAuthorizationType("API_KEY");
+        /// <summary>
+        /// Constant BASIC for ConnectionAuthorizationType
+        /// </summary>
+        public static readonly ConnectionAuthorizationType BASIC = new ConnectionAuthorizationType("BASIC");
+        /// <summary>
+        /// Constant OAUTH_CLIENT_CREDENTIALS for ConnectionAuthorizationType
+        /// </summary>
+        public static readonly ConnectionAuthorizationType OAUTH_CLIENT_CREDENTIALS = new ConnectionAuthorizationType("OAUTH_CLIENT_CREDENTIALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionAuthorizationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionAuthorizationType FindValue(string value)
+        {
+            return FindValue<ConnectionAuthorizationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionAuthorizationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionOAuthHttpMethod.
+    /// </summary>
+    public class ConnectionOAuthHttpMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GET for ConnectionOAuthHttpMethod
+        /// </summary>
+        public static readonly ConnectionOAuthHttpMethod GET = new ConnectionOAuthHttpMethod("GET");
+        /// <summary>
+        /// Constant POST for ConnectionOAuthHttpMethod
+        /// </summary>
+        public static readonly ConnectionOAuthHttpMethod POST = new ConnectionOAuthHttpMethod("POST");
+        /// <summary>
+        /// Constant PUT for ConnectionOAuthHttpMethod
+        /// </summary>
+        public static readonly ConnectionOAuthHttpMethod PUT = new ConnectionOAuthHttpMethod("PUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionOAuthHttpMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionOAuthHttpMethod FindValue(string value)
+        {
+            return FindValue<ConnectionOAuthHttpMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionOAuthHttpMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionState.
+    /// </summary>
+    public class ConnectionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHORIZED for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState AUTHORIZED = new ConnectionState("AUTHORIZED");
+        /// <summary>
+        /// Constant AUTHORIZING for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState AUTHORIZING = new ConnectionState("AUTHORIZING");
+        /// <summary>
+        /// Constant CREATING for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState CREATING = new ConnectionState("CREATING");
+        /// <summary>
+        /// Constant DEAUTHORIZED for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState DEAUTHORIZED = new ConnectionState("DEAUTHORIZED");
+        /// <summary>
+        /// Constant DEAUTHORIZING for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState DEAUTHORIZING = new ConnectionState("DEAUTHORIZING");
+        /// <summary>
+        /// Constant DELETING for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState DELETING = new ConnectionState("DELETING");
+        /// <summary>
+        /// Constant UPDATING for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState UPDATING = new ConnectionState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionState FindValue(string value)
+        {
+            return FindValue<ConnectionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionState(string value)
         {
             return FindValue(value);
         }

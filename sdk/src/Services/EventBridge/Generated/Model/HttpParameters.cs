@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// These are custom parameter to be used when the target is an API Gateway REST APIs.
+    /// These are custom parameter to be used when the target is an API Gateway REST APIs
+    /// or EventBridge ApiDestinations. In the latter case, these are merged with any InvocationParameters
+    /// specified on the Connection, with any values from the Connection taking precedence.
     /// </summary>
     public partial class HttpParameters
     {
@@ -41,7 +43,7 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property HeaderParameters. 
         /// <para>
         /// The headers that need to be sent as part of request invoking the API Gateway REST
-        /// API.
+        /// API or EventBridge ApiDestination.
         /// </para>
         /// </summary>
         public Dictionary<string, string> HeaderParameters
@@ -59,8 +61,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property PathParameterValues. 
         /// <para>
-        /// The path parameter values to be used to populate API Gateway REST API path wildcards
-        /// ("*").
+        /// The path parameter values to be used to populate API Gateway REST API or EventBridge
+        /// ApiDestination path wildcards ("*").
         /// </para>
         /// </summary>
         public List<string> PathParameterValues
@@ -79,7 +81,7 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property QueryStringParameters. 
         /// <para>
         /// The query string keys/values that need to be sent as part of request invoking the
-        /// API Gateway REST API.
+        /// API Gateway REST API or EventBridge ApiDestination.
         /// </para>
         /// </summary>
         public Dictionary<string, string> QueryStringParameters

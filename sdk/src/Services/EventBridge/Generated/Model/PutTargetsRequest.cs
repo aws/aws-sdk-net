@@ -109,6 +109,10 @@ namespace Amazon.EventBridge.Model
     /// <para>
     /// Redshift Clusters to invoke Data API ExecuteStatement on
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Custom/SaaS HTTPS APIs via EventBridge API Destinations
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Creating rules with built-in targets is supported only in the AWS Management Console.

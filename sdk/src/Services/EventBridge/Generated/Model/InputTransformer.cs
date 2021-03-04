@@ -47,7 +47,7 @@ namespace Amazon.EventBridge.Model
         ///  
         /// <para>
         ///  <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid
-        /// JSON path. You can have as many as 10 key-value pairs. You must use JSON dot notation,
+        /// JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation,
         /// not bracket notation.
         /// </para>
         ///  
@@ -84,10 +84,6 @@ namespace Amazon.EventBridge.Model
         ///  <ul> <li> 
         /// <para>
         /// The placeholder cannot be used as an object key.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Object values cannot include quote marks.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -135,6 +131,33 @@ namespace Amazon.EventBridge.Model
         ///  
         /// <para>
         ///  <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>}</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out,
+        /// as in the following example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "InputTransformer":</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus": "&lt;instance&gt;
+        /// is in state \"&lt;status&gt;\""}'</code> 
         /// </para>
         ///  
         /// <para>
