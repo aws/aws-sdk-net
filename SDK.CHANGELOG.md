@@ -1,3 +1,20 @@
+### 3.5.123.0 (2021-03-04 19:15 UTC)
+* CloudWatchEvents (3.5.6.0)
+	* Introducing support for EventBridge Api Destinations - any HTTP APIs as Targets, with managed authorization via EventBridge Connections.
+* EventBridge (3.5.6.0)
+	* Introducing support for EventBridge Api Destinations - any HTTP APIs as Targets, with managed authorization via EventBridge Connections.
+* MWAA (3.5.1.0)
+	* This release introduces a new MinWorker parameter to the CreateEnvironment and UpdateEnvironment APIs. MinWorker allows the users to set a minimum worker count for worker auto-scaling operations.
+* SageMaker (3.5.12.0)
+	* This release adds the ResolvedOutputS3Uri to the DescribeFeatureGroup API to indicate the S3 prefix where offline data is stored in a feature group
+* ServiceDiscovery (3.5.2.0)
+	* Supports creating API-only services under DNS namespace.  Add namespace syntax validation.
+* Core 3.5.3.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.122.0 (2021-03-03 19:20 UTC)
 * CertificateManager (3.5.1.0)
 	* Adds 2 new APIs to add and retrieve account configuration in AWS Certificate Manager.

@@ -32,7 +32,7 @@ namespace Amazon.ManagedBlockchain
     public partial class AmazonManagedBlockchainConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.5.3.10");
+            InternalSDKUtils.BuildUserAgentString("3.5.3.11");
 
         private string _userAgent = UserAgentString;
 
