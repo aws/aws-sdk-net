@@ -42,6 +42,7 @@ namespace Amazon.ServiceDiscovery.Model
         private string _id;
         private int? _instanceCount;
         private string _name;
+        private ServiceType _type;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -200,6 +201,39 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Describes the systems that can be used to discover the service instances.
+        /// </para>
+        ///  <dl> <dt>DNS_HTTP</dt> <dd> 
+        /// <para>
+        /// The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code>
+        /// API operation.
+        /// </para>
+        ///  </dd> <dt>HTTP</dt> <dd> 
+        /// <para>
+        /// The service instances can only be discovered using the <code>DiscoverInstances</code>
+        /// API operation.
+        /// </para>
+        ///  </dd> <dt>DNS</dt> <dd> 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public ServiceType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

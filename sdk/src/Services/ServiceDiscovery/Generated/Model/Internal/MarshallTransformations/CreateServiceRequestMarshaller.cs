@@ -146,6 +146,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("Type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

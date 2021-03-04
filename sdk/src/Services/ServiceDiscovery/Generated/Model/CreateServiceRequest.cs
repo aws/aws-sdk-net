@@ -84,6 +84,7 @@ namespace Amazon.ServiceDiscovery.Model
         private string _name;
         private string _namespaceId;
         private List<Tag> _tags = new List<Tag>();
+        private ServiceTypeOption _type;
 
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
@@ -232,6 +233,14 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         ///  <code>_exampleservice._tcp.example.com</code> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For a single DNS namespace, you cannot create two services with names that differ
+        /// only by case (such as EXAMPLE and example). Otherwise, these services will have the
+        /// same DNS name. However, you can create multiple HTTP services with names that differ
+        /// only by case because HTTP services are case sensitive.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -284,6 +293,26 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
+        /// API operation. No DNS records will be registered for the service instances. The only
+        /// valid value is <code>HTTP</code>.
+        /// </para>
+        /// </summary>
+        public ServiceTypeOption Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
