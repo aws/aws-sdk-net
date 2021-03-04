@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies details about how containers in a multi-container are run.
+    /// Specifies details about how containers in a multi-container endpoint are run.
     /// </summary>
     public partial class InferenceExecutionConfig
     {

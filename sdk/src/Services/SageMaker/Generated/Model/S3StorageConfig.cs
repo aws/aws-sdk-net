@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class S3StorageConfig
     {
         private string _kmsKeyId;
+        private string _resolvedOutputS3Uri;
         private string _s3Uri;
 
         /// <summary>
@@ -65,6 +66,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolvedOutputS3Uri. 
+        /// <para>
+        /// The S3 path where offline records are written.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string ResolvedOutputS3Uri
+        {
+            get { return this._resolvedOutputS3Uri; }
+            set { this._resolvedOutputS3Uri = value; }
+        }
+
+        // Check to see if ResolvedOutputS3Uri property is set
+        internal bool IsSetResolvedOutputS3Uri()
+        {
+            return this._resolvedOutputS3Uri != null;
         }
 
         /// <summary>

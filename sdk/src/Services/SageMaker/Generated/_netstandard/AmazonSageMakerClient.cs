@@ -5881,7 +5881,16 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns information about a training job.
+        /// Returns information about a training job. 
+        /// 
+        ///  
+        /// <para>
+        /// Some of the attributes below only appear if the training job successfully starts.
+        /// If the training job fails, <code>TrainingJobStatus</code> is <code>Failed</code> and,
+        /// depending on the <code>FailureReason</code>, attributes like <code>TrainingStartTime</code>,
+        /// <code>TrainingTimeInSeconds</code>, <code>TrainingEndTime</code>, and <code>BillableTimeInSeconds</code>
+        /// may not be present in the response.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingJob service method.</param>
         /// <param name="cancellationToken">

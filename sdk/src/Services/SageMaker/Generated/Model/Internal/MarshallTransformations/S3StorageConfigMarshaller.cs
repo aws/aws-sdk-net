@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.KmsKeyId);
             }
 
+            if(requestObject.IsSetResolvedOutputS3Uri())
+            {
+                context.Writer.WritePropertyName("ResolvedOutputS3Uri");
+                context.Writer.Write(requestObject.ResolvedOutputS3Uri);
+            }
+
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
