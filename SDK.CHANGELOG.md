@@ -1,3 +1,20 @@
+### 3.5.123.1 (2021-03-05 00:08 UTC)
+* AccessAnalyzer (3.5.2.12)
+	* Update generator to provide a default value for idempotency tokens passed via querystring
+* CodeGuruProfiler (3.5.0.75)
+	* Update generator to provide a default value for idempotency tokens passed via querystring
+* IoTFleetHub (3.5.0.26)
+	* Update generator to provide a default value for idempotency tokens passed via querystring
+* IoTSiteWise (3.5.8.7)
+	* Update generator to provide a default value for idempotency tokens passed via querystring
+* PrometheusService (3.5.0.26)
+	* Update generator to provide a default value for idempotency tokens passed via querystring
+* WellArchitected (3.5.1.2)
+	* Update generator to provide a default value for idempotency tokens passed via querystring
+* Core 3.5.3.5
+	* Fixes an issue where signature mismatch error occurs when user metadata keys contain _ (underscore) and User agent reverted to aws-sdk-dotnet-coreclr
+	* All services packages updated to require new Core
+
 ### 3.5.123.0 (2021-03-04 19:15 UTC)
 * CloudWatchEvents (3.5.6.0)
 	* Introducing support for EventBridge Api Destinations - any HTTP APIs as Targets, with managed authorization via EventBridge Connections.
