@@ -69,6 +69,14 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Paginator for ListPreparedStatements operation
+        ///</summary>
+        public IListPreparedStatementsPaginator ListPreparedStatements(ListPreparedStatementsRequest request) 
+        {
+            return new ListPreparedStatementsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListQueryExecutions operation
         ///</summary>
         public IListQueryExecutionsPaginator ListQueryExecutions(ListQueryExecutionsRequest request) 

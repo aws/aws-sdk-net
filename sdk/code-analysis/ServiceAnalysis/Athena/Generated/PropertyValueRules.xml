@@ -40,6 +40,26 @@
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.CreatePreparedStatementRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreatePreparedStatementRequest.QueryStatement</property>
+    <min>1</min>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreatePreparedStatementRequest.StatementName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z_][a-zA-Z0-9_@:]{1,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreatePreparedStatementRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.CreateWorkGroupRequest.Description</property>
     <min>0</min>
     <max>1024</max>
@@ -52,6 +72,16 @@
     <property>Amazon.Athena.Model.DeleteDataCatalogRequest.Name</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.DeletePreparedStatementRequest.StatementName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z_][a-zA-Z0-9_@:]{1,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.DeletePreparedStatementRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.DeleteWorkGroupRequest.WorkGroup</property>
@@ -71,6 +101,16 @@
     <property>Amazon.Athena.Model.GetDataCatalogRequest.Name</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetPreparedStatementRequest.StatementName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z_][a-zA-Z0-9_@:]{1,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetPreparedStatementRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.GetQueryResultsRequest.MaxResults</property>
@@ -172,6 +212,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.ListNamedQueriesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListPreparedStatementsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListPreparedStatementsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListPreparedStatementsRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListPreparedStatementsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -293,6 +352,26 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.UpdatePreparedStatementRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdatePreparedStatementRequest.QueryStatement</property>
+    <min>1</min>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdatePreparedStatementRequest.StatementName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z_][a-zA-Z0-9_@:]{1,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdatePreparedStatementRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.UpdateWorkGroupRequest.Description</property>
     <min>0</min>
     <max>1024</max>
@@ -379,6 +458,32 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.NamedQuery.WorkGroup</property>
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.PreparedStatement.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.PreparedStatement.QueryStatement</property>
+    <min>1</min>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.PreparedStatement.StatementName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z_][a-zA-Z0-9_@:]{1,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.PreparedStatement.WorkGroupName</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.PreparedStatementSummary.StatementName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z_][a-zA-Z0-9_@:]{1,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.QueryExecution.Query</property>

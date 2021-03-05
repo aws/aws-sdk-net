@@ -199,6 +199,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Athena")]
+        public void ListPreparedStatementsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPreparedStatementsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListPreparedStatementsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListPreparedStatementsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListPreparedStatements(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListPreparedStatements(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Athena")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListPreparedStatementsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPreparedStatementsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListPreparedStatementsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListPreparedStatements(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListPreparedStatements(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Athena")]
         public void ListQueryExecutionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListQueryExecutionsRequest>();

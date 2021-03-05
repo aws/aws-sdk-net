@@ -270,6 +270,53 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  CreatePreparedStatement
+
+
+        /// <summary>
+        /// Creates a prepared statement for use with SQL queries in Athena.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePreparedStatement service method.</param>
+        /// 
+        /// <returns>The response from the CreatePreparedStatement service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement">REST API Reference for CreatePreparedStatement Operation</seealso>
+        CreatePreparedStatementResponse CreatePreparedStatement(CreatePreparedStatementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePreparedStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePreparedStatement operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePreparedStatement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement">REST API Reference for CreatePreparedStatement Operation</seealso>
+        IAsyncResult BeginCreatePreparedStatement(CreatePreparedStatementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePreparedStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePreparedStatement.</param>
+        /// 
+        /// <returns>Returns a  CreatePreparedStatementResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement">REST API Reference for CreatePreparedStatement Operation</seealso>
+        CreatePreparedStatementResponse EndCreatePreparedStatement(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateWorkGroup
 
 
@@ -415,6 +462,56 @@ namespace Amazon.Athena
         /// <returns>Returns a  DeleteNamedQueryResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">REST API Reference for DeleteNamedQuery Operation</seealso>
         DeleteNamedQueryResponse EndDeleteNamedQuery(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePreparedStatement
+
+
+        /// <summary>
+        /// Deletes the prepared statement with the specified name from the specified workgroup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePreparedStatement service method.</param>
+        /// 
+        /// <returns>The response from the DeletePreparedStatement service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement">REST API Reference for DeletePreparedStatement Operation</seealso>
+        DeletePreparedStatementResponse DeletePreparedStatement(DeletePreparedStatementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePreparedStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePreparedStatement operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePreparedStatement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement">REST API Reference for DeletePreparedStatement Operation</seealso>
+        IAsyncResult BeginDeletePreparedStatement(DeletePreparedStatementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePreparedStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePreparedStatement.</param>
+        /// 
+        /// <returns>Returns a  DeletePreparedStatementResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement">REST API Reference for DeletePreparedStatement Operation</seealso>
+        DeletePreparedStatementResponse EndDeletePreparedStatement(IAsyncResult asyncResult);
 
         #endregion
         
@@ -611,6 +708,56 @@ namespace Amazon.Athena
         /// <returns>Returns a  GetNamedQueryResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
         GetNamedQueryResponse EndGetNamedQuery(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPreparedStatement
+
+
+        /// <summary>
+        /// Retrieves the prepared statement with the specified name from the specified workgroup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPreparedStatement service method.</param>
+        /// 
+        /// <returns>The response from the GetPreparedStatement service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement">REST API Reference for GetPreparedStatement Operation</seealso>
+        GetPreparedStatementResponse GetPreparedStatement(GetPreparedStatementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPreparedStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPreparedStatement operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPreparedStatement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement">REST API Reference for GetPreparedStatement Operation</seealso>
+        IAsyncResult BeginGetPreparedStatement(GetPreparedStatementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPreparedStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPreparedStatement.</param>
+        /// 
+        /// <returns>Returns a  GetPreparedStatementResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement">REST API Reference for GetPreparedStatement Operation</seealso>
+        GetPreparedStatementResponse EndGetPreparedStatement(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1032,6 +1179,53 @@ namespace Amazon.Athena
         /// <returns>Returns a  ListNamedQueriesResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
         ListNamedQueriesResponse EndListNamedQueries(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListPreparedStatements
+
+
+        /// <summary>
+        /// Lists the prepared statements in the specfied workgroup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPreparedStatements service method.</param>
+        /// 
+        /// <returns>The response from the ListPreparedStatements service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements">REST API Reference for ListPreparedStatements Operation</seealso>
+        ListPreparedStatementsResponse ListPreparedStatements(ListPreparedStatementsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPreparedStatements operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPreparedStatements operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPreparedStatements
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements">REST API Reference for ListPreparedStatements Operation</seealso>
+        IAsyncResult BeginListPreparedStatements(ListPreparedStatementsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPreparedStatements operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPreparedStatements.</param>
+        /// 
+        /// <returns>Returns a  ListPreparedStatementsResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements">REST API Reference for ListPreparedStatements Operation</seealso>
+        ListPreparedStatementsResponse EndListPreparedStatements(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1504,6 +1698,56 @@ namespace Amazon.Athena
         /// <returns>Returns a  UpdateDataCatalogResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog">REST API Reference for UpdateDataCatalog Operation</seealso>
         UpdateDataCatalogResponse EndUpdateDataCatalog(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePreparedStatement
+
+
+        /// <summary>
+        /// Updates a prepared statement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePreparedStatement service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePreparedStatement service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">REST API Reference for UpdatePreparedStatement Operation</seealso>
+        UpdatePreparedStatementResponse UpdatePreparedStatement(UpdatePreparedStatementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePreparedStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePreparedStatement operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePreparedStatement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">REST API Reference for UpdatePreparedStatement Operation</seealso>
+        IAsyncResult BeginUpdatePreparedStatement(UpdatePreparedStatementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePreparedStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePreparedStatement.</param>
+        /// 
+        /// <returns>Returns a  UpdatePreparedStatementResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">REST API Reference for UpdatePreparedStatement Operation</seealso>
+        UpdatePreparedStatementResponse EndUpdatePreparedStatement(IAsyncResult asyncResult);
 
         #endregion
         
