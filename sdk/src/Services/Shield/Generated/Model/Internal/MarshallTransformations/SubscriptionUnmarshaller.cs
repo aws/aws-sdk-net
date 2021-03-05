@@ -94,6 +94,12 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SubscriptionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubscriptionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SubscriptionLimits", targetDepth))
                 {
                     var unmarshaller = SubscriptionLimitsUnmarshaller.Instance;

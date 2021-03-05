@@ -36,6 +36,7 @@ namespace Amazon.Shield.Model
         private List<string> _healthCheckIds = new List<string>();
         private string _id;
         private string _name;
+        private string _protectionArn;
         private string _resourceArn;
 
         /// <summary>
@@ -93,6 +94,25 @@ namespace Amazon.Shield.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtectionArn. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the protection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ProtectionArn
+        {
+            get { return this._protectionArn; }
+            set { this._protectionArn = value; }
+        }
+
+        // Check to see if ProtectionArn property is set
+        internal bool IsSetProtectionArn()
+        {
+            return this._protectionArn != null;
         }
 
         /// <summary>

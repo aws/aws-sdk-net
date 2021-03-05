@@ -40,6 +40,7 @@ namespace Amazon.Shield.Model
         private ProtectionGroupPattern _pattern;
         private string _protectionGroupId;
         private ProtectedResourceType _resourceType;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Aggregation. 
@@ -161,6 +162,25 @@ namespace Amazon.Shield.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more tag key-value pairs for the protection group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

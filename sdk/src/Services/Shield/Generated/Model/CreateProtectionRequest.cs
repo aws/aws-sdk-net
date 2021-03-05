@@ -47,6 +47,7 @@ namespace Amazon.Shield.Model
     {
         private string _name;
         private string _resourceArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -119,6 +120,25 @@ namespace Amazon.Shield.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more tag key-value pairs for the <a>Protection</a> object that is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

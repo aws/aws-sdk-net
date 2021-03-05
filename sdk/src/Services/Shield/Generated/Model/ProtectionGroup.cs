@@ -38,6 +38,7 @@ namespace Amazon.Shield.Model
         private ProtectionGroupAggregation _aggregation;
         private List<string> _members = new List<string>();
         private ProtectionGroupPattern _pattern;
+        private string _protectionGroupArn;
         private string _protectionGroupId;
         private ProtectedResourceType _resourceType;
 
@@ -118,6 +119,25 @@ namespace Amazon.Shield.Model
         internal bool IsSetPattern()
         {
             return this._pattern != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtectionGroupArn. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the protection group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ProtectionGroupArn
+        {
+            get { return this._protectionGroupArn; }
+            set { this._protectionGroupArn = value; }
+        }
+
+        // Check to see if ProtectionGroupArn property is set
+        internal bool IsSetProtectionGroupArn()
+        {
+            return this._protectionGroupArn != null;
         }
 
         /// <summary>

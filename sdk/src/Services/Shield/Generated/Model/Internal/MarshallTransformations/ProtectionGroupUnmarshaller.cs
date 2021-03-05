@@ -82,6 +82,12 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                     unmarshalledObject.Pattern = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProtectionGroupArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProtectionGroupArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProtectionGroupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

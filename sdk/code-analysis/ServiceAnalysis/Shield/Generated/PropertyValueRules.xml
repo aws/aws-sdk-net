@@ -183,6 +183,24 @@
     <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Shield.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Shield.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Shield.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Shield.Model.UpdateProtectionGroupRequest.ProtectionGroupId</property>
     <min>1</min>
     <max>36</max>
@@ -231,7 +249,19 @@
     <pattern>[ a-zA-Z0-9_\\.\\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Shield.Model.Protection.ProtectionArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Shield.Model.Protection.ResourceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Shield.Model.ProtectionGroup.ProtectionGroupArn</property>
     <min>1</min>
     <max>2048</max>
     <pattern>^arn:aws.*</pattern>
@@ -243,7 +273,23 @@
     <pattern>[a-zA-Z0-9\\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Shield.Model.Subscription.SubscriptionArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Shield.Model.Subscription.TimeCommitmentInSeconds</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Shield.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Shield.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

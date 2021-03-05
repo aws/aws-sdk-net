@@ -38,6 +38,7 @@ namespace Amazon.Shield.Model
         private List<Limit> _limits = new List<Limit>();
         private ProactiveEngagementStatus _proactiveEngagementStatus;
         private DateTime? _startTime;
+        private string _subscriptionArn;
         private SubscriptionLimits _subscriptionLimits;
         private long? _timeCommitmentInSeconds;
 
@@ -149,6 +150,25 @@ namespace Amazon.Shield.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionArn. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the subscription.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string SubscriptionArn
+        {
+            get { return this._subscriptionArn; }
+            set { this._subscriptionArn = value; }
+        }
+
+        // Check to see if SubscriptionArn property is set
+        internal bool IsSetSubscriptionArn()
+        {
+            return this._subscriptionArn != null;
         }
 
         /// <summary>
