@@ -45,6 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// The action type definition for the action type to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActionTypeDeclaration ActionType
         {
             get { return this._actionType; }
