@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
     {
         private string _inputDeviceId;
         private string _targetCustomerId;
+        private string _targetRegion;
         private string _transferMessage;
 
         /// <summary>
@@ -70,6 +71,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetTargetCustomerId()
         {
             return this._targetCustomerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetRegion. The target AWS region to transfer the device.
+        /// </summary>
+        public string TargetRegion
+        {
+            get { return this._targetRegion; }
+            set { this._targetRegion = value; }
+        }
+
+        // Check to see if TargetRegion property is set
+        internal bool IsSetTargetRegion()
+        {
+            return this._targetRegion != null;
         }
 
         /// <summary>

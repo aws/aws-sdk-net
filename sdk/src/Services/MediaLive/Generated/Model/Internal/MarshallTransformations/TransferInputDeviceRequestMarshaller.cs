@@ -75,6 +75,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TargetCustomerId);
                 }
 
+                if(publicRequest.IsSetTargetRegion())
+                {
+                    context.Writer.WritePropertyName("targetRegion");
+                    context.Writer.Write(publicRequest.TargetRegion);
+                }
+
                 if(publicRequest.IsSetTransferMessage())
                 {
                     context.Writer.WritePropertyName("transferMessage");
