@@ -81,7 +81,6 @@ namespace Amazon.LicenseManager.Model
         /// Filter value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> ProductInformationFilterValue
         {
             get { return this._productInformationFilterValue; }
