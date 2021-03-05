@@ -29,14 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// 
+    /// Provides configuration status for a single policy or rule group that is used for a
+    /// firewall endpoint. Network Firewall provides each endpoint with the rules that are
+    /// configured in the firewall policy. Each time you add a subnet or modify the associated
+    /// firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can
+    /// properly filter network traffic. This is part of a <a>SyncState</a> for a firewall.
     /// </summary>
     public partial class PerObjectStatus
     {
         private PerObjectSyncStatus _syncStatus;
+        private string _updateToken;
 
         /// <summary>
-        /// Gets and sets the property SyncStatus.
+        /// Gets and sets the property SyncStatus. 
+        /// <para>
+        /// Indicates whether this object is in sync with the version indicated in the update
+        /// token.
+        /// </para>
         /// </summary>
         public PerObjectSyncStatus SyncStatus
         {
@@ -48,6 +57,26 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetSyncStatus()
         {
             return this._syncStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateToken. 
+        /// <para>
+        /// The current version of the object that is either in sync or pending synchronization.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string UpdateToken
+        {
+            get { return this._updateToken; }
+            set { this._updateToken = value; }
+        }
+
+        // Check to see if UpdateToken property is set
+        internal bool IsSetUpdateToken()
+        {
+            return this._updateToken != null;
         }
 
     }

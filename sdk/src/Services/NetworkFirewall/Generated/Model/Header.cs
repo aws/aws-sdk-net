@@ -131,8 +131,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol to inspect for. To match with any protocol, specify <code>ANY</code>.
-        /// 
+        /// The protocol to inspect for. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

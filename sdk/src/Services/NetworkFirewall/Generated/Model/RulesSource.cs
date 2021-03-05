@@ -70,13 +70,6 @@ namespace Amazon.NetworkFirewall.Model
         /// These rules contain the inspection criteria and the action to take for traffic that
         /// matches the criteria, so this type of rule group doesn't have a separate action setting.
         /// </para>
-        ///  
-        /// <para>
-        /// You can provide the rules from a file that you've stored in an Amazon S3 bucket, or
-        /// by providing the rules in a Suricata rules string. To import from Amazon S3, provide
-        /// the fully qualified name of the file that contains the rules definitions. To provide
-        /// a Suricata rule string, provide the complete, Suricata compatible rule.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
         public string RulesString

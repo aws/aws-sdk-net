@@ -122,9 +122,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property StatelessFragmentDefaultActions. 
         /// <para>
-        /// The actions to take on a fragmented packet if it doesn't match any of the stateless
-        /// rules in the policy. If you want non-matching fragmented packets to be forwarded for
-        /// stateful inspection, specify <code>aws:forward_to_sfe</code>. 
+        /// The actions to take on a fragmented UDP packet if it doesn't match any of the stateless
+        /// rules in the policy. Network Firewall only manages UDP packet fragments and silently
+        /// drops packet fragments for other protocols. If you want non-matching fragmented UDP
+        /// packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
