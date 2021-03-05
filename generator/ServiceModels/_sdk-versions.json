@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.123.1",
+    "ProductVersion" : "3.5.124.0",
     "CoreVersion"    : "3.5.3.5",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.5.31.10",
+            "Version" : "3.5.32.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.5"
@@ -418,7 +418,7 @@
             "InPreview"               : false
         },
         "CodePipeline"              : {
-            "Version" : "3.5.4.2",
+            "Version" : "3.5.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.5"
@@ -674,7 +674,7 @@
             "InPreview"               : false
         },
         "Shield"                          : {
-            "Version" : "3.5.1.38",
+            "Version" : "3.5.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.5"
@@ -794,7 +794,7 @@
             "InPreview"               : false
         },
         "Athena"                          : {
-            "Version" : "3.5.1.9",
+            "Version" : "3.5.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.5"
@@ -874,7 +874,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.5.11.5",
+            "Version" : "3.5.12.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.5"
@@ -1314,7 +1314,7 @@
             "InPreview"               : false
         },
         "LicenseManager"                  : {
-            "Version" : "3.5.3.29",
+            "Version" : "3.5.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.5"
@@ -1826,7 +1826,7 @@
             "InPreview"               : false
         },
         "Appflow"                         : {
-            "Version" : "3.5.4.3",
+            "Version" : "3.5.4.4",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.5"
@@ -1890,7 +1890,7 @@
             "InPreview"               : false
         },
         "NetworkFirewall"                 : {
-            "Version" : "3.5.0.38",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.5"
