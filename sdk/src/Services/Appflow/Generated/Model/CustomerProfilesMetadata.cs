@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// 
+    /// The connector metadata specific to Amazon Connect Customer Profiles.
     /// </summary>
     public partial class CustomerProfilesMetadata
     {

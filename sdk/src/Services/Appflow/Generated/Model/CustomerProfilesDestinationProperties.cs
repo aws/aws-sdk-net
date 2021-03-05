@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// 
+    /// The properties that are applied when Amazon Connect Customer Profiles is used as
+    /// a destination.
     /// </summary>
     public partial class CustomerProfilesDestinationProperties
     {
@@ -37,7 +38,10 @@ namespace Amazon.Appflow.Model
         private string _objectTypeName;
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        ///  The unique name of the Amazon Connect Customer Profiles domain. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
         public string DomainName
@@ -53,7 +57,10 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ObjectTypeName.
+        /// Gets and sets the property ObjectTypeName. 
+        /// <para>
+        ///  The object specified in the Amazon Connect Customer Profiles flow destination. 
+        /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
         public string ObjectTypeName

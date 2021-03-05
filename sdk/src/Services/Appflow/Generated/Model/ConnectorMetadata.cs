@@ -74,7 +74,10 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomerProfiles.
+        /// Gets and sets the property CustomerProfiles. 
+        /// <para>
+        ///  The connector metadata specific to Amazon Connect Customer Profiles. 
+        /// </para>
         /// </summary>
         public CustomerProfilesMetadata CustomerProfiles
         {
@@ -161,7 +164,10 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Honeycode.
+        /// Gets and sets the property Honeycode. 
+        /// <para>
+        ///  The connector metadata specific to Amazon Honeycode. 
+        /// </para>
         /// </summary>
         public HoneycodeMetadata Honeycode
         {

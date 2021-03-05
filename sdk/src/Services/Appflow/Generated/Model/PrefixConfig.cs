@@ -40,8 +40,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property PrefixFormat. 
         /// <para>
-        ///  Determines the format of the prefix, and whether it applies to the file name, file
-        /// path, or both. 
+        ///  Determines the level of granularity that's included in the prefix. 
         /// </para>
         /// </summary>
         public PrefixFormat PrefixFormat
@@ -59,7 +58,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property PrefixType. 
         /// <para>
-        ///  Determines the level of granularity that's included in the prefix. 
+        ///  Determines the format of the prefix, and whether it applies to the file name, file
+        /// path, or both. 
         /// </para>
         /// </summary>
         public PrefixType PrefixType

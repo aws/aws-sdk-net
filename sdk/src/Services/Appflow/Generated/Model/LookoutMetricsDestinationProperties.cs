@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// 
+    /// The properties that are applied when Amazon Lookout for Metrics is used as a destination.
     /// </summary>
     public partial class LookoutMetricsDestinationProperties
     {

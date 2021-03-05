@@ -47,12 +47,6 @@ namespace Amazon.Appflow.Model
         /// <para>
         ///  The type of connector, such as Salesforce, Amplitude, and so on. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <i>Locke</i> refers to a new destination known as Amazon Connect Customer Profiles.
-        /// At this time, we recommend that you do not use this destination. 
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> ConnectorTypes

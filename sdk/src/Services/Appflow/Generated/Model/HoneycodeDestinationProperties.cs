@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// 
+    /// The properties that are applied when Amazon Honeycode is used as a destination.
     /// </summary>
     public partial class HoneycodeDestinationProperties
     {
@@ -52,7 +52,10 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Object.
+        /// Gets and sets the property Object. 
+        /// <para>
+        ///  The object specified in the Amazon Honeycode flow destination. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
         public string Object

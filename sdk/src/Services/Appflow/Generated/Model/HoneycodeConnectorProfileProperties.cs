@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// 
+    /// The connector-specific properties required when using Amazon Honeycode.
     /// </summary>
     public partial class HoneycodeConnectorProfileProperties
     {

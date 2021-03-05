@@ -62,7 +62,11 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FirstExecutionFrom.
+        /// Gets and sets the property FirstExecutionFrom. 
+        /// <para>
+        ///  Specifies the date range for the records to import from the connector in the first
+        /// flow run. 
+        /// </para>
         /// </summary>
         public DateTime FirstExecutionFrom
         {

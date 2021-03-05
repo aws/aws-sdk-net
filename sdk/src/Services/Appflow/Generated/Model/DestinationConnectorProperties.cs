@@ -44,7 +44,10 @@ namespace Amazon.Appflow.Model
         private UpsolverDestinationProperties _upsolver;
 
         /// <summary>
-        /// Gets and sets the property CustomerProfiles.
+        /// Gets and sets the property CustomerProfiles. 
+        /// <para>
+        ///  The properties required to query Amazon Connect Customer Profiles. 
+        /// </para>
         /// </summary>
         public CustomerProfilesDestinationProperties CustomerProfiles
         {
@@ -77,7 +80,10 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Honeycode.
+        /// Gets and sets the property Honeycode. 
+        /// <para>
+        ///  The properties required to query Amazon Honeycode. 
+        /// </para>
         /// </summary>
         public HoneycodeDestinationProperties Honeycode
         {
@@ -92,7 +98,10 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LookoutMetrics.
+        /// Gets and sets the property LookoutMetrics. 
+        /// <para>
+        ///  The properties required to query Amazon Lookout for Metrics. 
+        /// </para>
         /// </summary>
         public LookoutMetricsDestinationProperties LookoutMetrics
         {

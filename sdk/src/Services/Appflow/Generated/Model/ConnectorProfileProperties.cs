@@ -123,7 +123,10 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Honeycode.
+        /// Gets and sets the property Honeycode. 
+        /// <para>
+        ///  The connector-specific properties required by Amazon Honeycode. 
+        /// </para>
         /// </summary>
         public HoneycodeConnectorProfileProperties Honeycode
         {

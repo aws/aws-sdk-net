@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// 
+    /// The connector metadata specific to Amazon Honeycode.
     /// </summary>
     public partial class HoneycodeMetadata
     {
         private List<string> _oAuthScopes = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property OAuthScopes.
+        /// Gets and sets the property OAuthScopes. 
+        /// <para>
+        ///  The desired authorization scope for the Amazon Honeycode account. 
+        /// </para>
         /// </summary>
         public List<string> OAuthScopes
         {

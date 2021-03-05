@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// 
+    /// The connector-specific credentials required when using Amazon Honeycode.
     /// </summary>
     public partial class HoneycodeConnectorProfileCredentials
     {
@@ -38,7 +38,10 @@ namespace Amazon.Appflow.Model
         private string _refreshToken;
 
         /// <summary>
-        /// Gets and sets the property AccessToken.
+        /// Gets and sets the property AccessToken. 
+        /// <para>
+        ///  The credentials used to access protected Amazon Honeycode resources. 
+        /// </para>
         /// </summary>
         [AWSProperty(Max=512)]
         public string AccessToken
@@ -69,7 +72,10 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RefreshToken.
+        /// Gets and sets the property RefreshToken. 
+        /// <para>
+        ///  The credentials used to acquire new access tokens. 
+        /// </para>
         /// </summary>
         [AWSProperty(Max=512)]
         public string RefreshToken
