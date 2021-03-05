@@ -79,12 +79,25 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority for the launch template override. If <b>OnDemandAllocationStrategy</b>
-        /// is set to <code>prioritized</code>, Spot Fleet uses priority to determine which launch
-        /// template override to use first in fulfilling On-Demand capacity. The highest priority
-        /// is launched first. Valid values are whole numbers starting at <code>0</code>. The
-        /// lower the number, the higher the priority. If no number is set, the launch template
-        /// override has the lowest priority.
+        /// The priority for the launch template override. The highest priority is launched first.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>, Spot
+        /// Fleet uses priority to determine which launch template override to use first in fulfilling
+        /// On-Demand capacity.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the Spot <code>AllocationStrategy</code> is set to <code>capacityOptimizedPrioritized</code>,
+        /// Spot Fleet uses priority on a best-effort basis to determine which launch template
+        /// override to use first in fulfilling Spot capacity, but optimizes for capacity first.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are whole numbers starting at <code>0</code>. The lower the number, the
+        /// higher the priority. If no number is set, the launch template override has the lowest
+        /// priority. You can set the same priority for different launch template overrides.
         /// </para>
         /// </summary>
         public double Priority

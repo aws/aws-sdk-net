@@ -305,6 +305,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly AllocationStrategy CapacityOptimized = new AllocationStrategy("capacityOptimized");
         /// <summary>
+        /// Constant CapacityOptimizedPrioritized for AllocationStrategy
+        /// </summary>
+        public static readonly AllocationStrategy CapacityOptimizedPrioritized = new AllocationStrategy("capacityOptimizedPrioritized");
+        /// <summary>
         /// Constant Diversified for AllocationStrategy
         /// </summary>
         public static readonly AllocationStrategy Diversified = new AllocationStrategy("diversified");
@@ -10590,6 +10594,10 @@ namespace Amazon.EC2
         /// Constant CapacityOptimized for SpotAllocationStrategy
         /// </summary>
         public static readonly SpotAllocationStrategy CapacityOptimized = new SpotAllocationStrategy("capacity-optimized");
+        /// <summary>
+        /// Constant CapacityOptimizedPrioritized for SpotAllocationStrategy
+        /// </summary>
+        public static readonly SpotAllocationStrategy CapacityOptimizedPrioritized = new SpotAllocationStrategy("capacity-optimized-prioritized");
         /// <summary>
         /// Constant Diversified for SpotAllocationStrategy
         /// </summary>

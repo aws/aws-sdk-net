@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         /// Instantiates DescribeImageAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
-        /// <param name="attribute">The AMI attribute.  <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may return a <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get information about the block device mapping for the AMI.</param>
+        /// <param name="attribute">The AMI attribute.  <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <a>DescribeImages</a> action.</param>
         public DescribeImageAttributeRequest(string imageId, ImageAttributeName attribute)
         {
             _imageId = imageId;
@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code>
-        /// attribute may return a <code>Client.AuthFailure</code> error. If this happens, use
-        /// <a>DescribeImages</a> to get information about the block device mapping for the AMI.
+        ///  <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this
+        /// attribute returns the <code>Client.AuthFailure</code> error. To get information about
+        /// the block device mappings for an AMI, use the <a>DescribeImages</a> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
