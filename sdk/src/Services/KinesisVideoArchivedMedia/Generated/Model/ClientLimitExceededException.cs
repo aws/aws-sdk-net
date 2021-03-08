@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// Kinesis Video Streams has throttled the request because you have exceeded the limit
-    /// of allowed client calls. Try making the call later.
+    /// Kinesis Video Streams has throttled the request because you have exceeded a limit.
+    /// Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
+    /// Video Streams Limits</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

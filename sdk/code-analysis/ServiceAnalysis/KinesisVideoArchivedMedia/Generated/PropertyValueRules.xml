@@ -26,7 +26,7 @@
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetDASHStreamingSessionURLRequest.MaxManifestFragmentResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetDASHStreamingSessionURLRequest.StreamARN</property>
@@ -48,7 +48,7 @@
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetHLSStreamingSessionURLRequest.MaxMediaPlaylistFragmentResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetHLSStreamingSessionURLRequest.StreamARN</property>

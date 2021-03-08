@@ -30,13 +30,6 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
     /// The range of timestamps for which to return fragments.
-    /// 
-    ///  
-    /// <para>
-    /// The values in the ClipTimestampRange are <code>inclusive</code>. Fragments that begin
-    /// before the start time but continue past it, or fragments that begin before the end
-    /// time but continue past it, are included in the session. 
-    /// </para>
     /// </summary>
     public partial class ClipTimestampRange
     {
@@ -50,7 +43,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// This value must be within 3 hours of the specified <code>StartTimestamp</code>, and
+        /// This value must be within 24 hours of the specified <code>StartTimestamp</code>, and
         /// it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code>
         /// for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.
         /// 
@@ -82,10 +75,10 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is inclusive. Fragments that start before the <code>StartTimestamp</code>
-        /// and continue past it are included in the session. If <code>FragmentSelectorType</code>
-        /// is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
-        /// the stream head. 
+        /// Only fragments that start exactly at or after <code>StartTimestamp</code> are included
+        /// in the session. Fragments that start before <code>StartTimestamp</code> and continue
+        /// past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>,
+        /// the <code>StartTimestamp</code> must be later than the stream head. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

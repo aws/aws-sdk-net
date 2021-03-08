@@ -90,9 +90,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Don't share or store this token where an unauthorized entity could access it. The
-    /// token provides access to the content of the stream. Safeguard the token with the same
-    /// measures that you would use with your AWS credentials.
+    /// Don't share or store this token where an unauthorized entity can access it. The token
+    /// provides access to the content of the stream. Safeguard the token with the same measures
+    /// that you use with your AWS credentials.
     /// </para>
     ///  </note> 
     /// <para>
@@ -154,30 +154,10 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  </li> </ul> </li> </ol> <note> 
     /// <para>
-    /// The following restrictions apply to MPEG-DASH sessions:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// A streaming session URL should not be shared between players. The service might throttle
-    /// a session if multiple media players are sharing it. For connection limits, see <a
-    /// href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
+    /// For restrictions that apply to MPEG-DASH sessions, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
     /// Video Streams Limits</a>.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A Kinesis video stream can have a maximum of ten active MPEG-DASH streaming sessions.
-    /// If a new session is created when the maximum number of sessions is already active,
-    /// the oldest (earliest created) session is closed. The number of active <code>GetMedia</code>
-    /// connections on a Kinesis video stream does not count against this limit, and the number
-    /// of active MPEG-DASH sessions does not count against the active <code>GetMedia</code>
-    /// connection limit.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// The maximum limits for active HLS and MPEG-DASH streaming sessions are independent
-    /// of each other. 
-    /// </para>
-    ///  </note> </li> </ul> </note> 
+    ///  </note> 
     /// <para>
     /// You can monitor the amount of data that the media player consumes by monitoring the
     /// <code>GetMP4MediaFragment.OutgoingBytes</code> Amazon CloudWatch metric. For information
@@ -380,7 +360,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// with 10-second fragments.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=5000)]
         public long MaxManifestFragmentResults
         {
             get { return this._maxManifestFragmentResults.GetValueOrDefault(); }
@@ -438,10 +418,10 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <para>
         ///  <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest
         /// contains all the fragments for the session, up to the number that is specified in
-        /// <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved only
-        /// once for each session. When this type of session is played in a media player, the
-        /// user interface typically displays a scrubber control for choosing the position in
-        /// the playback window to display.
+        /// <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only once
+        /// for each session. When this type of session is played in a media player, the user
+        /// interface typically displays a scrubber control for choosing the position in the playback
+        /// window to display.
         /// </para>
         ///  </li> </ul> 
         /// <para>

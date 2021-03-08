@@ -189,32 +189,14 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// Data retrieved with this action is billable. For more information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Kinesis
     /// Video Streams pricing</a>.
     /// </para>
-    ///  </li> </ul> </li> </ol> <note> 
+    ///  </li> </ul> </li> </ol> 
     /// <para>
-    /// The following restrictions apply to HLS sessions:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// A streaming session URL should not be shared between players. The service might throttle
+    /// A streaming session URL must not be shared between players. The service might throttle
     /// a session if multiple media players are sharing it. For connection limits, see <a
     /// href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
     /// Video Streams Limits</a>.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A Kinesis video stream can have a maximum of ten active HLS streaming sessions. If
-    /// a new session is created when the maximum number of sessions is already active, the
-    /// oldest (earliest created) session is closed. The number of active <code>GetMedia</code>
-    /// connections on a Kinesis video stream does not count against this limit, and the number
-    /// of active HLS sessions does not count against the active <code>GetMedia</code> connection
-    /// limit.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// The maximum limits for active HLS and MPEG-DASH streaming sessions are independent
-    /// of each other.
-    /// </para>
-    ///  </note> </li> </ul> </note> 
+    ///  
     /// <para>
     /// You can monitor the amount of data that the media player consumes by monitoring the
     /// <code>GetMP4MediaFragment.OutgoingBytes</code> Amazon CloudWatch metric. For information
@@ -471,12 +453,12 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// The maximum value of 1,000 fragments corresponds to more than 16 minutes of video
-        /// on streams with 1-second fragments, and more than 2 1/2 hours of video on streams
-        /// with 10-second fragments.
+        /// The maximum value of 5,000 fragments corresponds to more than 80 minutes of video
+        /// on streams with 1-second fragments, and more than 13 hours of video on streams with
+        /// 10-second fragments.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=5000)]
         public long MaxMediaPlaylistFragmentResults
         {
             get { return this._maxMediaPlaylistFragmentResults.GetValueOrDefault(); }
@@ -543,8 +525,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <para>
         /// In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
         /// and if there are multiple fragments with the same start timestamp, the fragment that
-        /// has the larger fragment number (that is, the newer fragment) is included in the HLS
-        /// media playlist. The other fragments are not included. Fragments that have different
+        /// has the largest fragment number (that is, the newest fragment) is included in the
+        /// HLS media playlist. The other fragments are not included. Fragments that have different
         /// timestamps but have overlapping durations are still included in the HLS media playlist.
         /// This can lead to unexpected behavior in the media player.
         /// </para>

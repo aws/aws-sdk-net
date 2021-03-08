@@ -42,20 +42,10 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The following limits apply when using the <code>GetMediaForFragmentList</code> API:
+    /// For limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
+    /// Video Streams Limits</a>.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// A client can call <code>GetMediaForFragmentList</code> up to five times per second
-    /// per stream. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Kinesis Video Streams sends media data at a rate of up to 25 megabytes per second
-    /// (or 200 megabits per second) during a <code>GetMediaForFragmentList</code> session.
-    /// 
-    /// </para>
-    ///  </li> </ul> <important> 
+    ///  <important> 
     /// <para>
     /// If an error is thrown after invoking a Kinesis Video Streams archived media API, in
     /// addition to the HTTP status code and the response body, it includes the following

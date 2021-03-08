@@ -35,13 +35,6 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <para>
     /// This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// The values in the <code>HLSTimestampRange</code> are inclusive. Fragments that begin
-    /// before the start time but continue past it, or fragments that begin before the end
-    /// time but continue past it, are included in the session.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class HLSTimestampRange
     {
@@ -52,7 +45,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property EndTimestamp. 
         /// <para>
         /// The end of the timestamp range for the requested media. This value must be within
-        /// 3 hours of the specified <code>StartTimestamp</code>, and it must be later than the
+        /// 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the
         /// <code>StartTimestamp</code> value.
         /// </para>
         ///  
@@ -95,16 +88,15 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         ///  
         /// <para>
         /// If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code>
-        /// value is required.
+        /// value is required. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// This value is inclusive. Fragments that start before the <code>StartTimestamp</code>
-        /// and continue past it are included in the session. If <code>FragmentSelectorType</code>
-        /// is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than
-        /// the stream head.
+        /// Only fragments that start exactly at or after <code>StartTimestamp</code> are included
+        /// in the session. Fragments that start before <code>StartTimestamp</code> and continue
+        /// past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>,
+        /// the <code>StartTimestamp</code> must be later than the stream head. 
         /// </para>
-        ///  </note>
         /// </summary>
         public DateTime StartTimestamp
         {
