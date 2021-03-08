@@ -1523,6 +1523,102 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type OnDemandCapacityReservationPreference.
+    /// </summary>
+    public class OnDemandCapacityReservationPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for OnDemandCapacityReservationPreference
+        /// </summary>
+        public static readonly OnDemandCapacityReservationPreference None = new OnDemandCapacityReservationPreference("none");
+        /// <summary>
+        /// Constant Open for OnDemandCapacityReservationPreference
+        /// </summary>
+        public static readonly OnDemandCapacityReservationPreference Open = new OnDemandCapacityReservationPreference("open");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OnDemandCapacityReservationPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnDemandCapacityReservationPreference FindValue(string value)
+        {
+            return FindValue<OnDemandCapacityReservationPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnDemandCapacityReservationPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OnDemandCapacityReservationUsageStrategy.
+    /// </summary>
+    public class OnDemandCapacityReservationUsageStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UseCapacityReservationsFirst for OnDemandCapacityReservationUsageStrategy
+        /// </summary>
+        public static readonly OnDemandCapacityReservationUsageStrategy UseCapacityReservationsFirst = new OnDemandCapacityReservationUsageStrategy("use-capacity-reservations-first");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OnDemandCapacityReservationUsageStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnDemandCapacityReservationUsageStrategy FindValue(string value)
+        {
+            return FindValue<OnDemandCapacityReservationUsageStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnDemandCapacityReservationUsageStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OnDemandProvisioningAllocationStrategy.
     /// </summary>
     public class OnDemandProvisioningAllocationStrategy : ConstantClass

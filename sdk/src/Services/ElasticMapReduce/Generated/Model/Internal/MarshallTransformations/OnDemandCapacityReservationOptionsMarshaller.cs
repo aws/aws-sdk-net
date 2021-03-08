@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OnDemandProvisioningSpecification Marshaller
+    /// OnDemandCapacityReservationOptions Marshaller
     /// </summary>       
-    public class OnDemandProvisioningSpecificationMarshaller : IRequestMarshaller<OnDemandProvisioningSpecification, JsonMarshallerContext> 
+    public class OnDemandCapacityReservationOptionsMarshaller : IRequestMarshaller<OnDemandCapacityReservationOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OnDemandProvisioningSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(OnDemandCapacityReservationOptions requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAllocationStrategy())
+            if(requestObject.IsSetCapacityReservationPreference())
             {
-                context.Writer.WritePropertyName("AllocationStrategy");
-                context.Writer.Write(requestObject.AllocationStrategy);
+                context.Writer.WritePropertyName("CapacityReservationPreference");
+                context.Writer.Write(requestObject.CapacityReservationPreference);
             }
 
-            if(requestObject.IsSetCapacityReservationOptions())
+            if(requestObject.IsSetUsageStrategy())
             {
-                context.Writer.WritePropertyName("CapacityReservationOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OnDemandCapacityReservationOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.CapacityReservationOptions, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("UsageStrategy");
+                context.Writer.Write(requestObject.UsageStrategy);
             }
 
         }
@@ -67,7 +62,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static OnDemandProvisioningSpecificationMarshaller Instance = new OnDemandProvisioningSpecificationMarshaller();
+        public readonly static OnDemandCapacityReservationOptionsMarshaller Instance = new OnDemandCapacityReservationOptionsMarshaller();
 
     }
 }

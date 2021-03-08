@@ -43,13 +43,14 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class OnDemandProvisioningSpecification
     {
         private OnDemandProvisioningAllocationStrategy _allocationStrategy;
+        private OnDemandCapacityReservationOptions _capacityReservationOptions;
 
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        ///  Specifies the strategy to use in launching On-Demand Instance fleets. Currently,
-        /// the only option is lowest-price (the default), which launches the lowest price first.
-        /// 
+        /// Specifies the strategy to use in launching On-Demand instance fleets. Currently, the
+        /// only option is <code>lowest-price</code> (the default), which launches the lowest
+        /// price first.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,6 +64,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetAllocationStrategy()
         {
             return this._allocationStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationOptions. 
+        /// <para>
+        /// The launch specification for On-Demand instances in the instance fleet, which determines
+        /// the allocation strategy.
+        /// </para>
+        /// </summary>
+        public OnDemandCapacityReservationOptions CapacityReservationOptions
+        {
+            get { return this._capacityReservationOptions; }
+            set { this._capacityReservationOptions = value; }
+        }
+
+        // Check to see if CapacityReservationOptions property is set
+        internal bool IsSetCapacityReservationOptions()
+        {
+            return this._capacityReservationOptions != null;
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OnDemandProvisioningSpecification Object
+    /// Response Unmarshaller for OnDemandCapacityReservationOptions Object
     /// </summary>  
-    public class OnDemandProvisioningSpecificationUnmarshaller : IUnmarshaller<OnDemandProvisioningSpecification, XmlUnmarshallerContext>, IUnmarshaller<OnDemandProvisioningSpecification, JsonUnmarshallerContext>
+    public class OnDemandCapacityReservationOptionsUnmarshaller : IUnmarshaller<OnDemandCapacityReservationOptions, XmlUnmarshallerContext>, IUnmarshaller<OnDemandCapacityReservationOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OnDemandProvisioningSpecification IUnmarshaller<OnDemandProvisioningSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OnDemandCapacityReservationOptions IUnmarshaller<OnDemandCapacityReservationOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OnDemandProvisioningSpecification Unmarshall(JsonUnmarshallerContext context)
+        public OnDemandCapacityReservationOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OnDemandProvisioningSpecification unmarshalledObject = new OnDemandProvisioningSpecification();
+            OnDemandCapacityReservationOptions unmarshalledObject = new OnDemandCapacityReservationOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AllocationStrategy", targetDepth))
+                if (context.TestExpression("CapacityReservationPreference", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CapacityReservationPreference = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CapacityReservationOptions", targetDepth))
+                if (context.TestExpression("UsageStrategy", targetDepth))
                 {
-                    var unmarshaller = OnDemandCapacityReservationOptionsUnmarshaller.Instance;
-                    unmarshalledObject.CapacityReservationOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UsageStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
 
 
-        private static OnDemandProvisioningSpecificationUnmarshaller _instance = new OnDemandProvisioningSpecificationUnmarshaller();        
+        private static OnDemandCapacityReservationOptionsUnmarshaller _instance = new OnDemandCapacityReservationOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OnDemandProvisioningSpecificationUnmarshaller Instance
+        public static OnDemandCapacityReservationOptionsUnmarshaller Instance
         {
             get
             {
