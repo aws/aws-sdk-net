@@ -1,3 +1,17 @@
+### 3.5.125.0 (2021-03-08 19:23 UTC)
+* AutoScaling (3.5.4.4)
+	* Documentation updates for autoscaling for capacity-optimized-prioritized SpotAllocationStrategy
+* ElasticMapReduce (3.5.5.0)
+	* Amazon EMR customers can now specify how EC2 On-Demand Capacity Reservations are used in their EMR clusters with instance fleets using allocation strategy.
+* KinesisVideoArchivedMedia (3.5.2.0)
+	* Increase the maximum HLS and MPEG-DASH manifest size from 1,000 to 5,000 fragments.
+* Lambda (3.5.8.0)
+	* Documentation updates for Lambda. Constraint updates to AddLayerVersionPermission's Action and OrganizationId parameters, and AddPermission's Principal and SourceAccount parameters.
+* S3 (3.5.9.4)
+	* Amazon S3 Documentation updates
+* S3Control (3.5.5.12)
+	* Documentation updates for Amazon S3
+
 ### 3.5.124.0 (2021-03-05 19:22 UTC)
 * Appflow (3.5.4.4)
 	* Documentation updates for arn:aws:trebuchet:::service:v1:decb008d-e0d8-44a4-b93c-092f0355d523
