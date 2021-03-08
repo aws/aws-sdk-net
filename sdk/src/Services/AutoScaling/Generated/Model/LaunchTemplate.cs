@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// You specify these parameters as part of a mixed instances policy. 
+    /// You specify these properties as part of a mixed instances policy. 
     /// </para>
     ///  
     /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Overrides. 
         /// <para>
-        /// Any parameters that you specify override the same parameters in the launch template.
+        /// Any properties that you specify override the same properties in the launch template.
         /// If not provided, Amazon EC2 Auto Scaling uses the instance type specified in the launch
         /// template when it launches an instance. 
         /// </para>

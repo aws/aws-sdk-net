@@ -62,11 +62,11 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid
         /// value is <code>prioritized</code>, which is also the default value. This strategy
-        /// uses the order of instance types in the overrides to define the launch priority of
-        /// each instance type. The first instance type in the array is prioritized higher than
-        /// the last. If all your On-Demand capacity cannot be fulfilled using your highest priority
-        /// instance, then the Auto Scaling groups launches the remaining capacity using the second
-        /// priority instance type, and so on.
+        /// uses the order of instance types in the <code>LaunchTemplateOverrides</code> to define
+        /// the launch priority of each instance type. The first instance type in the array is
+        /// prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled
+        /// using your highest priority instance, then the Auto Scaling groups launches the remaining
+        /// capacity using the second priority instance type, and so on.
         /// </para>
         /// </summary>
         public string OnDemandAllocationStrategy
@@ -127,13 +127,24 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SpotAllocationStrategy. 
         /// <para>
-        /// Indicates how to allocate instances across Spot Instance pools. If the allocation
-        /// strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group
-        /// launches instances using Spot pools that are optimally chosen based on the available
-        /// Spot capacity. If the allocation strategy is <code>lowest-price</code>, the Auto Scaling
-        /// group launches instances using the Spot pools with the lowest price, and evenly allocates
-        /// your instances across the number of Spot pools that you specify. Defaults to <code>lowest-price</code>
+        /// Indicates how to allocate instances across Spot Instance pools. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches
+        /// instances using the Spot pools with the lowest price, and evenly allocates your instances
+        /// across the number of Spot pools that you specify. Defaults to <code>lowest-price</code>
         /// if not specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto
+        /// Scaling group launches instances using Spot pools that are optimally chosen based
+        /// on the available Spot capacity. Alternatively, you can use <code>capacity-optimized-prioritized</code>
+        /// and set the order of instance types in the list of launch template overrides from
+        /// highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling
+        /// honors the instance type priorities on a best-effort basis but optimizes for capacity
+        /// first. 
         /// </para>
         /// </summary>
         public string SpotAllocationStrategy
