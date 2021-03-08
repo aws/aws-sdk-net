@@ -32,7 +32,7 @@ namespace Amazon.S3Control.Model
     /// Specifies when an object transitions to a specified storage class. For more information
     /// about Amazon S3 Lifecycle configuration rules, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">
     /// Transitioning objects using Amazon S3 Lifecycle</a> in the <i>Amazon Simple Storage
-    /// Service Developer Guide</i>.
+    /// Service User Guide</i>.
     /// </summary>
     public partial class Transition
     {

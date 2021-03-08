@@ -32,19 +32,19 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the DeleteBucketPolicy operation.
     /// <note> 
     /// <para>
-    /// This API operation deletes an Amazon S3 on Outposts bucket policy. To delete an S3
-    /// bucket policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html">DeleteBucketPolicy</a>
+    /// This action deletes an Amazon S3 on Outposts bucket policy. To delete an S3 bucket
+    /// policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html">DeleteBucketPolicy</a>
     /// in the <i>Amazon Simple Storage Service API</i>. 
     /// </para>
     ///  </note> 
     /// <para>
-    /// This implementation of the DELETE operation uses the policy subresource to delete
-    /// the policy of a specified Amazon S3 on Outposts bucket. If you are using an identity
-    /// other than the root user of the AWS account that owns the bucket, the calling identity
-    /// must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
-    /// Outposts bucket and belong to the bucket owner's account to use this operation. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-    /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
+    /// This implementation of the DELETE action uses the policy subresource to delete the
+    /// policy of a specified Amazon S3 on Outposts bucket. If you are using an identity other
+    /// than the root user of the AWS account that owns the bucket, the calling identity must
+    /// have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
+    /// Outposts bucket and belong to the bucket owner's account to use this action. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+    /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -56,8 +56,8 @@ namespace Amazon.S3Control.Model
     ///  <important> 
     /// <para>
     /// As a security precaution, the root user of the AWS account that owns a bucket can
-    /// always use this operation, even if the policy explicitly denies the root user the
-    /// ability to perform this action.
+    /// always use this action, even if the policy explicitly denies the root user the ability
+    /// to perform this action.
     /// </para>
     ///  </important> 
     /// <para>

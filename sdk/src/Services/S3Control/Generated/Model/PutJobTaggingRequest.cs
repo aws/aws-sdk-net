@@ -41,7 +41,7 @@ namespace Amazon.S3Control.Model
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>,
     /// modify that tag set, and use this action to replace the tag set with the one you modified.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-    /// access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer
+    /// access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service User
     /// Guide</i>. 
     /// </para>
     ///   <note> <ul> <li> 
@@ -84,7 +84,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> </li> </ul> </note>  
     /// <para>
-    /// To use this operation, you must have permission to perform the <code>s3:PutJobTagging</code>
+    /// To use this action, you must have permission to perform the <code>s3:PutJobTagging</code>
     /// action.
     /// </para>
     ///  

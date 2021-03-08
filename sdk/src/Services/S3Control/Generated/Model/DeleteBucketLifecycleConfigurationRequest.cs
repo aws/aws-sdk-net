@@ -32,8 +32,8 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the DeleteBucketLifecycleConfiguration operation.
     /// <note> 
     /// <para>
-    /// This API action deletes an Amazon S3 on Outposts bucket's lifecycle configuration.
-    /// To delete an S3 bucket's lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+    /// This action deletes an Amazon S3 on Outposts bucket's lifecycle configuration. To
+    /// delete an S3 bucket's lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
     /// in the <i>Amazon Simple Storage Service API</i>. 
     /// </para>
     ///  </note> 
@@ -43,11 +43,11 @@ namespace Amazon.S3Control.Model
     /// associated with the bucket. Your objects never expire, and Amazon S3 on Outposts no
     /// longer automatically deletes any objects on the basis of rules contained in the deleted
     /// lifecycle configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-    /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
+    /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// To use this operation, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
+    /// To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
     /// action. By default, the bucket owner has this permission and the Outposts bucket owner
     /// can grant this permission to others.
     /// </para>

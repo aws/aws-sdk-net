@@ -34,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// data types in your operation, you will remove the retention from your objects. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
     /// S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple Storage
-    /// Service Developer Guide</i>.
+    /// Service User Guide</i>.
     /// </summary>
     public partial class S3Retention
     {

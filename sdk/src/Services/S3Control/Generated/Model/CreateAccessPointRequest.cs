@@ -33,7 +33,7 @@ namespace Amazon.S3Control.Model
     /// Creates an access point and associates it with the specified bucket. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
     /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service
-    /// Developer Guide</i>.
+    /// User Guide</i>.
     /// 
     ///   
     /// <para>
@@ -62,8 +62,8 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="AmazonS3/latest/dev/S3onOutposts.html">Using Amazon
-    /// S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide </i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+    /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide </i>.
     /// </para>
     ///  
     /// <para>

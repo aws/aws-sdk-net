@@ -39,7 +39,7 @@ namespace Amazon.S3Control.Model
     ///  </note> 
     /// <para>
     /// Sets the tags for an Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-    /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// To use this operation, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code>
+    /// To use this action, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code>
     /// action. The Outposts bucket owner has this permission by default and can grant this
     /// permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
     /// Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
@@ -94,8 +94,8 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Description: A conflicting conditional operation is currently in progress against
-    /// this resource. Try again.
+    /// Description: A conflicting conditional action is currently in progress against this
+    /// resource. Try again.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>

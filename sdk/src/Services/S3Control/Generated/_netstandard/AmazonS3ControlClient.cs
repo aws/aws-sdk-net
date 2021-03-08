@@ -38,7 +38,7 @@ namespace Amazon.S3Control
     /// <summary>
     /// Implementation for accessing S3Control
     ///
-    /// AWS S3 Control provides access to Amazon S3 control plane operations.
+    /// AWS S3 Control provides access to Amazon S3 control plane actions.
     /// </summary>
 #if NETSTANDARD13
     [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
@@ -289,7 +289,7 @@ namespace Amazon.S3Control
         /// Creates an access point and associates it with the specified bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
         /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service
-        /// Developer Guide</i>.
+        /// User Guide</i>.
         /// 
         ///   
         /// <para>
@@ -318,8 +318,8 @@ namespace Amazon.S3Control
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="AmazonS3/latest/dev/S3onOutposts.html">Using Amazon
-        /// S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide </i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide </i>.
         /// </para>
         ///  
         /// <para>
@@ -386,8 +386,8 @@ namespace Amazon.S3Control
         /// <summary>
         /// <note> 
         /// <para>
-        /// This API operation creates an Amazon S3 on Outposts bucket. To create an S3 bucket,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create
+        /// This action creates an Amazon S3 on Outposts bucket. To create an S3 bucket, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create
         /// Bucket</a> in the <i>Amazon Simple Storage Service API</i>. 
         /// </para>
         ///  </note> 
@@ -395,7 +395,7 @@ namespace Amazon.S3Control
         /// Creates a new Outposts bucket. By creating the bucket, you become the bucket owner.
         /// To create an Outposts bucket, you must have S3 on Outposts. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -405,25 +405,22 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// S3 on Outposts buckets do not support 
+        /// S3 on Outposts buckets support:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ACLs. Instead, configure access point policies to manage access to buckets.
+        /// Tags
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Public access. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Object Lock
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Bucket Location constraint
+        /// LifecycleConfigurations for deleting expired objects
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// For a list of Amazon S3 features not supported by Amazon S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html#S3OnOutpostsFeatureLimitations">Unsupported
+        /// Amazon S3 features</a>.
+        /// </para>
+        ///  
         /// <para>
         /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
         /// Outposts endpoint hostname prefix and <code>x-amz-outpost-id</code> in your API request,
@@ -500,14 +497,14 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// You can use S3 Batch Operations to perform large-scale batch operations on Amazon
-        /// S3 objects. Batch Operations can run a single operation on lists of Amazon S3 objects
-        /// that you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
-        /// Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3
+        /// objects. Batch Operations can run a single action on lists of Amazon S3 objects that
+        /// you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// This operation creates a S3 Batch Operations job.
+        /// This action creates a S3 Batch Operations job.
         /// </para>
         ///   
         /// <para>
@@ -711,8 +708,8 @@ namespace Amazon.S3Control
         /// <summary>
         /// <note> 
         /// <para>
-        /// This API operation deletes an Amazon S3 on Outposts bucket. To delete an S3 bucket,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// This action deletes an Amazon S3 on Outposts bucket. To delete an S3 bucket, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// in the <i>Amazon Simple Storage Service API</i>. 
         /// </para>
         ///  </note> 
@@ -720,7 +717,7 @@ namespace Amazon.S3Control
         /// Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions
         /// and delete markers) in the bucket must be deleted before the bucket itself can be
         /// deleted. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -785,8 +782,8 @@ namespace Amazon.S3Control
         /// <summary>
         /// <note> 
         /// <para>
-        /// This API action deletes an Amazon S3 on Outposts bucket's lifecycle configuration.
-        /// To delete an S3 bucket's lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+        /// This action deletes an Amazon S3 on Outposts bucket's lifecycle configuration. To
+        /// delete an S3 bucket's lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// in the <i>Amazon Simple Storage Service API</i>. 
         /// </para>
         ///  </note> 
@@ -796,11 +793,11 @@ namespace Amazon.S3Control
         /// associated with the bucket. Your objects never expire, and Amazon S3 on Outposts no
         /// longer automatically deletes any objects on the basis of rules contained in the deleted
         /// lifecycle configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
+        /// To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
         /// action. By default, the bucket owner has this permission and the Outposts bucket owner
         /// can grant this permission to others.
         /// </para>
@@ -869,19 +866,19 @@ namespace Amazon.S3Control
         /// <summary>
         /// <note> 
         /// <para>
-        /// This API operation deletes an Amazon S3 on Outposts bucket policy. To delete an S3
-        /// bucket policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html">DeleteBucketPolicy</a>
+        /// This action deletes an Amazon S3 on Outposts bucket policy. To delete an S3 bucket
+        /// policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html">DeleteBucketPolicy</a>
         /// in the <i>Amazon Simple Storage Service API</i>. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// This implementation of the DELETE operation uses the policy subresource to delete
-        /// the policy of a specified Amazon S3 on Outposts bucket. If you are using an identity
-        /// other than the root user of the AWS account that owns the bucket, the calling identity
-        /// must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
-        /// Outposts bucket and belong to the bucket owner's account to use this operation. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// This implementation of the DELETE action uses the policy subresource to delete the
+        /// policy of a specified Amazon S3 on Outposts bucket. If you are using an identity other
+        /// than the root user of the AWS account that owns the bucket, the calling identity must
+        /// have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
+        /// Outposts bucket and belong to the bucket owner's account to use this action. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -893,8 +890,8 @@ namespace Amazon.S3Control
         ///  <important> 
         /// <para>
         /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action.
+        /// always use this action, even if the policy explicitly denies the root user the ability
+        /// to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -961,18 +958,18 @@ namespace Amazon.S3Control
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket
+        /// This action deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket
         /// tags, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
         /// in the <i>Amazon Simple Storage Service API</i>. 
         /// </para>
         ///  </note> 
         /// <para>
         /// Deletes the tags from the Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <code>PutBucketTagging</code>
+        /// To use this action, you must have permission to perform the <code>PutBucketTagging</code>
         /// action. By default, the bucket owner has this permission and can grant this permission
         /// to others. 
         /// </para>
@@ -1037,7 +1034,7 @@ namespace Amazon.S3Control
         /// Removes the entire tag set from the specified S3 Batch Operations job. To use this
         /// operation, you must have permission to perform the <code>s3:DeleteJobTagging</code>
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-        /// access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer
+        /// access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service User
         /// Guide</i>.
         /// 
         ///   
@@ -1157,14 +1154,14 @@ namespace Amazon.S3Control
         /// Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage
         /// Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
-        /// Simple Storage Service Developer Guide</i>.
+        /// Simple Storage Service User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfiguration</code>
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
-        /// Developer Guide</i>.
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1203,14 +1200,14 @@ namespace Amazon.S3Control
         /// Deletes the Amazon S3 Storage Lens configuration tags. For more information about
         /// S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
-        /// Simple Storage Service Developer Guide</i>.
+        /// Simple Storage Service User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfigurationTagging</code>
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
-        /// Developer Guide</i>.
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1248,7 +1245,7 @@ namespace Amazon.S3Control
         /// <summary>
         /// Retrieves the configuration parameters and status for a Batch Operations job. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
-        /// Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
         ///   
         /// <para>
@@ -1473,16 +1470,15 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Gets an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">
-        /// Using Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-        /// Guide</i>.
+        /// Using Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
         ///  
         /// <para>
         /// If you are using an identity other than the root user of the AWS account that owns
         /// the bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
         /// permissions on the specified bucket and belong to the bucket owner's account in order
-        /// to use this operation. Only users from Outposts bucket owner account with the right
-        /// permissions can perform actions on an Outposts bucket. 
+        /// to use this action. Only users from Outposts bucket owner account with the right permissions
+        /// can perform actions on an Outposts bucket. 
         /// </para>
         ///  
         /// <para>
@@ -1555,8 +1551,8 @@ namespace Amazon.S3Control
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation gets an Amazon S3 on Outposts bucket's lifecycle configuration. To
-        /// get an S3 bucket's lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// This action gets an Amazon S3 on Outposts bucket's lifecycle configuration. To get
+        /// an S3 bucket's lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// in the <i>Amazon Simple Storage Service API</i>. 
         /// </para>
         ///  </note> 
@@ -1565,11 +1561,11 @@ namespace Amazon.S3Control
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> and for information about lifecycle configuration, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">
-        /// Object Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Object Lifecycle Management</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
+        /// To use this action, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
         /// action. The Outposts bucket owner has this permission, by default. The bucket owner
         /// can grant this permission to others. For more information about permissions, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
@@ -1663,14 +1659,14 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Returns the policy of a specified Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you are using an identity other than the root user of the AWS account that owns
         /// the bucket, the calling identity must have the <code>GetBucketPolicy</code> permissions
         /// on the specified bucket and belong to the bucket owner's account in order to use this
-        /// operation.
+        /// action.
         /// </para>
         ///  
         /// <para>
@@ -1682,8 +1678,8 @@ namespace Amazon.S3Control
         ///  <important> 
         /// <para>
         /// As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action.
+        /// always use this action, even if the policy explicitly denies the root user the ability
+        /// to perform this action.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1755,7 +1751,7 @@ namespace Amazon.S3Control
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags,
+        /// This action gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
         /// in the <i>Amazon Simple Storage Service API</i>. 
         /// </para>
@@ -1763,11 +1759,11 @@ namespace Amazon.S3Control
         /// <para>
         /// Returns the tag set associated with the Outposts bucket. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <code>GetBucketTagging</code>
+        /// To use this action, you must have permission to perform the <code>GetBucketTagging</code>
         /// action. By default, the bucket owner has this permission and can grant this permission
         /// to others.
         /// </para>
@@ -1844,7 +1840,7 @@ namespace Amazon.S3Control
         /// Returns the tags on an S3 Batch Operations job. To use this operation, you must have
         /// permission to perform the <code>s3:GetJobTagging</code> action. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-        /// access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer
+        /// access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service User
         /// Guide</i>.
         /// 
         ///   
@@ -1968,14 +1964,14 @@ namespace Amazon.S3Control
         /// <summary>
         /// Gets the Amazon S3 Storage Lens configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
-        /// Simple Storage Service Developer Guide</i>.
+        /// Simple Storage Service User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:GetStorageLensConfiguration</code>
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
-        /// Developer Guide</i>.
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2014,14 +2010,14 @@ namespace Amazon.S3Control
         /// Gets the tags of Amazon S3 Storage Lens configuration. For more information about
         /// S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
-        /// Simple Storage Service Developer Guide</i>.
+        /// Simple Storage Service User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:GetStorageLensConfigurationTagging</code>
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
-        /// Developer Guide</i>.
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2128,7 +2124,7 @@ namespace Amazon.S3Control
         /// <summary>
         /// Lists current S3 Batch Operations jobs and jobs that have ended within the last 30
         /// days for the AWS account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
-        /// Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2199,7 +2195,7 @@ namespace Amazon.S3Control
         /// <summary>
         /// Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated
         /// sender of the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2244,14 +2240,14 @@ namespace Amazon.S3Control
         /// Gets a list of Amazon S3 Storage Lens configurations. For more information about S3
         /// Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
-        /// Simple Storage Service Developer Guide</i>.
+        /// Simple Storage Service User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:ListStorageLensConfigurations</code>
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
-        /// Developer Guide</i>.
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2431,14 +2427,14 @@ namespace Amazon.S3Control
         /// <para>
         /// Applies an Amazon S3 bucket policy to an Outposts bucket. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you are using an identity other than the root user of the AWS account that owns
         /// the Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code>
         /// permissions on the specified Outposts bucket and belong to the bucket owner's account
-        /// in order to use this operation.
+        /// in order to use this action.
         /// </para>
         ///  
         /// <para>
@@ -2450,8 +2446,8 @@ namespace Amazon.S3Control
         ///  <important> 
         /// <para>
         ///  As a security precaution, the root user of the AWS account that owns a bucket can
-        /// always use this operation, even if the policy explicitly denies the root user the
-        /// ability to perform this action. 
+        /// always use this action, even if the policy explicitly denies the root user the ability
+        /// to perform this action. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -2525,7 +2521,7 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Sets the tags for an Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2545,7 +2541,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  </note> 
         /// <para>
-        /// To use this operation, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code>
+        /// To use this action, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code>
         /// action. The Outposts bucket owner has this permission by default and can grant this
         /// permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
         /// Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
@@ -2580,8 +2576,8 @@ namespace Amazon.S3Control
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Description: A conflicting conditional operation is currently in progress against
-        /// this resource. Try again.
+        /// Description: A conflicting conditional action is currently in progress against this
+        /// resource. Try again.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -2660,7 +2656,7 @@ namespace Amazon.S3Control
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>,
         /// modify that tag set, and use this action to replace the tag set with the one you modified.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-        /// access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer
+        /// access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service User
         /// Guide</i>. 
         /// </para>
         ///   <note> <ul> <li> 
@@ -2703,7 +2699,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  </li> </ul> </li> </ul> </note>  
         /// <para>
-        /// To use this operation, you must have permission to perform the <code>s3:PutJobTagging</code>
+        /// To use this action, you must have permission to perform the <code>s3:PutJobTagging</code>
         /// action.
         /// </para>
         ///  
@@ -2825,15 +2821,14 @@ namespace Amazon.S3Control
         /// <summary>
         /// Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage
         /// Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
-        /// with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer
-        /// Guide</i>.
+        /// with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code>
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
-        /// Developer Guide</i>.
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2872,14 +2867,14 @@ namespace Amazon.S3Control
         /// Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more
         /// information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
         /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
-        /// Simple Storage Service Developer Guide</i>.
+        /// Simple Storage Service User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// To use this action, you must have permission to perform the <code>s3:PutStorageLensConfigurationTagging</code>
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
-        /// Developer Guide</i>.
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2917,7 +2912,7 @@ namespace Amazon.S3Control
         /// <summary>
         /// Updates an existing S3 Batch Operations job's priority. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
-        /// Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
         ///   
         /// <para>
@@ -2989,9 +2984,9 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Updates the status for the specified job. Use this operation to confirm that you want
+        /// Updates the status for the specified job. Use this action to confirm that you want
         /// to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
-        /// Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
         ///   
         /// <para>

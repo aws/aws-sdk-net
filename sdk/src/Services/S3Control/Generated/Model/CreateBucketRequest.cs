@@ -32,8 +32,8 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the CreateBucket operation.
     /// <note> 
     /// <para>
-    /// This API operation creates an Amazon S3 on Outposts bucket. To create an S3 bucket,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create
+    /// This action creates an Amazon S3 on Outposts bucket. To create an S3 bucket, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create
     /// Bucket</a> in the <i>Amazon Simple Storage Service API</i>. 
     /// </para>
     ///  </note> 
@@ -41,7 +41,7 @@ namespace Amazon.S3Control.Model
     /// Creates a new Outposts bucket. By creating the bucket, you become the bucket owner.
     /// To create an Outposts bucket, you must have S3 on Outposts. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-    /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
+    /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -51,25 +51,22 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// S3 on Outposts buckets do not support 
+    /// S3 on Outposts buckets support:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// ACLs. Instead, configure access point policies to manage access to buckets.
+    /// Tags
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Public access. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Object Lock
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Bucket Location constraint
+    /// LifecycleConfigurations for deleting expired objects
     /// </para>
     ///  </li> </ul> 
+    /// <para>
+    /// For a list of Amazon S3 features not supported by Amazon S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html#S3OnOutpostsFeatureLimitations">Unsupported
+    /// Amazon S3 features</a>.
+    /// </para>
+    ///  
     /// <para>
     /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
     /// Outposts endpoint hostname prefix and <code>x-amz-outpost-id</code> in your API request,

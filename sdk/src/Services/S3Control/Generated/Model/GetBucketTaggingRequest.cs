@@ -32,7 +32,7 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the GetBucketTagging operation.
     /// <note> 
     /// <para>
-    /// This operation gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags,
+    /// This action gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags,
     /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
     /// in the <i>Amazon Simple Storage Service API</i>. 
     /// </para>
@@ -40,11 +40,11 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// Returns the tag set associated with the Outposts bucket. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-    /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// To use this operation, you must have permission to perform the <code>GetBucketTagging</code>
+    /// To use this action, you must have permission to perform the <code>GetBucketTagging</code>
     /// action. By default, the bucket owner has this permission and can grant this permission
     /// to others.
     /// </para>
