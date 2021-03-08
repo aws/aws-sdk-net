@@ -36,9 +36,16 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
-    /// of each function in addition to the unpublished version. To get more information about
-    /// a function or version, use <a>GetFunction</a>.
+    /// of each function in addition to the unpublished version. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a>
+    /// fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus,
+    /// LastUpdateStatusReason, LastUpdateStatusReasonCode) for a function or version, use
+    /// <a>GetFunction</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListFunctionsRequest : AmazonLambdaRequest
     {
@@ -108,7 +115,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of functions to return.
+        /// The maximum number of functions to return in the response. Note that <code>ListFunctions</code>
+        /// returns a maximum of 50 items in each response, even if you set the number higher.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

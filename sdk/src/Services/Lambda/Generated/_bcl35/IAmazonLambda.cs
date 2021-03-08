@@ -2375,9 +2375,16 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
-        /// of each function in addition to the unpublished version. To get more information about
-        /// a function or version, use <a>GetFunction</a>.
+        /// of each function in addition to the unpublished version. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a>
+        /// fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus,
+        /// LastUpdateStatusReason, LastUpdateStatusReasonCode) for a function or version, use
+        /// <a>GetFunction</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
@@ -2400,9 +2407,16 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
-        /// of each function in addition to the unpublished version. To get more information about
-        /// a function or version, use <a>GetFunction</a>.
+        /// of each function in addition to the unpublished version. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a>
+        /// fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus,
+        /// LastUpdateStatusReason, LastUpdateStatusReasonCode) for a function or version, use
+        /// <a>GetFunction</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
         /// 

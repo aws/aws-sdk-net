@@ -211,6 +211,7 @@ namespace Amazon.Lambda.Model
         /// another account.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=12)]
         public string SourceAccount
         {
             get { return this._sourceAccount; }
