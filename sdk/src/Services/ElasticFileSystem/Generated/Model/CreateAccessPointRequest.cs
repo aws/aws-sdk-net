@@ -37,7 +37,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// system path is exposed as the access point's root directory. Applications using the
     /// access point can only access data in its own directory and below. To learn more, see
     /// <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
-    /// a File System Using EFS Access Points</a>.
+    /// a file system using EFS access points</a>.
     /// 
     ///  
     /// <para>
@@ -119,7 +119,14 @@ namespace Amazon.ElasticFileSystem.Model
         /// <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates
         /// it and applies the <code>CreationInfo</code> settings when a client connects to an
         /// access point. When specifying a <code>RootDirectory</code>, you need to provide the
-        /// <code>Path</code>, and the <code>CreationInfo</code> is optional.
+        /// <code>Path</code>, and the <code>CreationInfo</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid,
+        /// OwnGID, and permissions for the directory. If you do not provide this information,
+        /// Amazon EFS does not create the root directory. If the root directory does not exist,
+        /// attempts to mount using the access point will fail.
         /// </para>
         /// </summary>
         public RootDirectory RootDirectory

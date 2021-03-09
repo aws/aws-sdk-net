@@ -61,6 +61,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// the NextMarker in the subsequent request to fetch the additional descriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NextToken
         {
             get { return this._nextToken; }

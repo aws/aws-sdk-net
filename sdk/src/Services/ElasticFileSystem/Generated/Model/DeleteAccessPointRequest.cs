@@ -50,7 +50,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the access point that you want to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string AccessPointId
         {
             get { return this._accessPointId; }

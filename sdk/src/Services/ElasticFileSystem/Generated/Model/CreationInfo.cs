@@ -35,6 +35,13 @@ namespace Amazon.ElasticFileSystem.Model
     /// it with these settings when a client connects to the access point. When specifying
     /// <code>CreationInfo</code>, you must include values for all properties. 
     /// 
+    ///  
+    /// <para>
+    /// Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid,
+    /// OwnGID, and permissions for the directory. If you do not provide this information,
+    /// Amazon EFS does not create the root directory. If the root directory does not exist,
+    /// attempts to mount using the access point will fail.
+    /// </para>
     ///  <important> 
     /// <para>
     /// If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code>
@@ -95,7 +102,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// format of an octal number representing the file's mode bits.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=3, Max=4)]
         public string Permissions
         {
             get { return this._permissions; }

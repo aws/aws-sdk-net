@@ -72,6 +72,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// of access point descriptions if the response payload was paginated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -91,7 +92,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// EFS file systems and access points using this API endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string ResourceId
         {
             get { return this._resourceId; }

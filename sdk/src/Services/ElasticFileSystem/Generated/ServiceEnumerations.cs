@@ -47,6 +47,10 @@ namespace Amazon.ElasticFileSystem
         /// </summary>
         public static readonly LifeCycleState Deleting = new LifeCycleState("deleting");
         /// <summary>
+        /// Constant Error for LifeCycleState
+        /// </summary>
+        public static readonly LifeCycleState Error = new LifeCycleState("error");
+        /// <summary>
         /// Constant Updating for LifeCycleState
         /// </summary>
         public static readonly LifeCycleState Updating = new LifeCycleState("updating");

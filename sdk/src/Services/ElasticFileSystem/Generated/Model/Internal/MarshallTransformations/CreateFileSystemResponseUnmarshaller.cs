@@ -51,6 +51,18 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AvailabilityZoneId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AvailabilityZoneName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AvailabilityZoneName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -187,6 +199,10 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThroughputLimitExceeded"))
                 {
                     return ThroughputLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedAvailabilityZone"))
+                {
+                    return UnsupportedAvailabilityZoneExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonElasticFileSystemException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

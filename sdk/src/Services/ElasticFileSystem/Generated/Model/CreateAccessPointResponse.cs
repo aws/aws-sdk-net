@@ -50,6 +50,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The unique Amazon Resource Name (ARN) associated with the access point.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string AccessPointArn
         {
             get { return this._accessPointArn; }
@@ -68,6 +69,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the access point, assigned by Amazon EFS.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string AccessPointId
         {
             get { return this._accessPointId; }

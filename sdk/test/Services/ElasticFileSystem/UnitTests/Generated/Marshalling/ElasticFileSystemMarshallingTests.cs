@@ -491,6 +491,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ElasticFileSystem")]
+        public void CreateFileSystem_UnsupportedAvailabilityZoneExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateFileSystem");
+
+            var request = InstantiateClassGenerator.Execute<CreateFileSystemRequest>();
+            var marshaller = new CreateFileSystemRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateFileSystem", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedAvailabilityZoneException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedAvailabilityZoneException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateFileSystemResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
         public void CreateMountTargetMarshallTest()
         {
             var operation = service_model.FindOperation("CreateMountTarget");
@@ -516,6 +548,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = unmarshaller.Unmarshall(context)
                 as CreateMountTargetResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateMountTarget_AvailabilityZonesMismatchExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateMountTarget");
+
+            var request = InstantiateClassGenerator.Execute<CreateMountTargetRequest>();
+            var marshaller = new CreateMountTargetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateMountTarget", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AvailabilityZonesMismatchException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AvailabilityZonesMismatchException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateMountTargetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

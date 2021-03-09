@@ -29,8 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// The backup policy for the file system, showing the curent status. If <code>ENABLED</code>,
-    /// the file system is being backed up.
+    /// The backup policy for the file system used to create automatic daily backups. If status
+    /// has a value of <code>ENABLED</code>, the file system is being automatically backed
+    /// up. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic
+    /// backups</a>.
     /// </summary>
     public partial class BackupPolicy
     {
@@ -43,22 +45,21 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i> <code>ENABLED</code> - EFS is automatically backing up the file system.</i> 
+        ///  <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i> <code>ENABLING</code> - EFS is turning on automatic backups for the file system.</i>
-        /// 
+        ///  <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file
+        /// system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i> <code>DISABLED</code> - automatic back ups are turned off for the file system.</i>
-        /// 
+        ///  <b> <code>DISABLED</code> </b> - automatic back ups are turned off for the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i> <code>DISABLED</code> - EFS is turning off automatic backups for the file system.</i>
-        /// 
+        ///  <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file
+        /// system.
         /// </para>
         ///  </li> </ul>
         /// </summary>

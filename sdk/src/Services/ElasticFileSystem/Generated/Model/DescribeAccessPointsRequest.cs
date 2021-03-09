@@ -55,6 +55,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// with <code>FileSystemId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string AccessPointId
         {
             get { return this._accessPointId; }
@@ -115,6 +116,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// in the subsequent request to fetch the next page of access point descriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NextToken
         {
             get { return this._nextToken; }

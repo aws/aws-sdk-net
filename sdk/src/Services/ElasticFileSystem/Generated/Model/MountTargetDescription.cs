@@ -47,9 +47,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
         /// <para>
-        /// The unique and consistent identifier of the Availability Zone (AZ) that the mount
-        /// target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1
-        /// Region and it has the same location in every AWS account.
+        /// The unique and consistent identifier of the Availability Zone that the mount target
+        /// resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region
+        /// and it has the same location in every AWS account.
         /// </para>
         /// </summary>
         public string AvailabilityZoneId
@@ -67,12 +67,13 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneName. 
         /// <para>
-        /// The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently
-        /// mapped to names for each AWS account. For example, the Availability Zone <code>us-east-1a</code>
-        /// for your AWS account might not be the same location as <code>us-east-1a</code> for
-        /// another AWS account.
+        /// The name of the Availability Zone in which the mount target is located. Availability
+        /// Zones are independently mapped to names for each AWS account. For example, the Availability
+        /// Zone <code>us-east-1a</code> for your AWS account might not be the same location as
+        /// <code>us-east-1a</code> for another AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string AvailabilityZoneName
         {
             get { return this._availabilityZoneName; }
@@ -221,7 +222,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+        /// The virtual private cloud (VPC) ID that the mount target is configured in.
         /// </para>
         /// </summary>
         public string VpcId

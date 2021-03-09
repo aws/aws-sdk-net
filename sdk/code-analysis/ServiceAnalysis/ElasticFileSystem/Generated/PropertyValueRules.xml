@@ -4,6 +4,7 @@
     <property>Amazon.ElasticFileSystem.Model.CreateAccessPointRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateAccessPointRequest.FileSystemId</property>
@@ -11,9 +12,20 @@
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.CreateAccessPointResponse.AccessPointArn</property>
+    <max>128</max>
+    <pattern>^arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:access-point/fsap-[0-9a-f]{8,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.CreateAccessPointResponse.AccessPointId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:access-point/fsap-[0-9a-f]{8,40}|fsap-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateAccessPointResponse.ClientToken</property>
     <min>1</min>
     <max>64</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateAccessPointResponse.FileSystemId</property>
@@ -24,6 +36,12 @@
     <property>Amazon.ElasticFileSystem.Model.CreateAccessPointResponse.OwnerId</property>
     <max>14</max>
     <pattern>^(\d{12})|(\d{4}-\d{4}-\d{4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.CreateFileSystemRequest.AvailabilityZoneName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateFileSystemRequest.CreationToken</property>
@@ -39,6 +57,12 @@
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateFileSystemRequest.ProvisionedThroughputInMibps</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.CreateFileSystemResponse.AvailabilityZoneName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateFileSystemResponse.CreationToken</property>
@@ -92,6 +116,12 @@
     <pattern>^subnet-[0-9a-f]{8,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.CreateMountTargetResponse.AvailabilityZoneName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateMountTargetResponse.FileSystemId</property>
     <max>128</max>
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
@@ -125,6 +155,11 @@
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.DeleteAccessPointRequest.AccessPointId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:access-point/fsap-[0-9a-f]{8,40}|fsap-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.DeleteFileSystemRequest.FileSystemId</property>
     <max>128</max>
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
@@ -146,6 +181,11 @@
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.DescribeAccessPointsRequest.AccessPointId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:access-point/fsap-[0-9a-f]{8,40}|fsap-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.DescribeAccessPointsRequest.FileSystemId</property>
     <max>128</max>
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
@@ -153,6 +193,18 @@
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.DescribeAccessPointsRequest.MaxResults</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.DescribeAccessPointsRequest.NextToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.DescribeAccessPointsResponse.NextToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.DescribeBackupPolicyRequest.FileSystemId</property>
@@ -168,6 +220,12 @@
     <property>Amazon.ElasticFileSystem.Model.DescribeFileSystemPolicyResponse.FileSystemId</property>
     <max>128</max>
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.DescribeFileSystemPolicyResponse.Policy</property>
+    <min>1</min>
+    <max>20000</max>
+    <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.DescribeFileSystemsRequest.CreationToken</property>
@@ -206,6 +264,11 @@
     <property>Amazon.ElasticFileSystem.Model.DescribeLifecycleConfigurationRequest.FileSystemId</property>
     <max>128</max>
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.DescribeMountTargetsRequest.AccessPointId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:access-point/fsap-[0-9a-f]{8,40}|fsap-[0-9a-f]{8,40})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.DescribeMountTargetsRequest.FileSystemId</property>
@@ -278,6 +341,23 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.ListTagsForResourceRequest.NextToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.ListTagsForResourceRequest.ResourceId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:(access-point/fsap|file-system/fs)-[0-9a-f]{8,40}|fs(ap)?-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.ListTagsForResourceResponse.NextToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.ModifyMountTargetSecurityGroupsRequest.MountTargetId</property>
     <min>13</min>
     <max>45</max>
@@ -294,14 +374,36 @@
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.PutFileSystemPolicyRequest.Policy</property>
+    <min>1</min>
+    <max>20000</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.PutFileSystemPolicyResponse.FileSystemId</property>
     <max>128</max>
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.PutFileSystemPolicyResponse.Policy</property>
+    <min>1</min>
+    <max>20000</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.PutLifecycleConfigurationRequest.FileSystemId</property>
     <max>128</max>
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.TagResourceRequest.ResourceId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:(access-point/fsap|file-system/fs)-[0-9a-f]{8,40}|fs(ap)?-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.UntagResourceRequest.ResourceId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:(access-point/fsap|file-system/fs)-[0-9a-f]{8,40}|fs(ap)?-[0-9a-f]{8,40})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.UpdateFileSystemRequest.FileSystemId</property>
@@ -311,6 +413,12 @@
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.UpdateFileSystemRequest.ProvisionedThroughputInMibps</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.UpdateFileSystemResponse.AvailabilityZoneName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.UpdateFileSystemResponse.CreationToken</property>
@@ -347,6 +455,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.AccessPointAlreadyExistsException.AccessPointId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:access-point/fsap-[0-9a-f]{8,40}|fsap-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.AccessPointAlreadyExistsException.ErrorCode</property>
     <min>1</min>
   </property-value-rule>
@@ -356,6 +469,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.AccessPointNotFoundException.ErrorCode</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.AvailabilityZonesMismatchException.ErrorCode</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -374,6 +491,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreationInfo.Permissions</property>
+    <min>3</min>
+    <max>4</max>
     <pattern>^[0-7]{3,4}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -471,6 +590,7 @@
     <property>Amazon.ElasticFileSystem.Model.RootDirectory.Path</property>
     <min>1</min>
     <max>100</max>
+    <pattern>^(\/|(\/(?!\.)+[^$#&lt;&gt;;`|&amp;?{}^*/\n]+){1,4})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.SecurityGroupLimitExceededException.ErrorCode</property>

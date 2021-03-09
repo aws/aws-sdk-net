@@ -29,43 +29,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the AWS Backup service is not available in the Region in which the request
-    /// was made.
+    /// Returned if the Availability Zone that was specified for a mount target is different
+    /// from the Availability Zone that was specified for One Zone storage classes. For more
+    /// information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional
+    /// and One Zone storage redundancy</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ValidationException : AmazonElasticFileSystemException
+    public partial class AvailabilityZonesMismatchException : AmazonElasticFileSystemException
     {
         private string _errorCode;
 
         /// <summary>
-        /// Constructs a new ValidationException with the specified error
+        /// Constructs a new AvailabilityZonesMismatchException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ValidationException(string message) 
+        public AvailabilityZonesMismatchException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of AvailabilityZonesMismatchException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ValidationException(string message, Exception innerException) 
+        public AvailabilityZonesMismatchException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of AvailabilityZonesMismatchException
         /// </summary>
         /// <param name="innerException"></param>
-        public ValidationException(Exception innerException) 
+        public AvailabilityZonesMismatchException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of AvailabilityZonesMismatchException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,30 +75,30 @@ namespace Amazon.ElasticFileSystem.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ValidationException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public AvailabilityZonesMismatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of AvailabilityZonesMismatchException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ValidationException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public AvailabilityZonesMismatchException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ValidationException class with serialized data.
+        /// Constructs a new instance of the AvailabilityZonesMismatchException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected AvailabilityZonesMismatchException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
             this.ErrorCode = (string)info.GetValue("ErrorCode", typeof(string));
@@ -127,7 +129,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property ErrorCode.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public string ErrorCode
         {
             get { return this._errorCode; }

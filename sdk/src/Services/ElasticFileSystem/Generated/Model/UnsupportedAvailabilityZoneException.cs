@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// 
+    /// Returned if the requested Amazon EFS functionality is not available in the specified
+    /// Availability Zone.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

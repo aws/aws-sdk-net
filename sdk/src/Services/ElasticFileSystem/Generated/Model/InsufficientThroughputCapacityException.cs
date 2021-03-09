@@ -33,7 +33,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// might be returned when you try to create a file system in provisioned throughput mode,
     /// when you attempt to increase the provisioned throughput of an existing file system,
     /// or when you attempt to change an existing file system from bursting to provisioned
-    /// throughput mode.
+    /// throughput mode. Try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

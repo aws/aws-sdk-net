@@ -18,7 +18,9 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
 
             var response = client.CreateFileSystem(new CreateFileSystemRequest 
             {
+                Backup = true,
                 CreationToken = "tokenstring",
+                Encrypted = true,
                 PerformanceMode = "generalPurpose",
                 Tags = new List<Tag> {
                     new Tag {
@@ -30,6 +32,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
 
             DateTime creationTime = response.CreationTime;
             string creationToken = response.CreationToken;
+            bool encrypted = response.Encrypted;
             string fileSystemId = response.FileSystemId;
             string lifeCycleState = response.LifeCycleState;
             int numberOfMountTargets = response.NumberOfMountTargets;

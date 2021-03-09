@@ -61,6 +61,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20000)]
         public string Policy
         {
             get { return this._policy; }

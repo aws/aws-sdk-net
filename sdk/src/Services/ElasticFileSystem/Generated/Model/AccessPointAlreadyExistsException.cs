@@ -130,7 +130,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property AccessPointId.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string AccessPointId
         {
             get { return this._accessPointId; }

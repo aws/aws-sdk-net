@@ -50,7 +50,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Specifies the EFS resource that you want to remove tags from.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -66,7 +66,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The keys of the key:value tag pairs that you want to remove from the specified EFS
+        /// The keys of the key-value tag pairs that you want to remove from the specified EFS
         /// resource.
         /// </para>
         /// </summary>

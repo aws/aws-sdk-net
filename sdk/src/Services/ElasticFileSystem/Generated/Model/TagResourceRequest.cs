@@ -50,7 +50,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID specifying the EFS resource that you want to create a tag for. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string ResourceId
         {
             get { return this._resourceId; }

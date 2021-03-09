@@ -33,6 +33,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// </summary>
     public partial class FileSystemDescription
     {
+        private string _availabilityZoneId;
+        private string _availabilityZoneName;
         private DateTime? _creationTime;
         private string _creationToken;
         private bool? _encrypted;
@@ -48,6 +50,48 @@ namespace Amazon.ElasticFileSystem.Model
         private FileSystemSize _sizeInBytes;
         private List<Tag> _tags = new List<Tag>();
         private ThroughputMode _throughputMode;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The unique and consistent identifier of the Availability Zone in which the file system's
+        /// One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability
+        /// Zone ID for the us-east-1 AWS Region, and it has the same location in every AWS account.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneName. 
+        /// <para>
+        /// Describes the AWS Availability Zone in which the file system is located, and is valid
+        /// only for file systems using One Zone storage classes. For more information, see <a
+        /// href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage
+        /// classes</a> in the <i>Amazon EFS User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string AvailabilityZoneName
+        {
+            get { return this._availabilityZoneName; }
+            set { this._availabilityZoneName = value; }
+        }
+
+        // Check to see if AvailabilityZoneName property is set
+        internal bool IsSetAvailabilityZoneName()
+        {
+            return this._availabilityZoneName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -266,11 +310,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property ProvisionedThroughputInMibps. 
         /// <para>
-        /// The throughput, measured in MiB/s, that you want to provision for a file system. Valid
-        /// values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>.
-        /// The limit on throughput is 1024 MiB/s. You can get these limits increased by contacting
-        /// AWS Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-        /// EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> 
+        /// The amount of provisioned throughput, measured in MiB/s, for the file system. Valid
+        /// for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -335,13 +376,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property ThroughputMode. 
         /// <para>
-        /// The throughput mode for a file system. There are two throughput modes to choose from
-        /// for your file system: <code>bursting</code> and <code>provisioned</code>. If you set
-        /// <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value
-        /// for <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-        /// throughput in Provisioned Throughput mode or change between the throughput modes as
-        /// long as it’s been more than 24 hours since the last decrease or throughput mode change.
-        /// 
+        /// Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+        /// modes</a> in the <i>Amazon EFS User Guide</i>. 
         /// </para>
         /// </summary>
         public ThroughputMode ThroughputMode

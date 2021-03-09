@@ -71,6 +71,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// is not included in your request. Accepts either an access point ID or ARN as input.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string AccessPointId
         {
             get { return this._accessPointId; }
