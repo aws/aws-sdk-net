@@ -1707,6 +1707,67 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CreateDBProxyEndpoint
+
+
+        /// <summary>
+        /// Creates a <code>DBProxyEndpoint</code>. Only applies to proxies that are associated
+        /// with Aurora DB clusters. You can use DB proxy endpoints to specify read/write or read-only
+        /// access to the DB cluster. You can also use DB proxy endpoints to access a DB proxy
+        /// through a different VPC than the proxy's default VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBProxyEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateDBProxyEndpoint service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointAlreadyExistsException">
+        /// The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointQuotaExceededException">
+        /// The DB proxy already has the maximum number of endpoints.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxyEndpoint">REST API Reference for CreateDBProxyEndpoint Operation</seealso>
+        CreateDBProxyEndpointResponse CreateDBProxyEndpoint(CreateDBProxyEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDBProxyEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBProxyEndpoint operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDBProxyEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxyEndpoint">REST API Reference for CreateDBProxyEndpoint Operation</seealso>
+        IAsyncResult BeginCreateDBProxyEndpoint(CreateDBProxyEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDBProxyEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDBProxyEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateDBProxyEndpointResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxyEndpoint">REST API Reference for CreateDBProxyEndpoint Operation</seealso>
+        CreateDBProxyEndpointResponse EndCreateDBProxyEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDBSecurityGroup
 
 
@@ -2586,7 +2647,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Deletes an existing proxy.
+        /// Deletes an existing DB proxy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxy service method.</param>
         /// 
@@ -2626,6 +2687,55 @@ namespace Amazon.RDS
         /// <returns>Returns a  DeleteDBProxyResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">REST API Reference for DeleteDBProxy Operation</seealso>
         DeleteDBProxyResponse EndDeleteDBProxy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteDBProxyEndpoint
+
+
+        /// <summary>
+        /// Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the
+        /// DB proxy using the endpoint that you defined. The endpoint that you delete might have
+        /// provided capabilities such as read/write or read-only operations, or using a different
+        /// VPC than the DB proxy's default VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxyEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBProxyEndpoint service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyEndpointStateException">
+        /// You can't perform this operation while the DB proxy endpoint is in a particular state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxyEndpoint">REST API Reference for DeleteDBProxyEndpoint Operation</seealso>
+        DeleteDBProxyEndpointResponse DeleteDBProxyEndpoint(DeleteDBProxyEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDBProxyEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxyEndpoint operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDBProxyEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxyEndpoint">REST API Reference for DeleteDBProxyEndpoint Operation</seealso>
+        IAsyncResult BeginDeleteDBProxyEndpoint(DeleteDBProxyEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDBProxyEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDBProxyEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteDBProxyEndpointResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxyEndpoint">REST API Reference for DeleteDBProxyEndpoint Operation</seealso>
+        DeleteDBProxyEndpointResponse EndDeleteDBProxyEndpoint(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3939,6 +4049,53 @@ namespace Amazon.RDS
         /// <returns>Returns a  DescribeDBProxiesResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
         DescribeDBProxiesResponse EndDescribeDBProxies(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeDBProxyEndpoints
+
+
+        /// <summary>
+        /// Returns information about DB proxy endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBProxyEndpoints service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints">REST API Reference for DescribeDBProxyEndpoints Operation</seealso>
+        DescribeDBProxyEndpointsResponse DescribeDBProxyEndpoints(DescribeDBProxyEndpointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBProxyEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyEndpoints operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBProxyEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints">REST API Reference for DescribeDBProxyEndpoints Operation</seealso>
+        IAsyncResult BeginDescribeDBProxyEndpoints(DescribeDBProxyEndpointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBProxyEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBProxyEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBProxyEndpointsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints">REST API Reference for DescribeDBProxyEndpoints Operation</seealso>
+        DescribeDBProxyEndpointsResponse EndDescribeDBProxyEndpoints(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6103,6 +6260,59 @@ namespace Amazon.RDS
         /// <returns>Returns a  ModifyDBProxyResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">REST API Reference for ModifyDBProxy Operation</seealso>
         ModifyDBProxyResponse EndModifyDBProxy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyDBProxyEndpoint
+
+
+        /// <summary>
+        /// Changes the settings for an existing DB proxy endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBProxyEndpoint service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointAlreadyExistsException">
+        /// The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyEndpointStateException">
+        /// You can't perform this operation while the DB proxy endpoint is in a particular state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyEndpoint">REST API Reference for ModifyDBProxyEndpoint Operation</seealso>
+        ModifyDBProxyEndpointResponse ModifyDBProxyEndpoint(ModifyDBProxyEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBProxyEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyEndpoint operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBProxyEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyEndpoint">REST API Reference for ModifyDBProxyEndpoint Operation</seealso>
+        IAsyncResult BeginModifyDBProxyEndpoint(ModifyDBProxyEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDBProxyEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBProxyEndpoint.</param>
+        /// 
+        /// <returns>Returns a  ModifyDBProxyEndpointResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyEndpoint">REST API Reference for ModifyDBProxyEndpoint Operation</seealso>
+        ModifyDBProxyEndpointResponse EndModifyDBProxyEndpoint(IAsyncResult asyncResult);
 
         #endregion
         

@@ -1224,6 +1224,45 @@ namespace Amazon.RDS
 
         #endregion
                 
+        #region  CreateDBProxyEndpoint
+
+
+
+        /// <summary>
+        /// Creates a <code>DBProxyEndpoint</code>. Only applies to proxies that are associated
+        /// with Aurora DB clusters. You can use DB proxy endpoints to specify read/write or read-only
+        /// access to the DB cluster. You can also use DB proxy endpoints to access a DB proxy
+        /// through a different VPC than the proxy's default VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBProxyEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDBProxyEndpoint service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointAlreadyExistsException">
+        /// The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointQuotaExceededException">
+        /// The DB proxy already has the maximum number of endpoints.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxyEndpoint">REST API Reference for CreateDBProxyEndpoint Operation</seealso>
+        Task<CreateDBProxyEndpointResponse> CreateDBProxyEndpointAsync(CreateDBProxyEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDBSecurityGroup
 
 
@@ -1796,7 +1835,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Deletes an existing proxy.
+        /// Deletes an existing DB proxy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxy service method.</param>
         /// <param name="cancellationToken">
@@ -1813,6 +1852,33 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">REST API Reference for DeleteDBProxy Operation</seealso>
         Task<DeleteDBProxyResponse> DeleteDBProxyAsync(DeleteDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteDBProxyEndpoint
+
+
+
+        /// <summary>
+        /// Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the
+        /// DB proxy using the endpoint that you defined. The endpoint that you delete might have
+        /// provided capabilities such as read/write or read-only operations, or using a different
+        /// VPC than the DB proxy's default VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxyEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDBProxyEndpoint service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyEndpointStateException">
+        /// You can't perform this operation while the DB proxy endpoint is in a particular state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxyEndpoint">REST API Reference for DeleteDBProxyEndpoint Operation</seealso>
+        Task<DeleteDBProxyEndpointResponse> DeleteDBProxyEndpointAsync(DeleteDBProxyEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2592,6 +2658,31 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
         Task<DescribeDBProxiesResponse> DescribeDBProxiesAsync(DescribeDBProxiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeDBProxyEndpoints
+
+
+
+        /// <summary>
+        /// Returns information about DB proxy endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBProxyEndpoints service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints">REST API Reference for DescribeDBProxyEndpoints Operation</seealso>
+        Task<DescribeDBProxyEndpointsResponse> DescribeDBProxyEndpointsAsync(DescribeDBProxyEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4000,6 +4091,37 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">REST API Reference for ModifyDBProxy Operation</seealso>
         Task<ModifyDBProxyResponse> ModifyDBProxyAsync(ModifyDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyDBProxyEndpoint
+
+
+
+        /// <summary>
+        /// Changes the settings for an existing DB proxy endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDBProxyEndpoint service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointAlreadyExistsException">
+        /// The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyEndpointStateException">
+        /// You can't perform this operation while the DB proxy endpoint is in a particular state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyEndpoint">REST API Reference for ModifyDBProxyEndpoint Operation</seealso>
+        Task<ModifyDBProxyEndpointResponse> ModifyDBProxyEndpointAsync(ModifyDBProxyEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

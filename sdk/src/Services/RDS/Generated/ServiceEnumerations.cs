@@ -229,6 +229,122 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type DBProxyEndpointStatus.
+    /// </summary>
+    public class DBProxyEndpointStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for DBProxyEndpointStatus
+        /// </summary>
+        public static readonly DBProxyEndpointStatus Available = new DBProxyEndpointStatus("available");
+        /// <summary>
+        /// Constant Creating for DBProxyEndpointStatus
+        /// </summary>
+        public static readonly DBProxyEndpointStatus Creating = new DBProxyEndpointStatus("creating");
+        /// <summary>
+        /// Constant Deleting for DBProxyEndpointStatus
+        /// </summary>
+        public static readonly DBProxyEndpointStatus Deleting = new DBProxyEndpointStatus("deleting");
+        /// <summary>
+        /// Constant IncompatibleNetwork for DBProxyEndpointStatus
+        /// </summary>
+        public static readonly DBProxyEndpointStatus IncompatibleNetwork = new DBProxyEndpointStatus("incompatible-network");
+        /// <summary>
+        /// Constant InsufficientResourceLimits for DBProxyEndpointStatus
+        /// </summary>
+        public static readonly DBProxyEndpointStatus InsufficientResourceLimits = new DBProxyEndpointStatus("insufficient-resource-limits");
+        /// <summary>
+        /// Constant Modifying for DBProxyEndpointStatus
+        /// </summary>
+        public static readonly DBProxyEndpointStatus Modifying = new DBProxyEndpointStatus("modifying");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DBProxyEndpointStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DBProxyEndpointStatus FindValue(string value)
+        {
+            return FindValue<DBProxyEndpointStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DBProxyEndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DBProxyEndpointTargetRole.
+    /// </summary>
+    public class DBProxyEndpointTargetRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READ_ONLY for DBProxyEndpointTargetRole
+        /// </summary>
+        public static readonly DBProxyEndpointTargetRole READ_ONLY = new DBProxyEndpointTargetRole("READ_ONLY");
+        /// <summary>
+        /// Constant READ_WRITE for DBProxyEndpointTargetRole
+        /// </summary>
+        public static readonly DBProxyEndpointTargetRole READ_WRITE = new DBProxyEndpointTargetRole("READ_WRITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DBProxyEndpointTargetRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DBProxyEndpointTargetRole FindValue(string value)
+        {
+            return FindValue<DBProxyEndpointTargetRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DBProxyEndpointTargetRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DBProxyStatus.
     /// </summary>
     public class DBProxyStatus : ConstantClass
@@ -591,6 +707,10 @@ namespace Amazon.RDS
         /// </summary>
         public static readonly TargetHealthReason CONNECTION_FAILED = new TargetHealthReason("CONNECTION_FAILED");
         /// <summary>
+        /// Constant INVALID_REPLICATION_STATE for TargetHealthReason
+        /// </summary>
+        public static readonly TargetHealthReason INVALID_REPLICATION_STATE = new TargetHealthReason("INVALID_REPLICATION_STATE");
+        /// <summary>
         /// Constant PENDING_PROXY_CAPACITY for TargetHealthReason
         /// </summary>
         public static readonly TargetHealthReason PENDING_PROXY_CAPACITY = new TargetHealthReason("PENDING_PROXY_CAPACITY");
@@ -628,6 +748,60 @@ namespace Amazon.RDS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetHealthReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetRole.
+    /// </summary>
+    public class TargetRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READ_ONLY for TargetRole
+        /// </summary>
+        public static readonly TargetRole READ_ONLY = new TargetRole("READ_ONLY");
+        /// <summary>
+        /// Constant READ_WRITE for TargetRole
+        /// </summary>
+        public static readonly TargetRole READ_WRITE = new TargetRole("READ_WRITE");
+        /// <summary>
+        /// Constant UNKNOWN for TargetRole
+        /// </summary>
+        public static readonly TargetRole UNKNOWN = new TargetRole("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetRole FindValue(string value)
+        {
+            return FindValue<TargetRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetRole(string value)
         {
             return FindValue(value);
         }

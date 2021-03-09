@@ -127,6 +127,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.UpdatedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("VpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("VpcSecurityGroupIds/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

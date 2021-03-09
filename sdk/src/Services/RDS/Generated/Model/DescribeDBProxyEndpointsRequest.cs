@@ -29,23 +29,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeDBProxies operation.
-    /// Returns information about DB proxies.
+    /// Container for the parameters to the DescribeDBProxyEndpoints operation.
+    /// Returns information about DB proxy endpoints.
     /// </summary>
-    public partial class DescribeDBProxiesRequest : AmazonRDSRequest
+    public partial class DescribeDBProxyEndpointsRequest : AmazonRDSRequest
     {
+        private string _dbProxyEndpointName;
         private string _dbProxyName;
         private List<Filter> _filters = new List<Filter>();
         private string _marker;
         private int? _maxRecords;
 
         /// <summary>
-        /// Gets and sets the property DBProxyName. 
+        /// Gets and sets the property DBProxyEndpointName. 
         /// <para>
-        /// The name of the DB proxy. If you omit this parameter, the output includes information
-        /// about all DB proxies owned by your AWS account ID.
+        /// The name of a DB proxy endpoint to describe. If you omit this parameter, the output
+        /// includes information about all DB proxy endpoints associated with the specified proxy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string DBProxyEndpointName
+        {
+            get { return this._dbProxyEndpointName; }
+            set { this._dbProxyEndpointName = value; }
+        }
+
+        // Check to see if DBProxyEndpointName property is set
+        internal bool IsSetDBProxyEndpointName()
+        {
+            return this._dbProxyEndpointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBProxyName. 
+        /// <para>
+        /// The name of the DB proxy whose endpoints you want to describe. If you omit this parameter,
+        /// the output includes information about all DB proxy endpoints associated with all your
+        /// DB proxies.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string DBProxyName
         {
             get { return this._dbProxyName; }

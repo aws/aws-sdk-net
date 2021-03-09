@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateDBProxy operation
+    /// Response Unmarshaller for ModifyDBProxyEndpoint operation
     /// </summary>  
-    public class CreateDBProxyResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ModifyDBProxyEndpointResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateDBProxyResponse response = new CreateDBProxyResponse();
+            ModifyDBProxyEndpointResponse response = new ModifyDBProxyEndpointResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("CreateDBProxyResult", 2))
+                    if(context.TestExpression("ModifyDBProxyEndpointResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateDBProxyResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ModifyDBProxyEndpointResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,10 +81,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("DBProxy", targetDepth))
+                    if (context.TestExpression("DBProxyEndpoint", targetDepth))
                     {
-                        var unmarshaller = DBProxyUnmarshaller.Instance;
-                        response.DBProxy = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DBProxyEndpointUnmarshaller.Instance;
+                        response.DBProxyEndpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -112,24 +112,28 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBProxyAlreadyExistsFault"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DBProxyEndpointAlreadyExistsFault"))
                 {
-                    return DBProxyAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DBProxyEndpointAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBProxyQuotaExceededFault"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DBProxyEndpointNotFoundFault"))
                 {
-                    return DBProxyQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DBProxyEndpointNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSubnet"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBProxyEndpointStateFault"))
                 {
-                    return InvalidSubnetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidDBProxyEndpointStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBProxyStateFault"))
+                {
+                    return InvalidDBProxyStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static CreateDBProxyResponseUnmarshaller _instance = new CreateDBProxyResponseUnmarshaller();        
+        private static ModifyDBProxyEndpointResponseUnmarshaller _instance = new ModifyDBProxyEndpointResponseUnmarshaller();        
 
-        internal static CreateDBProxyResponseUnmarshaller GetInstance()
+        internal static ModifyDBProxyEndpointResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +141,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDBProxyResponseUnmarshaller Instance
+        public static ModifyDBProxyEndpointResponseUnmarshaller Instance
         {
             get
             {

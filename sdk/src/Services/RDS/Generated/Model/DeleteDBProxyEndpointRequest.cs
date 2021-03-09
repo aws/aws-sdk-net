@@ -29,30 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDBProxy operation.
-    /// Deletes an existing DB proxy.
+    /// Container for the parameters to the DeleteDBProxyEndpoint operation.
+    /// Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the
+    /// DB proxy using the endpoint that you defined. The endpoint that you delete might have
+    /// provided capabilities such as read/write or read-only operations, or using a different
+    /// VPC than the DB proxy's default VPC.
     /// </summary>
-    public partial class DeleteDBProxyRequest : AmazonRDSRequest
+    public partial class DeleteDBProxyEndpointRequest : AmazonRDSRequest
     {
-        private string _dbProxyName;
+        private string _dbProxyEndpointName;
 
         /// <summary>
-        /// Gets and sets the property DBProxyName. 
+        /// Gets and sets the property DBProxyEndpointName. 
         /// <para>
-        /// The name of the DB proxy to delete.
+        /// The name of the DB proxy endpoint to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DBProxyName
+        [AWSProperty(Required=true, Min=1, Max=63)]
+        public string DBProxyEndpointName
         {
-            get { return this._dbProxyName; }
-            set { this._dbProxyName = value; }
+            get { return this._dbProxyEndpointName; }
+            set { this._dbProxyEndpointName = value; }
         }
 
-        // Check to see if DBProxyName property is set
-        internal bool IsSetDBProxyName()
+        // Check to see if DBProxyEndpointName property is set
+        internal bool IsSetDBProxyEndpointName()
         {
-            return this._dbProxyName != null;
+            return this._dbProxyEndpointName != null;
         }
 
     }

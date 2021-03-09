@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         private string _endpoint;
         private int? _port;
         private string _rdsResourceId;
+        private TargetRole _role;
         private string _targetArn;
         private TargetHealth _targetHealth;
         private string _trackedClusterId;
@@ -103,6 +104,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetRdsResourceId()
         {
             return this._rdsResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Role. 
+        /// <para>
+        /// A value that indicates whether the target of the proxy can be used for read/write
+        /// or read-only operations.
+        /// </para>
+        /// </summary>
+        public TargetRole Role
+        {
+            get { return this._role; }
+            set { this._role = value; }
+        }
+
+        // Check to see if Role property is set
+        internal bool IsSetRole()
+        {
+            return this._role != null;
         }
 
         /// <summary>

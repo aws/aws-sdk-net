@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDBProxy operation.
-    /// Deletes an existing DB proxy.
+    /// This is the response object from the DeleteDBProxyEndpoint operation.
     /// </summary>
-    public partial class DeleteDBProxyRequest : AmazonRDSRequest
+    public partial class DeleteDBProxyEndpointResponse : AmazonWebServiceResponse
     {
-        private string _dbProxyName;
+        private DBProxyEndpoint _dbProxyEndpoint;
 
         /// <summary>
-        /// Gets and sets the property DBProxyName. 
+        /// Gets and sets the property DBProxyEndpoint. 
         /// <para>
-        /// The name of the DB proxy to delete.
+        /// The data structure representing the details of the DB proxy endpoint that you delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DBProxyName
+        public DBProxyEndpoint DBProxyEndpoint
         {
-            get { return this._dbProxyName; }
-            set { this._dbProxyName = value; }
+            get { return this._dbProxyEndpoint; }
+            set { this._dbProxyEndpoint = value; }
         }
 
-        // Check to see if DBProxyName property is set
-        internal bool IsSetDBProxyName()
+        // Check to see if DBProxyEndpoint property is set
+        internal bool IsSetDBProxyEndpoint()
         {
-            return this._dbProxyName != null;
+            return this._dbProxyEndpoint != null;
         }
 
     }

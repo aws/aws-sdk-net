@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         private string _roleArn;
         private DBProxyStatus _status;
         private DateTime? _updatedDate;
+        private string _vpcId;
         private List<string> _vpcSecurityGroupIds = new List<string>();
         private List<string> _vpcSubnetIds = new List<string>();
 
@@ -154,8 +155,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The endpoint that you can use to connect to the proxy. You include the endpoint value
-        /// in the connection string for a database client application.
+        /// The endpoint that you can use to connect to the DB proxy. You include the endpoint
+        /// value in the connection string for a database client application.
         /// </para>
         /// </summary>
         public string Endpoint
@@ -290,6 +291,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetUpdatedDate()
         {
             return this._updatedDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// Provides the VPC ID of the DB proxy.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
         /// <summary>
