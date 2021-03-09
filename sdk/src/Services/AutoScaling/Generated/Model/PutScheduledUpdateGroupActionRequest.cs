@@ -30,9 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutScheduledUpdateGroupAction operation.
-    /// Creates or updates a scheduled scaling action for an Auto Scaling group. If you leave
-    /// a parameter unspecified when updating a scheduled scaling action, the corresponding
-    /// value remains unchanged.
+    /// Creates or updates a scheduled scaling action for an Auto Scaling group.
     /// 
     ///  
     /// <para>
@@ -51,6 +49,7 @@ namespace Amazon.AutoScaling.Model
         private string _scheduledActionName;
         private DateTime? _startTimeUtc;
         private DateTime? _timeUtc;
+        private string _timeZone;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -94,8 +93,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTimeUtc. 
         /// <para>
-        /// The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does
-        /// not perform the action after this time.
+        /// The date and time for the recurring schedule to end, in UTC.
         /// </para>
         /// </summary>
         public DateTime EndTimeUtc
@@ -149,15 +147,19 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Recurrence. 
         /// <para>
-        /// The recurring schedule for this action, in Unix cron syntax format. This format consists
-        /// of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
-        /// [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>).
-        /// For more information about this format, see <a href="http://crontab.org">Crontab</a>.
+        /// The recurring schedule for this action. This format consists of five fields separated
+        /// by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The
+        /// value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information
+        /// about this format, see <a href="http://crontab.org">Crontab</a>.
         /// </para>
         ///  
         /// <para>
         /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
         /// they form the boundaries of when the recurring action starts and stops.
+        /// </para>
+        ///  
+        /// <para>
+        /// Cron expressions use Universal Coordinated Time (UTC) by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -240,6 +242,32 @@ namespace Amazon.AutoScaling.Model
             return this._timeUtc.HasValue; 
         }
 
+        /// <summary>
+        /// Gets and sets the property TimeZone. 
+        /// <para>
+        /// Specifies the time zone for a cron expression. If a time zone is not provided, UTC
+        /// is used by default. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are the canonical names of the IANA time zones, derived from the IANA
+        /// Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>).
+        /// For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string TimeZone
+        {
+            get { return this._timeZone; }
+            set { this._timeZone = value; }
+        }
+
+        // Check to see if TimeZone property is set
+        internal bool IsSetTimeZone()
+        {
+            return this._timeZone != null;
+        }
+
 #region Backwards compatible properties
         private DateTime? _endTime;
         private DateTime? _startTime;
@@ -257,8 +285,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does
-        /// not perform the action after this time.
+        /// The date and time for the recurring schedule to end, in UTC.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

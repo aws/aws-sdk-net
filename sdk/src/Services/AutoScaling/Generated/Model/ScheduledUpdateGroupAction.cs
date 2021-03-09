@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         private string _scheduledActionName;
         private DateTime? _startTime;
         private DateTime? _time;
+        private string _timeZone;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -234,6 +235,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetTime()
         {
             return this._time.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeZone. 
+        /// <para>
+        /// The time zone for the cron expression.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string TimeZone
+        {
+            get { return this._timeZone; }
+            set { this._timeZone = value; }
+        }
+
+        // Check to see if TimeZone property is set
+        internal bool IsSetTimeZone()
+        {
+            return this._timeZone != null;
         }
 
     }

@@ -31,12 +31,6 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Describes information used for one or more scheduled scaling action updates in a <a>BatchPutScheduledUpdateGroupAction</a>
     /// operation.
-    /// 
-    ///  
-    /// <para>
-    /// When updating a scheduled scaling action, all optional parameters are left unchanged
-    /// if not specified.
-    /// </para>
     /// </summary>
     public partial class ScheduledUpdateGroupActionRequest
     {
@@ -47,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         private string _recurrence;
         private string _scheduledActionName;
         private DateTime? _startTimeUtc;
+        private string _timeZone;
 
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
@@ -70,8 +65,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTimeUtc. 
         /// <para>
-        /// The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does
-        /// not perform the action after this time.
+        /// The date and time for the recurring schedule to end, in UTC.
         /// </para>
         /// </summary>
         public DateTime EndTimeUtc
@@ -134,6 +128,10 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
         /// they form the boundaries of when the recurring action starts and stops.
+        /// </para>
+        ///  
+        /// <para>
+        /// Cron expressions use Universal Coordinated Time (UTC) by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -198,6 +196,32 @@ namespace Amazon.AutoScaling.Model
             return this._startTimeUtc.HasValue; 
         }
 
+        /// <summary>
+        /// Gets and sets the property TimeZone. 
+        /// <para>
+        /// Specifies the time zone for a cron expression. If a time zone is not provided, UTC
+        /// is used by default. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are the canonical names of the IANA time zones, derived from the IANA
+        /// Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>).
+        /// For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string TimeZone
+        {
+            get { return this._timeZone; }
+            set { this._timeZone = value; }
+        }
+
+        // Check to see if TimeZone property is set
+        internal bool IsSetTimeZone()
+        {
+            return this._timeZone != null;
+        }
+
 #region Backwards compatible properties
         private DateTime? _endTime;
         private DateTime? _startTime;
@@ -214,8 +238,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does
-        /// not perform the action after this time.
+        /// The date and time for the recurring schedule to end, in UTC.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

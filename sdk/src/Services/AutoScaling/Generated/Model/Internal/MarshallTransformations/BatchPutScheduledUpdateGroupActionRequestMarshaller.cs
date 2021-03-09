@@ -95,6 +95,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.StartTimeUtc));
                         }
+                        if(publicRequestlistValue.IsSetTimeZone())
+                        {
+                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TimeZone", StringUtils.FromString(publicRequestlistValue.TimeZone));
+                        }
                         publicRequestlistValueIndex++;
                     }
                 }

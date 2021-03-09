@@ -94,6 +94,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Time", StringUtils.FromDateTimeToISO8601(publicRequest.TimeUtc));
                 }
+                if(publicRequest.IsSetTimeZone())
+                {
+                    request.Parameters.Add("TimeZone", StringUtils.FromString(publicRequest.TimeZone));
+                }
             }
             return request;
         }

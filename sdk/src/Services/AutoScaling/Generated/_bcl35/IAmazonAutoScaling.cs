@@ -317,8 +317,6 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Creates or updates one or more scheduled scaling actions for an Auto Scaling group.
-        /// If you leave a parameter unspecified when updating a scheduled scaling action, the
-        /// corresponding value remains unchanged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutScheduledUpdateGroupAction service method.</param>
         /// 
@@ -3024,9 +3022,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Creates or updates a scheduled scaling action for an Auto Scaling group. If you leave
-        /// a parameter unspecified when updating a scheduled scaling action, the corresponding
-        /// value remains unchanged.
+        /// Creates or updates a scheduled scaling action for an Auto Scaling group.
         /// 
         ///  
         /// <para>
