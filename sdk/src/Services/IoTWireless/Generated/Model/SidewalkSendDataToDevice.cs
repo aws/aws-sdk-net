@@ -41,7 +41,7 @@ namespace Amazon.IoTWireless.Model
         /// The sequence number.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=16383)]
         public int Seq
         {
             get { return this._seq.GetValueOrDefault(); }

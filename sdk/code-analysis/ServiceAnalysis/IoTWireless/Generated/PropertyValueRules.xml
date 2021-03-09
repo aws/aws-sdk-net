@@ -877,6 +877,7 @@
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkSendDataToDevice.Seq</property>
     <min>0</min>
+    <max>16383</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkUpdateAccount.AppServerPrivateKey</property>
