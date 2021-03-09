@@ -91,6 +91,7 @@
       "output":{"shape":"DeleteProfilingGroupResponse"},
       "errors":[
         {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
         {"shape":"ValidationException"},
         {"shape":"ThrottlingException"},
         {"shape":"ResourceNotFoundException"}
@@ -759,9 +760,13 @@
         "values":{"shape":"FrameMetricValues"}
       }
     },
+    "FrameMetricValue":{
+      "type":"double",
+      "box":true
+    },
     "FrameMetricValues":{
       "type":"list",
-      "member":{"shape":"Double"}
+      "member":{"shape":"FrameMetricValue"}
     },
     "FrameMetrics":{
       "type":"list",
@@ -951,7 +956,8 @@
       },
       "error":{"httpStatusCode":500},
       "exception":true,
-      "fault":true
+      "fault":true,
+      "retryable":{"throttling":false}
     },
     "ListFindingsReportsRequest":{
       "type":"structure",
@@ -1436,7 +1442,8 @@
         "httpStatusCode":402,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "retryable":{"throttling":false}
     },
     "String":{"type":"string"},
     "Strings":{
@@ -1521,7 +1528,8 @@
         "httpStatusCode":429,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "retryable":{"throttling":false}
     },
     "Timestamp":{
       "type":"timestamp",

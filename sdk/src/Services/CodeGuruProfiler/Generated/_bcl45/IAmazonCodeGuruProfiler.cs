@@ -33,21 +33,35 @@ namespace Amazon.CodeGuruProfiler
     ///
     /// This section provides documentation for the Amazon CodeGuru Profiler API operations.
     /// 
-    ///  <pre><code> &lt;p&gt;Amazon CodeGuru Profiler collects runtime performance data from
-    /// your live applications, and provides recommendations that can help you fine-tune your
-    /// application performance. Using machine learning algorithms, CodeGuru Profiler can
-    /// help you find your most expensive lines of code and suggest ways you can improve efficiency
-    /// and remove CPU bottlenecks. &lt;/p&gt; &lt;p&gt;Amazon CodeGuru Profiler provides
-    /// different visualizations of profiling data to help you identify what code is running
-    /// on the CPU, see how much time is consumed, and suggest ways to reduce CPU utilization.
-    /// &lt;/p&gt; &lt;note&gt; &lt;p&gt;Amazon CodeGuru Profiler currently supports applications
-    /// written in all Java virtual machine (JVM) languages. While CodeGuru Profiler supports
-    /// both visualizations and recommendations for applications written in Java, it can also
-    /// generate visualizations and a subset of recommendations for applications written in
-    /// other JVM languages.&lt;/p&gt; &lt;/note&gt; &lt;p&gt; For more information, see &lt;a
-    /// href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-ug/what-is-codeguru-profiler.html&quot;&gt;What
-    /// is Amazon CodeGuru Profiler&lt;/a&gt; in the &lt;i&gt;Amazon CodeGuru Profiler User
-    /// Guide&lt;/i&gt;. &lt;/p&gt; </code></pre>
+    /// 
+    ///  
+    /// <para>
+    ///  Amazon CodeGuru Profiler collects runtime performance data from your live applications,
+    /// and provides recommendations that can help you fine-tune your application performance.
+    /// Using machine learning algorithms, CodeGuru Profiler can help you find your most expensive
+    /// lines of code and suggest ways you can improve efficiency and remove CPU bottlenecks.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    ///  Amazon CodeGuru Profiler provides different visualizations of profiling data to help
+    /// you identify what code is running on the CPU, see how much time is consumed, and suggest
+    /// ways to reduce CPU utilization. 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Amazon CodeGuru Profiler currently supports applications written in all Java virtual
+    /// machine (JVM) languages and Python. While CodeGuru Profiler supports both visualizations
+    /// and recommendations for applications written in Java, it can also generate visualizations
+    /// and a subset of recommendations for applications written in other JVM languages and
+    /// Python.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/what-is-codeguru-profiler.html">What
+    /// is Amazon CodeGuru Profiler</a> in the <i>Amazon CodeGuru Profiler User Guide</i>.
+    /// 
+    /// </para>
     /// </summary>
     public partial interface IAmazonCodeGuruProfiler : IAmazonService, IDisposable
     {
@@ -187,7 +201,7 @@ namespace Amazon.CodeGuruProfiler
 
         /// <summary>
         /// Used by profiler agents to report their current state and to receive remote configuration
-        /// updates. For example, <code>ConfigureAgent</code> can be used to tell and agent whether
+        /// updates. For example, <code>ConfigureAgent</code> can be used to tell an agent whether
         /// to profile or not and for how long to return profiling data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureAgent service method.</param>
@@ -212,7 +226,7 @@ namespace Amazon.CodeGuruProfiler
 
         /// <summary>
         /// Used by profiler agents to report their current state and to receive remote configuration
-        /// updates. For example, <code>ConfigureAgent</code> can be used to tell and agent whether
+        /// updates. For example, <code>ConfigureAgent</code> can be used to tell an agent whether
         /// to profile or not and for how long to return profiling data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureAgent service method.</param>
@@ -311,6 +325,10 @@ namespace Amazon.CodeGuruProfiler
         /// <param name="request">Container for the necessary parameters to execute the DeleteProfilingGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteProfilingGroup service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
         /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
@@ -337,6 +355,10 @@ namespace Amazon.CodeGuruProfiler
         /// </param>
         /// 
         /// <returns>The response from the DeleteProfilingGroup service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
         /// The server encountered an internal error and is unable to complete the request.
         /// </exception>

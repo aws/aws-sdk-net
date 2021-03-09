@@ -39,6 +39,8 @@ namespace Amazon.CodeGuruProfiler.Model
     public partial class ServiceQuotaExceededException : AmazonCodeGuruProfilerException
     {
 
+        private RetryableDetails _retryableDetails = new RetryableDetails(false);
+
         /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error
         /// message.
@@ -122,5 +124,16 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 #endif
 
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable
+        {
+            get
+            {
+                return _retryableDetails;
+            }
+        }
     }
 }
