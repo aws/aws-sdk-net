@@ -1,3 +1,20 @@
+### 3.5.126.0 (2021-03-09 19:15 UTC)
+* AutoScaling (3.5.5.0)
+	* EC2 Auto Scaling now supports setting a local time zone for cron expressions in scheduled actions, removing the need to adjust for Daylight Saving Time (DST)
+* CodeGuruProfiler (3.5.1.0)
+	* Update documentation to include Python. Add ConflictException for DeleteProfilingGroup. Add FrameMetricValue.
+* ElasticFileSystem (3.5.1.0)
+	* AWS EFS is introducing one-zone file systems.
+* IoTWireless (3.5.4.0)
+	* Add max value to Seq in SendDataToWirelessDevice API"
+* RDS (3.5.14.0)
+	* This release adds support for Amazon RDS Proxy endpoints.
+* Core 3.5.3.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.125.0 (2021-03-08 19:23 UTC)
 * AutoScaling (3.5.4.4)
 	* Documentation updates for autoscaling for capacity-optimized-prioritized SpotAllocationStrategy
