@@ -242,8 +242,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PluginName. 
         /// <para>
-        /// The name of the plugin for which you want detailed results. For example, aws:RunShellScript
-        /// is a plugin.
+        /// The name of the plugin, or <i>step name</i>, for which details are reported. For example,
+        /// <code>aws:RunShellScript</code> is a plugin.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4)]

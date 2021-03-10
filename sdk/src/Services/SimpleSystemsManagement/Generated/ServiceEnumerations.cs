@@ -4411,6 +4411,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly ResourceTypeForTagging OpsItem = new ResourceTypeForTagging("OpsItem");
         /// <summary>
+        /// Constant OpsMetadata for ResourceTypeForTagging
+        /// </summary>
+        public static readonly ResourceTypeForTagging OpsMetadata = new ResourceTypeForTagging("OpsMetadata");
+        /// <summary>
         /// Constant Parameter for ResourceTypeForTagging
         /// </summary>
         public static readonly ResourceTypeForTagging Parameter = new ResourceTypeForTagging("Parameter");

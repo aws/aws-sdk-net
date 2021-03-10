@@ -38,6 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private Dictionary<string, MetadataValue> _metadata = new Dictionary<string, MetadataValue>();
         private string _resourceId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Metadata. 
@@ -75,6 +76,38 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetResourceId()
         {
             return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Optional metadata that you assign to a resource. You can specify a maximum of five
+        /// tags for an OpsMetadata object. Tags enable you to categorize a resource in different
+        /// ways, such as by purpose, owner, or environment. For example, you might want to tag
+        /// an OpsMetadata object to identify an environment or target AWS Region. In this case,
+        /// you could specify the following key-value pairs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Key=Environment,Value=Production</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Region,Value=us-east-2</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -57,6 +57,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
+        /// OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon
+        /// Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created
+        /// from the strings that come after the word <code>opsmetadata</code> in the ARN. For
+        /// example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
+        /// has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
+        /// <code>/aws/ssm/MyGroup/appmanager</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// For the Document and Parameter values, use the name of the resource.
         /// </para>
         ///  <note> 
