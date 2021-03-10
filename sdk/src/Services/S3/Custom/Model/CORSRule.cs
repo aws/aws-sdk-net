@@ -64,10 +64,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// An optional unique identifier for the rule.
+        /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
         /// </summary>
         /// <remarks>
-        /// The ID value can be up to 255 characters long. The IDs help you find a rule in the configuration.
+        /// The IDs help you find a rule in the configuration.
         /// </remarks>
         public string Id
         {
