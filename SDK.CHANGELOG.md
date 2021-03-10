@@ -1,3 +1,13 @@
+### 3.5.127.0 (2021-03-10 19:52 UTC)
+* AccessAnalyzer (3.5.3.0)
+	* This release adds support to preview IAM Access Analyzer findings for a resource before deploying resource permission changes.
+* Backup (3.5.3.0)
+	* Added support for enabling continuous backups.
+* S3 (3.5.9.6)
+	* Updated documentation for the ID element in the CORSRule schema
+* SimpleSystemsManagement (3.5.11.0)
+	* Systems Manager support for tagging OpsMetadata.
+
 ### 3.5.126.0 (2021-03-09 19:15 UTC)
 * AutoScaling (3.5.5.0)
 	* EC2 Auto Scaling now supports setting a local time zone for cron expressions in scheduled actions, removing the need to adjust for Daylight Saving Time (DST)
