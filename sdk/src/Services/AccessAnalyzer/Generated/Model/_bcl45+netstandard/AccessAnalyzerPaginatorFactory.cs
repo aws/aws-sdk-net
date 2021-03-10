@@ -37,6 +37,22 @@ namespace Amazon.AccessAnalyzer.Model
         }
 
         /// <summary>
+        /// Paginator for ListAccessPreviewFindings operation
+        ///</summary>
+        public IListAccessPreviewFindingsPaginator ListAccessPreviewFindings(ListAccessPreviewFindingsRequest request) 
+        {
+            return new ListAccessPreviewFindingsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAccessPreviews operation
+        ///</summary>
+        public IListAccessPreviewsPaginator ListAccessPreviews(ListAccessPreviewsRequest request) 
+        {
+            return new ListAccessPreviewsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAnalyzedResources operation
         ///</summary>
         public IListAnalyzedResourcesPaginator ListAnalyzedResources(ListAnalyzedResourcesRequest request) 

@@ -11,6 +11,14 @@
     <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.CreateAccessPreviewRequest.AnalyzerArn</property>
+    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.CreateAccessPreviewResponse.Id</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.CreateAnalyzerRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
@@ -51,6 +59,14 @@
     <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.GetAccessPreviewRequest.AccessPreviewId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.GetAccessPreviewRequest.AnalyzerArn</property>
+    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetAnalyzedResourceRequest.AnalyzerArn</property>
     <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
   </property-value-rule>
@@ -78,6 +94,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetFindingRequest.AnalyzerArn</property>
+    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.ListAccessPreviewFindingsRequest.AccessPreviewId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.ListAccessPreviewFindingsRequest.AnalyzerArn</property>
+    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.ListAccessPreviewsRequest.AnalyzerArn</property>
     <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -123,6 +151,22 @@
     <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.AccessPreview.AnalyzerArn</property>
+    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.AccessPreview.Id</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.AccessPreviewSummary.AnalyzerArn</property>
+    <pattern>^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.AccessPreviewSummary.Id</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.AnalyzedResource.ResourceArn</property>
     <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$</pattern>
   </property-value-rule>
@@ -151,5 +195,9 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[A-Za-z][A-Za-z0-9_.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.VpcConfiguration.VpcId</property>
+    <pattern>^vpc-([0-9a-f]){8}(([0-9a-f]){9})?$</pattern>
   </property-value-rule>
 </property-value-rules>

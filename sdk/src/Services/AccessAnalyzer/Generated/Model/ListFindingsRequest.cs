@@ -34,7 +34,8 @@ namespace Amazon.AccessAnalyzer.Model
     /// 
     ///  
     /// <para>
-    /// To learn about filter keys that you can use to create an archive rule, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
+    /// To learn about filter keys that you can use to retrieve a list of findings, see <a
+    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
     /// Analyzer filter keys</a> in the <b>IAM User Guide</b>.
     /// </para>
     /// </summary>
@@ -49,7 +50,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property AnalyzerArn. 
         /// <para>
-        /// The ARN of the analyzer to retrieve findings from.
+        /// The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+        /// of the analyzer</a> to retrieve findings from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

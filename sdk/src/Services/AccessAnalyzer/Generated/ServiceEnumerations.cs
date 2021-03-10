@@ -25,6 +25,172 @@ namespace Amazon.AccessAnalyzer
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessPreviewStatus.
+    /// </summary>
+    public class AccessPreviewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for AccessPreviewStatus
+        /// </summary>
+        public static readonly AccessPreviewStatus COMPLETED = new AccessPreviewStatus("COMPLETED");
+        /// <summary>
+        /// Constant CREATING for AccessPreviewStatus
+        /// </summary>
+        public static readonly AccessPreviewStatus CREATING = new AccessPreviewStatus("CREATING");
+        /// <summary>
+        /// Constant FAILED for AccessPreviewStatus
+        /// </summary>
+        public static readonly AccessPreviewStatus FAILED = new AccessPreviewStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessPreviewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessPreviewStatus FindValue(string value)
+        {
+            return FindValue<AccessPreviewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessPreviewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AccessPreviewStatusReasonCode.
+    /// </summary>
+    public class AccessPreviewStatusReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for AccessPreviewStatusReasonCode
+        /// </summary>
+        public static readonly AccessPreviewStatusReasonCode INTERNAL_ERROR = new AccessPreviewStatusReasonCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVALID_CONFIGURATION for AccessPreviewStatusReasonCode
+        /// </summary>
+        public static readonly AccessPreviewStatusReasonCode INVALID_CONFIGURATION = new AccessPreviewStatusReasonCode("INVALID_CONFIGURATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessPreviewStatusReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessPreviewStatusReasonCode FindValue(string value)
+        {
+            return FindValue<AccessPreviewStatusReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessPreviewStatusReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AclPermission.
+    /// </summary>
+    public class AclPermission : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_CONTROL for AclPermission
+        /// </summary>
+        public static readonly AclPermission FULL_CONTROL = new AclPermission("FULL_CONTROL");
+        /// <summary>
+        /// Constant READ for AclPermission
+        /// </summary>
+        public static readonly AclPermission READ = new AclPermission("READ");
+        /// <summary>
+        /// Constant READ_ACP for AclPermission
+        /// </summary>
+        public static readonly AclPermission READ_ACP = new AclPermission("READ_ACP");
+        /// <summary>
+        /// Constant WRITE for AclPermission
+        /// </summary>
+        public static readonly AclPermission WRITE = new AclPermission("WRITE");
+        /// <summary>
+        /// Constant WRITE_ACP for AclPermission
+        /// </summary>
+        public static readonly AclPermission WRITE_ACP = new AclPermission("WRITE_ACP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AclPermission(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AclPermission FindValue(string value)
+        {
+            return FindValue<AclPermission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AclPermission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnalyzerStatus.
     /// </summary>
     public class AnalyzerStatus : ConstantClass
@@ -76,6 +242,60 @@ namespace Amazon.AccessAnalyzer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AnalyzerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FindingChangeType.
+    /// </summary>
+    public class FindingChangeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHANGED for FindingChangeType
+        /// </summary>
+        public static readonly FindingChangeType CHANGED = new FindingChangeType("CHANGED");
+        /// <summary>
+        /// Constant NEW for FindingChangeType
+        /// </summary>
+        public static readonly FindingChangeType NEW = new FindingChangeType("NEW");
+        /// <summary>
+        /// Constant UNCHANGED for FindingChangeType
+        /// </summary>
+        public static readonly FindingChangeType UNCHANGED = new FindingChangeType("UNCHANGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FindingChangeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingChangeType FindValue(string value)
+        {
+            return FindValue<FindingChangeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingChangeType(string value)
         {
             return FindValue(value);
         }
@@ -234,6 +454,104 @@ namespace Amazon.AccessAnalyzer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FindingStatusUpdate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KmsGrantOperation.
+    /// </summary>
+    public class KmsGrantOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateGrant for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation CreateGrant = new KmsGrantOperation("CreateGrant");
+        /// <summary>
+        /// Constant Decrypt for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation Decrypt = new KmsGrantOperation("Decrypt");
+        /// <summary>
+        /// Constant DescribeKey for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation DescribeKey = new KmsGrantOperation("DescribeKey");
+        /// <summary>
+        /// Constant Encrypt for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation Encrypt = new KmsGrantOperation("Encrypt");
+        /// <summary>
+        /// Constant GenerateDataKey for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation GenerateDataKey = new KmsGrantOperation("GenerateDataKey");
+        /// <summary>
+        /// Constant GenerateDataKeyPair for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation GenerateDataKeyPair = new KmsGrantOperation("GenerateDataKeyPair");
+        /// <summary>
+        /// Constant GenerateDataKeyPairWithoutPlaintext for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation GenerateDataKeyPairWithoutPlaintext = new KmsGrantOperation("GenerateDataKeyPairWithoutPlaintext");
+        /// <summary>
+        /// Constant GenerateDataKeyWithoutPlaintext for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation GenerateDataKeyWithoutPlaintext = new KmsGrantOperation("GenerateDataKeyWithoutPlaintext");
+        /// <summary>
+        /// Constant GetPublicKey for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation GetPublicKey = new KmsGrantOperation("GetPublicKey");
+        /// <summary>
+        /// Constant ReEncryptFrom for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation ReEncryptFrom = new KmsGrantOperation("ReEncryptFrom");
+        /// <summary>
+        /// Constant ReEncryptTo for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation ReEncryptTo = new KmsGrantOperation("ReEncryptTo");
+        /// <summary>
+        /// Constant RetireGrant for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation RetireGrant = new KmsGrantOperation("RetireGrant");
+        /// <summary>
+        /// Constant Sign for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation Sign = new KmsGrantOperation("Sign");
+        /// <summary>
+        /// Constant Verify for KmsGrantOperation
+        /// </summary>
+        public static readonly KmsGrantOperation Verify = new KmsGrantOperation("Verify");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KmsGrantOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KmsGrantOperation FindValue(string value)
+        {
+            return FindValue<KmsGrantOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KmsGrantOperation(string value)
         {
             return FindValue(value);
         }

@@ -238,7 +238,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the resource reported in the finding.
+        /// The type of the resource identified in the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

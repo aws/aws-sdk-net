@@ -165,7 +165,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <para>
         /// The <code>statusReason</code> provides more details about the current status of the
         /// analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code>
-        /// status is displayed. For an analyzer with organization as the type, this failure can
+        /// status is returned. For an analyzer with organization as the type, this failure can
         /// be due to an issue with creating the service-linked roles required in the member accounts
         /// of the AWS organization.
         /// </para>

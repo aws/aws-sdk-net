@@ -43,6 +43,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("AccessAnalyzer")]
+        public void ListAccessPreviewFindingsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAccessPreviewFindingsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAccessPreviewFindingsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAccessPreviewFindingsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAccessPreviewFindings(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAccessPreviewFindings(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AccessAnalyzer")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAccessPreviewFindingsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAccessPreviewFindingsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAccessPreviewFindingsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAccessPreviewFindings(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAccessPreviewFindings(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AccessAnalyzer")]
+        public void ListAccessPreviewsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAccessPreviewsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAccessPreviewsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAccessPreviewsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAccessPreviews(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAccessPreviews(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AccessAnalyzer")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAccessPreviewsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAccessPreviewsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAccessPreviewsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAccessPreviews(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAccessPreviews(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AccessAnalyzer")]
         public void ListAnalyzedResourcesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListAnalyzedResourcesRequest>();

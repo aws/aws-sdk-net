@@ -40,7 +40,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property AnalyzerArn. 
         /// <para>
-        /// The ARN of the analyzer to retrieve information from.
+        /// The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+        /// of the analyzer</a> to retrieve information from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
