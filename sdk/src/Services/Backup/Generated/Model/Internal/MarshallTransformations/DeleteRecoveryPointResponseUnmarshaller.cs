@@ -77,6 +77,10 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceStateException"))
+                {
+                    return InvalidResourceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
                 {
                     return MissingParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

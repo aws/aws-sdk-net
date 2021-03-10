@@ -29,16 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteRecoveryPoint operation.
-    /// Deletes the recovery point specified by a recovery point ID.
+    /// Container for the parameters to the DisassociateRecoveryPoint operation.
+    /// Deletes the specified continuous backup recovery point from AWS Backup and releases
+    /// control of that continuous backup to the source service, such as Amazon RDS. The source
+    /// service will continue to create and retain continuous backups using the lifecycle
+    /// that you specified in your original backup plan.
     /// 
     ///  
     /// <para>
-    /// If the recovery point ID belongs to a continuous backup, calling this endpoint deletes
-    /// the existing continuous backup and stops future continuous backup.
+    /// Does not support snapshot backup recovery points.
     /// </para>
     /// </summary>
-    public partial class DeleteRecoveryPointRequest : AmazonBackupRequest
+    public partial class DisassociateRecoveryPointRequest : AmazonBackupRequest
     {
         private string _backupVaultName;
         private string _recoveryPointArn;
@@ -46,9 +48,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultName. 
         /// <para>
-        /// The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the AWS Region where
-        /// they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// The unique name of an AWS Backup vault. Required.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,8 +67,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPointArn. 
         /// <para>
-        /// An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// An Amazon Resource Name (ARN) that uniquely identifies an AWS Backup recovery point.
+        /// Required.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

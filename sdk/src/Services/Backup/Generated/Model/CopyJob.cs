@@ -239,7 +239,6 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The type of AWS resource to be copied; for example, an Amazon Elastic Block Store
         /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
-        /// 
         /// </para>
         /// </summary>
         public string ResourceType

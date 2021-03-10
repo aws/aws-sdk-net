@@ -35,6 +35,7 @@ namespace Amazon.Backup.Model
     {
         private long? _completionWindowMinutes;
         private List<CopyAction> _copyActions = new List<CopyAction>();
+        private bool? _enableContinuousBackup;
         private Lifecycle _lifecycle;
         private Dictionary<string, string> _recoveryPointTags = new Dictionary<string, string>();
         private string _ruleId;
@@ -79,6 +80,26 @@ namespace Amazon.Backup.Model
         internal bool IsSetCopyActions()
         {
             return this._copyActions != null && this._copyActions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableContinuousBackup. 
+        /// <para>
+        /// Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to
+        /// create continuous backups capable of point-in-time restore (PITR). False (or not specified)
+        /// causes AWS Backup to create snapshot backups.
+        /// </para>
+        /// </summary>
+        public bool EnableContinuousBackup
+        {
+            get { return this._enableContinuousBackup.GetValueOrDefault(); }
+            set { this._enableContinuousBackup = value; }
+        }
+
+        // Check to see if EnableContinuousBackup property is set
+        internal bool IsSetEnableContinuousBackup()
+        {
+            return this._enableContinuousBackup.HasValue; 
         }
 
         /// <summary>

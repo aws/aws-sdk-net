@@ -31,6 +31,11 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Container for the parameters to the StartCopyJob operation.
     /// Starts a job to create a one-time copy of the specified resource.
+    /// 
+    ///  
+    /// <para>
+    /// Does not support continuous backups.
+    /// </para>
     /// </summary>
     public partial class StartCopyJobRequest : AmazonBackupRequest
     {

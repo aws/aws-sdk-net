@@ -30,7 +30,9 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBackupJobs operation.
-    /// Returns a list of existing backup jobs for an authenticated account.
+    /// Returns a list of existing backup jobs for an authenticated account for the last 30
+    /// days. For a longer period of time, consider using these <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">monitoring
+    /// tools</a>.
     /// </summary>
     public partial class ListBackupJobsRequest : AmazonBackupRequest
     {

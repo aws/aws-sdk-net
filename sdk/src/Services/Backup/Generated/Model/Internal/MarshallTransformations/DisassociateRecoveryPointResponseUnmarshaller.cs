@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeGlobalSettings operation
+    /// Response Unmarshaller for DisassociateRecoveryPoint operation
     /// </summary>  
-    public class DescribeGlobalSettingsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DisassociateRecoveryPointResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeGlobalSettingsResponse response = new DescribeGlobalSettingsResponse();
+            DisassociateRecoveryPointResponse response = new DisassociateRecoveryPointResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("GlobalSettings", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.GlobalSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -86,9 +69,25 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+                {
+                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceStateException"))
+                {
+                    return InvalidResourceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
+                {
+                    return MissingParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {
@@ -98,9 +97,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             return new AmazonBackupException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeGlobalSettingsResponseUnmarshaller _instance = new DescribeGlobalSettingsResponseUnmarshaller();        
+        private static DisassociateRecoveryPointResponseUnmarshaller _instance = new DisassociateRecoveryPointResponseUnmarshaller();        
 
-        internal static DescribeGlobalSettingsResponseUnmarshaller GetInstance()
+        internal static DisassociateRecoveryPointResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -108,7 +107,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeGlobalSettingsResponseUnmarshaller Instance
+        public static DisassociateRecoveryPointResponseUnmarshaller Instance
         {
             get
             {

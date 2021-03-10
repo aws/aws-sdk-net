@@ -76,6 +76,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.CopyActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnableContinuousBackup", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableContinuousBackup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Lifecycle", targetDepth))
                 {
                     var unmarshaller = LifecycleUnmarshaller.Instance;

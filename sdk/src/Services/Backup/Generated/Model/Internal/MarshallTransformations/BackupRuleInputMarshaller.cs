@@ -67,6 +67,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEnableContinuousBackup())
+            {
+                context.Writer.WritePropertyName("EnableContinuousBackup");
+                context.Writer.Write(requestObject.EnableContinuousBackup);
+            }
+
             if(requestObject.IsSetLifecycle())
             {
                 context.Writer.WritePropertyName("Lifecycle");

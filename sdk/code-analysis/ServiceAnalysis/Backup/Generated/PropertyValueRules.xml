@@ -45,6 +45,9 @@
     <property>Amazon.Backup.Model.DescribeRestoreJobResponse.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.DisassociateRecoveryPointRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.GetBackupVaultAccessPolicyRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
