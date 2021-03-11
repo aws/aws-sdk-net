@@ -30,8 +30,8 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Contains one or more IP addresses or blocks of IP addresses specified in Classless
-    /// Inter-Domain Routing (CIDR) notation. AWS WAF supports any CIDR range. For information
-    /// about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+    /// Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges
+    /// except for /0. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
     /// Inter-Domain Routing</a>. 
     /// 
     ///  
@@ -55,7 +55,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Contains an array of strings that specify one or more IP addresses or blocks of IP
         /// addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports all
-        /// address ranges for IP versions IPv4 and IPv6. 
+        /// IPv4 and IPv6 CIDR ranges except for /0. 
         /// </para>
         ///  
         /// <para>

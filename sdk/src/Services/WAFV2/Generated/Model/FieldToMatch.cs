@@ -170,6 +170,10 @@ namespace Amazon.WAFV2.Model
         /// Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code>
         /// or <code>Referer</code>. This setting isn't case sensitive.
         /// </para>
+        ///  
+        /// <para>
+        /// Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> 
+        /// </para>
         /// </summary>
         public SingleHeader SingleHeader
         {
@@ -194,6 +198,10 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// This is used only to indicate the web request component for AWS WAF to inspect, in
         /// the <a>FieldToMatch</a> specification. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> 
         /// </para>
         /// </summary>
         public SingleQueryArgument SingleQueryArgument

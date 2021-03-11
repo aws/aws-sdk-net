@@ -49,7 +49,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Contains an array of strings that specify one or more IP addresses or blocks of IP
         /// addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports all
-        /// address ranges for IP versions IPv4 and IPv6. 
+        /// IPv4 and IPv6 CIDR ranges except for /0. 
         /// </para>
         ///  
         /// <para>

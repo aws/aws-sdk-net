@@ -4526,7 +4526,17 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Updates the specified <a>IPSet</a>.
+        /// Updates the specified <a>IPSet</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation completely replaces any IP address specifications that you already
+        /// have in the IP set with the ones that you provide to this call. If you want to add
+        /// to or modify the addresses that are already in the IP set, retrieve those by calling
+        /// <a>GetIPSet</a>, update them, and provide the complete updated array of IP addresses
+        /// to this call.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIPSet service method.</param>
         /// 
@@ -4587,7 +4597,17 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Updates the specified <a>IPSet</a>.
+        /// Updates the specified <a>IPSet</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation completely replaces any IP address specifications that you already
+        /// have in the IP set with the ones that you provide to this call. If you want to add
+        /// to or modify the addresses that are already in the IP set, retrieve those by calling
+        /// <a>GetIPSet</a>, update them, and provide the complete updated array of IP addresses
+        /// to this call.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIPSet service method.</param>
         /// <param name="cancellationToken">

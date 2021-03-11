@@ -30,7 +30,17 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIPSet operation.
-    /// Updates the specified <a>IPSet</a>.
+    /// Updates the specified <a>IPSet</a>. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation completely replaces any IP address specifications that you already
+    /// have in the IP set with the ones that you provide to this call. If you want to add
+    /// to or modify the addresses that are already in the IP set, retrieve those by calling
+    /// <a>GetIPSet</a>, update them, and provide the complete updated array of IP addresses
+    /// to this call.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateIPSetRequest : AmazonWAFV2Request
     {
@@ -46,7 +56,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Contains an array of strings that specify one or more IP addresses or blocks of IP
         /// addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports all
-        /// address ranges for IP versions IPv4 and IPv6. 
+        /// IPv4 and IPv6 CIDR ranges except for /0. 
         /// </para>
         ///  
         /// <para>
