@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TeletextSourceSettings Marshaller
+    /// ArchiveS3Settings Marshaller
     /// </summary>       
-    public class TeletextSourceSettingsMarshaller : IRequestMarshaller<TeletextSourceSettings, JsonMarshallerContext> 
+    public class ArchiveS3SettingsMarshaller : IRequestMarshaller<ArchiveS3Settings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TeletextSourceSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ArchiveS3Settings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetOutputRectangle())
+            if(requestObject.IsSetCannedAcl())
             {
-                context.Writer.WritePropertyName("outputRectangle");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CaptionRectangleMarshaller.Instance;
-                marshaller.Marshall(requestObject.OutputRectangle, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPageNumber())
-            {
-                context.Writer.WritePropertyName("pageNumber");
-                context.Writer.Write(requestObject.PageNumber);
+                context.Writer.WritePropertyName("cannedAcl");
+                context.Writer.Write(requestObject.CannedAcl);
             }
 
         }
@@ -67,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static TeletextSourceSettingsMarshaller Instance = new TeletextSourceSettingsMarshaller();
+        public readonly static ArchiveS3SettingsMarshaller Instance = new ArchiveS3SettingsMarshaller();
 
     }
 }

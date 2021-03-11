@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EbuTtDDestinationSettings Object
+    /// Response Unmarshaller for ArchiveS3Settings Object
     /// </summary>  
-    public class EbuTtDDestinationSettingsUnmarshaller : IUnmarshaller<EbuTtDDestinationSettings, XmlUnmarshallerContext>, IUnmarshaller<EbuTtDDestinationSettings, JsonUnmarshallerContext>
+    public class ArchiveS3SettingsUnmarshaller : IUnmarshaller<ArchiveS3Settings, XmlUnmarshallerContext>, IUnmarshaller<ArchiveS3Settings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EbuTtDDestinationSettings IUnmarshaller<EbuTtDDestinationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ArchiveS3Settings IUnmarshaller<ArchiveS3Settings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EbuTtDDestinationSettings Unmarshall(JsonUnmarshallerContext context)
+        public ArchiveS3Settings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EbuTtDDestinationSettings unmarshalledObject = new EbuTtDDestinationSettings();
+            ArchiveS3Settings unmarshalledObject = new ArchiveS3Settings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("copyrightHolder", targetDepth))
+                if (context.TestExpression("cannedAcl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CopyrightHolder = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fillLineGap", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FillLineGap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fontFamily", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontFamily = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("styleControl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StyleControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CannedAcl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static EbuTtDDestinationSettingsUnmarshaller _instance = new EbuTtDDestinationSettingsUnmarshaller();        
+        private static ArchiveS3SettingsUnmarshaller _instance = new ArchiveS3SettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EbuTtDDestinationSettingsUnmarshaller Instance
+        public static ArchiveS3SettingsUnmarshaller Instance
         {
             get
             {

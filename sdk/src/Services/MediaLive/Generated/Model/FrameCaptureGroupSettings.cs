@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class FrameCaptureGroupSettings
     {
         private OutputLocationRef _destination;
+        private FrameCaptureCdnSettings _frameCaptureCdnSettings;
 
         /// <summary>
         /// Gets and sets the property Destination. The destination for the frame capture files.
@@ -55,6 +56,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FrameCaptureCdnSettings. Parameters that control interactions
+        /// with the CDN.
+        /// </summary>
+        public FrameCaptureCdnSettings FrameCaptureCdnSettings
+        {
+            get { return this._frameCaptureCdnSettings; }
+            set { this._frameCaptureCdnSettings = value; }
+        }
+
+        // Check to see if FrameCaptureCdnSettings property is set
+        internal bool IsSetFrameCaptureCdnSettings()
+        {
+            return this._frameCaptureCdnSettings != null;
         }
 
     }

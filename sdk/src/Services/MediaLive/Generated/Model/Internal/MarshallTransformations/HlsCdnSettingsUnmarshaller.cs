@@ -82,6 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsMediaStoreSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hlsS3Settings", targetDepth))
+                {
+                    var unmarshaller = HlsS3SettingsUnmarshaller.Instance;
+                    unmarshalledObject.HlsS3Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hlsWebdavSettings", targetDepth))
                 {
                     var unmarshaller = HlsWebdavSettingsUnmarshaller.Instance;

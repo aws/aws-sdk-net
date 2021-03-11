@@ -64,6 +64,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("archiveCdnSettings", targetDepth))
+                {
+                    var unmarshaller = ArchiveCdnSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ArchiveCdnSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = OutputLocationRefUnmarshaller.Instance;

@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ArchiveGroupSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetArchiveCdnSettings())
+            {
+                context.Writer.WritePropertyName("archiveCdnSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ArchiveCdnSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ArchiveCdnSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");

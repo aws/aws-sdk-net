@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TeletextSourceSettings Marshaller
+    /// FrameCaptureCdnSettings Marshaller
     /// </summary>       
-    public class TeletextSourceSettingsMarshaller : IRequestMarshaller<TeletextSourceSettings, JsonMarshallerContext> 
+    public class FrameCaptureCdnSettingsMarshaller : IRequestMarshaller<FrameCaptureCdnSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TeletextSourceSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(FrameCaptureCdnSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetOutputRectangle())
+            if(requestObject.IsSetFrameCaptureS3Settings())
             {
-                context.Writer.WritePropertyName("outputRectangle");
+                context.Writer.WritePropertyName("frameCaptureS3Settings");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = CaptionRectangleMarshaller.Instance;
-                marshaller.Marshall(requestObject.OutputRectangle, context);
+                var marshaller = FrameCaptureS3SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FrameCaptureS3Settings, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPageNumber())
-            {
-                context.Writer.WritePropertyName("pageNumber");
-                context.Writer.Write(requestObject.PageNumber);
             }
 
         }
@@ -67,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static TeletextSourceSettingsMarshaller Instance = new TeletextSourceSettingsMarshaller();
+        public readonly static FrameCaptureCdnSettingsMarshaller Instance = new FrameCaptureCdnSettingsMarshaller();
 
     }
 }

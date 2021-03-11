@@ -70,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("frameCaptureCdnSettings", targetDepth))
+                {
+                    var unmarshaller = FrameCaptureCdnSettingsUnmarshaller.Instance;
+                    unmarshalledObject.FrameCaptureCdnSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

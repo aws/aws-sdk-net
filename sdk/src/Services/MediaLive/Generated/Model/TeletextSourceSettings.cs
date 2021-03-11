@@ -33,7 +33,24 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class TeletextSourceSettings
     {
+        private CaptionRectangle _outputRectangle;
         private string _pageNumber;
+
+        /// <summary>
+        /// Gets and sets the property OutputRectangle. Optionally defines a region where TTML
+        /// style captions will be displayed
+        /// </summary>
+        public CaptionRectangle OutputRectangle
+        {
+            get { return this._outputRectangle; }
+            set { this._outputRectangle = value; }
+        }
+
+        // Check to see if OutputRectangle property is set
+        internal bool IsSetOutputRectangle()
+        {
+            return this._outputRectangle != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PageNumber. Specifies the teletext page number within the

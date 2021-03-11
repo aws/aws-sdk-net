@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
         private HlsAkamaiSettings _hlsAkamaiSettings;
         private HlsBasicPutSettings _hlsBasicPutSettings;
         private HlsMediaStoreSettings _hlsMediaStoreSettings;
+        private HlsS3Settings _hlsS3Settings;
         private HlsWebdavSettings _hlsWebdavSettings;
 
         /// <summary>
@@ -81,6 +82,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHlsMediaStoreSettings()
         {
             return this._hlsMediaStoreSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HlsS3Settings.
+        /// </summary>
+        public HlsS3Settings HlsS3Settings
+        {
+            get { return this._hlsS3Settings; }
+            set { this._hlsS3Settings = value; }
+        }
+
+        // Check to see if HlsS3Settings property is set
+        internal bool IsSetHlsS3Settings()
+        {
+            return this._hlsS3Settings != null;
         }
 
         /// <summary>

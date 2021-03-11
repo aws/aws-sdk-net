@@ -781,6 +781,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type ArchiveS3LogUploads.
+    /// </summary>
+    public class ArchiveS3LogUploads : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ArchiveS3LogUploads
+        /// </summary>
+        public static readonly ArchiveS3LogUploads DISABLED = new ArchiveS3LogUploads("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ArchiveS3LogUploads
+        /// </summary>
+        public static readonly ArchiveS3LogUploads ENABLED = new ArchiveS3LogUploads("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ArchiveS3LogUploads(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArchiveS3LogUploads FindValue(string value)
+        {
+            return FindValue<ArchiveS3LogUploads>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArchiveS3LogUploads(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AudioDescriptionAudioTypeControl.
     /// </summary>
     public class AudioDescriptionAudioTypeControl : ConstantClass
@@ -3822,6 +3872,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FrameCaptureIntervalUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FrameCaptureS3LogUploads.
+    /// </summary>
+    public class FrameCaptureS3LogUploads : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for FrameCaptureS3LogUploads
+        /// </summary>
+        public static readonly FrameCaptureS3LogUploads DISABLED = new FrameCaptureS3LogUploads("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for FrameCaptureS3LogUploads
+        /// </summary>
+        public static readonly FrameCaptureS3LogUploads ENABLED = new FrameCaptureS3LogUploads("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FrameCaptureS3LogUploads(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FrameCaptureS3LogUploads FindValue(string value)
+        {
+            return FindValue<FrameCaptureS3LogUploads>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FrameCaptureS3LogUploads(string value)
         {
             return FindValue(value);
         }
@@ -6906,6 +7006,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsRedundantManifest(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsS3LogUploads.
+    /// </summary>
+    public class HlsS3LogUploads : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for HlsS3LogUploads
+        /// </summary>
+        public static readonly HlsS3LogUploads DISABLED = new HlsS3LogUploads("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for HlsS3LogUploads
+        /// </summary>
+        public static readonly HlsS3LogUploads ENABLED = new HlsS3LogUploads("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsS3LogUploads(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsS3LogUploads FindValue(string value)
+        {
+            return FindValue<HlsS3LogUploads>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsS3LogUploads(string value)
         {
             return FindValue(value);
         }
@@ -11436,6 +11586,64 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RtmpOutputCertificateMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3CannedAcl.
+    /// </summary>
+    public class S3CannedAcl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHENTICATED_READ for S3CannedAcl
+        /// </summary>
+        public static readonly S3CannedAcl AUTHENTICATED_READ = new S3CannedAcl("AUTHENTICATED_READ");
+        /// <summary>
+        /// Constant BUCKET_OWNER_FULL_CONTROL for S3CannedAcl
+        /// </summary>
+        public static readonly S3CannedAcl BUCKET_OWNER_FULL_CONTROL = new S3CannedAcl("BUCKET_OWNER_FULL_CONTROL");
+        /// <summary>
+        /// Constant BUCKET_OWNER_READ for S3CannedAcl
+        /// </summary>
+        public static readonly S3CannedAcl BUCKET_OWNER_READ = new S3CannedAcl("BUCKET_OWNER_READ");
+        /// <summary>
+        /// Constant PUBLIC_READ for S3CannedAcl
+        /// </summary>
+        public static readonly S3CannedAcl PUBLIC_READ = new S3CannedAcl("PUBLIC_READ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3CannedAcl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3CannedAcl FindValue(string value)
+        {
+            return FindValue<S3CannedAcl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3CannedAcl(string value)
         {
             return FindValue(value);
         }

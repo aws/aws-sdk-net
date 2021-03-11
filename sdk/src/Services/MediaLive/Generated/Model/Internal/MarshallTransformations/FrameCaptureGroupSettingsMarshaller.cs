@@ -56,6 +56,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFrameCaptureCdnSettings())
+            {
+                context.Writer.WritePropertyName("frameCaptureCdnSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FrameCaptureCdnSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FrameCaptureCdnSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

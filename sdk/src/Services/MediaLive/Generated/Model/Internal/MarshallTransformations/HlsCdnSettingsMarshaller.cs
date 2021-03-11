@@ -78,6 +78,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHlsS3Settings())
+            {
+                context.Writer.WritePropertyName("hlsS3Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HlsS3SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.HlsS3Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHlsWebdavSettings())
             {
                 context.Writer.WritePropertyName("hlsWebdavSettings");

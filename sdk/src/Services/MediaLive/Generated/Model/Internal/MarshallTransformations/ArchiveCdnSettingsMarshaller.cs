@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TeletextSourceSettings Marshaller
+    /// ArchiveCdnSettings Marshaller
     /// </summary>       
-    public class TeletextSourceSettingsMarshaller : IRequestMarshaller<TeletextSourceSettings, JsonMarshallerContext> 
+    public class ArchiveCdnSettingsMarshaller : IRequestMarshaller<ArchiveCdnSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TeletextSourceSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ArchiveCdnSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetOutputRectangle())
+            if(requestObject.IsSetArchiveS3Settings())
             {
-                context.Writer.WritePropertyName("outputRectangle");
+                context.Writer.WritePropertyName("archiveS3Settings");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = CaptionRectangleMarshaller.Instance;
-                marshaller.Marshall(requestObject.OutputRectangle, context);
+                var marshaller = ArchiveS3SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ArchiveS3Settings, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPageNumber())
-            {
-                context.Writer.WritePropertyName("pageNumber");
-                context.Writer.Write(requestObject.PageNumber);
             }
 
         }
@@ -67,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static TeletextSourceSettingsMarshaller Instance = new TeletextSourceSettingsMarshaller();
+        public readonly static ArchiveCdnSettingsMarshaller Instance = new ArchiveCdnSettingsMarshaller();
 
     }
 }

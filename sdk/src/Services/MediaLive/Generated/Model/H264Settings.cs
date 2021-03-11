@@ -688,7 +688,8 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Softness. Softness. Selects quantizer matrix, larger values
-        /// reduce high-frequency content in the encoded image.
+        /// reduce high-frequency content in the encoded image.  If not set to zero, must be greater
+        /// than 15.
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
         public int Softness

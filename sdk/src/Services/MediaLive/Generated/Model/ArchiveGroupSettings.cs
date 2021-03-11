@@ -33,8 +33,25 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ArchiveGroupSettings
     {
+        private ArchiveCdnSettings _archiveCdnSettings;
         private OutputLocationRef _destination;
         private int? _rolloverInterval;
+
+        /// <summary>
+        /// Gets and sets the property ArchiveCdnSettings. Parameters that control interactions
+        /// with the CDN.
+        /// </summary>
+        public ArchiveCdnSettings ArchiveCdnSettings
+        {
+            get { return this._archiveCdnSettings; }
+            set { this._archiveCdnSettings = value; }
+        }
+
+        // Check to see if ArchiveCdnSettings property is set
+        internal bool IsSetArchiveCdnSettings()
+        {
+            return this._archiveCdnSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Destination. A directory and base filename where archive

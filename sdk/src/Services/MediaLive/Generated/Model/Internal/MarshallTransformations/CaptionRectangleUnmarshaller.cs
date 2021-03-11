@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EbuTtDDestinationSettings Object
+    /// Response Unmarshaller for CaptionRectangle Object
     /// </summary>  
-    public class EbuTtDDestinationSettingsUnmarshaller : IUnmarshaller<EbuTtDDestinationSettings, XmlUnmarshallerContext>, IUnmarshaller<EbuTtDDestinationSettings, JsonUnmarshallerContext>
+    public class CaptionRectangleUnmarshaller : IUnmarshaller<CaptionRectangle, XmlUnmarshallerContext>, IUnmarshaller<CaptionRectangle, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EbuTtDDestinationSettings IUnmarshaller<EbuTtDDestinationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CaptionRectangle IUnmarshaller<CaptionRectangle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EbuTtDDestinationSettings Unmarshall(JsonUnmarshallerContext context)
+        public CaptionRectangle Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EbuTtDDestinationSettings unmarshalledObject = new EbuTtDDestinationSettings();
+            CaptionRectangle unmarshalledObject = new CaptionRectangle();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("copyrightHolder", targetDepth))
+                if (context.TestExpression("height", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CopyrightHolder = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("fillLineGap", targetDepth))
+                if (context.TestExpression("leftOffset", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FillLineGap = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.LeftOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("fontFamily", targetDepth))
+                if (context.TestExpression("topOffset", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontFamily = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TopOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("styleControl", targetDepth))
+                if (context.TestExpression("width", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StyleControl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Width = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +94,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static EbuTtDDestinationSettingsUnmarshaller _instance = new EbuTtDDestinationSettingsUnmarshaller();        
+        private static CaptionRectangleUnmarshaller _instance = new CaptionRectangleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EbuTtDDestinationSettingsUnmarshaller Instance
+        public static CaptionRectangleUnmarshaller Instance
         {
             get
             {

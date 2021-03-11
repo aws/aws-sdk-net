@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EbuTtDDestinationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCopyrightHolder())
+            {
+                context.Writer.WritePropertyName("copyrightHolder");
+                context.Writer.Write(requestObject.CopyrightHolder);
+            }
+
             if(requestObject.IsSetFillLineGap())
             {
                 context.Writer.WritePropertyName("fillLineGap");

@@ -33,9 +33,28 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class EbuTtDDestinationSettings
     {
+        private string _copyrightHolder;
         private EbuTtDFillLineGapControl _fillLineGap;
         private string _fontFamily;
         private EbuTtDDestinationStyleControl _styleControl;
+
+        /// <summary>
+        /// Gets and sets the property CopyrightHolder. Applies only if you plan to convert these
+        /// source captions to EBU-TT-D or TTML in an output. Complete this field if you want
+        /// to include the name of the copyright holder in the copyright metadata tag in the TTML
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public string CopyrightHolder
+        {
+            get { return this._copyrightHolder; }
+            set { this._copyrightHolder = value; }
+        }
+
+        // Check to see if CopyrightHolder property is set
+        internal bool IsSetCopyrightHolder()
+        {
+            return this._copyrightHolder != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FillLineGap. Specifies how to handle the gap between the

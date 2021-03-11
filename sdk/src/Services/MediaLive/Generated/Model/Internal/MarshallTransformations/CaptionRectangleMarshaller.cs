@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TeletextSourceSettings Marshaller
+    /// CaptionRectangle Marshaller
     /// </summary>       
-    public class TeletextSourceSettingsMarshaller : IRequestMarshaller<TeletextSourceSettings, JsonMarshallerContext> 
+    public class CaptionRectangleMarshaller : IRequestMarshaller<CaptionRectangle, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,30 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TeletextSourceSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(CaptionRectangle requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetOutputRectangle())
+            if(requestObject.IsSetHeight())
             {
-                context.Writer.WritePropertyName("outputRectangle");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CaptionRectangleMarshaller.Instance;
-                marshaller.Marshall(requestObject.OutputRectangle, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("height");
+                context.Writer.Write(requestObject.Height);
             }
 
-            if(requestObject.IsSetPageNumber())
+            if(requestObject.IsSetLeftOffset())
             {
-                context.Writer.WritePropertyName("pageNumber");
-                context.Writer.Write(requestObject.PageNumber);
+                context.Writer.WritePropertyName("leftOffset");
+                context.Writer.Write(requestObject.LeftOffset);
+            }
+
+            if(requestObject.IsSetTopOffset())
+            {
+                context.Writer.WritePropertyName("topOffset");
+                context.Writer.Write(requestObject.TopOffset);
+            }
+
+            if(requestObject.IsSetWidth())
+            {
+                context.Writer.WritePropertyName("width");
+                context.Writer.Write(requestObject.Width);
             }
 
         }
@@ -67,7 +74,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static TeletextSourceSettingsMarshaller Instance = new TeletextSourceSettingsMarshaller();
+        public readonly static CaptionRectangleMarshaller Instance = new CaptionRectangleMarshaller();
 
     }
 }
