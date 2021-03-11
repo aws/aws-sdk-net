@@ -310,7 +310,7 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.GreengrassV2](https://www.nuget.org/packages/AWSSDK.GreengrassV2/)
 	* AWS IoT Greengrass V2 is a new major version of AWS IoT Greengrass. This release adds several updates such as modular components, continuous deployments, and improved ease of use.
 * [AWSSDK.GroundStation](https://www.nuget.org/packages/AWSSDK.GroundStation/)
-	* New Service temporary synopsis, please replace it.
+	* AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
 * [AWSSDK.GuardDuty](https://www.nuget.org/packages/AWSSDK.GuardDuty/)
 	* Enable Amazon GuardDuty to continuously monitor and process AWS data sources to identify threats to your AWS accounts and workloads. You can add customization by uploading additional threat intelligence lists and IP safe lists. You can list security findings, suspend, and disable the service.
 * [AWSSDK.HealthLake](https://www.nuget.org/packages/AWSSDK.HealthLake/)
