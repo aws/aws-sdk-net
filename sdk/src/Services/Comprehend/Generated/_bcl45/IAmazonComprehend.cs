@@ -127,11 +127,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities">REST API Reference for BatchDetectEntities Operation</seealso>
         BatchDetectEntitiesResponse BatchDetectEntities(BatchDetectEntitiesRequest request);
@@ -162,11 +160,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities">REST API Reference for BatchDetectEntities Operation</seealso>
         Task<BatchDetectEntitiesResponse> BatchDetectEntitiesAsync(BatchDetectEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -196,11 +192,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrases">REST API Reference for BatchDetectKeyPhrases Operation</seealso>
         BatchDetectKeyPhrasesResponse BatchDetectKeyPhrases(BatchDetectKeyPhrasesRequest request);
@@ -230,11 +224,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrases">REST API Reference for BatchDetectKeyPhrases Operation</seealso>
         Task<BatchDetectKeyPhrasesResponse> BatchDetectKeyPhrasesAsync(BatchDetectKeyPhrasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -266,11 +258,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentiment">REST API Reference for BatchDetectSentiment Operation</seealso>
         BatchDetectSentimentResponse BatchDetectSentiment(BatchDetectSentimentRequest request);
@@ -302,11 +292,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentiment">REST API Reference for BatchDetectSentiment Operation</seealso>
         Task<BatchDetectSentimentResponse> BatchDetectSentimentAsync(BatchDetectSentimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -338,11 +326,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
         BatchDetectSyntaxResponse BatchDetectSyntax(BatchDetectSyntaxRequest request);
@@ -374,11 +360,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
         Task<BatchDetectSyntaxResponse> BatchDetectSyntaxAsync(BatchDetectSyntaxRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -439,6 +423,66 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ContainsPiiEntities
+
+
+        /// <summary>
+        /// Analyzes input text for the presence of personally identifiable information (PII)
+        /// and returns the labels of identified PII entity types such as name, address, bank
+        /// account number, or phone number.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContainsPiiEntities service method.</param>
+        /// 
+        /// <returns>The response from the ContainsPiiEntities service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities">REST API Reference for ContainsPiiEntities Operation</seealso>
+        ContainsPiiEntitiesResponse ContainsPiiEntities(ContainsPiiEntitiesRequest request);
+
+
+
+        /// <summary>
+        /// Analyzes input text for the presence of personally identifiable information (PII)
+        /// and returns the labels of identified PII entity types such as name, address, bank
+        /// account number, or phone number.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContainsPiiEntities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ContainsPiiEntities service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities">REST API Reference for ContainsPiiEntities Operation</seealso>
+        Task<ContainsPiiEntitiesResponse> ContainsPiiEntitiesAsync(ContainsPiiEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDocumentClassifier
 
 
@@ -478,11 +522,9 @@ namespace Amazon.Comprehend
         /// in your current request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
         CreateDocumentClassifierResponse CreateDocumentClassifier(CreateDocumentClassifierRequest request);
@@ -528,11 +570,9 @@ namespace Amazon.Comprehend
         /// in your current request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
         Task<CreateDocumentClassifierResponse> CreateDocumentClassifierAsync(CreateDocumentClassifierRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -662,11 +702,9 @@ namespace Amazon.Comprehend
         /// in your current request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">REST API Reference for CreateEntityRecognizer Operation</seealso>
         CreateEntityRecognizerResponse CreateEntityRecognizer(CreateEntityRecognizerRequest request);
@@ -710,11 +748,9 @@ namespace Amazon.Comprehend
         /// in your current request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">REST API Reference for CreateEntityRecognizer Operation</seealso>
         Task<CreateEntityRecognizerResponse> CreateEntityRecognizerAsync(CreateEntityRecognizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1630,11 +1666,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         DetectEntitiesResponse DetectEntities(DetectEntitiesRequest request);
@@ -1664,11 +1698,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         Task<DetectEntitiesResponse> DetectEntitiesAsync(DetectEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1694,11 +1726,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectKeyPhrases">REST API Reference for DetectKeyPhrases Operation</seealso>
         DetectKeyPhrasesResponse DetectKeyPhrases(DetectKeyPhrasesRequest request);
@@ -1724,11 +1754,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectKeyPhrases">REST API Reference for DetectKeyPhrases Operation</seealso>
         Task<DetectKeyPhrasesResponse> DetectKeyPhrasesAsync(DetectKeyPhrasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1755,11 +1783,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">REST API Reference for DetectPiiEntities Operation</seealso>
         DetectPiiEntitiesResponse DetectPiiEntities(DetectPiiEntitiesRequest request);
@@ -1786,11 +1812,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">REST API Reference for DetectPiiEntities Operation</seealso>
         Task<DetectPiiEntitiesResponse> DetectPiiEntitiesAsync(DetectPiiEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1817,11 +1841,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSentiment">REST API Reference for DetectSentiment Operation</seealso>
         DetectSentimentResponse DetectSentiment(DetectSentimentRequest request);
@@ -1848,11 +1870,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSentiment">REST API Reference for DetectSentiment Operation</seealso>
         Task<DetectSentimentResponse> DetectSentimentAsync(DetectSentimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1879,11 +1899,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
         DetectSyntaxResponse DetectSyntax(DetectSyntaxRequest request);
@@ -1910,11 +1928,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all custom entity
-        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
-        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
-        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
-        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
         Task<DetectSyntaxResponse> DetectSyntaxAsync(DetectSyntaxRequest request, CancellationToken cancellationToken = default(CancellationToken));

@@ -10,6 +10,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.ContainsPiiEntitiesRequest.Text</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.CreateDocumentClassifierRequest.ClientRequestToken</property>
     <min>1</min>
     <max>64</max>
@@ -892,7 +896,7 @@
   <property-value-rule>
     <property>Amazon.Comprehend.Model.EntityTypesListItem.Type</property>
     <max>64</max>
-    <pattern>^(?:(?!\\n+|\\t+|\\r+|[\r\t\n\s,]).)+$</pattern>
+    <pattern>^(?:(?!\\n+|\\t+|\\r+|[\r\t\n,]).)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.EventsDetectionJobFilter.JobName</property>
