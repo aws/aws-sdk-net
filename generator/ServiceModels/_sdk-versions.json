@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.127.0",
+    "ProductVersion" : "3.5.128.0",
     "CoreVersion"    : "3.5.3.6",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -874,7 +874,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.5.12.1",
+            "Version" : "3.5.13.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.6"
@@ -962,7 +962,7 @@
             "InPreview"               : false
         },
         "Comprehend"                      : {
-            "Version" : "3.5.3.34",
+            "Version" : "3.5.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.6"
@@ -1610,7 +1610,7 @@
             "InPreview"               : false
         },
         "WAFV2"                           : {
-            "Version" : "3.5.2.6",
+            "Version" : "3.5.2.7",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.6"
@@ -1890,7 +1890,7 @@
             "InPreview"               : false
         },
         "NetworkFirewall"                 : {
-            "Version" : "3.5.1.1",
+            "Version" : "3.5.1.2",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.6"
