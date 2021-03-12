@@ -73,6 +73,22 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateWorkspaceBundleRequest.BundleDescription</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_./() -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateWorkspaceBundleRequest.BundleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_./()\\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateWorkspaceBundleRequest.ImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DeleteConnectionAliasRequest.AliasId</property>
     <min>13</min>
     <max>68</max>
@@ -85,6 +101,10 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DeleteTagsRequest.ResourceId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DeleteWorkspaceBundleRequest.BundleId</property>
+    <pattern>^wsb-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DeleteWorkspaceImageRequest.ImageId</property>
@@ -406,6 +426,14 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.UpdateRulesOfIpGroupRequest.GroupId</property>
     <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.UpdateWorkspaceBundleRequest.BundleId</property>
+    <pattern>^wsb-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.UpdateWorkspaceBundleRequest.ImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.UpdateWorkspaceImagePermissionRequest.ImageId</property>

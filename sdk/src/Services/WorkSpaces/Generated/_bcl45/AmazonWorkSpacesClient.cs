@@ -883,6 +883,87 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  CreateWorkspaceBundle
+
+
+        /// <summary>
+        /// Creates the specified WorkSpace bundle. For more information about creating WorkSpace
+        /// bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html">
+        /// Create a Custom WorkSpaces Image and Bundle</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceBundle service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkspaceBundle service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceBundle">REST API Reference for CreateWorkspaceBundle Operation</seealso>
+        public virtual CreateWorkspaceBundleResponse CreateWorkspaceBundle(CreateWorkspaceBundleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceBundleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspaceBundleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates the specified WorkSpace bundle. For more information about creating WorkSpace
+        /// bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html">
+        /// Create a Custom WorkSpaces Image and Bundle</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceBundle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorkspaceBundle service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceBundle">REST API Reference for CreateWorkspaceBundle Operation</seealso>
+        public virtual Task<CreateWorkspaceBundleResponse> CreateWorkspaceBundleAsync(CreateWorkspaceBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceBundleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateWorkspaceBundleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateWorkspaces
 
 
@@ -1183,6 +1264,75 @@ namespace Amazon.WorkSpaces
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkspaceBundle
+
+
+        /// <summary>
+        /// Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace
+        /// bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html">
+        /// Delete a Custom WorkSpaces Bundle or Image</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceBundle service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkspaceBundle service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceBundle">REST API Reference for DeleteWorkspaceBundle Operation</seealso>
+        public virtual DeleteWorkspaceBundleResponse DeleteWorkspaceBundle(DeleteWorkspaceBundleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceBundleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspaceBundleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace
+        /// bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html">
+        /// Delete a Custom WorkSpaces Bundle or Image</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceBundle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkspaceBundle service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceBundle">REST API Reference for DeleteWorkspaceBundle Operation</seealso>
+        public virtual Task<DeleteWorkspaceBundleResponse> DeleteWorkspaceBundleAsync(DeleteWorkspaceBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceBundleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteWorkspaceBundleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4000,6 +4150,91 @@ namespace Amazon.WorkSpaces
             options.ResponseUnmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateRulesOfIpGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspaceBundle
+
+
+        /// <summary>
+        /// Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace
+        /// bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html">
+        /// Update a Custom WorkSpaces Bundle</a>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Existing WorkSpaces aren't automatically updated when you update the bundle that they're
+        /// based on. To update existing WorkSpaces that are based on a bundle that you've updated,
+        /// you must either rebuild the WorkSpaces or delete and recreate them.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceBundle service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceBundle service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceBundle">REST API Reference for UpdateWorkspaceBundle Operation</seealso>
+        public virtual UpdateWorkspaceBundleResponse UpdateWorkspaceBundle(UpdateWorkspaceBundleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceBundleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceBundleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace
+        /// bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html">
+        /// Update a Custom WorkSpaces Bundle</a>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Existing WorkSpaces aren't automatically updated when you update the bundle that they're
+        /// based on. To update existing WorkSpaces that are based on a bundle that you've updated,
+        /// you must either rebuild the WorkSpaces or delete and recreate them.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceBundle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceBundle service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceBundle">REST API Reference for UpdateWorkspaceBundle Operation</seealso>
+        public virtual Task<UpdateWorkspaceBundleResponse> UpdateWorkspaceBundleAsync(UpdateWorkspaceBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceBundleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateWorkspaceBundleResponse>(request, options, cancellationToken);
         }
 
         #endregion

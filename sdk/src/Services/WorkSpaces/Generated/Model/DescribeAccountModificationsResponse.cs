@@ -57,8 +57,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next set of results, or null if no more results are
-        /// available.
+        /// The token to use to retrieve the next page of results. This value is null when there
+        /// are no more results to return. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

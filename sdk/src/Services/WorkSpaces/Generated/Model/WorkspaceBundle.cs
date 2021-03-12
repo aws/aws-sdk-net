@@ -35,6 +35,7 @@ namespace Amazon.WorkSpaces.Model
     {
         private string _bundleId;
         private ComputeType _computeType;
+        private DateTime? _creationTime;
         private string _description;
         private string _imageId;
         private DateTime? _lastUpdatedTime;
@@ -46,7 +47,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The bundle identifier.
+        /// The identifier of the bundle.
         /// </para>
         /// </summary>
         public string BundleId
@@ -64,7 +65,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ComputeType. 
         /// <para>
-        /// The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+        /// The compute type of the bundle. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
         /// WorkSpaces Bundles</a>.
         /// </para>
         /// </summary>
@@ -81,9 +82,27 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The time when the bundle was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreationTime
+        {
+            get { return this._creationTime.GetValueOrDefault(); }
+            set { this._creationTime = value; }
+        }
+
+        // Check to see if CreationTime property is set
+        internal bool IsSetCreationTime()
+        {
+            return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description.
+        /// The description of the bundle.
         /// </para>
         /// </summary>
         public string Description
@@ -101,7 +120,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The image identifier of the bundle.
+        /// The identifier of the image that was used to create the bundle.
         /// </para>
         /// </summary>
         public string ImageId
@@ -193,7 +212,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserStorage. 
         /// <para>
-        /// The size of the user storage.
+        /// The size of the user volume.
         /// </para>
         /// </summary>
         public UserStorage UserStorage

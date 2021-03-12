@@ -29,29 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the user volume for a WorkSpace bundle.
+    /// This is the response object from the CreateWorkspaceBundle operation.
     /// </summary>
-    public partial class UserStorage
+    public partial class CreateWorkspaceBundleResponse : AmazonWebServiceResponse
     {
-        private string _capacity;
+        private WorkspaceBundle _workspaceBundle;
 
         /// <summary>
-        /// Gets and sets the property Capacity. 
-        /// <para>
-        /// The size of the user volume.
-        /// </para>
+        /// Gets and sets the property WorkspaceBundle.
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string Capacity
+        public WorkspaceBundle WorkspaceBundle
         {
-            get { return this._capacity; }
-            set { this._capacity = value; }
+            get { return this._workspaceBundle; }
+            set { this._workspaceBundle = value; }
         }
 
-        // Check to see if Capacity property is set
-        internal bool IsSetCapacity()
+        // Check to see if WorkspaceBundle property is set
+        internal bool IsSetWorkspaceBundle()
         {
-            return this._capacity != null;
+            return this._workspaceBundle != null;
         }
 
     }

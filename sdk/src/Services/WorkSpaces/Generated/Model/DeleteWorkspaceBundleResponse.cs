@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the user volume for a WorkSpace bundle.
+    /// This is the response object from the DeleteWorkspaceBundle operation.
     /// </summary>
-    public partial class UserStorage
+    public partial class DeleteWorkspaceBundleResponse : AmazonWebServiceResponse
     {
-        private string _capacity;
-
-        /// <summary>
-        /// Gets and sets the property Capacity. 
-        /// <para>
-        /// The size of the user volume.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1)]
-        public string Capacity
-        {
-            get { return this._capacity; }
-            set { this._capacity = value; }
-        }
-
-        // Check to see if Capacity property is set
-        internal bool IsSetCapacity()
-        {
-            return this._capacity != null;
-        }
 
     }
 }

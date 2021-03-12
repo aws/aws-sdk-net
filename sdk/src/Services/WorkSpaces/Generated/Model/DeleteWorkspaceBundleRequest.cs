@@ -29,29 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the user volume for a WorkSpace bundle.
+    /// Container for the parameters to the DeleteWorkspaceBundle operation.
+    /// Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace
+    /// bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html">
+    /// Delete a Custom WorkSpaces Bundle or Image</a>.
     /// </summary>
-    public partial class UserStorage
+    public partial class DeleteWorkspaceBundleRequest : AmazonWorkSpacesRequest
     {
-        private string _capacity;
+        private string _bundleId;
 
         /// <summary>
-        /// Gets and sets the property Capacity. 
+        /// Gets and sets the property BundleId. 
         /// <para>
-        /// The size of the user volume.
+        /// The identifier of the bundle.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string Capacity
+        public string BundleId
         {
-            get { return this._capacity; }
-            set { this._capacity = value; }
+            get { return this._bundleId; }
+            set { this._bundleId = value; }
         }
 
-        // Check to see if Capacity property is set
-        internal bool IsSetCapacity()
+        // Check to see if BundleId property is set
+        internal bool IsSetBundleId()
         {
-            return this._capacity != null;
+            return this._bundleId != null;
         }
 
     }
