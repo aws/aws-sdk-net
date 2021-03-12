@@ -1,3 +1,11 @@
+### 3.5.129.0 (2021-03-12 19:29 UTC)
+* CostAndUsageReport (3.5.2.0)
+	* - Added optional billingViewArn field for OSG.
+* MediaTailor (3.5.3.0)
+	* MediaTailor channel assembly is a new manifest-only service that allows you to assemble linear streams using your existing VOD content.
+* WorkSpaces (3.5.4.0)
+	* Adds API support for WorkSpaces bundle management operations.
+
 ### 3.5.128.0 (2021-03-11 19:14 UTC)
 * Comprehend (3.5.4.0)
 	* ContainsPiiEntities API analyzes the input text for the presence of personally identifiable information(PII) and returns the labels of identified PII entity types such as name, address etc.
