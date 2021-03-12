@@ -37,11 +37,51 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Paginator for GetChannelSchedule operation
+        ///</summary>
+        public IGetChannelSchedulePaginator GetChannelSchedule(GetChannelScheduleRequest request) 
+        {
+            return new GetChannelSchedulePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListChannels operation
+        ///</summary>
+        public IListChannelsPaginator ListChannels(ListChannelsRequest request) 
+        {
+            return new ListChannelsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPlaybackConfigurations operation
         ///</summary>
         public IListPlaybackConfigurationsPaginator ListPlaybackConfigurations(ListPlaybackConfigurationsRequest request) 
         {
             return new ListPlaybackConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPrograms operation
+        ///</summary>
+        public IListProgramsPaginator ListPrograms(ListProgramsRequest request) 
+        {
+            return new ListProgramsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSourceLocations operation
+        ///</summary>
+        public IListSourceLocationsPaginator ListSourceLocations(ListSourceLocationsRequest request) 
+        {
+            return new ListSourceLocationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListVodSources operation
+        ///</summary>
+        public IListVodSourcesPaginator ListVodSources(ListVodSourcesRequest request) 
+        {
+            return new ListVodSourcesPaginator(this.client, request);
         }
     }
 }

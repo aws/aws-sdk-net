@@ -31,15 +31,20 @@ namespace Amazon.MediaTailor
     /// <summary>
     /// Interface for accessing MediaTailor
     ///
-    /// Use the AWS Elemental MediaTailor SDK to configure scalable ad insertion for your
-    /// live and VOD content. With AWS Elemental MediaTailor, you can serve targeted ads to
-    /// viewers while maintaining broadcast quality in over-the-top (OTT) video applications.
-    /// For information about using the service, including detailed information about the
-    /// settings covered in this guide, see the AWS Elemental MediaTailor User Guide.
+    /// Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion
+    /// and linear channels. With MediaTailor, you can assemble existing content into a linear
+    /// stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top
+    /// (OTT) video applications. For information about using the service, including detailed
+    /// information about the settings covered in this guide, see the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/">AWS
+    /// Elemental MediaTailor User Guide</a>.
+    /// 
+    ///  
     /// <para>
-    /// Through the SDK, you manage AWS Elemental MediaTailor configurations the same as you
-    /// do through the console. For example, you specify ad insertion behavior and mapping
-    /// information for the origin server and the ad decision server (ADS).
+    /// Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and
+    /// channels the same as you do through the console. For example, you specify ad insertion
+    /// behavior and mapping information for the origin server and the ad decision server
+    /// (ADS).
+    /// </para>
     /// </summary>
     public partial interface IAmazonMediaTailor : IAmazonService, IDisposable
     {
@@ -49,6 +54,174 @@ namespace Amazon.MediaTailor
         /// </summary>
         IMediaTailorPaginatorFactory Paginators { get; }
 
+        
+        #region  CreateChannel
+
+
+        /// <summary>
+        /// Creates a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
+        /// 
+        /// <returns>The response from the CreateChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        CreateChannelResponse CreateChannel(CreateChannelRequest request);
+
+
+
+        /// <summary>
+        /// Creates a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateProgram
+
+
+        /// <summary>
+        /// Creates a program.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProgram service method.</param>
+        /// 
+        /// <returns>The response from the CreateProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateProgram">REST API Reference for CreateProgram Operation</seealso>
+        CreateProgramResponse CreateProgram(CreateProgramRequest request);
+
+
+
+        /// <summary>
+        /// Creates a program.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProgram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateProgram">REST API Reference for CreateProgram Operation</seealso>
+        Task<CreateProgramResponse> CreateProgramAsync(CreateProgramRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateSourceLocation
+
+
+        /// <summary>
+        /// Creates a source location on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSourceLocation service method.</param>
+        /// 
+        /// <returns>The response from the CreateSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateSourceLocation">REST API Reference for CreateSourceLocation Operation</seealso>
+        CreateSourceLocationResponse CreateSourceLocation(CreateSourceLocationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a source location on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSourceLocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateSourceLocation">REST API Reference for CreateSourceLocation Operation</seealso>
+        Task<CreateSourceLocationResponse> CreateSourceLocationAsync(CreateSourceLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateVodSource
+
+
+        /// <summary>
+        /// Creates name for a specific VOD source in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVodSource service method.</param>
+        /// 
+        /// <returns>The response from the CreateVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateVodSource">REST API Reference for CreateVodSource Operation</seealso>
+        CreateVodSourceResponse CreateVodSource(CreateVodSourceRequest request);
+
+
+
+        /// <summary>
+        /// Creates name for a specific VOD source in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVodSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateVodSource">REST API Reference for CreateVodSource Operation</seealso>
+        Task<CreateVodSourceResponse> CreateVodSourceAsync(CreateVodSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteChannel
+
+
+        /// <summary>
+        /// Deletes a channel. You must stop the channel before it can be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
+        DeleteChannelResponse DeleteChannel(DeleteChannelRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a channel. You must stop the channel before it can be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
+        Task<DeleteChannelResponse> DeleteChannelAsync(DeleteChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteChannelPolicy
+
+
+        /// <summary>
+        /// Deletes a channel's IAM policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannelPolicy service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannelPolicy">REST API Reference for DeleteChannelPolicy Operation</seealso>
+        DeleteChannelPolicyResponse DeleteChannelPolicy(DeleteChannelPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a channel's IAM policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteChannelPolicy service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannelPolicy">REST API Reference for DeleteChannelPolicy Operation</seealso>
+        Task<DeleteChannelPolicyResponse> DeleteChannelPolicyAsync(DeleteChannelPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
         #region  DeletePlaybackConfiguration
 
@@ -78,6 +251,258 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  DeleteProgram
+
+
+        /// <summary>
+        /// Deletes a specific program on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProgram service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteProgram">REST API Reference for DeleteProgram Operation</seealso>
+        DeleteProgramResponse DeleteProgram(DeleteProgramRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a specific program on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProgram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteProgram">REST API Reference for DeleteProgram Operation</seealso>
+        Task<DeleteProgramResponse> DeleteProgramAsync(DeleteProgramRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteSourceLocation
+
+
+        /// <summary>
+        /// Deletes a source location on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceLocation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteSourceLocation">REST API Reference for DeleteSourceLocation Operation</seealso>
+        DeleteSourceLocationResponse DeleteSourceLocation(DeleteSourceLocationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a source location on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceLocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteSourceLocation">REST API Reference for DeleteSourceLocation Operation</seealso>
+        Task<DeleteSourceLocationResponse> DeleteSourceLocationAsync(DeleteSourceLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteVodSource
+
+
+        /// <summary>
+        /// Deletes a specific VOD source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVodSource service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteVodSource">REST API Reference for DeleteVodSource Operation</seealso>
+        DeleteVodSourceResponse DeleteVodSource(DeleteVodSourceRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a specific VOD source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVodSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteVodSource">REST API Reference for DeleteVodSource Operation</seealso>
+        Task<DeleteVodSourceResponse> DeleteVodSourceAsync(DeleteVodSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeChannel
+
+
+        /// <summary>
+        /// Describes the properties of a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
+        DescribeChannelResponse DescribeChannel(DescribeChannelRequest request);
+
+
+
+        /// <summary>
+        /// Describes the properties of a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
+        Task<DescribeChannelResponse> DescribeChannelAsync(DescribeChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeProgram
+
+
+        /// <summary>
+        /// Retrieves the properties of the requested program.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProgram service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeProgram">REST API Reference for DescribeProgram Operation</seealso>
+        DescribeProgramResponse DescribeProgram(DescribeProgramRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the properties of the requested program.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProgram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeProgram">REST API Reference for DescribeProgram Operation</seealso>
+        Task<DescribeProgramResponse> DescribeProgramAsync(DescribeProgramRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeSourceLocation
+
+
+        /// <summary>
+        /// Retrieves the properties of the requested source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceLocation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeSourceLocation">REST API Reference for DescribeSourceLocation Operation</seealso>
+        DescribeSourceLocationResponse DescribeSourceLocation(DescribeSourceLocationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the properties of the requested source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceLocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeSourceLocation">REST API Reference for DescribeSourceLocation Operation</seealso>
+        Task<DescribeSourceLocationResponse> DescribeSourceLocationAsync(DescribeSourceLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeVodSource
+
+
+        /// <summary>
+        /// Provides details about a specific VOD source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVodSource service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeVodSource">REST API Reference for DescribeVodSource Operation</seealso>
+        DescribeVodSourceResponse DescribeVodSource(DescribeVodSourceRequest request);
+
+
+
+        /// <summary>
+        /// Provides details about a specific VOD source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVodSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeVodSource">REST API Reference for DescribeVodSource Operation</seealso>
+        Task<DescribeVodSourceResponse> DescribeVodSourceAsync(DescribeVodSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetChannelPolicy
+
+
+        /// <summary>
+        /// Retrieves information about a channel's IAM policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetChannelPolicy service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelPolicy">REST API Reference for GetChannelPolicy Operation</seealso>
+        GetChannelPolicyResponse GetChannelPolicy(GetChannelPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a channel's IAM policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetChannelPolicy service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelPolicy">REST API Reference for GetChannelPolicy Operation</seealso>
+        Task<GetChannelPolicyResponse> GetChannelPolicyAsync(GetChannelPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetChannelSchedule
+
+
+        /// <summary>
+        /// Retrieves information about your channel's schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelSchedule service method.</param>
+        /// 
+        /// <returns>The response from the GetChannelSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelSchedule">REST API Reference for GetChannelSchedule Operation</seealso>
+        GetChannelScheduleResponse GetChannelSchedule(GetChannelScheduleRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about your channel's schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetChannelSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelSchedule">REST API Reference for GetChannelSchedule Operation</seealso>
+        Task<GetChannelScheduleResponse> GetChannelScheduleAsync(GetChannelScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetPlaybackConfiguration
 
 
@@ -103,6 +528,34 @@ namespace Amazon.MediaTailor
         /// <returns>The response from the GetPlaybackConfiguration service method, as returned by MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">REST API Reference for GetPlaybackConfiguration Operation</seealso>
         Task<GetPlaybackConfigurationResponse> GetPlaybackConfigurationAsync(GetPlaybackConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListChannels
+
+
+        /// <summary>
+        /// Retrieves a list of channels that are associated with this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        ListChannelsResponse ListChannels(ListChannelsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of channels that are associated with this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -142,6 +595,62 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  ListPrograms
+
+
+        /// <summary>
+        /// Retrieves a list of programs on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrograms service method.</param>
+        /// 
+        /// <returns>The response from the ListPrograms service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms">REST API Reference for ListPrograms Operation</seealso>
+        ListProgramsResponse ListPrograms(ListProgramsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of programs on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrograms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPrograms service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms">REST API Reference for ListPrograms Operation</seealso>
+        Task<ListProgramsResponse> ListProgramsAsync(ListProgramsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListSourceLocations
+
+
+        /// <summary>
+        /// Retrieves a list of source locations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceLocations service method.</param>
+        /// 
+        /// <returns>The response from the ListSourceLocations service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListSourceLocations">REST API Reference for ListSourceLocations Operation</seealso>
+        ListSourceLocationsResponse ListSourceLocations(ListSourceLocationsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of source locations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceLocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSourceLocations service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListSourceLocations">REST API Reference for ListSourceLocations Operation</seealso>
+        Task<ListSourceLocationsResponse> ListSourceLocationsAsync(ListSourceLocationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -176,6 +685,62 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  ListVodSources
+
+
+        /// <summary>
+        /// Lists all the VOD sources in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVodSources service method.</param>
+        /// 
+        /// <returns>The response from the ListVodSources service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListVodSources">REST API Reference for ListVodSources Operation</seealso>
+        ListVodSourcesResponse ListVodSources(ListVodSourcesRequest request);
+
+
+
+        /// <summary>
+        /// Lists all the VOD sources in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVodSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVodSources service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListVodSources">REST API Reference for ListVodSources Operation</seealso>
+        Task<ListVodSourcesResponse> ListVodSourcesAsync(ListVodSourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutChannelPolicy
+
+
+        /// <summary>
+        /// Creates an IAM policy for the channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutChannelPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutChannelPolicy service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutChannelPolicy">REST API Reference for PutChannelPolicy Operation</seealso>
+        PutChannelPolicyResponse PutChannelPolicy(PutChannelPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Creates an IAM policy for the channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutChannelPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutChannelPolicy service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutChannelPolicy">REST API Reference for PutChannelPolicy Operation</seealso>
+        Task<PutChannelPolicyResponse> PutChannelPolicyAsync(PutChannelPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutPlaybackConfiguration
 
 
@@ -201,6 +766,62 @@ namespace Amazon.MediaTailor
         /// <returns>The response from the PutPlaybackConfiguration service method, as returned by MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">REST API Reference for PutPlaybackConfiguration Operation</seealso>
         Task<PutPlaybackConfigurationResponse> PutPlaybackConfigurationAsync(PutPlaybackConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartChannel
+
+
+        /// <summary>
+        /// Starts a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartChannel service method.</param>
+        /// 
+        /// <returns>The response from the StartChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StartChannel">REST API Reference for StartChannel Operation</seealso>
+        StartChannelResponse StartChannel(StartChannelRequest request);
+
+
+
+        /// <summary>
+        /// Starts a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StartChannel">REST API Reference for StartChannel Operation</seealso>
+        Task<StartChannelResponse> StartChannelAsync(StartChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopChannel
+
+
+        /// <summary>
+        /// Stops a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopChannel service method.</param>
+        /// 
+        /// <returns>The response from the StopChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StopChannel">REST API Reference for StopChannel Operation</seealso>
+        StopChannelResponse StopChannel(StopChannelRequest request);
+
+
+
+        /// <summary>
+        /// Stops a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StopChannel">REST API Reference for StopChannel Operation</seealso>
+        Task<StopChannelResponse> StopChannelAsync(StopChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -273,6 +894,90 @@ namespace Amazon.MediaTailor
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateChannel
+
+
+        /// <summary>
+        /// Updates an existing channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        UpdateChannelResponse UpdateChannel(UpdateChannelRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateSourceLocation
+
+
+        /// <summary>
+        /// Updates a source location on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceLocation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateSourceLocation">REST API Reference for UpdateSourceLocation Operation</seealso>
+        UpdateSourceLocationResponse UpdateSourceLocation(UpdateSourceLocationRequest request);
+
+
+
+        /// <summary>
+        /// Updates a source location on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceLocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateSourceLocation">REST API Reference for UpdateSourceLocation Operation</seealso>
+        Task<UpdateSourceLocationResponse> UpdateSourceLocationAsync(UpdateSourceLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateVodSource
+
+
+        /// <summary>
+        /// Updates a specific VOD source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVodSource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateVodSource">REST API Reference for UpdateVodSource Operation</seealso>
+        UpdateVodSourceResponse UpdateVodSource(UpdateVodSourceRequest request);
+
+
+
+        /// <summary>
+        /// Updates a specific VOD source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVodSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateVodSource">REST API Reference for UpdateVodSource Operation</seealso>
+        Task<UpdateVodSourceResponse> UpdateVodSourceAsync(UpdateVodSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -40,7 +40,7 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the playback configuration. You can get this from
-        /// the response to any playback configuration request. 
+        /// the response to any playback configuration request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

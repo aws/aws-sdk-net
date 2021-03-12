@@ -38,8 +38,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A comma-separated list of tag key:value pairs. For example:  { "Key1": "Value1", "Key2":
-        /// "Value2" } 
+        /// A comma-separated list of tag key:value pairs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

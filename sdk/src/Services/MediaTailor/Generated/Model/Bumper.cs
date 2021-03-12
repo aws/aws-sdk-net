@@ -30,7 +30,7 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// The configuration for bumpers. Bumpers are short audio or video clips that play at
-    /// the start or before the end of an ad break.
+    /// the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
     /// </summary>
     public partial class Bumper
     {
@@ -40,7 +40,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property EndUrl. 
         /// <para>
-        /// The URL for the end bumper asset. 
+        /// The URL for the end bumper asset.
         /// </para>
         /// </summary>
         public string EndUrl
@@ -58,7 +58,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property StartUrl. 
         /// <para>
-        /// The URL for the start bumper asset. 
+        /// The URL for the start bumper asset.
         /// </para>
         /// </summary>
         public string StartUrl

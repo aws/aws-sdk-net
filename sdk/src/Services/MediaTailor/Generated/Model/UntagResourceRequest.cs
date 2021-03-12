@@ -42,7 +42,7 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the playback configuration. You can get this from
-        /// the response to any playback configuration request. 
+        /// the response to any playback configuration request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,6 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property TagKeys. 
         /// <para>
         /// A comma-separated list of the tag keys to remove from the playback configuration.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

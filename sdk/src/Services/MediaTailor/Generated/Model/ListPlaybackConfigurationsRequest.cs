@@ -44,7 +44,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of records to return. 
+        /// Maximum number of records to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

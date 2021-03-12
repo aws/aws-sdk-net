@@ -41,7 +41,7 @@ namespace Amazon.MediaTailor.Model
         /// <para>
         /// Array of playback configurations. This might be all the available configurations or
         /// a subset, depending on the settings that you provide and the total number of configurations
-        /// stored. 
+        /// stored.
         /// </para>
         /// </summary>
         public List<PlaybackConfiguration> Items

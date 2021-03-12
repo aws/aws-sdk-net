@@ -35,15 +35,20 @@ namespace Amazon.MediaTailor
     /// <summary>
     /// Implementation for accessing MediaTailor
     ///
-    /// Use the AWS Elemental MediaTailor SDK to configure scalable ad insertion for your
-    /// live and VOD content. With AWS Elemental MediaTailor, you can serve targeted ads to
-    /// viewers while maintaining broadcast quality in over-the-top (OTT) video applications.
-    /// For information about using the service, including detailed information about the
-    /// settings covered in this guide, see the AWS Elemental MediaTailor User Guide.
+    /// Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion
+    /// and linear channels. With MediaTailor, you can assemble existing content into a linear
+    /// stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top
+    /// (OTT) video applications. For information about using the service, including detailed
+    /// information about the settings covered in this guide, see the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/">AWS
+    /// Elemental MediaTailor User Guide</a>.
+    /// 
+    ///  
     /// <para>
-    /// Through the SDK, you manage AWS Elemental MediaTailor configurations the same as you
-    /// do through the console. For example, you specify ad insertion behavior and mapping
-    /// information for the origin server and the ad decision server (ADS).
+    /// Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and
+    /// channels the same as you do through the console. For example, you specify ad insertion
+    /// behavior and mapping information for the origin server and the ad decision server
+    /// (ADS).
+    /// </para>
     /// </summary>
     public partial class AmazonMediaTailorClient : AmazonServiceClient, IAmazonMediaTailor
     {
@@ -245,6 +250,330 @@ namespace Amazon.MediaTailor
         #endregion
 
 
+        #region  CreateChannel
+
+        /// <summary>
+        /// Creates a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
+        /// 
+        /// <returns>The response from the CreateChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        public virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateChannelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        public virtual IAsyncResult BeginCreateChannel(CreateChannelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateChannel.</param>
+        /// 
+        /// <returns>Returns a  CreateChannelResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        public virtual CreateChannelResponse EndCreateChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateProgram
+
+        /// <summary>
+        /// Creates a program.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProgram service method.</param>
+        /// 
+        /// <returns>The response from the CreateProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateProgram">REST API Reference for CreateProgram Operation</seealso>
+        public virtual CreateProgramResponse CreateProgram(CreateProgramRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProgramResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProgramResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProgram operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProgram operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProgram
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateProgram">REST API Reference for CreateProgram Operation</seealso>
+        public virtual IAsyncResult BeginCreateProgram(CreateProgramRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProgramResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProgram operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProgram.</param>
+        /// 
+        /// <returns>Returns a  CreateProgramResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateProgram">REST API Reference for CreateProgram Operation</seealso>
+        public virtual CreateProgramResponse EndCreateProgram(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateProgramResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSourceLocation
+
+        /// <summary>
+        /// Creates a source location on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSourceLocation service method.</param>
+        /// 
+        /// <returns>The response from the CreateSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateSourceLocation">REST API Reference for CreateSourceLocation Operation</seealso>
+        public virtual CreateSourceLocationResponse CreateSourceLocation(CreateSourceLocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSourceLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSourceLocationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSourceLocationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSourceLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSourceLocation operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSourceLocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateSourceLocation">REST API Reference for CreateSourceLocation Operation</seealso>
+        public virtual IAsyncResult BeginCreateSourceLocation(CreateSourceLocationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSourceLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSourceLocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSourceLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSourceLocation.</param>
+        /// 
+        /// <returns>Returns a  CreateSourceLocationResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateSourceLocation">REST API Reference for CreateSourceLocation Operation</seealso>
+        public virtual CreateSourceLocationResponse EndCreateSourceLocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSourceLocationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateVodSource
+
+        /// <summary>
+        /// Creates name for a specific VOD source in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVodSource service method.</param>
+        /// 
+        /// <returns>The response from the CreateVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateVodSource">REST API Reference for CreateVodSource Operation</seealso>
+        public virtual CreateVodSourceResponse CreateVodSource(CreateVodSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVodSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVodSourceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVodSourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVodSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVodSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVodSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateVodSource">REST API Reference for CreateVodSource Operation</seealso>
+        public virtual IAsyncResult BeginCreateVodSource(CreateVodSourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVodSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVodSourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVodSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVodSource.</param>
+        /// 
+        /// <returns>Returns a  CreateVodSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateVodSource">REST API Reference for CreateVodSource Operation</seealso>
+        public virtual CreateVodSourceResponse EndCreateVodSource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVodSourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteChannel
+
+        /// <summary>
+        /// Deletes a channel. You must stop the channel before it can be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
+        public virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteChannelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannel operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
+        public virtual IAsyncResult BeginDeleteChannel(DeleteChannelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChannel.</param>
+        /// 
+        /// <returns>Returns a  DeleteChannelResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
+        public virtual DeleteChannelResponse EndDeleteChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteChannelPolicy
+
+        /// <summary>
+        /// Deletes a channel's IAM policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannelPolicy service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannelPolicy">REST API Reference for DeleteChannelPolicy Operation</seealso>
+        public virtual DeleteChannelPolicyResponse DeleteChannelPolicy(DeleteChannelPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteChannelPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteChannelPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteChannelPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChannelPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelPolicy operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChannelPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannelPolicy">REST API Reference for DeleteChannelPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteChannelPolicy(DeleteChannelPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteChannelPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteChannelPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteChannelPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChannelPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteChannelPolicyResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannelPolicy">REST API Reference for DeleteChannelPolicy Operation</seealso>
+        public virtual DeleteChannelPolicyResponse EndDeleteChannelPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteChannelPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePlaybackConfiguration
 
         /// <summary>
@@ -299,6 +628,492 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  DeleteProgram
+
+        /// <summary>
+        /// Deletes a specific program on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProgram service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteProgram">REST API Reference for DeleteProgram Operation</seealso>
+        public virtual DeleteProgramResponse DeleteProgram(DeleteProgramRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProgramResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProgramResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProgram operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProgram operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProgram
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteProgram">REST API Reference for DeleteProgram Operation</seealso>
+        public virtual IAsyncResult BeginDeleteProgram(DeleteProgramRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProgramResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProgram operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProgram.</param>
+        /// 
+        /// <returns>Returns a  DeleteProgramResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteProgram">REST API Reference for DeleteProgram Operation</seealso>
+        public virtual DeleteProgramResponse EndDeleteProgram(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteProgramResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSourceLocation
+
+        /// <summary>
+        /// Deletes a source location on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceLocation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteSourceLocation">REST API Reference for DeleteSourceLocation Operation</seealso>
+        public virtual DeleteSourceLocationResponse DeleteSourceLocation(DeleteSourceLocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSourceLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSourceLocationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSourceLocationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSourceLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceLocation operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSourceLocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteSourceLocation">REST API Reference for DeleteSourceLocation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSourceLocation(DeleteSourceLocationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSourceLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSourceLocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSourceLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSourceLocation.</param>
+        /// 
+        /// <returns>Returns a  DeleteSourceLocationResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteSourceLocation">REST API Reference for DeleteSourceLocation Operation</seealso>
+        public virtual DeleteSourceLocationResponse EndDeleteSourceLocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSourceLocationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVodSource
+
+        /// <summary>
+        /// Deletes a specific VOD source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVodSource service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteVodSource">REST API Reference for DeleteVodSource Operation</seealso>
+        public virtual DeleteVodSourceResponse DeleteVodSource(DeleteVodSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVodSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVodSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVodSourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVodSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVodSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVodSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteVodSource">REST API Reference for DeleteVodSource Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVodSource(DeleteVodSourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVodSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVodSourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVodSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVodSource.</param>
+        /// 
+        /// <returns>Returns a  DeleteVodSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteVodSource">REST API Reference for DeleteVodSource Operation</seealso>
+        public virtual DeleteVodSourceResponse EndDeleteVodSource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVodSourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeChannel
+
+        /// <summary>
+        /// Describes the properties of a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
+        public virtual DescribeChannelResponse DescribeChannel(DescribeChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeChannelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannel operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
+        public virtual IAsyncResult BeginDescribeChannel(DescribeChannelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeChannel.</param>
+        /// 
+        /// <returns>Returns a  DescribeChannelResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
+        public virtual DescribeChannelResponse EndDescribeChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeProgram
+
+        /// <summary>
+        /// Retrieves the properties of the requested program.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProgram service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeProgram">REST API Reference for DescribeProgram Operation</seealso>
+        public virtual DescribeProgramResponse DescribeProgram(DescribeProgramRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProgramResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProgramResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProgram operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProgram operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProgram
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeProgram">REST API Reference for DescribeProgram Operation</seealso>
+        public virtual IAsyncResult BeginDescribeProgram(DescribeProgramRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProgramResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProgram operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProgram.</param>
+        /// 
+        /// <returns>Returns a  DescribeProgramResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeProgram">REST API Reference for DescribeProgram Operation</seealso>
+        public virtual DescribeProgramResponse EndDescribeProgram(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeProgramResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeSourceLocation
+
+        /// <summary>
+        /// Retrieves the properties of the requested source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceLocation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeSourceLocation">REST API Reference for DescribeSourceLocation Operation</seealso>
+        public virtual DescribeSourceLocationResponse DescribeSourceLocation(DescribeSourceLocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSourceLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSourceLocationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSourceLocationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSourceLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceLocation operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSourceLocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeSourceLocation">REST API Reference for DescribeSourceLocation Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSourceLocation(DescribeSourceLocationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSourceLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSourceLocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSourceLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSourceLocation.</param>
+        /// 
+        /// <returns>Returns a  DescribeSourceLocationResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeSourceLocation">REST API Reference for DescribeSourceLocation Operation</seealso>
+        public virtual DescribeSourceLocationResponse EndDescribeSourceLocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSourceLocationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVodSource
+
+        /// <summary>
+        /// Provides details about a specific VOD source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVodSource service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeVodSource">REST API Reference for DescribeVodSource Operation</seealso>
+        public virtual DescribeVodSourceResponse DescribeVodSource(DescribeVodSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVodSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVodSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVodSourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVodSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVodSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVodSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeVodSource">REST API Reference for DescribeVodSource Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVodSource(DescribeVodSourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVodSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVodSourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVodSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVodSource.</param>
+        /// 
+        /// <returns>Returns a  DescribeVodSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeVodSource">REST API Reference for DescribeVodSource Operation</seealso>
+        public virtual DescribeVodSourceResponse EndDescribeVodSource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVodSourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetChannelPolicy
+
+        /// <summary>
+        /// Retrieves information about a channel's IAM policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetChannelPolicy service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelPolicy">REST API Reference for GetChannelPolicy Operation</seealso>
+        public virtual GetChannelPolicyResponse GetChannelPolicy(GetChannelPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetChannelPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChannelPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelPolicy operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChannelPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelPolicy">REST API Reference for GetChannelPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetChannelPolicy(GetChannelPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetChannelPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChannelPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetChannelPolicyResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelPolicy">REST API Reference for GetChannelPolicy Operation</seealso>
+        public virtual GetChannelPolicyResponse EndGetChannelPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetChannelPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetChannelSchedule
+
+        /// <summary>
+        /// Retrieves information about your channel's schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelSchedule service method.</param>
+        /// 
+        /// <returns>The response from the GetChannelSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelSchedule">REST API Reference for GetChannelSchedule Operation</seealso>
+        public virtual GetChannelScheduleResponse GetChannelSchedule(GetChannelScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<GetChannelScheduleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChannelSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelSchedule operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChannelSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelSchedule">REST API Reference for GetChannelSchedule Operation</seealso>
+        public virtual IAsyncResult BeginGetChannelSchedule(GetChannelScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetChannelSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChannelSchedule.</param>
+        /// 
+        /// <returns>Returns a  GetChannelScheduleResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelSchedule">REST API Reference for GetChannelSchedule Operation</seealso>
+        public virtual GetChannelScheduleResponse EndGetChannelSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetChannelScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetPlaybackConfiguration
 
         /// <summary>
@@ -349,6 +1164,60 @@ namespace Amazon.MediaTailor
         public virtual GetPlaybackConfigurationResponse EndGetPlaybackConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPlaybackConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListChannels
+
+        /// <summary>
+        /// Retrieves a list of channels that are associated with this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChannelsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        public virtual IAsyncResult BeginListChannels(ListChannelsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannels.</param>
+        /// 
+        /// <returns>Returns a  ListChannelsResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        public virtual ListChannelsResponse EndListChannels(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListChannelsResponse>(asyncResult);
         }
 
         #endregion
@@ -411,6 +1280,114 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  ListPrograms
+
+        /// <summary>
+        /// Retrieves a list of programs on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrograms service method.</param>
+        /// 
+        /// <returns>The response from the ListPrograms service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms">REST API Reference for ListPrograms Operation</seealso>
+        public virtual ListProgramsResponse ListPrograms(ListProgramsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProgramsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProgramsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProgramsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPrograms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPrograms operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPrograms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms">REST API Reference for ListPrograms Operation</seealso>
+        public virtual IAsyncResult BeginListPrograms(ListProgramsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProgramsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProgramsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPrograms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPrograms.</param>
+        /// 
+        /// <returns>Returns a  ListProgramsResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms">REST API Reference for ListPrograms Operation</seealso>
+        public virtual ListProgramsResponse EndListPrograms(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProgramsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSourceLocations
+
+        /// <summary>
+        /// Retrieves a list of source locations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceLocations service method.</param>
+        /// 
+        /// <returns>The response from the ListSourceLocations service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListSourceLocations">REST API Reference for ListSourceLocations Operation</seealso>
+        public virtual ListSourceLocationsResponse ListSourceLocations(ListSourceLocationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSourceLocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceLocationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSourceLocationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSourceLocations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceLocations operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSourceLocations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListSourceLocations">REST API Reference for ListSourceLocations Operation</seealso>
+        public virtual IAsyncResult BeginListSourceLocations(ListSourceLocationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSourceLocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceLocationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSourceLocations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSourceLocations.</param>
+        /// 
+        /// <returns>Returns a  ListSourceLocationsResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListSourceLocations">REST API Reference for ListSourceLocations Operation</seealso>
+        public virtual ListSourceLocationsResponse EndListSourceLocations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSourceLocationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -468,6 +1445,114 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  ListVodSources
+
+        /// <summary>
+        /// Lists all the VOD sources in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVodSources service method.</param>
+        /// 
+        /// <returns>The response from the ListVodSources service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListVodSources">REST API Reference for ListVodSources Operation</seealso>
+        public virtual ListVodSourcesResponse ListVodSources(ListVodSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVodSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVodSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListVodSourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVodSources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVodSources operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVodSources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListVodSources">REST API Reference for ListVodSources Operation</seealso>
+        public virtual IAsyncResult BeginListVodSources(ListVodSourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVodSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVodSourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVodSources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVodSources.</param>
+        /// 
+        /// <returns>Returns a  ListVodSourcesResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListVodSources">REST API Reference for ListVodSources Operation</seealso>
+        public virtual ListVodSourcesResponse EndListVodSources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVodSourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutChannelPolicy
+
+        /// <summary>
+        /// Creates an IAM policy for the channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutChannelPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutChannelPolicy service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutChannelPolicy">REST API Reference for PutChannelPolicy Operation</seealso>
+        public virtual PutChannelPolicyResponse PutChannelPolicy(PutChannelPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutChannelPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutChannelPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutChannelPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutChannelPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutChannelPolicy operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutChannelPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutChannelPolicy">REST API Reference for PutChannelPolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutChannelPolicy(PutChannelPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutChannelPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutChannelPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutChannelPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutChannelPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutChannelPolicyResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutChannelPolicy">REST API Reference for PutChannelPolicy Operation</seealso>
+        public virtual PutChannelPolicyResponse EndPutChannelPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutChannelPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutPlaybackConfiguration
 
         /// <summary>
@@ -518,6 +1603,114 @@ namespace Amazon.MediaTailor
         public virtual PutPlaybackConfigurationResponse EndPutPlaybackConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutPlaybackConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartChannel
+
+        /// <summary>
+        /// Starts a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartChannel service method.</param>
+        /// 
+        /// <returns>The response from the StartChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StartChannel">REST API Reference for StartChannel Operation</seealso>
+        public virtual StartChannelResponse StartChannel(StartChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartChannelResponseUnmarshaller.Instance;
+
+            return Invoke<StartChannelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartChannel operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StartChannel">REST API Reference for StartChannel Operation</seealso>
+        public virtual IAsyncResult BeginStartChannel(StartChannelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartChannel.</param>
+        /// 
+        /// <returns>Returns a  StartChannelResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StartChannel">REST API Reference for StartChannel Operation</seealso>
+        public virtual StartChannelResponse EndStartChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopChannel
+
+        /// <summary>
+        /// Stops a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopChannel service method.</param>
+        /// 
+        /// <returns>The response from the StopChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StopChannel">REST API Reference for StopChannel Operation</seealso>
+        public virtual StopChannelResponse StopChannel(StopChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopChannelResponseUnmarshaller.Instance;
+
+            return Invoke<StopChannelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopChannel operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StopChannel">REST API Reference for StopChannel Operation</seealso>
+        public virtual IAsyncResult BeginStopChannel(StopChannelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopChannel.</param>
+        /// 
+        /// <returns>Returns a  StopChannelResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StopChannel">REST API Reference for StopChannel Operation</seealso>
+        public virtual StopChannelResponse EndStopChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopChannelResponse>(asyncResult);
         }
 
         #endregion
@@ -634,6 +1827,168 @@ namespace Amazon.MediaTailor
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateChannel
+
+        /// <summary>
+        /// Updates an existing channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        public virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateChannelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        public virtual IAsyncResult BeginUpdateChannel(UpdateChannelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateChannelResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        public virtual UpdateChannelResponse EndUpdateChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSourceLocation
+
+        /// <summary>
+        /// Updates a source location on a specific channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceLocation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSourceLocation service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateSourceLocation">REST API Reference for UpdateSourceLocation Operation</seealso>
+        public virtual UpdateSourceLocationResponse UpdateSourceLocation(UpdateSourceLocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSourceLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSourceLocationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSourceLocationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSourceLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceLocation operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSourceLocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateSourceLocation">REST API Reference for UpdateSourceLocation Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSourceLocation(UpdateSourceLocationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSourceLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSourceLocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSourceLocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSourceLocation.</param>
+        /// 
+        /// <returns>Returns a  UpdateSourceLocationResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateSourceLocation">REST API Reference for UpdateSourceLocation Operation</seealso>
+        public virtual UpdateSourceLocationResponse EndUpdateSourceLocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSourceLocationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVodSource
+
+        /// <summary>
+        /// Updates a specific VOD source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVodSource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVodSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateVodSource">REST API Reference for UpdateVodSource Operation</seealso>
+        public virtual UpdateVodSourceResponse UpdateVodSource(UpdateVodSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVodSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVodSourceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVodSourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVodSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVodSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVodSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateVodSource">REST API Reference for UpdateVodSource Operation</seealso>
+        public virtual IAsyncResult BeginUpdateVodSource(UpdateVodSourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVodSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVodSourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVodSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVodSource.</param>
+        /// 
+        /// <returns>Returns a  UpdateVodSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateVodSource">REST API Reference for UpdateVodSource Operation</seealso>
+        public virtual UpdateVodSourceResponse EndUpdateVodSource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVodSourceResponse>(asyncResult);
         }
 
         #endregion

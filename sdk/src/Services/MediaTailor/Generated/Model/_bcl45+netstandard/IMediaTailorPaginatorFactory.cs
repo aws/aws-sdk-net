@@ -27,9 +27,34 @@ namespace Amazon.MediaTailor.Model
     {
 
         /// <summary>
+        /// Paginator for GetChannelSchedule operation
+        ///</summary>
+        IGetChannelSchedulePaginator GetChannelSchedule(GetChannelScheduleRequest request);
+
+        /// <summary>
+        /// Paginator for ListChannels operation
+        ///</summary>
+        IListChannelsPaginator ListChannels(ListChannelsRequest request);
+
+        /// <summary>
         /// Paginator for ListPlaybackConfigurations operation
         ///</summary>
         IListPlaybackConfigurationsPaginator ListPlaybackConfigurations(ListPlaybackConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPrograms operation
+        ///</summary>
+        IListProgramsPaginator ListPrograms(ListProgramsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSourceLocations operation
+        ///</summary>
+        IListSourceLocationsPaginator ListSourceLocations(ListSourceLocationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListVodSources operation
+        ///</summary>
+        IListVodSourcesPaginator ListVodSources(ListVodSourcesRequest request);
     }
 }
 #endif
