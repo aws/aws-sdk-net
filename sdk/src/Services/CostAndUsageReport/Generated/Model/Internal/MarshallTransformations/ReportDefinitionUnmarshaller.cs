@@ -76,6 +76,12 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdditionalSchemaElements = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BillingViewArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BillingViewArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Compression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -37,6 +37,7 @@ namespace Amazon.CostAndUsageReport.Model
     {
         private List<string> _additionalArtifacts = new List<string>();
         private List<string> _additionalSchemaElements = new List<string>();
+        private string _billingViewArn;
         private CompressionFormat _compression;
         private ReportFormat _format;
         private bool? _refreshClosedReports;
@@ -83,6 +84,26 @@ namespace Amazon.CostAndUsageReport.Model
         internal bool IsSetAdditionalSchemaElements()
         {
             return this._additionalSchemaElements != null && this._additionalSchemaElements.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingViewArn. 
+        /// <para>
+        ///  The Amazon resource name of the billing view. You can get this value by using the
+        /// billing view service public APIs. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=128)]
+        public string BillingViewArn
+        {
+            get { return this._billingViewArn; }
+            set { this._billingViewArn = value; }
+        }
+
+        // Check to see if BillingViewArn property is set
+        internal bool IsSetBillingViewArn()
+        {
+            return this._billingViewArn != null;
         }
 
         /// <summary>

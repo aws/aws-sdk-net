@@ -67,6 +67,12 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetBillingViewArn())
+            {
+                context.Writer.WritePropertyName("BillingViewArn");
+                context.Writer.Write(requestObject.BillingViewArn);
+            }
+
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");
