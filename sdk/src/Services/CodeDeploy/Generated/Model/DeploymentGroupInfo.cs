@@ -51,6 +51,7 @@ namespace Amazon.CodeDeploy.Model
         private LoadBalancerInfo _loadBalancerInfo;
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private OnPremisesTagSet _onPremisesTagSet;
+        private OutdatedInstancesStrategy _outdatedInstancesStrategy;
         private string _serviceRoleArn;
         private RevisionLocation _targetRevision;
         private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
@@ -392,6 +393,36 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetOnPremisesTagSet()
         {
             return this._onPremisesTagSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutdatedInstancesStrategy. 
+        /// <para>
+        /// Indicates what happens when new EC2 instances are launched mid-deployment and do not
+        /// receive the deployed application revision.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
+        /// one or more 'auto-update outdated instances' deployments to apply the deployed application
+        /// revision to the new EC2 instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+        /// to update the new EC2 instances. This may result in instances having different revisions.
+        /// </para>
+        /// </summary>
+        public OutdatedInstancesStrategy OutdatedInstancesStrategy
+        {
+            get { return this._outdatedInstancesStrategy; }
+            set { this._outdatedInstancesStrategy = value; }
+        }
+
+        // Check to see if OutdatedInstancesStrategy property is set
+        internal bool IsSetOutdatedInstancesStrategy()
+        {
+            return this._outdatedInstancesStrategy != null;
         }
 
         /// <summary>

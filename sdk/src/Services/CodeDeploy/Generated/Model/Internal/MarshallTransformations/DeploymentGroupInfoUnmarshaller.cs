@@ -172,6 +172,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.OnPremisesTagSet = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("outdatedInstancesStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutdatedInstancesStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

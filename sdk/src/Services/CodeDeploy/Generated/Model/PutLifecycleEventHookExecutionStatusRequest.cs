@@ -88,8 +88,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The result of a Lambda function that validates a deployment lifecycle event (<code>Succeeded</code>
-        /// or <code>Failed</code>).
+        /// The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code>
+        /// and <code>Failed</code> are the only valid values for <code>status</code>.
         /// </para>
         /// </summary>
         public LifecycleEventStatus Status

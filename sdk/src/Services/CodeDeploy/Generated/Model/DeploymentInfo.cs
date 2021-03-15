@@ -55,6 +55,7 @@ namespace Amazon.CodeDeploy.Model
         private bool? _instanceTerminationWaitTimeStarted;
         private LoadBalancerInfo _loadBalancerInfo;
         private RevisionLocation _previousRevision;
+        private RelatedDeployments _relatedDeployments;
         private RevisionLocation _revision;
         private RollbackInfo _rollbackInfo;
         private DateTime? _startTime;
@@ -207,6 +208,11 @@ namespace Amazon.CodeDeploy.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>codeDeployRollback</code>: A rollback process created the deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment
+        /// when it detected outdated EC2 instances.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -524,6 +530,21 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetPreviousRevision()
         {
             return this._previousRevision != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedDeployments.
+        /// </summary>
+        public RelatedDeployments RelatedDeployments
+        {
+            get { return this._relatedDeployments; }
+            set { this._relatedDeployments = value; }
+        }
+
+        // Check to see if RelatedDeployments property is set
+        internal bool IsSetRelatedDeployments()
+        {
+            return this._relatedDeployments != null;
         }
 
         /// <summary>

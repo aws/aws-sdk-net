@@ -228,6 +228,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOutdatedInstancesStrategy())
+                {
+                    context.Writer.WritePropertyName("outdatedInstancesStrategy");
+                    context.Writer.Write(publicRequest.OutdatedInstancesStrategy);
+                }
+
                 if(publicRequest.IsSetServiceRoleArn())
                 {
                     context.Writer.WritePropertyName("serviceRoleArn");

@@ -196,6 +196,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreviousRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("relatedDeployments", targetDepth))
+                {
+                    var unmarshaller = RelatedDeploymentsUnmarshaller.Instance;
+                    unmarshalledObject.RelatedDeployments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("revision", targetDepth))
                 {
                     var unmarshaller = RevisionLocationUnmarshaller.Instance;
