@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.129.0",
+    "ProductVersion" : "3.5.130.0",
     "CoreVersion"    : "3.5.3.6",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -94,7 +94,7 @@
             "InPreview"               : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.5.0.76",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.6"
@@ -160,7 +160,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.5.3.16",
+            "Version" : "3.5.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.6"
@@ -192,7 +192,7 @@
             "InPreview"               : false
         },
         "ElasticMapReduce"     : {
-            "Version" : "3.5.5.1",
+            "Version" : "3.5.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.6"
@@ -2067,6 +2067,14 @@
         },
         "LexModelsV2"                     : {
             "Version" : "3.5.0.16",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.3.6"
+            },
+            "InPreview"               : false
+        },
+        "FIS"                             : {
+            "Version" : "3.5.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.3.6"
