@@ -48,11 +48,18 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DockerVolumeConfiguration. 
         /// <para>
-        /// This parameter is specified when you are using Docker volumes. Docker volumes are
-        /// only supported when you are using the EC2 launch type. Windows containers only support
-        /// the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code>
-        /// parameter instead.
+        /// This parameter is specified when you are using Docker volumes.
         /// </para>
+        ///  
+        /// <para>
+        /// Windows containers only support the use of the <code>local</code> driver. To use bind
+        /// mounts, specify the <code>host</code> parameter instead.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Docker volumes are not supported by tasks run on AWS Fargate.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DockerVolumeConfiguration DockerVolumeConfiguration
         {

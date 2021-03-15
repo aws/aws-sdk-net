@@ -91,6 +91,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnableECSManagedTags);
                 }
 
+                if(publicRequest.IsSetEnableExecuteCommand())
+                {
+                    context.Writer.WritePropertyName("enableExecuteCommand");
+                    context.Writer.Write(publicRequest.EnableExecuteCommand);
+                }
+
                 if(publicRequest.IsSetGroup())
                 {
                     context.Writer.WritePropertyName("group");

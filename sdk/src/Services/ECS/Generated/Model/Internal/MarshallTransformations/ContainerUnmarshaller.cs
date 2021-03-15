@@ -112,6 +112,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("managedAgents", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ManagedAgent, ManagedAgentUnmarshaller>(ManagedAgentUnmarshaller.Instance);
+                    unmarshalledObject.ManagedAgents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("memory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

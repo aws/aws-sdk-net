@@ -313,6 +313,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly ClusterField ATTACHMENTS = new ClusterField("ATTACHMENTS");
         /// <summary>
+        /// Constant CONFIGURATIONS for ClusterField
+        /// </summary>
+        public static readonly ClusterField CONFIGURATIONS = new ClusterField("CONFIGURATIONS");
+        /// <summary>
         /// Constant SETTINGS for ClusterField
         /// </summary>
         public static readonly ClusterField SETTINGS = new ClusterField("SETTINGS");
@@ -1035,6 +1039,60 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type ExecuteCommandLogging.
+    /// </summary>
+    public class ExecuteCommandLogging : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for ExecuteCommandLogging
+        /// </summary>
+        public static readonly ExecuteCommandLogging DEFAULT = new ExecuteCommandLogging("DEFAULT");
+        /// <summary>
+        /// Constant NONE for ExecuteCommandLogging
+        /// </summary>
+        public static readonly ExecuteCommandLogging NONE = new ExecuteCommandLogging("NONE");
+        /// <summary>
+        /// Constant OVERRIDE for ExecuteCommandLogging
+        /// </summary>
+        public static readonly ExecuteCommandLogging OVERRIDE = new ExecuteCommandLogging("OVERRIDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecuteCommandLogging(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecuteCommandLogging FindValue(string value)
+        {
+            return FindValue<ExecuteCommandLogging>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecuteCommandLogging(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FirelensConfigurationType.
     /// </summary>
     public class FirelensConfigurationType : ConstantClass
@@ -1310,6 +1368,52 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogDriver(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManagedAgentName.
+    /// </summary>
+    public class ManagedAgentName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ExecuteCommandAgent for ManagedAgentName
+        /// </summary>
+        public static readonly ManagedAgentName ExecuteCommandAgent = new ManagedAgentName("ExecuteCommandAgent");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedAgentName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedAgentName FindValue(string value)
+        {
+            return FindValue<ManagedAgentName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedAgentName(string value)
         {
             return FindValue(value);
         }

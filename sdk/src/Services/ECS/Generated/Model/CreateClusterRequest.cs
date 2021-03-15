@@ -50,6 +50,7 @@ namespace Amazon.ECS.Model
     {
         private List<string> _capacityProviders = new List<string>();
         private string _clusterName;
+        private ClusterConfiguration _configuration;
         private List<CapacityProviderStrategyItem> _defaultCapacityProviderStrategy = new List<CapacityProviderStrategyItem>();
         private List<ClusterSetting> _settings = new List<ClusterSetting>();
         private List<Tag> _tags = new List<Tag>();
@@ -57,13 +58,17 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CapacityProviders. 
         /// <para>
-        /// The short name of one or more capacity providers to associate with the cluster.
+        /// The short name of one or more capacity providers to associate with the cluster. A
+        /// capacity provider must be associated with a cluster before it can be included as part
+        /// of the default capacity provider strategy of the cluster or used in a capacity provider
+        /// strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
         /// </para>
         ///  
         /// <para>
         /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
-        /// must already be created and not already associated with another cluster. New capacity
-        /// providers can be created with the <a>CreateCapacityProvider</a> API operation.
+        /// must already be created and not already associated with another cluster. New Auto
+        /// Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a>
+        /// API operation.
         /// </para>
         ///  
         /// <para>
@@ -110,36 +115,30 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// The execute command configuration for the cluster.
+        /// </para>
+        /// </summary>
+        public ClusterConfiguration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DefaultCapacityProviderStrategy. 
         /// <para>
-        /// The capacity provider strategy to use by default for the cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// When creating a service or running a task on a cluster, if no capacity provider or
-        /// launch type is specified then the default capacity provider strategy for the cluster
-        /// is used.
-        /// </para>
-        ///  
-        /// <para>
-        /// A capacity provider strategy consists of one or more capacity providers along with
-        /// the <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with
-        /// a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code>
-        /// status can be used.
-        /// </para>
-        ///  
-        /// <para>
-        /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
-        /// must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a>
-        /// API operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be used.
+        /// The capacity provider strategy to set as the default for the cluster. When a default
+        /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or
+        /// <a>CreateService</a> APIs wtih no capacity provider strategy or launch type specified,
+        /// the default capacity provider strategy for the cluster is used.
         /// </para>
         ///  
         /// <para>

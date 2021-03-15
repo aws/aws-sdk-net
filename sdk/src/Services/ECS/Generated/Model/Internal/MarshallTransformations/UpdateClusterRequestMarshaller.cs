@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCluster Request Marshaller
+    /// UpdateCluster Request Marshaller
     /// </summary>       
-    public class CreateClusterRequestMarshaller : IMarshaller<IRequest, CreateClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateClusterRequestMarshaller : IMarshaller<IRequest, UpdateClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateClusterRequest)input);
+            return this.Marshall((UpdateClusterRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateClusterRequest publicRequest)
+        public IRequest Marshall(UpdateClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            string target = "AmazonEC2ContainerServiceV20141113.CreateCluster";
+            string target = "AmazonEC2ContainerServiceV20141113.UpdateCluster";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-13";            
@@ -68,21 +68,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapacityProviders())
+                if(publicRequest.IsSetCluster())
                 {
-                    context.Writer.WritePropertyName("capacityProviders");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCapacityProvidersListValue in publicRequest.CapacityProviders)
-                    {
-                            context.Writer.Write(publicRequestCapacityProvidersListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetClusterName())
-                {
-                    context.Writer.WritePropertyName("clusterName");
-                    context.Writer.Write(publicRequest.ClusterName);
+                    context.Writer.WritePropertyName("cluster");
+                    context.Writer.Write(publicRequest.Cluster);
                 }
 
                 if(publicRequest.IsSetConfiguration())
@@ -94,22 +83,6 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Configuration, context);
 
                     context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDefaultCapacityProviderStrategy())
-                {
-                    context.Writer.WritePropertyName("defaultCapacityProviderStrategy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDefaultCapacityProviderStrategyListValue in publicRequest.DefaultCapacityProviderStrategy)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CapacityProviderStrategyItemMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDefaultCapacityProviderStrategyListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetSettings())
@@ -128,22 +101,6 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -153,9 +110,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateClusterRequestMarshaller _instance = new CreateClusterRequestMarshaller();        
+        private static UpdateClusterRequestMarshaller _instance = new UpdateClusterRequestMarshaller();        
 
-        internal static CreateClusterRequestMarshaller GetInstance()
+        internal static UpdateClusterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -163,7 +120,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateClusterRequestMarshaller Instance
+        public static UpdateClusterRequestMarshaller Instance
         {
             get
             {

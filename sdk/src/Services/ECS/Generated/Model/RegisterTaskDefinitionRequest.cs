@@ -261,8 +261,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks using the Fargate
-        /// launch type.
+        /// This parameter is not supported for Windows containers or tasks run on AWS Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -432,8 +431,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks using the Fargate
-        /// launch type.
+        /// This parameter is not supported for Windows containers or tasks run on AWS Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -488,8 +486,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
         /// The task launch type that Amazon ECS should validate the task definition against.
-        /// This ensures that the task definition parameters are compatible with the specified
-        /// launch type. If no value is specified, it defaults to <code>EC2</code>.
+        /// A client exception is returned if the task definition doesn't validate against the
+        /// compatibilities specified. If no value is specified, the parameter is omitted from
+        /// the response.
         /// </para>
         /// </summary>
         public List<string> RequiresCompatibilities

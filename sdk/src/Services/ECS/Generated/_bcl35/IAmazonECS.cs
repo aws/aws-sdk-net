@@ -34,17 +34,15 @@ namespace Amazon.ECS
     /// Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container
     /// management service that makes it easy to run, stop, and manage Docker containers on
     /// a cluster. You can host your cluster on a serverless infrastructure that is managed
-    /// by Amazon ECS by launching your services or tasks using the Fargate launch type. For
-    /// more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud
-    /// (Amazon EC2) instances that you manage by using the EC2 launch type. For more information
-    /// about launch types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-    /// ECS Launch Types</a>.
+    /// by Amazon ECS by launching your services or tasks on AWS Fargate. For more control,
+    /// you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2)
+    /// instances that you manage.
     /// </para>
     ///  
     /// <para>
-    /// Amazon ECS lets you launch and stop container-based applications with simple API calls,
-    /// allows you to get the state of your cluster from a centralized service, and gives
-    /// you access to many familiar Amazon EC2 features.
+    /// Amazon ECS makes it easy to launch and stop container-based applications with simple
+    /// API calls, allows you to get the state of your cluster from a centralized service,
+    /// and gives you access to many familiar Amazon EC2 features.
     /// </para>
     ///  
     /// <para>
@@ -1440,6 +1438,68 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  ExecuteCommand
+
+
+        /// <summary>
+        /// Runs a command remotely on a container within a task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteCommand service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteCommand service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You do not have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.TargetNotConnectedException">
+        /// The target container is not properly configured with the execute command agent or
+        /// the container is no longer active or running.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">REST API Reference for ExecuteCommand Operation</seealso>
+        ExecuteCommandResponse ExecuteCommand(ExecuteCommandRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteCommand operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteCommand operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteCommand
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">REST API Reference for ExecuteCommand Operation</seealso>
+        IAsyncResult BeginExecuteCommand(ExecuteCommandRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteCommand operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteCommand.</param>
+        /// 
+        /// <returns>Returns a  ExecuteCommandResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">REST API Reference for ExecuteCommand Operation</seealso>
+        ExecuteCommandResponse EndExecuteCommand(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAccountSettings
 
 
@@ -2779,6 +2839,61 @@ namespace Amazon.ECS
         /// <returns>Returns a  UpdateCapacityProviderResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
         UpdateCapacityProviderResponse EndUpdateCapacityProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateCluster
+
+
+        /// <summary>
+        /// Updates the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        UpdateClusterResponse UpdateCluster(UpdateClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        IAsyncResult BeginUpdateCluster(UpdateClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCluster.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult);
 
         #endregion
         

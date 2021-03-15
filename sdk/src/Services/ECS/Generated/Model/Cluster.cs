@@ -42,6 +42,7 @@ namespace Amazon.ECS.Model
         private List<string> _capacityProviders = new List<string>();
         private string _clusterArn;
         private string _clusterName;
+        private ClusterConfiguration _configuration;
         private List<CapacityProviderStrategyItem> _defaultCapacityProviderStrategy = new List<CapacityProviderStrategyItem>();
         private int? _pendingTasksCount;
         private int? _registeredContainerInstancesCount;
@@ -177,6 +178,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// The execute command configuration for the cluster.
+        /// </para>
+        /// </summary>
+        public ClusterConfiguration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
         }
 
         /// <summary>

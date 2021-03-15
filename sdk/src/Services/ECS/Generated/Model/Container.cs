@@ -41,6 +41,7 @@ namespace Amazon.ECS.Model
         private string _image;
         private string _imageDigest;
         private string _lastStatus;
+        private List<ManagedAgent> _managedAgents = new List<ManagedAgent>();
         private string _memory;
         private string _memoryReservation;
         private string _name;
@@ -200,6 +201,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetLastStatus()
         {
             return this._lastStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedAgents. 
+        /// <para>
+        /// The details of any Amazon ECS managed agents associated with the container.
+        /// </para>
+        /// </summary>
+        public List<ManagedAgent> ManagedAgents
+        {
+            get { return this._managedAgents; }
+            set { this._managedAgents = value; }
+        }
+
+        // Check to see if ManagedAgents property is set
+        internal bool IsSetManagedAgents()
+        {
+            return this._managedAgents != null && this._managedAgents.Count > 0; 
         }
 
         /// <summary>

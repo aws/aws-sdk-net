@@ -100,6 +100,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("configuration", targetDepth))
+                {
+                    var unmarshaller = ClusterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("defaultCapacityProviderStrategy", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<CapacityProviderStrategyItem, CapacityProviderStrategyItemUnmarshaller>(CapacityProviderStrategyItemUnmarshaller.Instance);

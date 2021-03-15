@@ -118,6 +118,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableECSManagedTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enableExecuteCommand", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableExecuteCommand = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("events", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ServiceEvent, ServiceEventUnmarshaller>(ServiceEventUnmarshaller.Instance);

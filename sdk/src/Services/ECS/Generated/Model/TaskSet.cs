@@ -187,7 +187,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The launch type the tasks in the task set are using. For more information, see <a
         /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-        /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -262,11 +262,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version on which the tasks in the task set are running. A platform version
-        /// is only specified for tasks using the Fargate launch type. If one is not specified,
-        /// the <code>LATEST</code> platform version is used by default. For more information,
+        /// The AWS Fargate platform version on which the tasks in the task set are running. A
+        /// platform version is only specified for tasks run on AWS Fargate. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-        /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+        /// Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -343,7 +342,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The details of the service discovery registries to assign to this task set. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-        /// Discovery</a>.
+        /// discovery</a>.
         /// </para>
         /// </summary>
         public List<ServiceRegistry> ServiceRegistries

@@ -1000,8 +1000,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks using the Fargate
-        /// launch type.
+        /// This parameter is not supported for Windows containers or tasks run on AWS Fargate.
         /// </para>
         ///  </note>
         /// </summary>

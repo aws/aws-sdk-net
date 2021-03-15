@@ -173,6 +173,7 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
+        private bool? _enableExecuteCommand;
         private bool? _forceNewDeployment;
         private int? _healthCheckGracePeriodSeconds;
         private NetworkConfiguration _networkConfiguration;
@@ -288,6 +289,29 @@ namespace Amazon.ECS.Model
         internal bool IsSetDesiredCount()
         {
             return this._desiredCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableExecuteCommand. 
+        /// <para>
+        /// If <code>true</code>, this enables execute command functionality on all task containers.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not want to override the value that was set when the service was created,
+        /// you can set this to <code>null</code> when performing this action.
+        /// </para>
+        /// </summary>
+        public bool EnableExecuteCommand
+        {
+            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            set { this._enableExecuteCommand = value; }
+        }
+
+        // Check to see if EnableExecuteCommand property is set
+        internal bool IsSetEnableExecuteCommand()
+        {
+            return this._enableExecuteCommand.HasValue; 
         }
 
         /// <summary>

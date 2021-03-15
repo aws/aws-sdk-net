@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         private string _cpu;
         private DateTime? _createdAt;
         private string _desiredStatus;
+        private bool? _enableExecuteCommand;
         private DateTime? _executionStoppedAt;
         private string _group;
         private HealthStatus _healthStatus;
@@ -326,6 +327,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetDesiredStatus()
         {
             return this._desiredStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableExecuteCommand. 
+        /// <para>
+        /// Whether or not execute command functionality is enabled for this task. If <code>true</code>,
+        /// this enables execute command functionality on all containers in the task.
+        /// </para>
+        /// </summary>
+        public bool EnableExecuteCommand
+        {
+            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            set { this._enableExecuteCommand = value; }
+        }
+
+        // Check to see if EnableExecuteCommand property is set
+        internal bool IsSetEnableExecuteCommand()
+        {
+            return this._enableExecuteCommand.HasValue; 
         }
 
         /// <summary>

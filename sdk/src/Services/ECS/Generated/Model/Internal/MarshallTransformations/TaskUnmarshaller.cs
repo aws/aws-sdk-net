@@ -136,6 +136,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.DesiredStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enableExecuteCommand", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableExecuteCommand = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("executionStoppedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

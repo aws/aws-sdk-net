@@ -42,6 +42,7 @@ namespace Amazon.ECS.Model
         private List<Deployment> _deployments = new List<Deployment>();
         private int? _desiredCount;
         private bool? _enableecsManagedTags;
+        private bool? _enableExecuteCommand;
         private List<ServiceEvent> _events = new List<ServiceEvent>();
         private int? _healthCheckGracePeriodSeconds;
         private LaunchType _launchType;
@@ -231,6 +232,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetEnableECSManagedTags()
         {
             return this._enableecsManagedTags.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableExecuteCommand. 
+        /// <para>
+        /// Whether or not the execute command functionality is enabled for the service. If <code>true</code>,
+        /// the execute command functionality is enabled for all containers in tasks as part of
+        /// the service.
+        /// </para>
+        /// </summary>
+        public bool EnableExecuteCommand
+        {
+            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            set { this._enableExecuteCommand = value; }
+        }
+
+        // Check to see if EnableExecuteCommand property is set
+        internal bool IsSetEnableExecuteCommand()
+        {
+            return this._enableExecuteCommand.HasValue; 
         }
 
         /// <summary>

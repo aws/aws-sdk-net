@@ -171,6 +171,7 @@ namespace Amazon.ECS.Model
         private DeploymentController _deploymentController;
         private int? _desiredCount;
         private bool? _enableecsManagedTags;
+        private bool? _enableExecuteCommand;
         private int? _healthCheckGracePeriodSeconds;
         private LaunchType _launchType;
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
@@ -193,36 +194,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// A capacity provider strategy consists of one or more capacity providers along with
-        /// the <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with
-        /// a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code>
-        /// status can be used.
-        /// </para>
-        ///  
-        /// <para>
         /// If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
         /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code>
         /// is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is
         /// used.
-        /// </para>
-        ///  
-        /// <para>
-        /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
-        /// must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a>
-        /// API operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be used.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <a>PutClusterCapacityProviders</a> API operation is used to update the list of
-        /// available capacity providers for a cluster after the cluster is created.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
@@ -359,6 +334,25 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableExecuteCommand. 
+        /// <para>
+        /// Whether or not the execute command functionality is enabled for the service. If <code>true</code>,
+        /// this enables execute command functionality on all containers in the service tasks.
+        /// </para>
+        /// </summary>
+        public bool EnableExecuteCommand
+        {
+            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            set { this._enableExecuteCommand = value; }
+        }
+
+        // Check to see if EnableExecuteCommand property is set
+        internal bool IsSetEnableExecuteCommand()
+        {
+            return this._enableExecuteCommand.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HealthCheckGracePeriodSeconds. 
         /// <para>
         /// The period of time, in seconds, that the Amazon ECS service scheduler should ignore
@@ -391,8 +385,20 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type on which to run your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-        /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// The launch type on which to run your service. The accepted values are <code>FARGATE</code>
+        /// and <code>EC2</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS
+        /// Fargate On-Demand infrastructure. To use Fargate Spot, you must use a capacity provider
+        /// strategy with the <code>FARGATE_SPOT</code> capacity provider.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2
+        /// instances registered to your cluster.
         /// </para>
         ///  
         /// <para>
@@ -426,7 +432,7 @@ namespace Amazon.ECS.Model
         /// one or more target group ARNs to attach to the service. The service-linked role is
         /// required for services that make use of multiple target groups. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-        /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
+        /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
         ///  
@@ -494,7 +500,7 @@ namespace Amazon.ECS.Model
         /// that use the <code>awsvpc</code> network mode to receive their own elastic network
         /// interface, and it is not supported for other network modes. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-        /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -555,7 +561,7 @@ namespace Amazon.ECS.Model
         /// is specified only for tasks using the Fargate launch type. If one isn't specified,
         /// the <code>LATEST</code> platform version is used by default. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-        /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+        /// Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -609,7 +615,7 @@ namespace Amazon.ECS.Model
         /// or if the service is configured to use service discovery, an external deployment controller,
         /// multiple target groups, or Elastic Inference accelerators in which case you should
         /// not specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-        /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
+        /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
         ///  </important> 
@@ -619,7 +625,7 @@ namespace Amazon.ECS.Model
         /// For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
         /// then you would specify <code>/foo/bar</code> as the role name. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-        /// Names and Paths</a> in the <i>IAM User Guide</i>.
+        /// names and paths</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public string Role
@@ -706,13 +712,13 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The details of the service discovery registries to assign to this service. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-        /// Discovery</a>.
+        /// discovery</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Service discovery is supported for Fargate tasks if you are using platform version
         /// v1.1.0 or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-        /// Fargate Platform Versions</a>.
+        /// Fargate platform versions</a>.
         /// </para>
         ///  </note>
         /// </summary>

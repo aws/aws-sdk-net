@@ -43,11 +43,12 @@ namespace Amazon.ECS.Model
     /// an environment file. If multiple environment files are specified that contain the
     /// same variable, they are processed from the top down. It is recommended to use unique
     /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
-    /// Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// environment variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// This field is not valid for containers in tasks using the Fargate launch type.
+    /// This field is only valid for containers in Fargate tasks that use platform version
+    /// <code>1.4.0</code> or later.
     /// </para>
     /// </summary>
     public partial class EnvironmentFile

@@ -78,6 +78,7 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private int? _count;
         private bool? _enableecsManagedTags;
+        private bool? _enableExecuteCommand;
         private string _group;
         private LaunchType _launchType;
         private NetworkConfiguration _networkConfiguration;
@@ -98,36 +99,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// A capacity provider strategy consists of one or more capacity providers along with
-        /// the <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with
-        /// a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code>
-        /// status can be used.
-        /// </para>
-        ///  
-        /// <para>
         /// If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
         /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code>
         /// is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is
         /// used.
-        /// </para>
-        ///  
-        /// <para>
-        /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
-        /// must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a>
-        /// API operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be used.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <a>PutClusterCapacityProviders</a> API operation is used to update the list of
-        /// available capacity providers for a cluster after the cluster is created.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
@@ -202,6 +177,26 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableExecuteCommand. 
+        /// <para>
+        /// Whether or not to enable the execute command functionality for the containers in this
+        /// task. If <code>true</code>, this enables execute command functionality on all containers
+        /// in the task.
+        /// </para>
+        /// </summary>
+        public bool EnableExecuteCommand
+        {
+            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            set { this._enableExecuteCommand = value; }
+        }
+
+        // Check to see if EnableExecuteCommand property is set
+        internal bool IsSetEnableExecuteCommand()
+        {
+            return this._enableExecuteCommand.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
         /// The name of the task group to associate with the task. The default value is the family
@@ -223,8 +218,20 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type on which to run your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// The launch type on which to run your task. The accepted values are <code>FARGATE</code>
+        /// and <code>EC2</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS
+        /// Fargate On-Demand infrastructure. To use Fargate Spot, you must use a capacity provider
+        /// strategy with the <code>FARGATE_SPOT</code> capacity provider.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2
+        /// instances registered to your cluster.
         /// </para>
         ///  
         /// <para>

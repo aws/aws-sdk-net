@@ -62,8 +62,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Compatibilities. 
         /// <para>
-        /// The launch type to use with your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-        /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// The task launch types the task definition validated against during task definition
+        /// registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> Compatibilities
@@ -270,8 +271,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks using the Fargate
-        /// launch type.
+        /// This parameter is not supported for Windows containers or tasks run on AWS Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -294,16 +294,16 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If using the EC2 launch type, you must specify either a task-level memory value or
-        /// a container-level memory value. This field is optional and any value can be used.
-        /// If a task-level memory value is specified then the container-level memory value is
-        /// optional. For more information regarding container-level memory and memory reservation,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.
+        /// If your tasks will be run on Amazon EC2 instances, you must specify either a task-level
+        /// memory value or a container-level memory value. This field is optional and any value
+        /// can be used. If a task-level memory value is specified then the container-level memory
+        /// value is optional. For more information regarding container-level memory and memory
+        /// reservation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.
         /// </para>
         ///  
         /// <para>
-        /// If using the Fargate launch type, this field is required and you must use one of the
-        /// following values, which determines your range of valid values for the <code>cpu</code>
+        /// If your tasks will be run on AWS Fargate, this field is required and you must use
+        /// one of the following values, which determines your range of valid values for the <code>cpu</code>
         /// parameter:
         /// </para>
         ///  <ul> <li> 
@@ -437,8 +437,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks using the Fargate
-        /// launch type.
+        /// This parameter is not supported for Windows containers or tasks run on AWS Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -457,9 +456,13 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlacementConstraints. 
         /// <para>
-        /// An array of placement constraint objects to use for tasks. This field is not valid
-        /// if you are using the Fargate launch type for your task.
+        /// An array of placement constraint objects to use for tasks.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for tasks run on AWS Fargate.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<TaskDefinitionPlacementConstraint> PlacementConstraints
         {
@@ -539,9 +542,19 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RequiresAttributes. 
         /// <para>
-        /// The container instance attributes required by your task. This field is not valid if
-        /// you are using the Fargate launch type for your task.
+        /// The container instance attributes required by your task. When an Amazon EC2 instance
+        /// is registered to your cluster, the Amazon ECS container agent assigns some standard
+        /// attributes to the instance. You can apply custom attributes, specified as key-value
+        /// pairs using the Amazon ECS console or the <a>PutAttributes</a> API. These attributes
+        /// are used when considering task placement for tasks hosted on Amazon EC2 instances.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for tasks run on AWS Fargate.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Attribute> RequiresAttributes
         {
@@ -558,8 +571,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
-        /// The launch type the task requires. If no value is specified, it will default to <code>EC2</code>.
-        /// Valid values include <code>EC2</code> and <code>FARGATE</code>.
+        /// The task launch types the task definition was validated against. To determine which
+        /// task launch types the task definition is validated for, see the <a>TaskDefinition$compatibilities</a>
+        /// parameter.
         /// </para>
         /// </summary>
         public List<string> RequiresCompatibilities
@@ -646,7 +660,7 @@ namespace Amazon.ECS.Model
         /// is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must
         /// also run some configuration code in order to take advantage of the feature. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-        /// IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string TaskRoleArn
@@ -664,18 +678,15 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Volumes. 
         /// <para>
-        /// The list of volume definitions for the task.
+        /// The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+        /// data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-        /// parameters are not supported.
+        /// The <code>host</code> and <code>sourcePath</code> parameters are not supported for
+        /// tasks run on AWS Fargate.
         /// </para>
-        ///  
-        /// <para>
-        /// For more information about volume definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
-        /// ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-        /// </para>
+        ///  </note>
         /// </summary>
         public List<Volume> Volumes
         {

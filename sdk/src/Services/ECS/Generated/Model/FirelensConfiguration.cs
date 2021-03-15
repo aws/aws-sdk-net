@@ -49,6 +49,12 @@ namespace Amazon.ECS.Model
         /// a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic
         /// Container Service Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Tasks hosted on AWS Fargate only support the <code>file</code> configuration file
+        /// type.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, string> Options
         {

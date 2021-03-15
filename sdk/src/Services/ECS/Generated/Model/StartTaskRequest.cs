@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private List<string> _containerInstances = new List<string>();
         private bool? _enableecsManagedTags;
+        private bool? _enableExecuteCommand;
         private string _group;
         private NetworkConfiguration _networkConfiguration;
         private TaskOverride _overrides;
@@ -112,6 +113,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetEnableECSManagedTags()
         {
             return this._enableecsManagedTags.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableExecuteCommand. 
+        /// <para>
+        /// Whether or not the execute command functionality is enabled for the task. If <code>true</code>,
+        /// this enables execute command functionality on all containers in the task.
+        /// </para>
+        /// </summary>
+        public bool EnableExecuteCommand
+        {
+            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            set { this._enableExecuteCommand = value; }
+        }
+
+        // Check to see if EnableExecuteCommand property is set
+        internal bool IsSetEnableExecuteCommand()
+        {
+            return this._enableExecuteCommand.HasValue; 
         }
 
         /// <summary>
