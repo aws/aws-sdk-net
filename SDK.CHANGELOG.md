@@ -1,3 +1,10 @@
+### 3.5.130.1 (2021-03-15 21:30 UTC)
+* GroundStation (3.5.1.50)
+	* Updated description for GroundStation
+* Core 3.5.3.7
+	* Force s3-object-lambda to use UNSIGNED_PAYLOAD and removed -local off of the Osaka region endpoint
+	* All services packages updated to require new Core
+
 ### 3.5.130.0 (2021-03-15 18:27 UTC)
 * CodeDeploy (3.5.1.0)
 	* AWS CodeDeploy can now detect instances running an outdated revision of your application and automatically update them with the latest revision.
