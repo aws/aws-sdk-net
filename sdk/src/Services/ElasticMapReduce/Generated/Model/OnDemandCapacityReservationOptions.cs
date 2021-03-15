@@ -35,6 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class OnDemandCapacityReservationOptions
     {
         private OnDemandCapacityReservationPreference _capacityReservationPreference;
+        private string _capacityReservationResourceGroupArn;
         private OnDemandCapacityReservationUsageStrategy _usageStrategy;
 
         /// <summary>
@@ -64,6 +65,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetCapacityReservationPreference()
         {
             return this._capacityReservationPreference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationResourceGroupArn. 
+        /// <para>
+        /// The ARN of the Capacity Reservation resource group in which to run the instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string CapacityReservationResourceGroupArn
+        {
+            get { return this._capacityReservationResourceGroupArn; }
+            set { this._capacityReservationResourceGroupArn = value; }
+        }
+
+        // Check to see if CapacityReservationResourceGroupArn property is set
+        internal bool IsSetCapacityReservationResourceGroupArn()
+        {
+            return this._capacityReservationResourceGroupArn != null;
         }
 
         /// <summary>

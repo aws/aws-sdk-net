@@ -89,8 +89,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property DefaultS3Location. 
         /// <para>
-        /// The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
-        /// files.
+        /// The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]

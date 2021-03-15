@@ -51,6 +51,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CapacityReservationPreference);
             }
 
+            if(requestObject.IsSetCapacityReservationResourceGroupArn())
+            {
+                context.Writer.WritePropertyName("CapacityReservationResourceGroupArn");
+                context.Writer.Write(requestObject.CapacityReservationResourceGroupArn);
+            }
+
             if(requestObject.IsSetUsageStrategy())
             {
                 context.Writer.WritePropertyName("UsageStrategy");
