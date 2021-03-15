@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Initial release of AWS Fault Injection Simulator, a managed service that enables you to perform fault injection experiments on your AWS workloads",
+  "generate-client-constructors": true
+}
