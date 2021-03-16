@@ -160,45 +160,6 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("MediaTailor")]
-        public void ListProgramsTest_TwoPages()
-        {
-            var request = InstantiateClassGenerator.Execute<ListProgramsRequest>();
-
-            var firstResponse = InstantiateClassGenerator.Execute<ListProgramsResponse>();
-            var secondResponse = InstantiateClassGenerator.Execute<ListProgramsResponse>();
-            secondResponse.NextToken = null;
-
-            _mockClient.SetupSequence(x => x.ListPrograms(request)).Returns(firstResponse).Returns(secondResponse);
-            var paginator = _mockClient.Object.Paginators.ListPrograms(request);
-            
-            Assert.AreEqual(2, paginator.Responses.ToList().Count);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("MediaTailor")]
-        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
-        public void ListProgramsTest__OnlyUsedOnce()
-        {
-            var request = InstantiateClassGenerator.Execute<ListProgramsRequest>();
-
-            var response = InstantiateClassGenerator.Execute<ListProgramsResponse>();
-            response.NextToken = null;
-
-            _mockClient.Setup(x => x.ListPrograms(request)).Returns(response);
-            var paginator = _mockClient.Object.Paginators.ListPrograms(request);
-
-            // Should work the first time
-            paginator.Responses.ToList();
-
-            // Second time should throw an exception
-            paginator.Responses.ToList();
-        }
-
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("MediaTailor")]
         public void ListSourceLocationsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListSourceLocationsRequest>();

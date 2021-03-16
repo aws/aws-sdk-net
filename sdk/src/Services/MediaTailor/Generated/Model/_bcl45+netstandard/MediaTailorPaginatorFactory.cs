@@ -61,14 +61,6 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
-        /// Paginator for ListPrograms operation
-        ///</summary>
-        public IListProgramsPaginator ListPrograms(ListProgramsRequest request) 
-        {
-            return new ListProgramsPaginator(this.client, request);
-        }
-
-        /// <summary>
         /// Paginator for ListSourceLocations operation
         ///</summary>
         public IListSourceLocationsPaginator ListSourceLocations(ListSourceLocationsRequest request) 

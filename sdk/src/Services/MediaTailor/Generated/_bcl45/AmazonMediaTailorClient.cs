@@ -1054,47 +1054,6 @@ namespace Amazon.MediaTailor
 
         #endregion
         
-        #region  ListPrograms
-
-
-        /// <summary>
-        /// Retrieves a list of programs on a specific channel.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListPrograms service method.</param>
-        /// 
-        /// <returns>The response from the ListPrograms service method, as returned by MediaTailor.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms">REST API Reference for ListPrograms Operation</seealso>
-        public virtual ListProgramsResponse ListPrograms(ListProgramsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ListProgramsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListProgramsResponseUnmarshaller.Instance;
-
-            return Invoke<ListProgramsResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Retrieves a list of programs on a specific channel.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListPrograms service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListPrograms service method, as returned by MediaTailor.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms">REST API Reference for ListPrograms Operation</seealso>
-        public virtual Task<ListProgramsResponse> ListProgramsAsync(ListProgramsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ListProgramsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListProgramsResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<ListProgramsResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  ListSourceLocations
 
 

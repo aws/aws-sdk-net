@@ -42,11 +42,6 @@ namespace Amazon.MediaTailor.Model
         IListPlaybackConfigurationsPaginator ListPlaybackConfigurations(ListPlaybackConfigurationsRequest request);
 
         /// <summary>
-        /// Paginator for ListPrograms operation
-        ///</summary>
-        IListProgramsPaginator ListPrograms(ListProgramsRequest request);
-
-        /// <summary>
         /// Paginator for ListSourceLocations operation
         ///</summary>
         IListSourceLocationsPaginator ListSourceLocations(ListSourceLocationsRequest request);
