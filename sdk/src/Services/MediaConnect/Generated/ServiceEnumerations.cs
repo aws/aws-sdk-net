@@ -185,6 +185,10 @@ namespace Amazon.MediaConnect
         /// </summary>
         public static readonly KeyType Speke = new KeyType("speke");
         /// <summary>
+        /// Constant SrtPassword for KeyType
+        /// </summary>
+        public static readonly KeyType SrtPassword = new KeyType("srt-password");
+        /// <summary>
         /// Constant StaticKey for KeyType
         /// </summary>
         public static readonly KeyType StaticKey = new KeyType("static-key");
@@ -288,6 +292,10 @@ namespace Amazon.MediaConnect
         /// Constant RtpFec for Protocol
         /// </summary>
         public static readonly Protocol RtpFec = new Protocol("rtp-fec");
+        /// <summary>
+        /// Constant SrtListener for Protocol
+        /// </summary>
+        public static readonly Protocol SrtListener = new Protocol("srt-listener");
         /// <summary>
         /// Constant ZixiPull for Protocol
         /// </summary>

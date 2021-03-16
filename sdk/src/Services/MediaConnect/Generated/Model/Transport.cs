@@ -36,6 +36,7 @@ namespace Amazon.MediaConnect.Model
         private List<string> _cidrAllowList = new List<string>();
         private int? _maxBitrate;
         private int? _maxLatency;
+        private int? _minLatency;
         private Protocol _protocol;
         private string _remoteId;
         private int? _smoothingLatency;
@@ -88,6 +89,25 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMaxLatency()
         {
             return this._maxLatency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinLatency. The minimum latency in milliseconds for SRT-based
+        /// streams. In streams that use the SRT protocol, this value that you set on your MediaConnect
+        /// source or output represents the minimal potential latency of that connection. The
+        /// latency of the stream is set to the highest number between the sender’s minimum latency
+        /// and the receiver’s minimum latency.
+        /// </summary>
+        public int MinLatency
+        {
+            get { return this._minLatency.GetValueOrDefault(); }
+            set { this._minLatency = value; }
+        }
+
+        // Check to see if MinLatency property is set
+        internal bool IsSetMinLatency()
+        {
+            return this._minLatency.HasValue; 
         }
 
         /// <summary>

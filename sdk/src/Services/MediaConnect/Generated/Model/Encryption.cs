@@ -47,7 +47,6 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Algorithm. The type of algorithm that is used for the encryption
         /// (such as aes128, aes192, or aes256).
         /// </summary>
-        [AWSProperty(Required=true)]
         public Algorithm Algorithm
         {
             get { return this._algorithm; }

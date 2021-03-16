@@ -86,6 +86,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaxLatency);
             }
 
+            if(requestObject.IsSetMinLatency())
+            {
+                context.Writer.WritePropertyName("minLatency");
+                context.Writer.Write(requestObject.MinLatency);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

@@ -112,6 +112,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxLatency);
                 }
 
+                if(publicRequest.IsSetMinLatency())
+                {
+                    context.Writer.WritePropertyName("minLatency");
+                    context.Writer.Write(publicRequest.MinLatency);
+                }
+
                 if(publicRequest.IsSetPort())
                 {
                     context.Writer.WritePropertyName("port");
