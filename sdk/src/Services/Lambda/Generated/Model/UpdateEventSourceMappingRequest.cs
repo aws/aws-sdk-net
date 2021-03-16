@@ -225,7 +225,7 @@ namespace Amazon.Lambda.Model
         /// (Streams) A list of current response type enums applied to the event source mapping.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<string> FunctionResponseTypes
         {
             get { return this._functionResponseTypes; }

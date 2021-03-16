@@ -2,7 +2,6 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddLayerVersionPermissionRequest.Action</property>
-    <max>22</max>
     <pattern>lambda:GetLayerVersion</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -13,7 +12,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddLayerVersionPermissionRequest.OrganizationId</property>
-    <max>34</max>
     <pattern>o-[a-z0-9]{10,32}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -44,7 +42,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.Principal</property>
-    <pattern>[^\s]+</pattern>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.Qualifier</property>
@@ -54,7 +52,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.SourceAccount</property>
-    <max>12</max>
     <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
