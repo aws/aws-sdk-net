@@ -540,6 +540,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
+        /// As a best practice, you can validate your IAM policies. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating
+        /// IAM policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
@@ -584,6 +589,11 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// You use this operation to attach a managed policy to a group. To embed an inline policy
         /// in a group, use <a>PutGroupPolicy</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// As a best practice, you can validate your IAM policies. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating
+        /// IAM policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -649,6 +659,11 @@ namespace Amazon.IdentityManagement
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// As a best practice, you can validate your IAM policies. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating
+        /// IAM policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachRolePolicy service method.</param>
         /// 
@@ -707,6 +722,11 @@ namespace Amazon.IdentityManagement
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// As a best practice, you can validate your IAM policies. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating
+        /// IAM policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachRolePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -764,6 +784,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
+        /// As a best practice, you can validate your IAM policies. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating
+        /// IAM policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
@@ -808,6 +833,11 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// You use this operation to attach a <i>managed</i> policy to a user. To embed an inline
         /// policy in a user, use <a>PutUserPolicy</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// As a best practice, you can validate your IAM policies. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating
+        /// IAM policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1668,6 +1698,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
+        /// As a best practice, you can validate your IAM policies. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating
+        /// IAM policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about managed policies in general, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
@@ -1717,6 +1752,11 @@ namespace Amazon.IdentityManagement
         /// and sets v1 as the policy's default version. For more information about policy versions,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
         /// for managed policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// As a best practice, you can validate your IAM policies. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating
+        /// IAM policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
