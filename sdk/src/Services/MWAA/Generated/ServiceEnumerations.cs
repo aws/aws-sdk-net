@@ -51,6 +51,14 @@ namespace Amazon.MWAA
         /// </summary>
         public static readonly EnvironmentStatus DELETING = new EnvironmentStatus("DELETING");
         /// <summary>
+        /// Constant UNAVAILABLE for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus UNAVAILABLE = new EnvironmentStatus("UNAVAILABLE");
+        /// <summary>
+        /// Constant UPDATE_FAILED for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus UPDATE_FAILED = new EnvironmentStatus("UPDATE_FAILED");
+        /// <summary>
         /// Constant UPDATING for EnvironmentStatus
         /// </summary>
         public static readonly EnvironmentStatus UPDATING = new EnvironmentStatus("UPDATING");
