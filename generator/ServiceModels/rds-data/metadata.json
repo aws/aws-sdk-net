@@ -1,5 +1,5 @@
 {
   "active": true,
-  "synopsis": "The RDS Data API Beta is available for the MySQL-compatible edition of Amazon Aurora Serverless in the US East (N. Virginia) Region. This API enables you to easily access Aurora Serverless with web services-based applications including AWS Lambda and AWS AppSync.",
+  "synopsis": "Amazon RDS Data Service API is an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster.",
   "generate-client-constructors": true
 }
