@@ -34,31 +34,17 @@ namespace Amazon.GameLift.Model
     /// operation returns all VPC peering authorizations and requests for peering. This includes
     /// those initiated and received by this account. 
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateVpcPeeringAuthorization</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>DescribeVpcPeeringAuthorizations</a> 
+    ///  <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> |
+    /// <a>DeleteVpcPeeringAuthorization</a> | <a>CreateVpcPeeringConnection</a> | <a>DescribeVpcPeeringConnections</a>
+    /// | <a>DeleteVpcPeeringConnection</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteVpcPeeringAuthorization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateVpcPeeringConnection</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeVpcPeeringConnections</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteVpcPeeringConnection</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class DescribeVpcPeeringAuthorizationsRequest : AmazonGameLiftRequest
     {

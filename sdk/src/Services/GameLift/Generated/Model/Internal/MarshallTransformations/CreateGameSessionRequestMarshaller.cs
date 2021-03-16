@@ -120,6 +120,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdempotencyToken);
                 }
 
+                if(publicRequest.IsSetLocation())
+                {
+                    context.Writer.WritePropertyName("Location");
+                    context.Writer.Write(publicRequest.Location);
+                }
+
                 if(publicRequest.IsSetMaximumPlayerSessionCount())
                 {
                     context.Writer.WritePropertyName("MaximumPlayerSessionCount");

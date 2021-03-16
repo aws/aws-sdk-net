@@ -30,16 +30,36 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstances operation.
-    /// Retrieves information about a fleet's instances, including instance IDs. Use this
-    /// operation to get details on all instances in the fleet or get details on one specific
-    /// instance.
+    /// Retrieves information about a fleet's instances, including instance IDs, connection
+    /// data, and status. 
     /// 
     ///  
     /// <para>
-    /// To get a specific instance, specify fleet ID and instance ID. To get all instances
-    /// in a fleet, specify a fleet ID only. Use the pagination parameters to retrieve results
-    /// as a set of sequential pages. If successful, an <a>Instance</a> object is returned
-    /// for each result.
+    /// This operation can be used in the following ways:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To get information on all instances that are deployed to a fleet's home Region, provide
+    /// the fleet ID.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To get information on all instances that are deployed to a fleet's remote location,
+    /// provide the fleet ID and location name.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To get information on a specific instance in a fleet, provide the fleet ID and instance
+    /// ID.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Use the pagination parameters to retrieve results as a set of sequential pages. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, an <code>Instance</code> object is returned for each requested instance.
+    /// Instances are not returned in any particular order. 
     /// </para>
     ///  
     /// <para>
@@ -57,29 +77,27 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>DescribeInstances</a> 
+    ///  <a>DescribeInstances</a> | <a>GetInstanceAccess</a> | <a>DescribeEC2InstanceLimits</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetInstanceAccess</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class DescribeInstancesRequest : AmazonGameLiftRequest
     {
         private string _fleetId;
         private string _instanceId;
         private int? _limit;
+        private string _location;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet to retrieve instance information for. You can use
+        /// A unique identifier for the fleet to retrieve instance information for. You can use
         /// either the fleet ID or ARN value.
         /// </para>
         /// </summary>
@@ -136,9 +154,29 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The name of a location to retrieve instance information for, in the form of an AWS
+        /// Region code such as <code>us-west-2</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// A token that indicates the start of the next sequential page of results. Use the token
         /// that is returned with a previous call to this operation. To start at the beginning
         /// of the result set, do not specify a value.
         /// </para>

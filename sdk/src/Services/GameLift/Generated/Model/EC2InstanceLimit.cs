@@ -29,19 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// The maximum number of instances allowed based on the Amazon Elastic Compute Cloud
-    /// (Amazon EC2) instance type. Instance limits can be retrieved by calling <a>DescribeEC2InstanceLimits</a>.
+    /// The GameLift service limits for an EC2 instance type and current utilization. GameLift
+    /// allows AWS accounts a maximum number of instances, per instance type, per AWS Region
+    /// or location, for use with GameLift. You can request an limit increase for your account
+    /// by using the <b>Service limits</b> page in the GameLift console.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Related actions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> 
+    /// </para>
     /// </summary>
     public partial class EC2InstanceLimit
     {
         private int? _currentInstances;
         private EC2InstanceType _ec2InstanceType;
         private int? _instanceLimit;
+        private string _location;
 
         /// <summary>
         /// Gets and sets the property CurrentInstances. 
         /// <para>
-        /// Number of instances of the specified type that are currently in use by this AWS account.
+        /// The number of instances for the specified type and location that are currently being
+        /// used by the AWS account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -60,11 +73,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceType. 
         /// <para>
-        /// Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance
-        /// type determines the computing resources of each instance in the fleet, including CPU,
-        /// memory, storage, and networking capacity. Amazon GameLift supports the following EC2
-        /// instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-        /// Instance Types</a> for detailed descriptions.
+        /// The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+        /// EC2 Instance Types</a> for detailed descriptions. 
         /// </para>
         /// </summary>
         public EC2InstanceType EC2InstanceType
@@ -82,7 +92,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceLimit. 
         /// <para>
-        /// Number of instances allowed.
+        /// The number of instances that is allowed for the specified instance type and location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -96,6 +106,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetInstanceLimit()
         {
             return this._instanceLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// An AWS Region code, such as <code>us-west-2</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
         }
 
     }

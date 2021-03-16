@@ -32,31 +32,16 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the ResolveAlias operation.
     /// Retrieves the fleet ID that an alias is currently pointing to.
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateAlias</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>ListAliases</a> 
+    ///  <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> | <a>UpdateAlias</a>
+    /// | <a>DeleteAlias</a> | <a>ResolveAlias</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ResolveAlias</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class ResolveAliasRequest : AmazonGameLiftRequest
     {

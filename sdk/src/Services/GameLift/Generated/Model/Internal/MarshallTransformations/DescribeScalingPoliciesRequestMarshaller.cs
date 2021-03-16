@@ -80,6 +80,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Limit);
                 }
 
+                if(publicRequest.IsSetLocation())
+                {
+                    context.Writer.WritePropertyName("Location");
+                    context.Writer.Write(publicRequest.Location);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");

@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterGameServer operation.
-    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-    /// groups.</b> 
+    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>
@@ -67,33 +67,14 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>RegisterGameServer</a> 
+    ///  <a>RegisterGameServer</a> | <a>ListGameServers</a> | <a>ClaimGameServer</a> | <a>DescribeGameServer</a>
+    /// | <a>UpdateGameServer</a> | <a>DeregisterGameServer</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListGameServers</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ClaimGameServer</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameServer</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameServer</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeregisterGameServer</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class RegisterGameServerRequest : AmazonGameLiftRequest
     {

@@ -30,10 +30,40 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFleets operation.
-    /// Retrieves a collection of fleet resources for this AWS account. You can filter the
-    /// result set to find only those fleets that are deployed with a specific build or script.
-    /// Use the pagination parameters to retrieve results in sequential pages.
+    /// Retrieves a collection of fleet resources in an AWS Region. You can call this operation
+    /// to get fleets in a previously selected default Region (see <a href="https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html">https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html</a>or
+    /// specify a Region in your request. You can filter the result set to find only those
+    /// fleets that are deployed with a specific build or script. For fleets that have multiple
+    /// locations, this operation retrieves fleets based on their home Region only.
     /// 
+    ///  
+    /// <para>
+    /// This operation can be used in the following ways: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To get a list of all fleets in a Region, don't provide a build or script identifier.
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To get a list of all fleets where a specific custom game build is deployed, provide
+    /// the build ID.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To get a list of all Realtime Servers fleets with a specific configuration script,
+    /// provide the script ID. 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Use the pagination parameters to retrieve results as a set of sequential pages. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, a list of fleet IDs that match the request parameters is returned.
+    /// A NextToken value is also returned if there are more result pages to retrieve.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Fleet resources are not listed in a particular order.
@@ -45,37 +75,19 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift Fleets</a> 
+    /// up GameLift fleets</a> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateFleet</a> 
+    ///  <a>CreateFleet</a> | <a>UpdateFleetCapacity</a> | <a>PutScalingPolicy</a> | <a>DescribeEC2InstanceLimits</a>
+    /// | <a>DescribeFleetAttributes</a> | <a>DescribeFleetLocationAttributes</a> | <a>UpdateFleetAttributes</a>
+    /// | <a>StopFleetActions</a> | <a>DeleteFleet</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListFleets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class ListFleetsRequest : AmazonGameLiftRequest
     {
@@ -87,9 +99,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// A unique identifier for a build to return fleets for. Use this parameter to return
-        /// only fleets using a specified build. Use either the build ID or ARN value. To retrieve
-        /// all fleets, do not include either a BuildId and ScriptID parameter.
+        /// A unique identifier for the build to request fleets for. Use this parameter to return
+        /// only fleets using a specified build. Use either the build ID or ARN value.
         /// </para>
         /// </summary>
         public string BuildId
@@ -127,7 +138,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// A token that indicates the start of the next sequential page of results. Use the token
         /// that is returned with a previous call to this operation. To start at the beginning
         /// of the result set, do not specify a value.
         /// </para>
@@ -148,9 +159,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ScriptId. 
         /// <para>
-        /// A unique identifier for a Realtime script to return fleets for. Use this parameter
+        /// A unique identifier for the Realtime script to request fleets for. Use this parameter
         /// to return only fleets using a specified script. Use either the script ID or ARN value.
-        /// To retrieve all fleets, leave this parameter empty.
         /// </para>
         /// </summary>
         public string ScriptId

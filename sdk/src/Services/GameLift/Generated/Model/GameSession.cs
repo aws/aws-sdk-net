@@ -42,47 +42,18 @@ namespace Amazon.GameLift.Model
     /// you can reuse idempotency token values after this time. Game session logs are retained
     /// for 14 days.
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateGameSession</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>DescribeGameSessions</a> 
+    ///  <a>CreateGameSession</a> | <a>DescribeGameSessions</a> | <a>DescribeGameSessionDetails</a>
+    /// | <a>SearchGameSessions</a> | <a>UpdateGameSession</a> | <a>GetGameSessionLogUrl</a>
+    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionDetails</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>SearchGameSessions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameSession</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetGameSessionLogUrl</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Game session placements
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class GameSession
     {
@@ -96,6 +67,7 @@ namespace Amazon.GameLift.Model
         private string _gameSessionData;
         private string _gameSessionId;
         private string _ipAddress;
+        private string _location;
         private string _matchmakerData;
         private int? _maximumPlayerSessionCount;
         private string _name;
@@ -108,8 +80,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (for example "1469498468.057").
+        /// A time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -166,8 +138,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// DNS identifier assigned to the instance that is running the game session. Values have
-        /// the following format:
+        /// The DNS identifier assigned to the instance that is running the game session. Values
+        /// have the following format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -200,7 +172,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetArn. 
         /// <para>
-        ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// associated with the GameLift fleet that this game session is running on. 
         /// </para>
         /// </summary>
@@ -219,7 +191,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet that the game session is running on.
+        /// A unique identifier for the fleet that the game session is running on.
         /// </para>
         /// </summary>
         public string FleetId
@@ -237,11 +209,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameProperties. 
         /// <para>
-        /// Set of custom properties for a game session, formatted as key:value pairs. These properties
-        /// are passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-        /// a Game Session</a>). You can search for active game sessions based on this custom
-        /// data with <a>SearchGameSessions</a>.
+        /// A set of custom properties for a game session, formatted as key:value pairs. These
+        /// properties are passed to a game server process in the <a>GameSession</a> object with
+        /// a request to start a new game session. You can search for active game sessions based
+        /// on this custom data with <a>SearchGameSessions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=16)]
@@ -260,13 +231,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionData. 
         /// <para>
-        /// Set of custom game session properties, formatted as a single string value. This data
-        /// is passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-        /// a Game Session</a>).
+        /// A set of custom game session properties, formatted as a single string value. This
+        /// data is passed to a game server process in the <a>GameSession</a> object with a request
+        /// to start a new game session.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Min=1, Max=262144)]
         public string GameSessionData
         {
             get { return this._gameSessionData; }
@@ -303,9 +273,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// IP address of the instance that is running the game session. When connecting to a
-        /// Amazon GameLift game server, a client needs to reference an IP address (or DNS name)
-        /// and port number.
+        /// The IP address of the game session. To connect to a GameLift game server, an app needs
+        /// both the IP address and port number.
         /// </para>
         /// </summary>
         public string IpAddress
@@ -318,6 +287,27 @@ namespace Amazon.GameLift.Model
         internal bool IsSetIpAddress()
         {
             return this._ipAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The fleet location where the game session is running. This value might specify the
+        /// fleet's home Region or a remote location. Location is expressed as an AWS Region code
+        /// such as <code>us-west-2</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
         }
 
         /// <summary>
@@ -405,8 +395,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port number for the game session. To connect to a Amazon GameLift game server, an
-        /// app needs both the IP address and port number.
+        /// The port number for the game session. To connect to a GameLift game server, an app
+        /// needs both the IP address and port number.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60000)]
@@ -464,8 +454,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TerminationTime. 
         /// <para>
-        /// Time stamp indicating when this data object was terminated. Format is a number expressed
-        /// in Unix time as milliseconds (for example "1469498468.057").
+        /// A time stamp indicating when this data object was terminated. Format is a number expressed
+        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime TerminationTime

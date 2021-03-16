@@ -30,13 +30,23 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFleetPortSettings operation.
-    /// Updates port settings for a fleet. To update settings, specify the fleet ID to be
-    /// updated and list the permissions you want to update. List the permissions you want
-    /// to add in <code>InboundPermissionAuthorizations</code>, and permissions you want to
-    /// remove in <code>InboundPermissionRevocations</code>. Permissions to be removed must
-    /// match existing fleet permissions. If successful, the fleet ID for the updated fleet
-    /// is returned.
+    /// Updates permissions that allow inbound traffic to connect to game sessions that are
+    /// being hosted on instances in the fleet. 
     /// 
+    ///  
+    /// <para>
+    /// To update settings, specify the fleet ID to be updated and specify the changes to
+    /// be made. List the permissions you want to add in <code>InboundPermissionAuthorizations</code>,
+    /// and permissions you want to remove in <code>InboundPermissionRevocations</code>. Permissions
+    /// to be removed must match existing fleet permissions. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, the fleet ID for the updated fleet is returned. For fleets with remote
+    /// locations, port setting updates can take time to propagate across all locations. You
+    /// can check the status of updates in each location by calling <code>DescribeFleetPortSettings</code>
+    /// with a location name.
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 
@@ -44,53 +54,20 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift Fleets</a> 
+    /// up GameLift fleets</a> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateFleet</a> 
+    ///  <a>CreateFleetLocations</a> | <a>UpdateFleetAttributes</a> | <a>UpdateFleetCapacity</a>
+    /// | <a>UpdateFleetPortSettings</a> | <a>UpdateRuntimeConfiguration</a> | <a>StopFleetActions</a>
+    /// | <a>StartFleetActions</a> | <a>PutScalingPolicy</a> | <a>DeleteFleet</a> | <a>DeleteFleetLocations</a>
+    /// | <a>DeleteScalingPolicy</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListFleets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>UpdateFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class UpdateFleetPortSettingsRequest : AmazonGameLiftRequest
     {
@@ -101,8 +78,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet to update port settings for. You can use either the
-        /// fleet ID or ARN value.
+        /// A unique identifier for the fleet to update port settings for. You can use either
+        /// the fleet ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

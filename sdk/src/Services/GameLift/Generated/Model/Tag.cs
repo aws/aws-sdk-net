@@ -47,21 +47,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>TagResource</a> 
+    ///  <a>TagResource</a> | <a>UntagResource</a> | <a>ListTagsForResource</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UntagResource</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListTagsForResource</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class Tag
     {

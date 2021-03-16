@@ -84,6 +84,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetFilterConfiguration())
+                {
+                    context.Writer.WritePropertyName("FilterConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FilterConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FilterConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");
@@ -104,6 +115,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetPriorityConfiguration())
+                {
+                    context.Writer.WritePropertyName("PriorityConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PriorityConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PriorityConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTags())

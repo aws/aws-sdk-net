@@ -46,59 +46,30 @@ namespace Amazon.GameLift.Model
     /// To see whether a fleet's scaling policies are in force or suspended, call <a>DescribeFleetAttributes</a>
     /// and check the stopped actions.
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
+    ///  <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a>
+    /// | <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a>
+    /// | <a>StopFleetActions</a> | <a>StartFleetActions</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Manage scaling policies:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>PutScalingPolicy</a> (auto-scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeScalingPolicies</a> (auto-scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteScalingPolicy</a> (auto-scaling)
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Manage fleet actions:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class DescribeScalingPoliciesRequest : AmazonGameLiftRequest
     {
         private string _fleetId;
         private int? _limit;
+        private string _location;
         private string _nextToken;
         private ScalingStatusType _statusFilter;
 
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet to retrieve scaling policies for. You can use either
+        /// A unique identifier for the fleet to retrieve scaling policies for. You can use either
         /// the fleet ID or ARN value.
         /// </para>
         /// </summary>
@@ -136,9 +107,28 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        ///  CONTENT TODO 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// A token that indicates the start of the next sequential page of results. Use the token
         /// that is returned with a previous call to this operation. To start at the beginning
         /// of the result set, do not specify a value.
         /// </para>

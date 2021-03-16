@@ -30,11 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// A set of instructions for launching server processes on each instance in a fleet.
-    /// Server processes run either a custom game build executable or a Realtime Servers script.
-    /// Each instruction set identifies the location of the custom game build executable or
-    /// Realtime launch script, optional launch parameters, and the number of server processes
-    /// with this configuration to maintain concurrently on the instance. Server process configurations
-    /// make up a fleet's <code> <a>RuntimeConfiguration</a> </code>.
+    /// Server processes run either an executable in a custom game build or a Realtime Servers
+    /// script. Server process configurations are part of a fleet's <a>RuntimeConfiguration</a>.
     /// </summary>
     public partial class ServerProcess
     {
@@ -45,8 +42,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ConcurrentExecutions. 
         /// <para>
-        /// The number of server processes that use this configuration to run concurrently on
-        /// an instance.
+        /// The number of server processes using this configuration that run concurrently on each
+        /// instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -65,13 +62,13 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LaunchPath. 
         /// <para>
-        /// The location of the server executable in a custom game build or the name of the Realtime
-        /// script file that contains the <code>Init()</code> function. Game builds and Realtime
-        /// scripts are installed on instances at the root: 
+        /// The location of a game build executable or the Realtime script file that contains
+        /// the <code>Init()</code> function. Game builds and Realtime scripts are installed on
+        /// instances at the root: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Windows (for custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
+        /// Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
         /// 
         /// </para>
         ///  </li> <li> 

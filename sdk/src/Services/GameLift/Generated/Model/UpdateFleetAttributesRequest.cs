@@ -30,10 +30,18 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFleetAttributes operation.
-    /// Updates fleet properties, including name and description, for a fleet. To update metadata,
-    /// specify the fleet ID and the property values that you want to change. If successful,
-    /// the fleet ID for the updated fleet is returned.
+    /// Updates a fleet's mutable attributes, including game session protection and resource
+    /// creation limits.
     /// 
+    ///  
+    /// <para>
+    /// To update fleet attributes, specify the fleet ID and the property values that you
+    /// want to change. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, an updated <code>FleetAttributes</code> object is returned.
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 
@@ -41,53 +49,20 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift Fleets</a> 
+    /// up GameLift fleets</a> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateFleet</a> 
+    ///  <a>CreateFleetLocations</a> | <a>UpdateFleetAttributes</a> | <a>UpdateFleetCapacity</a>
+    /// | <a>UpdateFleetPortSettings</a> | <a>UpdateRuntimeConfiguration</a> | <a>StopFleetActions</a>
+    /// | <a>StartFleetActions</a> | <a>PutScalingPolicy</a> | <a>DeleteFleet</a> | <a>DeleteFleetLocations</a>
+    /// | <a>DeleteScalingPolicy</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListFleets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>UpdateFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class UpdateFleetAttributesRequest : AmazonGameLiftRequest
     {
@@ -101,7 +76,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Human-readable description of a fleet.
+        /// A human-readable description of a fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -120,7 +95,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet to update attribute metadata for. You can use either
+        /// A unique identifier for the fleet to update attribute metadata for. You can use either
         /// the fleet ID or ARN value.
         /// </para>
         /// </summary>
@@ -140,10 +115,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MetricGroups. 
         /// <para>
-        /// Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric
-        /// group is to aggregate metrics from multiple fleets. Use an existing metric group name
-        /// to add this fleet to the group. Or use a new name to create a new metric group. A
-        /// fleet can only be included in one metric group at a time.
+        /// The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch
+        /// to aggregate the metrics from multiple fleets. Provide an existing metric group name,
+        /// or create a new metric group by providing a new name. A fleet can only be in one metric
+        /// group at a time.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]
@@ -182,7 +157,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NewGameSessionProtectionPolicy. 
         /// <para>
-        /// Game session protection policy to apply to all new instances created in this fleet.
+        /// The game session protection policy to apply to all new instances created in this fleet.
         /// Instances that already exist are not affected. You can set protection for individual
         /// instances using <a>UpdateGameSession</a>.
         /// </para>
@@ -212,8 +187,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ResourceCreationLimitPolicy. 
         /// <para>
-        /// Policy that limits the number of game sessions an individual player can create over
-        /// a span of time. 
+        /// Policy settings that limit the number of game sessions an individual player can create
+        /// over a span of time. 
         /// </para>
         /// </summary>
         public ResourceCreationLimitPolicy ResourceCreationLimitPolicy

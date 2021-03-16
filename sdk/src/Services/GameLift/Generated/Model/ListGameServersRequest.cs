@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGameServers operation.
-    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-    /// groups.</b> 
+    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>
@@ -50,33 +50,14 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>RegisterGameServer</a> 
+    ///  <a>RegisterGameServer</a> | <a>ListGameServers</a> | <a>ClaimGameServer</a> | <a>DescribeGameServer</a>
+    /// | <a>UpdateGameServer</a> | <a>DeregisterGameServer</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListGameServers</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ClaimGameServer</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameServer</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameServer</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeregisterGameServer</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class ListGameServersRequest : AmazonGameLiftRequest
     {
@@ -109,7 +90,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
-        /// to get results as a set of sequential segments.
+        /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -128,8 +109,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that indicates the start of the next sequential segment of results. Use the
-        /// token returned with the previous call to this operation. To start at the beginning
+        /// A token that indicates the start of the next sequential page of results. Use the token
+        /// that is returned with a previous call to this operation. To start at the beginning
         /// of the result set, do not specify a value.
         /// </para>
         /// </summary>
@@ -150,9 +131,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property SortOrder. 
         /// <para>
         /// Indicates how to sort the returned data based on game server registration timestamp.
-        /// Use ASCENDING to retrieve oldest game servers first, or use DESCENDING to retrieve
-        /// newest game servers first. If this parameter is left empty, game servers are returned
-        /// in no particular order.
+        /// Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code>
+        /// to retrieve newest game servers first. If this parameter is left empty, game servers
+        /// are returned in no particular order.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

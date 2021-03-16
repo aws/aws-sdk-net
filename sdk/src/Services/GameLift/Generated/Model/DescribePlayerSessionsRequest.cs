@@ -30,53 +30,49 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePlayerSessions operation.
-    /// Retrieves properties for one or more player sessions. This operation can be used in
-    /// several ways: (1) provide a <code>PlayerSessionId</code> to request properties for
-    /// a specific player session; (2) provide a <code>GameSessionId</code> to request properties
-    /// for all player sessions in the specified game session; (3) provide a <code>PlayerId</code>
-    /// to request properties for all player sessions of a specified player. 
+    /// Retrieves properties for one or more player sessions. 
     /// 
     ///  
     /// <para>
-    /// To get game session record(s), specify only one of the following: a player session
-    /// ID, a game session ID, or a player ID. You can filter this request by player session
-    /// status. Use the pagination parameters to retrieve results as a set of sequential pages.
-    /// If successful, a <a>PlayerSession</a> object is returned for each session matching
-    /// the request.
+    /// This action can be used in the following ways: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To retrieve a specific player session, provide the player session ID only.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To retrieve all player sessions in a game session, provide the game session ID only.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To retrieve all player sessions for a specific player, provide a player ID only.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To request player sessions, specify either a player session ID, game session ID, or
+    /// player ID. You can filter this request by player session status. Use the pagination
+    /// parameters to retrieve results as a set of sequential pages. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, a <code>PlayerSession</code> object is returned for each session that
+    /// matches the request.
     /// </para>
     ///  
     /// <para>
     ///  <i>Available in Amazon GameLift Local.</i> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreatePlayerSession</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>CreatePlayerSessions</a> 
+    ///  <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a>
+    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribePlayerSessions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Game session placements
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class DescribePlayerSessionsRequest : AmazonGameLiftRequest
     {
@@ -130,7 +126,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// A token that indicates the start of the next sequential page of results. Use the token
         /// that is returned with a previous call to this operation. To start at the beginning
         /// of the result set, do not specify a value. If a player session ID is specified, this
         /// parameter is ignored.

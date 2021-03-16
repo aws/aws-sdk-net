@@ -29,16 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Properties that describe an instance of a virtual computing resource that hosts one
-    /// or more game servers. A fleet may contain zero or more instances.
+    /// Represents an EC2 instance of virtual computing resources that hosts one or more game
+    /// servers. In GameLift, a fleet can contain zero or more instances.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Related actions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a>DescribeInstances</a> 
+    /// </para>
     /// </summary>
     public partial class Instance
     {
         private DateTime? _creationTime;
         private string _dnsName;
+        private string _fleetArn;
         private string _fleetId;
         private string _instanceId;
         private string _ipAddress;
+        private string _location;
         private OperatingSystem _operatingSystem;
         private InstanceStatus _status;
         private EC2InstanceType _type;
@@ -46,8 +57,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (for example "1469498468.057").
+        /// A time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -65,8 +76,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// DNS identifier assigned to the instance that is running the game session. Values have
-        /// the following format:
+        /// The DNS identifier assigned to the instance that is running the game session. Values
+        /// have the following format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -97,9 +108,29 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FleetArn. 
+        /// <para>
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are
+        /// unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// </para>
+        /// </summary>
+        public string FleetArn
+        {
+            get { return this._fleetArn; }
+            set { this._fleetArn = value; }
+        }
+
+        // Check to see if FleetArn property is set
+        internal bool IsSetFleetArn()
+        {
+            return this._fleetArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet that the instance is in.
+        /// A unique identifier for the fleet that the instance is in.
         /// </para>
         /// </summary>
         public string FleetId
@@ -117,7 +148,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// A unique identifier for an instance.
+        /// A unique identifier for the instance.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -151,6 +182,26 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OperatingSystem. 
         /// <para>
         /// Operating system that is running on this instance. 
@@ -181,9 +232,8 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>ACTIVE</b> -- The instance has been successfully created and at least one server
-        /// process has successfully launched and reported back to Amazon GameLift that it is
-        /// ready to host a game session. The instance is now considered ready to host game sessions.
-        /// 
+        /// process has successfully launched and reported back to GameLift that it is ready to
+        /// host a game session. The instance is now considered ready to host game sessions. 
         /// </para>
         ///  </li> <li> 
         /// <para>

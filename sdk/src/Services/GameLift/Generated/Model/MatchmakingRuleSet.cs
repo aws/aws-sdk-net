@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// A rule set may define the following elements for a match. For detailed information
     /// and examples showing how to construct a rule set, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build
-    /// a FlexMatch Rule Set</a>. 
+    /// a FlexMatch rule set</a>. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -83,8 +83,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time stamp indicating when this data object was created. The format is a number
-        /// expressed in Unix time as milliseconds (for example "1469498468.057").
+        /// A time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -102,10 +102,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuleSetArn. 
         /// <para>
-        /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// that is assigned to a GameLift matchmaking rule set resource and uniquely identifies
-        /// it. ARNs are unique across all Regions. In a GameLift rule set ARN, the resource ID
-        /// matches the <i>RuleSetName</i> value.
+        /// it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset
+        /// name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i>
+        /// value.
         /// </para>
         /// </summary>
         public string RuleSetArn
@@ -143,7 +144,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuleSetName. 
         /// <para>
-        /// A unique identifier for a matchmaking rule set
+        /// A unique identifier for the matchmaking rule set
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

@@ -29,36 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Current status of fleet capacity. The number of active instances should match or be
-    /// in the process of matching the number of desired instances. Pending and terminating
-    /// counts are non-zero only if fleet capacity is adjusting to an <a>UpdateFleetCapacity</a>
-    /// request, or if access to resources is temporarily affected.
+    /// Resource capacity settings. Fleet capacity is measured in EC2 instances. Pending and
+    /// terminating counts are non-zero when the fleet capacity is adjusting to a scaling
+    /// event or if access to resources is temporarily affected.
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateFleet</a> 
+    /// EC2 instance counts are part of <a>FleetCapacity</a>.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListFleets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class EC2InstanceCounts
     {
@@ -73,7 +51,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ACTIVE. 
         /// <para>
-        /// Actual number of active instances in the fleet.
+        /// Actual number of instances that are ready to host game sessions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -92,7 +70,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DESIRED. 
         /// <para>
-        /// Ideal number of active instances in the fleet.
+        /// Ideal number of active instances. GameLift will always try to maintain the desired
+        /// number of instances. Capacity is scaled up or down by changing the desired instances.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -111,7 +91,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IDLE. 
         /// <para>
-        /// Number of active instances in the fleet that are not currently hosting a game session.
+        /// Number of active instances that are not currently hosting a game session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -130,7 +110,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MAXIMUM. 
         /// <para>
-        /// The maximum value allowed for the fleet's instance count.
+        /// The maximum instance count value allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -149,7 +129,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MINIMUM. 
         /// <para>
-        /// The minimum value allowed for the fleet's instance count.
+        /// The minimum instance count value allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -168,7 +148,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PENDING. 
         /// <para>
-        /// Number of instances in the fleet that are starting but not yet active.
+        /// Number of instances that are starting but not yet active.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -187,7 +167,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TERMINATING. 
         /// <para>
-        /// Number of instances in the fleet that are no longer active but haven't yet been terminated.
+        /// Number of instances that are no longer active but haven't yet been terminated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

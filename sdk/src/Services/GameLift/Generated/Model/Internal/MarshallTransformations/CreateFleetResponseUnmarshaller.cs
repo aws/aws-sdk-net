@@ -57,6 +57,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     response.FleetAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LocationStates", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LocationState, LocationStateUnmarshaller>(LocationStateUnmarshaller.Instance);
+                    response.LocationStates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

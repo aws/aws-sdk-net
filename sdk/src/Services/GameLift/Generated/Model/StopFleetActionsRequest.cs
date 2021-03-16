@@ -30,16 +30,37 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the StopFleetActions operation.
-    /// Suspends activity on a fleet. Currently, this operation is used to stop a fleet's
-    /// auto-scaling activity. It is used to temporarily stop triggering scaling events. The
-    /// policies can be retained and auto-scaling activity can be restarted using <a>StartFleetActions</a>.
-    /// You can view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.
+    /// Suspends certain types of activity in a fleet location. Currently, this operation
+    /// is used to stop auto-scaling activity. For multi-location fleets, fleet actions are
+    /// managed separately for each location. 
     /// 
     ///  
     /// <para>
-    /// To stop fleet actions, specify the fleet ID and the type of actions to suspend. When
-    /// auto-scaling fleet actions are stopped, Amazon GameLift no longer initiates scaling
-    /// events except in response to manual changes using <a>UpdateFleetCapacity</a>. 
+    /// Stopping fleet actions has several potential purposes. It allows you to temporarily
+    /// stop auto-scaling activity but retain your scaling policies for use in the future.
+    /// For multi-location fleets, you can set up fleet-wide auto-scaling, and then opt out
+    /// of it for certain locations. 
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation can be used in the following ways: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To stop actions on instances in the fleet's home Region, provide a fleet ID and the
+    /// type of actions to suspend. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To stop actions on instances in one of the fleet's remote locations, provide a fleet
+    /// ID, a location name, and the type of actions to suspend. 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If successful, GameLift no longer initiates scaling events except in response to manual
+    /// changes using <a>UpdateFleetCapacity</a>. You can view a fleet's stopped actions using
+    /// <a>DescribeFleetAttributes</a> or <a>DescribeFleetLocationAttributes</a>. Suspended
+    /// activity can be restarted using <a>StartFleetActions</a>.
     /// </para>
     ///  
     /// <para>
@@ -52,38 +73,21 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateFleet</a> 
+    ///  <a>CreateFleet</a> | <a>UpdateFleetCapacity</a> | <a>PutScalingPolicy</a> | <a>DescribeEC2InstanceLimits</a>
+    /// | <a>DescribeFleetAttributes</a> | <a>DescribeFleetLocationAttributes</a> | <a>UpdateFleetAttributes</a>
+    /// | <a>StopFleetActions</a> | <a>DeleteFleet</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListFleets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class StopFleetActionsRequest : AmazonGameLiftRequest
     {
         private List<string> _actions = new List<string>();
         private string _fleetId;
+        private string _location;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -107,8 +111,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet to stop actions on. You can use either the fleet ID
-        /// or ARN value.
+        /// A unique identifier for the fleet to stop actions on. You can use either the fleet
+        /// ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,6 +126,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The fleet location to stop fleet actions for. Specify a location in the form of an
+        /// AWS Region code, such as <code>us-west-2</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
         }
 
     }

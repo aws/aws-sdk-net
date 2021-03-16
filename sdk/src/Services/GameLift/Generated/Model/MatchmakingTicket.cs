@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// associated with the GameLift matchmaking configuration resource that is used with
         /// this ticket.
         /// </para>
@@ -94,7 +94,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Time stamp indicating when this matchmaking request stopped being processed due to
         /// success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds
-        /// (for example "1469498468.057").
+        /// (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -175,7 +175,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// Time stamp indicating when this matchmaking request was received. Format is a number
-        /// expressed in Unix time as milliseconds (for example "1469498468.057").
+        /// expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime StartTime

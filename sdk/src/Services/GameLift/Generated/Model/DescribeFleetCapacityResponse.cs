@@ -39,8 +39,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetCapacity. 
         /// <para>
-        /// A collection of objects containing capacity information for each requested fleet ID.
-        /// Leave this parameter empty to retrieve capacity information for all fleets.
+        /// A collection of objects that contains capacity information for each requested fleet
+        /// ID. Capacity objects are returned only for fleets that currently exist.
         /// </para>
         /// </summary>
         public List<FleetCapacity> FleetCapacity
@@ -58,8 +58,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates where to resume retrieving results on the next call to this operation.
-        /// If no token is returned, these results represent the end of the list.
+        /// A token that indicates where to resume retrieving results on the next call to this
+        /// operation. If no token is returned, these results represent the end of the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -33,29 +33,14 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateScript</a> 
+    ///  <a>CreateScript</a> | <a>ListScripts</a> | <a>DescribeScript</a> | <a>UpdateScript</a>
+    /// | <a>DeleteScript</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListScripts</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeScript</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateScript</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteScript</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class Script
     {
@@ -70,8 +55,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A time stamp indicating when this data object was created. The format is a number
-        /// expressed in Unix time as milliseconds (for example "1469498468.057").
+        /// A time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -109,7 +94,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ScriptArn. 
         /// <para>
-        /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// that is assigned to a GameLift script resource and uniquely identifies it. ARNs are
         /// unique across all Regions. In a GameLift script ARN, the resource ID matches the <i>ScriptId</i>
         /// value.
@@ -130,7 +115,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ScriptId. 
         /// <para>
-        /// A unique identifier for a Realtime script
+        /// A unique identifier for the Realtime script
         /// </para>
         /// </summary>
         public string ScriptId
@@ -183,8 +168,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version that is associated with a build or script. Version strings do not need
-        /// to be unique.
+        /// Version information that is associated with a build or script. Version strings do
+        /// not need to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

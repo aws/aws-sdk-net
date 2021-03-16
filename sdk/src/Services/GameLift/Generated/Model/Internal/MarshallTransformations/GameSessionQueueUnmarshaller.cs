@@ -70,6 +70,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FilterConfiguration", targetDepth))
+                {
+                    var unmarshaller = FilterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GameSessionQueueArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<PlayerLatencyPolicy, PlayerLatencyPolicyUnmarshaller>(PlayerLatencyPolicyUnmarshaller.Instance);
                     unmarshalledObject.PlayerLatencyPolicies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PriorityConfiguration", targetDepth))
+                {
+                    var unmarshaller = PriorityConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PriorityConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TimeoutInSeconds", targetDepth))

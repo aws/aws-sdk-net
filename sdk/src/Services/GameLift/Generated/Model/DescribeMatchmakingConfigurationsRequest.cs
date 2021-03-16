@@ -51,45 +51,20 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/matchmaker-build.html">
-    /// Setting Up FlexMatch Matchmakers</a> 
+    /// Setting up FlexMatch matchmakers</a> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateMatchmakingConfiguration</a> 
+    ///  <a>CreateMatchmakingConfiguration</a> | <a>DescribeMatchmakingConfigurations</a>
+    /// | <a>UpdateMatchmakingConfiguration</a> | <a>DeleteMatchmakingConfiguration</a> |
+    /// <a>CreateMatchmakingRuleSet</a> | <a>DescribeMatchmakingRuleSets</a> | <a>ValidateMatchmakingRuleSet</a>
+    /// | <a>DeleteMatchmakingRuleSet</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeMatchmakingConfigurations</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateMatchmakingConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteMatchmakingConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateMatchmakingRuleSet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeMatchmakingRuleSets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ValidateMatchmakingRuleSet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteMatchmakingRuleSet</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class DescribeMatchmakingConfigurationsRequest : AmazonGameLiftRequest
     {
@@ -121,9 +96,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// A unique identifier for a matchmaking configuration(s) to retrieve. You can use either
-        /// the configuration name or ARN value. To request all existing configurations, leave
-        /// this parameter empty.
+        /// A unique identifier for the matchmaking configuration(s) to retrieve. You can use
+        /// either the configuration name or ARN value. To request all existing configurations,
+        /// leave this parameter empty.
         /// </para>
         /// </summary>
         public List<string> Names
@@ -162,9 +137,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuleSetName. 
         /// <para>
-        /// A unique identifier for a matchmaking rule set. You can use either the rule set name
-        /// or ARN value. Use this parameter to retrieve all matchmaking configurations that use
-        /// this rule set.
+        /// A unique identifier for the matchmaking rule set. You can use either the rule set
+        /// name or ARN value. Use this parameter to retrieve all matchmaking configurations that
+        /// use this rule set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

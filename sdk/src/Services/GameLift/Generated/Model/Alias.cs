@@ -31,31 +31,16 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Properties that describe an alias resource.
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateAlias</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>ListAliases</a> 
+    ///  <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> | <a>UpdateAlias</a>
+    /// | <a>DeleteAlias</a> | <a>ResolveAlias</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ResolveAlias</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class Alias
     {
@@ -70,10 +55,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AliasArn. 
         /// <para>
-        /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// that is assigned to a GameLift alias resource and uniquely identifies it. ARNs are
-        /// unique across all Regions. In a GameLift alias ARN, the resource ID matches the alias
-        /// ID value.
+        /// unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// In a GameLift alias ARN, the resource ID matches the alias ID value.
         /// </para>
         /// </summary>
         public string AliasArn
@@ -91,7 +76,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AliasId. 
         /// <para>
-        /// A unique identifier for an alias. Alias IDs are unique within a Region.
+        /// A unique identifier for the alias. Alias IDs are unique within a Region.
         /// </para>
         /// </summary>
         public string AliasId
@@ -110,7 +95,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// A time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (for example "1469498468.057").
+        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -147,7 +132,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
         /// The time that this data object was last modified. Format is a number expressed in
-        /// Unix time as milliseconds (for example "1469498468.057").
+        /// Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime

@@ -30,40 +30,39 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGameSessionQueue operation.
-    /// Establishes a new queue for processing requests to place new game sessions. A queue
-    /// identifies where new game sessions can be hosted -- by specifying a list of destinations
-    /// (fleets or aliases) -- and how long requests can wait in the queue before timing out.
-    /// You can set up a queue to try to place game sessions on fleets in multiple Regions.
-    /// To add placement requests to a queue, call <a>StartGameSessionPlacement</a> and reference
-    /// the queue name.
+    /// Creates a placement queue that processes requests for new game sessions. A queue uses
+    /// FleetIQ algorithms to determine the best placement locations and find an available
+    /// game server there, then prompts the game server process to start a new game session.
+    /// 
     /// 
     ///  
     /// <para>
-    ///  <b>Destination order.</b> When processing a request for a game session, Amazon GameLift
-    /// tries each destination in order until it finds one with available resources to host
-    /// the new game session. A queue's default order is determined by how destinations are
-    /// listed. The default order is overridden when a game session placement request provides
-    /// player latency information. Player latency information enables Amazon GameLift to
-    /// prioritize destinations where players report the lowest average latency, as a result
-    /// placing the new game session where the majority of players will have the best possible
-    /// gameplay experience.
+    /// A game session queue is configured with a set of destinations (GameLift fleets or
+    /// aliases), which determine the locations where the queue can place new game sessions.
+    /// These destinations can span multiple fleet types (Spot and On-Demand), instance types,
+    /// and AWS Regions. If the queue includes multi-location fleets, the queue is able to
+    /// place game sessions in all of a fleet's remote locations. You can opt to filter out
+    /// individual locations if needed.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Player latency policies.</b> For placement requests containing player latency
-    /// information, use player latency policies to protect individual players from very high
-    /// latencies. With a latency cap, even when a destination can deliver a low latency for
-    /// most players, the game is not placed where any individual player is reporting latency
-    /// higher than a policy's maximum. A queue can have multiple latency policies, which
-    /// are enforced consecutively starting with the policy with the lowest latency cap. Use
-    /// multiple policies to gradually relax latency controls; for example, you might set
-    /// a policy with a low latency cap for the first 60 seconds, a second policy with a higher
-    /// cap for the next 60 seconds, etc. 
+    /// The queue configuration also determines how FleetIQ selects the best available placement
+    /// for a new game session. Before searching for an available game server, FleetIQ first
+    /// prioritizes the queue's destinations and locations, with the best placement locations
+    /// on top. You can set up the queue to use the FleetIQ default prioritization or provide
+    /// an alternate set of priorities.
     /// </para>
     ///  
     /// <para>
-    /// To create a new queue, provide a name, timeout value, a list of destinations and,
-    /// if desired, a set of latency policies. If successful, a new queue object is returned.
+    /// To create a new queue, provide a name, timeout value, and a list of destinations.
+    /// Optionally, specify a sort configuration and/or a filter, and define a set of latency
+    /// cap policies.
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, a new <code>GameSessionQueue</code> object is returned with an assigned
+    /// queue ARN. New game session requests, which are submitted to queue with <a>StartGameSessionPlacement</a>
+    /// or <a>StartMatchmaking</a>, reference a queue's name or ARN. 
     /// </para>
     ///  
     /// <para>
@@ -72,49 +71,40 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-design.html">
-    /// Design a Game Session Queue</a> 
+    /// Design a game session queue</a> 
     /// </para>
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-creating.html">
-    /// Create a Game Session Queue</a> 
+    /// Create a game session queue</a> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateGameSessionQueue</a> 
+    ///  <a>CreateGameSessionQueue</a> | <a>DescribeGameSessionQueues</a> | <a>UpdateGameSessionQueue</a>
+    /// | <a>DeleteGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionQueues</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameSessionQueue</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteGameSessionQueue</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class CreateGameSessionQueueRequest : AmazonGameLiftRequest
     {
         private List<GameSessionQueueDestination> _destinations = new List<GameSessionQueueDestination>();
+        private FilterConfiguration _filterConfiguration;
         private string _name;
         private List<PlayerLatencyPolicy> _playerLatencyPolicies = new List<PlayerLatencyPolicy>();
+        private PriorityConfiguration _priorityConfiguration;
         private List<Tag> _tags = new List<Tag>();
         private int? _timeoutInSeconds;
 
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// A list of fleets that can be used to fulfill game session placement requests in the
-        /// queue. Fleets are identified by either a fleet ARN or a fleet alias ARN. Destinations
-        /// are listed in default preference order.
+        /// A list of fleets and/or fleet aliases that can be used to fulfill game session placement
+        /// requests in the queue. Destinations are identified by either a fleet ARN or a fleet
+        /// alias ARN, and are listed in order of placement preference.
         /// </para>
         /// </summary>
         public List<GameSessionQueueDestination> Destinations
@@ -127,6 +117,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetDestinations()
         {
             return this._destinations != null && this._destinations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterConfiguration. 
+        /// <para>
+        /// A list of locations where a queue is allowed to place new game sessions. Locations
+        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If
+        /// this parameter is not set, game sessions can be placed in any queue location. 
+        /// </para>
+        /// </summary>
+        public FilterConfiguration FilterConfiguration
+        {
+            get { return this._filterConfiguration; }
+            set { this._filterConfiguration = value; }
+        }
+
+        // Check to see if FilterConfiguration property is set
+        internal bool IsSetFilterConfiguration()
+        {
+            return this._filterConfiguration != null;
         }
 
         /// <summary>
@@ -152,15 +162,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerLatencyPolicies. 
         /// <para>
-        /// A collection of latency policies to apply when processing game sessions placement
-        /// requests with player latency information. Multiple policies are evaluated in order
-        /// of the maximum latency value, starting with the lowest latency values. With just one
-        /// policy, the policy is enforced at the start of the game session placement for the
-        /// duration period. With multiple policies, each policy is enforced consecutively for
-        /// its duration period. For example, a queue might enforce a 60-second policy followed
-        /// by a 120-second policy, and then no policy for the remainder of the placement. A player
-        /// latency policy must set a value for <code>MaximumIndividualPlayerLatencyMilliseconds</code>.
-        /// If none is set, this API request fails.
+        /// A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver
+        /// low latency for most players in a game session. These policies ensure that no individual
+        /// player can be placed into a game with unreasonably high latency. Use multiple policies
+        /// to gradually relax latency requirements a step at a time. Multiple policies are applied
+        /// based on their maximum allowed latency, starting with the lowest value.
         /// </para>
         /// </summary>
         public List<PlayerLatencyPolicy> PlayerLatencyPolicies
@@ -173,6 +179,27 @@ namespace Amazon.GameLift.Model
         internal bool IsSetPlayerLatencyPolicies()
         {
             return this._playerLatencyPolicies != null && this._playerLatencyPolicies.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PriorityConfiguration. 
+        /// <para>
+        /// Custom settings to use when prioritizing destinations and locations for game session
+        /// placements. This configuration replaces the FleetIQ default prioritization process.
+        /// Priority types that are not explicitly named will be automatically applied at the
+        /// end of the prioritization process. 
+        /// </para>
+        /// </summary>
+        public PriorityConfiguration PriorityConfiguration
+        {
+            get { return this._priorityConfiguration; }
+            set { this._priorityConfiguration = value; }
+        }
+
+        // Check to see if PriorityConfiguration property is set
+        internal bool IsSetPriorityConfiguration()
+        {
+            return this._priorityConfiguration != null;
         }
 
         /// <summary>

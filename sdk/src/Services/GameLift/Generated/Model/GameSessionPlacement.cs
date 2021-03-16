@@ -75,8 +75,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// DNS identifier assigned to the instance that is running the game session. Values have
-        /// the following format:
+        /// The DNS identifier assigned to the instance that is running the game session. Values
+        /// have the following format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -127,9 +127,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameProperties. 
         /// <para>
-        /// Set of custom properties for a game session, formatted as key:value pairs. These properties
-        /// are passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// A set of custom properties for a game session, formatted as key:value pairs. These
+        /// properties are passed to a game server process in the <a>GameSession</a> object with
+        /// a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>
@@ -171,13 +171,13 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionData. 
         /// <para>
-        /// Set of custom game session properties, formatted as a single string value. This data
-        /// is passed to a game server process in the <a>GameSession</a> object with a request
+        /// A set of custom game session properties, formatted as a single string value. This
+        /// data is passed to a game server process in the <a>GameSession</a> object with a request
         /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Min=1, Max=262144)]
         public string GameSessionData
         {
             get { return this._gameSessionData; }
@@ -273,10 +273,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// IP address of the instance that is running the game session. When connecting to a
-        /// Amazon GameLift game server, a client needs to reference an IP address (or DNS name)
-        /// and port number. This value is set once the new game session is placed (placement
-        /// status is <code>FULFILLED</code>). 
+        /// The IP address of the game session. To connect to a GameLift game server, an app needs
+        /// both the IP address and port number. This value is set once the new game session is
+        /// placed (placement status is <code>FULFILLED</code>). 
         /// </para>
         /// </summary>
         public string IpAddress
@@ -378,8 +377,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerLatencies. 
         /// <para>
-        /// Set of values, expressed in milliseconds, indicating the amount of latency that a
-        /// player experiences when connected to AWS Regions.
+        /// A set of values, expressed in milliseconds, that indicates the amount of latency that
+        /// a player experiences when connected to AWS Regions.
         /// </para>
         /// </summary>
         public List<PlayerLatency> PlayerLatencies
@@ -397,9 +396,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port number for the game session. To connect to a Amazon GameLift game server, an
-        /// app needs both the IP address and port number. This value is set once the new game
-        /// session is placed (placement status is <code>FULFILLED</code>).
+        /// The port number for the game session. To connect to a GameLift game server, an app
+        /// needs both the IP address and port number. This value is set once the new game session
+        /// is placed (placement status is <code>FULFILLED</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60000)]
@@ -419,7 +418,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// Time stamp indicating when this request was placed in the queue. Format is a number
-        /// expressed in Unix time as milliseconds (for example "1469498468.057").
+        /// expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime StartTime

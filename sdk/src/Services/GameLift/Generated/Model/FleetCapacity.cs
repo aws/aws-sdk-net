@@ -29,47 +29,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Information about the fleet's capacity. Fleet capacity is measured in EC2 instances.
-    /// By default, new fleets have a capacity of one instance, but can be updated as needed.
-    /// The maximum number of instances for a fleet is determined by the fleet's instance
-    /// type.
+    /// Current resource capacity settings in a specified fleet or location. The location
+    /// value might refer to a fleet's remote location or its home Region. 
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateFleet</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>ListFleets</a> 
+    ///  <a>DescribeFleetCapacity</a> | <a>DescribeFleetLocationCapacity</a> | <a>UpdateFleetCapacity</a>
+    /// 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class FleetCapacity
     {
+        private string _fleetArn;
         private string _fleetId;
         private EC2InstanceCounts _instanceCounts;
         private EC2InstanceType _instanceType;
+        private string _location;
+
+        /// <summary>
+        /// Gets and sets the property FleetArn. 
+        /// <para>
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are
+        /// unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// </para>
+        /// </summary>
+        public string FleetArn
+        {
+            get { return this._fleetArn; }
+            set { this._fleetArn = value; }
+        }
+
+        // Check to see if FleetArn property is set
+        internal bool IsSetFleetArn()
+        {
+            return this._fleetArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet.
+        /// A unique identifier for the fleet associated with the location.
         /// </para>
         /// </summary>
         public string FleetId
@@ -87,7 +91,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceCounts. 
         /// <para>
-        /// Current status of fleet capacity.
+        /// The current instance count and capacity settings for the fleet location. 
         /// </para>
         /// </summary>
         public EC2InstanceCounts InstanceCounts
@@ -105,11 +109,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance
-        /// type determines the computing resources of each instance in the fleet, including CPU,
-        /// memory, storage, and networking capacity. Amazon GameLift supports the following EC2
-        /// instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-        /// Instance Types</a> for detailed descriptions.
+        /// The EC2 instance type that is used for all instances in a fleet. The instance type
+        /// determines the computing resources in use, including CPU, memory, storage, and networking
+        /// capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+        /// Types</a> for detailed descriptions.
         /// </para>
         /// </summary>
         public EC2InstanceType InstanceType
@@ -122,6 +125,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The fleet location for the instance count information, expressed as an AWS Region
+        /// code, such as <code>us-west-2</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
         }
 
     }

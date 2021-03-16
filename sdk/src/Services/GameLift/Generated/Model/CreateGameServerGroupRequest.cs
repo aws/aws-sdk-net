@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGameServerGroup operation.
-    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-    /// groups.</b> 
+    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     /// An IAM role that extends limited access to your AWS account to allow GameLift FleetIQ
-    /// to create and interact with the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-iam-permissions-roles.html">Create
+    /// to create and interact with the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create
     /// IAM roles for cross-service interaction</a> in the <i>GameLift FleetIQ Developer Guide</i>.
     /// </para>
     ///  </li> </ul> 
@@ -86,41 +86,15 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateGameServerGroup</a> 
+    ///  <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a>
+    /// | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a>
+    /// | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListGameServerGroups</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameServerGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameServerGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteGameServerGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ResumeGameServerGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>SuspendGameServerGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameServerInstances</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class CreateGameServerGroupRequest : AmazonGameLiftRequest
     {
@@ -283,6 +257,14 @@ namespace Amazon.GameLift.Model
         /// User Guide</i>. After the Auto Scaling group is created, update this value directly
         /// in the Auto Scaling group using the AWS console or APIs.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify network interfaces in your launch template, you must explicitly set
+        /// the property <code>AssociatePublicIpAddress</code> to "true". If no network interface
+        /// is specified in the launch template, GameLift FleetIQ uses your account's default
+        /// VPC.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public LaunchTemplateSpecification LaunchTemplate

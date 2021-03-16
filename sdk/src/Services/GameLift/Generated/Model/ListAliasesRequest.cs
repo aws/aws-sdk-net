@@ -38,31 +38,16 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Returned aliases are not listed in any particular order.
     /// </para>
-    ///  </note> <ul> <li> 
+    ///  </note> 
     /// <para>
-    ///  <a>CreateAlias</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>ListAliases</a> 
+    ///  <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> | <a>UpdateAlias</a>
+    /// | <a>DeleteAlias</a> | <a>ResolveAlias</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ResolveAlias</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class ListAliasesRequest : AmazonGameLiftRequest
     {

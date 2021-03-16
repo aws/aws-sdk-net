@@ -29,27 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Fleet designated in a game session queue. Requests for new game sessions in the queue
-    /// are fulfilled by starting a new game session on any destination that is configured
-    /// for a queue. 
+    /// A fleet or alias designated in a game session queue. Queues fulfill requests for new
+    /// game sessions by placing a new game session on any of the queue's destinations. 
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateGameSessionQueue</a> 
+    /// Destinations are part of a <a>GameSessionQueue</a>.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionQueues</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameSessionQueue</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteGameSessionQueue</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class GameSessionQueueDestination
     {

@@ -40,7 +40,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetUtilization. 
         /// <para>
         /// A collection of objects containing utilization information for each requested fleet
-        /// ID.
+        /// ID. Utilization objects are returned only for fleets that currently exist.
         /// </para>
         /// </summary>
         public List<FleetUtilization> FleetUtilization
@@ -58,8 +58,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates where to resume retrieving results on the next call to this operation.
-        /// If no token is returned, these results represent the end of the list.
+        /// A token that indicates where to resume retrieving results on the next call to this
+        /// operation. If no token is returned, these results represent the end of the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

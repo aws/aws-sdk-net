@@ -47,6 +47,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         {
             StartFleetActionsResponse response = new StartFleetActionsResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("FleetArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FleetArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FleetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FleetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

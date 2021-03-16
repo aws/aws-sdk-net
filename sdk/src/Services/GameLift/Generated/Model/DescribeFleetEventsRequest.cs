@@ -30,11 +30,20 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetEvents operation.
-    /// Retrieves entries from the specified fleet's event log. You can specify a time range
-    /// to limit the result set. Use the pagination parameters to retrieve results as a set
-    /// of sequential pages. If successful, a collection of event log entries matching the
-    /// request are returned.
+    /// Retrieves entries from a fleet's event log. Fleet events are initiated by changes
+    /// in status, such as during fleet creation and termination, changes in capacity, etc.
+    /// If a fleet has multiple locations, events are also initiated by changes to status
+    /// and capacity in remote locations. 
     /// 
+    ///  
+    /// <para>
+    /// You can specify a time range to limit the result set. Use the pagination parameters
+    /// to retrieve results as a set of sequential pages. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, a collection of event log entries matching the request are returned.
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 
@@ -42,65 +51,20 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift Fleets</a> 
+    /// up GameLift fleets</a> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateFleet</a> 
+    ///  <a>ListFleets</a> | <a>DescribeEC2InstanceLimits</a> | <a>DescribeFleetAttributes</a>
+    /// | <a>DescribeFleetCapacity</a> | <a>DescribeFleetEvents</a> | <a>DescribeFleetLocationAttributes</a>
+    /// | <a>DescribeFleetPortSettings</a> | <a>DescribeFleetUtilization</a> | <a>DescribeRuntimeConfiguration</a>
+    /// | <a>DescribeScalingPolicies</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListFleets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Describe fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>DescribeFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class DescribeFleetEventsRequest : AmazonGameLiftRequest
     {
@@ -113,9 +77,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// Most recent date to retrieve event logs for. If no end time is specified, this call
-        /// returns entries from the specified start time up to the present. Format is a number
-        /// expressed in Unix time as milliseconds (ex: "1469498468.057").
+        /// The most recent date to retrieve event logs for. If no end time is specified, this
+        /// call returns entries from the specified start time up to the present. Format is a
+        /// number expressed in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -133,7 +97,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet to get event logs for. You can use either the fleet
+        /// A unique identifier for the fleet to get event logs for. You can use either the fleet
         /// ID or ARN value.
         /// </para>
         /// </summary>
@@ -173,7 +137,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// A token that indicates the start of the next sequential page of results. Use the token
         /// that is returned with a previous call to this operation. To start at the beginning
         /// of the result set, do not specify a value.
         /// </para>
@@ -194,9 +158,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Earliest date to retrieve event logs for. If no start time is specified, this call
-        /// returns entries starting from when the fleet was created to the specified end time.
-        /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").
+        /// The earliest date to retrieve event logs for. If no start time is specified, this
+        /// call returns entries starting from when the fleet was created to the specified end
+        /// time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime StartTime

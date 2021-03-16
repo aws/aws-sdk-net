@@ -30,51 +30,29 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGameSessionPlacement operation.
-    /// Retrieves properties and current status of a game session placement request. To get
-    /// game session placement details, specify the placement ID. If successful, a <a>GameSessionPlacement</a>
-    /// object is returned.
+    /// Retrieves information, including current status, about a game session placement request.
     /// 
-    ///  <ul> <li> 
+    /// 
+    ///  
     /// <para>
-    ///  <a>CreateGameSession</a> 
+    /// To get game session placement details, specify the placement ID.
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>DescribeGameSessions</a> 
+    /// If successful, a <a>GameSessionPlacement</a> object is returned.
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>DescribeGameSessionDetails</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>SearchGameSessions</a> 
+    ///  <a>CreateGameSession</a> | <a>DescribeGameSessions</a> | <a>DescribeGameSessionDetails</a>
+    /// | <a>SearchGameSessions</a> | <a>UpdateGameSession</a> | <a>GetGameSessionLogUrl</a>
+    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameSession</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetGameSessionLogUrl</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Game session placements
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class DescribeGameSessionPlacementRequest : AmazonGameLiftRequest
     {

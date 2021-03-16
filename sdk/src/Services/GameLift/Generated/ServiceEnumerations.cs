@@ -2097,6 +2097,52 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type LocationUpdateStatus.
+    /// </summary>
+    public class LocationUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PENDING_UPDATE for LocationUpdateStatus
+        /// </summary>
+        public static readonly LocationUpdateStatus PENDING_UPDATE = new LocationUpdateStatus("PENDING_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocationUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocationUpdateStatus FindValue(string value)
+        {
+            return FindValue<LocationUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocationUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MatchmakingConfigurationStatus.
     /// </summary>
     public class MatchmakingConfigurationStatus : ConstantClass
@@ -2462,6 +2508,64 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PriorityType.
+    /// </summary>
+    public class PriorityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COST for PriorityType
+        /// </summary>
+        public static readonly PriorityType COST = new PriorityType("COST");
+        /// <summary>
+        /// Constant DESTINATION for PriorityType
+        /// </summary>
+        public static readonly PriorityType DESTINATION = new PriorityType("DESTINATION");
+        /// <summary>
+        /// Constant LATENCY for PriorityType
+        /// </summary>
+        public static readonly PriorityType LATENCY = new PriorityType("LATENCY");
+        /// <summary>
+        /// Constant LOCATION for PriorityType
+        /// </summary>
+        public static readonly PriorityType LOCATION = new PriorityType("LOCATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PriorityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PriorityType FindValue(string value)
+        {
+            return FindValue<PriorityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PriorityType(string value)
         {
             return FindValue(value);
         }

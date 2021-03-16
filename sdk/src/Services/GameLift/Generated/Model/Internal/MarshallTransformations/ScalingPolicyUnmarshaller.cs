@@ -76,10 +76,22 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.EvaluationPeriods = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FleetArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FleetArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FleetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FleetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Location", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MetricName", targetDepth))
@@ -128,6 +140,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UpdateStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpdateStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

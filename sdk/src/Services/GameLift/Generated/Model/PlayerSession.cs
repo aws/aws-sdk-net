@@ -29,48 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Properties describing a player session. Player session objects are created either
-    /// by creating a player session for a specific game session, or as part of a game session
-    /// placement. A player session represents either a player reservation for a game session
-    /// (status <code>RESERVED</code>) or actual player activity in a game session (status
-    /// <code>ACTIVE</code>). A player session object (including player data) is automatically
-    /// passed to a game session when the player connects to the game session and is validated.
+    /// Represents a player session. Player sessions are created either for a specific game
+    /// session, or as part of a game session placement or matchmaking request. A player session
+    /// can represents a reserved player slot in a game session (when status is <code>RESERVED</code>)
+    /// or actual player activity in a game session (when status is <code>ACTIVE</code>).
+    /// A player session object, including player data, is automatically passed to a game
+    /// session when the player connects to the game session and is validated. After the game
+    /// session ends, player sessions information is retained for 30 days and then removed.
     /// 
     ///  
     /// <para>
-    /// When a player disconnects, the player session status changes to <code>COMPLETED</code>.
-    /// Once the session ends, the player session object is retained for 30 days and then
-    /// removed.
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreatePlayerSession</a> 
+    ///  <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a>
+    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreatePlayerSessions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribePlayerSessions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Game session placements
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class PlayerSession
     {
@@ -90,8 +66,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (for example "1469498468.057").
+        /// A time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -109,8 +85,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// DNS identifier assigned to the instance that is running the game session. Values have
-        /// the following format:
+        /// The DNS identifier assigned to the instance that is running the game session. Values
+        /// have the following format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -143,7 +119,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetArn. 
         /// <para>
-        ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// associated with the GameLift fleet that the player's game session is running on. 
         /// </para>
         /// </summary>
@@ -162,7 +138,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet that the player's game session is running on.
+        /// A unique identifier for the fleet that the player's game session is running on.
         /// </para>
         /// </summary>
         public string FleetId
@@ -199,9 +175,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// IP address of the instance that is running the game session. When connecting to a
-        /// Amazon GameLift game server, a client needs to reference an IP address (or DNS name)
-        /// and port number.
+        /// The IP address of the game session. To connect to a GameLift game server, an app needs
+        /// both the IP address and port number.
         /// </para>
         /// </summary>
         public string IpAddress
@@ -219,8 +194,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerData. 
         /// <para>
-        /// Developer-defined information related to a player. Amazon GameLift does not use this
-        /// data, so it can be formatted as needed for use in the game. 
+        /// Developer-defined information related to a player. GameLift does not use this data,
+        /// so it can be formatted as needed for use in the game. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -338,8 +313,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TerminationTime. 
         /// <para>
-        /// Time stamp indicating when this data object was terminated. Format is a number expressed
-        /// in Unix time as milliseconds (for example "1469498468.057").
+        /// A time stamp indicating when this data object was terminated. Format is a number expressed
+        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime TerminationTime

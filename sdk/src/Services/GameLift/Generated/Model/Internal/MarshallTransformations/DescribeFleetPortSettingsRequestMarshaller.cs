@@ -74,6 +74,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FleetId);
                 }
 
+                if(publicRequest.IsSetLocation())
+                {
+                    context.Writer.WritePropertyName("Location");
+                    context.Writer.Write(publicRequest.Location);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

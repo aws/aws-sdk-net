@@ -32,53 +32,25 @@ namespace Amazon.GameLift.Model
     /// Rule that controls how a fleet is scaled. Scaling policies are uniquely identified
     /// by the combination of name and fleet ID.
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
+    ///  <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a>
+    /// | <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a>
+    /// | <a>StopFleetActions</a> | <a>StartFleetActions</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Manage scaling policies:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>PutScalingPolicy</a> (auto-scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeScalingPolicies</a> (auto-scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteScalingPolicy</a> (auto-scaling)
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Manage fleet actions:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class ScalingPolicy
     {
         private ComparisonOperatorType _comparisonOperator;
         private int? _evaluationPeriods;
+        private string _fleetArn;
         private string _fleetId;
+        private string _location;
         private MetricName _metricName;
         private string _name;
         private PolicyType _policyType;
@@ -87,6 +59,7 @@ namespace Amazon.GameLift.Model
         private ScalingStatusType _status;
         private TargetConfiguration _targetConfiguration;
         private double? _threshold;
+        private LocationUpdateStatus _updateStatus;
 
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
@@ -127,9 +100,29 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FleetArn. 
+        /// <para>
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are
+        /// unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// </para>
+        /// </summary>
+        public string FleetArn
+        {
+            get { return this._fleetArn; }
+            set { this._fleetArn = value; }
+        }
+
+        // Check to see if FleetArn property is set
+        internal bool IsSetFleetArn()
+        {
+            return this._fleetArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet that is associated with this scaling policy.
+        /// A unique identifier for the fleet that is associated with this scaling policy.
         /// </para>
         /// </summary>
         public string FleetId
@@ -142,6 +135,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        ///  
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
         }
 
         /// <summary>
@@ -223,8 +235,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label that is associated with a scaling policy. Policy names do not
-        /// need to be unique.
+        /// A descriptive label that is associated with a fleet's scaling policy. Policy names
+        /// do not need to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -367,7 +379,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TargetConfiguration. 
         /// <para>
-        /// The settings for a target-based scaling policy.
+        /// An object that contains settings for a target-based scaling policy.
         /// </para>
         /// </summary>
         public TargetConfiguration TargetConfiguration
@@ -398,6 +410,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetThreshold()
         {
             return this._threshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateStatus. 
+        /// <para>
+        /// The current status of the fleet's scaling policies in a requested fleet location.
+        /// The status <code>PENDING_UPDATE</code> indicates that an update was requested for
+        /// the fleet but has not yet been completed for the location.
+        /// </para>
+        /// </summary>
+        public LocationUpdateStatus UpdateStatus
+        {
+            get { return this._updateStatus; }
+            set { this._updateStatus = value; }
+        }
+
+        // Check to see if UpdateStatus property is set
+        internal bool IsSetUpdateStatus()
+        {
+            return this._updateStatus != null;
         }
 
     }

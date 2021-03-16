@@ -30,26 +30,50 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFleetCapacity operation.
-    /// Updates capacity settings for a fleet. Use this operation to specify the number of
-    /// EC2 instances (hosts) that you want this fleet to contain. Before calling this operation,
-    /// you may want to call <a>DescribeEC2InstanceLimits</a> to get the maximum capacity
-    /// based on the fleet's EC2 instance type.
+    /// Updates capacity settings for a fleet. For fleets with multiple locations, use this
+    /// operation to manage capacity settings in each location individually. Fleet capacity
+    /// determines the number of game sessions and players that can be hosted based on the
+    /// fleet configuration. Use this operation to set the following fleet capacity properties:
     /// 
-    ///  
+    /// 
+    ///  <ul> <li> 
     /// <para>
-    /// Specify minimum and maximum number of instances. Amazon GameLift will not change fleet
-    /// capacity to values fall outside of this range. This is particularly important when
-    /// using auto-scaling (see <a>PutScalingPolicy</a>) to allow capacity to adjust based
-    /// on player demand while imposing limits on automatic adjustments.
+    /// Minimum/maximum size: Set hard limits on fleet capacity. GameLift cannot set the fleet's
+    /// capacity to a value outside of this range, whether the capacity is changed manually
+    /// or through automatic scaling. 
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// To update fleet capacity, specify the fleet ID and the number of instances you want
-    /// the fleet to host. If successful, Amazon GameLift starts or terminates instances so
-    /// that the fleet's active instance count matches the desired instance count. You can
-    /// view a fleet's current capacity information by calling <a>DescribeFleetCapacity</a>.
-    /// If the desired instance count is higher than the instance type's limit, the "Limit
-    /// Exceeded" exception occurs.
+    /// Desired capacity: Manually set the number of EC2 instances to be maintained in a fleet
+    /// location. Before changing a fleet's desired capacity, you may want to call <a>DescribeEC2InstanceLimits</a>
+    /// to get the maximum capacity of the fleet's EC2 instance type. Alternatively, consider
+    /// using automatic scaling to adjust capacity based on player demand.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// This operation can be used in the following ways: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To update capacity for a fleet's home Region, or if the fleet has no remote locations,
+    /// omit the <code>Location</code> parameter. The fleet must be in <code>ACTIVE</code>
+    /// status. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To update capacity for a fleet's remote location, include the <code>Location</code>
+    /// parameter set to the location to be updated. The location must be in <code>ACTIVE</code>
+    /// status.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If successful, capacity settings are updated immediately. In response a change in
+    /// desired capacity, GameLift initiates steps to start new instances or terminate existing
+    /// instances in the requested fleet location. This continues until the location's active
+    /// instance count matches the new desired instance count. You can track a fleet's current
+    /// capacity by calling <a>DescribeFleetCapacity</a> or <a>DescribeFleetLocationCapacity</a>.
+    /// If the requested desired instance count is higher than the instance type's limit,
+    /// the <code>LimitExceeded</code> exception occurs.
     /// </para>
     ///  
     /// <para>
@@ -57,66 +81,35 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift Fleets</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-manage-capacity.html">Scaling
+    /// fleet capacity</a> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateFleet</a> 
+    ///  <a>CreateFleetLocations</a> | <a>UpdateFleetAttributes</a> | <a>UpdateFleetCapacity</a>
+    /// | <a>UpdateFleetPortSettings</a> | <a>UpdateRuntimeConfiguration</a> | <a>StopFleetActions</a>
+    /// | <a>StartFleetActions</a> | <a>PutScalingPolicy</a> | <a>DeleteFleet</a> | <a>DeleteFleetLocations</a>
+    /// | <a>DeleteScalingPolicy</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListFleets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>UpdateFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class UpdateFleetCapacityRequest : AmazonGameLiftRequest
     {
         private int? _desiredInstances;
         private string _fleetId;
+        private string _location;
         private int? _maxSize;
         private int? _minSize;
 
         /// <summary>
         /// Gets and sets the property DesiredInstances. 
         /// <para>
-        /// Number of EC2 instances you want this fleet to host.
+        /// The number of EC2 instances you want to maintain in the specified fleet location.
+        /// This value must fall between the minimum and maximum size limits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -135,8 +128,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet to update capacity for. You can use either the fleet
-        /// ID or ARN value.
+        /// A unique identifier for the fleet to update capacity settings for. You can use either
+        /// the fleet ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -153,9 +146,30 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The name of a remote location to update fleet capacity settings for, in the form of
+        /// an AWS Region code such as <code>us-west-2</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum value allowed for the fleet's instance count. Default if not set is 1.
+        /// The maximum number of instances that are allowed in the specified fleet location.
+        /// If this parameter is not set, the default is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -174,7 +188,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum value allowed for the fleet's instance count. Default if not set is 0.
+        /// The minimum number of instances that are allowed in the specified fleet location.
+        /// If this parameter is not set, the default is 0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

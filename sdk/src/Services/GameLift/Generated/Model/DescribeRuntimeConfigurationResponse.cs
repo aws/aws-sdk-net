@@ -38,8 +38,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuntimeConfiguration. 
         /// <para>
-        /// Instructions describing how server processes should be launched and maintained on
-        /// each instance in the fleet.
+        /// Instructions that describe how server processes should be launched and maintained
+        /// on each instance in the fleet.
         /// </para>
         /// </summary>
         public RuntimeConfiguration RuntimeConfiguration

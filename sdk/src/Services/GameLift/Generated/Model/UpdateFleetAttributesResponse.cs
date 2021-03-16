@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet that was updated. Use either the fleet ID or ARN value.
+        /// A unique identifier for the fleet that was updated.
         /// </para>
         /// </summary>
         public string FleetId

@@ -46,8 +46,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// DNS identifier assigned to the instance that is running the game session. Values have
-        /// the following format:
+        /// The DNS identifier assigned to the instance that is running the game session. Values
+        /// have the following format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -80,8 +80,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionArn. 
         /// <para>
-        /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
-        /// that is assigned to a game session and uniquely identifies it.
+        /// A unique identifier for the game session. Use the game session ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -100,9 +99,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// IP address of the instance that is running the game session. When connecting to a
-        /// Amazon GameLift game server, a client needs to reference an IP address (or DNS name)
-        /// and port number.
+        /// The IP address of the game session. To connect to a GameLift game server, an app needs
+        /// both the IP address and port number.
         /// </para>
         /// </summary>
         public string IpAddress
@@ -139,8 +137,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port number for the game session. To connect to a Amazon GameLift game server, an
-        /// app needs both the IP address and port number.
+        /// The port number for the game session. To connect to a GameLift game server, an app
+        /// needs both the IP address and port number.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

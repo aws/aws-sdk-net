@@ -82,10 +82,22 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentPlayerSessionCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FleetArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FleetArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FleetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FleetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Location", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaximumPlayerSessionCount", targetDepth))

@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSession. 
         /// <para>
-        /// The updated game session metadata.
+        /// The updated game session properties.
         /// </para>
         /// </summary>
         public GameSession GameSession

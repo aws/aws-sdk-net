@@ -51,10 +51,34 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("FleetArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FleetArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FleetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FleetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InboundPermissions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<IpPermission, IpPermissionUnmarshaller>(IpPermissionUnmarshaller.Instance);
                     response.InboundPermissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Location", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UpdateStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UpdateStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

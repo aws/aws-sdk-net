@@ -34,11 +34,13 @@ namespace Amazon.GameLift.Model
     public partial class CreateFleetResponse : AmazonWebServiceResponse
     {
         private FleetAttributes _fleetAttributes;
+        private List<LocationState> _locationStates = new List<LocationState>();
 
         /// <summary>
         /// Gets and sets the property FleetAttributes. 
         /// <para>
-        /// Properties for the newly created fleet.
+        /// The properties for the new fleet, including the current status. All fleets are placed
+        /// in <code>NEW</code> status on creation. 
         /// </para>
         /// </summary>
         public FleetAttributes FleetAttributes
@@ -51,6 +53,28 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetAttributes()
         {
             return this._fleetAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocationStates. 
+        /// <para>
+        /// The fleet's locations and life-cycle status of each location. For new fleets, the
+        /// status of all locations is set to <code>NEW</code>. During fleet creation, GameLift
+        /// updates each location status as instances are deployed there and prepared for game
+        /// hosting. This list includes an entry for the fleet's home Region. For fleets with
+        /// no remote locations, only one entry, representing the home Region, is returned.
+        /// </para>
+        /// </summary>
+        public List<LocationState> LocationStates
+        {
+            get { return this._locationStates; }
+            set { this._locationStates = value; }
+        }
+
+        // Check to see if LocationStates property is set
+        internal bool IsSetLocationStates()
+        {
+            return this._locationStates != null && this._locationStates.Count > 0; 
         }
 
     }

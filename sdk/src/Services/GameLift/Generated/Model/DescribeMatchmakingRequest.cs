@@ -55,38 +55,23 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html">
-    /// Add FlexMatch to a Game Client</a> 
+    /// Add FlexMatch to a game client</a> 
     /// </para>
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-    /// Set Up FlexMatch Event Notification</a> 
+    /// Set Up FlexMatch event notification</a> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>StartMatchmaking</a> 
+    ///  <a>StartMatchmaking</a> | <a>DescribeMatchmaking</a> | <a>StopMatchmaking</a> | <a>AcceptMatch</a>
+    /// | <a>StartMatchBackfill</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeMatchmaking</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopMatchmaking</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>AcceptMatch</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartMatchBackfill</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class DescribeMatchmakingRequest : AmazonGameLiftRequest
     {

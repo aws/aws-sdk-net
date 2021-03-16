@@ -43,8 +43,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LatencyInMs. 
         /// <para>
-        /// Set of values, expressed in milliseconds, indicating the amount of latency that a
-        /// player experiences when connected to AWS Regions. If this property is present, FlexMatch
+        /// A set of values, expressed in milliseconds, that indicates the amount of latency that
+        /// a player experiences when connected to AWS Regions. If this property is present, FlexMatch
         /// considers placing the match only in Regions for which latency is reported. 
         /// </para>
         ///  

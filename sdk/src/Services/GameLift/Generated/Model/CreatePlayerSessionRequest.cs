@@ -30,53 +30,38 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlayerSession operation.
-    /// Reserves an open player slot in an active game session. Before a player can be added,
-    /// a game session must have an <code>ACTIVE</code> status, have a creation policy of
-    /// <code>ALLOW_ALL</code>, and have an open player slot. To add a group of players to
-    /// a game session, use <a>CreatePlayerSessions</a>. When the player connects to the game
-    /// server and references a player session ID, the game server contacts the Amazon GameLift
-    /// service to validate the player reservation and accept the player.
+    /// Reserves an open player slot in a game session for a player. New player sessions can
+    /// be created in any game session with an open slot that is in <code>ACTIVE</code> status
+    /// and has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of
+    /// players to a game session with <a>CreatePlayerSessions</a>. 
     /// 
     ///  
     /// <para>
     /// To create a player session, specify a game session ID, player ID, and optionally a
-    /// string of player data. If successful, a slot is reserved in the game session for the
-    /// player and a new <a>PlayerSession</a> object is returned. Player sessions cannot be
-    /// updated. 
+    /// set of player data. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, a slot is reserved in the game session for the player and a new <a>PlayerSession</a>
+    /// object is returned with a player session ID. The player references the player session
+    /// ID when sending a connection request to the game session, and the game server can
+    /// use it to validate the player reservation with the GameLift service. Player sessions
+    /// cannot be updated. 
     /// </para>
     ///  
     /// <para>
     ///  <i>Available in Amazon GameLift Local.</i> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreatePlayerSession</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>CreatePlayerSessions</a> 
+    ///  <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a>
+    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribePlayerSessions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Game session placements
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class CreatePlayerSessionRequest : AmazonGameLiftRequest
     {
@@ -106,8 +91,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerData. 
         /// <para>
-        /// Developer-defined information related to a player. Amazon GameLift does not use this
-        /// data, so it can be formatted as needed for use in the game.
+        /// Developer-defined information related to a player. GameLift does not use this data,
+        /// so it can be formatted as needed for use in the game.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

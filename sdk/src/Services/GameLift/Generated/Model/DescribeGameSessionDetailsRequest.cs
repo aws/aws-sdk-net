@@ -30,60 +30,65 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGameSessionDetails operation.
-    /// Retrieves properties, including the protection policy in force, for one or more game
-    /// sessions. This operation can be used in several ways: (1) provide a <code>GameSessionId</code>
-    /// or <code>GameSessionArn</code> to request details for a specific game session; (2)
-    /// provide either a <code>FleetId</code> or an <code>AliasId</code> to request properties
-    /// for all game sessions running on a fleet. 
+    /// Retrieves additional game session properties, including the game session protection
+    /// policy in force, a set of one or more game sessions in a specific fleet location.
+    /// You can optionally filter the results by current game session status. Alternatively,
+    /// use <a>SearchGameSessions</a> to request a set of active game sessions that are filtered
+    /// by certain criteria. To retrieve all game session properties, use <a>DescribeGameSessions</a>.
+    /// 
     /// 
     ///  
     /// <para>
-    /// To get game session record(s), specify just one of the following: game session ID,
-    /// fleet ID, or alias ID. You can filter this request by game session status. Use the
-    /// pagination parameters to retrieve results as a set of sequential pages. If successful,
-    /// a <a>GameSessionDetail</a> object is returned for each session matching the request.
+    /// This operation can be used in the following ways: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateGameSession</a> 
+    /// To retrieve details for all game sessions that are currently running on all locations
+    /// in a fleet, provide a fleet or alias ID, with an optional status filter. This approach
+    /// returns details from the fleet's home Region and all remote locations.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessions</a> 
+    /// To retrieve details for all game sessions that are currently running on a specific
+    /// fleet location, provide a fleet or alias ID and a location name, with optional status
+    /// filter. The location can be the fleet's home Region or any remote location.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionDetails</a> 
+    /// To retrieve details for a specific game session, provide the game session ID. This
+    /// approach looks for the game session ID in all fleets that reside in the AWS Region
+    /// defined in the request.
     /// </para>
-    ///  </li> <li> 
+    ///  </li> </ul> 
     /// <para>
-    ///  <a>SearchGameSessions</a> 
+    /// Use the pagination parameters to retrieve results as a set of sequential pages. 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>UpdateGameSession</a> 
+    /// If successful, a <code>GameSessionDetail</code> object is returned for each game session
+    /// that matches the request.
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>GetGameSessionLogUrl</a> 
+    ///  <b>Learn more</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    /// Game session placements
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-find">Find
+    /// a game session</a> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>StartGameSessionPlacement</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>DescribeGameSessionPlacement</a> 
+    ///  <a>CreateGameSession</a> | <a>DescribeGameSessions</a> | <a>DescribeGameSessionDetails</a>
+    /// | <a>SearchGameSessions</a> | <a>UpdateGameSession</a> | <a>GetGameSessionLogUrl</a>
+    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class DescribeGameSessionDetailsRequest : AmazonGameLiftRequest
     {
@@ -91,13 +96,14 @@ namespace Amazon.GameLift.Model
         private string _fleetId;
         private string _gameSessionId;
         private int? _limit;
+        private string _location;
         private string _nextToken;
         private string _statusFilter;
 
         /// <summary>
         /// Gets and sets the property AliasId. 
         /// <para>
-        /// A unique identifier for an alias associated with the fleet to retrieve all game sessions
+        /// A unique identifier for the alias associated with the fleet to retrieve all game sessions
         /// for. You can use either the alias ID or ARN value.
         /// </para>
         /// </summary>
@@ -116,7 +122,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet to retrieve all game sessions active on the fleet.
+        /// A unique identifier for the fleet to retrieve all game sessions active on the fleet.
         /// You can use either the fleet ID or ARN value.
         /// </para>
         /// </summary>
@@ -172,9 +178,30 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// A fleet location to get game sessions for. You can specify a fleet's home Region or
+        /// a remote location. Use the AWS Region code format, such as <code>us-west-2</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// A token that indicates the start of the next sequential page of results. Use the token
         /// that is returned with a previous call to this operation. To start at the beginning
         /// of the result set, do not specify a value.
         /// </para>

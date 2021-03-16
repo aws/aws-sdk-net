@@ -39,47 +39,17 @@ namespace Amazon.GameLift.Model
     /// To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This operation
     /// suspends all policies for the fleet.
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
+    ///  <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a>
+    /// | <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a>
+    /// | <a>StopFleetActions</a> | <a>StartFleetActions</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Manage scaling policies:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>PutScalingPolicy</a> (auto-scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeScalingPolicies</a> (auto-scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteScalingPolicy</a> (auto-scaling)
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Manage fleet actions:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class DeleteScalingPolicyRequest : AmazonGameLiftRequest
     {
@@ -89,7 +59,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for a fleet to be deleted. You can use either the fleet ID or
+        /// A unique identifier for the fleet to be deleted. You can use either the fleet ID or
         /// ARN value.
         /// </para>
         /// </summary>
@@ -109,8 +79,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label that is associated with a scaling policy. Policy names do not
-        /// need to be unique.
+        /// A descriptive label that is associated with a fleet's scaling policy. Policy names
+        /// do not need to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

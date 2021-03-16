@@ -160,6 +160,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("GameLift")]
+        public void DescribeFleetLocationAttributesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeFleetLocationAttributesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeFleetLocationAttributesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeFleetLocationAttributesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeFleetLocationAttributes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeFleetLocationAttributes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("GameLift")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeFleetLocationAttributesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeFleetLocationAttributesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeFleetLocationAttributesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeFleetLocationAttributes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeFleetLocationAttributes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("GameLift")]
         public void DescribeFleetUtilizationTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeFleetUtilizationRequest>();

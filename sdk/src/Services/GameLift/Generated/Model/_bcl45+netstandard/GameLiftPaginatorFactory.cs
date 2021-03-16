@@ -61,6 +61,14 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeFleetLocationAttributes operation
+        ///</summary>
+        public IDescribeFleetLocationAttributesPaginator DescribeFleetLocationAttributes(DescribeFleetLocationAttributesRequest request) 
+        {
+            return new DescribeFleetLocationAttributesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeFleetUtilization operation
         ///</summary>
         public IDescribeFleetUtilizationPaginator DescribeFleetUtilization(DescribeFleetUtilizationRequest request) 

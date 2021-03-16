@@ -125,6 +125,22 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InstanceRoleArn);
                 }
 
+                if(publicRequest.IsSetLocations())
+                {
+                    context.Writer.WritePropertyName("Locations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLocationsListValue in publicRequest.Locations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LocationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestLocationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetLogPaths())
                 {
                     context.Writer.WritePropertyName("LogPaths");

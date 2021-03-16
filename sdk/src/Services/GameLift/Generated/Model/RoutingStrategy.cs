@@ -31,31 +31,16 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// The routing configuration for a fleet alias.
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateAlias</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>ListAliases</a> 
+    ///  <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> | <a>UpdateAlias</a>
+    /// | <a>DeleteAlias</a> | <a>ResolveAlias</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ResolveAlias</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class RoutingStrategy
     {
@@ -66,7 +51,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// The unique identifier for a fleet that the alias points to. This value is the fleet
+        /// A unique identifier for the fleet that the alias points to. This value is the fleet
         /// ID, not the fleet ARN.
         /// </para>
         /// </summary>

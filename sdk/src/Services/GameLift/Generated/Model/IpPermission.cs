@@ -30,12 +30,19 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// A range of IP addresses and port settings that allow inbound traffic to connect to
-    /// server processes on an Amazon GameLift hosting resource. New game sessions that are
-    /// started on the fleet are assigned an IP address/port number combination, which must
-    /// fall into the fleet's allowed ranges. For fleets created with a custom game server,
-    /// the ranges reflect the server's game session assignments. For Realtime Servers fleets,
-    /// Amazon GameLift automatically opens two port ranges, one for TCP messaging and one
-    /// for UDP for use by the Realtime servers.
+    /// server processes on an instance in a fleet. New game sessions are assigned an IP address/port
+    /// number combination, which must fall into the fleet's allowed ranges. Fleets with custom
+    /// game builds must have permissions explicitly set. For Realtime Servers fleets, GameLift
+    /// automatically opens two port ranges, one for TCP messaging and one for UDP.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Related actions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a>DescribeFleetPortSettings</a> 
+    /// </para>
     /// </summary>
     public partial class IpPermission
     {

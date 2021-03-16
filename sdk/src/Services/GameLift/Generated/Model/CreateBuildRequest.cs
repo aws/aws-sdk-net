@@ -47,21 +47,22 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To create a new game build with build files that are in an S3 location under an AWS
-    /// account that you control. To use this option, you must first give Amazon GameLift
-    /// access to the S3 bucket. With permissions in place, call <code>CreateBuild</code>
-    /// and specify a build name, operating system, and the S3 storage location of your game
-    /// build.
+    /// To create a new game build with build files that are in an Amazon S3 location under
+    /// an AWS account that you control. To use this option, you must first give Amazon GameLift
+    /// access to the Amazon S3 bucket. With permissions in place, call <code>CreateBuild</code>
+    /// and specify a build name, operating system, and the Amazon S3 storage location of
+    /// your game build.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To directly upload your build files to a GameLift S3 location. To use this option,
-    /// first call <code>CreateBuild</code> and specify a build name and operating system.
-    /// This operation creates a new build resource and also returns an S3 location with temporary
-    /// access credentials. Use the credentials to manually upload your build files to the
-    /// specified S3 location. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+    /// To directly upload your build files to a GameLift Amazon S3 location. To use this
+    /// option, first call <code>CreateBuild</code> and specify a build name and operating
+    /// system. This operation creates a new build resource and also returns an Amazon S3
+    /// location with temporary access credentials. Use the credentials to manually upload
+    /// your build files to the specified Amazon S3 location. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
     /// Objects</a> in the <i>Amazon S3 Developer Guide</i>. Build files can be uploaded to
-    /// the GameLift S3 location once only; that can't be updated. 
+    /// the GameLift Amazon S3 location once only; that can't be updated. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -85,29 +86,14 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related operations</b> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateBuild</a> 
+    ///  <a>CreateBuild</a> | <a>ListBuilds</a> | <a>DescribeBuild</a> | <a>UpdateBuild</a>
+    /// | <a>DeleteBuild</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListBuilds</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeBuild</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateBuild</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteBuild</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class CreateBuildRequest : AmazonGameLiftRequest
     {
@@ -162,14 +148,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StorageLocation. 
         /// <para>
-        /// The location where your game build files are stored. Use this parameter only when
-        /// creating a build using files that are stored in an S3 bucket that you own. Identify
-        /// an S3 bucket name and key, which must in the same Region where you're creating a build.
-        /// This parameter must also specify the ARN for an IAM role that you've set up to give
-        /// Amazon GameLift access your S3 bucket. To call this operation with a storage location,
-        /// you must have IAM PassRole permission. For more details on IAM roles and PassRole
-        /// permissions, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">
-        /// Set up a role for GameLift access</a>. 
+        /// Information indicating where your game build files are stored. Use this parameter
+        /// only when creating a build with files stored in an Amazon S3 bucket that you own.
+        /// The storage location must specify an Amazon S3 bucket name and key. The location must
+        /// also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon
+        /// S3 bucket. The S3 bucket and your new build must be in the same Region.
         /// </para>
         /// </summary>
         public S3Location StorageLocation

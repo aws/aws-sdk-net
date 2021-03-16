@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
-    /// 
+    /// <b>This data type is used with the GameLift FleetIQ and game server groups.</b> 
     /// 
     ///  
     /// <para>
@@ -44,39 +43,17 @@ namespace Amazon.GameLift.Model
     /// can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code>
     /// and <code>ResumeGameServerGroup</code>, respectively. 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <a>CreateGameServerGroup</a> 
+    ///  <b>Related actions</b> 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <a>ListGameServerGroups</a> 
+    ///  <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a>
+    /// | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a>
+    /// | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
+    /// APIs by task</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameServerGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameServerGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteGameServerGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ResumeGameServerGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>SuspendGameServerGroup</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameServerInstances</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class GameServerGroup
     {
@@ -158,7 +135,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A timestamp that indicates when this data object was created. Format is a number expressed
+        /// A time stamp indicating when this data object was created. Format is a number expressed
         /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
