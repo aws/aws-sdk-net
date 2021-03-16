@@ -83,6 +83,14 @@ namespace Amazon.AccessAnalyzer.Model
         {
             return new ListFindingsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ValidatePolicy operation
+        ///</summary>
+        public IValidatePolicyPaginator ValidatePolicy(ValidatePolicyRequest request) 
+        {
+            return new ValidatePolicyPaginator(this.client, request);
+        }
     }
 }
 #endif

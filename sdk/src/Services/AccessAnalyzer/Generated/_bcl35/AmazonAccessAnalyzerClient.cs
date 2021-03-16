@@ -474,6 +474,12 @@ namespace Amazon.AccessAnalyzer
         /// <summary>
         /// Creates an archive rule for the specified analyzer. Archive rules automatically archive
         /// new findings that meet the criteria you define when you create the rule.
+        /// 
+        ///  
+        /// <para>
+        /// To learn about filter keys that you can use to create an archive rule, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
+        /// Analyzer filter keys</a> in the <b>IAM User Guide</b>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchiveRule service method.</param>
         /// 
@@ -1865,6 +1871,74 @@ namespace Amazon.AccessAnalyzer
         public virtual UpdateFindingsResponse EndUpdateFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFindingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ValidatePolicy
+
+        /// <summary>
+        /// Requests the validation of a policy and returns a list of findings. The findings help
+        /// you identify issues and provide actionable recommendations to resolve the issue and
+        /// enable you to author functional policies that meet security best practices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidatePolicy service method.</param>
+        /// 
+        /// <returns>The response from the ValidatePolicy service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy">REST API Reference for ValidatePolicy Operation</seealso>
+        public virtual ValidatePolicyResponse ValidatePolicy(ValidatePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidatePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ValidatePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ValidatePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ValidatePolicy operation on AmazonAccessAnalyzerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidatePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy">REST API Reference for ValidatePolicy Operation</seealso>
+        public virtual IAsyncResult BeginValidatePolicy(ValidatePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidatePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ValidatePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginValidatePolicy.</param>
+        /// 
+        /// <returns>Returns a  ValidatePolicyResult from AccessAnalyzer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy">REST API Reference for ValidatePolicy Operation</seealso>
+        public virtual ValidatePolicyResponse EndValidatePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ValidatePolicyResponse>(asyncResult);
         }
 
         #endregion

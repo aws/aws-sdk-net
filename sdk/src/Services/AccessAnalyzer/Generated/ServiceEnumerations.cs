@@ -559,6 +559,88 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type Locale.
+    /// </summary>
+    public class Locale : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DE for Locale
+        /// </summary>
+        public static readonly Locale DE = new Locale("DE");
+        /// <summary>
+        /// Constant EN for Locale
+        /// </summary>
+        public static readonly Locale EN = new Locale("EN");
+        /// <summary>
+        /// Constant ES for Locale
+        /// </summary>
+        public static readonly Locale ES = new Locale("ES");
+        /// <summary>
+        /// Constant FR for Locale
+        /// </summary>
+        public static readonly Locale FR = new Locale("FR");
+        /// <summary>
+        /// Constant IT for Locale
+        /// </summary>
+        public static readonly Locale IT = new Locale("IT");
+        /// <summary>
+        /// Constant JA for Locale
+        /// </summary>
+        public static readonly Locale JA = new Locale("JA");
+        /// <summary>
+        /// Constant KO for Locale
+        /// </summary>
+        public static readonly Locale KO = new Locale("KO");
+        /// <summary>
+        /// Constant PT_BR for Locale
+        /// </summary>
+        public static readonly Locale PT_BR = new Locale("PT_BR");
+        /// <summary>
+        /// Constant ZH_CN for Locale
+        /// </summary>
+        public static readonly Locale ZH_CN = new Locale("ZH_CN");
+        /// <summary>
+        /// Constant ZH_TW for Locale
+        /// </summary>
+        public static readonly Locale ZH_TW = new Locale("ZH_TW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Locale(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Locale FindValue(string value)
+        {
+            return FindValue<Locale>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Locale(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrderBy.
     /// </summary>
     public class OrderBy : ConstantClass
@@ -602,6 +684,60 @@ namespace Amazon.AccessAnalyzer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrderBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyType.
+    /// </summary>
+    public class PolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IDENTITY_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType IDENTITY_POLICY = new PolicyType("IDENTITY_POLICY");
+        /// <summary>
+        /// Constant RESOURCE_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType RESOURCE_POLICY = new PolicyType("RESOURCE_POLICY");
+        /// <summary>
+        /// Constant SERVICE_CONTROL_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType SERVICE_CONTROL_POLICY = new PolicyType("SERVICE_CONTROL_POLICY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyType FindValue(string value)
+        {
+            return FindValue<PolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyType(string value)
         {
             return FindValue(value);
         }
@@ -780,6 +916,64 @@ namespace Amazon.AccessAnalyzer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Type(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidatePolicyFindingType.
+    /// </summary>
+    public class ValidatePolicyFindingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for ValidatePolicyFindingType
+        /// </summary>
+        public static readonly ValidatePolicyFindingType ERROR = new ValidatePolicyFindingType("ERROR");
+        /// <summary>
+        /// Constant SECURITY_WARNING for ValidatePolicyFindingType
+        /// </summary>
+        public static readonly ValidatePolicyFindingType SECURITY_WARNING = new ValidatePolicyFindingType("SECURITY_WARNING");
+        /// <summary>
+        /// Constant SUGGESTION for ValidatePolicyFindingType
+        /// </summary>
+        public static readonly ValidatePolicyFindingType SUGGESTION = new ValidatePolicyFindingType("SUGGESTION");
+        /// <summary>
+        /// Constant WARNING for ValidatePolicyFindingType
+        /// </summary>
+        public static readonly ValidatePolicyFindingType WARNING = new ValidatePolicyFindingType("WARNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidatePolicyFindingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidatePolicyFindingType FindValue(string value)
+        {
+            return FindValue<ValidatePolicyFindingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidatePolicyFindingType(string value)
         {
             return FindValue(value);
         }

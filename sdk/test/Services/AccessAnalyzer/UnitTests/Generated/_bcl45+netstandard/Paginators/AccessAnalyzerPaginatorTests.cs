@@ -273,6 +273,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             paginator.Responses.ToList();
         }
 
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AccessAnalyzer")]
+        public void ValidatePolicyTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ValidatePolicyRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ValidatePolicyResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ValidatePolicyResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ValidatePolicy(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ValidatePolicy(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AccessAnalyzer")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ValidatePolicyTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ValidatePolicyRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ValidatePolicyResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ValidatePolicy(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ValidatePolicy(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
     }
 }
 #endif
