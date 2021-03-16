@@ -1,3 +1,19 @@
+### 3.5.131.0 (2021-03-16 18:20 UTC)
+* AccessAnalyzer (3.5.4.0)
+	* This release adds support for the ValidatePolicy API. IAM Access Analyzer is adding over 100 policy checks and actionable recommendations that help you validate your policies during authoring.
+* GameLift (3.5.4.0)
+	* GameLift expands to six new AWS Regions, adds support for multi-location fleets to streamline management of hosting resources, and lets you customize more of the game session placement process.
+* IdentityManagement (3.5.1.8)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* Lambda (3.5.9.0)
+	* Allow empty list for function response types
+* MediaConnect (3.5.2.0)
+	* This release adds support for the SRT-listener protocol on sources and outputs.
+* MediaTailor (3.5.4.0)
+	* MediaTailor channel assembly is a new manifest-only service that allows you to assemble linear streams using your existing VOD content.
+* MWAA (3.5.2.0)
+	* This release adds UPDATE_FAILED and UNAVAILABLE MWAA environment states.
+
 ### 3.5.130.1 (2021-03-15 21:30 UTC)
 * GroundStation (3.5.1.50)
 	* Updated description for GroundStation
