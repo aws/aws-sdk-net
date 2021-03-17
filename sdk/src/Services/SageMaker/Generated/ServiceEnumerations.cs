@@ -8947,6 +8947,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TargetDevice Ml_c5 = new TargetDevice("ml_c5");
         /// <summary>
+        /// Constant Ml_eia2 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Ml_eia2 = new TargetDevice("ml_eia2");
+        /// <summary>
         /// Constant Ml_g4dn for TargetDevice
         /// </summary>
         public static readonly TargetDevice Ml_g4dn = new TargetDevice("ml_g4dn");
