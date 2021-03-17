@@ -45,12 +45,12 @@ namespace Amazon.Batch.Model
         /// parameter is empty, then the Docker daemon has assigned a host path for you. If this
         /// parameter contains a file location, then the data volume persists at the specified
         /// location on the host container instance until you delete it manually. If the source
-        /// path location does not exist on the host container instance, the Docker daemon creates
+        /// path location doesn't exist on the host container instance, the Docker daemon creates
         /// it. If the location does exist, the contents of the source path folder are exported.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// This parameter isn't applicable to jobs that run on Fargate resources and shouldn't
         /// be provided.
         /// </para>
         ///  </note>

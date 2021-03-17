@@ -71,10 +71,10 @@ namespace Amazon.Batch.Model
         /// <para>
         /// AWS Batch selects an instance type that best fits the needs of the jobs with a preference
         /// for the lowest-cost instance type. If additional instances of the selected instance
-        /// type aren't available, AWS Batch will wait for the additional instances to be available.
-        /// If there are not enough instances available, or if the user is hitting <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-        /// EC2 service limits</a> then additional jobs aren't run until currently running jobs
-        /// have completed. This allocation strategy keeps costs lower but can limit scaling.
+        /// type aren't available, AWS Batch waits for the additional instances to be available.
+        /// If there aren't enough instances available, or if the user is hitting <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+        /// EC2 service limits</a> then additional jobs aren't run until the currently running
+        /// jobs have completed. This allocation strategy keeps costs lower but can limit scaling.
         /// If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role
         /// must be specified.
         /// </para>
@@ -289,7 +289,7 @@ namespace Amazon.Batch.Model
         /// any instance type within those families (for example, <code>c5</code> or <code>p3</code>),
         /// or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>).
         /// You can also choose <code>optimal</code> to select instance types (from the C4, M4,
-        /// and R4 instance families) on the fly that match the demand of your job queues.
+        /// and R4 instance families) that match the demand of your job queues.
         /// </para>
         ///  <note> 
         /// <para>
@@ -359,10 +359,10 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
-        /// allocation strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet
-        /// your capacity requirements. In this event, AWS Batch will never go above <code>maxvCpus</code>
-        /// by more than a single instance (e.g., no more than a single instance from among those
-        /// specified in your compute environment).
+        /// allocation strategies, AWS Batch might need to exceed <code>maxvCpus</code> to meet
+        /// your capacity requirements. In this event, AWS Batch never exceeds <code>maxvCpus</code>
+        /// by more than a single instance. For example, no more than a single instance from among
+        /// those specified in your compute environment is allocated.
         /// </para>
         ///  </note>
         /// </summary>
@@ -440,9 +440,9 @@ namespace Amazon.Batch.Model
         /// One or more security groups must be specified, either in <code>securityGroupIds</code>
         /// or using a launch template referenced in <code>launchTemplate</code>. This parameter
         /// is required for jobs running on Fargate resources and must contain at least one security
-        /// group. (Fargate does not support launch templates.) If security groups are specified
+        /// group. Fargate doesn't support launch templates. If security groups are specified
         /// using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values
-        /// in <code>securityGroupIds</code> will be used.
+        /// in <code>securityGroupIds</code> is used.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -497,8 +497,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Subnets. 
         /// <para>
         /// The VPC subnets into which the compute resources are launched. These subnets must
-        /// be within the same VPC. This parameter is required for jobs running on Fargate resources,
-        /// where it can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+        /// be within the same VPC. Fargate compute resources can contain up to 16 subnets. For
+        /// more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
         /// and Subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
@@ -524,7 +524,7 @@ namespace Amazon.Batch.Model
         /// - C4OnDemand" }. This is helpful for recognizing your AWS Batch instances in the Amazon
         /// EC2 console. These tags can't be updated or removed after the compute environment
         /// has been created; any changes require creating a new compute environment and removing
-        /// the old compute environment. These tags are not seen when using the AWS Batch <code>ListTagsForResource</code>
+        /// the old compute environment. These tags aren't seen when using the AWS Batch <code>ListTagsForResource</code>
         /// API operation.
         /// </para>
         ///  <note> 

@@ -99,7 +99,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </dd> </dl> <note> 
         /// <para>
-        /// If you have a custom driver that'sn't listed earlier that you want to work with the
+        /// If you have a custom driver that's not listed earlier that you want to work with the
         /// Amazon ECS container agent, you can fork the Amazon ECS container agent project that's
         /// <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize
         /// it to work with that driver. We encourage you to submit pull requests for changes

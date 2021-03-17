@@ -267,12 +267,12 @@ namespace Amazon.Batch.Model
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. By default, containers use the same logging driver that the Docker daemon
-        /// uses. However the container might use a different logging driver than the Docker daemon
-        /// by specifying a log driver with this parameter in the container definition. To use
-        /// a different logging driver for a container, the log system must be configured properly
-        /// on the container instance. Or, alternatively, it must be configured on a different
-        /// log server for remote logging options. For more information on the options for different
-        /// supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+        /// uses. However, the container might use a different logging driver than the Docker
+        /// daemon by specifying a log driver with this parameter in the container definition.
+        /// To use a different logging driver for a container, the log system must be configured
+        /// properly on the container instance. Or, alternatively, it must be configured on a
+        /// different log server for remote logging options. For more information on the options
+        /// for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
         /// logging drivers</a> in the Docker documentation.
         /// </para>
         ///  <note> 
@@ -582,9 +582,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Vcpus. 
         /// <para>
-        /// The number of vCPUs reserved for the container. Jobs running on EC2 resources can
-        /// specify the vCPU requirement for the job using <code>resourceRequirements</code> but
-        /// the vCPU requirements can't be specified both here and in the <code>resourceRequirement</code>
+        /// The number of vCPUs reserved for the container. For jobs that run on EC2 resources,
+        /// you can specify the vCPU requirement for the job using <code>resourceRequirements</code>,
+        /// but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirement</code>
         /// object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -594,8 +594,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs running on Fargate resources. Jobs running
-        /// on Fargate resources must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+        /// This parameter isn't applicable to jobs that run on Fargate resources. For jobs that
+        /// run on Fargate resources, you must specify the vCPU requirement for the job using
+        /// <code>resourceRequirements</code>.
         /// </para>
         ///  </note>
         /// </summary>

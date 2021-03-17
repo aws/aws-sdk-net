@@ -193,7 +193,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from
         /// a job definition, each container will have a default <code>swappiness</code> value
-        /// of 60 and the total swap usage will be limited to two times the memory reservation
+        /// of 60, and the total swap usage will be limited to two times the memory reservation
         /// of the container.
         /// </para>
         ///  </li> </ul> <note> 

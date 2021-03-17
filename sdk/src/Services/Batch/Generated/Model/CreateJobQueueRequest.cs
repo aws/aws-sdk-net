@@ -36,10 +36,10 @@ namespace Amazon.Batch.Model
     /// 
     ///  
     /// <para>
-    /// You also set a priority to the job queue that determines the order in which the AWS
-    /// Batch scheduler places jobs onto its associated compute environments. For example,
-    /// if a compute environment is associated with more than one job queue, the job queue
-    /// with a higher priority is given preference for scheduling jobs to that compute environment.
+    /// You also set a priority to the job queue that determines the order that the AWS Batch
+    /// scheduler places jobs onto its associated compute environments. For example, if a
+    /// compute environment is associated with more than one job queue, the job queue with
+    /// a higher priority is given preference for scheduling jobs to that compute environment.
     /// </para>
     /// </summary>
     public partial class CreateJobQueueRequest : AmazonBatchRequest

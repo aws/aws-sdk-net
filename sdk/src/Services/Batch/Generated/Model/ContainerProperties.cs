@@ -113,8 +113,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. Jobs
-        /// running on Fargate resources must provide an execution role. For more information,
+        /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For
+        /// jobs that run on Fargate resources, you must provide an execution role. For more information,
         /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
         /// Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
@@ -211,7 +211,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to single-node container jobs or for jobs running
+        /// This parameter isn't applicable to single-node container jobs or for jobs that run
         /// on Fargate resources and shouldn't be provided.
         /// </para>
         ///  </note>
@@ -323,16 +323,23 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// This parameter is deprecated and not supported for jobs run on Fargate resources,
-        /// use <code>ResourceRequirement</code>. For jobs run on EC2 resources can specify the
-        /// memory requirement using the <code>ResourceRequirement</code> structure. The hard
-        /// limit (in MiB) of memory to present to the container. If your container attempts to
-        /// exceed the memory specified here, the container is killed. This parameter maps to
-        /// <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// This parameter indicates the memory hard limit (in MiB) for a container. If your container
+        /// attempts to exceed the specified number, it is terminated. You must specify at least
+        /// 4 MiB of memory for a job using this parameter. The memory hard limit can be specified
+        /// in several places. It must be specified for each node at least once.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-        /// run</a>. You must specify at least 4 MiB of memory for a job. This is required but
-        /// can be specified in several places; it must be specified for each node at least once.
+        /// run</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is supported on EC2 resources but isn't supported on Fargate resources.
+        /// For Fargate resources, you should specify the memory requirement using <code>resourceRequirement</code>.
+        /// You can do this for EC2 resources.
         /// </para>
         ///  <note> 
         /// <para>
@@ -537,22 +544,25 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Vcpus. 
         /// <para>
-        /// This parameter is deprecated and not supported for jobs run on Fargate resources,
-        /// see <code>resourceRequirement</code>. The number of vCPUs reserved for the container.
-        /// Jobs running on EC2 resources can specify the vCPU requirement for the job using <code>resourceRequirements</code>
-        /// but the vCPU requirements can't be specified both here and in the <code>resourceRequirement</code>
-        /// structure. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// The number of vCPUs reserved for the job. Each vCPU is equivalent to 1,024 CPU shares.
+        /// This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-        /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one
-        /// vCPU. This is required but can be specified in several places. It must be specified
-        /// for each node at least once.
+        /// run</a>. The number of vCPUs must be specified but can be be specified in several
+        /// places. You must specify it at least once for each node.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is supported on EC2 resources but isn't supported for jobs that run
+        /// on Fargate resources. For these resources, use <code>resourceRequirement</code> instead.
+        /// You can use this parameter or <code>resourceRequirements</code> structure but not
+        /// both.
         /// </para>
         ///  <note> 
         /// <para>
         /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
-        /// be provided. Jobs running on Fargate resources must specify the vCPU requirement for
-        /// the job using <code>resourceRequirements</code>.
+        /// be provided. For jobs that run on Fargate resources, you must specify the vCPU requirement
+        /// for the job using <code>resourceRequirements</code>.
         /// </para>
         ///  </note>
         /// </summary>

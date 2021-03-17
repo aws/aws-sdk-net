@@ -39,7 +39,7 @@ namespace Amazon.Batch.Model
     /// job queues with the <a>UpdateJobQueue</a> API operation. Compute environments that
     /// use AWS Fargate resources must terminate all active jobs on that compute environment
     /// before deleting the compute environment. If this isn't done, the compute environment
-    /// will end up in an invalid state.
+    /// enters an invalid state.
     /// </para>
     /// </summary>
     public partial class DeleteComputeEnvironmentRequest : AmazonBatchRequest

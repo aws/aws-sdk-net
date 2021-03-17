@@ -82,7 +82,7 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// If the AWS Systems Manager Parameter Store parameter exists in the same Region as
-        /// the job you are launching, then you can use either the full ARN or name of the parameter.
+        /// the job you're launching, then you can use either the full ARN or name of the parameter.
         /// If the parameter exists in a different Region, then the full ARN must be specified.
         /// </para>
         ///  </note>

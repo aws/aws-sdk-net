@@ -111,7 +111,7 @@ namespace Amazon.Batch.Model
         /// preference over a job queue with a priority value of <code>1</code>. All of the compute
         /// environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
         /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments
-        /// cannot be mixed.
+        /// can't be mixed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

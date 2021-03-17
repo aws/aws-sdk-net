@@ -61,8 +61,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The maximum number of results returned by <code>DescribeJobQueues</code> in paginated
         /// output. When this parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another <code>DescribeJobQueues</code>
+        /// results in a single page and a <code>nextToken</code> response element. The remaining
+        /// results of the initial request can be seen by sending another <code>DescribeJobQueues</code>
         /// request with the returned <code>nextToken</code> value. This value can be between
         /// 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns
         /// up to 100 results and a <code>nextToken</code> value if applicable.

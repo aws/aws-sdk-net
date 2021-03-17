@@ -42,11 +42,11 @@ namespace Amazon.Batch.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A multi-node parallel job ID to return a list of that job's nodes
+    /// A multi-node parallel job ID to return a list of nodes for that job
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An array job ID to return a list of that job's children
+    /// An array job ID to return a list of the children for that job
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -124,8 +124,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The maximum number of results returned by <code>ListJobs</code> in paginated output.
         /// When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another <code>ListJobs</code>
+        /// results in a single page and a <code>nextToken</code> response element. The remaining
+        /// results of the initial request can be seen by sending another <code>ListJobs</code>
         /// request with the returned <code>nextToken</code> value. This value can be between
         /// 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to
         /// 100 results and a <code>nextToken</code> value if applicable.

@@ -75,9 +75,10 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note> </dd> <dt>type="MEMORY"</dt> <dd> 
         /// <para>
-        /// For jobs running on EC2 resources, the hard limit (in MiB) of memory to present to
-        /// the container. If your container attempts to exceed the memory specified here, the
-        /// container is killed. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// The memory hard limit (in MiB) present to the container. This parameter is supported
+        /// for jobs running on EC2 resources. If your container attempts to exceed the memory
+        /// specified, the container is terminated. This parameter maps to <code>Memory</code>
+        /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. You must specify at least 4 MiB of memory for a job. This is required but

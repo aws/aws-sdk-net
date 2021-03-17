@@ -30,13 +30,19 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the SubmitJob operation.
-    /// Submits an AWS Batch job from a job definition. Parameters specified during <a>SubmitJob</a>
-    /// override parameters defined in the job definition.
+    /// Submits an AWS Batch job from a job definition. Parameters that are specified during
+    /// <a>SubmitJob</a> override parameters defined in the job definition. vCPU and memory
+    /// requirements that are specified in the <code>ResourceRequirements</code> objects in
+    /// the job definition are the exception. They can't be overridden this way using the
+    /// <code>memory</code> and <code>vcpus</code> parameters. Rather, you must specify updates
+    /// to job definition parameters in a <code>ResourceRequirements</code> object that's
+    /// included in the <code>containerOverrides</code> parameter.
     /// 
     ///  <important> 
     /// <para>
-    /// Jobs run on Fargate resources don't run for more than 14 days. After 14 days, the
-    /// Fargate resources might no longer be available and the job is terminated.
+    /// Jobs that run on Fargate resources can't be guaranteed to run for more than 14 days.
+    /// This is because, after 14 days, Fargate resources might become unavailable and job
+    /// might be terminated.
     /// </para>
     ///  </important>
     /// </summary>
@@ -79,13 +85,12 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 
         /// <para>
-        /// A list of container overrides in JSON format that specify the name of a container
+        /// A list of container overrides in the JSON format that specify the name of a container
         /// in the specified job definition and the overrides it should receive. You can override
-        /// the default command for a container (that's specified in the job definition or the
-        /// Docker image) with a <code>command</code> override. You can also override existing
-        /// environment variables (that are specified in the job definition or Docker image) on
-        /// a container or add new environment variables to it with an <code>environment</code>
-        /// override.
+        /// the default command for a container, which is specified in the job definition or the
+        /// Docker image, with a <code>command</code> override. You can also override existing
+        /// environment variables on a container or add new environment variables to it with an
+        /// <code>environment</code> override.
         /// </para>
         /// </summary>
         public ContainerOverrides ContainerOverrides
@@ -167,8 +172,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobQueue. 
         /// <para>
-        /// The job queue into which the job is submitted. You can specify either the name or
-        /// the Amazon Resource Name (ARN) of the queue.
+        /// The job queue where the job is submitted. You can specify either the name or the Amazon
+        /// Resource Name (ARN) of the queue.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

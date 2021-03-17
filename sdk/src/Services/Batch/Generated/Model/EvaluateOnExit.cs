@@ -43,7 +43,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-        /// <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case
+        /// <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case
         /// sensitive.
         /// </para>
         /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property OnExitCode. 
         /// <para>
         /// Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code>
-        /// returned for a job. The patten can be up to 512 characters long, can contain only
+        /// returned for a job. The pattern can be up to 512 characters long, can contain only
         /// numbers, and can optionally end with an asterisk (*) so that only the start of the
         /// string needs to be an exact match.
         /// </para>
@@ -85,9 +85,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property OnReason. 
         /// <para>
         /// Contains a glob pattern to match against the <code>Reason</code> returned for a job.
-        /// The patten can be up to 512 characters long, can contain letters, numbers, periods
-        /// (.), colons (:), and white space (spaces, tabs), and can optionally end with an asterisk
-        /// (*) so that only the start of the string needs to be an exact match.
+        /// The pattern can be up to 512 characters long, and can contain letters, numbers, periods
+        /// (.), colons (:), and white space (including spaces and tabs). It can optionally end
+        /// with an asterisk (*) so that only the start of the string needs to be an exact match.
         /// </para>
         /// </summary>
         public string OnReason
@@ -106,9 +106,10 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property OnStatusReason. 
         /// <para>
         /// Contains a glob pattern to match against the <code>StatusReason</code> returned for
-        /// a job. The patten can be up to 512 characters long, can contain letters, numbers,
-        /// periods (.), colons (:), and white space (spaces, tabs). and can optionally end with
-        /// an asterisk (*) so that only the start of the string needs to be an exact match.
+        /// a job. The pattern can be up to 512 characters long, and can contain letters, numbers,
+        /// periods (.), colons (:), and white space (including spaces or tabs). It can optionally
+        /// end with an asterisk (*) so that only the start of the string needs to be an exact
+        /// match.
         /// </para>
         /// </summary>
         public string OnStatusReason

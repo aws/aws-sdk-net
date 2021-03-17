@@ -73,10 +73,10 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
-        /// allocation strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet
-        /// your capacity requirements. In this event, AWS Batch will never go above <code>maxvCpus</code>
-        /// by more than a single instance (e.g., no more than a single instance from among those
-        /// specified in your compute environment).
+        /// allocation strategies, AWS Batch might need to exceed <code>maxvCpus</code> to meet
+        /// your capacity requirements. In this event, AWS Batch never exceeds <code>maxvCpus</code>
+        /// by more than a single instance. That is, no more than a single instance from among
+        /// those specified in your compute environment.
         /// </para>
         ///  </note>
         /// </summary>
@@ -140,12 +140,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The VPC subnets that the compute resources are launched into. This parameter is required
-        /// for jobs running on Fargate compute resources, where it can contain up to 16 subnets.
+        /// The VPC subnets that the compute resources are launched into. Fargate compute resources
+        /// can contain up to 16 subnets. Providing an empty list will be handled as if this parameter
+        /// wasn't specified and no change is made. This can't be specified for EC2 compute resources.
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-        /// and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for EC2
-        /// compute resources. Providing an empty list will be handled as if this parameter wasn't
-        /// specified and no change is made.
+        /// and Subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> Subnets

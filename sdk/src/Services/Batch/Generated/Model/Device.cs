@@ -47,7 +47,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The path inside the container used to expose the host device. By default the <code>hostPath</code>
+        /// The path inside the container used to expose the host device. By default, the <code>hostPath</code>
         /// value is used.
         /// </para>
         /// </summary>
