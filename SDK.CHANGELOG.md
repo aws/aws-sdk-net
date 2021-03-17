@@ -1,3 +1,14 @@
+### 3.5.132.0 (2021-03-17 18:12 UTC)
+* Batch (3.5.6.0)
+	* Making serviceRole an optional parameter when creating a compute environment. If serviceRole is not provided then Service Linked Role will be created (or reused if it already exists).
+* SageMaker (3.5.13.0)
+	* Support new target device ml_eia2 in SageMaker CreateCompilationJob API
+* Core 3.5.3.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.131.0 (2021-03-16 18:20 UTC)
 * AccessAnalyzer (3.5.4.0)
 	* This release adds support for the ValidatePolicy API. IAM Access Analyzer is adding over 100 policy checks and actionable recommendations that help you validate your policies during authoring.
