@@ -1,3 +1,15 @@
+### 3.5.133.0 (2021-03-18 19:12 UTC)
+* AutoScaling (3.5.6.0)
+	* Amazon EC2 Auto Scaling Instance Refresh now supports phased deployments.
+* Redshift (3.5.4.0)
+	* Add new fields for additional information about VPC endpoint for clusters with reallocation enabled, and a new field for total storage capacity for all clusters.
+* S3 (3.5.10.0)
+	* S3 Object Lambda is a new S3 feature that enables users to apply their own custom code to process the output of a standard S3 GET request by automatically invoking a Lambda function with a GET request
+* S3Control (3.5.6.0)
+	* S3 Object Lambda is a new S3 feature that enables users to apply their own custom code to process the output of a standard S3 GET request by automatically invoking a Lambda function with a GET request
+* SecurityHub (3.5.6.0)
+	* New object for separate provider and customer values. New objects track S3 Public Access Block configuration and identify sensitive data. BatchImportFinding requests are limited to 100 findings.
+
 ### 3.5.132.0 (2021-03-17 18:12 UTC)
 * Batch (3.5.6.0)
 	* Making serviceRole an optional parameter when creating a compute environment. If serviceRole is not provided then Service Linked Role will be created (or reused if it already exists).
