@@ -617,6 +617,102 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type ObjectLambdaAllowedFeature.
+    /// </summary>
+    public class ObjectLambdaAllowedFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GetObjectPartNumber for ObjectLambdaAllowedFeature
+        /// </summary>
+        public static readonly ObjectLambdaAllowedFeature GetObjectPartNumber = new ObjectLambdaAllowedFeature("GetObject-PartNumber");
+        /// <summary>
+        /// Constant GetObjectRange for ObjectLambdaAllowedFeature
+        /// </summary>
+        public static readonly ObjectLambdaAllowedFeature GetObjectRange = new ObjectLambdaAllowedFeature("GetObject-Range");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectLambdaAllowedFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectLambdaAllowedFeature FindValue(string value)
+        {
+            return FindValue<ObjectLambdaAllowedFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectLambdaAllowedFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ObjectLambdaTransformationConfigurationAction.
+    /// </summary>
+    public class ObjectLambdaTransformationConfigurationAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GetObject for ObjectLambdaTransformationConfigurationAction
+        /// </summary>
+        public static readonly ObjectLambdaTransformationConfigurationAction GetObject = new ObjectLambdaTransformationConfigurationAction("GetObject");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectLambdaTransformationConfigurationAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectLambdaTransformationConfigurationAction FindValue(string value)
+        {
+            return FindValue<ObjectLambdaTransformationConfigurationAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectLambdaTransformationConfigurationAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OperationName.
     /// </summary>
     public class OperationName : ConstantClass

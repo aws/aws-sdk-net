@@ -43,7 +43,7 @@ namespace Amazon.S3Control.Model
     /// than the root user of the AWS account that owns the bucket, the calling identity must
     /// have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
     /// Outposts bucket and belong to the bucket owner's account to use this action. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
     /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
     /// </para>
     ///  

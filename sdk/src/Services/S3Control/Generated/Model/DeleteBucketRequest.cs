@@ -40,7 +40,7 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions
     /// and delete markers) in the bucket must be deleted before the bucket itself can be
-    /// deleted. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+    /// deleted. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
     /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
     /// </para>
     ///  

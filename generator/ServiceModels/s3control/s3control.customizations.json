@@ -178,6 +178,36 @@
     },
     "PutStorageLensConfigurationTaggingRequest":{
       "containsArnField": false
+    },
+    "CreateAccessPointForObjectLambdaRequest":{
+      "containsArnField": false
+    },
+    "GetAccessPointForObjectLambdaRequest":{
+      "containsArnField": false
+    },
+    "DeleteAccessPointForObjectLambdaRequest":{
+      "containsArnField": false
+    },
+    "ListAccessPointsForObjectLambdaRequest":{
+      "containsArnField": false
+    },
+    "PutAccessPointPolicyForObjectLambdaRequest":{
+      "containsArnField": false
+    },
+    "GetAccessPointPolicyForObjectLambdaRequest":{
+      "containsArnField": false
+    },
+    "DeleteAccessPointPolicyForObjectLambdaRequest":{
+      "containsArnField": false
+    },
+    "GetAccessPointPolicyStatusForObjectLambdaRequest":{
+      "containsArnField": false
+    },
+    "PutAccessPointConfigurationForObjectLambdaRequest":{
+      "containsArnField": false
+    },
+    "GetAccessPointConfigurationForObjectLambdaRequest":{
+      "containsArnField": false
     }
   }
 }

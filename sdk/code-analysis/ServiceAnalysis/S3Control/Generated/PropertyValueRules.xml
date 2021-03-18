@@ -21,6 +21,23 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.CreateAccessPointForObjectLambdaRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.CreateAccessPointForObjectLambdaRequest.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.CreateAccessPointForObjectLambdaResponse.ObjectLambdaAccessPointArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:[^:]+:s3-object-lambda:[^:]*:\d{12}:accesspoint/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.CreateBucketRequest.Bucket</property>
     <min>3</min>
     <max>255</max>
@@ -77,6 +94,17 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteAccessPointForObjectLambdaRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteAccessPointForObjectLambdaRequest.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteAccessPointPolicyRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -85,6 +113,17 @@
     <property>Amazon.S3Control.Model.DeleteAccessPointPolicyRequest.Name</property>
     <min>3</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteAccessPointPolicyForObjectLambdaRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteAccessPointPolicyForObjectLambdaRequest.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteBucketRequest.AccountId</property>
@@ -192,6 +231,34 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointConfigurationForObjectLambdaRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointConfigurationForObjectLambdaRequest.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointForObjectLambdaRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointForObjectLambdaRequest.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointForObjectLambdaResponse.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointPolicyRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -202,6 +269,17 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointPolicyForObjectLambdaRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointPolicyForObjectLambdaRequest.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -210,6 +288,17 @@
     <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusRequest.Name</property>
     <min>3</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusForObjectLambdaRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusForObjectLambdaRequest.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetBucketRequest.AccountId</property>
@@ -317,6 +406,26 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsForObjectLambdaRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsForObjectLambdaRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsForObjectLambdaRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsForObjectLambdaResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.ListJobsRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -369,6 +478,17 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.PutAccessPointConfigurationForObjectLambdaRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutAccessPointConfigurationForObjectLambdaRequest.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.PutAccessPointPolicyRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -377,6 +497,17 @@
     <property>Amazon.S3Control.Model.PutAccessPointPolicyRequest.Name</property>
     <min>3</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutAccessPointPolicyForObjectLambdaRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutAccessPointPolicyForObjectLambdaRequest.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutBucketLifecycleConfigurationRequest.AccountId</property>
@@ -509,6 +640,12 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.AwsLambdaTransformation.FunctionArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.JobDescriptor.Description</property>
     <min>1</min>
     <max>256</max>
@@ -631,6 +768,24 @@
     <min>1</min>
     <max>1024</max>
     <pattern>arn:[a-z\-]+:s3:[a-z0-9\-]+:\d{12}:storage\-lens\/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ObjectLambdaAccessPoint.Name</property>
+    <min>3</min>
+    <max>45</max>
+    <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ObjectLambdaAccessPoint.ObjectLambdaAccessPointArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:[^:]+:s3-object-lambda:[^:]*:\d{12}:accesspoint/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ObjectLambdaConfiguration.SupportingAccessPoint</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:[^:]+:s3:[^:]*:\d{12}:accesspoint/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.RegionalBucket.Bucket</property>

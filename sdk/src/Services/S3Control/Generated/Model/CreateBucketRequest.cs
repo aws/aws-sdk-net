@@ -40,13 +40,13 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// Creates a new Outposts bucket. By creating the bucket, you become the bucket owner.
     /// To create an Outposts bucket, you must have S3 on Outposts. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
     /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// Not every string is an acceptable bucket name. For information on bucket naming restrictions,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html#bucketnamingrules">Working
     /// with Amazon S3 Buckets</a>.
     /// </para>
     ///  
@@ -63,8 +63,9 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For a list of Amazon S3 features not supported by Amazon S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html#S3OnOutpostsFeatureLimitations">Unsupported
-    /// Amazon S3 features</a>.
+    /// For a complete list of restrictions and Amazon S3 feature limitations on S3 on Outposts,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html">
+    /// Amazon S3 on Outposts Restrictions and Limitations</a>.
     /// </para>
     ///  
     /// <para>

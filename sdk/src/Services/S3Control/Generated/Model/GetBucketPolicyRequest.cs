@@ -38,7 +38,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the policy of a specified Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+    /// Returns the policy of a specified Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
     /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
     /// </para>
     ///  

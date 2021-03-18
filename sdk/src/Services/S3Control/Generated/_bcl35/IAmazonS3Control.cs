@@ -49,41 +49,21 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Creates an access point and associates it with the specified bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
         /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service
         /// User Guide</i>.
         /// 
-        ///   
+        ///   <note> 
         /// <para>
-        ///  <b>Using this action with Amazon S3 on Outposts</b> 
+        /// S3 on Outposts only supports VPC-style Access Points. 
         /// </para>
         ///  
         /// <para>
-        /// This action: 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+        /// Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only Access Points</a>
+        /// in the <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Requires a virtual private cloud (VPC) configuration as S3 on Outposts only supports
-        /// VPC style access points.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Does not support ACL on S3 on Outposts buckets.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Does not support Public Access on S3 on Outposts buckets.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Does not support object lock for S3 on Outposts buckets.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-        /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide </i>.
-        /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// All Amazon S3 on Outposts REST API requests for this action require an additional
         /// parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3
@@ -148,6 +128,69 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  CreateAccessPointForObjectLambda
+
+
+        /// <summary>
+        /// Creates an Object Lambda Access Point. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming
+        /// objects with Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service
+        /// User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <code>CreateAccessPointForObjectLambda</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessPointForObjectLambda service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccessPointForObjectLambda service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda">REST API Reference for CreateAccessPointForObjectLambda Operation</seealso>
+        CreateAccessPointForObjectLambdaResponse CreateAccessPointForObjectLambda(CreateAccessPointForObjectLambdaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccessPointForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessPointForObjectLambda operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccessPointForObjectLambda
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda">REST API Reference for CreateAccessPointForObjectLambda Operation</seealso>
+        IAsyncResult BeginCreateAccessPointForObjectLambda(CreateAccessPointForObjectLambdaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccessPointForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccessPointForObjectLambda.</param>
+        /// 
+        /// <returns>Returns a  CreateAccessPointForObjectLambdaResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda">REST API Reference for CreateAccessPointForObjectLambda Operation</seealso>
+        CreateAccessPointForObjectLambdaResponse EndCreateAccessPointForObjectLambda(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateBucket
 
 
@@ -162,13 +205,13 @@ namespace Amazon.S3Control
         /// <para>
         /// Creates a new Outposts bucket. By creating the bucket, you become the bucket owner.
         /// To create an Outposts bucket, you must have S3 on Outposts. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Not every string is an acceptable bucket name. For information on bucket naming restrictions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html#bucketnamingrules">Working
         /// with Amazon S3 Buckets</a>.
         /// </para>
         ///  
@@ -185,8 +228,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For a list of Amazon S3 features not supported by Amazon S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html#S3OnOutpostsFeatureLimitations">Unsupported
-        /// Amazon S3 features</a>.
+        /// For a complete list of restrictions and Amazon S3 feature limitations on S3 on Outposts,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html">
+        /// Amazon S3 on Outposts Restrictions and Limitations</a>.
         /// </para>
         ///  
         /// <para>
@@ -428,6 +472,67 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DeleteAccessPointForObjectLambda
+
+
+        /// <summary>
+        /// Deletes the specified Object Lambda Access Point.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <code>DeleteAccessPointForObjectLambda</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointForObjectLambda service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessPointForObjectLambda service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda">REST API Reference for DeleteAccessPointForObjectLambda Operation</seealso>
+        DeleteAccessPointForObjectLambdaResponse DeleteAccessPointForObjectLambda(DeleteAccessPointForObjectLambdaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessPointForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointForObjectLambda operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessPointForObjectLambda
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda">REST API Reference for DeleteAccessPointForObjectLambda Operation</seealso>
+        IAsyncResult BeginDeleteAccessPointForObjectLambda(DeleteAccessPointForObjectLambdaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessPointForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessPointForObjectLambda.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessPointForObjectLambdaResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda">REST API Reference for DeleteAccessPointForObjectLambda Operation</seealso>
+        DeleteAccessPointForObjectLambdaResponse EndDeleteAccessPointForObjectLambda(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteAccessPointPolicy
 
 
@@ -494,6 +599,62 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DeleteAccessPointPolicyForObjectLambda
+
+
+        /// <summary>
+        /// Removes the resource policy for an Object Lambda Access Point.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <code>DeleteAccessPointPolicyForObjectLambda</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicyForObjectLambda service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessPointPolicyForObjectLambda service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda">REST API Reference for DeleteAccessPointPolicyForObjectLambda Operation</seealso>
+        DeleteAccessPointPolicyForObjectLambdaResponse DeleteAccessPointPolicyForObjectLambda(DeleteAccessPointPolicyForObjectLambdaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessPointPolicyForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicyForObjectLambda operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessPointPolicyForObjectLambda
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda">REST API Reference for DeleteAccessPointPolicyForObjectLambda Operation</seealso>
+        IAsyncResult BeginDeleteAccessPointPolicyForObjectLambda(DeleteAccessPointPolicyForObjectLambdaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessPointPolicyForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessPointPolicyForObjectLambda.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessPointPolicyForObjectLambdaResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda">REST API Reference for DeleteAccessPointPolicyForObjectLambda Operation</seealso>
+        DeleteAccessPointPolicyForObjectLambdaResponse EndDeleteAccessPointPolicyForObjectLambda(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteBucket
 
 
@@ -508,7 +669,7 @@ namespace Amazon.S3Control
         /// <para>
         /// Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions
         /// and delete markers) in the bucket must be deleted before the bucket itself can be
-        /// deleted. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// deleted. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
@@ -590,7 +751,7 @@ namespace Amazon.S3Control
         /// on Outposts removes all the lifecycle configuration rules in the lifecycle subresource
         /// associated with the bucket. Your objects never expire, and Amazon S3 on Outposts no
         /// longer automatically deletes any objects on the basis of rules contained in the deleted
-        /// lifecycle configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// lifecycle configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
@@ -681,7 +842,7 @@ namespace Amazon.S3Control
         /// than the root user of the AWS account that owns the bucket, the calling identity must
         /// have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
         /// Outposts bucket and belong to the bucket owner's account to use this action. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
@@ -774,7 +935,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes the tags from the Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// Deletes the tags from the Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
@@ -1230,6 +1391,118 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetAccessPointConfigurationForObjectLambda
+
+
+        /// <summary>
+        /// Returns configuration for an Object Lambda Access Point.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <code>GetAccessPointConfigurationForObjectLambda</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html">PutAccessPointConfigurationForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointConfigurationForObjectLambda service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPointConfigurationForObjectLambda service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda">REST API Reference for GetAccessPointConfigurationForObjectLambda Operation</seealso>
+        GetAccessPointConfigurationForObjectLambdaResponse GetAccessPointConfigurationForObjectLambda(GetAccessPointConfigurationForObjectLambdaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessPointConfigurationForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointConfigurationForObjectLambda operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPointConfigurationForObjectLambda
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda">REST API Reference for GetAccessPointConfigurationForObjectLambda Operation</seealso>
+        IAsyncResult BeginGetAccessPointConfigurationForObjectLambda(GetAccessPointConfigurationForObjectLambdaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessPointConfigurationForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPointConfigurationForObjectLambda.</param>
+        /// 
+        /// <returns>Returns a  GetAccessPointConfigurationForObjectLambdaResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda">REST API Reference for GetAccessPointConfigurationForObjectLambda Operation</seealso>
+        GetAccessPointConfigurationForObjectLambdaResponse EndGetAccessPointConfigurationForObjectLambda(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAccessPointForObjectLambda
+
+
+        /// <summary>
+        /// Returns configuration information about the specified Object Lambda Access Point
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <code>GetAccessPointForObjectLambda</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointForObjectLambda service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPointForObjectLambda service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda">REST API Reference for GetAccessPointForObjectLambda Operation</seealso>
+        GetAccessPointForObjectLambdaResponse GetAccessPointForObjectLambda(GetAccessPointForObjectLambdaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessPointForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointForObjectLambda operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPointForObjectLambda
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda">REST API Reference for GetAccessPointForObjectLambda Operation</seealso>
+        IAsyncResult BeginGetAccessPointForObjectLambda(GetAccessPointForObjectLambdaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessPointForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPointForObjectLambda.</param>
+        /// 
+        /// <returns>Returns a  GetAccessPointForObjectLambdaResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda">REST API Reference for GetAccessPointForObjectLambda Operation</seealso>
+        GetAccessPointForObjectLambdaResponse EndGetAccessPointForObjectLambda(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAccessPointPolicy
 
 
@@ -1286,12 +1559,68 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetAccessPointPolicyForObjectLambda
+
+
+        /// <summary>
+        /// Returns the resource policy for an Object Lambda Access Point.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <code>GetAccessPointPolicyForObjectLambda</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">DeleteAccessPointPolicyForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyForObjectLambda service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPointPolicyForObjectLambda service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda">REST API Reference for GetAccessPointPolicyForObjectLambda Operation</seealso>
+        GetAccessPointPolicyForObjectLambdaResponse GetAccessPointPolicyForObjectLambda(GetAccessPointPolicyForObjectLambdaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessPointPolicyForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyForObjectLambda operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPointPolicyForObjectLambda
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda">REST API Reference for GetAccessPointPolicyForObjectLambda Operation</seealso>
+        IAsyncResult BeginGetAccessPointPolicyForObjectLambda(GetAccessPointPolicyForObjectLambdaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessPointPolicyForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPointPolicyForObjectLambda.</param>
+        /// 
+        /// <returns>Returns a  GetAccessPointPolicyForObjectLambdaResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda">REST API Reference for GetAccessPointPolicyForObjectLambda Operation</seealso>
+        GetAccessPointPolicyForObjectLambdaResponse EndGetAccessPointPolicyForObjectLambda(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAccessPointPolicyStatus
 
 
         /// <summary>
         /// Indicates whether the specified access point currently has a policy that allows public
-        /// access. For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+        /// access. For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
         /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service
         /// Developer Guide</i>.
         /// </summary>
@@ -1329,20 +1658,61 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetAccessPointPolicyStatusForObjectLambda
+
+
+        /// <summary>
+        /// Returns the status of the resource policy associated with an Object Lambda Access
+        /// Point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatusForObjectLambda service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPointPolicyStatusForObjectLambda service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda">REST API Reference for GetAccessPointPolicyStatusForObjectLambda Operation</seealso>
+        GetAccessPointPolicyStatusForObjectLambdaResponse GetAccessPointPolicyStatusForObjectLambda(GetAccessPointPolicyStatusForObjectLambdaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessPointPolicyStatusForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatusForObjectLambda operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPointPolicyStatusForObjectLambda
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda">REST API Reference for GetAccessPointPolicyStatusForObjectLambda Operation</seealso>
+        IAsyncResult BeginGetAccessPointPolicyStatusForObjectLambda(GetAccessPointPolicyStatusForObjectLambdaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessPointPolicyStatusForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPointPolicyStatusForObjectLambda.</param>
+        /// 
+        /// <returns>Returns a  GetAccessPointPolicyStatusForObjectLambdaResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda">REST API Reference for GetAccessPointPolicyStatusForObjectLambda Operation</seealso>
+        GetAccessPointPolicyStatusForObjectLambdaResponse EndGetAccessPointPolicyStatusForObjectLambda(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetBucket
 
 
         /// <summary>
-        /// Gets an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">
+        /// Gets an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
         /// Using Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
         ///  
         /// <para>
         /// If you are using an identity other than the root user of the AWS account that owns
-        /// the bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
-        /// permissions on the specified bucket and belong to the bucket owner's account in order
-        /// to use this action. Only users from Outposts bucket owner account with the right permissions
-        /// can perform actions on an Outposts bucket. 
+        /// the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
+        /// permissions on the specified Outposts bucket and belong to the Outposts bucket owner's
+        /// account in order to use this action. Only users from Outposts bucket owner account
+        /// with the right permissions can perform actions on an Outposts bucket. 
         /// </para>
         ///  
         /// <para>
@@ -1428,7 +1798,7 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Returns the lifecycle configuration information set on the Outposts bucket. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> and for information about lifecycle configuration, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">
         /// Object Lifecycle Management</a> in <i>Amazon Simple Storage Service User Guide</i>.
@@ -1438,8 +1808,8 @@ namespace Amazon.S3Control
         /// To use this action, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
         /// action. The Outposts bucket owner has this permission, by default. The bucket owner
         /// can grant this permission to others. For more information about permissions, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
         ///  
@@ -1534,7 +1904,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns the policy of a specified Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// Returns the policy of a specified Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
@@ -1640,7 +2010,7 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Returns the tag set associated with the Outposts bucket. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
@@ -2036,6 +2406,71 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  ListAccessPointsForObjectLambda
+
+
+        /// <summary>
+        /// Returns a list of the access points associated with the Object Lambda Access Point.
+        /// You can retrieve up to 1000 access points per call. If there are more than 1,000 access
+        /// points (or the number specified in <code>maxResults</code>, whichever is less), the
+        /// response will include a continuation token that you can use to list the additional
+        /// access points.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <code>ListAccessPointsForObjectLambda</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessPointsForObjectLambda service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessPointsForObjectLambda service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda">REST API Reference for ListAccessPointsForObjectLambda Operation</seealso>
+        ListAccessPointsForObjectLambdaResponse ListAccessPointsForObjectLambda(ListAccessPointsForObjectLambdaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccessPointsForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessPointsForObjectLambda operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessPointsForObjectLambda
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda">REST API Reference for ListAccessPointsForObjectLambda Operation</seealso>
+        IAsyncResult BeginListAccessPointsForObjectLambda(ListAccessPointsForObjectLambdaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccessPointsForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessPointsForObjectLambda.</param>
+        /// 
+        /// <returns>Returns a  ListAccessPointsForObjectLambdaResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda">REST API Reference for ListAccessPointsForObjectLambda Operation</seealso>
+        ListAccessPointsForObjectLambdaResponse EndListAccessPointsForObjectLambda(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListJobs
 
 
@@ -2118,7 +2553,7 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated
-        /// sender of the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// sender of the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
         ///  
@@ -2215,6 +2650,57 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  PutAccessPointConfigurationForObjectLambda
+
+
+        /// <summary>
+        /// Replaces configuration for an Object Lambda Access Point.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <code>PutAccessPointConfigurationForObjectLambda</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html">GetAccessPointConfigurationForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessPointConfigurationForObjectLambda service method.</param>
+        /// 
+        /// <returns>The response from the PutAccessPointConfigurationForObjectLambda service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda">REST API Reference for PutAccessPointConfigurationForObjectLambda Operation</seealso>
+        PutAccessPointConfigurationForObjectLambdaResponse PutAccessPointConfigurationForObjectLambda(PutAccessPointConfigurationForObjectLambdaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccessPointConfigurationForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessPointConfigurationForObjectLambda operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccessPointConfigurationForObjectLambda
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda">REST API Reference for PutAccessPointConfigurationForObjectLambda Operation</seealso>
+        IAsyncResult BeginPutAccessPointConfigurationForObjectLambda(PutAccessPointConfigurationForObjectLambdaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccessPointConfigurationForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccessPointConfigurationForObjectLambda.</param>
+        /// 
+        /// <returns>Returns a  PutAccessPointConfigurationForObjectLambdaResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda">REST API Reference for PutAccessPointConfigurationForObjectLambda Operation</seealso>
+        PutAccessPointConfigurationForObjectLambdaResponse EndPutAccessPointConfigurationForObjectLambda(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutAccessPointPolicy
 
 
@@ -2283,6 +2769,64 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  PutAccessPointPolicyForObjectLambda
+
+
+        /// <summary>
+        /// Creates or replaces resource policy for an Object Lambda Access Point. For an example
+        /// policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating
+        /// Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to <code>PutAccessPointPolicyForObjectLambda</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">DeleteAccessPointPolicyForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicyForObjectLambda service method.</param>
+        /// 
+        /// <returns>The response from the PutAccessPointPolicyForObjectLambda service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda">REST API Reference for PutAccessPointPolicyForObjectLambda Operation</seealso>
+        PutAccessPointPolicyForObjectLambdaResponse PutAccessPointPolicyForObjectLambda(PutAccessPointPolicyForObjectLambdaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccessPointPolicyForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicyForObjectLambda operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccessPointPolicyForObjectLambda
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda">REST API Reference for PutAccessPointPolicyForObjectLambda Operation</seealso>
+        IAsyncResult BeginPutAccessPointPolicyForObjectLambda(PutAccessPointPolicyForObjectLambdaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccessPointPolicyForObjectLambda operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccessPointPolicyForObjectLambda.</param>
+        /// 
+        /// <returns>Returns a  PutAccessPointPolicyForObjectLambdaResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda">REST API Reference for PutAccessPointPolicyForObjectLambda Operation</seealso>
+        PutAccessPointPolicyForObjectLambdaResponse EndPutAccessPointPolicyForObjectLambda(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutBucketLifecycleConfiguration
 
 
@@ -2295,11 +2839,10 @@ namespace Amazon.S3Control
         /// </para>
         ///  </note> 
         /// <para>
-        /// Creates a new lifecycle configuration for the Outposts bucket or replaces an existing
-        /// lifecycle configuration. Outposts buckets only support lifecycle configurations that
-        /// delete/expire objects after a certain period of time and abort incomplete multipart
-        /// uploads. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing
-        /// Lifecycle Permissions for Amazon S3 on Outposts</a>.
+        /// Creates a new lifecycle configuration for the S3 on Outposts bucket or replaces an
+        /// existing lifecycle configuration. Outposts buckets only support lifecycle configurations
+        /// that delete/expire objects after a certain period of time and abort incomplete multipart
+        /// uploads.
         /// </para>
         ///   
         /// <para>
@@ -2374,7 +2917,7 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Applies an Amazon S3 bucket policy to an Outposts bucket. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
@@ -2474,7 +3017,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for an Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+        /// Sets the tags for an S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
         /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  
@@ -2485,21 +3028,21 @@ namespace Amazon.S3Control
         /// with the same tag key values. For example, you can tag several resources with a specific
         /// application name, and then organize your billing information to see the total cost
         /// of that application across several services. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
-        /// Allocation and Tagging</a>.
+        /// allocation and tagging</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Within a bucket, if you add a tag that has the same key as an existing tag, the new
-        /// value overwrites the old value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
-        /// Using Cost Allocation in Amazon S3 Bucket Tags</a>.
+        /// value overwrites the old value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">
+        /// Using cost allocation in Amazon S3 bucket tags</a>.
         /// </para>
         ///  </note> 
         /// <para>
         /// To use this action, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code>
         /// action. The Outposts bucket owner has this permission by default and can grant this
-        /// permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
-        /// Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
-        /// Access Permissions to Your Amazon S3 Resources</a>.
+        /// permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
+        /// Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// access permissions to your Amazon S3 resources</a>.
         /// </para>
         ///  
         /// <para>

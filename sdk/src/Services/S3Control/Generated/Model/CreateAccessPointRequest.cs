@@ -31,41 +31,21 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Container for the parameters to the CreateAccessPoint operation.
     /// Creates an access point and associates it with the specified bucket. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
     /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service
     /// User Guide</i>.
     /// 
-    ///   
+    ///   <note> 
     /// <para>
-    ///  <b>Using this action with Amazon S3 on Outposts</b> 
+    /// S3 on Outposts only supports VPC-style Access Points. 
     /// </para>
     ///  
     /// <para>
-    /// This action: 
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+    /// Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only Access Points</a>
+    /// in the <i>Amazon Simple Storage Service User Guide</i>.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Requires a virtual private cloud (VPC) configuration as S3 on Outposts only supports
-    /// VPC style access points.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Does not support ACL on S3 on Outposts buckets.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Does not support Public Access on S3 on Outposts buckets.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Does not support object lock for S3 on Outposts buckets.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-    /// Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide </i>.
-    /// </para>
-    ///  
+    ///  </note> 
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
     /// parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3

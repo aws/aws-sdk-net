@@ -82,6 +82,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("S3Control")]
+        public void ListAccessPointsForObjectLambdaTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAccessPointsForObjectLambdaRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAccessPointsForObjectLambdaResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAccessPointsForObjectLambdaResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAccessPointsForObjectLambda(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAccessPointsForObjectLambda(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("S3Control")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAccessPointsForObjectLambdaTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAccessPointsForObjectLambdaRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAccessPointsForObjectLambdaResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAccessPointsForObjectLambda(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAccessPointsForObjectLambda(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("S3Control")]
         public void ListJobsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListJobsRequest>();
