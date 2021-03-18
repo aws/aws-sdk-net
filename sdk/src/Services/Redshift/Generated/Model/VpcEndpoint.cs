@@ -33,7 +33,28 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class VpcEndpoint
     {
+        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private string _vpcEndpointId;
+        private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
+        /// One or more network interfaces of the endpoint. Also known as an interface endpoint.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<NetworkInterface> NetworkInterfaces
+        {
+            get { return this._networkInterfaces; }
+            set { this._networkInterfaces = value; }
+        }
+
+        // Check to see if NetworkInterfaces property is set
+        internal bool IsSetNetworkInterfaces()
+        {
+            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property VpcEndpointId. 
@@ -52,6 +73,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetVpcEndpointId()
         {
             return this._vpcEndpointId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The VPC identifier that the endpoint is associated. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
     }

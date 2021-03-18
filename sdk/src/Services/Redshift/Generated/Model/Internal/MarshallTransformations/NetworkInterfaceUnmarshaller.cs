@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VpcEndpoint Object
+    /// Response Unmarshaller for NetworkInterface Object
     /// </summary>  
-    public class VpcEndpointUnmarshaller : IUnmarshaller<VpcEndpoint, XmlUnmarshallerContext>, IUnmarshaller<VpcEndpoint, JsonUnmarshallerContext>
+    public class NetworkInterfaceUnmarshaller : IUnmarshaller<NetworkInterface, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterface, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcEndpoint Unmarshall(XmlUnmarshallerContext context)
+        public NetworkInterface Unmarshall(XmlUnmarshallerContext context)
         {
-            VpcEndpoint unmarshalledObject = new VpcEndpoint();
+            NetworkInterface unmarshalledObject = new NetworkInterface();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,23 +54,28 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("NetworkInterfaces/NetworkInterface", targetDepth))
-                    {
-                        var unmarshaller = NetworkInterfaceUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.NetworkInterfaces.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("VpcEndpointId", targetDepth))
+                    if (context.TestExpression("AvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("VpcId", targetDepth))
+                    if (context.TestExpression("NetworkInterfaceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PrivateIpAddress", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrivateIpAddress = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SubnetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -88,18 +93,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcEndpoint Unmarshall(JsonUnmarshallerContext context)
+        public NetworkInterface Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static VpcEndpointUnmarshaller _instance = new VpcEndpointUnmarshaller();        
+        private static NetworkInterfaceUnmarshaller _instance = new NetworkInterfaceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpcEndpointUnmarshaller Instance
+        public static NetworkInterfaceUnmarshaller Instance
         {
             get
             {

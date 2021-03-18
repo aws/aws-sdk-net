@@ -132,6 +132,11 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
+        /// You can't disable automated snapshots for RA3 node types. Set the automated retention
+        /// period from 1-35 days.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: <code>1</code> 
         /// </para>
         ///  

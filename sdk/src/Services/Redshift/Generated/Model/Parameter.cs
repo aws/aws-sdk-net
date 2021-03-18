@@ -182,7 +182,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterValue. 
         /// <para>
-        /// The value of the parameter.
+        /// The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>,
+        /// then the maximum size of <code>ParameterValue</code> is 8000 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

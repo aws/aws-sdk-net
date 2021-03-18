@@ -337,6 +337,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tags.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("TotalStorageCapacityInMegaBytes", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.TotalStorageCapacityInMegaBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("VpcId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

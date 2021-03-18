@@ -1545,6 +1545,22 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.NetworkInterface.AvailabilityZone</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.NetworkInterface.NetworkInterfaceId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.NetworkInterface.PrivateIpAddress</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.NetworkInterface.SubnetId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.NodeConfigurationOption.NodeType</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1842,6 +1858,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.VpcEndpoint.VpcEndpointId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.VpcEndpoint.VpcId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
