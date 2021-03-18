@@ -82,6 +82,7 @@ namespace Amazon.SecurityHub.Model
         private AwsRdsDbInstanceDetails _awsRdsDbInstance;
         private AwsRdsDbSnapshotDetails _awsRdsDbSnapshot;
         private AwsRedshiftClusterDetails _awsRedshiftCluster;
+        private AwsS3AccountPublicAccessBlockDetails _awsS3AccountPublicAccessBlock;
         private AwsS3BucketDetails _awsS3Bucket;
         private AwsS3ObjectDetails _awsS3Object;
         private AwsSecretsManagerSecretDetails _awsSecretsManagerSecret;
@@ -666,6 +667,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsRedshiftCluster()
         {
             return this._awsRedshiftCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsS3AccountPublicAccessBlock. 
+        /// <para>
+        /// Details about the Amazon S3 Public Access Block configuration for an account.
+        /// </para>
+        /// </summary>
+        public AwsS3AccountPublicAccessBlockDetails AwsS3AccountPublicAccessBlock
+        {
+            get { return this._awsS3AccountPublicAccessBlock; }
+            set { this._awsS3AccountPublicAccessBlock = value; }
+        }
+
+        // Check to see if AwsS3AccountPublicAccessBlock property is set
+        internal bool IsSetAwsS3AccountPublicAccessBlock()
+        {
+            return this._awsS3AccountPublicAccessBlock != null;
         }
 
         /// <summary>

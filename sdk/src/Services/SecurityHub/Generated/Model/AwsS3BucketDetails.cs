@@ -36,6 +36,7 @@ namespace Amazon.SecurityHub.Model
         private string _createdAt;
         private string _ownerId;
         private string _ownerName;
+        private AwsS3AccountPublicAccessBlockDetails _publicAccessBlockConfiguration;
         private AwsS3BucketServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
 
         /// <summary>
@@ -96,6 +97,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetOwnerName()
         {
             return this._ownerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicAccessBlockConfiguration. 
+        /// <para>
+        /// Provides information about the Amazon S3 Public Access Block configuration for the
+        /// S3 bucket.
+        /// </para>
+        /// </summary>
+        public AwsS3AccountPublicAccessBlockDetails PublicAccessBlockConfiguration
+        {
+            get { return this._publicAccessBlockConfiguration; }
+            set { this._publicAccessBlockConfiguration = value; }
+        }
+
+        // Check to see if PublicAccessBlockConfiguration property is set
+        internal bool IsSetPublicAccessBlockConfiguration()
+        {
+            return this._publicAccessBlockConfiguration != null;
         }
 
         /// <summary>

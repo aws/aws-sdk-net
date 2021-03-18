@@ -50,6 +50,7 @@ namespace Amazon.SecurityHub.Model
         private string _createdAt;
         private int? _criticality;
         private string _description;
+        private FindingProviderFields _findingProviderFields;
         private string _firstObservedAt;
         private string _generatorId;
         private string _id;
@@ -231,6 +232,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingProviderFields. 
+        /// <para>
+        /// In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code>
+        /// to provide and update their own values for confidence, criticality, related findings,
+        /// severity, and types.
+        /// </para>
+        /// </summary>
+        public FindingProviderFields FindingProviderFields
+        {
+            get { return this._findingProviderFields; }
+            set { this._findingProviderFields = value; }
+        }
+
+        // Check to see if FindingProviderFields property is set
+        internal bool IsSetFindingProviderFields()
+        {
+            return this._findingProviderFields != null;
         }
 
         /// <summary>
@@ -571,7 +592,6 @@ namespace Amazon.SecurityHub.Model
         /// A finding's severity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Severity Severity
         {
             get { return this._severity; }
@@ -657,7 +677,6 @@ namespace Amazon.SecurityHub.Model
         /// Behaviors | Sensitive Data Identifications
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> Types
         {
             get { return this._types; }

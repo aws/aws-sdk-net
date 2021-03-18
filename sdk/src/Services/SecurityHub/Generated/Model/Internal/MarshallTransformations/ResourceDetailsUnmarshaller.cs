@@ -256,6 +256,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsRedshiftCluster = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsS3AccountPublicAccessBlock", targetDepth))
+                {
+                    var unmarshaller = AwsS3AccountPublicAccessBlockDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsS3AccountPublicAccessBlock = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsS3Bucket", targetDepth))
                 {
                     var unmarshaller = AwsS3BucketDetailsUnmarshaller.Instance;

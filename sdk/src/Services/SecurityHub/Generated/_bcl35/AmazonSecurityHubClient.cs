@@ -530,9 +530,9 @@ namespace Amazon.SecurityHub
         #region  BatchImportFindings
 
         /// <summary>
-        /// Imports security findings generated from an integrated third-party product into Security
-        /// Hub. This action is requested by the integrated product to import its findings into
-        /// Security Hub.
+        /// Imports security findings generated from an integrated product into Security Hub.
+        /// This action is requested by the integrated product to import its findings into Security
+        /// Hub.
         /// 
         ///  
         /// <para>
@@ -563,10 +563,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>BatchImportFindings</code> can be used to update the following finding fields
-        /// and objects only if they have not been updated using <code>BatchUpdateFindings</code>.
-        /// After they are updated using <code>BatchUpdateFindings</code>, these fields cannot
-        /// be updated using <code>BatchImportFindings</code>.
+        /// Finding providers also should not use <code>BatchImportFindings</code> to update the
+        /// following attributes.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -588,7 +586,11 @@ namespace Amazon.SecurityHub
         /// <para>
         ///  <code>Types</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Instead, finding providers use <code>FindingProviderFields</code> to provide values
+        /// for these attributes.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportFindings service method.</param>
         /// 

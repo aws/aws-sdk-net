@@ -45,6 +45,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Resource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDataClassification())
+            {
+                context.Writer.WritePropertyName("DataClassification");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataClassificationDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataClassification, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDetails())
             {
                 context.Writer.WritePropertyName("Details");

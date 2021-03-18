@@ -106,6 +106,48 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FindingProviderFieldsConfidence", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<NumberFilter, NumberFilterUnmarshaller>(NumberFilterUnmarshaller.Instance);
+                    unmarshalledObject.FindingProviderFieldsConfidence = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FindingProviderFieldsCriticality", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<NumberFilter, NumberFilterUnmarshaller>(NumberFilterUnmarshaller.Instance);
+                    unmarshalledObject.FindingProviderFieldsCriticality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FindingProviderFieldsRelatedFindingsId", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.FindingProviderFieldsRelatedFindingsId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FindingProviderFieldsRelatedFindingsProductArn", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.FindingProviderFieldsRelatedFindingsProductArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FindingProviderFieldsSeverityLabel", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.FindingProviderFieldsSeverityLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FindingProviderFieldsSeverityOriginal", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.FindingProviderFieldsSeverityOriginal = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FindingProviderFieldsTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.FindingProviderFieldsTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FirstObservedAt", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DateFilter, DateFilterUnmarshaller>(DateFilterUnmarshaller.Instance);

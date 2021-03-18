@@ -82,6 +82,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwnerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PublicAccessBlockConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3AccountPublicAccessBlockDetailsUnmarshaller.Instance;
+                    unmarshalledObject.PublicAccessBlockConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServerSideEncryptionConfiguration", targetDepth))
                 {
                     var unmarshaller = AwsS3BucketServerSideEncryptionConfigurationUnmarshaller.Instance;

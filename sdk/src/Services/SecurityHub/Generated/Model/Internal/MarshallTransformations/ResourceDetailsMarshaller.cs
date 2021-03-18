@@ -397,6 +397,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsS3AccountPublicAccessBlock())
+            {
+                context.Writer.WritePropertyName("AwsS3AccountPublicAccessBlock");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3AccountPublicAccessBlockDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsS3AccountPublicAccessBlock, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsS3Bucket())
             {
                 context.Writer.WritePropertyName("AwsS3Bucket");

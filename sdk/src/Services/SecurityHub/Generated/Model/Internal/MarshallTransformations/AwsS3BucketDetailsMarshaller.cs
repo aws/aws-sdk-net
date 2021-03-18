@@ -63,6 +63,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.OwnerName);
             }
 
+            if(requestObject.IsSetPublicAccessBlockConfiguration())
+            {
+                context.Writer.WritePropertyName("PublicAccessBlockConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3AccountPublicAccessBlockDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.PublicAccessBlockConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetServerSideEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("ServerSideEncryptionConfiguration");

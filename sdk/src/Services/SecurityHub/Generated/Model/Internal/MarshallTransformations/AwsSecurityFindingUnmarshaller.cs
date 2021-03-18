@@ -106,6 +106,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FindingProviderFields", targetDepth))
+                {
+                    var unmarshaller = FindingProviderFieldsUnmarshaller.Instance;
+                    unmarshalledObject.FindingProviderFields = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FirstObservedAt", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

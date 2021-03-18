@@ -47,6 +47,13 @@ namespace Amazon.SecurityHub.Model
         private List<DateFilter> _createdAt = new List<DateFilter>();
         private List<NumberFilter> _criticality = new List<NumberFilter>();
         private List<StringFilter> _description = new List<StringFilter>();
+        private List<NumberFilter> _findingProviderFieldsConfidence = new List<NumberFilter>();
+        private List<NumberFilter> _findingProviderFieldsCriticality = new List<NumberFilter>();
+        private List<StringFilter> _findingProviderFieldsRelatedFindingsId = new List<StringFilter>();
+        private List<StringFilter> _findingProviderFieldsRelatedFindingsProductArn = new List<StringFilter>();
+        private List<StringFilter> _findingProviderFieldsSeverityLabel = new List<StringFilter>();
+        private List<StringFilter> _findingProviderFieldsSeverityOriginal = new List<StringFilter>();
+        private List<StringFilter> _findingProviderFieldsTypes = new List<StringFilter>();
         private List<DateFilter> _firstObservedAt = new List<DateFilter>();
         private List<StringFilter> _generatorId = new List<StringFilter>();
         private List<StringFilter> _id = new List<StringFilter>();
@@ -264,6 +271,152 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDescription()
         {
             return this._description != null && this._description.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingProviderFieldsConfidence. 
+        /// <para>
+        /// The finding provider value for the finding confidence. Confidence is defined as the
+        /// likelihood that a finding accurately identifies the behavior or issue that it was
+        /// intended to identify.
+        /// </para>
+        ///  
+        /// <para>
+        /// Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
+        /// confidence and 100 means 100 percent confidence.
+        /// </para>
+        /// </summary>
+        public List<NumberFilter> FindingProviderFieldsConfidence
+        {
+            get { return this._findingProviderFieldsConfidence; }
+            set { this._findingProviderFieldsConfidence = value; }
+        }
+
+        // Check to see if FindingProviderFieldsConfidence property is set
+        internal bool IsSetFindingProviderFieldsConfidence()
+        {
+            return this._findingProviderFieldsConfidence != null && this._findingProviderFieldsConfidence.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingProviderFieldsCriticality. 
+        /// <para>
+        /// The finding provider value for the level of importance assigned to the resources associated
+        /// with the findings.
+        /// </para>
+        ///  
+        /// <para>
+        /// A score of 0 means that the underlying resources have no criticality, and a score
+        /// of 100 is reserved for the most critical resources. 
+        /// </para>
+        /// </summary>
+        public List<NumberFilter> FindingProviderFieldsCriticality
+        {
+            get { return this._findingProviderFieldsCriticality; }
+            set { this._findingProviderFieldsCriticality = value; }
+        }
+
+        // Check to see if FindingProviderFieldsCriticality property is set
+        internal bool IsSetFindingProviderFieldsCriticality()
+        {
+            return this._findingProviderFieldsCriticality != null && this._findingProviderFieldsCriticality.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingProviderFieldsRelatedFindingsId. 
+        /// <para>
+        /// The finding identifier of a related finding that is identified by the finding provider.
+        /// </para>
+        /// </summary>
+        public List<StringFilter> FindingProviderFieldsRelatedFindingsId
+        {
+            get { return this._findingProviderFieldsRelatedFindingsId; }
+            set { this._findingProviderFieldsRelatedFindingsId = value; }
+        }
+
+        // Check to see if FindingProviderFieldsRelatedFindingsId property is set
+        internal bool IsSetFindingProviderFieldsRelatedFindingsId()
+        {
+            return this._findingProviderFieldsRelatedFindingsId != null && this._findingProviderFieldsRelatedFindingsId.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingProviderFieldsRelatedFindingsProductArn. 
+        /// <para>
+        /// The ARN of the solution that generated a related finding that is identified by the
+        /// finding provider.
+        /// </para>
+        /// </summary>
+        public List<StringFilter> FindingProviderFieldsRelatedFindingsProductArn
+        {
+            get { return this._findingProviderFieldsRelatedFindingsProductArn; }
+            set { this._findingProviderFieldsRelatedFindingsProductArn = value; }
+        }
+
+        // Check to see if FindingProviderFieldsRelatedFindingsProductArn property is set
+        internal bool IsSetFindingProviderFieldsRelatedFindingsProductArn()
+        {
+            return this._findingProviderFieldsRelatedFindingsProductArn != null && this._findingProviderFieldsRelatedFindingsProductArn.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingProviderFieldsSeverityLabel. 
+        /// <para>
+        /// The finding provider value for the severity label.
+        /// </para>
+        /// </summary>
+        public List<StringFilter> FindingProviderFieldsSeverityLabel
+        {
+            get { return this._findingProviderFieldsSeverityLabel; }
+            set { this._findingProviderFieldsSeverityLabel = value; }
+        }
+
+        // Check to see if FindingProviderFieldsSeverityLabel property is set
+        internal bool IsSetFindingProviderFieldsSeverityLabel()
+        {
+            return this._findingProviderFieldsSeverityLabel != null && this._findingProviderFieldsSeverityLabel.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingProviderFieldsSeverityOriginal. 
+        /// <para>
+        /// The finding provider's original value for the severity.
+        /// </para>
+        /// </summary>
+        public List<StringFilter> FindingProviderFieldsSeverityOriginal
+        {
+            get { return this._findingProviderFieldsSeverityOriginal; }
+            set { this._findingProviderFieldsSeverityOriginal = value; }
+        }
+
+        // Check to see if FindingProviderFieldsSeverityOriginal property is set
+        internal bool IsSetFindingProviderFieldsSeverityOriginal()
+        {
+            return this._findingProviderFieldsSeverityOriginal != null && this._findingProviderFieldsSeverityOriginal.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingProviderFieldsTypes. 
+        /// <para>
+        /// One or more finding types that the finding provider assigned to the finding. Uses
+        /// the format of <code>namespace/category/classifier</code> that classify a finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual
+        /// Behaviors | Sensitive Data Identifications
+        /// </para>
+        /// </summary>
+        public List<StringFilter> FindingProviderFieldsTypes
+        {
+            get { return this._findingProviderFieldsTypes; }
+            set { this._findingProviderFieldsTypes = value; }
+        }
+
+        // Check to see if FindingProviderFieldsTypes property is set
+        internal bool IsSetFindingProviderFieldsTypes()
+        {
+            return this._findingProviderFieldsTypes != null && this._findingProviderFieldsTypes.Count > 0; 
         }
 
         /// <summary>
@@ -1379,6 +1532,7 @@ namespace Amazon.SecurityHub.Model
         /// The normalized severity of a finding.
         /// </para>
         /// </summary>
+        [Obsolete("This filter is deprecated, use SeverityLabel or FindingProviderFieldsSeverityLabel instead.")]
         public List<NumberFilter> SeverityNormalized
         {
             get { return this._severityNormalized; }
@@ -1398,6 +1552,7 @@ namespace Amazon.SecurityHub.Model
         /// the finding.
         /// </para>
         /// </summary>
+        [Obsolete("This filter is deprecated, use FindingProviiltersSeverityOriginal instead.")]
         public List<NumberFilter> SeverityProduct
         {
             get { return this._severityProduct; }

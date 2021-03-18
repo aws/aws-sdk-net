@@ -33,6 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class Resource
     {
+        private DataClassificationDetails _dataClassification;
         private ResourceDetails _details;
         private string _id;
         private Partition _partition;
@@ -40,6 +41,24 @@ namespace Amazon.SecurityHub.Model
         private string _resourceRole;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property DataClassification. 
+        /// <para>
+        /// Contains information about sensitive data that was detected on the resource.
+        /// </para>
+        /// </summary>
+        public DataClassificationDetails DataClassification
+        {
+            get { return this._dataClassification; }
+            set { this._dataClassification = value; }
+        }
+
+        // Check to see if DataClassification property is set
+        internal bool IsSetDataClassification()
+        {
+            return this._dataClassification != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Details. 

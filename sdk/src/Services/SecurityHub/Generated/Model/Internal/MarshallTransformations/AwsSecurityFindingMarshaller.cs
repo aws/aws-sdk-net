@@ -97,6 +97,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Description);
             }
 
+            if(requestObject.IsSetFindingProviderFields())
+            {
+                context.Writer.WritePropertyName("FindingProviderFields");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FindingProviderFieldsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FindingProviderFields, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFirstObservedAt())
             {
                 context.Writer.WritePropertyName("FirstObservedAt");

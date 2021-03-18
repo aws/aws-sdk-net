@@ -157,6 +157,118 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetFindingProviderFieldsConfidence())
+            {
+                context.Writer.WritePropertyName("FindingProviderFieldsConfidence");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFindingProviderFieldsConfidenceListValue in requestObject.FindingProviderFieldsConfidence)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NumberFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFindingProviderFieldsConfidenceListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetFindingProviderFieldsCriticality())
+            {
+                context.Writer.WritePropertyName("FindingProviderFieldsCriticality");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFindingProviderFieldsCriticalityListValue in requestObject.FindingProviderFieldsCriticality)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NumberFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFindingProviderFieldsCriticalityListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetFindingProviderFieldsRelatedFindingsId())
+            {
+                context.Writer.WritePropertyName("FindingProviderFieldsRelatedFindingsId");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFindingProviderFieldsRelatedFindingsIdListValue in requestObject.FindingProviderFieldsRelatedFindingsId)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFindingProviderFieldsRelatedFindingsIdListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetFindingProviderFieldsRelatedFindingsProductArn())
+            {
+                context.Writer.WritePropertyName("FindingProviderFieldsRelatedFindingsProductArn");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFindingProviderFieldsRelatedFindingsProductArnListValue in requestObject.FindingProviderFieldsRelatedFindingsProductArn)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFindingProviderFieldsRelatedFindingsProductArnListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetFindingProviderFieldsSeverityLabel())
+            {
+                context.Writer.WritePropertyName("FindingProviderFieldsSeverityLabel");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFindingProviderFieldsSeverityLabelListValue in requestObject.FindingProviderFieldsSeverityLabel)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFindingProviderFieldsSeverityLabelListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetFindingProviderFieldsSeverityOriginal())
+            {
+                context.Writer.WritePropertyName("FindingProviderFieldsSeverityOriginal");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFindingProviderFieldsSeverityOriginalListValue in requestObject.FindingProviderFieldsSeverityOriginal)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFindingProviderFieldsSeverityOriginalListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetFindingProviderFieldsTypes())
+            {
+                context.Writer.WritePropertyName("FindingProviderFieldsTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFindingProviderFieldsTypesListValue in requestObject.FindingProviderFieldsTypes)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFindingProviderFieldsTypesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetFirstObservedAt())
             {
                 context.Writer.WritePropertyName("FirstObservedAt");
