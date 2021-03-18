@@ -67,7 +67,8 @@ namespace Amazon.AutoScaling.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-    /// Auto Scaling Instances Based on an Instance Refresh</a>.
+    /// Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2 Auto
+    /// Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeInstanceRefreshesRequest : AmazonAutoScalingRequest

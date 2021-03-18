@@ -29,12 +29,68 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes information used to start an instance refresh.
+    /// Describes information used to start an instance refresh. 
+    /// 
+    ///  
+    /// <para>
+    /// All properties are optional. However, if you specify a value for <code>CheckpointDelay</code>,
+    /// you must also provide a value for <code>CheckpointPercentages</code>. 
+    /// </para>
     /// </summary>
     public partial class RefreshPreferences
     {
+        private int? _checkpointDelay;
+        private List<int> _checkpointPercentages = new List<int>();
         private int? _instanceWarmup;
         private int? _minHealthyPercentage;
+
+        /// <summary>
+        /// Gets and sets the property CheckpointDelay. 
+        /// <para>
+        /// The amount of time, in seconds, to wait after a checkpoint before continuing. This
+        /// property is optional, but if you specify a value for it, you must also specify a value
+        /// for <code>CheckpointPercentages</code>. If you specify a value for <code>CheckpointPercentages</code>
+        /// and not for <code>CheckpointDelay</code>, the <code>CheckpointDelay</code> defaults
+        /// to <code>3600</code> (1 hour). 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=172800)]
+        public int CheckpointDelay
+        {
+            get { return this._checkpointDelay.GetValueOrDefault(); }
+            set { this._checkpointDelay = value; }
+        }
+
+        // Check to see if CheckpointDelay property is set
+        internal bool IsSetCheckpointDelay()
+        {
+            return this._checkpointDelay.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CheckpointPercentages. 
+        /// <para>
+        /// Threshold values for each checkpoint in ascending order. Each number must be unique.
+        /// To replace all instances in the Auto Scaling group, the last number in the array must
+        /// be <code>100</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding
+        /// checkpoints to an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<int> CheckpointPercentages
+        {
+            get { return this._checkpointPercentages; }
+            set { this._checkpointPercentages = value; }
+        }
+
+        // Check to see if CheckpointPercentages property is set
+        internal bool IsSetCheckpointPercentages()
+        {
+            return this._checkpointPercentages != null && this._checkpointPercentages.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceWarmup. 

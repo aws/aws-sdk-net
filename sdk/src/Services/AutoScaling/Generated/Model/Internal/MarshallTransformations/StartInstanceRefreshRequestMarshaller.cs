@@ -64,6 +64,19 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPreferences())
                 {
+                    if(publicRequest.Preferences.IsSetCheckpointDelay())
+                    {
+                        request.Parameters.Add("Preferences" + "." + "CheckpointDelay", StringUtils.FromInt(publicRequest.Preferences.CheckpointDelay));
+                    }
+                    if(publicRequest.Preferences.IsSetCheckpointPercentages())
+                    {
+                        int publicRequestPreferenceslistValueIndex = 1;
+                        foreach(var publicRequestPreferenceslistValue in publicRequest.Preferences.CheckpointPercentages)
+                        {
+                            request.Parameters.Add("Preferences" + "." + "CheckpointPercentages" + "." + "member" + "." + publicRequestPreferenceslistValueIndex, StringUtils.FromInt(publicRequestPreferenceslistValue));
+                            publicRequestPreferenceslistValueIndex++;
+                        }
+                    }
                     if(publicRequest.Preferences.IsSetInstanceWarmup())
                     {
                         request.Parameters.Add("Preferences" + "." + "InstanceWarmup", StringUtils.FromInt(publicRequest.Preferences.InstanceWarmup));

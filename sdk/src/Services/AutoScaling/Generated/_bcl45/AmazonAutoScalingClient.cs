@@ -701,7 +701,8 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-        /// Auto Scaling Instances Based on an Instance Refresh</a>.
+        /// Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelInstanceRefresh service method.</param>
@@ -740,7 +741,8 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-        /// Auto Scaling Instances Based on an Instance Refresh</a>.
+        /// Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelInstanceRefresh service method.</param>
@@ -2268,7 +2270,8 @@ namespace Amazon.AutoScaling
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-        /// Auto Scaling Instances Based on an Instance Refresh</a>.
+        /// Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceRefreshes service method.</param>
@@ -2330,7 +2333,8 @@ namespace Amazon.AutoScaling
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-        /// Auto Scaling Instances Based on an Instance Refresh</a>.
+        /// Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceRefreshes service method.</param>
@@ -5014,7 +5018,8 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-        /// Auto Scaling Instances Based on an Instance Refresh</a>.
+        /// Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstanceRefresh service method.</param>
@@ -5060,7 +5065,8 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-        /// Auto Scaling Instances Based on an Instance Refresh</a>.
+        /// Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstanceRefresh service method.</param>
