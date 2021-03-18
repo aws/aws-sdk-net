@@ -203,9 +203,6 @@ namespace Amazon.S3
 
             AmazonS3Util.SetMetadataHeaders(request, getPreSignedUrlRequest.Metadata);
 
-            if (!string.IsNullOrEmpty(token))
-                request.Headers[HeaderKeys.XAmzSecurityTokenHeader] = token;
-
             if (getPreSignedUrlRequest.ServerSideEncryptionMethod != null && getPreSignedUrlRequest.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(getPreSignedUrlRequest.ServerSideEncryptionMethod));
             if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerMethod())
@@ -240,7 +237,7 @@ namespace Amazon.S3
             queryParameters.Add(aws4Signing ? "X-Amz-Expires" : "Expires", expires.ToString(CultureInfo.InvariantCulture));
 
             if (!string.IsNullOrEmpty(token))
-                queryParameters.Add("x-amz-security-token", token);
+                queryParameters.Add("X-Amz-Security-Token", token);
             if (!aws4Signing)
                 queryParameters.Add("AWSAccessKeyId", accessKey);
             if (getPreSignedUrlRequest.IsSetVersionId())

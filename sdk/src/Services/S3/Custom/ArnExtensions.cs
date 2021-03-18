@@ -79,6 +79,15 @@ namespace Amazon.S3
         }
 
         /// <summary>
+        /// Checks whether an ARN belongs to a particular service
+        /// </summary>
+        /// <returns>True if a match is found</returns>
+        public static bool IsService(this Arn arn, string serviceName)
+        {
+            return arn.Service.Equals(serviceName, StringComparison.Ordinal);
+        }
+
+        /// <summary>
         /// Parse an Arn to extract information on S3 outpost access point
         /// and if it is not found or properly formatted, throw an exception
         /// </summary>

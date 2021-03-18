@@ -63,6 +63,10 @@ namespace Amazon.S3.Transfer
         IAmazonS3 _s3Client;
         bool _shouldDispose = false;
         bool _isDisposed;
+        private HashSet<string> blockedServiceNames = new HashSet<string>
+        {
+            "s3-object-lambda"
+        };
 
         #region Constructors
 
@@ -299,6 +303,19 @@ namespace Amazon.S3.Transfer
         }
 
         #endregion
+
+        private void CheckForBlockedArn(string bucketName, string command)
+        {
+            if (Arn.IsArn(bucketName))
+            {
+                Arn s3Arn = Arn.Parse(bucketName);
+                if (blockedServiceNames.Contains(s3Arn.Service))
+                {
+                    if (s3Arn.IsService("s3-object-lambda"))
+                        throw new AmazonS3Exception($"{command} does not support S3 Object Lambda resources");
+                }
+            }
+        }
 
         private static TransferUtilityUploadRequest ConstructUploadRequest(string filePath, string bucketName)
         {

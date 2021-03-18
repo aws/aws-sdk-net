@@ -586,7 +586,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account id of the expected bucket owner. 
+        /// The account ID of the expected bucket owner. 
         /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
         /// </summary>
         public string ExpectedBucketOwner
@@ -608,7 +608,7 @@ namespace Amazon.S3.Model
         /// <para>Specifies whether Amazon S3 should use bucket key for object encryption 
         /// with server-side encryption using AWS KMS (SSE-KMS). Setting this header 
         /// to <code>true</code> causes Amazon S3 to use bucket key for object encryption with 
-        /// SSE-KMS.</para> <para>Specifying this header with a PUT operation doesn’t affect 
+        /// SSE-KMS.</para> <para>Specifying this header with a PUT operation doesnï¿½t affect 
         /// bucket-level settings for bucket key.</para>",
         /// </summary>
         public bool BucketKeyEnabled

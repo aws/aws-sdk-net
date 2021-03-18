@@ -33,6 +33,7 @@ namespace Amazon.S3.Internal
 {
     public class AmazonS3PostMarshallHandler : PipelineHandler
     {
+        private const string s3ObjectLambdaServiceName = "s3-object-lambda";
         private static HashSet<Type> UnsupportedAccelerateRequestTypes = new HashSet<Type>
         {
            typeof(ListBucketsRequest),
@@ -124,36 +125,14 @@ namespace Amazon.S3.Internal
 
             bool isHttp;
             bool removeBucketFromResourcePath = false;
-
+            
             if (Arn.IsArn(bucketResourcePathToken))
             {
                 string accessPoint;
                 Arn s3Arn = Arn.Parse(bucketResourcePathToken);
-                if (s3Arn.TryParseAccessPoint(out accessPoint))
+                if (s3Arn.IsService("s3") && s3Arn.TryParseAccessPoint(out accessPoint))
                 {
-                    if (s3Config.UseAccelerateEndpoint)
-                    {
-                        throw new AmazonClientException(
-                                    "The request is using an access point ARN for the bucket name and the S3 service client is configured to use accelerate endpoints which is not supported. " +
-                                    "To use this access point create a new S3 service client with the UseAccelerateEndpoint property set to false."
-                            );
-                    }
-                    if (string.IsNullOrEmpty(s3Arn.AccountId))
-                    {
-                        throw new AmazonClientException("Account ID is missing in access point ARN");
-                    }
-                    if (string.IsNullOrEmpty(s3Arn.Region))
-                    {
-                        throw new AmazonClientException("AWS region is missing in access point ARN");
-                    }
-
-                    if (!string.Equals(regionEndpoint.PartitionName, s3Arn.Partition, StringComparison.Ordinal))
-                    {
-                        throw new AmazonClientException("The access point used in the request is in a different AWS partition then the region configured for the AmazonS3Client.");
-                    }
-
-                    ValidateUseArnRegion(s3Arn, s3Config, regionEndpoint);                    
-                    
+                    ValidateS3AccessPoint(s3Arn, s3Config, regionEndpoint);
                     UriBuilder ub;
                     if (!string.IsNullOrEmpty(config.ServiceURL))
                     {
@@ -168,6 +147,26 @@ namespace Amazon.S3.Internal
                         ub = new UriBuilder($"{scheme}://{accessPoint}-{s3Arn.AccountId}.s3-accesspoint{(config.UseDualstackEndpoint ? ".dualstack" : "")}.{s3Arn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
                     }
                     
+                    request.Endpoint = ub.Uri;
+                }
+                else if (s3Arn.IsService(s3ObjectLambdaServiceName) && s3Arn.TryParseAccessPoint(out accessPoint))
+                {
+                    ValidateS3ObjectLambdaAccessPoint(s3Arn, s3Config, regionEndpoint);
+                    UriBuilder ub;
+
+                    if (!string.IsNullOrEmpty(config.ServiceURL))
+                    {
+                        ub = new UriBuilder(EndpointResolver.DetermineEndpoint(s3Config, request));
+                        isHttp = string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase);
+                        ub.Host = string.Concat($"{accessPoint}-{s3Arn.AccountId}.", ub.Host);
+                    }
+                    else
+                    {
+                        isHttp = s3Config.UseHttp;
+                        var scheme = isHttp ? "http" : "https";
+                        ub = new UriBuilder($"{scheme}://{accessPoint}-{s3Arn.AccountId}.{s3ObjectLambdaServiceName}.{s3Arn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
+                    }
+
                     request.Endpoint = ub.Uri;
                 }
                 else if (s3Arn.IsOutpostArn())
@@ -225,6 +224,26 @@ namespace Amazon.S3.Internal
                     }
                 }
 
+                if (request.OriginalRequest.GetType() == typeof(WriteGetObjectResponseRequest))
+                {
+                    if (!string.IsNullOrEmpty(config.ServiceURL))
+                    {
+                        ub = new UriBuilder(EndpointResolver.DetermineEndpoint(s3Config, request));
+                        isHttp = string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase);
+                    }
+                    else
+                    {
+                        isHttp = s3Config.UseHttp;
+                        var scheme = isHttp ? "http" : "https";
+                        var region = regionEndpoint.SystemName == "us-east-1-regional" ? "us-east-1" : regionEndpoint.SystemName;
+                        ub = new UriBuilder($"{scheme}://{request.Headers["x-amz-request-route"]}.{s3ObjectLambdaServiceName}.{region}.{config.RegionEndpoint.PartitionDnsSuffix}");
+                    }
+
+                    request.Endpoint = ub.Uri;
+                    request.OverrideSigningServiceName = s3ObjectLambdaServiceName;
+                    request.UseSigV4 = true;
+                }
+
                 if (s3Config.UseAccelerateEndpoint)
                 {
                     // Validate if bucket name is accelerate compatible and enable acceleration by using
@@ -269,7 +288,6 @@ namespace Amazon.S3.Internal
                 request.CanonicalResourcePrefix = canonicalBucketName;
             }
 
-
             // Some parameters should not be sent over HTTP, just HTTPS
             if (isHttp)
             {
@@ -277,26 +295,83 @@ namespace Amazon.S3.Internal
             }
         }
 
-        private static Uri GetAccelerateEndpoint(string bucketName, AmazonS3Config config)
+        private static void ValidateS3AccessPoint(Arn s3Arn, AmazonS3Config s3Config, RegionEndpoint region)
         {
-            return new Uri($"{(config.UseHttp ? "http://" : "https://")}{bucketName}.{config.AccelerateEndpoint}");
-        }
-
-        private static void ValidateUseArnRegion(Arn arn, AmazonS3Config config, RegionEndpoint region)
-        {
-            if (string.Equals(arn.Region, region.SystemName, StringComparison.Ordinal))
+            if (s3Config.UseAccelerateEndpoint)
+            {
+                throw new AmazonClientException(
+                            "The request is using an access point ARN for the bucket name and the S3 service client is configured to use accelerate endpoints which is not supported. " +
+                            "To use this access point create a new S3 service client with the UseAccelerateEndpoint property set to false."
+                    );
+            }
+            if (string.IsNullOrEmpty(s3Arn.AccountId))
+            {
+                throw new AmazonClientException("Account ID is missing in access point ARN");
+            }
+            if (string.IsNullOrEmpty(s3Arn.Region))
+            {
+                throw new AmazonClientException("AWS region is missing in access point ARN");
+            }
+            if (!string.Equals(region.PartitionName, s3Arn.Partition, StringComparison.Ordinal))
+            {
+                throw new AmazonClientException("The access point used in the request is in a different AWS partition then the region configured for the AmazonS3Client.");
+            }
+            if (string.Equals(s3Arn.Region, region.SystemName, StringComparison.Ordinal))
             {
                 return;
             }
-
-            if (!config.UseArnRegion)
+            if (!s3Config.UseArnRegion)
             {
                 throw new AmazonClientException(
-                    $"The S3 service client is configured for region {region.SystemName} but the access point is in {arn.Region}. " +
+                    $"The S3 service client is configured for region {region.SystemName} but the access point is in {s3Arn.Region}. " +
                     "By default the SDK doesn't allow cross region calls. If you want to enable cross region calls set the environment AWS_S3_USE_ARN_REGION or the AmazonS3Config.UseArnRegion property to value \"true\".");
             }
         }
 
+        /// <summary>
+        /// Validates S3ObjectLambda Access Points.
+        /// </summary>
+        private static void ValidateS3ObjectLambdaAccessPoint(Arn arn, AmazonS3Config s3Config, RegionEndpoint region)
+        {
+            var arnString = arn.ToString();
+            foreach (var ch in arnString)
+            {
+                if (!char.IsLetterOrDigit(ch) && ch != ':' && ch != '/' && ch != '-')
+                    throw new AmazonClientException("Invalid Arn. S3ObjectLambda arns can only contain alphanumeric characters, :, / and -");
+            }
+            if (arn.Resource.Split(':').Length > 2)
+                throw new AmazonClientException("Invalid ARN, Access Point ARN contains sub resources");
+
+            if (s3Config.UseAccelerateEndpoint)
+            {
+                throw new AmazonClientException("Invalid configuration S3ObjectLambda access points do not support accelerate");
+            }
+            if (s3Config.UseDualstackEndpoint)
+            {
+                throw new AmazonClientException("Invalid configuration S3ObjectLambda access points do not support dualstack");
+            }
+            if (string.IsNullOrEmpty(arn.AccountId))
+            {
+                throw new AmazonClientException("Account ID is missing in S3ObjectLambda access point ARN");
+            }
+            if (string.IsNullOrEmpty(arn.Region))
+            {
+                throw new AmazonClientException("AWS region is missing in S3ObjectLambda access point ARN");
+            }
+            if (!string.Equals(region.PartitionName, arn.Partition))
+            {
+                throw new AmazonClientException("Invalid configuration, cross partition S3ObjectLambda access point ARN");
+            }
+            if (!s3Config.UseArnRegion
+                && !string.Equals(arn.Region, region.SystemName, StringComparison.Ordinal))
+            {
+                throw new AmazonClientException("Invalid configuration, cross region S3ObjectLambda access point ARN");
+            }
+        }
+
+        /// <summary>
+        /// Validates Outposts Access points.
+        /// </summary>
         private static void ValidateOutpostAccessPoint(Arn arn, AmazonS3Config s3Config, RegionEndpoint region)
         {
             if (s3Config.UseAccelerateEndpoint)
@@ -315,7 +390,6 @@ namespace Amazon.S3.Internal
             {
                 throw new AmazonClientException("AWS region is missing in outpost access point ARN");
             }
-
             if (!string.Equals(region.PartitionName, arn.Partition))
             {
                 throw new AmazonClientException("Invalid configuration, cross partition outpost access point ARN");
@@ -325,11 +399,16 @@ namespace Amazon.S3.Internal
             {
                 throw new AmazonClientException("Invalid configuration outpost access points do not support Fips- regions");
             }
-            if (!s3Config.UseArnRegion 
+            if (!s3Config.UseArnRegion
                 && !string.Equals(arn.Region, region.SystemName, StringComparison.Ordinal))
             {
                 throw new AmazonClientException("Invalid configuration, cross region outpost access point ARN");
             }
+        }
+
+        private static Uri GetAccelerateEndpoint(string bucketName, AmazonS3Config config)
+        {
+            return new Uri($"{(config.UseHttp ? "http://" : "https://")}{bucketName}.{config.AccelerateEndpoint}");
         }
 
         private static void ValidateHttpsOnlyHeaders(IRequest request)

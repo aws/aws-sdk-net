@@ -181,6 +181,7 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task UploadAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
+            CheckForBlockedArn(request.BucketName, "Upload");
             var command = GetUploadCommand(request, null);
             return command.ExecuteAsync(cancellationToken);
         }
@@ -202,6 +203,7 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task AbortMultipartUploadsAsync(string bucketName, DateTime initiatedDate, CancellationToken cancellationToken = default(CancellationToken))
         {
+            CheckForBlockedArn(bucketName, "AbortMultipartUploads");
             var command = new AbortMultipartUploadsCommand(this._s3Client, bucketName, initiatedDate, this._config);
             return command.ExecuteAsync(cancellationToken);
         }
@@ -223,6 +225,7 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task DownloadAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
+            CheckForBlockedArn(request.BucketName, "Download");
             var command = new DownloadCommand(this._s3Client, request);
             return command.ExecuteAsync(cancellationToken);
         }
@@ -269,6 +272,7 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public async Task<Stream> OpenStreamAsync(TransferUtilityOpenStreamRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
+            CheckForBlockedArn(request.BucketName, "OpenStream");
             OpenStreamCommand command = new OpenStreamCommand(this._s3Client, request);
             await command.ExecuteAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
             return command.ResponseStream;

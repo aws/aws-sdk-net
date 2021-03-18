@@ -167,7 +167,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account id of the expected bucket owner. 
+        /// The account ID of the expected bucket owner. 
         /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
         /// </summary>
         public string ExpectedBucketOwner

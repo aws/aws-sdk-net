@@ -153,6 +153,7 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task UploadDirectoryAsync(TransferUtilityUploadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
+            CheckForBlockedArn(request.BucketName, "UploadDirectory");
             validate(request);
             UploadDirectoryCommand command = new UploadDirectoryCommand(this, this._config, request);
             command.UploadFilesConcurrently = request.UploadFilesConcurrently;
@@ -200,6 +201,7 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task DownloadDirectoryAsync(TransferUtilityDownloadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
+            CheckForBlockedArn(request.BucketName, "DownloadDirectory");
             var command = new DownloadDirectoryCommand(this._s3Client, request, this._config);
             command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
             return command.ExecuteAsync(cancellationToken);

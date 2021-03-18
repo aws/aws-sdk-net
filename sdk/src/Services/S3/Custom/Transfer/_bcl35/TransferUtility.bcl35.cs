@@ -59,7 +59,6 @@ namespace Amazon.S3.Transfer
     /// </remarks>
     public partial class TransferUtility : ITransferUtility
     {
-
         #region UploadDirectory
         /// <summary>
         /// 	Uploads files from a specified directory.  
@@ -964,6 +963,7 @@ namespace Amazon.S3.Transfer
 
         private void UploadDirectoryHelper(TransferUtilityUploadDirectoryRequest request)
         {
+            CheckForBlockedArn(request.BucketName, "UploadDirectory");
             validate(request);
             UploadDirectoryCommand command = new UploadDirectoryCommand(this, this._config, request);
             command.Execute();
@@ -1035,6 +1035,7 @@ namespace Amazon.S3.Transfer
         /// </param>
         private void UploadHelper(TransferUtilityUploadRequest request)
         {
+            CheckForBlockedArn(request.BucketName, "Upload");
             var command = GetUploadCommand(request);
             command.Execute();
         }
@@ -1057,6 +1058,7 @@ namespace Amazon.S3.Transfer
 
         private Stream OpenStreamHelper(TransferUtilityOpenStreamRequest request)
         {
+            CheckForBlockedArn(request.BucketName, "OpenStream");
             OpenStreamCommand command = new OpenStreamCommand(this._s3Client, request);
             command.Execute();
             return command.ResponseStream;
@@ -1073,6 +1075,7 @@ namespace Amazon.S3.Transfer
 
         private void DownloadHelper(TransferUtilityDownloadRequest request)
         {
+            CheckForBlockedArn(request.BucketName, "Download");
             BaseCommand command = new DownloadCommand(this._s3Client, request);
             command.Execute();
         }
@@ -1088,6 +1091,7 @@ namespace Amazon.S3.Transfer
 
         private void DownloadDirectoryHelper(TransferUtilityDownloadDirectoryRequest request)
         {
+            CheckForBlockedArn(request.BucketName, "DownloadDirectory");
             BaseCommand command = new DownloadDirectoryCommand(this._s3Client, request);
             command.Execute();
         }
@@ -1097,6 +1101,7 @@ namespace Amazon.S3.Transfer
 
         private void AbortMultipartUploadsHelper(string bucketName, DateTime initiatedDate)
         {
+            CheckForBlockedArn(bucketName, "AbortMultipartUploads");
             BaseCommand command = new AbortMultipartUploadsCommand(this._s3Client, bucketName, initiatedDate);
             command.Execute();
         }
