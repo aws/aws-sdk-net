@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImageConfig Object
+    /// Response Unmarshaller for RepositoryAuthConfig Object
     /// </summary>  
-    public class ImageConfigUnmarshaller : IUnmarshaller<ImageConfig, XmlUnmarshallerContext>, IUnmarshaller<ImageConfig, JsonUnmarshallerContext>
+    public class RepositoryAuthConfigUnmarshaller : IUnmarshaller<RepositoryAuthConfig, XmlUnmarshallerContext>, IUnmarshaller<RepositoryAuthConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ImageConfig IUnmarshaller<ImageConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RepositoryAuthConfig IUnmarshaller<RepositoryAuthConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ImageConfig Unmarshall(JsonUnmarshallerContext context)
+        public RepositoryAuthConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImageConfig unmarshalledObject = new ImageConfig();
+            RepositoryAuthConfig unmarshalledObject = new RepositoryAuthConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("RepositoryAccessMode", targetDepth))
+                if (context.TestExpression("RepositoryCredentialsProviderArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryAccessMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RepositoryAuthConfig", targetDepth))
-                {
-                    var unmarshaller = RepositoryAuthConfigUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryAuthConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RepositoryCredentialsProviderArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ImageConfigUnmarshaller _instance = new ImageConfigUnmarshaller();        
+        private static RepositoryAuthConfigUnmarshaller _instance = new RepositoryAuthConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImageConfigUnmarshaller Instance
+        public static RepositoryAuthConfigUnmarshaller Instance
         {
             get
             {

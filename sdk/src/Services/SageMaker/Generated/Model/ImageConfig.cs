@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ImageConfig
     {
         private RepositoryAccessMode _repositoryAccessMode;
+        private RepositoryAuthConfig _repositoryAuthConfig;
 
         /// <summary>
         /// Gets and sets the property RepositoryAccessMode. 
@@ -63,6 +64,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRepositoryAccessMode()
         {
             return this._repositoryAccessMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepositoryAuthConfig. 
+        /// <para>
+        /// (Optional) Specifies an authentication configuration for the private docker registry
+        /// where your model image is hosted. Specify a value for this property only if you specified
+        /// <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field, and
+        /// the private Docker registry where the model image is hosted requires authentication.
+        /// </para>
+        /// </summary>
+        public RepositoryAuthConfig RepositoryAuthConfig
+        {
+            get { return this._repositoryAuthConfig; }
+            set { this._repositoryAuthConfig = value; }
+        }
+
+        // Check to see if RepositoryAuthConfig property is set
+        internal bool IsSetRepositoryAuthConfig()
+        {
+            return this._repositoryAuthConfig != null;
         }
 
     }

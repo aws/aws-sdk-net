@@ -55,6 +55,25 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>DTYPE</code>: Specifies the data type for the input. When compiling for <code>ml_*</code>
+        /// (except for <code>ml_inf</code>) instances using PyTorch framework, provide the data
+        /// type (dtype) of the model's input. <code>"float32"</code> is used if <code>"DTYPE"</code>
+        /// is not specified. Options for data type are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// float32: Use either <code>"float"</code> or <code>"float32"</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// int64: Use either <code>"int64"</code> or <code>"long"</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For example, <code>{"dtype" : "float32"}</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>CPU</code>: Compilation for CPU supports the following compiler options.
         /// </para>
         ///  <ul> <li> 

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ImageConfig Marshaller
+    /// RepositoryAuthConfig Marshaller
     /// </summary>       
-    public class ImageConfigMarshaller : IRequestMarshaller<ImageConfig, JsonMarshallerContext> 
+    public class RepositoryAuthConfigMarshaller : IRequestMarshaller<RepositoryAuthConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ImageConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(RepositoryAuthConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetRepositoryAccessMode())
+            if(requestObject.IsSetRepositoryCredentialsProviderArn())
             {
-                context.Writer.WritePropertyName("RepositoryAccessMode");
-                context.Writer.Write(requestObject.RepositoryAccessMode);
-            }
-
-            if(requestObject.IsSetRepositoryAuthConfig())
-            {
-                context.Writer.WritePropertyName("RepositoryAuthConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RepositoryAuthConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.RepositoryAuthConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("RepositoryCredentialsProviderArn");
+                context.Writer.Write(requestObject.RepositoryCredentialsProviderArn);
             }
 
         }
@@ -67,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ImageConfigMarshaller Instance = new ImageConfigMarshaller();
+        public readonly static RepositoryAuthConfigMarshaller Instance = new RepositoryAuthConfigMarshaller();
 
     }
 }
