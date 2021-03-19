@@ -1,3 +1,9 @@
+### 3.5.134.0 (2021-03-19 18:12 UTC)
+* EC2 (3.5.33.0)
+	* X2gd instances are the next generation of memory-optimized instances powered by AWS-designed, Arm-based AWS Graviton2 processors.
+* SageMaker (3.5.14.0)
+	* Adding authentication support for pulling images stored in private Docker registries to build containers for real-time inference.
+
 ### 3.5.133.0 (2021-03-18 19:12 UTC)
 * AutoScaling (3.5.6.0)
 	* Amazon EC2 Auto Scaling Instance Refresh now supports phased deployments.
