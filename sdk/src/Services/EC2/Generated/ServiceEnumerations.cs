@@ -6989,6 +6989,42 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType X1eXlarge = new InstanceType("x1e.xlarge");
         /// <summary>
+        /// Constant X2gd12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2gd12xlarge = new InstanceType("x2gd.12xlarge");
+        /// <summary>
+        /// Constant X2gd16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2gd16xlarge = new InstanceType("x2gd.16xlarge");
+        /// <summary>
+        /// Constant X2gd2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2gd2xlarge = new InstanceType("x2gd.2xlarge");
+        /// <summary>
+        /// Constant X2gd4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2gd4xlarge = new InstanceType("x2gd.4xlarge");
+        /// <summary>
+        /// Constant X2gd8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2gd8xlarge = new InstanceType("x2gd.8xlarge");
+        /// <summary>
+        /// Constant X2gdLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2gdLarge = new InstanceType("x2gd.large");
+        /// <summary>
+        /// Constant X2gdMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2gdMedium = new InstanceType("x2gd.medium");
+        /// <summary>
+        /// Constant X2gdMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2gdMetal = new InstanceType("x2gd.metal");
+        /// <summary>
+        /// Constant X2gdXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2gdXlarge = new InstanceType("x2gd.xlarge");
+        /// <summary>
         /// Constant Z1d12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Z1d12xlarge = new InstanceType("z1d.12xlarge");
