@@ -29,6 +29,8 @@ using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -45,6 +47,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var s3Config = new AmazonS3Config();
             using (var s3Client = new AmazonS3Client(s3Config))
             using (var snsClient = new AmazonSimpleNotificationServiceClient())
+            using (var stsClient = new AmazonSecurityTokenServiceClient())
             {
                 var snsCreateResponse = snsClient.CreateTopic("events-test-" + DateTime.Now.Ticks);
                 var bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
@@ -75,6 +78,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         return res.TopicConfigurations?.Count > 0 && res.TopicConfigurations[0].Id == "the-topic-test" ? res : null;
                     });
 
+                    var getAttributeResponse = snsClient.GetTopicAttributes(new GetTopicAttributesRequest
+                    {
+                        TopicArn = snsCreateResponse.TopicArn
+                    });
+
+                    var policy = Policy.FromJson(getAttributeResponse.Attributes["Policy"]);
+
+                    // SNS topics already have a default statement. We need to evaluate the second statement that the SDK appended.
+                    var conditions = policy.Statements[1].Conditions;
+                    Assert.AreEqual(2, conditions.Count);
+
+                    var accountCondition = conditions.FirstOrDefault(x => string.Equals(x.ConditionKey, ConditionFactory.SOURCE_ACCOUNT_KEY));
+                    Assert.IsNotNull(accountCondition);
+                    Assert.AreEqual(ConditionFactory.StringComparisonType.StringEquals.ToString(), accountCondition.Type);
+                    Assert.AreEqual(12, accountCondition.Values[0].Length);
+
+                    var currentAccountId = stsClient.GetCallerIdentity(new GetCallerIdentityRequest()).Account;
+                    Assert.AreEqual(currentAccountId, accountCondition.Values[0]);
+
                     Assert.AreEqual(1, getResponse.TopicConfigurations.Count);
                     Assert.AreEqual(1, getResponse.TopicConfigurations[0].Events.Count);
                     Assert.AreEqual(EventType.ObjectCreatedPut, getResponse.TopicConfigurations[0].Events[0]);
@@ -102,6 +124,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var s3Config = new AmazonS3Config();
             using (var s3Client = new AmazonS3Client(s3Config))
             using (var sqsClient = new AmazonSQSClient())
+            using (var stsClient = new AmazonSecurityTokenServiceClient())
             {
                 var createResponse = sqsClient.CreateQueue("events-test-" + DateTime.Now.Ticks);
                 var bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
@@ -141,6 +164,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         var res = s3Client.GetBucketNotification(bucketName);
                         return res.QueueConfigurations?.Count > 0 && res.QueueConfigurations[0].Id == "the-queue-test" ? res : null;
                     });
+
+                    var getAttributeResponse = sqsClient.GetQueueAttributes(new GetQueueAttributesRequest
+                    {
+                        QueueUrl = createResponse.QueueUrl,
+                        AttributeNames = new List<string> { "All" }
+                    });
+
+                    var policy = Policy.FromJson(getAttributeResponse.Policy);
+                    var conditions = policy.Statements[0].Conditions;
+                    Assert.AreEqual(2, conditions.Count);
+
+                    var accountCondition = conditions.FirstOrDefault(x => string.Equals(x.ConditionKey, ConditionFactory.SOURCE_ACCOUNT_KEY));
+                    Assert.IsNotNull(accountCondition);
+                    Assert.AreEqual(ConditionFactory.StringComparisonType.StringEquals.ToString(), accountCondition.Type);
+                    Assert.AreEqual(12, accountCondition.Values[0].Length);
+
+                    var currentAccountId = stsClient.GetCallerIdentity(new GetCallerIdentityRequest()).Account;
+                    Assert.AreEqual(currentAccountId, accountCondition.Values[0]);
+
 
                     Assert.AreEqual(1, getResponse.QueueConfigurations.Count);
                     Assert.AreEqual(1, getResponse.QueueConfigurations[0].Events.Count);
