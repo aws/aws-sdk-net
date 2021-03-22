@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private ArchitectureValues _architecture;
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private BootModeValues _bootMode;
         private string _creationDate;
         private string _description;
         private bool? _enaSupport;
@@ -94,6 +95,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootMode. 
+        /// <para>
+        /// The boot mode of the image. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+        /// modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public BootModeValues BootMode
+        {
+            get { return this._bootMode; }
+            set { this._bootMode = value; }
+        }
+
+        // Check to see if BootMode property is set
+        internal bool IsSetBootMode()
+        {
+            return this._bootMode != null;
         }
 
         /// <summary>

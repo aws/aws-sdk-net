@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private int? _amiLaunchIndex;
         private ArchitectureValues _architecture;
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
+        private BootModeValues _bootMode;
         private string _capacityReservationId;
         private CapacityReservationSpecificationResponse _capacityReservationSpecification;
         private string _clientToken;
@@ -134,6 +135,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootMode. 
+        /// <para>
+        /// The boot mode of the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+        /// modes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public BootModeValues BootMode
+        {
+            get { return this._bootMode; }
+            set { this._bootMode = value; }
+        }
+
+        // Check to see if BootMode property is set
+        internal bool IsSetBootMode()
+        {
+            return this._bootMode != null;
         }
 
         /// <summary>
@@ -790,12 +810,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceDestCheck. 
         /// <para>
-        /// Specifies whether to enable an instance launched in a VPC to perform NAT. This controls
-        /// whether source/destination checking is enabled on the instance. A value of <code>true</code>
-        /// means that checking is enabled, and <code>false</code> means that checking is disabled.
-        /// The value must be <code>false</code> for the instance to perform NAT. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-        /// instances</a> in the <i>Amazon VPC User Guide</i>.
+        /// Indicates whether source/destination checking is enabled.
         /// </para>
         /// </summary>
         public bool SourceDestCheck

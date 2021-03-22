@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class ImageAttribute
     {
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private string _bootMode;
         private string _description;
         private string _imageId;
         private string _kernelId;
@@ -58,6 +59,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootMode.
+        /// </summary>
+        public string BootMode
+        {
+            get { return this._bootMode; }
+            set { this._bootMode = value; }
+        }
+
+        // Check to see if BootMode property is set
+        internal bool IsSetBootMode()
+        {
+            return this._bootMode != null;
         }
 
         /// <summary>

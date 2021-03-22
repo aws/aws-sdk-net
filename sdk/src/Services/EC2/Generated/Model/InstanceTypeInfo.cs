@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         private NetworkInfo _networkInfo;
         private PlacementGroupInfo _placementGroupInfo;
         private ProcessorInfo _processorInfo;
+        private List<string> _supportedBootModes = new List<string>();
         private List<string> _supportedRootDeviceTypes = new List<string>();
         private List<string> _supportedUsageClasses = new List<string>();
         private List<string> _supportedVirtualizationTypes = new List<string>();
@@ -398,6 +399,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetProcessorInfo()
         {
             return this._processorInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedBootModes. 
+        /// <para>
+        /// The supported boot modes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+        /// modes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedBootModes
+        {
+            get { return this._supportedBootModes; }
+            set { this._supportedBootModes = value; }
+        }
+
+        // Check to see if SupportedBootModes property is set
+        internal bool IsSetSupportedBootModes()
+        {
+            return this._supportedBootModes != null && this._supportedBootModes.Count > 0; 
         }
 
         /// <summary>

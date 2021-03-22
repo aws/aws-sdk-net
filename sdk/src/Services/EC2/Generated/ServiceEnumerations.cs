@@ -1163,6 +1163,106 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type BootModeType.
+    /// </summary>
+    public class BootModeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LegacyBios for BootModeType
+        /// </summary>
+        public static readonly BootModeType LegacyBios = new BootModeType("legacy-bios");
+        /// <summary>
+        /// Constant Uefi for BootModeType
+        /// </summary>
+        public static readonly BootModeType Uefi = new BootModeType("uefi");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BootModeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BootModeType FindValue(string value)
+        {
+            return FindValue<BootModeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BootModeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BootModeValues.
+    /// </summary>
+    public class BootModeValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LegacyBios for BootModeValues
+        /// </summary>
+        public static readonly BootModeValues LegacyBios = new BootModeValues("legacy-bios");
+        /// <summary>
+        /// Constant Uefi for BootModeValues
+        /// </summary>
+        public static readonly BootModeValues Uefi = new BootModeValues("uefi");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BootModeValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BootModeValues FindValue(string value)
+        {
+            return FindValue<BootModeValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BootModeValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BundleTaskState.
     /// </summary>
     public class BundleTaskState : ConstantClass
@@ -4748,6 +4848,10 @@ namespace Amazon.EC2
         /// Constant BlockDeviceMapping for ImageAttributeName
         /// </summary>
         public static readonly ImageAttributeName BlockDeviceMapping = new ImageAttributeName("blockDeviceMapping");
+        /// <summary>
+        /// Constant BootMode for ImageAttributeName
+        /// </summary>
+        public static readonly ImageAttributeName BootMode = new ImageAttributeName("bootMode");
         /// <summary>
         /// Constant Description for ImageAttributeName
         /// </summary>

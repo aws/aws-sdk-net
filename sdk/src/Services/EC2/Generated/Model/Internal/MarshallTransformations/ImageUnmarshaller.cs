@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("bootMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BootMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("creationDate", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

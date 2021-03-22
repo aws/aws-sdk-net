@@ -211,6 +211,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
         /// | <code>instance-store</code>).
         /// </para>

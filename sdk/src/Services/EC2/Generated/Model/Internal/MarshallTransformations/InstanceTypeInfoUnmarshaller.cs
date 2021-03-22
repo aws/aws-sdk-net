@@ -168,6 +168,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ProcessorInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("supportedBootModes/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedBootModes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("supportedRootDeviceTypes/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

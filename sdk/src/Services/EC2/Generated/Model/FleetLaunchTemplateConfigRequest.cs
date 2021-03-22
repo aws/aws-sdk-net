@@ -60,6 +60,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Any parameters that you specify override the same parameters in the launch template.
         /// </para>
+        ///  
+        /// <para>
+        /// For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300
+        /// items is allowed across all launch templates.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<FleetLaunchTemplateOverridesRequest> Overrides
