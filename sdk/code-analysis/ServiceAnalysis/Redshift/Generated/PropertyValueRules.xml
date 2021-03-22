@@ -825,6 +825,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyAquaConfigurationRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.AvailabilityZone</property>
     <max>2147483647</max>
   </property-value-rule>

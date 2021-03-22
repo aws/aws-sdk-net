@@ -5334,6 +5334,46 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  ModifyAquaConfiguration
+
+
+        /// <summary>
+        /// Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAquaConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyAquaConfiguration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">REST API Reference for ModifyAquaConfiguration Operation</seealso>
+        ModifyAquaConfigurationResponse ModifyAquaConfiguration(ModifyAquaConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAquaConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyAquaConfiguration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">REST API Reference for ModifyAquaConfiguration Operation</seealso>
+        Task<ModifyAquaConfigurationResponse> ModifyAquaConfigurationAsync(ModifyAquaConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyCluster
 
 
