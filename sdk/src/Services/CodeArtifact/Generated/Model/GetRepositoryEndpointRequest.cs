@@ -45,10 +45,6 @@ namespace Amazon.CodeArtifact.Model
     /// <para>
     ///  <code>maven</code> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>nuget</code> 
-    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class GetRepositoryEndpointRequest : AmazonCodeArtifactRequest
@@ -114,10 +110,6 @@ namespace Amazon.CodeArtifact.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>maven</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>nuget</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

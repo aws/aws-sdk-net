@@ -38,8 +38,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property PackageVersion. 
         /// <para>
-        ///  A <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-        /// </code> object that contains information about the requested package version. 
+        ///  A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
+        /// object that contains information about the requested package version. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

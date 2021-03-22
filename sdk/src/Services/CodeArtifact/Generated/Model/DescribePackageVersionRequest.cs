@@ -102,10 +102,6 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  <code>maven</code> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>nuget</code> 
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -138,11 +134,6 @@ namespace Amazon.CodeArtifact.Model
         ///  </li> <li> 
         /// <para>
         ///  A Python package does not contain a corresponding component, so Python packages do
-        /// not have a namespace. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  A NuGet package does not contain a corresponding component, so NuGet packages do
         /// not have a namespace. 
         /// </para>
         ///  </li> </ul>

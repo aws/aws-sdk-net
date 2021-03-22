@@ -39,8 +39,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Domains. 
         /// <para>
-        ///  The returned list of <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
-        /// </code> objects. 
+        ///  The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
+        /// objects. 
         /// </para>
         /// </summary>
         public List<DomainSummary> Domains

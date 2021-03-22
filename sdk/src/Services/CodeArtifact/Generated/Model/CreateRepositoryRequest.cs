@@ -63,7 +63,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The domain that contains the created repository. 
+        ///  The name of the domain that contains the created repository. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=50)]
