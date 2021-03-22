@@ -2598,6 +2598,87 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  GetFindingsPublicationConfiguration
+
+        /// <summary>
+        /// Retrieves the configuration settings for publishing findings to AWS Security Hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsPublicationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingsPublicationConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration">REST API Reference for GetFindingsPublicationConfiguration Operation</seealso>
+        public virtual GetFindingsPublicationConfigurationResponse GetFindingsPublicationConfiguration(GetFindingsPublicationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingsPublicationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingsPublicationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetFindingsPublicationConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFindingsPublicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsPublicationConfiguration operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindingsPublicationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration">REST API Reference for GetFindingsPublicationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetFindingsPublicationConfiguration(GetFindingsPublicationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingsPublicationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingsPublicationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFindingsPublicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindingsPublicationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetFindingsPublicationConfigurationResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration">REST API Reference for GetFindingsPublicationConfiguration Operation</seealso>
+        public virtual GetFindingsPublicationConfigurationResponse EndGetFindingsPublicationConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFindingsPublicationConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetFindingStatistics
 
         /// <summary>
@@ -3871,6 +3952,87 @@ namespace Amazon.Macie2
         public virtual PutClassificationExportConfigurationResponse EndPutClassificationExportConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutClassificationExportConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutFindingsPublicationConfiguration
+
+        /// <summary>
+        /// Updates the configuration settings for publishing findings to AWS Security Hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFindingsPublicationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutFindingsPublicationConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration">REST API Reference for PutFindingsPublicationConfiguration Operation</seealso>
+        public virtual PutFindingsPublicationConfigurationResponse PutFindingsPublicationConfiguration(PutFindingsPublicationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutFindingsPublicationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFindingsPublicationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutFindingsPublicationConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFindingsPublicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFindingsPublicationConfiguration operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutFindingsPublicationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration">REST API Reference for PutFindingsPublicationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutFindingsPublicationConfiguration(PutFindingsPublicationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutFindingsPublicationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFindingsPublicationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutFindingsPublicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutFindingsPublicationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutFindingsPublicationConfigurationResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration">REST API Reference for PutFindingsPublicationConfiguration Operation</seealso>
+        public virtual PutFindingsPublicationConfigurationResponse EndPutFindingsPublicationConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutFindingsPublicationConfigurationResponse>(asyncResult);
         }
 
         #endregion

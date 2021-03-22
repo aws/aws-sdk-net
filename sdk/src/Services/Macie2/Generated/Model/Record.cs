@@ -41,13 +41,15 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property JsonPath. 
         /// <para>
         /// The path, as a JSONPath expression, to the field in the record that contains the data.
+        /// If Amazon Macie detects sensitive data in the name of any element in the path, Macie
+        /// omits this field.
         /// </para>
         ///  
         /// <para>
-        /// If the name of an element exceeds 20 characters, Amazon Macie truncates the name by
-        /// removing characters from the beginning of the name. If the resulting full path exceeds
-        /// 250 characters, Macie also truncates the path, starting with the first element in
-        /// the path, until the path contains 250 or fewer characters.
+        /// If the name of an element exceeds 20 characters, Macie truncates the name by removing
+        /// characters from the beginning of the name. If the resulting full path exceeds 250
+        /// characters, Macie also truncates the path, starting with the first element in the
+        /// path, until the path contains 250 or fewer characters.
         /// </para>
         /// </summary>
         public string JsonPath

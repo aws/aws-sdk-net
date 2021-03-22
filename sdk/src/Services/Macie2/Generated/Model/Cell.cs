@@ -82,7 +82,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ColumnName. 
         /// <para>
-        /// The name of the column that contains the data, if available.
+        /// The name of the column that contains the data, if available. This value is also null
+        /// if Amazon Macie detects sensitive data in the name of any column in the file.
         /// </para>
         /// </summary>
         public string ColumnName

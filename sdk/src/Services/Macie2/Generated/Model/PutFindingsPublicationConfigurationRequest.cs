@@ -29,14 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Container for the parameters to the EnableMacie operation.
-    /// Enables Amazon Macie and specifies the configuration settings for a Macie account.
+    /// Container for the parameters to the PutFindingsPublicationConfiguration operation.
+    /// Updates the configuration settings for publishing findings to AWS Security Hub.
     /// </summary>
-    public partial class EnableMacieRequest : AmazonMacie2Request
+    public partial class PutFindingsPublicationConfigurationRequest : AmazonMacie2Request
     {
         private string _clientToken;
-        private FindingPublishingFrequency _findingPublishingFrequency;
-        private MacieStatus _status;
+        private SecurityHubConfiguration _securityHubConfiguration;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -57,39 +56,22 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FindingPublishingFrequency. Specifies how often to publish
-        /// updates to policy findings for the account. This includes publishing updates to AWS
-        /// Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
-        /// </summary>
-        public FindingPublishingFrequency FindingPublishingFrequency
-        {
-            get { return this._findingPublishingFrequency; }
-            set { this._findingPublishingFrequency = value; }
-        }
-
-        // Check to see if FindingPublishingFrequency property is set
-        internal bool IsSetFindingPublishingFrequency()
-        {
-            return this._findingPublishingFrequency != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property SecurityHubConfiguration. 
         /// <para>
-        /// Specifies the new status for the account. To enable Amazon Macie and start all Macie
-        /// activities for the account, set this value to ENABLED.
+        /// The configuration settings that determine which findings to publish to AWS Security
+        /// Hub.
         /// </para>
         /// </summary>
-        public MacieStatus Status
+        public SecurityHubConfiguration SecurityHubConfiguration
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._securityHubConfiguration; }
+            set { this._securityHubConfiguration = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if SecurityHubConfiguration property is set
+        internal bool IsSetSecurityHubConfiguration()
         {
-            return this._status != null;
+            return this._securityHubConfiguration != null;
         }
 
     }

@@ -70,9 +70,10 @@ namespace Amazon.Macie2.Model
         ///  
         /// <para>
         /// This value is often null for file types that are supported by Cell, Page, or Record
-        /// objects. Exceptions are the locations of: data in unstructured sections of an otherwise
-        /// structured file, such as a comment in a file; and, data in a malformed file that Amazon
-        /// Macie analyzes as plain text.
+        /// objects. Exceptions are the locations of data in: unstructured sections of an otherwise
+        /// structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes
+        /// as plain text; and, a CSV or TSV file that has any column names that contain sensitive
+        /// data.
         /// </para>
         /// </summary>
         public List<Range> LineRanges

@@ -87,8 +87,9 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current
-        /// status is IDLE or RUNNING. If you specify this value and the job's current status
-        /// is RUNNING, Macie immediately begins to pause all processing tasks for the job.
+        /// status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current
+        /// status is RUNNING, Macie immediately begins to pause all processing tasks for the
+        /// job.
         /// </para>
         ///  
         /// <para>
