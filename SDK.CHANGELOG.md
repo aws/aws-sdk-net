@@ -1,3 +1,15 @@
+### 3.5.136.0 (2021-03-23 18:17 UTC)
+* CostExplorer (3.5.9.0)
+	* You can now create cost categories with inherited value rules and specify default values for any uncategorized costs.
+* FIS (3.5.1.0)
+	* Updated maximum allowed size of action parameter from 64 to 1024
+* GameLift (3.5.5.0)
+	* GameLift adds support for using event notifications to monitor game session placements. Specify an SNS topic or use CloudWatch Events to track activity for a game session queue.
+* IdentityManagement (3.5.1.10)
+	* Documentation updates for IAM operations and descriptions.
+* Redshift (3.5.6.0)
+	* Removed APIs to control AQUA on clusters.
+
 ### 3.5.135.0 (2021-03-22 18:12 UTC)
 * CodeArtifact (3.5.2.38)
 	* Documentation updates for CodeArtifact
