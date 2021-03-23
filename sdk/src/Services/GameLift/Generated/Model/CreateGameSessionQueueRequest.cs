@@ -56,12 +56,14 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// To create a new queue, provide a name, timeout value, and a list of destinations.
     /// Optionally, specify a sort configuration and/or a filter, and define a set of latency
-    /// cap policies.
+    /// cap policies. You can also include the ARN for an Amazon Simple Notification Service
+    /// (SNS) topic to receive notifications of game session placement activity. Notifications
+    /// using SNS or CloudWatch events is the preferred way to track placement activity.
     /// </para>
     ///  
     /// <para>
     /// If successful, a new <code>GameSessionQueue</code> object is returned with an assigned
-    /// queue ARN. New game session requests, which are submitted to queue with <a>StartGameSessionPlacement</a>
+    /// queue ARN. New game session requests, which are submitted to the queue with <a>StartGameSessionPlacement</a>
     /// or <a>StartMatchmaking</a>, reference a queue's name or ARN. 
     /// </para>
     ///  
@@ -91,13 +93,35 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class CreateGameSessionQueueRequest : AmazonGameLiftRequest
     {
+        private string _customEventData;
         private List<GameSessionQueueDestination> _destinations = new List<GameSessionQueueDestination>();
         private FilterConfiguration _filterConfiguration;
         private string _name;
+        private string _notificationTarget;
         private List<PlayerLatencyPolicy> _playerLatencyPolicies = new List<PlayerLatencyPolicy>();
         private PriorityConfiguration _priorityConfiguration;
         private List<Tag> _tags = new List<Tag>();
         private int? _timeoutInSeconds;
+
+        /// <summary>
+        /// Gets and sets the property CustomEventData. 
+        /// <para>
+        ///  Information to be added to all events that are related to this game session queue.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string CustomEventData
+        {
+            get { return this._customEventData; }
+            set { this._customEventData = value; }
+        }
+
+        // Check to see if CustomEventData property is set
+        internal bool IsSetCustomEventData()
+        {
+            return this._customEventData != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Destinations. 
@@ -157,6 +181,27 @@ namespace Amazon.GameLift.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationTarget. 
+        /// <para>
+        /// An SNS topic ARN that is set up to receive game session placement notifications. See
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+        /// Setting up notifications for game session placement</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public string NotificationTarget
+        {
+            get { return this._notificationTarget; }
+            set { this._notificationTarget = value; }
+        }
+
+        // Check to see if NotificationTarget property is set
+        internal bool IsSetNotificationTarget()
+        {
+            return this._notificationTarget != null;
         }
 
         /// <summary>

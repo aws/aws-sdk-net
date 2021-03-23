@@ -824,8 +824,9 @@ namespace Amazon.GameLift
         /// that are created in the following AWS Regions support multiple locations: us-east-1
         /// (N. Virginia), us-west-2 (Oregon), eu-central-1 (Frankfurt), eu-west-1 (Ireland),
         /// ap-southeast-2 (Sydney), ap-northeast-1 (Tokyo), and ap-northeast-2 (Seoul). Fleets
-        /// that created in other GameLift Regions can have instances in the fleet Region only.
-        /// All instances deployed to fleet locations use the same configuration.
+        /// that are created in other GameLift Regions can deploy instances in the fleet's home
+        /// Region only. All fleet instances use the same configuration regardless of location;
+        /// however, you can adjust capacity settings and turn auto-scaling on/off for each location.
         /// </para>
         ///  
         /// <para>
@@ -1407,12 +1408,14 @@ namespace Amazon.GameLift
         /// <para>
         /// To create a new queue, provide a name, timeout value, and a list of destinations.
         /// Optionally, specify a sort configuration and/or a filter, and define a set of latency
-        /// cap policies.
+        /// cap policies. You can also include the ARN for an Amazon Simple Notification Service
+        /// (SNS) topic to receive notifications of game session placement activity. Notifications
+        /// using SNS or CloudWatch events is the preferred way to track placement activity.
         /// </para>
         ///  
         /// <para>
         /// If successful, a new <code>GameSessionQueue</code> object is returned with an assigned
-        /// queue ARN. New game session requests, which are submitted to queue with <a>StartGameSessionPlacement</a>
+        /// queue ARN. New game session requests, which are submitted to the queue with <a>StartGameSessionPlacement</a>
         /// or <a>StartMatchmaking</a>, reference a queue's name or ARN. 
         /// </para>
         ///  
@@ -1454,6 +1457,10 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.LimitExceededException">
         /// The requested operation would cause the resource to exceed the allowed service limit.
         /// Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -1531,8 +1538,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// In addition, you must set up an Amazon Simple Notification Service (SNS) to receive
-        /// matchmaking notifications, and provide the topic ARN in the matchmaking configuration.
+        /// In addition, you must set up an Amazon Simple Notification Service (SNS) topic to
+        /// receive matchmaking notifications. Provide the topic ARN in the matchmaking configuration.
         /// An alternative method, continuously polling ticket status with <a>DescribeMatchmaking</a>,
         /// is only suitable for games in development with low matchmaking usage.
         /// </para>

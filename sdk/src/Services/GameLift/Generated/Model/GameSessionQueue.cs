@@ -44,13 +44,35 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class GameSessionQueue
     {
+        private string _customEventData;
         private List<GameSessionQueueDestination> _destinations = new List<GameSessionQueueDestination>();
         private FilterConfiguration _filterConfiguration;
         private string _gameSessionQueueArn;
         private string _name;
+        private string _notificationTarget;
         private List<PlayerLatencyPolicy> _playerLatencyPolicies = new List<PlayerLatencyPolicy>();
         private PriorityConfiguration _priorityConfiguration;
         private int? _timeoutInSeconds;
+
+        /// <summary>
+        /// Gets and sets the property CustomEventData. 
+        /// <para>
+        ///  Information that is added to all events that are related to this game session queue.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string CustomEventData
+        {
+            get { return this._customEventData; }
+            set { this._customEventData = value; }
+        }
+
+        // Check to see if CustomEventData property is set
+        internal bool IsSetCustomEventData()
+        {
+            return this._customEventData != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Destinations. 
@@ -133,6 +155,27 @@ namespace Amazon.GameLift.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationTarget. 
+        /// <para>
+        /// An SNS topic ARN that is set up to receive game session placement notifications. See
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+        /// Setting up notifications for game session placement</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public string NotificationTarget
+        {
+            get { return this._notificationTarget; }
+            set { this._notificationTarget = value; }
+        }
+
+        // Check to see if NotificationTarget property is set
+        internal bool IsSetNotificationTarget()
+        {
+            return this._notificationTarget != null;
         }
 
         /// <summary>

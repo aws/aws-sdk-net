@@ -64,6 +64,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomEventData", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomEventData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Destinations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<GameSessionQueueDestination, GameSessionQueueDestinationUnmarshaller>(GameSessionQueueDestinationUnmarshaller.Instance);
@@ -86,6 +92,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NotificationTarget", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NotificationTarget = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PlayerLatencyPolicies", targetDepth))

@@ -50,8 +50,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// In addition, you must set up an Amazon Simple Notification Service (SNS) to receive
-    /// matchmaking notifications, and provide the topic ARN in the matchmaking configuration.
+    /// In addition, you must set up an Amazon Simple Notification Service (SNS) topic to
+    /// receive matchmaking notifications. Provide the topic ARN in the matchmaking configuration.
     /// An alternative method, continuously polling ticket status with <a>DescribeMatchmaking</a>,
     /// is only suitable for games in development with low matchmaking usage.
     /// </para>
@@ -352,7 +352,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NotificationTarget. 
         /// <para>
-        /// An SNS topic ARN that is set up to receive matchmaking notifications.
+        /// An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+        /// Setting up notifications for matchmaking</a> for more information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]

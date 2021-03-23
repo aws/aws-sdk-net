@@ -68,6 +68,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomEventData())
+                {
+                    context.Writer.WritePropertyName("CustomEventData");
+                    context.Writer.Write(publicRequest.CustomEventData);
+                }
+
                 if(publicRequest.IsSetDestinations())
                 {
                     context.Writer.WritePropertyName("Destinations");
@@ -99,6 +105,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetNotificationTarget())
+                {
+                    context.Writer.WritePropertyName("NotificationTarget");
+                    context.Writer.Write(publicRequest.NotificationTarget);
                 }
 
                 if(publicRequest.IsSetPlayerLatencyPolicies())
