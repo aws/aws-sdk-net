@@ -34,7 +34,6 @@ namespace Amazon.Redshift.Model
     public partial class Cluster
     {
         private bool? _allowVersionUpgrade;
-        private AquaConfiguration _aquaConfiguration;
         private int? _automatedSnapshotRetentionPeriod;
         private string _availabilityZone;
         private string _availabilityZoneRelocationStatus;
@@ -101,24 +100,6 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAllowVersionUpgrade()
         {
             return this._allowVersionUpgrade.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property AquaConfiguration. 
-        /// <para>
-        /// The AQUA (Advanced Query Accelerator) configuration of the cluster.
-        /// </para>
-        /// </summary>
-        public AquaConfiguration AquaConfiguration
-        {
-            get { return this._aquaConfiguration; }
-            set { this._aquaConfiguration = value; }
-        }
-
-        // Check to see if AquaConfiguration property is set
-        internal bool IsSetAquaConfiguration()
-        {
-            return this._aquaConfiguration != null;
         }
 
         /// <summary>

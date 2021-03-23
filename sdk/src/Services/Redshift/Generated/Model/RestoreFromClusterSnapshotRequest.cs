@@ -53,7 +53,6 @@ namespace Amazon.Redshift.Model
     {
         private string _additionalInfo;
         private bool? _allowVersionUpgrade;
-        private AquaConfigurationStatus _aquaConfigurationStatus;
         private int? _automatedSnapshotRetentionPeriod;
         private string _availabilityZone;
         private bool? _availabilityZoneRelocation;
@@ -120,39 +119,6 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAllowVersionUpgrade()
         {
             return this._allowVersionUpgrade.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property AquaConfigurationStatus. 
-        /// <para>
-        /// The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator)
-        /// after the cluster is restored. Possible values include the following.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift
-        /// node type.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// disabled - Don't use AQUA. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// auto - Amazon Redshift determines whether to use AQUA.
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        public AquaConfigurationStatus AquaConfigurationStatus
-        {
-            get { return this._aquaConfigurationStatus; }
-            set { this._aquaConfigurationStatus = value; }
-        }
-
-        // Check to see if AquaConfigurationStatus property is set
-        internal bool IsSetAquaConfigurationStatus()
-        {
-            return this._aquaConfigurationStatus != null;
         }
 
         /// <summary>

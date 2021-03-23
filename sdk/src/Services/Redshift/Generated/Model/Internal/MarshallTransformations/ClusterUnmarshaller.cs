@@ -60,12 +60,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllowVersionUpgrade = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("AquaConfiguration", targetDepth))
-                    {
-                        var unmarshaller = AquaConfigurationUnmarshaller.Instance;
-                        unmarshalledObject.AquaConfiguration = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("AutomatedSnapshotRetentionPeriod", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

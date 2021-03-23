@@ -6500,59 +6500,6 @@ namespace Amazon.Redshift
 
         #endregion
         
-        #region  ModifyAquaConfiguration
-
-
-        /// <summary>
-        /// Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ModifyAquaConfiguration service method.</param>
-        /// 
-        /// <returns>The response from the ModifyAquaConfiguration service method, as returned by Redshift.</returns>
-        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-        /// </exception>
-        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
-        /// The requested operation isn't supported.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">REST API Reference for ModifyAquaConfiguration Operation</seealso>
-        public virtual ModifyAquaConfigurationResponse ModifyAquaConfiguration(ModifyAquaConfigurationRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ModifyAquaConfigurationRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ModifyAquaConfigurationResponseUnmarshaller.Instance;
-
-            return Invoke<ModifyAquaConfigurationResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ModifyAquaConfiguration service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ModifyAquaConfiguration service method, as returned by Redshift.</returns>
-        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-        /// </exception>
-        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
-        /// The requested operation isn't supported.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">REST API Reference for ModifyAquaConfiguration Operation</seealso>
-        public virtual Task<ModifyAquaConfigurationResponse> ModifyAquaConfigurationAsync(ModifyAquaConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ModifyAquaConfigurationRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ModifyAquaConfigurationResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<ModifyAquaConfigurationResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  ModifyCluster
 
 
