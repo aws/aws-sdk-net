@@ -34,8 +34,29 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class CostCategoryRule
     {
+        private CostCategoryInheritedValueDimension _inheritedValue;
         private Expression _rule;
+        private CostCategoryRuleType _type;
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property InheritedValue. 
+        /// <para>
+        /// The value the line item will be categorized as, if the line item contains the matched
+        /// dimension.
+        /// </para>
+        /// </summary>
+        public CostCategoryInheritedValueDimension InheritedValue
+        {
+            get { return this._inheritedValue; }
+            set { this._inheritedValue = value; }
+        }
+
+        // Check to see if InheritedValue property is set
+        internal bool IsSetInheritedValue()
+        {
+            return this._inheritedValue != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Rule. 
@@ -59,7 +80,6 @@ namespace Amazon.CostExplorer.Model
         /// Comparisons</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Expression Rule
         {
             get { return this._rule; }
@@ -73,9 +93,33 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code>
+        /// or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the
+        /// flexibility of defining a rule that dynamically inherits the cost category value from
+        /// the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For
+        /// example, if you wanted to dynamically group costs based on the value of a specific
+        /// tag key, you would first choose an inherited value rule type, then choose the tag
+        /// dimension and specify the tag key to use.
+        /// </para>
+        /// </summary>
+        public CostCategoryRuleType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Value.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=50)]
         public string Value
         {
             get { return this._value; }

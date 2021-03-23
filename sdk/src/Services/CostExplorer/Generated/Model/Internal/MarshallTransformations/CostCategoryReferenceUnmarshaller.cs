@@ -70,6 +70,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CostCategoryArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EffectiveEnd", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

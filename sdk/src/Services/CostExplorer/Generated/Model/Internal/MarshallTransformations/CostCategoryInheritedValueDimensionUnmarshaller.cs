@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CostCategoryRule Object
+    /// Response Unmarshaller for CostCategoryInheritedValueDimension Object
     /// </summary>  
-    public class CostCategoryRuleUnmarshaller : IUnmarshaller<CostCategoryRule, XmlUnmarshallerContext>, IUnmarshaller<CostCategoryRule, JsonUnmarshallerContext>
+    public class CostCategoryInheritedValueDimensionUnmarshaller : IUnmarshaller<CostCategoryInheritedValueDimension, XmlUnmarshallerContext>, IUnmarshaller<CostCategoryInheritedValueDimension, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CostCategoryRule IUnmarshaller<CostCategoryRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CostCategoryInheritedValueDimension IUnmarshaller<CostCategoryInheritedValueDimension, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CostCategoryRule Unmarshall(JsonUnmarshallerContext context)
+        public CostCategoryInheritedValueDimension Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CostCategoryRule unmarshalledObject = new CostCategoryRule();
+            CostCategoryInheritedValueDimension unmarshalledObject = new CostCategoryInheritedValueDimension();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InheritedValue", targetDepth))
-                {
-                    var unmarshaller = CostCategoryInheritedValueDimensionUnmarshaller.Instance;
-                    unmarshalledObject.InheritedValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Rule", targetDepth))
-                {
-                    var unmarshaller = ExpressionUnmarshaller.Instance;
-                    unmarshalledObject.Rule = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("DimensionKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DimensionKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Value", targetDepth))
+                if (context.TestExpression("DimensionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DimensionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
 
 
-        private static CostCategoryRuleUnmarshaller _instance = new CostCategoryRuleUnmarshaller();        
+        private static CostCategoryInheritedValueDimensionUnmarshaller _instance = new CostCategoryInheritedValueDimensionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CostCategoryRuleUnmarshaller Instance
+        public static CostCategoryInheritedValueDimensionUnmarshaller Instance
         {
             get
             {

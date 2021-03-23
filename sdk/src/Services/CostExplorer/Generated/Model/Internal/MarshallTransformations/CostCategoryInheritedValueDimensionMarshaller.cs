@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CostCategoryRule Marshaller
+    /// CostCategoryInheritedValueDimension Marshaller
     /// </summary>       
-    public class CostCategoryRuleMarshaller : IRequestMarshaller<CostCategoryRule, JsonMarshallerContext> 
+    public class CostCategoryInheritedValueDimensionMarshaller : IRequestMarshaller<CostCategoryInheritedValueDimension, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,18 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CostCategoryRule requestObject, JsonMarshallerContext context)
+        public void Marshall(CostCategoryInheritedValueDimension requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetInheritedValue())
+            if(requestObject.IsSetDimensionKey())
             {
-                context.Writer.WritePropertyName("InheritedValue");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CostCategoryInheritedValueDimensionMarshaller.Instance;
-                marshaller.Marshall(requestObject.InheritedValue, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("DimensionKey");
+                context.Writer.Write(requestObject.DimensionKey);
             }
 
-            if(requestObject.IsSetRule())
+            if(requestObject.IsSetDimensionName())
             {
-                context.Writer.WritePropertyName("Rule");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ExpressionMarshaller.Instance;
-                marshaller.Marshall(requestObject.Rule, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
-            }
-
-            if(requestObject.IsSetValue())
-            {
-                context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WritePropertyName("DimensionName");
+                context.Writer.Write(requestObject.DimensionName);
             }
 
         }
@@ -84,7 +62,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static CostCategoryRuleMarshaller Instance = new CostCategoryRuleMarshaller();
+        public readonly static CostCategoryInheritedValueDimensionMarshaller Instance = new CostCategoryInheritedValueDimensionMarshaller();
 
     }
 }

@@ -74,6 +74,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CostCategoryArn);
                 }
 
+                if(publicRequest.IsSetDefaultValue())
+                {
+                    context.Writer.WritePropertyName("DefaultValue");
+                    context.Writer.Write(publicRequest.DefaultValue);
+                }
+
                 if(publicRequest.IsSetRules())
                 {
                     context.Writer.WritePropertyName("Rules");

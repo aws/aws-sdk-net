@@ -35,6 +35,7 @@ namespace Amazon.CostExplorer.Model
     public partial class CostCategory
     {
         private string _costCategoryArn;
+        private string _defaultValue;
         private string _effectiveEnd;
         private string _effectiveStart;
         private string _name;
@@ -59,6 +60,22 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetCostCategoryArn()
         {
             return this._costCategoryArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultValue.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public string DefaultValue
+        {
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
+        }
+
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
+        {
+            return this._defaultValue != null;
         }
 
         /// <summary>
@@ -102,7 +119,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Name.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string Name
         {
             get { return this._name; }

@@ -37,6 +37,7 @@ namespace Amazon.CostExplorer.Model
     public partial class UpdateCostCategoryDefinitionRequest : AmazonCostExplorerRequest
     {
         private string _costCategoryArn;
+        private string _defaultValue;
         private List<CostCategoryRule> _rules = new List<CostCategoryRule>();
         private CostCategoryRuleVersion _ruleVersion;
 
@@ -57,6 +58,22 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetCostCategoryArn()
         {
             return this._costCategoryArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultValue.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public string DefaultValue
+        {
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
+        }
+
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
+        {
+            return this._defaultValue != null;
         }
 
         /// <summary>

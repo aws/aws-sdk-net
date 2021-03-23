@@ -53,7 +53,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Key.
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=50)]
         public string Key
         {
             get { return this._key; }

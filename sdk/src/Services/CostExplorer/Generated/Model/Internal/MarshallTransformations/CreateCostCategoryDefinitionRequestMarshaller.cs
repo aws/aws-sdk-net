@@ -68,6 +68,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDefaultValue())
+                {
+                    context.Writer.WritePropertyName("DefaultValue");
+                    context.Writer.Write(publicRequest.DefaultValue);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

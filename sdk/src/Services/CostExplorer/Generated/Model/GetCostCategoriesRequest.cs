@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryName.
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=50)]
         public string CostCategoryName
         {
             get { return this._costCategoryName; }
