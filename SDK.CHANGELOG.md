@@ -1,3 +1,17 @@
+### 3.5.137.0 (2021-03-24 18:15 UTC)
+* EC2 (3.5.35.0)
+	* maximumEfaInterfaces added to DescribeInstanceTypes API
+* Greengrass (3.5.2.0)
+	* Updated the parameters to make name required for CreateGroup API.
+* Route53 (3.5.1.29)
+	* Documentation updates for route53
+* S3 (3.5.10.1)
+	* Documentation updates for Amazon S3
+* S3Control (3.5.6.1)
+	* Documentation updates for s3-control
+* SimpleSystemsManagement (3.5.12.0)
+	* This release allows SSM Explorer customers to enable OpsData sources across their organization when creating a resource data sync.
+
 ### 3.5.136.0 (2021-03-23 18:17 UTC)
 * CostExplorer (3.5.9.0)
 	* You can now create cost categories with inherited value rules and specify default values for any uncategorized costs.
