@@ -34,7 +34,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    ///  <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a time
+    ///  <code>ListResourceRecordSets</code> returns up to 300 resource record sets at a time
     /// in ASCII order, beginning at a position specified by the <code>name</code> and <code>type</code>
     /// elements.
     /// </para>
