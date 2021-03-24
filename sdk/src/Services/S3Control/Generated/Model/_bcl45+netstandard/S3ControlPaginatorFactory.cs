@@ -67,6 +67,14 @@ namespace Amazon.S3Control.Model
         {
             return new ListRegionalBucketsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListStorageLensConfigurations operation
+        ///</summary>
+        public IListStorageLensConfigurationsPaginator ListStorageLensConfigurations(ListStorageLensConfigurationsRequest request) 
+        {
+            return new ListStorageLensConfigurationsPaginator(this.client, request);
+        }
     }
 }
 #endif

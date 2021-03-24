@@ -45,6 +45,11 @@ namespace Amazon.S3Control.Model
         /// Paginator for ListRegionalBuckets operation
         ///</summary>
         IListRegionalBucketsPaginator ListRegionalBuckets(ListRegionalBucketsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStorageLensConfigurations operation
+        ///</summary>
+        IListStorageLensConfigurationsPaginator ListStorageLensConfigurations(ListStorageLensConfigurationsRequest request);
     }
 }
 #endif

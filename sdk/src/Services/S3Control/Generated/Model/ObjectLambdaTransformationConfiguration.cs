@@ -39,7 +39,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// A container for the action of an Object Lambda Access Point configuration.
+        /// A container for the action of an Object Lambda Access Point configuration. Valid input
+        /// is <code>GetObject</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
