@@ -76,6 +76,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the group.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
