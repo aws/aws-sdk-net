@@ -65,7 +65,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/playbackConfigurations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

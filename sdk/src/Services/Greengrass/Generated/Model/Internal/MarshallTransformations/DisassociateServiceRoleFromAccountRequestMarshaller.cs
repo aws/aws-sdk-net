@@ -59,7 +59,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             request.ResourcePath = "/greengrass/servicerole";
-            request.MarshallerVersion = 2;
 
             return request;
         }

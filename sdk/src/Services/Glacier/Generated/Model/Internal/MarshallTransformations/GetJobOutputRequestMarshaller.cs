@@ -66,7 +66,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 throw new AmazonGlacierException("Request object does not have required field VaultName set");
             request.AddPathResource("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
             request.ResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetRange())
                 request.Headers["Range"] = publicRequest.Range;

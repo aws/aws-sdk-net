@@ -221,16 +221,9 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("\";\r\n\t\t\trequest.MarshallerVersion = ");
+            this.Write("\";\r\n");
             
             #line 83 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(MarshallerVersion));
-            
-            #line default
-            #line hidden
-            this.Write(";\r\n");
-            
-            #line 84 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
   
 
     var payload= this.Operation.RequestPayloadMember;
@@ -245,7 +238,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\tusing (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCultu" +
                     "re))\r\n\t\t\t{\r\n\t\t\t\tJsonWriter writer = new JsonWriter(stringWriter);\r\n");
             
-            #line 95 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 94 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
 		if(shouldMarshallPayload)	
 		{
@@ -255,7 +248,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\tvar context = new JsonMarshallerContext(request, writer);\r\n");
             
-            #line 100 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 99 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
 			ProcessStructure(0, "publicRequest." + this.Operation.RequestPayloadMember.PropertyName, this.Operation.RequestPayloadMember.Shape);
 		}
@@ -268,7 +261,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\t\twriter.WriteObjectStart();\r\n\t\t\t\tvar context = new JsonMarshallerContext(reque" +
                     "st, writer);\r\n");
             
-            #line 108 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 107 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
 			ProcessMembers(1, "publicRequest", this.Operation.RequestBodyMembers);
 
@@ -277,7 +270,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\r\n\t\t\t\twriter.WriteObjectEnd();\r\n");
             
-            #line 113 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 112 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 		}
 
@@ -287,7 +280,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\t\tstring snippet = stringWriter.ToString();\r\n\t\t\t\trequest.Content = System.Text." +
                     "Encoding.UTF8.GetBytes(snippet);\r\n");
             
-            #line 118 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 117 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 					CheckContentMd5Header(this.Operation, "snippet");
 
@@ -296,7 +289,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t}\r\n\r\n");
             
-            #line 123 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 122 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 	}
     else if (payload != null)
@@ -307,14 +300,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.ContentStream =  publicRequest.");
             
-            #line 128 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 127 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.PropertyName));
             
             #line default
             #line hidden
             this.Write(" ?? new MemoryStream();\r\n");
             
-            #line 129 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 128 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
 		var requiresLength = payload.RequiresLength;		
 		if(!requiresLength && payload.IsStreaming && this.Operation.AuthType == OperationAuthType.V4UnsignedBody)
@@ -334,7 +327,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 			}
 ");
             
-            #line 143 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 142 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 		}
 		else
@@ -349,7 +342,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     "nException(\"Cannot determine stream length for the payload when content-length i" +
                     "s required.\");\r\n\t\t\t}\r\n");
             
-            #line 154 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 153 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 			}
 
@@ -359,7 +352,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\trequest.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  \r\n\t\t\t\trequest.C" +
                     "ontentStream.Length.ToString(CultureInfo.InvariantCulture);\r\n");
             
-            #line 159 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 158 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 		}		
 
@@ -369,7 +362,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\trequest.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = \"binary/octet-stre" +
                     "am\";\r\n");
             
-            #line 163 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 162 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
     }
 	else if (this.Config.ServiceModel.Type == ServiceType.Json)
@@ -381,7 +374,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\tvar content = \"{}\";\r\n            request.Content = System.Text.Encoding.UTF8.G" +
                     "etBytes(content);\r\n");
             
-            #line 170 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 169 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 				CheckContentMd5Header(this.Operation, "content");
 
@@ -389,7 +382,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             
-            #line 173 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 172 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 	}
 
@@ -407,7 +400,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.UseQueryString = true;\r\n");
             
-            #line 186 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 185 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 	}
 
 	if(!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
@@ -420,7 +413,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\r\n\t\t\treturn request;\r\n\t\t}\r\n");
             
-            #line 196 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 195 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 				
 		this.AddRequestSingletonMethod();
 

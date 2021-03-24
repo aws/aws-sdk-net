@@ -65,7 +65,6 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointSMSVoiceException("Request object does not have required field EventDestinationName set");
             request.AddPathResource("{EventDestinationName}", StringUtils.FromString(publicRequest.EventDestinationName));
             request.ResourcePath = "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

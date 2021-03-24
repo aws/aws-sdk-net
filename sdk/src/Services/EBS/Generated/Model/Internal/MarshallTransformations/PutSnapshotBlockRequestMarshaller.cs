@@ -66,7 +66,6 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
                 throw new AmazonEBSException("Request object does not have required field SnapshotId set");
             request.AddPathResource("{snapshotId}", StringUtils.FromString(publicRequest.SnapshotId));
             request.ResourcePath = "/snapshots/{snapshotId}/blocks/{blockIndex}";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.BlockData ?? new MemoryStream();
             if(request.ContentStream.CanSeek)
             {

@@ -63,7 +63,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field ChannelArn set");
             request.AddPathResource("{channelArn}", StringUtils.FromString(publicRequest.ChannelArn));
             request.ResourcePath = "/channels/{channelArn}/readMarker";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetChimeBearer())
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;

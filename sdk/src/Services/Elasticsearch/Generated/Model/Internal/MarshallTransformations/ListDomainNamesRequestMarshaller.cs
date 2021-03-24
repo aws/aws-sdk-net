@@ -59,7 +59,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/2015-01-01/domain";
-            request.MarshallerVersion = 2;
 
             return request;
         }

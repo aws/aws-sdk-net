@@ -69,7 +69,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field IngestionId set");
             request.AddPathResource("{IngestionId}", StringUtils.FromString(publicRequest.IngestionId));
             request.ResourcePath = "/accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions/{IngestionId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

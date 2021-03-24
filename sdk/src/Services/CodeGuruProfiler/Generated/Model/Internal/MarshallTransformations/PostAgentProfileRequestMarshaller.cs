@@ -69,7 +69,6 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 request.Parameters.Add("profileToken", System.Guid.NewGuid().ToString());
                 
             request.ResourcePath = "/profilingGroups/{profilingGroupName}/agentProfile";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.AgentProfile ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

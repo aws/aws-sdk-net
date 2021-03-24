@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ConfirmationToken set");
             request.AddPathResource("{confirmationToken+}", StringUtils.FromString(publicRequest.ConfirmationToken.TrimStart('/')));
             request.ResourcePath = "/confirmdestination/{confirmationToken+}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

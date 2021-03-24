@@ -65,7 +65,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetIncludeStatistics())
                 request.Parameters.Add("includeStatistics", StringUtils.FromBool(publicRequest.IncludeStatistics));
             request.ResourcePath = "/datastores/{datastoreName}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

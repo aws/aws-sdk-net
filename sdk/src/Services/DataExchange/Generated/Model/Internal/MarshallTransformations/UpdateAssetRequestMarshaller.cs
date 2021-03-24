@@ -69,7 +69,6 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 throw new AmazonDataExchangeException("Request object does not have required field RevisionId set");
             request.AddPathResource("{RevisionId}", StringUtils.FromString(publicRequest.RevisionId));
             request.ResourcePath = "/v1/data-sets/{DataSetId}/revisions/{RevisionId}/assets/{AssetId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

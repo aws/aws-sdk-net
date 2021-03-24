@@ -71,7 +71,6 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
             request.ResourcePath = "/internal/profilingGroups/{profilingGroupName}/recommendations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

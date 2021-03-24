@@ -41,9 +41,6 @@ namespace Amazon.IoTDeviceAdvisor
     /// to get your device qualified for the AWS Partner Device Catalog without the need to
     /// send your device in and wait for it to be tested.
     /// </summary>
-#if NETSTANDARD13
-    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
-#endif
     public partial interface IAmazonIoTDeviceAdvisor : IAmazonService, IDisposable
     {
 #if AWS_ASYNC_ENUMERABLES_API

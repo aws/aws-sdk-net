@@ -65,7 +65,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 throw new AmazonIoTAnalyticsException("Request object does not have required field ReprocessingId set");
             request.AddPathResource("{reprocessingId}", StringUtils.FromString(publicRequest.ReprocessingId));
             request.ResourcePath = "/pipelines/{pipelineName}/reprocessing/{reprocessingId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

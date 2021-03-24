@@ -68,7 +68,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPortalId())
                 request.Parameters.Add("portalId", StringUtils.FromString(publicRequest.PortalId));
             request.ResourcePath = "/projects";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
             request.HostPrefix = $"monitor.";

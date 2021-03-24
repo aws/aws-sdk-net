@@ -63,7 +63,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetArn())
                 request.Parameters.Add("Arn", StringUtils.FromString(publicRequest.Arn));
             request.ResourcePath = "/2018-10-31/layers";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

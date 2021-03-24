@@ -68,7 +68,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTaskDefinitionType())
                 request.Parameters.Add("taskDefinitionType", StringUtils.FromString(publicRequest.TaskDefinitionType));
             request.ResourcePath = "/wireless-gateway-task-definitions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

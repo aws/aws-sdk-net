@@ -68,7 +68,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetOnlyAssociated())
                 request.Parameters.Add("OnlyAssociated", StringUtils.FromBool(publicRequest.OnlyAssociated));
             request.ResourcePath = "/members";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

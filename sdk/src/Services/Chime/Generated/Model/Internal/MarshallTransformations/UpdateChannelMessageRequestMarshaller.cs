@@ -66,7 +66,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field MessageId set");
             request.AddPathResource("{messageId}", StringUtils.FromString(publicRequest.MessageId));
             request.ResourcePath = "/channels/{channelArn}/messages/{messageId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

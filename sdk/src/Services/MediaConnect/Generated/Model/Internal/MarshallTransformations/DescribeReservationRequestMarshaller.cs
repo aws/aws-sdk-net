@@ -62,7 +62,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field ReservationArn set");
             request.AddPathResource("{reservationArn}", StringUtils.FromString(publicRequest.ReservationArn));
             request.ResourcePath = "/v1/reservations/{reservationArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

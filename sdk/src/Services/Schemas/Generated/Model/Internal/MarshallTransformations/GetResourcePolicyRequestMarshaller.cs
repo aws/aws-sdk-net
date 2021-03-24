@@ -62,7 +62,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRegistryName())
                 request.Parameters.Add("registryName", StringUtils.FromString(publicRequest.RegistryName));
             request.ResourcePath = "/v1/policy";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

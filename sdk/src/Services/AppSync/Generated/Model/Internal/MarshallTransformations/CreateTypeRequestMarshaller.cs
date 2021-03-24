@@ -63,7 +63,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
             request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             request.ResourcePath = "/v1/apis/{apiId}/types";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

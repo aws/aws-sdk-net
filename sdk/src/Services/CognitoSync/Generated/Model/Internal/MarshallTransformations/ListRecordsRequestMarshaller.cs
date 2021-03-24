@@ -80,7 +80,6 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSyncSessionToken())
                 request.Parameters.Add("syncSessionToken", StringUtils.FromString(publicRequest.SyncSessionToken));
             request.ResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

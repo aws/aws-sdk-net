@@ -66,7 +66,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSubdivisionCode())
                 request.Parameters.Add("subdivisioncode", StringUtils.FromString(publicRequest.SubdivisionCode));
             request.ResourcePath = "/2013-04-01/geolocation";
-            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

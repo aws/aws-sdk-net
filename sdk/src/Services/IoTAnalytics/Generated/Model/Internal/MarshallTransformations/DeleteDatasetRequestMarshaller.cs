@@ -62,7 +62,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 throw new AmazonIoTAnalyticsException("Request object does not have required field DatasetName set");
             request.AddPathResource("{datasetName}", StringUtils.FromString(publicRequest.DatasetName));
             request.ResourcePath = "/datasets/{datasetName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

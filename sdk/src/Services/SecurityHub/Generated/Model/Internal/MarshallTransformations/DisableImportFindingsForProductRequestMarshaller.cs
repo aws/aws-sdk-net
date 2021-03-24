@@ -62,7 +62,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 throw new AmazonSecurityHubException("Request object does not have required field ProductSubscriptionArn set");
             request.AddPathResource("{ProductSubscriptionArn+}", StringUtils.FromString(publicRequest.ProductSubscriptionArn.TrimStart('/')));
             request.ResourcePath = "/productSubscriptions/{ProductSubscriptionArn+}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

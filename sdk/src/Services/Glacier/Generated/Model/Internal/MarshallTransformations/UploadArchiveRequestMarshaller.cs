@@ -64,7 +64,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 throw new AmazonGlacierException("Request object does not have required field VaultName set");
             request.AddPathResource("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
             request.ResourcePath = "/{accountId}/vaults/{vaultName}/archives";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

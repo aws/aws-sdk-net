@@ -63,7 +63,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field InputSecurityGroupId set");
             request.AddPathResource("{inputSecurityGroupId}", StringUtils.FromString(publicRequest.InputSecurityGroupId));
             request.ResourcePath = "/prod/inputSecurityGroups/{inputSecurityGroupId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

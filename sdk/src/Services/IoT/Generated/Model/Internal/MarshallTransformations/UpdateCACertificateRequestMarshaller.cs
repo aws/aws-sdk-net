@@ -69,7 +69,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNewStatus())
                 request.Parameters.Add("newStatus", StringUtils.FromString(publicRequest.NewStatus));
             request.ResourcePath = "/cacertificate/{caCertificateId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -74,7 +74,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRecursive())
                 request.Parameters.Add("recursive", StringUtils.FromBool(publicRequest.Recursive));
             request.ResourcePath = "/thing-groups";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

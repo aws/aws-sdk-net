@@ -67,7 +67,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field UserId set");
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/accounts/{accountId}/users/{userId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -68,7 +68,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRevisionId())
                 request.Parameters.Add("revisionId", StringUtils.FromString(publicRequest.RevisionId));
             request.ResourcePath = "/signing-profiles/{profileName}/permissions/{statementId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

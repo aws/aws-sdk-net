@@ -65,7 +65,6 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next_token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/assignment/accounts";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAccessToken())
                 request.Headers["x-amz-sso_bearer_token"] = publicRequest.AccessToken;

@@ -23,7 +23,6 @@ using System.Text.RegularExpressions;
 
 namespace Amazon.SecurityToken.SAML
 {
-#if !NETSTANDARD13
     /// <summary>
     /// Implementation of IAuthenticationController, allowing authentication calls against
     /// an AD FS endpoint.
@@ -243,5 +242,4 @@ namespace Amazon.SecurityToken.SAML
             return new SAMLAssertion(samlAssertion);
         }
     }
-#endif
-    }
+}

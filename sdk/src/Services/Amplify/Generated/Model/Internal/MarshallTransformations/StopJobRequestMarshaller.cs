@@ -68,7 +68,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field JobId set");
             request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
             request.ResourcePath = "/apps/{appId}/branches/{branchName}/jobs/{jobId}/stop";
-            request.MarshallerVersion = 2;
 
             return request;
         }

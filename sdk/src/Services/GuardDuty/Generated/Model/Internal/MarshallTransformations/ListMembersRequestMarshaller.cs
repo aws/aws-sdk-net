@@ -71,7 +71,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetOnlyAssociated())
                 request.Parameters.Add("onlyAssociated", StringUtils.FromString(publicRequest.OnlyAssociated));
             request.ResourcePath = "/detector/{detectorId}/member";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

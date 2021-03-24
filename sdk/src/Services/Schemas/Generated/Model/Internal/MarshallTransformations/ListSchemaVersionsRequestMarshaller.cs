@@ -71,7 +71,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v1/registries/name/{registryName}/schemas/name/{schemaName}/versions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

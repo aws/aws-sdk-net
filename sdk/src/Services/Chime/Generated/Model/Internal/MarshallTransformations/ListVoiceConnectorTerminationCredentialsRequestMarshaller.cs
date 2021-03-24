@@ -62,7 +62,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field VoiceConnectorId set");
             request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
             request.ResourcePath = "/voice-connectors/{voiceConnectorId}/termination/credentials";
-            request.MarshallerVersion = 2;
 
             return request;
         }

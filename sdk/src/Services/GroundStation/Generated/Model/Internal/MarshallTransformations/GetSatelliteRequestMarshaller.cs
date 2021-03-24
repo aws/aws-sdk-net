@@ -62,7 +62,6 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 throw new AmazonGroundStationException("Request object does not have required field SatelliteId set");
             request.AddPathResource("{satelliteId}", StringUtils.FromString(publicRequest.SatelliteId));
             request.ResourcePath = "/satellite/{satelliteId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

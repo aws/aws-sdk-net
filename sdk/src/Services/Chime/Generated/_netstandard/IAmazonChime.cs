@@ -80,9 +80,6 @@ namespace Amazon.Chime
     /// and Access Management for Amazon Chime</a> in the <i>Amazon Chime Administration Guide</i>.
     /// </para>
     /// </summary>
-#if NETSTANDARD13
-    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
-#endif
     public partial interface IAmazonChime : IAmazonService, IDisposable
     {
 #if AWS_ASYNC_ENUMERABLES_API

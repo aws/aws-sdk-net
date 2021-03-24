@@ -74,7 +74,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTarget())
                 request.Parameters.Add("target", StringUtils.FromString(publicRequest.Target));
             request.ResourcePath = "/signing-platforms";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

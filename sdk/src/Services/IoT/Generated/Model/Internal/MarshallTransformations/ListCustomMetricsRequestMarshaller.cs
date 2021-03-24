@@ -65,7 +65,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/custom-metrics";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

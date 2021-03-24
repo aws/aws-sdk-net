@@ -62,7 +62,6 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                 throw new AmazonBraketException("Request object does not have required field DeviceArn set");
             request.AddPathResource("{deviceArn}", StringUtils.FromString(publicRequest.DeviceArn));
             request.ResourcePath = "/device/{deviceArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

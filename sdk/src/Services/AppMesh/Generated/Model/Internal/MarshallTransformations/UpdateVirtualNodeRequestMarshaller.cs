@@ -69,7 +69,6 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMeshOwner())
                 request.Parameters.Add("meshOwner", StringUtils.FromString(publicRequest.MeshOwner));
             request.ResourcePath = "/v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

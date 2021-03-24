@@ -62,7 +62,6 @@ namespace Amazon.IoTFleetHub.Model.Internal.MarshallTransformations
                 throw new AmazonIoTFleetHubException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

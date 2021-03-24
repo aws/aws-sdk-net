@@ -68,7 +68,6 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 throw new AmazonAppConfigException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{EnvironmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/applications/{ApplicationId}/environments/{EnvironmentId}/deployments/{DeploymentNumber}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

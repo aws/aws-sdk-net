@@ -63,7 +63,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/v1/tags";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

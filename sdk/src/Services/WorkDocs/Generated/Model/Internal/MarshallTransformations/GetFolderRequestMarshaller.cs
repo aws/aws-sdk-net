@@ -65,7 +65,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetIncludeCustomMetadata())
                 request.Parameters.Add("includeCustomMetadata", StringUtils.FromBool(publicRequest.IncludeCustomMetadata));
             request.ResourcePath = "/api/v1/folders/{FolderId}";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

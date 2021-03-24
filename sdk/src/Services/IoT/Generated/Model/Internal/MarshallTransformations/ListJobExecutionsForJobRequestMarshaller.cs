@@ -71,7 +71,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/jobs/{jobId}/things";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

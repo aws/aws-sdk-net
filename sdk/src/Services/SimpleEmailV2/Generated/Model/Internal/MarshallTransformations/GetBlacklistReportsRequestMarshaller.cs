@@ -62,7 +62,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetBlacklistItemNames())
                 request.ParameterCollection.Add("BlacklistItemNames", publicRequest.BlacklistItemNames);
             request.ResourcePath = "/v2/email/deliverability-dashboard/blacklist-report";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

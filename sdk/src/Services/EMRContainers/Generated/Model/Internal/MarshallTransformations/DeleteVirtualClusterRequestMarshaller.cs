@@ -62,7 +62,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 throw new AmazonEMRContainersException("Request object does not have required field Id set");
             request.AddPathResource("{virtualClusterId}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/virtualclusters/{virtualClusterId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

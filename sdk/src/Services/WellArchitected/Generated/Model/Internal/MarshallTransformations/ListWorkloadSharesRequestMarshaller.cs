@@ -71,7 +71,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSharedWithPrefix())
                 request.Parameters.Add("SharedWithPrefix", StringUtils.FromString(publicRequest.SharedWithPrefix));
             request.ResourcePath = "/workloads/{WorkloadId}/shares";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

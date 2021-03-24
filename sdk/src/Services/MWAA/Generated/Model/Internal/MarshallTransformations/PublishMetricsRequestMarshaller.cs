@@ -63,7 +63,6 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 throw new AmazonMWAAException("Request object does not have required field EnvironmentName set");
             request.AddPathResource("{EnvironmentName}", StringUtils.FromString(publicRequest.EnvironmentName));
             request.ResourcePath = "/metrics/environments/{EnvironmentName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

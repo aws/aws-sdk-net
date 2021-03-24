@@ -69,7 +69,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRepositoryPrefix())
                 request.Parameters.Add("repository-prefix", StringUtils.FromString(publicRequest.RepositoryPrefix));
             request.ResourcePath = "/v1/repositories";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

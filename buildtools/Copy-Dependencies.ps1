@@ -33,7 +33,7 @@ Function Copy-Dependencies
         # The supported platforms in .NET SDK
         [Parameter()]
         [string[]]
-        $AcceptedPlatforms =  @("net35","net45","netstandard1.3","netstandard2.0","netcoreapp3.1"),
+        $AcceptedPlatforms =  @("net35","net45","netstandard2.0","netcoreapp3.1"),
 
         # The supported platforms in .NET SDK
         [Parameter()]

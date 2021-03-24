@@ -65,7 +65,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field VersionNumber set");
             request.AddPathResource("{VersionNumber}", StringUtils.FromLong(publicRequest.VersionNumber));
             request.ResourcePath = "/2018-10-31/layers/{LayerName}/versions/{VersionNumber}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

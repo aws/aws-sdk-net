@@ -62,7 +62,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field TemplateId set");
             request.AddPathResource("{TemplateId}", StringUtils.FromString(publicRequest.TemplateId));
             request.ResourcePath = "/templates/{TemplateId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

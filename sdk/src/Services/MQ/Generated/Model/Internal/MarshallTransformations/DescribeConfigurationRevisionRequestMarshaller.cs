@@ -65,7 +65,6 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 throw new AmazonMQException("Request object does not have required field ConfigurationRevision set");
             request.AddPathResource("{configuration-revision}", StringUtils.FromString(publicRequest.ConfigurationRevision));
             request.ResourcePath = "/v1/configurations/{configuration-id}/revisions/{configuration-revision}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

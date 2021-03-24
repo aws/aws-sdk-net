@@ -80,7 +80,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/api/v1/folders/{FolderId}/contents";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

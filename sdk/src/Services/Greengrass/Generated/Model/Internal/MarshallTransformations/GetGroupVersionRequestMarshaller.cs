@@ -65,7 +65,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field GroupVersionId set");
             request.AddPathResource("{GroupVersionId}", StringUtils.FromString(publicRequest.GroupVersionId));
             request.ResourcePath = "/greengrass/groups/{GroupId}/versions/{GroupVersionId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

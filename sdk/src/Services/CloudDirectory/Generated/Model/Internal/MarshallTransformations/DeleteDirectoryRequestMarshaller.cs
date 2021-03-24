@@ -60,7 +60,6 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/directory";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetDirectoryArn())
                 request.Headers["x-amz-data-partition"] = publicRequest.DirectoryArn;

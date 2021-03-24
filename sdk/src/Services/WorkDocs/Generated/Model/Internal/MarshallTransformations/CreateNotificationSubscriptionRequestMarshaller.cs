@@ -63,7 +63,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field OrganizationId set");
             request.AddPathResource("{OrganizationId}", StringUtils.FromString(publicRequest.OrganizationId));
             request.ResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

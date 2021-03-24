@@ -67,7 +67,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field MeetingId set");
             request.AddPathResource("{meetingId}", StringUtils.FromString(publicRequest.MeetingId));
             request.ResourcePath = "/meetings/{meetingId}/attendees/{attendeeId}/tags";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

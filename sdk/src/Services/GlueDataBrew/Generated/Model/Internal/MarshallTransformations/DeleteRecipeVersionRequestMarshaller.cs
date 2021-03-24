@@ -65,7 +65,6 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 throw new AmazonGlueDataBrewException("Request object does not have required field RecipeVersion set");
             request.AddPathResource("{recipeVersion}", StringUtils.FromString(publicRequest.RecipeVersion));
             request.ResourcePath = "/recipes/{name}/recipeVersion/{recipeVersion}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

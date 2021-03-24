@@ -34,7 +34,7 @@ namespace Amazon.Runtime.SharedInterfaces
         /// <returns></returns>
         AssumeRoleImmutableCredentials CredentialsFromAssumeRoleAuthentication(string roleArn, string roleSessionName, AssumeRoleAWSCredentialsOptions options);
 
-#if NETSTANDARD20 || NETCOREAPP3_1 // In the NETSTANDARD flavors of the SDK ICoreAmazonSTS is declared without CredentialsFromSAMLAuthentication,
+#if !BCL // In the NETSTANDARD flavors of the SDK ICoreAmazonSTS is declared without CredentialsFromSAMLAuthentication,
     }             // we cannot add a new method to the interface for backward compatibility concerns. 
 
     /// <summary>
@@ -46,7 +46,6 @@ namespace Amazon.Runtime.SharedInterfaces
     public interface ICoreAmazonSTS_SAML
     {
 #endif
-#if BCL || (NETSTANDARD && !NETSTANDARD13)
         /// <summary>
         /// <para>
         /// This method is used internally to access the Amazon Security Token
@@ -76,7 +75,6 @@ namespace Amazon.Runtime.SharedInterfaces
                                                                    string roleARN,
                                                                    TimeSpan credentialDuration,
                                                                    ICredentials userCredential);
-#endif
     }
 
     public interface ICoreAmazonSTS_WebIdentity : IDisposable

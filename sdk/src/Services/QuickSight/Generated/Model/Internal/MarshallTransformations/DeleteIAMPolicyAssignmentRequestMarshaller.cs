@@ -68,7 +68,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field Namespace set");
             request.AddPathResource("{Namespace}", StringUtils.FromString(publicRequest.Namespace));
             request.ResourcePath = "/accounts/{AwsAccountId}/namespace/{Namespace}/iam-policy-assignments/{AssignmentName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

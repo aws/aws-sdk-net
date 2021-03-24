@@ -62,7 +62,6 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 throw new AmazonMediaPackageException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/tags/{resource-arn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

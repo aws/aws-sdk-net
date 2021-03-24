@@ -74,7 +74,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPhoneNumberTypes())
                 request.ParameterCollection.Add("phoneNumberTypes", publicRequest.PhoneNumberTypes);
             request.ResourcePath = "/phone-numbers-summary/{InstanceId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

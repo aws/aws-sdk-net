@@ -66,7 +66,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field IntegrationId set");
             request.AddPathResource("{integrationId}", StringUtils.FromString(publicRequest.IntegrationId));
             request.ResourcePath = "/v2/apis/{apiId}/integrations/{integrationId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -68,7 +68,6 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMemberId())
                 request.Parameters.Add("memberId", StringUtils.FromString(publicRequest.MemberId));
             request.ResourcePath = "/networks/{networkId}/nodes/{nodeId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

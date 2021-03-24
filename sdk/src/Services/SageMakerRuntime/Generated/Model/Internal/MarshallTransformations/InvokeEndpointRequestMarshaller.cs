@@ -63,7 +63,6 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                 throw new AmazonSageMakerRuntimeException("Request object does not have required field EndpointName set");
             request.AddPathResource("{EndpointName}", StringUtils.FromString(publicRequest.EndpointName));
             request.ResourcePath = "/endpoints/{EndpointName}/invocations";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

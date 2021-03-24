@@ -30,12 +30,10 @@ namespace Amazon.Runtime.CredentialManagement
     {
         private static HashSet<CredentialProfileType> CallbackProfileTypes = new HashSet<CredentialProfileType>()
             {
-#if !NETSTANDARD13
                 CredentialProfileType.SAMLRoleUserIdentity,
-#endif
                 CredentialProfileType.AssumeRoleExternalMFA,
                 CredentialProfileType.AssumeRoleMFA,
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
                 CredentialProfileType.SSO,
 #endif
             };
@@ -156,7 +154,7 @@ namespace Amazon.Runtime.CredentialManagement
                             "Please use an assume role profile that doesn't require an MFA, or a different type of profile.", profileName);
                     throw new InvalidOperationException(mfaMessage);
                 }
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
                 else if (profileType == CredentialProfileType.SSO)
                 {
                     var ssoMessage = profileName == null
@@ -168,7 +166,6 @@ namespace Amazon.Runtime.CredentialManagement
                     throw new InvalidOperationException(ssoMessage);
                 }
 #endif
-#if !NETSTANDARD13
                 else if (profileType == CredentialProfileType.SAMLRoleUserIdentity)
                 {
                     var samlMessage = profileName == null
@@ -179,7 +176,6 @@ namespace Amazon.Runtime.CredentialManagement
                             "Please use a SAML role profile without an explicit user identity, or a different type of profile.", profileName);
                     throw new InvalidOperationException(samlMessage);
                 }
-#endif
             }
             return GetAWSCredentialsInternal(profileName, profileType, options, stsRegion, profileSource, true);
         }
@@ -267,7 +263,7 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.AssumeRoleWithWebIdentity:
                     case CredentialProfileType.AssumeRoleWithWebIdentitySessionName:
                         return new AssumeRoleWithWebIdentityCredentials(options.WebIdentityTokenFile, options.RoleArn, options.RoleSessionName);
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
                     case CredentialProfileType.SSO:
                     {
                         var ssoCredentialsOptions = new SSOAWSCredentialsOptions();
@@ -278,7 +274,6 @@ namespace Amazon.Runtime.CredentialManagement
                         );
                     }
 #endif
-#if !NETSTANDARD13
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleUserIdentity:
                         if (UserCrypto.IsUserCryptAvailable)
@@ -296,7 +291,6 @@ namespace Amazon.Runtime.CredentialManagement
                         {
                             return ThrowOrReturnNull("Federated credentials are not available on this platform.", null, throwIfInvalid);
                         }
-#endif
                     case CredentialProfileType.CredentialProcess:
                         return new ProcessAWSCredentials(options.CredentialProcess);
 

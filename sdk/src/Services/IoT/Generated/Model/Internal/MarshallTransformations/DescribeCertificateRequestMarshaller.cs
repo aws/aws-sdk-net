@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field CertificateId set");
             request.AddPathResource("{certificateId}", StringUtils.FromString(publicRequest.CertificateId));
             request.ResourcePath = "/certificates/{certificateId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

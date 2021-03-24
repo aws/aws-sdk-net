@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field MetricName set");
             request.AddPathResource("{metricName}", StringUtils.FromString(publicRequest.MetricName));
             request.ResourcePath = "/custom-metric/{metricName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

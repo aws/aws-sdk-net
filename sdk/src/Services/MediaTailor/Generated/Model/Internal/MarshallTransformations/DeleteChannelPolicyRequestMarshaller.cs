@@ -62,7 +62,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field ChannelName set");
             request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
             request.ResourcePath = "/channel/{channelName}/policy";
-            request.MarshallerVersion = 2;
 
             return request;
         }

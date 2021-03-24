@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field AuthorizerName set");
             request.AddPathResource("{authorizerName}", StringUtils.FromString(publicRequest.AuthorizerName));
             request.ResourcePath = "/authorizer/{authorizerName}/test";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

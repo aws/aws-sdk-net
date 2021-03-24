@@ -62,7 +62,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field WebhookId set");
             request.AddPathResource("{webhookId}", StringUtils.FromString(publicRequest.WebhookId));
             request.ResourcePath = "/webhooks/{webhookId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -68,7 +68,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
             request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             request.ResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration";
-            request.MarshallerVersion = 2;
 
             return request;
         }

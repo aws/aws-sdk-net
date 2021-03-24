@@ -81,7 +81,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTollFreePrefix())
                 request.Parameters.Add("toll-free-prefix", StringUtils.FromString(publicRequest.TollFreePrefix));
             request.ResourcePath = "/search";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

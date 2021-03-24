@@ -62,7 +62,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetContainerRecipeArn())
                 request.Parameters.Add("containerRecipeArn", StringUtils.FromString(publicRequest.ContainerRecipeArn));
             request.ResourcePath = "/GetContainerRecipe";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

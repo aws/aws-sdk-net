@@ -71,7 +71,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSearchQuery())
                 request.Parameters.Add("searchQuery", StringUtils.FromString(publicRequest.SearchQuery));
             request.ResourcePath = "/api/v1/groups";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

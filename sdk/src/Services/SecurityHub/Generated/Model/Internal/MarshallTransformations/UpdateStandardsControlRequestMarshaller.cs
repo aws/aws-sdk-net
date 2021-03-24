@@ -63,7 +63,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 throw new AmazonSecurityHubException("Request object does not have required field StandardsControlArn set");
             request.AddPathResource("{StandardsControlArn+}", StringUtils.FromString(publicRequest.StandardsControlArn.TrimStart('/')));
             request.ResourcePath = "/standards/control/{StandardsControlArn+}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

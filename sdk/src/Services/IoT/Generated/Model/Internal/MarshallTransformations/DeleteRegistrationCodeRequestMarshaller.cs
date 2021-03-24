@@ -59,7 +59,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             request.ResourcePath = "/registrationcode";
-            request.MarshallerVersion = 2;
 
             return request;
         }

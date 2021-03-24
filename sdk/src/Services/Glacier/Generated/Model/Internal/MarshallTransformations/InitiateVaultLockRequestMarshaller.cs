@@ -64,7 +64,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 throw new AmazonGlacierException("Request object does not have required field VaultName set");
             request.AddPathResource("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
             request.ResourcePath = "/{accountId}/vaults/{vaultName}/lock-policy";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

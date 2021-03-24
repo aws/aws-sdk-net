@@ -41,9 +41,6 @@ namespace Amazon.XRay
     /// AWS X-Ray provides APIs for managing debug traces and retrieving service maps and
     /// other data created by processing those traces.
     /// </summary>
-#if NETSTANDARD13
-    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
-#endif
     public partial class AmazonXRayClient : AmazonServiceClient, IAmazonXRay
     {
         private static IServiceMetadata serviceMetadata = new AmazonXRayMetadata();

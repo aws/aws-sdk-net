@@ -62,7 +62,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Signature set");
             request.AddPathResource("{signature}", StringUtils.FromString(publicRequest.Signature));
             request.ResourcePath = "/builtins/intents/{signature}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

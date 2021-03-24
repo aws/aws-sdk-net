@@ -62,7 +62,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field ThingName set");
             request.AddPathResource("{ThingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/greengrass/things/{ThingName}/connectivityInfo";
-            request.MarshallerVersion = 2;
 
             return request;
         }

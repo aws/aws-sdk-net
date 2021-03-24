@@ -62,7 +62,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 throw new AmazonSignerException("Request object does not have required field PlatformId set");
             request.AddPathResource("{platformId}", StringUtils.FromString(publicRequest.PlatformId));
             request.ResourcePath = "/signing-platforms/{platformId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

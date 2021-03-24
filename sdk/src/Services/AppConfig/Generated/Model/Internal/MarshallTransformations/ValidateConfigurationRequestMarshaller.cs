@@ -69,7 +69,6 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetConfigurationVersion())
                 request.Parameters.Add("configuration_version", StringUtils.FromString(publicRequest.ConfigurationVersion));
             request.ResourcePath = "/applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/validators";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

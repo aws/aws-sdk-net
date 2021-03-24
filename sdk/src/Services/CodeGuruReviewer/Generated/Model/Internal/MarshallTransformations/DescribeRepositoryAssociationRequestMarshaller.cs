@@ -62,7 +62,6 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                 throw new AmazonCodeGuruReviewerException("Request object does not have required field AssociationArn set");
             request.AddPathResource("{AssociationArn}", StringUtils.FromString(publicRequest.AssociationArn));
             request.ResourcePath = "/associations/{AssociationArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

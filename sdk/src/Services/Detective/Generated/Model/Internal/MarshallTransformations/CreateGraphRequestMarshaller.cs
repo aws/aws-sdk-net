@@ -60,7 +60,6 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/graph";
-            request.MarshallerVersion = 2;
 
             return request;
         }

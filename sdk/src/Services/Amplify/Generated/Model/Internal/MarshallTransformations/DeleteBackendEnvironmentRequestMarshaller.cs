@@ -65,7 +65,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field EnvironmentName set");
             request.AddPathResource("{environmentName}", StringUtils.FromString(publicRequest.EnvironmentName));
             request.ResourcePath = "/apps/{appId}/backendenvironments/{environmentName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

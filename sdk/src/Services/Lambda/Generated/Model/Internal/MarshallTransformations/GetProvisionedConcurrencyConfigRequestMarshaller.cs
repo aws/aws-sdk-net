@@ -65,7 +65,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = "/2019-09-30/functions/{FunctionName}/provisioned-concurrency";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

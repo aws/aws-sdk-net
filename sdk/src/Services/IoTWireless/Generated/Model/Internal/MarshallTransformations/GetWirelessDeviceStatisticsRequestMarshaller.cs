@@ -62,7 +62,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field WirelessDeviceId set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.WirelessDeviceId));
             request.ResourcePath = "/wireless-devices/{Id}/statistics";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -65,7 +65,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/bots/{botName}/aliases/{name}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

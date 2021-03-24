@@ -68,7 +68,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetLexRegion())
                 request.Parameters.Add("lexRegion", StringUtils.FromString(publicRequest.LexRegion));
             request.ResourcePath = "/instance/{InstanceId}/lex-bot";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

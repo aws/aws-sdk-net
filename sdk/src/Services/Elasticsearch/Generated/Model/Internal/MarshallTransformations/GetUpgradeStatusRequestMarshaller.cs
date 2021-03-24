@@ -62,7 +62,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 throw new AmazonElasticsearchException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/2015-01-01/es/upgradeDomain/{DomainName}/status";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -65,7 +65,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetCurrentVersion())
                 request.Parameters.Add("currentVersion", StringUtils.FromString(publicRequest.CurrentVersion));
             request.ResourcePath = "/v1/clusters/{clusterArn}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -66,7 +66,6 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 throw new AmazonCodeGuruProfilerException("Request object does not have required field ProfilingGroupName set");
             request.AddPathResource("{profilingGroupName}", StringUtils.FromString(publicRequest.ProfilingGroupName));
             request.ResourcePath = "/profilingGroups/{profilingGroupName}/policy/{actionGroup}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

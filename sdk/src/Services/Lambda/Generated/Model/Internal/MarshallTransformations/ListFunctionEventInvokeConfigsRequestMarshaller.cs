@@ -68,7 +68,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
             request.ResourcePath = "/2019-09-25/functions/{FunctionName}/event-invoke-config/list";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

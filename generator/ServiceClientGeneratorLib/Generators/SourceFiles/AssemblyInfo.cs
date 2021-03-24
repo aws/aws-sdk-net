@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+    #line 1 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class AssemblyInfo : BaseGenerator
     {
@@ -36,7 +36,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle(""");
             
-            #line 12 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 12 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyTitle));
             
             #line default
@@ -44,14 +44,14 @@ using System.Runtime.CompilerServices;
             this.Write("\")]\r\n#if BCL35\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for ." +
                     "NET (3.5) - ");
             
-            #line 14 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 14 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
             
             #line default
             #line hidden
             this.Write(". ");
             
-            #line 14 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 14 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
             
             #line default
@@ -59,29 +59,14 @@ using System.Runtime.CompilerServices;
             this.Write("\")]\r\n#elif BCL45\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for" +
                     " .NET (4.5) - ");
             
-            #line 16 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 16 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
             
             #line default
             #line hidden
             this.Write(". ");
             
-            #line 16 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
-            
-            #line default
-            #line hidden
-            this.Write("\")]\r\n#elif NETSTANDARD13\r\n[assembly: AssemblyDescription(\"The Amazon Web Services" +
-                    " SDK for .NET (NetStandard 1.3) - ");
-            
-            #line 18 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
-            
-            #line default
-            #line hidden
-            this.Write(". ");
-            
-            #line 18 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 16 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
             
             #line default
@@ -89,14 +74,14 @@ using System.Runtime.CompilerServices;
             this.Write("\")]\r\n#elif NETSTANDARD20\r\n[assembly: AssemblyDescription(\"The Amazon Web Services" +
                     " SDK for .NET (NetStandard 2.0) - ");
             
-            #line 20 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 18 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
             
             #line default
             #line hidden
             this.Write(". ");
             
-            #line 20 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 18 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
             
             #line default
@@ -104,14 +89,14 @@ using System.Runtime.CompilerServices;
             this.Write("\")]\r\n#elif NETCOREAPP3_1\r\n[assembly: AssemblyDescription(\"The Amazon Web Services" +
                     " SDK for .NET (.NET Core 3.1) - ");
             
-            #line 22 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 20 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
             
             #line default
             #line hidden
             this.Write(". ");
             
-            #line 22 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 20 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
             
             #line default
@@ -145,14 +130,14 @@ using System.Runtime.CompilerServices;
 // [assembly: AssemblyVersion(""1.0.*"")]
 [assembly: AssemblyVersion(""");
             
-            #line 49 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 47 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceVersion));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 50 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 48 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceFileVersion));
             
             #line default

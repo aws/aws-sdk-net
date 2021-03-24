@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+    #line 1 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class ServicePaginatorFactoryInterface : BaseGenerator
     {
@@ -28,9 +28,8 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// </summary>
         public override string TransformText()
         {
-            this.Write("#if !NETSTANDARD13\r\n");
             
-            #line 7 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+            #line 6 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
 
     AddLicenseHeader();
 
@@ -39,28 +38,28 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\nnamespace ");
             
-            #line 11 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+            #line 10 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n    /// <summary>\r\n    /// Paginators for the ");
             
-            #line 14 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+            #line 13 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceNameRoot));
             
             #line default
             #line hidden
             this.Write(" service\r\n    ///</summary>\r\n    public interface I");
             
-            #line 16 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+            #line 15 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceNameRoot));
             
             #line default
             #line hidden
             this.Write("PaginatorFactory\r\n    {\r\n");
             
-            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+            #line 17 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
 
 foreach(var operation in this.Config.ServiceModel.Operations)
 {
@@ -72,35 +71,35 @@ foreach(var operation in this.Config.ServiceModel.Operations)
             #line hidden
             this.Write("\r\n        /// <summary>\r\n        /// Paginator for ");
             
-            #line 26 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+            #line 25 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write(" operation\r\n        ///</summary>\r\n        I");
             
-            #line 28 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+            #line 27 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Paginator ");
             
-            #line 28 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+            #line 27 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 28 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+            #line 27 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request);\r\n");
             
-            #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
+            #line 28 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServicePaginatorFactoryInterface.tt"
 
     }
 }
@@ -108,7 +107,7 @@ foreach(var operation in this.Config.ServiceModel.Operations)
             
             #line default
             #line hidden
-            this.Write("    }\r\n}\r\n#endif");
+            this.Write("    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -62,7 +62,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 throw new AmazonElasticFileSystemException("Request object does not have required field FileSystemId set");
             request.AddPathResource("{FileSystemId}", StringUtils.FromString(publicRequest.FileSystemId));
             request.ResourcePath = "/2015-02-01/file-systems/{FileSystemId}/lifecycle-configuration";
-            request.MarshallerVersion = 2;
 
             return request;
         }

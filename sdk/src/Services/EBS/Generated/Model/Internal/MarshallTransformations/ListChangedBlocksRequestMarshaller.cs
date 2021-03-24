@@ -74,7 +74,6 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStartingBlockIndex())
                 request.Parameters.Add("startingBlockIndex", StringUtils.FromInt(publicRequest.StartingBlockIndex));
             request.ResourcePath = "/snapshots/{secondSnapshotId}/changedblocks";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

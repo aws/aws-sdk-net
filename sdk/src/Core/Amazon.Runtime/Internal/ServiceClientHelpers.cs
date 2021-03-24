@@ -146,24 +146,9 @@ namespace Amazon.Runtime.Internal
 
         private static Assembly GetSDKAssembly(string assemblyName)
         {
-            Assembly assembly = null;
-#if BCL || (NETSTANDARD && !NETSTANDARD13)
-            assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(x => string.Equals(x.GetName().Name, assemblyName, StringComparison.Ordinal));
-#endif
-            if (assembly == null)
-            {
-                assembly = Assembly.Load(new AssemblyName(assemblyName));
-            }
-
-            if (assembly == null)
-            {
-                throw new AmazonClientException
-                    (
-                        string.Format(CultureInfo.InvariantCulture, "Failed to load assembly. Be sure to include a reference to {0}.", assemblyName)
-                    );
-            }
-
-            return assembly;
+            return AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(x => string.Equals(x.GetName().Name, assemblyName, StringComparison.Ordinal))
+                ?? Assembly.Load(new AssemblyName(assemblyName))
+                ?? throw new AmazonClientException($"Failed to load assembly. Be sure to include a reference to {assemblyName}.");
         }
     }
 }

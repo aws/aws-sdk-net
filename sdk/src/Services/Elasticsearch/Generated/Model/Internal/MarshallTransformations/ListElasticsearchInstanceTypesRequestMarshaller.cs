@@ -71,7 +71,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/2015-01-01/es/instanceTypes/{ElasticsearchVersion}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -65,7 +65,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field RoutingProfileId set");
             request.AddPathResource("{RoutingProfileId}", StringUtils.FromString(publicRequest.RoutingProfileId));
             request.ResourcePath = "/routing-profiles/{InstanceId}/{RoutingProfileId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

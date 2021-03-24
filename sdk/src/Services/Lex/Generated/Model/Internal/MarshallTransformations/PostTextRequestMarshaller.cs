@@ -69,7 +69,6 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                 throw new AmazonLexException("Request object does not have required field UserId set");
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/text";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

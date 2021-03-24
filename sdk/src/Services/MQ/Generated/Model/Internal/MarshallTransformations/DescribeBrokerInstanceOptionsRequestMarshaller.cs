@@ -74,7 +74,6 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStorageType())
                 request.Parameters.Add("storageType", StringUtils.FromString(publicRequest.StorageType));
             request.ResourcePath = "/v1/broker-instance-options";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

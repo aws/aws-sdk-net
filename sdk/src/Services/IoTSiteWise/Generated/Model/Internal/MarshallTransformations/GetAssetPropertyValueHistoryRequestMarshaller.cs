@@ -86,7 +86,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTimeOrdering())
                 request.Parameters.Add("timeOrdering", StringUtils.FromString(publicRequest.TimeOrdering));
             request.ResourcePath = "/properties/history";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
             request.HostPrefix = $"data.";

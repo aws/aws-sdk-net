@@ -70,7 +70,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field MessageId set");
             request.AddPathResource("{messageId}", StringUtils.FromString(publicRequest.MessageId));
             request.ResourcePath = "/accounts/{accountId}/conversations/{conversationId}/messages/{messageId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

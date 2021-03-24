@@ -68,7 +68,6 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next_token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/ledgers/{name}/journal-s3-exports";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -66,7 +66,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field SegmentId set");
             request.AddPathResource("{segment-id}", StringUtils.FromString(publicRequest.SegmentId));
             request.ResourcePath = "/v1/apps/{application-id}/segments/{segment-id}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -62,7 +62,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetServiceType())
                 request.Parameters.Add("serviceType", StringUtils.FromString(publicRequest.ServiceType));
             request.ResourcePath = "/service-endpoint";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

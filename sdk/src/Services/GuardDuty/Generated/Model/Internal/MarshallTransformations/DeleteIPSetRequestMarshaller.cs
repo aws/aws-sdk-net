@@ -65,7 +65,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field IpSetId set");
             request.AddPathResource("{ipSetId}", StringUtils.FromString(publicRequest.IpSetId));
             request.ResourcePath = "/detector/{detectorId}/ipset/{ipSetId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

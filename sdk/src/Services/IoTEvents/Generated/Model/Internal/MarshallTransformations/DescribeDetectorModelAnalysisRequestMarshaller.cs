@@ -62,7 +62,6 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 throw new AmazonIoTEventsException("Request object does not have required field AnalysisId set");
             request.AddPathResource("{analysisId}", StringUtils.FromString(publicRequest.AnalysisId));
             request.ResourcePath = "/analysis/detector-models/{analysisId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

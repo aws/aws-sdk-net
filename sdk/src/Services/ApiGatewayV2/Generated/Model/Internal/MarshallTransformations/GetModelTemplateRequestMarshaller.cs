@@ -65,7 +65,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field ModelId set");
             request.AddPathResource("{modelId}", StringUtils.FromString(publicRequest.ModelId));
             request.ResourcePath = "/v2/apis/{apiId}/models/{modelId}/template";
-            request.MarshallerVersion = 2;
 
             return request;
         }

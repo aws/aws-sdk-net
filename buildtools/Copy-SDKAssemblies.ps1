@@ -63,7 +63,7 @@ Function Copy-SdkAssemblies
         # The platforms to copy. Defaults to all if not specified.
         [Parameter()]
         [string[]]
-        $Platforms = @("net35","net45","netstandard1.3","netstandard2.0","netcoreapp3.1"),
+        $Platforms = @("net35","net45","netstandard2.0","netcoreapp3.1"),
         
         # The public key token that all assemblies should have. Optional.
         [Parameter()]

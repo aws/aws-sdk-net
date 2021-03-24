@@ -3,7 +3,6 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-#if !NETSTANDARD13
 <#
     AddLicenseHeader();
 #>
@@ -32,4 +31,3 @@ foreach(var operation in this.Config.ServiceModel.Operations)
 #>
     }
 }
-#endif

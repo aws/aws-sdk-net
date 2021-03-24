@@ -68,7 +68,6 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetUserId())
                 request.Parameters.Add("UserId", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/feedback/{CodeReviewArn}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

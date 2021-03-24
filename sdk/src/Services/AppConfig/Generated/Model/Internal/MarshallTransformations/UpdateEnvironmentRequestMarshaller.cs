@@ -66,7 +66,6 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 throw new AmazonAppConfigException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{EnvironmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/applications/{ApplicationId}/environments/{EnvironmentId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

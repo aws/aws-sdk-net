@@ -69,7 +69,6 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSnapshotId())
                 request.Parameters.Add("snapshotId", StringUtils.FromString(publicRequest.SnapshotId));
             request.ResourcePath = "/projects";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Contents ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

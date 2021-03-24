@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -47,4 +46,3 @@ namespace Amazon.QLDB.Model
         IListLedgersPaginator ListLedgers(ListLedgersRequest request);
     }
 }
-#endif

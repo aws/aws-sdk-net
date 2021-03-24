@@ -74,7 +74,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTraversalDirection())
                 request.Parameters.Add("traversalDirection", StringUtils.FromString(publicRequest.TraversalDirection));
             request.ResourcePath = "/assets/{assetId}/hierarchies";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
             request.HostPrefix = $"model.";

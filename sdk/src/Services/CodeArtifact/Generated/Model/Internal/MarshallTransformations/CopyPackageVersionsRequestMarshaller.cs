@@ -81,7 +81,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSourceRepository())
                 request.Parameters.Add("source-repository", StringUtils.FromString(publicRequest.SourceRepository));
             request.ResourcePath = "/v1/package/versions/copy";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

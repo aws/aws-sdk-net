@@ -66,7 +66,6 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
             request.ResourcePath = "/profilingGroups";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

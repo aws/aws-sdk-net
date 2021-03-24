@@ -62,7 +62,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field ReportId set");
             request.AddPathResource("{ReportId}", StringUtils.FromString(publicRequest.ReportId));
             request.ResourcePath = "/v2/email/deliverability-dashboard/test-reports/{ReportId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

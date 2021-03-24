@@ -71,7 +71,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetUserArn())
                 request.Parameters.Add("user-arn", StringUtils.FromString(publicRequest.UserArn));
             request.ResourcePath = "/accounts/{AwsAccountId}/session-embed-url";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

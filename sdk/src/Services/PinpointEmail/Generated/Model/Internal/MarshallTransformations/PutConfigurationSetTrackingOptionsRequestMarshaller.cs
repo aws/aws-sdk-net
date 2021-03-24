@@ -63,7 +63,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointEmailException("Request object does not have required field ConfigurationSetName set");
             request.AddPathResource("{ConfigurationSetName}", StringUtils.FromString(publicRequest.ConfigurationSetName));
             request.ResourcePath = "/v1/email/configuration-sets/{ConfigurationSetName}/tracking-options";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

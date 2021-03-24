@@ -71,7 +71,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
             request.ResourcePath = "/detect/mitigationactions/tasks";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

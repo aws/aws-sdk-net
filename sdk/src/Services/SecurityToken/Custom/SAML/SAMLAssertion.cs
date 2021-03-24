@@ -26,7 +26,6 @@ using Amazon.SecurityToken.Model;
 
 namespace Amazon.SecurityToken.SAML
 {
-#if !NETSTANDARD13
     /// <summary>
     /// Contains the parsed SAML response data following successful user
     /// authentication against a federated endpoint. We only parse out the
@@ -218,5 +217,4 @@ namespace Amazon.SecurityToken.SAML
             return roleName;
         }
     }
-#endif
 }

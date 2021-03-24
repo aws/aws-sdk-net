@@ -62,7 +62,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
             request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
             request.ResourcePath = "/backup-vaults/{backupVaultName}/access-policy";
-            request.MarshallerVersion = 2;
 
             return request;
         }

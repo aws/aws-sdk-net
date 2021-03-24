@@ -78,7 +78,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRepository())
                 request.Parameters.Add("repository", StringUtils.FromString(publicRequest.Repository));
             request.ResourcePath = "/v1/package/versions/dispose";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

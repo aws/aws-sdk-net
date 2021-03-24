@@ -77,7 +77,6 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStates())
                 request.ParameterCollection.Add("State", publicRequest.States);
             request.ResourcePath = "/associations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

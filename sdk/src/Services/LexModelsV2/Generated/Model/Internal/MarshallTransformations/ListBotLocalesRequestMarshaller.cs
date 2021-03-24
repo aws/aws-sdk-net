@@ -66,7 +66,6 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field BotVersion set");
             request.AddPathResource("{botVersion}", StringUtils.FromString(publicRequest.BotVersion));
             request.ResourcePath = "/bots/{botId}/botversions/{botVersion}/botlocales/";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

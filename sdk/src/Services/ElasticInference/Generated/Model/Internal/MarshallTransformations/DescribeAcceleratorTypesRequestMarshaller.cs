@@ -59,7 +59,6 @@ namespace Amazon.ElasticInference.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/describe-accelerator-types";
-            request.MarshallerVersion = 2;
 
             return request;
         }

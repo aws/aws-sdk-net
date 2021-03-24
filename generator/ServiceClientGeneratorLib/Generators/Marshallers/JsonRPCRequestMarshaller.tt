@@ -80,7 +80,6 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	}
 #>
 			request.ResourcePath = "<#=this.Operation.RequestUri #>";
-			request.MarshallerVersion = <#=MarshallerVersion #>;
 <#  
 
     var payload= this.Operation.RequestPayloadMember;

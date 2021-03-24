@@ -62,7 +62,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResourceARN())
                 request.Parameters.Add("arn", StringUtils.FromString(publicRequest.ResourceARN));
             request.ResourcePath = "/tags";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

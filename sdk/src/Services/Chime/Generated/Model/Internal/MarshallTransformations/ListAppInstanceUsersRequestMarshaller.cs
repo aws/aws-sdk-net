@@ -68,7 +68,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/app-instance-users";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
             request.HostPrefix = $"identity-";

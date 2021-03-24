@@ -15,10 +15,6 @@
 using System.Collections;
 using System.Collections.Specialized;
 
-#if ADD_SUPPORT_IORDERED_DICTIONARY
-using Amazon.MissingTypes;
-#endif
-
 namespace ThirdParty.Json.LitJson
 {
     public enum JsonType

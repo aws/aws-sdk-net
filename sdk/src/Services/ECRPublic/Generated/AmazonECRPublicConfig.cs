@@ -32,7 +32,7 @@ namespace Amazon.ECRPublic
     public partial class AmazonECRPublicConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.5.1.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.0");
 
         private string _userAgent = UserAgentString;
 

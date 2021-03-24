@@ -68,7 +68,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/domains/{DomainName}/object-types";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

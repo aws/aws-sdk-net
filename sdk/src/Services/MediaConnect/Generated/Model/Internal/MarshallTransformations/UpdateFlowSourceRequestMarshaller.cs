@@ -66,7 +66,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field SourceArn set");
             request.AddPathResource("{sourceArn}", StringUtils.FromString(publicRequest.SourceArn));
             request.ResourcePath = "/v1/flows/{flowArn}/source/{sourceArn}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

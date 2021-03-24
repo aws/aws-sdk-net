@@ -65,7 +65,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/2015-02-01/resource-tags/{ResourceId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

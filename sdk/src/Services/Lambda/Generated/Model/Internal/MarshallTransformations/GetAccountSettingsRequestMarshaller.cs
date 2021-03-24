@@ -59,7 +59,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/2016-08-19/account-settings/";
-            request.MarshallerVersion = 2;
 
             return request;
         }

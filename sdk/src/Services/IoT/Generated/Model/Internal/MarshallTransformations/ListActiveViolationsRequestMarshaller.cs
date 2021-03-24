@@ -77,7 +77,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetThingName())
                 request.Parameters.Add("thingName", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/active-violations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

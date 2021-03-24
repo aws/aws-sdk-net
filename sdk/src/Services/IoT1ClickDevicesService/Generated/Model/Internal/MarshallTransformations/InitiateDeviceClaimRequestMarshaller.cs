@@ -63,7 +63,6 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field DeviceId set");
             request.AddPathResource("{deviceId}", StringUtils.FromString(publicRequest.DeviceId));
             request.ResourcePath = "/devices/{deviceId}/initiate-claim";
-            request.MarshallerVersion = 2;
 
             return request;
         }

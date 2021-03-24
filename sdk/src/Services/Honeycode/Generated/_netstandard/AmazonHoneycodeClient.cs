@@ -43,9 +43,6 @@ namespace Amazon.Honeycode
     /// anything, like projects, customers, operations, approvals, resources, and even your
     /// team.
     /// </summary>
-#if NETSTANDARD13
-    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
-#endif
     public partial class AmazonHoneycodeClient : AmazonServiceClient, IAmazonHoneycode
     {
         private static IServiceMetadata serviceMetadata = new AmazonHoneycodeMetadata();

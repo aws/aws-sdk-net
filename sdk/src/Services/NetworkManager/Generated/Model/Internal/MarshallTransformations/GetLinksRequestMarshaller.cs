@@ -80,7 +80,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/global-networks/{globalNetworkId}/links";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

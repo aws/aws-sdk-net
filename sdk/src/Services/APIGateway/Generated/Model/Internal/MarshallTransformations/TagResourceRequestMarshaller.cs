@@ -63,7 +63,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resource_arn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/tags/{resource_arn}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -59,7 +59,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/supported-resource-types";
-            request.MarshallerVersion = 2;
 
             return request;
         }

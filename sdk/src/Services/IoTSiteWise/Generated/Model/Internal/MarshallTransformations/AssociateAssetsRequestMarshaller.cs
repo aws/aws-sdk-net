@@ -63,7 +63,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field AssetId set");
             request.AddPathResource("{assetId}", StringUtils.FromString(publicRequest.AssetId));
             request.ResourcePath = "/assets/{assetId}/associate";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

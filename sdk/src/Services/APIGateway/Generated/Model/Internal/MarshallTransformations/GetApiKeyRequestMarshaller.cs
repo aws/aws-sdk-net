@@ -65,7 +65,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetIncludeValue())
                 request.Parameters.Add("includeValue", StringUtils.FromBool(publicRequest.IncludeValue));
             request.ResourcePath = "/apikeys/{api_Key}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

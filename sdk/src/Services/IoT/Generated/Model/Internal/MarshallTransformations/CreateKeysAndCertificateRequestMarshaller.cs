@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSetAsActive())
                 request.Parameters.Add("setAsActive", StringUtils.FromBool(publicRequest.SetAsActive));
             request.ResourcePath = "/keys-and-certificate";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

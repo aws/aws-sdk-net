@@ -68,7 +68,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field TemplateId set");
             request.AddPathResource("{TemplateId}", StringUtils.FromString(publicRequest.TemplateId));
             request.ResourcePath = "/accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

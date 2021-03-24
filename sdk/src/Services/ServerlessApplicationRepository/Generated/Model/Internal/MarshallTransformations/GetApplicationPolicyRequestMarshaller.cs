@@ -62,7 +62,6 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}/policy";
-            request.MarshallerVersion = 2;
 
             return request;
         }

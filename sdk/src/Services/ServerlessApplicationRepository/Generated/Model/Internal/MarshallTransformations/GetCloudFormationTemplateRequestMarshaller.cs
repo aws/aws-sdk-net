@@ -65,7 +65,6 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field TemplateId set");
             request.AddPathResource("{templateId}", StringUtils.FromString(publicRequest.TemplateId));
             request.ResourcePath = "/applications/{applicationId}/templates/{templateId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

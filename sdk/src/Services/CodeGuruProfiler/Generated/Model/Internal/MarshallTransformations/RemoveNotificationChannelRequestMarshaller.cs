@@ -65,7 +65,6 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 throw new AmazonCodeGuruProfilerException("Request object does not have required field ProfilingGroupName set");
             request.AddPathResource("{profilingGroupName}", StringUtils.FromString(publicRequest.ProfilingGroupName));
             request.ResourcePath = "/profilingGroups/{profilingGroupName}/notificationConfiguration/{channelId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

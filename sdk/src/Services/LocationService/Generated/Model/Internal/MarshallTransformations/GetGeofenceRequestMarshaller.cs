@@ -65,7 +65,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field GeofenceId set");
             request.AddPathResource("{GeofenceId}", StringUtils.FromString(publicRequest.GeofenceId));
             request.ResourcePath = "/geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"geofencing.";
 

@@ -60,7 +60,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/account/deregisterAccount";
-            request.MarshallerVersion = 2;
 
             return request;
         }

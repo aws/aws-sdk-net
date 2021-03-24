@@ -63,7 +63,6 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 throw new AmazonQLDBException("Request object does not have required field LedgerName set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.LedgerName));
             request.ResourcePath = "/ledgers/{name}/journal-kinesis-streams";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

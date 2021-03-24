@@ -71,7 +71,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTransitGatewayArns())
                 request.ParameterCollection.Add("transitGatewayArns", publicRequest.TransitGatewayArns);
             request.ResourcePath = "/global-networks/{globalNetworkId}/transit-gateway-registrations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -27,7 +27,7 @@ namespace AWSSDK.UnitTests
             SecretKey = nameof(CredentialProfileOptions.SecretKey),
         };
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         private static readonly CredentialProfileOptions SsoProfileOptions = new CredentialProfileOptions()
         {
             SsoAccountId = nameof(CredentialProfileOptions.SsoAccountId),
@@ -59,7 +59,7 @@ namespace AWSSDK.UnitTests
                 CredentialProfileTypeDetector.DetectProfileType(BasicProfileOptions));
         }
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         [TestMethod]
         public void DetectProfileTypeSso()
         {

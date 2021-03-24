@@ -62,7 +62,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetComponentArn())
                 request.Parameters.Add("componentArn", StringUtils.FromString(publicRequest.ComponentArn));
             request.ResourcePath = "/GetComponentPolicy";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

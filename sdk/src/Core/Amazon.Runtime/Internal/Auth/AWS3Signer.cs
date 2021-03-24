@@ -189,12 +189,7 @@ namespace Amazon.Runtime.Internal.Auth
                 return Slash;
             }
             
-            if(request.MarshallerVersion >= 2)
-            {
-                return AWSSDKUtils.ResolveResourcePath(resourcePath, request.PathResources);
-            }                
-               
-            return AWSSDKUtils.UrlEncode(resourcePath, true);            
+            return AWSSDKUtils.ResolveResourcePath(resourcePath, request.PathResources);
         }
 
         private static bool IsHttpsRequest(IRequest request)

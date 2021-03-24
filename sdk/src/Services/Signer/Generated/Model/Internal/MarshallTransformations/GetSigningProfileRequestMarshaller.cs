@@ -65,7 +65,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetProfileOwner())
                 request.Parameters.Add("profileOwner", StringUtils.FromString(publicRequest.ProfileOwner));
             request.ResourcePath = "/signing-profiles/{profileName}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -69,7 +69,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetFailOnWarnings())
                 request.Parameters.Add("failOnWarnings", StringUtils.FromBool(publicRequest.FailOnWarnings));
             request.ResourcePath = "/v2/apis/{apiId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

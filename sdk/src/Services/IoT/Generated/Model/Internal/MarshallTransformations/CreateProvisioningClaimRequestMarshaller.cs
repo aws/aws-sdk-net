@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field TemplateName set");
             request.AddPathResource("{templateName}", StringUtils.FromString(publicRequest.TemplateName));
             request.ResourcePath = "/provisioning-templates/{templateName}/provisioning-claim";
-            request.MarshallerVersion = 2;
 
             return request;
         }

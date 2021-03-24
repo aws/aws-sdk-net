@@ -65,7 +65,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field DeploymentId set");
             request.AddPathResource("{deploymentId}", StringUtils.FromString(publicRequest.DeploymentId));
             request.ResourcePath = "/v2/apis/{apiId}/deployments/{deploymentId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

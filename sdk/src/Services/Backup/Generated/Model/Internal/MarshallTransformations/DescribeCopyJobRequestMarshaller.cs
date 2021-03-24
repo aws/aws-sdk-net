@@ -62,7 +62,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field CopyJobId set");
             request.AddPathResource("{copyJobId}", StringUtils.FromString(publicRequest.CopyJobId));
             request.ResourcePath = "/copy-jobs/{copyJobId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

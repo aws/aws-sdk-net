@@ -62,7 +62,6 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 throw new AmazonOutpostsException("Request object does not have required field OutpostId set");
             request.AddPathResource("{OutpostId}", StringUtils.FromString(publicRequest.OutpostId));
             request.ResourcePath = "/outposts/{OutpostId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

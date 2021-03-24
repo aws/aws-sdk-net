@@ -66,7 +66,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field UserId set");
             request.AddPathResource("{UserId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/users/{InstanceId}/{UserId}/security-profiles";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

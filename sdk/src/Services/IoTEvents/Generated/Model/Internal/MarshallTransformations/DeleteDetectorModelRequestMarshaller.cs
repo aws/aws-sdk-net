@@ -62,7 +62,6 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 throw new AmazonIoTEventsException("Request object does not have required field DetectorModelName set");
             request.AddPathResource("{detectorModelName}", StringUtils.FromString(publicRequest.DetectorModelName));
             request.ResourcePath = "/detector-models/{detectorModelName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

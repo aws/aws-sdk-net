@@ -62,7 +62,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 throw new AmazonWellArchitectedException("Request object does not have required field WorkloadArn set");
             request.AddPathResource("{WorkloadArn}", StringUtils.FromString(publicRequest.WorkloadArn));
             request.ResourcePath = "/tags/{WorkloadArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

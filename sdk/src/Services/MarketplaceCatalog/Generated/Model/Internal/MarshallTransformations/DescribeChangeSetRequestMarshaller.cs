@@ -65,7 +65,6 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetChangeSetId())
                 request.Parameters.Add("changeSetId", StringUtils.FromString(publicRequest.ChangeSetId));
             request.ResourcePath = "/DescribeChangeSet";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

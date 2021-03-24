@@ -62,7 +62,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field SipMediaApplicationId set");
             request.AddPathResource("{sipMediaApplicationId}", StringUtils.FromString(publicRequest.SipMediaApplicationId));
             request.ResourcePath = "/sip-media-applications/{sipMediaApplicationId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

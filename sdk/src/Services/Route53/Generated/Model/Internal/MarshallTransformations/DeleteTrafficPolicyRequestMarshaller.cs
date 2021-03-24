@@ -63,7 +63,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field Version set");
             request.AddPathResource("{Version}", StringUtils.FromInt(publicRequest.Version));
             request.ResourcePath = "/2013-04-01/trafficpolicy/{Id}/{Version}";
-            request.MarshallerVersion = 2;
 
 
             return request;

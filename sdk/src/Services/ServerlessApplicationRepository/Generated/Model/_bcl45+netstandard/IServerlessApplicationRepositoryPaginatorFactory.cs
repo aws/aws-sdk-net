@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -42,4 +41,3 @@ namespace Amazon.ServerlessApplicationRepository.Model
         IListApplicationVersionsPaginator ListApplicationVersions(ListApplicationVersionsRequest request);
     }
 }
-#endif

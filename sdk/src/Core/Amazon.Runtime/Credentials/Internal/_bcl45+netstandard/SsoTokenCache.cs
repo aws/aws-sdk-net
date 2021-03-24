@@ -13,7 +13,6 @@
  * permissions and limitations under the License.
  */
 
-#if !NETSTANDARD13
 using System;
 using System.IO;
 using System.Text;
@@ -202,4 +201,3 @@ namespace Amazon.Runtime.Credentials.Internal
         }
     }
 }
-#endif

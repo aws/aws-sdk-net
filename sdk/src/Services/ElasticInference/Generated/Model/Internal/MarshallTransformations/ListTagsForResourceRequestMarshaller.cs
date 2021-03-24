@@ -62,7 +62,6 @@ namespace Amazon.ElasticInference.Model.Internal.MarshallTransformations
                 throw new AmazonElasticInferenceException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/tags/{resourceArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -68,7 +68,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
             request.ResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

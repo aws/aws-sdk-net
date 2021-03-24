@@ -62,7 +62,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field ImportId set");
             request.AddPathResource("{importId}", StringUtils.FromString(publicRequest.ImportId));
             request.ResourcePath = "/imports/{importId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

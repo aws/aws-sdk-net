@@ -62,7 +62,6 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 throw new AmazonGroundStationException("Request object does not have required field ContactId set");
             request.AddPathResource("{contactId}", StringUtils.FromString(publicRequest.ContactId));
             request.ResourcePath = "/contact/{contactId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -63,7 +63,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/resources/{ResourceArn}/tags";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

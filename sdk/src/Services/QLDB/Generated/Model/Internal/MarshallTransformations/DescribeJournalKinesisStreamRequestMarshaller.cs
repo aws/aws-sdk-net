@@ -65,7 +65,6 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 throw new AmazonQLDBException("Request object does not have required field StreamId set");
             request.AddPathResource("{streamId}", StringUtils.FromString(publicRequest.StreamId));
             request.ResourcePath = "/ledgers/{name}/journal-kinesis-streams/{streamId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

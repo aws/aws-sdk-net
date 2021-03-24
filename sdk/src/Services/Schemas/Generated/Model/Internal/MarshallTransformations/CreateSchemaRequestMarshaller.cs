@@ -66,7 +66,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                 throw new AmazonSchemasException("Request object does not have required field SchemaName set");
             request.AddPathResource("{schemaName}", StringUtils.FromString(publicRequest.SchemaName));
             request.ResourcePath = "/v1/registries/name/{registryName}/schemas/name/{schemaName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

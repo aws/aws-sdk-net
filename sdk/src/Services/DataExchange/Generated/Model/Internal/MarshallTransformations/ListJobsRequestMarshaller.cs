@@ -71,7 +71,6 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRevisionId())
                 request.Parameters.Add("revisionId", StringUtils.FromString(publicRequest.RevisionId));
             request.ResourcePath = "/v1/jobs";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

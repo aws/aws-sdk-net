@@ -62,7 +62,6 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field ResourceARN set");
             request.AddPathResource("{resourceARN}", StringUtils.FromString(publicRequest.ResourceARN));
             request.ResourcePath = "/tags/{resourceARN}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

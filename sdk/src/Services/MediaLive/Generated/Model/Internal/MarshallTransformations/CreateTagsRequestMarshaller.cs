@@ -63,7 +63,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/prod/tags/{resource-arn}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

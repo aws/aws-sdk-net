@@ -63,7 +63,6 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 throw new AmazonQLDBException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/ledgers/{name}/digest";
-            request.MarshallerVersion = 2;
 
             return request;
         }

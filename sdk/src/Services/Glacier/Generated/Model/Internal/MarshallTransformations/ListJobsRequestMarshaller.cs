@@ -75,7 +75,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatuscode())
                 request.Parameters.Add("statuscode", StringUtils.FromString(publicRequest.Statuscode));
             request.ResourcePath = "/{accountId}/vaults/{vaultName}/jobs";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -66,7 +66,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNamespace())
                 request.Parameters.Add("namespace", StringUtils.FromString(publicRequest.Namespace));
             request.ResourcePath = "/accounts/{AwsAccountId}/customizations";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

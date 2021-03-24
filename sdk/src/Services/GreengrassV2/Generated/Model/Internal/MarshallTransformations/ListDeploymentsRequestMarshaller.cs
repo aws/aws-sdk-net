@@ -71,7 +71,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTargetArn())
                 request.Parameters.Add("targetArn", StringUtils.FromString(publicRequest.TargetArn));
             request.ResourcePath = "/greengrass/v2/deployments";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

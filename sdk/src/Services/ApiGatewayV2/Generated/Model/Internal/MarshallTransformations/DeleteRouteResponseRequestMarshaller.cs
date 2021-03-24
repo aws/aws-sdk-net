@@ -68,7 +68,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field RouteResponseId set");
             request.AddPathResource("{routeResponseId}", StringUtils.FromString(publicRequest.RouteResponseId));
             request.ResourcePath = "/v2/apis/{apiId}/routes/{routeId}/routeresponses/{routeResponseId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

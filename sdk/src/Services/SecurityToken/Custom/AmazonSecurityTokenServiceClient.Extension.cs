@@ -16,23 +16,20 @@ using System;
 using System.Net;
 using System.Linq;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken.Model;
-using Amazon.Runtime.Internal;
+using Amazon.SecurityToken.SAML;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
-#if BCL || (NETSTANDARD && !NETSTANDARD13)
-using Amazon.SecurityToken.SAML;
 #endif
 
 namespace Amazon.SecurityToken
 {
     public partial class AmazonSecurityTokenServiceClient : AmazonServiceClient, IAmazonSecurityTokenService, ICoreAmazonSTS_WebIdentity
     {
-#if BCL || (NETSTANDARD && !NETSTANDARD13)
-#if NETSTANDARD20 || NETCOREAPP3_1
+#if !BCL
         SAMLImmutableCredentials ICoreAmazonSTS_SAML.CredentialsFromSAMLAuthentication(
 #else
         SAMLImmutableCredentials ICoreAmazonSTS.CredentialsFromSAMLAuthentication(
@@ -64,7 +61,6 @@ namespace Amazon.SecurityToken
                 throw new AmazonClientException("Credential generation failed following successful authentication.", e);
             }
         }
-#endif
 
         private AssumeRoleWithWebIdentityRequest SetupAssumeRoleWithWebIdentityRequest(string webIdentityToken, string roleArn,
             string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)

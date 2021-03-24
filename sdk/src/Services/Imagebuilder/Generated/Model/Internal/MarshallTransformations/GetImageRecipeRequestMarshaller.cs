@@ -62,7 +62,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetImageRecipeArn())
                 request.Parameters.Add("imageRecipeArn", StringUtils.FromString(publicRequest.ImageRecipeArn));
             request.ResourcePath = "/GetImageRecipe";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

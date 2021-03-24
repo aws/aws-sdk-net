@@ -65,7 +65,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetForceDelete())
                 request.Parameters.Add("forceDelete", StringUtils.FromBool(publicRequest.ForceDelete));
             request.ResourcePath = "/certificates/{certificateId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

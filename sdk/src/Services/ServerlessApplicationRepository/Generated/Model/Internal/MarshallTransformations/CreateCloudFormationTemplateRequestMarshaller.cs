@@ -63,7 +63,6 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}/templates";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

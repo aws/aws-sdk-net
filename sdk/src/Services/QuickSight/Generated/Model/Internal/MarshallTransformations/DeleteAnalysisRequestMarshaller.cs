@@ -71,7 +71,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRecoveryWindowInDays())
                 request.Parameters.Add("recovery-window-in-days", StringUtils.FromLong(publicRequest.RecoveryWindowInDays));
             request.ResourcePath = "/accounts/{AwsAccountId}/analyses/{AnalysisId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

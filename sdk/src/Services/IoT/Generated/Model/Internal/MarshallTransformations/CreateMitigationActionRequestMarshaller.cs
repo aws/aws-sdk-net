@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ActionName set");
             request.AddPathResource("{actionName}", StringUtils.FromString(publicRequest.ActionName));
             request.ResourcePath = "/mitigationactions/actions/{actionName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -68,7 +68,6 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/codereviews/{CodeReviewArn}/Recommendations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -86,7 +86,6 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSourceRefContains())
                 request.Parameters.Add("sourceRefContains", StringUtils.FromString(publicRequest.SourceRefContains));
             request.ResourcePath = "/2020-11-20/projects/{projectName}/datasets/{datasetType}/entries";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

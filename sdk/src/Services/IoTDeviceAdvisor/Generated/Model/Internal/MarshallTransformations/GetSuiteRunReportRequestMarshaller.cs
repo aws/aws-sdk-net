@@ -65,7 +65,6 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                 throw new AmazonIoTDeviceAdvisorException("Request object does not have required field SuiteRunId set");
             request.AddPathResource("{suiteRunId}", StringUtils.FromString(publicRequest.SuiteRunId));
             request.ResourcePath = "/suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}/report";
-            request.MarshallerVersion = 2;
 
             return request;
         }

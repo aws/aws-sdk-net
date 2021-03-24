@@ -65,7 +65,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/prod/tags/{resource-arn}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

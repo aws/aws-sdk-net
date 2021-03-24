@@ -66,7 +66,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionid", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/api/v1/resources/{ResourceId}/customMetadata";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

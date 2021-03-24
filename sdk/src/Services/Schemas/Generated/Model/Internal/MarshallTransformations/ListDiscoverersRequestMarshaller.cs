@@ -71,7 +71,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSourceArnPrefix())
                 request.Parameters.Add("sourceArnPrefix", StringUtils.FromString(publicRequest.SourceArnPrefix));
             request.ResourcePath = "/v1/discoverers";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

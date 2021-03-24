@@ -63,7 +63,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 throw new AmazonIoTAnalyticsException("Request object does not have required field PipelineName set");
             request.AddPathResource("{pipelineName}", StringUtils.FromString(publicRequest.PipelineName));
             request.ResourcePath = "/pipelines/{pipelineName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

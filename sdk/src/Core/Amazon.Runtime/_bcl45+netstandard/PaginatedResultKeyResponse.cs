@@ -1,5 +1,4 @@
-﻿#if !NETSTANDARD13
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -71,4 +70,3 @@ namespace Amazon.Runtime
 #endif
     }
 }
-#endif

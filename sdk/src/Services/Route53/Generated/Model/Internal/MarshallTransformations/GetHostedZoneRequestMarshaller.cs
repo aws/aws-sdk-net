@@ -60,7 +60,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}";
-            request.MarshallerVersion = 2;
 
 
             return request;

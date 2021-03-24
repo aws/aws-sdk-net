@@ -69,7 +69,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatusUpdateReason())
                 request.Parameters.Add("statusUpdateReason", StringUtils.FromString(publicRequest.StatusUpdateReason));
             request.ResourcePath = "/v20180820/jobs/{id}/status";
-            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

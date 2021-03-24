@@ -69,8 +69,6 @@ namespace Amazon.Util
 
         private const int MaxIsSetMethodsCacheSize = 50;
 
-        private static readonly Regex CompressWhitespaceRegex = new Regex("\\s+", RegexOptions.Compiled);
-
         public static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
         public const int DefaultBufferSize = 8192;
@@ -87,7 +85,7 @@ namespace Amazon.Util
         internal const string S3Accelerate = "s3-accelerate";
         internal const string S3Control = "s3-control";
 
-        private const int DefaultMarshallerVersion = 1;
+        private const int DefaultMarshallerVersion = 2;
 
         private static readonly string _userAgent = InternalSDKUtils.BuildUserAgentString(string.Empty);
 
@@ -172,8 +170,6 @@ namespace Amazon.Util
         public const string RFC822DateFormat = "ddd, dd MMM yyyy HH:mm:ss \\G\\M\\T";
 
 #endregion
-
-
 
 #region Internal Methods
 
@@ -353,18 +349,7 @@ namespace Amazon.Util
             if (string.IsNullOrEmpty(resourcePath))
                 return Slash;
 
-            
-            
-            IEnumerable<string> encodedSegments;
-            if(marshallerVersion >= 2)
-            {
-                encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, pathResources);
-            }
-            else
-            {
-                //split path at / into segments
-                encodedSegments = resourcePath.Split(new char[] { SlashChar }, StringSplitOptions.None);                
-            }
+            IEnumerable<string> encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, pathResources);
             
             var pathWasPreEncoded = false;
             if (detectPreEncode)
@@ -376,33 +361,14 @@ namespace Amazon.Util
                 // For everything else URL pre encode the resource path segments.
                 if (!S3Uri.IsS3Uri(endpoint))
                 {
-                    if(marshallerVersion >= 2)
-                    {
-                        encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, true).Replace(Slash, EncodedSlash));
-                    }
-                    else
-                    {
-                        encodedSegments = encodedSegments.Select(segment => ProtectEncodedSlashUrlEncode(segment, true));
-                    }
+                    encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, true).Replace(Slash, EncodedSlash));
                     
                     pathWasPreEncoded = true;
                 }
             }
 
-            var canonicalizedResourcePath = string.Empty;
-            if(marshallerVersion >= 2)
-            {
-                canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
-            }
-            else
-            {
-                // Encode for canonicalization
-                encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, false));
+            var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
 
-                // join the encoded segments with /
-                canonicalizedResourcePath = string.Join(Slash, encodedSegments.ToArray());
-            }
-            
             // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
             Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
                 pathWasPreEncoded ? "Double" : "Single",
@@ -974,7 +940,7 @@ namespace Amazon.Util
         {
             return (value >= 'A' && value <= 'Z') || (value >= 'a' && value <= 'z');
         }
-        #endregion The code in this region has been minimally adapted from Microsoft's PathInternal.Windows.cs class as of 11/19/2019.  The logic remains the same.
+#endregion The code in this region has been minimally adapted from Microsoft's PathInternal.Windows.cs class as of 11/19/2019.  The logic remains the same.
 
         /// <summary>
         /// URL encodes a string per RFC3986. If the path property is specified,
@@ -1040,7 +1006,8 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="data">The string to encode</param>
         /// <param name="path">Whether the string is a URL path or not</param>
-        /// <returns>The encoded string with any previously encoded %2F preserved</returns>        
+        /// <returns>The encoded string with any previously encoded %2F preserved</returns>
+        [Obsolete("This method is not supported in AWSSDK 3.5")]
         public static string ProtectEncodedSlashUrlEncode(string data, bool path)
         {
             if (string.IsNullOrEmpty(data))
@@ -1473,7 +1440,6 @@ namespace Amazon.Util
         }
 #endif
 
-#if !NETSTANDARD13
         /// <summary>
         /// This method allows to check whether a property of an object returned by a service call
         /// is set. This method is needed to discriminate whether a field is not set (not present in
@@ -1523,13 +1489,10 @@ namespace Amazon.Util
 
             return (bool)result;
         }
-#endif
+#endregion
 
-        #endregion
+#region Private Methods, Static Fields and Classes
 
-        #region Private Methods, Static Fields and Classes
-
-#if !NETSTANDARD13
         private static LruCache<IsSetMethodsCacheKey, MethodInfo> IsSetMethodsCache = new LruCache<IsSetMethodsCacheKey, MethodInfo>(MaxIsSetMethodsCacheSize);
 
         private class IsSetMethodsCacheKey
@@ -1561,7 +1524,6 @@ namespace Amazon.Util
                 return Type.FullName + "." + PropertyName;
             }
         }
-#endif
 #endregion
     }
 

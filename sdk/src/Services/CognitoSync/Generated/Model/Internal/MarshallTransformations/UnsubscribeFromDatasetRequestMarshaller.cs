@@ -71,7 +71,6 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
             request.AddPathResource("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
             request.ResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

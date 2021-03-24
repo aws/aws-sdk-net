@@ -63,7 +63,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field TemplateName set");
             request.AddPathResource("{template-name}", StringUtils.FromString(publicRequest.TemplateName));
             request.ResourcePath = "/v1/templates/{template-name}/voice";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

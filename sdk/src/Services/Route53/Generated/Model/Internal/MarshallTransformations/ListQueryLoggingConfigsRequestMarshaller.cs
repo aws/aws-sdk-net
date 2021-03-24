@@ -66,7 +66,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxresults", StringUtils.FromString(publicRequest.MaxResults));
             request.ResourcePath = "/2013-04-01/queryloggingconfig";
-            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

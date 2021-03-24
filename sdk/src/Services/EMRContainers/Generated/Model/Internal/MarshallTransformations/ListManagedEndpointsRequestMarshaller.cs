@@ -80,7 +80,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTypes())
                 request.ParameterCollection.Add("types", publicRequest.Types);
             request.ResourcePath = "/virtualclusters/{virtualClusterId}/endpoints";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

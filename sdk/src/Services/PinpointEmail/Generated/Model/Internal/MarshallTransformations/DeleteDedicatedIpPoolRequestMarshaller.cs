@@ -62,7 +62,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointEmailException("Request object does not have required field PoolName set");
             request.AddPathResource("{PoolName}", StringUtils.FromString(publicRequest.PoolName));
             request.ResourcePath = "/v1/email/dedicated-ip-pools/{PoolName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

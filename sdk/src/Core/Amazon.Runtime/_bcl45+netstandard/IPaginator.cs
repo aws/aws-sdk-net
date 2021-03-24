@@ -1,4 +1,4 @@
-﻿#if !NETSTANDARD13
+﻿
 using System.Collections.Generic;
 using System.Threading;
 
@@ -18,4 +18,3 @@ namespace Amazon.Runtime
 #endif
     }
 }
-#endif

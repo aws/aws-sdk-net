@@ -66,7 +66,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPriority())
                 request.Parameters.Add("priority", StringUtils.FromInt(publicRequest.Priority));
             request.ResourcePath = "/v20180820/jobs/{id}/priority";
-            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

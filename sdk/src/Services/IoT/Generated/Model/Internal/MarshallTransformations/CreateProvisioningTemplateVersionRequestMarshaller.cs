@@ -66,7 +66,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSetAsDefault())
                 request.Parameters.Add("setAsDefault", StringUtils.FromBool(publicRequest.SetAsDefault));
             request.ResourcePath = "/provisioning-templates/{templateName}/versions";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

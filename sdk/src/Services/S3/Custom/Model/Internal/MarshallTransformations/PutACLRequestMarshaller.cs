@@ -54,7 +54,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             //Not checking if Key is null or empty because PutAcl allows to put an ACL for both a Bucket or an Object. TODO: deprecate PutAcl and create two separate operations
 
             // if we are putting the acl onto the bucket, the keyname component will collapse to empty string
-			request.MarshallerVersion = 2;
 			request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(putObjectAclRequest.BucketName),
                                                  S3Transforms.ToStringValue(putObjectAclRequest.Key));

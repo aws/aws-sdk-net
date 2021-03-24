@@ -60,7 +60,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetAccountId())
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
             request.ResourcePath = "/v20180820/configuration/publicAccessBlock";
-            request.MarshallerVersion = 2;
 
 
 

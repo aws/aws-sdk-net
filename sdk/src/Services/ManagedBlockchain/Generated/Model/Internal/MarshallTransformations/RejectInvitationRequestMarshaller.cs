@@ -62,7 +62,6 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 throw new AmazonManagedBlockchainException("Request object does not have required field InvitationId set");
             request.AddPathResource("{invitationId}", StringUtils.FromString(publicRequest.InvitationId));
             request.ResourcePath = "/invitations/{invitationId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

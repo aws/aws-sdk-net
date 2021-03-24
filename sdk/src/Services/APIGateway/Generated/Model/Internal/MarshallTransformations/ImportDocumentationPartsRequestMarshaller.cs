@@ -69,7 +69,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMode())
                 request.Parameters.Add("mode", StringUtils.FromString(publicRequest.Mode));
             request.ResourcePath = "/restapis/{restapi_id}/documentation/parts";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

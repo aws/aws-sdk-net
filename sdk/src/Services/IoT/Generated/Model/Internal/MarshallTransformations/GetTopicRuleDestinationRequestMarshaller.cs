@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field Arn set");
             request.AddPathResource("{arn+}", StringUtils.FromString(publicRequest.Arn.TrimStart('/')));
             request.ResourcePath = "/destinations/{arn+}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

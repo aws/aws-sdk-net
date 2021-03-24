@@ -65,7 +65,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field UserId set");
             request.AddPathResource("{UserId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/users/{InstanceId}/{UserId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

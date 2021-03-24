@@ -62,7 +62,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 throw new AmazonMacie2Exception("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/findingsfilters/{id}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

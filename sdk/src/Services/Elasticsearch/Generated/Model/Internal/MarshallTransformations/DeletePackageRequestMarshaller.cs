@@ -62,7 +62,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 throw new AmazonElasticsearchException("Request object does not have required field PackageID set");
             request.AddPathResource("{PackageID}", StringUtils.FromString(publicRequest.PackageID));
             request.ResourcePath = "/2015-01-01/packages/{PackageID}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

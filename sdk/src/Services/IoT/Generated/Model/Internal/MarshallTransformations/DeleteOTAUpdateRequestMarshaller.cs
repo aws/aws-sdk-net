@@ -68,7 +68,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetForceDeleteAWSJob())
                 request.Parameters.Add("forceDeleteAWSJob", StringUtils.FromBool(publicRequest.ForceDeleteAWSJob));
             request.ResourcePath = "/otaUpdates/{otaUpdateId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

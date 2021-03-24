@@ -63,7 +63,6 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
                 throw new AmazonAppRegistryException("Request object does not have required field AttributeGroup set");
             request.AddPathResource("{attributeGroup}", StringUtils.FromString(publicRequest.AttributeGroup));
             request.ResourcePath = "/attribute-groups/{attributeGroup}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

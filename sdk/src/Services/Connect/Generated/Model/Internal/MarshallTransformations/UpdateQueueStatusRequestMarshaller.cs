@@ -66,7 +66,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field QueueId set");
             request.AddPathResource("{QueueId}", StringUtils.FromString(publicRequest.QueueId));
             request.ResourcePath = "/queues/{InstanceId}/{QueueId}/status";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

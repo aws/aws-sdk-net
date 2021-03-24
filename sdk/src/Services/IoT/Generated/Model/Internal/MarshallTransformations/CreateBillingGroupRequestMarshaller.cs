@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field BillingGroupName set");
             request.AddPathResource("{billingGroupName}", StringUtils.FromString(publicRequest.BillingGroupName));
             request.ResourcePath = "/billing-groups/{billingGroupName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -68,7 +68,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetIncludeDirectives())
                 request.Parameters.Add("includeDirectives", StringUtils.FromBool(publicRequest.IncludeDirectives));
             request.ResourcePath = "/v1/apis/{apiId}/schema";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

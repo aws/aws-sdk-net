@@ -74,7 +74,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNamespaceId())
                 request.Parameters.Add("namespaceId", StringUtils.FromString(publicRequest.NamespaceId));
             request.ResourcePath = "/things/{thingName}/jobs/{jobId}/executionNumber/{executionNumber}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

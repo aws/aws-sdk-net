@@ -63,7 +63,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassV2Exception("Request object does not have required field DeploymentId set");
             request.AddPathResource("{deploymentId}", StringUtils.FromString(publicRequest.DeploymentId));
             request.ResourcePath = "/greengrass/v2/deployments/{deploymentId}/cancel";
-            request.MarshallerVersion = 2;
 
             return request;
         }

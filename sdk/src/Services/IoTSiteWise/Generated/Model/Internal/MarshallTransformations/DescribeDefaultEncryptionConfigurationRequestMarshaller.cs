@@ -59,7 +59,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/configuration/account/encryption";
-            request.MarshallerVersion = 2;
 
             return request;
         }

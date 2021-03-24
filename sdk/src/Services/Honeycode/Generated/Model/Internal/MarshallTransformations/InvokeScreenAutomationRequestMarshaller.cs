@@ -72,7 +72,6 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
                 throw new AmazonHoneycodeException("Request object does not have required field WorkbookId set");
             request.AddPathResource("{workbookId}", StringUtils.FromString(publicRequest.WorkbookId));
             request.ResourcePath = "/workbooks/{workbookId}/apps/{appId}/screens/{screenId}/automations/{automationId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

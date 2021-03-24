@@ -65,7 +65,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field VersionId set");
             request.AddPathResource("{versionId}", StringUtils.FromInt(publicRequest.VersionId));
             request.ResourcePath = "/provisioning-templates/{templateName}/versions/{versionId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

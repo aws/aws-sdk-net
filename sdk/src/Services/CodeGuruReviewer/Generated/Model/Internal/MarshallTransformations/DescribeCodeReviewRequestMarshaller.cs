@@ -62,7 +62,6 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                 throw new AmazonCodeGuruReviewerException("Request object does not have required field CodeReviewArn set");
             request.AddPathResource("{CodeReviewArn}", StringUtils.FromString(publicRequest.CodeReviewArn));
             request.ResourcePath = "/codereviews/{CodeReviewArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

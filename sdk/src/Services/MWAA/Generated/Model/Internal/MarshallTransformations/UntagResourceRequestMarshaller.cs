@@ -65,7 +65,6 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/tags/{ResourceArn}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
             request.HostPrefix = $"api.";

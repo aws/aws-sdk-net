@@ -66,7 +66,6 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetQos())
                 request.Parameters.Add("qos", StringUtils.FromInt(publicRequest.Qos));
             request.ResourcePath = "/topics/{topic}";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Payload ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

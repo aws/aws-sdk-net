@@ -71,7 +71,6 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetOrder())
                 request.Parameters.Add("order", StringUtils.FromString(publicRequest.Order));
             request.ResourcePath = "/2017-08-29/queues";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

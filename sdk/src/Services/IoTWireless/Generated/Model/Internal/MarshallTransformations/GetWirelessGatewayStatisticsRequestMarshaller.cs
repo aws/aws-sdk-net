@@ -62,7 +62,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field WirelessGatewayId set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.WirelessGatewayId));
             request.ResourcePath = "/wireless-gateways/{Id}/statistics";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -65,7 +65,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field GlobalNetworkId set");
             request.AddPathResource("{globalNetworkId}", StringUtils.FromString(publicRequest.GlobalNetworkId));
             request.ResourcePath = "/global-networks/{globalNetworkId}/devices/{deviceId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

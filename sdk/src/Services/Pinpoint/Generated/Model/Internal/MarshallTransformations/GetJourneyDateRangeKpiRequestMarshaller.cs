@@ -80,7 +80,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("start-time", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
             request.ResourcePath = "/v1/apps/{application-id}/journeys/{journey-id}/kpis/daterange/{kpi-name}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

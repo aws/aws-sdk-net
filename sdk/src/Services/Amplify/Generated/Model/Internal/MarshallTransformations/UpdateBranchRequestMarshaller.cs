@@ -66,7 +66,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field BranchName set");
             request.AddPathResource("{branchName}", StringUtils.FromString(publicRequest.BranchName));
             request.ResourcePath = "/apps/{appId}/branches/{branchName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -63,7 +63,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field GroupId set");
             request.AddPathResource("{GroupId}", StringUtils.FromString(publicRequest.GroupId));
             request.ResourcePath = "/greengrass/groups/{GroupId}/deployments/$reset";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -71,7 +71,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMilestoneNumber())
                 request.Parameters.Add("MilestoneNumber", StringUtils.FromInt(publicRequest.MilestoneNumber));
             request.ResourcePath = "/workloads/{WorkloadId}/lensReviews/{LensAlias}/answers/{QuestionId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

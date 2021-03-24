@@ -66,7 +66,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAppInstanceUserArn())
                 request.Parameters.Add("app-instance-user-arn", StringUtils.FromString(publicRequest.AppInstanceUserArn));
             request.ResourcePath = "/channels/{channelArn}";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetChimeBearer())
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;

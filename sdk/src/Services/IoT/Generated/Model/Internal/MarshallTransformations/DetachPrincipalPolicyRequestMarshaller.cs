@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field PolicyName set");
             request.AddPathResource("{policyName}", StringUtils.FromString(publicRequest.PolicyName));
             request.ResourcePath = "/principal-policies/{policyName}";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetPrincipal())
                 request.Headers["x-amzn-iot-principal"] = publicRequest.Principal;

@@ -46,7 +46,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (getBucketOwnershipControlsRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getBucketOwnershipControlsRequest.ExpectedBucketOwner));
 
-            request.MarshallerVersion = 2;
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketOwnershipControlsRequest.BucketName));
             request.AddSubResource("ownershipControls");
             request.UseQueryString = true;

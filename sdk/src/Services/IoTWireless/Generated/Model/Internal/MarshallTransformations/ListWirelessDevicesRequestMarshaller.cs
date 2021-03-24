@@ -77,7 +77,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetWirelessDeviceType())
                 request.Parameters.Add("wirelessDeviceType", StringUtils.FromString(publicRequest.WirelessDeviceType));
             request.ResourcePath = "/wireless-devices";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

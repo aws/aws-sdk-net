@@ -62,7 +62,6 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                 throw new AmazonPollyException("Request object does not have required field TaskId set");
             request.AddPathResource("{TaskId}", StringUtils.FromString(publicRequest.TaskId));
             request.ResourcePath = "/v1/synthesisTasks/{TaskId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

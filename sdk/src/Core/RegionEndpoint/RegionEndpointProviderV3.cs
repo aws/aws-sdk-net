@@ -329,7 +329,6 @@ namespace Amazon.Internal
 
         private static Stream GetEndpointJsonSourceStream()
         {
-#if BCL || (NETSTANDARD && !NETSTANDARD13)
             //
             // If the endpoints.json file has been provided next to the assembly:
             //
@@ -342,7 +341,7 @@ namespace Amazon.Internal
                     return File.Open(endpointsPath, FileMode.Open, FileAccess.Read);
                 }
             }
-#endif
+
             //
             // Default to endpoints.json file provided in the resource manifest:
             //

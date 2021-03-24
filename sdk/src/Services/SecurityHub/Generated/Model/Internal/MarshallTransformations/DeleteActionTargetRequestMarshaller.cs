@@ -62,7 +62,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 throw new AmazonSecurityHubException("Request object does not have required field ActionTargetArn set");
             request.AddPathResource("{ActionTargetArn+}", StringUtils.FromString(publicRequest.ActionTargetArn.TrimStart('/')));
             request.ResourcePath = "/actionTargets/{ActionTargetArn+}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

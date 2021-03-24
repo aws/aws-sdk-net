@@ -60,7 +60,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonCloudFrontException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/2020-05-31/distribution/{Id}";
-            request.MarshallerVersion = 2;
 
 
             return request;

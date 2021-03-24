@@ -66,7 +66,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field ClusterName set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.ClusterName));
             request.ResourcePath = "/clusters/{name}/addons/{addonName}/update";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -63,7 +63,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/destinations/{Name}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

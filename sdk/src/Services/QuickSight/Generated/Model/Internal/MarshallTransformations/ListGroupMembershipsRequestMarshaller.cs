@@ -74,7 +74,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

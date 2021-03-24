@@ -63,7 +63,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field RecommenderId set");
             request.AddPathResource("{recommender-id}", StringUtils.FromString(publicRequest.RecommenderId));
             request.ResourcePath = "/v1/recommenders/{recommender-id}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

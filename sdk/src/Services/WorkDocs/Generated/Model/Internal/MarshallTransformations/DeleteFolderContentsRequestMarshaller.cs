@@ -62,7 +62,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field FolderId set");
             request.AddPathResource("{FolderId}", StringUtils.FromString(publicRequest.FolderId));
             request.ResourcePath = "/api/v1/folders/{FolderId}/contents";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

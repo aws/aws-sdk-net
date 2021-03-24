@@ -63,7 +63,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
             request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
             request.ResourcePath = "/detector/{detectorId}/member/disassociate";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

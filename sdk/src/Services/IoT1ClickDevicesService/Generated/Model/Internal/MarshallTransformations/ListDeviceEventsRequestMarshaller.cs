@@ -74,7 +74,6 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetToTimeStampUtc())
                 request.Parameters.Add("toTimeStamp", StringUtils.FromDateTimeToISO8601(publicRequest.ToTimeStampUtc));
             request.ResourcePath = "/devices/{deviceId}/events";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -61,7 +61,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
             request.AddSubResource("operation", "batch-delete");
             request.ResourcePath = "/phone-numbers";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

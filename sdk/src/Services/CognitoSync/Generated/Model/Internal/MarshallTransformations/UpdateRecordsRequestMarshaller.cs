@@ -69,7 +69,6 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
             request.AddPathResource("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
             request.ResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ThingGroupName set");
             request.AddPathResource("{thingGroupName}", StringUtils.FromString(publicRequest.ThingGroupName));
             request.ResourcePath = "/thing-groups/{thingGroupName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

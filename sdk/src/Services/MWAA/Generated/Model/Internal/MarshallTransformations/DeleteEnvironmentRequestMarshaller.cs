@@ -62,7 +62,6 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 throw new AmazonMWAAException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/environments/{Name}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"api.";
 

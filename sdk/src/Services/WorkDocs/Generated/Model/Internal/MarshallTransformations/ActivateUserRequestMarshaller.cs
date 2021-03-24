@@ -63,7 +63,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field UserId set");
             request.AddPathResource("{UserId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/api/v1/users/{UserId}/activation";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

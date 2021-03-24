@@ -71,7 +71,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStartTimeUtc())
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
             request.ResourcePath = "/channels/{channelName}/sample";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

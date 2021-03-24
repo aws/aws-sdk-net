@@ -71,7 +71,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTemplateType())
                 request.Parameters.Add("template-type", StringUtils.FromString(publicRequest.TemplateType));
             request.ResourcePath = "/v1/templates";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

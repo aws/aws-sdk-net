@@ -65,7 +65,6 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyBackendException("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/backend/{appId}/challenge/{sessionId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

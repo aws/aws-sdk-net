@@ -65,7 +65,6 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                 throw new AmazonLookoutforVisionException("Request object does not have required field ProjectName set");
             request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
             request.ResourcePath = "/2020-11-20/projects/{projectName}/models/{modelVersion}";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetClientToken())
                 request.Headers["X-Amzn-Client-Token"] = publicRequest.ClientToken;

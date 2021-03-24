@@ -22,12 +22,6 @@
     <DefineConstants>$(DefineConstants);<#=
                     string.Join(";", this.Project.DefineConstants) #></DefineConstants>
 <#
-    if (this.Project.TargetFrameworks.Contains("netstandard1.3"))
-    {
-#>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard1.3'">$(DefineConstants);NETSTANDARD13;ADD_SUPPORT_ICLONEABLE;ADD_SUPPORT_IORDERED_DICTIONARY</DefineConstants>
-<#
-    }
     if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
     {
 #>
@@ -84,12 +78,6 @@
 #>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath><#=this.Project.OutputPathOverride #></OutputPath>
-<#
-    }
-    if (this.Project.TargetFrameworks.Contains("netstandard1.3"))
-    {
-#>
-    <NetStandardImplicitPackageVersion  Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
 <#
     }
 #>

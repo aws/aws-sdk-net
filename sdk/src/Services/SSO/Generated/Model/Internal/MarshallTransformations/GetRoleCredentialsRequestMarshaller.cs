@@ -65,7 +65,6 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRoleName())
                 request.Parameters.Add("role_name", StringUtils.FromString(publicRequest.RoleName));
             request.ResourcePath = "/federation/credentials";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAccessToken())
                 request.Headers["x-amz-sso_bearer_token"] = publicRequest.AccessToken;

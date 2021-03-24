@@ -65,7 +65,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field QueueId set");
             request.AddPathResource("{QueueId}", StringUtils.FromString(publicRequest.QueueId));
             request.ResourcePath = "/queues/{InstanceId}/{QueueId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

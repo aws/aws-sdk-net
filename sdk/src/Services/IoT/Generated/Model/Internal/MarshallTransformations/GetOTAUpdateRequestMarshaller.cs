@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field OtaUpdateId set");
             request.AddPathResource("{otaUpdateId}", StringUtils.FromString(publicRequest.OtaUpdateId));
             request.ResourcePath = "/otaUpdates/{otaUpdateId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -65,7 +65,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/datasets/{datasetName}/content";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

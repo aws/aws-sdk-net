@@ -63,7 +63,6 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConvertException("Request object does not have required field Arn set");
             request.AddPathResource("{arn}", StringUtils.FromString(publicRequest.Arn));
             request.ResourcePath = "/2017-08-29/tags/{arn}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

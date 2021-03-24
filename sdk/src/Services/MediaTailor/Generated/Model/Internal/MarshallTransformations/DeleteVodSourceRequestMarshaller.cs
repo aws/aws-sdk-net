@@ -65,7 +65,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field VodSourceName set");
             request.AddPathResource("{vodSourceName}", StringUtils.FromString(publicRequest.VodSourceName));
             request.ResourcePath = "/sourceLocation/{sourceLocationName}/vodSource/{vodSourceName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

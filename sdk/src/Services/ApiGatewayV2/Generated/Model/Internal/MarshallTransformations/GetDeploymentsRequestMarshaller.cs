@@ -68,7 +68,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v2/apis/{apiId}/deployments";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

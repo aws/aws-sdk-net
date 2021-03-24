@@ -130,7 +130,7 @@ namespace Amazon.Runtime
                     }
                 }
             }
-#if BCL45 || (NETSTANDARD && !NETSTANDARD13)
+#if !BCL35
             var profileFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             if (!string.IsNullOrEmpty(profileFolder))
             {
@@ -141,8 +141,7 @@ namespace Amazon.Runtime
                     return credentialFile;
                 }
             }
-#elif BCL35
-
+#else
             var profileFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             if (!string.IsNullOrEmpty(profileFolder))
             {

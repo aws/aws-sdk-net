@@ -65,7 +65,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field VpcInterfaceName set");
             request.AddPathResource("{vpcInterfaceName}", StringUtils.FromString(publicRequest.VpcInterfaceName));
             request.ResourcePath = "/v1/flows/{flowArn}/vpcInterfaces/{vpcInterfaceName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

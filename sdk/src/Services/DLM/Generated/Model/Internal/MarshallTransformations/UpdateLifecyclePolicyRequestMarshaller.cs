@@ -63,7 +63,6 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 throw new AmazonDLMException("Request object does not have required field PolicyId set");
             request.AddPathResource("{policyId}", StringUtils.FromString(publicRequest.PolicyId));
             request.ResourcePath = "/policies/{policyId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

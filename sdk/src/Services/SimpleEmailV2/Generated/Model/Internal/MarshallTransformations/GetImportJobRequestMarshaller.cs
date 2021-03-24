@@ -62,7 +62,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field JobId set");
             request.AddPathResource("{JobId}", StringUtils.FromString(publicRequest.JobId));
             request.ResourcePath = "/v2/email/import-jobs/{JobId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

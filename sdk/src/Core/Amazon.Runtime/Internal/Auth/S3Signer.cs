@@ -197,9 +197,7 @@ namespace Amazon.Runtime.Internal.Auth
             // during request preprocessing (where it would have been removed from ResourcePath)
             var sb = new StringBuilder(request.CanonicalResourcePrefix);
             sb.Append(!string.IsNullOrEmpty(request.ResourcePath)
-                                ? request.MarshallerVersion >= 2 
-                                    ? AWSSDKUtils.ResolveResourcePath(request.ResourcePath, request.PathResources)
-                                    : AWSSDKUtils.UrlEncode(request.ResourcePath, true)
+                                ? AWSSDKUtils.ResolveResourcePath(request.ResourcePath, request.PathResources)
                                 : "/");
 
             // form up the set of all subresources and specific query parameters that must be 

@@ -71,7 +71,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetVersionNumber())
                 request.Parameters.Add("version-number", StringUtils.FromLong(publicRequest.VersionNumber));
             request.ResourcePath = "/accounts/{AwsAccountId}/templates/{TemplateId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

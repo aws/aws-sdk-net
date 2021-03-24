@@ -62,7 +62,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointEmailException("Request object does not have required field EmailIdentity set");
             request.AddPathResource("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
             request.ResourcePath = "/v1/email/identities/{EmailIdentity}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

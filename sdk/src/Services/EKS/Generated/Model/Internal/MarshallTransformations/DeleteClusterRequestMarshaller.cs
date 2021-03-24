@@ -62,7 +62,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/clusters/{name}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

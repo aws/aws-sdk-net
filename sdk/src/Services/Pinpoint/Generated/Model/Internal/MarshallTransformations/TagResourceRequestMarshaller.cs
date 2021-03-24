@@ -63,7 +63,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/v1/tags/{resource-arn}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

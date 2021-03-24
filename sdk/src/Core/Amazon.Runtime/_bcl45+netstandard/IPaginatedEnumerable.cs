@@ -1,5 +1,4 @@
-﻿#if !NETSTANDARD13
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,4 +21,3 @@ namespace Amazon.Runtime
 
     }
 }
-#endif

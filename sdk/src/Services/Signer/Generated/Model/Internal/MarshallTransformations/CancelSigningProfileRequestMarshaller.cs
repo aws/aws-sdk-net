@@ -62,7 +62,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 throw new AmazonSignerException("Request object does not have required field ProfileName set");
             request.AddPathResource("{profileName}", StringUtils.FromString(publicRequest.ProfileName));
             request.ResourcePath = "/signing-profiles/{profileName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -65,7 +65,6 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDetectorModelVersion())
                 request.Parameters.Add("version", StringUtils.FromString(publicRequest.DetectorModelVersion));
             request.ResourcePath = "/detector-models/{detectorModelName}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

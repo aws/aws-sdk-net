@@ -60,7 +60,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/administrator/disassociate";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -66,7 +66,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNewStatus())
                 request.Parameters.Add("newStatus", StringUtils.FromString(publicRequest.NewStatus));
             request.ResourcePath = "/certificates/{certificateId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

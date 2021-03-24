@@ -72,7 +72,6 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexRuntimeV2Exception("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/utterance";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.InputStream ?? new MemoryStream();
             if(request.ContentStream.CanSeek)
             {

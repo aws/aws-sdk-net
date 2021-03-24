@@ -66,7 +66,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DataSetId set");
             request.AddPathResource("{DataSetId}", StringUtils.FromString(publicRequest.DataSetId));
             request.ResourcePath = "/accounts/{AwsAccountId}/data-sets/{DataSetId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

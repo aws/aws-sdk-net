@@ -61,7 +61,6 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
 
             request.AddSubResource("format", "sdk");
             request.ResourcePath = "/2013-01-01/documents/batch";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Documents ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -37,4 +36,3 @@ namespace Amazon.Route53.Model
         IPaginatedEnumerable<ResourceRecordSet> ResourceRecordSets { get; }
     }
 }
-#endif

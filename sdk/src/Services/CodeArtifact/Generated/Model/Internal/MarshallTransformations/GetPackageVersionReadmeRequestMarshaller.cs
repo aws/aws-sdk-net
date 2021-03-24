@@ -80,7 +80,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRepository())
                 request.Parameters.Add("repository", StringUtils.FromString(publicRequest.Repository));
             request.ResourcePath = "/v1/package/version/readme";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -65,7 +65,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/2017-03-31/tags/{ARN}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

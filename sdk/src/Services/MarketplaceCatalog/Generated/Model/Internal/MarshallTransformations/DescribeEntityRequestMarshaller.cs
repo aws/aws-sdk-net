@@ -65,7 +65,6 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetEntityId())
                 request.Parameters.Add("entityId", StringUtils.FromString(publicRequest.EntityId));
             request.ResourcePath = "/DescribeEntity";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -68,7 +68,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetLinkId())
                 request.Parameters.Add("linkId", StringUtils.FromString(publicRequest.LinkId));
             request.ResourcePath = "/global-networks/{globalNetworkId}/link-associations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

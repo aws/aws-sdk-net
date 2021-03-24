@@ -74,7 +74,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetUserType())
                 request.Parameters.Add("user-type", StringUtils.FromString(publicRequest.UserType));
             request.ResourcePath = "/accounts/{accountId}/users";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

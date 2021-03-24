@@ -62,7 +62,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field ReservationId set");
             request.AddPathResource("{reservationId}", StringUtils.FromString(publicRequest.ReservationId));
             request.ResourcePath = "/prod/reservations/{reservationId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

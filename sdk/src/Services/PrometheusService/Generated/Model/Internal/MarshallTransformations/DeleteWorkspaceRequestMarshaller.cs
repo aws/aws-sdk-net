@@ -68,7 +68,6 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
             request.ResourcePath = "/workspaces/{workspaceId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

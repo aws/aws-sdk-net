@@ -62,7 +62,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field DashboardId set");
             request.AddPathResource("{dashboardId}", StringUtils.FromString(publicRequest.DashboardId));
             request.ResourcePath = "/dashboards/{dashboardId}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"monitor.";
 

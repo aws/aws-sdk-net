@@ -63,7 +63,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointEmailException("Request object does not have required field EmailIdentity set");
             request.AddPathResource("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
             request.ResourcePath = "/v1/email/identities/{EmailIdentity}/dkim";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

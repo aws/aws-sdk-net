@@ -85,9 +85,7 @@ namespace Amazon.Runtime.CredentialManagement
                 {
                     { "AccessKey", SettingsConstants.AccessKeyField },
                     { "CredentialSource", SettingsConstants.CredentialSourceField },
-#if !NETSTANDARD13
                     { "EndpointName", SettingsConstants.EndpointNameField },
-#endif
                     { "ExternalID", SettingsConstants.ExternalIDField},
                     { "MfaSerial", SettingsConstants.MfaSerialField},
                     { "RoleArn", SettingsConstants.RoleArnField },
@@ -95,14 +93,12 @@ namespace Amazon.Runtime.CredentialManagement
                     { "SecretKey", SettingsConstants.SecretKeyField },
                     { "SourceProfile", SettingsConstants.SourceProfileField },
                     { "Token", SettingsConstants.SessionTokenField },
-#if !NETSTANDARD13
                     { "UserIdentity", SettingsConstants.UserIdentityField },
-#endif
                     // Not implemented for NetSDKCredentials. Applicable only
                     // for SharedCredentials
                     { "CredentialProcess" , SettingsConstants.CredentialProcess },
                     { "WebIdentityTokenFile", SettingsConstants.WebIdentityTokenFile },
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
@@ -427,12 +423,10 @@ namespace Amazon.Runtime.CredentialManagement
                 case CredentialProfileType.Basic:
                     properties[SettingsConstants.ProfileTypeField] = AWSCredentialsProfileType;
                     break;
-#if !NETSTANDARD13
                 case CredentialProfileType.SAMLRole:
                 case CredentialProfileType.SAMLRoleUserIdentity:
                     properties[SettingsConstants.ProfileTypeField] = SAMLRoleProfileType;
                     break;
-#endif
                 default:
                     properties[SettingsConstants.ProfileTypeField] = profileType.ToString();
                     break;

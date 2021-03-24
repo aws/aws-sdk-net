@@ -32,7 +32,7 @@ namespace Amazon.NetworkFirewall
     public partial class AmazonNetworkFirewallConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.5.1.5");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.0");
 
         private string _userAgent = UserAgentString;
 

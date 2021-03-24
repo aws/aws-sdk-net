@@ -65,7 +65,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field EndpointId set");
             request.AddPathResource("{endpoint-id}", StringUtils.FromString(publicRequest.EndpointId));
             request.ResourcePath = "/v1/apps/{application-id}/endpoints/{endpoint-id}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

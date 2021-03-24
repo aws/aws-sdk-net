@@ -69,7 +69,6 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
                 throw new AmazonAppRegistryException("Request object does not have required field ResourceType set");
             request.AddPathResource("{resourceType}", StringUtils.FromString(publicRequest.ResourceType));
             request.ResourcePath = "/applications/{application}/resources/{resourceType}/{resource}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

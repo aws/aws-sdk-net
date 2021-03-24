@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field TaskId set");
             request.AddPathResource("{taskId}", StringUtils.FromString(publicRequest.TaskId));
             request.ResourcePath = "/thing-registration-tasks/{taskId}/cancel";
-            request.MarshallerVersion = 2;
 
             return request;
         }

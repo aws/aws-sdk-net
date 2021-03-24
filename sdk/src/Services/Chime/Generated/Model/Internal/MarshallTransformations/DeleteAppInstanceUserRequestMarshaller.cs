@@ -62,7 +62,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field AppInstanceUserArn set");
             request.AddPathResource("{appInstanceUserArn}", StringUtils.FromString(publicRequest.AppInstanceUserArn));
             request.ResourcePath = "/app-instance-users/{appInstanceUserArn}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"identity-";
 

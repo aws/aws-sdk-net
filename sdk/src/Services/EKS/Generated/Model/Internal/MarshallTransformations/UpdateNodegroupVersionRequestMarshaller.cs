@@ -66,7 +66,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field NodegroupName set");
             request.AddPathResource("{nodegroupName}", StringUtils.FromString(publicRequest.NodegroupName));
             request.ResourcePath = "/clusters/{name}/node-groups/{nodegroupName}/update-version";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

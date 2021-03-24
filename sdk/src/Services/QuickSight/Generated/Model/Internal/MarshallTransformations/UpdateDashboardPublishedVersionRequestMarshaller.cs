@@ -69,7 +69,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field VersionNumber set");
             request.AddPathResource("{VersionNumber}", StringUtils.FromLong(publicRequest.VersionNumber));
             request.ResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/versions/{VersionNumber}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

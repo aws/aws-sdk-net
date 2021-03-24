@@ -72,7 +72,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRecursive())
                 request.Parameters.Add("recursive", StringUtils.FromBool(publicRequest.Recursive));
             request.ResourcePath = "/attached-policies/{target}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

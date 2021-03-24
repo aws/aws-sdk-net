@@ -63,7 +63,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field DashboardId set");
             request.AddPathResource("{dashboardId}", StringUtils.FromString(publicRequest.DashboardId));
             request.ResourcePath = "/dashboards/{dashboardId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

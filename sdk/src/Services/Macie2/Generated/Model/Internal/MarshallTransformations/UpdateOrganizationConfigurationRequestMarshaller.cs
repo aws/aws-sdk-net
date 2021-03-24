@@ -60,7 +60,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             request.ResourcePath = "/admin/configuration";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

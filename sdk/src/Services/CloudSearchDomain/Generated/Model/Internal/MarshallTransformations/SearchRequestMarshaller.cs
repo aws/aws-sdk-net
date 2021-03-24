@@ -103,7 +103,6 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStats())
                 request.Parameters.Add("stats", StringUtils.FromString(publicRequest.Stats));
             request.ResourcePath = "/2013-01-01/search";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

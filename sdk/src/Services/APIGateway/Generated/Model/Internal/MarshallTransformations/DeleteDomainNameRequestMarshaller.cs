@@ -62,7 +62,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field DomainName set");
             request.AddPathResource("{domain_name}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domainnames/{domain_name}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

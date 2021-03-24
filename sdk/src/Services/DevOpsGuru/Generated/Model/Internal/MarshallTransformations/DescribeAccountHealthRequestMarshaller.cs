@@ -59,7 +59,6 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/accounts/health";
-            request.MarshallerVersion = 2;
 
             return request;
         }

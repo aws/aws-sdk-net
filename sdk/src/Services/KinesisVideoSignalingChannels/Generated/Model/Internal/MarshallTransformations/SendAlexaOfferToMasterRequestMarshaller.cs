@@ -60,7 +60,6 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/send-alexa-offer-to-master";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

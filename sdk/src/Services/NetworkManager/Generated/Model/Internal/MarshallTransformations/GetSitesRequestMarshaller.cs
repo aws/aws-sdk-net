@@ -71,7 +71,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSiteIds())
                 request.ParameterCollection.Add("siteIds", publicRequest.SiteIds);
             request.ResourcePath = "/global-networks/{globalNetworkId}/sites";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -65,7 +65,6 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSyncFromResources())
                 request.Parameters.Add("syncFromResources", StringUtils.FromBool(publicRequest.SyncFromResources));
             request.ResourcePath = "/project";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

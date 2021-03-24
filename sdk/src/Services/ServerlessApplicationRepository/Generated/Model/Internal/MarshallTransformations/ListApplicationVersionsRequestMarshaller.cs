@@ -68,7 +68,6 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/applications/{applicationId}/versions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -71,7 +71,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetQuickConnectTypes())
                 request.ParameterCollection.Add("QuickConnectTypes", publicRequest.QuickConnectTypes);
             request.ResourcePath = "/quick-connects/{InstanceId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

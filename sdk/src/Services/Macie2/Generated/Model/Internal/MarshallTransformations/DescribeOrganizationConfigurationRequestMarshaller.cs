@@ -59,7 +59,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/admin/configuration";
-            request.MarshallerVersion = 2;
 
             return request;
         }

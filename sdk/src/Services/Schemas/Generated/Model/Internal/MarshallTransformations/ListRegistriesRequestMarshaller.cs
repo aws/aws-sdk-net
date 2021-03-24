@@ -71,7 +71,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetScope())
                 request.Parameters.Add("scope", StringUtils.FromString(publicRequest.Scope));
             request.ResourcePath = "/v1/registries";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

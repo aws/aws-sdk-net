@@ -62,7 +62,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field ClientCertificateId set");
             request.AddPathResource("{clientcertificate_id}", StringUtils.FromString(publicRequest.ClientCertificateId));
             request.ResourcePath = "/clientcertificates/{clientcertificate_id}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

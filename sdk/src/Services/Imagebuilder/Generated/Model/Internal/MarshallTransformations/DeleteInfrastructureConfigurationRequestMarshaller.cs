@@ -62,7 +62,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetInfrastructureConfigurationArn())
                 request.Parameters.Add("infrastructureConfigurationArn", StringUtils.FromString(publicRequest.InfrastructureConfigurationArn));
             request.ResourcePath = "/DeleteInfrastructureConfiguration";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

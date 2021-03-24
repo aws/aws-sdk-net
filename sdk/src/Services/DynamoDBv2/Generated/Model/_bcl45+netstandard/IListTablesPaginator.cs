@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -37,4 +36,3 @@ namespace Amazon.DynamoDBv2.Model
         IPaginatedEnumerable<string> TableNames { get; }
     }
 }
-#endif

@@ -62,7 +62,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field Ip set");
             request.AddPathResource("{IP}", StringUtils.FromString(publicRequest.Ip));
             request.ResourcePath = "/v2/email/dedicated-ips/{IP}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

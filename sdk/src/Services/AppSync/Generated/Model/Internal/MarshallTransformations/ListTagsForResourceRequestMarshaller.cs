@@ -62,7 +62,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/v1/tags/{resourceArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

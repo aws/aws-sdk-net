@@ -74,7 +74,6 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTargetTags())
                 request.ParameterCollection.Add("targetTags", publicRequest.TargetTags);
             request.ResourcePath = "/policies";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -65,7 +65,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
             request.ResourcePath = "/v2/email/import-jobs";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

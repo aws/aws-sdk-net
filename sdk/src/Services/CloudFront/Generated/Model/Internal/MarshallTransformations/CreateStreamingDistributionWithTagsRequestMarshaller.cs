@@ -58,7 +58,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
             request.AddSubResource("WithTags");
             request.ResourcePath = "/2020-05-31/streaming-distribution";
-            request.MarshallerVersion = 2;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))

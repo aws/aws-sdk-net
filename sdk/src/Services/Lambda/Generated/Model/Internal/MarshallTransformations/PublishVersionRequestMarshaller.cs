@@ -63,7 +63,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
             request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
             request.ResourcePath = "/2015-03-31/functions/{FunctionName}/versions";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -62,7 +62,6 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                 throw new AmazonFISException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/experimentTemplates/{id}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

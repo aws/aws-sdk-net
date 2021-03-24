@@ -40,7 +40,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(deleteBucketEncryptionRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketEncryptionRequest.BucketName");
 
-			request.MarshallerVersion = 2;
+
 			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteBucketEncryptionRequest.BucketName));
             request.AddSubResource("encryption");
             request.UseQueryString = true;

@@ -65,7 +65,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field FargateProfileName set");
             request.AddPathResource("{fargateProfileName}", StringUtils.FromString(publicRequest.FargateProfileName));
             request.ResourcePath = "/clusters/{name}/fargate-profiles/{fargateProfileName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

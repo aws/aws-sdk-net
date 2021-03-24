@@ -63,7 +63,6 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 throw new AmazonMediaPackageException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/channels/{id}/configure_logs";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

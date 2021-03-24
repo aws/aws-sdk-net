@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ThingTypeName set");
             request.AddPathResource("{thingTypeName}", StringUtils.FromString(publicRequest.ThingTypeName));
             request.ResourcePath = "/thing-types/{thingTypeName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

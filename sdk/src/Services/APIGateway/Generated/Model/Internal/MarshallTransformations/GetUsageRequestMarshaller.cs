@@ -77,7 +77,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("startDate", StringUtils.FromString(publicRequest.StartDate));
             request.ResourcePath = "/usageplans/{usageplanId}/usage";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

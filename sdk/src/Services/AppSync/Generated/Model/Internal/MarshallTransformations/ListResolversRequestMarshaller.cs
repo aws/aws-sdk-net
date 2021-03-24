@@ -71,7 +71,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v1/apis/{apiId}/types/{typeName}/resolvers";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

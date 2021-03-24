@@ -16,7 +16,6 @@ using System;
 
 namespace Amazon.Runtime
 {
-#if !NETSTANDARD13
     /// <summary>
     /// Custom exception type thrown when authentication for a user fails due to
     /// invalid credentials.
@@ -59,5 +58,4 @@ namespace Amazon.Runtime
         }
 #endif
     }
-#endif
 }

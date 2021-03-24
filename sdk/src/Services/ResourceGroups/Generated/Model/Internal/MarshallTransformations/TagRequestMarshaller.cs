@@ -63,7 +63,6 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                 throw new AmazonResourceGroupsException("Request object does not have required field Arn set");
             request.AddPathResource("{Arn}", StringUtils.FromString(publicRequest.Arn));
             request.ResourcePath = "/resources/{Arn}/tags";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

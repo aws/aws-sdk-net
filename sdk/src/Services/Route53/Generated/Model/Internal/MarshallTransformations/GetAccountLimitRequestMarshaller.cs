@@ -60,7 +60,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field Type set");
             request.AddPathResource("{Type}", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/2013-04-01/accountlimit/{Type}";
-            request.MarshallerVersion = 2;
 
 
             return request;

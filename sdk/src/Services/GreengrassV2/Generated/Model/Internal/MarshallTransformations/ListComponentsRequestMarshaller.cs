@@ -68,7 +68,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetScope())
                 request.Parameters.Add("scope", StringUtils.FromString(publicRequest.Scope));
             request.ResourcePath = "/greengrass/v2/components";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

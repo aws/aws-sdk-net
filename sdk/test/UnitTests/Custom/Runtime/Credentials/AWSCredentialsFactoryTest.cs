@@ -139,7 +139,7 @@ namespace AWSSDK.UnitTests
                 UserIdentity = "user_identity"
             });
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         private static readonly CredentialProfile SsoProfile =
             new CredentialProfile("sso_profile", new CredentialProfileOptions
             {
@@ -237,7 +237,7 @@ namespace AWSSDK.UnitTests
             ProfileStore.Profiles.Add(AssumeRoleChainedAssumeRoleSource.Name, AssumeRoleChainedAssumeRoleSource);
             ProfileStore.Profiles.Add(AssumeRoleLoopedAssumeRoleSource1.Name, AssumeRoleLoopedAssumeRoleSource1);
             ProfileStore.Profiles.Add(AssumeRoleLoopedAssumeRoleSource2.Name, AssumeRoleLoopedAssumeRoleSource2);
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
             ProfileStore.Profiles.Add(SsoProfile.Name, SsoProfile);
             ProfileStore.Profiles.Add(SsoProfileMissingFields.Name, SsoProfileMissingFields);
             ProfileStore.Profiles.Add(SsoProfileMixedFields.Name, SsoProfileMixedFields);
@@ -278,7 +278,7 @@ namespace AWSSDK.UnitTests
         private static readonly AssumeRoleAWSCredentials AssumeRoleChainedAssumeRoleCredentials =
             new AssumeRoleAWSCredentials(AssumeRoleCredentialsBasicSource, "second_role_arn", "role_session_name");
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         private static readonly SSOAWSCredentials SsoCredentials =
             new SSOAWSCredentials(
                 SsoProfile.Options.SsoAccountId,
@@ -475,7 +475,7 @@ namespace AWSSDK.UnitTests
             }, typeof(InvalidOperationException), string.Format(UserIdentityCallbackErrorFormat, SAMLRoleUserIdentityProfile.Name));
         }
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         [TestMethod]
         public void GetSsoCredentialsNoCallback()
         {
@@ -655,7 +655,7 @@ namespace AWSSDK.UnitTests
             }, typeof(InvalidOperationException), UserIdentityCallbackErrorAnonymous);
         }
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         [TestMethod]
         public void GetSsoCredentialsNoCallbackAnonymous()
         {
@@ -768,7 +768,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expected.Options.ProxySettings, actual.Options.ProxySettings);
         }
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         private void AssertSSOCredentialsAreEqual(SSOAWSCredentials expected, AWSCredentials actualAWSCredentials)
         {
             var actual = actualAWSCredentials as SSOAWSCredentials;

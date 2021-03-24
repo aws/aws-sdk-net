@@ -62,7 +62,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDomainName())
                 request.Parameters.Add("domainName", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/2015-01-01/es/compatibleVersions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

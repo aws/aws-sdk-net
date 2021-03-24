@@ -177,7 +177,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HostPrefix = $"{hostPrefixLabels.RequestRoute}.";
 
-            request.MarshallerVersion = 2;
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
                                                  S3Transforms.ToStringValue("WriteGetObjectResponse"));
                                                  

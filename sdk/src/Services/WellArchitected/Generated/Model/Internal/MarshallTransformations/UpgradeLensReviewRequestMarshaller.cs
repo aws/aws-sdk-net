@@ -66,7 +66,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 throw new AmazonWellArchitectedException("Request object does not have required field WorkloadId set");
             request.AddPathResource("{WorkloadId}", StringUtils.FromString(publicRequest.WorkloadId));
             request.ResourcePath = "/workloads/{WorkloadId}/lensReviews/{LensAlias}/upgrade";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

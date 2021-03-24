@@ -66,7 +66,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field RoutingProfileId set");
             request.AddPathResource("{RoutingProfileId}", StringUtils.FromString(publicRequest.RoutingProfileId));
             request.ResourcePath = "/routing-profiles/{InstanceId}/{RoutingProfileId}/queues";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

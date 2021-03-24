@@ -63,7 +63,6 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 throw new AmazonDataExchangeException("Request object does not have required field DataSetId set");
             request.AddPathResource("{DataSetId}", StringUtils.FromString(publicRequest.DataSetId));
             request.ResourcePath = "/v1/data-sets/{DataSetId}/revisions";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

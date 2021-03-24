@@ -62,7 +62,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field BackupPlanId set");
             request.AddPathResource("{backupPlanId}", StringUtils.FromString(publicRequest.BackupPlanId));
             request.ResourcePath = "/backup/plans/{backupPlanId}/toTemplate/";
-            request.MarshallerVersion = 2;
 
             return request;
         }

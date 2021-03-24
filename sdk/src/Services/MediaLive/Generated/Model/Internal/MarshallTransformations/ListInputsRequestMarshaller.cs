@@ -65,7 +65,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/prod/inputs";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

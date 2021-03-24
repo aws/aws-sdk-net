@@ -68,7 +68,6 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("pageSize", StringUtils.FromInt(publicRequest.PageSize));
             request.ResourcePath = "/api/things/shadow/ListNamedShadowsForThing/{thingName}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

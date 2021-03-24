@@ -71,7 +71,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

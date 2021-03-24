@@ -62,7 +62,6 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 throw new AmazonOutpostsException("Request object does not have required field SiteId set");
             request.AddPathResource("{SiteId}", StringUtils.FromString(publicRequest.SiteId));
             request.ResourcePath = "/sites/{SiteId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

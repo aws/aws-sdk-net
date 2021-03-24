@@ -68,7 +68,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetFlatten())
                 request.Parameters.Add("flatten", StringUtils.FromBool(publicRequest.Flatten));
             request.ResourcePath = "/restapis/{restapi_id}/models/{model_name}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

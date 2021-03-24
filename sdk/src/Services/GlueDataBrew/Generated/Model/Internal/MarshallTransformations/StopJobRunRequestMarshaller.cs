@@ -66,7 +66,6 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 throw new AmazonGlueDataBrewException("Request object does not have required field RunId set");
             request.AddPathResource("{runId}", StringUtils.FromString(publicRequest.RunId));
             request.ResourcePath = "/jobs/{name}/jobRun/{runId}/stopJobRun";
-            request.MarshallerVersion = 2;
 
             return request;
         }

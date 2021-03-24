@@ -62,7 +62,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field CampaignId set");
             request.AddPathResource("{CampaignId}", StringUtils.FromString(publicRequest.CampaignId));
             request.ResourcePath = "/v2/email/deliverability-dashboard/campaigns/{CampaignId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

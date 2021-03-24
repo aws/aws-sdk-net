@@ -68,7 +68,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field PrincipalId set");
             request.AddPathResource("{PrincipalId}", StringUtils.FromString(publicRequest.PrincipalId));
             request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/user-principals/{PrincipalId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

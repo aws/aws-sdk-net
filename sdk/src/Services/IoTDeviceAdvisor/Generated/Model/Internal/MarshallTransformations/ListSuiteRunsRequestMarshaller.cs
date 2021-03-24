@@ -71,7 +71,6 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSuiteDefinitionVersion())
                 request.Parameters.Add("suiteDefinitionVersion", StringUtils.FromString(publicRequest.SuiteDefinitionVersion));
             request.ResourcePath = "/suiteRuns";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

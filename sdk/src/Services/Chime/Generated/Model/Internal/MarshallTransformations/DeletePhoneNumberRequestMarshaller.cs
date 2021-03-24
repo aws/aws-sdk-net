@@ -62,7 +62,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field PhoneNumberId set");
             request.AddPathResource("{phoneNumberId}", StringUtils.FromString(publicRequest.PhoneNumberId));
             request.ResourcePath = "/phone-numbers/{phoneNumberId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

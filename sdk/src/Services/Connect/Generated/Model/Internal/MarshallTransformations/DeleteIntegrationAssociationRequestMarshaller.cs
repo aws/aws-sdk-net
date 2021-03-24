@@ -65,7 +65,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field IntegrationAssociationId set");
             request.AddPathResource("{IntegrationAssociationId}", StringUtils.FromString(publicRequest.IntegrationAssociationId));
             request.ResourcePath = "/instance/{InstanceId}/integration-associations/{IntegrationAssociationId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

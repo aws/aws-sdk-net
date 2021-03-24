@@ -63,7 +63,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 throw new AmazonWellArchitectedException("Request object does not have required field ShareInvitationId set");
             request.AddPathResource("{ShareInvitationId}", StringUtils.FromString(publicRequest.ShareInvitationId));
             request.ResourcePath = "/shareInvitations/{ShareInvitationId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

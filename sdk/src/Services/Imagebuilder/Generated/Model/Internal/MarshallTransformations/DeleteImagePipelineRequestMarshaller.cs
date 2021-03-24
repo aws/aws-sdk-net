@@ -62,7 +62,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetImagePipelineArn())
                 request.Parameters.Add("imagePipelineArn", StringUtils.FromString(publicRequest.ImagePipelineArn));
             request.ResourcePath = "/DeleteImagePipeline";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

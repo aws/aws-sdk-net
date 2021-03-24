@@ -65,7 +65,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field SelectionId set");
             request.AddPathResource("{selectionId}", StringUtils.FromString(publicRequest.SelectionId));
             request.ResourcePath = "/backup/plans/{backupPlanId}/selections/{selectionId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

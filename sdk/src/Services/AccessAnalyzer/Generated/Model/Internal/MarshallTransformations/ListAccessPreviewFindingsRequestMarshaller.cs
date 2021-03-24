@@ -63,7 +63,6 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 throw new AmazonAccessAnalyzerException("Request object does not have required field AccessPreviewId set");
             request.AddPathResource("{accessPreviewId}", StringUtils.FromString(publicRequest.AccessPreviewId));
             request.ResourcePath = "/access-preview/{accessPreviewId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

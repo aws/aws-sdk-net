@@ -62,7 +62,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field OfferingId set");
             request.AddPathResource("{offeringId}", StringUtils.FromString(publicRequest.OfferingId));
             request.ResourcePath = "/prod/offerings/{offeringId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

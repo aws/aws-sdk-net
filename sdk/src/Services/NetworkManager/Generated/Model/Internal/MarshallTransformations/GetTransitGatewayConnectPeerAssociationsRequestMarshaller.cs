@@ -71,7 +71,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTransitGatewayConnectPeerArns())
                 request.ParameterCollection.Add("transitGatewayConnectPeerArns", publicRequest.TransitGatewayConnectPeerArns);
             request.ResourcePath = "/global-networks/{globalNetworkId}/transit-gateway-connect-peer-associations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

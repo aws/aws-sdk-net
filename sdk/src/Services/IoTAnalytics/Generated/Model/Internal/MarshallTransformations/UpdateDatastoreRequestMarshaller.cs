@@ -63,7 +63,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 throw new AmazonIoTAnalyticsException("Request object does not have required field DatastoreName set");
             request.AddPathResource("{datastoreName}", StringUtils.FromString(publicRequest.DatastoreName));
             request.ResourcePath = "/datastores/{datastoreName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

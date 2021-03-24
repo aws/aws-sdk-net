@@ -62,7 +62,6 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            request.MarshallerVersion = 2;
             var content = "{}";
             request.Content = System.Text.Encoding.UTF8.GetBytes(content);
 

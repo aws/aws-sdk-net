@@ -68,7 +68,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field Version set");
             request.AddPathResource("{version}", StringUtils.FromString(publicRequest.Version));
             request.ResourcePath = "/v1/apps/{application-id}/segments/{segment-id}/versions/{version}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

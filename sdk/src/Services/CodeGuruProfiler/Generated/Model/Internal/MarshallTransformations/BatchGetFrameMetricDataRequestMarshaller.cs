@@ -75,7 +75,6 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTargetResolution())
                 request.Parameters.Add("targetResolution", StringUtils.FromString(publicRequest.TargetResolution));
             request.ResourcePath = "/profilingGroups/{profilingGroupName}/frames/-/metrics";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

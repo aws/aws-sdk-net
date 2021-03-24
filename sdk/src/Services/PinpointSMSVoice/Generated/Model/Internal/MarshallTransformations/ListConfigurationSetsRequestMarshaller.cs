@@ -65,7 +65,6 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("PageSize", StringUtils.FromString(publicRequest.PageSize));
             request.ResourcePath = "/v1/sms-voice/configuration-sets";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

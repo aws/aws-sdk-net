@@ -62,7 +62,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field PoolName set");
             request.AddPathResource("{PoolName}", StringUtils.FromString(publicRequest.PoolName));
             request.ResourcePath = "/v2/email/dedicated-ip-pools/{PoolName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

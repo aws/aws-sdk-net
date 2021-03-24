@@ -63,7 +63,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field ChannelId set");
             request.AddPathResource("{channelId}", StringUtils.FromString(publicRequest.ChannelId));
             request.ResourcePath = "/prod/channels/{channelId}/channelClass";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

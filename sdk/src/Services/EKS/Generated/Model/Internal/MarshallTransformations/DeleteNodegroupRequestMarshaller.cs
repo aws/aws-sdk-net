@@ -65,7 +65,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field NodegroupName set");
             request.AddPathResource("{nodegroupName}", StringUtils.FromString(publicRequest.NodegroupName));
             request.ResourcePath = "/clusters/{name}/node-groups/{nodegroupName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

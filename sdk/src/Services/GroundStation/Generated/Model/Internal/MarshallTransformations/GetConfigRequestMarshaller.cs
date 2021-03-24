@@ -65,7 +65,6 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 throw new AmazonGroundStationException("Request object does not have required field ConfigType set");
             request.AddPathResource("{configType}", StringUtils.FromString(publicRequest.ConfigType));
             request.ResourcePath = "/config/{configType}/{configId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

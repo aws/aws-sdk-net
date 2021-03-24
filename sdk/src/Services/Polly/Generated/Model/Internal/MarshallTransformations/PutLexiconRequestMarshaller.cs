@@ -63,7 +63,6 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                 throw new AmazonPollyException("Request object does not have required field Name set");
             request.AddPathResource("{LexiconName}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/v1/lexicons/{LexiconName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

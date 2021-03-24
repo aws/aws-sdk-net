@@ -57,7 +57,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "POST";
             request.ResourcePath = "/2013-04-01/keysigningkey";
-            request.MarshallerVersion = 2;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))

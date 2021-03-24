@@ -65,7 +65,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field ProgramName set");
             request.AddPathResource("{programName}", StringUtils.FromString(publicRequest.ProgramName));
             request.ResourcePath = "/prod/multiplexes/{multiplexId}/programs/{programName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

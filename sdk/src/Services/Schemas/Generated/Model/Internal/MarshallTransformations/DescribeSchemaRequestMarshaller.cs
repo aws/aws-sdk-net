@@ -68,7 +68,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSchemaVersion())
                 request.Parameters.Add("schemaVersion", StringUtils.FromString(publicRequest.SchemaVersion));
             request.ResourcePath = "/v1/registries/name/{registryName}/schemas/name/{schemaName}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

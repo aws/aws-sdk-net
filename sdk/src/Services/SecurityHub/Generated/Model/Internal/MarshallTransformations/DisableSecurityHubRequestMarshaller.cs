@@ -59,7 +59,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             request.ResourcePath = "/accounts";
-            request.MarshallerVersion = 2;
 
             return request;
         }

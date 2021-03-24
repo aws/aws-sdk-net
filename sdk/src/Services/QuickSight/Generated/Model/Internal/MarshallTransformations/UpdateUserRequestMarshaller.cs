@@ -69,7 +69,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field UserName set");
             request.AddPathResource("{UserName}", StringUtils.FromString(publicRequest.UserName));
             request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

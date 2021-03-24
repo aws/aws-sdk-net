@@ -77,7 +77,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPillarId())
                 request.Parameters.Add("PillarId", StringUtils.FromString(publicRequest.PillarId));
             request.ResourcePath = "/workloads/{WorkloadId}/lensReviews/{LensAlias}/answers";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

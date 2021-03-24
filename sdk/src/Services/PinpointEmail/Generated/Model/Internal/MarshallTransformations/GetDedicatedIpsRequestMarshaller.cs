@@ -68,7 +68,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPoolName())
                 request.Parameters.Add("PoolName", StringUtils.FromString(publicRequest.PoolName));
             request.ResourcePath = "/v1/email/dedicated-ips";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

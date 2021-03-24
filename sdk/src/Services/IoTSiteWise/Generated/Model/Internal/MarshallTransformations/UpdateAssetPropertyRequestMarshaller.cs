@@ -66,7 +66,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field PropertyId set");
             request.AddPathResource("{propertyId}", StringUtils.FromString(publicRequest.PropertyId));
             request.ResourcePath = "/assets/{assetId}/properties/{propertyId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -68,7 +68,6 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageToken())
                 request.Parameters.Add("PageToken", StringUtils.FromString(publicRequest.PageToken));
             request.ResourcePath = "/2012-09-25/jobsByStatus/{Status}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

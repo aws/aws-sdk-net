@@ -66,7 +66,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field OutputArn set");
             request.AddPathResource("{outputArn}", StringUtils.FromString(publicRequest.OutputArn));
             request.ResourcePath = "/v1/flows/{flowArn}/outputs/{outputArn}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

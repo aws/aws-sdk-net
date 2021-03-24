@@ -65,7 +65,6 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKeyValue())
                 request.Parameters.Add("keyValue", StringUtils.FromString(publicRequest.KeyValue));
             request.ResourcePath = "/detectors/{detectorModelName}/keyValues/";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

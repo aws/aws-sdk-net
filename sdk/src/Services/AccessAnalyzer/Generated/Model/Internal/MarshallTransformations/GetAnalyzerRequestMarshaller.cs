@@ -62,7 +62,6 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 throw new AmazonAccessAnalyzerException("Request object does not have required field AnalyzerName set");
             request.AddPathResource("{analyzerName}", StringUtils.FromString(publicRequest.AnalyzerName));
             request.ResourcePath = "/analyzer/{analyzerName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

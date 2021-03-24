@@ -29,10 +29,8 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         AssumeRoleExternalMFA,
         AssumeRoleMFA,
         Basic,
-#if !NETSTANDARD13
         SAMLRole,
         SAMLRoleUserIdentity,
-#endif
         Session,
         CredentialProcess,
         AssumeRoleWithWebIdentity,
@@ -42,7 +40,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         AssumeRoleExternalSessionName,
         AssumeRoleExternalMFASessionName,
         AssumeRoleMFASessionName,
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         SSO,
 #endif
     }
@@ -76,7 +74,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string UserIdentity = "UserIdentity";
         private const string CredentialProcess = "CredentialProcess";
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         private const string SsoAccountId = nameof(CredentialProfileOptions.SsoAccountId);
         private const string SsoRegion = nameof(CredentialProfileOptions.SsoRegion);
         private const string SsoRoleName = nameof(CredentialProfileOptions.SsoRoleName);
@@ -157,7 +155,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         SecretKey,
                     }
                 },
-#if !NETSTANDARD13
                 {
                     CredentialProfileType.SAMLRole, new HashSet<string>()
                     {
@@ -173,7 +170,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         UserIdentity,
                     }
                 },
-#endif
                 {
                     CredentialProfileType.Session, new HashSet<string>()
                     {
@@ -226,7 +222,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         RoleSessionName
                     }
                 },
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
                 {
                     CredentialProfileType.SSO, new HashSet<string>()
                     {
@@ -253,10 +249,8 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                 { CredentialProfileType.AssumeRoleExternalMFASessionName, AssumeRoleCredentials },
                 { CredentialProfileType.AssumeRoleMFASessionName, AssumeRoleCredentials },
                 { CredentialProfileType.Basic, BasicCredentials },
-#if !NETSTANDARD13
                 { CredentialProfileType.SAMLRole, SAMLCredentials },
                 { CredentialProfileType.SAMLRoleUserIdentity, SAMLCredentials },
-#endif
                 { CredentialProfileType.Session, SessionCredentials },
                 { CredentialProfileType.CredentialProcess, CredentialProcess }
             };
@@ -279,7 +273,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
 
             HashSet<string> propertyNames = GetPropertyNames(profileOptions);
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
             // Spec: If one or more of the SSO properties is present, the profile MUST be resolved by the SSO credential provider.
             if (propertyNames.Any(propertyName => SsoProperties.Contains(propertyName)))
             {

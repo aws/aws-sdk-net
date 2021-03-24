@@ -66,7 +66,6 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field SemanticVersion set");
             request.AddPathResource("{semanticVersion}", StringUtils.FromString(publicRequest.SemanticVersion));
             request.ResourcePath = "/applications/{applicationId}/versions/{semanticVersion}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -62,7 +62,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field CodeSigningConfigArn set");
             request.AddPathResource("{CodeSigningConfigArn}", StringUtils.FromString(publicRequest.CodeSigningConfigArn));
             request.ResourcePath = "/2020-04-22/code-signing-configs/{CodeSigningConfigArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

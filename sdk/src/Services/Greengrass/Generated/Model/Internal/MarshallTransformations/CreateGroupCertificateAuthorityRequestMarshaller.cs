@@ -63,7 +63,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field GroupId set");
             request.AddPathResource("{GroupId}", StringUtils.FromString(publicRequest.GroupId));
             request.ResourcePath = "/greengrass/groups/{GroupId}/certificateauthorities";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAmznClientToken())
                 request.Headers["X-Amzn-Client-Token"] = publicRequest.AmznClientToken;

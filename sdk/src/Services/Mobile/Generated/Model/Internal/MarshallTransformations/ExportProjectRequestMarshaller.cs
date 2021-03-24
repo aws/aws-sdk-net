@@ -63,7 +63,6 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
                 throw new AmazonMobileException("Request object does not have required field ProjectId set");
             request.AddPathResource("{projectId}", StringUtils.FromString(publicRequest.ProjectId));
             request.ResourcePath = "/exports/{projectId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

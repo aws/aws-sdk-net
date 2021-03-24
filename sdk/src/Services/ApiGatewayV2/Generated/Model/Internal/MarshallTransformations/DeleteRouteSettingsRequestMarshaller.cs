@@ -68,7 +68,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field StageName set");
             request.AddPathResource("{stageName}", StringUtils.FromString(publicRequest.StageName));
             request.ResourcePath = "/v2/apis/{apiId}/stages/{stageName}/routesettings/{routeKey}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

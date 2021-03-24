@@ -68,7 +68,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field ThemeId set");
             request.AddPathResource("{ThemeId}", StringUtils.FromString(publicRequest.ThemeId));
             request.ResourcePath = "/accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

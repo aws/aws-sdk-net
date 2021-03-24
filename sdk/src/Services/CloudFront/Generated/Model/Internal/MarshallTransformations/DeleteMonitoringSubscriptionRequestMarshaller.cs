@@ -60,7 +60,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
             request.AddPathResource("{DistributionId}", StringUtils.FromString(publicRequest.DistributionId));
             request.ResourcePath = "/2020-05-31/distributions/{DistributionId}/monitoring-subscription";
-            request.MarshallerVersion = 2;
 
 
             return request;

@@ -63,7 +63,6 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                 throw new AmazonFISException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/experimentTemplates/{id}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

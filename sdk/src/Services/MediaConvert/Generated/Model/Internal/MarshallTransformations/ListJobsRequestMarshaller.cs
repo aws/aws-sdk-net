@@ -74,7 +74,6 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/2017-08-29/jobs";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -62,7 +62,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field AccessPolicyId set");
             request.AddPathResource("{accessPolicyId}", StringUtils.FromString(publicRequest.AccessPolicyId));
             request.ResourcePath = "/access-policies/{accessPolicyId}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"monitor.";
 

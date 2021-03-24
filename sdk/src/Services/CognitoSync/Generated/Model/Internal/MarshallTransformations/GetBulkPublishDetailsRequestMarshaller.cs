@@ -63,7 +63,6 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
             request.AddPathResource("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
             request.ResourcePath = "/identitypools/{IdentityPoolId}/getBulkPublishDetails";
-            request.MarshallerVersion = 2;
 
             return request;
         }

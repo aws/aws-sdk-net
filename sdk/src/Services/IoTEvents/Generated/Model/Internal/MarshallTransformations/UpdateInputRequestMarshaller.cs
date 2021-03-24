@@ -63,7 +63,6 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 throw new AmazonIoTEventsException("Request object does not have required field InputName set");
             request.AddPathResource("{inputName}", StringUtils.FromString(publicRequest.InputName));
             request.ResourcePath = "/inputs/{inputName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -63,7 +63,6 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field ClaimCode set");
             request.AddPathResource("{claimCode}", StringUtils.FromString(publicRequest.ClaimCode));
             request.ResourcePath = "/claims/{claimCode}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

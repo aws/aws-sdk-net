@@ -66,7 +66,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field ThemeId set");
             request.AddPathResource("{ThemeId}", StringUtils.FromString(publicRequest.ThemeId));
             request.ResourcePath = "/accounts/{AwsAccountId}/themes/{ThemeId}/permissions";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

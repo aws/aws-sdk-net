@@ -68,7 +68,6 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPath())
                 request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
             request.ResourcePath = "/";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

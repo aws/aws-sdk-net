@@ -63,7 +63,6 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 throw new AmazonElasticTranscoderException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/2012-09-25/pipelines/{Id}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

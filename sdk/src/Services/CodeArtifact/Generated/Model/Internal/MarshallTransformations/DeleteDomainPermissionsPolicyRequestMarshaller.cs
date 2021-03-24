@@ -68,7 +68,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPolicyRevision())
                 request.Parameters.Add("policy-revision", StringUtils.FromString(publicRequest.PolicyRevision));
             request.ResourcePath = "/v1/domain/permissions/policy";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

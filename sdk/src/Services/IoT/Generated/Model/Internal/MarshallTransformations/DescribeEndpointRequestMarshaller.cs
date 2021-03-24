@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetEndpointType())
                 request.Parameters.Add("endpointType", StringUtils.FromString(publicRequest.EndpointType));
             request.ResourcePath = "/endpoint";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

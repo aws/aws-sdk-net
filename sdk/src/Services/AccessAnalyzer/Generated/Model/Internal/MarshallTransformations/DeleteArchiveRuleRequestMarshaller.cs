@@ -71,7 +71,6 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
             request.ResourcePath = "/analyzer/{analyzerName}/archive-rule/{ruleName}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

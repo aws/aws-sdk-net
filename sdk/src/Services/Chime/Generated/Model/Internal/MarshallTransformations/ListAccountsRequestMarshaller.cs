@@ -71,7 +71,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetUserEmail())
                 request.Parameters.Add("user-email", StringUtils.FromString(publicRequest.UserEmail));
             request.ResourcePath = "/accounts";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -68,7 +68,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));
             request.ResourcePath = "/v1/apis/{apiId}/types/{typeName}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

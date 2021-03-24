@@ -62,7 +62,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field ContactListName set");
             request.AddPathResource("{ContactListName}", StringUtils.FromString(publicRequest.ContactListName));
             request.ResourcePath = "/v2/email/contact-lists/{ContactListName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

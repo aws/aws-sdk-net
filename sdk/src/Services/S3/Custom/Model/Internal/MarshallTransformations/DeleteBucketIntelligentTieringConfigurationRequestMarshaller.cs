@@ -42,7 +42,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(deleteBucketIntelligentTieringConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "deleteBucketIntelligentTieringConfigurationRequest.BucketName");
 
-            request.MarshallerVersion = 2;
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteBucketIntelligentTieringConfigurationRequest.BucketName));
             request.AddSubResource("intelligent-tiering");
             request.AddSubResource("id", deleteBucketIntelligentTieringConfigurationRequest.IntelligentTieringId);

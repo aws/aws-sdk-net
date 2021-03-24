@@ -62,7 +62,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDistributionConfigurationArn())
                 request.Parameters.Add("distributionConfigurationArn", StringUtils.FromString(publicRequest.DistributionConfigurationArn));
             request.ResourcePath = "/DeleteDistributionConfiguration";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

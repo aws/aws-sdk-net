@@ -15,7 +15,6 @@
 
 namespace Amazon.Runtime
 {
-#if !NETSTANDARD13
     /// <summary>
     /// State class passed on callback to demand user credentials when authentication
     /// needs to be performed using a non-default identity.
@@ -47,5 +46,4 @@ namespace Amazon.Runtime
         /// </summary>
         public bool PreviousAuthenticationFailed { get; internal set; }
     }
-#endif
 }

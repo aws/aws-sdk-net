@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -626,4 +625,3 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
     }
 }
-#endif

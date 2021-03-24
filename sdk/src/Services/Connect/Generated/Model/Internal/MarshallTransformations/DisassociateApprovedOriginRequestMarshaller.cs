@@ -65,7 +65,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetOrigin())
                 request.Parameters.Add("origin", StringUtils.FromString(publicRequest.Origin));
             request.ResourcePath = "/instance/{InstanceId}/approved-origin";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

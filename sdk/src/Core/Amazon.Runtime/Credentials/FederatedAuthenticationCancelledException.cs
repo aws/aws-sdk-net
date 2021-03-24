@@ -16,7 +16,6 @@ using System;
 
 namespace Amazon.Runtime
 {
-#if !NETSTANDARD13
     /// <summary>
     /// Custom exception type thrown when a role profile with user identity is used
     /// in conjunction with a credential request callback. This exception is thrown
@@ -60,5 +59,4 @@ namespace Amazon.Runtime
         }
 #endif
     }
-#endif
 }

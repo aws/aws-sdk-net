@@ -74,7 +74,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("page-size", StringUtils.FromString(publicRequest.PageSize));
             request.ResourcePath = "/v1/apps/{application-id}/journeys/{journey-id}/activities/{journey-activity-id}/execution-metrics";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

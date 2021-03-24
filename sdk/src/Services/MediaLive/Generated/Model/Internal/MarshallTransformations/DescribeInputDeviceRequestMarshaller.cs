@@ -62,7 +62,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field InputDeviceId set");
             request.AddPathResource("{inputDeviceId}", StringUtils.FromString(publicRequest.InputDeviceId));
             request.ResourcePath = "/prod/inputDevices/{inputDeviceId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

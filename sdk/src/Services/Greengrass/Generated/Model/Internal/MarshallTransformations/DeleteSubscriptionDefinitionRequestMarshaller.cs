@@ -62,7 +62,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field SubscriptionDefinitionId set");
             request.AddPathResource("{SubscriptionDefinitionId}", StringUtils.FromString(publicRequest.SubscriptionDefinitionId));
             request.ResourcePath = "/greengrass/definition/subscriptions/{SubscriptionDefinitionId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

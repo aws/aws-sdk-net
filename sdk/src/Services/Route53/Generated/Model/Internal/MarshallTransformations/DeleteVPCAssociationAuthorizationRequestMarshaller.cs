@@ -60,7 +60,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.HostedZoneId));
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}/deauthorizevpcassociation";
-            request.MarshallerVersion = 2;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))

@@ -68,7 +68,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/greengrass/v2/components/{arn}/versions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -65,7 +65,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassV2Exception("Request object does not have required field ArtifactName set");
             request.AddPathResource("{artifactName+}", StringUtils.FromString(publicRequest.ArtifactName.TrimStart('/')));
             request.ResourcePath = "/greengrass/v2/components/{arn}/artifacts/{artifactName+}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

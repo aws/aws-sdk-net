@@ -68,7 +68,6 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetOrigin())
                 request.Parameters.Add("origin", StringUtils.FromString(publicRequest.Origin));
             request.ResourcePath = "/v1/data-sets";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -67,4 +66,3 @@ namespace Amazon.ECS.Model
         IListTasksPaginator ListTasks(ListTasksRequest request);
     }
 }
-#endif

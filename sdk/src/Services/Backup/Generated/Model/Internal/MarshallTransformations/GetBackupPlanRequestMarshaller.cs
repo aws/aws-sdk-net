@@ -65,7 +65,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/backup/plans/{backupPlanId}/";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

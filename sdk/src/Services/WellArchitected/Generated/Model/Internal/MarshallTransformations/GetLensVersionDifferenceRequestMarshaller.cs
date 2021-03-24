@@ -65,7 +65,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetBaseLensVersion())
                 request.Parameters.Add("BaseLensVersion", StringUtils.FromString(publicRequest.BaseLensVersion));
             request.ResourcePath = "/lenses/{LensAlias}/versionDifference";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

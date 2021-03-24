@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -77,4 +76,3 @@ namespace Amazon.IoTThingsGraph.Model
         ISearchThingsPaginator SearchThings(SearchThingsRequest request);
     }
 }
-#endif

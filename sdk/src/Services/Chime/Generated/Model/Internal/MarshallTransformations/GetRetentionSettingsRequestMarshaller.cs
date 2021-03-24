@@ -62,7 +62,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field AccountId set");
             request.AddPathResource("{accountId}", StringUtils.FromString(publicRequest.AccountId));
             request.ResourcePath = "/accounts/{accountId}/retention-settings";
-            request.MarshallerVersion = 2;
 
             return request;
         }

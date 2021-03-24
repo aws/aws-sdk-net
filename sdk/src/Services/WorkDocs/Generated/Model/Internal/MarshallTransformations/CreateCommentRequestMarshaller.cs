@@ -66,7 +66,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field VersionId set");
             request.AddPathResource("{VersionId}", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/api/v1/documents/{DocumentId}/versions/{VersionId}/comment";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -62,7 +62,6 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 throw new AmazonElasticTranscoderException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/2012-09-25/presets/{Id}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

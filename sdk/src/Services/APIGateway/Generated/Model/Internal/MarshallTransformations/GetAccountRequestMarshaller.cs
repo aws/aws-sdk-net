@@ -59,7 +59,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/account";
-            request.MarshallerVersion = 2;
 
             return request;
         }

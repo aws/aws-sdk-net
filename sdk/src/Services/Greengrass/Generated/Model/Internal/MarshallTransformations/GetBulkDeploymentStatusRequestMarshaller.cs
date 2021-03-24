@@ -62,7 +62,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field BulkDeploymentId set");
             request.AddPathResource("{BulkDeploymentId}", StringUtils.FromString(publicRequest.BulkDeploymentId));
             request.ResourcePath = "/greengrass/bulk/deployments/{BulkDeploymentId}/status";
-            request.MarshallerVersion = 2;
 
             return request;
         }

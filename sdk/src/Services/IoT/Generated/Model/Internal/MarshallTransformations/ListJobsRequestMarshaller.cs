@@ -80,7 +80,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetThingGroupName())
                 request.Parameters.Add("thingGroupName", StringUtils.FromString(publicRequest.ThingGroupName));
             request.ResourcePath = "/jobs";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

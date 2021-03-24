@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -52,4 +51,3 @@ namespace Amazon.ECR.Model
         IListImagesPaginator ListImages(ListImagesRequest request);
     }
 }
-#endif

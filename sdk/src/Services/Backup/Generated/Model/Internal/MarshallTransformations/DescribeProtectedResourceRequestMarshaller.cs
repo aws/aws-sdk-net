@@ -62,7 +62,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/resources/{resourceArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

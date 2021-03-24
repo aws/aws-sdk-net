@@ -68,7 +68,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPrincipalType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.PrincipalType));
             request.ResourcePath = "/api/v1/resources/{ResourceId}/permissions/{PrincipalId}";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

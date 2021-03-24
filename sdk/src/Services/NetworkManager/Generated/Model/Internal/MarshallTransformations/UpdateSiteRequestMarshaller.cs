@@ -66,7 +66,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field SiteId set");
             request.AddPathResource("{siteId}", StringUtils.FromString(publicRequest.SiteId));
             request.ResourcePath = "/global-networks/{globalNetworkId}/sites/{siteId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

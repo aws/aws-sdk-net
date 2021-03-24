@@ -76,7 +76,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
             }
             request.ResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/exports/{export_type}";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAccepts())
                 request.Headers["Accept"] = publicRequest.Accepts;

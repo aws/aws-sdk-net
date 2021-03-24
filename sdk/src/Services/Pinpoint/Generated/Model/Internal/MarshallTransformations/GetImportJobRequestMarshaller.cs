@@ -65,7 +65,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field JobId set");
             request.AddPathResource("{job-id}", StringUtils.FromString(publicRequest.JobId));
             request.ResourcePath = "/v1/apps/{application-id}/jobs/import/{job-id}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

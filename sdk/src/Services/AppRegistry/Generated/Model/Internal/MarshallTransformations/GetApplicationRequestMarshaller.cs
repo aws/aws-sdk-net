@@ -62,7 +62,6 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
                 throw new AmazonAppRegistryException("Request object does not have required field Application set");
             request.AddPathResource("{application}", StringUtils.FromString(publicRequest.Application));
             request.ResourcePath = "/applications/{application}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

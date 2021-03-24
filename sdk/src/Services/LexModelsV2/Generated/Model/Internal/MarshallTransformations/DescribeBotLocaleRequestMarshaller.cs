@@ -68,7 +68,6 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field LocaleId set");
             request.AddPathResource("{localeId}", StringUtils.FromString(publicRequest.LocaleId));
             request.ResourcePath = "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/";
-            request.MarshallerVersion = 2;
 
             return request;
         }

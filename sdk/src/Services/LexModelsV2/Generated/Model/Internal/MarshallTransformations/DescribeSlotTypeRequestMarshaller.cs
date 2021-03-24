@@ -71,7 +71,6 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field SlotTypeId set");
             request.AddPathResource("{slotTypeId}", StringUtils.FromString(publicRequest.SlotTypeId));
             request.ResourcePath = "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}/";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -63,7 +63,6 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 throw new AmazonMQException("Request object does not have required field ConfigurationId set");
             request.AddPathResource("{configuration-id}", StringUtils.FromString(publicRequest.ConfigurationId));
             request.ResourcePath = "/v1/configurations/{configuration-id}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

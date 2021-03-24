@@ -1,5 +1,4 @@
-﻿#if !NETSTANDARD13
-using Amazon.Runtime;
+﻿using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
@@ -226,4 +225,3 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
         }
     }
 }
-#endif

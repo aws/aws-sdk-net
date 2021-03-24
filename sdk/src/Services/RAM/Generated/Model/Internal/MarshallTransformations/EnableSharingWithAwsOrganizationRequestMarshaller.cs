@@ -60,7 +60,6 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/enablesharingwithawsorganization";
-            request.MarshallerVersion = 2;
 
             return request;
         }

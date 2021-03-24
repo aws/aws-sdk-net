@@ -66,7 +66,6 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetShadowName())
                 request.Parameters.Add("name", StringUtils.FromString(publicRequest.ShadowName));
             request.ResourcePath = "/things/{thingName}/shadow";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Payload ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

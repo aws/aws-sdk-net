@@ -62,7 +62,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 throw new AmazonKafkaException("Request object does not have required field Arn set");
             request.AddPathResource("{arn}", StringUtils.FromString(publicRequest.Arn));
             request.ResourcePath = "/v1/configurations/{arn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

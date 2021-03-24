@@ -65,7 +65,6 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/S3Outposts/ListEndpoints";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

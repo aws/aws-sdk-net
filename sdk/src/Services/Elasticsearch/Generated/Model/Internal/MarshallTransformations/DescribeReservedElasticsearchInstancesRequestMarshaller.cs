@@ -68,7 +68,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetReservedElasticsearchInstanceId())
                 request.Parameters.Add("reservationId", StringUtils.FromString(publicRequest.ReservedElasticsearchInstanceId));
             request.ResourcePath = "/2015-01-01/es/reservedInstances";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

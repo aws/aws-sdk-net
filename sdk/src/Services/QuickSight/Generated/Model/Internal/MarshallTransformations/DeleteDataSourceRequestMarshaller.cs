@@ -65,7 +65,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DataSourceId set");
             request.AddPathResource("{DataSourceId}", StringUtils.FromString(publicRequest.DataSourceId));
             request.ResourcePath = "/accounts/{AwsAccountId}/data-sources/{DataSourceId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

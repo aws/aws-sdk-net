@@ -36,9 +36,6 @@ namespace Amazon.KinesisAnalyticsV2
     /// author and run Java, SQL, or Scala code against streaming sources to perform time
     /// series analytics, feed real-time dashboards, and create real-time metrics.
     /// </summary>
-#if NETSTANDARD13
-    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
-#endif
     public partial interface IAmazonKinesisAnalyticsV2 : IAmazonService, IDisposable
     {
                 

@@ -63,7 +63,6 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyBackendException("Request object does not have required field AppId set");
             request.AddPathResource("{appId}", StringUtils.FromString(publicRequest.AppId));
             request.ResourcePath = "/backend/{appId}/config/remove";
-            request.MarshallerVersion = 2;
 
             return request;
         }

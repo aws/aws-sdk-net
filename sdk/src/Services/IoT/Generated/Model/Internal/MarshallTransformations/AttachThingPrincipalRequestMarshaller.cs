@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/things/{thingName}/principals";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetPrincipal())
                 request.Headers["x-amzn-principal"] = publicRequest.Principal;

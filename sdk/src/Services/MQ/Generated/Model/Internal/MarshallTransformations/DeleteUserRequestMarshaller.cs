@@ -65,7 +65,6 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 throw new AmazonMQException("Request object does not have required field Username set");
             request.AddPathResource("{username}", StringUtils.FromString(publicRequest.Username));
             request.ResourcePath = "/v1/brokers/{broker-id}/users/{username}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

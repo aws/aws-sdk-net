@@ -68,7 +68,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetOtaUpdateStatus())
                 request.Parameters.Add("otaUpdateStatus", StringUtils.FromString(publicRequest.OtaUpdateStatus));
             request.ResourcePath = "/otaUpdates";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -71,7 +71,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field EvidenceId set");
             request.AddPathResource("{evidenceId}", StringUtils.FromString(publicRequest.EvidenceId));
             request.ResourcePath = "/assessments/{assessmentId}/controlSets/{controlSetId}/evidenceFolders/{evidenceFolderId}/evidence/{evidenceId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

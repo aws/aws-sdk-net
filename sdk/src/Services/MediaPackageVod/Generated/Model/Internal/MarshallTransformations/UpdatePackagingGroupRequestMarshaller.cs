@@ -63,7 +63,6 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                 throw new AmazonMediaPackageVodException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/packaging_groups/{id}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

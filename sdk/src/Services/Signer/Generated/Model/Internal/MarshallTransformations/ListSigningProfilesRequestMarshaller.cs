@@ -74,7 +74,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatuses())
                 request.ParameterCollection.Add("statuses", publicRequest.Statuses);
             request.ResourcePath = "/signing-profiles";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

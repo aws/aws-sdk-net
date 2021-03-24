@@ -71,7 +71,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetToken())
                 request.Parameters.Add("token", StringUtils.FromString(publicRequest.Token));
             request.ResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}/versions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -68,7 +68,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
             request.ResourcePath = "/2018-10-31/layers";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -65,7 +65,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetExpectedVersion())
                 request.Parameters.Add("expectedVersion", StringUtils.FromLong(publicRequest.ExpectedVersion));
             request.ResourcePath = "/security-profiles/{securityProfileName}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

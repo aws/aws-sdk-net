@@ -65,7 +65,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
             request.ResourcePath = "/2020-04-22/code-signing-configs/";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -59,7 +59,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/services";
-            request.MarshallerVersion = 2;
 
             return request;
         }

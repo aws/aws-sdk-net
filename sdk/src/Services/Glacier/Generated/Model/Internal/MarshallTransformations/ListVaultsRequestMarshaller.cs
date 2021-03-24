@@ -66,7 +66,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
             request.ResourcePath = "/{accountId}/vaults";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

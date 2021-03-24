@@ -65,7 +65,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field QuickConnectId set");
             request.AddPathResource("{QuickConnectId}", StringUtils.FromString(publicRequest.QuickConnectId));
             request.ResourcePath = "/quick-connects/{InstanceId}/{QuickConnectId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

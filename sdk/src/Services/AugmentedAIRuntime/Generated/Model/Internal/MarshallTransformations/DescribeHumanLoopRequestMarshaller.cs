@@ -62,7 +62,6 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
                 throw new AmazonAugmentedAIRuntimeException("Request object does not have required field HumanLoopName set");
             request.AddPathResource("{HumanLoopName}", StringUtils.FromString(publicRequest.HumanLoopName));
             request.ResourcePath = "/human-loops/{HumanLoopName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

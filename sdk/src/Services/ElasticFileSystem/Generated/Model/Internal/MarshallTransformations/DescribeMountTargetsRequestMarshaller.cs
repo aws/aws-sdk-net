@@ -74,7 +74,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMountTargetId())
                 request.Parameters.Add("MountTargetId", StringUtils.FromString(publicRequest.MountTargetId));
             request.ResourcePath = "/2015-02-01/mount-targets";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

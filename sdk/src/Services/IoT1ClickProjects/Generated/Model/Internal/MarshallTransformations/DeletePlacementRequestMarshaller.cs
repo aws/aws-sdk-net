@@ -65,7 +65,6 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
                 throw new AmazonIoT1ClickProjectsException("Request object does not have required field ProjectName set");
             request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
             request.ResourcePath = "/projects/{projectName}/placements/{placementName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

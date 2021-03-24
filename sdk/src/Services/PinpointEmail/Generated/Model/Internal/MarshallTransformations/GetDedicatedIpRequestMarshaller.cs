@@ -62,7 +62,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointEmailException("Request object does not have required field Ip set");
             request.AddPathResource("{IP}", StringUtils.FromString(publicRequest.Ip));
             request.ResourcePath = "/v1/email/dedicated-ips/{IP}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

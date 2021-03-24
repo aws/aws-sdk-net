@@ -65,7 +65,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRecipeOutputFormat())
                 request.Parameters.Add("recipeOutputFormat", StringUtils.FromString(publicRequest.RecipeOutputFormat));
             request.ResourcePath = "/greengrass/v2/components/{arn}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

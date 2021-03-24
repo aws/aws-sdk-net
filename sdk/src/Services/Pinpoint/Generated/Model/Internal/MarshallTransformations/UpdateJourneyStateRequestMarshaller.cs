@@ -66,7 +66,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field JourneyId set");
             request.AddPathResource("{journey-id}", StringUtils.FromString(publicRequest.JourneyId));
             request.ResourcePath = "/v1/apps/{application-id}/journeys/{journey-id}/state";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

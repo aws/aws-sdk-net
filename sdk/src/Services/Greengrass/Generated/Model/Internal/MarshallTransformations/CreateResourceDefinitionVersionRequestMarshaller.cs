@@ -63,7 +63,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field ResourceDefinitionId set");
             request.AddPathResource("{ResourceDefinitionId}", StringUtils.FromString(publicRequest.ResourceDefinitionId));
             request.ResourcePath = "/greengrass/definition/resources/{ResourceDefinitionId}/versions";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

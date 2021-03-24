@@ -62,7 +62,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field VpcLinkId set");
             request.AddPathResource("{vpcLinkId}", StringUtils.FromString(publicRequest.VpcLinkId));
             request.ResourcePath = "/v2/vpclinks/{vpcLinkId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

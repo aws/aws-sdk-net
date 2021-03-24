@@ -77,7 +77,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
             }
             request.ResourcePath = "/restapis/{restapi_id}";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

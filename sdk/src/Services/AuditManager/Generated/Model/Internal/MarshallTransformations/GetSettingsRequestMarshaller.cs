@@ -62,7 +62,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field Attribute set");
             request.AddPathResource("{attribute}", StringUtils.FromString(publicRequest.Attribute));
             request.ResourcePath = "/settings/{attribute}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

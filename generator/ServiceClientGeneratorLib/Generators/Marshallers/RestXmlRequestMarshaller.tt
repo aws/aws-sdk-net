@@ -54,7 +54,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	ProcessQueryStringMembers("publicRequest", this.Operation);
 #>
 			request.ResourcePath = "<#=this.Operation.RequestUri #>";
-			request.MarshallerVersion = <#=MarshallerVersion #>;
 
 <#   
 	// Process any members which are marshalled as part of the request body

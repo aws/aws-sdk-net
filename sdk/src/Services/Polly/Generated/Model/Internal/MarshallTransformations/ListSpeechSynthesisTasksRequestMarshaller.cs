@@ -68,7 +68,6 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/v1/synthesisTasks";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

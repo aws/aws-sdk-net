@@ -60,7 +60,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field HealthCheckId set");
             request.AddPathResource("{HealthCheckId}", StringUtils.FromString(publicRequest.HealthCheckId));
             request.ResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}/lastfailurereason";
-            request.MarshallerVersion = 2;
 
 
             return request;

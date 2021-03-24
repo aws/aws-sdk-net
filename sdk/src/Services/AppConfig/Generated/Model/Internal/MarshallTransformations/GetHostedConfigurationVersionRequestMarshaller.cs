@@ -68,7 +68,6 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 throw new AmazonAppConfigException("Request object does not have required field VersionNumber set");
             request.AddPathResource("{VersionNumber}", StringUtils.FromInt(publicRequest.VersionNumber));
             request.ResourcePath = "/applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions/{VersionNumber}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

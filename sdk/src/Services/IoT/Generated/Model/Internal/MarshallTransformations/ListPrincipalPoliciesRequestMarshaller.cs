@@ -68,7 +68,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("pageSize", StringUtils.FromInt(publicRequest.PageSize));
             request.ResourcePath = "/principal-policies";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetPrincipal())
                 request.Headers["x-amzn-iot-principal"] = publicRequest.Principal;

@@ -62,7 +62,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 throw new AmazonSecurityHubException("Request object does not have required field InsightArn set");
             request.AddPathResource("{InsightArn+}", StringUtils.FromString(publicRequest.InsightArn.TrimStart('/')));
             request.ResourcePath = "/insights/results/{InsightArn+}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

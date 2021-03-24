@@ -71,7 +71,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetVersion())
                 request.Parameters.Add("version", StringUtils.FromString(publicRequest.Version));
             request.ResourcePath = "/exports/";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

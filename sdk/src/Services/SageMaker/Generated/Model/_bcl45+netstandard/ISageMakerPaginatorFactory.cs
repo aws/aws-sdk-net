@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -297,4 +296,3 @@ namespace Amazon.SageMaker.Model
         ISearchPaginator Search(SearchRequest request);
     }
 }
-#endif

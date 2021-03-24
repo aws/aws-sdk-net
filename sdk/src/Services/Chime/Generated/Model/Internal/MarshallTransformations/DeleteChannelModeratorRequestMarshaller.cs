@@ -65,7 +65,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field ChannelModeratorArn set");
             request.AddPathResource("{channelModeratorArn}", StringUtils.FromString(publicRequest.ChannelModeratorArn));
             request.ResourcePath = "/channels/{channelArn}/moderators/{channelModeratorArn}";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetChimeBearer())
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;

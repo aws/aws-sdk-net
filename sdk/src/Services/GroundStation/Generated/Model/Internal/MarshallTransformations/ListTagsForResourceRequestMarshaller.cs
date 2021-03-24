@@ -62,7 +62,6 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 throw new AmazonGroundStationException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/tags/{resourceArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

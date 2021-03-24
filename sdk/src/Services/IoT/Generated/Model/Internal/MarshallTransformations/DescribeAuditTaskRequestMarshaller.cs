@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field TaskId set");
             request.AddPathResource("{taskId}", StringUtils.FromString(publicRequest.TaskId));
             request.ResourcePath = "/audit/tasks/{taskId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

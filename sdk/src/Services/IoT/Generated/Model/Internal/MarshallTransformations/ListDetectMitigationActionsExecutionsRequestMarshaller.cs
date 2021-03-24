@@ -80,7 +80,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetViolationId())
                 request.Parameters.Add("violationId", StringUtils.FromString(publicRequest.ViolationId));
             request.ResourcePath = "/detect/mitigationactions/executions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

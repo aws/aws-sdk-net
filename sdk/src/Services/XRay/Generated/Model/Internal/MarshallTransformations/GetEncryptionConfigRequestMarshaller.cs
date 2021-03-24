@@ -60,7 +60,6 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/EncryptionConfig";
-            request.MarshallerVersion = 2;
 
             return request;
         }

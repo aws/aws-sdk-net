@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDeleteScheduledAudits())
                 request.Parameters.Add("deleteScheduledAudits", StringUtils.FromBool(publicRequest.DeleteScheduledAudits));
             request.ResourcePath = "/audit/configuration";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

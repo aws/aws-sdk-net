@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -62,4 +61,3 @@ namespace Amazon.Kafka.Model
         IListScramSecretsPaginator ListScramSecrets(ListScramSecretsRequest request);
     }
 }
-#endif

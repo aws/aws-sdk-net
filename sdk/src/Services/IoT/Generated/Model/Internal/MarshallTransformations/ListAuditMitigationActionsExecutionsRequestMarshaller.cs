@@ -74,7 +74,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTaskId())
                 request.Parameters.Add("taskId", StringUtils.FromString(publicRequest.TaskId));
             request.ResourcePath = "/audit/mitigationactions/executions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -65,7 +65,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetIdentifierType())
                 request.Parameters.Add("identifierType", StringUtils.FromString(publicRequest.IdentifierType));
             request.ResourcePath = "/wireless-gateways/{Identifier}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

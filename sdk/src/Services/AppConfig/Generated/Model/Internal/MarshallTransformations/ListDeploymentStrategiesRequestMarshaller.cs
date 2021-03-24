@@ -65,7 +65,6 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next_token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/deploymentstrategies";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

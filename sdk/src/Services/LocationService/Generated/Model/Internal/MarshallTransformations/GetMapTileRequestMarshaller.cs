@@ -71,7 +71,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field Z set");
             request.AddPathResource("{Z}", StringUtils.FromString(publicRequest.Z));
             request.ResourcePath = "/maps/v0/maps/{MapName}/tiles/{Z}/{X}/{Y}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"maps.";
 

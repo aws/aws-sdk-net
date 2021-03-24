@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field RoleAlias set");
             request.AddPathResource("{roleAlias}", StringUtils.FromString(publicRequest.RoleAlias));
             request.ResourcePath = "/role-aliases/{roleAlias}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

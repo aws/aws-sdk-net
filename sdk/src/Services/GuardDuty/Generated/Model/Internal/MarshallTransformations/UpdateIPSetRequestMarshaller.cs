@@ -66,7 +66,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field IpSetId set");
             request.AddPathResource("{ipSetId}", StringUtils.FromString(publicRequest.IpSetId));
             request.ResourcePath = "/detector/{detectorId}/ipset/{ipSetId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -62,7 +62,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field RestoreJobId set");
             request.AddPathResource("{restoreJobId}", StringUtils.FromString(publicRequest.RestoreJobId));
             request.ResourcePath = "/restore-jobs/{restoreJobId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -62,7 +62,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetHubArn())
                 request.Parameters.Add("HubArn", StringUtils.FromString(publicRequest.HubArn));
             request.ResourcePath = "/accounts";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

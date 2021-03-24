@@ -62,7 +62,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetComponentBuildVersionArn())
                 request.Parameters.Add("componentBuildVersionArn", StringUtils.FromString(publicRequest.ComponentBuildVersionArn));
             request.ResourcePath = "/DeleteComponent";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

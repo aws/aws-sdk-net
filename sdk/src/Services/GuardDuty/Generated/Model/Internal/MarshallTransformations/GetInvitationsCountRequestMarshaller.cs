@@ -59,7 +59,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/invitation/count";
-            request.MarshallerVersion = 2;
 
             return request;
         }

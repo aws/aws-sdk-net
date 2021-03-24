@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field DomainConfigurationName set");
             request.AddPathResource("{domainConfigurationName}", StringUtils.FromString(publicRequest.DomainConfigurationName));
             request.ResourcePath = "/domainConfigurations/{domainConfigurationName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

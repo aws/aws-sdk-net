@@ -65,7 +65,6 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSkipResourceInUseCheck())
                 request.Parameters.Add("skipResourceInUseCheck", StringUtils.FromBool(publicRequest.SkipResourceInUseCheck));
             request.ResourcePath = "/bots/{botId}/";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

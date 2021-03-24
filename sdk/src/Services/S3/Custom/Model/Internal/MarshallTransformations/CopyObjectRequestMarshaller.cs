@@ -141,7 +141,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyObjectRequest.DestinationKey");
 
             
-			request.MarshallerVersion = 2;
 			request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(copyObjectRequest.DestinationBucket),
                                                  S3Transforms.ToStringValue(destinationKey));

@@ -68,7 +68,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSipMediaApplicationId())
                 request.Parameters.Add("sip-media-application", StringUtils.FromString(publicRequest.SipMediaApplicationId));
             request.ResourcePath = "/sip-rules";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

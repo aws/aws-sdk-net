@@ -63,7 +63,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field SourceLocationName set");
             request.AddPathResource("{sourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
             request.ResourcePath = "/sourceLocation/{sourceLocationName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

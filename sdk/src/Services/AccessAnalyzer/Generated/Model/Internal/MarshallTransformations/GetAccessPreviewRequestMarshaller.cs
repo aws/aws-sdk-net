@@ -65,7 +65,6 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAnalyzerArn())
                 request.Parameters.Add("analyzerArn", StringUtils.FromString(publicRequest.AnalyzerArn));
             request.ResourcePath = "/access-preview/{accessPreviewId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

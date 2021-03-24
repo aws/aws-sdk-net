@@ -63,7 +63,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field BackupPlanId set");
             request.AddPathResource("{backupPlanId}", StringUtils.FromString(publicRequest.BackupPlanId));
             request.ResourcePath = "/backup/plans/{backupPlanId}/selections/";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

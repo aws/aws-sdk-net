@@ -64,7 +64,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 throw new AmazonGlacierException("Request object does not have required field VaultName set");
             request.AddPathResource("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
             request.ResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetArchiveDescription())
                 request.Headers["x-amz-archive-description"] = publicRequest.ArchiveDescription;

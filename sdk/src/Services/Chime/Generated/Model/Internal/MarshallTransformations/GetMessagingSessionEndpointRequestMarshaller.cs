@@ -59,7 +59,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/endpoints/messaging-session";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"messaging-";
 

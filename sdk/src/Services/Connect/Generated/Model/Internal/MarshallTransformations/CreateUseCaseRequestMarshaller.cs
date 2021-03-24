@@ -66,7 +66,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field IntegrationAssociationId set");
             request.AddPathResource("{IntegrationAssociationId}", StringUtils.FromString(publicRequest.IntegrationAssociationId));
             request.ResourcePath = "/instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -71,7 +71,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/workloads/{WorkloadId}/lensReviews";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

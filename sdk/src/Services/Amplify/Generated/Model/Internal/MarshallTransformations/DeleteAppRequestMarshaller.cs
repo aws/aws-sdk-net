@@ -62,7 +62,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field AppId set");
             request.AddPathResource("{appId}", StringUtils.FromString(publicRequest.AppId));
             request.ResourcePath = "/apps/{appId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

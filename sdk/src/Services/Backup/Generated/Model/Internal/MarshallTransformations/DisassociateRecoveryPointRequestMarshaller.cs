@@ -66,7 +66,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field RecoveryPointArn set");
             request.AddPathResource("{recoveryPointArn}", StringUtils.FromString(publicRequest.RecoveryPointArn));
             request.ResourcePath = "/backup-vaults/{backupVaultName}/recovery-points/{recoveryPointArn}/disassociate";
-            request.MarshallerVersion = 2;
 
             return request;
         }

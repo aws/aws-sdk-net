@@ -63,7 +63,6 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field BotId set");
             request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
             request.ResourcePath = "/bots/{botId}/botversions/";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

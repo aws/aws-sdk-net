@@ -65,7 +65,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDomainOwner())
                 request.Parameters.Add("domain-owner", StringUtils.FromString(publicRequest.DomainOwner));
             request.ResourcePath = "/v1/domain/permissions/policy";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

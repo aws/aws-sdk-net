@@ -68,7 +68,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDate));
             request.ResourcePath = "/v1/email/deliverability-dashboard/statistics-report/{Domain}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

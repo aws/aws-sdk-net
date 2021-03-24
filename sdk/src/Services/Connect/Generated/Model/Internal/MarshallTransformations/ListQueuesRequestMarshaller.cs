@@ -71,7 +71,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetQueueTypes())
                 request.ParameterCollection.Add("queueTypes", publicRequest.QueueTypes);
             request.ResourcePath = "/queues-summary/{InstanceId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -71,7 +71,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
             request.ResourcePath = "/2015-02-01/file-systems";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

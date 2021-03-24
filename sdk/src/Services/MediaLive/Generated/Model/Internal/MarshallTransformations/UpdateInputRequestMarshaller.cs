@@ -63,7 +63,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field InputId set");
             request.AddPathResource("{inputId}", StringUtils.FromString(publicRequest.InputId));
             request.ResourcePath = "/prod/inputs/{inputId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

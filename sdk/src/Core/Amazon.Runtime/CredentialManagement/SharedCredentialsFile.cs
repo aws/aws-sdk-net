@@ -93,7 +93,7 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileType.AssumeRoleExternalSessionName,
                 CredentialProfileType.AssumeRoleExternalMFASessionName,
                 CredentialProfileType.AssumeRoleMFASessionName,
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
                 CredentialProfileType.SSO,
 #endif
             };
@@ -104,9 +104,7 @@ namespace Amazon.Runtime.CredentialManagement
                 {
                     { "AccessKey", "aws_access_key_id" },
                     { "CredentialSource", "credential_source" },
-#if !NETSTANDARD13
                     { "EndpointName", null },
-#endif
                     { "ExternalID", "external_id" },
                     { "MfaSerial", "mfa_serial" },
                     { "RoleArn", "role_arn" },
@@ -114,12 +112,10 @@ namespace Amazon.Runtime.CredentialManagement
                     { "SecretKey", "aws_secret_access_key" },
                     { "SourceProfile", "source_profile" },
                     { "Token", "aws_session_token" },
-#if !NETSTANDARD13
                     { "UserIdentity", null },
-#endif
                     { "CredentialProcess" , "credential_process" },
                     { "WebIdentityTokenFile", "web_identity_token_file" },
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },

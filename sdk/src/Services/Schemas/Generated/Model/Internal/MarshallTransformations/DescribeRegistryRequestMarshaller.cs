@@ -62,7 +62,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                 throw new AmazonSchemasException("Request object does not have required field RegistryName set");
             request.AddPathResource("{registryName}", StringUtils.FromString(publicRequest.RegistryName));
             request.ResourcePath = "/v1/registries/name/{registryName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

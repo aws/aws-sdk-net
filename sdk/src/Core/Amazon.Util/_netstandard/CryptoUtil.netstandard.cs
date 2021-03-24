@@ -66,14 +66,10 @@ namespace Amazon.Util
 
             public byte[] ComputeSHA1Hash(byte[] data)
             {
-#if NETSTANDARD13
-                throw new NotImplementedException();
-#else
                 using (var sha1 = new SHA1Managed())
                 {
                     return sha1.ComputeHash(data);
                 }
-#endif
             }
 
             public byte[] ComputeSHA256Hash(byte[] data)

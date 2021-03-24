@@ -68,7 +68,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                 throw new AmazonSchemasException("Request object does not have required field SchemaVersion set");
             request.AddPathResource("{schemaVersion}", StringUtils.FromString(publicRequest.SchemaVersion));
             request.ResourcePath = "/v1/registries/name/{registryName}/schemas/name/{schemaName}/version/{schemaVersion}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

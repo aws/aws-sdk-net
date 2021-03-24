@@ -59,7 +59,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/organization/configuration";
-            request.MarshallerVersion = 2;
 
             return request;
         }

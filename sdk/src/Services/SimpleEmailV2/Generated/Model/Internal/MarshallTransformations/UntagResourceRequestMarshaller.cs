@@ -65,7 +65,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("TagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/v2/email/tags";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

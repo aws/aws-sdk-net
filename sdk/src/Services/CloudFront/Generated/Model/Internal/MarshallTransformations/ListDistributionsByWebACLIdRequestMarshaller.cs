@@ -66,7 +66,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/distributionsByWebACLId/{WebACLId}";
-            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

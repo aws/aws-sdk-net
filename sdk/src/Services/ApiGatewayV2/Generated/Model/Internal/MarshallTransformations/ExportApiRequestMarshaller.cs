@@ -77,7 +77,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStageName())
                 request.Parameters.Add("stageName", StringUtils.FromString(publicRequest.StageName));
             request.ResourcePath = "/v2/apis/{apiId}/exports/{specification}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

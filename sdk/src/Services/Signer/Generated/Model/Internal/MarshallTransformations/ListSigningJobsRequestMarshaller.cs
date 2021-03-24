@@ -86,7 +86,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/signing-jobs";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -63,7 +63,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 throw new AmazonMacie2Exception("Request object does not have required field JobId set");
             request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
             request.ResourcePath = "/jobs/{jobId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -71,7 +71,6 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetCheckpointLabelFilter())
                 request.Parameters.Add("checkpointLabelFilter", StringUtils.FromString(publicRequest.CheckpointLabelFilter));
             request.ResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/session/";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -71,7 +71,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTraversalType())
                 request.Parameters.Add("traversalType", StringUtils.FromString(publicRequest.TraversalType));
             request.ResourcePath = "/assets/{assetId}/assetRelationships";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
             request.HostPrefix = $"model.";

@@ -76,7 +76,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
             }
             request.ResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/sdks/{sdk_type}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

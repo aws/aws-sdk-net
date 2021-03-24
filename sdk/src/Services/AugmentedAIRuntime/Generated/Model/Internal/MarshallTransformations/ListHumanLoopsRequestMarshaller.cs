@@ -77,7 +77,6 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSortOrder())
                 request.Parameters.Add("SortOrder", StringUtils.FromString(publicRequest.SortOrder));
             request.ResourcePath = "/human-loops";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

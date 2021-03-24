@@ -62,30 +62,6 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARIABLE_AWS_ENABLE_ENDPOINT_DISCOVERY = "AWS_ENABLE_ENDPOINT_DISCOVERY";
         public const string ENVIRONMENT_VARIABLE_AWS_MAX_ATTEMPTS = "AWS_MAX_ATTEMPTS";
         public const string ENVIRONMENT_VARIABLE_AWS_RETRY_MODE = "AWS_RETRY_MODE";
-        
-#if NETSTANDARD13
-        /// <summary>
-        /// Filler for netstandard 1.3 not supporting TypeConverter.
-        /// </summary>        
-        private static object ConvertToType(string value, Type type)
-        {
-            Object convertedObj = null;
-            if (type == typeof(bool?))
-            {
-                convertedObj = (bool?)Convert.ToBoolean(value);
-            }
-            else if (type == typeof(RequestRetryMode?))
-            {
-                convertedObj = (RequestRetryMode?)Enum.Parse(typeof(RequestRetryMode), value, true);
-            }
-            else if (type == typeof(int?))
-            {
-                convertedObj = (int?)Convert.ToInt32(value);
-            }
-
-            return convertedObj;
-        }
-#endif
 
         /// <summary>
         /// Attempts to construct a configuration instance of configuration environment 
@@ -120,22 +96,18 @@ namespace Amazon.Runtime.Internal
             {
                 return null;
             }
-#if !NETSTANDARD13
+
             var converter = TypeDescriptor.GetConverter(typeof(T?));
             if (converter == null)
             {
                 throw new InvalidOperationException($"Unable to obtain type converter for type {typeof(T?)} " +
                     $"to convert environment variable {name}.");
             }
-#endif
+
 
             try
             {
-#if !NETSTANDARD13
                 return (T?)converter.ConvertFromString(value);
-#else
-                return (T?)ConvertToType(value, typeof(T?));
-#endif
             }
             catch (Exception e)
             {

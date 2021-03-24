@@ -62,7 +62,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/v2/tags/{resource-arn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

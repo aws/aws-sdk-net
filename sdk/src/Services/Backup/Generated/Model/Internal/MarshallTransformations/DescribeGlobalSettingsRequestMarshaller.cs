@@ -59,7 +59,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/global-settings";
-            request.MarshallerVersion = 2;
 
             return request;
         }

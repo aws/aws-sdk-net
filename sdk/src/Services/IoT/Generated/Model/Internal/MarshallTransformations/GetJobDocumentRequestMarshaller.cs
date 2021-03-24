@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field JobId set");
             request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
             request.ResourcePath = "/jobs/{jobId}/job-document";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -63,7 +63,6 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResourceShareArn())
                 request.Parameters.Add("resourceShareArn", StringUtils.FromString(publicRequest.ResourceShareArn));
             request.ResourcePath = "/promoteresourcesharecreatedfrompolicy";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

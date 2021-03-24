@@ -63,7 +63,6 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 throw new AmazonSyntheticsException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/canary/{name}/stop";
-            request.MarshallerVersion = 2;
 
             return request;
         }

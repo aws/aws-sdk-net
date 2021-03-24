@@ -62,7 +62,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field ProjectId set");
             request.AddPathResource("{projectId}", StringUtils.FromString(publicRequest.ProjectId));
             request.ResourcePath = "/projects/{projectId}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"monitor.";
 

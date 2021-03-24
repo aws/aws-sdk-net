@@ -1,5 +1,4 @@
-﻿#if !NETSTANDARD13
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -492,4 +491,3 @@ namespace AWSSDK_NetStandard.UnitTests
         }
     }
 }
-#endif

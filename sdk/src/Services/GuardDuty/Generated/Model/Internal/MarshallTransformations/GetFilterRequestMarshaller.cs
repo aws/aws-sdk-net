@@ -65,7 +65,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field FilterName set");
             request.AddPathResource("{filterName}", StringUtils.FromString(publicRequest.FilterName));
             request.ResourcePath = "/detector/{detectorId}/filter/{filterName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

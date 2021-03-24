@@ -62,7 +62,6 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConvertException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/2017-08-29/jobs/{id}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

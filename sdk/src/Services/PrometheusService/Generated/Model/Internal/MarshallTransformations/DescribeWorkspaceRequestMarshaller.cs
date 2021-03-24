@@ -62,7 +62,6 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 throw new AmazonPrometheusServiceException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

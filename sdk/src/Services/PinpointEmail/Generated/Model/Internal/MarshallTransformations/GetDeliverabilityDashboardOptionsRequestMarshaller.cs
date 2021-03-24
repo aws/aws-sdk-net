@@ -59,7 +59,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/v1/email/deliverability-dashboard";
-            request.MarshallerVersion = 2;
 
             return request;
         }

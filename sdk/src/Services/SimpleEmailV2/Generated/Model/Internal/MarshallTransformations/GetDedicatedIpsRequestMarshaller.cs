@@ -68,7 +68,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPoolName())
                 request.Parameters.Add("PoolName", StringUtils.FromString(publicRequest.PoolName));
             request.ResourcePath = "/v2/email/dedicated-ips";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -62,7 +62,6 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 throw new AmazonDevOpsGuruException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/insights/{Id}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

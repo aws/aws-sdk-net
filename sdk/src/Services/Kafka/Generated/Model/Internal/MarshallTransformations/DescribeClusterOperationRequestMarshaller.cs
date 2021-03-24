@@ -62,7 +62,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 throw new AmazonKafkaException("Request object does not have required field ClusterOperationArn set");
             request.AddPathResource("{clusterOperationArn}", StringUtils.FromString(publicRequest.ClusterOperationArn));
             request.ResourcePath = "/v1/operations/{clusterOperationArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

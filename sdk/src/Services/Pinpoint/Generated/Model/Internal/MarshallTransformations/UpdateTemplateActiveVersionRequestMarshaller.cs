@@ -66,7 +66,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field TemplateType set");
             request.AddPathResource("{template-type}", StringUtils.FromString(publicRequest.TemplateType));
             request.ResourcePath = "/v1/templates/{template-name}/{template-type}/active-version";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

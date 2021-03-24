@@ -62,7 +62,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetARN())
                 request.Parameters.Add("arn", StringUtils.FromString(publicRequest.ARN));
             request.ResourcePath = "/2015-01-01/tags/";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

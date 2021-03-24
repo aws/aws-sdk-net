@@ -63,7 +63,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 throw new AmazonElasticsearchException("Request object does not have required field CrossClusterSearchConnectionId set");
             request.AddPathResource("{ConnectionId}", StringUtils.FromString(publicRequest.CrossClusterSearchConnectionId));
             request.ResourcePath = "/2015-01-01/es/ccs/inboundConnection/{ConnectionId}/accept";
-            request.MarshallerVersion = 2;
 
             return request;
         }

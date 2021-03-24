@@ -70,7 +70,6 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSuggester())
                 request.Parameters.Add("suggester", StringUtils.FromString(publicRequest.Suggester));
             request.ResourcePath = "/2013-01-01/suggest";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

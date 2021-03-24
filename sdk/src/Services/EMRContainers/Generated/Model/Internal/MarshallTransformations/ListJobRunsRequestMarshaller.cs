@@ -80,7 +80,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStates())
                 request.ParameterCollection.Add("states", publicRequest.States);
             request.ResourcePath = "/virtualclusters/{virtualClusterId}/jobruns";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

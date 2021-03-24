@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field IndexName set");
             request.AddPathResource("{indexName}", StringUtils.FromString(publicRequest.IndexName));
             request.ResourcePath = "/indices/{indexName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

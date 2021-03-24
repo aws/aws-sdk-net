@@ -68,7 +68,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetServiceType())
                 request.Parameters.Add("serviceType", StringUtils.FromString(publicRequest.ServiceType));
             request.ResourcePath = "/domainConfigurations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

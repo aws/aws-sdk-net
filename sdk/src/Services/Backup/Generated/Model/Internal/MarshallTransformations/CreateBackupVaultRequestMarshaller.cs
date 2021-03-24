@@ -63,7 +63,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
             request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
             request.ResourcePath = "/backup-vaults/{backupVaultName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

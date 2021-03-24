@@ -71,7 +71,6 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetIncludeJobDocument())
                 request.Parameters.Add("includeJobDocument", StringUtils.FromBool(publicRequest.IncludeJobDocument));
             request.ResourcePath = "/things/{thingName}/jobs/{jobId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -42,4 +41,3 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         IDescribeTargetGroupsPaginator DescribeTargetGroups(DescribeTargetGroupsRequest request);
     }
 }
-#endif

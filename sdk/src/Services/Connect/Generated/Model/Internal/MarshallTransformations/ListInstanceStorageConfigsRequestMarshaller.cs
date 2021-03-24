@@ -71,7 +71,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResourceType())
                 request.Parameters.Add("resourceType", StringUtils.FromString(publicRequest.ResourceType));
             request.ResourcePath = "/instance/{InstanceId}/storage-configs";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

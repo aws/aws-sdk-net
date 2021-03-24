@@ -68,7 +68,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSource())
                 request.Parameters.Add("source", StringUtils.FromString(publicRequest.Source));
             request.ResourcePath = "/dataSourceKeywords";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

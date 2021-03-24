@@ -62,7 +62,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field CollectionName set");
             request.AddPathResource("{CollectionName}", StringUtils.FromString(publicRequest.CollectionName));
             request.ResourcePath = "/geofencing/v0/collections/{CollectionName}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"geofencing.";
 

@@ -80,7 +80,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResourceType())
                 request.Parameters.Add("resourceType", StringUtils.FromString(publicRequest.ResourceType));
             request.ResourcePath = "/access-policies";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
             request.HostPrefix = $"monitor.";

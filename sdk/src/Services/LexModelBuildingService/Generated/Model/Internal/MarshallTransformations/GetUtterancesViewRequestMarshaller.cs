@@ -69,7 +69,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatusType())
                 request.Parameters.Add("status_type", StringUtils.FromString(publicRequest.StatusType));
             request.ResourcePath = "/bots/{botname}/utterances";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

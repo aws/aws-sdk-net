@@ -59,7 +59,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/logging";
-            request.MarshallerVersion = 2;
 
             return request;
         }

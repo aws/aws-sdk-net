@@ -62,7 +62,6 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 throw new AmazonGroundStationException("Request object does not have required field DataflowEndpointGroupId set");
             request.AddPathResource("{dataflowEndpointGroupId}", StringUtils.FromString(publicRequest.DataflowEndpointGroupId));
             request.ResourcePath = "/dataflowEndpointGroup/{dataflowEndpointGroupId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

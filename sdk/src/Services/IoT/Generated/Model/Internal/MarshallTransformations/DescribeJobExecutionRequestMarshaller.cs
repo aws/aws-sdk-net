@@ -68,7 +68,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetExecutionNumber())
                 request.Parameters.Add("executionNumber", StringUtils.FromLong(publicRequest.ExecutionNumber));
             request.ResourcePath = "/things/{thingName}/jobs/{jobId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

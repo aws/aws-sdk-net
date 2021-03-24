@@ -65,7 +65,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = "/2015-03-31/functions/{FunctionName}/configuration";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

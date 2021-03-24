@@ -62,7 +62,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/destinations/{Name}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

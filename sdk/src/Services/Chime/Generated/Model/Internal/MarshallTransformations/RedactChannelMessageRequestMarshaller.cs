@@ -67,7 +67,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field MessageId set");
             request.AddPathResource("{messageId}", StringUtils.FromString(publicRequest.MessageId));
             request.ResourcePath = "/channels/{channelArn}/messages/{messageId}";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetChimeBearer())
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;

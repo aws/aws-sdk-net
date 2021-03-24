@@ -68,7 +68,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetEmbed())
                 request.ParameterCollection.Add("embed", publicRequest.Embed);
             request.ResourcePath = "/restapis/{restapi_id}/deployments/{deployment_id}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

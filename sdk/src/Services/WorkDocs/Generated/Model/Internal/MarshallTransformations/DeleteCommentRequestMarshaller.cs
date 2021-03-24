@@ -68,7 +68,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field VersionId set");
             request.AddPathResource("{VersionId}", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/api/v1/documents/{DocumentId}/versions/{VersionId}/comment/{CommentId}";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

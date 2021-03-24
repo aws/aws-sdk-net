@@ -68,7 +68,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTransferType())
                 request.Parameters.Add("transferType", StringUtils.FromString(publicRequest.TransferType));
             request.ResourcePath = "/prod/inputDeviceTransfers";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

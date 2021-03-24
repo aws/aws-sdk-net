@@ -65,7 +65,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
             request.ResourcePath = "/v1/email/deliverability-dashboard/test-reports";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

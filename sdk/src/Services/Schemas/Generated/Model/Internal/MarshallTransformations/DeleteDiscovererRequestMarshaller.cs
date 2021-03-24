@@ -62,7 +62,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                 throw new AmazonSchemasException("Request object does not have required field DiscovererId set");
             request.AddPathResource("{discovererId}", StringUtils.FromString(publicRequest.DiscovererId));
             request.ResourcePath = "/v1/discoverers/id/{discovererId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

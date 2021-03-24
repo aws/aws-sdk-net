@@ -62,7 +62,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetClusterArn())
                 request.Parameters.Add("clusterArn", StringUtils.FromString(publicRequest.ClusterArn));
             request.ResourcePath = "/v1/compatible-kafka-versions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

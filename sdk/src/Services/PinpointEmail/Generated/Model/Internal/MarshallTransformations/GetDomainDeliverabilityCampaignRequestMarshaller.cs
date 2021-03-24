@@ -62,7 +62,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointEmailException("Request object does not have required field CampaignId set");
             request.AddPathResource("{CampaignId}", StringUtils.FromString(publicRequest.CampaignId));
             request.ResourcePath = "/v1/email/deliverability-dashboard/campaigns/{CampaignId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

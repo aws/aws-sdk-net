@@ -62,7 +62,6 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
                 throw new AmazonMobileException("Request object does not have required field BundleId set");
             request.AddPathResource("{bundleId}", StringUtils.FromString(publicRequest.BundleId));
             request.ResourcePath = "/bundles/{bundleId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

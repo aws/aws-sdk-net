@@ -65,7 +65,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetVersion())
                 request.Parameters.Add("version", StringUtils.FromString(publicRequest.Version));
             request.ResourcePath = "/v1/templates/{template-name}/push";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

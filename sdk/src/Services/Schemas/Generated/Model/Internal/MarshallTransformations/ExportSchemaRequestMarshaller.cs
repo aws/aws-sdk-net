@@ -71,7 +71,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/v1/registries/name/{registryName}/schemas/name/{schemaName}/export";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

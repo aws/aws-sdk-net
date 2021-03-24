@@ -65,7 +65,6 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRecipeVersion())
                 request.Parameters.Add("recipeVersion", StringUtils.FromString(publicRequest.RecipeVersion));
             request.ResourcePath = "/recipes/{name}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

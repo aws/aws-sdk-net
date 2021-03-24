@@ -65,7 +65,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 throw new AmazonKafkaException("Request object does not have required field Revision set");
             request.AddPathResource("{revision}", StringUtils.FromLong(publicRequest.Revision));
             request.ResourcePath = "/v1/configurations/{arn}/revisions/{revision}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -80,7 +80,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/restapis/{restapi_id}/documentation/parts";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

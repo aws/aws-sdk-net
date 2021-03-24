@@ -66,7 +66,6 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyBackendException("Request object does not have required field BackendEnvironmentName set");
             request.AddPathResource("{backendEnvironmentName}", StringUtils.FromString(publicRequest.BackendEnvironmentName));
             request.ResourcePath = "/backend/{appId}/environments/{backendEnvironmentName}/remove";
-            request.MarshallerVersion = 2;
 
             return request;
         }

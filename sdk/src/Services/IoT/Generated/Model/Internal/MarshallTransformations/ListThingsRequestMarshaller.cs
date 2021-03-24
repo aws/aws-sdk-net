@@ -74,7 +74,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetThingTypeName())
                 request.Parameters.Add("thingTypeName", StringUtils.FromString(publicRequest.ThingTypeName));
             request.ResourcePath = "/things";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

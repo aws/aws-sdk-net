@@ -62,7 +62,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 throw new AmazonElasticFileSystemException("Request object does not have required field AccessPointId set");
             request.AddPathResource("{AccessPointId}", StringUtils.FromString(publicRequest.AccessPointId));
             request.ResourcePath = "/2015-02-01/access-points/{AccessPointId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

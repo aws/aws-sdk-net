@@ -65,7 +65,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field GatewayId set");
             request.AddPathResource("{gatewayId}", StringUtils.FromString(publicRequest.GatewayId));
             request.ResourcePath = "/20200301/gateways/{gatewayId}/capability/{capabilityNamespace}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"edge.";
 

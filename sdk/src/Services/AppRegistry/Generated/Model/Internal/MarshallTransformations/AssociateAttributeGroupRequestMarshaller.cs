@@ -66,7 +66,6 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
                 throw new AmazonAppRegistryException("Request object does not have required field AttributeGroup set");
             request.AddPathResource("{attributeGroup}", StringUtils.FromString(publicRequest.AttributeGroup));
             request.ResourcePath = "/applications/{application}/attribute-groups/{attributeGroup}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

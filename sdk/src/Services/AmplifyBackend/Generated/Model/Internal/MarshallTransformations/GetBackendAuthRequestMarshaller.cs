@@ -66,7 +66,6 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyBackendException("Request object does not have required field BackendEnvironmentName set");
             request.AddPathResource("{backendEnvironmentName}", StringUtils.FromString(publicRequest.BackendEnvironmentName));
             request.ResourcePath = "/backend/{appId}/auth/{backendEnvironmentName}/details";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

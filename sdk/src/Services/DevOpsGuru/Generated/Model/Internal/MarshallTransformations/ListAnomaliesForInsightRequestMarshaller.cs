@@ -63,7 +63,6 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 throw new AmazonDevOpsGuruException("Request object does not have required field InsightId set");
             request.AddPathResource("{InsightId}", StringUtils.FromString(publicRequest.InsightId));
             request.ResourcePath = "/anomalies/insight/{InsightId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

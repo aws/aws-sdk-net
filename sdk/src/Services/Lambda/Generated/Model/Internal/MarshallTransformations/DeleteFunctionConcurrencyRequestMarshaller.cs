@@ -62,7 +62,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
             request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
             request.ResourcePath = "/2017-10-31/functions/{FunctionName}/concurrency";
-            request.MarshallerVersion = 2;
 
             return request;
         }

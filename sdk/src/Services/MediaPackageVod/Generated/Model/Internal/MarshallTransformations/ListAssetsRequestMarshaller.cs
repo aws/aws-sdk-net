@@ -68,7 +68,6 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPackagingGroupId())
                 request.Parameters.Add("packagingGroupId", StringUtils.FromString(publicRequest.PackagingGroupId));
             request.ResourcePath = "/assets";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -66,7 +66,6 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 throw new AmazonMediaPackageException("Request object does not have required field IngestEndpointId set");
             request.AddPathResource("{ingest_endpoint_id}", StringUtils.FromString(publicRequest.IngestEndpointId));
             request.ResourcePath = "/channels/{id}/ingest_endpoints/{ingest_endpoint_id}/credentials";
-            request.MarshallerVersion = 2;
 
             return request;
         }

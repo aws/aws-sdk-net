@@ -73,7 +73,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
-			request.MarshallerVersion = 2;
 			request.ResourcePath = uriResourcePath;
 
 

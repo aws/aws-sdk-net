@@ -65,7 +65,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetFunctionArn())
                 request.Parameters.Add("functionArn", StringUtils.FromString(publicRequest.FunctionArn));
             request.ResourcePath = "/instance/{InstanceId}/lambda-function";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -66,7 +66,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetType())
                 request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/2020-05-31/origin-request-policy";
-            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

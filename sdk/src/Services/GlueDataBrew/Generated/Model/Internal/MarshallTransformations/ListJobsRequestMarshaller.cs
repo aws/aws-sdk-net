@@ -71,7 +71,6 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetProjectName())
                 request.Parameters.Add("projectName", StringUtils.FromString(publicRequest.ProjectName));
             request.ResourcePath = "/jobs";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

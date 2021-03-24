@@ -59,7 +59,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/settings/phone-number";
-            request.MarshallerVersion = 2;
 
             return request;
         }

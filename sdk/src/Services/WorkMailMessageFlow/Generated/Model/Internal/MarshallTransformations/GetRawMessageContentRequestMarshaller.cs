@@ -62,7 +62,6 @@ namespace Amazon.WorkMailMessageFlow.Model.Internal.MarshallTransformations
                 throw new AmazonWorkMailMessageFlowException("Request object does not have required field MessageId set");
             request.AddPathResource("{messageId}", StringUtils.FromString(publicRequest.MessageId));
             request.ResourcePath = "/messages/{messageId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

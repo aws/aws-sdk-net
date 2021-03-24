@@ -66,7 +66,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field PolicyName set");
             request.AddPathResource("{PolicyName}", StringUtils.FromString(publicRequest.PolicyName));
             request.ResourcePath = "/v2/email/identities/{EmailIdentity}/policies/{PolicyName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -62,7 +62,6 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 throw new AmazonAppIntegrationsServiceException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/eventIntegrations/{Name}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

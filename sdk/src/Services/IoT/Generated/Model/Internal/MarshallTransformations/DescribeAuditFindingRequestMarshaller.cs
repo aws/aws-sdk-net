@@ -62,7 +62,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field FindingId set");
             request.AddPathResource("{findingId}", StringUtils.FromString(publicRequest.FindingId));
             request.ResourcePath = "/audit/findings/{findingId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

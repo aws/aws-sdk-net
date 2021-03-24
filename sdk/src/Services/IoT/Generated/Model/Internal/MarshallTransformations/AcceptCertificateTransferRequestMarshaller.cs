@@ -66,7 +66,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSetAsActive())
                 request.Parameters.Add("setAsActive", StringUtils.FromBool(publicRequest.SetAsActive));
             request.ResourcePath = "/accept-certificate-transfer/{certificateId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

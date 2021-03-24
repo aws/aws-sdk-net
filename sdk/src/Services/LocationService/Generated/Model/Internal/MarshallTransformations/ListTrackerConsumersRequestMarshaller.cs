@@ -63,7 +63,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field TrackerName set");
             request.AddPathResource("{TrackerName}", StringUtils.FromString(publicRequest.TrackerName));
             request.ResourcePath = "/tracking/v0/trackers/{TrackerName}/list-consumers";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -65,7 +65,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field UserId set");
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/bots/{botName}/utterances/{userId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

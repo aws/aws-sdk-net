@@ -65,7 +65,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTargetType())
                 request.Parameters.Add("targetType", StringUtils.FromString(publicRequest.TargetType));
             request.ResourcePath = "/v2LoggingLevel";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -63,7 +63,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
             request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
             request.ResourcePath = "/2014-11-13/functions/{FunctionName}/invoke-async/";
-            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.InvokeArgsStream ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

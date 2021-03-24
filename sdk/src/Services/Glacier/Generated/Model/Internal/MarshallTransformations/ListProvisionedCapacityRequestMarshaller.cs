@@ -60,7 +60,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             request.AddPathResource("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
             request.ResourcePath = "/{accountId}/provisioned-capacity";
-            request.MarshallerVersion = 2;
 
             return request;
         }

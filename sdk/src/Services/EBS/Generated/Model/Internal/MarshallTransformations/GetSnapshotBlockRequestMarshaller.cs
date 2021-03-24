@@ -68,7 +68,6 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetBlockToken())
                 request.Parameters.Add("blockToken", StringUtils.FromString(publicRequest.BlockToken));
             request.ResourcePath = "/snapshots/{snapshotId}/blocks/{blockIndex}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -62,7 +62,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointEmailException("Request object does not have required field ReportId set");
             request.AddPathResource("{ReportId}", StringUtils.FromString(publicRequest.ReportId));
             request.ResourcePath = "/v1/email/deliverability-dashboard/test-reports/{ReportId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

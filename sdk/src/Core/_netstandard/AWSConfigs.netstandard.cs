@@ -48,7 +48,6 @@ namespace Amazon
         public static HttpClientFactory HttpClientFactory { get; set; }
 
 #region TraceListeners
-#if !NETSTANDARD13
         private static Dictionary<string, List<TraceListener>> _traceListeners
             = new Dictionary<string, List<TraceListener>>(StringComparer.OrdinalIgnoreCase);
 
@@ -121,7 +120,6 @@ namespace Amazon
                 return new TraceListener[0];
             }
         }
-#endif
 #endregion
     }
 }

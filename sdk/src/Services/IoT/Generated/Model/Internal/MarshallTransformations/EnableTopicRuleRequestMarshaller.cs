@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field RuleName set");
             request.AddPathResource("{ruleName}", StringUtils.FromString(publicRequest.RuleName));
             request.ResourcePath = "/rules/{ruleName}/enable";
-            request.MarshallerVersion = 2;
 
             return request;
         }

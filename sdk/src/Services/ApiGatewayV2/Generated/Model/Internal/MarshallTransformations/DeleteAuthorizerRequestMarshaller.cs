@@ -65,7 +65,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field AuthorizerId set");
             request.AddPathResource("{authorizerId}", StringUtils.FromString(publicRequest.AuthorizerId));
             request.ResourcePath = "/v2/apis/{apiId}/authorizers/{authorizerId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

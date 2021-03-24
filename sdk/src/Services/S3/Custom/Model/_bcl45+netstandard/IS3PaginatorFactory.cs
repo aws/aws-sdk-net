@@ -1,5 +1,4 @@
-﻿#if !NETSTANDARD13
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -62,4 +61,3 @@ namespace Amazon.S3.Model
         IListVersionsPaginator ListVersions(ListVersionsRequest request);
     }
 }
-#endif

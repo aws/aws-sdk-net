@@ -63,7 +63,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDomain())
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));
             request.ResourcePath = "/v1/domain";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

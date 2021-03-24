@@ -65,7 +65,6 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/tags";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

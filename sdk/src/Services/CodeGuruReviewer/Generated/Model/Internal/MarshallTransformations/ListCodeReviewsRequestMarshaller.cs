@@ -77,7 +77,6 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetType())
                 request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/codereviews";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

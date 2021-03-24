@@ -68,7 +68,6 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRevisionId())
                 request.Parameters.Add("revisionId", StringUtils.FromString(publicRequest.RevisionId));
             request.ResourcePath = "/profilingGroups/{profilingGroupName}/policy/{actionGroup}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

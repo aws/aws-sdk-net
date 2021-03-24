@@ -65,7 +65,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/v1/apis/{apiId}/datasources/{name}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

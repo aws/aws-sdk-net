@@ -63,7 +63,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field Ip set");
             request.AddPathResource("{IP}", StringUtils.FromString(publicRequest.Ip));
             request.ResourcePath = "/v2/email/dedicated-ips/{IP}/pool";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

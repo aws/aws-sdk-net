@@ -63,7 +63,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field CollectionName set");
             request.AddPathResource("{CollectionName}", StringUtils.FromString(publicRequest.CollectionName));
             request.ResourcePath = "/geofencing/v0/collections/{CollectionName}/delete-geofences";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

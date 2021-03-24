@@ -68,7 +68,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetOnlyAssociated())
                 request.Parameters.Add("onlyAssociated", StringUtils.FromString(publicRequest.OnlyAssociated));
             request.ResourcePath = "/members";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

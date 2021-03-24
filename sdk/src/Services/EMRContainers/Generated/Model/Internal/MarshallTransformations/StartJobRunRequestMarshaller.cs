@@ -63,7 +63,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 throw new AmazonEMRContainersException("Request object does not have required field VirtualClusterId set");
             request.AddPathResource("{virtualClusterId}", StringUtils.FromString(publicRequest.VirtualClusterId));
             request.ResourcePath = "/virtualclusters/{virtualClusterId}/jobruns";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

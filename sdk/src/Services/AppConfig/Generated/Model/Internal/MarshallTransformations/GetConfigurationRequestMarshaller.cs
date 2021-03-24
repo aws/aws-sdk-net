@@ -74,7 +74,6 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetClientId())
                 request.Parameters.Add("client_id", StringUtils.FromString(publicRequest.ClientId));
             request.ResourcePath = "/applications/{Application}/environments/{Environment}/configurations/{Configuration}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -63,7 +63,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 throw new AmazonKafkaException("Request object does not have required field ClusterArn set");
             request.AddPathResource("{clusterArn}", StringUtils.FromString(publicRequest.ClusterArn));
             request.ResourcePath = "/v1/clusters/{clusterArn}/monitoring";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

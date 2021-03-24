@@ -59,7 +59,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             request.ResourcePath = "/macie";
-            request.MarshallerVersion = 2;
 
             return request;
         }

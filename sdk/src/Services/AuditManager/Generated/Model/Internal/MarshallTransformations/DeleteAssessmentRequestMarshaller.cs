@@ -62,7 +62,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field AssessmentId set");
             request.AddPathResource("{assessmentId}", StringUtils.FromString(publicRequest.AssessmentId));
             request.ResourcePath = "/assessments/{assessmentId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

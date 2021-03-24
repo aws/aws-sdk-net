@@ -71,7 +71,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSignatureContains())
                 request.Parameters.Add("signatureContains", StringUtils.FromString(publicRequest.SignatureContains));
             request.ResourcePath = "/builtins/slottypes/";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

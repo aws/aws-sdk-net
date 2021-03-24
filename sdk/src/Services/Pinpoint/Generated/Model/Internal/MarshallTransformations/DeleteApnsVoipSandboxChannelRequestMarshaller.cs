@@ -62,7 +62,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/v1/apps/{application-id}/channels/apns_voip_sandbox";
-            request.MarshallerVersion = 2;
 
             return request;
         }

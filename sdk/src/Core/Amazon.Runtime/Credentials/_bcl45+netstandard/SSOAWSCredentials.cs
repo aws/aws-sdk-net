@@ -13,7 +13,6 @@
  * permissions and limitations under the License.
  */
 
-#if !NETSTANDARD13
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
@@ -341,4 +340,3 @@ namespace Amazon.Runtime
         }
     }
 }
-#endif

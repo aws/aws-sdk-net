@@ -23,10 +23,6 @@ using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
-#if ADD_SUPPORT_ICLONEABLE
-using Amazon.MissingTypes;
-#endif
-
 namespace Amazon.DynamoDBv2.DocumentModel
 {
 

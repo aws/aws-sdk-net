@@ -74,7 +74,6 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetScheduledOnOrAfter())
                 request.Parameters.Add("scheduledOnOrAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ScheduledOnOrAfter));
             request.ResourcePath = "/datasets/{datasetName}/contents";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

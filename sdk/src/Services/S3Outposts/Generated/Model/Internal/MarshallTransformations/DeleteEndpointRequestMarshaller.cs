@@ -65,7 +65,6 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetOutpostId())
                 request.Parameters.Add("outpostId", StringUtils.FromString(publicRequest.OutpostId));
             request.ResourcePath = "/S3Outposts/DeleteEndpoint";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

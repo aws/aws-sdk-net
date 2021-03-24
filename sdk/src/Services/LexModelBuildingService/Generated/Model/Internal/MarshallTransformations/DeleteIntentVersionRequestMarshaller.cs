@@ -65,7 +65,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Version set");
             request.AddPathResource("{version}", StringUtils.FromString(publicRequest.Version));
             request.ResourcePath = "/intents/{name}/versions/{version}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

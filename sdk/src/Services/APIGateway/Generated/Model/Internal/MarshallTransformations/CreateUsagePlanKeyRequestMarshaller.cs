@@ -63,7 +63,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field UsagePlanId set");
             request.AddPathResource("{usageplanId}", StringUtils.FromString(publicRequest.UsagePlanId));
             request.ResourcePath = "/usageplans/{usageplanId}/keys";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

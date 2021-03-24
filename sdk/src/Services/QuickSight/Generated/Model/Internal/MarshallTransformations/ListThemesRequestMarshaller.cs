@@ -71,7 +71,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/accounts/{AwsAccountId}/themes";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

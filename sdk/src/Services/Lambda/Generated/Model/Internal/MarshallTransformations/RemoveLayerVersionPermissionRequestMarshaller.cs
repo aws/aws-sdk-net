@@ -71,7 +71,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRevisionId())
                 request.Parameters.Add("RevisionId", StringUtils.FromString(publicRequest.RevisionId));
             request.ResourcePath = "/2018-10-31/layers/{LayerName}/versions/{VersionNumber}/policy/{StatementId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -59,7 +59,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             request.ResourcePath = "/2015-01-01/es/role";
-            request.MarshallerVersion = 2;
 
             return request;
         }

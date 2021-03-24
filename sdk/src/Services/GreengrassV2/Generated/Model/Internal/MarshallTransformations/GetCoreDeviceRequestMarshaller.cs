@@ -62,7 +62,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassV2Exception("Request object does not have required field CoreDeviceThingName set");
             request.AddPathResource("{coreDeviceThingName}", StringUtils.FromString(publicRequest.CoreDeviceThingName));
             request.ResourcePath = "/greengrass/v2/coreDevices/{coreDeviceThingName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

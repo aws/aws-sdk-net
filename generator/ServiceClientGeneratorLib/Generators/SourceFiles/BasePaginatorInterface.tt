@@ -3,7 +3,6 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-#if !NETSTANDARD13
 <#
     AddLicenseHeader();
 #>
@@ -37,7 +36,7 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys)
 #>
     }
 }
-#endif
+
 
 <#+
     // The operation the marshaller will be used on

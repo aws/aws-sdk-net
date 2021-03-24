@@ -62,7 +62,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetBlacklistItemNames())
                 request.ParameterCollection.Add("BlacklistItemNames", publicRequest.BlacklistItemNames);
             request.ResourcePath = "/v1/email/deliverability-dashboard/blacklist-report";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

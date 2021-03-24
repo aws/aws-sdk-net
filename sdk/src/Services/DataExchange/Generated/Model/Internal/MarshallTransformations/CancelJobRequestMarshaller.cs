@@ -62,7 +62,6 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 throw new AmazonDataExchangeException("Request object does not have required field JobId set");
             request.AddPathResource("{JobId}", StringUtils.FromString(publicRequest.JobId));
             request.ResourcePath = "/v1/jobs/{JobId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

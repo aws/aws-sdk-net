@@ -62,7 +62,6 @@ namespace Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayManagementApiException("Request object does not have required field ConnectionId set");
             request.AddPathResource("{connectionId}", StringUtils.FromString(publicRequest.ConnectionId));
             request.ResourcePath = "/@connections/{connectionId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

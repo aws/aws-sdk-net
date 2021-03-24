@@ -60,7 +60,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/master/disassociate";
-            request.MarshallerVersion = 2;
 
             return request;
         }

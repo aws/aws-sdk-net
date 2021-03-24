@@ -63,7 +63,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field DomainName set");
             request.AddPathResource("{domainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/v2/domainnames/{domainName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

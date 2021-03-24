@@ -69,7 +69,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDurationSeconds())
                 request.Parameters.Add("duration", StringUtils.FromLong(publicRequest.DurationSeconds));
             request.ResourcePath = "/v1/authorization-token";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

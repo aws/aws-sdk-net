@@ -68,7 +68,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetWorkloadNamePrefix())
                 request.Parameters.Add("WorkloadNamePrefix", StringUtils.FromString(publicRequest.WorkloadNamePrefix));
             request.ResourcePath = "/shareInvitations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

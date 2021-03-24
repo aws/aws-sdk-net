@@ -60,7 +60,6 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/logout";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAccessToken())
                 request.Headers["x-amz-sso_bearer_token"] = publicRequest.AccessToken;

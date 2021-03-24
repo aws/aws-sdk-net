@@ -68,7 +68,6 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
                 throw new AmazonHoneycodeException("Request object does not have required field WorkbookId set");
             request.AddPathResource("{workbookId}", StringUtils.FromString(publicRequest.WorkbookId));
             request.ResourcePath = "/workbooks/{workbookId}/tables/{tableId}/import/{jobId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

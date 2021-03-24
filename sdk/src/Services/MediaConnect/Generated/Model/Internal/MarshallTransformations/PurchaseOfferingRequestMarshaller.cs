@@ -63,7 +63,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field OfferingArn set");
             request.AddPathResource("{offeringArn}", StringUtils.FromString(publicRequest.OfferingArn));
             request.ResourcePath = "/v1/offerings/{offeringArn}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -68,7 +68,6 @@ namespace Amazon.IoTFleetHub.Model.Internal.MarshallTransformations
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
             request.ResourcePath = "/applications/{applicationId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

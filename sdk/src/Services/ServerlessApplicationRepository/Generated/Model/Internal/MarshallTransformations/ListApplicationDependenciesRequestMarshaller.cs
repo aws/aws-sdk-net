@@ -71,7 +71,6 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             if (publicRequest.IsSetSemanticVersion())
                 request.Parameters.Add("semanticVersion", StringUtils.FromString(publicRequest.SemanticVersion));
             request.ResourcePath = "/applications/{applicationId}/dependencies";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

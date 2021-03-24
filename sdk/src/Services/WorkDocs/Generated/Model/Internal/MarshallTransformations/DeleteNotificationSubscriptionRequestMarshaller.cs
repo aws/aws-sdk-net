@@ -65,7 +65,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field SubscriptionId set");
             request.AddPathResource("{SubscriptionId}", StringUtils.FromString(publicRequest.SubscriptionId));
             request.ResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

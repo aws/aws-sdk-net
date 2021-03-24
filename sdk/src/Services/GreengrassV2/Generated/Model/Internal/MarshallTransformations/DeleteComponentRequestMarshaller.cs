@@ -62,7 +62,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassV2Exception("Request object does not have required field Arn set");
             request.AddPathResource("{arn}", StringUtils.FromString(publicRequest.Arn));
             request.ResourcePath = "/greengrass/v2/components/{arn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

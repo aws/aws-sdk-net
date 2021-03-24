@@ -62,7 +62,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetImageArn())
                 request.Parameters.Add("imageArn", StringUtils.FromString(publicRequest.ImageArn));
             request.ResourcePath = "/GetImagePolicy";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

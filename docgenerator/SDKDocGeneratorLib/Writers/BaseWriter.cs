@@ -509,14 +509,12 @@ namespace SDKDocGenerator.Writers
 
             var docs35 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net35"), wrapper);
             var docs45 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net45"), wrapper);
-            var docsCore13 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard1.3"), wrapper);
             var docsCore20 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard2.0"), wrapper);
             var docsNetCoreApp31 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netcoreapp3.1"), wrapper);
 
             // If there is no documentation then assume it is available for all platforms.
             var boolNoDocs = docs35 == null && docs45 == null 
-                && docsCore13 == null && docsCore20 == null 
-                && docsNetCoreApp31 == null;
+                && docsCore20 == null && docsNetCoreApp31 == null;
 
             // .NET Core App
             var netCoreAppVersions = new List<string>();
@@ -531,10 +529,7 @@ namespace SDKDocGenerator.Writers
             // .NET Standard
             var netstandardVersions = new List<string>();            
             if (boolNoDocs || (wrapper != null && docsCore20 != null))
-                netstandardVersions.Add("2.0");
-            if (boolNoDocs || (wrapper != null && docsCore13 != null))
-                netstandardVersions.Add("1.3");
-            
+                netstandardVersions.Add("2.0");            
 
             if(netstandardVersions.Count > 0)
             {

@@ -63,7 +63,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field ControlId set");
             request.AddPathResource("{controlId}", StringUtils.FromString(publicRequest.ControlId));
             request.ResourcePath = "/controls/{controlId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

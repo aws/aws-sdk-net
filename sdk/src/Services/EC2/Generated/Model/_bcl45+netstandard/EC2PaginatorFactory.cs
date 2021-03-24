@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -805,4 +804,3 @@ namespace Amazon.EC2.Model
         }
     }
 }
-#endif

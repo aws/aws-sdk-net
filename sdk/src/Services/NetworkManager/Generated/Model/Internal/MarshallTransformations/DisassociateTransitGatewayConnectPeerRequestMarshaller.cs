@@ -65,7 +65,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field TransitGatewayConnectPeerArn set");
             request.AddPathResource("{transitGatewayConnectPeerArn}", StringUtils.FromString(publicRequest.TransitGatewayConnectPeerArn));
             request.ResourcePath = "/global-networks/{globalNetworkId}/transit-gateway-connect-peer-associations/{transitGatewayConnectPeerArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

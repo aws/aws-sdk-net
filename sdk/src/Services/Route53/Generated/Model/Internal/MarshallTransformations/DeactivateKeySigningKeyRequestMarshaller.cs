@@ -63,7 +63,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/2013-04-01/keysigningkey/{HostedZoneId}/{Name}/deactivate";
-            request.MarshallerVersion = 2;
 
 
             return request;

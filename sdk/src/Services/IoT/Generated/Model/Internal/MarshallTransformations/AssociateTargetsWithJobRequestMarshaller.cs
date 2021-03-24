@@ -66,7 +66,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNamespaceId())
                 request.Parameters.Add("namespaceId", StringUtils.FromString(publicRequest.NamespaceId));
             request.ResourcePath = "/jobs/{jobId}/targets";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

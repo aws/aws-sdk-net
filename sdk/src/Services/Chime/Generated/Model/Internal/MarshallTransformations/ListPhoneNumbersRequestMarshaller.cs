@@ -77,7 +77,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/phone-numbers";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

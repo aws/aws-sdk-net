@@ -68,7 +68,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResolved())
                 request.Parameters.Add("resolved", StringUtils.FromBool(publicRequest.Resolved));
             request.ResourcePath = "/accounts/{AwsAccountId}/customizations";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

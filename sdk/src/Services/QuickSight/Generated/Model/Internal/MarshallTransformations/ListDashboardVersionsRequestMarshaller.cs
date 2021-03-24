@@ -71,7 +71,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/versions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

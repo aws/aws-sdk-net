@@ -89,7 +89,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetUserArn())
                 request.Parameters.Add("user-arn", StringUtils.FromString(publicRequest.UserArn));
             request.ResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/embed-url";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -66,7 +66,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDelegationSetId())
                 request.Parameters.Add("delegationsetid", StringUtils.FromString(publicRequest.DelegationSetId));
             request.ResourcePath = "/2013-04-01/hostedzone";
-            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

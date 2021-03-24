@@ -66,7 +66,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 throw new AmazonGlacierException("Request object does not have required field VaultName set");
             request.AddPathResource("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
             request.ResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

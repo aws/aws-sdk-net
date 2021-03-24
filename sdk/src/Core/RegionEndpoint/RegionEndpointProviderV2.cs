@@ -242,13 +242,11 @@ namespace Amazon.Internal
                     _documentEndpoints = new Dictionary<string, JsonData>();
                     if (string.IsNullOrEmpty(endpointsPath))
                     {
-#if BCL || (NETSTANDARD && !NETSTANDARD13)
                         if (TryLoadEndpointDefinitionsFromAssemblyDir())
                         {
                             RegionEndpoint.loaded = true;
                             return;
                         }
-#endif
                         LoadEndpointDefinitionsFromEmbeddedResource();
                     }
                     else if (endpointsPath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
@@ -289,7 +287,7 @@ namespace Amazon.Internal
                     ReadEndpointFile(stream);
                 }
             }
-#if BCL || (NETSTANDARD && !NETSTANDARD13)
+
             static bool TryLoadEndpointDefinitionsFromAssemblyDir()
             {
                 string endpointsFile;
@@ -323,7 +321,7 @@ namespace Amazon.Internal
                 LoadEndpointDefinitionFromFilePath(endpointsFile);
                 return true;
             }
-#endif
+
             static void LoadEndpointDefinitionFromFilePath(string path)
             {
                 if (!System.IO.File.Exists(path))

@@ -62,7 +62,6 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
                 throw new AmazonMediaStoreDataException("Request object does not have required field Path set");
             request.AddPathResource("{Path+}", StringUtils.FromString(publicRequest.Path.TrimStart('/')));
             request.ResourcePath = "/{Path+}";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetRange())
                 request.Headers["Range"] = publicRequest.Range;

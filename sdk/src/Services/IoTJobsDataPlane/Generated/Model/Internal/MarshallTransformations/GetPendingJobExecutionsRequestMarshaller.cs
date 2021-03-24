@@ -62,7 +62,6 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
                 throw new AmazonIoTJobsDataPlaneException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/things/{thingName}/jobs";
-            request.MarshallerVersion = 2;
 
             return request;
         }

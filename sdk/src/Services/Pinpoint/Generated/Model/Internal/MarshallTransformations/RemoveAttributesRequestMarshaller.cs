@@ -66,7 +66,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field AttributeType set");
             request.AddPathResource("{attribute-type}", StringUtils.FromString(publicRequest.AttributeType));
             request.ResourcePath = "/v1/apps/{application-id}/attributes/{attribute-type}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -63,7 +63,6 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 throw new AmazonGroundStationException("Request object does not have required field MissionProfileId set");
             request.AddPathResource("{missionProfileId}", StringUtils.FromString(publicRequest.MissionProfileId));
             request.ResourcePath = "/missionprofile/{missionProfileId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

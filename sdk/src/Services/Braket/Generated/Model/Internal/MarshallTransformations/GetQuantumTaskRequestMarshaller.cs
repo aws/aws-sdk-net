@@ -62,7 +62,6 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                 throw new AmazonBraketException("Request object does not have required field QuantumTaskArn set");
             request.AddPathResource("{quantumTaskArn}", StringUtils.FromString(publicRequest.QuantumTaskArn));
             request.ResourcePath = "/quantum-task/{quantumTaskArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

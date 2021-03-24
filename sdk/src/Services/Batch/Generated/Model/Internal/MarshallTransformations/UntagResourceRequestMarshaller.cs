@@ -65,7 +65,6 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/v1/tags/{resourceArn}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

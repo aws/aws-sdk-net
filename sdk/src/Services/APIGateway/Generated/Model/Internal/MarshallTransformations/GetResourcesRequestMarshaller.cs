@@ -71,7 +71,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPosition())
                 request.Parameters.Add("position", StringUtils.FromString(publicRequest.Position));
             request.ResourcePath = "/restapis/{restapi_id}/resources";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

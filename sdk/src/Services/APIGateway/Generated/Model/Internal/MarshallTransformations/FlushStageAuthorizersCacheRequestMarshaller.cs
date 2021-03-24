@@ -65,7 +65,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field StageName set");
             request.AddPathResource("{stage_name}", StringUtils.FromString(publicRequest.StageName));
             request.ResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/cache/authorizers";
-            request.MarshallerVersion = 2;
 
             return request;
         }

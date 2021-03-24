@@ -66,7 +66,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field RoomId set");
             request.AddPathResource("{roomId}", StringUtils.FromString(publicRequest.RoomId));
             request.ResourcePath = "/accounts/{accountId}/rooms/{roomId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

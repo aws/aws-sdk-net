@@ -95,7 +95,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetVideoQuality())
                 request.Parameters.Add("videoQuality", StringUtils.FromString(publicRequest.VideoQuality));
             request.ResourcePath = "/prod/offerings";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

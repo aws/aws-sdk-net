@@ -71,7 +71,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetThingGroupArn())
                 request.Parameters.Add("thingGroupArn", StringUtils.FromString(publicRequest.ThingGroupArn));
             request.ResourcePath = "/greengrass/v2/coreDevices";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

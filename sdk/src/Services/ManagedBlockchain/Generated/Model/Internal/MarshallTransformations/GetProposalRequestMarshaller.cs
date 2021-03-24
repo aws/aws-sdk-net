@@ -65,7 +65,6 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 throw new AmazonManagedBlockchainException("Request object does not have required field ProposalId set");
             request.AddPathResource("{proposalId}", StringUtils.FromString(publicRequest.ProposalId));
             request.ResourcePath = "/networks/{networkId}/proposals/{proposalId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -65,7 +65,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("keys", publicRequest.TagKeys);
             request.ResourcePath = "/resources/{ResourceArn}/tags";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

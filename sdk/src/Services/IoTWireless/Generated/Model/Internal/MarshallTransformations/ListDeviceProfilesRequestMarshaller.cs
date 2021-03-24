@@ -65,7 +65,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/device-profiles";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

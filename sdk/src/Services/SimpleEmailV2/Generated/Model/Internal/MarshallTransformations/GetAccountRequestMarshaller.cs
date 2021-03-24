@@ -59,7 +59,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/v2/email/account";
-            request.MarshallerVersion = 2;
 
             return request;
         }

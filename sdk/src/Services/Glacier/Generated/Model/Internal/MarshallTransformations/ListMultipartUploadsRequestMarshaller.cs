@@ -69,7 +69,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetUploadIdMarker())
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.UploadIdMarker));
             request.ResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

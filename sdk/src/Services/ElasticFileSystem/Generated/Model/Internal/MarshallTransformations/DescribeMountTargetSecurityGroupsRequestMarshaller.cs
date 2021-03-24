@@ -62,7 +62,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 throw new AmazonElasticFileSystemException("Request object does not have required field MountTargetId set");
             request.AddPathResource("{MountTargetId}", StringUtils.FromString(publicRequest.MountTargetId));
             request.ResourcePath = "/2015-02-01/mount-targets/{MountTargetId}/security-groups";
-            request.MarshallerVersion = 2;
 
             return request;
         }

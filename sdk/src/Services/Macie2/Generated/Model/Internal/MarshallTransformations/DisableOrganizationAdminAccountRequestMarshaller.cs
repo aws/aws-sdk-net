@@ -62,7 +62,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAdminAccountId())
                 request.Parameters.Add("adminAccountId", StringUtils.FromString(publicRequest.AdminAccountId));
             request.ResourcePath = "/admin";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

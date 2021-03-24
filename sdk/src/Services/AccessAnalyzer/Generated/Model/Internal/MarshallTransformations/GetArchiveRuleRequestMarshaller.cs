@@ -65,7 +65,6 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 throw new AmazonAccessAnalyzerException("Request object does not have required field RuleName set");
             request.AddPathResource("{ruleName}", StringUtils.FromString(publicRequest.RuleName));
             request.ResourcePath = "/analyzer/{analyzerName}/archive-rule/{ruleName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

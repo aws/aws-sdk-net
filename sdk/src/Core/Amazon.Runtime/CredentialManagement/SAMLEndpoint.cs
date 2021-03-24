@@ -17,7 +17,6 @@ using System;
 
 namespace Amazon.Runtime.CredentialManagement
 {
-#if !NETSTANDARD13
     /// <summary>
     /// Represents the different types of authentication available for SAML endpoints.
     /// </summary>
@@ -108,5 +107,4 @@ namespace Amazon.Runtime.CredentialManagement
             AuthenticationType = authenticationType;
         }
     }
-#endif
 }

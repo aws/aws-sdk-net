@@ -62,7 +62,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field ArtifactId set");
             request.AddPathResource("{artifactId}", StringUtils.FromString(publicRequest.ArtifactId));
             request.ResourcePath = "/artifacts/{artifactId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

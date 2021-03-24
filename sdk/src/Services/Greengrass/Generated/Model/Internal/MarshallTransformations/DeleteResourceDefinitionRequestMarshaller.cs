@@ -62,7 +62,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field ResourceDefinitionId set");
             request.AddPathResource("{ResourceDefinitionId}", StringUtils.FromString(publicRequest.ResourceDefinitionId));
             request.ResourcePath = "/greengrass/definition/resources/{ResourceDefinitionId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

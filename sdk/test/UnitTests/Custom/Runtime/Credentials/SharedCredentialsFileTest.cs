@@ -98,7 +98,7 @@ namespace AWSSDK.UnitTests
             MfaSerial = "mfa_serial_number"
         };
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         private static readonly string SsoProfileText = new StringBuilder()
             .AppendLine("[sso]")
             .AppendLine($"sso_account_id={SampleValues.SsoAccountId}")
@@ -429,7 +429,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-#if !BCL35 && !NETSTANDARD13
+#if !BCL35
         [TestMethod]
         public void ReadSsoProfile()
         {

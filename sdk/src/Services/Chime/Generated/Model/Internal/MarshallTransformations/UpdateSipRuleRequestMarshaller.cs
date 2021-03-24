@@ -63,7 +63,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field SipRuleId set");
             request.AddPathResource("{sipRuleId}", StringUtils.FromString(publicRequest.SipRuleId));
             request.ResourcePath = "/sip-rules/{sipRuleId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

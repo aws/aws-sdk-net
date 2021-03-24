@@ -62,7 +62,6 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 throw new AmazonManagedBlockchainException("Request object does not have required field NetworkId set");
             request.AddPathResource("{networkId}", StringUtils.FromString(publicRequest.NetworkId));
             request.ResourcePath = "/networks/{networkId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

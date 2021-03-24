@@ -451,10 +451,6 @@
             SourceFiles="..\Notice.txt;..\License.txt"
             DestinationFiles="..\Deployment\assemblies\net45\Notice.txt;..\Deployment\assemblies\net45\License.txt"
         />
-        <Copy
-            SourceFiles="..\Notice.txt;..\License.txt"
-            DestinationFiles="..\Deployment\assemblies\netstandard1.3\Notice.txt;..\Deployment\assemblies\netstandard1.3\License.txt"
-        />
         <!-- netstandard2.0 needs modified Notice with additional 3rd party dependencies -->
         <Copy
             SourceFiles=".\NoticeForZips.txt;..\License.txt"

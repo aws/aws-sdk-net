@@ -62,7 +62,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTimeRange())
                 request.Parameters.Add("timeRange", StringUtils.FromString(publicRequest.TimeRange));
             request.ResourcePath = "/usage";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

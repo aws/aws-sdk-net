@@ -62,7 +62,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 throw new AmazonSignerException("Request object does not have required field JobId set");
             request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
             request.ResourcePath = "/signing-jobs/{jobId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

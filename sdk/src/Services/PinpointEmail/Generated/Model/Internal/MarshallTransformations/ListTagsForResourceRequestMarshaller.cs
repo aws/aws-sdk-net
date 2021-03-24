@@ -62,7 +62,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/v1/email/tags";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

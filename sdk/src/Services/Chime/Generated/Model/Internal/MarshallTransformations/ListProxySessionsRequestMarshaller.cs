@@ -71,7 +71,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/voice-connectors/{voiceConnectorId}/proxy-sessions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

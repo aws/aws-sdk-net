@@ -20,7 +20,6 @@ using Amazon.Util;
 
 namespace Amazon.SecurityToken.SAML
 {
-#if !NETSTANDARD13
     /// <summary>
     /// Interface implemented by plugins supplied to the SAMLAuthenticationController
     /// to perform the call to the authentication endpoint. The implementor returns the
@@ -197,5 +196,4 @@ namespace Amazon.SecurityToken.SAML
             return ResponseParser.Parse(response);
         }
     }
-#endif
-    }
+}

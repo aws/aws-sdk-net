@@ -26,7 +26,6 @@ using System.Net;
 
 namespace Amazon.Runtime
 {
-#if !NETSTANDARD13
     /// <summary>
     /// Temporary credentials that are created following successful authentication with
     /// a federated endpoint supporting SAML.
@@ -294,5 +293,4 @@ namespace Amazon.Runtime
             base.ClearCredentials();
         }
     }
-#endif
 }

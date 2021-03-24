@@ -77,7 +77,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTaskType())
                 request.Parameters.Add("taskType", StringUtils.FromString(publicRequest.TaskType));
             request.ResourcePath = "/audit/tasks";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

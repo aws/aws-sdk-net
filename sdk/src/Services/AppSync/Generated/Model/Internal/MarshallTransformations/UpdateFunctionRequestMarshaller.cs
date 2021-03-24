@@ -66,7 +66,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field FunctionId set");
             request.AddPathResource("{functionId}", StringUtils.FromString(publicRequest.FunctionId));
             request.ResourcePath = "/v1/apis/{apiId}/functions/{functionId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

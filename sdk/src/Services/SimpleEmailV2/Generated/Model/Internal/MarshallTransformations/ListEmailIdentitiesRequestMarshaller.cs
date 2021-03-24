@@ -65,7 +65,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
             request.ResourcePath = "/v2/email/identities";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

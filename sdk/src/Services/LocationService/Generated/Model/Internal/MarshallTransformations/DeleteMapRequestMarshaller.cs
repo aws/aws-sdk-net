@@ -62,7 +62,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field MapName set");
             request.AddPathResource("{MapName}", StringUtils.FromString(publicRequest.MapName));
             request.ResourcePath = "/maps/v0/maps/{MapName}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"maps.";
 

@@ -63,7 +63,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field MultiplexId set");
             request.AddPathResource("{multiplexId}", StringUtils.FromString(publicRequest.MultiplexId));
             request.ResourcePath = "/prod/multiplexes/{multiplexId}/programs";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

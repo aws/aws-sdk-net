@@ -65,7 +65,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field CoreDefinitionVersionId set");
             request.AddPathResource("{CoreDefinitionVersionId}", StringUtils.FromString(publicRequest.CoreDefinitionVersionId));
             request.ResourcePath = "/greengrass/definition/cores/{CoreDefinitionId}/versions/{CoreDefinitionVersionId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

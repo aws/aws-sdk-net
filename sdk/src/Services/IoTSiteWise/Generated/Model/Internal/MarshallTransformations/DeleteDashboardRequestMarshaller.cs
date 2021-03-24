@@ -68,7 +68,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
             request.ResourcePath = "/dashboards/{dashboardId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
             request.HostPrefix = $"monitor.";

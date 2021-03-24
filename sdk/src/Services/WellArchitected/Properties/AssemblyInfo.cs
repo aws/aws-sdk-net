@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
-#elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
 #elif NETCOREAPP3_1
@@ -44,7 +42,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.5.1.6")]
+[assembly: AssemblyFileVersion("3.7.0.0")]
 
 [assembly: System.CLSCompliant(true)]
 

@@ -62,7 +62,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field IndexName set");
             request.AddPathResource("{IndexName}", StringUtils.FromString(publicRequest.IndexName));
             request.ResourcePath = "/places/v0/indexes/{IndexName}";
-            request.MarshallerVersion = 2;
             
             request.HostPrefix = $"places.";
 

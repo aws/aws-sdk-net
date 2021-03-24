@@ -69,7 +69,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nexttoken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/2013-04-01/hostedzonesbyvpc";
-            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

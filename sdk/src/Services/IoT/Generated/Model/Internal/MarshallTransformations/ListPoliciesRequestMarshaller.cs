@@ -68,7 +68,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("pageSize", StringUtils.FromInt(publicRequest.PageSize));
             request.ResourcePath = "/policies";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

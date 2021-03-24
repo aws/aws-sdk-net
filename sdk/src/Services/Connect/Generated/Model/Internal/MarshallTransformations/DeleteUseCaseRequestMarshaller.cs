@@ -68,7 +68,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field UseCaseId set");
             request.AddPathResource("{UseCaseId}", StringUtils.FromString(publicRequest.UseCaseId));
             request.ResourcePath = "/instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases/{UseCaseId}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

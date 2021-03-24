@@ -62,7 +62,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 throw new AmazonKafkaException("Request object does not have required field ClusterArn set");
             request.AddPathResource("{clusterArn}", StringUtils.FromString(publicRequest.ClusterArn));
             request.ResourcePath = "/v1/clusters/{clusterArn}/bootstrap-brokers";
-            request.MarshallerVersion = 2;
 
             return request;
         }

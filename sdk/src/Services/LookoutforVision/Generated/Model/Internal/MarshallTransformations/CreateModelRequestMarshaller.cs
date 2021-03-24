@@ -63,7 +63,6 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                 throw new AmazonLookoutforVisionException("Request object does not have required field ProjectName set");
             request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
             request.ResourcePath = "/2020-11-20/projects/{projectName}/models";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

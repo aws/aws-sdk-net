@@ -62,7 +62,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field Id set");
             request.AddPathResource("{sdktype_id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/sdktypes/{sdktype_id}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

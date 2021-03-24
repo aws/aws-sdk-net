@@ -65,7 +65,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 throw new AmazonPinpointException("Request object does not have required field UserId set");
             request.AddPathResource("{user-id}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/v1/apps/{application-id}/users/{user-id}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

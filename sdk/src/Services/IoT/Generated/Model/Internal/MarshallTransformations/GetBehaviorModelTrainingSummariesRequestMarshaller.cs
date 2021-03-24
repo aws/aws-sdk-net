@@ -68,7 +68,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSecurityProfileName())
                 request.Parameters.Add("securityProfileName", StringUtils.FromString(publicRequest.SecurityProfileName));
             request.ResourcePath = "/behavior-model-training/summaries";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

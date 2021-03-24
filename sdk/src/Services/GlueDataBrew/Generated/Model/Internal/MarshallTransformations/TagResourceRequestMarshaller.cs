@@ -63,7 +63,6 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 throw new AmazonGlueDataBrewException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = "/tags/{ResourceArn}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -66,7 +66,6 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 throw new AmazonManagedBlockchainException("Request object does not have required field NodeId set");
             request.AddPathResource("{nodeId}", StringUtils.FromString(publicRequest.NodeId));
             request.ResourcePath = "/networks/{networkId}/nodes/{nodeId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

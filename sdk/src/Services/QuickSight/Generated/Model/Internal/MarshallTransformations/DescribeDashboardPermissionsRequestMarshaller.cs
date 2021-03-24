@@ -65,7 +65,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DashboardId set");
             request.AddPathResource("{DashboardId}", StringUtils.FromString(publicRequest.DashboardId));
             request.ResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/permissions";
-            request.MarshallerVersion = 2;
 
             return request;
         }

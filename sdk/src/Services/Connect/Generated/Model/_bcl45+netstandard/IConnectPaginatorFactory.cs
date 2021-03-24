@@ -1,4 +1,3 @@
-#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -142,4 +141,3 @@ namespace Amazon.Connect.Model
         IListUsersPaginator ListUsers(ListUsersRequest request);
     }
 }
-#endif

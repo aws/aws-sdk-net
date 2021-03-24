@@ -65,7 +65,6 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/2020-11-20/tags/{resourceArn}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

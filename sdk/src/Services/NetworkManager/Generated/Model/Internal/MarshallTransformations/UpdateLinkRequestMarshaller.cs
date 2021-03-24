@@ -66,7 +66,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field LinkId set");
             request.AddPathResource("{linkId}", StringUtils.FromString(publicRequest.LinkId));
             request.ResourcePath = "/global-networks/{globalNetworkId}/links/{linkId}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

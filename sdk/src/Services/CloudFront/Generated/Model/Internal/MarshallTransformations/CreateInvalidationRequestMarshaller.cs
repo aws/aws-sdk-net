@@ -60,7 +60,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
             request.AddPathResource("{DistributionId}", StringUtils.FromString(publicRequest.DistributionId));
             request.ResourcePath = "/2020-05-31/distribution/{DistributionId}/invalidation";
-            request.MarshallerVersion = 2;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))

@@ -74,7 +74,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDate));
             request.ResourcePath = "/v2/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

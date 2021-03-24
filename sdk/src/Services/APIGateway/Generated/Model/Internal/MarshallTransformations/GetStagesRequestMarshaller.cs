@@ -65,7 +65,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDeploymentId())
                 request.Parameters.Add("deploymentId", StringUtils.FromString(publicRequest.DeploymentId));
             request.ResourcePath = "/restapis/{restapi_id}/stages";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -54,7 +54,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(restoreObjectRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "RestoreObjectRequest.Key");
 
-			request.MarshallerVersion = 2;
 			request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(restoreObjectRequest.BucketName),
                                                  S3Transforms.ToStringValue(restoreObjectRequest.Key));

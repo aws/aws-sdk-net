@@ -68,7 +68,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPropertyId())
                 request.Parameters.Add("propertyId", StringUtils.FromString(publicRequest.PropertyId));
             request.ResourcePath = "/properties/latest";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
             request.HostPrefix = $"data.";

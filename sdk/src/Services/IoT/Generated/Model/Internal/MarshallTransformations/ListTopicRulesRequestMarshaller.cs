@@ -71,7 +71,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetTopic())
                 request.Parameters.Add("topic", StringUtils.FromString(publicRequest.Topic));
             request.ResourcePath = "/rules";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

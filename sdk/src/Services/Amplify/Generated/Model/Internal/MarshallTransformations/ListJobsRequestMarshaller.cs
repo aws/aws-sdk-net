@@ -71,7 +71,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/apps/{appId}/branches/{branchName}/jobs";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -68,7 +68,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v1/clusters";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

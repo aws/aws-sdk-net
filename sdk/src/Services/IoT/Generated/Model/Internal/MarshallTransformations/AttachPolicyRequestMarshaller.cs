@@ -63,7 +63,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field PolicyName set");
             request.AddPathResource("{policyName}", StringUtils.FromString(publicRequest.PolicyName));
             request.ResourcePath = "/target-policies/{policyName}";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

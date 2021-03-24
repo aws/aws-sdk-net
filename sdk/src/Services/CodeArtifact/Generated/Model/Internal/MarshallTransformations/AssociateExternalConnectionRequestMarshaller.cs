@@ -72,7 +72,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRepository())
                 request.Parameters.Add("repository", StringUtils.FromString(publicRequest.Repository));
             request.ResourcePath = "/v1/repository/external-connection";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

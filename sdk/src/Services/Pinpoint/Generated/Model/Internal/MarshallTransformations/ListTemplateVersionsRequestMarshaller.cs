@@ -71,7 +71,6 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("page-size", StringUtils.FromString(publicRequest.PageSize));
             request.ResourcePath = "/v1/templates/{template-name}/{template-type}/versions";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

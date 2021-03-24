@@ -65,7 +65,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             request.ResourcePath = "/principals/things";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetPrincipal())
                 request.Headers["x-amzn-principal"] = publicRequest.Principal;

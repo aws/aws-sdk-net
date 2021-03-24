@@ -65,7 +65,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPartnerType())
                 request.Parameters.Add("partnerType", StringUtils.FromString(publicRequest.PartnerType));
             request.ResourcePath = "/partner-accounts/{PartnerAccountId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

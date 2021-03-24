@@ -60,7 +60,6 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getClip";
-            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

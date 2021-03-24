@@ -68,7 +68,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetLabels())
                 request.ParameterCollection.Add("labels", publicRequest.Labels);
             request.ResourcePath = "/api/v1/resources/{ResourceId}/labels";
-            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

@@ -65,7 +65,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field TransitGatewayArn set");
             request.AddPathResource("{transitGatewayArn}", StringUtils.FromString(publicRequest.TransitGatewayArn));
             request.ResourcePath = "/global-networks/{globalNetworkId}/transit-gateway-registrations/{transitGatewayArn}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

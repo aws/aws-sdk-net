@@ -40,7 +40,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(deleteBucketReplicationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketReplicationRequest.BucketName");
 
-			request.MarshallerVersion = 2;
 			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteBucketReplicationRequest.BucketName));
             request.AddSubResource("replication");
             request.UseQueryString = true;

@@ -62,7 +62,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field TemplateName set");
             request.AddPathResource("{TemplateName}", StringUtils.FromString(publicRequest.TemplateName));
             request.ResourcePath = "/v2/email/custom-verification-email-templates/{TemplateName}";
-            request.MarshallerVersion = 2;
 
             return request;
         }

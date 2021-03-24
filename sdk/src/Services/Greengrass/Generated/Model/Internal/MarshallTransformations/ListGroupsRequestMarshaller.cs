@@ -65,7 +65,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/greengrass/groups";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

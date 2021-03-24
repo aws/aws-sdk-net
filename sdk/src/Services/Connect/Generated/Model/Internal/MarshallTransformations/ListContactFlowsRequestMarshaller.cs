@@ -71,7 +71,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/contact-flows-summary/{InstanceId}";
-            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;
