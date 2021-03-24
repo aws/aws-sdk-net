@@ -70,6 +70,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsOrganizationsSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnableAllOpsDataSources", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableAllOpsDataSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IncludeFutureRegions", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

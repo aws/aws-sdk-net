@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class ResourceDataSyncSource
     {
         private ResourceDataSyncAwsOrganizationsSource _awsOrganizationsSource;
+        private bool? _enableAllOpsDataSources;
         private bool? _includeFutureRegions;
         private List<string> _sourceRegions = new List<string>();
         private string _sourceType;
@@ -55,6 +56,29 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAwsOrganizationsSource()
         {
             return this._awsOrganizationsSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableAllOpsDataSources. 
+        /// <para>
+        /// When you create a resource data sync, if you choose one of the AWS Organizations options,
+        /// then Systems Manager automatically enables all OpsData sources in the selected AWS
+        /// Regions for all AWS accounts in your organization (or in the selected organization
+        /// units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About
+        /// multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableAllOpsDataSources
+        {
+            get { return this._enableAllOpsDataSources.GetValueOrDefault(); }
+            set { this._enableAllOpsDataSources = value; }
+        }
+
+        // Check to see if EnableAllOpsDataSources property is set
+        internal bool IsSetEnableAllOpsDataSources()
+        {
+            return this._enableAllOpsDataSources.HasValue; 
         }
 
         /// <summary>

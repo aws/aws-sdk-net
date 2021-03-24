@@ -164,6 +164,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// a command on instances that include EC2 tags of <code>ServerRole,WebServer</code>.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code>
+        /// might be lower than the global maximum of 50.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<string> Values
