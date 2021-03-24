@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class NetworkInfo
     {
         private int? _defaultNetworkCardIndex;
+        private EfaInfo _efaInfo;
         private bool? _efaSupported;
         private EnaSupport _enaSupport;
         private int? _ipv4AddressesPerInterface;
@@ -60,6 +61,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDefaultNetworkCardIndex()
         {
             return this._defaultNetworkCardIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EfaInfo. 
+        /// <para>
+        /// Describes the Elastic Fabric Adapters for the instance type.
+        /// </para>
+        /// </summary>
+        public EfaInfo EfaInfo
+        {
+            get { return this._efaInfo; }
+            set { this._efaInfo = value; }
+        }
+
+        // Check to see if EfaInfo property is set
+        internal bool IsSetEfaInfo()
+        {
+            return this._efaInfo != null;
         }
 
         /// <summary>

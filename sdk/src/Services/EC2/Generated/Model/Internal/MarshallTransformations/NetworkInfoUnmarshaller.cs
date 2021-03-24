@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DefaultNetworkCardIndex = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("efaInfo", targetDepth))
+                    {
+                        var unmarshaller = EfaInfoUnmarshaller.Instance;
+                        unmarshalledObject.EfaInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("efaSupported", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
