@@ -680,6 +680,10 @@
       <Project>{AEAAF64A-F230-4C3C-8AA4-8E2182617E19}</Project>
       <Name>AWSSDK.LookoutforVision.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LookoutMetrics/AWSSDK.LookoutMetrics.CodeAnalysis.csproj">
+      <Project>{4DE72996-4492-40ED-939C-098008D6AF81}</Project>
+      <Name>AWSSDK.LookoutMetrics.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MachineLearning/AWSSDK.MachineLearning.CodeAnalysis.csproj">
       <Project>{BFEE58EE-DF58-4F52-A99B-01D05FB251AF}</Project>
       <Name>AWSSDK.MachineLearning.CodeAnalysis</Name>
