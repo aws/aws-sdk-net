@@ -64,7 +64,7 @@ namespace Amazon.SQS
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Additional Information</b> 
+    ///  <b>Additional information</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
