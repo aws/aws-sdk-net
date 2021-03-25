@@ -389,6 +389,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchFacesRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
@@ -625,6 +630,16 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.TagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.UntagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.AgeRange.High</property>

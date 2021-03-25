@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateStreamProcessor Request Marshaller
+    /// UntagResource Request Marshaller
     /// </summary>       
-    public class CreateStreamProcessorRequestMarshaller : IMarshaller<IRequest, CreateStreamProcessorRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateStreamProcessorRequest)input);
+            return this.Marshall((UntagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateStreamProcessorRequest publicRequest)
+        public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Rekognition");
-            string target = "RekognitionService.CreateStreamProcessor";
+            string target = "RekognitionService.UntagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";            
@@ -68,63 +68,21 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInput())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("Input");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamProcessorInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Input, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
-                if(publicRequest.IsSetName())
+                if(publicRequest.IsSetTagKeys())
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOutput())
-                {
-                    context.Writer.WritePropertyName("Output");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamProcessorOutputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Output, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSettings())
-                {
-                    context.Writer.WritePropertyName("Settings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamProcessorSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Settings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    context.Writer.WritePropertyName("TagKeys");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                            context.Writer.Write(publicRequestTagKeysListValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         
@@ -136,9 +94,9 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateStreamProcessorRequestMarshaller _instance = new CreateStreamProcessorRequestMarshaller();        
+        private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
 
-        internal static CreateStreamProcessorRequestMarshaller GetInstance()
+        internal static UntagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -146,7 +104,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateStreamProcessorRequestMarshaller Instance
+        public static UntagResourceRequestMarshaller Instance
         {
             get
             {

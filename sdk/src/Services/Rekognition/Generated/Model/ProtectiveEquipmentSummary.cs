@@ -77,8 +77,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property PersonsWithoutRequiredEquipment. 
         /// <para>
         /// An array of IDs for persons who are not wearing all of the types of PPE specified
-        /// in the RequiredEquipmentTypes field of the detected personal protective equipment.
-        /// 
+        /// in the <code>RequiredEquipmentTypes</code> field of the detected personal protective
+        /// equipment. 
         /// </para>
         /// </summary>
         public List<int> PersonsWithoutRequiredEquipment

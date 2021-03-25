@@ -83,9 +83,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property MinConfidence. 
         /// <para>
-        /// Sets confidence of word detection. Words with detection confidence below this will
-        /// be excluded from the result. Values should be between 0.5 and 1 as Text in Video will
-        /// not return any result below 0.5.
+        /// Sets the confidence of word detection. Words with detection confidence below this
+        /// will be excluded from the result. Values should be between 50 and 100 as Text in Video
+        /// will not return any result below 50.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

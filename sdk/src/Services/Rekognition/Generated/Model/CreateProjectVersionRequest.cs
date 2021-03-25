@@ -58,6 +58,7 @@ namespace Amazon.Rekognition.Model
     {
         private OutputConfig _outputConfig;
         private string _projectArn;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private TestingData _testingData;
         private TrainingData _trainingData;
         private string _versionName;
@@ -99,6 +100,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetProjectArn()
         {
             return this._projectArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A set of tags (key-value pairs) that you want to attach to the model. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
