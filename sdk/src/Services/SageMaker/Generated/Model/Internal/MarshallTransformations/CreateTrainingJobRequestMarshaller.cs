@@ -135,6 +135,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnableNetworkIsolation);
                 }
 
+                if(publicRequest.IsSetEnvironment())
+                {
+                    context.Writer.WritePropertyName("Environment");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestEnvironmentKvp in publicRequest.Environment)
+                    {
+                        context.Writer.WritePropertyName(publicRequestEnvironmentKvp.Key);
+                        var publicRequestEnvironmentValue = publicRequestEnvironmentKvp.Value;
+
+                            context.Writer.Write(publicRequestEnvironmentValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetExperimentConfig())
                 {
                     context.Writer.WritePropertyName("ExperimentConfig");

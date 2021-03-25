@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies options when sharing an Amazon SageMaker Studio notebook. These settings
-    /// are specified as part of <code>DefaultUserSettings</code> when the <a>CreateDomain</a>
-    /// API is called, and as part of <code>UserSettings</code> when the <a>CreateUserProfile</a>
-    /// API is called.
+    /// Specifies options for sharing SageMaker Studio notebooks. These settings are specified
+    /// as part of <code>DefaultUserSettings</code> when the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+    /// API is called, and as part of <code>UserSettings</code> when the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>
+    /// API is called. When <code>SharingSettings</code> is not specified, notebook sharing
+    /// isn't allowed.
     /// </summary>
     public partial class SharingSettings
     {

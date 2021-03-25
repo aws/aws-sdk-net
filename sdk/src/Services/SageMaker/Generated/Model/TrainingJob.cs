@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
+        private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private ExperimentConfig _experimentConfig;
         private string _failureReason;
         private List<MetricData> _finalMetricDataList = new List<MetricData>();
@@ -271,6 +272,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableNetworkIsolation()
         {
             return this._enableNetworkIsolation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The environment variables to set in the Docker container.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=48)]
+        public Dictionary<string, string> Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null && this._environment.Count > 0; 
         }
 
         /// <summary>

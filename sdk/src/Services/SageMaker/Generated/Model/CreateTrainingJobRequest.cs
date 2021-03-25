@@ -92,6 +92,10 @@ namespace Amazon.SageMaker.Model
     /// to set a time limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify
     /// how long you are willing to wait for a managed spot training job to complete. 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Environment</code> - The environment variables to set in the Docker container.
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  For more information about Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
@@ -107,6 +111,7 @@ namespace Amazon.SageMaker.Model
         private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
+        private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private ExperimentConfig _experimentConfig;
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
         private List<Channel> _inputDataConfig = new List<Channel>();
@@ -268,6 +273,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableNetworkIsolation()
         {
             return this._enableNetworkIsolation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The environment variables to set in the Docker container.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=48)]
+        public Dictionary<string, string> Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null && this._environment.Count > 0; 
         }
 
         /// <summary>

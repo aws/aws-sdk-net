@@ -74,7 +74,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SnsDataSource. 
         /// <para>
-        /// An Amazon SNS data source used for streaming labeling jobs.
+        /// An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send
+        /// Data to a Streaming Labeling Job</a>. 
         /// </para>
         /// </summary>
         public LabelingJobSnsDataSource SnsDataSource

@@ -41,11 +41,6 @@ namespace Amazon.SageMaker.Model
         /// The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input
         /// topic you will use to send new data objects to a streaming labeling job.
         /// </para>
-        ///  
-        /// <para>
-        /// If you specify an input topic for <code>SnsTopicArn</code> in <code>InputConfig</code>,
-        /// you must specify a value for <code>SnsTopicArn</code> in <code>OutputConfig</code>.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2048)]
         public string SnsTopicArn
