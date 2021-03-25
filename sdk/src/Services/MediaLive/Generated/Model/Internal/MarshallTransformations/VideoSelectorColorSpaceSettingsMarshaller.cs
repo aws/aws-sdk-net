@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VideoSelector Marshaller
+    /// VideoSelectorColorSpaceSettings Marshaller
     /// </summary>       
-    public class VideoSelectorMarshaller : IRequestMarshaller<VideoSelector, JsonMarshallerContext> 
+    public class VideoSelectorColorSpaceSettingsMarshaller : IRequestMarshaller<VideoSelectorColorSpaceSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,38 +43,15 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VideoSelector requestObject, JsonMarshallerContext context)
+        public void Marshall(VideoSelectorColorSpaceSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetColorSpace())
+            if(requestObject.IsSetHdr10Settings())
             {
-                context.Writer.WritePropertyName("colorSpace");
-                context.Writer.Write(requestObject.ColorSpace);
-            }
-
-            if(requestObject.IsSetColorSpaceSettings())
-            {
-                context.Writer.WritePropertyName("colorSpaceSettings");
+                context.Writer.WritePropertyName("hdr10Settings");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = VideoSelectorColorSpaceSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ColorSpaceSettings, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetColorSpaceUsage())
-            {
-                context.Writer.WritePropertyName("colorSpaceUsage");
-                context.Writer.Write(requestObject.ColorSpaceUsage);
-            }
-
-            if(requestObject.IsSetSelectorSettings())
-            {
-                context.Writer.WritePropertyName("selectorSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = VideoSelectorSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SelectorSettings, context);
+                var marshaller = Hdr10SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Hdr10Settings, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -84,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VideoSelectorMarshaller Instance = new VideoSelectorMarshaller();
+        public readonly static VideoSelectorColorSpaceSettingsMarshaller Instance = new VideoSelectorColorSpaceSettingsMarshaller();
 
     }
 }

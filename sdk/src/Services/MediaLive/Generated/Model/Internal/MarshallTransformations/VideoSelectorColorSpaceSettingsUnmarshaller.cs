@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VideoSelector Object
+    /// Response Unmarshaller for VideoSelectorColorSpaceSettings Object
     /// </summary>  
-    public class VideoSelectorUnmarshaller : IUnmarshaller<VideoSelector, XmlUnmarshallerContext>, IUnmarshaller<VideoSelector, JsonUnmarshallerContext>
+    public class VideoSelectorColorSpaceSettingsUnmarshaller : IUnmarshaller<VideoSelectorColorSpaceSettings, XmlUnmarshallerContext>, IUnmarshaller<VideoSelectorColorSpaceSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VideoSelector IUnmarshaller<VideoSelector, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VideoSelectorColorSpaceSettings IUnmarshaller<VideoSelectorColorSpaceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VideoSelector Unmarshall(JsonUnmarshallerContext context)
+        public VideoSelectorColorSpaceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VideoSelector unmarshalledObject = new VideoSelector();
+            VideoSelectorColorSpaceSettings unmarshalledObject = new VideoSelectorColorSpaceSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("colorSpace", targetDepth))
+                if (context.TestExpression("hdr10Settings", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("colorSpaceSettings", targetDepth))
-                {
-                    var unmarshaller = VideoSelectorColorSpaceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpaceSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("colorSpaceUsage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpaceUsage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("selectorSettings", targetDepth))
-                {
-                    var unmarshaller = VideoSelectorSettingsUnmarshaller.Instance;
-                    unmarshalledObject.SelectorSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = Hdr10SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Hdr10Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static VideoSelectorUnmarshaller _instance = new VideoSelectorUnmarshaller();        
+        private static VideoSelectorColorSpaceSettingsUnmarshaller _instance = new VideoSelectorColorSpaceSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VideoSelectorUnmarshaller Instance
+        public static VideoSelectorColorSpaceSettingsUnmarshaller Instance
         {
             get
             {

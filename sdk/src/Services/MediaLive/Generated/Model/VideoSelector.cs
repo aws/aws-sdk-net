@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class VideoSelector
     {
         private VideoSelectorColorSpace _colorSpace;
+        private VideoSelectorColorSpaceSettings _colorSpaceSettings;
         private VideoSelectorColorSpaceUsage _colorSpaceUsage;
         private VideoSelectorSettings _selectorSettings;
 
@@ -53,6 +54,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetColorSpace()
         {
             return this._colorSpace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColorSpaceSettings. Color space settings
+        /// </summary>
+        public VideoSelectorColorSpaceSettings ColorSpaceSettings
+        {
+            get { return this._colorSpaceSettings; }
+            set { this._colorSpaceSettings = value; }
+        }
+
+        // Check to see if ColorSpaceSettings property is set
+        internal bool IsSetColorSpaceSettings()
+        {
+            return this._colorSpaceSettings != null;
         }
 
         /// <summary>

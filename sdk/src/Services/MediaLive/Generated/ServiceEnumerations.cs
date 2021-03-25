@@ -13053,6 +13053,14 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly VideoSelectorColorSpace FOLLOW = new VideoSelectorColorSpace("FOLLOW");
         /// <summary>
+        /// Constant HDR10 for VideoSelectorColorSpace
+        /// </summary>
+        public static readonly VideoSelectorColorSpace HDR10 = new VideoSelectorColorSpace("HDR10");
+        /// <summary>
+        /// Constant HLG_2020 for VideoSelectorColorSpace
+        /// </summary>
+        public static readonly VideoSelectorColorSpace HLG_2020 = new VideoSelectorColorSpace("HLG_2020");
+        /// <summary>
         /// Constant REC_601 for VideoSelectorColorSpace
         /// </summary>
         public static readonly VideoSelectorColorSpace REC_601 = new VideoSelectorColorSpace("REC_601");
