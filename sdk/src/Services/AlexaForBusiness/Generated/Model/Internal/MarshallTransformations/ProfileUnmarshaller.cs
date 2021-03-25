@@ -76,6 +76,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.AddressBookArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataRetentionOptIn", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DataRetentionOptIn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DistanceUnit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -35,6 +35,7 @@ namespace Amazon.AlexaForBusiness.Model
     {
         private string _address;
         private string _addressBookArn;
+        private bool? _dataRetentionOptIn;
         private DistanceUnit _distanceUnit;
         private bool? _isDefault;
         private string _locale;
@@ -83,6 +84,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetAddressBookArn()
         {
             return this._addressBookArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataRetentionOptIn. 
+        /// <para>
+        /// Whether data retention of the profile is enabled.
+        /// </para>
+        /// </summary>
+        public bool DataRetentionOptIn
+        {
+            get { return this._dataRetentionOptIn.GetValueOrDefault(); }
+            set { this._dataRetentionOptIn = value; }
+        }
+
+        // Check to see if DataRetentionOptIn property is set
+        internal bool IsSetDataRetentionOptIn()
+        {
+            return this._dataRetentionOptIn.HasValue; 
         }
 
         /// <summary>

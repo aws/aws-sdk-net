@@ -85,6 +85,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetDataRetentionOptIn())
+                {
+                    context.Writer.WritePropertyName("DataRetentionOptIn");
+                    context.Writer.Write(publicRequest.DataRetentionOptIn);
+                }
+
                 if(publicRequest.IsSetDistanceUnit())
                 {
                     context.Writer.WritePropertyName("DistanceUnit");

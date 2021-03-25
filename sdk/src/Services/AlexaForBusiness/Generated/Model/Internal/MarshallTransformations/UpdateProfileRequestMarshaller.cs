@@ -74,6 +74,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Address);
                 }
 
+                if(publicRequest.IsSetDataRetentionOptIn())
+                {
+                    context.Writer.WritePropertyName("DataRetentionOptIn");
+                    context.Writer.Write(publicRequest.DataRetentionOptIn);
+                }
+
                 if(publicRequest.IsSetDistanceUnit())
                 {
                     context.Writer.WritePropertyName("DistanceUnit");
