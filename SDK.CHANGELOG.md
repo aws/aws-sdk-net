@@ -1,3 +1,7 @@
+### 3.7.0.0 (2021-03-25 21:00 UTC)
+* All (Core and Services) updated to version 3.7.0.0
+  * Removes support for .NET Standard 1.3
+
 ### 3.5.138.0 (2021-03-25 18:18 UTC)
 * AlexaForBusiness (3.5.2.0)
 	* Added support for enabling and disabling data retention in the CreateProfile and UpdateProfile APIs and retrieving the state of data retention for a profile in the GetProfile API.
