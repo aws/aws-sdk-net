@@ -1,3 +1,22 @@
+### 3.5.138.0 (2021-03-25 18:18 UTC)
+* AlexaForBusiness (3.5.2.0)
+	* Added support for enabling and disabling data retention in the CreateProfile and UpdateProfile APIs and retrieving the state of data retention for a profile in the GetProfile API.
+* LookoutMetrics (3.5.0.0)
+	* Amazon Lookout for Metrics is now generally available. You can use Lookout for Metrics to monitor your data for anomalies. For more information, see the Amazon Lookout for Metrics Developer Guide.
+* MediaLive (3.5.14.0)
+	* EML now supports handling HDR10 and HLG 2020 color space from a Link input.
+* Rekognition (3.5.3.0)
+	* "This release introduces AWS tagging support for Amazon Rekognition collections, stream processors, and Custom Label models."
+* SageMaker (3.5.15.0)
+	* This feature allows customer to specify the environment variables in their CreateTrainingJob requests.
+* SQS (3.5.1.28)
+	* Documentation updates for Amazon SQS
+* Core 3.5.3.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.137.0 (2021-03-24 18:15 UTC)
 * EC2 (3.5.35.0)
 	* maximumEfaInterfaces added to DescribeInstanceTypes API
