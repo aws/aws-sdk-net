@@ -1,3 +1,7 @@
+### 3.7.1.0 (2021-03-26 04:10 UTC)
+* LookoutMetrics (3.7.1.0)
+	* Allowing uppercase alphabets for RDS and Redshift database names.
+
 ### 3.7.0.0 (2021-03-25 21:00 UTC)
 * All (Core and Services) updated to version 3.7.0.0
   * Removes support for .NET Standard 1.3
