@@ -109,7 +109,7 @@ namespace Amazon.Extensions.NETCore.Setup
             var constructor = clientType.GetConstructor(new Type[] { typeof(AWSCredentials), config.GetType() });
             if (constructor == null)
             {
-                throw new AmazonClientException($"Service client {clientTypeName} misisng a constructor with parameters AWSCredentials and {config.GetType().FullName}.");
+                throw new AmazonClientException($"Service client {clientTypeName} missing a constructor with parameters AWSCredentials and {config.GetType().FullName}.");
             }
 
             var client = constructor.Invoke(new object[] { credentials, config }) as AmazonServiceClient;
