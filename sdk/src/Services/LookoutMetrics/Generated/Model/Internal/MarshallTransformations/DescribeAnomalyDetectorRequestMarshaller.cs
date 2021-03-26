@@ -55,7 +55,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeAnomalyDetectorRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutMetrics");
-            request.Headers["Content-Type"] = "application/json";
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "POST";
 
