@@ -113,6 +113,10 @@ namespace Amazon.EventBridge.Model
     /// <para>
     /// Custom/SaaS HTTPS APIs via EventBridge API Destinations
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon SageMaker Model Building Pipelines
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Creating rules with built-in targets is supported only in the AWS Management Console.
