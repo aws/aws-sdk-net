@@ -228,7 +228,7 @@ namespace Amazon.S3.Transfer
         /// The number of concurrent web requests used is controlled 
         /// by the TransferUtilityConfig.ConcurrencyLevel property.
         /// </summary>
-#if BCL45
+#if BCL45 || NETSTANDARD
         public
 #else
         internal
