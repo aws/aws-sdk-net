@@ -2072,6 +2072,22 @@
                 "Core" : "3.7.0.0"
             },
             "InPreview"               : false
+        },
+        "FIS"                             : {
+            "Version" : "3.7.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.0.0"
+            },
+            "InPreview"               : false
+        },
+        "LookoutMetrics"                  : {
+            "Version" : "3.7.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.0.0"
+            },
+            "InPreview"               : false
         }
     }
 }
