@@ -47,8 +47,17 @@ namespace Amazon.SQS
             statement = new Statement(Statement.StatementEffect.Allow);
             statement.Actions.Add(SQSActionIdentifiers.SendMessage);
             statement.Resources.Add(new Resource(response.QueueARN));
-            statement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));
             statement.Principals.Add(new Principal("*"));
+            statement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));
+
+
+            // If the arn doesn't have the required tokens then it is most likely be called from a mock or fake AWS service.
+            // Since this is an existing method we don't want to introduce a new exception. So if there is no account id then
+            // don't add the extra condition.
+            if(Arn.TryParse(response.QueueARN, out Arn arn) && !string.IsNullOrEmpty(arn.AccountId))
+            {
+                statement.Conditions.Add(ConditionFactory.NewCondition(ConditionFactory.StringComparisonType.StringEquals, ConditionFactory.SOURCE_ACCOUNT_KEY, arn.AccountId));
+            }
         }
     }
 }

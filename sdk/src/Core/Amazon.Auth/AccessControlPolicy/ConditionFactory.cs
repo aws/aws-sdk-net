@@ -90,6 +90,12 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </para>
         /// </summary>
         public const string SOURCE_ARN_CONDITION_KEY = "aws:SourceArn";
+
+        /// <summary>
+        /// Condition key for the account id of the source specified
+        /// in a request.  
+        /// </summary>
+        public const string SOURCE_ACCOUNT_KEY = "aws:SourceAccount";
         #endregion
 
         #region ArnComparisonType
