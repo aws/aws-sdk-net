@@ -1,5 +1,5 @@
 {
     "active": true, 
     "generate-client-constructors": false, 
-    "synopsis": "Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application."
+    "synopsis": "Amazon CloudSearch Domain encapsulates a collection of data you want to search, the search instances that process your search requests, and a configuration that controls how your data is indexed and searched."
 }

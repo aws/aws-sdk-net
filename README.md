@@ -166,7 +166,7 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.CloudSearch](https://www.nuget.org/packages/AWSSDK.CloudSearch/)
 	* Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.
 * [AWSSDK.CloudSearchDomain](https://www.nuget.org/packages/AWSSDK.CloudSearchDomain/)
-	* Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.
+	* Amazon CloudSearch Domain encapsulates a collection of data you want to search, the search instances that process your search requests, and a configuration that controls how your data is indexed and searched.
 * [AWSSDK.CloudTrail](https://www.nuget.org/packages/AWSSDK.CloudTrail/)
 	* AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service.
 * [AWSSDK.CloudWatch](https://www.nuget.org/packages/AWSSDK.CloudWatch/)
@@ -488,7 +488,7 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.RDS](https://www.nuget.org/packages/AWSSDK.RDS/)
 	* Amazon Relational Database Service (Amazon RDS) is a web service that makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while managing time-consuming database management tasks, freeing you up to focus on your applications and business.
 * [AWSSDK.RDSDataService](https://www.nuget.org/packages/AWSSDK.RDSDataService/)
-	* The RDS Data API Beta is available for the MySQL-compatible edition of Amazon Aurora Serverless in the US East (N. Virginia) Region. This API enables you to easily access Aurora Serverless with web services-based applications including AWS Lambda and AWS AppSync.
+	* Amazon RDS Data Service API is an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster.
 * [AWSSDK.Redshift](https://www.nuget.org/packages/AWSSDK.Redshift/)
 	* Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools.
 * [AWSSDK.RedshiftDataAPIService](https://www.nuget.org/packages/AWSSDK.RedshiftDataAPIService/)
