@@ -1,3 +1,20 @@
+### 3.7.2.0 (2021-03-26 18:17 UTC)
+* CloudWatchEvents (3.7.1.0)
+	* Add support for SageMaker Model Builder Pipelines Targets to EventBridge
+* CustomerProfiles (3.7.1.0)
+	* This release adds an optional parameter named FlowDefinition in PutIntegrationRequest.
+* EventBridge (3.7.1.0)
+	* Add support for SageMaker Model Builder Pipelines Targets to EventBridge
+* IoTWireless (3.7.1.0)
+	* Support tag-on-create for WirelessDevice.
+* TranscribeService (3.7.1.0)
+	* Amazon Transcribe now supports tagging words that match your vocabulary filter for batch transcription.
+* Core 3.7.0.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.1.0 (2021-03-26 04:10 UTC)
 * LookoutMetrics (3.7.1.0)
 	* Allowing uppercase alphabets for RDS and Redshift database names.
