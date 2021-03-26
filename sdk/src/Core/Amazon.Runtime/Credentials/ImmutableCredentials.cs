@@ -43,7 +43,7 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Gets the UseToken property for the current credentials.
-        /// Specifies if Token property is non-emtpy.
+        /// Specifies if Token property is non-empty.
         /// </summary>
         public bool UseToken { get { return !string.IsNullOrEmpty(Token); } }
 
