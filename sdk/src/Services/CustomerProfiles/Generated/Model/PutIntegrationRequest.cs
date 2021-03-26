@@ -41,6 +41,7 @@ namespace Amazon.CustomerProfiles.Model
     public partial class PutIntegrationRequest : AmazonCustomerProfilesRequest
     {
         private string _domainName;
+        private FlowDefinition _flowDefinition;
         private string _objectTypeName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _uri;
@@ -62,6 +63,21 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlowDefinition.
+        /// </summary>
+        public FlowDefinition FlowDefinition
+        {
+            get { return this._flowDefinition; }
+            set { this._flowDefinition = value; }
+        }
+
+        // Check to see if FlowDefinition property is set
+        internal bool IsSetFlowDefinition()
+        {
+            return this._flowDefinition != null;
         }
 
         /// <summary>
@@ -108,7 +124,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The URI of the S3 bucket or any other type of data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string Uri
         {
             get { return this._uri; }

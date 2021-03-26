@@ -796,6 +796,27 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FlowDefinition.Description</property>
+    <max>2048</max>
+    <pattern>[\w!@#\-.?,\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FlowDefinition.FlowName</property>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FlowDefinition.KmsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:kms:.*:[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.IncrementalPullConfig.DatetimeTypeFieldName</property>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.ListDomainItem.DomainName</property>
     <min>1</min>
     <max>64</max>
@@ -862,6 +883,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.MarketoSourceProperties.Object</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.ObjectTypeField.Source</property>
@@ -948,6 +974,52 @@
     <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.S3SourceProperties.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.S3SourceProperties.BucketPrefix</property>
+    <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.SalesforceSourceProperties.Object</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ScheduledTriggerProperties.ScheduleExpression</property>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ScheduledTriggerProperties.ScheduleOffset</property>
+    <min>0</min>
+    <max>36000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ScheduledTriggerProperties.Timezone</property>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ServiceNowSourceProperties.Object</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.SourceFlowConfig.ConnectorProfileName</property>
+    <max>256</max>
+    <pattern>[\w/!@#+=.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.Task.DestinationField</property>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.UpdateAddress.Address1</property>
     <min>0</min>
     <max>255</max>
@@ -996,5 +1068,10 @@
     <property>Amazon.CustomerProfiles.Model.UpdateAddress.State</property>
     <min>0</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ZendeskSourceProperties.Object</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
 </property-value-rules>
