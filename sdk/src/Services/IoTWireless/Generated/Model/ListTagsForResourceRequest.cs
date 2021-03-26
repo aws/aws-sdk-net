@@ -39,7 +39,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource for which to list tags.
+        /// The ARN of the resource for which you want to list tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

@@ -101,7 +101,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to attach to the new service profile. Tags are metadata that can be used
+        /// The tags to attach to the new service profile. Tags are metadata that you can use
         /// to manage a resource.
         /// </para>
         /// </summary>

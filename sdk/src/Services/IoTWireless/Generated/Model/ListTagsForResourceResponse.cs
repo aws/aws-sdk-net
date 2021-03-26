@@ -38,8 +38,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags attached to the specified resource. Tags are metadata that can be used to
-        /// manage a resource
+        /// The tags to attach to the specified resource. Tags are metadata that you can use to
+        /// manage a resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
