@@ -744,6 +744,10 @@ namespace Amazon.TranscribeService
         /// Constant Remove for VocabularyFilterMethod
         /// </summary>
         public static readonly VocabularyFilterMethod Remove = new VocabularyFilterMethod("remove");
+        /// <summary>
+        /// Constant Tag for VocabularyFilterMethod
+        /// </summary>
+        public static readonly VocabularyFilterMethod Tag = new VocabularyFilterMethod("tag");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
