@@ -29,7 +29,6 @@ using System.Net;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-using System.Text.RegularExpressions;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
