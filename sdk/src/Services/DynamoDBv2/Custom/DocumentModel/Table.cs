@@ -452,6 +452,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="ddbClient">Client to use to access DynamoDB.</param>
         /// <param name="tableName">Name of the table.</param>
+        /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
+        /// <returns>Table object representing the specified table.</returns>
+        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, bool isEmptyStringValueEnabled)
+        {
+            return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, isEmptyStringValueEnabled);
+        }
+
+        /// <summary>
+        /// Creates a Table object with the specified name, using the
+        /// passed-in client to load the table definition.
+        /// 
+        /// This method will throw an exception if the table does not exist.
+        /// </summary>
+        /// <param name="ddbClient">Client to use to access DynamoDB.</param>
+        /// <param name="tableName">Name of the table.</param>
         /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <returns>Table object representing the specified table.</returns>
@@ -497,6 +512,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, out Table table)
         {
             return TryLoadTable(ddbClient, tableName, conversion, false, out table);
+        }
+
+        /// <summary>
+        /// Creates a Table object with the specified name, using the
+        /// passed-in client to load the table definition.
+        /// 
+        /// This method will return false if the table does not exist.
+        /// </summary>
+        /// <param name="ddbClient">Client to use to access DynamoDB.</param>
+        /// <param name="tableName">Name of the table.</param>
+        /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
+        /// <param name="table">Loaded table.</param>
+        /// <returns>
+        /// True if table was successfully loaded; otherwise false.
+        /// </returns>
+        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, bool isEmptyStringValueEnabled, out Table table)
+        {
+            return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, isEmptyStringValueEnabled, out table);
         }
 
         /// <summary>
