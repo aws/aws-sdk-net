@@ -135,7 +135,11 @@ namespace Amazon.S3.Util
 
         private static AmazonS3Client GetUsEast1ClientFromCredentials(ImmutableCredentials credentials)
         {
-            if (credentials.UseToken)
+            if (credentials == null)
+            {
+                return new AmazonS3Client(new AnonymousAWSCredentials(), RegionEndpoint.USEast1);
+            }
+            else if(credentials.UseToken)
             {
                 return new AmazonS3Client(credentials.AccessKey, credentials.SecretKey, credentials.Token, RegionEndpoint.USEast1);
             }
