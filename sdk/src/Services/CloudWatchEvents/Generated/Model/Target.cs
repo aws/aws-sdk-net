@@ -57,6 +57,7 @@ namespace Amazon.CloudWatchEvents.Model
         private RetryPolicy _retryPolicy;
         private string _roleArn;
         private RunCommandParameters _runCommandParameters;
+        private SageMakerPipelineParameters _sageMakerPipelineParameters;
         private SqsParameters _sqsParameters;
 
         /// <summary>
@@ -344,6 +345,30 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetRunCommandParameters()
         {
             return this._runCommandParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SageMakerPipelineParameters. 
+        /// <para>
+        /// Contains the SageMaker Model Building Pipeline parameters to start execution of a
+        /// SageMaker Model Building Pipeline.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a SageMaker Model Building Pipeline as a target, you can use this to
+        /// specify parameters to start a pipeline execution based on EventBridge events.
+        /// </para>
+        /// </summary>
+        public SageMakerPipelineParameters SageMakerPipelineParameters
+        {
+            get { return this._sageMakerPipelineParameters; }
+            set { this._sageMakerPipelineParameters = value; }
+        }
+
+        // Check to see if SageMakerPipelineParameters property is set
+        internal bool IsSetSageMakerPipelineParameters()
+        {
+            return this._sageMakerPipelineParameters != null;
         }
 
         /// <summary>

@@ -3354,6 +3354,10 @@ namespace Amazon.CloudWatchEvents
         /// <para>
         /// Custom/SaaS HTTPS APIs via EventBridge API Destinations
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SageMaker Model Building Pipelines
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Creating rules with built-in targets is supported only in the AWS Management Console.
@@ -3573,6 +3577,10 @@ namespace Amazon.CloudWatchEvents
         ///  </li> <li> 
         /// <para>
         /// Custom/SaaS HTTPS APIs via EventBridge API Destinations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SageMaker Model Building Pipelines
         /// </para>
         ///  </li> </ul> 
         /// <para>

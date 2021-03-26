@@ -148,6 +148,12 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                     unmarshalledObject.RunCommandParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SageMakerPipelineParameters", targetDepth))
+                {
+                    var unmarshaller = SageMakerPipelineParametersUnmarshaller.Instance;
+                    unmarshalledObject.SageMakerPipelineParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SqsParameters", targetDepth))
                 {
                     var unmarshaller = SqsParametersUnmarshaller.Instance;

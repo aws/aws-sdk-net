@@ -174,6 +174,17 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSageMakerPipelineParameters())
+            {
+                context.Writer.WritePropertyName("SageMakerPipelineParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SageMakerPipelineParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.SageMakerPipelineParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSqsParameters())
             {
                 context.Writer.WritePropertyName("SqsParameters");
