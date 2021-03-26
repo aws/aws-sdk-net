@@ -337,7 +337,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Confirms that the requester knows that she or he will be charged for the list objects request.
+        /// Confirms that the requester knows that she or he will be charged for the request.
         /// Bucket owners need not specify this parameter in their requests.
         /// </summary>
         public RequestPayer RequestPayer
