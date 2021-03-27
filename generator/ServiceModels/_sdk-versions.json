@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.7.2.0",
-    "CoreVersion"    : "3.7.0.1",
+    "ProductVersion" : "3.7.2.1",
+    "CoreVersion"    : "3.7.0.2",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
     "ServiceVersions"     : {
@@ -54,7 +54,7 @@
             "InPreview"               : false
         },
         "CloudSearchDomain" : {
-            "Version" : "3.7.0.1",
+            "Version" : "3.7.0.2",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.1"
@@ -144,7 +144,7 @@
             "InPreview"               : false
         },
         "DynamoDBv2"        : {
-            "Version" : "3.7.0.1",
+            "Version" : "3.7.0.2",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.1"
@@ -314,7 +314,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.7.0.1",
+            "Version" : "3.7.0.2",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.1"
@@ -346,10 +346,10 @@
             "InPreview"               : false
         },
         "SimpleNotificationService" : {
-            "Version" : "3.7.0.1",
+            "Version" : "3.7.0.2",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
-                "Core" : "3.7.0.1"
+                "Core" : "3.7.0.2"
             },
             "InPreview"               : false
         },
@@ -362,10 +362,10 @@
             "InPreview"               : false
         },
         "SQS"                       : {
-            "Version" : "3.7.0.1",
+            "Version" : "3.7.0.2",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
-                "Core" : "3.7.0.1"
+                "Core" : "3.7.0.2"
             },
             "InPreview"               : false
         },
@@ -1218,7 +1218,7 @@
             "InPreview"               : false
         },
         "RDSDataService"                  : {
-            "Version" : "3.7.0.1",
+            "Version" : "3.7.0.2",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.1"

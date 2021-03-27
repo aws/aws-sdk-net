@@ -1,3 +1,21 @@
+### 3.7.2.1 (2021-03-26 22:36 UTC)
+* CloudSearchDomain (3.7.0.2)
+	* Doc update
+* DynamoDBv2 (3.7.0.2)
+	* Added TryLoadTable overload 
+* RDSDataService (3.7.0.2)
+	* Doc update
+* S3 (3.7.0.2)
+	* Make DownloadFilesConcurrently in TransferUtilityDownloadDirectoryRequest Accessible for .NET Standard
+* SimpleNotificationService (3.7.0.2)
+	* Updated to use new Core, version 3.7.0.2
+	* Update AuthorizeS3ToPublish to set account id as condition in IAM policy.  Fixed null ref using utility method parsing messages
+* SQS (3.7.0.2)
+	* Updated to use new Core, version 3.7.0.2
+	* Update AuthorizeS3ToPublish to set account id as condition in IAM policy
+* Core 3.7.0.2
+	* Removed unused regular expression definition,  RedirectHandler adds port number to redirected endpoint
+
 ### 3.7.2.0 (2021-03-26 18:17 UTC)
 * CloudWatchEvents (3.7.1.0)
 	* Add support for SageMaker Model Builder Pipelines Targets to EventBridge
