@@ -30,14 +30,14 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourcePolicies operation.
-    /// Retrieves the security configurations for the resource policies set on individual
-    /// resources, and also the account-level policy.
+    /// Retrieves the resource policies set on individual resources by AWS Resource Access
+    /// Manager during cross-account permission grants. Also retrieves the Data Catalog resource
+    /// policy.
     /// 
     ///  
     /// <para>
-    /// This operation also returns the Data Catalog resource policy. However, if you enabled
-    /// metadata encryption in Data Catalog settings, and you do not have permission on the
-    /// AWS KMS key, the operation can't return the Data Catalog resource policy.
+    /// If you enabled metadata encryption in Data Catalog settings, and you do not have permission
+    /// on the AWS KMS key, the operation can't return the Data Catalog resource policy.
     /// </para>
     /// </summary>
     public partial class GetResourcePoliciesRequest : AmazonGlueRequest

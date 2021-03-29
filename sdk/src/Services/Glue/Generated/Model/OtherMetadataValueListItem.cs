@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A structure containing metadata information for a schema version.
+    /// A structure containing other metadata for a schema version belonging to the same metadata
+    /// key.
     /// </summary>
-    public partial class MetadataInfo
+    public partial class OtherMetadataValueListItem
     {
         private string _createdTime;
         private string _metadataValue;
-        private List<OtherMetadataValueListItem> _otherMetadataValueList = new List<OtherMetadataValueListItem>();
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -58,7 +58,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MetadataValue. 
         /// <para>
-        /// The metadata key’s corresponding value.
+        /// The metadata key’s corresponding value for the other metadata belonging to the same
+        /// metadata key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -72,24 +73,6 @@ namespace Amazon.Glue.Model
         internal bool IsSetMetadataValue()
         {
             return this._metadataValue != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OtherMetadataValueList. 
-        /// <para>
-        /// Other metadata belonging to the same metadata key.
-        /// </para>
-        /// </summary>
-        public List<OtherMetadataValueListItem> OtherMetadataValueList
-        {
-            get { return this._otherMetadataValueList; }
-            set { this._otherMetadataValueList = value; }
-        }
-
-        // Check to see if OtherMetadataValueList property is set
-        internal bool IsSetOtherMetadataValueList()
-        {
-            return this._otherMetadataValueList != null && this._otherMetadataValueList.Count > 0; 
         }
 
     }

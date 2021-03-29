@@ -43,15 +43,21 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EnableHybrid. 
         /// <para>
-        /// Allows you to specify if you want to use both resource-level and account/catalog-level
-        /// resource policies. A resource-level policy is a policy attached to an individual resource
-        /// such as a database or a table.
+        /// If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
+        /// access to Data Catalog resources:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// The default value of <code>NO</code> indicates that resource-level policies cannot
-        /// co-exist with an account-level policy. A value of <code>YES</code> means the use of
-        /// both resource-level and account/catalog-level resource policies is allowed.
+        /// By directly updating the resource policy with <code>PutResourePolicy</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// By using the <b>Grant permissions</b> command on the AWS Management Console.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Must be set to <code>'TRUE'</code> if you have already used the Management Console
+        /// to grant cross-account access, otherwise the call fails. Default is 'FALSE'.
         /// </para>
         /// </summary>
         public EnableHybridValues EnableHybrid
@@ -71,7 +77,7 @@ namespace Amazon.Glue.Model
         /// <para>
         /// A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code>
         /// is used to create a new policy. If a value of <code>NONE</code> or a null value is
-        /// used, the call will not depend on the existence of a policy.
+        /// used, the call does not depend on the existence of a policy.
         /// </para>
         /// </summary>
         public ExistCondition PolicyExistsCondition
@@ -129,9 +135,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the AWS Glue resource for the resource policy to be set. For more information
-        /// about AWS Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-        /// Glue ARN string pattern</a> 
+        /// Do not use. For internal use only.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10240)]

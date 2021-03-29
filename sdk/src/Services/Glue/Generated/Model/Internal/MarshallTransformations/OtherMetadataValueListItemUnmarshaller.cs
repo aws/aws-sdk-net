@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MetadataInfo Object
+    /// Response Unmarshaller for OtherMetadataValueListItem Object
     /// </summary>  
-    public class MetadataInfoUnmarshaller : IUnmarshaller<MetadataInfo, XmlUnmarshallerContext>, IUnmarshaller<MetadataInfo, JsonUnmarshallerContext>
+    public class OtherMetadataValueListItemUnmarshaller : IUnmarshaller<OtherMetadataValueListItem, XmlUnmarshallerContext>, IUnmarshaller<OtherMetadataValueListItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MetadataInfo IUnmarshaller<MetadataInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OtherMetadataValueListItem IUnmarshaller<OtherMetadataValueListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MetadataInfo Unmarshall(JsonUnmarshallerContext context)
+        public OtherMetadataValueListItem Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MetadataInfo unmarshalledObject = new MetadataInfo();
+            OtherMetadataValueListItem unmarshalledObject = new OtherMetadataValueListItem();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -76,24 +76,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.MetadataValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OtherMetadataValueList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<OtherMetadataValueListItem, OtherMetadataValueListItemUnmarshaller>(OtherMetadataValueListItemUnmarshaller.Instance);
-                    unmarshalledObject.OtherMetadataValueList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static MetadataInfoUnmarshaller _instance = new MetadataInfoUnmarshaller();        
+        private static OtherMetadataValueListItemUnmarshaller _instance = new OtherMetadataValueListItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MetadataInfoUnmarshaller Instance
+        public static OtherMetadataValueListItemUnmarshaller Instance
         {
             get
             {
