@@ -5796,6 +5796,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void GetAccessKeyLastUsed_NoSuchEntityExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessKeyLastUsed");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessKeyLastUsedRequest>();
+            var marshaller = new GetAccessKeyLastUsedRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchEntityException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetAccessKeyLastUsedResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void GetAccountAuthorizationDetailsMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccountAuthorizationDetails");
