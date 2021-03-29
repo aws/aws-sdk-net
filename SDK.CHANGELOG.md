@@ -1,3 +1,20 @@
+### 3.7.3.0 (2021-03-29 18:16 UTC)
+* DocDB (3.7.1.0)
+	* This release adds support for Event Subscriptions to DocumentDB.
+* Glue (3.7.1.0)
+	* Allow Dots in Registry and Schema Names for CreateRegistry, CreateSchema; Fixed issue when duplicate keys are present and not returned as part of QuerySchemaVersionMetadata.
+* IdentityManagement (3.7.1.0)
+	* AWS Identity and Access Management GetAccessKeyLastUsed API will throw a custom error if customer public key is not found for access keys.
+* LocationService (3.7.1.0)
+	* Amazon Location added support for specifying pricing plan information on resources in alignment with our cost model.
+* WAFV2 (3.7.1.0)
+	* Added custom request handling and custom response support in rule actions and default action; Added the option to inspect the web request body as parsed and filtered JSON.
+* Core 3.7.0.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.2.1 (2021-03-26 22:36 UTC)
 * CloudSearchDomain (3.7.0.2)
 	* Doc update
