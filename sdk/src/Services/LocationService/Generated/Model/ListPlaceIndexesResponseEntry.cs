@@ -37,6 +37,7 @@ namespace Amazon.LocationService.Model
         private string _dataSource;
         private string _description;
         private string _indexName;
+        private PricingPlan _pricingPlan;
         private DateTime? _updateTime;
 
         /// <summary>
@@ -62,7 +63,20 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The data provider of geospatial data.
+        /// The data provider of geospatial data. Indicates one of the available providers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Esri
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HERE
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+        /// Location Service data providers page</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -114,6 +128,30 @@ namespace Amazon.LocationService.Model
         internal bool IsSetIndexName()
         {
             return this._indexName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PricingPlan. 
+        /// <para>
+        /// The pricing plan for the specified Place index resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
+        /// Location Service pricing page</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PricingPlan PricingPlan
+        {
+            get { return this._pricingPlan; }
+            set { this._pricingPlan = value; }
+        }
+
+        // Check to see if PricingPlan property is set
+        internal bool IsSetPricingPlan()
+        {
+            return this._pricingPlan != null;
         }
 
         /// <summary>

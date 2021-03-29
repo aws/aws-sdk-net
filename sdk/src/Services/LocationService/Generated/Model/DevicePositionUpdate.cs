@@ -60,7 +60,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Position. 
         /// <para>
         /// The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-        /// 84</a> format: <code>[Xlongitude, Ylatitude]</code>.
+        /// 84</a> format: <code>[X or longitude, Y or latitude]</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=2)]
@@ -79,7 +79,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property SampleTime. 
         /// <para>
-        /// The timestamp for when the position update was received in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
         /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> 
         /// </para>
         /// </summary>

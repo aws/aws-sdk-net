@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateTrackerConsumer operation.
-    /// Removes the association bewteen a tracker resource and a geofence collection.
+    /// Removes the association between a tracker resource and a geofence collection.
     /// 
     ///  <note> 
     /// <para>

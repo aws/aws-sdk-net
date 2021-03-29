@@ -30,8 +30,16 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchEvaluateGeofences operation.
-    /// Used in geofence monitoring. Evaluates device positions against the position of geofences
-    /// in a given geofence collection.
+    /// Evaluates device positions against the geofence geometries from a given geofence collection.
+    /// The evaluation determines if the device has entered or exited a geofenced area, which
+    /// publishes ENTER or EXIT geofence events to Amazon EventBridge.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The last geofence that a device was observed within, if any, is tracked for 30 days
+    /// after the most recent device position update
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchEvaluateGeofencesRequest : AmazonLocationServiceRequest
     {

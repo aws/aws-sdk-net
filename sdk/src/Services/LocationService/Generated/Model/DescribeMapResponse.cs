@@ -39,6 +39,7 @@ namespace Amazon.LocationService.Model
         private string _description;
         private string _mapArn;
         private string _mapName;
+        private PricingPlan _pricingPlan;
         private DateTime? _updateTime;
 
         /// <summary>
@@ -155,6 +156,28 @@ namespace Amazon.LocationService.Model
         internal bool IsSetMapName()
         {
             return this._mapName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PricingPlan. 
+        /// <para>
+        /// The pricing plan selected for the specified map resource.
+        /// </para>
+        ///  <pre><code> &lt;p&gt;For additional details and restrictions on each pricing plan
+        /// option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon
+        /// Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PricingPlan PricingPlan
+        {
+            get { return this._pricingPlan; }
+            set { this._pricingPlan = value; }
+        }
+
+        // Check to see if PricingPlan property is set
+        internal bool IsSetPricingPlan()
+        {
+            return this._pricingPlan != null;
         }
 
         /// <summary>

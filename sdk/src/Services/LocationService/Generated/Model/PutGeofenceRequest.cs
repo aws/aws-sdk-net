@@ -30,8 +30,8 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutGeofence operation.
-    /// Stores a geofence to a given geofence collection, or updates the geometry of an existing
-    /// geofence if a geofence ID is included in the request.
+    /// Stores a geofence geometry in a given geofence collection, or updates the geometry
+    /// of an existing geofence if a geofence ID is included in the request.
     /// </summary>
     public partial class PutGeofenceRequest : AmazonLocationServiceRequest
     {
@@ -82,6 +82,12 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// Contains the polygon details to specify the position of the geofence.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
+        /// polygon</a> can have a maximum of 1,000 vertices.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public GeofenceGeometry Geometry

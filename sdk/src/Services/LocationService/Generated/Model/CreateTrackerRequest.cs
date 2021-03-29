@@ -37,6 +37,7 @@ namespace Amazon.LocationService.Model
     {
         private string _description;
         private PricingPlan _pricingPlan;
+        private string _pricingPlanDataSource;
         private string _trackerName;
 
         /// <summary>
@@ -61,22 +62,9 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Specifies the pricing plan for your tracker resource. There's three pricing plan options:
+        /// Specifies the pricing plan for your tracker resource.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing
-        /// plan.
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
         /// Location Service pricing page</a>.
@@ -96,6 +84,36 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PricingPlanDataSource. 
+        /// <para>
+        /// Specifies the plan data source. Required if the Mobile Asset Tracking (MAT) or the
+        /// Mobile Asset Management (MAM) pricing plan is selected.
+        /// </para>
+        ///  
+        /// <para>
+        /// Billing is determined by the resource usage, the associated pricing plan, and data
+        /// source that was specified. For more information about each pricing plan option and
+        /// restrictions, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location
+        /// Service pricing page</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>Esri</code> | <code>Here</code> 
+        /// </para>
+        /// </summary>
+        public string PricingPlanDataSource
+        {
+            get { return this._pricingPlanDataSource; }
+            set { this._pricingPlanDataSource = value; }
+        }
+
+        // Check to see if PricingPlanDataSource property is set
+        internal bool IsSetPricingPlanDataSource()
+        {
+            return this._pricingPlanDataSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrackerName. 
         /// <para>
         /// The name for the tracker resource.
@@ -106,8 +124,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-) and underscores
-        /// (_).
+        /// Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and
+        /// underscores (_).
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -30,11 +30,11 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDevicePosition operation.
-    /// Retrieves the latest device position.
+    /// Retrieves a device's most recent position according to its sample time.
     /// 
     ///  <note> 
     /// <para>
-    /// Limitation — Device positions are deleted after one year.
+    /// Device positions are deleted after one year.
     /// </para>
     ///  </note>
     /// </summary>
@@ -46,7 +46,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DeviceId. 
         /// <para>
-        /// The device whose position you want to retreieve.
+        /// The device whose position you want to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

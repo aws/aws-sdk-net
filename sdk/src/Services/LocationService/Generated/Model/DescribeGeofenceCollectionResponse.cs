@@ -37,6 +37,8 @@ namespace Amazon.LocationService.Model
         private string _collectionName;
         private DateTime? _createTime;
         private string _description;
+        private PricingPlan _pricingPlan;
+        private string _pricingPlanDataSource;
         private DateTime? _updateTime;
 
         /// <summary>
@@ -115,6 +117,48 @@ namespace Amazon.LocationService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PricingPlan. 
+        /// <para>
+        /// The pricing plan selected for the specified geofence collection.
+        /// </para>
+        ///  
+        /// <para>
+        /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
+        /// Location Service pricing page</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PricingPlan PricingPlan
+        {
+            get { return this._pricingPlan; }
+            set { this._pricingPlan = value; }
+        }
+
+        // Check to see if PricingPlan property is set
+        internal bool IsSetPricingPlan()
+        {
+            return this._pricingPlan != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PricingPlanDataSource. 
+        /// <para>
+        /// The data source selected for the geofence collection and associated pricing plan.
+        /// </para>
+        /// </summary>
+        public string PricingPlanDataSource
+        {
+            get { return this._pricingPlanDataSource; }
+            set { this._pricingPlanDataSource = value; }
+        }
+
+        // Check to see if PricingPlanDataSource property is set
+        internal bool IsSetPricingPlanDataSource()
+        {
+            return this._pricingPlanDataSource != null;
         }
 
         /// <summary>

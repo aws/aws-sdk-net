@@ -63,7 +63,20 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The data provider of geospatial data for the Place index resource.
+        /// The data provider of geospatial data. Indicates one of the available providers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Esri
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HERE
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+        /// Location Service data providers page</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

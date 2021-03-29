@@ -87,6 +87,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     response.MapName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PricingPlan", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PricingPlan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UpdateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

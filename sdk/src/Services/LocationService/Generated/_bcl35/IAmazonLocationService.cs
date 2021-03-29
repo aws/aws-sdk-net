@@ -50,6 +50,13 @@ namespace Amazon.LocationService
         /// <summary>
         /// Creates an association between a geofence collection and a tracker resource. This
         /// allows the tracker resource to communicate location data to the linked geofence collection.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently not supported — Cross-account configurations, such as creating associations
+        /// between a tracker resource in one account and a geofence collection in another account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTrackerConsumer service method.</param>
         /// 
@@ -172,8 +179,16 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Used in geofence monitoring. Evaluates device positions against the position of geofences
-        /// in a given geofence collection.
+        /// Evaluates device positions against the geofence geometries from a given geofence collection.
+        /// The evaluation determines if the device has entered or exited a geofenced area, which
+        /// publishes ENTER or EXIT geofence events to Amazon EventBridge.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The last geofence that a device was observed within, if any, is tracked for 30 days
+        /// after the most recent device position update
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchEvaluateGeofences service method.</param>
         /// 
@@ -230,13 +245,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// A batch request to retrieve device positions.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The response will return the device positions from the last 24 hours.
-        /// </para>
-        ///  </note>
+        /// A batch request to retrieve all device positions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDevicePosition service method.</param>
         /// 
@@ -293,7 +302,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// A batch request for storing geofences into a given geofence collection.
+        /// A batch request for storing geofence geometries into a given geofence collection.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutGeofence service method.</param>
         /// 
@@ -350,13 +359,15 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Uploads a position update for one or more devices to a tracker resource. The data
-        /// is used for API queries requesting the device position and position history.
+        /// Uploads position update data for one or more devices to a tracker resource. Amazon
+        /// Location uses the data when reporting the last known device position and position
+        /// history.
         /// 
         ///  <note> 
         /// <para>
-        /// Limitation — Location data is sampled at a fixed rate of 1 position per 30 second
-        /// interval, and retained for 1 year before it is deleted.
+        /// Only one position update is stored per sample time. Location data is sampled at a
+        /// fixed rate of one position per 30-second interval, and retained for one year before
+        /// it is deleted.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1153,7 +1164,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Removes the association bewteen a tracker resource and a geofence collection.
+        /// Removes the association between a tracker resource and a geofence collection.
         /// 
         ///  <note> 
         /// <para>
@@ -1217,11 +1228,11 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Retrieves the latest device position.
+        /// Retrieves a device's most recent position according to its sample time.
         /// 
         ///  <note> 
         /// <para>
-        /// Limitation — Device positions are deleted after one year.
+        /// Device positions are deleted after one year.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1285,7 +1296,7 @@ namespace Amazon.LocationService
         /// 
         ///  <note> 
         /// <para>
-        /// Limitation — Device positions are deleted after one year.
+        /// Device positions are deleted after 1 year.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1977,8 +1988,8 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Stores a geofence to a given geofence collection, or updates the geometry of an existing
-        /// geofence if a geofence ID is included in the request.
+        /// Stores a geofence geometry in a given geofence collection, or updates the geometry
+        /// of an existing geofence if a geofence ID is included in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutGeofence service method.</param>
         /// 

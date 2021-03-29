@@ -35,6 +35,8 @@ namespace Amazon.LocationService.Model
     {
         private DateTime? _createTime;
         private string _description;
+        private PricingPlan _pricingPlan;
+        private string _pricingPlanDataSource;
         private string _trackerName;
         private DateTime? _updateTime;
 
@@ -78,6 +80,48 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PricingPlan. 
+        /// <para>
+        /// The pricing plan for the specified tracker resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
+        /// Location Service pricing page</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PricingPlan PricingPlan
+        {
+            get { return this._pricingPlan; }
+            set { this._pricingPlan = value; }
+        }
+
+        // Check to see if PricingPlan property is set
+        internal bool IsSetPricingPlan()
+        {
+            return this._pricingPlan != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PricingPlanDataSource. 
+        /// <para>
+        /// The data source selected for the tracker resource and associated pricing plan.
+        /// </para>
+        /// </summary>
+        public string PricingPlanDataSource
+        {
+            get { return this._pricingPlanDataSource; }
+            set { this._pricingPlanDataSource = value; }
+        }
+
+        // Check to see if PricingPlanDataSource property is set
+        internal bool IsSetPricingPlanDataSource()
+        {
+            return this._pricingPlanDataSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrackerName. 
         /// <para>
         /// The name of the tracker resource.
@@ -99,7 +143,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        /// The timestamp for when the position was detected and sampled in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
+        /// The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
         /// ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
         /// </para>
         /// </summary>

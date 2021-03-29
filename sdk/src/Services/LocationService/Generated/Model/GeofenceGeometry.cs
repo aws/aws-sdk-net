@@ -33,8 +33,8 @@ namespace Amazon.LocationService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Limitation — Amazon Location does not currently support polygons with holes, multipolygons,
-    /// polygons that are wound clockwise, or that cross the antimeridian. 
+    /// Amazon Location does not currently support polygons with holes, multipolygons, polygons
+    /// that are wound clockwise, or that cross the antimeridian. 
     /// </para>
     ///  </note>
     /// </summary>

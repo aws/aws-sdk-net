@@ -78,7 +78,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property SampleTime. 
         /// <para>
-        /// The timestamp for when a position sample was attempted in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
+        /// The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
         /// ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
         /// </para>
         /// </summary>

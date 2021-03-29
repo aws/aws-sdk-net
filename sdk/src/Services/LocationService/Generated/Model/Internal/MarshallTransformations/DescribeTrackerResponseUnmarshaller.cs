@@ -63,6 +63,18 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PricingPlan", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PricingPlan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PricingPlanDataSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PricingPlanDataSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrackerArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

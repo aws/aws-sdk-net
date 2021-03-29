@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Contains geofence details.
+    /// Contains geofence geometry details.
     /// </summary>
     public partial class BatchPutGeofenceRequestEntry
     {
@@ -58,8 +58,14 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Geometry. 
         /// <para>
-        /// The geometry details for the geofence.
+        /// Contains the polygon details to specify the position of the geofence.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
+        /// polygon</a> can have a maximum of 1,000 vertices.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public GeofenceGeometry Geometry

@@ -60,6 +60,28 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// Specifies the data provider of geospatial data.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is case-sensitive. Enter the valid values as shown. For example, entering
+        /// <code>HERE</code> will return an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Valid values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Esri</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Here</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+        /// Location Service data providers page</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DataSource
@@ -122,8 +144,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-) and underscores
-        /// (_) ).
+        /// Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and
+        /// underscores (_).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -151,23 +173,9 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Specifies the pricing plan for your Place index resource. There's three pricing plan
-        /// options:
+        /// Specifies the pricing plan for your Place index resource.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing
-        /// plan.
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
         /// Location Service pricing page</a>.

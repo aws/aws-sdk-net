@@ -77,6 +77,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PricingPlan);
                 }
 
+                if(publicRequest.IsSetPricingPlanDataSource())
+                {
+                    context.Writer.WritePropertyName("PricingPlanDataSource");
+                    context.Writer.Write(publicRequest.PricingPlanDataSource);
+                }
+
                 if(publicRequest.IsSetTrackerName())
                 {
                     context.Writer.WritePropertyName("TrackerName");

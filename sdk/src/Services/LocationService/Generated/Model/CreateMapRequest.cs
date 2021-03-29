@@ -98,8 +98,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and underscores
-        /// (_). 
+        /// Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+        /// and underscores (_). 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -127,22 +127,9 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Specifies the pricing plan for your map resource. There's three pricing plan options:
+        /// Specifies the pricing plan for your map resource.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing
-        /// plan.
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
         /// Location Service pricing page</a>.
