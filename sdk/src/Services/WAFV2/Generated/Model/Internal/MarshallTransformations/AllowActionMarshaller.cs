@@ -45,6 +45,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AllowAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomRequestHandling())
+            {
+                context.Writer.WritePropertyName("CustomRequestHandling");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomRequestHandlingMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomRequestHandling, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -29,16 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies that AWS WAF should count requests.
+    /// Specifies that AWS WAF should count the request. Optionally defines additional custom
+    /// handling for the request.
     /// 
     ///  
     /// <para>
-    /// This is used only in the context of other settings, for example to specify values
-    /// for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. 
+    /// This is used in the context of other settings, for example to specify values for <a>RuleAction</a>
+    /// and web ACL <a>DefaultAction</a>. 
     /// </para>
     /// </summary>
     public partial class CountAction
     {
+        private CustomRequestHandling _customRequestHandling;
+
+        /// <summary>
+        /// Gets and sets the property CustomRequestHandling. 
+        /// <para>
+        /// Defines custom handling for the web request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+        /// web requests and responses in AWS WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+        /// WAF Developer Guide</a>. 
+        /// </para>
+        /// </summary>
+        public CustomRequestHandling CustomRequestHandling
+        {
+            get { return this._customRequestHandling; }
+            set { this._customRequestHandling = value; }
+        }
+
+        // Check to see if CustomRequestHandling property is set
+        internal bool IsSetCustomRequestHandling()
+        {
+            return this._customRequestHandling != null;
+        }
 
     }
 }

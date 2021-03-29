@@ -48,16 +48,15 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property InvalidFallbackBehavior. 
         /// <para>
-        /// What AWS WAF should do if it fails to completely parse the JSON body. The options
-        /// are the following:
+        /// The inspection behavior to fall back to if the JSON in the request body is invalid.
+        /// For AWS WAF, invalid JSON is any content that isn't complete syntactical JSON, content
+        /// whose root node isn't an object or an array, and duplicate keys in the content. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify the following fallback behaviors:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies
-        /// the text transformations and inspection criteria that you defined for the JSON inspection
-        /// to the body text string.
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF
         /// applies the rule action to the request.
@@ -66,34 +65,17 @@ namespace Amazon.WAFV2.Model
         /// <para>
         ///  <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. This option applies
+        /// the text transformations and inspection criteria that you defined for the JSON inspection
+        /// to the body text string. 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't provide this setting, AWS WAF parses and evaluates the content only up
-        /// to the first parsing failure that it encounters. 
+        /// If you don't provide this setting, when AWS WAF encounters invalid JSON, it parses
+        /// and inspects what it can, up to the first invalid JSON that it encounters. 
         /// </para>
-        ///  
-        /// <para>
-        /// AWS WAF does its best to parse the entire JSON body, but might be forced to stop for
-        /// reasons such as invalid characters, duplicate keys, truncation, and any content whose
-        /// root node isn't an object or an array. 
-        /// </para>
-        ///  
-        /// <para>
-        /// AWS WAF parses the JSON in the following examples as two valid key, value pairs: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Missing comma: <code>{"key1":"value1""key2":"value2"}</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Missing colon: <code>{"key1":"value1","key2""value2"}</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Extra colons: <code>{"key1"::"value1","key2""value2"}</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public BodyParsingFallbackBehavior InvalidFallbackBehavior
         {

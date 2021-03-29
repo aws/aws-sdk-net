@@ -76,6 +76,18 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Request = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RequestHeadersInserted", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HTTPHeader, HTTPHeaderUnmarshaller>(HTTPHeaderUnmarshaller.Instance);
+                    unmarshalledObject.RequestHeadersInserted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResponseCodeSent", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ResponseCodeSent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RuleNameWithinRuleGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

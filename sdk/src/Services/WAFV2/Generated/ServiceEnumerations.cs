@@ -1409,6 +1409,18 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField BYTE_MATCH_STATEMENT = new ParameterExceptionField("BYTE_MATCH_STATEMENT");
         /// <summary>
+        /// Constant CUSTOM_REQUEST_HANDLING for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField CUSTOM_REQUEST_HANDLING = new ParameterExceptionField("CUSTOM_REQUEST_HANDLING");
+        /// <summary>
+        /// Constant CUSTOM_RESPONSE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField CUSTOM_RESPONSE = new ParameterExceptionField("CUSTOM_RESPONSE");
+        /// <summary>
+        /// Constant CUSTOM_RESPONSE_BODY for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField CUSTOM_RESPONSE_BODY = new ParameterExceptionField("CUSTOM_RESPONSE_BODY");
+        /// <summary>
         /// Constant DEFAULT_ACTION for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField DEFAULT_ACTION = new ParameterExceptionField("DEFAULT_ACTION");
@@ -1520,6 +1532,10 @@ namespace Amazon.WAFV2
         /// Constant RESOURCE_TYPE for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField RESOURCE_TYPE = new ParameterExceptionField("RESOURCE_TYPE");
+        /// <summary>
+        /// Constant RESPONSE_CONTENT_TYPE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField RESPONSE_CONTENT_TYPE = new ParameterExceptionField("RESPONSE_CONTENT_TYPE");
         /// <summary>
         /// Constant RULE for ParameterExceptionField
         /// </summary>
@@ -1776,6 +1792,60 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResponseContentType.
+    /// </summary>
+    public class ResponseContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLICATION_JSON for ResponseContentType
+        /// </summary>
+        public static readonly ResponseContentType APPLICATION_JSON = new ResponseContentType("APPLICATION_JSON");
+        /// <summary>
+        /// Constant TEXT_HTML for ResponseContentType
+        /// </summary>
+        public static readonly ResponseContentType TEXT_HTML = new ResponseContentType("TEXT_HTML");
+        /// <summary>
+        /// Constant TEXT_PLAIN for ResponseContentType
+        /// </summary>
+        public static readonly ResponseContentType TEXT_PLAIN = new ResponseContentType("TEXT_PLAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResponseContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponseContentType FindValue(string value)
+        {
+            return FindValue<ResponseContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponseContentType(string value)
         {
             return FindValue(value);
         }

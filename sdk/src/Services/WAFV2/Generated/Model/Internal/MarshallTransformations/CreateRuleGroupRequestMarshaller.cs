@@ -73,6 +73,25 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Capacity);
                 }
 
+                if(publicRequest.IsSetCustomResponseBodies())
+                {
+                    context.Writer.WritePropertyName("CustomResponseBodies");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestCustomResponseBodiesKvp in publicRequest.CustomResponseBodies)
+                    {
+                        context.Writer.WritePropertyName(publicRequestCustomResponseBodiesKvp.Key);
+                        var publicRequestCustomResponseBodiesValue = publicRequestCustomResponseBodiesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomResponseBodyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCustomResponseBodiesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

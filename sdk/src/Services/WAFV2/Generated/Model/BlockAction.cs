@@ -29,16 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies that AWS WAF should block requests.
+    /// Specifies that AWS WAF should block the request and optionally defines additional
+    /// custom handling for the response to the web request.
     /// 
     ///  
     /// <para>
-    /// This is used only in the context of other settings, for example to specify values
-    /// for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. 
+    /// This is used in the context of other settings, for example to specify values for <a>RuleAction</a>
+    /// and web ACL <a>DefaultAction</a>. 
     /// </para>
     /// </summary>
     public partial class BlockAction
     {
+        private CustomResponse _customResponse;
+
+        /// <summary>
+        /// Gets and sets the property CustomResponse. 
+        /// <para>
+        /// Defines a custom response for the web request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+        /// web requests and responses in AWS WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+        /// WAF Developer Guide</a>. 
+        /// </para>
+        /// </summary>
+        public CustomResponse CustomResponse
+        {
+            get { return this._customResponse; }
+            set { this._customResponse = value; }
+        }
+
+        // Check to see if CustomResponse property is set
+        internal bool IsSetCustomResponse()
+        {
+            return this._customResponse != null;
+        }
 
     }
 }

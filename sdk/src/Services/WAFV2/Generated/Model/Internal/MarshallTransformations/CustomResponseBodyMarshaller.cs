@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BlockAction Marshaller
+    /// CustomResponseBody Marshaller
     /// </summary>       
-    public class BlockActionMarshaller : IRequestMarshaller<BlockAction, JsonMarshallerContext> 
+    public class CustomResponseBodyMarshaller : IRequestMarshaller<CustomResponseBody, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,17 +43,18 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BlockAction requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomResponseBody requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCustomResponse())
+            if(requestObject.IsSetContent())
             {
-                context.Writer.WritePropertyName("CustomResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Content");
+                context.Writer.Write(requestObject.Content);
+            }
 
-                var marshaller = CustomResponseMarshaller.Instance;
-                marshaller.Marshall(requestObject.CustomResponse, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetContentType())
+            {
+                context.Writer.WritePropertyName("ContentType");
+                context.Writer.Write(requestObject.ContentType);
             }
 
         }
@@ -61,7 +62,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static BlockActionMarshaller Instance = new BlockActionMarshaller();
+        public readonly static CustomResponseBodyMarshaller Instance = new CustomResponseBodyMarshaller();
 
     }
 }

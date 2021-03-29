@@ -38,6 +38,8 @@ namespace Amazon.WAFV2.Model
     {
         private string _action;
         private HTTPRequest _request;
+        private List<HTTPHeader> _requestHeadersInserted = new List<HTTPHeader>();
+        private int? _responseCodeSent;
         private string _ruleNameWithinRuleGroup;
         private DateTime? _timestamp;
         private long? _weight;
@@ -78,6 +80,44 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetRequest()
         {
             return this._request != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestHeadersInserted. 
+        /// <para>
+        /// Custom request headers inserted by AWS WAF into the request, according to the custom
+        /// request configuration for the matching rule action.
+        /// </para>
+        /// </summary>
+        public List<HTTPHeader> RequestHeadersInserted
+        {
+            get { return this._requestHeadersInserted; }
+            set { this._requestHeadersInserted = value; }
+        }
+
+        // Check to see if RequestHeadersInserted property is set
+        internal bool IsSetRequestHeadersInserted()
+        {
+            return this._requestHeadersInserted != null && this._requestHeadersInserted.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseCodeSent. 
+        /// <para>
+        /// The response code that was sent for the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=200, Max=600)]
+        public int ResponseCodeSent
+        {
+            get { return this._responseCodeSent.GetValueOrDefault(); }
+            set { this._responseCodeSent = value; }
+        }
+
+        // Check to see if ResponseCodeSent property is set
+        internal bool IsSetResponseCodeSent()
+        {
+            return this._responseCodeSent.HasValue; 
         }
 
         /// <summary>

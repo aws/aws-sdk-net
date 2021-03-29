@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BlockAction Marshaller
+    /// CustomRequestHandling Marshaller
     /// </summary>       
-    public class BlockActionMarshaller : IRequestMarshaller<BlockAction, JsonMarshallerContext> 
+    public class CustomRequestHandlingMarshaller : IRequestMarshaller<CustomRequestHandling, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,17 +43,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BlockAction requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomRequestHandling requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCustomResponse())
+            if(requestObject.IsSetInsertHeaders())
             {
-                context.Writer.WritePropertyName("CustomResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("InsertHeaders");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInsertHeadersListValue in requestObject.InsertHeaders)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = CustomResponseMarshaller.Instance;
-                marshaller.Marshall(requestObject.CustomResponse, context);
+                    var marshaller = CustomHTTPHeaderMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInsertHeadersListValue, context);
 
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -61,7 +66,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static BlockActionMarshaller Instance = new BlockActionMarshaller();
+        public readonly static CustomRequestHandlingMarshaller Instance = new CustomRequestHandlingMarshaller();
 
     }
 }

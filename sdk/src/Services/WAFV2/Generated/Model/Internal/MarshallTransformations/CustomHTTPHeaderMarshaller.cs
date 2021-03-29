@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BlockAction Marshaller
+    /// CustomHTTPHeader Marshaller
     /// </summary>       
-    public class BlockActionMarshaller : IRequestMarshaller<BlockAction, JsonMarshallerContext> 
+    public class CustomHTTPHeaderMarshaller : IRequestMarshaller<CustomHTTPHeader, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,17 +43,18 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BlockAction requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomHTTPHeader requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCustomResponse())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("CustomResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
+            }
 
-                var marshaller = CustomResponseMarshaller.Instance;
-                marshaller.Marshall(requestObject.CustomResponse, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetValue())
+            {
+                context.Writer.WritePropertyName("Value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -61,7 +62,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static BlockActionMarshaller Instance = new BlockActionMarshaller();
+        public readonly static CustomHTTPHeaderMarshaller Instance = new CustomHTTPHeaderMarshaller();
 
     }
 }

@@ -38,6 +38,7 @@ namespace Amazon.WAFV2.Model
     {
         private string _arn;
         private long? _capacity;
+        private Dictionary<string, CustomResponseBody> _customResponseBodies = new Dictionary<string, CustomResponseBody>();
         private string _description;
         private string _id;
         private string _name;
@@ -95,6 +96,40 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetCapacity()
         {
             return this._capacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomResponseBodies. 
+        /// <para>
+        /// A map of custom response keys and content bodies. When you create a rule with a block
+        /// action, you can send a custom response to the web request. You define these for the
+        /// rule group, and then use them in the rules that you define in the rule group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+        /// web requests and responses in AWS WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+        /// WAF Developer Guide</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the limits on count and size for custom request and response
+        /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS
+        /// WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+        /// WAF Developer Guide</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public Dictionary<string, CustomResponseBody> CustomResponseBodies
+        {
+            get { return this._customResponseBodies; }
+            set { this._customResponseBodies = value; }
+        }
+
+        // Check to see if CustomResponseBodies property is set
+        internal bool IsSetCustomResponseBodies()
+        {
+            return this._customResponseBodies != null && this._customResponseBodies.Count > 0; 
         }
 
         /// <summary>

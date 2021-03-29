@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BlockAction Object
+    /// Response Unmarshaller for CustomRequestHandling Object
     /// </summary>  
-    public class BlockActionUnmarshaller : IUnmarshaller<BlockAction, XmlUnmarshallerContext>, IUnmarshaller<BlockAction, JsonUnmarshallerContext>
+    public class CustomRequestHandlingUnmarshaller : IUnmarshaller<CustomRequestHandling, XmlUnmarshallerContext>, IUnmarshaller<CustomRequestHandling, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BlockAction IUnmarshaller<BlockAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CustomRequestHandling IUnmarshaller<CustomRequestHandling, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,21 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BlockAction Unmarshall(JsonUnmarshallerContext context)
+        public CustomRequestHandling Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BlockAction unmarshalledObject = new BlockAction();
+            CustomRequestHandling unmarshalledObject = new CustomRequestHandling();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CustomResponse", targetDepth))
+                if (context.TestExpression("InsertHeaders", targetDepth))
                 {
-                    var unmarshaller = CustomResponseUnmarshaller.Instance;
-                    unmarshalledObject.CustomResponse = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<CustomHTTPHeader, CustomHTTPHeaderUnmarshaller>(CustomHTTPHeaderUnmarshaller.Instance);
+                    unmarshalledObject.InsertHeaders = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,12 +76,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static BlockActionUnmarshaller _instance = new BlockActionUnmarshaller();        
+        private static CustomRequestHandlingUnmarshaller _instance = new CustomRequestHandlingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BlockActionUnmarshaller Instance
+        public static CustomRequestHandlingUnmarshaller Instance
         {
             get
             {

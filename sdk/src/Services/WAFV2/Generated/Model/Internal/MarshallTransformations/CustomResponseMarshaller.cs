@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BlockAction Marshaller
+    /// CustomResponse Marshaller
     /// </summary>       
-    public class BlockActionMarshaller : IRequestMarshaller<BlockAction, JsonMarshallerContext> 
+    public class CustomResponseMarshaller : IRequestMarshaller<CustomResponse, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,17 +43,34 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BlockAction requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomResponse requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCustomResponse())
+            if(requestObject.IsSetCustomResponseBodyKey())
             {
-                context.Writer.WritePropertyName("CustomResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("CustomResponseBodyKey");
+                context.Writer.Write(requestObject.CustomResponseBodyKey);
+            }
 
-                var marshaller = CustomResponseMarshaller.Instance;
-                marshaller.Marshall(requestObject.CustomResponse, context);
+            if(requestObject.IsSetResponseCode())
+            {
+                context.Writer.WritePropertyName("ResponseCode");
+                context.Writer.Write(requestObject.ResponseCode);
+            }
 
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetResponseHeaders())
+            {
+                context.Writer.WritePropertyName("ResponseHeaders");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResponseHeadersListValue in requestObject.ResponseHeaders)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomHTTPHeaderMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResponseHeadersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -61,7 +78,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static BlockActionMarshaller Instance = new BlockActionMarshaller();
+        public readonly static CustomResponseMarshaller Instance = new CustomResponseMarshaller();
 
     }
 }

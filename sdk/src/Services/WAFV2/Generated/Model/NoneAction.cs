@@ -35,8 +35,8 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// This is used only in the context of other settings, for example to specify values
-    /// for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. 
+    /// This is used in the context of other settings, for example to specify values for <a>RuleAction</a>
+    /// and web ACL <a>DefaultAction</a>. 
     /// </para>
     /// </summary>
     public partial class NoneAction

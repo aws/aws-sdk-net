@@ -64,6 +64,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomRequestHandling", targetDepth))
+                {
+                    var unmarshaller = CustomRequestHandlingUnmarshaller.Instance;
+                    unmarshalledObject.CustomRequestHandling = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
