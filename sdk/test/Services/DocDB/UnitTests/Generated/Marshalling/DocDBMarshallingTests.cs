@@ -44,6 +44,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("DocDB")]
+        public void AddSourceIdentifierToSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddSourceIdentifierToSubscription");
+
+            var request = InstantiateClassGenerator.Execute<AddSourceIdentifierToSubscriptionRequest>();
+            var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as AddSourceIdentifierToSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void AddSourceIdentifierToSubscription_SourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddSourceIdentifierToSubscription");
+
+            var request = InstantiateClassGenerator.Execute<AddSourceIdentifierToSubscriptionRequest>();
+            var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void AddSourceIdentifierToSubscription_SubscriptionNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddSourceIdentifierToSubscription");
+
+            var request = InstantiateClassGenerator.Execute<AddSourceIdentifierToSubscriptionRequest>();
+            var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SubscriptionNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
         public void AddTagsToResourceMarshallTest()
         {
             var operation = service_model.FindOperation("AddTagsToResource");
@@ -1548,6 +1616,189 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("DocDB")]
+        public void CreateEventSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateEventSubscriptionRequest>();
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateEventSubscriptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateEventSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateEventSubscription_EventSubscriptionQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateEventSubscriptionRequest>();
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EventSubscriptionQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateEventSubscription_SNSInvalidTopicExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateEventSubscriptionRequest>();
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SNSInvalidTopicException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateEventSubscription_SNSNoAuthorizationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateEventSubscriptionRequest>();
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SNSNoAuthorizationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateEventSubscription_SNSTopicArnNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateEventSubscriptionRequest>();
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SNSTopicArnNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateEventSubscription_SourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateEventSubscriptionRequest>();
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateEventSubscription_SubscriptionAlreadyExistExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateEventSubscriptionRequest>();
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SubscriptionAlreadyExistException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateEventSubscription_SubscriptionCategoryNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateEventSubscriptionRequest>();
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SubscriptionCategoryNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
         public void DeleteDBClusterMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDBCluster");
@@ -2039,6 +2290,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("DocDB")]
+        public void DeleteEventSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<DeleteEventSubscriptionRequest>();
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteEventSubscriptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteEventSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void DeleteEventSubscription_InvalidEventSubscriptionStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<DeleteEventSubscriptionRequest>();
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidEventSubscriptionStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void DeleteEventSubscription_SubscriptionNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<DeleteEventSubscriptionRequest>();
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SubscriptionNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
         public void DescribeCertificatesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeCertificates");
@@ -2481,6 +2800,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = DescribeEventsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeEventsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void DescribeEventSubscriptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEventSubscriptions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEventSubscriptionsRequest>();
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeEventSubscriptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeEventSubscriptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void DescribeEventSubscriptions_SubscriptionNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEventSubscriptions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEventSubscriptionsRequest>();
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SubscriptionNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeEventSubscriptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -3628,6 +3992,166 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("DocDB")]
+        public void ModifyEventSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<ModifyEventSubscriptionRequest>();
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyEventSubscriptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyEventSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void ModifyEventSubscription_EventSubscriptionQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<ModifyEventSubscriptionRequest>();
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EventSubscriptionQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void ModifyEventSubscription_SNSInvalidTopicExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<ModifyEventSubscriptionRequest>();
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SNSInvalidTopicException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void ModifyEventSubscription_SNSNoAuthorizationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<ModifyEventSubscriptionRequest>();
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SNSNoAuthorizationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void ModifyEventSubscription_SNSTopicArnNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<ModifyEventSubscriptionRequest>();
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SNSTopicArnNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void ModifyEventSubscription_SubscriptionCategoryNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<ModifyEventSubscriptionRequest>();
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SubscriptionCategoryNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void ModifyEventSubscription_SubscriptionNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyEventSubscription");
+
+            var request = InstantiateClassGenerator.Execute<ModifyEventSubscriptionRequest>();
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SubscriptionNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
         public void RebootDBInstanceMarshallTest()
         {
             var operation = service_model.FindOperation("RebootDBInstance");
@@ -3688,6 +4212,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RebootDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void RemoveSourceIdentifierFromSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveSourceIdentifierFromSubscription");
+
+            var request = InstantiateClassGenerator.Execute<RemoveSourceIdentifierFromSubscriptionRequest>();
+            var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as RemoveSourceIdentifierFromSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void RemoveSourceIdentifierFromSubscription_SourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveSourceIdentifierFromSubscription");
+
+            var request = InstantiateClassGenerator.Execute<RemoveSourceIdentifierFromSubscriptionRequest>();
+            var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void RemoveSourceIdentifierFromSubscription_SubscriptionNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveSourceIdentifierFromSubscription");
+
+            var request = InstantiateClassGenerator.Execute<RemoveSourceIdentifierFromSubscriptionRequest>();
+            var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SubscriptionNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

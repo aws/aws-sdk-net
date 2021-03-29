@@ -44,6 +44,52 @@ namespace Amazon.DocDB
 
 
         
+        #region  AddSourceIdentifierToSubscription
+
+
+        /// <summary>
+        /// Adds a source identifier to an existing event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddSourceIdentifierToSubscription service method.</param>
+        /// 
+        /// <returns>The response from the AddSourceIdentifierToSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
+        AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddSourceIdentifierToSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddSourceIdentifierToSubscription operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddSourceIdentifierToSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
+        IAsyncResult BeginAddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddSourceIdentifierToSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddSourceIdentifierToSubscription.</param>
+        /// 
+        /// <returns>Returns a  AddSourceIdentifierToSubscriptionResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
+        AddSourceIdentifierToSubscriptionResponse EndAddSourceIdentifierToSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AddTagsToResource
 
 
@@ -634,6 +680,92 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  CreateEventSubscription
+
+
+        /// <summary>
+        /// Creates an Amazon DocumentDB event notification subscription. This action requires
+        /// a topic Amazon Resource Name (ARN) created by using the Amazon DocumentDB console,
+        /// the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you
+        /// must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed
+        /// in the Amazon SNS console.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify the type of source (<code>SourceType</code>) that you want to be notified
+        /// of. You can also provide a list of Amazon DocumentDB sources (<code>SourceIds</code>)
+        /// that trigger the events, and you can provide a list of event categories (<code>EventCategories</code>)
+        /// for events that you want to be notified of. For example, you can specify <code>SourceType
+        /// = db-instance</code>, <code>SourceIds = mydbinstance1, mydbinstance2</code> and <code>EventCategories
+        /// = Availability, Backup</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both the <code>SourceType</code> and <code>SourceIds</code> (such as
+        /// <code>SourceType = db-instance</code> and <code>SourceIdentifier = myDBInstance1</code>),
+        /// you are notified of all the <code>db-instance</code> events for the specified source.
+        /// If you specify a <code>SourceType</code> but do not specify a <code>SourceIdentifier</code>,
+        /// you receive notice of the events for that source type for all your Amazon DocumentDB
+        /// sources. If you do not specify either the <code>SourceType</code> or the <code>SourceIdentifier</code>,
+        /// you are notified of events generated from all Amazon DocumentDB sources belonging
+        /// to your customer account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateEventSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.EventSubscriptionQuotaExceededException">
+        /// You have reached the maximum number of event subscriptions.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSInvalidTopicException">
+        /// Amazon SNS has responded that there is a problem with the specified topic.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSNoAuthorizationException">
+        /// You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSTopicArnNotFoundException">
+        /// The SNS topic Amazon Resource Name (ARN) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionAlreadyExistException">
+        /// The provided subscription name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionCategoryNotFoundException">
+        /// The provided category does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEventSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        IAsyncResult BeginCreateEventSubscription(CreateEventSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventSubscription.</param>
+        /// 
+        /// <returns>Returns a  CreateEventSubscriptionResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        CreateEventSubscriptionResponse EndCreateEventSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteDBCluster
 
 
@@ -900,6 +1032,52 @@ namespace Amazon.DocDB
         /// <returns>Returns a  DeleteDBSubnetGroupResult from DocDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
         DeleteDBSubnetGroupResponse EndDeleteDBSubnetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteEventSubscription
+
+
+        /// <summary>
+        /// Deletes an Amazon DocumentDB event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.InvalidEventSubscriptionStateException">
+        /// Someone else might be modifying a subscription. Wait a few seconds, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        IAsyncResult BeginDeleteEventSubscription(DeleteEventSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventSubscription.</param>
+        /// 
+        /// <returns>Returns a  DeleteEventSubscriptionResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        DeleteEventSubscriptionResponse EndDeleteEventSubscription(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1428,6 +1606,56 @@ namespace Amazon.DocDB
         /// <returns>Returns a  DescribeEventsResult from DocDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeEventSubscriptions
+
+
+        /// <summary>
+        /// Lists all the subscription descriptions for a customer account. The description for
+        /// a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>,
+        /// <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventSubscriptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        IAsyncResult BeginDescribeEventSubscriptions(DescribeEventSubscriptionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEventSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventSubscriptions.</param>
+        /// 
+        /// <returns>Returns a  DescribeEventSubscriptionsResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        DescribeEventSubscriptionsResponse EndDescribeEventSubscriptions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1985,6 +2213,64 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  ModifyEventSubscription
+
+
+        /// <summary>
+        /// Modifies an existing Amazon DocumentDB event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription service method.</param>
+        /// 
+        /// <returns>The response from the ModifyEventSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.EventSubscriptionQuotaExceededException">
+        /// You have reached the maximum number of event subscriptions.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSInvalidTopicException">
+        /// Amazon SNS has responded that there is a problem with the specified topic.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSNoAuthorizationException">
+        /// You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSTopicArnNotFoundException">
+        /// The SNS topic Amazon Resource Name (ARN) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionCategoryNotFoundException">
+        /// The provided category does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyEventSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        IAsyncResult BeginModifyEventSubscription(ModifyEventSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyEventSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyEventSubscription.</param>
+        /// 
+        /// <returns>Returns a  ModifyEventSubscriptionResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        ModifyEventSubscriptionResponse EndModifyEventSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RebootDBInstance
 
 
@@ -2038,6 +2324,53 @@ namespace Amazon.DocDB
         /// <returns>Returns a  RebootDBInstanceResult from DocDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         RebootDBInstanceResponse EndRebootDBInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RemoveSourceIdentifierFromSubscription
+
+
+        /// <summary>
+        /// Removes a source identifier from an existing Amazon DocumentDB event notification
+        /// subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSourceIdentifierFromSubscription service method.</param>
+        /// 
+        /// <returns>The response from the RemoveSourceIdentifierFromSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
+        RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveSourceIdentifierFromSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSourceIdentifierFromSubscription operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveSourceIdentifierFromSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
+        IAsyncResult BeginRemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveSourceIdentifierFromSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveSourceIdentifierFromSubscription.</param>
+        /// 
+        /// <returns>Returns a  RemoveSourceIdentifierFromSubscriptionResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
+        RemoveSourceIdentifierFromSubscriptionResponse EndRemoveSourceIdentifierFromSubscription(IAsyncResult asyncResult);
 
         #endregion
         

@@ -262,6 +262,59 @@ namespace Amazon.DocDB
         #endregion
 
 
+        #region  AddSourceIdentifierToSubscription
+
+
+        /// <summary>
+        /// Adds a source identifier to an existing event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddSourceIdentifierToSubscription service method.</param>
+        /// 
+        /// <returns>The response from the AddSourceIdentifierToSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
+        public virtual AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddSourceIdentifierToSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<AddSourceIdentifierToSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds a source identifier to an existing event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddSourceIdentifierToSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddSourceIdentifierToSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
+        public virtual Task<AddSourceIdentifierToSubscriptionResponse> AddSourceIdentifierToSubscriptionAsync(AddSourceIdentifierToSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddSourceIdentifierToSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AddSourceIdentifierToSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddTagsToResource
 
 
@@ -1091,6 +1144,139 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  CreateEventSubscription
+
+
+        /// <summary>
+        /// Creates an Amazon DocumentDB event notification subscription. This action requires
+        /// a topic Amazon Resource Name (ARN) created by using the Amazon DocumentDB console,
+        /// the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you
+        /// must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed
+        /// in the Amazon SNS console.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify the type of source (<code>SourceType</code>) that you want to be notified
+        /// of. You can also provide a list of Amazon DocumentDB sources (<code>SourceIds</code>)
+        /// that trigger the events, and you can provide a list of event categories (<code>EventCategories</code>)
+        /// for events that you want to be notified of. For example, you can specify <code>SourceType
+        /// = db-instance</code>, <code>SourceIds = mydbinstance1, mydbinstance2</code> and <code>EventCategories
+        /// = Availability, Backup</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both the <code>SourceType</code> and <code>SourceIds</code> (such as
+        /// <code>SourceType = db-instance</code> and <code>SourceIdentifier = myDBInstance1</code>),
+        /// you are notified of all the <code>db-instance</code> events for the specified source.
+        /// If you specify a <code>SourceType</code> but do not specify a <code>SourceIdentifier</code>,
+        /// you receive notice of the events for that source type for all your Amazon DocumentDB
+        /// sources. If you do not specify either the <code>SourceType</code> or the <code>SourceIdentifier</code>,
+        /// you are notified of events generated from all Amazon DocumentDB sources belonging
+        /// to your customer account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateEventSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.EventSubscriptionQuotaExceededException">
+        /// You have reached the maximum number of event subscriptions.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSInvalidTopicException">
+        /// Amazon SNS has responded that there is a problem with the specified topic.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSNoAuthorizationException">
+        /// You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSTopicArnNotFoundException">
+        /// The SNS topic Amazon Resource Name (ARN) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionAlreadyExistException">
+        /// The provided subscription name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionCategoryNotFoundException">
+        /// The provided category does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        public virtual CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an Amazon DocumentDB event notification subscription. This action requires
+        /// a topic Amazon Resource Name (ARN) created by using the Amazon DocumentDB console,
+        /// the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you
+        /// must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed
+        /// in the Amazon SNS console.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify the type of source (<code>SourceType</code>) that you want to be notified
+        /// of. You can also provide a list of Amazon DocumentDB sources (<code>SourceIds</code>)
+        /// that trigger the events, and you can provide a list of event categories (<code>EventCategories</code>)
+        /// for events that you want to be notified of. For example, you can specify <code>SourceType
+        /// = db-instance</code>, <code>SourceIds = mydbinstance1, mydbinstance2</code> and <code>EventCategories
+        /// = Availability, Backup</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both the <code>SourceType</code> and <code>SourceIds</code> (such as
+        /// <code>SourceType = db-instance</code> and <code>SourceIdentifier = myDBInstance1</code>),
+        /// you are notified of all the <code>db-instance</code> events for the specified source.
+        /// If you specify a <code>SourceType</code> but do not specify a <code>SourceIdentifier</code>,
+        /// you receive notice of the events for that source type for all your Amazon DocumentDB
+        /// sources. If you do not specify either the <code>SourceType</code> or the <code>SourceIdentifier</code>,
+        /// you are notified of events generated from all Amazon DocumentDB sources belonging
+        /// to your customer account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEventSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.EventSubscriptionQuotaExceededException">
+        /// You have reached the maximum number of event subscriptions.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSInvalidTopicException">
+        /// Amazon SNS has responded that there is a problem with the specified topic.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSNoAuthorizationException">
+        /// You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSTopicArnNotFoundException">
+        /// The SNS topic Amazon Resource Name (ARN) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionAlreadyExistException">
+        /// The provided subscription name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionCategoryNotFoundException">
+        /// The provided category does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        public virtual Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEventSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDBCluster
 
 
@@ -1430,6 +1616,59 @@ namespace Amazon.DocDB
             options.ResponseUnmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteDBSubnetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEventSubscription
+
+
+        /// <summary>
+        /// Deletes an Amazon DocumentDB event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.InvalidEventSubscriptionStateException">
+        /// Someone else might be modifying a subscription. Wait a few seconds, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        public virtual DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an Amazon DocumentDB event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEventSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.InvalidEventSubscriptionStateException">
+        /// Someone else might be modifying a subscription. Wait a few seconds, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        public virtual Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEventSubscriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2018,6 +2257,67 @@ namespace Amazon.DocDB
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEventSubscriptions
+
+
+        /// <summary>
+        /// Lists all the subscription descriptions for a customer account. The description for
+        /// a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>,
+        /// <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        public virtual DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventSubscriptionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all the subscription descriptions for a customer account. The description for
+        /// a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>,
+        /// <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        public virtual Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeEventSubscriptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2779,6 +3079,83 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  ModifyEventSubscription
+
+
+        /// <summary>
+        /// Modifies an existing Amazon DocumentDB event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription service method.</param>
+        /// 
+        /// <returns>The response from the ModifyEventSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.EventSubscriptionQuotaExceededException">
+        /// You have reached the maximum number of event subscriptions.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSInvalidTopicException">
+        /// Amazon SNS has responded that there is a problem with the specified topic.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSNoAuthorizationException">
+        /// You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSTopicArnNotFoundException">
+        /// The SNS topic Amazon Resource Name (ARN) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionCategoryNotFoundException">
+        /// The provided category does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        public virtual ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyEventSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies an existing Amazon DocumentDB event notification subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyEventSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.EventSubscriptionQuotaExceededException">
+        /// You have reached the maximum number of event subscriptions.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSInvalidTopicException">
+        /// Amazon SNS has responded that there is a problem with the specified topic.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSNoAuthorizationException">
+        /// You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SNSTopicArnNotFoundException">
+        /// The SNS topic Amazon Resource Name (ARN) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionCategoryNotFoundException">
+        /// The provided category does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        public virtual Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyEventSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RebootDBInstance
 
 
@@ -2848,6 +3225,61 @@ namespace Amazon.DocDB
             options.ResponseUnmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
             
             return InvokeAsync<RebootDBInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveSourceIdentifierFromSubscription
+
+
+        /// <summary>
+        /// Removes a source identifier from an existing Amazon DocumentDB event notification
+        /// subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSourceIdentifierFromSubscription service method.</param>
+        /// 
+        /// <returns>The response from the RemoveSourceIdentifierFromSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
+        public virtual RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveSourceIdentifierFromSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveSourceIdentifierFromSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a source identifier from an existing Amazon DocumentDB event notification
+        /// subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSourceIdentifierFromSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveSourceIdentifierFromSubscription service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.SourceNotFoundException">
+        /// The requested source could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
+        public virtual Task<RemoveSourceIdentifierFromSubscriptionResponse> RemoveSourceIdentifierFromSubscriptionAsync(RemoveSourceIdentifierFromSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveSourceIdentifierFromSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RemoveSourceIdentifierFromSubscriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion

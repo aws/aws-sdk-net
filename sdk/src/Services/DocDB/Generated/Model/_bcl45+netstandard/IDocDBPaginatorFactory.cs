@@ -71,6 +71,11 @@ namespace Amazon.DocDB.Model
         IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeEventSubscriptions operation
+        ///</summary>
+        IDescribeEventSubscriptionsPaginator DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeOrderableDBInstanceOptions operation
         ///</summary>
         IDescribeOrderableDBInstanceOptionsPaginator DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request);
