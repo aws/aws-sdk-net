@@ -222,7 +222,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major
         /// and minor version numbers. The maximum length of each is 6 digits, and neither can
         /// be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0"
-        /// is not a valid version.
+        /// isn't a valid version.
         /// </para>
         ///  </li> <li> 
         /// <para>

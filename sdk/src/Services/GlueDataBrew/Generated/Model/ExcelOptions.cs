@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Options that define how DataBrew will interpret a Microsoft Excel file, when creating
-    /// a dataset from that file.
+    /// Represents a set of options that define how DataBrew will interpret a Microsoft Excel
+    /// file when creating a dataset from that file.
     /// </summary>
     public partial class ExcelOptions
     {
@@ -41,8 +41,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property HeaderRow. 
         /// <para>
-        /// A variable that specifies whether the first row in the file will be parsed as the
-        /// header. If false, column names will be auto-generated.
+        /// A variable that specifies whether the first row in the file is parsed as the header.
+        /// If this value is false, column names are auto-generated.
         /// </para>
         /// </summary>
         public bool HeaderRow
@@ -60,8 +60,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property SheetIndexes. 
         /// <para>
-        /// Specifies one or more sheet numbers in the Excel file, which will be included in the
-        /// dataset.
+        /// One or more sheet numbers in the Excel file that will be included in the dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -80,8 +79,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property SheetNames. 
         /// <para>
-        /// Specifies one or more named sheets in the Excel file, which will be included in the
-        /// dataset.
+        /// One or more named sheets in the Excel file that will be included in the dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

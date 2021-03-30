@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Options that define the structure of either Csv, Excel, or JSON input.
+    /// Represents a set of options that define the structure of either comma-separated value
+    /// (CSV), Excel, or JSON input.
     /// </summary>
     public partial class FormatOptions
     {
@@ -40,7 +41,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Csv. 
         /// <para>
-        /// Options that define how Csv input is to be interpreted by DataBrew.
+        /// Options that define how CSV input is to be interpreted by DataBrew.
         /// </para>
         /// </summary>
         public CsvOptions Csv

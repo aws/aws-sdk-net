@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Input Marshaller
+    /// FilterExpression Marshaller
     /// </summary>       
-    public class InputMarshaller : IRequestMarshaller<Input, JsonMarshallerContext> 
+    public class FilterExpressionMarshaller : IRequestMarshaller<FilterExpression, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,38 +43,25 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Input requestObject, JsonMarshallerContext context)
+        public void Marshall(FilterExpression requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDatabaseInputDefinition())
+            if(requestObject.IsSetExpression())
             {
-                context.Writer.WritePropertyName("DatabaseInputDefinition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DatabaseInputDefinitionMarshaller.Instance;
-                marshaller.Marshall(requestObject.DatabaseInputDefinition, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Expression");
+                context.Writer.Write(requestObject.Expression);
             }
 
-            if(requestObject.IsSetDataCatalogInputDefinition())
+            if(requestObject.IsSetValuesMap())
             {
-                context.Writer.WritePropertyName("DataCatalogInputDefinition");
+                context.Writer.WritePropertyName("ValuesMap");
                 context.Writer.WriteObjectStart();
+                foreach (var requestObjectValuesMapKvp in requestObject.ValuesMap)
+                {
+                    context.Writer.WritePropertyName(requestObjectValuesMapKvp.Key);
+                    var requestObjectValuesMapValue = requestObjectValuesMapKvp.Value;
 
-                var marshaller = DataCatalogInputDefinitionMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataCatalogInputDefinition, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetS3InputDefinition())
-            {
-                context.Writer.WritePropertyName("S3InputDefinition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3LocationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3InputDefinition, context);
-
+                        context.Writer.Write(requestObjectValuesMapValue);
+                }
                 context.Writer.WriteObjectEnd();
             }
 
@@ -83,7 +70,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InputMarshaller Instance = new InputMarshaller();
+        public readonly static FilterExpressionMarshaller Instance = new FilterExpressionMarshaller();
 
     }
 }

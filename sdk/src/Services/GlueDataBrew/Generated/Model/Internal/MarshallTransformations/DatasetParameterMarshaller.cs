@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Input Marshaller
+    /// DatasetParameter Marshaller
     /// </summary>       
-    public class InputMarshaller : IRequestMarshaller<Input, JsonMarshallerContext> 
+    public class DatasetParameterMarshaller : IRequestMarshaller<DatasetParameter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,46 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Input requestObject, JsonMarshallerContext context)
+        public void Marshall(DatasetParameter requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDatabaseInputDefinition())
+            if(requestObject.IsSetCreateColumn())
             {
-                context.Writer.WritePropertyName("DatabaseInputDefinition");
+                context.Writer.WritePropertyName("CreateColumn");
+                context.Writer.Write(requestObject.CreateColumn);
+            }
+
+            if(requestObject.IsSetDatetimeOptions())
+            {
+                context.Writer.WritePropertyName("DatetimeOptions");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = DatabaseInputDefinitionMarshaller.Instance;
-                marshaller.Marshall(requestObject.DatabaseInputDefinition, context);
+                var marshaller = DatetimeOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DatetimeOptions, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetDataCatalogInputDefinition())
+            if(requestObject.IsSetFilter())
             {
-                context.Writer.WritePropertyName("DataCatalogInputDefinition");
+                context.Writer.WritePropertyName("Filter");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = DataCatalogInputDefinitionMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataCatalogInputDefinition, context);
+                var marshaller = FilterExpressionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Filter, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetS3InputDefinition())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("S3InputDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
+            }
 
-                var marshaller = S3LocationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3InputDefinition, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -83,7 +90,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InputMarshaller Instance = new InputMarshaller();
+        public readonly static DatasetParameterMarshaller Instance = new DatasetParameterMarshaller();
 
     }
 }

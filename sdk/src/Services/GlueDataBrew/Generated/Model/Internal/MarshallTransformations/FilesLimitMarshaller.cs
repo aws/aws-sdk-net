@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Input Marshaller
+    /// FilesLimit Marshaller
     /// </summary>       
-    public class InputMarshaller : IRequestMarshaller<Input, JsonMarshallerContext> 
+    public class FilesLimitMarshaller : IRequestMarshaller<FilesLimit, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,24 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Input requestObject, JsonMarshallerContext context)
+        public void Marshall(FilesLimit requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDatabaseInputDefinition())
+            if(requestObject.IsSetMaxFiles())
             {
-                context.Writer.WritePropertyName("DatabaseInputDefinition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DatabaseInputDefinitionMarshaller.Instance;
-                marshaller.Marshall(requestObject.DatabaseInputDefinition, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("MaxFiles");
+                context.Writer.Write(requestObject.MaxFiles);
             }
 
-            if(requestObject.IsSetDataCatalogInputDefinition())
+            if(requestObject.IsSetOrder())
             {
-                context.Writer.WritePropertyName("DataCatalogInputDefinition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DataCatalogInputDefinitionMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataCatalogInputDefinition, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Order");
+                context.Writer.Write(requestObject.Order);
             }
 
-            if(requestObject.IsSetS3InputDefinition())
+            if(requestObject.IsSetOrderedBy())
             {
-                context.Writer.WritePropertyName("S3InputDefinition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3LocationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3InputDefinition, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("OrderedBy");
+                context.Writer.Write(requestObject.OrderedBy);
             }
 
         }
@@ -83,7 +68,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InputMarshaller Instance = new InputMarshaller();
+        public readonly static FilesLimitMarshaller Instance = new FilesLimitMarshaller();
 
     }
 }

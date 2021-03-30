@@ -102,7 +102,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property CronExpression. 
         /// <para>
-        /// The date(s) and time(s) when the job will run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+        /// The dates and times when the job is to run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
         /// expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.
         /// </para>
         /// </summary>

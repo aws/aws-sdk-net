@@ -58,7 +58,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property ConditionExpressions. 
         /// <para>
-        /// One or more conditions that must be met, in order for the recipe step to succeed.
+        /// One or more conditions that must be met for the recipe step to succeed.
         /// </para>
         ///  <note> 
         /// <para>

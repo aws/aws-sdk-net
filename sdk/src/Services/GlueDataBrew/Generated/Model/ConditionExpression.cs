@@ -33,7 +33,7 @@ namespace Amazon.GlueDataBrew.Model
     /// 
     ///  
     /// <para>
-    /// Conditions are used with recipe actions: The action is only performed for column values
+    /// Conditions are used with recipe actions. The action is only performed for column values
     /// where the condition evaluates to true.
     /// </para>
     ///  

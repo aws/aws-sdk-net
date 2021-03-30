@@ -99,6 +99,17 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPathOptions())
+                {
+                    context.Writer.WritePropertyName("PathOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PathOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PathOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

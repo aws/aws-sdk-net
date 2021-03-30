@@ -99,6 +99,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PathOptions", targetDepth))
+                {
+                    var unmarshaller = PathOptionsUnmarshaller.Instance;
+                    response.PathOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

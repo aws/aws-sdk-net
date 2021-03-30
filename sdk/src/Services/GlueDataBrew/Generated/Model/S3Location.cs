@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// An Amazon S3 location (bucket name an object key) where DataBrew can read input data,
-    /// or write output from a job.
+    /// Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
+    /// input data, or write output from a job.
     /// </summary>
     public partial class S3Location
     {

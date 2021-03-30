@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Options that define how DataBrew will write a Csv file.
+    /// Represents a set of options that define how DataBrew will write a comma-separated
+    /// value (CSV) file.
     /// </summary>
     public partial class CsvOutputOptions
     {
@@ -38,7 +39,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Delimiter. 
         /// <para>
-        /// A single character that specifies the delimiter used to create Csv job output.
+        /// A single character that specifies the delimiter used to create CSV job output.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

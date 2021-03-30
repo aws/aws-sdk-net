@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Sample configuration for Profile Jobs only. Determines the number of rows on which
-    /// the Profile job will be executed. If a JobSample value is not provided for profile
-    /// jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode
-    /// parameter and 20000 for the size parameter.
+    /// A sample configuration for profile jobs only, which determines the number of rows
+    /// on which the profile job is run. If a <code>JobSample</code> value isn't provided,
+    /// the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000
+    /// for the size parameter.
     /// </summary>
     public partial class JobSample
     {
@@ -42,16 +42,16 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Determines whether the profile job will be executed on the entire dataset or on a
-        /// specified number of rows. Must be one of the following:
+        /// A value that determines whether the profile job is run on the entire dataset or a
+        /// specified number of rows. This value must be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// FULL_DATASET: Profile job will be executed on the entire dataset.
+        /// FULL_DATASET - The profile job is run on the entire dataset.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size
+        /// CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code>
         /// parameter.
         /// </para>
         ///  </li> </ul>
@@ -71,8 +71,9 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// Size parameter is only required when the mode is CUSTOM_ROWS. Profile job will be
-        /// executed on the the specified number of rows. The maximum value for size is Long.MAX_VALUE.
+        /// The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The
+        /// profile job is run on the specified number of rows. The maximum value for size is
+        /// Long.MAX_VALUE.
         /// </para>
         ///  
         /// <para>

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Options that define the structure of Csv job output.
+    /// Represents a set of options that define the structure of comma-separated (CSV) job
+    /// output.
     /// </summary>
     public partial class OutputFormatOptions
     {
@@ -38,7 +39,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Csv. 
         /// <para>
-        /// Options that define how DataBrew writes Csv output.
+        /// Represents a set of options that define the structure of comma-separated value (CSV)
+        /// job output.
         /// </para>
         /// </summary>
         public CsvOutputOptions Csv

@@ -29,13 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Information on how DataBrew can find data, in either the AWS Glue Data Catalog or
-    /// Amazon S3.
+    /// Represents information on how DataBrew can find data, in either the AWS Glue Data
+    /// Catalog or Amazon S3.
     /// </summary>
     public partial class Input
     {
+        private DatabaseInputDefinition _databaseInputDefinition;
         private DataCatalogInputDefinition _dataCatalogInputDefinition;
         private S3Location _s3InputDefinition;
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInputDefinition. 
+        /// <para>
+        /// Connection information for dataset input files stored in a database.
+        /// </para>
+        /// </summary>
+        public DatabaseInputDefinition DatabaseInputDefinition
+        {
+            get { return this._databaseInputDefinition; }
+            set { this._databaseInputDefinition = value; }
+        }
+
+        // Check to see if DatabaseInputDefinition property is set
+        internal bool IsSetDatabaseInputDefinition()
+        {
+            return this._databaseInputDefinition != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataCatalogInputDefinition. 

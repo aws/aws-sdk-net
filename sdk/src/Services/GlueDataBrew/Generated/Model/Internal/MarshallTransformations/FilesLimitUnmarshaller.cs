@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Input Object
+    /// Response Unmarshaller for FilesLimit Object
     /// </summary>  
-    public class InputUnmarshaller : IUnmarshaller<Input, XmlUnmarshallerContext>, IUnmarshaller<Input, JsonUnmarshallerContext>
+    public class FilesLimitUnmarshaller : IUnmarshaller<FilesLimit, XmlUnmarshallerContext>, IUnmarshaller<FilesLimit, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Input IUnmarshaller<Input, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FilesLimit IUnmarshaller<FilesLimit, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Input Unmarshall(JsonUnmarshallerContext context)
+        public FilesLimit Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Input unmarshalledObject = new Input();
+            FilesLimit unmarshalledObject = new FilesLimit();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DatabaseInputDefinition", targetDepth))
+                if (context.TestExpression("MaxFiles", targetDepth))
                 {
-                    var unmarshaller = DatabaseInputDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseInputDefinition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DataCatalogInputDefinition", targetDepth))
+                if (context.TestExpression("Order", targetDepth))
                 {
-                    var unmarshaller = DataCatalogInputDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.DataCatalogInputDefinition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Order = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3InputDefinition", targetDepth))
+                if (context.TestExpression("OrderedBy", targetDepth))
                 {
-                    var unmarshaller = S3LocationUnmarshaller.Instance;
-                    unmarshalledObject.S3InputDefinition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OrderedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputUnmarshaller _instance = new InputUnmarshaller();        
+        private static FilesLimitUnmarshaller _instance = new FilesLimitUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputUnmarshaller Instance
+        public static FilesLimitUnmarshaller Instance
         {
             get
             {

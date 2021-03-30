@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents the data being being transformed during an action.
+    /// Represents the data being transformed during an action.
     /// </summary>
     public partial class ViewFrame
     {

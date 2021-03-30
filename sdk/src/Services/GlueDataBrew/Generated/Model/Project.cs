@@ -274,7 +274,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Gets and sets the property Sample. 
         /// <para>
         /// The sample size and sampling type to apply to the data. If this parameter isn't specified,
-        /// then the sample will consiste of the first 500 rows from the dataset.
+        /// then the sample consists of the first 500 rows from the dataset.
         /// </para>
         /// </summary>
         public Sample Sample

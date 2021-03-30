@@ -162,9 +162,9 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property JobSample. 
         /// <para>
-        /// Sample configuration for profile jobs only. Determines the number of rows on which
-        /// the profile job will be executed. If a JobSample value is not provided, the default
-        /// value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000
+        /// A sample configuration for profile jobs only, which determines the number of rows
+        /// on which the profile job is run. If a <code>JobSample</code> value isn't provided,
+        /// the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000
         /// for the size parameter.
         /// </para>
         /// </summary>

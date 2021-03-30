@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Input Marshaller
+    /// PathOptions Marshaller
     /// </summary>       
-    public class InputMarshaller : IRequestMarshaller<Input, JsonMarshallerContext> 
+    public class PathOptionsMarshaller : IRequestMarshaller<PathOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,38 +43,46 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Input requestObject, JsonMarshallerContext context)
+        public void Marshall(PathOptions requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDatabaseInputDefinition())
+            if(requestObject.IsSetFilesLimit())
             {
-                context.Writer.WritePropertyName("DatabaseInputDefinition");
+                context.Writer.WritePropertyName("FilesLimit");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = DatabaseInputDefinitionMarshaller.Instance;
-                marshaller.Marshall(requestObject.DatabaseInputDefinition, context);
+                var marshaller = FilesLimitMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilesLimit, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetDataCatalogInputDefinition())
+            if(requestObject.IsSetLastModifiedDateCondition())
             {
-                context.Writer.WritePropertyName("DataCatalogInputDefinition");
+                context.Writer.WritePropertyName("LastModifiedDateCondition");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = DataCatalogInputDefinitionMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataCatalogInputDefinition, context);
+                var marshaller = FilterExpressionMarshaller.Instance;
+                marshaller.Marshall(requestObject.LastModifiedDateCondition, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetS3InputDefinition())
+            if(requestObject.IsSetParameters())
             {
-                context.Writer.WritePropertyName("S3InputDefinition");
+                context.Writer.WritePropertyName("Parameters");
                 context.Writer.WriteObjectStart();
+                foreach (var requestObjectParametersKvp in requestObject.Parameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
+                    var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                var marshaller = S3LocationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3InputDefinition, context);
+                    context.Writer.WriteObjectStart();
 
+                    var marshaller = DatasetParameterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectParametersValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
                 context.Writer.WriteObjectEnd();
             }
 
@@ -83,7 +91,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InputMarshaller Instance = new InputMarshaller();
+        public readonly static PathOptionsMarshaller Instance = new PathOptionsMarshaller();
 
     }
 }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Input Object
+    /// Response Unmarshaller for PathOptions Object
     /// </summary>  
-    public class InputUnmarshaller : IUnmarshaller<Input, XmlUnmarshallerContext>, IUnmarshaller<Input, JsonUnmarshallerContext>
+    public class PathOptionsUnmarshaller : IUnmarshaller<PathOptions, XmlUnmarshallerContext>, IUnmarshaller<PathOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Input IUnmarshaller<Input, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PathOptions IUnmarshaller<PathOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Input Unmarshall(JsonUnmarshallerContext context)
+        public PathOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Input unmarshalledObject = new Input();
+            PathOptions unmarshalledObject = new PathOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DatabaseInputDefinition", targetDepth))
+                if (context.TestExpression("FilesLimit", targetDepth))
                 {
-                    var unmarshaller = DatabaseInputDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseInputDefinition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FilesLimitUnmarshaller.Instance;
+                    unmarshalledObject.FilesLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DataCatalogInputDefinition", targetDepth))
+                if (context.TestExpression("LastModifiedDateCondition", targetDepth))
                 {
-                    var unmarshaller = DataCatalogInputDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.DataCatalogInputDefinition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FilterExpressionUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedDateCondition = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3InputDefinition", targetDepth))
+                if (context.TestExpression("Parameters", targetDepth))
                 {
-                    var unmarshaller = S3LocationUnmarshaller.Instance;
-                    unmarshalledObject.S3InputDefinition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, DatasetParameter, StringUnmarshaller, DatasetParameterUnmarshaller>(StringUnmarshaller.Instance, DatasetParameterUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputUnmarshaller _instance = new InputUnmarshaller();        
+        private static PathOptionsUnmarshaller _instance = new PathOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputUnmarshaller Instance
+        public static PathOptionsUnmarshaller Instance
         {
             get
             {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Input Object
+    /// Response Unmarshaller for DatetimeOptions Object
     /// </summary>  
-    public class InputUnmarshaller : IUnmarshaller<Input, XmlUnmarshallerContext>, IUnmarshaller<Input, JsonUnmarshallerContext>
+    public class DatetimeOptionsUnmarshaller : IUnmarshaller<DatetimeOptions, XmlUnmarshallerContext>, IUnmarshaller<DatetimeOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Input IUnmarshaller<Input, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DatetimeOptions IUnmarshaller<DatetimeOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Input Unmarshall(JsonUnmarshallerContext context)
+        public DatetimeOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Input unmarshalledObject = new Input();
+            DatetimeOptions unmarshalledObject = new DatetimeOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DatabaseInputDefinition", targetDepth))
+                if (context.TestExpression("Format", targetDepth))
                 {
-                    var unmarshaller = DatabaseInputDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseInputDefinition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DataCatalogInputDefinition", targetDepth))
+                if (context.TestExpression("LocaleCode", targetDepth))
                 {
-                    var unmarshaller = DataCatalogInputDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.DataCatalogInputDefinition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LocaleCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3InputDefinition", targetDepth))
+                if (context.TestExpression("TimezoneOffset", targetDepth))
                 {
-                    var unmarshaller = S3LocationUnmarshaller.Instance;
-                    unmarshalledObject.S3InputDefinition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimezoneOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputUnmarshaller _instance = new InputUnmarshaller();        
+        private static DatetimeOptionsUnmarshaller _instance = new DatetimeOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputUnmarshaller Instance
+        public static DatetimeOptionsUnmarshaller Instance
         {
             get
             {

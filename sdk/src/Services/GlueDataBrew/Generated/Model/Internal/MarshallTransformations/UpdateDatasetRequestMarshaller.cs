@@ -96,6 +96,17 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPathOptions())
+                {
+                    context.Writer.WritePropertyName("PathOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PathOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PathOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
