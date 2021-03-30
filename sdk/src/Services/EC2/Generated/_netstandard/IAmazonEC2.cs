@@ -595,19 +595,18 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When the IAM role is associated with the ACM certificate, places the certificate,
-        /// certificate chain, and encrypted private key in an Amazon S3 bucket that only the
-        /// associated IAM role can access. The private key of the certificate is encrypted with
-        /// an AWS-managed KMS customer master (CMK) that has an attached attestation-based CMK
-        /// policy.
+        /// When the IAM role is associated with the ACM certificate, the certificate, certificate
+        /// chain, and encrypted private key are placed in an Amazon S3 bucket that only the associated
+        /// IAM role can access. The private key of the certificate is encrypted with an AWS-managed
+        /// KMS customer master (CMK) that has an attached attestation-based CMK policy.
         /// </para>
         ///  
         /// <para>
         /// To enable the IAM role to access the Amazon S3 object, you must grant it permission
         /// to call <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command.
         /// To enable the IAM role to access the AWS KMS CMK, you must grant it permission to
-        /// call <code>kms:Decrypt</code> on AWS KMS CMK returned by the command. For more information,
-        /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+        /// call <code>kms:Decrypt</code> on the AWS KMS CMK returned by the command. For more
+        /// information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
         /// Grant the role permission to access the certificate and encryption key</a> in the
         /// <i>AWS Nitro Enclaves User Guide</i>.
         /// </para>
@@ -2238,6 +2237,32 @@ namespace Amazon.EC2
         /// <returns>The response from the CreatePlacementGroup service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         Task<CreatePlacementGroupResponse> CreatePlacementGroupAsync(CreatePlacementGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateReplaceRootVolumeTask
+
+
+
+        /// <summary>
+        /// Creates a root volume replacement task for an Amazon EC2 instance. The root volume
+        /// can either be restored to its initial launch state, or it can be restored using a
+        /// specific snapshot.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/">Replace a root volume</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplaceRootVolumeTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateReplaceRootVolumeTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">REST API Reference for CreateReplaceRootVolumeTask Operation</seealso>
+        Task<CreateReplaceRootVolumeTaskResponse> CreateReplaceRootVolumeTaskAsync(CreateReplaceRootVolumeTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6675,6 +6700,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeReplaceRootVolumeTasks
+
+
+
+        /// <summary>
+        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/">Replace
+        /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplaceRootVolumeTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReplaceRootVolumeTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">REST API Reference for DescribeReplaceRootVolumeTasks Operation</seealso>
+        Task<DescribeReplaceRootVolumeTasksResponse> DescribeReplaceRootVolumeTasksAsync(DescribeReplaceRootVolumeTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeReservedInstances
 
 
@@ -8543,6 +8587,27 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DisableSerialConsoleAccess
+
+
+
+        /// <summary>
+        /// Disables access to the EC2 serial console of all instances for your account. By default,
+        /// access to the EC2 serial console is disabled for your account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+        /// account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSerialConsoleAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableSerialConsoleAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess">REST API Reference for DisableSerialConsoleAccess Operation</seealso>
+        Task<DisableSerialConsoleAccessResponse> DisableSerialConsoleAccessAsync(DisableSerialConsoleAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableTransitGatewayRouteTablePropagation
 
 
@@ -8858,7 +8923,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// After you enable encryption by default, the EBS volumes that you create are are always
+        /// After you enable encryption by default, the EBS volumes that you create are always
         /// encrypted, either using the default CMK or the CMK that you specified when you created
         /// each volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -8919,6 +8984,27 @@ namespace Amazon.EC2
         /// <returns>The response from the EnableFastSnapshotRestores service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
         Task<EnableFastSnapshotRestoresResponse> EnableFastSnapshotRestoresAsync(EnableFastSnapshotRestoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  EnableSerialConsoleAccess
+
+
+
+        /// <summary>
+        /// Enables access to the EC2 serial console of all instances for your account. By default,
+        /// access to the EC2 serial console is disabled for your account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+        /// account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSerialConsoleAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableSerialConsoleAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">REST API Reference for EnableSerialConsoleAccess Operation</seealso>
+        Task<EnableSerialConsoleAccessResponse> EnableSerialConsoleAccessAsync(EnableSerialConsoleAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -9506,6 +9592,27 @@ namespace Amazon.EC2
         /// <returns>The response from the GetReservedInstancesExchangeQuote service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         Task<GetReservedInstancesExchangeQuoteResponse> GetReservedInstancesExchangeQuoteAsync(GetReservedInstancesExchangeQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSerialConsoleAccessStatus
+
+
+
+        /// <summary>
+        /// Retrieves the access status of your account to the EC2 serial console of all instances.
+        /// By default, access to the EC2 serial console is disabled for your account. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+        /// account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSerialConsoleAccessStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSerialConsoleAccessStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">REST API Reference for GetSerialConsoleAccessStatus Operation</seealso>
+        Task<GetSerialConsoleAccessStatusResponse> GetSerialConsoleAccessStatusAsync(GetSerialConsoleAccessStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -1714,6 +1714,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateReplaceRootVolumeTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplaceRootVolumeTask");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplaceRootVolumeTaskRequest>();
+            var marshaller = new CreateReplaceRootVolumeTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateReplaceRootVolumeTaskResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateReplaceRootVolumeTaskResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateReservedInstancesListingMarshallTest()
         {
             var operation = service_model.FindOperation("CreateReservedInstancesListing");
@@ -5487,6 +5511,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeReplaceRootVolumeTasksMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReplaceRootVolumeTasks");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReplaceRootVolumeTasksRequest>();
+            var marshaller = new DescribeReplaceRootVolumeTasksRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeReplaceRootVolumeTasksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeReplaceRootVolumeTasksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeReservedInstancesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeReservedInstances");
@@ -6792,6 +6840,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableSerialConsoleAccessMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableSerialConsoleAccess");
+
+            var request = InstantiateClassGenerator.Execute<DisableSerialConsoleAccessRequest>();
+            var marshaller = new DisableSerialConsoleAccessRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableSerialConsoleAccessResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableSerialConsoleAccessResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisableTransitGatewayRouteTablePropagationMarshallTest()
         {
             var operation = service_model.FindOperation("DisableTransitGatewayRouteTablePropagation");
@@ -7128,6 +7200,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = EnableFastSnapshotRestoresResponseUnmarshaller.Instance.Unmarshall(context)
                 as EnableFastSnapshotRestoresResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void EnableSerialConsoleAccessMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableSerialConsoleAccess");
+
+            var request = InstantiateClassGenerator.Execute<EnableSerialConsoleAccessRequest>();
+            var marshaller = new EnableSerialConsoleAccessRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableSerialConsoleAccessResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableSerialConsoleAccessResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -7718,6 +7814,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetReservedInstancesExchangeQuoteResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetReservedInstancesExchangeQuoteResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetSerialConsoleAccessStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSerialConsoleAccessStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetSerialConsoleAccessStatusRequest>();
+            var marshaller = new GetSerialConsoleAccessStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetSerialConsoleAccessStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetSerialConsoleAccessStatusResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

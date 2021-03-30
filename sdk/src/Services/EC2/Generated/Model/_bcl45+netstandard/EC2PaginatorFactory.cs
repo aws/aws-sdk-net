@@ -436,6 +436,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeReplaceRootVolumeTasks operation
+        ///</summary>
+        public IDescribeReplaceRootVolumeTasksPaginator DescribeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest request) 
+        {
+            return new DescribeReplaceRootVolumeTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeReservedInstancesModifications operation
         ///</summary>
         public IDescribeReservedInstancesModificationsPaginator DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request) 

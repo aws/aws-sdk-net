@@ -276,6 +276,11 @@ namespace Amazon.EC2.Model
         IDescribePublicIpv4PoolsPaginator DescribePublicIpv4Pools(DescribePublicIpv4PoolsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeReplaceRootVolumeTasks operation
+        ///</summary>
+        IDescribeReplaceRootVolumeTasksPaginator DescribeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest request);
+
+        /// <summary>
         /// Paginator for DescribeReservedInstancesModifications operation
         ///</summary>
         IDescribeReservedInstancesModificationsPaginator DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request);

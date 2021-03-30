@@ -105,7 +105,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: If no IOPS value is specified, the existing value is retained.
+        /// Default: If no IOPS value is specified, the existing value is retained, unless a volume
+        /// type is modified that supports different values.
         /// </para>
         /// </summary>
         public int Iops

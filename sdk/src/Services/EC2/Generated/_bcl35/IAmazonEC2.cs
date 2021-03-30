@@ -922,19 +922,18 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When the IAM role is associated with the ACM certificate, places the certificate,
-        /// certificate chain, and encrypted private key in an Amazon S3 bucket that only the
-        /// associated IAM role can access. The private key of the certificate is encrypted with
-        /// an AWS-managed KMS customer master (CMK) that has an attached attestation-based CMK
-        /// policy.
+        /// When the IAM role is associated with the ACM certificate, the certificate, certificate
+        /// chain, and encrypted private key are placed in an Amazon S3 bucket that only the associated
+        /// IAM role can access. The private key of the certificate is encrypted with an AWS-managed
+        /// KMS customer master (CMK) that has an attached attestation-based CMK policy.
         /// </para>
         ///  
         /// <para>
         /// To enable the IAM role to access the Amazon S3 object, you must grant it permission
         /// to call <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command.
         /// To enable the IAM role to access the AWS KMS CMK, you must grant it permission to
-        /// call <code>kms:Decrypt</code> on AWS KMS CMK returned by the command. For more information,
-        /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+        /// call <code>kms:Decrypt</code> on the AWS KMS CMK returned by the command. For more
+        /// information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
         /// Grant the role permission to access the certificate and encryption key</a> in the
         /// <i>AWS Nitro Enclaves User Guide</i>.
         /// </para>
@@ -3794,6 +3793,54 @@ namespace Amazon.EC2
         /// <returns>Returns a  CreatePlacementGroupResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         CreatePlacementGroupResponse EndCreatePlacementGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateReplaceRootVolumeTask
+
+
+        /// <summary>
+        /// Creates a root volume replacement task for an Amazon EC2 instance. The root volume
+        /// can either be restored to its initial launch state, or it can be restored using a
+        /// specific snapshot.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/">Replace a root volume</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplaceRootVolumeTask service method.</param>
+        /// 
+        /// <returns>The response from the CreateReplaceRootVolumeTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">REST API Reference for CreateReplaceRootVolumeTask Operation</seealso>
+        CreateReplaceRootVolumeTaskResponse CreateReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReplaceRootVolumeTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplaceRootVolumeTask operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReplaceRootVolumeTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">REST API Reference for CreateReplaceRootVolumeTask Operation</seealso>
+        IAsyncResult BeginCreateReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateReplaceRootVolumeTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReplaceRootVolumeTask.</param>
+        /// 
+        /// <returns>Returns a  CreateReplaceRootVolumeTaskResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">REST API Reference for CreateReplaceRootVolumeTask Operation</seealso>
+        CreateReplaceRootVolumeTaskResponse EndCreateReplaceRootVolumeTask(IAsyncResult asyncResult);
 
         #endregion
         
@@ -11723,6 +11770,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeReplaceRootVolumeTasks
+
+
+        /// <summary>
+        /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/">Replace
+        /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplaceRootVolumeTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplaceRootVolumeTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">REST API Reference for DescribeReplaceRootVolumeTasks Operation</seealso>
+        DescribeReplaceRootVolumeTasksResponse DescribeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplaceRootVolumeTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplaceRootVolumeTasks operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplaceRootVolumeTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">REST API Reference for DescribeReplaceRootVolumeTasks Operation</seealso>
+        IAsyncResult BeginDescribeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReplaceRootVolumeTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplaceRootVolumeTasks.</param>
+        /// 
+        /// <returns>Returns a  DescribeReplaceRootVolumeTasksResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">REST API Reference for DescribeReplaceRootVolumeTasks Operation</seealso>
+        DescribeReplaceRootVolumeTasksResponse EndDescribeReplaceRootVolumeTasks(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeReservedInstances
 
 
@@ -14729,6 +14817,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableSerialConsoleAccess
+
+
+        /// <summary>
+        /// Disables access to the EC2 serial console of all instances for your account. By default,
+        /// access to the EC2 serial console is disabled for your account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+        /// account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSerialConsoleAccess service method.</param>
+        /// 
+        /// <returns>The response from the DisableSerialConsoleAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess">REST API Reference for DisableSerialConsoleAccess Operation</seealso>
+        DisableSerialConsoleAccessResponse DisableSerialConsoleAccess(DisableSerialConsoleAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableSerialConsoleAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableSerialConsoleAccess operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableSerialConsoleAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess">REST API Reference for DisableSerialConsoleAccess Operation</seealso>
+        IAsyncResult BeginDisableSerialConsoleAccess(DisableSerialConsoleAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableSerialConsoleAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableSerialConsoleAccess.</param>
+        /// 
+        /// <returns>Returns a  DisableSerialConsoleAccessResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess">REST API Reference for DisableSerialConsoleAccess Operation</seealso>
+        DisableSerialConsoleAccessResponse EndDisableSerialConsoleAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableTransitGatewayRouteTablePropagation
 
 
@@ -15329,7 +15460,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// After you enable encryption by default, the EBS volumes that you create are are always
+        /// After you enable encryption by default, the EBS volumes that you create are always
         /// encrypted, either using the default CMK or the CMK that you specified when you created
         /// each volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -15435,6 +15566,49 @@ namespace Amazon.EC2
         /// <returns>Returns a  EnableFastSnapshotRestoresResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
         EnableFastSnapshotRestoresResponse EndEnableFastSnapshotRestores(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableSerialConsoleAccess
+
+
+        /// <summary>
+        /// Enables access to the EC2 serial console of all instances for your account. By default,
+        /// access to the EC2 serial console is disabled for your account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+        /// account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSerialConsoleAccess service method.</param>
+        /// 
+        /// <returns>The response from the EnableSerialConsoleAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">REST API Reference for EnableSerialConsoleAccess Operation</seealso>
+        EnableSerialConsoleAccessResponse EnableSerialConsoleAccess(EnableSerialConsoleAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableSerialConsoleAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableSerialConsoleAccess operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableSerialConsoleAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">REST API Reference for EnableSerialConsoleAccess Operation</seealso>
+        IAsyncResult BeginEnableSerialConsoleAccess(EnableSerialConsoleAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableSerialConsoleAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableSerialConsoleAccess.</param>
+        /// 
+        /// <returns>Returns a  EnableSerialConsoleAccessResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">REST API Reference for EnableSerialConsoleAccess Operation</seealso>
+        EnableSerialConsoleAccessResponse EndEnableSerialConsoleAccess(IAsyncResult asyncResult);
 
         #endregion
         
@@ -16572,6 +16746,49 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetReservedInstancesExchangeQuoteResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         GetReservedInstancesExchangeQuoteResponse EndGetReservedInstancesExchangeQuote(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSerialConsoleAccessStatus
+
+
+        /// <summary>
+        /// Retrieves the access status of your account to the EC2 serial console of all instances.
+        /// By default, access to the EC2 serial console is disabled for your account. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+        /// account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSerialConsoleAccessStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetSerialConsoleAccessStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">REST API Reference for GetSerialConsoleAccessStatus Operation</seealso>
+        GetSerialConsoleAccessStatusResponse GetSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSerialConsoleAccessStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSerialConsoleAccessStatus operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSerialConsoleAccessStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">REST API Reference for GetSerialConsoleAccessStatus Operation</seealso>
+        IAsyncResult BeginGetSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSerialConsoleAccessStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSerialConsoleAccessStatus.</param>
+        /// 
+        /// <returns>Returns a  GetSerialConsoleAccessStatusResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">REST API Reference for GetSerialConsoleAccessStatus Operation</seealso>
+        GetSerialConsoleAccessStatusResponse EndGetSerialConsoleAccessStatus(IAsyncResult asyncResult);
 
         #endregion
         

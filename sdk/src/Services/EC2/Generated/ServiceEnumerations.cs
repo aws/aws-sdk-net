@@ -9457,6 +9457,72 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type ReplaceRootVolumeTaskState.
+    /// </summary>
+    public class ReplaceRootVolumeTaskState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for ReplaceRootVolumeTaskState
+        /// </summary>
+        public static readonly ReplaceRootVolumeTaskState Failed = new ReplaceRootVolumeTaskState("failed");
+        /// <summary>
+        /// Constant FailedDetached for ReplaceRootVolumeTaskState
+        /// </summary>
+        public static readonly ReplaceRootVolumeTaskState FailedDetached = new ReplaceRootVolumeTaskState("failed-detached");
+        /// <summary>
+        /// Constant Failing for ReplaceRootVolumeTaskState
+        /// </summary>
+        public static readonly ReplaceRootVolumeTaskState Failing = new ReplaceRootVolumeTaskState("failing");
+        /// <summary>
+        /// Constant InProgress for ReplaceRootVolumeTaskState
+        /// </summary>
+        public static readonly ReplaceRootVolumeTaskState InProgress = new ReplaceRootVolumeTaskState("in-progress");
+        /// <summary>
+        /// Constant Pending for ReplaceRootVolumeTaskState
+        /// </summary>
+        public static readonly ReplaceRootVolumeTaskState Pending = new ReplaceRootVolumeTaskState("pending");
+        /// <summary>
+        /// Constant Succeeded for ReplaceRootVolumeTaskState
+        /// </summary>
+        public static readonly ReplaceRootVolumeTaskState Succeeded = new ReplaceRootVolumeTaskState("succeeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplaceRootVolumeTaskState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplaceRootVolumeTaskState FindValue(string value)
+        {
+            return FindValue<ReplaceRootVolumeTaskState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplaceRootVolumeTaskState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReportInstanceReasonCodes.
     /// </summary>
     public class ReportInstanceReasonCodes : ConstantClass
