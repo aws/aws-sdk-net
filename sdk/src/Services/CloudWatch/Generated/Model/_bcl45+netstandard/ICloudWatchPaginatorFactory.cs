@@ -54,5 +54,10 @@ namespace Amazon.CloudWatch.Model
         /// Paginator for ListMetrics operation
         ///</summary>
         IListMetricsPaginator ListMetrics(ListMetricsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMetricStreams operation
+        ///</summary>
+        IListMetricStreamsPaginator ListMetricStreams(ListMetricStreamsRequest request);
     }
 }

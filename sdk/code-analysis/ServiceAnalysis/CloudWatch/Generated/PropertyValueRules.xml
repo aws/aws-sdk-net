@@ -16,6 +16,11 @@
     <pattern>(SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DeleteMetricStreamRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.AlarmName</property>
     <min>1</min>
     <max>255</max>
@@ -121,6 +126,36 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetMetricStreamRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetMetricStreamResponse.Arn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetMetricStreamResponse.FirehoseArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetMetricStreamResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetMetricStreamResponse.OutputFormat</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetMetricStreamResponse.RoleArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListMetricsRequest.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -130,6 +165,11 @@
     <min>1</min>
     <max>255</max>
     <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ListMetricStreamsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListTagsForResourceRequest.ResourceARN</property>
@@ -241,6 +281,31 @@
     <min>1</min>
     <max>255</max>
     <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutMetricStreamRequest.FirehoseArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutMetricStreamRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutMetricStreamRequest.OutputFormat</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutMetricStreamRequest.RoleArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutMetricStreamResponse.Arn</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.SetAlarmStateRequest.AlarmName</property>
@@ -479,6 +544,32 @@
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricStat.Period</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricStreamEntry.Arn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricStreamEntry.FirehoseArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricStreamEntry.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricStreamEntry.OutputFormat</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricStreamFilter.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.Tag.Key</property>

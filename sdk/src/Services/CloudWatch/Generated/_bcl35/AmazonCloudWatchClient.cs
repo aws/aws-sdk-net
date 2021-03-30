@@ -536,6 +536,69 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DeleteMetricStream
+
+        /// <summary>
+        /// Permanently deletes the metric stream that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricStream service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMetricStream service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">REST API Reference for DeleteMetricStream Operation</seealso>
+        public virtual DeleteMetricStreamResponse DeleteMetricStream(DeleteMetricStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMetricStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMetricStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMetricStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricStream operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMetricStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">REST API Reference for DeleteMetricStream Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMetricStream(DeleteMetricStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMetricStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMetricStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMetricStream.</param>
+        /// 
+        /// <returns>Returns a  DeleteMetricStreamResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">REST API Reference for DeleteMetricStream Operation</seealso>
+        public virtual DeleteMetricStreamResponse EndDeleteMetricStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMetricStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAlarmHistory
 
         /// <summary>
@@ -1556,6 +1619,75 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetMetricStream
+
+        /// <summary>
+        /// Returns information about the metric stream that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricStream service method.</param>
+        /// 
+        /// <returns>The response from the GetMetricStream service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
+        /// Parameters were used together that cannot be used together.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream">REST API Reference for GetMetricStream Operation</seealso>
+        public virtual GetMetricStreamResponse GetMetricStream(GetMetricStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricStreamResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetricStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricStream operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMetricStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream">REST API Reference for GetMetricStream Operation</seealso>
+        public virtual IAsyncResult BeginGetMetricStream(GetMetricStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMetricStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetricStream.</param>
+        /// 
+        /// <returns>Returns a  GetMetricStreamResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream">REST API Reference for GetMetricStream Operation</seealso>
+        public virtual GetMetricStreamResponse EndGetMetricStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMetricStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetMetricWidgetImage
 
         /// <summary>
@@ -1817,6 +1949,72 @@ namespace Amazon.CloudWatch
         public virtual ListMetricsResponse EndListMetrics(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMetricsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMetricStreams
+
+        /// <summary>
+        /// Returns a list of metric streams in this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricStreams service method.</param>
+        /// 
+        /// <returns>The response from the ListMetricStreams service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">REST API Reference for ListMetricStreams Operation</seealso>
+        public virtual ListMetricStreamsResponse ListMetricStreams(ListMetricStreamsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetricStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMetricStreamsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMetricStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricStreams operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMetricStreams
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">REST API Reference for ListMetricStreams Operation</seealso>
+        public virtual IAsyncResult BeginListMetricStreams(ListMetricStreamsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetricStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricStreamsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMetricStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMetricStreams.</param>
+        /// 
+        /// <returns>Returns a  ListMetricStreamsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">REST API Reference for ListMetricStreams Operation</seealso>
+        public virtual ListMetricStreamsResponse EndListMetricStreams(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMetricStreamsResponse>(asyncResult);
         }
 
         #endregion
@@ -2267,8 +2465,8 @@ namespace Amazon.CloudWatch
         ///  </li> </ul> 
         /// <para>
         /// The first time you create an alarm in the AWS Management Console, the CLI, or by using
-        /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked rolea for
-        /// you. The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code>
+        /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
+        /// The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code>
         /// and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
         /// service-linked role</a>.
@@ -2457,6 +2655,111 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  PutMetricStream
+
+        /// <summary>
+        /// Creates or updates a metric stream. Metric streams can automatically stream CloudWatch
+        /// metrics to AWS destinations including Amazon S3 and to many third-party solutions.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html">
+        /// Using Metric Streams</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code>
+        /// permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
+        /// permission.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create or update a metric stream, you choose one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Stream metrics from all metric namespaces in the account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Stream metrics from all metric namespaces in the account, except for the namespaces
+        /// that you list in <code>ExcludeFilters</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Stream metrics from only the metric namespaces that you list in <code>IncludeFilters</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you use <code>PutMetricStream</code> to create a new metric stream, the stream
+        /// is created in the <code>running</code> state. If you use it to update an existing
+        /// stream, the state of the stream is not changed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricStream service method.</param>
+        /// 
+        /// <returns>The response from the PutMetricStream service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConcurrentModificationException">
+        /// More than one process tried to modify a resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
+        /// Parameters were used together that cannot be used together.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">REST API Reference for PutMetricStream Operation</seealso>
+        public virtual PutMetricStreamResponse PutMetricStream(PutMetricStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMetricStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMetricStreamResponseUnmarshaller.Instance;
+
+            return Invoke<PutMetricStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutMetricStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricStream operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMetricStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">REST API Reference for PutMetricStream Operation</seealso>
+        public virtual IAsyncResult BeginPutMetricStream(PutMetricStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMetricStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMetricStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutMetricStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMetricStream.</param>
+        /// 
+        /// <returns>Returns a  PutMetricStreamResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">REST API Reference for PutMetricStream Operation</seealso>
+        public virtual PutMetricStreamResponse EndPutMetricStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutMetricStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SetAlarmState
 
         /// <summary>
@@ -2537,6 +2840,132 @@ namespace Amazon.CloudWatch
         public virtual SetAlarmStateResponse EndSetAlarmState(IAsyncResult asyncResult)
         {
             return EndInvoke<SetAlarmStateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMetricStreams
+
+        /// <summary>
+        /// Starts the streaming of metrics for one or more of your metric streams.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMetricStreams service method.</param>
+        /// 
+        /// <returns>The response from the StartMetricStreams service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams">REST API Reference for StartMetricStreams Operation</seealso>
+        public virtual StartMetricStreamsResponse StartMetricStreams(StartMetricStreamsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetricStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetricStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<StartMetricStreamsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMetricStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMetricStreams operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMetricStreams
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams">REST API Reference for StartMetricStreams Operation</seealso>
+        public virtual IAsyncResult BeginStartMetricStreams(StartMetricStreamsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetricStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetricStreamsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMetricStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMetricStreams.</param>
+        /// 
+        /// <returns>Returns a  StartMetricStreamsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams">REST API Reference for StartMetricStreams Operation</seealso>
+        public virtual StartMetricStreamsResponse EndStartMetricStreams(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMetricStreamsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopMetricStreams
+
+        /// <summary>
+        /// Stops the streaming of metrics for one or more of your metric streams.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMetricStreams service method.</param>
+        /// 
+        /// <returns>The response from the StopMetricStreams service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">REST API Reference for StopMetricStreams Operation</seealso>
+        public virtual StopMetricStreamsResponse StopMetricStreams(StopMetricStreamsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopMetricStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMetricStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<StopMetricStreamsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopMetricStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopMetricStreams operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopMetricStreams
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">REST API Reference for StopMetricStreams Operation</seealso>
+        public virtual IAsyncResult BeginStopMetricStreams(StopMetricStreamsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopMetricStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMetricStreamsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopMetricStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopMetricStreams.</param>
+        /// 
+        /// <returns>Returns a  StopMetricStreamsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">REST API Reference for StopMetricStreams Operation</seealso>
+        public virtual StopMetricStreamsResponse EndStopMetricStreams(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopMetricStreamsResponse>(asyncResult);
         }
 
         #endregion
