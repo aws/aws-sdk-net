@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2InstanceConnect.Model
 {
     /// <summary>
-    /// This is the response object from the SendSSHPublicKey operation.
+    /// This is the response object from the SendSerialConsoleSSHPublicKey operation.
     /// </summary>
-    public partial class SendSSHPublicKeyResponse : AmazonWebServiceResponse
+    public partial class SendSerialConsoleSSHPublicKeyResponse : AmazonWebServiceResponse
     {
         private string _requestId;
         private bool? _success;

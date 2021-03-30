@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2InstanceConnect.Model
 {
     /// <summary>
-    /// Indicates you have been making requests too frequently and have been throttled. Wait
-    /// for a while and try again. If higher call volume is warranted contact AWS Support.
+    /// The requests were made too frequently and have been throttled. Wait a while and try
+    /// again. To increase the limit on your request frequency, contact AWS Support.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

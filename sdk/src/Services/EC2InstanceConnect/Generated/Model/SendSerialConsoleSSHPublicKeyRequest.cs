@@ -29,36 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2InstanceConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the SendSSHPublicKey operation.
-    /// Pushes an SSH public key to the specified EC2 instance for use by the specified user.
-    /// The key remains for 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect
-    /// to your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2 User Guide</i>.
+    /// Container for the parameters to the SendSerialConsoleSSHPublicKey operation.
+    /// Pushes an SSH public key to the specified EC2 instance. The key remains for 60 seconds,
+    /// which gives you 60 seconds to establish a serial console connection to the instance
+    /// using SSH. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2
+    /// Serial Console</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
-    public partial class SendSSHPublicKeyRequest : AmazonEC2InstanceConnectRequest
+    public partial class SendSerialConsoleSSHPublicKeyRequest : AmazonEC2InstanceConnectRequest
     {
-        private string _availabilityZone;
         private string _instanceId;
-        private string _instanceOSUser;
+        private int? _serialPort;
         private string _sshPublicKey;
-
-        /// <summary>
-        /// Gets and sets the property AvailabilityZone. 
-        /// <para>
-        /// The Availability Zone in which the EC2 instance was launched.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=32)]
-        public string AvailabilityZone
-        {
-            get { return this._availabilityZone; }
-            set { this._availabilityZone = value; }
-        }
-
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
-        {
-            return this._availabilityZone != null;
-        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -80,29 +61,34 @@ namespace Amazon.EC2InstanceConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceOSUser. 
+        /// Gets and sets the property SerialPort. 
         /// <para>
-        /// The OS user on the EC2 instance for whom the key can be used to authenticate.
+        /// The serial port of the EC2 instance. Currently only port 0 is supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 0
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string InstanceOSUser
+        [AWSProperty(Min=0, Max=0)]
+        public int SerialPort
         {
-            get { return this._instanceOSUser; }
-            set { this._instanceOSUser = value; }
+            get { return this._serialPort.GetValueOrDefault(); }
+            set { this._serialPort = value; }
         }
 
-        // Check to see if InstanceOSUser property is set
-        internal bool IsSetInstanceOSUser()
+        // Check to see if SerialPort property is set
+        internal bool IsSetSerialPort()
         {
-            return this._instanceOSUser != null;
+            return this._serialPort.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property SSHPublicKey. 
         /// <para>
         /// The public key material. To use the public key, you must have the matching private
-        /// key.
+        /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements
+        /// for key pairs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=256, Max=4096)]

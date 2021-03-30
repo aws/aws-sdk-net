@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2InstanceConnect.Model
 {
     /// <summary>
-    /// Indicates that either your AWS credentials are invalid or you do not have access to
-    /// the EC2 instance.
+    /// Either your AWS credentials are not valid or you do not have access to the EC2 instance.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

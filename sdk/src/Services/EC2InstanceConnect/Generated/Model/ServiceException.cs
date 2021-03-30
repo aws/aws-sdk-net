@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2InstanceConnect.Model
 {
     /// <summary>
-    /// Indicates that the service encountered an error. Follow the message's instructions
-    /// and try again.
+    /// The service encountered an error. Follow the instructions in the error message and
+    /// try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

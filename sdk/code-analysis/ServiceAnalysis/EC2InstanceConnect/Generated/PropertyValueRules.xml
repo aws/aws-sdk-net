@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.EC2InstanceConnect.Model.SendSerialConsoleSSHPublicKeyRequest.InstanceId</property>
+    <min>10</min>
+    <max>32</max>
+    <pattern>^i-[a-f0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2InstanceConnect.Model.SendSerialConsoleSSHPublicKeyRequest.SerialPort</property>
+    <min>0</min>
+    <max>0</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2InstanceConnect.Model.SendSerialConsoleSSHPublicKeyRequest.SSHPublicKey</property>
+    <min>256</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest.AvailabilityZone</property>
     <min>6</min>
     <max>32</max>

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2InstanceConnect.Model
 {
     /// <summary>
-    /// Indicates that the instance requested was not found in the given zone. Check that
-    /// you have provided a valid instance ID and the correct zone.
+    /// The specified instance was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,41 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2InstanceConnect.Model
 {
     /// <summary>
-    /// One of the parameters is not valid.
+    /// Unable to start a serial console session. Please try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class InvalidArgsException : AmazonEC2InstanceConnectException
+    public partial class SerialConsoleSessionUnavailableException : AmazonEC2InstanceConnectException
     {
 
         /// <summary>
-        /// Constructs a new InvalidArgsException with the specified error
+        /// Constructs a new SerialConsoleSessionUnavailableException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public InvalidArgsException(string message) 
+        public SerialConsoleSessionUnavailableException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of InvalidArgsException
+        /// Construct instance of SerialConsoleSessionUnavailableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public InvalidArgsException(string message, Exception innerException) 
+        public SerialConsoleSessionUnavailableException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidArgsException
+        /// Construct instance of SerialConsoleSessionUnavailableException
         /// </summary>
         /// <param name="innerException"></param>
-        public InvalidArgsException(Exception innerException) 
+        public SerialConsoleSessionUnavailableException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidArgsException
+        /// Construct instance of SerialConsoleSessionUnavailableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -71,30 +71,30 @@ namespace Amazon.EC2InstanceConnect.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidArgsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public SerialConsoleSessionUnavailableException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of InvalidArgsException
+        /// Construct instance of SerialConsoleSessionUnavailableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidArgsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public SerialConsoleSessionUnavailableException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the InvalidArgsException class with serialized data.
+        /// Constructs a new instance of the SerialConsoleSessionUnavailableException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected InvalidArgsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected SerialConsoleSessionUnavailableException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }
