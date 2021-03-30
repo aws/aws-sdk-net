@@ -36,15 +36,16 @@ namespace Amazon.ConfigService.Model
     {
         private ConformancePackComplianceType _complianceType;
         private string _configRuleName;
+        private List<string> _controls = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        /// Compliance of the AWS Config rule
+        /// Compliance of the AWS Config rule.
         /// </para>
         ///  
         /// <para>
-        /// The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+        /// The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
         /// </para>
         /// </summary>
         public ConformancePackComplianceType ComplianceType
@@ -76,6 +77,27 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigRuleName()
         {
             return this._configRuleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Controls. 
+        /// <para>
+        /// Controls for the conformance pack. A control is a process to prevent or detect problems
+        /// while meeting objectives. A control can align with a specific compliance regime or
+        /// map to internal controls defined by an organization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<string> Controls
+        {
+            get { return this._controls; }
+            set { this._controls = value; }
+        }
+
+        // Check to see if Controls property is set
+        internal bool IsSetControls()
+        {
+            return this._controls != null && this._controls.Count > 0; 
         }
 
     }

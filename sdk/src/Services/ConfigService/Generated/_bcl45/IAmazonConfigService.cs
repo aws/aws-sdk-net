@@ -1919,6 +1919,100 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DescribeAggregateComplianceByConformancePacks
+
+
+        /// <summary>
+        /// Returns a list of the conformance packs and their associated compliance status with
+        /// the count of compliant and noncompliant AWS Config rules within each conformance pack.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The results can return an empty result page, but if you have a <code>nextToken</code>,
+        /// the results are displayed on the next page.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateComplianceByConformancePacks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAggregateComplianceByConformancePacks service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">REST API Reference for DescribeAggregateComplianceByConformancePacks Operation</seealso>
+        DescribeAggregateComplianceByConformancePacksResponse DescribeAggregateComplianceByConformancePacks(DescribeAggregateComplianceByConformancePacksRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of the conformance packs and their associated compliance status with
+        /// the count of compliant and noncompliant AWS Config rules within each conformance pack.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The results can return an empty result page, but if you have a <code>nextToken</code>,
+        /// the results are displayed on the next page.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateComplianceByConformancePacks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAggregateComplianceByConformancePacks service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">REST API Reference for DescribeAggregateComplianceByConformancePacks Operation</seealso>
+        Task<DescribeAggregateComplianceByConformancePacksResponse> DescribeAggregateComplianceByConformancePacksAsync(DescribeAggregateComplianceByConformancePacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAggregationAuthorizations
 
 
@@ -4028,6 +4122,100 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
         Task<GetAggregateConfigRuleComplianceSummaryResponse> GetAggregateConfigRuleComplianceSummaryAsync(GetAggregateConfigRuleComplianceSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAggregateConformancePackComplianceSummary
+
+
+        /// <summary>
+        /// Returns the count of compliant and noncompliant conformance packs across all AWS Accounts
+        /// and AWS Regions. You can filter based on AWS Account ID or AWS Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The results can return an empty result page, but if you have a nextToken, the results
+        /// are displayed on the next page.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateConformancePackComplianceSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetAggregateConformancePackComplianceSummary service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">REST API Reference for GetAggregateConformancePackComplianceSummary Operation</seealso>
+        GetAggregateConformancePackComplianceSummaryResponse GetAggregateConformancePackComplianceSummary(GetAggregateConformancePackComplianceSummaryRequest request);
+
+
+
+        /// <summary>
+        /// Returns the count of compliant and noncompliant conformance packs across all AWS Accounts
+        /// and AWS Regions. You can filter based on AWS Account ID or AWS Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The results can return an empty result page, but if you have a nextToken, the results
+        /// are displayed on the next page.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateConformancePackComplianceSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAggregateConformancePackComplianceSummary service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">REST API Reference for GetAggregateConformancePackComplianceSummary Operation</seealso>
+        Task<GetAggregateConformancePackComplianceSummaryResponse> GetAggregateConformancePackComplianceSummaryAsync(GetAggregateConformancePackComplianceSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6978,7 +7166,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// You can create 6 conformance packs with 25 AWS Config rules in each pack and 3 delegated
+        /// You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated
         /// administrator per organization. 
         /// </para>
         ///  </note>
@@ -7166,7 +7354,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// You can create 6 conformance packs with 25 AWS Config rules in each pack and 3 delegated
+        /// You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated
         /// administrator per organization. 
         /// </para>
         ///  </note>

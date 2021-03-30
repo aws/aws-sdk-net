@@ -120,6 +120,17 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeAggregateComplianceByConformancePacksRequest.ConfigurationAggregatorName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeAggregateComplianceByConformancePacksRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DescribeAggregationAuthorizationsRequest.Limit</property>
     <min>0</min>
     <max>100</max>
@@ -273,6 +284,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.GetAggregateConfigRuleComplianceSummaryResponse.GroupByKey</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateConformancePackComplianceSummaryRequest.ConfigurationAggregatorName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateConformancePackComplianceSummaryRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateConformancePackComplianceSummaryResponse.GroupByKey</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -621,9 +648,53 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateComplianceByConformancePack.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateComplianceByConformancePack.AwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateComplianceByConformancePack.ConformancePackName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.AggregateComplianceCount.GroupName</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateConformancePackComplianceFilters.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateConformancePackComplianceFilters.AwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateConformancePackComplianceFilters.ConformancePackName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateConformancePackComplianceSummary.GroupName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateConformancePackComplianceSummaryFilters.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateConformancePackComplianceSummaryFilters.AwsRegion</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.AggregatedSourceStatus.AwsRegion</property>

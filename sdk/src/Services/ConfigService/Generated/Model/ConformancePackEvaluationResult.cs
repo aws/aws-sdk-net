@@ -64,7 +64,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ComplianceType. 
         /// <para>
         /// The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-        /// 
+        /// <code>INSUFFICIENT_DATA</code> is not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

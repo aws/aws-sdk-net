@@ -67,7 +67,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// You can create 6 conformance packs with 25 AWS Config rules in each pack and 3 delegated
+    /// You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated
     /// administrator per organization. 
     /// </para>
     ///  </note>
@@ -108,7 +108,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This field is optional.
+        /// This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
         /// </para>
         ///  </note>
         /// </summary>

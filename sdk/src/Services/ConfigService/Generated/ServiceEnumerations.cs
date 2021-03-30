@@ -25,6 +25,56 @@ namespace Amazon.ConfigService
 {
 
     /// <summary>
+    /// Constants used for properties of type AggregateConformancePackComplianceSummaryGroupKey.
+    /// </summary>
+    public class AggregateConformancePackComplianceSummaryGroupKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for AggregateConformancePackComplianceSummaryGroupKey
+        /// </summary>
+        public static readonly AggregateConformancePackComplianceSummaryGroupKey ACCOUNT_ID = new AggregateConformancePackComplianceSummaryGroupKey("ACCOUNT_ID");
+        /// <summary>
+        /// Constant AWS_REGION for AggregateConformancePackComplianceSummaryGroupKey
+        /// </summary>
+        public static readonly AggregateConformancePackComplianceSummaryGroupKey AWS_REGION = new AggregateConformancePackComplianceSummaryGroupKey("AWS_REGION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregateConformancePackComplianceSummaryGroupKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregateConformancePackComplianceSummaryGroupKey FindValue(string value)
+        {
+            return FindValue<AggregateConformancePackComplianceSummaryGroupKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregateConformancePackComplianceSummaryGroupKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AggregatedSourceStatusType.
     /// </summary>
     public class AggregatedSourceStatusType : ConstantClass
@@ -1494,6 +1544,10 @@ namespace Amazon.ConfigService
         /// Constant AWSCodePipelinePipeline for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCodePipelinePipeline = new ResourceType("AWS::CodePipeline::Pipeline");
+        /// <summary>
+        /// Constant AWSConfigConformancePackCompliance for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSConfigConformancePackCompliance = new ResourceType("AWS::Config::ConformancePackCompliance");
         /// <summary>
         /// Constant AWSConfigResourceCompliance for ResourceType
         /// </summary>

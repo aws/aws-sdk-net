@@ -1485,6 +1485,79 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DescribeAggregateComplianceByConformancePacks
+
+
+        /// <summary>
+        /// Returns a list of the conformance packs and their associated compliance status with
+        /// the count of compliant and noncompliant AWS Config rules within each conformance pack.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The results can return an empty result page, but if you have a <code>nextToken</code>,
+        /// the results are displayed on the next page.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateComplianceByConformancePacks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAggregateComplianceByConformancePacks service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">REST API Reference for DescribeAggregateComplianceByConformancePacks Operation</seealso>
+        DescribeAggregateComplianceByConformancePacksResponse DescribeAggregateComplianceByConformancePacks(DescribeAggregateComplianceByConformancePacksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAggregateComplianceByConformancePacks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateComplianceByConformancePacks operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAggregateComplianceByConformancePacks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">REST API Reference for DescribeAggregateComplianceByConformancePacks Operation</seealso>
+        IAsyncResult BeginDescribeAggregateComplianceByConformancePacks(DescribeAggregateComplianceByConformancePacksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAggregateComplianceByConformancePacks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAggregateComplianceByConformancePacks.</param>
+        /// 
+        /// <returns>Returns a  DescribeAggregateComplianceByConformancePacksResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">REST API Reference for DescribeAggregateComplianceByConformancePacks Operation</seealso>
+        DescribeAggregateComplianceByConformancePacksResponse EndDescribeAggregateComplianceByConformancePacks(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeAggregationAuthorizations
 
 
@@ -3178,6 +3251,79 @@ namespace Amazon.ConfigService
         /// <returns>Returns a  GetAggregateConfigRuleComplianceSummaryResult from ConfigService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
         GetAggregateConfigRuleComplianceSummaryResponse EndGetAggregateConfigRuleComplianceSummary(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAggregateConformancePackComplianceSummary
+
+
+        /// <summary>
+        /// Returns the count of compliant and noncompliant conformance packs across all AWS Accounts
+        /// and AWS Regions. You can filter based on AWS Account ID or AWS Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The results can return an empty result page, but if you have a nextToken, the results
+        /// are displayed on the next page.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateConformancePackComplianceSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetAggregateConformancePackComplianceSummary service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">REST API Reference for GetAggregateConformancePackComplianceSummary Operation</seealso>
+        GetAggregateConformancePackComplianceSummaryResponse GetAggregateConformancePackComplianceSummary(GetAggregateConformancePackComplianceSummaryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAggregateConformancePackComplianceSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateConformancePackComplianceSummary operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAggregateConformancePackComplianceSummary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">REST API Reference for GetAggregateConformancePackComplianceSummary Operation</seealso>
+        IAsyncResult BeginGetAggregateConformancePackComplianceSummary(GetAggregateConformancePackComplianceSummaryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAggregateConformancePackComplianceSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAggregateConformancePackComplianceSummary.</param>
+        /// 
+        /// <returns>Returns a  GetAggregateConformancePackComplianceSummaryResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">REST API Reference for GetAggregateConformancePackComplianceSummary Operation</seealso>
+        GetAggregateConformancePackComplianceSummaryResponse EndGetAggregateConformancePackComplianceSummary(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5351,7 +5497,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// You can create 6 conformance packs with 25 AWS Config rules in each pack and 3 delegated
+        /// You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated
         /// administrator per organization. 
         /// </para>
         ///  </note>

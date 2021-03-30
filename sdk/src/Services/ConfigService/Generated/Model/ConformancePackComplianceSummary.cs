@@ -39,8 +39,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConformancePackComplianceStatus. 
         /// <para>
-        /// The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
-        /// 
+        /// The status of the conformance pack. The allowed values are <code>COMPLIANT</code>,
+        /// <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -153,11 +153,11 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// To record all configuration changes, you must set the <code>allSupported</code> option
-        /// to <code>false</code>.
+        /// to <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you set this option to <code>true</code>, when AWS Config adds support for a new
+        /// If you set this option to <code>false</code>, when AWS Config adds support for a new
         /// type of resource, it will not record resources of that type unless you manually add
         /// that type to your recording group.
         /// </para>

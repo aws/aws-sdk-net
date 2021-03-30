@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConformancePackRuleCompliance Object
+    /// Response Unmarshaller for AggregateConformancePackComplianceSummary Object
     /// </summary>  
-    public class ConformancePackRuleComplianceUnmarshaller : IUnmarshaller<ConformancePackRuleCompliance, XmlUnmarshallerContext>, IUnmarshaller<ConformancePackRuleCompliance, JsonUnmarshallerContext>
+    public class AggregateConformancePackComplianceSummaryUnmarshaller : IUnmarshaller<AggregateConformancePackComplianceSummary, XmlUnmarshallerContext>, IUnmarshaller<AggregateConformancePackComplianceSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConformancePackRuleCompliance IUnmarshaller<ConformancePackRuleCompliance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AggregateConformancePackComplianceSummary IUnmarshaller<AggregateConformancePackComplianceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConformancePackRuleCompliance Unmarshall(JsonUnmarshallerContext context)
+        public AggregateConformancePackComplianceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConformancePackRuleCompliance unmarshalledObject = new ConformancePackRuleCompliance();
+            AggregateConformancePackComplianceSummary unmarshalledObject = new AggregateConformancePackComplianceSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ComplianceType", targetDepth))
+                if (context.TestExpression("ComplianceSummary", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComplianceType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AggregateConformancePackComplianceCountUnmarshaller.Instance;
+                    unmarshalledObject.ComplianceSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConfigRuleName", targetDepth))
+                if (context.TestExpression("GroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigRuleName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Controls", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Controls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConformancePackRuleComplianceUnmarshaller _instance = new ConformancePackRuleComplianceUnmarshaller();        
+        private static AggregateConformancePackComplianceSummaryUnmarshaller _instance = new AggregateConformancePackComplianceSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConformancePackRuleComplianceUnmarshaller Instance
+        public static AggregateConformancePackComplianceSummaryUnmarshaller Instance
         {
             get
             {
