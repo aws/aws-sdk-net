@@ -43,11 +43,13 @@ namespace Amazon.Pinpoint.Model
         private string _name;
         private QuietTime _quietTime;
         private string _refreshFrequency;
+        private bool? _refreshOnSegmentUpdate;
         private JourneySchedule _schedule;
         private string _startActivity;
         private StartCondition _startCondition;
         private State _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private bool? _waitForQuietTime;
 
         /// <summary>
         /// Gets and sets the property Activities. 
@@ -259,6 +261,24 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RefreshOnSegmentUpdate. 
+        /// <para>
+        /// Specifies whether a journey should be refreshed on segment update.
+        /// </para>
+        /// </summary>
+        public bool RefreshOnSegmentUpdate
+        {
+            get { return this._refreshOnSegmentUpdate.GetValueOrDefault(); }
+            set { this._refreshOnSegmentUpdate = value; }
+        }
+
+        // Check to see if RefreshOnSegmentUpdate property is set
+        internal bool IsSetRefreshOnSegmentUpdate()
+        {
+            return this._refreshOnSegmentUpdate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
         /// The schedule settings for the journey.
@@ -378,6 +398,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WaitForQuietTime. 
+        /// <para>
+        /// Specifies whether endpoints in quiet hours should enter a wait till the end of their
+        /// quiet hours.
+        /// </para>
+        /// </summary>
+        public bool WaitForQuietTime
+        {
+            get { return this._waitForQuietTime.GetValueOrDefault(); }
+            set { this._waitForQuietTime = value; }
+        }
+
+        // Check to see if WaitForQuietTime property is set
+        internal bool IsSetWaitForQuietTime()
+        {
+            return this._waitForQuietTime.HasValue; 
         }
 
     }

@@ -76,6 +76,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointReentryCap = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointReentryInterval", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointReentryInterval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MessagesPerSecond", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

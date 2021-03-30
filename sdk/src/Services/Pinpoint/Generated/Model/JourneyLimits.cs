@@ -36,6 +36,7 @@ namespace Amazon.Pinpoint.Model
     {
         private int? _dailyCap;
         private int? _endpointReentryCap;
+        private string _endpointReentryInterval;
         private int? _messagesPerSecond;
 
         /// <summary>
@@ -75,6 +76,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetEndpointReentryCap()
         {
             return this._endpointReentryCap.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointReentryInterval. 
+        /// <para>
+        /// Minimum time that must pass before an endpoint can re-enter a given journey. The duration
+        /// should use an ISO 8601 format, such as PT1H. 
+        /// </para>
+        /// </summary>
+        public string EndpointReentryInterval
+        {
+            get { return this._endpointReentryInterval; }
+            set { this._endpointReentryInterval = value; }
+        }
+
+        // Check to see if EndpointReentryInterval property is set
+        internal bool IsSetEndpointReentryInterval()
+        {
+            return this._endpointReentryInterval != null;
         }
 
         /// <summary>

@@ -1204,6 +1204,10 @@ namespace Amazon.Pinpoint
         /// Constant DRAFT for State
         /// </summary>
         public static readonly State DRAFT = new State("DRAFT");
+        /// <summary>
+        /// Constant PAUSED for State
+        /// </summary>
+        public static readonly State PAUSED = new State("PAUSED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

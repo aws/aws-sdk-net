@@ -57,6 +57,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EndpointReentryCap);
             }
 
+            if(requestObject.IsSetEndpointReentryInterval())
+            {
+                context.Writer.WritePropertyName("EndpointReentryInterval");
+                context.Writer.Write(requestObject.EndpointReentryInterval);
+            }
+
             if(requestObject.IsSetMessagesPerSecond())
             {
                 context.Writer.WritePropertyName("MessagesPerSecond");

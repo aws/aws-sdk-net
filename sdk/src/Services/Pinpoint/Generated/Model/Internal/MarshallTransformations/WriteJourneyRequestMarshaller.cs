@@ -116,6 +116,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RefreshFrequency);
             }
 
+            if(requestObject.IsSetRefreshOnSegmentUpdate())
+            {
+                context.Writer.WritePropertyName("RefreshOnSegmentUpdate");
+                context.Writer.Write(requestObject.RefreshOnSegmentUpdate);
+            }
+
             if(requestObject.IsSetSchedule())
             {
                 context.Writer.WritePropertyName("Schedule");
@@ -148,6 +154,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("State");
                 context.Writer.Write(requestObject.State);
+            }
+
+            if(requestObject.IsSetWaitForQuietTime())
+            {
+                context.Writer.WritePropertyName("WaitForQuietTime");
+                context.Writer.Write(requestObject.WaitForQuietTime);
             }
 
         }

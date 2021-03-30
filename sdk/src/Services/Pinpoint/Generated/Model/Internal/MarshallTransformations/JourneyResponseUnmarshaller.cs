@@ -124,6 +124,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.RefreshFrequency = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RefreshOnSegmentUpdate", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RefreshOnSegmentUpdate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Schedule", targetDepth))
                 {
                     var unmarshaller = JourneyScheduleUnmarshaller.Instance;
@@ -152,6 +158,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WaitForQuietTime", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.WaitForQuietTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
