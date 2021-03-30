@@ -66,6 +66,7 @@ namespace Amazon.FraudDetector.Model
         /// Timestamp of when the model was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=11, Max=30)]
         public string CreatedTime
         {
             get { return this._createdTime; }
@@ -121,6 +122,7 @@ namespace Amazon.FraudDetector.Model
         /// Timestamp of last time the model was updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=11, Max=30)]
         public string LastUpdatedTime
         {
             get { return this._lastUpdatedTime; }

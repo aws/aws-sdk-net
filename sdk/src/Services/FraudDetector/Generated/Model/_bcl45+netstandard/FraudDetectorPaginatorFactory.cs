@@ -44,6 +44,14 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
+        /// Paginator for GetBatchPredictionJobs operation
+        ///</summary>
+        public IGetBatchPredictionJobsPaginator GetBatchPredictionJobs(GetBatchPredictionJobsRequest request) 
+        {
+            return new GetBatchPredictionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetDetectors operation
         ///</summary>
         public IGetDetectorsPaginator GetDetectors(GetDetectorsRequest request) 

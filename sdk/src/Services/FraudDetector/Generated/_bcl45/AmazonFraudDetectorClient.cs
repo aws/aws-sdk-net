@@ -395,6 +395,138 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  CancelBatchPredictionJob
+
+
+        /// <summary>
+        /// Cancels the specified batch prediction job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelBatchPredictionJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelBatchPredictionJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob">REST API Reference for CancelBatchPredictionJob Operation</seealso>
+        public virtual CancelBatchPredictionJobResponse CancelBatchPredictionJob(CancelBatchPredictionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelBatchPredictionJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelBatchPredictionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels the specified batch prediction job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelBatchPredictionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelBatchPredictionJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob">REST API Reference for CancelBatchPredictionJob Operation</seealso>
+        public virtual Task<CancelBatchPredictionJobResponse> CancelBatchPredictionJobAsync(CancelBatchPredictionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelBatchPredictionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelBatchPredictionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateBatchPredictionJob
+
+
+        /// <summary>
+        /// Creates a batch prediction job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchPredictionJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateBatchPredictionJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob">REST API Reference for CreateBatchPredictionJob Operation</seealso>
+        public virtual CreateBatchPredictionJobResponse CreateBatchPredictionJob(CreateBatchPredictionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBatchPredictionJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBatchPredictionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a batch prediction job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchPredictionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBatchPredictionJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob">REST API Reference for CreateBatchPredictionJob Operation</seealso>
+        public virtual Task<CreateBatchPredictionJobResponse> CreateBatchPredictionJobAsync(CreateBatchPredictionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBatchPredictionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateBatchPredictionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDetectorVersion
 
 
@@ -736,6 +868,75 @@ namespace Amazon.FraudDetector
             options.ResponseUnmarshaller = CreateVariableResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateVariableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBatchPredictionJob
+
+
+        /// <summary>
+        /// Deletes a batch prediction job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBatchPredictionJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBatchPredictionJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchPredictionJob">REST API Reference for DeleteBatchPredictionJob Operation</seealso>
+        public virtual DeleteBatchPredictionJobResponse DeleteBatchPredictionJob(DeleteBatchPredictionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBatchPredictionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBatchPredictionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a batch prediction job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBatchPredictionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBatchPredictionJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchPredictionJob">REST API Reference for DeleteBatchPredictionJob Operation</seealso>
+        public virtual Task<DeleteBatchPredictionJobResponse> DeleteBatchPredictionJobAsync(DeleteBatchPredictionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBatchPredictionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteBatchPredictionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2392,6 +2593,83 @@ namespace Amazon.FraudDetector
             options.ResponseUnmarshaller = DescribeModelVersionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeModelVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBatchPredictionJobs
+
+
+        /// <summary>
+        /// Gets all batch prediction jobs or a specific job if you specify a job ID. This is
+        /// a paginated API. If you provide a null maxResults, this action retrieves a maximum
+        /// of 50 records per page. If you provide a maxResults, the value must be between 1 and
+        /// 50. To get the next page results, provide the pagination token from the GetBatchPredictionJobsResponse
+        /// as part of your request. A null pagination token fetches the records from the beginning.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBatchPredictionJobs service method.</param>
+        /// 
+        /// <returns>The response from the GetBatchPredictionJobs service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchPredictionJobs">REST API Reference for GetBatchPredictionJobs Operation</seealso>
+        public virtual GetBatchPredictionJobsResponse GetBatchPredictionJobs(GetBatchPredictionJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBatchPredictionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBatchPredictionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<GetBatchPredictionJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets all batch prediction jobs or a specific job if you specify a job ID. This is
+        /// a paginated API. If you provide a null maxResults, this action retrieves a maximum
+        /// of 50 records per page. If you provide a maxResults, the value must be between 1 and
+        /// 50. To get the next page results, provide the pagination token from the GetBatchPredictionJobsResponse
+        /// as part of your request. A null pagination token fetches the records from the beginning.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBatchPredictionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBatchPredictionJobs service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchPredictionJobs">REST API Reference for GetBatchPredictionJobs Operation</seealso>
+        public virtual Task<GetBatchPredictionJobsResponse> GetBatchPredictionJobsAsync(GetBatchPredictionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBatchPredictionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBatchPredictionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBatchPredictionJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion

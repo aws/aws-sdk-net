@@ -81,6 +81,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("FraudDetector")]
+        public void GetBatchPredictionJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetBatchPredictionJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetBatchPredictionJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetBatchPredictionJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetBatchPredictionJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetBatchPredictionJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetBatchPredictionJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetBatchPredictionJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetBatchPredictionJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetBatchPredictionJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetBatchPredictionJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
         public void GetDetectorsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<GetDetectorsRequest>();

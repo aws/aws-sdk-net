@@ -82,6 +82,7 @@ namespace Amazon.FraudDetector.Model
         /// Timestamp of when the detector version was last updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=11, Max=30)]
         public string LastUpdatedTime
         {
             get { return this._lastUpdatedTime; }

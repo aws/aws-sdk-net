@@ -376,6 +376,139 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  CancelBatchPredictionJob
+
+        /// <summary>
+        /// Cancels the specified batch prediction job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelBatchPredictionJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelBatchPredictionJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob">REST API Reference for CancelBatchPredictionJob Operation</seealso>
+        public virtual CancelBatchPredictionJobResponse CancelBatchPredictionJob(CancelBatchPredictionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelBatchPredictionJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelBatchPredictionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelBatchPredictionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelBatchPredictionJob operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelBatchPredictionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob">REST API Reference for CancelBatchPredictionJob Operation</seealso>
+        public virtual IAsyncResult BeginCancelBatchPredictionJob(CancelBatchPredictionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelBatchPredictionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelBatchPredictionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelBatchPredictionJob.</param>
+        /// 
+        /// <returns>Returns a  CancelBatchPredictionJobResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob">REST API Reference for CancelBatchPredictionJob Operation</seealso>
+        public virtual CancelBatchPredictionJobResponse EndCancelBatchPredictionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelBatchPredictionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateBatchPredictionJob
+
+        /// <summary>
+        /// Creates a batch prediction job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchPredictionJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateBatchPredictionJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob">REST API Reference for CreateBatchPredictionJob Operation</seealso>
+        public virtual CreateBatchPredictionJobResponse CreateBatchPredictionJob(CreateBatchPredictionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBatchPredictionJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBatchPredictionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBatchPredictionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchPredictionJob operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBatchPredictionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob">REST API Reference for CreateBatchPredictionJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateBatchPredictionJob(CreateBatchPredictionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBatchPredictionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBatchPredictionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBatchPredictionJob.</param>
+        /// 
+        /// <returns>Returns a  CreateBatchPredictionJobResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob">REST API Reference for CreateBatchPredictionJob Operation</seealso>
+        public virtual CreateBatchPredictionJobResponse EndCreateBatchPredictionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBatchPredictionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDetectorVersion
 
         /// <summary>
@@ -712,6 +845,74 @@ namespace Amazon.FraudDetector
         public virtual CreateVariableResponse EndCreateVariable(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVariableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBatchPredictionJob
+
+        /// <summary>
+        /// Deletes a batch prediction job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBatchPredictionJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBatchPredictionJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchPredictionJob">REST API Reference for DeleteBatchPredictionJob Operation</seealso>
+        public virtual DeleteBatchPredictionJobResponse DeleteBatchPredictionJob(DeleteBatchPredictionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBatchPredictionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBatchPredictionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBatchPredictionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBatchPredictionJob operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBatchPredictionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchPredictionJob">REST API Reference for DeleteBatchPredictionJob Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBatchPredictionJob(DeleteBatchPredictionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBatchPredictionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBatchPredictionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBatchPredictionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBatchPredictionJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteBatchPredictionJobResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchPredictionJob">REST API Reference for DeleteBatchPredictionJob Operation</seealso>
+        public virtual DeleteBatchPredictionJobResponse EndDeleteBatchPredictionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBatchPredictionJobResponse>(asyncResult);
         }
 
         #endregion
@@ -2009,6 +2210,78 @@ namespace Amazon.FraudDetector
         public virtual DescribeModelVersionsResponse EndDescribeModelVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeModelVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBatchPredictionJobs
+
+        /// <summary>
+        /// Gets all batch prediction jobs or a specific job if you specify a job ID. This is
+        /// a paginated API. If you provide a null maxResults, this action retrieves a maximum
+        /// of 50 records per page. If you provide a maxResults, the value must be between 1 and
+        /// 50. To get the next page results, provide the pagination token from the GetBatchPredictionJobsResponse
+        /// as part of your request. A null pagination token fetches the records from the beginning.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBatchPredictionJobs service method.</param>
+        /// 
+        /// <returns>The response from the GetBatchPredictionJobs service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchPredictionJobs">REST API Reference for GetBatchPredictionJobs Operation</seealso>
+        public virtual GetBatchPredictionJobsResponse GetBatchPredictionJobs(GetBatchPredictionJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBatchPredictionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBatchPredictionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<GetBatchPredictionJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBatchPredictionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBatchPredictionJobs operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBatchPredictionJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchPredictionJobs">REST API Reference for GetBatchPredictionJobs Operation</seealso>
+        public virtual IAsyncResult BeginGetBatchPredictionJobs(GetBatchPredictionJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBatchPredictionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBatchPredictionJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBatchPredictionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBatchPredictionJobs.</param>
+        /// 
+        /// <returns>Returns a  GetBatchPredictionJobsResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchPredictionJobs">REST API Reference for GetBatchPredictionJobs Operation</seealso>
+        public virtual GetBatchPredictionJobsResponse EndGetBatchPredictionJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBatchPredictionJobsResponse>(asyncResult);
         }
 
         #endregion
