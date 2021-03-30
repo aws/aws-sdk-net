@@ -36,12 +36,14 @@ namespace Amazon.Runtime.Internal
         private Logger _logger;
         private LruCache<string, IList<DiscoveryEndpointBase>> _cache;
         private object objectCacheLock = new object();
+        private const int _cacheKeyValidityInSeconds = 3600;
 
         protected EndpointDiscoveryResolverBase(IClientConfig config, Logger logger)
         {
             _config = config;
             _logger = logger;
             _cache = new LruCache<string, IList<DiscoveryEndpointBase>>(config.EndpointDiscoveryCacheLimit);
+
         }
 
         /// <summary>
@@ -54,6 +56,9 @@ namespace Amazon.Runtime.Internal
         {
             //Build the cacheKey
             var cacheKey = BuildEndpointDiscoveryCacheKey(context);
+
+            //Evict cache keys that more than 1 hour old.
+            _cache.EvictExpiredLRUListItems(_cacheKeyValidityInSeconds);
 
             //Check / cleanup the cache            
             var refreshCache = false;

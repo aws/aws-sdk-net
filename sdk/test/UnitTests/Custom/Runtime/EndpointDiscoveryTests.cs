@@ -28,6 +28,8 @@ using Amazon.Runtime.Internal.Transform;
 using AWSSDK_DotNet35.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ExecutionContext = Amazon.Runtime.Internal.ExecutionContext;
+using Amazon.Runtime.Internal.Util;
+using System.Reflection;
 
 namespace AWSSDK.UnitTests
 {
@@ -312,6 +314,50 @@ namespace AWSSDK.UnitTests
 
             //Verify the endpoint has not been touched by the endpoint discovery resolver
             Assert.IsNull(executionContext.RequestContext.Request.Endpoint);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void CacheEvictionTestUsingEndpointDiscoveryCallStack()
+        {
+            var oldUtcNowSource = GetUtcNowSource();
+            var currentDateTime = new DateTime(2021, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            try
+            {
+                SetUtcNowSource(() => currentDateTime);
+
+                var config = SetupConfig();
+                var client = new EndpointDiscoveryTestClient(config);
+                var executionContext = CreateExecutionContext(client, config, true, null);
+                EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+
+                Assert.AreEqual(1, client.CacheCount);
+
+                // Jump in the future so the endpoint we just cached will be evicted the next time we do discovery
+                SetUtcNowSource(() => currentDateTime.AddDays(1));
+                executionContext.RequestContext.ImmutableCredentials = new ImmutableCredentials("AWS_ACCESS_KEY_ID" + "2", "test2", "test2");
+                EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+
+                // First endpoint should be evicted, leaving us with only the second one
+                Assert.AreEqual(1, client.CacheCount);
+            }
+            finally
+            {
+                SetUtcNowSource(oldUtcNowSource);
+            }
+        }
+
+        private static Func<DateTime> GetUtcNowSource()
+        {
+            var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
+            return (Func<DateTime>)field.GetValue(null);
+        }
+
+        private static void SetUtcNowSource(Func<DateTime> source)
+        {
+            var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
+            field.SetValue(null, source);
         }
 
         private ExecutionContext CreateExecutionContext(EndpointDiscoveryTestClient client, AmazonDynamoDBConfig config,

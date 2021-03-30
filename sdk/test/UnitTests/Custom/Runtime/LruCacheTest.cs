@@ -16,6 +16,7 @@ using System;
 using Amazon.Runtime.Internal.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon;
+using System.Reflection;
 
 namespace AWSSDK.UnitTests
 {
@@ -106,6 +107,82 @@ namespace AWSSDK.UnitTests
 
             var found = lru.TryGetValue("my-bucket-us-west-2", out regionEndpoint);
             Assert.IsFalse(found, "Cache entry was not evicted");
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestFindOldestItem()
+        {
+            var cache = new LruCache<string, string>(10);
+            cache.AddOrUpdate("key1", "value1");
+            cache.AddOrUpdate("key2", "value2");
+            cache.AddOrUpdate("key3", "value3");
+
+            // current order: key1 -> key2 -> key3
+            Assert.AreEqual("key1", cache.FindOldestItem().Key);
+
+            cache.AddOrUpdate("key1", "value1Updated");
+
+            // current order: key2 -> key3 -> key1
+            Assert.AreEqual("key2", cache.FindOldestItem().Key);
+
+            cache.Evict("key2");
+
+            // current order: key3 -> key1
+            Assert.AreEqual("key3", cache.FindOldestItem().Key);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestEvictExpiredLRUListItems()
+        {
+            var oldUtcNowSource = GetUtcNowSource();
+            var currentDateTime = new DateTime(2021, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            try
+            {
+                var cache = new LruCache<string, string>(10);
+
+                //0th second
+                SetUtcNowSource(() => currentDateTime);
+                cache.AddOrUpdate("key1", "value1");
+
+                //5th second
+                SetUtcNowSource(() => currentDateTime.AddSeconds(5));
+                cache.AddOrUpdate("key2", "value2");
+
+                //10th second
+                SetUtcNowSource(() => currentDateTime.AddSeconds(10));
+                cache.AddOrUpdate("key3", "value3");
+
+                //16th second
+                SetUtcNowSource(() => currentDateTime.AddSeconds(16));
+
+                //Evict cache keys that are more than 10 seconds old
+                cache.EvictExpiredLRUListItems(10);
+
+                AssertNotInCache(cache, "key1");
+                AssertNotInCache(cache, "key2");
+                AssertInCache(cache, "key3", "value3");
+            }
+            finally
+            {
+                SetUtcNowSource(oldUtcNowSource);
+            }
+        }
+
+        private static Func<DateTime> GetUtcNowSource()
+        {
+            var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
+            return (Func<DateTime>)field.GetValue(null);
+        }
+
+        private static void SetUtcNowSource(Func<DateTime> source)
+        {
+            var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
+            field.SetValue(null, source);
         }
 
         private LruCache<string, string> GetCache(int maxItems, int count)

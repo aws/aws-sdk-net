@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 
@@ -67,6 +68,43 @@ namespace Amazon.Runtime.Internal.Util
             MaxEntries = maxEntries;
             cache = new Dictionary<TKey, LruListItem<TKey, TValue>>();
             lruList = new LruList<TKey, TValue>();
+        }
+
+        /// <summary>
+        /// Returns the least recently used item if it exists.
+        /// </summary>
+        /// <returns>The item that is least recently used or the default value of the LruListItem class if the LRU cache is empty.</returns>
+        public LruListItem<TKey, TValue> FindOldestItem()
+        {
+            lock (cacheLock)
+            {
+                var item = default(LruListItem<TKey, TValue>);
+                if (lruList.Tail != null)
+                    item = lruList.Tail;
+                return item;
+            }
+        }
+        
+        /// <summary>
+        /// Method to evict expired LRUListItems.
+        /// </summary>
+        /// <param name="validityInSeconds">Number of seconds the LRUListItems are valid for.</param>
+        public void EvictExpiredLRUListItems(int validityInSeconds)
+        {
+            lock (cacheLock)
+            {
+                while (Count != 0)
+                {
+                    var item = FindOldestItem();
+#pragma warning disable CS0618 // Type or member is obsolete
+                    var timeSpan = AWSSDKUtils.CorrectedUtcNow - item.LastTouchedTimestamp;
+#pragma warning restore CS0618 // Type or member is obsolete
+                    if (timeSpan.TotalSeconds > validityInSeconds)
+                        Evict(item.Key);
+                    else
+                        break;
+                }
+            }
         }
 
         /// <summary>
@@ -202,6 +240,9 @@ namespace Amazon.Runtime.Internal.Util
                 item.Previous = null;
                 Head = item;
             }
+#pragma warning disable CS0618 // Type or member is obsolete
+            item.LastTouchedTimestamp = AWSSDKUtils.CorrectedUtcNow;
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         public void Remove(LruListItem<TKey, TValue> item)
@@ -268,6 +309,7 @@ namespace Amazon.Runtime.Internal.Util
     {
         public TValue Value { get; set; }
         public TKey Key { get; private set; }
+        internal DateTime LastTouchedTimestamp { get; set; }
         public LruListItem<TKey, TValue> Next { get; set; }
         public LruListItem<TKey, TValue> Previous { get; set; }
 
