@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxAutoMLJobRuntimeInSeconds. 
         /// <para>
         /// The maximum time, in seconds, an AutoML job is allowed to wait for a trial to complete.
-        /// It must be equal to or greater than MaxRuntimePerTrainingJobInSeconds.
+        /// It must be equal to or greater than <code>MaxRuntimePerTrainingJobInSeconds</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

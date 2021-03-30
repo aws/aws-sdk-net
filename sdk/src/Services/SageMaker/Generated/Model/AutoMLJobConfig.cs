@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A collection of settings used for a job.
+    /// A collection of settings used for an AutoML job.
     /// </summary>
     public partial class AutoMLJobConfig
     {
@@ -39,7 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompletionCriteria. 
         /// <para>
-        /// How long a job is allowed to run, or how many candidates a job is allowed to generate.
+        /// How long an AutoML job is allowed to run, or how many candidates a job is allowed
+        /// to generate.
         /// </para>
         /// </summary>
         public AutoMLJobCompletionCriteria CompletionCriteria

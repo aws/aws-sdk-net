@@ -29,30 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAutoMLJob operation.
-    /// Returns information about an Amazon SageMaker AutoML job.
+    /// The reason for a partial failure of an AutoML job.
     /// </summary>
-    public partial class DescribeAutoMLJobRequest : AmazonSageMakerRequest
+    public partial class AutoMLPartialFailureReason
     {
-        private string _autoMLJobName;
+        private string _partialFailureMessage;
 
         /// <summary>
-        /// Gets and sets the property AutoMLJobName. 
+        /// Gets and sets the property PartialFailureMessage. 
         /// <para>
-        /// Requests information about an AutoML job using its unique name.
+        /// The message containing the reason for a partial failure of an AutoML job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string AutoMLJobName
+        [AWSProperty(Max=1024)]
+        public string PartialFailureMessage
         {
-            get { return this._autoMLJobName; }
-            set { this._autoMLJobName = value; }
+            get { return this._partialFailureMessage; }
+            set { this._partialFailureMessage = value; }
         }
 
-        // Check to see if AutoMLJobName property is set
-        internal bool IsSetAutoMLJobName()
+        // Check to see if PartialFailureMessage property is set
+        internal bool IsSetPartialFailureMessage()
         {
-            return this._autoMLJobName != null;
+            return this._partialFailureMessage != null;
         }
 
     }

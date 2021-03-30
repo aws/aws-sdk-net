@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Similar to Channel. A channel is a named input source that training algorithms can
-    /// consume. Refer to Channel for detailed descriptions.
+    /// A channel is a named input source that training algorithms can consume. For more information,
+    /// see .
     /// </summary>
     public partial class AutoMLChannel
     {
@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompressionType. 
         /// <para>
-        /// You can use Gzip or None. The default value is None.
+        /// You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
         /// </para>
         /// </summary>
         public CompressionType CompressionType
@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The data source.
+        /// The data source for an AutoML channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TargetAttributeName. 
         /// <para>
-        /// The name of the target variable in supervised learning, a.k.a. 'y'.
+        /// The name of the target variable in supervised learning, usually represented by 'y'.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

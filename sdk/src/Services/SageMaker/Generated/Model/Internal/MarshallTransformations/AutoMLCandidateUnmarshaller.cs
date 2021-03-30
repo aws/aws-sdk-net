@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CandidateName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CandidateProperties", targetDepth))
+                {
+                    var unmarshaller = CandidatePropertiesUnmarshaller.Instance;
+                    unmarshalledObject.CandidateProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CandidateStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

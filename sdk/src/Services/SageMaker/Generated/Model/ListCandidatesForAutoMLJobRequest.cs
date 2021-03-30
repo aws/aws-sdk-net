@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCandidatesForAutoMLJob operation.
-    /// List the Candidates created for the job.
+    /// List the candidates created for the job.
     /// </summary>
     public partial class ListCandidatesForAutoMLJobRequest : AmazonSageMakerRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobName. 
         /// <para>
-        /// List the Candidates created for the job by providing the job's name.
+        /// List the candidates created for the job by providing the job's name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CandidateNameEquals. 
         /// <para>
-        /// List the Candidates for the job and filter by candidate name.
+        /// List the candidates for the job and filter by candidate name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// List the job's Candidates up to a specified limit.
+        /// List the job's candidates up to a specified limit.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -122,7 +122,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The parameter by which to sort the results. The default is Descending.
+        /// The parameter by which to sort the results. The default is <code>Descending</code>.
         /// </para>
         /// </summary>
         public CandidateSortBy SortBy
@@ -140,7 +140,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order for the results. The default is Ascending.
+        /// The sort order for the results. The default is <code>Ascending</code>.
         /// </para>
         /// </summary>
         public AutoMLSortOrder SortOrder
@@ -158,7 +158,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StatusEquals. 
         /// <para>
-        /// List the Candidates for the job and filter by status.
+        /// List the candidates for the job and filter by status.
         /// </para>
         /// </summary>
         public CandidateStatus StatusEquals

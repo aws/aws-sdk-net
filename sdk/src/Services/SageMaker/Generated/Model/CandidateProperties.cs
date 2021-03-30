@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAutoMLJob operation.
-    /// Returns information about an Amazon SageMaker AutoML job.
+    /// The properties of an AutoML candidate job.
     /// </summary>
-    public partial class DescribeAutoMLJobRequest : AmazonSageMakerRequest
+    public partial class CandidateProperties
     {
-        private string _autoMLJobName;
+        private CandidateArtifactLocations _candidateArtifactLocations;
 
         /// <summary>
-        /// Gets and sets the property AutoMLJobName. 
+        /// Gets and sets the property CandidateArtifactLocations. 
         /// <para>
-        /// Requests information about an AutoML job using its unique name.
+        /// The S3 prefix to the artifacts generated for an AutoML candidate.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string AutoMLJobName
+        public CandidateArtifactLocations CandidateArtifactLocations
         {
-            get { return this._autoMLJobName; }
-            set { this._autoMLJobName = value; }
+            get { return this._candidateArtifactLocations; }
+            set { this._candidateArtifactLocations = value; }
         }
 
-        // Check to see if AutoMLJobName property is set
-        internal bool IsSetAutoMLJobName()
+        // Check to see if CandidateArtifactLocations property is set
+        internal bool IsSetCandidateArtifactLocations()
         {
-            return this._autoMLJobName != null;
+            return this._candidateArtifactLocations != null;
         }
 
     }

@@ -151,8 +151,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DefaultUserSettings. 
         /// <para>
         /// The default settings to use to create a user profile when <code>UserSettings</code>
-        /// isn't specified in the call to the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>
-        /// API.
+        /// isn't specified in the call to the <code>CreateUserProfile</code> API.
         /// </para>
         ///  
         /// <para>
@@ -257,7 +256,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags to associated with the Domain. Each tag consists of a key and an optional value.
-        /// Tag keys must be unique per resource. Tags are searchable using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+        /// Tag keys must be unique per resource. Tags are searchable using the <code>Search</code>
         /// API.
         /// </para>
         /// </summary>

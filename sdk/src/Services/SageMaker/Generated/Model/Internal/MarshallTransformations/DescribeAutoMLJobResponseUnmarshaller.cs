@@ -141,6 +141,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.OutputDataConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PartialFailureReasons", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AutoMLPartialFailureReason, AutoMLPartialFailureReasonUnmarshaller>(AutoMLPartialFailureReasonUnmarshaller.Instance);
+                    response.PartialFailureReasons = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProblemType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

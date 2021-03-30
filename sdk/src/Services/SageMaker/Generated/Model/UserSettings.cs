@@ -30,9 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A collection of settings that apply to users of Amazon SageMaker Studio. These settings
-    /// are specified when the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>
-    /// API is called, and as <code>DefaultUserSettings</code> when the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
-    /// API is called.
+    /// are specified when the <code>CreateUserProfile</code> API is called, and as <code>DefaultUserSettings</code>
+    /// when the <code>CreateDomain</code> API is called.
     /// 
     ///  
     /// <para>

@@ -48,6 +48,7 @@ namespace Amazon.SageMaker.Model
         private List<AutoMLChannel> _inputDataConfig = new List<AutoMLChannel>();
         private DateTime? _lastModifiedTime;
         private AutoMLOutputDataConfig _outputDataConfig;
+        private List<AutoMLPartialFailureReason> _partialFailureReasons = new List<AutoMLPartialFailureReason>();
         private ProblemType _problemType;
         private ResolvedAttributes _resolvedAttributes;
         private string _roleArn;
@@ -55,7 +56,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobArn. 
         /// <para>
-        /// Returns the job's ARN.
+        /// Returns the ARN of the AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -92,7 +93,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobConfig. 
         /// <para>
-        /// Returns the job's config.
+        /// Returns the configuration for the AutoML job.
         /// </para>
         /// </summary>
         public AutoMLJobConfig AutoMLJobConfig
@@ -110,7 +111,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobName. 
         /// <para>
-        /// Returns the name of a job.
+        /// Returns the name of the AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -147,7 +148,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobSecondaryStatus. 
         /// <para>
-        /// Returns the job's AutoMLJobSecondaryStatus.
+        /// Returns the secondary status of the AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -166,7 +167,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobStatus. 
         /// <para>
-        /// Returns the job's AutoMLJobStatus.
+        /// Returns the status of the AutoML job's AutoMLJobStatus.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -203,7 +204,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Returns the job's creation time.
+        /// Returns the creation time of the AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -222,7 +223,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// Returns the job's end time.
+        /// Returns the end time of the AutoML job.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -277,7 +278,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// Returns the job's input data config.
+        /// Returns the input data configuration for the AutoML job..
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -332,6 +333,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PartialFailureReasons. 
+        /// <para>
+        /// Returns a list of reasons for partial failures within an AutoML job. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<AutoMLPartialFailureReason> PartialFailureReasons
+        {
+            get { return this._partialFailureReasons; }
+            set { this._partialFailureReasons = value; }
+        }
+
+        // Check to see if PartialFailureReasons property is set
+        internal bool IsSetPartialFailureReasons()
+        {
+            return this._partialFailureReasons != null && this._partialFailureReasons.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ProblemType. 
         /// <para>
         /// Returns the job's problem type.
@@ -352,9 +372,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResolvedAttributes. 
         /// <para>
-        /// This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They're auto-inferred
-        /// values, if not provided by you. If you do provide them, then they'll be the same as
-        /// provided.
+        /// This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you do not
+        /// provide these values, they are auto-inferred. If you do provide them, they are the
+        /// values you provide.
         /// </para>
         /// </summary>
         public ResolvedAttributes ResolvedAttributes

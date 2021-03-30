@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Provides a summary about a job.
+    /// Provides a summary about an AutoML job.
     /// </summary>
     public partial class AutoMLJobSummary
     {
@@ -41,11 +41,12 @@ namespace Amazon.SageMaker.Model
         private DateTime? _endTime;
         private string _failureReason;
         private DateTime? _lastModifiedTime;
+        private List<AutoMLPartialFailureReason> _partialFailureReasons = new List<AutoMLPartialFailureReason>();
 
         /// <summary>
         /// Gets and sets the property AutoMLJobArn. 
         /// <para>
-        /// The ARN of the job.
+        /// The ARN of the AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -64,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobName. 
         /// <para>
-        /// The name of the object you are requesting.
+        /// The name of the AutoML you are requesting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -83,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobSecondaryStatus. 
         /// <para>
-        /// The job's secondary status.
+        /// The secondary status of the AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobStatus. 
         /// <para>
-        /// The job's status.
+        /// The status of the AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,7 +122,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// When the job was created.
+        /// When the AutoML job was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -158,7 +159,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The failure reason of a job.
+        /// The failure reason of an AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -177,7 +178,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// When the job was last modified.
+        /// When the AutoML job was last modified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -191,6 +192,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartialFailureReasons. 
+        /// <para>
+        /// The list of reasons for partial failures within an AutoML job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<AutoMLPartialFailureReason> PartialFailureReasons
+        {
+            get { return this._partialFailureReasons; }
+            set { this._partialFailureReasons = value; }
+        }
+
+        // Check to see if PartialFailureReasons property is set
+        internal bool IsSetPartialFailureReasons()
+        {
+            return this._partialFailureReasons != null && this._partialFailureReasons.Count > 0; 
         }
 
     }

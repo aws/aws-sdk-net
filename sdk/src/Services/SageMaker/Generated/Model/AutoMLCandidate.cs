@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class AutoMLCandidate
     {
         private string _candidateName;
+        private CandidateProperties _candidateProperties;
         private CandidateStatus _candidateStatus;
         private List<AutoMLCandidateStep> _candidateSteps = new List<AutoMLCandidateStep>();
         private DateTime? _creationTime;
@@ -62,6 +63,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCandidateName()
         {
             return this._candidateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CandidateProperties. 
+        /// <para>
+        /// The AutoML candidate's properties.
+        /// </para>
+        /// </summary>
+        public CandidateProperties CandidateProperties
+        {
+            get { return this._candidateProperties; }
+            set { this._candidateProperties = value; }
+        }
+
+        // Check to see if CandidateProperties property is set
+        internal bool IsSetCandidateProperties()
+        {
+            return this._candidateProperties != null;
         }
 
         /// <summary>

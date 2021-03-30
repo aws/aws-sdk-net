@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobArn. 
         /// <para>
-        /// When a job is created, it is assigned a unique ARN.
+        /// The unique ARN that is assigned to the AutoML job when it is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

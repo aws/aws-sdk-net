@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A list of container definitions that describe the different containers that make up
-    /// one AutoML candidate. Refer to ContainerDefinition for more details.
+    /// an AutoML candidate. For more information, see .
     /// </summary>
     public partial class AutoMLContainerDefinition
     {
@@ -41,8 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// Environment variables to set in the container. Refer to ContainerDefinition for more
-        /// details.
+        /// Environment variables to set in the container. For more information, see .
         /// </para>
         /// </summary>
         [AWSProperty(Max=16)]
@@ -61,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        /// The ECR path of the container. Refer to ContainerDefinition for more details.
+        /// The ECR path of the container. For more information, see .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -80,7 +79,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelDataUrl. 
         /// <para>
-        /// The location of the model artifacts. Refer to ContainerDefinition for more details.
+        /// The location of the model artifacts. For more information, see .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
