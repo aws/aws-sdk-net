@@ -32,7 +32,7 @@ namespace Amazon.CognitoSync.Model
     /// Container for the parameters to the SubscribeToDataset operation.
     /// Subscribes to receive notifications when a dataset is modified by another device.
     /// 
-    ///  
+    /// 
     /// <para>
     /// This API can only be called with temporary credentials provided by Cognito Identity.
     /// You cannot call this API with developer credentials.

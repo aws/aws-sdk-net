@@ -34,7 +34,7 @@ namespace Amazon.CognitoSync.Model
     /// only updates the key/value pair specified. Other key/values pairs are not updated.
     /// To remove a key value pair, pass a empty value for the particular key.
     /// 
-    ///  
+    /// 
     /// <para>
     /// This API can only be called with developer credentials. You cannot call this API with
     /// the temporary user credentials provided by Cognito Identity.

@@ -35,7 +35,7 @@ namespace Amazon.CognitoSync.Model
     /// is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails
     /// operation.
     /// 
-    ///  
+    /// 
     /// <para>
     /// This API can only be called with developer credentials. You cannot call this API with
     /// the temporary user credentials provided by Cognito Identity.

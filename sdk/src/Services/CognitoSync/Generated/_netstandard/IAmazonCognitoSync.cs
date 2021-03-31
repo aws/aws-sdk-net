@@ -70,7 +70,7 @@ namespace Amazon.CognitoSync
         /// is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails
         /// operation.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This API can only be called with developer credentials. You cannot call this API with
         /// the temporary user credentials provided by Cognito Identity.
@@ -312,7 +312,7 @@ namespace Amazon.CognitoSync
         /// <summary>
         /// Get the status of the last BulkPublish operation for an identity pool.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This API can only be called with developer credentials. You cannot call this API with
         /// the temporary user credentials provided by Cognito Identity.
@@ -349,7 +349,7 @@ namespace Amazon.CognitoSync
         /// Gets the events and the corresponding Lambda functions associated with an identity
         /// pool.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This API can only be called with developer credentials. You cannot call this API with
         /// the temporary user credentials provided by Cognito Identity.
@@ -387,7 +387,7 @@ namespace Amazon.CognitoSync
         /// <summary>
         /// Gets the configuration settings of an identity pool.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This API can only be called with developer credentials. You cannot call this API with
         /// the temporary user credentials provided by Cognito Identity.
@@ -421,7 +421,7 @@ namespace Amazon.CognitoSync
         /// <summary>
         /// Gets the configuration settings of an identity pool.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This API can only be called with developer credentials. You cannot call this API with
         /// the temporary user credentials provided by Cognito Identity.
@@ -575,7 +575,7 @@ namespace Amazon.CognitoSync
         /// <summary>
         /// Registers a device to receive push sync notifications.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This API can only be called with temporary credentials provided by Cognito Identity.
         /// You cannot call this API with developer credentials.
@@ -619,7 +619,7 @@ namespace Amazon.CognitoSync
         /// only updates the key/value pair specified. Other key/values pairs are not updated.
         /// To remove a key value pair, pass a empty value for the particular key.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This API can only be called with developer credentials. You cannot call this API with
         /// the temporary user credentials provided by Cognito Identity.
@@ -658,7 +658,7 @@ namespace Amazon.CognitoSync
         /// <summary>
         /// Sets the necessary configuration for push sync.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This API can only be called with developer credentials. You cannot call this API with
         /// the temporary user credentials provided by Cognito Identity.
@@ -700,7 +700,7 @@ namespace Amazon.CognitoSync
         /// <summary>
         /// Subscribes to receive notifications when a dataset is modified by another device.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This API can only be called with temporary credentials provided by Cognito Identity.
         /// You cannot call this API with developer credentials.
@@ -742,7 +742,7 @@ namespace Amazon.CognitoSync
         /// <summary>
         /// Unsubscribes from receiving notifications when a dataset is modified by another device.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This API can only be called with temporary credentials provided by Cognito Identity.
         /// You cannot call this API with developer credentials.
@@ -790,7 +790,7 @@ namespace Amazon.CognitoSync
         /// The server will reject an UpdateRecords request with a ResourceConflictException if
         /// you try to patch a record with a new value but a stale sync count.
         /// </para>
-        ///  
+        /// 
         /// <para>
         /// For example, if the sync count on the server is 5 for a key called highScore and you
         /// try and submit a new highScore with sync count of 4, the request will be rejected.
