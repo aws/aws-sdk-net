@@ -1,3 +1,42 @@
+### 3.7.5.0 (2021-03-31 18:24 UTC)
+* Batch (3.7.1.0)
+	* AWS Batch adds support for Amazon EFS File System
+* Cloud9 (3.7.1.0)
+	* Add ImageId input parameter to CreateEnvironmentEC2 endpoint. New parameter enables creation of environments with different AMIs.
+* CloudFormation (3.7.1.0)
+	* 1. Added a new parameter "RegionConcurrencyType" in OperationPreferences. 2. Changed the name of "AccountUrl" to "AccountsUrl" in "DeploymentTargets" parameter.
+* CloudHSM (3.7.1.0)
+	* Minor documentation and link updates.
+* CognitoSync (3.7.1.0)
+	* Minor documentation updates and link updates.
+* Comprehend (3.7.1.0)
+	* Support for customer managed KMS encryption of Comprehend custom models
+* DataPipeline (3.7.1.0)
+	* Minor documentation updates and link updates.
+* Detective (3.7.1.0)
+	* Added the ability to assign tag values to Detective behavior graphs. Tag values can be used for attribute-based access control, and for cost allocation for billing.
+* DirectConnect (3.7.1.0)
+	* This release adds MACsec support to AWS Direct Connect
+* IoT (3.7.1.0)
+	* Added ability to prefix search on attribute value for ListThings API.
+* IoTWireless (3.7.2.0)
+	* Add Sidewalk support to APIs: GetWirelessDevice, ListWirelessDevices, GetWirelessDeviceStatistics. Add Gateway connection status in GetWirelessGatewayStatistics API.
+* MachineLearning (3.7.1.0)
+	* Minor documentation updates and link updates.
+* Pricing (3.7.1.0)
+	* Minor documentation and link updates.
+* Redshift (3.7.1.0)
+	* Enable customers to share access to their Redshift clusters from other VPCs (including VPCs from other accounts).
+* TranscribeService (3.7.2.0)
+	* Amazon Transcribe now supports creating custom language models in the following languages: British English (en-GB), Australian English (en-AU), Indian Hindi (hi-IN), and US Spanish (es-US).
+* WorkMail (3.7.1.0)
+	* This release adds support for mobile device access rules management in Amazon WorkMail.
+* Core 3.7.0.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.4.0 (2021-03-30 18:21 UTC)
 * CloudWatch (3.7.1.0)
 	* SDK update for new Metric Streams feature
