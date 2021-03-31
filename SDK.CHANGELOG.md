@@ -1,3 +1,8 @@
+### 3.7.5.1 (2021-03-31 20:56 UTC)
+* Core 3.7.0.6
+	* Evict cache keys that are more than 1 hour old during endpoint discovery.
+	* All services packages updated to require new Core
+
 ### 3.7.5.0 (2021-03-31 18:24 UTC)
 * Batch (3.7.1.0)
 	* AWS Batch adds support for Amazon EFS File System
