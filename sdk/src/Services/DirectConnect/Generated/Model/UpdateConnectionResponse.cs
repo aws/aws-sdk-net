@@ -29,53 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Information about a link aggregation group (LAG).
+    /// Information about an AWS Direct Connect connection.
     /// </summary>
-    public partial class CreateLagResponse : AmazonWebServiceResponse
+    public partial class UpdateConnectionResponse : AmazonWebServiceResponse
     {
-        private bool? _allowsHostedConnections;
         private string _awsDevice;
         private string _awsDeviceV2;
-        private List<Connection> _connections = new List<Connection>();
-        private string _connectionsBandwidth;
+        private string _bandwidth;
+        private string _connectionId;
+        private string _connectionName;
+        private ConnectionState _connectionState;
         private string _encryptionMode;
         private HasLogicalRedundancy _hasLogicalRedundancy;
         private bool? _jumboFrameCapable;
         private string _lagId;
-        private string _lagName;
-        private LagState _lagState;
+        private DateTime? _loaIssueTime;
         private string _location;
         private bool? _macSecCapable;
         private List<MacSecKey> _macSecKeys = new List<MacSecKey>();
-        private int? _minimumLinks;
-        private int? _numberOfConnections;
         private string _ownerAccount;
+        private string _partnerName;
+        private string _portEncryptionStatus;
         private string _providerName;
         private string _region;
         private List<Tag> _tags = new List<Tag>();
-
-        /// <summary>
-        /// Gets and sets the property AllowsHostedConnections. 
-        /// <para>
-        /// Indicates whether the LAG can host other connections.
-        /// </para>
-        /// </summary>
-        public bool AllowsHostedConnections
-        {
-            get { return this._allowsHostedConnections.GetValueOrDefault(); }
-            set { this._allowsHostedConnections = value; }
-        }
-
-        // Check to see if AllowsHostedConnections property is set
-        internal bool IsSetAllowsHostedConnections()
-        {
-            return this._allowsHostedConnections.HasValue; 
-        }
+        private int? _vlan;
 
         /// <summary>
         /// Gets and sets the property AwsDevice. 
         /// <para>
-        /// The AWS Direct Connect endpoint that hosts the LAG.
+        /// The Direct Connect endpoint on which the physical connection terminates.
         /// </para>
         /// </summary>
         public string AwsDevice
@@ -93,7 +76,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDeviceV2. 
         /// <para>
-        /// The AWS Direct Connect endpoint that hosts the LAG.
+        /// The Direct Connect endpoint on which the physical connection terminates.
         /// </para>
         /// </summary>
         public string AwsDeviceV2
@@ -109,46 +92,123 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Connections. 
+        /// Gets and sets the property Bandwidth. 
         /// <para>
-        /// The connections bundled by the LAG.
+        /// The bandwidth of the connection.
         /// </para>
         /// </summary>
-        public List<Connection> Connections
+        public string Bandwidth
         {
-            get { return this._connections; }
-            set { this._connections = value; }
+            get { return this._bandwidth; }
+            set { this._bandwidth = value; }
         }
 
-        // Check to see if Connections property is set
-        internal bool IsSetConnections()
+        // Check to see if Bandwidth property is set
+        internal bool IsSetBandwidth()
         {
-            return this._connections != null && this._connections.Count > 0; 
+            return this._bandwidth != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ConnectionsBandwidth. 
+        /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. 
+        /// The ID of the connection.
         /// </para>
         /// </summary>
-        public string ConnectionsBandwidth
+        public string ConnectionId
         {
-            get { return this._connectionsBandwidth; }
-            set { this._connectionsBandwidth = value; }
+            get { return this._connectionId; }
+            set { this._connectionId = value; }
         }
 
-        // Check to see if ConnectionsBandwidth property is set
-        internal bool IsSetConnectionsBandwidth()
+        // Check to see if ConnectionId property is set
+        internal bool IsSetConnectionId()
         {
-            return this._connectionsBandwidth != null;
+            return this._connectionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionName. 
+        /// <para>
+        /// The name of the connection.
+        /// </para>
+        /// </summary>
+        public string ConnectionName
+        {
+            get { return this._connectionName; }
+            set { this._connectionName = value; }
+        }
+
+        // Check to see if ConnectionName property is set
+        internal bool IsSetConnectionName()
+        {
+            return this._connectionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionState. 
+        /// <para>
+        /// The state of the connection. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ordering</code>: The initial state of a hosted connection provisioned on an
+        /// interconnect. The connection stays in the ordering state until the owner of the hosted
+        /// connection confirms or declines the connection order.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>requested</code>: The initial state of a standard connection. The connection
+        /// stays in the requested state until the Letter of Authorization (LOA) is sent to the
+        /// customer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending</code>: The connection has been approved and is being initialized.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>available</code>: The network link is up and the connection is ready for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>down</code>: The network link is down.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code>: The connection is being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleted</code>: The connection has been deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters
+        /// the <code>rejected</code> state if it is deleted by the customer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>unknown</code>: The state of the connection is not available.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ConnectionState ConnectionState
+        {
+            get { return this._connectionState; }
+            set { this._connectionState = value; }
+        }
+
+        // Check to see if ConnectionState property is set
+        internal bool IsSetConnectionState()
+        {
+            return this._connectionState != null;
         }
 
         /// <summary>
         /// Gets and sets the property EncryptionMode. 
         /// <para>
-        /// The LAG MAC Security (MACsec) encryption mode.
+        /// The MAC Security (MACsec) connection encryption mode.
         /// </para>
         ///  
         /// <para>
@@ -170,8 +230,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property HasLogicalRedundancy. 
         /// <para>
-        /// Indicates whether the LAG supports a secondary BGP peer in the same address family
-        /// (IPv4/IPv6).
+        /// Indicates whether the connection supports a secondary BGP peer in the same address
+        /// family (IPv4/IPv6).
         /// </para>
         /// </summary>
         public HasLogicalRedundancy HasLogicalRedundancy
@@ -223,76 +283,27 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LagName. 
+        /// Gets and sets the property LoaIssueTime. 
         /// <para>
-        /// The name of the LAG.
+        /// The time of the most recent call to <a>DescribeLoa</a> for this connection.
         /// </para>
         /// </summary>
-        public string LagName
+        public DateTime LoaIssueTime
         {
-            get { return this._lagName; }
-            set { this._lagName = value; }
+            get { return this._loaIssueTime.GetValueOrDefault(); }
+            set { this._loaIssueTime = value; }
         }
 
-        // Check to see if LagName property is set
-        internal bool IsSetLagName()
+        // Check to see if LoaIssueTime property is set
+        internal bool IsSetLoaIssueTime()
         {
-            return this._lagName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LagState. 
-        /// <para>
-        /// The state of the LAG. The following are the possible values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>requested</code>: The initial state of a LAG. The LAG stays in the requested
-        /// state until the Letter of Authorization (LOA) is available.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pending</code>: The LAG has been approved and is being initialized.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>available</code>: The network link is established and the LAG is ready for
-        /// use.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>down</code>: The network link is down.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>deleting</code>: The LAG is being deleted.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>deleted</code>: The LAG is deleted.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>unknown</code>: The state of the LAG is not available.
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        public LagState LagState
-        {
-            get { return this._lagState; }
-            set { this._lagState = value; }
-        }
-
-        // Check to see if LagState property is set
-        internal bool IsSetLagState()
-        {
-            return this._lagState != null;
+            return this._loaIssueTime.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The location of the LAG.
+        /// The location of the connection.
         /// </para>
         /// </summary>
         public string Location
@@ -310,7 +321,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property MacSecCapable. 
         /// <para>
-        /// Indicates whether the LAG supports MAC Security (MACsec).
+        /// Indicates whether the connection supports MAC Security (MACsec).
         /// </para>
         /// </summary>
         public bool MacSecCapable
@@ -328,7 +339,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property MacSecKeys. 
         /// <para>
-        /// The MAC Security (MACsec) security keys associated with the LAG.
+        /// The MAC Security (MACsec) security keys associated with the connection.
         /// </para>
         /// </summary>
         public List<MacSecKey> MacSecKeys
@@ -344,47 +355,9 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinimumLinks. 
-        /// <para>
-        /// The minimum number of physical dedicated connections that must be operational for
-        /// the LAG itself to be operational.
-        /// </para>
-        /// </summary>
-        public int MinimumLinks
-        {
-            get { return this._minimumLinks.GetValueOrDefault(); }
-            set { this._minimumLinks = value; }
-        }
-
-        // Check to see if MinimumLinks property is set
-        internal bool IsSetMinimumLinks()
-        {
-            return this._minimumLinks.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NumberOfConnections. 
-        /// <para>
-        /// The number of physical dedicated connections bundled by the LAG, up to a maximum of
-        /// 10.
-        /// </para>
-        /// </summary>
-        public int NumberOfConnections
-        {
-            get { return this._numberOfConnections.GetValueOrDefault(); }
-            set { this._numberOfConnections = value; }
-        }
-
-        // Check to see if NumberOfConnections property is set
-        internal bool IsSetNumberOfConnections()
-        {
-            return this._numberOfConnections.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the LAG.
+        /// The ID of the AWS account that owns the connection.
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -400,9 +373,50 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PartnerName. 
+        /// <para>
+        /// The name of the AWS Direct Connect service provider associated with the connection.
+        /// </para>
+        /// </summary>
+        public string PartnerName
+        {
+            get { return this._partnerName; }
+            set { this._partnerName = value; }
+        }
+
+        // Check to see if PartnerName property is set
+        internal bool IsSetPartnerName()
+        {
+            return this._partnerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortEncryptionStatus. 
+        /// <para>
+        /// The MAC Security (MACsec) port link status of the connection.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <code>Encryption Up</code>, which means that there is an active
+        /// Connection Key Name, or <code>Encryption Down</code>.
+        /// </para>
+        /// </summary>
+        public string PortEncryptionStatus
+        {
+            get { return this._portEncryptionStatus; }
+            set { this._portEncryptionStatus = value; }
+        }
+
+        // Check to see if PortEncryptionStatus property is set
+        internal bool IsSetPortEncryptionStatus()
+        {
+            return this._portEncryptionStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The name of the service provider associated with the LAG.
+        /// The name of the service provider associated with the connection.
         /// </para>
         /// </summary>
         public string ProviderName
@@ -438,7 +452,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags associated with the LAG.
+        /// The tags associated with the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -452,6 +466,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vlan. 
+        /// <para>
+        /// The ID of the VLAN.
+        /// </para>
+        /// </summary>
+        public int Vlan
+        {
+            get { return this._vlan.GetValueOrDefault(); }
+            set { this._vlan = value; }
+        }
+
+        // Check to see if Vlan property is set
+        internal bool IsSetVlan()
+        {
+            return this._vlan.HasValue; 
         }
 
     }

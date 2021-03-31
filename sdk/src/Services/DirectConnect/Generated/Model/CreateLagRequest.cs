@@ -72,6 +72,7 @@ namespace Amazon.DirectConnect.Model
         private string _location;
         private int? _numberOfConnections;
         private string _providerName;
+        private bool? _requestmacSec;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -205,6 +206,31 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetProviderName()
         {
             return this._providerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestMACSec. 
+        /// <para>
+        /// Indicates whether the connection will support MAC Security (MACsec).
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// All connections in the LAG must be capable of supporting MAC Security (MACsec). For
+        /// information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec
+        /// prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool RequestMACSec
+        {
+            get { return this._requestmacSec.GetValueOrDefault(); }
+            set { this._requestmacSec = value; }
+        }
+
+        // Check to see if RequestMACSec property is set
+        internal bool IsSetRequestMACSec()
+        {
+            return this._requestmacSec.HasValue; 
         }
 
         /// <summary>

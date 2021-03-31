@@ -94,6 +94,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectionsBandwidth = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encryptionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hasLogicalRedundancy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +134,18 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("macSecCapable", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.MacSecCapable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("macSecKeys", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MacSecKey, MacSecKeyUnmarshaller>(MacSecKeyUnmarshaller.Instance);
+                    unmarshalledObject.MacSecKeys = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minimumLinks", targetDepth))

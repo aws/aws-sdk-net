@@ -33,11 +33,30 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class Location
     {
+        private List<string> _availableMacSecPortSpeeds = new List<string>();
         private List<string> _availablePortSpeeds = new List<string>();
         private List<string> _availableProviders = new List<string>();
         private string _locationCode;
         private string _locationName;
         private string _region;
+
+        /// <summary>
+        /// Gets and sets the property AvailableMacSecPortSpeeds. 
+        /// <para>
+        /// The available MAC Security (MACsec) port speeds for the location.
+        /// </para>
+        /// </summary>
+        public List<string> AvailableMacSecPortSpeeds
+        {
+            get { return this._availableMacSecPortSpeeds; }
+            set { this._availableMacSecPortSpeeds = value; }
+        }
+
+        // Check to see if AvailableMacSecPortSpeeds property is set
+        internal bool IsSetAvailableMacSecPortSpeeds()
+        {
+            return this._availableMacSecPortSpeeds != null && this._availableMacSecPortSpeeds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AvailablePortSpeeds. 

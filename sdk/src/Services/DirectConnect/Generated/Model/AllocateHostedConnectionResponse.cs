@@ -39,13 +39,17 @@ namespace Amazon.DirectConnect.Model
         private string _connectionId;
         private string _connectionName;
         private ConnectionState _connectionState;
+        private string _encryptionMode;
         private HasLogicalRedundancy _hasLogicalRedundancy;
         private bool? _jumboFrameCapable;
         private string _lagId;
         private DateTime? _loaIssueTime;
         private string _location;
+        private bool? _macSecCapable;
+        private List<MacSecKey> _macSecKeys = new List<MacSecKey>();
         private string _ownerAccount;
         private string _partnerName;
+        private string _portEncryptionStatus;
         private string _providerName;
         private string _region;
         private List<Tag> _tags = new List<Tag>();
@@ -202,6 +206,28 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncryptionMode. 
+        /// <para>
+        /// The MAC Security (MACsec) connection encryption mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.
+        /// </para>
+        /// </summary>
+        public string EncryptionMode
+        {
+            get { return this._encryptionMode; }
+            set { this._encryptionMode = value; }
+        }
+
+        // Check to see if EncryptionMode property is set
+        internal bool IsSetEncryptionMode()
+        {
+            return this._encryptionMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HasLogicalRedundancy. 
         /// <para>
         /// Indicates whether the connection supports a secondary BGP peer in the same address
@@ -293,6 +319,42 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MacSecCapable. 
+        /// <para>
+        /// Indicates whether the connection supports MAC Security (MACsec).
+        /// </para>
+        /// </summary>
+        public bool MacSecCapable
+        {
+            get { return this._macSecCapable.GetValueOrDefault(); }
+            set { this._macSecCapable = value; }
+        }
+
+        // Check to see if MacSecCapable property is set
+        internal bool IsSetMacSecCapable()
+        {
+            return this._macSecCapable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MacSecKeys. 
+        /// <para>
+        /// The MAC Security (MACsec) security keys associated with the connection.
+        /// </para>
+        /// </summary>
+        public List<MacSecKey> MacSecKeys
+        {
+            get { return this._macSecKeys; }
+            set { this._macSecKeys = value; }
+        }
+
+        // Check to see if MacSecKeys property is set
+        internal bool IsSetMacSecKeys()
+        {
+            return this._macSecKeys != null && this._macSecKeys.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
         /// The ID of the AWS account that owns the connection.
@@ -326,6 +388,29 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetPartnerName()
         {
             return this._partnerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortEncryptionStatus. 
+        /// <para>
+        /// The MAC Security (MACsec) port link status of the connection.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <code>Encryption Up</code>, which means that there is an active
+        /// Connection Key Name, or <code>Encryption Down</code>.
+        /// </para>
+        /// </summary>
+        public string PortEncryptionStatus
+        {
+            get { return this._portEncryptionStatus; }
+            set { this._portEncryptionStatus = value; }
+        }
+
+        // Check to see if PortEncryptionStatus property is set
+        internal bool IsSetPortEncryptionStatus()
+        {
+            return this._portEncryptionStatus != null;
         }
 
         /// <summary>

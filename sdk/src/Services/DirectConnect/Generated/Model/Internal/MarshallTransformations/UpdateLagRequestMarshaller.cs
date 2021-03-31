@@ -67,6 +67,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEncryptionMode())
+                {
+                    context.Writer.WritePropertyName("encryptionMode");
+                    context.Writer.Write(publicRequest.EncryptionMode);
+                }
+
                 if(publicRequest.IsSetLagId())
                 {
                     context.Writer.WritePropertyName("lagId");

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Location Object
+    /// Response Unmarshaller for MacSecKey Object
     /// </summary>  
-    public class LocationUnmarshaller : IUnmarshaller<Location, XmlUnmarshallerContext>, IUnmarshaller<Location, JsonUnmarshallerContext>
+    public class MacSecKeyUnmarshaller : IUnmarshaller<MacSecKey, XmlUnmarshallerContext>, IUnmarshaller<MacSecKey, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Location IUnmarshaller<Location, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MacSecKey IUnmarshaller<MacSecKey, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,39 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Location Unmarshall(JsonUnmarshallerContext context)
+        public MacSecKey Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Location unmarshalledObject = new Location();
+            MacSecKey unmarshalledObject = new MacSecKey();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("availableMacSecPortSpeeds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AvailableMacSecPortSpeeds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("availablePortSpeeds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AvailablePortSpeeds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("availableProviders", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AvailableProviders = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("locationCode", targetDepth))
+                if (context.TestExpression("ckn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ckn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("locationName", targetDepth))
+                if (context.TestExpression("secretARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecretARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("startOn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartOn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("state", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +94,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static LocationUnmarshaller _instance = new LocationUnmarshaller();        
+        private static MacSecKeyUnmarshaller _instance = new MacSecKeyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LocationUnmarshaller Instance
+        public static MacSecKeyUnmarshaller Instance
         {
             get
             {

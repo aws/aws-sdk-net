@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateConnection Request Marshaller
+    /// UpdateConnection Request Marshaller
     /// </summary>       
-    public class CreateConnectionRequestMarshaller : IMarshaller<IRequest, CreateConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateConnectionRequestMarshaller : IMarshaller<IRequest, UpdateConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateConnectionRequest)input);
+            return this.Marshall((UpdateConnectionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateConnectionRequest publicRequest)
+        public IRequest Marshall(UpdateConnectionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
-            string target = "OvertureService.CreateConnection";
+            string target = "OvertureService.UpdateConnection";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-10-25";            
@@ -67,10 +67,10 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBandwidth())
+                if(publicRequest.IsSetConnectionId())
                 {
-                    context.Writer.WritePropertyName("bandwidth");
-                    context.Writer.Write(publicRequest.Bandwidth);
+                    context.Writer.WritePropertyName("connectionId");
+                    context.Writer.Write(publicRequest.ConnectionId);
                 }
 
                 if(publicRequest.IsSetConnectionName())
@@ -79,44 +79,10 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectionName);
                 }
 
-                if(publicRequest.IsSetLagId())
+                if(publicRequest.IsSetEncryptionMode())
                 {
-                    context.Writer.WritePropertyName("lagId");
-                    context.Writer.Write(publicRequest.LagId);
-                }
-
-                if(publicRequest.IsSetLocation())
-                {
-                    context.Writer.WritePropertyName("location");
-                    context.Writer.Write(publicRequest.Location);
-                }
-
-                if(publicRequest.IsSetProviderName())
-                {
-                    context.Writer.WritePropertyName("providerName");
-                    context.Writer.Write(publicRequest.ProviderName);
-                }
-
-                if(publicRequest.IsSetRequestMACSec())
-                {
-                    context.Writer.WritePropertyName("requestMACSec");
-                    context.Writer.Write(publicRequest.RequestMACSec);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("encryptionMode");
+                    context.Writer.Write(publicRequest.EncryptionMode);
                 }
 
         
@@ -128,9 +94,9 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateConnectionRequestMarshaller _instance = new CreateConnectionRequestMarshaller();        
+        private static UpdateConnectionRequestMarshaller _instance = new UpdateConnectionRequestMarshaller();        
 
-        internal static CreateConnectionRequestMarshaller GetInstance()
+        internal static UpdateConnectionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -138,7 +104,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateConnectionRequestMarshaller Instance
+        public static UpdateConnectionRequestMarshaller Instance
         {
             get
             {

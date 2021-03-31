@@ -34,179 +34,201 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Connection Object
+    /// Response Unmarshaller for UpdateConnection operation
     /// </summary>  
-    public class ConnectionUnmarshaller : IUnmarshaller<Connection, XmlUnmarshallerContext>, IUnmarshaller<Connection, JsonUnmarshallerContext>
+    public class UpdateConnectionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Connection IUnmarshaller<Connection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
-        }
+            UpdateConnectionResponse response = new UpdateConnectionResponse();
 
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Connection Unmarshall(JsonUnmarshallerContext context)
-        {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
-
-            Connection unmarshalledObject = new Connection();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
                 if (context.TestExpression("awsDevice", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsDevice = unmarshaller.Unmarshall(context);
+                    response.AwsDevice = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("awsDeviceV2", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsDeviceV2 = unmarshaller.Unmarshall(context);
+                    response.AwsDeviceV2 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bandwidth", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Bandwidth = unmarshaller.Unmarshall(context);
+                    response.Bandwidth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("connectionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionId = unmarshaller.Unmarshall(context);
+                    response.ConnectionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("connectionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
+                    response.ConnectionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("connectionState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionState = unmarshaller.Unmarshall(context);
+                    response.ConnectionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("encryptionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionMode = unmarshaller.Unmarshall(context);
+                    response.EncryptionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("hasLogicalRedundancy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HasLogicalRedundancy = unmarshaller.Unmarshall(context);
+                    response.HasLogicalRedundancy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jumboFrameCapable", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.JumboFrameCapable = unmarshaller.Unmarshall(context);
+                    response.JumboFrameCapable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lagId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LagId = unmarshaller.Unmarshall(context);
+                    response.LagId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("loaIssueTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LoaIssueTime = unmarshaller.Unmarshall(context);
+                    response.LoaIssueTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    response.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("macSecCapable", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.MacSecCapable = unmarshaller.Unmarshall(context);
+                    response.MacSecCapable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("macSecKeys", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<MacSecKey, MacSecKeyUnmarshaller>(MacSecKeyUnmarshaller.Instance);
-                    unmarshalledObject.MacSecKeys = unmarshaller.Unmarshall(context);
+                    response.MacSecKeys = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ownerAccount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerAccount = unmarshaller.Unmarshall(context);
+                    response.OwnerAccount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("partnerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PartnerName = unmarshaller.Unmarshall(context);
+                    response.PartnerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("portEncryptionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PortEncryptionStatus = unmarshaller.Unmarshall(context);
+                    response.PortEncryptionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("providerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProviderName = unmarshaller.Unmarshall(context);
+                    response.ProviderName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    response.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("vlan", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Vlan = unmarshaller.Unmarshall(context);
+                    response.Vlan = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
-          
-            return unmarshalledObject;
+
+            return response;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
 
-        private static ConnectionUnmarshaller _instance = new ConnectionUnmarshaller();        
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectClientException"))
+                {
+                    return DirectConnectClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectServerException"))
+                {
+                    return DirectConnectServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+            }
+            return new AmazonDirectConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        }
+
+        private static UpdateConnectionResponseUnmarshaller _instance = new UpdateConnectionResponseUnmarshaller();        
+
+        internal static UpdateConnectionResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConnectionUnmarshaller Instance
+        public static UpdateConnectionResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

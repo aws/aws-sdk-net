@@ -38,12 +38,15 @@ namespace Amazon.DirectConnect.Model
         private string _awsDeviceV2;
         private List<Connection> _connections = new List<Connection>();
         private string _connectionsBandwidth;
+        private string _encryptionMode;
         private HasLogicalRedundancy _hasLogicalRedundancy;
         private bool? _jumboFrameCapable;
         private string _lagId;
         private string _lagName;
         private LagState _lagState;
         private string _location;
+        private bool? _macSecCapable;
+        private List<MacSecKey> _macSecKeys = new List<MacSecKey>();
         private int? _minimumLinks;
         private int? _numberOfConnections;
         private string _ownerAccount;
@@ -140,6 +143,28 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetConnectionsBandwidth()
         {
             return this._connectionsBandwidth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionMode. 
+        /// <para>
+        /// The LAG MAC Security (MACsec) encryption mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.
+        /// </para>
+        /// </summary>
+        public string EncryptionMode
+        {
+            get { return this._encryptionMode; }
+            set { this._encryptionMode = value; }
+        }
+
+        // Check to see if EncryptionMode property is set
+        internal bool IsSetEncryptionMode()
+        {
+            return this._encryptionMode != null;
         }
 
         /// <summary>
@@ -280,6 +305,42 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MacSecCapable. 
+        /// <para>
+        /// Indicates whether the LAG supports MAC Security (MACsec).
+        /// </para>
+        /// </summary>
+        public bool MacSecCapable
+        {
+            get { return this._macSecCapable.GetValueOrDefault(); }
+            set { this._macSecCapable = value; }
+        }
+
+        // Check to see if MacSecCapable property is set
+        internal bool IsSetMacSecCapable()
+        {
+            return this._macSecCapable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MacSecKeys. 
+        /// <para>
+        /// The MAC Security (MACsec) security keys associated with the LAG.
+        /// </para>
+        /// </summary>
+        public List<MacSecKey> MacSecKeys
+        {
+            get { return this._macSecKeys; }
+            set { this._macSecKeys = value; }
+        }
+
+        // Check to see if MacSecKeys property is set
+        internal bool IsSetMacSecKeys()
+        {
+            return this._macSecKeys != null && this._macSecKeys.Count > 0; 
         }
 
         /// <summary>

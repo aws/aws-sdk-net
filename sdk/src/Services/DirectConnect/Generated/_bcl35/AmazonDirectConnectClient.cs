@@ -849,6 +849,78 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  AssociateMacSecKey
+
+        /// <summary>
+        /// Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association
+        /// Key (CAK) pair with an AWS Direct Connect dedicated connection.
+        /// 
+        ///  
+        /// <para>
+        /// You must supply either the <code>secretARN,</code> or the CKN/CAK (<code>ckn</code>
+        /// and <code>cak</code>) pair in the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about MAC Security (MACsec) key considerations, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-key-consideration">MACsec
+        /// pre-shared CKN/CAK key considerations </a> in the <i>AWS Direct Connect User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMacSecKey service method.</param>
+        /// 
+        /// <returns>The response from the AssociateMacSecKey service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateMacSecKey">REST API Reference for AssociateMacSecKey Operation</seealso>
+        public virtual AssociateMacSecKeyResponse AssociateMacSecKey(AssociateMacSecKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMacSecKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMacSecKeyResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateMacSecKeyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateMacSecKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMacSecKey operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateMacSecKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateMacSecKey">REST API Reference for AssociateMacSecKey Operation</seealso>
+        public virtual IAsyncResult BeginAssociateMacSecKey(AssociateMacSecKeyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMacSecKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMacSecKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateMacSecKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateMacSecKey.</param>
+        /// 
+        /// <returns>Returns a  AssociateMacSecKeyResult from DirectConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateMacSecKey">REST API Reference for AssociateMacSecKey Operation</seealso>
+        public virtual AssociateMacSecKeyResponse EndAssociateMacSecKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateMacSecKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateVirtualInterface
 
         /// <summary>
@@ -3766,6 +3838,67 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DisassociateMacSecKey
+
+        /// <summary>
+        /// Removes the association between a MAC Security (MACsec) security key and an AWS Direct
+        /// Connect dedicated connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMacSecKey service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateMacSecKey service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey">REST API Reference for DisassociateMacSecKey Operation</seealso>
+        public virtual DisassociateMacSecKeyResponse DisassociateMacSecKey(DisassociateMacSecKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMacSecKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMacSecKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateMacSecKeyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateMacSecKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMacSecKey operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateMacSecKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey">REST API Reference for DisassociateMacSecKey Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateMacSecKey(DisassociateMacSecKeyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMacSecKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMacSecKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateMacSecKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateMacSecKey.</param>
+        /// 
+        /// <returns>Returns a  DisassociateMacSecKeyResult from DirectConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey">REST API Reference for DisassociateMacSecKey Operation</seealso>
+        public virtual DisassociateMacSecKeyResponse EndDisassociateMacSecKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateMacSecKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListVirtualInterfaceTestHistory
 
         /// <summary>
@@ -4095,6 +4228,80 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  UpdateConnection
+
+        /// <summary>
+        /// Updates the AWS Direct Connect dedicated connection configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can update the following parameters for a connection:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The connection name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The connection's MAC Security (MACsec) encryption mode.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnection service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
+        public virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnection operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConnection(UpdateConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnection.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectionResult from DirectConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
+        public virtual UpdateConnectionResponse EndUpdateConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateDirectConnectGatewayAssociation
 
         /// <summary>
@@ -4167,7 +4374,7 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// You can update the following attributes:
+        /// You can update the following LAG attributes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4178,14 +4385,25 @@ namespace Amazon.DirectConnect
         /// The value for the minimum number of connections that must be operational for the LAG
         /// itself to be operational. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// When you create a LAG, the default value for the minimum number of operational connections
-        /// is zero (0). If you update this value and the number of operational connections falls
-        /// below the specified value, the LAG automatically goes down to avoid over-utilization
-        /// of the remaining connections. Adjust this value with care, as it could force the LAG
-        /// down if it is set higher than the current number of operational connections.
+        /// The LAG's MACsec encryption mode.
         /// </para>
+        ///  
+        /// <para>
+        /// AWS assigns this value to each connection which is part of the LAG.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The tags
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If you adjust the threshold value for the minimum number of operational connections,
+        /// ensure that the new value does not cause the LAG to fall below the threshold and become
+        /// non-operational.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLag service method.</param>
         /// 

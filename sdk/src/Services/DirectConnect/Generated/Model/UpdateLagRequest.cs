@@ -34,7 +34,7 @@ namespace Amazon.DirectConnect.Model
     /// 
     ///  
     /// <para>
-    /// You can update the following attributes:
+    /// You can update the following LAG attributes:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -45,20 +45,54 @@ namespace Amazon.DirectConnect.Model
     /// The value for the minimum number of connections that must be operational for the LAG
     /// itself to be operational. 
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> <li> 
     /// <para>
-    /// When you create a LAG, the default value for the minimum number of operational connections
-    /// is zero (0). If you update this value and the number of operational connections falls
-    /// below the specified value, the LAG automatically goes down to avoid over-utilization
-    /// of the remaining connections. Adjust this value with care, as it could force the LAG
-    /// down if it is set higher than the current number of operational connections.
+    /// The LAG's MACsec encryption mode.
     /// </para>
+    ///  
+    /// <para>
+    /// AWS assigns this value to each connection which is part of the LAG.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The tags
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// If you adjust the threshold value for the minimum number of operational connections,
+    /// ensure that the new value does not cause the LAG to fall below the threshold and become
+    /// non-operational.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateLagRequest : AmazonDirectConnectRequest
     {
+        private string _encryptionMode;
         private string _lagId;
         private string _lagName;
         private int? _minimumLinks;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionMode. 
+        /// <para>
+        /// The LAG MAC Security (MACsec) encryption mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS applies the value to all connections which are part of the LAG.
+        /// </para>
+        /// </summary>
+        public string EncryptionMode
+        {
+            get { return this._encryptionMode; }
+            set { this._encryptionMode = value; }
+        }
+
+        // Check to see if EncryptionMode property is set
+        internal bool IsSetEncryptionMode()
+        {
+            return this._encryptionMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LagId. 
