@@ -25,6 +25,230 @@ namespace Amazon.IoTWireless
 {
 
     /// <summary>
+    /// Constants used for properties of type BatteryLevel.
+    /// </summary>
+    public class BatteryLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Critical for BatteryLevel
+        /// </summary>
+        public static readonly BatteryLevel Critical = new BatteryLevel("critical");
+        /// <summary>
+        /// Constant Low for BatteryLevel
+        /// </summary>
+        public static readonly BatteryLevel Low = new BatteryLevel("low");
+        /// <summary>
+        /// Constant Normal for BatteryLevel
+        /// </summary>
+        public static readonly BatteryLevel Normal = new BatteryLevel("normal");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatteryLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatteryLevel FindValue(string value)
+        {
+            return FindValue<BatteryLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatteryLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionStatus.
+    /// </summary>
+    public class ConnectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Connected for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus Connected = new ConnectionStatus("Connected");
+        /// <summary>
+        /// Constant Disconnected for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus Disconnected = new ConnectionStatus("Disconnected");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionStatus FindValue(string value)
+        {
+            return FindValue<ConnectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeviceState.
+    /// </summary>
+    public class DeviceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Provisioned for DeviceState
+        /// </summary>
+        public static readonly DeviceState Provisioned = new DeviceState("Provisioned");
+        /// <summary>
+        /// Constant RegisteredNotSeen for DeviceState
+        /// </summary>
+        public static readonly DeviceState RegisteredNotSeen = new DeviceState("RegisteredNotSeen");
+        /// <summary>
+        /// Constant RegisteredReachable for DeviceState
+        /// </summary>
+        public static readonly DeviceState RegisteredReachable = new DeviceState("RegisteredReachable");
+        /// <summary>
+        /// Constant RegisteredUnreachable for DeviceState
+        /// </summary>
+        public static readonly DeviceState RegisteredUnreachable = new DeviceState("RegisteredUnreachable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceState FindValue(string value)
+        {
+            return FindValue<DeviceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Event.
+    /// </summary>
+    public class Event : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ack for Event
+        /// </summary>
+        public static readonly Event Ack = new Event("ack");
+        /// <summary>
+        /// Constant Discovered for Event
+        /// </summary>
+        public static readonly Event Discovered = new Event("discovered");
+        /// <summary>
+        /// Constant Lost for Event
+        /// </summary>
+        public static readonly Event Lost = new Event("lost");
+        /// <summary>
+        /// Constant Nack for Event
+        /// </summary>
+        public static readonly Event Nack = new Event("nack");
+        /// <summary>
+        /// Constant Passthrough for Event
+        /// </summary>
+        public static readonly Event Passthrough = new Event("passthrough");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Event(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Event FindValue(string value)
+        {
+            return FindValue<Event>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Event(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExpressionType.
     /// </summary>
     public class ExpressionType : ConstantClass
@@ -114,6 +338,56 @@ namespace Amazon.IoTWireless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PartnerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SigningAlg.
+    /// </summary>
+    public class SigningAlg : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ed25519 for SigningAlg
+        /// </summary>
+        public static readonly SigningAlg Ed25519 = new SigningAlg("Ed25519");
+        /// <summary>
+        /// Constant P256r1 for SigningAlg
+        /// </summary>
+        public static readonly SigningAlg P256r1 = new SigningAlg("P256r1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SigningAlg(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SigningAlg FindValue(string value)
+        {
+            return FindValue<SigningAlg>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SigningAlg(string value)
         {
             return FindValue(value);
         }

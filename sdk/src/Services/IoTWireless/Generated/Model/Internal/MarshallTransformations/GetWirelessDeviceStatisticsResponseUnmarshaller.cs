@@ -63,6 +63,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     response.LoRaWAN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Sidewalk", targetDepth))
+                {
+                    var unmarshaller = SidewalkDeviceMetadataUnmarshaller.Instance;
+                    response.Sidewalk = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WirelessDeviceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

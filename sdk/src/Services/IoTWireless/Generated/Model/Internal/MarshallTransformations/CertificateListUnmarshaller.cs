@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SidewalkListDevice Object
+    /// Response Unmarshaller for CertificateList Object
     /// </summary>  
-    public class SidewalkListDeviceUnmarshaller : IUnmarshaller<SidewalkListDevice, XmlUnmarshallerContext>, IUnmarshaller<SidewalkListDevice, JsonUnmarshallerContext>
+    public class CertificateListUnmarshaller : IUnmarshaller<CertificateList, XmlUnmarshallerContext>, IUnmarshaller<CertificateList, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SidewalkListDevice IUnmarshaller<SidewalkListDevice, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CertificateList IUnmarshaller<CertificateList, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SidewalkListDevice Unmarshall(JsonUnmarshallerContext context)
+        public CertificateList Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SidewalkListDevice unmarshalledObject = new SidewalkListDevice();
+            CertificateList unmarshalledObject = new CertificateList();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AmazonId", targetDepth))
+                if (context.TestExpression("SigningAlg", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AmazonId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SigningAlg = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeviceCertificates", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);
-                    unmarshalledObject.DeviceCertificates = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SidewalkId", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SidewalkId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SidewalkManufacturingSn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SidewalkManufacturingSn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
 
 
-        private static SidewalkListDeviceUnmarshaller _instance = new SidewalkListDeviceUnmarshaller();        
+        private static CertificateListUnmarshaller _instance = new CertificateListUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SidewalkListDeviceUnmarshaller Instance
+        public static CertificateListUnmarshaller Instance
         {
             get
             {

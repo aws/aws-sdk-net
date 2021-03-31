@@ -575,6 +575,11 @@
     <pattern>[a-fA-F0-9]{8}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.CertificateList.Value</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.Destinations.Description</property>
     <max>2048</max>
   </property-value-rule>
@@ -871,8 +876,24 @@
     <pattern>[a-fA-F0-9]{64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.SidewalkDevice.SidewalkId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.SidewalkDevice.SidewalkManufacturingSn</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkListDevice.AmazonId</property>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.SidewalkListDevice.SidewalkId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.SidewalkListDevice.SidewalkManufacturingSn</property>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkSendDataToDevice.Seq</property>

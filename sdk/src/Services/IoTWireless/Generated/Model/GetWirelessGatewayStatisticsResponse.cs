@@ -33,8 +33,27 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class GetWirelessGatewayStatisticsResponse : AmazonWebServiceResponse
     {
+        private ConnectionStatus _connectionStatus;
         private string _lastUplinkReceivedAt;
         private string _wirelessGatewayId;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionStatus. 
+        /// <para>
+        /// The connection status of the wireless gateway.
+        /// </para>
+        /// </summary>
+        public ConnectionStatus ConnectionStatus
+        {
+            get { return this._connectionStatus; }
+            set { this._connectionStatus = value; }
+        }
+
+        // Check to see if ConnectionStatus property is set
+        internal bool IsSetConnectionStatus()
+        {
+            return this._connectionStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LastUplinkReceivedAt. 

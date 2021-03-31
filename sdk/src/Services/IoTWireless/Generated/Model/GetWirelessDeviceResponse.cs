@@ -39,6 +39,7 @@ namespace Amazon.IoTWireless.Model
         private string _id;
         private LoRaWANDevice _loRaWAN;
         private string _name;
+        private SidewalkDevice _sidewalk;
         private string _thingArn;
         private string _thingName;
         private WirelessDeviceType _type;
@@ -153,6 +154,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sidewalk. 
+        /// <para>
+        /// Sidewalk device object.
+        /// </para>
+        /// </summary>
+        public SidewalkDevice Sidewalk
+        {
+            get { return this._sidewalk; }
+            set { this._sidewalk = value; }
+        }
+
+        // Check to see if Sidewalk property is set
+        internal bool IsSetSidewalk()
+        {
+            return this._sidewalk != null;
         }
 
         /// <summary>

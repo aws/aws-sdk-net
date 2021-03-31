@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SidewalkListDevice Object
+    /// Response Unmarshaller for SidewalkDeviceMetadata Object
     /// </summary>  
-    public class SidewalkListDeviceUnmarshaller : IUnmarshaller<SidewalkListDevice, XmlUnmarshallerContext>, IUnmarshaller<SidewalkListDevice, JsonUnmarshallerContext>
+    public class SidewalkDeviceMetadataUnmarshaller : IUnmarshaller<SidewalkDeviceMetadata, XmlUnmarshallerContext>, IUnmarshaller<SidewalkDeviceMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SidewalkListDevice IUnmarshaller<SidewalkListDevice, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SidewalkDeviceMetadata IUnmarshaller<SidewalkDeviceMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SidewalkListDevice Unmarshall(JsonUnmarshallerContext context)
+        public SidewalkDeviceMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SidewalkListDevice unmarshalledObject = new SidewalkListDevice();
+            SidewalkDeviceMetadata unmarshalledObject = new SidewalkDeviceMetadata();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AmazonId", targetDepth))
+                if (context.TestExpression("BatteryLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AmazonId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BatteryLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeviceCertificates", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);
-                    unmarshalledObject.DeviceCertificates = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SidewalkId", targetDepth))
+                if (context.TestExpression("DeviceState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SidewalkId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceState = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SidewalkManufacturingSn", targetDepth))
+                if (context.TestExpression("Event", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SidewalkManufacturingSn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Event = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Rssi", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Rssi = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +94,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
 
 
-        private static SidewalkListDeviceUnmarshaller _instance = new SidewalkListDeviceUnmarshaller();        
+        private static SidewalkDeviceMetadataUnmarshaller _instance = new SidewalkDeviceMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SidewalkListDeviceUnmarshaller Instance
+        public static SidewalkDeviceMetadataUnmarshaller Instance
         {
             get
             {

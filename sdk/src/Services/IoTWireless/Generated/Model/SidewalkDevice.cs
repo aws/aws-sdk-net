@@ -29,33 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// Sidewalk object used by list functions.
+    /// Sidewalk device object.
     /// </summary>
-    public partial class SidewalkListDevice
+    public partial class SidewalkDevice
     {
-        private string _amazonId;
         private List<CertificateList> _deviceCertificates = new List<CertificateList>();
         private string _sidewalkId;
         private string _sidewalkManufacturingSn;
-
-        /// <summary>
-        /// Gets and sets the property AmazonId. 
-        /// <para>
-        /// The Sidewalk Amazon ID.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=2048)]
-        public string AmazonId
-        {
-            get { return this._amazonId; }
-            set { this._amazonId = value; }
-        }
-
-        // Check to see if AmazonId property is set
-        internal bool IsSetAmazonId()
-        {
-            return this._amazonId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property DeviceCertificates. 
