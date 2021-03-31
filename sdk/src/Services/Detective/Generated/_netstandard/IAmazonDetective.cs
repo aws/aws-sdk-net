@@ -518,6 +518,33 @@ namespace Amazon.Detective
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Returns the tag values that are assigned to a behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RejectInvitation
 
 
@@ -611,6 +638,60 @@ namespace Amazon.Detective
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember">REST API Reference for StartMonitoringMember Operation</seealso>
         Task<StartMonitoringMemberResponse> StartMonitoringMemberAsync(StartMonitoringMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Applies tag values to a behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes tags from a behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

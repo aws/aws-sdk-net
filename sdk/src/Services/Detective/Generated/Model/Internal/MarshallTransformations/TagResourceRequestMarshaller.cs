@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateGraph Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateGraphRequestMarshaller : IMarshaller<IRequest, CreateGraphRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateGraphRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,17 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateGraphRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Detective");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/graph";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonDetectiveException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{ResourceArn}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -88,9 +91,9 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateGraphRequestMarshaller _instance = new CreateGraphRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateGraphRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -98,7 +101,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateGraphRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

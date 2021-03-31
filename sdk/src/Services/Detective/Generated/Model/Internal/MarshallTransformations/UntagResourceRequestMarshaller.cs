@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateGraph Request Marshaller
+    /// UntagResource Request Marshaller
     /// </summary>       
-    public class CreateGraphRequestMarshaller : IMarshaller<IRequest, CreateGraphRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateGraphRequest)input);
+            return this.Marshall((UntagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,45 +52,26 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateGraphRequest publicRequest)
+        public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Detective");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
-            request.HttpMethod = "POST";
+            request.HttpMethod = "DELETE";
 
-            request.ResourcePath = "/graph";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonDetectiveException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            
+            if (publicRequest.IsSetTagKeys())
+                request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
+            request.ResourcePath = "/tags/{ResourceArn}";
+            request.UseQueryString = true;
 
             return request;
         }
-        private static CreateGraphRequestMarshaller _instance = new CreateGraphRequestMarshaller();        
+        private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
 
-        internal static CreateGraphRequestMarshaller GetInstance()
+        internal static UntagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -98,7 +79,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateGraphRequestMarshaller Instance
+        public static UntagResourceRequestMarshaller Instance
         {
             get
             {
