@@ -61,6 +61,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Accounts.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("AccountsUrl", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AccountsUrl = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("OrganizationalUnitIds/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -78,6 +78,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.MaxConcurrentPercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("RegionConcurrencyType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RegionConcurrencyType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("RegionOrder/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

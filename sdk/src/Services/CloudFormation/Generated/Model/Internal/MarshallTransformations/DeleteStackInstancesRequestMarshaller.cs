@@ -82,6 +82,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                             publicRequestDeploymentTargetslistValueIndex++;
                         }
                     }
+                    if(publicRequest.DeploymentTargets.IsSetAccountsUrl())
+                    {
+                        request.Parameters.Add("DeploymentTargets" + "." + "AccountsUrl", StringUtils.FromString(publicRequest.DeploymentTargets.AccountsUrl));
+                    }
                     if(publicRequest.DeploymentTargets.IsSetOrganizationalUnitIds())
                     {
                         int publicRequestDeploymentTargetslistValueIndex = 1;
@@ -117,6 +121,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if(publicRequest.OperationPreferences.IsSetMaxConcurrentPercentage())
                     {
                         request.Parameters.Add("OperationPreferences" + "." + "MaxConcurrentPercentage", StringUtils.FromInt(publicRequest.OperationPreferences.MaxConcurrentPercentage));
+                    }
+                    if(publicRequest.OperationPreferences.IsSetRegionConcurrencyType())
+                    {
+                        request.Parameters.Add("OperationPreferences" + "." + "RegionConcurrencyType", StringUtils.FromString(publicRequest.OperationPreferences.RegionConcurrencyType));
                     }
                     if(publicRequest.OperationPreferences.IsSetRegionOrder())
                     {

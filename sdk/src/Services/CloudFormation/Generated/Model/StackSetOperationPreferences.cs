@@ -45,6 +45,7 @@ namespace Amazon.CloudFormation.Model
         private int? _failureTolerancePercentage;
         private int? _maxConcurrentCount;
         private int? _maxConcurrentPercentage;
+        private RegionConcurrencyType _regionConcurrencyType;
         private List<string> _regionOrder = new List<string>();
 
         /// <summary>
@@ -170,6 +171,21 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetMaxConcurrentPercentage()
         {
             return this._maxConcurrentPercentage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionConcurrencyType.
+        /// </summary>
+        public RegionConcurrencyType RegionConcurrencyType
+        {
+            get { return this._regionConcurrencyType; }
+            set { this._regionConcurrencyType = value; }
+        }
+
+        // Check to see if RegionConcurrencyType property is set
+        internal bool IsSetRegionConcurrencyType()
+        {
+            return this._regionConcurrencyType != null;
         }
 
         /// <summary>

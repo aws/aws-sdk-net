@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
     public partial class DeploymentTargets
     {
         private List<string> _accounts = new List<string>();
+        private string _accountsUrl;
         private List<string> _organizationalUnitIds = new List<string>();
 
         /// <summary>
@@ -61,6 +62,22 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAccounts()
         {
             return this._accounts != null && this._accounts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccountsUrl.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5120)]
+        public string AccountsUrl
+        {
+            get { return this._accountsUrl; }
+            set { this._accountsUrl = value; }
+        }
+
+        // Check to see if AccountsUrl property is set
+        internal bool IsSetAccountsUrl()
+        {
+            return this._accountsUrl != null;
         }
 
         /// <summary>

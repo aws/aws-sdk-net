@@ -912,6 +912,12 @@
     <pattern>arn:[-a-zA-Z0-9:/]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DeploymentTargets.AccountsUrl</property>
+    <min>1</min>
+    <max>5120</max>
+    <pattern>(s3://|http(s?)://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.LoggingConfig.LogGroupName</property>
     <min>1</min>
     <max>512</max>

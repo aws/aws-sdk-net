@@ -88,6 +88,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("OperationPreferences" + "." + "MaxConcurrentPercentage", StringUtils.FromInt(publicRequest.OperationPreferences.MaxConcurrentPercentage));
                     }
+                    if(publicRequest.OperationPreferences.IsSetRegionConcurrencyType())
+                    {
+                        request.Parameters.Add("OperationPreferences" + "." + "RegionConcurrencyType", StringUtils.FromString(publicRequest.OperationPreferences.RegionConcurrencyType));
+                    }
                     if(publicRequest.OperationPreferences.IsSetRegionOrder())
                     {
                         int publicRequestOperationPreferenceslistValueIndex = 1;
