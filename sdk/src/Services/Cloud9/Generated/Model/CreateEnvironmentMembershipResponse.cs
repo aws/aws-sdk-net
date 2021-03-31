@@ -41,6 +41,7 @@ namespace Amazon.Cloud9.Model
         /// Information about the environment member that was added.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EnvironmentMember Membership
         {
             get { return this._membership; }

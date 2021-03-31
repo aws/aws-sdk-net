@@ -45,6 +45,7 @@ namespace Amazon.Cloud9.Model
         /// The ID of the environment for the environment member.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EnvironmentId
         {
             get { return this._environmentId; }
@@ -96,6 +97,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PermissionsType Permissions
         {
             get { return this._permissions; }
@@ -114,6 +116,7 @@ namespace Amazon.Cloud9.Model
         /// The Amazon Resource Name (ARN) of the environment member.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserArn
         {
             get { return this._userArn; }
@@ -132,6 +135,7 @@ namespace Amazon.Cloud9.Model
         /// The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserId
         {
             get { return this._userId; }

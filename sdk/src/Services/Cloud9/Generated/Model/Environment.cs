@@ -38,6 +38,7 @@ namespace Amazon.Cloud9.Model
         private string _description;
         private string _id;
         private EnvironmentLifecycle _lifecycle;
+        private ManagedCredentialsStatus _managedCredentialsStatus;
         private string _name;
         private string _ownerArn;
         private EnvironmentType _type;
@@ -48,6 +49,7 @@ namespace Amazon.Cloud9.Model
         /// The Amazon Resource Name (ARN) of the environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -63,7 +65,8 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
-        /// The connection type used for connecting to an Amazon EC2 environment.
+        /// The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code>
+        /// is selected by default.
         /// </para>
         /// </summary>
         public ConnectionType ConnectionType
@@ -134,6 +137,66 @@ namespace Amazon.Cloud9.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedCredentialsStatus. 
+        /// <para>
+        /// Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment.
+        /// Available values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ENABLED_ON_CREATE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ENABLED_BY_OWNER</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISABLED_BY_DEFAULT</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISABLED_BY_OWNER</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISABLED_BY_COLLABORATOR</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_REMOVAL_BY_COLLABORATOR</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_REMOVAL_BY_OWNER</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED_REMOVAL_BY_COLLABORATOR</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ENABLED_BY_OWNER</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISABLED_BY_DEFAULT</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ManagedCredentialsStatus ManagedCredentialsStatus
+        {
+            get { return this._managedCredentialsStatus; }
+            set { this._managedCredentialsStatus = value; }
+        }
+
+        // Check to see if ManagedCredentialsStatus property is set
+        internal bool IsSetManagedCredentialsStatus()
+        {
+            return this._managedCredentialsStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the environment.
@@ -158,6 +221,7 @@ namespace Amazon.Cloud9.Model
         /// The Amazon Resource Name (ARN) of the environment owner.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OwnerArn
         {
             get { return this._ownerArn; }
@@ -186,6 +250,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EnvironmentType Type
         {
             get { return this._type; }

@@ -42,6 +42,7 @@ namespace Amazon.Cloud9.Model
         /// Any informational message about the status of the environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Message
         {
             get { return this._message; }
@@ -89,6 +90,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EnvironmentStatus Status
         {
             get { return this._status; }

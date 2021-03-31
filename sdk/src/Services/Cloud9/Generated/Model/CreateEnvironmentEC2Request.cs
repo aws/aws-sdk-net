@@ -39,6 +39,7 @@ namespace Amazon.Cloud9.Model
         private string _clientRequestToken;
         private ConnectionType _connectionType;
         private string _description;
+        private string _imageId;
         private string _instanceType;
         private string _name;
         private string _ownerArn;
@@ -92,7 +93,14 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
-        /// The connection type used for connecting to an Amazon EC2 environment.
+        /// The connection type used for connecting to an Amazon EC2 environment. Valid values
+        /// are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through
+        /// AWS Systems Manager).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+        /// no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
         /// </para>
         /// </summary>
         public ConnectionType ConnectionType
@@ -124,6 +132,64 @@ namespace Amazon.Cloud9.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance.
+        /// You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager
+        /// (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value
+        /// in the request. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>AMI aliases </b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Linux 2: <code>amazonlinux-2-x86_64</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Linux (default): <code>amazonlinux-1-x86_64</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>SSM paths</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
         }
 
         /// <summary>
@@ -195,7 +261,7 @@ namespace Amazon.Cloud9.Model
         /// Amazon EC2 instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=30)]
+        [AWSProperty(Min=15, Max=24)]
         public string SubnetId
         {
             get { return this._subnetId; }

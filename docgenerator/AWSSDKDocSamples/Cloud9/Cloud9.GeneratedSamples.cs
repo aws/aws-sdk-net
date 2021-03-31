@@ -23,7 +23,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
                 Description = "This is my demonstration environment.",
                 InstanceType = "t2.micro",
                 OwnerArn = "arn:aws:iam::123456789012:user/MyDemoUser",
-                SubnetId = "subnet-1fab8aEX"
+                SubnetId = "subnet-6300cd1b"
             });
 
             string environmentId = response.EnvironmentId;

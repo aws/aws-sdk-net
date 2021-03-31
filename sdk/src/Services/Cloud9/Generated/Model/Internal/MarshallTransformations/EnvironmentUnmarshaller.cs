@@ -94,6 +94,12 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
                     unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("managedCredentialsStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManagedCredentialsStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

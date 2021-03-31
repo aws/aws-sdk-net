@@ -257,6 +257,92 @@ namespace Amazon.Cloud9
 
 
     /// <summary>
+    /// Constants used for properties of type ManagedCredentialsStatus.
+    /// </summary>
+    public class ManagedCredentialsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED_BY_COLLABORATOR for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus DISABLED_BY_COLLABORATOR = new ManagedCredentialsStatus("DISABLED_BY_COLLABORATOR");
+        /// <summary>
+        /// Constant DISABLED_BY_DEFAULT for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus DISABLED_BY_DEFAULT = new ManagedCredentialsStatus("DISABLED_BY_DEFAULT");
+        /// <summary>
+        /// Constant DISABLED_BY_OWNER for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus DISABLED_BY_OWNER = new ManagedCredentialsStatus("DISABLED_BY_OWNER");
+        /// <summary>
+        /// Constant ENABLED_BY_OWNER for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus ENABLED_BY_OWNER = new ManagedCredentialsStatus("ENABLED_BY_OWNER");
+        /// <summary>
+        /// Constant ENABLED_ON_CREATE for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus ENABLED_ON_CREATE = new ManagedCredentialsStatus("ENABLED_ON_CREATE");
+        /// <summary>
+        /// Constant FAILED_REMOVAL_BY_COLLABORATOR for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus FAILED_REMOVAL_BY_COLLABORATOR = new ManagedCredentialsStatus("FAILED_REMOVAL_BY_COLLABORATOR");
+        /// <summary>
+        /// Constant FAILED_REMOVAL_BY_OWNER for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus FAILED_REMOVAL_BY_OWNER = new ManagedCredentialsStatus("FAILED_REMOVAL_BY_OWNER");
+        /// <summary>
+        /// Constant PENDING_REMOVAL_BY_COLLABORATOR for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus PENDING_REMOVAL_BY_COLLABORATOR = new ManagedCredentialsStatus("PENDING_REMOVAL_BY_COLLABORATOR");
+        /// <summary>
+        /// Constant PENDING_REMOVAL_BY_OWNER for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus PENDING_REMOVAL_BY_OWNER = new ManagedCredentialsStatus("PENDING_REMOVAL_BY_OWNER");
+        /// <summary>
+        /// Constant PENDING_START_REMOVAL_BY_COLLABORATOR for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus PENDING_START_REMOVAL_BY_COLLABORATOR = new ManagedCredentialsStatus("PENDING_START_REMOVAL_BY_COLLABORATOR");
+        /// <summary>
+        /// Constant PENDING_START_REMOVAL_BY_OWNER for ManagedCredentialsStatus
+        /// </summary>
+        public static readonly ManagedCredentialsStatus PENDING_START_REMOVAL_BY_OWNER = new ManagedCredentialsStatus("PENDING_START_REMOVAL_BY_OWNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedCredentialsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedCredentialsStatus FindValue(string value)
+        {
+            return FindValue<ManagedCredentialsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedCredentialsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MemberPermissions.
     /// </summary>
     public class MemberPermissions : ConstantClass
