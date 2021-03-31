@@ -38,11 +38,10 @@ namespace Amazon.MachineLearning.Model
     /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code>
     /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
     /// </para>
-    ///  <caution><title>Caution</title> 
+    ///  
     /// <para>
-    /// The results of the <code>DeleteEvaluation</code> operation are irreversible.
+    ///  <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
     /// </para>
-    /// </caution>
     /// </summary>
     public partial class DeleteEvaluationRequest : AmazonMachineLearningRequest
     {

@@ -36,12 +36,11 @@ namespace Amazon.MachineLearning.Model
     /// The result contains the <code>MLModelId</code> and the endpoint information for the
     /// <code>MLModel</code>.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
-    /// The endpoint information includes the URI of the <code>MLModel</code>; that is, the
-    /// location to send online prediction requests for the specified <code>MLModel</code>.
+    ///  <b>Note:</b> The endpoint information includes the URI of the <code>MLModel</code>;
+    /// that is, the location to send online prediction requests for the specified <code>MLModel</code>.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateRealtimeEndpointResponse : AmazonWebServiceResponse
     {

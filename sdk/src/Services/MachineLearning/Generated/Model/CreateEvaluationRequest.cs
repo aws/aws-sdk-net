@@ -42,7 +42,7 @@ namespace Amazon.MachineLearning.Model
     /// 
     ///  
     /// <para>
-    /// <code>CreateEvaluation</code> is an asynchronous operation. In response to <code>CreateEvaluation</code>,
+    ///  <code>CreateEvaluation</code> is an asynchronous operation. In response to <code>CreateEvaluation</code>,
     /// Amazon Machine Learning (Amazon ML) immediately returns and sets the evaluation status
     /// to <code>PENDING</code>. After the <code>Evaluation</code> is created and ready for
     /// use, Amazon ML sets the status to <code>COMPLETED</code>. 

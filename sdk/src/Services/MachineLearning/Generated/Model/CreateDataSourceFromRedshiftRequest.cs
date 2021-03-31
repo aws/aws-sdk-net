@@ -36,7 +36,7 @@ namespace Amazon.MachineLearning.Model
     /// 
     ///  
     /// <para>
-    /// <code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In response
+    ///  <code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In response
     /// to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning (Amazon ML)
     /// immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>.
     /// After the <code>DataSource</code> is created and ready for use, Amazon ML sets the
@@ -150,37 +150,43 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// The data specification of an Amazon Redshift <code>DataSource</code>:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name of the Amazon
-        /// Redshift database. </li> <li> <code> ClusterIdentifier</code> - The unique ID for
-        /// the Amazon Redshift cluster.</li> </ul>
+        /// DatabaseInformation -
         /// </para>
-        /// </li> <li>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DatabaseName</code> - The name of the Amazon Redshift database.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that
         /// are used to connect to the Amazon Redshift database.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging
         /// Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
         /// query is stored in this location.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code>
         /// is specified. 
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
         /// DataRearrangement - A JSON string that represents the splitting and rearrangement
         /// requirements for the <code>DataSource</code>.
@@ -209,21 +215,19 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf
-        /// of the user to create the following: 
+        /// of the user to create the following:
         /// </para>
-        ///  
-        /// <para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query
         /// on an Amazon Redshift cluster
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code>
+        /// 
         /// </para>
-        /// </li> </ul> 
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=110)]
         public string RoleARN

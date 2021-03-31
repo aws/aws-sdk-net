@@ -35,7 +35,7 @@ namespace Amazon.MachineLearning.Model
     /// 
     ///  
     /// <para>
-    /// <code>GetDataSource</code> provides results in normal or verbose format. The verbose
+    ///  <code>GetDataSource</code> provides results in normal or verbose format. The verbose
     /// format adds the schema description and the list of files pointed to by the DataSource
     /// to the normal format.
     /// </para>

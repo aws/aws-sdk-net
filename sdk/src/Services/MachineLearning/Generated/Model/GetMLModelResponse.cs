@@ -118,7 +118,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EndpointInfo. 
         /// <para>
-        /// The current endpoint of the <code>MLModel</code>
+        /// The current endpoint of the <code>MLModel</code> 
         /// </para>
         /// </summary>
         public RealtimeEndpointInfo EndpointInfo
@@ -254,10 +254,22 @@ namespace Amazon.MachineLearning.Model
         /// Identifies the <code>MLModel</code> category. The following are the available types:
         /// 
         /// </para>
-        ///  <ul> <li>REGRESSION -- Produces a numeric result. For example, "What price should
-        /// a house be listed at?"</li> <li>BINARY -- Produces one of two possible results. For
-        /// example, "Is this an e-commerce website?"</li> <li>MULTICLASS -- Produces one of several
-        /// possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// REGRESSION -- Produces a numeric result. For example, "What price should a house be
+        /// listed at?"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// BINARY -- Produces one of two possible results. For example, "Is this an e-commerce
+        /// website?"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH,
+        /// LOW or MEDIUM risk trade?"
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public MLModelType MLModelType
         {
@@ -297,11 +309,10 @@ namespace Amazon.MachineLearning.Model
         /// provides detailed information about the observation data to use during training, and
         /// manipulations to perform on the observation data during training.
         /// </para>
-        ///  <note><title>Note</title> 
+        ///  
         /// <para>
-        /// This parameter is provided as part of the verbose format.
+        ///  <b>Note:</b> This parameter is provided as part of the verbose format.
         /// </para>
-        /// </note>
         /// </summary>
         [AWSProperty(Max=131071)]
         public string Recipe
@@ -321,11 +332,10 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// The schema used by all of the data files referenced by the <code>DataSource</code>.
         /// </para>
-        ///  <note><title>Note</title> 
+        ///  
         /// <para>
-        /// This parameter is provided as part of the verbose format.
+        ///  <b>Note:</b> This parameter is provided as part of the verbose format.
         /// </para>
-        /// </note>
         /// </summary>
         [AWSProperty(Max=131071)]
         public string Schema
@@ -425,12 +435,28 @@ namespace Amazon.MachineLearning.Model
         /// The current status of the <code>MLModel</code>. This element can have one of the following
         /// values:
         /// </para>
-        ///  <ul> <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a
-        /// request to describe a <code>MLModel</code>.</li> <li> <code>INPROGRESS</code> - The
-        /// request is processing.</li> <li> <code>FAILED</code> - The request did not run to
-        /// completion. The ML model isn't usable.</li> <li> <code>COMPLETED</code> - The request
-        /// completed successfully.</li> <li> <code>DELETED</code> - The <code>MLModel</code>
-        /// is marked as deleted. It isn't usable.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to
+        /// describe a <code>MLModel</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INPROGRESS</code> - The request is processing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> - The request did not run to completion. The ML model isn't usable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>COMPLETED</code> - The request completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public EntityStatus Status
         {
@@ -471,11 +497,11 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  
         /// <para>
-        /// The following is the current set of training parameters: 
+        /// The following is the current set of training parameters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending
+        ///  <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending
         /// on the input data, the size of the model might affect its performance.
         /// </para>
         ///  
@@ -483,22 +509,22 @@ namespace Amazon.MachineLearning.Model
         ///  The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>.
         /// The default value is <code>33554432</code>.
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>sgd.maxPasses</code> - The number of times that the training process traverses
+        ///  <code>sgd.maxPasses</code> - The number of times that the training process traverses
         /// the observations to build the <code>MLModel</code>. The value is an integer that ranges
         /// from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
+        ///  <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
         /// data improves a model's ability to find the optimal solution for a variety of data
         /// types. The valid values are <code>auto</code> and <code>none</code>. The default value
         /// is <code>none</code>. We strongly recommend that you shuffle your data.
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm.
+        ///  <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm.
         /// It controls overfitting the data by penalizing large coefficients. This tends to drive
         /// coefficients to zero, resulting in a sparse feature set. If you use this parameter,
         /// start by specifying a small value, such as <code>1.0E-08</code>.
@@ -511,7 +537,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm.
+        ///  <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm.
         /// It controls overfitting the data by penalizing large coefficients. This tends to drive
         /// coefficients to small, nonzero values. If you use this parameter, start by specifying
         /// a small value, such as <code>1.0E-08</code>.

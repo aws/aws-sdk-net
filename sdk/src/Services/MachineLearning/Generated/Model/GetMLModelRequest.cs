@@ -35,7 +35,7 @@ namespace Amazon.MachineLearning.Model
     /// 
     ///  
     /// <para>
-    /// <code>GetMLModel</code> provides results in normal or verbose format. 
+    ///  <code>GetMLModel</code> provides results in normal or verbose format. 
     /// </para>
     /// </summary>
     public partial class GetMLModelRequest : AmazonMachineLearningRequest

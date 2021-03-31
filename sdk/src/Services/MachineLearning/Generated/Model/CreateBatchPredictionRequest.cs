@@ -37,7 +37,7 @@ namespace Amazon.MachineLearning.Model
     /// 
     ///  
     /// <para>
-    /// <code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>,
+    ///  <code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>,
     /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>BatchPrediction</code>
     /// status to <code>PENDING</code>. After the <code>BatchPrediction</code> completes,
     /// Amazon ML sets the status to <code>COMPLETED</code>. 
@@ -148,7 +148,7 @@ namespace Amazon.MachineLearning.Model
         ///  
         /// <para>
         /// Amazon ML needs permissions to store and retrieve the logs on your behalf. For information
-        /// about how to set permissions, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+        /// about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
         /// Machine Learning Developer Guide</a>.
         /// </para>
         /// </summary>

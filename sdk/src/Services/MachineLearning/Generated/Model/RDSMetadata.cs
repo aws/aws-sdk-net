@@ -99,7 +99,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property ResourceRole. 
         /// <para>
         /// The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry
-        /// out the copy task from Amazon RDS to Amazon S3. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+        /// out the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
         /// templates</a> for data pipelines.
         /// </para>
         /// </summary>
@@ -141,7 +141,7 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor
         /// the progress of the copy task from Amazon RDS to Amazon S3. For more information,
-        /// see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+        /// see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
         /// templates</a> for data pipelines.
         /// </para>
         /// </summary>

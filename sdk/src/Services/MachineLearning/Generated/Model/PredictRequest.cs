@@ -32,12 +32,11 @@ namespace Amazon.MachineLearning.Model
     /// Container for the parameters to the Predict operation.
     /// Generates a prediction for the observation using the specified <code>ML Model</code>.
     /// 
-    ///  <note><title>Note</title> 
+    ///  
     /// <para>
-    /// Not all response parameters will be populated. Whether a response parameter is populated
-    /// depends on the type of model requested.
+    ///  <b>Note:</b> Not all response parameters will be populated. Whether a response parameter
+    /// is populated depends on the type of model requested.
     /// </para>
-    /// </note>
     /// </summary>
     public partial class PredictRequest : AmazonMachineLearningRequest
     {

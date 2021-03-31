@@ -96,9 +96,9 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// There are multiple parameters that control what data is used to create a datasource:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <b><code>percentBegin</code></b>
+        ///  <b> <code>percentBegin</code> </b> 
         /// </para>
         ///  
         /// <para>
@@ -106,9 +106,9 @@ namespace Amazon.MachineLearning.Model
         /// to create the Datasource. If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
         /// Amazon ML includes all of the data when creating the datasource.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b><code>percentEnd</code></b>
+        ///  <b> <code>percentEnd</code> </b> 
         /// </para>
         ///  
         /// <para>
@@ -116,9 +116,9 @@ namespace Amazon.MachineLearning.Model
         /// the Datasource. If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
         /// Amazon ML includes all of the data when creating the datasource.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b><code>complement</code></b>
+        ///  <b> <code>complement</code> </b> 
         /// </para>
         ///  
         /// <para>
@@ -138,14 +138,16 @@ namespace Amazon.MachineLearning.Model
         ///  
         /// <para>
         /// Datasource for evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code>
+        /// 
         /// </para>
         ///  
         /// <para>
         /// Datasource for training: <code>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</code>
+        /// 
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b><code>strategy</code></b>
+        ///  <b> <code>strategy</code> </b> 
         /// </para>
         ///  
         /// <para>
@@ -167,12 +169,12 @@ namespace Amazon.MachineLearning.Model
         ///  
         /// <para>
         /// Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-        /// "strategy":"sequential"}}</code>
+        /// "strategy":"sequential"}}</code> 
         /// </para>
         ///  
         /// <para>
         /// Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-        /// "strategy":"sequential", "complement":"true"}}</code>
+        /// "strategy":"sequential", "complement":"true"}}</code> 
         /// </para>
         ///  
         /// <para>
@@ -198,12 +200,13 @@ namespace Amazon.MachineLearning.Model
         ///  
         /// <para>
         /// Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-        /// "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code>
+        /// "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> 
         /// </para>
         ///  
         /// <para>
         /// Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
         /// "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -229,6 +232,7 @@ namespace Amazon.MachineLearning.Model
         ///  
         /// <para>
         /// A <code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -242,31 +246,31 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  
         /// <para>
-        ///  "recordAnnotationFieldName": "F1",
+        /// "recordAnnotationFieldName": "F1",
         /// </para>
         ///  
         /// <para>
-        ///  "recordWeightFieldName": "F2",
+        /// "recordWeightFieldName": "F2",
         /// </para>
         ///  
         /// <para>
-        ///  "targetFieldName": "F3",
+        /// "targetFieldName": "F3",
         /// </para>
         ///  
         /// <para>
-        ///  "dataFormat": "CSV",
+        /// "dataFormat": "CSV",
         /// </para>
         ///  
         /// <para>
-        ///  "dataFileContainsHeader": true,
+        /// "dataFileContainsHeader": true,
         /// </para>
         ///  
         /// <para>
-        ///  "attributes": [
+        /// "attributes": [
         /// </para>
         ///  
         /// <para>
-        ///  { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC"
+        /// { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC"
         /// }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType":
         /// "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6",
         /// "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" },
@@ -274,7 +278,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  
         /// <para>
-        ///  "excludedVariableNames": [ "F6" ] } 
+        /// "excludedVariableNames": [ "F6" ] }
         /// </para>
         /// </summary>
         [AWSProperty(Max=131071)]
@@ -314,7 +318,7 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic Compute Cloud
         /// (Amazon EC2) instance to carry out the copy operation from Amazon RDS to an Amazon
-        /// S3 task. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+        /// S3 task. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
         /// templates</a> for data pipelines.
         /// </para>
         /// </summary>
@@ -397,7 +401,7 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to monitor
         /// the progress of the copy task from Amazon RDS to Amazon S3. For more information,
-        /// see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+        /// see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
         /// templates</a> for data pipelines.
         /// </para>
         /// </summary>

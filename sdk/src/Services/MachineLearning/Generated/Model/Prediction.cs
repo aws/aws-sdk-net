@@ -111,8 +111,10 @@ namespace Amazon.MachineLearning.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PredictedValue. The prediction value for <code>REGRESSION</code>
-        /// <code>MLModel</code>.
+        /// Gets and sets the property PredictedValue. 
+        /// <para>
+        /// The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+        /// </para>
         /// </summary>
         public float PredictedValue
         {

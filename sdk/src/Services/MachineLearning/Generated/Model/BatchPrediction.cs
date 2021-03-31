@@ -319,12 +319,30 @@ namespace Amazon.MachineLearning.Model
         /// The status of the <code>BatchPrediction</code>. This element can have one of the following
         /// values:
         /// </para>
-        ///  <ul> <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a
-        /// request to generate predictions for a batch of observations.</li> <li> <code>INPROGRESS</code>
-        /// - The process is underway.</li> <li> <code>FAILED</code> - The request to perform
-        /// a batch prediction did not run to completion. It is not usable.</li> <li> <code>COMPLETED</code>
-        /// - The batch prediction process completed successfully.</li> <li> <code>DELETED</code>
-        /// - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to
+        /// generate predictions for a batch of observations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INPROGRESS</code> - The process is underway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> - The request to perform a batch prediction did not run to completion.
+        /// It is not usable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>COMPLETED</code> - The batch prediction process completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It
+        /// is not usable.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public EntityStatus Status
         {

@@ -63,8 +63,12 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:
         /// </para>
-        ///  <ul> <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code>
-        /// is to minimize the gradient of the loss function. </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is
+        /// to minimize the gradient of the loss function. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Algorithm Algorithm
         {
@@ -247,11 +251,22 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// Identifies the <code>MLModel</code> category. The following are the available types:
         /// </para>
-        ///  <ul> <li> <code>REGRESSION</code> - Produces a numeric result. For example, "What
-        /// price should a house be listed at?"</li> <li> <code>BINARY</code> - Produces one of
-        /// two possible results. For example, "Is this a child-friendly web site?".</li> <li>
-        /// <code>MULTICLASS</code> - Produces one of several possible results. For example, "Is
-        /// this a HIGH-, LOW-, or MEDIUM-risk trade?".</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>REGRESSION</code> - Produces a numeric result. For example, "What price should
+        /// a house be listed at?"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BINARY</code> - Produces one of two possible results. For example, "Is this
+        /// a child-friendly web site?".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MULTICLASS</code> - Produces one of several possible results. For example,
+        /// "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public MLModelType MLModelType
         {
@@ -354,12 +369,29 @@ namespace Amazon.MachineLearning.Model
         /// The current status of an <code>MLModel</code>. This element can have one of the following
         /// values: 
         /// </para>
-        ///  <ul> <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a
-        /// request to create an <code>MLModel</code>.</li> <li> <code>INPROGRESS</code> - The
-        /// creation process is underway.</li> <li> <code>FAILED</code> - The request to create
-        /// an <code>MLModel</code> didn't run to completion. The model isn't usable.</li> <li>
-        /// <code>COMPLETED</code> - The creation process completed successfully.</li> <li> <code>DELETED</code>
-        /// - The <code>MLModel</code> is marked as deleted. It isn't usable.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to
+        /// create an <code>MLModel</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INPROGRESS</code> - The creation process is underway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to
+        /// completion. The model isn't usable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>COMPLETED</code> - The creation process completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public EntityStatus Status
         {
@@ -401,11 +433,11 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  
         /// <para>
-        /// The following is the current set of training parameters: 
+        /// The following is the current set of training parameters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending
+        ///  <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending
         /// on the input data, the size of the model might affect its performance.
         /// </para>
         ///  
@@ -413,22 +445,22 @@ namespace Amazon.MachineLearning.Model
         ///  The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>.
         /// The default value is <code>33554432</code>.
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>sgd.maxPasses</code> - The number of times that the training process traverses
+        ///  <code>sgd.maxPasses</code> - The number of times that the training process traverses
         /// the observations to build the <code>MLModel</code>. The value is an integer that ranges
         /// from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
+        ///  <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
         /// the data improves a model's ability to find the optimal solution for a variety of
         /// data types. The valid values are <code>auto</code> and <code>none</code>. The default
         /// value is <code>none</code>.
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm,
+        ///  <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm,
         /// which controls overfitting the data by penalizing large coefficients. This parameter
         /// tends to drive coefficients to zero, resulting in sparse feature set. If you use this
         /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.
@@ -441,7 +473,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm,
+        ///  <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm,
         /// which controls overfitting the data by penalizing large coefficients. This tends to
         /// drive coefficients to small, nonzero values. If you use this parameter, start by specifying
         /// a small value, such as <code>1.0E-08</code>.

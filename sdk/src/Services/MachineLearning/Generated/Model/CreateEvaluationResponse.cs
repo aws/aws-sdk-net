@@ -34,8 +34,8 @@ namespace Amazon.MachineLearning.Model
     /// 
     ///  
     /// <para>
-    /// <code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates
-    /// by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code>
+    ///  <code>CreateEvaluation</code> operation is asynchronous. You can poll for status
+    /// updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code>
     /// parameter. 
     /// </para>
     /// </summary>

@@ -36,13 +36,14 @@ namespace Amazon.MachineLearning.Model
     /// 
     ///  
     /// <para>
-    /// <code>CreateDataSourceFromS3</code> is an asynchronous operation. In response to <code>CreateDataSourceFromS3</code>,
-    /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code>
-    /// status to <code>PENDING</code>. After the <code>DataSource</code> has been created
-    /// and is ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-    /// <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code> state
-    /// can be used to perform only <code>CreateMLModel</code>, <code>CreateEvaluation</code>
-    /// or <code>CreateBatchPrediction</code> operations. 
+    ///  <code>CreateDataSourceFromS3</code> is an asynchronous operation. In response to
+    /// <code>CreateDataSourceFromS3</code>, Amazon Machine Learning (Amazon ML) immediately
+    /// returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After
+    /// the <code>DataSource</code> has been created and is ready for use, Amazon ML sets
+    /// the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code>
+    /// in the <code>COMPLETED</code> or <code>PENDING</code> state can be used to perform
+    /// only <code>CreateMLModel</code>, <code>CreateEvaluation</code> or <code>CreateBatchPrediction</code>
+    /// operations. 
     /// </para>
     ///  
     /// <para>
@@ -83,8 +84,8 @@ namespace Amazon.MachineLearning.Model
         /// The compute statistics for a <code>DataSource</code>. The statistics are generated
         /// from the observation data referenced by a <code>DataSource</code>. Amazon ML uses
         /// the statistics internally during <code>MLModel</code> training. This parameter must
-        /// be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-        /// used for <code>MLModel</code> training.
+        /// be set to <code>true</code> if the <code/>DataSource<code/> needs to be used for <code>MLModel</code>
+        /// training.
         /// </para>
         /// </summary>
         public bool ComputeStatistics
@@ -142,20 +143,20 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// The data specification of a <code>DataSource</code>:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// DataLocationS3 - The Amazon S3 location of the observation data.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code>
         /// is specified. 
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
         /// DataRearrangement - A JSON string that represents the splitting and rearrangement
         /// requirements for the <code>Datasource</code>. 

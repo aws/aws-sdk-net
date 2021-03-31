@@ -62,7 +62,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the ML object to tag. 
+        /// The type of the ML object to tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

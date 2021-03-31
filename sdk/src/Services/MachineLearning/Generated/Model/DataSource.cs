@@ -365,12 +365,28 @@ namespace Amazon.MachineLearning.Model
         /// The current status of the <code>DataSource</code>. This element can have one of the
         /// following values: 
         /// </para>
-        ///  <ul> <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create
-        /// a <code>DataSource</code>.</li> <li>INPROGRESS - The creation process is underway.</li>
-        /// <li>FAILED - The request to create a <code>DataSource</code> did not run to completion.
-        /// It is not usable.</li> <li>COMPLETED - The creation process completed successfully.</li>
-        /// <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INPROGRESS - The creation process is underway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FAILED - The request to create a <code>DataSource</code> did not run to completion.
+        /// It is not usable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// COMPLETED - The creation process completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public EntityStatus Status
         {

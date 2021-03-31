@@ -203,6 +203,24 @@ namespace Amazon.MachineLearning
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IMachineLearningPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMachineLearningPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MachineLearningPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 
@@ -321,7 +339,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>,
+        ///  <code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>,
         /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>BatchPrediction</code>
         /// status to <code>PENDING</code>. After the <code>BatchPrediction</code> completes,
         /// Amazon ML sets the status to <code>COMPLETED</code>. 
@@ -383,7 +401,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response to
+        ///  <code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response to
         /// <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML) immediately
         /// returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After
         /// the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code>
@@ -446,7 +464,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In response
+        ///  <code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In response
         /// to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning (Amazon ML)
         /// immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>.
         /// After the <code>DataSource</code> is created and ready for use, Amazon ML sets the
@@ -535,13 +553,14 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>CreateDataSourceFromS3</code> is an asynchronous operation. In response to <code>CreateDataSourceFromS3</code>,
-        /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code>
-        /// status to <code>PENDING</code>. After the <code>DataSource</code> has been created
-        /// and is ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-        /// <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code> state
-        /// can be used to perform only <code>CreateMLModel</code>, <code>CreateEvaluation</code>
-        /// or <code>CreateBatchPrediction</code> operations. 
+        ///  <code>CreateDataSourceFromS3</code> is an asynchronous operation. In response to
+        /// <code>CreateDataSourceFromS3</code>, Amazon Machine Learning (Amazon ML) immediately
+        /// returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After
+        /// the <code>DataSource</code> has been created and is ready for use, Amazon ML sets
+        /// the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code>
+        /// in the <code>COMPLETED</code> or <code>PENDING</code> state can be used to perform
+        /// only <code>CreateMLModel</code>, <code>CreateEvaluation</code> or <code>CreateBatchPrediction</code>
+        /// operations. 
         /// </para>
         ///  
         /// <para>
@@ -623,7 +642,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>CreateEvaluation</code> is an asynchronous operation. In response to <code>CreateEvaluation</code>,
+        ///  <code>CreateEvaluation</code> is an asynchronous operation. In response to <code>CreateEvaluation</code>,
         /// Amazon Machine Learning (Amazon ML) immediately returns and sets the evaluation status
         /// to <code>PENDING</code>. After the <code>Evaluation</code> is created and ready for
         /// use, Amazon ML sets the status to <code>COMPLETED</code>. 
@@ -687,7 +706,7 @@ namespace Amazon.MachineLearning
         /// </para>
         ///  
         /// <para>
-        /// <code>CreateMLModel</code> is an asynchronous operation. In response to <code>CreateMLModel</code>,
+        ///  <code>CreateMLModel</code> is an asynchronous operation. In response to <code>CreateMLModel</code>,
         /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>MLModel</code>
         /// status to <code>PENDING</code>. After the <code>MLModel</code> has been created and
         /// ready is for use, Amazon ML sets the status to <code>COMPLETED</code>. 
@@ -830,7 +849,7 @@ namespace Amazon.MachineLearning
         /// </para>
         ///  
         /// <para>
-        /// <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
+        ///  <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
         /// irreversible.
         /// </para>
         /// </summary>
@@ -870,7 +889,7 @@ namespace Amazon.MachineLearning
         /// </para>
         ///  
         /// <para>
-        /// <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
+        ///  <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
         /// irreversible.
         /// </para>
         /// </summary>
@@ -923,7 +942,7 @@ namespace Amazon.MachineLearning
         /// </para>
         ///  
         /// <para>
-        /// <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
+        ///  <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
         /// </para>
         /// </summary>
         /// <param name="dataSourceId">A user-supplied ID that uniquely identifies the <code>DataSource</code>.</param>
@@ -961,7 +980,7 @@ namespace Amazon.MachineLearning
         /// </para>
         ///  
         /// <para>
-        /// <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
+        ///  <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
@@ -1012,11 +1031,10 @@ namespace Amazon.MachineLearning
         /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code>
         /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The results of the <code>DeleteEvaluation</code> operation are irreversible.
+        ///  <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="evaluationId">A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</param>
         /// <param name="cancellationToken">
@@ -1052,11 +1070,10 @@ namespace Amazon.MachineLearning
         /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code>
         /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The results of the <code>DeleteEvaluation</code> operation are irreversible.
+        ///  <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluation service method.</param>
         /// <param name="cancellationToken">
@@ -1107,7 +1124,7 @@ namespace Amazon.MachineLearning
         /// </para>
         ///  
         /// <para>
-        /// <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
+        ///  <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
         /// </para>
         /// </summary>
         /// <param name="mlModelId">A user-supplied ID that uniquely identifies the <code>MLModel</code>.</param>
@@ -1145,7 +1162,7 @@ namespace Amazon.MachineLearning
         /// </para>
         ///  
         /// <para>
-        /// <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
+        ///  <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMLModel service method.</param>
@@ -1592,7 +1609,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>GetDataSource</code> provides results in normal or verbose format. The verbose
+        ///  <code>GetDataSource</code> provides results in normal or verbose format. The verbose
         /// format adds the schema description and the list of files pointed to by the DataSource
         /// to the normal format.
         /// </para>
@@ -1627,7 +1644,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>GetDataSource</code> provides results in normal or verbose format. The verbose
+        ///  <code>GetDataSource</code> provides results in normal or verbose format. The verbose
         /// format adds the schema description and the list of files pointed to by the DataSource
         /// to the normal format.
         /// </para>
@@ -1665,7 +1682,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>GetDataSource</code> provides results in normal or verbose format. The verbose
+        ///  <code>GetDataSource</code> provides results in normal or verbose format. The verbose
         /// format adds the schema description and the list of files pointed to by the DataSource
         /// to the normal format.
         /// </para>
@@ -1787,7 +1804,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>GetMLModel</code> provides results in normal or verbose format. 
+        ///  <code>GetMLModel</code> provides results in normal or verbose format. 
         /// </para>
         /// </summary>
         /// <param name="mlModelId">The ID assigned to the <code>MLModel</code> at creation.</param>
@@ -1820,7 +1837,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>GetMLModel</code> provides results in normal or verbose format. 
+        ///  <code>GetMLModel</code> provides results in normal or verbose format. 
         /// </para>
         /// </summary>
         /// <param name="mlModelId">The ID assigned to the <code>MLModel</code> at creation.</param>
@@ -1856,7 +1873,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// <code>GetMLModel</code> provides results in normal or verbose format. 
+        ///  <code>GetMLModel</code> provides results in normal or verbose format. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMLModel service method.</param>
@@ -1901,12 +1918,11 @@ namespace Amazon.MachineLearning
         /// <summary>
         /// Generates a prediction for the observation using the specified <code>ML Model</code>.
         /// 
-        ///  <note><title>Note</title> 
+        ///  
         /// <para>
-        /// Not all response parameters will be populated. Whether a response parameter is populated
-        /// depends on the type of model requested.
+        ///  <b>Note:</b> Not all response parameters will be populated. Whether a response parameter
+        /// is populated depends on the type of model requested.
         /// </para>
-        /// </note>
         /// </summary>
         /// <param name="mlModelId">A unique identifier of the <code>MLModel</code>.</param>
         /// <param name="predictEndpoint">A property of PredictRequest used to execute the Predict service method.</param>
@@ -1947,12 +1963,11 @@ namespace Amazon.MachineLearning
         /// <summary>
         /// Generates a prediction for the observation using the specified <code>ML Model</code>.
         /// 
-        ///  <note><title>Note</title> 
+        ///  
         /// <para>
-        /// Not all response parameters will be populated. Whether a response parameter is populated
-        /// depends on the type of model requested.
+        ///  <b>Note:</b> Not all response parameters will be populated. Whether a response parameter
+        /// is populated depends on the type of model requested.
         /// </para>
-        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Predict service method.</param>
         /// <param name="cancellationToken">

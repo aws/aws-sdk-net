@@ -39,7 +39,7 @@ namespace Amazon.MachineLearning.Model
     /// </para>
     ///  
     /// <para>
-    /// <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
+    ///  <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
     /// </para>
     /// </summary>
     public partial class DeleteDataSourceRequest : AmazonMachineLearningRequest

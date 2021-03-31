@@ -41,7 +41,7 @@ namespace Amazon.MachineLearning.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>CreateMLModel</code> is an asynchronous operation. In response to <code>CreateMLModel</code>,
+    ///  <code>CreateMLModel</code> is an asynchronous operation. In response to <code>CreateMLModel</code>,
     /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>MLModel</code>
     /// status to <code>PENDING</code>. After the <code>MLModel</code> has been created and
     /// ready is for use, Amazon ML sets the status to <code>COMPLETED</code>. 
@@ -113,12 +113,23 @@ namespace Amazon.MachineLearning.Model
         /// The category of supervised learning that this <code>MLModel</code> will address. Choose
         /// from the following types:
         /// </para>
-        ///  <ul> <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used
-        /// to predict a numeric value.</li> <li>Choose <code>BINARY</code> if the <code>MLModel</code>
-        /// result has two possible values.</li> <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code>
-        /// result has a limited number of values. </li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        ///  For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+        /// Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict
+        /// a numeric value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number
+        /// of values.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
         /// Machine Learning Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -143,11 +154,11 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  
         /// <para>
-        /// The following is the current set of training parameters: 
+        /// The following is the current set of training parameters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending
+        ///  <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending
         /// on the input data, the size of the model might affect its performance.
         /// </para>
         ///  
@@ -155,22 +166,22 @@ namespace Amazon.MachineLearning.Model
         ///  The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>.
         /// The default value is <code>33554432</code>.
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>sgd.maxPasses</code> - The number of times that the training process traverses
+        ///  <code>sgd.maxPasses</code> - The number of times that the training process traverses
         /// the observations to build the <code>MLModel</code>. The value is an integer that ranges
         /// from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
+        ///  <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
         /// the data improves a model's ability to find the optimal solution for a variety of
         /// data types. The valid values are <code>auto</code> and <code>none</code>. The default
         /// value is <code>none</code>. We strongly recommend that you shuffle your data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm.
+        ///  <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm.
         /// It controls overfitting the data by penalizing large coefficients. This tends to drive
         /// coefficients to zero, resulting in a sparse feature set. If you use this parameter,
         /// start by specifying a small value, such as <code>1.0E-08</code>.
@@ -183,7 +194,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm.
+        ///  <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm.
         /// It controls overfitting the data by penalizing large coefficients. This tends to drive
         /// coefficients to small, nonzero values. If you use this parameter, start by specifying
         /// a small value, such as <code>1.0E-08</code>.

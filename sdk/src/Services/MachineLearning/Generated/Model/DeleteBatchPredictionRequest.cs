@@ -40,7 +40,7 @@ namespace Amazon.MachineLearning.Model
     /// </para>
     ///  
     /// <para>
-    /// <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
+    ///  <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
     /// irreversible.
     /// </para>
     /// </summary>

@@ -215,11 +215,10 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// The schema used by all of the data files of this <code>DataSource</code>.
         /// </para>
-        ///  <note><title>Note</title> 
+        ///  
         /// <para>
-        /// This parameter is provided as part of the verbose format.
+        ///  <b>Note:</b> This parameter is provided as part of the verbose format.
         /// </para>
-        /// </note>
         /// </summary>
         [AWSProperty(Max=131071)]
         public string DataSourceSchema
@@ -420,12 +419,29 @@ namespace Amazon.MachineLearning.Model
         /// The current status of the <code>DataSource</code>. This element can have one of the
         /// following values:
         /// </para>
-        ///  <ul> <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-        /// <li> <code>INPROGRESS</code> - The creation process is underway.</li> <li> <code>FAILED</code>
-        /// - The request to create a <code>DataSource</code> did not run to completion. It is
-        /// not usable.</li> <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-        /// <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
-        /// not usable.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INPROGRESS</code> - The creation process is underway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> - The request to create a <code>DataSource</code> did not run
+        /// to completion. It is not usable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>COMPLETED</code> - The creation process completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not
+        /// usable.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public EntityStatus Status
         {

@@ -39,7 +39,7 @@ namespace Amazon.MachineLearning.Model
     /// </para>
     ///  
     /// <para>
-    /// <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
+    ///  <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
     /// </para>
     /// </summary>
     public partial class DeleteMLModelRequest : AmazonMachineLearningRequest
