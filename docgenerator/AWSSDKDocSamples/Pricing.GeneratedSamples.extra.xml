@@ -10,7 +10,7 @@
         <value>
             <example>
                 <para>
-                    
+                    Retrieves the service for the given Service Code.
                 </para>
                 <code
                     title="To retrieve a list of services and service codes"

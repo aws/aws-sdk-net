@@ -238,6 +238,24 @@ namespace Amazon.Pricing
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IPricingPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IPricingPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new PricingPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 
@@ -344,8 +362,8 @@ namespace Amazon.Pricing
 
         /// <summary>
         /// Returns a list of attribute values. Attibutes are similar to the details in a Price
-        /// List API offer file. For a list of available attributes, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
-        /// File Definitions</a> in the <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">AWS
+        /// List API offer file. For a list of available attributes, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
+        /// File Definitions</a> in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">AWS
         /// Billing and Cost Management User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAttributeValues service method.</param>
