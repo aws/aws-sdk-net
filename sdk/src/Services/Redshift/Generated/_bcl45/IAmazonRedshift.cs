@@ -252,6 +252,70 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  AuthorizeEndpointAccess
+
+
+        /// <summary>
+        /// Grants access to a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the AuthorizeEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAuthorizationAlreadyExistsException">
+        /// The authorization already exists for this endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAuthorizationsPerClusterLimitExceededException">
+        /// The number of endpoint authorizations per cluster has exceeded its limit.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthorizationStateException">
+        /// The status of the authorization is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeEndpointAccess">REST API Reference for AuthorizeEndpointAccess Operation</seealso>
+        AuthorizeEndpointAccessResponse AuthorizeEndpointAccess(AuthorizeEndpointAccessRequest request);
+
+
+
+        /// <summary>
+        /// Grants access to a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AuthorizeEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAuthorizationAlreadyExistsException">
+        /// The authorization already exists for this endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAuthorizationsPerClusterLimitExceededException">
+        /// The number of endpoint authorizations per cluster has exceeded its limit.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthorizationStateException">
+        /// The status of the authorization is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeEndpointAccess">REST API Reference for AuthorizeEndpointAccess Operation</seealso>
+        Task<AuthorizeEndpointAccessResponse> AuthorizeEndpointAccessAsync(AuthorizeEndpointAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AuthorizeSnapshotAccess
 
 
@@ -1121,6 +1185,94 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">REST API Reference for CreateClusterSubnetGroup Operation</seealso>
         Task<CreateClusterSubnetGroupResponse> CreateClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateEndpointAccess
+
+
+        /// <summary>
+        /// Creates a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the CreateEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AccessToClusterDeniedException">
+        /// You are not authorized to access the cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
+        /// The cluster subnet group name does not refer to an existing cluster subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAlreadyExistsException">
+        /// The account already has a Redshift-managed VPC endpoint with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointsPerAuthorizationLimitExceededException">
+        /// The number of Redshift-managed VPC endpoints per authorization has exceeded its limit.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointsPerClusterLimitExceededException">
+        /// The number of Redshift-managed VPC endpoints per cluster has exceeded its limit.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEndpointAccess">REST API Reference for CreateEndpointAccess Operation</seealso>
+        CreateEndpointAccessResponse CreateEndpointAccess(CreateEndpointAccessRequest request);
+
+
+
+        /// <summary>
+        /// Creates a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AccessToClusterDeniedException">
+        /// You are not authorized to access the cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
+        /// The cluster subnet group name does not refer to an existing cluster subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAlreadyExistsException">
+        /// The account already has a Redshift-managed VPC endpoint with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointsPerAuthorizationLimitExceededException">
+        /// The number of Redshift-managed VPC endpoints per authorization has exceeded its limit.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointsPerClusterLimitExceededException">
+        /// The number of Redshift-managed VPC endpoints per cluster has exceeded its limit.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEndpointAccess">REST API Reference for CreateEndpointAccess Operation</seealso>
+        Task<CreateEndpointAccessResponse> CreateEndpointAccessAsync(CreateEndpointAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2135,6 +2287,64 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">REST API Reference for DeleteClusterSubnetGroup Operation</seealso>
         Task<DeleteClusterSubnetGroupResponse> DeleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteEndpointAccess
+
+
+        /// <summary>
+        /// Deletes a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidEndpointStateException">
+        /// The status of the endpoint is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEndpointAccess">REST API Reference for DeleteEndpointAccess Operation</seealso>
+        DeleteEndpointAccessResponse DeleteEndpointAccess(DeleteEndpointAccessRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidEndpointStateException">
+        /// The status of the endpoint is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEndpointAccess">REST API Reference for DeleteEndpointAccess Operation</seealso>
+        Task<DeleteEndpointAccessResponse> DeleteEndpointAccessAsync(DeleteEndpointAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3501,6 +3711,92 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeDefaultClusterParameters service method, as returned by Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">REST API Reference for DescribeDefaultClusterParameters Operation</seealso>
         Task<DescribeDefaultClusterParametersResponse> DescribeDefaultClusterParametersAsync(DescribeDefaultClusterParametersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEndpointAccess
+
+
+        /// <summary>
+        /// Describes a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAccess">REST API Reference for DescribeEndpointAccess Operation</seealso>
+        DescribeEndpointAccessResponse DescribeEndpointAccess(DescribeEndpointAccessRequest request);
+
+
+
+        /// <summary>
+        /// Describes a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAccess">REST API Reference for DescribeEndpointAccess Operation</seealso>
+        Task<DescribeEndpointAccessResponse> DescribeEndpointAccessAsync(DescribeEndpointAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEndpointAuthorization
+
+
+        /// <summary>
+        /// Describes an endpoint authorization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEndpointAuthorization service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAuthorization">REST API Reference for DescribeEndpointAuthorization Operation</seealso>
+        DescribeEndpointAuthorizationResponse DescribeEndpointAuthorization(DescribeEndpointAuthorizationRequest request);
+
+
+
+        /// <summary>
+        /// Describes an endpoint authorization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointAuthorization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEndpointAuthorization service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAuthorization">REST API Reference for DescribeEndpointAuthorization Operation</seealso>
+        Task<DescribeEndpointAuthorizationResponse> DescribeEndpointAuthorizationAsync(DescribeEndpointAuthorizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5906,6 +6202,70 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  ModifyEndpointAccess
+
+
+        /// <summary>
+        /// Modifies a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the ModifyEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidEndpointStateException">
+        /// The status of the endpoint is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEndpointAccess">REST API Reference for ModifyEndpointAccess Operation</seealso>
+        ModifyEndpointAccessResponse ModifyEndpointAccess(ModifyEndpointAccessRequest request);
+
+
+
+        /// <summary>
+        /// Modifies a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidEndpointStateException">
+        /// The status of the endpoint is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEndpointAccess">REST API Reference for ModifyEndpointAccess Operation</seealso>
+        Task<ModifyEndpointAccessResponse> ModifyEndpointAccessAsync(ModifyEndpointAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyEventSubscription
 
 
@@ -7071,6 +7431,76 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">REST API Reference for RevokeClusterSecurityGroupIngress Operation</seealso>
         Task<RevokeClusterSecurityGroupIngressResponse> RevokeClusterSecurityGroupIngressAsync(RevokeClusterSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RevokeEndpointAccess
+
+
+        /// <summary>
+        /// Revokes access to a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the RevokeEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAuthorizationNotFoundException">
+        /// The authorization for this endpoint can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthorizationStateException">
+        /// The status of the authorization is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidEndpointStateException">
+        /// The status of the endpoint is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeEndpointAccess">REST API Reference for RevokeEndpointAccess Operation</seealso>
+        RevokeEndpointAccessResponse RevokeEndpointAccess(RevokeEndpointAccessRequest request);
+
+
+
+        /// <summary>
+        /// Revokes access to a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAuthorizationNotFoundException">
+        /// The authorization for this endpoint can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthorizationStateException">
+        /// The status of the authorization is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidEndpointStateException">
+        /// The status of the endpoint is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeEndpointAccess">REST API Reference for RevokeEndpointAccess Operation</seealso>
+        Task<RevokeEndpointAccessResponse> RevokeEndpointAccessAsync(RevokeEndpointAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -218,6 +218,64 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  AuthorizeEndpointAccess
+
+
+        /// <summary>
+        /// Grants access to a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the AuthorizeEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAuthorizationAlreadyExistsException">
+        /// The authorization already exists for this endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAuthorizationsPerClusterLimitExceededException">
+        /// The number of endpoint authorizations per cluster has exceeded its limit.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthorizationStateException">
+        /// The status of the authorization is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeEndpointAccess">REST API Reference for AuthorizeEndpointAccess Operation</seealso>
+        AuthorizeEndpointAccessResponse AuthorizeEndpointAccess(AuthorizeEndpointAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AuthorizeEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeEndpointAccess operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeEndpointAccess">REST API Reference for AuthorizeEndpointAccess Operation</seealso>
+        IAsyncResult BeginAuthorizeEndpointAccess(AuthorizeEndpointAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AuthorizeEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  AuthorizeEndpointAccessResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeEndpointAccess">REST API Reference for AuthorizeEndpointAccess Operation</seealso>
+        AuthorizeEndpointAccessResponse EndAuthorizeEndpointAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AuthorizeSnapshotAccess
 
 
@@ -911,6 +969,76 @@ namespace Amazon.Redshift
         /// <returns>Returns a  CreateClusterSubnetGroupResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">REST API Reference for CreateClusterSubnetGroup Operation</seealso>
         CreateClusterSubnetGroupResponse EndCreateClusterSubnetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateEndpointAccess
+
+
+        /// <summary>
+        /// Creates a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the CreateEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AccessToClusterDeniedException">
+        /// You are not authorized to access the cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
+        /// The cluster subnet group name does not refer to an existing cluster subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAlreadyExistsException">
+        /// The account already has a Redshift-managed VPC endpoint with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointsPerAuthorizationLimitExceededException">
+        /// The number of Redshift-managed VPC endpoints per authorization has exceeded its limit.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointsPerClusterLimitExceededException">
+        /// The number of Redshift-managed VPC endpoints per cluster has exceeded its limit.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEndpointAccess">REST API Reference for CreateEndpointAccess Operation</seealso>
+        CreateEndpointAccessResponse CreateEndpointAccess(CreateEndpointAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpointAccess operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEndpointAccess">REST API Reference for CreateEndpointAccess Operation</seealso>
+        IAsyncResult BeginCreateEndpointAccess(CreateEndpointAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  CreateEndpointAccessResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEndpointAccess">REST API Reference for CreateEndpointAccess Operation</seealso>
+        CreateEndpointAccessResponse EndCreateEndpointAccess(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1756,6 +1884,61 @@ namespace Amazon.Redshift
         /// <returns>Returns a  DeleteClusterSubnetGroupResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">REST API Reference for DeleteClusterSubnetGroup Operation</seealso>
         DeleteClusterSubnetGroupResponse EndDeleteClusterSubnetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteEndpointAccess
+
+
+        /// <summary>
+        /// Deletes a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidEndpointStateException">
+        /// The status of the endpoint is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEndpointAccess">REST API Reference for DeleteEndpointAccess Operation</seealso>
+        DeleteEndpointAccessResponse DeleteEndpointAccess(DeleteEndpointAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpointAccess operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEndpointAccess">REST API Reference for DeleteEndpointAccess Operation</seealso>
+        IAsyncResult BeginDeleteEndpointAccess(DeleteEndpointAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  DeleteEndpointAccessResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEndpointAccess">REST API Reference for DeleteEndpointAccess Operation</seealso>
+        DeleteEndpointAccessResponse EndDeleteEndpointAccess(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2918,6 +3101,101 @@ namespace Amazon.Redshift
         /// <returns>Returns a  DescribeDefaultClusterParametersResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">REST API Reference for DescribeDefaultClusterParameters Operation</seealso>
         DescribeDefaultClusterParametersResponse EndDescribeDefaultClusterParameters(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeEndpointAccess
+
+
+        /// <summary>
+        /// Describes a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAccess">REST API Reference for DescribeEndpointAccess Operation</seealso>
+        DescribeEndpointAccessResponse DescribeEndpointAccess(DescribeEndpointAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointAccess operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAccess">REST API Reference for DescribeEndpointAccess Operation</seealso>
+        IAsyncResult BeginDescribeEndpointAccess(DescribeEndpointAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  DescribeEndpointAccessResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAccess">REST API Reference for DescribeEndpointAccess Operation</seealso>
+        DescribeEndpointAccessResponse EndDescribeEndpointAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeEndpointAuthorization
+
+
+        /// <summary>
+        /// Describes an endpoint authorization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEndpointAuthorization service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAuthorization">REST API Reference for DescribeEndpointAuthorization Operation</seealso>
+        DescribeEndpointAuthorizationResponse DescribeEndpointAuthorization(DescribeEndpointAuthorizationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEndpointAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointAuthorization operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEndpointAuthorization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAuthorization">REST API Reference for DescribeEndpointAuthorization Operation</seealso>
+        IAsyncResult BeginDescribeEndpointAuthorization(DescribeEndpointAuthorizationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEndpointAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEndpointAuthorization.</param>
+        /// 
+        /// <returns>Returns a  DescribeEndpointAuthorizationResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAuthorization">REST API Reference for DescribeEndpointAuthorization Operation</seealso>
+        DescribeEndpointAuthorizationResponse EndDescribeEndpointAuthorization(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4934,6 +5212,64 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  ModifyEndpointAccess
+
+
+        /// <summary>
+        /// Modifies a Redshift-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the ModifyEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidEndpointStateException">
+        /// The status of the endpoint is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEndpointAccess">REST API Reference for ModifyEndpointAccess Operation</seealso>
+        ModifyEndpointAccessResponse ModifyEndpointAccess(ModifyEndpointAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEndpointAccess operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEndpointAccess">REST API Reference for ModifyEndpointAccess Operation</seealso>
+        IAsyncResult BeginModifyEndpointAccess(ModifyEndpointAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  ModifyEndpointAccessResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEndpointAccess">REST API Reference for ModifyEndpointAccess Operation</seealso>
+        ModifyEndpointAccessResponse EndModifyEndpointAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyEventSubscription
 
 
@@ -5879,6 +6215,67 @@ namespace Amazon.Redshift
         /// <returns>Returns a  RevokeClusterSecurityGroupIngressResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">REST API Reference for RevokeClusterSecurityGroupIngress Operation</seealso>
         RevokeClusterSecurityGroupIngressResponse EndRevokeClusterSecurityGroupIngress(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RevokeEndpointAccess
+
+
+        /// <summary>
+        /// Revokes access to a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the RevokeEndpointAccess service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointAuthorizationNotFoundException">
+        /// The authorization for this endpoint can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.EndpointNotFoundException">
+        /// The endpoint name doesn't refer to an existing endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidAuthorizationStateException">
+        /// The status of the authorization is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
+        /// The state of the cluster security group is not <code>available</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidEndpointStateException">
+        /// The status of the endpoint is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeEndpointAccess">REST API Reference for RevokeEndpointAccess Operation</seealso>
+        RevokeEndpointAccessResponse RevokeEndpointAccess(RevokeEndpointAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeEndpointAccess operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeEndpointAccess">REST API Reference for RevokeEndpointAccess Operation</seealso>
+        IAsyncResult BeginRevokeEndpointAccess(RevokeEndpointAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RevokeEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  RevokeEndpointAccessResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeEndpointAccess">REST API Reference for RevokeEndpointAccess Operation</seealso>
+        RevokeEndpointAccessResponse EndRevokeEndpointAccess(IAsyncResult asyncResult);
 
         #endregion
         

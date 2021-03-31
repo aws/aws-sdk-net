@@ -25,6 +25,30 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthorizeEndpointAccessRequest.Account</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthorizeEndpointAccessRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthorizeEndpointAccessResponse.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthorizeEndpointAccessResponse.ClusterStatus</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthorizeEndpointAccessResponse.Grantee</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthorizeEndpointAccessResponse.Grantor</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest.AccountWithRestoreAccess</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -185,6 +209,46 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateEndpointAccessRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateEndpointAccessRequest.EndpointName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateEndpointAccessRequest.ResourceOwner</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateEndpointAccessRequest.SubnetGroupName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.Address</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.EndpointName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.EndpointStatus</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.ResourceOwner</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateEndpointAccessResponse.SubnetGroupName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEventSubscriptionRequest.Severity</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -326,6 +390,34 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteClusterSubnetGroupRequest.ClusterSubnetGroupName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteEndpointAccessRequest.EndpointName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.Address</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.EndpointName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.EndpointStatus</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.ResourceOwner</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteEndpointAccessResponse.SubnetGroupName</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -494,6 +586,46 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeDefaultClusterParametersRequest.ParameterGroupFamily</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEndpointAccessRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEndpointAccessRequest.EndpointName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEndpointAccessRequest.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEndpointAccessRequest.ResourceOwner</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEndpointAccessRequest.VpcId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEndpointAccessResponse.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEndpointAuthorizationRequest.Account</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEndpointAuthorizationRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEndpointAuthorizationRequest.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeEndpointAuthorizationResponse.Marker</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -933,6 +1065,34 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyEndpointAccessRequest.EndpointName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.Address</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.EndpointName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.EndpointStatus</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.ResourceOwner</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyEndpointAccessResponse.SubnetGroupName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEventSubscriptionRequest.Severity</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1158,6 +1318,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeClusterSecurityGroupIngressRequest.EC2SecurityGroupOwnerId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RevokeEndpointAccessRequest.Account</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RevokeEndpointAccessRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RevokeEndpointAccessResponse.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RevokeEndpointAccessResponse.ClusterStatus</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RevokeEndpointAccessResponse.Grantee</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RevokeEndpointAccessResponse.Grantor</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
