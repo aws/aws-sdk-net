@@ -670,6 +670,74 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  CreateMobileDeviceAccessRule
+
+        /// <summary>
+        /// Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMobileDeviceAccessRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateMobileDeviceAccessRule service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule">REST API Reference for CreateMobileDeviceAccessRule Operation</seealso>
+        public virtual CreateMobileDeviceAccessRuleResponse CreateMobileDeviceAccessRule(CreateMobileDeviceAccessRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMobileDeviceAccessRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMobileDeviceAccessRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMobileDeviceAccessRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMobileDeviceAccessRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMobileDeviceAccessRule operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMobileDeviceAccessRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule">REST API Reference for CreateMobileDeviceAccessRule Operation</seealso>
+        public virtual IAsyncResult BeginCreateMobileDeviceAccessRule(CreateMobileDeviceAccessRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMobileDeviceAccessRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMobileDeviceAccessRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMobileDeviceAccessRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMobileDeviceAccessRule.</param>
+        /// 
+        /// <returns>Returns a  CreateMobileDeviceAccessRuleResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule">REST API Reference for CreateMobileDeviceAccessRule Operation</seealso>
+        public virtual CreateMobileDeviceAccessRuleResponse EndCreateMobileDeviceAccessRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMobileDeviceAccessRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateOrganization
 
         /// <summary>
@@ -1204,6 +1272,71 @@ namespace Amazon.WorkMail
         public virtual DeleteMailboxPermissionsResponse EndDeleteMailboxPermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMailboxPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteMobileDeviceAccessRule
+
+        /// <summary>
+        /// Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMobileDeviceAccessRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMobileDeviceAccessRule service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule">REST API Reference for DeleteMobileDeviceAccessRule Operation</seealso>
+        public virtual DeleteMobileDeviceAccessRuleResponse DeleteMobileDeviceAccessRule(DeleteMobileDeviceAccessRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMobileDeviceAccessRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMobileDeviceAccessRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMobileDeviceAccessRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMobileDeviceAccessRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMobileDeviceAccessRule operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMobileDeviceAccessRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule">REST API Reference for DeleteMobileDeviceAccessRule Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMobileDeviceAccessRule(DeleteMobileDeviceAccessRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMobileDeviceAccessRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMobileDeviceAccessRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMobileDeviceAccessRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMobileDeviceAccessRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteMobileDeviceAccessRuleResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule">REST API Reference for DeleteMobileDeviceAccessRule Operation</seealso>
+        public virtual DeleteMobileDeviceAccessRuleResponse EndDeleteMobileDeviceAccessRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMobileDeviceAccessRuleResponse>(asyncResult);
         }
 
         #endregion
@@ -2259,6 +2392,73 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  GetMobileDeviceAccessEffect
+
+        /// <summary>
+        /// Simulates the effect of the mobile device access rules for the given attributes of
+        /// a sample access event. Use this method to test the effects of the current set of mobile
+        /// device access rules for the Amazon WorkMail organization for a particular user's attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMobileDeviceAccessEffect service method.</param>
+        /// 
+        /// <returns>The response from the GetMobileDeviceAccessEffect service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect">REST API Reference for GetMobileDeviceAccessEffect Operation</seealso>
+        public virtual GetMobileDeviceAccessEffectResponse GetMobileDeviceAccessEffect(GetMobileDeviceAccessEffectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMobileDeviceAccessEffectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMobileDeviceAccessEffectResponseUnmarshaller.Instance;
+
+            return Invoke<GetMobileDeviceAccessEffectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMobileDeviceAccessEffect operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMobileDeviceAccessEffect operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMobileDeviceAccessEffect
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect">REST API Reference for GetMobileDeviceAccessEffect Operation</seealso>
+        public virtual IAsyncResult BeginGetMobileDeviceAccessEffect(GetMobileDeviceAccessEffectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMobileDeviceAccessEffectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMobileDeviceAccessEffectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMobileDeviceAccessEffect operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMobileDeviceAccessEffect.</param>
+        /// 
+        /// <returns>Returns a  GetMobileDeviceAccessEffectResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect">REST API Reference for GetMobileDeviceAccessEffect Operation</seealso>
+        public virtual GetMobileDeviceAccessEffectResponse EndGetMobileDeviceAccessEffect(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMobileDeviceAccessEffectResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAccessControlRules
 
         /// <summary>
@@ -2664,6 +2864,71 @@ namespace Amazon.WorkMail
         public virtual ListMailboxPermissionsResponse EndListMailboxPermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMailboxPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMobileDeviceAccessRules
+
+        /// <summary>
+        /// Lists the mobile device access rules for the specified Amazon WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMobileDeviceAccessRules service method.</param>
+        /// 
+        /// <returns>The response from the ListMobileDeviceAccessRules service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules">REST API Reference for ListMobileDeviceAccessRules Operation</seealso>
+        public virtual ListMobileDeviceAccessRulesResponse ListMobileDeviceAccessRules(ListMobileDeviceAccessRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMobileDeviceAccessRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMobileDeviceAccessRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMobileDeviceAccessRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMobileDeviceAccessRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMobileDeviceAccessRules operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMobileDeviceAccessRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules">REST API Reference for ListMobileDeviceAccessRules Operation</seealso>
+        public virtual IAsyncResult BeginListMobileDeviceAccessRules(ListMobileDeviceAccessRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMobileDeviceAccessRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMobileDeviceAccessRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMobileDeviceAccessRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMobileDeviceAccessRules.</param>
+        /// 
+        /// <returns>Returns a  ListMobileDeviceAccessRulesResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules">REST API Reference for ListMobileDeviceAccessRules Operation</seealso>
+        public virtual ListMobileDeviceAccessRulesResponse EndListMobileDeviceAccessRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMobileDeviceAccessRulesResponse>(asyncResult);
         }
 
         #endregion
@@ -3651,6 +3916,74 @@ namespace Amazon.WorkMail
         public virtual UpdateMailboxQuotaResponse EndUpdateMailboxQuota(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMailboxQuotaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMobileDeviceAccessRule
+
+        /// <summary>
+        /// Updates a mobile device access rule for the specified Amazon WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMobileDeviceAccessRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMobileDeviceAccessRule service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule">REST API Reference for UpdateMobileDeviceAccessRule Operation</seealso>
+        public virtual UpdateMobileDeviceAccessRuleResponse UpdateMobileDeviceAccessRule(UpdateMobileDeviceAccessRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMobileDeviceAccessRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMobileDeviceAccessRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMobileDeviceAccessRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMobileDeviceAccessRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMobileDeviceAccessRule operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMobileDeviceAccessRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule">REST API Reference for UpdateMobileDeviceAccessRule Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMobileDeviceAccessRule(UpdateMobileDeviceAccessRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMobileDeviceAccessRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMobileDeviceAccessRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMobileDeviceAccessRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMobileDeviceAccessRule.</param>
+        /// 
+        /// <returns>Returns a  UpdateMobileDeviceAccessRuleResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule">REST API Reference for UpdateMobileDeviceAccessRule Operation</seealso>
+        public virtual UpdateMobileDeviceAccessRuleResponse EndUpdateMobileDeviceAccessRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMobileDeviceAccessRuleResponse>(asyncResult);
         }
 
         #endregion

@@ -86,6 +86,36 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7e]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleResponse.MobileDeviceAccessRuleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateOrganizationRequest.Alias</property>
     <min>1</min>
     <max>62</max>
@@ -211,6 +241,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteMailboxPermissionsRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessRuleRequest.MobileDeviceAccessRuleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessRuleRequest.OrganizationId</property>
     <min>34</min>
     <max>34</max>
     <pattern>^m-[0-9a-f]{32}$</pattern>
@@ -577,6 +619,36 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessEffectRequest.DeviceModel</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessEffectRequest.DeviceOperatingSystem</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessEffectRequest.DeviceType</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessEffectRequest.DeviceUserAgent</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessEffectRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.ListAccessControlRulesRequest.OrganizationId</property>
     <min>34</min>
     <max>34</max>
@@ -711,6 +783,12 @@
     <min>1</min>
     <max>1024</max>
     <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMobileDeviceAccessRulesRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListOrganizationsRequest.MaxResults</property>
@@ -976,6 +1054,30 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateMobileDeviceAccessRuleRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateMobileDeviceAccessRuleRequest.MobileDeviceAccessRuleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateMobileDeviceAccessRuleRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateMobileDeviceAccessRuleRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdatePrimaryEmailAddressRequest.Email</property>
     <min>1</min>
     <max>254</max>
@@ -1101,6 +1203,36 @@
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Member.Name</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MobileDeviceAccessMatchedRule.MobileDeviceAccessRuleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MobileDeviceAccessMatchedRule.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MobileDeviceAccessRule.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MobileDeviceAccessRule.MobileDeviceAccessRuleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MobileDeviceAccessRule.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\S\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.OrganizationSummary.Alias</property>
