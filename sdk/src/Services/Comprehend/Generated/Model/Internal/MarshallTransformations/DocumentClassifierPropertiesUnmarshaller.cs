@@ -112,6 +112,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelKmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelKmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutputDataConfig", targetDepth))
                 {
                     var unmarshaller = DocumentClassifierOutputDataConfigUnmarshaller.Instance;

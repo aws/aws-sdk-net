@@ -113,6 +113,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Mode);
                 }
 
+                if(publicRequest.IsSetModelKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("ModelKmsKeyId");
+                    context.Writer.Write(publicRequest.ModelKmsKeyId);
+                }
+
                 if(publicRequest.IsSetOutputDataConfig())
                 {
                     context.Writer.WritePropertyName("OutputDataConfig");

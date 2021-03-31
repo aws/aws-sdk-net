@@ -100,6 +100,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelKmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelKmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RecognizerMetadata", targetDepth))
                 {
                     var unmarshaller = EntityRecognizerMetadataUnmarshaller.Instance;

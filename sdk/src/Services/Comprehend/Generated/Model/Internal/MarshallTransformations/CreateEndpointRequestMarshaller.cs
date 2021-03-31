@@ -78,6 +78,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetDataAccessRoleArn())
+                {
+                    context.Writer.WritePropertyName("DataAccessRoleArn");
+                    context.Writer.Write(publicRequest.DataAccessRoleArn);
+                }
+
                 if(publicRequest.IsSetDesiredInferenceUnits())
                 {
                     context.Writer.WritePropertyName("DesiredInferenceUnits");

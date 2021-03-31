@@ -76,6 +76,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentInferenceUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataAccessRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataAccessRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DesiredInferenceUnits", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

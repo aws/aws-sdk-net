@@ -41,6 +41,7 @@ namespace Amazon.Comprehend.Model
         private LanguageCode _languageCode;
         private string _message;
         private DocumentClassifierMode _mode;
+        private string _modelKmsKeyId;
         private DocumentClassifierOutputDataConfig _outputDataConfig;
         private ModelStatus _status;
         private DateTime? _submitTime;
@@ -201,6 +202,36 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetMode()
         {
             return this._mode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelKmsKeyId. 
+        /// <para>
+        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// trained custom models. The ModelKmsKeyId can be either of the following formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string ModelKmsKeyId
+        {
+            get { return this._modelKmsKeyId; }
+            set { this._modelKmsKeyId = value; }
+        }
+
+        // Check to see if ModelKmsKeyId property is set
+        internal bool IsSetModelKmsKeyId()
+        {
+            return this._modelKmsKeyId != null;
         }
 
         /// <summary>

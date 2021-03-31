@@ -101,6 +101,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LanguageCode);
                 }
 
+                if(publicRequest.IsSetModelKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("ModelKmsKeyId");
+                    context.Writer.Write(publicRequest.ModelKmsKeyId);
+                }
+
                 if(publicRequest.IsSetRecognizerName())
                 {
                     context.Writer.WritePropertyName("RecognizerName");

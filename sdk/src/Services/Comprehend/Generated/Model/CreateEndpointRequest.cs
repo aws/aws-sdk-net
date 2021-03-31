@@ -36,6 +36,7 @@ namespace Amazon.Comprehend.Model
     public partial class CreateEndpointRequest : AmazonComprehendRequest
     {
         private string _clientRequestToken;
+        private string _dataAccessRoleArn;
         private int? _desiredInferenceUnits;
         private string _endpointName;
         private string _modelArn;
@@ -60,6 +61,27 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataAccessRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role
+        /// that grants Amazon Comprehend read access to trained custom models encrypted with
+        /// a customer managed key (ModelKmsKeyId).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DataAccessRoleArn
+        {
+            get { return this._dataAccessRoleArn; }
+            set { this._dataAccessRoleArn = value; }
+        }
+
+        // Check to see if DataAccessRoleArn property is set
+        internal bool IsSetDataAccessRoleArn()
+        {
+            return this._dataAccessRoleArn != null;
         }
 
         /// <summary>
