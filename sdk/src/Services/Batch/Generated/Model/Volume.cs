@@ -33,8 +33,29 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class Volume
     {
+        private EFSVolumeConfiguration _efsVolumeConfiguration;
         private Host _host;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property EfsVolumeConfiguration. 
+        /// <para>
+        /// This parameter is specified when you are using an Amazon Elastic File System file
+        /// system for job storage. Jobs running on Fargate resources must specify a <code>platformVersion</code>
+        /// of at least <code>1.4.0</code>.
+        /// </para>
+        /// </summary>
+        public EFSVolumeConfiguration EfsVolumeConfiguration
+        {
+            get { return this._efsVolumeConfiguration; }
+            set { this._efsVolumeConfiguration = value; }
+        }
+
+        // Check to see if EfsVolumeConfiguration property is set
+        internal bool IsSetEfsVolumeConfiguration()
+        {
+            return this._efsVolumeConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Host. 

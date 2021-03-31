@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Volume Marshaller
+    /// EFSAuthorizationConfig Marshaller
     /// </summary>       
-    public class VolumeMarshaller : IRequestMarshaller<Volume, JsonMarshallerContext> 
+    public class EFSAuthorizationConfigMarshaller : IRequestMarshaller<EFSAuthorizationConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Volume requestObject, JsonMarshallerContext context)
+        public void Marshall(EFSAuthorizationConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEfsVolumeConfiguration())
+            if(requestObject.IsSetAccessPointId())
             {
-                context.Writer.WritePropertyName("efsVolumeConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EFSVolumeConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.EfsVolumeConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("accessPointId");
+                context.Writer.Write(requestObject.AccessPointId);
             }
 
-            if(requestObject.IsSetHost())
+            if(requestObject.IsSetIam())
             {
-                context.Writer.WritePropertyName("host");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = HostMarshaller.Instance;
-                marshaller.Marshall(requestObject.Host, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WritePropertyName("iam");
+                context.Writer.Write(requestObject.Iam);
             }
 
         }
@@ -78,7 +62,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VolumeMarshaller Instance = new VolumeMarshaller();
+        public readonly static EFSAuthorizationConfigMarshaller Instance = new EFSAuthorizationConfigMarshaller();
 
     }
 }

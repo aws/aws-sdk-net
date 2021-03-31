@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Volume Marshaller
+    /// EFSVolumeConfiguration Marshaller
     /// </summary>       
-    public class VolumeMarshaller : IRequestMarshaller<Volume, JsonMarshallerContext> 
+    public class EFSVolumeConfigurationMarshaller : IRequestMarshaller<EFSVolumeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,41 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Volume requestObject, JsonMarshallerContext context)
+        public void Marshall(EFSVolumeConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEfsVolumeConfiguration())
+            if(requestObject.IsSetAuthorizationConfig())
             {
-                context.Writer.WritePropertyName("efsVolumeConfiguration");
+                context.Writer.WritePropertyName("authorizationConfig");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = EFSVolumeConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.EfsVolumeConfiguration, context);
+                var marshaller = EFSAuthorizationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuthorizationConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetHost())
+            if(requestObject.IsSetFileSystemId())
             {
-                context.Writer.WritePropertyName("host");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = HostMarshaller.Instance;
-                marshaller.Marshall(requestObject.Host, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("fileSystemId");
+                context.Writer.Write(requestObject.FileSystemId);
             }
 
-            if(requestObject.IsSetName())
+            if(requestObject.IsSetRootDirectory())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WritePropertyName("rootDirectory");
+                context.Writer.Write(requestObject.RootDirectory);
+            }
+
+            if(requestObject.IsSetTransitEncryption())
+            {
+                context.Writer.WritePropertyName("transitEncryption");
+                context.Writer.Write(requestObject.TransitEncryption);
+            }
+
+            if(requestObject.IsSetTransitEncryptionPort())
+            {
+                context.Writer.WritePropertyName("transitEncryptionPort");
+                context.Writer.Write(requestObject.TransitEncryptionPort);
             }
 
         }
@@ -78,7 +85,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VolumeMarshaller Instance = new VolumeMarshaller();
+        public readonly static EFSVolumeConfigurationMarshaller Instance = new EFSVolumeConfigurationMarshaller();
 
     }
 }

@@ -50,7 +50,7 @@ namespace Amazon.Batch
     /// AWS Batch automatically provisions compute resources and optimizes workload distribution
     /// based on the quantity and scale of your specific workloads. With AWS Batch, there's
     /// no need to install or manage batch computing software. This means that you can focus
-    /// your time and energy on analyzing results and solving your specific problems. 
+    /// your time and energy on analyzing results and solving your specific problems.
     /// </para>
     /// </summary>
     public partial class AmazonBatchClient : AmazonServiceClient, IAmazonBatch

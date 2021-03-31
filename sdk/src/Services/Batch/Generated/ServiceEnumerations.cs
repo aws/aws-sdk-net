@@ -457,6 +457,106 @@ namespace Amazon.Batch
 
 
     /// <summary>
+    /// Constants used for properties of type EFSAuthorizationConfigIAM.
+    /// </summary>
+    public class EFSAuthorizationConfigIAM : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for EFSAuthorizationConfigIAM
+        /// </summary>
+        public static readonly EFSAuthorizationConfigIAM DISABLED = new EFSAuthorizationConfigIAM("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for EFSAuthorizationConfigIAM
+        /// </summary>
+        public static readonly EFSAuthorizationConfigIAM ENABLED = new EFSAuthorizationConfigIAM("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EFSAuthorizationConfigIAM(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EFSAuthorizationConfigIAM FindValue(string value)
+        {
+            return FindValue<EFSAuthorizationConfigIAM>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EFSAuthorizationConfigIAM(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EFSTransitEncryption.
+    /// </summary>
+    public class EFSTransitEncryption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for EFSTransitEncryption
+        /// </summary>
+        public static readonly EFSTransitEncryption DISABLED = new EFSTransitEncryption("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for EFSTransitEncryption
+        /// </summary>
+        public static readonly EFSTransitEncryption ENABLED = new EFSTransitEncryption("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EFSTransitEncryption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EFSTransitEncryption FindValue(string value)
+        {
+            return FindValue<EFSTransitEncryption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EFSTransitEncryption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobDefinitionType.
     /// </summary>
     public class JobDefinitionType : ConstantClass
