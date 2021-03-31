@@ -58,6 +58,12 @@ namespace Amazon.DataPipeline
     {
 
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDataPipelinePaginatorFactory Paginators { get; }
+#endif
 
 
         

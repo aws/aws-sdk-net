@@ -66,6 +66,22 @@ namespace Amazon.DataPipeline
     public partial class AmazonDataPipelineClient : AmazonServiceClient, IAmazonDataPipeline
     {
         private static IServiceMetadata serviceMetadata = new AmazonDataPipelineMetadata();
+        private IDataPipelinePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDataPipelinePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DataPipelinePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

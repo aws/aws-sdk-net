@@ -58,6 +58,12 @@ namespace Amazon.DataPipeline
     /// </summary>
     public partial interface IAmazonDataPipeline : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDataPipelinePaginatorFactory Paginators { get; }
+#endif
                 
         #region  ActivatePipeline
 
