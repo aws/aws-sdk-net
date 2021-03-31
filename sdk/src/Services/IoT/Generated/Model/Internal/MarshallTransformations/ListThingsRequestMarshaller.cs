@@ -73,6 +73,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetThingTypeName())
                 request.Parameters.Add("thingTypeName", StringUtils.FromString(publicRequest.ThingTypeName));
+            
+            if (publicRequest.IsSetUsePrefixAttributeValue())
+                request.Parameters.Add("usePrefixAttributeValue", StringUtils.FromBool(publicRequest.UsePrefixAttributeValue));
             request.ResourcePath = "/things";
             request.UseQueryString = true;
 

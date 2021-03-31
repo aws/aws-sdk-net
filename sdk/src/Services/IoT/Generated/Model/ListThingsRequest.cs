@@ -50,6 +50,7 @@ namespace Amazon.IoT.Model
         private string _marker;
         private int? _maxResults;
         private string _thingTypeName;
+        private bool? _usePrefixAttributeValue;
 
         /// <summary>
         /// Gets and sets the property AttributeName. 
@@ -144,6 +145,31 @@ namespace Amazon.IoT.Model
         internal bool IsSetThingTypeName()
         {
             return this._thingTypeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsePrefixAttributeValue. 
+        /// <para>
+        /// When <code>true</code>, the action returns the thing resources with attribute values
+        /// that start with the <code>attributeValue</code> provided.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>false</code>, or not present, the action returns only the thing resources
+        /// with attribute values that match the entire <code>attributeValue</code> provided.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool UsePrefixAttributeValue
+        {
+            get { return this._usePrefixAttributeValue.GetValueOrDefault(); }
+            set { this._usePrefixAttributeValue = value; }
+        }
+
+        // Check to see if UsePrefixAttributeValue property is set
+        internal bool IsSetUsePrefixAttributeValue()
+        {
+            return this._usePrefixAttributeValue.HasValue; 
         }
 
     }
