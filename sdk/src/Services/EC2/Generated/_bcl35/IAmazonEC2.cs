@@ -16422,6 +16422,68 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetFlowLogsIntegrationTemplate
+
+
+        /// <summary>
+        /// Generates a CloudFormation template that streamlines and automates the integration
+        /// of VPC flow logs with Amazon Athena. This make it easier for you to query and gain
+        /// insights from VPC flow logs data. Based on the information that you provide, we configure
+        /// resources in the template to do the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Create a table in Athena that maps fields to a custom log format
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a Lambda function that updates the table with new partitions on a daily, weekly,
+        /// or monthly basis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a table partitioned between two timestamps in the past
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a set of named queries in Athena that you can use to get started quickly
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowLogsIntegrationTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetFlowLogsIntegrationTemplate service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">REST API Reference for GetFlowLogsIntegrationTemplate Operation</seealso>
+        GetFlowLogsIntegrationTemplateResponse GetFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFlowLogsIntegrationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowLogsIntegrationTemplate operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFlowLogsIntegrationTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">REST API Reference for GetFlowLogsIntegrationTemplate Operation</seealso>
+        IAsyncResult BeginGetFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFlowLogsIntegrationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFlowLogsIntegrationTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetFlowLogsIntegrationTemplateResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">REST API Reference for GetFlowLogsIntegrationTemplate Operation</seealso>
+        GetFlowLogsIntegrationTemplateResponse EndGetFlowLogsIntegrationTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetGroupsForCapacityReservation
 
 

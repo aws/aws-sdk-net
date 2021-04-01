@@ -8751,6 +8751,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type PartitionLoadFrequency.
+    /// </summary>
+    public class PartitionLoadFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Daily for PartitionLoadFrequency
+        /// </summary>
+        public static readonly PartitionLoadFrequency Daily = new PartitionLoadFrequency("daily");
+        /// <summary>
+        /// Constant Monthly for PartitionLoadFrequency
+        /// </summary>
+        public static readonly PartitionLoadFrequency Monthly = new PartitionLoadFrequency("monthly");
+        /// <summary>
+        /// Constant None for PartitionLoadFrequency
+        /// </summary>
+        public static readonly PartitionLoadFrequency None = new PartitionLoadFrequency("none");
+        /// <summary>
+        /// Constant Weekly for PartitionLoadFrequency
+        /// </summary>
+        public static readonly PartitionLoadFrequency Weekly = new PartitionLoadFrequency("weekly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PartitionLoadFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartitionLoadFrequency FindValue(string value)
+        {
+            return FindValue<PartitionLoadFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartitionLoadFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PaymentOption.
     /// </summary>
     public class PaymentOption : ConstantClass

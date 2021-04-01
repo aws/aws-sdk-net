@@ -15126,6 +15126,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetFlowLogsIntegrationTemplate
+
+        internal virtual GetFlowLogsIntegrationTemplateResponse GetFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowLogsIntegrationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowLogsIntegrationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetFlowLogsIntegrationTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Generates a CloudFormation template that streamlines and automates the integration
+        /// of VPC flow logs with Amazon Athena. This make it easier for you to query and gain
+        /// insights from VPC flow logs data. Based on the information that you provide, we configure
+        /// resources in the template to do the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Create a table in Athena that maps fields to a custom log format
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a Lambda function that updates the table with new partitions on a daily, weekly,
+        /// or monthly basis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a table partitioned between two timestamps in the past
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a set of named queries in Athena that you can use to get started quickly
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowLogsIntegrationTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFlowLogsIntegrationTemplate service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">REST API Reference for GetFlowLogsIntegrationTemplate Operation</seealso>
+        public virtual Task<GetFlowLogsIntegrationTemplateResponse> GetFlowLogsIntegrationTemplateAsync(GetFlowLogsIntegrationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowLogsIntegrationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowLogsIntegrationTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFlowLogsIntegrationTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetGroupsForCapacityReservation
 
         internal virtual GetGroupsForCapacityReservationResponse GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request)

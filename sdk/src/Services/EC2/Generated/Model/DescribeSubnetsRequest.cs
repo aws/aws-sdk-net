@@ -94,6 +94,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>owner-id</code> - The ID of the AWS account that owns the subnet.
         /// </para>
         ///  </li> <li> 
