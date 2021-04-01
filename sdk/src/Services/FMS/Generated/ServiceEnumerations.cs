@@ -301,6 +301,10 @@ namespace Amazon.FMS
     {
 
         /// <summary>
+        /// Constant DNS_FIREWALL for SecurityServiceType
+        /// </summary>
+        public static readonly SecurityServiceType DNS_FIREWALL = new SecurityServiceType("DNS_FIREWALL");
+        /// <summary>
         /// Constant NETWORK_FIREWALL for SecurityServiceType
         /// </summary>
         public static readonly SecurityServiceType NETWORK_FIREWALL = new SecurityServiceType("NETWORK_FIREWALL");
@@ -371,6 +375,10 @@ namespace Amazon.FMS
     {
 
         /// <summary>
+        /// Constant FMS_CREATED_SECURITY_GROUP_EDITED for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason FMS_CREATED_SECURITY_GROUP_EDITED = new ViolationReason("FMS_CREATED_SECURITY_GROUP_EDITED");
+        /// <summary>
         /// Constant MISSING_EXPECTED_ROUTE_TABLE for ViolationReason
         /// </summary>
         public static readonly ViolationReason MISSING_EXPECTED_ROUTE_TABLE = new ViolationReason("MISSING_EXPECTED_ROUTE_TABLE");
@@ -390,6 +398,10 @@ namespace Amazon.FMS
         /// Constant RESOURCE_INCORRECT_WEB_ACL for ViolationReason
         /// </summary>
         public static readonly ViolationReason RESOURCE_INCORRECT_WEB_ACL = new ViolationReason("RESOURCE_INCORRECT_WEB_ACL");
+        /// <summary>
+        /// Constant RESOURCE_MISSING_DNS_FIREWALL for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason RESOURCE_MISSING_DNS_FIREWALL = new ViolationReason("RESOURCE_MISSING_DNS_FIREWALL");
         /// <summary>
         /// Constant RESOURCE_MISSING_SECURITY_GROUP for ViolationReason
         /// </summary>

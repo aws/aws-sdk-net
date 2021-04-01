@@ -36,6 +36,9 @@ namespace Amazon.FMS.Model
         private AwsEc2InstanceViolation _awsEc2InstanceViolation;
         private AwsEc2NetworkInterfaceViolation _awsEc2NetworkInterfaceViolation;
         private AwsVPCSecurityGroupViolation _awsVPCSecurityGroupViolation;
+        private DnsDuplicateRuleGroupViolation _dnsDuplicateRuleGroupViolation;
+        private DnsRuleGroupLimitExceededViolation _dnsRuleGroupLimitExceededViolation;
+        private DnsRuleGroupPriorityConflictViolation _dnsRuleGroupPriorityConflictViolation;
         private NetworkFirewallMissingExpectedRTViolation _networkFirewallMissingExpectedRTViolation;
         private NetworkFirewallMissingFirewallViolation _networkFirewallMissingFirewallViolation;
         private NetworkFirewallMissingSubnetViolation _networkFirewallMissingSubnetViolation;
@@ -93,6 +96,66 @@ namespace Amazon.FMS.Model
         internal bool IsSetAwsVPCSecurityGroupViolation()
         {
             return this._awsVPCSecurityGroupViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsDuplicateRuleGroupViolation. 
+        /// <para>
+        /// Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall
+        /// Manager tried to associate with a VPC is already associated with the VPC and can't
+        /// be associated again. 
+        /// </para>
+        /// </summary>
+        public DnsDuplicateRuleGroupViolation DnsDuplicateRuleGroupViolation
+        {
+            get { return this._dnsDuplicateRuleGroupViolation; }
+            set { this._dnsDuplicateRuleGroupViolation = value; }
+        }
+
+        // Check to see if DnsDuplicateRuleGroupViolation property is set
+        internal bool IsSetDnsDuplicateRuleGroupViolation()
+        {
+            return this._dnsDuplicateRuleGroupViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsRuleGroupLimitExceededViolation. 
+        /// <para>
+        /// Violation details for a DNS Firewall policy that indicates that the VPC reached the
+        /// limit for associated DNS Firewall rule groups. Firewall Manager tried to associate
+        /// another rule group with the VPC and failed. 
+        /// </para>
+        /// </summary>
+        public DnsRuleGroupLimitExceededViolation DnsRuleGroupLimitExceededViolation
+        {
+            get { return this._dnsRuleGroupLimitExceededViolation; }
+            set { this._dnsRuleGroupLimitExceededViolation = value; }
+        }
+
+        // Check to see if DnsRuleGroupLimitExceededViolation property is set
+        internal bool IsSetDnsRuleGroupLimitExceededViolation()
+        {
+            return this._dnsRuleGroupLimitExceededViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsRuleGroupPriorityConflictViolation. 
+        /// <para>
+        /// Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall
+        /// Manager tried to associate with a VPC has the same priority as a rule group that's
+        /// already associated. 
+        /// </para>
+        /// </summary>
+        public DnsRuleGroupPriorityConflictViolation DnsRuleGroupPriorityConflictViolation
+        {
+            get { return this._dnsRuleGroupPriorityConflictViolation; }
+            set { this._dnsRuleGroupPriorityConflictViolation = value; }
+        }
+
+        // Check to see if DnsRuleGroupPriorityConflictViolation property is set
+        internal bool IsSetDnsRuleGroupPriorityConflictViolation()
+        {
+            return this._dnsRuleGroupPriorityConflictViolation != null;
         }
 
         /// <summary>

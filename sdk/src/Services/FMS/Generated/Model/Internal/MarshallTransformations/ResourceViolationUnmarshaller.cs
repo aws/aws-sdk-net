@@ -82,6 +82,24 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsVPCSecurityGroupViolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DnsDuplicateRuleGroupViolation", targetDepth))
+                {
+                    var unmarshaller = DnsDuplicateRuleGroupViolationUnmarshaller.Instance;
+                    unmarshalledObject.DnsDuplicateRuleGroupViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DnsRuleGroupLimitExceededViolation", targetDepth))
+                {
+                    var unmarshaller = DnsRuleGroupLimitExceededViolationUnmarshaller.Instance;
+                    unmarshalledObject.DnsRuleGroupLimitExceededViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DnsRuleGroupPriorityConflictViolation", targetDepth))
+                {
+                    var unmarshaller = DnsRuleGroupPriorityConflictViolationUnmarshaller.Instance;
+                    unmarshalledObject.DnsRuleGroupPriorityConflictViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetworkFirewallMissingExpectedRTViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallMissingExpectedRTViolationUnmarshaller.Instance;
