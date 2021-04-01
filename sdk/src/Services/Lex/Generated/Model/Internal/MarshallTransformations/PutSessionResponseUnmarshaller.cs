@@ -57,6 +57,8 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                 response.ContentType = context.ResponseData.GetHeaderValue("Content-Type");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-dialog-state"))
                 response.DialogState = context.ResponseData.GetHeaderValue("x-amz-lex-dialog-state");
+            if (context.ResponseData.IsHeaderPresent("x-amz-lex-encoded-message"))
+                response.EncodedMessage = context.ResponseData.GetHeaderValue("x-amz-lex-encoded-message");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-intent-name"))
                 response.IntentName = context.ResponseData.GetHeaderValue("x-amz-lex-intent-name");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-message"))

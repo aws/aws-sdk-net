@@ -37,6 +37,7 @@ namespace Amazon.Lex.Model
         private Stream _audioStream;
         private string _contentType;
         private DialogState _dialogState;
+        private string _encodedMessage;
         private string _intentName;
         private string _message;
         private MessageFormatType _messageFormat;
@@ -145,6 +146,30 @@ namespace Amazon.Lex.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncodedMessage. 
+        /// <para>
+        /// The next message that should be presented to the user.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+        /// before you can use the value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1366)]
+        public string EncodedMessage
+        {
+            get { return this._encodedMessage; }
+            set { this._encodedMessage = value; }
+        }
+
+        // Check to see if EncodedMessage property is set
+        internal bool IsSetEncodedMessage()
+        {
+            return this._encodedMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IntentName. 
         /// <para>
         /// The name of the current intent.
@@ -167,7 +192,14 @@ namespace Amazon.Lex.Model
         /// <para>
         /// The next message that should be presented to the user.
         /// </para>
+        ///  
+        /// <para>
+        /// You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US,
+        /// fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field
+        /// is null. You should use the <code>encodedMessage</code> field instead.
+        /// </para>
         /// </summary>
+        [Obsolete("The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales.")]
         [AWSProperty(Min=1, Max=1024)]
         public string Message
         {

@@ -39,6 +39,8 @@ namespace Amazon.Lex.Model
         private string _botVersion;
         private string _contentType;
         private DialogState _dialogState;
+        private string _encodedInputTranscript;
+        private string _encodedMessage;
         private string _inputTranscript;
         private string _intentName;
         private string _message;
@@ -238,9 +240,91 @@ namespace Amazon.Lex.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncodedInputTranscript. 
+        /// <para>
+        /// The text used to process the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the input was an audio stream, the <code>encodedInputTranscript</code> field contains
+        /// the text extracted from the audio stream. This is the text that is actually processed
+        /// to recognize intents and slot values. You can use this information to determine if
+        /// Amazon Lex is correctly processing the audio that you send.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode
+        /// the field before you can use the value.
+        /// </para>
+        /// </summary>
+        public string EncodedInputTranscript
+        {
+            get { return this._encodedInputTranscript; }
+            set { this._encodedInputTranscript = value; }
+        }
+
+        // Check to see if EncodedInputTranscript property is set
+        internal bool IsSetEncodedInputTranscript()
+        {
+            return this._encodedInputTranscript != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncodedMessage. 
+        /// <para>
+        /// The message to convey to the user. The message can come from the bot's configuration
+        /// or from a Lambda function.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the intent is not configured with a Lambda function, or if the Lambda function
+        /// returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response,
+        /// Amazon Lex decides on the next course of action and selects an appropriate message
+        /// from the bot's configuration based on the current interaction context. For example,
+        /// if Amazon Lex isn't able to understand user input, it uses a clarification prompt
+        /// message.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create an intent you can assign messages to groups. When messages are assigned
+        /// to groups Amazon Lex returns one message from each group in the response. The message
+        /// field is an escaped JSON string containing the messages. For more information about
+        /// the structure of the JSON string returned, see <a>msg-prompts-formats</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the Lambda function returns a message, Amazon Lex passes it to the client in its
+        /// response.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+        /// before you can use the value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1366)]
+        public string EncodedMessage
+        {
+            get { return this._encodedMessage; }
+            set { this._encodedMessage = value; }
+        }
+
+        // Check to see if EncodedMessage property is set
+        internal bool IsSetEncodedMessage()
+        {
+            return this._encodedMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputTranscript. 
         /// <para>
         /// The text used to process the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US,
+        /// fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code>
+        /// field is null. You should use the <code>encodedInputTranscript</code> field instead.
         /// </para>
         ///  
         /// <para>
@@ -250,6 +334,7 @@ namespace Amazon.Lex.Model
         /// Amazon Lex is correctly processing the audio that you send.
         /// </para>
         /// </summary>
+        [Obsolete("The inputTranscript field is deprecated, use the encodedInputTranscript field instead. The inputTranscript field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales.")]
         public string InputTranscript
         {
             get { return this._inputTranscript; }
@@ -283,6 +368,12 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
+        /// You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US,
+        /// fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field
+        /// is null. You should use the <code>encodedMessage</code> field instead.
+        /// </para>
+        ///  
+        /// <para>
         /// The message to convey to the user. The message can come from the bot's configuration
         /// or from a Lambda function.
         /// </para>
@@ -308,6 +399,7 @@ namespace Amazon.Lex.Model
         /// response.
         /// </para>
         /// </summary>
+        [Obsolete("The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales.")]
         [AWSProperty(Min=1, Max=1024)]
         public string Message
         {
