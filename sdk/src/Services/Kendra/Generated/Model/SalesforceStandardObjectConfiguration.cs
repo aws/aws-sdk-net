@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies confguration information for indexing a single standard object.
+    /// Specifies configuration information for indexing a single standard object.
     /// </summary>
     public partial class SalesforceStandardObjectConfiguration
     {
@@ -60,7 +60,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentTitleFieldName. 
         /// <para>
-        /// The name of the field in the standard object table that contains the document titleB.
+        /// The name of the field in the standard object table that contains the document title.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

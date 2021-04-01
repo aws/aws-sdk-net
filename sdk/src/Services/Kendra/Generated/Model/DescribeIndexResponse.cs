@@ -52,9 +52,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CapacityUnits. 
         /// <para>
-        /// For enterprise edtion indexes, you can choose to use additional capacity to meet the
-        /// needs of your application. This contains the capacity units used for the index. A
-        /// 0 for the query capacity or the storage capacity indicates that the index is using
+        /// For Enterprise edition indexes, you can choose to use additional capacity to meet
+        /// the needs of your application. This contains the capacity units used for the index.
+        /// A 0 for the query capacity or the storage capacity indicates that the index is using
         /// the default capacity for the index.
         /// </para>
         /// </summary>

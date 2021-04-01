@@ -47,12 +47,12 @@ namespace Amazon.Kendra
 
         /// <summary>
         /// Removes one or more documents from an index. The documents must have been added with
-        /// the <a>BatchPutDocument</a> operation.
+        /// the <code>BatchPutDocument</code> operation.
         /// 
         ///  
         /// <para>
         /// The documents are deleted asynchronously. You can see the progress of the deletion
-        /// by using AWS CloudWatch. Any error messages releated to the processing of the batch
+        /// by using AWS CloudWatch. Any error messages related to the processing of the batch
         /// are sent to you CloudWatch log.
         /// </para>
         /// </summary>
@@ -84,12 +84,12 @@ namespace Amazon.Kendra
 
         /// <summary>
         /// Removes one or more documents from an index. The documents must have been added with
-        /// the <a>BatchPutDocument</a> operation.
+        /// the <code>BatchPutDocument</code> operation.
         /// 
         ///  
         /// <para>
         /// The documents are deleted asynchronously. You can see the progress of the deletion
-        /// by using AWS CloudWatch. Any error messages releated to the processing of the batch
+        /// by using AWS CloudWatch. Any error messages related to the processing of the batch
         /// are sent to you CloudWatch log.
         /// </para>
         /// </summary>
@@ -396,13 +396,13 @@ namespace Amazon.Kendra
         /// <summary>
         /// Creates a new Amazon Kendra index. Index creation is an asynchronous operation. To
         /// determine if index creation has completed, check the <code>Status</code> field returned
-        /// from a call to . The <code>Status</code> field is set to <code>ACTIVE</code> when
-        /// the index is ready to use.
+        /// from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to
+        /// <code>ACTIVE</code> when the index is ready to use.
         /// 
         ///  
         /// <para>
-        /// Once the index is active you can index your documents using the operation or using
-        /// one of the supported data sources. 
+        /// Once the index is active you can index your documents using the <code>BatchPutDocument</code>
+        /// operation or using one of the supported data sources. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
@@ -437,13 +437,13 @@ namespace Amazon.Kendra
         /// <summary>
         /// Creates a new Amazon Kendra index. Index creation is an asynchronous operation. To
         /// determine if index creation has completed, check the <code>Status</code> field returned
-        /// from a call to . The <code>Status</code> field is set to <code>ACTIVE</code> when
-        /// the index is ready to use.
+        /// from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to
+        /// <code>ACTIVE</code> when the index is ready to use.
         /// 
         ///  
         /// <para>
-        /// Once the index is active you can index your documents using the operation or using
-        /// one of the supported data sources. 
+        /// Once the index is active you can index your documents using the <code>BatchPutDocument</code>
+        /// operation or using one of the supported data sources. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
@@ -556,8 +556,8 @@ namespace Amazon.Kendra
         /// <summary>
         /// Deletes an Amazon Kendra data source. An exception is not thrown if the data source
         /// is already being deleted. While the data source is being deleted, the <code>Status</code>
-        /// field returned by a call to the operation is set to <code>DELETING</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
+        /// field returned by a call to the <code>DescribeDataSource</code> operation is set to
+        /// <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
         /// Data Sources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
@@ -589,8 +589,8 @@ namespace Amazon.Kendra
         /// <summary>
         /// Deletes an Amazon Kendra data source. An exception is not thrown if the data source
         /// is already being deleted. While the data source is being deleted, the <code>Status</code>
-        /// field returned by a call to the operation is set to <code>DELETING</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
+        /// field returned by a call to the <code>DescribeDataSource</code> operation is set to
+        /// <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
         /// Data Sources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
@@ -692,7 +692,7 @@ namespace Amazon.Kendra
         /// <summary>
         /// Deletes an existing Amazon Kendra index. An exception is not thrown if the index is
         /// already being deleted. While the index is being deleted, the <code>Status</code> field
-        /// returned by a call to the <a>DescribeIndex</a> operation is set to <code>DELETING</code>.
+        /// returned by a call to the <code>DescribeIndex</code> operation is set to <code>DELETING</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
         /// 
@@ -723,7 +723,7 @@ namespace Amazon.Kendra
         /// <summary>
         /// Deletes an existing Amazon Kendra index. An exception is not thrown if the index is
         /// already being deleted. While the index is being deleted, the <code>Status</code> field
-        /// returned by a call to the <a>DescribeIndex</a> operation is set to <code>DELETING</code>.
+        /// returned by a call to the <code>DescribeIndex</code> operation is set to <code>DELETING</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
         /// <param name="cancellationToken">

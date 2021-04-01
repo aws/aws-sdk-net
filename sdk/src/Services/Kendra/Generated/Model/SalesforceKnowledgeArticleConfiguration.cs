@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies configuration information for the knowlege article types that Amazon Kendra
+    /// Specifies configuration information for the knowledge article types that Amazon Kendra
     /// indexes. Amazon Kendra indexes standard knowledge articles and the standard fields
     /// of knowledge articles, or the custom fields of custom knowledge articles, but not
     /// both

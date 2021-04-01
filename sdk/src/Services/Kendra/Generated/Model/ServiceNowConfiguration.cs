@@ -33,11 +33,41 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ServiceNowConfiguration
     {
+        private ServiceNowAuthenticationType _authenticationType;
         private string _hostUrl;
         private ServiceNowKnowledgeArticleConfiguration _knowledgeArticleConfiguration;
         private string _secretArn;
         private ServiceNowServiceCatalogConfiguration _serviceCatalogConfiguration;
         private ServiceNowBuildVersionType _serviceNowBuildVersion;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// Determines the type of authentication used to connect to the ServiceNow instance.
+        /// If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+        /// name and password provided in the AWS Secrets Manager secret in the <code>SecretArn</code>
+        /// field. When you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the
+        /// OAuth token and secret provided in the Secrets Manager secret, and the user name and
+        /// password are used to determine which information Amazon Kendra has access to.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use <code>OAUTH2</code> authentication, you must generate a token and a client
+        /// secret using the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
+        /// a ServiceNow data source</a>.
+        /// </para>
+        /// </summary>
+        public ServiceNowAuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HostUrl. 

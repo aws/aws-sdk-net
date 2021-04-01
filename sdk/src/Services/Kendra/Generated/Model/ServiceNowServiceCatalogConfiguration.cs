@@ -102,7 +102,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExcludeAttachmentFilePatterns. 
         /// <para>
-        /// Determines the types of file attachments that are excluded from the index.
+        /// A list of regular expression patterns. Documents that match the patterns are excluded
+        /// from the index. Documents that don't match the patterns are included in the index.
+        /// If a document matches both an exclusion pattern and an inclusion pattern, the document
+        /// is not included in the index.
+        /// </para>
+        ///  
+        /// <para>
+        /// The regex is applied to the file name of the attachment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -141,7 +148,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IncludeAttachmentFilePatterns. 
         /// <para>
-        /// Determines the types of file attachments that are included in the index. 
+        /// A list of regular expression patterns. Documents that match the patterns are included
+        /// in the index. Documents that don't match the patterns are excluded from the index.
+        /// If a document matches both an exclusion pattern and an inclusion pattern, the document
+        /// is not included in the index.
+        /// </para>
+        ///  
+        /// <para>
+        /// The regex is applied to the file name of the attachment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

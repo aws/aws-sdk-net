@@ -34,7 +34,8 @@ namespace Amazon.Kendra.Model
     /// 
     ///  
     /// <para>
-    /// You must first create the index field using the operation. 
+    /// You must first create the index field using the <code>UpdateIndex</code> operation.
+    /// 
     /// </para>
     /// </summary>
     public partial class ConfluenceAttachmentToIndexFieldMapping
@@ -50,7 +51,8 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// You must first create the index field using the operation. 
+        /// You must first create the index field using the <code>UpdateIndex</code> operation.
+        /// 
         /// </para>
         /// </summary>
         public ConfluenceAttachmentFieldName DataSourceFieldName

@@ -138,7 +138,7 @@ namespace Amazon.Kendra.Model
         ///  
         /// <para>
         /// If you are using the console, you can define index fields when creating the mapping.
-        /// If you are using the API, you must first create the field using the <a>UpdateIndex</a>
+        /// If you are using the API, you must first create the field using the <code>UpdateIndex</code>
         /// operation.
         /// </para>
         /// </summary>

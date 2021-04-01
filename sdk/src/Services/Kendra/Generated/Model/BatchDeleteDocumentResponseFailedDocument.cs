@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides information about documents that could not be removed from an index by the
-    /// <a>BatchDeleteDocument</a> operation.
+    /// <code>BatchDeleteDocument</code> operation.
     /// </summary>
     public partial class BatchDeleteDocumentResponseFailedDocument
     {

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Summary information for a Amazon Kendra data source. Returned in a call to .
+    /// Summary information for a Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code>
+    /// operation.
     /// </summary>
     public partial class DataSourceSummary
     {
@@ -99,7 +100,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the data source. When the status is <code>ATIVE</code> the data source
+        /// The status of the data source. When the status is <code>ACTIVE</code> the data source
         /// is ready to use.
         /// </para>
         /// </summary>

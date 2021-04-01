@@ -81,7 +81,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property QueryId. 
         /// <para>
         /// The identifier of the specific query for which you are submitting feedback. The query
-        /// ID is returned in the response to the operation.
+        /// ID is returned in the response to the <code>Query</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]

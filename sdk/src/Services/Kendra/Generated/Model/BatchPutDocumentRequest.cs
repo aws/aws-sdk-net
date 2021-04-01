@@ -95,7 +95,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property IndexId. 
         /// <para>
         /// The identifier of the index to add the documents to. You need to create the index
-        /// first using the <a>CreateIndex</a> operation.
+        /// first using the <code>CreateIndex</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

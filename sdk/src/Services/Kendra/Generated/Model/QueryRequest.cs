@@ -127,7 +127,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property IndexId. 
         /// <para>
         /// The unique identifier of the index to search. The identifier is returned in the response
-        /// from the operation.
+        /// from the <code>CreateIndex</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

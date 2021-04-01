@@ -90,6 +90,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetFilterQuery())
+            {
+                context.Writer.WritePropertyName("FilterQuery");
+                context.Writer.Write(requestObject.FilterQuery);
+            }
+
             if(requestObject.IsSetIncludeAttachmentFilePatterns())
             {
                 context.Writer.WritePropertyName("IncludeAttachmentFilePatterns");

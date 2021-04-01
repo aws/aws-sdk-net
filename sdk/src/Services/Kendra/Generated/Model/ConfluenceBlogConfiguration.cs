@@ -31,7 +31,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Specifies the blog settings for the Confluence data source. Blogs are always indexed
     /// unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code>
-    /// fields in the data type.
+    /// fields in the <code>ConfluenceConfiguration</code> type.
     /// </summary>
     public partial class ConfluenceBlogConfiguration
     {

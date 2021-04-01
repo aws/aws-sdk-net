@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Maps a column or attribute in the data source to an index field. You must first create
-    /// the fields in the index using the <a>UpdateIndex</a> operation.
+    /// the fields in the index using the <code>UpdateIndex</code> operation.
     /// </summary>
     public partial class DataSourceToIndexFieldMapping
     {
