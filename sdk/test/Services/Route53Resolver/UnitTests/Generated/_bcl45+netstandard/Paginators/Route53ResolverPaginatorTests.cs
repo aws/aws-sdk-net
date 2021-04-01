@@ -42,6 +42,240 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Route53Resolver")]
+        public void ListFirewallConfigsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallConfigsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFirewallConfigsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFirewallConfigsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFirewallConfigs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFirewallConfigs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFirewallConfigsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallConfigsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFirewallConfigsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFirewallConfigs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFirewallConfigs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        public void ListFirewallDomainListsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallDomainListsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFirewallDomainListsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFirewallDomainListsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFirewallDomainLists(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFirewallDomainLists(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFirewallDomainListsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallDomainListsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFirewallDomainListsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFirewallDomainLists(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFirewallDomainLists(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        public void ListFirewallDomainsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallDomainsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFirewallDomainsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFirewallDomainsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFirewallDomains(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFirewallDomains(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFirewallDomainsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallDomainsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFirewallDomainsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFirewallDomains(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFirewallDomains(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        public void ListFirewallRuleGroupAssociationsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallRuleGroupAssociationsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFirewallRuleGroupAssociationsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFirewallRuleGroupAssociationsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFirewallRuleGroupAssociations(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFirewallRuleGroupAssociations(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFirewallRuleGroupAssociationsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallRuleGroupAssociationsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFirewallRuleGroupAssociationsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFirewallRuleGroupAssociations(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFirewallRuleGroupAssociations(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        public void ListFirewallRuleGroupsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallRuleGroupsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFirewallRuleGroupsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFirewallRuleGroupsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFirewallRuleGroups(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFirewallRuleGroups(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFirewallRuleGroupsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallRuleGroupsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFirewallRuleGroupsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFirewallRuleGroups(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFirewallRuleGroups(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        public void ListFirewallRulesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallRulesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFirewallRulesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFirewallRulesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFirewallRules(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFirewallRules(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFirewallRulesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFirewallRulesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFirewallRulesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFirewallRules(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFirewallRules(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
         public void ListResolverDnssecConfigsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsRequest>();

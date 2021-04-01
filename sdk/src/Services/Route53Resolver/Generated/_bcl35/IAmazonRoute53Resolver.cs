@@ -89,6 +89,69 @@ namespace Amazon.Route53Resolver
 
 
         
+        #region  AssociateFirewallRuleGroup
+
+
+        /// <summary>
+        /// Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the
+        /// VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFirewallRuleGroup service method.</param>
+        /// 
+        /// <returns>The response from the AssociateFirewallRuleGroup service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateFirewallRuleGroup">REST API Reference for AssociateFirewallRuleGroup Operation</seealso>
+        AssociateFirewallRuleGroupResponse AssociateFirewallRuleGroup(AssociateFirewallRuleGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateFirewallRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFirewallRuleGroup operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateFirewallRuleGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateFirewallRuleGroup">REST API Reference for AssociateFirewallRuleGroup Operation</seealso>
+        IAsyncResult BeginAssociateFirewallRuleGroup(AssociateFirewallRuleGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateFirewallRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateFirewallRuleGroup.</param>
+        /// 
+        /// <returns>Returns a  AssociateFirewallRuleGroupResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateFirewallRuleGroup">REST API Reference for AssociateFirewallRuleGroup Operation</seealso>
+        AssociateFirewallRuleGroupResponse EndAssociateFirewallRuleGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateResolverEndpointIpAddress
 
 
@@ -301,6 +364,181 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  AssociateResolverRuleResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateResolverRule">REST API Reference for AssociateResolverRule Operation</seealso>
         AssociateResolverRuleResponse EndAssociateResolverRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateFirewallDomainList
+
+
+        /// <summary>
+        /// Creates an empty firewall domain list for use in DNS Firewall rules. You can populate
+        /// the domains for the new list with a file, using <a>ImportFirewallDomains</a>, or with
+        /// domain strings, using <a>UpdateFirewallDomains</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFirewallDomainList service method.</param>
+        /// 
+        /// <returns>The response from the CreateFirewallDomainList service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallDomainList">REST API Reference for CreateFirewallDomainList Operation</seealso>
+        CreateFirewallDomainListResponse CreateFirewallDomainList(CreateFirewallDomainListRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFirewallDomainList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFirewallDomainList operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFirewallDomainList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallDomainList">REST API Reference for CreateFirewallDomainList Operation</seealso>
+        IAsyncResult BeginCreateFirewallDomainList(CreateFirewallDomainListRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFirewallDomainList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFirewallDomainList.</param>
+        /// 
+        /// <returns>Returns a  CreateFirewallDomainListResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallDomainList">REST API Reference for CreateFirewallDomainList Operation</seealso>
+        CreateFirewallDomainListResponse EndCreateFirewallDomainList(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateFirewallRule
+
+
+        /// <summary>
+        /// Creates a single DNS Firewall rule in the specified rule group, using the specified
+        /// domain list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateFirewallRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRule">REST API Reference for CreateFirewallRule Operation</seealso>
+        CreateFirewallRuleResponse CreateFirewallRule(CreateFirewallRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFirewallRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRule operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFirewallRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRule">REST API Reference for CreateFirewallRule Operation</seealso>
+        IAsyncResult BeginCreateFirewallRule(CreateFirewallRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFirewallRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFirewallRule.</param>
+        /// 
+        /// <returns>Returns a  CreateFirewallRuleResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRule">REST API Reference for CreateFirewallRule Operation</seealso>
+        CreateFirewallRuleResponse EndCreateFirewallRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateFirewallRuleGroup
+
+
+        /// <summary>
+        /// Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC.
+        /// You can add rules to the new rule group by calling <a>CreateFirewallRule</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRuleGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateFirewallRuleGroup service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRuleGroup">REST API Reference for CreateFirewallRuleGroup Operation</seealso>
+        CreateFirewallRuleGroupResponse CreateFirewallRuleGroup(CreateFirewallRuleGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFirewallRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRuleGroup operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFirewallRuleGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRuleGroup">REST API Reference for CreateFirewallRuleGroup Operation</seealso>
+        IAsyncResult BeginCreateFirewallRuleGroup(CreateFirewallRuleGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFirewallRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFirewallRuleGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateFirewallRuleGroupResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRuleGroup">REST API Reference for CreateFirewallRuleGroup Operation</seealso>
+        CreateFirewallRuleGroupResponse EndCreateFirewallRuleGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -525,6 +763,174 @@ namespace Amazon.Route53Resolver
 
         #endregion
         
+        #region  DeleteFirewallDomainList
+
+
+        /// <summary>
+        /// Deletes the specified domain list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallDomainList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFirewallDomainList service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallDomainList">REST API Reference for DeleteFirewallDomainList Operation</seealso>
+        DeleteFirewallDomainListResponse DeleteFirewallDomainList(DeleteFirewallDomainListRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFirewallDomainList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallDomainList operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFirewallDomainList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallDomainList">REST API Reference for DeleteFirewallDomainList Operation</seealso>
+        IAsyncResult BeginDeleteFirewallDomainList(DeleteFirewallDomainListRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFirewallDomainList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFirewallDomainList.</param>
+        /// 
+        /// <returns>Returns a  DeleteFirewallDomainListResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallDomainList">REST API Reference for DeleteFirewallDomainList Operation</seealso>
+        DeleteFirewallDomainListResponse EndDeleteFirewallDomainList(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteFirewallRule
+
+
+        /// <summary>
+        /// Deletes the specified firewall rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFirewallRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRule">REST API Reference for DeleteFirewallRule Operation</seealso>
+        DeleteFirewallRuleResponse DeleteFirewallRule(DeleteFirewallRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFirewallRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallRule operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFirewallRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRule">REST API Reference for DeleteFirewallRule Operation</seealso>
+        IAsyncResult BeginDeleteFirewallRule(DeleteFirewallRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFirewallRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFirewallRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteFirewallRuleResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRule">REST API Reference for DeleteFirewallRule Operation</seealso>
+        DeleteFirewallRuleResponse EndDeleteFirewallRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteFirewallRuleGroup
+
+
+        /// <summary>
+        /// Deletes the specified firewall rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallRuleGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFirewallRuleGroup service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRuleGroup">REST API Reference for DeleteFirewallRuleGroup Operation</seealso>
+        DeleteFirewallRuleGroupResponse DeleteFirewallRuleGroup(DeleteFirewallRuleGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFirewallRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallRuleGroup operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFirewallRuleGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRuleGroup">REST API Reference for DeleteFirewallRuleGroup Operation</seealso>
+        IAsyncResult BeginDeleteFirewallRuleGroup(DeleteFirewallRuleGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFirewallRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFirewallRuleGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteFirewallRuleGroupResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRuleGroup">REST API Reference for DeleteFirewallRuleGroup Operation</seealso>
+        DeleteFirewallRuleGroupResponse EndDeleteFirewallRuleGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteResolverEndpoint
 
 
@@ -722,6 +1128,66 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  DeleteResolverRuleResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteResolverRule">REST API Reference for DeleteResolverRule Operation</seealso>
         DeleteResolverRuleResponse EndDeleteResolverRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateFirewallRuleGroup
+
+
+        /// <summary>
+        /// Disassociates a <a>FirewallRuleGroup</a> from a VPC, to remove DNS filtering from
+        /// the VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFirewallRuleGroup service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFirewallRuleGroup service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateFirewallRuleGroup">REST API Reference for DisassociateFirewallRuleGroup Operation</seealso>
+        DisassociateFirewallRuleGroupResponse DisassociateFirewallRuleGroup(DisassociateFirewallRuleGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateFirewallRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFirewallRuleGroup operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateFirewallRuleGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateFirewallRuleGroup">REST API Reference for DisassociateFirewallRuleGroup Operation</seealso>
+        IAsyncResult BeginDisassociateFirewallRuleGroup(DisassociateFirewallRuleGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateFirewallRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateFirewallRuleGroup.</param>
+        /// 
+        /// <returns>Returns a  DisassociateFirewallRuleGroupResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateFirewallRuleGroup">REST API Reference for DisassociateFirewallRuleGroup Operation</seealso>
+        DisassociateFirewallRuleGroupResponse EndDisassociateFirewallRuleGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -924,6 +1390,282 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  DisassociateResolverRuleResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverRule">REST API Reference for DisassociateResolverRule Operation</seealso>
         DisassociateResolverRuleResponse EndDisassociateResolverRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetFirewallConfig
+
+
+        /// <summary>
+        /// Retrieves the configuration of the firewall behavior provided by DNS Firewall for
+        /// a single Amazon virtual private cloud (VPC).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetFirewallConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig">REST API Reference for GetFirewallConfig Operation</seealso>
+        GetFirewallConfigResponse GetFirewallConfig(GetFirewallConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFirewallConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallConfig operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFirewallConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig">REST API Reference for GetFirewallConfig Operation</seealso>
+        IAsyncResult BeginGetFirewallConfig(GetFirewallConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFirewallConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFirewallConfig.</param>
+        /// 
+        /// <returns>Returns a  GetFirewallConfigResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig">REST API Reference for GetFirewallConfig Operation</seealso>
+        GetFirewallConfigResponse EndGetFirewallConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetFirewallDomainList
+
+
+        /// <summary>
+        /// Retrieves the specified firewall domain list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallDomainList service method.</param>
+        /// 
+        /// <returns>The response from the GetFirewallDomainList service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallDomainList">REST API Reference for GetFirewallDomainList Operation</seealso>
+        GetFirewallDomainListResponse GetFirewallDomainList(GetFirewallDomainListRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFirewallDomainList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallDomainList operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFirewallDomainList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallDomainList">REST API Reference for GetFirewallDomainList Operation</seealso>
+        IAsyncResult BeginGetFirewallDomainList(GetFirewallDomainListRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFirewallDomainList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFirewallDomainList.</param>
+        /// 
+        /// <returns>Returns a  GetFirewallDomainListResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallDomainList">REST API Reference for GetFirewallDomainList Operation</seealso>
+        GetFirewallDomainListResponse EndGetFirewallDomainList(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetFirewallRuleGroup
+
+
+        /// <summary>
+        /// Retrieves the specified firewall rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallRuleGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetFirewallRuleGroup service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroup">REST API Reference for GetFirewallRuleGroup Operation</seealso>
+        GetFirewallRuleGroupResponse GetFirewallRuleGroup(GetFirewallRuleGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFirewallRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallRuleGroup operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFirewallRuleGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroup">REST API Reference for GetFirewallRuleGroup Operation</seealso>
+        IAsyncResult BeginGetFirewallRuleGroup(GetFirewallRuleGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFirewallRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFirewallRuleGroup.</param>
+        /// 
+        /// <returns>Returns a  GetFirewallRuleGroupResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroup">REST API Reference for GetFirewallRuleGroup Operation</seealso>
+        GetFirewallRuleGroupResponse EndGetFirewallRuleGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetFirewallRuleGroupAssociation
+
+
+        /// <summary>
+        /// Retrieves a firewall rule group association, which enables DNS filtering for a VPC
+        /// with one rule group. A VPC can have more than one firewall rule group association,
+        /// and a rule group can be associated with more than one VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallRuleGroupAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetFirewallRuleGroupAssociation service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupAssociation">REST API Reference for GetFirewallRuleGroupAssociation Operation</seealso>
+        GetFirewallRuleGroupAssociationResponse GetFirewallRuleGroupAssociation(GetFirewallRuleGroupAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFirewallRuleGroupAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallRuleGroupAssociation operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFirewallRuleGroupAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupAssociation">REST API Reference for GetFirewallRuleGroupAssociation Operation</seealso>
+        IAsyncResult BeginGetFirewallRuleGroupAssociation(GetFirewallRuleGroupAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFirewallRuleGroupAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFirewallRuleGroupAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetFirewallRuleGroupAssociationResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupAssociation">REST API Reference for GetFirewallRuleGroupAssociation Operation</seealso>
+        GetFirewallRuleGroupAssociationResponse EndGetFirewallRuleGroupAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetFirewallRuleGroupPolicy
+
+
+        /// <summary>
+        /// Returns the AWS Identity and Access Management (AWS IAM) policy for sharing the specified
+        /// rule group. You can use the policy to share the rule group using AWS Resource Access
+        /// Manager (RAM).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallRuleGroupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetFirewallRuleGroupPolicy service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">REST API Reference for GetFirewallRuleGroupPolicy Operation</seealso>
+        GetFirewallRuleGroupPolicyResponse GetFirewallRuleGroupPolicy(GetFirewallRuleGroupPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFirewallRuleGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallRuleGroupPolicy operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFirewallRuleGroupPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">REST API Reference for GetFirewallRuleGroupPolicy Operation</seealso>
+        IAsyncResult BeginGetFirewallRuleGroupPolicy(GetFirewallRuleGroupPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFirewallRuleGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFirewallRuleGroupPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetFirewallRuleGroupPolicyResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">REST API Reference for GetFirewallRuleGroupPolicy Operation</seealso>
+        GetFirewallRuleGroupPolicyResponse EndGetFirewallRuleGroupPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1375,6 +2117,457 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  GetResolverRulePolicyResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRulePolicy">REST API Reference for GetResolverRulePolicy Operation</seealso>
         GetResolverRulePolicyResponse EndGetResolverRulePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ImportFirewallDomains
+
+
+        /// <summary>
+        /// Imports domain names from a file into a domain list, for use in a DNS firewall rule
+        /// group. 
+        /// 
+        ///  
+        /// <para>
+        /// Each domain specification in your domain list must satisfy the following requirements:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It can optionally start with <code>*</code> (asterisk).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With the exception of the optional starting asterisk, it must only contain the following
+        /// characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It must be from 1-255 characters in length. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportFirewallDomains service method.</param>
+        /// 
+        /// <returns>The response from the ImportFirewallDomains service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ImportFirewallDomains">REST API Reference for ImportFirewallDomains Operation</seealso>
+        ImportFirewallDomainsResponse ImportFirewallDomains(ImportFirewallDomainsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportFirewallDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportFirewallDomains operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportFirewallDomains
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ImportFirewallDomains">REST API Reference for ImportFirewallDomains Operation</seealso>
+        IAsyncResult BeginImportFirewallDomains(ImportFirewallDomainsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportFirewallDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportFirewallDomains.</param>
+        /// 
+        /// <returns>Returns a  ImportFirewallDomainsResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ImportFirewallDomains">REST API Reference for ImportFirewallDomains Operation</seealso>
+        ImportFirewallDomainsResponse EndImportFirewallDomains(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFirewallConfigs
+
+
+        /// <summary>
+        /// Retrieves the firewall configurations that you have defined. DNS Firewall uses the
+        /// configurations to manage firewall behavior for your VPCs. 
+        /// 
+        ///  
+        /// <para>
+        /// A single call might return only a partial list of the configurations. For information,
+        /// see <code>MaxResults</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListFirewallConfigs service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallConfigs">REST API Reference for ListFirewallConfigs Operation</seealso>
+        ListFirewallConfigsResponse ListFirewallConfigs(ListFirewallConfigsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFirewallConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallConfigs operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFirewallConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallConfigs">REST API Reference for ListFirewallConfigs Operation</seealso>
+        IAsyncResult BeginListFirewallConfigs(ListFirewallConfigsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFirewallConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFirewallConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListFirewallConfigsResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallConfigs">REST API Reference for ListFirewallConfigs Operation</seealso>
+        ListFirewallConfigsResponse EndListFirewallConfigs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFirewallDomainLists
+
+
+        /// <summary>
+        /// Retrieves the firewall domain lists that you have defined. For each firewall domain
+        /// list, you can retrieve the domains that are defined for a list by calling <a>ListFirewallDomains</a>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// A single call to this list operation might return only a partial list of the domain
+        /// lists. For information, see <code>MaxResults</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallDomainLists service method.</param>
+        /// 
+        /// <returns>The response from the ListFirewallDomainLists service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomainLists">REST API Reference for ListFirewallDomainLists Operation</seealso>
+        ListFirewallDomainListsResponse ListFirewallDomainLists(ListFirewallDomainListsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFirewallDomainLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallDomainLists operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFirewallDomainLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomainLists">REST API Reference for ListFirewallDomainLists Operation</seealso>
+        IAsyncResult BeginListFirewallDomainLists(ListFirewallDomainListsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFirewallDomainLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFirewallDomainLists.</param>
+        /// 
+        /// <returns>Returns a  ListFirewallDomainListsResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomainLists">REST API Reference for ListFirewallDomainLists Operation</seealso>
+        ListFirewallDomainListsResponse EndListFirewallDomainLists(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFirewallDomains
+
+
+        /// <summary>
+        /// Retrieves the domains that you have defined for the specified firewall domain list.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// A single call might return only a partial list of the domains. For information, see
+        /// <code>MaxResults</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallDomains service method.</param>
+        /// 
+        /// <returns>The response from the ListFirewallDomains service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomains">REST API Reference for ListFirewallDomains Operation</seealso>
+        ListFirewallDomainsResponse ListFirewallDomains(ListFirewallDomainsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFirewallDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallDomains operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFirewallDomains
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomains">REST API Reference for ListFirewallDomains Operation</seealso>
+        IAsyncResult BeginListFirewallDomains(ListFirewallDomainsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFirewallDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFirewallDomains.</param>
+        /// 
+        /// <returns>Returns a  ListFirewallDomainsResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomains">REST API Reference for ListFirewallDomains Operation</seealso>
+        ListFirewallDomainsResponse EndListFirewallDomains(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFirewallRuleGroupAssociations
+
+
+        /// <summary>
+        /// Retrieves the firewall rule group associations that you have defined. Each association
+        /// enables DNS filtering for a VPC with one rule group. 
+        /// 
+        ///  
+        /// <para>
+        /// A single call might return only a partial list of the associations. For information,
+        /// see <code>MaxResults</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleGroupAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListFirewallRuleGroupAssociations service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroupAssociations">REST API Reference for ListFirewallRuleGroupAssociations Operation</seealso>
+        ListFirewallRuleGroupAssociationsResponse ListFirewallRuleGroupAssociations(ListFirewallRuleGroupAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFirewallRuleGroupAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleGroupAssociations operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFirewallRuleGroupAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroupAssociations">REST API Reference for ListFirewallRuleGroupAssociations Operation</seealso>
+        IAsyncResult BeginListFirewallRuleGroupAssociations(ListFirewallRuleGroupAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFirewallRuleGroupAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFirewallRuleGroupAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListFirewallRuleGroupAssociationsResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroupAssociations">REST API Reference for ListFirewallRuleGroupAssociations Operation</seealso>
+        ListFirewallRuleGroupAssociationsResponse EndListFirewallRuleGroupAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFirewallRuleGroups
+
+
+        /// <summary>
+        /// Retrieves the minimal high-level information for the rule groups that you have defined.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// A single call might return only a partial list of the rule groups. For information,
+        /// see <code>MaxResults</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListFirewallRuleGroups service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroups">REST API Reference for ListFirewallRuleGroups Operation</seealso>
+        ListFirewallRuleGroupsResponse ListFirewallRuleGroups(ListFirewallRuleGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFirewallRuleGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleGroups operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFirewallRuleGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroups">REST API Reference for ListFirewallRuleGroups Operation</seealso>
+        IAsyncResult BeginListFirewallRuleGroups(ListFirewallRuleGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFirewallRuleGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFirewallRuleGroups.</param>
+        /// 
+        /// <returns>Returns a  ListFirewallRuleGroupsResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroups">REST API Reference for ListFirewallRuleGroups Operation</seealso>
+        ListFirewallRuleGroupsResponse EndListFirewallRuleGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFirewallRules
+
+
+        /// <summary>
+        /// Retrieves the firewall rules that you have defined for the specified firewall rule
+        /// group. DNS Firewall uses the rules in a rule group to filter DNS network traffic for
+        /// a VPC. 
+        /// 
+        ///  
+        /// <para>
+        /// A single call might return only a partial list of the rules. For information, see
+        /// <code>MaxResults</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRules service method.</param>
+        /// 
+        /// <returns>The response from the ListFirewallRules service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules">REST API Reference for ListFirewallRules Operation</seealso>
+        ListFirewallRulesResponse ListFirewallRules(ListFirewallRulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFirewallRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRules operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFirewallRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules">REST API Reference for ListFirewallRules Operation</seealso>
+        IAsyncResult BeginListFirewallRules(ListFirewallRulesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFirewallRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFirewallRules.</param>
+        /// 
+        /// <returns>Returns a  ListFirewallRulesResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules">REST API Reference for ListFirewallRules Operation</seealso>
+        ListFirewallRulesResponse EndListFirewallRules(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1844,6 +3037,64 @@ namespace Amazon.Route53Resolver
 
         #endregion
         
+        #region  PutFirewallRuleGroupPolicy
+
+
+        /// <summary>
+        /// Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule
+        /// group. You can use the policy to share the rule group using AWS Resource Access Manager
+        /// (RAM).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFirewallRuleGroupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutFirewallRuleGroupPolicy service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">REST API Reference for PutFirewallRuleGroupPolicy Operation</seealso>
+        PutFirewallRuleGroupPolicyResponse PutFirewallRuleGroupPolicy(PutFirewallRuleGroupPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFirewallRuleGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFirewallRuleGroupPolicy operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutFirewallRuleGroupPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">REST API Reference for PutFirewallRuleGroupPolicy Operation</seealso>
+        IAsyncResult BeginPutFirewallRuleGroupPolicy(PutFirewallRuleGroupPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutFirewallRuleGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutFirewallRuleGroupPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutFirewallRuleGroupPolicyResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">REST API Reference for PutFirewallRuleGroupPolicy Operation</seealso>
+        PutFirewallRuleGroupPolicyResponse EndPutFirewallRuleGroupPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutResolverQueryLogConfigPolicy
 
 
@@ -2072,6 +3323,244 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  UntagResourceResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateFirewallConfig
+
+
+        /// <summary>
+        /// Updates the configuration of the firewall behavior provided by DNS Firewall for a
+        /// single Amazon virtual private cloud (VPC).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFirewallConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallConfig">REST API Reference for UpdateFirewallConfig Operation</seealso>
+        UpdateFirewallConfigResponse UpdateFirewallConfig(UpdateFirewallConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFirewallConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallConfig operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFirewallConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallConfig">REST API Reference for UpdateFirewallConfig Operation</seealso>
+        IAsyncResult BeginUpdateFirewallConfig(UpdateFirewallConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFirewallConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFirewallConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateFirewallConfigResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallConfig">REST API Reference for UpdateFirewallConfig Operation</seealso>
+        UpdateFirewallConfigResponse EndUpdateFirewallConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateFirewallDomains
+
+
+        /// <summary>
+        /// Updates the firewall domain list from an array of domain specifications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallDomains service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFirewallDomains service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallDomains">REST API Reference for UpdateFirewallDomains Operation</seealso>
+        UpdateFirewallDomainsResponse UpdateFirewallDomains(UpdateFirewallDomainsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFirewallDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallDomains operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFirewallDomains
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallDomains">REST API Reference for UpdateFirewallDomains Operation</seealso>
+        IAsyncResult BeginUpdateFirewallDomains(UpdateFirewallDomainsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFirewallDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFirewallDomains.</param>
+        /// 
+        /// <returns>Returns a  UpdateFirewallDomainsResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallDomains">REST API Reference for UpdateFirewallDomains Operation</seealso>
+        UpdateFirewallDomainsResponse EndUpdateFirewallDomains(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateFirewallRule
+
+
+        /// <summary>
+        /// Updates the specified firewall rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFirewallRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRule">REST API Reference for UpdateFirewallRule Operation</seealso>
+        UpdateFirewallRuleResponse UpdateFirewallRule(UpdateFirewallRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFirewallRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallRule operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFirewallRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRule">REST API Reference for UpdateFirewallRule Operation</seealso>
+        IAsyncResult BeginUpdateFirewallRule(UpdateFirewallRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFirewallRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFirewallRule.</param>
+        /// 
+        /// <returns>Returns a  UpdateFirewallRuleResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRule">REST API Reference for UpdateFirewallRule Operation</seealso>
+        UpdateFirewallRuleResponse EndUpdateFirewallRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateFirewallRuleGroupAssociation
+
+
+        /// <summary>
+        /// Changes the association of a <a>FirewallRuleGroup</a> with a VPC. The association
+        /// enables DNS filtering for the VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallRuleGroupAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFirewallRuleGroupAssociation service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRuleGroupAssociation">REST API Reference for UpdateFirewallRuleGroupAssociation Operation</seealso>
+        UpdateFirewallRuleGroupAssociationResponse UpdateFirewallRuleGroupAssociation(UpdateFirewallRuleGroupAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFirewallRuleGroupAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallRuleGroupAssociation operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFirewallRuleGroupAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRuleGroupAssociation">REST API Reference for UpdateFirewallRuleGroupAssociation Operation</seealso>
+        IAsyncResult BeginUpdateFirewallRuleGroupAssociation(UpdateFirewallRuleGroupAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFirewallRuleGroupAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFirewallRuleGroupAssociation.</param>
+        /// 
+        /// <returns>Returns a  UpdateFirewallRuleGroupAssociationResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRuleGroupAssociation">REST API Reference for UpdateFirewallRuleGroupAssociation Operation</seealso>
+        UpdateFirewallRuleGroupAssociationResponse EndUpdateFirewallRuleGroupAssociation(IAsyncResult asyncResult);
 
         #endregion
         

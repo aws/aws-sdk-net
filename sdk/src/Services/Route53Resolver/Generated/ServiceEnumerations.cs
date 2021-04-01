@@ -25,6 +25,480 @@ namespace Amazon.Route53Resolver
 {
 
     /// <summary>
+    /// Constants used for properties of type Action.
+    /// </summary>
+    public class Action : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALERT for Action
+        /// </summary>
+        public static readonly Action ALERT = new Action("ALERT");
+        /// <summary>
+        /// Constant ALLOW for Action
+        /// </summary>
+        public static readonly Action ALLOW = new Action("ALLOW");
+        /// <summary>
+        /// Constant BLOCK for Action
+        /// </summary>
+        public static readonly Action BLOCK = new Action("BLOCK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Action(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Action FindValue(string value)
+        {
+            return FindValue<Action>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Action(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BlockOverrideDnsType.
+    /// </summary>
+    public class BlockOverrideDnsType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CNAME for BlockOverrideDnsType
+        /// </summary>
+        public static readonly BlockOverrideDnsType CNAME = new BlockOverrideDnsType("CNAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlockOverrideDnsType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlockOverrideDnsType FindValue(string value)
+        {
+            return FindValue<BlockOverrideDnsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlockOverrideDnsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BlockResponse.
+    /// </summary>
+    public class BlockResponse : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NODATA for BlockResponse
+        /// </summary>
+        public static readonly BlockResponse NODATA = new BlockResponse("NODATA");
+        /// <summary>
+        /// Constant NXDOMAIN for BlockResponse
+        /// </summary>
+        public static readonly BlockResponse NXDOMAIN = new BlockResponse("NXDOMAIN");
+        /// <summary>
+        /// Constant OVERRIDE for BlockResponse
+        /// </summary>
+        public static readonly BlockResponse OVERRIDE = new BlockResponse("OVERRIDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlockResponse(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlockResponse FindValue(string value)
+        {
+            return FindValue<BlockResponse>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlockResponse(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FirewallDomainImportOperation.
+    /// </summary>
+    public class FirewallDomainImportOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REPLACE for FirewallDomainImportOperation
+        /// </summary>
+        public static readonly FirewallDomainImportOperation REPLACE = new FirewallDomainImportOperation("REPLACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FirewallDomainImportOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallDomainImportOperation FindValue(string value)
+        {
+            return FindValue<FirewallDomainImportOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallDomainImportOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FirewallDomainListStatus.
+    /// </summary>
+    public class FirewallDomainListStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for FirewallDomainListStatus
+        /// </summary>
+        public static readonly FirewallDomainListStatus COMPLETE = new FirewallDomainListStatus("COMPLETE");
+        /// <summary>
+        /// Constant COMPLETE_IMPORT_FAILED for FirewallDomainListStatus
+        /// </summary>
+        public static readonly FirewallDomainListStatus COMPLETE_IMPORT_FAILED = new FirewallDomainListStatus("COMPLETE_IMPORT_FAILED");
+        /// <summary>
+        /// Constant DELETING for FirewallDomainListStatus
+        /// </summary>
+        public static readonly FirewallDomainListStatus DELETING = new FirewallDomainListStatus("DELETING");
+        /// <summary>
+        /// Constant IMPORTING for FirewallDomainListStatus
+        /// </summary>
+        public static readonly FirewallDomainListStatus IMPORTING = new FirewallDomainListStatus("IMPORTING");
+        /// <summary>
+        /// Constant UPDATING for FirewallDomainListStatus
+        /// </summary>
+        public static readonly FirewallDomainListStatus UPDATING = new FirewallDomainListStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FirewallDomainListStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallDomainListStatus FindValue(string value)
+        {
+            return FindValue<FirewallDomainListStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallDomainListStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FirewallDomainUpdateOperation.
+    /// </summary>
+    public class FirewallDomainUpdateOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD for FirewallDomainUpdateOperation
+        /// </summary>
+        public static readonly FirewallDomainUpdateOperation ADD = new FirewallDomainUpdateOperation("ADD");
+        /// <summary>
+        /// Constant REMOVE for FirewallDomainUpdateOperation
+        /// </summary>
+        public static readonly FirewallDomainUpdateOperation REMOVE = new FirewallDomainUpdateOperation("REMOVE");
+        /// <summary>
+        /// Constant REPLACE for FirewallDomainUpdateOperation
+        /// </summary>
+        public static readonly FirewallDomainUpdateOperation REPLACE = new FirewallDomainUpdateOperation("REPLACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FirewallDomainUpdateOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallDomainUpdateOperation FindValue(string value)
+        {
+            return FindValue<FirewallDomainUpdateOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallDomainUpdateOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FirewallFailOpenStatus.
+    /// </summary>
+    public class FirewallFailOpenStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for FirewallFailOpenStatus
+        /// </summary>
+        public static readonly FirewallFailOpenStatus DISABLED = new FirewallFailOpenStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for FirewallFailOpenStatus
+        /// </summary>
+        public static readonly FirewallFailOpenStatus ENABLED = new FirewallFailOpenStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FirewallFailOpenStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallFailOpenStatus FindValue(string value)
+        {
+            return FindValue<FirewallFailOpenStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallFailOpenStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FirewallRuleGroupAssociationStatus.
+    /// </summary>
+    public class FirewallRuleGroupAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for FirewallRuleGroupAssociationStatus
+        /// </summary>
+        public static readonly FirewallRuleGroupAssociationStatus COMPLETE = new FirewallRuleGroupAssociationStatus("COMPLETE");
+        /// <summary>
+        /// Constant DELETING for FirewallRuleGroupAssociationStatus
+        /// </summary>
+        public static readonly FirewallRuleGroupAssociationStatus DELETING = new FirewallRuleGroupAssociationStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATING for FirewallRuleGroupAssociationStatus
+        /// </summary>
+        public static readonly FirewallRuleGroupAssociationStatus UPDATING = new FirewallRuleGroupAssociationStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FirewallRuleGroupAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallRuleGroupAssociationStatus FindValue(string value)
+        {
+            return FindValue<FirewallRuleGroupAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallRuleGroupAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FirewallRuleGroupStatus.
+    /// </summary>
+    public class FirewallRuleGroupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for FirewallRuleGroupStatus
+        /// </summary>
+        public static readonly FirewallRuleGroupStatus COMPLETE = new FirewallRuleGroupStatus("COMPLETE");
+        /// <summary>
+        /// Constant DELETING for FirewallRuleGroupStatus
+        /// </summary>
+        public static readonly FirewallRuleGroupStatus DELETING = new FirewallRuleGroupStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATING for FirewallRuleGroupStatus
+        /// </summary>
+        public static readonly FirewallRuleGroupStatus UPDATING = new FirewallRuleGroupStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FirewallRuleGroupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallRuleGroupStatus FindValue(string value)
+        {
+            return FindValue<FirewallRuleGroupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallRuleGroupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpAddressStatus.
     /// </summary>
     public class IpAddressStatus : ConstantClass
@@ -100,6 +574,56 @@ namespace Amazon.Route53Resolver
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpAddressStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MutationProtectionStatus.
+    /// </summary>
+    public class MutationProtectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for MutationProtectionStatus
+        /// </summary>
+        public static readonly MutationProtectionStatus DISABLED = new MutationProtectionStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for MutationProtectionStatus
+        /// </summary>
+        public static readonly MutationProtectionStatus ENABLED = new MutationProtectionStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MutationProtectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MutationProtectionStatus FindValue(string value)
+        {
+            return FindValue<MutationProtectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MutationProtectionStatus(string value)
         {
             return FindValue(value);
         }

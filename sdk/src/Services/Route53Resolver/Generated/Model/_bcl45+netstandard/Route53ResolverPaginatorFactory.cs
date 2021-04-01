@@ -36,6 +36,54 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Paginator for ListFirewallConfigs operation
+        ///</summary>
+        public IListFirewallConfigsPaginator ListFirewallConfigs(ListFirewallConfigsRequest request) 
+        {
+            return new ListFirewallConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFirewallDomainLists operation
+        ///</summary>
+        public IListFirewallDomainListsPaginator ListFirewallDomainLists(ListFirewallDomainListsRequest request) 
+        {
+            return new ListFirewallDomainListsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFirewallDomains operation
+        ///</summary>
+        public IListFirewallDomainsPaginator ListFirewallDomains(ListFirewallDomainsRequest request) 
+        {
+            return new ListFirewallDomainsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFirewallRuleGroupAssociations operation
+        ///</summary>
+        public IListFirewallRuleGroupAssociationsPaginator ListFirewallRuleGroupAssociations(ListFirewallRuleGroupAssociationsRequest request) 
+        {
+            return new ListFirewallRuleGroupAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFirewallRuleGroups operation
+        ///</summary>
+        public IListFirewallRuleGroupsPaginator ListFirewallRuleGroups(ListFirewallRuleGroupsRequest request) 
+        {
+            return new ListFirewallRuleGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFirewallRules operation
+        ///</summary>
+        public IListFirewallRulesPaginator ListFirewallRules(ListFirewallRulesRequest request) 
+        {
+            return new ListFirewallRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListResolverDnssecConfigs operation
         ///</summary>
         public IListResolverDnssecConfigsPaginator ListResolverDnssecConfigs(ListResolverDnssecConfigsRequest request) 
