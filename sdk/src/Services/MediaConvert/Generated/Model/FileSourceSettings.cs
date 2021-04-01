@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify
-    /// the URI of the input caption source file. If your caption source is IMSC in an IMF
-    /// package, use TrackSourceSettings instead of FileSoureSettings.
+    /// If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml
+    /// file, specify the URI of the input caption source file. If your caption source is
+    /// IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     /// </summary>
     public partial class FileSourceSettings
     {
@@ -82,7 +82,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property SourceFile. External caption file used for loading captions.
-        /// Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
+        /// Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', and
+        /// 'vtt'.
         /// </summary>
         [AWSProperty(Min=14)]
         public string SourceFile

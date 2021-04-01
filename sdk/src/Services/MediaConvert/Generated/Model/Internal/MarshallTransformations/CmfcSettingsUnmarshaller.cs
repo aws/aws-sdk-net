@@ -70,6 +70,30 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("audioGroupId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioGroupId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("audioRenditionSets", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioRenditionSets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("audioTrackType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioTrackType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("descriptiveVideoServiceFlag", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DescriptiveVideoServiceFlag = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("iFrameOnlyManifest", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

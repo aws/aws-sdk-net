@@ -38,7 +38,9 @@ namespace Amazon.MediaConvert.Model
         private Ac3BitstreamMode _bitstreamMode;
         private Ac3CodingMode _codingMode;
         private int? _dialnorm;
+        private Ac3DynamicRangeCompressionLine _dynamicRangeCompressionLine;
         private Ac3DynamicRangeCompressionProfile _dynamicRangeCompressionProfile;
+        private Ac3DynamicRangeCompressionRf _dynamicRangeCompressionRf;
         private Ac3LfeFilter _lfeFilter;
         private Ac3MetadataControl _metadataControl;
         private int? _sampleRate;
@@ -111,9 +113,37 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DynamicRangeCompressionProfile. If set to FILM_STANDARD,
-        /// adds dynamic range compression signaling to the output bitstream as defined in the
-        /// Dolby Digital specification.
+        /// Gets and sets the property DynamicRangeCompressionLine. Choose the Dolby Digital dynamic
+        /// range control (DRC) profile that MediaConvert uses when encoding the metadata in the
+        /// Dolby Digital stream for the line operating mode. Related setting: When you use this
+        /// setting, MediaConvert ignores any value you provide for Dynamic range compression
+        /// profile (DynamicRangeCompressionProfile). For information about the Dolby Digital
+        /// DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+        /// Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+        /// </summary>
+        public Ac3DynamicRangeCompressionLine DynamicRangeCompressionLine
+        {
+            get { return this._dynamicRangeCompressionLine; }
+            set { this._dynamicRangeCompressionLine = value; }
+        }
+
+        // Check to see if DynamicRangeCompressionLine property is set
+        internal bool IsSetDynamicRangeCompressionLine()
+        {
+            return this._dynamicRangeCompressionLine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamicRangeCompressionProfile. When you want to add Dolby
+        /// dynamic range compression (DRC) signaling to your output stream, we recommend that
+        /// you use the mode-specific settings instead of Dynamic range compression profile (DynamicRangeCompressionProfile).
+        /// The mode-specific settings are Dynamic range compression profile, line mode (dynamicRangeCompressionLine)
+        /// and Dynamic range compression profile, RF mode (dynamicRangeCompressionRf). Note that
+        /// when you specify values for all three settings, MediaConvert ignores the value of
+        /// this setting in favor of the mode-specific settings. If you do use this setting instead
+        /// of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep
+        /// the default Film standard (FILM_STANDARD) to set the profile to Dolby's film standard
+        /// profile for all operating modes.
         /// </summary>
         public Ac3DynamicRangeCompressionProfile DynamicRangeCompressionProfile
         {
@@ -125,6 +155,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDynamicRangeCompressionProfile()
         {
             return this._dynamicRangeCompressionProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamicRangeCompressionRf. Choose the Dolby Digital dynamic
+        /// range control (DRC) profile that MediaConvert uses when encoding the metadata in the
+        /// Dolby Digital stream for the RF operating mode. Related setting: When you use this
+        /// setting, MediaConvert ignores any value you provide for Dynamic range compression
+        /// profile (DynamicRangeCompressionProfile). For information about the Dolby Digital
+        /// DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+        /// Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+        /// </summary>
+        public Ac3DynamicRangeCompressionRf DynamicRangeCompressionRf
+        {
+            get { return this._dynamicRangeCompressionRf; }
+            set { this._dynamicRangeCompressionRf = value; }
+        }
+
+        // Check to see if DynamicRangeCompressionRf property is set
+        internal bool IsSetDynamicRangeCompressionRf()
+        {
+            return this._dynamicRangeCompressionRf != null;
         }
 
         /// <summary>

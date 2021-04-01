@@ -29,17 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+    /// WEBVTT Destination Settings
     /// </summary>
-    public partial class TtmlDestinationSettings
+    public partial class WebvttDestinationSettings
     {
-        private TtmlStylePassthrough _stylePassthrough;
+        private WebvttStylePassthrough _stylePassthrough;
 
         /// <summary>
-        /// Gets and sets the property StylePassthrough. Pass through style and position information
-        /// from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
+        /// Gets and sets the property StylePassthrough. If your input captions format is teletext
+        /// or teletext inside of STL, enable this setting to pass through style, color, and position
+        /// information to your WebVTT output captions.
         /// </summary>
-        public TtmlStylePassthrough StylePassthrough
+        public WebvttStylePassthrough StylePassthrough
         {
             get { return this._stylePassthrough; }
             set { this._stylePassthrough = value; }

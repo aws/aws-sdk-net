@@ -88,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioTrackType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("descriptiveVideoServiceFlag", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DescriptiveVideoServiceFlag = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("iFrameOnlyManifest", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

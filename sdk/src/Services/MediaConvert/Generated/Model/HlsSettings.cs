@@ -37,11 +37,12 @@ namespace Amazon.MediaConvert.Model
         private HlsAudioOnlyContainer _audioOnlyContainer;
         private string _audioRenditionSets;
         private HlsAudioTrackType _audioTrackType;
+        private HlsDescriptiveVideoServiceFlag _descriptiveVideoServiceFlag;
         private HlsIFrameOnlyManifest _iFrameOnlyManifest;
         private string _segmentModifier;
 
         /// <summary>
-        /// Gets and sets the property AudioGroupId. Specifies the group to which the audio Rendition
+        /// Gets and sets the property AudioGroupId. Specifies the group to which the audio rendition
         /// belongs.
         /// </summary>
         public string AudioGroupId
@@ -114,6 +115,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAudioTrackType()
         {
             return this._audioTrackType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DescriptiveVideoServiceFlag. Specify whether to flag this
+        /// audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+        /// choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video"
+        /// in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag
+        /// (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with accessibility
+        /// on Apple devices. For more information, see the Apple documentation.
+        /// </summary>
+        public HlsDescriptiveVideoServiceFlag DescriptiveVideoServiceFlag
+        {
+            get { return this._descriptiveVideoServiceFlag; }
+            set { this._descriptiveVideoServiceFlag = value; }
+        }
+
+        // Check to see if DescriptiveVideoServiceFlag property is set
+        internal bool IsSetDescriptiveVideoServiceFlag()
+        {
+            return this._descriptiveVideoServiceFlag != null;
         }
 
         /// <summary>

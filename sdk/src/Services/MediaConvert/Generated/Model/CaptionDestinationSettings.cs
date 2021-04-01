@@ -42,6 +42,7 @@ namespace Amazon.MediaConvert.Model
         private SccDestinationSettings _sccDestinationSettings;
         private TeletextDestinationSettings _teletextDestinationSettings;
         private TtmlDestinationSettings _ttmlDestinationSettings;
+        private WebvttDestinationSettings _webvttDestinationSettings;
 
         /// <summary>
         /// Gets and sets the property BurninDestinationSettings. Burn-In Destination Settings.
@@ -170,6 +171,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTtmlDestinationSettings()
         {
             return this._ttmlDestinationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebvttDestinationSettings. WEBVTT Destination Settings
+        /// </summary>
+        public WebvttDestinationSettings WebvttDestinationSettings
+        {
+            get { return this._webvttDestinationSettings; }
+            set { this._webvttDestinationSettings = value; }
+        }
+
+        // Check to see if WebvttDestinationSettings property is set
+        internal bool IsSetWebvttDestinationSettings()
+        {
+            return this._webvttDestinationSettings != null;
         }
 
     }

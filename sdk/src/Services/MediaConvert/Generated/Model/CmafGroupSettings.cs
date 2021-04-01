@@ -48,6 +48,7 @@ namespace Amazon.MediaConvert.Model
         private int? _minBufferTime;
         private double? _minFinalSegmentLength;
         private CmafMpdProfile _mpdProfile;
+        private CmafPtsOffsetHandlingForBFrames _ptsOffsetHandlingForBFrames;
         private CmafSegmentControl _segmentControl;
         private int? _segmentLength;
         private CmafStreamInfResolution _streamInfResolution;
@@ -288,6 +289,29 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMpdProfile()
         {
             return this._mpdProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PtsOffsetHandlingForBFrames. Use this setting only when
+        /// your output video stream has B-frames, which causes the initial presentation time
+        /// stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert
+        /// handles PTS when writing time stamps in output DASH manifests. Choose Match initial
+        /// PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first
+        /// time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore
+        /// the initial PTS in the video stream and instead write the initial time stamp as zero
+        /// in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
+        /// manifests start at zero regardless of your choice here.
+        /// </summary>
+        public CmafPtsOffsetHandlingForBFrames PtsOffsetHandlingForBFrames
+        {
+            get { return this._ptsOffsetHandlingForBFrames; }
+            set { this._ptsOffsetHandlingForBFrames = value; }
+        }
+
+        // Check to see if PtsOffsetHandlingForBFrames property is set
+        internal bool IsSetPtsOffsetHandlingForBFrames()
+        {
+            return this._ptsOffsetHandlingForBFrames != null;
         }
 
         /// <summary>

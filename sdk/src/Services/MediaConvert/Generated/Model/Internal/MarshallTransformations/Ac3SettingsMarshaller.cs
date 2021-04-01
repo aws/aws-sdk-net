@@ -69,10 +69,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Dialnorm);
             }
 
+            if(requestObject.IsSetDynamicRangeCompressionLine())
+            {
+                context.Writer.WritePropertyName("dynamicRangeCompressionLine");
+                context.Writer.Write(requestObject.DynamicRangeCompressionLine);
+            }
+
             if(requestObject.IsSetDynamicRangeCompressionProfile())
             {
                 context.Writer.WritePropertyName("dynamicRangeCompressionProfile");
                 context.Writer.Write(requestObject.DynamicRangeCompressionProfile);
+            }
+
+            if(requestObject.IsSetDynamicRangeCompressionRf())
+            {
+                context.Writer.WritePropertyName("dynamicRangeCompressionRf");
+                context.Writer.Write(requestObject.DynamicRangeCompressionRf);
             }
 
             if(requestObject.IsSetLfeFilter())

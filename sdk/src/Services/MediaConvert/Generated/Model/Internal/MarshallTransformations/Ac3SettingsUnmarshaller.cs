@@ -88,10 +88,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Dialnorm = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dynamicRangeCompressionLine", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DynamicRangeCompressionLine = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dynamicRangeCompressionProfile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DynamicRangeCompressionProfile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dynamicRangeCompressionRf", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DynamicRangeCompressionRf = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lfeFilter", targetDepth))

@@ -112,6 +112,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.TtmlDestinationSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("webvttDestinationSettings", targetDepth))
+                {
+                    var unmarshaller = WebvttDestinationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.WebvttDestinationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -34,6 +34,10 @@ namespace Amazon.MediaConvert.Model
     public partial class CmfcSettings
     {
         private CmfcAudioDuration _audioDuration;
+        private string _audioGroupId;
+        private string _audioRenditionSets;
+        private CmfcAudioTrackType _audioTrackType;
+        private CmfcDescriptiveVideoServiceFlag _descriptiveVideoServiceFlag;
         private CmfcIFrameOnlyManifest _iFrameOnlyManifest;
         private CmfcScte35Esam _scte35Esam;
         private CmfcScte35Source _scte35Source;
@@ -62,6 +66,104 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAudioDuration()
         {
             return this._audioDuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioGroupId. Specify the audio rendition group for this
+        /// audio rendition. Specify up to one value for each audio output in your output group.
+        /// This value appears in your HLS parent manifest in the EXT-X-MEDIA tag of TYPE=AUDIO,
+        /// as the value for the GROUP-ID attribute. For example, if you specify "audio_aac_1"
+        /// for Audio group ID, it appears in your manifest like this: #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio_aac_1".
+        /// Related setting: To associate the rendition group that this audio track belongs to
+        /// with a video rendition, include the same value that you provide here for that video
+        /// output's setting Audio rendition sets (audioRenditionSets).
+        /// </summary>
+        public string AudioGroupId
+        {
+            get { return this._audioGroupId; }
+            set { this._audioGroupId = value; }
+        }
+
+        // Check to see if AudioGroupId property is set
+        internal bool IsSetAudioGroupId()
+        {
+            return this._audioGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioRenditionSets. List the audio rendition groups that
+        /// you want included with this video rendition. Use a comma-separated list. For example,
+        /// say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1"
+        /// and "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby".
+        /// Related setting: The rendition groups that you include in your comma-separated list
+        /// should all match values that you specify in the setting Audio group ID (AudioGroupId)
+        /// for audio renditions in the same output group as this video rendition. Default behavior:
+        /// If you don't specify anything here and for Audio group ID, MediaConvert puts each
+        /// audio variant in its own audio rendition group and associates it with every video
+        /// variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF
+        /// tag as the value for the AUDIO attribute. To continue the previous example, say that
+        /// the file name for the child manifest for your video rendition is "amazing_video_1.m3u8".
+        /// Then, in your parent manifest, each value will appear on separate lines, like this:
+        /// #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"...
+        /// amazing_video_1.m3u8
+        /// </summary>
+        public string AudioRenditionSets
+        {
+            get { return this._audioRenditionSets; }
+            set { this._audioRenditionSets = value; }
+        }
+
+        // Check to see if AudioRenditionSets property is set
+        internal bool IsSetAudioRenditionSets()
+        {
+            return this._audioRenditionSets != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioTrackType. Use this setting to control the values
+        /// that MediaConvert puts in your HLS parent playlist to control how the client player
+        /// selects which audio track to play. The other options for this setting determine the
+        /// values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA
+        /// entry for the audio variant. For more information about these attributes, see the
+        /// Apple documentation article https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist.
+        /// Choose Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT)
+        /// to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only one variant in your
+        /// output group. Choose Alternate audio, auto select, not default (ALTERNATE_AUDIO_AUTO_SELECT)
+        /// to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set
+        /// DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert
+        /// defaults to Alternate audio, auto select, default. When there is more than one variant
+        /// in your output group, you must explicitly choose a value for this setting.
+        /// </summary>
+        public CmfcAudioTrackType AudioTrackType
+        {
+            get { return this._audioTrackType; }
+            set { this._audioTrackType = value; }
+        }
+
+        // Check to see if AudioTrackType property is set
+        internal bool IsSetAudioTrackType()
+        {
+            return this._audioTrackType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DescriptiveVideoServiceFlag. Specify whether to flag this
+        /// audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+        /// choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video"
+        /// in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag
+        /// (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with accessibility
+        /// on Apple devices. For more information, see the Apple documentation.
+        /// </summary>
+        public CmfcDescriptiveVideoServiceFlag DescriptiveVideoServiceFlag
+        {
+            get { return this._descriptiveVideoServiceFlag; }
+            set { this._descriptiveVideoServiceFlag = value; }
+        }
+
+        // Check to see if DescriptiveVideoServiceFlag property is set
+        internal bool IsSetDescriptiveVideoServiceFlag()
+        {
+            return this._descriptiveVideoServiceFlag != null;
         }
 
         /// <summary>

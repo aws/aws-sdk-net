@@ -92,9 +92,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FileSourceSettings. If your input captions are SCC, SMI,
-        /// SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption source
-        /// file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead
-        /// of FileSoureSettings.
+        /// SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input caption
+        /// source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings
+        /// instead of FileSoureSettings.
         /// </summary>
         public FileSourceSettings FileSourceSettings
         {

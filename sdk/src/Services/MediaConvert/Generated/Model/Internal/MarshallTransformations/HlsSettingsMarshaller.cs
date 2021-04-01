@@ -69,6 +69,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AudioTrackType);
             }
 
+            if(requestObject.IsSetDescriptiveVideoServiceFlag())
+            {
+                context.Writer.WritePropertyName("descriptiveVideoServiceFlag");
+                context.Writer.Write(requestObject.DescriptiveVideoServiceFlag);
+            }
+
             if(requestObject.IsSetIFrameOnlyManifest())
             {
                 context.Writer.WritePropertyName("iFrameOnlyManifest");

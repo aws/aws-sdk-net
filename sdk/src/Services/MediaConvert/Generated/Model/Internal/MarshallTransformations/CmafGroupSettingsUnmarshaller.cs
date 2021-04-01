@@ -142,6 +142,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.MpdProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ptsOffsetHandlingForBFrames", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PtsOffsetHandlingForBFrames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("segmentControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

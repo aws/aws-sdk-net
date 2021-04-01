@@ -143,6 +143,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MpdProfile);
             }
 
+            if(requestObject.IsSetPtsOffsetHandlingForBFrames())
+            {
+                context.Writer.WritePropertyName("ptsOffsetHandlingForBFrames");
+                context.Writer.Write(requestObject.PtsOffsetHandlingForBFrames);
+            }
+
             if(requestObject.IsSetSegmentControl())
             {
                 context.Writer.WritePropertyName("segmentControl");

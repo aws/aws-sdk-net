@@ -61,6 +61,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetAudioChannelConfigSchemeIdUri())
+            {
+                context.Writer.WritePropertyName("audioChannelConfigSchemeIdUri");
+                context.Writer.Write(requestObject.AudioChannelConfigSchemeIdUri);
+            }
+
             if(requestObject.IsSetBaseUrl())
             {
                 context.Writer.WritePropertyName("baseUrl");
@@ -123,6 +129,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("mpdProfile");
                 context.Writer.Write(requestObject.MpdProfile);
+            }
+
+            if(requestObject.IsSetPtsOffsetHandlingForBFrames())
+            {
+                context.Writer.WritePropertyName("ptsOffsetHandlingForBFrames");
+                context.Writer.Write(requestObject.PtsOffsetHandlingForBFrames);
             }
 
             if(requestObject.IsSetSegmentControl())

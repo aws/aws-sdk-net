@@ -531,6 +531,72 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type Ac3DynamicRangeCompressionLine.
+    /// </summary>
+    public class Ac3DynamicRangeCompressionLine : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILM_LIGHT for Ac3DynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionLine FILM_LIGHT = new Ac3DynamicRangeCompressionLine("FILM_LIGHT");
+        /// <summary>
+        /// Constant FILM_STANDARD for Ac3DynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionLine FILM_STANDARD = new Ac3DynamicRangeCompressionLine("FILM_STANDARD");
+        /// <summary>
+        /// Constant MUSIC_LIGHT for Ac3DynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionLine MUSIC_LIGHT = new Ac3DynamicRangeCompressionLine("MUSIC_LIGHT");
+        /// <summary>
+        /// Constant MUSIC_STANDARD for Ac3DynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionLine MUSIC_STANDARD = new Ac3DynamicRangeCompressionLine("MUSIC_STANDARD");
+        /// <summary>
+        /// Constant NONE for Ac3DynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionLine NONE = new Ac3DynamicRangeCompressionLine("NONE");
+        /// <summary>
+        /// Constant SPEECH for Ac3DynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionLine SPEECH = new Ac3DynamicRangeCompressionLine("SPEECH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ac3DynamicRangeCompressionLine(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ac3DynamicRangeCompressionLine FindValue(string value)
+        {
+            return FindValue<Ac3DynamicRangeCompressionLine>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ac3DynamicRangeCompressionLine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Ac3DynamicRangeCompressionProfile.
     /// </summary>
     public class Ac3DynamicRangeCompressionProfile : ConstantClass
@@ -574,6 +640,72 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Ac3DynamicRangeCompressionProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Ac3DynamicRangeCompressionRf.
+    /// </summary>
+    public class Ac3DynamicRangeCompressionRf : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILM_LIGHT for Ac3DynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionRf FILM_LIGHT = new Ac3DynamicRangeCompressionRf("FILM_LIGHT");
+        /// <summary>
+        /// Constant FILM_STANDARD for Ac3DynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionRf FILM_STANDARD = new Ac3DynamicRangeCompressionRf("FILM_STANDARD");
+        /// <summary>
+        /// Constant MUSIC_LIGHT for Ac3DynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionRf MUSIC_LIGHT = new Ac3DynamicRangeCompressionRf("MUSIC_LIGHT");
+        /// <summary>
+        /// Constant MUSIC_STANDARD for Ac3DynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionRf MUSIC_STANDARD = new Ac3DynamicRangeCompressionRf("MUSIC_STANDARD");
+        /// <summary>
+        /// Constant NONE for Ac3DynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionRf NONE = new Ac3DynamicRangeCompressionRf("NONE");
+        /// <summary>
+        /// Constant SPEECH for Ac3DynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Ac3DynamicRangeCompressionRf SPEECH = new Ac3DynamicRangeCompressionRf("SPEECH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ac3DynamicRangeCompressionRf(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ac3DynamicRangeCompressionRf FindValue(string value)
+        {
+            return FindValue<Ac3DynamicRangeCompressionRf>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ac3DynamicRangeCompressionRf(string value)
         {
             return FindValue(value);
         }
@@ -2882,6 +3014,10 @@ namespace Amazon.MediaConvert
         /// Constant TTML for CaptionSourceType
         /// </summary>
         public static readonly CaptionSourceType TTML = new CaptionSourceType("TTML");
+        /// <summary>
+        /// Constant WEBVTT for CaptionSourceType
+        /// </summary>
+        public static readonly CaptionSourceType WEBVTT = new CaptionSourceType("WEBVTT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3319,6 +3455,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmafPtsOffsetHandlingForBFrames.
+    /// </summary>
+    public class CmafPtsOffsetHandlingForBFrames : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MATCH_INITIAL_PTS for CmafPtsOffsetHandlingForBFrames
+        /// </summary>
+        public static readonly CmafPtsOffsetHandlingForBFrames MATCH_INITIAL_PTS = new CmafPtsOffsetHandlingForBFrames("MATCH_INITIAL_PTS");
+        /// <summary>
+        /// Constant ZERO_BASED for CmafPtsOffsetHandlingForBFrames
+        /// </summary>
+        public static readonly CmafPtsOffsetHandlingForBFrames ZERO_BASED = new CmafPtsOffsetHandlingForBFrames("ZERO_BASED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafPtsOffsetHandlingForBFrames(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafPtsOffsetHandlingForBFrames FindValue(string value)
+        {
+            return FindValue<CmafPtsOffsetHandlingForBFrames>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafPtsOffsetHandlingForBFrames(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmafSegmentControl.
     /// </summary>
     public class CmafSegmentControl : ConstantClass
@@ -3612,6 +3798,110 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CmfcAudioDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmfcAudioTrackType.
+    /// </summary>
+    public class CmfcAudioTrackType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALTERNATE_AUDIO_AUTO_SELECT for CmfcAudioTrackType
+        /// </summary>
+        public static readonly CmfcAudioTrackType ALTERNATE_AUDIO_AUTO_SELECT = new CmfcAudioTrackType("ALTERNATE_AUDIO_AUTO_SELECT");
+        /// <summary>
+        /// Constant ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT for CmfcAudioTrackType
+        /// </summary>
+        public static readonly CmfcAudioTrackType ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = new CmfcAudioTrackType("ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT");
+        /// <summary>
+        /// Constant ALTERNATE_AUDIO_NOT_AUTO_SELECT for CmfcAudioTrackType
+        /// </summary>
+        public static readonly CmfcAudioTrackType ALTERNATE_AUDIO_NOT_AUTO_SELECT = new CmfcAudioTrackType("ALTERNATE_AUDIO_NOT_AUTO_SELECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmfcAudioTrackType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmfcAudioTrackType FindValue(string value)
+        {
+            return FindValue<CmfcAudioTrackType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmfcAudioTrackType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmfcDescriptiveVideoServiceFlag.
+    /// </summary>
+    public class CmfcDescriptiveVideoServiceFlag : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DONT_FLAG for CmfcDescriptiveVideoServiceFlag
+        /// </summary>
+        public static readonly CmfcDescriptiveVideoServiceFlag DONT_FLAG = new CmfcDescriptiveVideoServiceFlag("DONT_FLAG");
+        /// <summary>
+        /// Constant FLAG for CmfcDescriptiveVideoServiceFlag
+        /// </summary>
+        public static readonly CmfcDescriptiveVideoServiceFlag FLAG = new CmfcDescriptiveVideoServiceFlag("FLAG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmfcDescriptiveVideoServiceFlag(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmfcDescriptiveVideoServiceFlag FindValue(string value)
+        {
+            return FindValue<CmfcDescriptiveVideoServiceFlag>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmfcDescriptiveVideoServiceFlag(string value)
         {
             return FindValue(value);
         }
@@ -4125,6 +4415,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type DashIsoGroupAudioChannelConfigSchemeIdUri.
+    /// </summary>
+    public class DashIsoGroupAudioChannelConfigSchemeIdUri : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOLBY_CHANNEL_CONFIGURATION for DashIsoGroupAudioChannelConfigSchemeIdUri
+        /// </summary>
+        public static readonly DashIsoGroupAudioChannelConfigSchemeIdUri DOLBY_CHANNEL_CONFIGURATION = new DashIsoGroupAudioChannelConfigSchemeIdUri("DOLBY_CHANNEL_CONFIGURATION");
+        /// <summary>
+        /// Constant MPEG_CHANNEL_CONFIGURATION for DashIsoGroupAudioChannelConfigSchemeIdUri
+        /// </summary>
+        public static readonly DashIsoGroupAudioChannelConfigSchemeIdUri MPEG_CHANNEL_CONFIGURATION = new DashIsoGroupAudioChannelConfigSchemeIdUri("MPEG_CHANNEL_CONFIGURATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashIsoGroupAudioChannelConfigSchemeIdUri(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashIsoGroupAudioChannelConfigSchemeIdUri FindValue(string value)
+        {
+            return FindValue<DashIsoGroupAudioChannelConfigSchemeIdUri>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashIsoGroupAudioChannelConfigSchemeIdUri(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DashIsoHbbtvCompliance.
     /// </summary>
     public class DashIsoHbbtvCompliance : ConstantClass
@@ -4268,6 +4608,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DashIsoPlaybackDeviceCompatibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DashIsoPtsOffsetHandlingForBFrames.
+    /// </summary>
+    public class DashIsoPtsOffsetHandlingForBFrames : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MATCH_INITIAL_PTS for DashIsoPtsOffsetHandlingForBFrames
+        /// </summary>
+        public static readonly DashIsoPtsOffsetHandlingForBFrames MATCH_INITIAL_PTS = new DashIsoPtsOffsetHandlingForBFrames("MATCH_INITIAL_PTS");
+        /// <summary>
+        /// Constant ZERO_BASED for DashIsoPtsOffsetHandlingForBFrames
+        /// </summary>
+        public static readonly DashIsoPtsOffsetHandlingForBFrames ZERO_BASED = new DashIsoPtsOffsetHandlingForBFrames("ZERO_BASED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashIsoPtsOffsetHandlingForBFrames(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashIsoPtsOffsetHandlingForBFrames FindValue(string value)
+        {
+            return FindValue<DashIsoPtsOffsetHandlingForBFrames>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashIsoPtsOffsetHandlingForBFrames(string value)
         {
             return FindValue(value);
         }
@@ -9704,6 +10094,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsCodecSpecification(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsDescriptiveVideoServiceFlag.
+    /// </summary>
+    public class HlsDescriptiveVideoServiceFlag : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DONT_FLAG for HlsDescriptiveVideoServiceFlag
+        /// </summary>
+        public static readonly HlsDescriptiveVideoServiceFlag DONT_FLAG = new HlsDescriptiveVideoServiceFlag("DONT_FLAG");
+        /// <summary>
+        /// Constant FLAG for HlsDescriptiveVideoServiceFlag
+        /// </summary>
+        public static readonly HlsDescriptiveVideoServiceFlag FLAG = new HlsDescriptiveVideoServiceFlag("FLAG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsDescriptiveVideoServiceFlag(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsDescriptiveVideoServiceFlag FindValue(string value)
+        {
+            return FindValue<HlsDescriptiveVideoServiceFlag>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsDescriptiveVideoServiceFlag(string value)
         {
             return FindValue(value);
         }
@@ -17678,6 +18118,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WavFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WebvttStylePassthrough.
+    /// </summary>
+    public class WebvttStylePassthrough : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for WebvttStylePassthrough
+        /// </summary>
+        public static readonly WebvttStylePassthrough DISABLED = new WebvttStylePassthrough("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for WebvttStylePassthrough
+        /// </summary>
+        public static readonly WebvttStylePassthrough ENABLED = new WebvttStylePassthrough("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WebvttStylePassthrough(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebvttStylePassthrough FindValue(string value)
+        {
+            return FindValue<WebvttStylePassthrough>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebvttStylePassthrough(string value)
         {
             return FindValue(value);
         }

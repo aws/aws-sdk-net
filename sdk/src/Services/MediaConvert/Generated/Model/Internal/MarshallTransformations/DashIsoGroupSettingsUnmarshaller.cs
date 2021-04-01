@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdditionalManifests = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("audioChannelConfigSchemeIdUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioChannelConfigSchemeIdUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("baseUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MpdProfile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ptsOffsetHandlingForBFrames", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PtsOffsetHandlingForBFrames = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("segmentControl", targetDepth))
