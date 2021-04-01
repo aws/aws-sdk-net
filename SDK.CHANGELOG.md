@@ -1,3 +1,28 @@
+### 3.7.6.0 (2021-04-01 18:17 UTC)
+* EC2 (3.7.2.0)
+	* VPC Flow Logs Service adds a new API, GetFlowLogsIntegrationTemplate, which generates CloudFormation templates for Athena. For more info, see https://docs.aws.amazon.com/console/vpc/flow-logs/athena
+* FMS (3.7.1.0)
+	* Added Firewall Manager policy support for AWS Route 53 Resolver DNS Firewall.
+* Kendra (3.7.1.0)
+	* AWS Kendra's ServiceNow data source now supports OAuth 2.0 authentication and knowledge article filtering via a ServiceNow query.
+* Lex (3.7.1.0)
+	* Amazon Lex now supports base64-encoded message and input transcript fields.
+* LexModelBuildingService (3.7.1.0)
+	* Lex now supports the ja-JP locale
+* Lightsail (3.7.1.0)
+	* - This release adds support for state detail for Amazon Lightsail container services.
+* MediaConvert (3.7.1.0)
+	* MediaConvert now supports HLS ingest, sidecar WebVTT ingest, Teletext color & style passthrough to TTML subtitles, TTML to WebVTT subtitle conversion with style, & DRC profiles in AC3 audio.
+* Route53Resolver (3.7.1.0)
+	* Route 53 Resolver DNS Firewall is a firewall service that allows you to filter and regulate outbound DNS traffic for your VPCs.
+* WAFV2 (3.7.2.0)
+	* Added support for ScopeDownStatement for ManagedRuleGroups, Labels, LabelMatchStatement, and LoggingFilter. For more information on these features, see the AWS WAF Developer Guide.
+* Core 3.7.0.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.5.1 (2021-03-31 20:56 UTC)
 * Core 3.7.0.6
 	* Evict cache keys that are more than 1 hour old during endpoint discovery.
