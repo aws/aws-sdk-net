@@ -46,6 +46,7 @@ namespace Amazon.WAFV2.Model
         private DefaultAction _defaultAction;
         private string _description;
         private string _id;
+        private string _labelNamespace;
         private bool? _managedByFirewallManager;
         private string _name;
         private List<FirewallManagerRuleGroup> _postProcessFirewallManagerRuleGroups = new List<FirewallManagerRuleGroup>();
@@ -194,6 +195,46 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LabelNamespace. 
+        /// <para>
+        /// The label namespace prefix for this web ACL. All labels added by rules in this web
+        /// ACL have this prefix. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The syntax for the label namespace prefix for a web ACL is the following: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When a rule with a label matches a web request, AWS WAF adds the fully qualified label
+        /// to the request. A fully qualified label is made up of the label namespace from the
+        /// rule group or web ACL where the rule is defined and the label from the rule, separated
+        /// by a colon: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string LabelNamespace
+        {
+            get { return this._labelNamespace; }
+            set { this._labelNamespace = value; }
+        }
+
+        // Check to see if LabelNamespace property is set
+        internal bool IsSetLabelNamespace()
+        {
+            return this._labelNamespace != null;
         }
 
         /// <summary>

@@ -38,6 +38,7 @@ namespace Amazon.WAFV2.Model
         private ByteMatchStatement _byteMatchStatement;
         private GeoMatchStatement _geoMatchStatement;
         private IPSetReferenceStatement _ipSetReferenceStatement;
+        private LabelMatchStatement _labelMatchStatement;
         private ManagedRuleGroupStatement _managedRuleGroupStatement;
         private NotStatement _notStatement;
         private OrStatement _orStatement;
@@ -132,6 +133,35 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetIPSetReferenceStatement()
         {
             return this._ipSetReferenceStatement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LabelMatchStatement. 
+        /// <para>
+        /// A rule statement that defines a string match search against labels that have been
+        /// added to the web request by rules that have already run in the web ACL. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The label match statement provides the label or namespace string to search for. The
+        /// label string can represent a part or all of the fully qualified label name that had
+        /// been added to the web request. Fully qualified labels have a prefix, optional namespaces,
+        /// and label name. The prefix identifies the rule group or web ACL context of the rule
+        /// that added the label. If you do not provide the fully qualified name in your label
+        /// match string, AWS WAF performs the search for labels that were added in the same context
+        /// as the label match statement. 
+        /// </para>
+        /// </summary>
+        public LabelMatchStatement LabelMatchStatement
+        {
+            get { return this._labelMatchStatement; }
+            set { this._labelMatchStatement = value; }
+        }
+
+        // Check to see if LabelMatchStatement property is set
+        internal bool IsSetLabelMatchStatement()
+        {
+            return this._labelMatchStatement != null;
         }
 
         /// <summary>

@@ -70,10 +70,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AvailableLabels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LabelSummary, LabelSummaryUnmarshaller>(LabelSummaryUnmarshaller.Instance);
+                    unmarshalledObject.AvailableLabels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Capacity", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     unmarshalledObject.Capacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConsumedLabels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LabelSummary, LabelSummaryUnmarshaller>(LabelSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ConsumedLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CustomResponseBodies", targetDepth))
@@ -92,6 +104,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LabelNamespace", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LabelNamespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))

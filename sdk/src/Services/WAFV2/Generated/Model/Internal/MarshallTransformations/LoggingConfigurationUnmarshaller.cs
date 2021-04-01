@@ -70,6 +70,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogDestinationConfigs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LoggingFilter", targetDepth))
+                {
+                    var unmarshaller = LoggingFilterUnmarshaller.Instance;
+                    unmarshalledObject.LoggingFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ManagedByFirewallManager", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

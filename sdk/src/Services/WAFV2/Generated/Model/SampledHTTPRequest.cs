@@ -37,6 +37,7 @@ namespace Amazon.WAFV2.Model
     public partial class SampledHTTPRequest
     {
         private string _action;
+        private List<Label> _labels = new List<Label>();
         private HTTPRequest _request;
         private List<HTTPHeader> _requestHeadersInserted = new List<HTTPHeader>();
         private int? _responseCodeSent;
@@ -61,6 +62,32 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Labels. 
+        /// <para>
+        /// Labels applied to the web request by matching rules. AWS WAF applies fully qualified
+        /// labels to matching web requests. A fully qualified label is the concatenation of a
+        /// label namespace and a rule label. The rule's rule group or web ACL defines the label
+        /// namespace. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+        /// or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. 
+        /// </para>
+        /// </summary>
+        public List<Label> Labels
+        {
+            get { return this._labels; }
+            set { this._labels = value; }
+        }
+
+        // Check to see if Labels property is set
+        internal bool IsSetLabels()
+        {
+            return this._labels != null && this._labels.Count > 0; 
         }
 
         /// <summary>

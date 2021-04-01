@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedRuleGroupStatement Object
+    /// Response Unmarshaller for Condition Object
     /// </summary>  
-    public class ManagedRuleGroupStatementUnmarshaller : IUnmarshaller<ManagedRuleGroupStatement, XmlUnmarshallerContext>, IUnmarshaller<ManagedRuleGroupStatement, JsonUnmarshallerContext>
+    public class ConditionUnmarshaller : IUnmarshaller<Condition, XmlUnmarshallerContext>, IUnmarshaller<Condition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ManagedRuleGroupStatement IUnmarshaller<ManagedRuleGroupStatement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Condition IUnmarshaller<Condition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ManagedRuleGroupStatement Unmarshall(JsonUnmarshallerContext context)
+        public Condition Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ManagedRuleGroupStatement unmarshalledObject = new ManagedRuleGroupStatement();
+            Condition unmarshalledObject = new Condition();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ExcludedRules", targetDepth))
+                if (context.TestExpression("ActionCondition", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ExcludedRule, ExcludedRuleUnmarshaller>(ExcludedRuleUnmarshaller.Instance);
-                    unmarshalledObject.ExcludedRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ActionConditionUnmarshaller.Instance;
+                    unmarshalledObject.ActionCondition = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("LabelNameCondition", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ScopeDownStatement", targetDepth))
-                {
-                    var unmarshaller = StatementUnmarshaller.Instance;
-                    unmarshalledObject.ScopeDownStatement = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VendorName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VendorName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LabelNameConditionUnmarshaller.Instance;
+                    unmarshalledObject.LabelNameCondition = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedRuleGroupStatementUnmarshaller _instance = new ManagedRuleGroupStatementUnmarshaller();        
+        private static ConditionUnmarshaller _instance = new ConditionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedRuleGroupStatementUnmarshaller Instance
+        public static ConditionUnmarshaller Instance
         {
             get
             {

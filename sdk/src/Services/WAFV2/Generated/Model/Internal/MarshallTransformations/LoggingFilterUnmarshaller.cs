@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedRuleGroupStatement Object
+    /// Response Unmarshaller for LoggingFilter Object
     /// </summary>  
-    public class ManagedRuleGroupStatementUnmarshaller : IUnmarshaller<ManagedRuleGroupStatement, XmlUnmarshallerContext>, IUnmarshaller<ManagedRuleGroupStatement, JsonUnmarshallerContext>
+    public class LoggingFilterUnmarshaller : IUnmarshaller<LoggingFilter, XmlUnmarshallerContext>, IUnmarshaller<LoggingFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ManagedRuleGroupStatement IUnmarshaller<ManagedRuleGroupStatement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LoggingFilter IUnmarshaller<LoggingFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ManagedRuleGroupStatement Unmarshall(JsonUnmarshallerContext context)
+        public LoggingFilter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ManagedRuleGroupStatement unmarshalledObject = new ManagedRuleGroupStatement();
+            LoggingFilter unmarshalledObject = new LoggingFilter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ExcludedRules", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ExcludedRule, ExcludedRuleUnmarshaller>(ExcludedRuleUnmarshaller.Instance);
-                    unmarshalledObject.ExcludedRules = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("DefaultBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ScopeDownStatement", targetDepth))
+                if (context.TestExpression("Filters", targetDepth))
                 {
-                    var unmarshaller = StatementUnmarshaller.Instance;
-                    unmarshalledObject.ScopeDownStatement = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VendorName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VendorName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Filter, FilterUnmarshaller>(FilterUnmarshaller.Instance);
+                    unmarshalledObject.Filters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedRuleGroupStatementUnmarshaller _instance = new ManagedRuleGroupStatementUnmarshaller();        
+        private static LoggingFilterUnmarshaller _instance = new LoggingFilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedRuleGroupStatementUnmarshaller Instance
+        public static LoggingFilterUnmarshaller Instance
         {
             get
             {

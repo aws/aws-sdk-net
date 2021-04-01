@@ -79,6 +79,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Priority);
             }
 
+            if(requestObject.IsSetRuleLabels())
+            {
+                context.Writer.WritePropertyName("RuleLabels");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRuleLabelsListValue in requestObject.RuleLabels)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LabelMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRuleLabelsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetStatement())
             {
                 context.Writer.WritePropertyName("Statement");

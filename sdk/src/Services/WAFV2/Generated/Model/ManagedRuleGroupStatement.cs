@@ -44,6 +44,7 @@ namespace Amazon.WAFV2.Model
     {
         private List<ExcludedRule> _excludedRules = new List<ExcludedRule>();
         private string _name;
+        private Statement _scopeDownStatement;
         private string _vendorName;
 
         /// <summary>
@@ -84,6 +85,21 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScopeDownStatement.
+        /// </summary>
+        public Statement ScopeDownStatement
+        {
+            get { return this._scopeDownStatement; }
+            set { this._scopeDownStatement = value; }
+        }
+
+        // Check to see if ScopeDownStatement property is set
+        internal bool IsSetScopeDownStatement()
+        {
+            return this._scopeDownStatement != null;
         }
 
         /// <summary>

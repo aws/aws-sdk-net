@@ -70,6 +70,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Labels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Label, LabelUnmarshaller>(LabelUnmarshaller.Instance);
+                    unmarshalledObject.Labels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Request", targetDepth))
                 {
                     var unmarshaller = HTTPRequestUnmarshaller.Instance;

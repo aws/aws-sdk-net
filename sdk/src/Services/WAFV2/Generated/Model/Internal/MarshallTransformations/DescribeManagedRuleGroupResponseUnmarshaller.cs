@@ -51,10 +51,28 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AvailableLabels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LabelSummary, LabelSummaryUnmarshaller>(LabelSummaryUnmarshaller.Instance);
+                    response.AvailableLabels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Capacity", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     response.Capacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConsumedLabels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LabelSummary, LabelSummaryUnmarshaller>(LabelSummaryUnmarshaller.Instance);
+                    response.ConsumedLabels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LabelNamespace", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LabelNamespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Rules", targetDepth))

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ManagedRuleGroupStatement Marshaller
+    /// LoggingFilter Marshaller
     /// </summary>       
-    public class ManagedRuleGroupStatementMarshaller : IRequestMarshaller<ManagedRuleGroupStatement, JsonMarshallerContext> 
+    public class LoggingFilterMarshaller : IRequestMarshaller<LoggingFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,45 +43,28 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ManagedRuleGroupStatement requestObject, JsonMarshallerContext context)
+        public void Marshall(LoggingFilter requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetExcludedRules())
+            if(requestObject.IsSetDefaultBehavior())
             {
-                context.Writer.WritePropertyName("ExcludedRules");
+                context.Writer.WritePropertyName("DefaultBehavior");
+                context.Writer.Write(requestObject.DefaultBehavior);
+            }
+
+            if(requestObject.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("Filters");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectExcludedRulesListValue in requestObject.ExcludedRules)
+                foreach(var requestObjectFiltersListValue in requestObject.Filters)
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = ExcludedRuleMarshaller.Instance;
-                    marshaller.Marshall(requestObjectExcludedRulesListValue, context);
+                    var marshaller = FilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFiltersListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
-            }
-
-            if(requestObject.IsSetScopeDownStatement())
-            {
-                context.Writer.WritePropertyName("ScopeDownStatement");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = StatementMarshaller.Instance;
-                marshaller.Marshall(requestObject.ScopeDownStatement, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetVendorName())
-            {
-                context.Writer.WritePropertyName("VendorName");
-                context.Writer.Write(requestObject.VendorName);
             }
 
         }
@@ -89,7 +72,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ManagedRuleGroupStatementMarshaller Instance = new ManagedRuleGroupStatementMarshaller();
+        public readonly static LoggingFilterMarshaller Instance = new LoggingFilterMarshaller();
 
     }
 }

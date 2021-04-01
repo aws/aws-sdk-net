@@ -100,6 +100,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LabelNamespace", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LabelNamespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ManagedByFirewallManager", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

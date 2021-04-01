@@ -37,10 +37,13 @@ namespace Amazon.WAFV2.Model
     public partial class RuleGroup
     {
         private string _arn;
+        private List<LabelSummary> _availableLabels = new List<LabelSummary>();
         private long? _capacity;
+        private List<LabelSummary> _consumedLabels = new List<LabelSummary>();
         private Dictionary<string, CustomResponseBody> _customResponseBodies = new Dictionary<string, CustomResponseBody>();
         private string _description;
         private string _id;
+        private string _labelNamespace;
         private string _name;
         private List<Rule> _rules = new List<Rule>();
         private VisibilityConfig _visibilityConfig;
@@ -62,6 +65,25 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetARN()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailableLabels. 
+        /// <para>
+        /// The labels that one or more rules in this rule group add to matching web ACLs. These
+        /// labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.
+        /// </para>
+        /// </summary>
+        public List<LabelSummary> AvailableLabels
+        {
+            get { return this._availableLabels; }
+            set { this._availableLabels = value; }
+        }
+
+        // Check to see if AvailableLabels property is set
+        internal bool IsSetAvailableLabels()
+        {
+            return this._availableLabels != null && this._availableLabels.Count > 0; 
         }
 
         /// <summary>
@@ -96,6 +118,26 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetCapacity()
         {
             return this._capacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsumedLabels. 
+        /// <para>
+        /// The labels that one or more rules in this rule group match against in label match
+        /// statements. These labels are defined in a <code>LabelMatchStatement</code> specification,
+        /// in the <a>Statement</a> definition of a rule. 
+        /// </para>
+        /// </summary>
+        public List<LabelSummary> ConsumedLabels
+        {
+            get { return this._consumedLabels; }
+            set { this._consumedLabels = value; }
+        }
+
+        // Check to see if ConsumedLabels property is set
+        internal bool IsSetConsumedLabels()
+        {
+            return this._consumedLabels != null && this._consumedLabels.Count > 0; 
         }
 
         /// <summary>
@@ -169,6 +211,46 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LabelNamespace. 
+        /// <para>
+        /// The label namespace prefix for this rule group. All labels added by rules in this
+        /// rule group have this prefix. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The syntax for the label namespace prefix for your rule groups is the following: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>awswaf:&lt;account ID&gt;:rulegroup:&lt;rule group name&gt;:</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When a rule with a label matches a web request, AWS WAF adds the fully qualified label
+        /// to the request. A fully qualified label is made up of the label namespace from the
+        /// rule group or web ACL where the rule is defined and the label from the rule, separated
+        /// by a colon: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string LabelNamespace
+        {
+            get { return this._labelNamespace; }
+            set { this._labelNamespace = value; }
+        }
+
+        // Check to see if LabelNamespace property is set
+        internal bool IsSetLabelNamespace()
+        {
+            return this._labelNamespace != null;
         }
 
         /// <summary>

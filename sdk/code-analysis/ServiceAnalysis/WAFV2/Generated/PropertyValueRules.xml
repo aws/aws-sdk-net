@@ -187,6 +187,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.DescribeManagedRuleGroupResponse.LabelNamespace</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.DisassociateWebACLRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
@@ -625,7 +631,7 @@
     <property>Amazon.WAFV2.Model.CustomResponseBody.Content</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>.*</pattern>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.ExcludedRule.Name</property>
@@ -714,6 +720,30 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.Label.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.LabelMatchStatement.Key</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.LabelNameCondition.LabelName</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.LabelSummary.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.LoggingConfiguration.ResourceArn</property>
@@ -855,6 +885,12 @@
     <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.RuleGroup.LabelNamespace</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.RuleGroup.Name</property>
     <min>1</min>
     <max>128</max>
@@ -987,6 +1023,12 @@
     <min>1</min>
     <max>36</max>
     <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.WebACL.LabelNamespace</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.WebACL.Name</property>

@@ -40,6 +40,7 @@ namespace Amazon.WAFV2.Model
         private string _name;
         private OverrideAction _overrideAction;
         private int? _priority;
+        private List<Label> _ruleLabels = new List<Label>();
         private Statement _statement;
         private VisibilityConfig _visibilityConfig;
 
@@ -165,6 +166,60 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetPriority()
         {
             return this._priority.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleLabels. 
+        /// <para>
+        /// Labels to apply to web requests that match the rule match statement. AWS WAF applies
+        /// fully qualified labels to matching web requests. A fully qualified label is the concatenation
+        /// of a label namespace and a rule label. The rule's rule group or web ACL defines the
+        /// label namespace. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Rules that run after this rule in the web ACL can match against these labels using
+        /// a <code>LabelMatchStatement</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For each label, provide a case-sensitive string containing optional namespaces and
+        /// a label name, according to the following guidelines:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Separate each component of the label with a colon. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each namespace or name can have up to 128 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can specify up to 5 namespaces in a label.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Don't use the following reserved words in your label specification: <code>aws</code>,
+        /// <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>,
+        /// <code>regexpatternset</code>, or <code>ipset</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<Label> RuleLabels
+        {
+            get { return this._ruleLabels; }
+            set { this._ruleLabels = value; }
+        }
+
+        // Check to see if RuleLabels property is set
+        internal bool IsSetRuleLabels()
+        {
+            return this._ruleLabels != null && this._ruleLabels.Count > 0; 
         }
 
         /// <summary>

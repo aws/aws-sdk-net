@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Rule Object
+    /// Response Unmarshaller for Label Object
     /// </summary>  
-    public class RuleUnmarshaller : IUnmarshaller<Rule, XmlUnmarshallerContext>, IUnmarshaller<Rule, JsonUnmarshallerContext>
+    public class LabelUnmarshaller : IUnmarshaller<Label, XmlUnmarshallerContext>, IUnmarshaller<Label, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Rule IUnmarshaller<Rule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Label IUnmarshaller<Label, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,21 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Rule Unmarshall(JsonUnmarshallerContext context)
+        public Label Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Rule unmarshalledObject = new Rule();
+            Label unmarshalledObject = new Label();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Action", targetDepth))
-                {
-                    var unmarshaller = RuleActionUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OverrideAction", targetDepth))
-                {
-                    var unmarshaller = OverrideActionUnmarshaller.Instance;
-                    unmarshalledObject.OverrideAction = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Priority", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleLabels", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Label, LabelUnmarshaller>(LabelUnmarshaller.Instance);
-                    unmarshalledObject.RuleLabels = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Statement", targetDepth))
-                {
-                    var unmarshaller = StatementUnmarshaller.Instance;
-                    unmarshalledObject.Statement = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VisibilityConfig", targetDepth))
-                {
-                    var unmarshaller = VisibilityConfigUnmarshaller.Instance;
-                    unmarshalledObject.VisibilityConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +76,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleUnmarshaller _instance = new RuleUnmarshaller();        
+        private static LabelUnmarshaller _instance = new LabelUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleUnmarshaller Instance
+        public static LabelUnmarshaller Instance
         {
             get
             {

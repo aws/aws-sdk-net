@@ -88,6 +88,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.IPSetReferenceStatement = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LabelMatchStatement", targetDepth))
+                {
+                    var unmarshaller = LabelMatchStatementUnmarshaller.Instance;
+                    unmarshalledObject.LabelMatchStatement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ManagedRuleGroupStatement", targetDepth))
                 {
                     var unmarshaller = ManagedRuleGroupStatementUnmarshaller.Instance;

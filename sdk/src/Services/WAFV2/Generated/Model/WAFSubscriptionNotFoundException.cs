@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// 
+    /// You tried to use a managed rule group that's available by subscription, but you aren't
+    /// subscribed to it yet.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

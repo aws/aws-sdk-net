@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Rule Object
+    /// Response Unmarshaller for Filter Object
     /// </summary>  
-    public class RuleUnmarshaller : IUnmarshaller<Rule, XmlUnmarshallerContext>, IUnmarshaller<Rule, JsonUnmarshallerContext>
+    public class FilterUnmarshaller : IUnmarshaller<Filter, XmlUnmarshallerContext>, IUnmarshaller<Filter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Rule IUnmarshaller<Rule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Filter IUnmarshaller<Filter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,33 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Rule Unmarshall(JsonUnmarshallerContext context)
+        public Filter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Rule unmarshalledObject = new Rule();
+            Filter unmarshalledObject = new Filter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Action", targetDepth))
-                {
-                    var unmarshaller = RuleActionUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Behavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Behavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OverrideAction", targetDepth))
+                if (context.TestExpression("Conditions", targetDepth))
                 {
-                    var unmarshaller = OverrideActionUnmarshaller.Instance;
-                    unmarshalledObject.OverrideAction = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Condition, ConditionUnmarshaller>(ConditionUnmarshaller.Instance);
+                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Priority", targetDepth))
+                if (context.TestExpression("Requirement", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleLabels", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Label, LabelUnmarshaller>(LabelUnmarshaller.Instance);
-                    unmarshalledObject.RuleLabels = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Statement", targetDepth))
-                {
-                    var unmarshaller = StatementUnmarshaller.Instance;
-                    unmarshalledObject.Statement = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VisibilityConfig", targetDepth))
-                {
-                    var unmarshaller = VisibilityConfigUnmarshaller.Instance;
-                    unmarshalledObject.VisibilityConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Requirement = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +88,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleUnmarshaller _instance = new RuleUnmarshaller();        
+        private static FilterUnmarshaller _instance = new FilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleUnmarshaller Instance
+        public static FilterUnmarshaller Instance
         {
             get
             {

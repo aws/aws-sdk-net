@@ -56,6 +56,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetLoggingFilter())
+            {
+                context.Writer.WritePropertyName("LoggingFilter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LoggingFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.LoggingFilter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetManagedByFirewallManager())
             {
                 context.Writer.WritePropertyName("ManagedByFirewallManager");

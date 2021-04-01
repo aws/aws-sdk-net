@@ -31,11 +31,13 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// Defines an association between Amazon Kinesis Data Firehose destinations and a web
     /// ACL resource, for logging from AWS WAF. As part of the association, you can specify
-    /// parts of the standard logging fields to keep out of the logs.
+    /// parts of the standard logging fields to keep out of the logs and you can specify filters
+    /// so that you log only a subset of the logging records.
     /// </summary>
     public partial class LoggingConfiguration
     {
         private List<string> _logDestinationConfigs = new List<string>();
+        private LoggingFilter _loggingFilter;
         private bool? _managedByFirewallManager;
         private List<FieldToMatch> _redactedFields = new List<FieldToMatch>();
         private string _resourceArn;
@@ -58,6 +60,26 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetLogDestinationConfigs()
         {
             return this._logDestinationConfigs != null && this._logDestinationConfigs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingFilter. 
+        /// <para>
+        /// Filtering that specifies which web requests are kept in the logs and which are dropped.
+        /// You can filter on the rule action and on the web request labels that were applied
+        /// by matching rules during web ACL evaluation. 
+        /// </para>
+        /// </summary>
+        public LoggingFilter LoggingFilter
+        {
+            get { return this._loggingFilter; }
+            set { this._loggingFilter = value; }
+        }
+
+        // Check to see if LoggingFilter property is set
+        internal bool IsSetLoggingFilter()
+        {
+            return this._loggingFilter != null;
         }
 
         /// <summary>

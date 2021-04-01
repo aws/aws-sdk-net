@@ -256,7 +256,8 @@ namespace Amazon.WAFV2
         /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
-        /// 
+        /// You tried to use a managed rule group that's available by subscription, but you aren't
+        /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
         /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
@@ -487,7 +488,8 @@ namespace Amazon.WAFV2
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
-        /// 
+        /// You tried to use a managed rule group that's available by subscription, but you aren't
+        /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
@@ -584,7 +586,8 @@ namespace Amazon.WAFV2
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
-        /// 
+        /// You tried to use a managed rule group that's available by subscription, but you aren't
+        /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
@@ -2470,7 +2473,17 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Updates the specified <a>IPSet</a>.
+        /// Updates the specified <a>IPSet</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation completely replaces any IP address specifications that you already
+        /// have in the IP set with the ones that you provide to this call. If you want to add
+        /// to or modify the addresses that are already in the IP set, retrieve those by calling
+        /// <a>GetIPSet</a>, update them, and provide the complete updated array of IP addresses
+        /// to this call.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIPSet service method.</param>
         /// <param name="cancellationToken">
@@ -2674,7 +2687,8 @@ namespace Amazon.WAFV2
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
-        /// 
+        /// You tried to use a managed rule group that's available by subscription, but you aren't
+        /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
         /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
@@ -2764,7 +2778,8 @@ namespace Amazon.WAFV2
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
-        /// 
+        /// You tried to use a managed rule group that's available by subscription, but you aren't
+        /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
         /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
