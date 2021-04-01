@@ -899,6 +899,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly ContainerServiceState DELETING = new ContainerServiceState("DELETING");
         /// <summary>
+        /// Constant DEPLOYING for ContainerServiceState
+        /// </summary>
+        public static readonly ContainerServiceState DEPLOYING = new ContainerServiceState("DEPLOYING");
+        /// <summary>
         /// Constant DISABLED for ContainerServiceState
         /// </summary>
         public static readonly ContainerServiceState DISABLED = new ContainerServiceState("DISABLED");
@@ -948,6 +952,84 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContainerServiceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerServiceStateDetailCode.
+    /// </summary>
+    public class ContainerServiceStateDetailCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING_DEPLOYMENT for ContainerServiceStateDetailCode
+        /// </summary>
+        public static readonly ContainerServiceStateDetailCode ACTIVATING_DEPLOYMENT = new ContainerServiceStateDetailCode("ACTIVATING_DEPLOYMENT");
+        /// <summary>
+        /// Constant CERTIFICATE_LIMIT_EXCEEDED for ContainerServiceStateDetailCode
+        /// </summary>
+        public static readonly ContainerServiceStateDetailCode CERTIFICATE_LIMIT_EXCEEDED = new ContainerServiceStateDetailCode("CERTIFICATE_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant CREATING_DEPLOYMENT for ContainerServiceStateDetailCode
+        /// </summary>
+        public static readonly ContainerServiceStateDetailCode CREATING_DEPLOYMENT = new ContainerServiceStateDetailCode("CREATING_DEPLOYMENT");
+        /// <summary>
+        /// Constant CREATING_NETWORK_INFRASTRUCTURE for ContainerServiceStateDetailCode
+        /// </summary>
+        public static readonly ContainerServiceStateDetailCode CREATING_NETWORK_INFRASTRUCTURE = new ContainerServiceStateDetailCode("CREATING_NETWORK_INFRASTRUCTURE");
+        /// <summary>
+        /// Constant CREATING_SYSTEM_RESOURCES for ContainerServiceStateDetailCode
+        /// </summary>
+        public static readonly ContainerServiceStateDetailCode CREATING_SYSTEM_RESOURCES = new ContainerServiceStateDetailCode("CREATING_SYSTEM_RESOURCES");
+        /// <summary>
+        /// Constant EVALUATING_HEALTH_CHECK for ContainerServiceStateDetailCode
+        /// </summary>
+        public static readonly ContainerServiceStateDetailCode EVALUATING_HEALTH_CHECK = new ContainerServiceStateDetailCode("EVALUATING_HEALTH_CHECK");
+        /// <summary>
+        /// Constant PROVISIONING_CERTIFICATE for ContainerServiceStateDetailCode
+        /// </summary>
+        public static readonly ContainerServiceStateDetailCode PROVISIONING_CERTIFICATE = new ContainerServiceStateDetailCode("PROVISIONING_CERTIFICATE");
+        /// <summary>
+        /// Constant PROVISIONING_SERVICE for ContainerServiceStateDetailCode
+        /// </summary>
+        public static readonly ContainerServiceStateDetailCode PROVISIONING_SERVICE = new ContainerServiceStateDetailCode("PROVISIONING_SERVICE");
+        /// <summary>
+        /// Constant UNKNOWN_ERROR for ContainerServiceStateDetailCode
+        /// </summary>
+        public static readonly ContainerServiceStateDetailCode UNKNOWN_ERROR = new ContainerServiceStateDetailCode("UNKNOWN_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerServiceStateDetailCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerServiceStateDetailCode FindValue(string value)
+        {
+            return FindValue<ContainerServiceStateDetailCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerServiceStateDetailCode(string value)
         {
             return FindValue(value);
         }

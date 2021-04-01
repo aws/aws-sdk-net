@@ -48,6 +48,7 @@ namespace Amazon.Lightsail.Model
         private ResourceType _resourceType;
         private int? _scale;
         private ContainerServiceState _state;
+        private ContainerServiceStateDetail _stateDetail;
         private List<Tag> _tags = new List<Tag>();
         private string _url;
 
@@ -363,33 +364,39 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The state can be:
+        /// The following container service states are possible:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Pending</code> - The container service is being created.
+        ///  <code>PENDING</code> - The container service is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Ready</code> - The container service is created but does not have a container
+        ///  <code>READY</code> - The container service is running but it does not have an active
+        /// container deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DEPLOYING</code> - The container service is launching a container deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RUNNING</code> - The container service is running and it has an active container
         /// deployment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Disabled</code> - The container service is disabled.
+        ///  <code>UPDATING</code> - The container service capacity or its custom domains are
+        /// being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Updating</code> - The container service capacity or other setting is being
-        /// updated.
+        ///  <code>DELETING</code> - The container service is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deploying</code> - The container service is launching a container deployment.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Running</code> - The container service is created and it has a container deployment.
+        ///  <code>DISABLED</code> - The container service is disabled, and its active deployment
+        /// and containers, if any, are shut down.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -403,6 +410,30 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateDetail. 
+        /// <para>
+        /// An object that describes the current state of the container service.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The state detail is populated only when a container service is in a <code>PENDING</code>,
+        /// <code>DEPLOYING</code>, or <code>UPDATING</code> state.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ContainerServiceStateDetail StateDetail
+        {
+            get { return this._stateDetail; }
+            set { this._stateDetail = value; }
+        }
+
+        // Check to see if StateDetail property is set
+        internal bool IsSetStateDetail()
+        {
+            return this._stateDetail != null;
         }
 
         /// <summary>
