@@ -1,3 +1,14 @@
+### 3.7.7.0 (2021-04-02 18:14 UTC)
+* Imagebuilder (3.7.1.0)
+	* This release adds support for Block Device Mappings for container image builds, and adds distribution configuration support for EC2 launch templates in AMI builds.
+* MediaPackage (3.7.1.0)
+	* SPEKE v2 is an upgrade to the existing SPEKE API to support multiple encryption keys, based on an encryption contract selected by the customer.
+* Core 3.7.0.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.6.0 (2021-04-01 18:17 UTC)
 * EC2 (3.7.2.0)
 	* VPC Flow Logs Service adds a new API, GetFlowLogsIntegrationTemplate, which generates CloudFormation templates for Athena. For more info, see https://docs.aws.amazon.com/console/vpc/flow-logs/athena
