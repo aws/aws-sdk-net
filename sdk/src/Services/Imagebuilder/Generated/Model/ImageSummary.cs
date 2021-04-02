@@ -103,7 +103,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property OsVersion. 
         /// <para>
         /// The operating system version of the instance. For example, Amazon Linux 2, Ubuntu
-        /// 18, or Microsoft Windows Server 2019. 
+        /// 18, or Microsoft Windows Server 2019.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

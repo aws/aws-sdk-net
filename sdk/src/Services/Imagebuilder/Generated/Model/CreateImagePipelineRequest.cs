@@ -51,7 +51,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The idempotency token used to make this request idempotent. 
+        ///  The idempotency token used to make this request idempotent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -89,7 +89,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the image pipeline. 
+        ///  The description of the image pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -109,7 +109,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property DistributionConfigurationArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the distribution configuration that will be used
-        /// to configure and distribute images created by this image pipeline. 
+        /// to configure and distribute images created by this image pipeline.
         /// </para>
         /// </summary>
         public string DistributionConfigurationArn
@@ -129,7 +129,7 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         ///  Collects additional information about the image being created, including the operating
         /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default. 
+        /// experience of using EC2 Image Builder. Enabled by default.
         /// </para>
         /// </summary>
         public bool EnhancedImageMetadataEnabled
@@ -148,7 +148,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property ImageRecipeArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the image recipe that will be used to configure
-        /// images created by this image pipeline. 
+        /// images created by this image pipeline.
         /// </para>
         /// </summary>
         public string ImageRecipeArn
@@ -166,7 +166,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageTestsConfiguration. 
         /// <para>
-        ///  The image test configuration of the image pipeline. 
+        ///  The image test configuration of the image pipeline.
         /// </para>
         /// </summary>
         public ImageTestsConfiguration ImageTestsConfiguration
@@ -185,7 +185,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property InfrastructureConfigurationArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the infrastructure configuration that will be used
-        /// to build images created by this image pipeline. 
+        /// to build images created by this image pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -204,7 +204,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the image pipeline. 
+        ///  The name of the image pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -223,7 +223,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        ///  The schedule of the image pipeline. 
+        ///  The schedule of the image pipeline.
         /// </para>
         /// </summary>
         public Schedule Schedule
@@ -241,7 +241,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the image pipeline. 
+        ///  The status of the image pipeline.
         /// </para>
         /// </summary>
         public PipelineStatus Status
@@ -259,7 +259,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags of the image pipeline. 
+        ///  The tags of the image pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

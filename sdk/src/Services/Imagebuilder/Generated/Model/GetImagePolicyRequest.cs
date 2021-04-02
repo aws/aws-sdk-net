@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image whose policy you want to retrieve. 
+        /// The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

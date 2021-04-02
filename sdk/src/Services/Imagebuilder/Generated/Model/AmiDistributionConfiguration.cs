@@ -43,7 +43,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property AmiTags. 
         /// <para>
-        /// The tags to apply to AMIs distributed to this Region. 
+        /// The tags to apply to AMIs distributed to this Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -82,7 +82,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  The KMS key identifier used to encrypt the distributed image. 
+        /// The KMS key identifier used to encrypt the distributed image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -102,7 +102,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property LaunchPermission. 
         /// <para>
         ///  Launch permissions can be used to configure which AWS accounts can use the AMI to
-        /// launch instances. 
+        /// launch instances.
         /// </para>
         /// </summary>
         public LaunchPermissionConfiguration LaunchPermission
@@ -120,7 +120,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the distribution configuration. 
+        /// The name of the distribution configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -139,7 +139,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TargetAccountIds. 
         /// <para>
-        ///  The ID of an account to which you want to distribute an image. 
+        /// The ID of an account to which you want to distribute an image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1536)]

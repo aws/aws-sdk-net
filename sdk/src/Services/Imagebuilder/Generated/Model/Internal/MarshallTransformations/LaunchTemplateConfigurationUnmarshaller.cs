@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Distribution Object
+    /// Response Unmarshaller for LaunchTemplateConfiguration Object
     /// </summary>  
-    public class DistributionUnmarshaller : IUnmarshaller<Distribution, XmlUnmarshallerContext>, IUnmarshaller<Distribution, JsonUnmarshallerContext>
+    public class LaunchTemplateConfigurationUnmarshaller : IUnmarshaller<LaunchTemplateConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Distribution IUnmarshaller<Distribution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LaunchTemplateConfiguration IUnmarshaller<LaunchTemplateConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Distribution Unmarshall(JsonUnmarshallerContext context)
+        public LaunchTemplateConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Distribution unmarshalledObject = new Distribution();
+            LaunchTemplateConfiguration unmarshalledObject = new LaunchTemplateConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("amiDistributionConfiguration", targetDepth))
-                {
-                    var unmarshaller = AmiDistributionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AmiDistributionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("containerDistributionConfiguration", targetDepth))
-                {
-                    var unmarshaller = ContainerDistributionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContainerDistributionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("launchTemplateConfigurations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<LaunchTemplateConfiguration, LaunchTemplateConfigurationUnmarshaller>(LaunchTemplateConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.LaunchTemplateConfigurations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("licenseConfigurationArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LicenseConfigurationArns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("launchTemplateId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LaunchTemplateId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("setDefaultVersion", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SetDefaultVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static DistributionUnmarshaller _instance = new DistributionUnmarshaller();        
+        private static LaunchTemplateConfigurationUnmarshaller _instance = new LaunchTemplateConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DistributionUnmarshaller Instance
+        public static LaunchTemplateConfigurationUnmarshaller Instance
         {
             get
             {

@@ -40,7 +40,6 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property ImageRecipeArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.
-        /// 
         /// </para>
         /// </summary>
         public string ImageRecipeArn
@@ -58,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

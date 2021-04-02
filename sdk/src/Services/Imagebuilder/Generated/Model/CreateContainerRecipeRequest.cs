@@ -42,6 +42,7 @@ namespace Amazon.Imagebuilder.Model
         private string _dockerfileTemplateData;
         private string _dockerfileTemplateUri;
         private string _imageOsVersionOverride;
+        private InstanceConfiguration _instanceConfiguration;
         private string _kmsKeyId;
         private string _name;
         private string _parentImage;
@@ -133,7 +134,7 @@ namespace Amazon.Imagebuilder.Model
         /// The Dockerfile template used to build your image as an inline data blob.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=16000)]
+        [AWSProperty(Min=1, Max=16000)]
         public string DockerfileTemplateData
         {
             get { return this._dockerfileTemplateData; }
@@ -181,6 +182,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetImageOsVersionOverride()
         {
             return this._imageOsVersionOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceConfiguration. 
+        /// <para>
+        /// A group of options that can be used to configure an instance for building and testing
+        /// container images.
+        /// </para>
+        /// </summary>
+        public InstanceConfiguration InstanceConfiguration
+        {
+            get { return this._instanceConfiguration; }
+            set { this._instanceConfiguration = value; }
+        }
+
+        // Check to see if InstanceConfiguration property is set
+        internal bool IsSetInstanceConfiguration()
+        {
+            return this._instanceConfiguration != null;
         }
 
         /// <summary>

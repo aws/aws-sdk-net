@@ -202,7 +202,7 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         ///  Collects additional information about the image being created, including the operating
         /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default. 
+        /// experience of using EC2 Image Builder. Enabled by default.
         /// </para>
         /// </summary>
         public bool EnhancedImageMetadataEnabled

@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImagePipeline. 
         /// <para>
-        /// The image pipeline object. 
+        /// The image pipeline object.
         /// </para>
         /// </summary>
         public ImagePipeline ImagePipeline
@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

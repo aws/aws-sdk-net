@@ -40,6 +40,7 @@ namespace Amazon.Imagebuilder.Model
         private string _description;
         private string _dockerfileTemplateData;
         private bool? _encrypted;
+        private InstanceConfiguration _instanceConfiguration;
         private string _kmsKeyId;
         private string _name;
         private string _owner;
@@ -179,6 +180,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetEncrypted()
         {
             return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceConfiguration. 
+        /// <para>
+        /// A group of options that can be used to configure an instance for building and testing
+        /// container images.
+        /// </para>
+        /// </summary>
+        public InstanceConfiguration InstanceConfiguration
+        {
+            get { return this._instanceConfiguration; }
+            set { this._instanceConfiguration = value; }
+        }
+
+        // Check to see if InstanceConfiguration property is set
+        internal bool IsSetInstanceConfiguration()
+        {
+            return this._instanceConfiguration != null;
         }
 
         /// <summary>

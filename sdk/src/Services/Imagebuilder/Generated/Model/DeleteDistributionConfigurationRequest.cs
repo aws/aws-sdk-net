@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DistributionConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the distribution configuration to delete. 
+        /// The Amazon Resource Name (ARN) of the distribution configuration to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

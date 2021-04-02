@@ -42,7 +42,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters. 
+        /// The filters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -61,7 +61,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum items to return in a request. 
+        /// The maximum items to return in a request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -81,7 +81,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response. 
+        /// truncated response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -103,7 +103,7 @@ namespace Amazon.Imagebuilder.Model
         /// The owner defines which image recipes you want to list. By default, this request will
         /// only show image recipes owned by your account. You can use this field to specify if
         /// you want to view image recipes owned by yourself, by Amazon, or those image recipes
-        /// that have been shared with you by other customers. 
+        /// that have been shared with you by other customers.
         /// </para>
         /// </summary>
         public Ownership Owner

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Distribution Object
+    /// Response Unmarshaller for InstanceConfiguration Object
     /// </summary>  
-    public class DistributionUnmarshaller : IUnmarshaller<Distribution, XmlUnmarshallerContext>, IUnmarshaller<Distribution, JsonUnmarshallerContext>
+    public class InstanceConfigurationUnmarshaller : IUnmarshaller<InstanceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<InstanceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Distribution IUnmarshaller<Distribution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InstanceConfiguration IUnmarshaller<InstanceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Distribution Unmarshall(JsonUnmarshallerContext context)
+        public InstanceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Distribution unmarshalledObject = new Distribution();
+            InstanceConfiguration unmarshalledObject = new InstanceConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("amiDistributionConfiguration", targetDepth))
+                if (context.TestExpression("blockDeviceMappings", targetDepth))
                 {
-                    var unmarshaller = AmiDistributionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AmiDistributionConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<InstanceBlockDeviceMapping, InstanceBlockDeviceMappingUnmarshaller>(InstanceBlockDeviceMappingUnmarshaller.Instance);
+                    unmarshalledObject.BlockDeviceMappings = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("containerDistributionConfiguration", targetDepth))
-                {
-                    var unmarshaller = ContainerDistributionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContainerDistributionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("launchTemplateConfigurations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<LaunchTemplateConfiguration, LaunchTemplateConfigurationUnmarshaller>(LaunchTemplateConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.LaunchTemplateConfigurations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("licenseConfigurationArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LicenseConfigurationArns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("image", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static DistributionUnmarshaller _instance = new DistributionUnmarshaller();        
+        private static InstanceConfigurationUnmarshaller _instance = new InstanceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DistributionUnmarshaller Instance
+        public static InstanceConfigurationUnmarshaller Instance
         {
             get
             {

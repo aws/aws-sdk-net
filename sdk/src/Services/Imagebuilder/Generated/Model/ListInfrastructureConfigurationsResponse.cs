@@ -40,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InfrastructureConfigurationSummaryList. 
         /// <para>
-        /// The list of infrastructure configurations. 
+        /// The list of infrastructure configurations.
         /// </para>
         /// </summary>
         public List<InfrastructureConfigurationSummary> InfrastructureConfigurationSummaryList
@@ -79,7 +79,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

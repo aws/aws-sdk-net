@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DistributionConfiguration. 
         /// <para>
-        /// The distribution configuration object. 
+        /// The distribution configuration object.
         /// </para>
         /// </summary>
         public DistributionConfiguration DistributionConfiguration
@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

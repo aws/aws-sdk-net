@@ -40,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token used to make this request idempotent. 
+        /// The idempotency token used to make this request idempotent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -60,7 +60,6 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property ImagePipelineArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImagePipelineArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image pipeline to delete. 
+        /// The Amazon Resource Name (ARN) of the image pipeline to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

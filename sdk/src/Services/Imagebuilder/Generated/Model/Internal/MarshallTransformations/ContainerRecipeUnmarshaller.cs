@@ -106,6 +106,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceConfiguration", targetDepth))
+                {
+                    var unmarshaller = InstanceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.InstanceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

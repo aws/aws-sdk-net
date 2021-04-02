@@ -40,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property InfrastructureConfigurationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// retrieve. 
+        /// retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -129,7 +129,7 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         ///  Collects additional information about the image being created, including the operating
         /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default. 
+        /// experience of using EC2 Image Builder. Enabled by default.
         /// </para>
         /// </summary>
         public bool EnhancedImageMetadataEnabled
@@ -220,7 +220,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property OsVersion. 
         /// <para>
         /// The operating system version of the instance. For example, Amazon Linux 2, Ubuntu
-        /// 18, or Microsoft Windows Server 2019. 
+        /// 18, or Microsoft Windows Server 2019.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

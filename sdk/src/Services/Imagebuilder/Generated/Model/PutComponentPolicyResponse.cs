@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the component that this policy was applied to. 
+        /// The Amazon Resource Name (ARN) of the component that this policy was applied to.
         /// </para>
         /// </summary>
         public string ComponentArn
@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

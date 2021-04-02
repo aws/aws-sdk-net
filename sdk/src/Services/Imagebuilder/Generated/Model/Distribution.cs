@@ -35,13 +35,14 @@ namespace Amazon.Imagebuilder.Model
     {
         private AmiDistributionConfiguration _amiDistributionConfiguration;
         private ContainerDistributionConfiguration _containerDistributionConfiguration;
+        private List<LaunchTemplateConfiguration> _launchTemplateConfigurations = new List<LaunchTemplateConfiguration>();
         private List<string> _licenseConfigurationArns = new List<string>();
         private string _region;
 
         /// <summary>
         /// Gets and sets the property AmiDistributionConfiguration. 
         /// <para>
-        /// The specific AMI settings (for example, launch permissions, AMI tags). 
+        /// The specific AMI settings; for example, launch permissions or AMI tags.
         /// </para>
         /// </summary>
         public AmiDistributionConfiguration AmiDistributionConfiguration
@@ -76,6 +77,26 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchTemplateConfigurations. 
+        /// <para>
+        /// A group of launchTemplateConfiguration settings that apply to image distribution for
+        /// specified accounts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<LaunchTemplateConfiguration> LaunchTemplateConfigurations
+        {
+            get { return this._launchTemplateConfigurations; }
+            set { this._launchTemplateConfigurations = value; }
+        }
+
+        // Check to see if LaunchTemplateConfigurations property is set
+        internal bool IsSetLaunchTemplateConfigurations()
+        {
+            return this._launchTemplateConfigurations != null && this._launchTemplateConfigurations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LicenseConfigurationArns. 
         /// <para>
         /// The License Manager Configuration to associate with the AMI in the specified Region.
@@ -97,7 +118,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The target Region. 
+        /// The target Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

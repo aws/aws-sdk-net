@@ -45,7 +45,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property ComponentArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the component that this policy should be applied
-        /// to. 
+        /// to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +64,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The policy to apply. 
+        /// The policy to apply.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30000)]

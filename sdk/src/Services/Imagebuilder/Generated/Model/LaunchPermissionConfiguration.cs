@@ -44,7 +44,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property UserGroups. 
         /// <para>
-        /// The name of the group. 
+        /// The name of the group.
         /// </para>
         /// </summary>
         public List<string> UserGroups
@@ -62,7 +62,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property UserIds. 
         /// <para>
-        /// The AWS account ID. 
+        /// The AWS account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1536)]

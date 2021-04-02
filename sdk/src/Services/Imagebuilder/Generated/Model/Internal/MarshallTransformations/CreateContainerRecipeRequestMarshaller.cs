@@ -122,6 +122,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ImageOsVersionOverride);
                 }
 
+                if(publicRequest.IsSetInstanceConfiguration())
+                {
+                    context.Writer.WritePropertyName("instanceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InstanceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     context.Writer.WritePropertyName("kmsKeyId");

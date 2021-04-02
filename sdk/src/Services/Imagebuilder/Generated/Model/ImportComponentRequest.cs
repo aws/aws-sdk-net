@@ -52,7 +52,6 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The change description of the component. Describes what change has been made in this
         /// version, or what makes this version different from other versions of this component.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -71,7 +70,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token of the component. 
+        /// The idempotency token of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -110,7 +109,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the component. Describes the contents of the component. 
+        /// The description of the component. Describes the contents of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -129,7 +128,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The format of the resource that you want to import as a component. 
+        /// The format of the resource that you want to import as a component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -148,7 +147,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the KMS key that should be used to encrypt this component. 
+        /// The ID of the KMS key that should be used to encrypt this component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -167,7 +166,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the component. 
+        ///  The name of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -186,7 +185,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the component. 
+        /// The platform of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -226,7 +225,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of the component. 
+        /// The tags of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -246,7 +245,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of the component denotes whether the component is used to build the image
-        /// or only to test it. 
+        /// or only to test it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -268,7 +267,7 @@ namespace Amazon.Imagebuilder.Model
         /// The uri of the component. Must be an S3 URL and the requester must have permission
         /// to access the S3 bucket. If you use S3, you can specify component content up to your
         /// service quota. Either <code>data</code> or <code>uri</code> can be used to specify
-        /// the data within the component. 
+        /// the data within the component.
         /// </para>
         /// </summary>
         public string Uri

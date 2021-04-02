@@ -237,7 +237,7 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The operating system (OS) version supported by the component. If the OS information
         /// is available, a prefix match is performed against the parent image OS version during
-        /// image recipe creation. 
+        /// image recipe creation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]

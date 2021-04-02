@@ -118,7 +118,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Distributions. 
         /// <para>
-        /// The distributions of the distribution configuration.
+        /// The distribution objects that apply Region-specific settings for the deployment of
+        /// the image to targeted Regions.
         /// </para>
         /// </summary>
         public List<Distribution> Distributions

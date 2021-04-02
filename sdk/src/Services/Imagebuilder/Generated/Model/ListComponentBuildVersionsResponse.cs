@@ -40,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentSummaryList. 
         /// <para>
-        /// The list of component summaries for the specified semantic version. 
+        /// The list of component summaries for the specified semantic version.
         /// </para>
         /// </summary>
         public List<ComponentSummary> ComponentSummaryList
@@ -60,7 +60,7 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The next token used for paginated responses. When this is not empty, there are additional
         /// elements that the service has not included in this request. Use this token with the
-        /// next request to retrieve additional objects. 
+        /// next request to retrieve additional objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -79,7 +79,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The request ID that uniquely identifies this request. 
+        /// The request ID that uniquely identifies this request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
