@@ -51,6 +51,17 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CertificateArn);
             }
 
+            if(requestObject.IsSetEncryptionContractConfiguration())
+            {
+                context.Writer.WritePropertyName("encryptionContractConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EncryptionContractConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EncryptionContractConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("resourceId");

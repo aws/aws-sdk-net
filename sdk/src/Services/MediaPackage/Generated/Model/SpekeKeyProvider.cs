@@ -35,6 +35,7 @@ namespace Amazon.MediaPackage.Model
     public partial class SpekeKeyProvider
     {
         private string _certificateArn;
+        private EncryptionContractConfiguration _encryptionContractConfiguration;
         private string _resourceId;
         private string _roleArn;
         private List<string> _systemIds = new List<string>();
@@ -55,6 +56,21 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetCertificateArn()
         {
             return this._certificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionContractConfiguration.
+        /// </summary>
+        public EncryptionContractConfiguration EncryptionContractConfiguration
+        {
+            get { return this._encryptionContractConfiguration; }
+            set { this._encryptionContractConfiguration = value; }
+        }
+
+        // Check to see if EncryptionContractConfiguration property is set
+        internal bool IsSetEncryptionContractConfiguration()
+        {
+            return this._encryptionContractConfiguration != null;
         }
 
         /// <summary>
