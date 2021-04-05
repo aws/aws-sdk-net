@@ -1,3 +1,11 @@
+### 3.7.8.0 (2021-04-05 18:14 UTC)
+* Appflow (3.7.1.0)
+	* Added destination properties for Zendesk.
+* AuditManager (3.7.1.0)
+	* AWS Audit Manager has updated the GetAssessment API operation to include a new response field called userRole. The userRole field indicates the role information and IAM ARN of the API caller.
+* MediaLive (3.7.1.0)
+	* MediaLive now support HTML5 Motion Graphics overlay
+
 ### 3.7.7.0 (2021-04-02 18:14 UTC)
 * Imagebuilder (3.7.1.0)
 	* This release adds support for Block Device Mappings for container image builds, and adds distribution configuration support for EC2 launch templates in AMI builds.

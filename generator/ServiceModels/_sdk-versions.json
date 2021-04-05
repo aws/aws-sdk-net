@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.7.0",
+    "ProductVersion" : "3.7.8.0",
     "CoreVersion"    : "3.7.0.8",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -874,7 +874,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.7.0.7",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.8"
@@ -1826,7 +1826,7 @@
             "InPreview"               : false
         },
         "Appflow"                         : {
-            "Version" : "3.7.0.7",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.8"
@@ -1994,7 +1994,7 @@
             "InPreview"               : false
         },
         "AuditManager"                    : {
-            "Version" : "3.7.0.7",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.8"
