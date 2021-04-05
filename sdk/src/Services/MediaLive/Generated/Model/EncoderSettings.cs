@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         private List<CaptionDescription> _captionDescriptions = new List<CaptionDescription>();
         private FeatureActivations _featureActivations;
         private GlobalConfiguration _globalConfiguration;
+        private MotionGraphicsConfiguration _motionGraphicsConfiguration;
         private NielsenConfiguration _nielsenConfiguration;
         private List<OutputGroup> _outputGroups = new List<OutputGroup>();
         private TimecodeConfig _timecodeConfig;
@@ -151,6 +152,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetGlobalConfiguration()
         {
             return this._globalConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MotionGraphicsConfiguration. Settings for motion graphics.
+        /// </summary>
+        public MotionGraphicsConfiguration MotionGraphicsConfiguration
+        {
+            get { return this._motionGraphicsConfiguration; }
+            set { this._motionGraphicsConfiguration = value; }
+        }
+
+        // Check to see if MotionGraphicsConfiguration property is set
+        internal bool IsSetMotionGraphicsConfiguration()
+        {
+            return this._motionGraphicsConfiguration != null;
         }
 
         /// <summary>

@@ -132,6 +132,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMotionGraphicsConfiguration())
+            {
+                context.Writer.WritePropertyName("motionGraphicsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MotionGraphicsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MotionGraphicsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNielsenConfiguration())
             {
                 context.Writer.WritePropertyName("nielsenConfiguration");

@@ -89,6 +89,28 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMotionGraphicsImageActivateSettings())
+            {
+                context.Writer.WritePropertyName("motionGraphicsImageActivateSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MotionGraphicsActivateScheduleActionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MotionGraphicsImageActivateSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMotionGraphicsImageDeactivateSettings())
+            {
+                context.Writer.WritePropertyName("motionGraphicsImageDeactivateSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MotionGraphicsDeactivateScheduleActionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MotionGraphicsImageDeactivateSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPauseStateSettings())
             {
                 context.Writer.WritePropertyName("pauseStateSettings");

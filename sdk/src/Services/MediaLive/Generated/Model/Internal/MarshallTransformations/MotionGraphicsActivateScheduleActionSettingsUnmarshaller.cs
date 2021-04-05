@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PipelineDetail Object
+    /// Response Unmarshaller for MotionGraphicsActivateScheduleActionSettings Object
     /// </summary>  
-    public class PipelineDetailUnmarshaller : IUnmarshaller<PipelineDetail, XmlUnmarshallerContext>, IUnmarshaller<PipelineDetail, JsonUnmarshallerContext>
+    public class MotionGraphicsActivateScheduleActionSettingsUnmarshaller : IUnmarshaller<MotionGraphicsActivateScheduleActionSettings, XmlUnmarshallerContext>, IUnmarshaller<MotionGraphicsActivateScheduleActionSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PipelineDetail IUnmarshaller<PipelineDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MotionGraphicsActivateScheduleActionSettings IUnmarshaller<MotionGraphicsActivateScheduleActionSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,39 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PipelineDetail Unmarshall(JsonUnmarshallerContext context)
+        public MotionGraphicsActivateScheduleActionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PipelineDetail unmarshalledObject = new PipelineDetail();
+            MotionGraphicsActivateScheduleActionSettings unmarshalledObject = new MotionGraphicsActivateScheduleActionSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("activeInputAttachmentName", targetDepth))
+                if (context.TestExpression("duration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveInputAttachmentName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("activeInputSwitchActionName", targetDepth))
+                if (context.TestExpression("passwordParam", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveInputSwitchActionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PasswordParam = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("activeMotionGraphicsActionName", targetDepth))
+                if (context.TestExpression("url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveMotionGraphicsActionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("activeMotionGraphicsUri", targetDepth))
+                if (context.TestExpression("username", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveMotionGraphicsUri = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelineId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +94,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static PipelineDetailUnmarshaller _instance = new PipelineDetailUnmarshaller();        
+        private static MotionGraphicsActivateScheduleActionSettingsUnmarshaller _instance = new MotionGraphicsActivateScheduleActionSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PipelineDetailUnmarshaller Instance
+        public static MotionGraphicsActivateScheduleActionSettingsUnmarshaller Instance
         {
             get
             {

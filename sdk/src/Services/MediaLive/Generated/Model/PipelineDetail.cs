@@ -35,6 +35,8 @@ namespace Amazon.MediaLive.Model
     {
         private string _activeInputAttachmentName;
         private string _activeInputSwitchActionName;
+        private string _activeMotionGraphicsActionName;
+        private string _activeMotionGraphicsUri;
         private string _pipelineId;
 
         /// <summary>
@@ -68,6 +70,39 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetActiveInputSwitchActionName()
         {
             return this._activeInputSwitchActionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActiveMotionGraphicsActionName. The name of the motion
+        /// graphics activate action that occurred most recently and that resulted in the current
+        /// graphics URI for this pipeline.
+        /// </summary>
+        public string ActiveMotionGraphicsActionName
+        {
+            get { return this._activeMotionGraphicsActionName; }
+            set { this._activeMotionGraphicsActionName = value; }
+        }
+
+        // Check to see if ActiveMotionGraphicsActionName property is set
+        internal bool IsSetActiveMotionGraphicsActionName()
+        {
+            return this._activeMotionGraphicsActionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActiveMotionGraphicsUri. The current URI being used for
+        /// HTML5 motion graphics for this pipeline.
+        /// </summary>
+        public string ActiveMotionGraphicsUri
+        {
+            get { return this._activeMotionGraphicsUri; }
+            set { this._activeMotionGraphicsUri = value; }
+        }
+
+        // Check to see if ActiveMotionGraphicsUri property is set
+        internal bool IsSetActiveMotionGraphicsUri()
+        {
+            return this._activeMotionGraphicsUri != null;
         }
 
         /// <summary>

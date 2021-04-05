@@ -37,6 +37,8 @@ namespace Amazon.MediaLive.Model
         private HlsTimedMetadataScheduleActionSettings _hlsTimedMetadataSettings;
         private InputPrepareScheduleActionSettings _inputPrepareSettings;
         private InputSwitchScheduleActionSettings _inputSwitchSettings;
+        private MotionGraphicsActivateScheduleActionSettings _motionGraphicsImageActivateSettings;
+        private MotionGraphicsDeactivateScheduleActionSettings _motionGraphicsImageDeactivateSettings;
         private PauseStateScheduleActionSettings _pauseStateSettings;
         private Scte35ReturnToNetworkScheduleActionSettings _scte35ReturnToNetworkSettings;
         private Scte35SpliceInsertScheduleActionSettings _scte35SpliceInsertSettings;
@@ -104,6 +106,38 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputSwitchSettings()
         {
             return this._inputSwitchSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MotionGraphicsImageActivateSettings. Action to activate
+        /// a motion graphics image overlay
+        /// </summary>
+        public MotionGraphicsActivateScheduleActionSettings MotionGraphicsImageActivateSettings
+        {
+            get { return this._motionGraphicsImageActivateSettings; }
+            set { this._motionGraphicsImageActivateSettings = value; }
+        }
+
+        // Check to see if MotionGraphicsImageActivateSettings property is set
+        internal bool IsSetMotionGraphicsImageActivateSettings()
+        {
+            return this._motionGraphicsImageActivateSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MotionGraphicsImageDeactivateSettings. Action to deactivate
+        /// a motion graphics image overlay
+        /// </summary>
+        public MotionGraphicsDeactivateScheduleActionSettings MotionGraphicsImageDeactivateSettings
+        {
+            get { return this._motionGraphicsImageDeactivateSettings; }
+            set { this._motionGraphicsImageDeactivateSettings = value; }
+        }
+
+        // Check to see if MotionGraphicsImageDeactivateSettings property is set
+        internal bool IsSetMotionGraphicsImageDeactivateSettings()
+        {
+            return this._motionGraphicsImageDeactivateSettings != null;
         }
 
         /// <summary>

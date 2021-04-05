@@ -630,6 +630,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.MotionGraphicsActivateScheduleActionSettings.Duration</property>
+    <min>0</min>
+    <max>86400000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.Mpeg2Settings.FramerateDenominator</property>
     <min>1</min>
   </property-value-rule>

@@ -88,6 +88,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputSwitchSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("motionGraphicsImageActivateSettings", targetDepth))
+                {
+                    var unmarshaller = MotionGraphicsActivateScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MotionGraphicsImageActivateSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("motionGraphicsImageDeactivateSettings", targetDepth))
+                {
+                    var unmarshaller = MotionGraphicsDeactivateScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MotionGraphicsImageDeactivateSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pauseStateSettings", targetDepth))
                 {
                     var unmarshaller = PauseStateScheduleActionSettingsUnmarshaller.Instance;
