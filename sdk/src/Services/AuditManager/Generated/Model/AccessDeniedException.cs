@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// You do not have sufficient access to perform this action.
+    /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+    /// setup on the AWS Audit Manager settings page, and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

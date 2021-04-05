@@ -327,7 +327,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the AssociateAssessmentReportEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -374,7 +375,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchAssociateAssessmentReportEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -421,7 +423,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchCreateDelegationByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -468,7 +471,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchDeleteDelegationByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -516,7 +520,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchDisassociateAssessmentReportEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -564,7 +569,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchImportEvidenceToAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -611,7 +617,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -658,7 +665,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -705,7 +713,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateAssessmentReport service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -752,7 +761,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -799,7 +809,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -846,7 +857,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -893,7 +905,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteAssessmentReport service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -940,7 +953,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -987,7 +1001,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeregisterAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1034,7 +1049,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeregisterOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1082,7 +1098,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DisassociateAssessmentReportEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1167,7 +1184,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1214,7 +1232,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1261,7 +1280,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetAssessmentReportUrl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1308,7 +1328,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetChangeLogs service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1355,7 +1376,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1402,7 +1424,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetDelegations service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1446,7 +1469,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1493,7 +1517,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceByEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1540,7 +1565,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1587,7 +1613,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceFoldersByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1635,7 +1662,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceFoldersByAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1682,7 +1710,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1729,7 +1758,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetServicesInScope service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1773,7 +1803,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetSettings service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1814,7 +1845,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListAssessmentFrameworks service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1858,7 +1890,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListAssessmentReports service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1902,7 +1935,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListAssessments service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1946,7 +1980,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListControls service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -1990,7 +2025,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListKeywordsForDataSource service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2034,7 +2070,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListNotifications service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2122,7 +2159,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the RegisterAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2170,7 +2208,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the RegisterOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2305,7 +2344,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2352,7 +2392,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2399,7 +2440,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentControlSetStatus service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2446,7 +2488,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2493,7 +2536,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentStatus service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2540,7 +2584,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2587,7 +2632,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateSettings service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
@@ -2631,7 +2677,8 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ValidateAssessmentReportIntegrity service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Your account is not registered with AWS Audit Manager. Check the delegated administrator
+        /// setup on the AWS Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again

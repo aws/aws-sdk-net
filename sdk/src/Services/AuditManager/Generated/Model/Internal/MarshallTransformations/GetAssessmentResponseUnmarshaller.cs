@@ -57,6 +57,12 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     response.Assessment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("userRole", targetDepth))
+                {
+                    var unmarshaller = RoleUnmarshaller.Instance;
+                    response.UserRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

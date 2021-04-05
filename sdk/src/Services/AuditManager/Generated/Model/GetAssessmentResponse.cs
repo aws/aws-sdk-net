@@ -34,6 +34,7 @@ namespace Amazon.AuditManager.Model
     public partial class GetAssessmentResponse : AmazonWebServiceResponse
     {
         private Assessment _assessment;
+        private Role _userRole;
 
         /// <summary>
         /// Gets and sets the property Assessment.
@@ -48,6 +49,21 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetAssessment()
         {
             return this._assessment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserRole.
+        /// </summary>
+        public Role UserRole
+        {
+            get { return this._userRole; }
+            set { this._userRole = value; }
+        }
+
+        // Check to see if UserRole property is set
+        internal bool IsSetUserRole()
+        {
+            return this._userRole != null;
         }
 
     }
