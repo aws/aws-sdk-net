@@ -144,6 +144,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetZendesk())
+            {
+                context.Writer.WritePropertyName("Zendesk");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ZendeskDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Zendesk, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

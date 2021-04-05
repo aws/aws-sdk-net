@@ -118,6 +118,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.Upsolver = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Zendesk", targetDepth))
+                {
+                    var unmarshaller = ZendeskDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.Zendesk = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

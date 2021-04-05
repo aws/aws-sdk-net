@@ -42,6 +42,7 @@ namespace Amazon.Appflow.Model
         private SalesforceDestinationProperties _salesforce;
         private SnowflakeDestinationProperties _snowflake;
         private UpsolverDestinationProperties _upsolver;
+        private ZendeskDestinationProperties _zendesk;
 
         /// <summary>
         /// Gets and sets the property CustomerProfiles. 
@@ -203,6 +204,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetUpsolver()
         {
             return this._upsolver != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Zendesk.
+        /// </summary>
+        public ZendeskDestinationProperties Zendesk
+        {
+            get { return this._zendesk; }
+            set { this._zendesk = value; }
+        }
+
+        // Check to see if Zendesk property is set
+        internal bool IsSetZendesk()
+        {
+            return this._zendesk != null;
         }
 
     }
