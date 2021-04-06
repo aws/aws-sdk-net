@@ -49,7 +49,7 @@ namespace Amazon.MediaLive.Model
         private string _roleArn;
         private ChannelState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private VpcOutputSettings _vpc;
+        private VpcOutputSettingsDescription _vpc;
 
         /// <summary>
         /// Gets and sets the property Arn. The unique arn of the channel.
@@ -303,7 +303,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Vpc. Settings for VPC output
         /// </summary>
-        public VpcOutputSettings Vpc
+        public VpcOutputSettingsDescription Vpc
         {
             get { return this._vpc; }
             set { this._vpc = value; }

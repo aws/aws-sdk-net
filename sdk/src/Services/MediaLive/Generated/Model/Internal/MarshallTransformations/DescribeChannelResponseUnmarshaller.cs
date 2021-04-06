@@ -149,7 +149,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("vpc", targetDepth))
                 {
-                    var unmarshaller = VpcOutputSettingsUnmarshaller.Instance;
+                    var unmarshaller = VpcOutputSettingsDescriptionUnmarshaller.Instance;
                     response.Vpc = unmarshaller.Unmarshall(context);
                     continue;
                 }
