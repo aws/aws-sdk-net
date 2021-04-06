@@ -1,3 +1,13 @@
+### 3.7.9.0 (2021-04-06 18:13 UTC)
+* Cloud9 (3.7.1.4)
+	* Documentation updates for Cloud9
+* EC2 (3.7.3.0)
+	* This release adds support for storing EBS-backed AMIs in S3 and restoring them from S3 to enable cross-partition copying of AMIs
+* MediaLive (3.7.2.0)
+	* MediaLive VPC outputs update to include Availability Zones, Security groups, Elastic Network Interfaces, and Subnet Ids in channel response
+* SimpleSystemsManagement (3.7.1.0)
+	* Supports removing a label or labels from a parameter, enables ScheduledEndTime and ChangeDetails for StartChangeRequestExecution API, supports critical/security/other noncompliant count for patch API.
+
 ### 3.7.8.0 (2021-04-05 18:14 UTC)
 * Appflow (3.7.1.0)
 	* Added destination properties for Zendesk.
