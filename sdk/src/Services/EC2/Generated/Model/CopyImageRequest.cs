@@ -32,7 +32,8 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CopyImage operation.
     /// Initiates the copy of an AMI. You can copy an AMI from one Region to another, or from
     /// a Region to an AWS Outpost. You can't copy an AMI from an Outpost to a Region, from
-    /// one Outpost to another, or within the same Outpost.
+    /// one Outpost to another, or within the same Outpost. To copy an AMI to another partition,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
     /// 
     ///  
     /// <para>
@@ -53,7 +54,7 @@ namespace Amazon.EC2.Model
     /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud
     /// User Guide</i>.
     /// </para>
-    ///   
+    ///  
     /// <para>
     /// For more information about the prerequisites and limits when copying an AMI, see <a
     /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying

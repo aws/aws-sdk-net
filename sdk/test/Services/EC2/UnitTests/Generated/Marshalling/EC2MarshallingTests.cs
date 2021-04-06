@@ -1762,6 +1762,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateRestoreImageTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateRestoreImageTask");
+
+            var request = InstantiateClassGenerator.Execute<CreateRestoreImageTaskRequest>();
+            var marshaller = new CreateRestoreImageTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateRestoreImageTaskResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateRestoreImageTaskResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateRouteMarshallTest()
         {
             var operation = service_model.FindOperation("CreateRoute");
@@ -1897,6 +1921,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = CreateSpotDatafeedSubscriptionResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateSpotDatafeedSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateStoreImageTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateStoreImageTask");
+
+            var request = InstantiateClassGenerator.Execute<CreateStoreImageTaskRequest>();
+            var marshaller = new CreateStoreImageTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateStoreImageTaskResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateStoreImageTaskResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -5958,6 +6006,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeStaleSecurityGroupsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeStoreImageTasksMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeStoreImageTasks");
+
+            var request = InstantiateClassGenerator.Execute<DescribeStoreImageTasksRequest>();
+            var marshaller = new DescribeStoreImageTasksRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeStoreImageTasksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeStoreImageTasksResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

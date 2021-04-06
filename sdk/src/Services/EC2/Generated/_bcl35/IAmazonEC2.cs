@@ -2187,7 +2187,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Initiates the copy of an AMI. You can copy an AMI from one Region to another, or from
         /// a Region to an AWS Outpost. You can't copy an AMI from an Outpost to a Region, from
-        /// one Outpost to another, or within the same Outpost.
+        /// one Outpost to another, or within the same Outpost. To copy an AMI to another partition,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
         /// 
         ///  
         /// <para>
@@ -2208,7 +2209,7 @@ namespace Amazon.EC2
         /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud
         /// User Guide</i>.
         /// </para>
-        ///   
+        ///  
         /// <para>
         /// For more information about the prerequisites and limits when copying an AMI, see <a
         /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
@@ -3915,6 +3916,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateRestoreImageTask
+
+
+        /// <summary>
+        /// Starts a task that restores an AMI from an S3 object that was previously created by
+        /// using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To use this API, you must have the required permissions. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
+        /// and restore an AMI using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreImageTask service method.</param>
+        /// 
+        /// <returns>The response from the CreateRestoreImageTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask">REST API Reference for CreateRestoreImageTask Operation</seealso>
+        CreateRestoreImageTaskResponse CreateRestoreImageTask(CreateRestoreImageTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRestoreImageTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreImageTask operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRestoreImageTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask">REST API Reference for CreateRestoreImageTask Operation</seealso>
+        IAsyncResult BeginCreateRestoreImageTask(CreateRestoreImageTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRestoreImageTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRestoreImageTask.</param>
+        /// 
+        /// <returns>Returns a  CreateRestoreImageTaskResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask">REST API Reference for CreateRestoreImageTask Operation</seealso>
+        CreateRestoreImageTaskResponse EndCreateRestoreImageTask(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateRoute
 
 
@@ -4288,6 +4343,59 @@ namespace Amazon.EC2
         /// <returns>Returns a  CreateSpotDatafeedSubscriptionResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">REST API Reference for CreateSpotDatafeedSubscription Operation</seealso>
         CreateSpotDatafeedSubscriptionResponse EndCreateSpotDatafeedSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateStoreImageTask
+
+
+        /// <summary>
+        /// Stores an AMI as a single object in an S3 bucket.
+        /// 
+        ///  
+        /// <para>
+        /// To use this API, you must have the required permissions. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
+        /// and restore an AMI using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStoreImageTask service method.</param>
+        /// 
+        /// <returns>The response from the CreateStoreImageTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask">REST API Reference for CreateStoreImageTask Operation</seealso>
+        CreateStoreImageTaskResponse CreateStoreImageTask(CreateStoreImageTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStoreImageTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStoreImageTask operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStoreImageTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask">REST API Reference for CreateStoreImageTask Operation</seealso>
+        IAsyncResult BeginCreateStoreImageTask(CreateStoreImageTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateStoreImageTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStoreImageTask.</param>
+        /// 
+        /// <returns>Returns a  CreateStoreImageTaskResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask">REST API Reference for CreateStoreImageTask Operation</seealso>
+        CreateStoreImageTaskResponse EndCreateStoreImageTask(IAsyncResult asyncResult);
 
         #endregion
         
@@ -13012,6 +13120,72 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeStaleSecurityGroupsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">REST API Reference for DescribeStaleSecurityGroups Operation</seealso>
         DescribeStaleSecurityGroupsResponse EndDescribeStaleSecurityGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeStoreImageTasks
+
+
+        /// <summary>
+        /// Describes the progress of the AMI store tasks. You can describe the store tasks for
+        /// specified AMIs. If you don't specify the AMIs, you get a paginated list of store tasks
+        /// from the last 31 days.
+        /// 
+        ///  
+        /// <para>
+        /// For each AMI task, the response indicates if the task is <code>InProgress</code>,
+        /// <code>Completed</code>, or <code>Failed</code>. For tasks <code>InProgress</code>,
+        /// the response shows the estimated progress as a percentage.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tasks are listed in reverse chronological order. Currently, only tasks from the past
+        /// 31 days can be viewed.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this API, you must have the required permissions. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
+        /// and restore an AMI using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStoreImageTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStoreImageTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks">REST API Reference for DescribeStoreImageTasks Operation</seealso>
+        DescribeStoreImageTasksResponse DescribeStoreImageTasks(DescribeStoreImageTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStoreImageTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStoreImageTasks operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStoreImageTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks">REST API Reference for DescribeStoreImageTasks Operation</seealso>
+        IAsyncResult BeginDescribeStoreImageTasks(DescribeStoreImageTasksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStoreImageTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStoreImageTasks.</param>
+        /// 
+        /// <returns>Returns a  DescribeStoreImageTasksResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks">REST API Reference for DescribeStoreImageTasks Operation</seealso>
+        DescribeStoreImageTasksResponse EndDescribeStoreImageTasks(IAsyncResult asyncResult);
 
         #endregion
         
