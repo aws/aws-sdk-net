@@ -138,9 +138,13 @@ namespace Amazon.Cloud9.Model
         /// Gets and sets the property ImageId. 
         /// <para>
         /// The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance.
-        /// You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager
-        /// (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value
-        /// in the request. 
+        /// To choose an AMI for the instance, you must specify a valid AMI alias or a valid AWS
+        /// Systems Manager (SSM) path.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default AMI is used if the parameter isn't explicitly assigned a value in the
+        /// request. 
         /// </para>
         ///  
         /// <para>
@@ -148,15 +152,15 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Amazon Linux 2: <code>amazonlinux-2-x86_64</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Amazon Linux (default): <code>amazonlinux-1-x86_64</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -164,17 +168,17 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
+        /// </b> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
         /// 
         /// </para>
         ///  </li> </ul>
