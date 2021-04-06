@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribePatchGroupStateResponse : AmazonWebServiceResponse
     {
         private int? _instances;
+        private int? _instancesWithCriticalNonCompliantPatches;
         private int? _instancesWithFailedPatches;
         private int? _instancesWithInstalledOtherPatches;
         private int? _instancesWithInstalledPatches;
@@ -41,6 +42,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _instancesWithInstalledRejectedPatches;
         private int? _instancesWithMissingPatches;
         private int? _instancesWithNotApplicablePatches;
+        private int? _instancesWithOtherNonCompliantPatches;
+        private int? _instancesWithSecurityNonCompliantPatches;
         private int? _instancesWithUnreportedNotApplicablePatches;
 
         /// <summary>
@@ -59,6 +62,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstances()
         {
             return this._instances.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancesWithCriticalNonCompliantPatches. 
+        /// <para>
+        /// The number of instances where patches that are specified as "Critical" for compliance
+        /// reporting in the patch baseline are not installed. These patches might be missing,
+        /// have failed installation, were rejected, or were installed but awaiting a required
+        /// instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+        /// </para>
+        /// </summary>
+        public int InstancesWithCriticalNonCompliantPatches
+        {
+            get { return this._instancesWithCriticalNonCompliantPatches.GetValueOrDefault(); }
+            set { this._instancesWithCriticalNonCompliantPatches = value; }
+        }
+
+        // Check to see if InstancesWithCriticalNonCompliantPatches property is set
+        internal bool IsSetInstancesWithCriticalNonCompliantPatches()
+        {
+            return this._instancesWithCriticalNonCompliantPatches.HasValue; 
         }
 
         /// <summary>
@@ -194,6 +218,47 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstancesWithNotApplicablePatches()
         {
             return this._instancesWithNotApplicablePatches.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancesWithOtherNonCompliantPatches. 
+        /// <para>
+        /// The number of instances with patches installed that are specified as other than "Critical"
+        /// or "Security" but are not compliant with the patch baseline. The status of these instances
+        /// is NON_COMPLIANT.
+        /// </para>
+        /// </summary>
+        public int InstancesWithOtherNonCompliantPatches
+        {
+            get { return this._instancesWithOtherNonCompliantPatches.GetValueOrDefault(); }
+            set { this._instancesWithOtherNonCompliantPatches = value; }
+        }
+
+        // Check to see if InstancesWithOtherNonCompliantPatches property is set
+        internal bool IsSetInstancesWithOtherNonCompliantPatches()
+        {
+            return this._instancesWithOtherNonCompliantPatches.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancesWithSecurityNonCompliantPatches. 
+        /// <para>
+        /// The number of instances where patches that are specified as "Security" in a patch
+        /// advisory are not installed. These patches might be missing, have failed installation,
+        /// were rejected, or were installed but awaiting a required instance reboot. The status
+        /// of these instances is <code>NON_COMPLIANT</code>.
+        /// </para>
+        /// </summary>
+        public int InstancesWithSecurityNonCompliantPatches
+        {
+            get { return this._instancesWithSecurityNonCompliantPatches.GetValueOrDefault(); }
+            set { this._instancesWithSecurityNonCompliantPatches = value; }
+        }
+
+        // Check to see if InstancesWithSecurityNonCompliantPatches property is set
+        internal bool IsSetInstancesWithSecurityNonCompliantPatches()
+        {
+            return this._instancesWithSecurityNonCompliantPatches.HasValue; 
         }
 
         /// <summary>

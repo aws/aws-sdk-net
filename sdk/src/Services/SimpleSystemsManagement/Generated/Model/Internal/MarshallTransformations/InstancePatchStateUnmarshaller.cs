@@ -70,6 +70,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.BaselineId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CriticalNonCompliantCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CriticalNonCompliantCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailedCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -148,6 +154,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.OperationStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OtherNonCompliantCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OtherNonCompliantCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OwnerInformation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -164,6 +176,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RebootOption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecurityNonCompliantCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SecurityNonCompliantCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SnapshotId", targetDepth))

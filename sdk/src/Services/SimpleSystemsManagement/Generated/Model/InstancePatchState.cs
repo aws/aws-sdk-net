@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class InstancePatchState
     {
         private string _baselineId;
+        private int? _criticalNonCompliantCount;
         private int? _failedCount;
         private int? _installedCount;
         private int? _installedOtherCount;
@@ -49,9 +50,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         private PatchOperationType _operation;
         private DateTime? _operationEndTime;
         private DateTime? _operationStartTime;
+        private int? _otherNonCompliantCount;
         private string _ownerInformation;
         private string _patchGroup;
         private RebootOption _rebootOption;
+        private int? _securityNonCompliantCount;
         private string _snapshotId;
         private int? _unreportedNotApplicableCount;
 
@@ -72,6 +75,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetBaselineId()
         {
             return this._baselineId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CriticalNonCompliantCount. 
+        /// <para>
+        /// The number of instances where patches that are specified as "Critical" for compliance
+        /// reporting in the patch baseline are not installed. These patches might be missing,
+        /// have failed installation, were rejected, or were installed but awaiting a required
+        /// instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+        /// </para>
+        /// </summary>
+        public int CriticalNonCompliantCount
+        {
+            get { return this._criticalNonCompliantCount.GetValueOrDefault(); }
+            set { this._criticalNonCompliantCount = value; }
+        }
+
+        // Check to see if CriticalNonCompliantCount property is set
+        internal bool IsSetCriticalNonCompliantCount()
+        {
+            return this._criticalNonCompliantCount.HasValue; 
         }
 
         /// <summary>
@@ -341,6 +365,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OtherNonCompliantCount. 
+        /// <para>
+        /// The number of instances with patches installed that are specified as other than "Critical"
+        /// or "Security" but are not compliant with the patch baseline. The status of these instances
+        /// is NON_COMPLIANT.
+        /// </para>
+        /// </summary>
+        public int OtherNonCompliantCount
+        {
+            get { return this._otherNonCompliantCount.GetValueOrDefault(); }
+            set { this._otherNonCompliantCount = value; }
+        }
+
+        // Check to see if OtherNonCompliantCount property is set
+        internal bool IsSetOtherNonCompliantCount()
+        {
+            return this._otherNonCompliantCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OwnerInformation. 
         /// <para>
         /// Placeholder information. This field will always be empty in the current release of
@@ -413,6 +457,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRebootOption()
         {
             return this._rebootOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityNonCompliantCount. 
+        /// <para>
+        /// The number of instances where patches that are specified as "Security" in a patch
+        /// advisory are not installed. These patches might be missing, have failed installation,
+        /// were rejected, or were installed but awaiting a required instance reboot. The status
+        /// of these instances is <code>NON_COMPLIANT</code>.
+        /// </para>
+        /// </summary>
+        public int SecurityNonCompliantCount
+        {
+            get { return this._securityNonCompliantCount.GetValueOrDefault(); }
+            set { this._securityNonCompliantCount = value; }
+        }
+
+        // Check to see if SecurityNonCompliantCount property is set
+        internal bool IsSetSecurityNonCompliantCount()
+        {
+            return this._securityNonCompliantCount.HasValue; 
         }
 
         /// <summary>

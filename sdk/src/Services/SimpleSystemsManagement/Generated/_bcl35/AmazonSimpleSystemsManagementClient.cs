@@ -5099,6 +5099,13 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Returns detailed information about command execution for an invocation or plugin.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>GetCommandInvocation</code> only gives the execution status of a plugin in
+        /// a document. To get the command execution status on a specific instance, use <a>ListCommandInvocations</a>.
+        /// To get the command execution status across instances, use <a>ListCommands</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCommandInvocation service method.</param>
         /// 
@@ -6672,8 +6679,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't delete a parameter label. If you no longer want to use a parameter label,
-        /// then you must move it to a different version of a parameter.
+        /// If you no longer want to use a parameter label, then you can either delete it or move
+        /// it to a different version of a parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9734,6 +9741,73 @@ namespace Amazon.SimpleSystemsManagement
         public virtual TerminateSessionResponse EndTerminateSession(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UnlabelParameterVersion
+
+        /// <summary>
+        /// Remove a label or labels from a parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnlabelParameterVersion service method.</param>
+        /// 
+        /// <returns>The response from the UnlabelParameterVersion service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
+        /// The parameter could not be found. Verify the name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
+        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">REST API Reference for UnlabelParameterVersion Operation</seealso>
+        public virtual UnlabelParameterVersionResponse UnlabelParameterVersion(UnlabelParameterVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlabelParameterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlabelParameterVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UnlabelParameterVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnlabelParameterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnlabelParameterVersion operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnlabelParameterVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">REST API Reference for UnlabelParameterVersion Operation</seealso>
+        public virtual IAsyncResult BeginUnlabelParameterVersion(UnlabelParameterVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlabelParameterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlabelParameterVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UnlabelParameterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnlabelParameterVersion.</param>
+        /// 
+        /// <returns>Returns a  UnlabelParameterVersionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">REST API Reference for UnlabelParameterVersion Operation</seealso>
+        public virtual UnlabelParameterVersionResponse EndUnlabelParameterVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UnlabelParameterVersionResponse>(asyncResult);
         }
 
         #endregion

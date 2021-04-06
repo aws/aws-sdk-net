@@ -4852,6 +4852,13 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Returns detailed information about command execution for an invocation or plugin.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>GetCommandInvocation</code> only gives the execution status of a plugin in
+        /// a document. To get the command execution status on a specific instance, use <a>ListCommandInvocations</a>.
+        /// To get the command execution status across instances, use <a>ListCommands</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCommandInvocation service method.</param>
         /// 
@@ -4897,6 +4904,13 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Returns detailed information about command execution for an invocation or plugin.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>GetCommandInvocation</code> only gives the execution status of a plugin in
+        /// a document. To get the command execution status on a specific instance, use <a>ListCommandInvocations</a>.
+        /// To get the command execution status across instances, use <a>ListCommands</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCommandInvocation service method.</param>
         /// <param name="cancellationToken">
@@ -6200,8 +6214,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't delete a parameter label. If you no longer want to use a parameter label,
-        /// then you must move it to a different version of a parameter.
+        /// If you no longer want to use a parameter label, then you can either delete it or move
+        /// it to a different version of a parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6275,8 +6289,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't delete a parameter label. If you no longer want to use a parameter label,
-        /// then you must move it to a different version of a parameter.
+        /// If you no longer want to use a parameter label, then you can either delete it or move
+        /// it to a different version of a parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9529,6 +9543,60 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
         Task<TerminateSessionResponse> TerminateSessionAsync(TerminateSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UnlabelParameterVersion
+
+
+        /// <summary>
+        /// Remove a label or labels from a parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnlabelParameterVersion service method.</param>
+        /// 
+        /// <returns>The response from the UnlabelParameterVersion service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
+        /// The parameter could not be found. Verify the name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
+        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">REST API Reference for UnlabelParameterVersion Operation</seealso>
+        UnlabelParameterVersionResponse UnlabelParameterVersion(UnlabelParameterVersionRequest request);
+
+
+
+        /// <summary>
+        /// Remove a label or labels from a parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnlabelParameterVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UnlabelParameterVersion service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
+        /// The parameter could not be found. Verify the name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
+        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">REST API Reference for UnlabelParameterVersion Operation</seealso>
+        Task<UnlabelParameterVersionResponse> UnlabelParameterVersionAsync(UnlabelParameterVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

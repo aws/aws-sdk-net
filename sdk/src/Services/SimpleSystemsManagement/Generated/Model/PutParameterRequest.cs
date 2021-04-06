@@ -248,7 +248,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Overwrite. 
         /// <para>
-        /// Overwrite an existing parameter. If not specified, will default to "false".
+        /// Overwrite an existing parameter. The default value is 'false'.
         /// </para>
         /// </summary>
         public bool Overwrite

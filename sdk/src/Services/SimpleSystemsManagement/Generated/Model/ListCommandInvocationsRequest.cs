@@ -82,7 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Details. 
         /// <para>
         /// (Optional) If set this returns the response of the command executions and any command
-        /// output. By default this is set to False. 
+        /// output. The default value is 'false'. 
         /// </para>
         /// </summary>
         public bool Details

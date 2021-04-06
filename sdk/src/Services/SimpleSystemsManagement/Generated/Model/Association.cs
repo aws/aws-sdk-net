@@ -192,7 +192,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A cron expression that specifies a schedule when the association runs.
+        /// A cron expression that specifies a schedule when the association runs. The schedule
+        /// runs in Coordinated Universal Time (UTC).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

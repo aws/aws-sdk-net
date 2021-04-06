@@ -36,14 +36,36 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class StartChangeRequestExecutionRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _changeDetails;
         private string _changeRequestName;
         private string _clientToken;
         private string _documentName;
         private string _documentVersion;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private List<Runbook> _runbooks = new List<Runbook>();
+        private DateTime? _scheduledEndTime;
         private DateTime? _scheduledTime;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property ChangeDetails. 
+        /// <para>
+        /// User-provided details about the change. If no details are provided, content specified
+        /// in the <b>Template information</b> section of the associated change template is added.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32768)]
+        public string ChangeDetails
+        {
+            get { return this._changeDetails; }
+            set { this._changeDetails = value; }
+        }
+
+        // Check to see if ChangeDetails property is set
+        internal bool IsSetChangeDetails()
+        {
+            return this._changeDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChangeRequestName. 
@@ -165,6 +187,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRunbooks()
         {
             return this._runbooks != null && this._runbooks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledEndTime. 
+        /// <para>
+        /// The time that the requester expects the runbook workflow related to the change request
+        /// to complete. The time is an estimate only that the requester provides for reviewers.
+        /// </para>
+        /// </summary>
+        public DateTime ScheduledEndTime
+        {
+            get { return this._scheduledEndTime.GetValueOrDefault(); }
+            set { this._scheduledEndTime = value; }
+        }
+
+        // Check to see if ScheduledEndTime property is set
+        internal bool IsSetScheduledEndTime()
+        {
+            return this._scheduledEndTime.HasValue; 
         }
 
         /// <summary>
