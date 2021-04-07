@@ -322,6 +322,52 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
         
+        #region  CancelPolicyGeneration
+
+        internal virtual CancelPolicyGenerationResponse CancelPolicyGeneration(CancelPolicyGenerationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelPolicyGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelPolicyGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<CancelPolicyGenerationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels the requested policy generation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelPolicyGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelPolicyGeneration service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CancelPolicyGeneration">REST API Reference for CancelPolicyGeneration Operation</seealso>
+        public virtual Task<CancelPolicyGenerationResponse> CancelPolicyGenerationAsync(CancelPolicyGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelPolicyGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelPolicyGenerationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelPolicyGenerationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAccessPreview
 
         internal virtual CreateAccessPreviewResponse CreateAccessPreview(CreateAccessPreviewRequest request)
@@ -843,6 +889,52 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
         
+        #region  GetGeneratedPolicy
+
+        internal virtual GetGeneratedPolicyResponse GetGeneratedPolicy(GetGeneratedPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGeneratedPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGeneratedPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetGeneratedPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the policy that was generated using <code>StartPolicyGeneration</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGeneratedPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGeneratedPolicy service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetGeneratedPolicy">REST API Reference for GetGeneratedPolicy Operation</seealso>
+        public virtual Task<GetGeneratedPolicyResponse> GetGeneratedPolicyAsync(GetGeneratedPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGeneratedPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGeneratedPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGeneratedPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAccessPreviewFindings
 
         internal virtual ListAccessPreviewFindingsResponse ListAccessPreviewFindings(ListAccessPreviewFindingsRequest request)
@@ -1142,6 +1234,52 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
         
+        #region  ListPolicyGenerations
+
+        internal virtual ListPolicyGenerationsResponse ListPolicyGenerations(ListPolicyGenerationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPolicyGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGenerationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyGenerationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all of the policy generations requested in the last seven days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGenerations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicyGenerations service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListPolicyGenerations">REST API Reference for ListPolicyGenerations Operation</seealso>
+        public virtual Task<ListPolicyGenerationsResponse> ListPolicyGenerationsAsync(ListPolicyGenerationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPolicyGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGenerationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPolicyGenerationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1187,6 +1325,58 @@ namespace Amazon.AccessAnalyzer
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartPolicyGeneration
+
+        internal virtual StartPolicyGenerationResponse StartPolicyGeneration(StartPolicyGenerationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPolicyGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPolicyGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<StartPolicyGenerationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts the policy generation request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPolicyGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartPolicyGeneration service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ConflictException">
+        /// A conflict exception error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ServiceQuotaExceededException">
+        /// Service quote met error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartPolicyGeneration">REST API Reference for StartPolicyGeneration Operation</seealso>
+        public virtual Task<StartPolicyGenerationResponse> StartPolicyGenerationAsync(StartPolicyGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPolicyGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPolicyGenerationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartPolicyGenerationResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -84,6 +84,14 @@ namespace Amazon.AccessAnalyzer.Model
         }
 
         /// <summary>
+        /// Paginator for ListPolicyGenerations operation
+        ///</summary>
+        public IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request) 
+        {
+            return new ListPolicyGenerationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ValidatePolicy operation
         ///</summary>
         public IValidatePolicyPaginator ValidatePolicy(ValidatePolicyRequest request) 

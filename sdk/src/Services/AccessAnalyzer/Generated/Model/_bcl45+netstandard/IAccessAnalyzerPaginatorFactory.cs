@@ -56,6 +56,11 @@ namespace Amazon.AccessAnalyzer.Model
         IListFindingsPaginator ListFindings(ListFindingsRequest request);
 
         /// <summary>
+        /// Paginator for ListPolicyGenerations operation
+        ///</summary>
+        IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request);
+
+        /// <summary>
         /// Paginator for ValidatePolicy operation
         ///</summary>
         IValidatePolicyPaginator ValidatePolicy(ValidatePolicyRequest request);

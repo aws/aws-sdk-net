@@ -461,6 +461,122 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type JobErrorCode.
+    /// </summary>
+    public class JobErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHORIZATION_ERROR for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode AUTHORIZATION_ERROR = new JobErrorCode("AUTHORIZATION_ERROR");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND_ERROR for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode RESOURCE_NOT_FOUND_ERROR = new JobErrorCode("RESOURCE_NOT_FOUND_ERROR");
+        /// <summary>
+        /// Constant SERVICE_ERROR for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode SERVICE_ERROR = new JobErrorCode("SERVICE_ERROR");
+        /// <summary>
+        /// Constant SERVICE_QUOTA_EXCEEDED_ERROR for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode SERVICE_QUOTA_EXCEEDED_ERROR = new JobErrorCode("SERVICE_QUOTA_EXCEEDED_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobErrorCode FindValue(string value)
+        {
+            return FindValue<JobErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobStatus.
+    /// </summary>
+    public class JobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for JobStatus
+        /// </summary>
+        public static readonly JobStatus CANCELED = new JobStatus("CANCELED");
+        /// <summary>
+        /// Constant FAILED for JobStatus
+        /// </summary>
+        public static readonly JobStatus FAILED = new JobStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for JobStatus
+        /// </summary>
+        public static readonly JobStatus IN_PROGRESS = new JobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for JobStatus
+        /// </summary>
+        public static readonly JobStatus SUCCEEDED = new JobStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobStatus FindValue(string value)
+        {
+            return FindValue<JobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KmsGrantOperation.
     /// </summary>
     public class KmsGrantOperation : ConstantClass
