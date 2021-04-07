@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Add new service - Application Migration Service.",
+  "generate-client-constructors": true
+}
