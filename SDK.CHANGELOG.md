@@ -1,3 +1,20 @@
+### 3.7.10.0 (2021-04-07 18:13 UTC)
+* AccessAnalyzer (3.7.1.0)
+	* IAM Access Analyzer now analyzes your CloudTrail events to identify actions and services that have been used by an IAM entity (user or role) and generates an IAM policy that is based on that activity.
+* ElastiCache (3.7.1.0)
+	* This release adds tagging support for all AWS ElastiCache resources except Global Replication Groups.
+* IVS (3.7.1.0)
+	* This release adds support for the Auto-Record to S3 feature. Amazon IVS now enables you to save your live video to Amazon S3.
+* Mgn (3.7.0.0)
+	* Add new service - Application Migration Service.
+* StorageGateway (3.7.1.0)
+	* File Gateway APIs now support FSx for Windows as a cloud storage.
+* Core 3.7.0.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.9.0 (2021-04-06 18:13 UTC)
 * Cloud9 (3.7.1.4)
 	* Documentation updates for Cloud9
