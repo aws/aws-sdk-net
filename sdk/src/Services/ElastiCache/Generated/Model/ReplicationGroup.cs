@@ -249,8 +249,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupInfo. 
         /// <para>
-        /// The name of the Global Datastore and role of this replication group in the Global
-        /// Datastore.
+        /// The name of the Global datastore and role of this replication group in the Global
+        /// datastore.
         /// </para>
         /// </summary>
         public GlobalReplicationGroupInfo GlobalReplicationGroupInfo

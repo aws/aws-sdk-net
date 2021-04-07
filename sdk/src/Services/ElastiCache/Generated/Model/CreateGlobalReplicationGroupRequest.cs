@@ -38,7 +38,7 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.
+    /// The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global datastore.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupDescription. 
         /// <para>
-        /// Provides details of the Global Datastore
+        /// Provides details of the Global datastore
         /// </para>
         /// </summary>
         public string GlobalReplicationGroupDescription
@@ -74,18 +74,18 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupIdSuffix. 
         /// <para>
-        /// The suffix name of a Global Datastore. Amazon ElastiCache automatically applies a
-        /// prefix to the Global Datastore ID when it is created. Each AWS Region has its own
-        /// prefix. For instance, a Global Datastore ID created in the US-West-1 region will begin
+        /// The suffix name of a Global datastore. Amazon ElastiCache automatically applies a
+        /// prefix to the Global datastore ID when it is created. Each AWS Region has its own
+        /// prefix. For instance, a Global datastore ID created in the US-West-1 region will begin
         /// with "dsdfu" along with the suffix name you provide. The suffix, combined with the
-        /// auto-generated prefix, guarantees uniqueness of the Global Datastore name across multiple
+        /// auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple
         /// regions. 
         /// </para>
         ///  
         /// <para>
-        /// For a full list of AWS Regions and their respective Global Datastore iD prefixes,
+        /// For a full list of AWS Regions and their respective Global datastore iD prefixes,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
-        /// the AWS CLI with Global Datastores </a>.
+        /// the AWS CLI with Global datastores </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

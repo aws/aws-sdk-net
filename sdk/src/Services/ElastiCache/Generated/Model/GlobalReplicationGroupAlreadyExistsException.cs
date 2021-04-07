@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The Global Datastore name already exists.
+    /// The Global datastore name already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

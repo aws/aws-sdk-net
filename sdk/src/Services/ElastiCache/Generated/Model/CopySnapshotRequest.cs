@@ -140,6 +140,7 @@ namespace Amazon.ElastiCache.Model
     {
         private string _kmsKeyId;
         private string _sourceSnapshotName;
+        private List<Tag> _tags = new List<Tag>();
         private string _targetBucket;
         private string _targetSnapshotName;
 
@@ -181,6 +182,25 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+        /// must be accompanied by a tag value, although null is accepted.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetBucket. 
         /// <para>
         /// The Amazon S3 bucket to which the snapshot is exported. This parameter is used only
@@ -189,13 +209,13 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// When using this parameter to export a snapshot, be sure Amazon ElastiCache has the
-        /// needed permissions to this S3 bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+        /// needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache
         /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
         /// a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
         /// </para>
         /// </summary>

@@ -62,6 +62,22 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
                 }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    {
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetUserGroupId())
                 {
                     request.Parameters.Add("UserGroupId", StringUtils.FromString(publicRequest.UserGroupId));

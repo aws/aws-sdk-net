@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DecreaseNodeGroupsInGlobalReplicationGroup operation.
-    /// Decreases the number of node groups in a Global Datastore
+    /// Decreases the number of node groups in a Global datastore
     /// </summary>
     public partial class DecreaseNodeGroupsInGlobalReplicationGroupRequest : AmazonElastiCacheRequest
     {
@@ -105,7 +105,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupId. 
         /// <para>
-        /// The name of the Global Datastore
+        /// The name of the Global datastore
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

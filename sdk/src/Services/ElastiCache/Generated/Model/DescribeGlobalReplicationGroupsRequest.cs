@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the DescribeGlobalReplicationGroups operation.
     /// Returns information about a particular global replication group. If no identifier
-    /// is specified, returns information about all Global Datastores.
+    /// is specified, returns information about all Global datastores.
     /// </summary>
     public partial class DescribeGlobalReplicationGroupsRequest : AmazonElastiCacheRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupId. 
         /// <para>
-        /// The name of the Global Datastore
+        /// The name of the Global datastore
         /// </para>
         /// </summary>
         public string GlobalReplicationGroupId
@@ -102,7 +102,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ShowMemberInfo. 
         /// <para>
-        /// Returns the list of members that comprise the Global Datastore.
+        /// Returns the list of members that comprise the Global datastore.
         /// </para>
         /// </summary>
         public bool ShowMemberInfo

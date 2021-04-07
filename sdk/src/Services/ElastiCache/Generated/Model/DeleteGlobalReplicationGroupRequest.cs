@@ -30,23 +30,24 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGlobalReplicationGroup operation.
-    /// Deleting a Global Datastore is a two-step process: 
+    /// Deleting a Global datastore is a two-step process: 
     /// 
     ///  <ul> <li> 
     /// <para>
     /// First, you must <a>DisassociateGlobalReplicationGroup</a> to remove the secondary
-    /// clusters in the Global Datastore.
+    /// clusters in the Global datastore.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Once the Global Datastore contains only the primary cluster, you can use DeleteGlobalReplicationGroup
-    /// API to delete the Global Datastore while retainining the primary cluster using Retain…=
-    /// true.
+    /// Once the Global datastore contains only the primary cluster, you can use the <code>DeleteGlobalReplicationGroup</code>
+    /// API to delete the Global datastore while retainining the primary cluster using <code>RetainPrimaryReplicationGroup=true</code>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Since the Global Datastore has only a primary cluster, you can delete the Global Datastore
-    /// while retaining the primary by setting <code>RetainPrimaryCluster=true</code>.
+    /// while retaining the primary by setting <code>RetainPrimaryReplicationGroup=true</code>.
+    /// The primary cluster is never deleted when deleting a Global Datastore. It can only
+    /// be deleted when it no longer is associated with any Global Datastore.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +63,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupId. 
         /// <para>
-        /// The name of the Global Datastore
+        /// The name of the Global datastore
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

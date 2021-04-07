@@ -136,6 +136,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     return SnapshotQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TagQuotaPerResourceExceeded"))
+                {
+                    return TagQuotaPerResourceExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonElastiCacheException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

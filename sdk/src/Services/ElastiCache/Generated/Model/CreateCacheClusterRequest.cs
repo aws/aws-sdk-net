@@ -894,7 +894,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of cost allocation tags to be added to this resource.
+        /// A list of tags to be added to this resource.
         /// </para>
         /// </summary>
         public List<Tag> Tags

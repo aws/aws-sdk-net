@@ -162,6 +162,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TagQuotaPerResourceExceeded"))
+                {
+                    return TagQuotaPerResourceExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UserGroupAlreadyExists"))
                 {
                     return UserGroupAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

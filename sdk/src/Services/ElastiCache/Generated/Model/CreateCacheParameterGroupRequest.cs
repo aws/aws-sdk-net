@@ -57,6 +57,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupFamily;
         private string _cacheParameterGroupName;
         private string _description;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -138,6 +139,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+        /// must be accompanied by a tag value, although null is accepted.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

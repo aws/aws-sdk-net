@@ -59,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupId. 
         /// <para>
-        /// The name of the Global Datastore
+        /// The name of the Global datastore
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        /// A list of cost allocation tags as key-value pairs.
+        /// A list of tags as key-value pairs.
         /// </para>
         /// </summary>
         public List<Tag> TagList

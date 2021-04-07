@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// A member of a Global Datastore. It contains the Replication Group Id, the AWS region
+    /// A member of a Global datastore. It contains the Replication Group Id, the AWS region
     /// and the role of the replication group.
     /// </summary>
     public partial class GlobalReplicationGroupMember
@@ -61,7 +61,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ReplicationGroupId. 
         /// <para>
-        /// The replication group id of the Global Datastore member.
+        /// The replication group id of the Global datastore member.
         /// </para>
         /// </summary>
         public string ReplicationGroupId
@@ -79,7 +79,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ReplicationGroupRegion. 
         /// <para>
-        /// The AWS region of the Global Datastore member.
+        /// The AWS region of the Global datastore member.
         /// </para>
         /// </summary>
         public string ReplicationGroupRegion

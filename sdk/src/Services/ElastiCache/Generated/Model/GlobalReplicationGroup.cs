@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore,
+    /// The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
     /// which is what you use to associate a secondary cluster.
     /// </para>
     ///  </li> </ul>
@@ -130,7 +130,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
-        /// The cache node type of the Global Datastore
+        /// The cache node type of the Global datastore
         /// </para>
         /// </summary>
         public string CacheNodeType
@@ -148,7 +148,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ClusterEnabled. 
         /// <para>
-        /// A flag that indicates whether the Global Datastore is cluster enabled.
+        /// A flag that indicates whether the Global datastore is cluster enabled.
         /// </para>
         /// </summary>
         public bool ClusterEnabled
@@ -220,7 +220,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupDescription. 
         /// <para>
-        /// The optional description of the Global Datastore
+        /// The optional description of the Global datastore
         /// </para>
         /// </summary>
         public string GlobalReplicationGroupDescription
@@ -238,7 +238,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupId. 
         /// <para>
-        /// The name of the Global Datastore
+        /// The name of the Global datastore
         /// </para>
         /// </summary>
         public string GlobalReplicationGroupId
@@ -256,7 +256,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Members. 
         /// <para>
-        /// The replication groups that comprise the Global Datastore.
+        /// The replication groups that comprise the Global datastore.
         /// </para>
         /// </summary>
         public List<GlobalReplicationGroupMember> Members
@@ -274,7 +274,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Global Datastore
+        /// The status of the Global datastore
         /// </para>
         /// </summary>
         public string Status

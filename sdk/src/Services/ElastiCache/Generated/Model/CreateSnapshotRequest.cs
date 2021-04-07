@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         private string _kmsKeyId;
         private string _replicationGroupId;
         private string _snapshotName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
@@ -117,6 +118,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSnapshotName()
         {
             return this._snapshotName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+        /// must be accompanied by a tag value, although null is accepted.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

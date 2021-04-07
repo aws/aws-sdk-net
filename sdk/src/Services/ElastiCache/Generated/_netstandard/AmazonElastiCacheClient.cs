@@ -289,16 +289,23 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Adds up to 50 cost allocation tags to the named resource. A cost allocation tag is
-        /// a key-value pair where the key and value are case-sensitive. You can use cost allocation
-        /// tags to categorize and track your AWS costs.
+        /// A tag is a key-value pair where the key and value are case-sensitive. You can use
+        /// tags to categorize and track all your ElastiCache resources, with the exception of
+        /// global replication group. When you add or remove tags on replication groups, those
+        /// actions will be replicated to all nodes in the replication group. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// permissions</a>.
         /// 
         ///  
         /// <para>
-        ///  When you apply tags to your ElastiCache resources, AWS generates a cost allocation
-        /// report as a comma-separated value (CSV) file with your usage and costs aggregated
-        /// by your tags. You can apply tags that represent business categories (such as cost
-        /// centers, application names, or owners) to organize your costs across multiple services.
+        ///  For example, you can use cost-allocation tags to your ElastiCache resources, AWS
+        /// generates a cost allocation report as a comma-separated value (CSV) file with your
+        /// usage and costs aggregated by your tags. You can apply tags that represent business
+        /// categories (such as cost centers, application names, or owners) to organize your costs
+        /// across multiple services.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
         /// Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User Guide</i>.
         /// </para>
@@ -312,8 +319,28 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
+        /// The requested cache subnet group name does not refer to an existing cache subnet group.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidARNException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeNotFoundException">
+        /// The requested reserved cache node was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
@@ -322,6 +349,12 @@ namespace Amazon.ElastiCache
         /// The request cannot be processed because it would cause the resource to have more than
         /// the allowed number of tags. The maximum number of tags permitted on a resource is
         /// 50.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -666,6 +699,11 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum number of snapshots.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public virtual Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -828,6 +866,11 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">REST API Reference for CreateCacheParameterGroup Operation</seealso>
         public virtual Task<CreateCacheParameterGroupResponse> CreateCacheParameterGroupAsync(CreateCacheParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -882,6 +925,11 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">REST API Reference for CreateCacheSecurityGroup Operation</seealso>
         public virtual Task<CreateCacheSecurityGroupResponse> CreateCacheSecurityGroupAsync(CreateCacheSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -944,6 +992,11 @@ namespace Amazon.ElastiCache
         /// one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed
         /// on this service.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">REST API Reference for CreateCacheSubnetGroup Operation</seealso>
         public virtual Task<CreateCacheSubnetGroupResponse> CreateCacheSubnetGroupAsync(CreateCacheSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -978,7 +1031,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.
+        /// The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global datastore.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -994,7 +1047,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the CreateGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupAlreadyExistsException">
-        /// The Global Datastore name already exists.
+        /// The Global datastore name already exists.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -1040,7 +1093,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         /// This API can be used to create a standalone regional replication group or a secondary
-        /// replication group associated with a Global Datastore.
+        /// replication group associated with a Global datastore.
         /// </para>
         ///  
         /// <para>
@@ -1112,7 +1165,7 @@ namespace Amazon.ElastiCache
         /// per customer.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
-        /// The Global Datastore does not exist
+        /// The Global datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
@@ -1123,7 +1176,7 @@ namespace Amazon.ElastiCache
         /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available or in primary-only state.
+        /// The Global datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1241,6 +1294,11 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum number of snapshots.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1285,6 +1343,11 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserAlreadyExistsException">
         /// A user with this ID already exists.
@@ -1337,6 +1400,11 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserGroupAlreadyExistsException">
         /// The user group with this ID already exists.
         /// </exception>
@@ -1372,7 +1440,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Decreases the number of node groups in a Global Datastore
+        /// Decreases the number of node groups in a Global datastore
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DecreaseNodeGroupsInGlobalReplicationGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1381,10 +1449,10 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DecreaseNodeGroupsInGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
-        /// The Global Datastore does not exist
+        /// The Global datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available or in primary-only state.
+        /// The Global datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1752,23 +1820,24 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Deleting a Global Datastore is a two-step process: 
+        /// Deleting a Global datastore is a two-step process: 
         /// 
         ///  <ul> <li> 
         /// <para>
         /// First, you must <a>DisassociateGlobalReplicationGroup</a> to remove the secondary
-        /// clusters in the Global Datastore.
+        /// clusters in the Global datastore.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Once the Global Datastore contains only the primary cluster, you can use DeleteGlobalReplicationGroup
-        /// API to delete the Global Datastore while retainining the primary cluster using Retain…=
-        /// true.
+        /// Once the Global datastore contains only the primary cluster, you can use the <code>DeleteGlobalReplicationGroup</code>
+        /// API to delete the Global datastore while retainining the primary cluster using <code>RetainPrimaryReplicationGroup=true</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Since the Global Datastore has only a primary cluster, you can delete the Global Datastore
-        /// while retaining the primary by setting <code>RetainPrimaryCluster=true</code>.
+        /// while retaining the primary by setting <code>RetainPrimaryReplicationGroup=true</code>.
+        /// The primary cluster is never deleted when deleting a Global Datastore. It can only
+        /// be deleted when it no longer is associated with any Global Datastore.
         /// </para>
         ///  
         /// <para>
@@ -1783,10 +1852,10 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DeleteGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
-        /// The Global Datastore does not exist
+        /// The Global datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available or in primary-only state.
+        /// The Global datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -2617,7 +2686,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Returns information about a particular global replication group. If no identifier
-        /// is specified, returns information about all Global Datastores.
+        /// is specified, returns information about all Global datastores.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalReplicationGroups service method.</param>
         /// <param name="cancellationToken">
@@ -2626,7 +2695,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DescribeGlobalReplicationGroups service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
-        /// The Global Datastore does not exist
+        /// The Global datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -3145,7 +3214,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Remove a secondary cluster from the Global Datastore using the Global Datastore name.
+        /// Remove a secondary cluster from the Global datastore using the Global datastore name.
         /// The secondary cluster will no longer receive updates from the primary cluster, but
         /// will remain as a standalone cluster in that AWS region.
         /// </summary>
@@ -3156,10 +3225,10 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the DisassociateGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
-        /// The Global Datastore does not exist
+        /// The Global datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available or in primary-only state.
+        /// The Global datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -3203,10 +3272,10 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the FailoverGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
-        /// The Global Datastore does not exist
+        /// The Global datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available or in primary-only state.
+        /// The Global datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -3240,7 +3309,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Increase the number of node groups in the Global Datastore
+        /// Increase the number of node groups in the Global datastore
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the IncreaseNodeGroupsInGlobalReplicationGroup service method.</param>
         /// <param name="cancellationToken">
@@ -3249,10 +3318,10 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the IncreaseNodeGroupsInGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
-        /// The Global Datastore does not exist
+        /// The Global datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available or in primary-only state.
+        /// The Global datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -3415,20 +3484,21 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Lists all cost allocation tags currently on the named resource. A <code>cost allocation
-        /// tag</code> is a key-value pair where the key is case-sensitive and the value is optional.
-        /// You can use cost allocation tags to categorize and track your AWS costs.
+        /// Lists all tags currently on a named resource.
         /// 
+        ///  
+        /// <para>
+        ///  A tag is a key-value pair where the key and value are case-sensitive. You can use
+        /// tags to categorize and track all your ElastiCache resources, with the exception of
+        /// global replication group. When you add or remove tags on replication groups, those
+        /// actions will be replicated to all nodes in the replication group. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// permissions</a>.
+        /// </para>
         ///  
         /// <para>
         /// If the cluster is not in the <i>available</i> state, <code>ListTagsForResource</code>
         /// returns an error.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can have a maximum of 50 cost allocation tags on an ElastiCache resource. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Monitoring
-        /// Costs with Tags</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -3440,11 +3510,37 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
+        /// The requested cache subnet group name does not refer to an existing cache subnet group.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidARNException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeNotFoundException">
+        /// The requested reserved cache node was not found.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3564,7 +3660,7 @@ namespace Amazon.ElastiCache
         /// to occur.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available or in primary-only state.
+        /// The Global datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -3651,7 +3747,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Modifies the settings for a Global Datastore.
+        /// Modifies the settings for a Global datastore.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyGlobalReplicationGroup service method.</param>
         /// <param name="cancellationToken">
@@ -3660,10 +3756,10 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the ModifyGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
-        /// The Global Datastore does not exist
+        /// The Global datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available or in primary-only state.
+        /// The Global datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -3995,6 +4091,11 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodesOfferingNotFoundException">
         /// The requested cache node offering does not exist.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">REST API Reference for PurchaseReservedCacheNodesOffering Operation</seealso>
         public virtual Task<PurchaseReservedCacheNodesOfferingResponse> PurchaseReservedCacheNodesOfferingAsync(PurchaseReservedCacheNodesOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -4030,10 +4131,10 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the RebalanceSlotsInGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
-        /// The Global Datastore does not exist
+        /// The Global datastore does not exist
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available or in primary-only state.
+        /// The Global datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
@@ -4129,6 +4230,12 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Removes the tags identified by the <code>TagKeys</code> list from the named resource.
+        /// A tag is a key-value pair where the key and value are case-sensitive. You can use
+        /// tags to categorize and track all your ElastiCache resources, with the exception of
+        /// global replication group. When you add or remove tags on replication groups, those
+        /// actions will be replicated to all nodes in the replication group. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// permissions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// <param name="cancellationToken">
@@ -4139,14 +4246,40 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
         /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
+        /// The requested cache subnet group name does not refer to an existing cache subnet group.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidARNException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeNotFoundException">
+        /// The requested reserved cache node was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.TagNotFoundException">
         /// The requested tag was not found on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4194,7 +4327,7 @@ namespace Amazon.ElastiCache
         /// to occur.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
-        /// The Global Datastore is not available or in primary-only state.
+        /// The Global datastore is not available or in primary-only state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.

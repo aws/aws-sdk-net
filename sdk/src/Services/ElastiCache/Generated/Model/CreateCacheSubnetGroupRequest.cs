@@ -43,6 +43,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheSubnetGroupDescription;
         private string _cacheSubnetGroupName;
         private List<string> _subnetIds = new List<string>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property CacheSubnetGroupDescription. 
@@ -107,6 +108,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && this._subnetIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+        /// must be accompanied by a tag value, although null is accepted.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

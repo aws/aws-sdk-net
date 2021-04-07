@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The Global Datastore does not exist
+    /// The Global datastore does not exist
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

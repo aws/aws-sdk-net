@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyGlobalReplicationGroup operation.
-    /// Modifies the settings for a Global Datastore.
+    /// Modifies the settings for a Global datastore.
     /// </summary>
     public partial class ModifyGlobalReplicationGroupRequest : AmazonElastiCacheRequest
     {
@@ -85,7 +85,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
-        /// A valid cache node type that you want to scale this Global Datastore to.
+        /// A valid cache node type that you want to scale this Global datastore to.
         /// </para>
         /// </summary>
         public string CacheNodeType
@@ -122,7 +122,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The upgraded version of the cache engine to be run on the clusters in the Global Datastore.
+        /// The upgraded version of the cache engine to be run on the clusters in the Global datastore.
         /// 
         /// </para>
         /// </summary>
@@ -141,7 +141,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupDescription. 
         /// <para>
-        /// A description of the Global Datastore
+        /// A description of the Global datastore
         /// </para>
         /// </summary>
         public string GlobalReplicationGroupDescription
@@ -159,7 +159,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupId. 
         /// <para>
-        /// The name of the Global Datastore
+        /// The name of the Global datastore
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

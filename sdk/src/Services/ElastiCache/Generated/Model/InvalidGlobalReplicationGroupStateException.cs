@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The Global Datastore is not available or in primary-only state.
+    /// The Global datastore is not available or in primary-only state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

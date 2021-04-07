@@ -42,7 +42,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupId. 
         /// <para>
-        /// The name of the Global Datastore
+        /// The name of the Global datastore
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PrimaryRegion. 
         /// <para>
-        /// The AWS region of the primary cluster of the Global Datastore
+        /// The AWS region of the primary cluster of the Global datastore
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

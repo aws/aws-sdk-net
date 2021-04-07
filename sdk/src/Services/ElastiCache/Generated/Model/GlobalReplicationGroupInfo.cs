@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The name of the Global Datastore and role of this replication group in the Global
-    /// Datastore.
+    /// The name of the Global datastore and role of this replication group in the Global
+    /// datastore.
     /// </summary>
     public partial class GlobalReplicationGroupInfo
     {
@@ -40,7 +40,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupId. 
         /// <para>
-        /// The name of the Global Datastore
+        /// The name of the Global datastore
         /// </para>
         /// </summary>
         public string GlobalReplicationGroupId
@@ -58,7 +58,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property GlobalReplicationGroupMemberRole. 
         /// <para>
-        /// The role of the replication group in a Global Datastore. Can be primary or secondary.
+        /// The role of the replication group in a Global datastore. Can be primary or secondary.
         /// </para>
         /// </summary>
         public string GlobalReplicationGroupMemberRole
