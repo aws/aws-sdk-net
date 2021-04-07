@@ -99,6 +99,42 @@
     <pattern>^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AssociateFileSystemRequest.AuditDestinationARN</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AssociateFileSystemRequest.ClientToken</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AssociateFileSystemRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AssociateFileSystemRequest.LocationARN</property>
+    <min>8</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AssociateFileSystemRequest.Password</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[ -~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AssociateFileSystemRequest.UserName</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\w[\w\.\- ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AssociateFileSystemResponse.FileSystemAssociationARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.AttachVolumeRequest.DiskId</property>
     <min>1</min>
     <max>300</max>
@@ -917,6 +953,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DisassociateFileSystemRequest.FileSystemAssociationARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DisassociateFileSystemResponse.FileSystemAssociationARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.JoinDomainRequest.DomainName</property>
     <min>1</min>
     <max>1024</max>
@@ -980,6 +1026,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListFileSharesResponse.NextMarker</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListFileSystemAssociationsRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListFileSystemAssociationsRequest.Limit</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListFileSystemAssociationsRequest.Marker</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListFileSystemAssociationsResponse.Marker</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListFileSystemAssociationsResponse.NextMarker</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -1313,6 +1383,32 @@
     <property>Amazon.StorageGateway.Model.UpdateChapCredentialsResponse.TargetARN</property>
     <min>50</min>
     <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateFileSystemAssociationRequest.AuditDestinationARN</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateFileSystemAssociationRequest.FileSystemAssociationARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateFileSystemAssociationRequest.Password</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[ -~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateFileSystemAssociationRequest.UserName</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\w[\w\.\- ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateFileSystemAssociationResponse.FileSystemAssociationARN</property>
+    <min>50</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateGatewayInformationRequest.CloudWatchLogGroupARN</property>
@@ -1659,6 +1755,50 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.FileShareInfo.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileSystemAssociationInfo.AuditDestinationARN</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileSystemAssociationInfo.FileSystemAssociationARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileSystemAssociationInfo.FileSystemAssociationStatus</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileSystemAssociationInfo.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileSystemAssociationInfo.LocationARN</property>
+    <min>8</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileSystemAssociationSummary.FileSystemAssociationARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileSystemAssociationSummary.FileSystemAssociationId</property>
+    <min>10</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileSystemAssociationSummary.FileSystemAssociationStatus</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileSystemAssociationSummary.GatewayARN</property>
     <min>50</min>
     <max>500</max>
   </property-value-rule>

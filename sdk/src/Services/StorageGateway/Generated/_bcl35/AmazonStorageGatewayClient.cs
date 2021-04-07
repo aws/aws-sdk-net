@@ -549,7 +549,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Configures one or more gateway local disks as upload buffer for a specified gateway.
-        /// This operation is supported for the stored volume, cached volume and tape gateway
+        /// This operation is supported for the stored volume, cached volume, and tape gateway
         /// types.
         /// 
         ///  
@@ -758,6 +758,71 @@ namespace Amazon.StorageGateway
         public virtual AssignTapePoolResponse EndAssignTapePool(IAsyncResult asyncResult)
         {
             return EndInvoke<AssignTapePoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateFileSystem
+
+        /// <summary>
+        /// Associate an Amazon FSx file system with the Amazon FSx file gateway. After the association
+        /// process is complete, the file shares on the Amazon FSx file system are available for
+        /// access through the gateway. This operation only supports the Amazon FSx file gateway
+        /// type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFileSystem service method.</param>
+        /// 
+        /// <returns>The response from the AssociateFileSystem service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem">REST API Reference for AssociateFileSystem Operation</seealso>
+        public virtual AssociateFileSystemResponse AssociateFileSystem(AssociateFileSystemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateFileSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateFileSystemResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateFileSystemResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateFileSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFileSystem operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateFileSystem
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem">REST API Reference for AssociateFileSystem Operation</seealso>
+        public virtual IAsyncResult BeginAssociateFileSystem(AssociateFileSystemRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateFileSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateFileSystemResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateFileSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateFileSystem.</param>
+        /// 
+        /// <returns>Returns a  AssociateFileSystemResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem">REST API Reference for AssociateFileSystem Operation</seealso>
+        public virtual AssociateFileSystemResponse EndAssociateFileSystem(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateFileSystemResponse>(asyncResult);
         }
 
         #endregion
@@ -1207,7 +1272,7 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// AWS Storage Gateway provides the ability to back up point-in-time snapshots of your
-        /// data to Amazon Simple Storage (Amazon S3) for durable off-site recovery, as well as
+        /// data to Amazon Simple Storage (Amazon S3) for durable off-site recovery, and also
         /// import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute
         /// Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
         /// basis. This API enables you to take an ad hoc snapshot. For more information, see
@@ -2366,7 +2431,7 @@ namespace Amazon.StorageGateway
         #region  DescribeAvailabilityMonitorTest
 
         /// <summary>
-        /// Returns information about the most recent High Availability monitoring test that was
+        /// Returns information about the most recent high availability monitoring test that was
         /// performed on the host in a cluster. If a test isn't performed, the status and start
         /// time in the response would be null.
         /// </summary>
@@ -2784,6 +2849,69 @@ namespace Amazon.StorageGateway
         public virtual DescribeChapCredentialsResponse EndDescribeChapCredentials(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeChapCredentialsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeFileSystemAssociations
+
+        /// <summary>
+        /// Gets the file system association information. This operation is only supported for
+        /// Amazon FSx file gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFileSystemAssociations service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations">REST API Reference for DescribeFileSystemAssociations Operation</seealso>
+        public virtual DescribeFileSystemAssociationsResponse DescribeFileSystemAssociations(DescribeFileSystemAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFileSystemAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFileSystemAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFileSystemAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFileSystemAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemAssociations operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFileSystemAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations">REST API Reference for DescribeFileSystemAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeFileSystemAssociations(DescribeFileSystemAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFileSystemAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFileSystemAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFileSystemAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFileSystemAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeFileSystemAssociationsResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations">REST API Reference for DescribeFileSystemAssociations Operation</seealso>
+        public virtual DescribeFileSystemAssociationsResponse EndDescribeFileSystemAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFileSystemAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -3817,6 +3945,70 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  DisassociateFileSystem
+
+        /// <summary>
+        /// Disassociates an Amazon FSx file system from the specified gateway. After the disassociation
+        /// process finishes, the gateway can no longer access the Amazon FSx file system. This
+        /// operation is only supported in the Amazon FSx file gateway type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFileSystem service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFileSystem service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem">REST API Reference for DisassociateFileSystem Operation</seealso>
+        public virtual DisassociateFileSystemResponse DisassociateFileSystem(DisassociateFileSystemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFileSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFileSystemResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateFileSystemResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateFileSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFileSystem operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateFileSystem
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem">REST API Reference for DisassociateFileSystem Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateFileSystem(DisassociateFileSystemRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFileSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFileSystemResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateFileSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateFileSystem.</param>
+        /// 
+        /// <returns>Returns a  DisassociateFileSystemResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem">REST API Reference for DisassociateFileSystem Operation</seealso>
+        public virtual DisassociateFileSystemResponse EndDisassociateFileSystem(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateFileSystemResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  JoinDomain
 
         /// <summary>
@@ -4008,6 +4200,70 @@ namespace Amazon.StorageGateway
         public virtual ListFileSharesResponse EndListFileShares(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFileSharesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFileSystemAssociations
+
+        /// <summary>
+        /// Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains
+        /// a summary of a file system association. This operation is only supported for Amazon
+        /// FSx file gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFileSystemAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListFileSystemAssociations service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations">REST API Reference for ListFileSystemAssociations Operation</seealso>
+        public virtual ListFileSystemAssociationsResponse ListFileSystemAssociations(ListFileSystemAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFileSystemAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFileSystemAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFileSystemAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFileSystemAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFileSystemAssociations operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFileSystemAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations">REST API Reference for ListFileSystemAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListFileSystemAssociations(ListFileSystemAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFileSystemAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFileSystemAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFileSystemAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFileSystemAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListFileSystemAssociationsResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations">REST API Reference for ListFileSystemAssociations Operation</seealso>
+        public virtual ListFileSystemAssociationsResponse EndListFileSystemAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFileSystemAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -4697,11 +4953,14 @@ namespace Amazon.StorageGateway
         #region  RefreshCache
 
         /// <summary>
-        /// Refreshes the cache for the specified file share. This operation finds objects in
-        /// the Amazon S3 bucket that were added, removed, or replaced since the gateway last
-        /// listed the bucket's contents and cached the results. This operation is only supported
-        /// in the file gateway type. You can subscribe to be notified through an Amazon CloudWatch
-        /// event when your RefreshCache operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+        /// Refreshes the cached inventory of objects for the specified file share. This operation
+        /// finds objects in the Amazon S3 bucket that were added, removed, or replaced since
+        /// the gateway last listed the bucket's contents and cached the results. This operation
+        /// does not import files into the file gateway cache storage. It only updates the cached
+        /// inventory to reflect changes in the inventory of the objects in the S3 bucket. This
+        /// operation is only supported in the file gateway type. You can subscribe to be notified
+        /// through an Amazon CloudWatch event when your <code>RefreshCache</code> operation completes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
         /// 
         ///  
@@ -4710,14 +4969,14 @@ namespace Amazon.StorageGateway
         /// completes and returns a success code, it doesn't necessarily mean that the file refresh
         /// has completed. You should use the refresh-complete notification to determine that
         /// the operation has completed before you check for new files on the gateway file share.
-        /// You can subscribe to be notified through an CloudWatch event when your <code>RefreshCache</code>
+        /// You can subscribe to be notified through a CloudWatch event when your <code>RefreshCache</code>
         /// operation completes.
         /// </para>
         ///  
         /// <para>
-        /// Throttle limit: This API is asynchronous so the gateway will accept no more than two
-        /// refreshes at any time. We recommend using the refresh-complete CloudWatch event notification
-        /// before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+        /// Throttle limit: This API is asynchronous, so the gateway will accept no more than
+        /// two refreshes at any time. We recommend using the refresh-complete CloudWatch event
+        /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
         /// </para>
         ///  
@@ -5771,6 +6030,69 @@ namespace Amazon.StorageGateway
         public virtual UpdateChapCredentialsResponse EndUpdateChapCredentials(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateChapCredentialsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFileSystemAssociation
+
+        /// <summary>
+        /// Updates a file system association. This operation is only supported in the Amazon
+        /// FSx file gateway type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystemAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFileSystemAssociation service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation">REST API Reference for UpdateFileSystemAssociation Operation</seealso>
+        public virtual UpdateFileSystemAssociationResponse UpdateFileSystemAssociation(UpdateFileSystemAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFileSystemAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFileSystemAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFileSystemAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFileSystemAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystemAssociation operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFileSystemAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation">REST API Reference for UpdateFileSystemAssociation Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFileSystemAssociation(UpdateFileSystemAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFileSystemAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFileSystemAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFileSystemAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFileSystemAssociation.</param>
+        /// 
+        /// <returns>Returns a  UpdateFileSystemAssociationResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation">REST API Reference for UpdateFileSystemAssociation Operation</seealso>
+        public virtual UpdateFileSystemAssociationResponse EndUpdateFileSystemAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFileSystemAssociationResponse>(asyncResult);
         }
 
         #endregion

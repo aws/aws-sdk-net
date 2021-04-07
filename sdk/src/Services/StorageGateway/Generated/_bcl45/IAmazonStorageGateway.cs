@@ -344,7 +344,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Configures one or more gateway local disks as upload buffer for a specified gateway.
-        /// This operation is supported for the stored volume, cached volume and tape gateway
+        /// This operation is supported for the stored volume, cached volume, and tape gateway
         /// types.
         /// 
         ///  
@@ -372,7 +372,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Configures one or more gateway local disks as upload buffer for a specified gateway.
-        /// This operation is supported for the stored volume, cached volume and tape gateway
+        /// This operation is supported for the stored volume, cached volume, and tape gateway
         /// types.
         /// 
         ///  
@@ -530,6 +530,56 @@ namespace Amazon.StorageGateway
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">REST API Reference for AssignTapePool Operation</seealso>
         Task<AssignTapePoolResponse> AssignTapePoolAsync(AssignTapePoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssociateFileSystem
+
+
+        /// <summary>
+        /// Associate an Amazon FSx file system with the Amazon FSx file gateway. After the association
+        /// process is complete, the file shares on the Amazon FSx file system are available for
+        /// access through the gateway. This operation only supports the Amazon FSx file gateway
+        /// type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFileSystem service method.</param>
+        /// 
+        /// <returns>The response from the AssociateFileSystem service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem">REST API Reference for AssociateFileSystem Operation</seealso>
+        AssociateFileSystemResponse AssociateFileSystem(AssociateFileSystemRequest request);
+
+
+
+        /// <summary>
+        /// Associate an Amazon FSx file system with the Amazon FSx file gateway. After the association
+        /// process is complete, the file shares on the Amazon FSx file system are available for
+        /// access through the gateway. This operation only supports the Amazon FSx file gateway
+        /// type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFileSystem service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateFileSystem service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem">REST API Reference for AssociateFileSystem Operation</seealso>
+        Task<AssociateFileSystemResponse> AssociateFileSystemAsync(AssociateFileSystemRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -936,7 +986,7 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// AWS Storage Gateway provides the ability to back up point-in-time snapshots of your
-        /// data to Amazon Simple Storage (Amazon S3) for durable off-site recovery, as well as
+        /// data to Amazon Simple Storage (Amazon S3) for durable off-site recovery, and also
         /// import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute
         /// Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
         /// basis. This API enables you to take an ad hoc snapshot. For more information, see
@@ -994,7 +1044,7 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// AWS Storage Gateway provides the ability to back up point-in-time snapshots of your
-        /// data to Amazon Simple Storage (Amazon S3) for durable off-site recovery, as well as
+        /// data to Amazon Simple Storage (Amazon S3) for durable off-site recovery, and also
         /// import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute
         /// Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
         /// basis. This API enables you to take an ad hoc snapshot. For more information, see
@@ -1979,7 +2029,7 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Returns information about the most recent High Availability monitoring test that was
+        /// Returns information about the most recent high availability monitoring test that was
         /// performed on the host in a cluster. If a test isn't performed, the status and start
         /// time in the response would be null.
         /// </summary>
@@ -2000,7 +2050,7 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Returns information about the most recent High Availability monitoring test that was
+        /// Returns information about the most recent high availability monitoring test that was
         /// performed on the host in a cluster. If a test isn't performed, the status and start
         /// time in the response would be null.
         /// </summary>
@@ -2342,6 +2392,52 @@ namespace Amazon.StorageGateway
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">REST API Reference for DescribeChapCredentials Operation</seealso>
         Task<DescribeChapCredentialsResponse> DescribeChapCredentialsAsync(DescribeChapCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeFileSystemAssociations
+
+
+        /// <summary>
+        /// Gets the file system association information. This operation is only supported for
+        /// Amazon FSx file gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFileSystemAssociations service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations">REST API Reference for DescribeFileSystemAssociations Operation</seealso>
+        DescribeFileSystemAssociationsResponse DescribeFileSystemAssociations(DescribeFileSystemAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Gets the file system association information. This operation is only supported for
+        /// Amazon FSx file gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFileSystemAssociations service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations">REST API Reference for DescribeFileSystemAssociations Operation</seealso>
+        Task<DescribeFileSystemAssociationsResponse> DescribeFileSystemAssociationsAsync(DescribeFileSystemAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3202,6 +3298,54 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  DisassociateFileSystem
+
+
+        /// <summary>
+        /// Disassociates an Amazon FSx file system from the specified gateway. After the disassociation
+        /// process finishes, the gateway can no longer access the Amazon FSx file system. This
+        /// operation is only supported in the Amazon FSx file gateway type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFileSystem service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFileSystem service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem">REST API Reference for DisassociateFileSystem Operation</seealso>
+        DisassociateFileSystemResponse DisassociateFileSystem(DisassociateFileSystemRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates an Amazon FSx file system from the specified gateway. After the disassociation
+        /// process finishes, the gateway can no longer access the Amazon FSx file system. This
+        /// operation is only supported in the Amazon FSx file gateway type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFileSystem service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateFileSystem service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem">REST API Reference for DisassociateFileSystem Operation</seealso>
+        Task<DisassociateFileSystemResponse> DisassociateFileSystemAsync(DisassociateFileSystemRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  JoinDomain
 
 
@@ -3349,6 +3493,54 @@ namespace Amazon.StorageGateway
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">REST API Reference for ListFileShares Operation</seealso>
         Task<ListFileSharesResponse> ListFileSharesAsync(ListFileSharesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListFileSystemAssociations
+
+
+        /// <summary>
+        /// Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains
+        /// a summary of a file system association. This operation is only supported for Amazon
+        /// FSx file gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFileSystemAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListFileSystemAssociations service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations">REST API Reference for ListFileSystemAssociations Operation</seealso>
+        ListFileSystemAssociationsResponse ListFileSystemAssociations(ListFileSystemAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains
+        /// a summary of a file system association. This operation is only supported for Amazon
+        /// FSx file gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFileSystemAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFileSystemAssociations service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations">REST API Reference for ListFileSystemAssociations Operation</seealso>
+        Task<ListFileSystemAssociationsResponse> ListFileSystemAssociationsAsync(ListFileSystemAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3999,11 +4191,14 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Refreshes the cache for the specified file share. This operation finds objects in
-        /// the Amazon S3 bucket that were added, removed, or replaced since the gateway last
-        /// listed the bucket's contents and cached the results. This operation is only supported
-        /// in the file gateway type. You can subscribe to be notified through an Amazon CloudWatch
-        /// event when your RefreshCache operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+        /// Refreshes the cached inventory of objects for the specified file share. This operation
+        /// finds objects in the Amazon S3 bucket that were added, removed, or replaced since
+        /// the gateway last listed the bucket's contents and cached the results. This operation
+        /// does not import files into the file gateway cache storage. It only updates the cached
+        /// inventory to reflect changes in the inventory of the objects in the S3 bucket. This
+        /// operation is only supported in the file gateway type. You can subscribe to be notified
+        /// through an Amazon CloudWatch event when your <code>RefreshCache</code> operation completes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
         /// 
         ///  
@@ -4012,14 +4207,14 @@ namespace Amazon.StorageGateway
         /// completes and returns a success code, it doesn't necessarily mean that the file refresh
         /// has completed. You should use the refresh-complete notification to determine that
         /// the operation has completed before you check for new files on the gateway file share.
-        /// You can subscribe to be notified through an CloudWatch event when your <code>RefreshCache</code>
+        /// You can subscribe to be notified through a CloudWatch event when your <code>RefreshCache</code>
         /// operation completes.
         /// </para>
         ///  
         /// <para>
-        /// Throttle limit: This API is asynchronous so the gateway will accept no more than two
-        /// refreshes at any time. We recommend using the refresh-complete CloudWatch event notification
-        /// before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+        /// Throttle limit: This API is asynchronous, so the gateway will accept no more than
+        /// two refreshes at any time. We recommend using the refresh-complete CloudWatch event
+        /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
         /// </para>
         ///  
@@ -4051,11 +4246,14 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Refreshes the cache for the specified file share. This operation finds objects in
-        /// the Amazon S3 bucket that were added, removed, or replaced since the gateway last
-        /// listed the bucket's contents and cached the results. This operation is only supported
-        /// in the file gateway type. You can subscribe to be notified through an Amazon CloudWatch
-        /// event when your RefreshCache operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+        /// Refreshes the cached inventory of objects for the specified file share. This operation
+        /// finds objects in the Amazon S3 bucket that were added, removed, or replaced since
+        /// the gateway last listed the bucket's contents and cached the results. This operation
+        /// does not import files into the file gateway cache storage. It only updates the cached
+        /// inventory to reflect changes in the inventory of the objects in the S3 bucket. This
+        /// operation is only supported in the file gateway type. You can subscribe to be notified
+        /// through an Amazon CloudWatch event when your <code>RefreshCache</code> operation completes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
         /// 
         ///  
@@ -4064,14 +4262,14 @@ namespace Amazon.StorageGateway
         /// completes and returns a success code, it doesn't necessarily mean that the file refresh
         /// has completed. You should use the refresh-complete notification to determine that
         /// the operation has completed before you check for new files on the gateway file share.
-        /// You can subscribe to be notified through an CloudWatch event when your <code>RefreshCache</code>
+        /// You can subscribe to be notified through a CloudWatch event when your <code>RefreshCache</code>
         /// operation completes.
         /// </para>
         ///  
         /// <para>
-        /// Throttle limit: This API is asynchronous so the gateway will accept no more than two
-        /// refreshes at any time. We recommend using the refresh-complete CloudWatch event notification
-        /// before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+        /// Throttle limit: This API is asynchronous, so the gateway will accept no more than
+        /// two refreshes at any time. We recommend using the refresh-complete CloudWatch event
+        /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
         /// </para>
         ///  
@@ -5025,6 +5223,52 @@ namespace Amazon.StorageGateway
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">REST API Reference for UpdateChapCredentials Operation</seealso>
         Task<UpdateChapCredentialsResponse> UpdateChapCredentialsAsync(UpdateChapCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateFileSystemAssociation
+
+
+        /// <summary>
+        /// Updates a file system association. This operation is only supported in the Amazon
+        /// FSx file gateway type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystemAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFileSystemAssociation service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation">REST API Reference for UpdateFileSystemAssociation Operation</seealso>
+        UpdateFileSystemAssociationResponse UpdateFileSystemAssociation(UpdateFileSystemAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Updates a file system association. This operation is only supported in the Amazon
+        /// FSx file gateway type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystemAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFileSystemAssociation service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation">REST API Reference for UpdateFileSystemAssociation Operation</seealso>
+        Task<UpdateFileSystemAssociationResponse> UpdateFileSystemAssociationAsync(UpdateFileSystemAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

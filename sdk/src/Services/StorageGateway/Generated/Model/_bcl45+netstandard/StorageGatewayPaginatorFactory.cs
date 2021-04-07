@@ -76,6 +76,14 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Paginator for ListFileSystemAssociations operation
+        ///</summary>
+        public IListFileSystemAssociationsPaginator ListFileSystemAssociations(ListFileSystemAssociationsRequest request) 
+        {
+            return new ListFileSystemAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGateways operation
         ///</summary>
         public IListGatewaysPaginator ListGateways(ListGatewaysRequest request) 

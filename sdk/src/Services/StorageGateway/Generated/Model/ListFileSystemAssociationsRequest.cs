@@ -29,13 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAvailabilityMonitorTest operation.
+    /// Container for the parameters to the ListFileSystemAssociations operation.
+    /// Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains
+    /// a summary of a file system association. This operation is only supported for Amazon
+    /// FSx file gateways.
     /// </summary>
-    public partial class DescribeAvailabilityMonitorTestResponse : AmazonWebServiceResponse
+    public partial class ListFileSystemAssociationsRequest : AmazonStorageGatewayRequest
     {
         private string _gatewayARN;
-        private DateTime? _startTime;
-        private AvailabilityMonitorTestStatus _status;
+        private int? _limit;
+        private string _marker;
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
@@ -54,41 +57,44 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime. 
+        /// Gets and sets the property Limit. 
         /// <para>
-        /// The time the high availability monitoring test was started. If a test hasn't been
-        /// performed, the value of this field is null.
+        /// The maximum number of file system associations to return in the response. If present,
+        /// <code>Limit</code> must be an integer with a value greater than zero. Optional.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        [AWSProperty(Min=1)]
+        public int Limit
         {
-            get { return this._startTime.GetValueOrDefault(); }
-            set { this._startTime = value; }
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
         }
 
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
+        // Check to see if Limit property is set
+        internal bool IsSetLimit()
         {
-            return this._startTime.HasValue; 
+            return this._limit.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// The status of the high availability monitoring test. If a test hasn't been performed,
-        /// the value of this field is null.
+        /// Opaque pagination token returned from a previous <code>ListFileSystemAssociations</code>
+        /// operation. If present, <code>Marker</code> specifies where to continue the list from
+        /// after a previous call to <code>ListFileSystemAssociations</code>. Optional.
         /// </para>
         /// </summary>
-        public AvailabilityMonitorTestStatus Status
+        [AWSProperty(Min=1, Max=1000)]
+        public string Marker
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
         {
-            return this._status != null;
+            return this._marker != null;
         }
 
     }

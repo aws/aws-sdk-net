@@ -29,35 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// The refresh cache information for the file share.
+    /// Container for the parameters to the DescribeFileSystemAssociations operation.
+    /// Gets the file system association information. This operation is only supported for
+    /// Amazon FSx file gateways.
     /// </summary>
-    public partial class CacheAttributes
+    public partial class DescribeFileSystemAssociationsRequest : AmazonStorageGatewayRequest
     {
-        private int? _cacheStaleTimeoutInSeconds;
+        private List<string> _fileSystemAssociationARNList = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property CacheStaleTimeoutInSeconds. 
+        /// Gets and sets the property FileSystemAssociationARNList. 
         /// <para>
-        /// Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time
-        /// since the last refresh after which access to the directory would cause the file gateway
-        /// to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx
-        /// file system. The TTL duration is in seconds.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
+        /// An array containing the Amazon Resource Name (ARN) of each file system association
+        /// to be described.
         /// </para>
         /// </summary>
-        public int CacheStaleTimeoutInSeconds
+        [AWSProperty(Required=true, Min=1, Max=10)]
+        public List<string> FileSystemAssociationARNList
         {
-            get { return this._cacheStaleTimeoutInSeconds.GetValueOrDefault(); }
-            set { this._cacheStaleTimeoutInSeconds = value; }
+            get { return this._fileSystemAssociationARNList; }
+            set { this._fileSystemAssociationARNList = value; }
         }
 
-        // Check to see if CacheStaleTimeoutInSeconds property is set
-        internal bool IsSetCacheStaleTimeoutInSeconds()
+        // Check to see if FileSystemAssociationARNList property is set
+        internal bool IsSetFileSystemAssociationARNList()
         {
-            return this._cacheStaleTimeoutInSeconds.HasValue; 
+            return this._fileSystemAssociationARNList != null && this._fileSystemAssociationARNList.Count > 0; 
         }
 
     }

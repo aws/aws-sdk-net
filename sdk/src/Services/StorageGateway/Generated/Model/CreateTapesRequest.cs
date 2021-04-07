@@ -224,7 +224,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The prefix must be 1 to 4 characters in length and must be one of the uppercase letters
+        /// The prefix must be 1-4 characters in length and must be one of the uppercase letters
         /// from A to Z.
         /// </para>
         ///  </note>

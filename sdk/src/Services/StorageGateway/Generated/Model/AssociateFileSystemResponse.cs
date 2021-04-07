@@ -29,35 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// The refresh cache information for the file share.
+    /// This is the response object from the AssociateFileSystem operation.
     /// </summary>
-    public partial class CacheAttributes
+    public partial class AssociateFileSystemResponse : AmazonWebServiceResponse
     {
-        private int? _cacheStaleTimeoutInSeconds;
+        private string _fileSystemAssociationARN;
 
         /// <summary>
-        /// Gets and sets the property CacheStaleTimeoutInSeconds. 
+        /// Gets and sets the property FileSystemAssociationARN. 
         /// <para>
-        /// Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time
-        /// since the last refresh after which access to the directory would cause the file gateway
-        /// to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx
-        /// file system. The TTL duration is in seconds.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
+        /// The ARN of the newly created file system association.
         /// </para>
         /// </summary>
-        public int CacheStaleTimeoutInSeconds
+        [AWSProperty(Min=50, Max=500)]
+        public string FileSystemAssociationARN
         {
-            get { return this._cacheStaleTimeoutInSeconds.GetValueOrDefault(); }
-            set { this._cacheStaleTimeoutInSeconds = value; }
+            get { return this._fileSystemAssociationARN; }
+            set { this._fileSystemAssociationARN = value; }
         }
 
-        // Check to see if CacheStaleTimeoutInSeconds property is set
-        internal bool IsSetCacheStaleTimeoutInSeconds()
+        // Check to see if FileSystemAssociationARN property is set
+        internal bool IsSetFileSystemAssociationARN()
         {
-            return this._cacheStaleTimeoutInSeconds.HasValue; 
+            return this._fileSystemAssociationARN != null;
         }
 
     }

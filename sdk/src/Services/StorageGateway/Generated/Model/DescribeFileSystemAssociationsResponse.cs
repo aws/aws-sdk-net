@@ -29,35 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// The refresh cache information for the file share.
+    /// This is the response object from the DescribeFileSystemAssociations operation.
     /// </summary>
-    public partial class CacheAttributes
+    public partial class DescribeFileSystemAssociationsResponse : AmazonWebServiceResponse
     {
-        private int? _cacheStaleTimeoutInSeconds;
+        private List<FileSystemAssociationInfo> _fileSystemAssociationInfoList = new List<FileSystemAssociationInfo>();
 
         /// <summary>
-        /// Gets and sets the property CacheStaleTimeoutInSeconds. 
+        /// Gets and sets the property FileSystemAssociationInfoList. 
         /// <para>
-        /// Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time
-        /// since the last refresh after which access to the directory would cause the file gateway
-        /// to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx
-        /// file system. The TTL duration is in seconds.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
+        /// An array containing the <code>FileSystemAssociationInfo</code> data type of each file
+        /// system association to be described. 
         /// </para>
         /// </summary>
-        public int CacheStaleTimeoutInSeconds
+        public List<FileSystemAssociationInfo> FileSystemAssociationInfoList
         {
-            get { return this._cacheStaleTimeoutInSeconds.GetValueOrDefault(); }
-            set { this._cacheStaleTimeoutInSeconds = value; }
+            get { return this._fileSystemAssociationInfoList; }
+            set { this._fileSystemAssociationInfoList = value; }
         }
 
-        // Check to see if CacheStaleTimeoutInSeconds property is set
-        internal bool IsSetCacheStaleTimeoutInSeconds()
+        // Check to see if FileSystemAssociationInfoList property is set
+        internal bool IsSetFileSystemAssociationInfoList()
         {
-            return this._cacheStaleTimeoutInSeconds.HasValue; 
+            return this._fileSystemAssociationInfoList != null && this._fileSystemAssociationInfoList.Count > 0; 
         }
 
     }

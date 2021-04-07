@@ -90,7 +90,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property DaysOfWeek. 
         /// <para>
         ///  The days of the week component of the bandwidth rate limit interval, represented
-        /// as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 Saturday. 
+        /// as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=7)]

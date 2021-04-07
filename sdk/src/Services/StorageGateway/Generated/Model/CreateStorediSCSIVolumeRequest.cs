@@ -169,8 +169,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property PreserveExistingData. 
         /// <para>
-        /// Set to true <code>true</code> if you want to preserve the data on the local disk.
-        /// Otherwise, set to <code>false</code> to create an empty volume.
+        /// Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise,
+        /// set to <code>false</code> to create an empty volume.
         /// </para>
         ///  
         /// <para>
@@ -193,7 +193,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored
+        /// The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored
         /// volume. Specify this field if you want to create the iSCSI storage volume from a snapshot;
         /// otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
         /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
