@@ -37,6 +37,7 @@ namespace Amazon.IVS.Model
         private bool? _authorized;
         private ChannelLatencyMode _latencyMode;
         private string _name;
+        private string _recordingConfigurationArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Authorized. 
         /// <para>
-        /// Whether the channel is authorized.
+        /// Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
         /// </para>
         /// </summary>
         public bool Authorized
@@ -79,7 +80,10 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property LatencyMode. 
         /// <para>
-        /// Channel latency mode. Default: <code>LOW</code>.
+        /// Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video
+        /// up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
+        /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
+        /// correspond to Ultra-low and Standard, respectively.)
         /// </para>
         /// </summary>
         public ChannelLatencyMode LatencyMode
@@ -111,6 +115,26 @@ namespace Amazon.IVS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingConfigurationArn. 
+        /// <para>
+        /// Recording-configuration ARN. A value other than an empty string indicates that recording
+        /// is enabled. Default: "" (empty string, recording is disabled).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string RecordingConfigurationArn
+        {
+            get { return this._recordingConfigurationArn; }
+            set { this._recordingConfigurationArn = value; }
+        }
+
+        // Check to see if RecordingConfigurationArn property is set
+        internal bool IsSetRecordingConfigurationArn()
+        {
+            return this._recordingConfigurationArn != null;
         }
 
         /// <summary>

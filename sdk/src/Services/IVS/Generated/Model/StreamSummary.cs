@@ -115,7 +115,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property ViewerCount. 
         /// <para>
-        /// Number of current viewers of the stream.
+        /// Number of current viewers of the stream. A value of -1 indicates that the request
+        /// timed out; in this case, retry.
         /// </para>
         /// </summary>
         public long ViewerCount

@@ -32,7 +32,9 @@ namespace Amazon.IVS.Model
     /// Container for the parameters to the ImportPlaybackKeyPair operation.
     /// Imports the public portion of a new key pair and returns its <code>arn</code> and
     /// <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate
-    /// viewer authorization tokens, to grant viewers access to authorized channels.
+    /// viewer authorization tokens, to grant viewers access to private channels. For more
+    /// information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+    /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
     /// </summary>
     public partial class ImportPlaybackKeyPairRequest : AmazonIVSRequest
     {

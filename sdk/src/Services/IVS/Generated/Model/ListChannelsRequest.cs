@@ -31,11 +31,14 @@ namespace Amazon.IVS.Model
     /// <summary>
     /// Container for the parameters to the ListChannels operation.
     /// Gets summary information about all channels in your account, in the AWS region where
-    /// the API request is processed. This list can be filtered to match a specified string.
+    /// the API request is processed. This list can be filtered to match a specified name
+    /// or recording-configuration ARN. Filters are mutually exclusive and cannot be used
+    /// together. If you try to use both filters, you will get an error (409 ConflictException).
     /// </summary>
     public partial class ListChannelsRequest : AmazonIVSRequest
     {
         private string _filterByName;
+        private string _filterByRecordingConfigurationArn;
         private int? _maxResults;
         private string _nextToken;
 
@@ -59,9 +62,28 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilterByRecordingConfigurationArn. 
+        /// <para>
+        /// Filters the channel list to match the specified recording-configuration ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string FilterByRecordingConfigurationArn
+        {
+            get { return this._filterByRecordingConfigurationArn; }
+            set { this._filterByRecordingConfigurationArn = value; }
+        }
+
+        // Check to see if FilterByRecordingConfigurationArn property is set
+        internal bool IsSetFilterByRecordingConfigurationArn()
+        {
+            return this._filterByRecordingConfigurationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of channels to return.
+        /// Maximum number of channels to return. Default: 50.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

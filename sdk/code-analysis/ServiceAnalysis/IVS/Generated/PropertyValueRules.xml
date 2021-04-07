@@ -7,6 +7,18 @@
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.CreateChannelRequest.RecordingConfigurationArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.CreateRecordingConfigurationRequest.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.CreateStreamKeyRequest.ChannelArn</property>
     <min>1</min>
     <max>128</max>
@@ -25,6 +37,12 @@
     <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:playback-key/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.DeleteRecordingConfigurationRequest.Arn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.DeleteStreamKeyRequest.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -41,6 +59,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:playback-key/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.GetRecordingConfigurationRequest.Arn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.GetStreamRequest.ChannelArn</property>
@@ -65,6 +89,12 @@
     <min>0</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ListChannelsRequest.FilterByRecordingConfigurationArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListChannelsRequest.MaxResults</property>
@@ -93,6 +123,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListPlaybackKeyPairsResponse.NextToken</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ListRecordingConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ListRecordingConfigurationsRequest.NextToken</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ListRecordingConfigurationsResponse.NextToken</property>
     <min>0</min>
     <max>500</max>
   </property-value-rule>
@@ -150,6 +195,10 @@
     <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.PutMetadataRequest.Metadata</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.StopStreamRequest.ChannelArn</property>
     <min>1</min>
     <max>128</max>
@@ -180,6 +229,12 @@
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.UpdateChannelRequest.RecordingConfigurationArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.BatchError.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -198,6 +253,12 @@
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.Channel.RecordingConfigurationArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.ChannelSummary.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -208,6 +269,12 @@
     <min>0</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ChannelSummary.RecordingConfigurationArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.PlaybackKeyPair.Arn</property>
@@ -232,6 +299,36 @@
     <min>0</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.RecordingConfiguration.Arn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.RecordingConfiguration.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.RecordingConfigurationSummary.Arn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.RecordingConfigurationSummary.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.S3DestinationConfiguration.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[a-z0-9-.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.Stream.ChannelArn</property>

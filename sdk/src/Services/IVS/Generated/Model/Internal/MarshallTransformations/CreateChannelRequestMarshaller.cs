@@ -83,6 +83,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRecordingConfigurationArn())
+                {
+                    context.Writer.WritePropertyName("recordingConfigurationArn");
+                    context.Writer.Write(publicRequest.RecordingConfigurationArn);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

@@ -30,7 +30,8 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPlaybackKeyPairs operation.
-    /// Gets summary information about playback key pairs.
+    /// Gets summary information about playback key pairs. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+    /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
     /// </summary>
     public partial class ListPlaybackKeyPairsRequest : AmazonIVSRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.IVS.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.
+        /// response field. Default: 50.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

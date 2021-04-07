@@ -39,6 +39,7 @@ namespace Amazon.IVS.Model
         private ChannelLatencyMode _latencyMode;
         private string _name;
         private string _playbackUrl;
+        private string _recordingConfigurationArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private ChannelType _type;
 
@@ -64,7 +65,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Authorized. 
         /// <para>
-        /// Whether the channel is authorized.
+        /// Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
         /// </para>
         /// </summary>
         public bool Authorized
@@ -101,7 +102,10 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property LatencyMode. 
         /// <para>
-        /// Channel latency mode. Default: <code>LOW</code>.
+        /// Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video
+        /// up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
+        /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
+        /// correspond to Ultra-low and Standard, respectively.)
         /// </para>
         /// </summary>
         public ChannelLatencyMode LatencyMode
@@ -154,6 +158,26 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecordingConfigurationArn. 
+        /// <para>
+        /// Recording-configuration ARN. A value other than an empty string indicates that recording
+        /// is enabled. Default: "" (empty string, recording is disabled).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string RecordingConfigurationArn
+        {
+            get { return this._recordingConfigurationArn; }
+            set { this._recordingConfigurationArn = value; }
+        }
+
+        // Check to see if RecordingConfigurationArn property is set
+        internal bool IsSetRecordingConfigurationArn()
+        {
+            return this._recordingConfigurationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
@@ -177,7 +201,7 @@ namespace Amazon.IVS.Model
         /// <para>
         /// Channel type, which determines the allowable resolution and bitrate. <i>If you exceed
         /// the allowable resolution or bitrate, the stream probably will disconnect immediately.</i>
-        /// Valid values:
+        /// Default: <code>STANDARD</code>. Valid values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -191,10 +215,7 @@ namespace Amazon.IVS.Model
         /// video-quality choice is limited to the original input. Vertical resolution can be
         /// up to 480 and bitrate can be up to 1.5 Mbps.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Default: <code>STANDARD</code>.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ChannelType Type
         {

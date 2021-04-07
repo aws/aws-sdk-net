@@ -43,8 +43,8 @@ namespace Amazon.IVS
     ///  
     /// <para>
     /// The Amazon Interactive Video Service (IVS) API is REST compatible, using a standard
-    /// HTTP API and an <a href="http://aws.amazon.com/sns">AWS SNS</a> event stream for responses.
-    /// JSON is used for both requests and responses, including errors.
+    /// HTTP API and an AWS EventBridge event stream for responses. JSON is used for both
+    /// requests and responses, including errors.
     /// </para>
     ///  
     /// <para>
@@ -126,7 +126,7 @@ namespace Amazon.IVS
     /// </para>
     ///  
     /// <para>
-    /// The following resources contain information about your IVS live stream (see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/GSIVS.html">
+    /// The following resources contain information about your IVS live stream (see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">
     /// Getting Started with Amazon IVS</a>):
     /// </para>
     ///  <ul> <li> 
@@ -148,6 +148,12 @@ namespace Amazon.IVS
     /// tokens, which use public-key encryption. A playback key pair is the public-private
     /// pair of keys used to sign and validate the playback-authorization token. See the PlaybackKeyPair
     /// endpoints for more information.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Recording configuration — Stores configuration related to recording a live stream
+    /// and where to store the recorded content. Multiple channels can reference the same
+    /// recording configuration. See the Recording Configuration endpoints for more information.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -171,9 +177,60 @@ namespace Amazon.IVS
     /// <para>
     /// The Amazon IVS API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>,
     /// and <a>ListTagsForResource</a>. The following resources support tagging: Channels,
-    /// Stream Keys, and Playback Key Pairs.
+    /// Stream Keys, Playback Key Pairs, and Recording Configurations.
     /// </para>
     ///  
+    /// <para>
+    ///  <b>Authentication versus Authorization</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Note the differences between these concepts:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>Authentication</i> is about verifying identity. You need to be authenticated to
+    /// sign Amazon IVS API requests.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>Authorization</i> is about granting permissions. You need to be authorized to
+    /// view <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Amazon
+    /// IVS private channels</a>. (Private channels are channels that are enabled for "playback
+    /// authorization.")
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Authentication</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// All Amazon IVS API requests must be authenticated with a signature. The AWS Command-Line
+    /// Interface (CLI) and Amazon IVS Player SDKs take care of signing the underlying API
+    /// calls for you. However, if your application calls the Amazon IVS API directly, it’s
+    /// your responsibility to sign the requests.
+    /// </para>
+    ///  
+    /// <para>
+    /// You generate a signature using valid AWS credentials that have permission to perform
+    /// the requested action. For example, you must sign PutMetadata requests with a signature
+    /// generated from an IAM user account that has the <code>ivs:PutMetadata</code> permission.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Authentication and generating signatures — See <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+    /// Requests (AWS Signature Version 4)</a> in the <i>AWS General Reference</i>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Managing Amazon IVS permissions — See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/security-iam.html">Identity
+    /// and Access Management</a> on the Security page of the <i>Amazon IVS User Guide</i>.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  <b>Channel Endpoints</b> 
     /// </para>
@@ -195,7 +252,9 @@ namespace Amazon.IVS
     /// <para>
     ///  <a>ListChannels</a> — Gets summary information about all channels in your account,
     /// in the AWS region where the API request is processed. This list can be filtered to
-    /// match a specified string.
+    /// match a specified name or recording-configuration ARN. Filters are mutually exclusive
+    /// and cannot be used together. If you try to use both filters, you will get an error
+    /// (409 Conflict Exception).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -256,27 +315,33 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>PutMetadata</a> — Inserts metadata into an RTMPS stream for the specified channel.
-    /// A maximum of 5 requests per second per channel is allowed, each with a maximum 1KB
-    /// payload.
+    ///  <a>PutMetadata</a> — Inserts metadata into the active stream of the specified channel.
+    /// A maximum of 5 requests per second per channel is allowed, each with a maximum 1 KB
+    /// payload. (If 5 TPS is not sufficient for your needs, we recommend batching your data
+    /// into a single PutMetadata call.)
     /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>PlaybackKeyPair Endpoints</b> 
     /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+    /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns
     /// its <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code> can
-    /// then be used to generate viewer authorization tokens, to grant viewers access to authorized
-    /// channels.
+    /// then be used to generate viewer authorization tokens, to grant viewers access to private
+    /// channels (channels enabled for playback authorization).
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and
     /// returns the <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code>
     /// held by the caller can be used to generate viewer authorization tokens, to grant viewers
-    /// access to authorized channels.
+    /// access to private channels.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -286,6 +351,30 @@ namespace Amazon.IVS
     /// <para>
     ///  <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates
     /// future viewer tokens generated using the key pair’s <code>privateKey</code>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>RecordingConfiguration Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateRecordingConfiguration</a> — Creates a new recording configuration, used
+    /// to enable recording to Amazon S3.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetRecordingConfiguration</a> — Gets the recording-configuration metadata for
+    /// the specified ARN.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListRecordingConfigurations</a> — Gets summary information about all recording
+    /// configurations in your account, in the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteRecordingConfiguration</a> — Deletes the recording configuration for the
+    /// specified ARN.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -617,6 +706,9 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
         /// 
         /// </exception>
@@ -649,6 +741,9 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
         /// 
         /// </exception>
@@ -663,6 +758,115 @@ namespace Amazon.IVS
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRecordingConfiguration
+
+
+        /// <summary>
+        /// Creates a new recording configuration, used to enable recording to Amazon S3.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Known issue:</b> In the us-east-1 region, if you use the AWS CLI to create a recording
+        /// configuration, it returns success even if the S3 bucket is in a different region.
+        /// In this case, the <code>state</code> of the recording configuration is <code>CREATE_FAILED</code>
+        /// (instead of <code>ACTIVE</code>). (In other regions, the CLI correctly returns failure
+        /// if the bucket is in a different region.)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Workaround:</b> Ensure that your S3 bucket is in the same region as the recording
+        /// configuration. If you create a recording configuration in a different region as your
+        /// S3 bucket, delete that recording configuration and create a new one with an S3 bucket
+        /// from the correct region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecordingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateRecordingConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateRecordingConfiguration">REST API Reference for CreateRecordingConfiguration Operation</seealso>
+        public virtual CreateRecordingConfigurationResponse CreateRecordingConfiguration(CreateRecordingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRecordingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecordingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRecordingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new recording configuration, used to enable recording to Amazon S3.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Known issue:</b> In the us-east-1 region, if you use the AWS CLI to create a recording
+        /// configuration, it returns success even if the S3 bucket is in a different region.
+        /// In this case, the <code>state</code> of the recording configuration is <code>CREATE_FAILED</code>
+        /// (instead of <code>ACTIVE</code>). (In other regions, the CLI correctly returns failure
+        /// if the bucket is in a different region.)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Workaround:</b> Ensure that your S3 bucket is in the same region as the recording
+        /// configuration. If you create a recording configuration in a different region as your
+        /// S3 bucket, delete that recording configuration and create a new one with an S3 bucket
+        /// from the correct region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecordingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRecordingConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateRecordingConfiguration">REST API Reference for CreateRecordingConfiguration Operation</seealso>
+        public virtual Task<CreateRecordingConfigurationResponse> CreateRecordingConfigurationAsync(CreateRecordingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRecordingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecordingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRecordingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -759,6 +963,15 @@ namespace Amazon.IVS
 
         /// <summary>
         /// Deletes the specified channel and its associated stream keys.
+        /// 
+        ///  
+        /// <para>
+        /// If you try to delete a live channel, you will get an error (409 ConflictException).
+        /// To delete a channel that is live, call <a>StopStream</a>, wait for the Amazon EventBridge
+        /// "Stream End" event (to verify that the stream's state was changed from Live to Offline),
+        /// then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">
+        /// Using EventBridge with Amazon IVS</a>.) 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
         /// 
@@ -791,6 +1004,15 @@ namespace Amazon.IVS
 
         /// <summary>
         /// Deletes the specified channel and its associated stream keys.
+        /// 
+        ///  
+        /// <para>
+        /// If you try to delete a live channel, you will get an error (409 ConflictException).
+        /// To delete a channel that is live, call <a>StopStream</a>, wait for the Amazon EventBridge
+        /// "Stream End" event (to verify that the stream's state was changed from Live to Offline),
+        /// then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">
+        /// Using EventBridge with Amazon IVS</a>.) 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
         /// <param name="cancellationToken">
@@ -830,7 +1052,9 @@ namespace Amazon.IVS
 
         /// <summary>
         /// Deletes a specified authorization key pair. This invalidates future viewer tokens
-        /// generated using the key pair’s <code>privateKey</code>.
+        /// generated using the key pair’s <code>privateKey</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlaybackKeyPair service method.</param>
         /// 
@@ -860,7 +1084,9 @@ namespace Amazon.IVS
 
         /// <summary>
         /// Deletes a specified authorization key pair. This invalidates future viewer tokens
-        /// generated using the key pair’s <code>privateKey</code>.
+        /// generated using the key pair’s <code>privateKey</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlaybackKeyPair service method.</param>
         /// <param name="cancellationToken">
@@ -888,6 +1114,93 @@ namespace Amazon.IVS
             options.ResponseUnmarshaller = DeletePlaybackKeyPairResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeletePlaybackKeyPairResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRecordingConfiguration
+
+
+        /// <summary>
+        /// Deletes the recording configuration for the specified ARN.
+        /// 
+        ///  
+        /// <para>
+        /// If you try to delete a recording configuration that is associated with a channel,
+        /// you will get an error (409 ConflictException). To avoid this, for all channels that
+        /// reference the recording configuration, first use <a>UpdateChannel</a> to set the <code>recordingConfigurationArn</code>
+        /// field to an empty string, then use DeleteRecordingConfiguration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecordingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRecordingConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteRecordingConfiguration">REST API Reference for DeleteRecordingConfiguration Operation</seealso>
+        public virtual DeleteRecordingConfigurationResponse DeleteRecordingConfiguration(DeleteRecordingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRecordingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecordingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRecordingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the recording configuration for the specified ARN.
+        /// 
+        ///  
+        /// <para>
+        /// If you try to delete a recording configuration that is associated with a channel,
+        /// you will get an error (409 ConflictException). To avoid this, for all channels that
+        /// reference the recording configuration, first use <a>UpdateChannel</a> to set the <code>recordingConfigurationArn</code>
+        /// field to an empty string, then use DeleteRecordingConfiguration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecordingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecordingConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteRecordingConfiguration">REST API Reference for DeleteRecordingConfiguration Operation</seealso>
+        public virtual Task<DeleteRecordingConfigurationResponse> DeleteRecordingConfigurationAsync(DeleteRecordingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRecordingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecordingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRecordingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1022,8 +1335,9 @@ namespace Amazon.IVS
         /// <summary>
         /// Gets a specified playback authorization key pair and returns the <code>arn</code>
         /// and <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be
-        /// used to generate viewer authorization tokens, to grant viewers access to authorized
-        /// channels.
+        /// used to generate viewer authorization tokens, to grant viewers access to private channels.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlaybackKeyPair service method.</param>
         /// 
@@ -1051,8 +1365,9 @@ namespace Amazon.IVS
         /// <summary>
         /// Gets a specified playback authorization key pair and returns the <code>arn</code>
         /// and <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be
-        /// used to generate viewer authorization tokens, to grant viewers access to authorized
-        /// channels.
+        /// used to generate viewer authorization tokens, to grant viewers access to private channels.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlaybackKeyPair service method.</param>
         /// <param name="cancellationToken">
@@ -1077,6 +1392,71 @@ namespace Amazon.IVS
             options.ResponseUnmarshaller = GetPlaybackKeyPairResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetPlaybackKeyPairResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRecordingConfiguration
+
+
+        /// <summary>
+        /// Gets the recording configuration for the specified ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecordingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetRecordingConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetRecordingConfiguration">REST API Reference for GetRecordingConfiguration Operation</seealso>
+        public virtual GetRecordingConfigurationResponse GetRecordingConfiguration(GetRecordingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecordingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecordingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecordingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the recording configuration for the specified ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecordingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecordingConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetRecordingConfiguration">REST API Reference for GetRecordingConfiguration Operation</seealso>
+        public virtual Task<GetRecordingConfigurationResponse> GetRecordingConfigurationAsync(GetRecordingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecordingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecordingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRecordingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1211,7 +1591,9 @@ namespace Amazon.IVS
         /// <summary>
         /// Imports the public portion of a new key pair and returns its <code>arn</code> and
         /// <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate
-        /// viewer authorization tokens, to grant viewers access to authorized channels.
+        /// viewer authorization tokens, to grant viewers access to private channels. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportPlaybackKeyPair service method.</param>
         /// 
@@ -1245,7 +1627,9 @@ namespace Amazon.IVS
         /// <summary>
         /// Imports the public portion of a new key pair and returns its <code>arn</code> and
         /// <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate
-        /// viewer authorization tokens, to grant viewers access to authorized channels.
+        /// viewer authorization tokens, to grant viewers access to private channels. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportPlaybackKeyPair service method.</param>
         /// <param name="cancellationToken">
@@ -1285,7 +1669,9 @@ namespace Amazon.IVS
 
         /// <summary>
         /// Gets summary information about all channels in your account, in the AWS region where
-        /// the API request is processed. This list can be filtered to match a specified string.
+        /// the API request is processed. This list can be filtered to match a specified name
+        /// or recording-configuration ARN. Filters are mutually exclusive and cannot be used
+        /// together. If you try to use both filters, you will get an error (409 ConflictException).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// 
@@ -1312,7 +1698,9 @@ namespace Amazon.IVS
 
         /// <summary>
         /// Gets summary information about all channels in your account, in the AWS region where
-        /// the API request is processed. This list can be filtered to match a specified string.
+        /// the API request is processed. This list can be filtered to match a specified name
+        /// or recording-configuration ARN. Filters are mutually exclusive and cannot be used
+        /// together. If you try to use both filters, you will get an error (409 ConflictException).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// <param name="cancellationToken">
@@ -1345,7 +1733,8 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets summary information about playback key pairs.
+        /// Gets summary information about playback key pairs. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlaybackKeyPairs service method.</param>
         /// 
@@ -1368,7 +1757,8 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets summary information about playback key pairs.
+        /// Gets summary information about playback key pairs. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlaybackKeyPairs service method.</param>
         /// <param name="cancellationToken">
@@ -1390,6 +1780,67 @@ namespace Amazon.IVS
             options.ResponseUnmarshaller = ListPlaybackKeyPairsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListPlaybackKeyPairsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRecordingConfigurations
+
+
+        /// <summary>
+        /// Gets summary information about all recording configurations in your account, in the
+        /// AWS region where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecordingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListRecordingConfigurations service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListRecordingConfigurations">REST API Reference for ListRecordingConfigurations Operation</seealso>
+        public virtual ListRecordingConfigurationsResponse ListRecordingConfigurations(ListRecordingConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRecordingConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecordingConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecordingConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets summary information about all recording configurations in your account, in the
+        /// AWS region where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecordingConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecordingConfigurations service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListRecordingConfigurations">REST API Reference for ListRecordingConfigurations Operation</seealso>
+        public virtual Task<ListRecordingConfigurationsResponse> ListRecordingConfigurationsAsync(ListRecordingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRecordingConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecordingConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRecordingConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1565,8 +2016,11 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Inserts metadata into an RTMPS stream for the specified channel. A maximum of 5 requests
-        /// per second per channel is allowed, each with a maximum 1KB payload.
+        /// Inserts metadata into the active stream of the specified channel. A maximum of 5 requests
+        /// per second per channel is allowed, each with a maximum 1 KB payload. (If 5 TPS is
+        /// not sufficient for your needs, we recommend batching your data into a single PutMetadata
+        /// call.) Also see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding
+        /// Metadata within a Video Stream</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetadata service method.</param>
         /// 
@@ -1598,8 +2052,11 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Inserts metadata into an RTMPS stream for the specified channel. A maximum of 5 requests
-        /// per second per channel is allowed, each with a maximum 1KB payload.
+        /// Inserts metadata into the active stream of the specified channel. A maximum of 5 requests
+        /// per second per channel is allowed, each with a maximum 1 KB payload. (If 5 TPS is
+        /// not sufficient for your needs, we recommend batching your data into a single PutMetadata
+        /// call.) Also see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding
+        /// Metadata within a Video Stream</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetadata service method.</param>
         /// <param name="cancellationToken">

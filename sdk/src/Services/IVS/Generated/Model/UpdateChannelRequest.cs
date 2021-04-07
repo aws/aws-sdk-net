@@ -39,6 +39,7 @@ namespace Amazon.IVS.Model
         private bool? _authorized;
         private ChannelLatencyMode _latencyMode;
         private string _name;
+        private string _recordingConfigurationArn;
         private ChannelType _type;
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Authorized. 
         /// <para>
-        /// Whether the channel is authorized. Default: <code>false</code>.
+        /// Whether the channel is private (enabled for playback authorization).
         /// </para>
         /// </summary>
         public bool Authorized
@@ -81,7 +82,10 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property LatencyMode. 
         /// <para>
-        /// Channel latency mode. Default: <code>LOW</code>.
+        /// Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video
+        /// up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note:
+        /// In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to
+        /// Ultra-low and Standard, respectively.)
         /// </para>
         /// </summary>
         public ChannelLatencyMode LatencyMode
@@ -116,10 +120,30 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecordingConfigurationArn. 
+        /// <para>
+        /// Recording-configuration ARN. If this is set to an empty string, recording is disabled.
+        /// A value other than an empty string indicates that recording is enabled
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string RecordingConfigurationArn
+        {
+            get { return this._recordingConfigurationArn; }
+            set { this._recordingConfigurationArn = value; }
+        }
+
+        // Check to see if RecordingConfigurationArn property is set
+        internal bool IsSetRecordingConfigurationArn()
+        {
+            return this._recordingConfigurationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// Channel type, which determines the allowable resolution and bitrate. <i>If you exceed
-        /// the allowable resolution or bitrate, the stream probably will disconnect immediately.</i>
+        /// the allowable resolution or bitrate, the stream probably will disconnect immediately</i>.
         /// Valid values:
         /// </para>
         ///  <ul> <li> 
@@ -134,10 +158,7 @@ namespace Amazon.IVS.Model
         /// video-quality choice is limited to the original input. Vertical resolution can be
         /// up to 480 and bitrate can be up to 1.5 Mbps.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Default: <code>STANDARD</code>.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ChannelType Type
         {

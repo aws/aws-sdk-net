@@ -59,7 +59,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Key-pair name.
+        /// An arbitrary string (a nickname) assigned to a playback key pair that helps the customer
+        /// identify that resource. The value does not need to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -78,7 +79,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Array of 1-50 maps, each of the form <code>string:string (key:value)</code> 
+        /// Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

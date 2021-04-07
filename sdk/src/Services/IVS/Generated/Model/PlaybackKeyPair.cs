@@ -78,7 +78,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Key-pair name.
+        /// An arbitrary string (a nickname) assigned to a playback key pair that helps the customer
+        /// identify that resource. The value does not need to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]

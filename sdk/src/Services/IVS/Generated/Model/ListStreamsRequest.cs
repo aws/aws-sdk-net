@@ -41,7 +41,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of streams to return.
+        /// Maximum number of streams to return. Default: 50.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

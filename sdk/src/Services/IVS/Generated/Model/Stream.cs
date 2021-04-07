@@ -80,7 +80,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property PlaybackUrl. 
         /// <para>
-        /// URL of the video master manifest, required by the video player to play the HLS stream.
+        /// URL of the master playlist, required by the video player to play the HLS stream.
         /// </para>
         /// </summary>
         public string PlaybackUrl
@@ -134,7 +134,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property ViewerCount. 
         /// <para>
-        /// Number of current viewers of the stream.
+        /// Number of current viewers of the stream. A value of -1 indicates that the request
+        /// timed out; in this case, retry.
         /// </para>
         /// </summary>
         public long ViewerCount

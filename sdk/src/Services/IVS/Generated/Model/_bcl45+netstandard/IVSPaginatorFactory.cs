@@ -52,6 +52,14 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Paginator for ListRecordingConfigurations operation
+        ///</summary>
+        public IListRecordingConfigurationsPaginator ListRecordingConfigurations(ListRecordingConfigurationsRequest request) 
+        {
+            return new ListRecordingConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStreamKeys operation
         ///</summary>
         public IListStreamKeysPaginator ListStreamKeys(ListStreamKeysRequest request) 
