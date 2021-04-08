@@ -676,6 +676,10 @@
       <Project>{083186B8-3B42-407F-9797-A1C9E93A0CDE}</Project>
       <Name>AWSSDK.LocationService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LookoutEquipment/AWSSDK.LookoutEquipment.CodeAnalysis.csproj">
+      <Project>{39D908BB-E21C-48F4-939F-61092E922DFB}</Project>
+      <Name>AWSSDK.LookoutEquipment.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/LookoutforVision/AWSSDK.LookoutforVision.CodeAnalysis.csproj">
       <Project>{AEAAF64A-F230-4C3C-8AA4-8E2182617E19}</Project>
       <Name>AWSSDK.LookoutforVision.CodeAnalysis</Name>

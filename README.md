@@ -397,6 +397,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* An extremely simplified VM creation and management service.
 * [AWSSDK.LocationService](https://www.nuget.org/packages/AWSSDK.LocationService/)
 	* Initial release of Amazon Location Service. A new geospatial service providing capabilities to render maps, geocode/reverse geocode, track device locations, and detect geofence entry/exit events.
+* [AWSSDK.LookoutEquipment](https://www.nuget.org/packages/AWSSDK.LookoutEquipment/)
+	* This release introduces support for Amazon Lookout for Equipment.
 * [AWSSDK.LookoutforVision](https://www.nuget.org/packages/AWSSDK.LookoutforVision/)
 	* This release introduces support for Amazon Lookout for Vision.
 * [AWSSDK.LookoutMetrics](https://www.nuget.org/packages/AWSSDK.LookoutMetrics/)

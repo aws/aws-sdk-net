@@ -327,6 +327,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Lightsail.CodeAnalysis" Path="|AWSSDK.Lightsail.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.LocationService.CodeAnalysis" Path="|AWSSDK.LocationService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.LocationService.CodeAnalysis" Path="|AWSSDK.LocationService.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.LookoutEquipment.CodeAnalysis" Path="|AWSSDK.LookoutEquipment.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.LookoutEquipment.CodeAnalysis" Path="|AWSSDK.LookoutEquipment.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.LookoutforVision.CodeAnalysis" Path="|AWSSDK.LookoutforVision.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.LookoutforVision.CodeAnalysis" Path="|AWSSDK.LookoutforVision.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.LookoutMetrics.CodeAnalysis" Path="|AWSSDK.LookoutMetrics.CodeAnalysis|"/>
