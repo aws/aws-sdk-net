@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// The image does not support storage connectors.
+    /// The image can't be updated because it's not compatible for updates.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

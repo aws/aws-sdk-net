@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         private string _displayName;
         private string _imageBuilderName;
         private bool? _imageBuilderSupported;
+        private List<ResourceError> _imageErrors = new List<ResourceError>();
         private ImagePermissions _imagePermissions;
         private string _name;
         private PlatformType _platform;
@@ -216,6 +217,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetImageBuilderSupported()
         {
             return this._imageBuilderSupported.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageErrors. 
+        /// <para>
+        /// Describes the errors that are returned when a new image can't be created.
+        /// </para>
+        /// </summary>
+        public List<ResourceError> ImageErrors
+        {
+            get { return this._imageErrors; }
+            set { this._imageErrors = value; }
+        }
+
+        // Check to see if ImageErrors property is set
+        internal bool IsSetImageErrors()
+        {
+            return this._imageErrors != null && this._imageErrors.Count > 0; 
         }
 
         /// <summary>

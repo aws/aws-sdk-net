@@ -541,6 +541,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly ImageBuilderState PENDING = new ImageBuilderState("PENDING");
         /// <summary>
+        /// Constant PENDING_QUALIFICATION for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState PENDING_QUALIFICATION = new ImageBuilderState("PENDING_QUALIFICATION");
+        /// <summary>
         /// Constant REBOOTING for ImageBuilderState
         /// </summary>
         public static readonly ImageBuilderState REBOOTING = new ImageBuilderState("REBOOTING");
@@ -560,6 +564,10 @@ namespace Amazon.AppStream
         /// Constant STOPPING for ImageBuilderState
         /// </summary>
         public static readonly ImageBuilderState STOPPING = new ImageBuilderState("STOPPING");
+        /// <summary>
+        /// Constant UPDATING for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState UPDATING = new ImageBuilderState("UPDATING");
         /// <summary>
         /// Constant UPDATING_AGENT for ImageBuilderState
         /// </summary>
