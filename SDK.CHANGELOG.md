@@ -1,3 +1,24 @@
+### 3.7.11.0 (2021-04-08 18:15 UTC)
+* AppStream (3.7.1.0)
+	* This release provides support for image updates
+* AutoScaling (3.7.1.0)
+	* Amazon EC2 Auto Scaling announces Warm Pools that help applications to scale out faster by pre-initializing EC2 instances and save money by requiring fewer continuously running instances
+* CustomerProfiles (3.7.1.8)
+	* Documentation updates for Put-Integration API
+* KinesisVideoArchivedMedia (3.7.0.9)
+	* Documentation updates for archived.kinesisvideo
+* LookoutEquipment (3.7.0.0)
+	* This release introduces support for Amazon Lookout for Equipment.
+* RAM (3.7.0.9)
+	* Documentation updates for AWS RAM resource sharing
+* RoboMaker (3.7.1.0)
+	* This release allows RoboMaker customers to specify custom tools to run with their simulation job
+* Core 3.7.0.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.10.0 (2021-04-07 18:13 UTC)
 * AccessAnalyzer (3.7.1.0)
 	* IAM Access Analyzer now analyzes your CloudTrail events to identify actions and services that have been used by an IAM entity (user or role) and generates an IAM policy that is based on that activity.
