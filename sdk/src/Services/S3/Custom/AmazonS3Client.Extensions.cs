@@ -237,7 +237,7 @@ namespace Amazon.S3
             queryParameters.Add(aws4Signing ? "X-Amz-Expires" : "Expires", expires.ToString(CultureInfo.InvariantCulture));
 
             if (!string.IsNullOrEmpty(token))
-                queryParameters.Add("X-Amz-Security-Token", token);
+                queryParameters.Add(aws4Signing ? "X-Amz-Security-Token" : "x-amz-security-token", token);
             if (!aws4Signing)
                 queryParameters.Add("AWSAccessKeyId", accessKey);
             if (getPreSignedUrlRequest.IsSetVersionId())

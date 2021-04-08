@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
@@ -43,6 +44,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void USEastUnder7Days()
         {
             TestPreSignedUrl(RegionEndpoint.USEast1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, true);
+            TestPreSignedUrlWithSessionToken(RegionEndpoint.USEast1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, true);
         }
 
         [TestMethod]
@@ -51,6 +53,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             // us-east-1 allows Sigv2 so it should fall back to it since the expiration is > 7 days
             TestPreSignedUrl(RegionEndpoint.USEast1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), true, false);
+            TestPreSignedUrlWithSessionToken(RegionEndpoint.USEast1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), true, false);
         }
 
         [TestMethod]
@@ -58,6 +61,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void EUCentral1Under7Days()
         {
             TestPreSignedUrl(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, true);
+            TestPreSignedUrlWithSessionToken(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, true);
         }
 
         [TestMethod]
@@ -67,6 +71,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // EUCentral1 doesn't allow SigV2 so we expect an error since the expiration > 7 days
             AssertExtensions.ExpectException(()=>{
                 TestPreSignedUrl(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), true, true);
+            }, typeof(ArgumentException), "The maximum expiry period for a presigned url using AWS4 signing is 604800 seconds");
+
+            AssertExtensions.ExpectException(() => {
+                TestPreSignedUrlWithSessionToken(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2), true, true);
             }, typeof(ArgumentException), "The maximum expiry period for a presigned url using AWS4 signing is 604800 seconds");
         }
 
@@ -92,6 +100,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
                 if (bucketName != null)
                     DeleteBucket(client, bucketName);
+            }
+        }
+
+        private void TestPreSignedUrlWithSessionToken(RegionEndpoint region, DateTime expires, bool useSigV4, bool expectSigV4Url)
+        {
+            using (var sts = new Amazon.SecurityToken.AmazonSecurityTokenServiceClient())
+            {
+                AWSCredentials credentials = sts.GetSessionToken().Credentials;
+                var client = new AmazonS3Client(credentials, region);
+                var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
+                AWSConfigsS3.UseSignatureVersion4 = true;
+                string bucketName = null;
+                try
+                {
+                    AWSConfigsS3.UseSignatureVersion4 = true;
+                    bucketName = CreateBucketAndObject(client);
+                    AssertPreSignedUrl(client, bucketName, expires, expectSigV4Url);
+                }
+                finally
+                {
+                    AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
+                    if (bucketName != null)
+                        DeleteBucket(client, bucketName);
+                }
             }
         }
 
