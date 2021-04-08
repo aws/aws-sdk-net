@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// The properties that are applied when Amazon S3 is being used as the flow source.
     /// </summary>
     public partial class S3SourceProperties
     {
@@ -37,7 +37,10 @@ namespace Amazon.CustomerProfiles.Model
         private string _bucketPrefix;
 
         /// <summary>
-        /// Gets and sets the property BucketName.
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The Amazon S3 bucket name where the source files are stored.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
         public string BucketName
@@ -53,7 +56,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BucketPrefix.
+        /// Gets and sets the property BucketPrefix. 
+        /// <para>
+        /// The object key for the Amazon S3 bucket in which the source files are stored.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=512)]
         public string BucketPrefix

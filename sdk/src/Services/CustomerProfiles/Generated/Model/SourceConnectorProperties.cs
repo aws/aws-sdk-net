@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// Specifies the information that is required to query a particular Amazon AppFlow connector.
+    /// Customer Profiles supports Salesforce, Zendesk, Marketo, ServiceNow and Amazon S3.
     /// </summary>
     public partial class SourceConnectorProperties
     {
@@ -40,7 +41,10 @@ namespace Amazon.CustomerProfiles.Model
         private ZendeskSourceProperties _zendesk;
 
         /// <summary>
-        /// Gets and sets the property Marketo.
+        /// Gets and sets the property Marketo. 
+        /// <para>
+        /// The properties that are applied when Marketo is being used as a source.
+        /// </para>
         /// </summary>
         public MarketoSourceProperties Marketo
         {
@@ -55,7 +59,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3.
+        /// Gets and sets the property S3. 
+        /// <para>
+        /// The properties that are applied when Amazon S3 is being used as the flow source.
+        /// </para>
         /// </summary>
         public S3SourceProperties S3
         {
@@ -70,7 +77,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Salesforce.
+        /// Gets and sets the property Salesforce. 
+        /// <para>
+        /// The properties that are applied when Salesforce is being used as a source.
+        /// </para>
         /// </summary>
         public SalesforceSourceProperties Salesforce
         {
@@ -85,7 +95,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceNow.
+        /// Gets and sets the property ServiceNow. 
+        /// <para>
+        /// The properties that are applied when ServiceNow is being used as a source.
+        /// </para>
         /// </summary>
         public ServiceNowSourceProperties ServiceNow
         {
@@ -100,7 +113,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Zendesk.
+        /// Gets and sets the property Zendesk. 
+        /// <para>
+        /// The properties that are applied when using Zendesk as a flow source.
+        /// </para>
         /// </summary>
         public ZendeskSourceProperties Zendesk
         {

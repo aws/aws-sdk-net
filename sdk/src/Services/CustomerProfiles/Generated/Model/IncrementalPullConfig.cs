@@ -29,14 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// Specifies the configuration used when importing incremental records from the source.
     /// </summary>
     public partial class IncrementalPullConfig
     {
         private string _datetimeTypeFieldName;
 
         /// <summary>
-        /// Gets and sets the property DatetimeTypeFieldName.
+        /// Gets and sets the property DatetimeTypeFieldName. 
+        /// <para>
+        /// A field that specifies the date time or timestamp field as the criteria to use when
+        /// importing incremental records from the source.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string DatetimeTypeFieldName

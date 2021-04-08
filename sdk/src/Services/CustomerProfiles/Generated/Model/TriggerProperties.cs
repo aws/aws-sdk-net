@@ -29,14 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// Specifies the configuration details that control the trigger for a flow. Currently,
+    /// these settings only apply to the Scheduled trigger type.
     /// </summary>
     public partial class TriggerProperties
     {
         private ScheduledTriggerProperties _scheduled;
 
         /// <summary>
-        /// Gets and sets the property Scheduled.
+        /// Gets and sets the property Scheduled. 
+        /// <para>
+        /// Specifies the configuration details of a schedule-triggered flow that you define.
+        /// </para>
         /// </summary>
         public ScheduledTriggerProperties Scheduled
         {

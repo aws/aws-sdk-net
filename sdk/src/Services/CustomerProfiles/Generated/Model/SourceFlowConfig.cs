@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about the configuration of the source connector used in the flow.
     /// </summary>
     public partial class SourceFlowConfig
     {
@@ -39,7 +39,11 @@ namespace Amazon.CustomerProfiles.Model
         private SourceConnectorProperties _sourceConnectorProperties;
 
         /// <summary>
-        /// Gets and sets the property ConnectorProfileName.
+        /// Gets and sets the property ConnectorProfileName. 
+        /// <para>
+        /// The name of the AppFlow connector profile. This name must be unique for each connector
+        /// profile in the AWS account.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string ConnectorProfileName
@@ -55,7 +59,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConnectorType.
+        /// Gets and sets the property ConnectorType. 
+        /// <para>
+        /// The type of connector, such as Salesforce, Marketo, and so on.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public SourceConnectorType ConnectorType
@@ -71,7 +78,12 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncrementalPullConfig.
+        /// Gets and sets the property IncrementalPullConfig. 
+        /// <para>
+        /// Defines the configuration for a scheduled incremental data pull. If a valid configuration
+        /// is provided, the fields specified in the configuration are used when querying for
+        /// the incremental data pull.
+        /// </para>
         /// </summary>
         public IncrementalPullConfig IncrementalPullConfig
         {
@@ -86,7 +98,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceConnectorProperties.
+        /// Gets and sets the property SourceConnectorProperties. 
+        /// <para>
+        /// Specifies the information that is required to query a particular source connector.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public SourceConnectorProperties SourceConnectorProperties

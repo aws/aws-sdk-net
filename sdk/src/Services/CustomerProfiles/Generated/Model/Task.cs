@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// A class for modeling different type of tasks. Task implementation varies based on
+    /// the TaskType.
     /// </summary>
     public partial class Task
     {
@@ -40,7 +41,10 @@ namespace Amazon.CustomerProfiles.Model
         private TaskType _taskType;
 
         /// <summary>
-        /// Gets and sets the property ConnectorOperator.
+        /// Gets and sets the property ConnectorOperator. 
+        /// <para>
+        /// The operation to be performed on the provided source fields.
+        /// </para>
         /// </summary>
         public ConnectorOperator ConnectorOperator
         {
@@ -55,7 +59,11 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationField.
+        /// Gets and sets the property DestinationField. 
+        /// <para>
+        /// A field in a destination connector, or a field value against which Amazon AppFlow
+        /// validates a source field.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string DestinationField
@@ -71,7 +79,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceFields.
+        /// Gets and sets the property SourceFields. 
+        /// <para>
+        /// The source fields to which a particular task is applied.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SourceFields
@@ -87,7 +98,11 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskProperties.
+        /// Gets and sets the property TaskProperties. 
+        /// <para>
+        /// A map used to store task-related information. The service looks for particular information
+        /// based on the TaskType.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> TaskProperties
         {
@@ -102,7 +117,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskType.
+        /// Gets and sets the property TaskType. 
+        /// <para>
+        /// Specifies the particular task implementation that Amazon AppFlow performs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public TaskType TaskType

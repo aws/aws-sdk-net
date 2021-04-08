@@ -66,7 +66,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowDefinition.
+        /// Gets and sets the property FlowDefinition. 
+        /// <para>
+        /// The configuration that controls how Customer Profiles retrieves data from the source.
+        /// </para>
         /// </summary>
         public FlowDefinition FlowDefinition
         {

@@ -45,7 +45,8 @@ namespace Amazon.CustomerProfiles
     /// </para>
     ///  
     /// <para>
-    /// If you're new to Amazon Connect, you might find it helpful to also review the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html">Amazon
+    /// If you're new to Amazon Connect , you might find it helpful to also review the <a
+    /// href="https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html">Amazon
     /// Connect Administrator Guide</a>.
     /// </para>
     /// </summary>

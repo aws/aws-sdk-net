@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// The properties that are applied when using Zendesk as a flow source.
     /// </summary>
     public partial class ZendeskSourceProperties
     {
         private string _object;
 
         /// <summary>
-        /// Gets and sets the property Object.
+        /// Gets and sets the property Object. 
+        /// <para>
+        /// The object specified in the Zendesk flow source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
         public string Object

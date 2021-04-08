@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// The trigger settings that determine how and when Amazon AppFlow runs the specified
+    /// flow.
     /// </summary>
     public partial class TriggerConfig
     {
@@ -37,7 +38,11 @@ namespace Amazon.CustomerProfiles.Model
         private TriggerType _triggerType;
 
         /// <summary>
-        /// Gets and sets the property TriggerProperties.
+        /// Gets and sets the property TriggerProperties. 
+        /// <para>
+        /// Specifies the configuration details of a schedule-triggered flow that you define.
+        /// Currently, these settings only apply to the Scheduled trigger type.
+        /// </para>
         /// </summary>
         public TriggerProperties TriggerProperties
         {
@@ -52,7 +57,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TriggerType.
+        /// Gets and sets the property TriggerType. 
+        /// <para>
+        /// Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public TriggerType TriggerType

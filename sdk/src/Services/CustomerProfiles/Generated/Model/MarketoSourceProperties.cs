@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// The properties that are applied when Marketo is being used as a source.
     /// </summary>
     public partial class MarketoSourceProperties
     {
         private string _object;
 
         /// <summary>
-        /// Gets and sets the property Object.
+        /// Gets and sets the property Object. 
+        /// <para>
+        /// The object specified in the Marketo flow source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
         public string Object

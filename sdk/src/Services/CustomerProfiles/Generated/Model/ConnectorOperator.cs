@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// The operation to be performed on the provided source fields.
     /// </summary>
     public partial class ConnectorOperator
     {
@@ -40,7 +40,10 @@ namespace Amazon.CustomerProfiles.Model
         private ZendeskConnectorOperator _zendesk;
 
         /// <summary>
-        /// Gets and sets the property Marketo.
+        /// Gets and sets the property Marketo. 
+        /// <para>
+        /// The operation to be performed on the provided Marketo source fields.
+        /// </para>
         /// </summary>
         public MarketoConnectorOperator Marketo
         {
@@ -55,7 +58,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3.
+        /// Gets and sets the property S3. 
+        /// <para>
+        /// The operation to be performed on the provided Amazon S3 source fields.
+        /// </para>
         /// </summary>
         public S3ConnectorOperator S3
         {
@@ -70,7 +76,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Salesforce.
+        /// Gets and sets the property Salesforce. 
+        /// <para>
+        /// The operation to be performed on the provided Salesforce source fields.
+        /// </para>
         /// </summary>
         public SalesforceConnectorOperator Salesforce
         {
@@ -85,7 +94,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceNow.
+        /// Gets and sets the property ServiceNow. 
+        /// <para>
+        /// The operation to be performed on the provided ServiceNow source fields.
+        /// </para>
         /// </summary>
         public ServiceNowConnectorOperator ServiceNow
         {
@@ -100,7 +112,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Zendesk.
+        /// Gets and sets the property Zendesk. 
+        /// <para>
+        /// The operation to be performed on the provided Zendesk source fields.
+        /// </para>
         /// </summary>
         public ZendeskConnectorOperator Zendesk
         {

@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// The properties that are applied when ServiceNow is being used as a source.
     /// </summary>
     public partial class ServiceNowSourceProperties
     {
         private string _object;
 
         /// <summary>
-        /// Gets and sets the property Object.
+        /// Gets and sets the property Object. 
+        /// <para>
+        /// The object specified in the ServiceNow flow source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
         public string Object

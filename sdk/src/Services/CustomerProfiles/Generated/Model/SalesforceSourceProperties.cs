@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// The properties that are applied when Salesforce is being used as a source.
     /// </summary>
     public partial class SalesforceSourceProperties
     {
@@ -38,7 +38,11 @@ namespace Amazon.CustomerProfiles.Model
         private string _object;
 
         /// <summary>
-        /// Gets and sets the property EnableDynamicFieldUpdate.
+        /// Gets and sets the property EnableDynamicFieldUpdate. 
+        /// <para>
+        /// The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
+        /// objects while running a flow.
+        /// </para>
         /// </summary>
         public bool EnableDynamicFieldUpdate
         {
@@ -53,7 +57,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeDeletedRecords.
+        /// Gets and sets the property IncludeDeletedRecords. 
+        /// <para>
+        /// Indicates whether Amazon AppFlow includes deleted files in the flow run.
+        /// </para>
         /// </summary>
         public bool IncludeDeletedRecords
         {
@@ -68,7 +75,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Object.
+        /// Gets and sets the property Object. 
+        /// <para>
+        /// The object specified in the Salesforce flow source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
         public string Object

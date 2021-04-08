@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// The configurations that control how Customer Profiles retrieves data from the source,
+    /// Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow
+    /// on behalf of customers.
     /// </summary>
     public partial class FlowDefinition
     {
@@ -41,7 +43,10 @@ namespace Amazon.CustomerProfiles.Model
         private TriggerConfig _triggerConfig;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the flow you want to create.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
         public string Description
@@ -57,7 +62,11 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowName.
+        /// Gets and sets the property FlowName. 
+        /// <para>
+        /// The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are
+        /// not allowed.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
         public string FlowName
@@ -73,7 +82,11 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KmsArn.
+        /// Gets and sets the property KmsArn. 
+        /// <para>
+        /// The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for
+        /// encryption.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
         public string KmsArn
@@ -89,7 +102,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceFlowConfig.
+        /// Gets and sets the property SourceFlowConfig. 
+        /// <para>
+        /// The configuration that controls how Customer Profiles retrieves data from the source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public SourceFlowConfig SourceFlowConfig
@@ -105,7 +121,11 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tasks.
+        /// Gets and sets the property Tasks. 
+        /// <para>
+        /// A list of tasks that Customer Profiles performs while transferring the data in the
+        /// flow run.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Task> Tasks
@@ -121,7 +141,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TriggerConfig.
+        /// Gets and sets the property TriggerConfig. 
+        /// <para>
+        /// The trigger settings that determine how and when the flow runs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public TriggerConfig TriggerConfig

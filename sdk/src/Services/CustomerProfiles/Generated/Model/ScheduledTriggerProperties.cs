@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// 
+    /// Specifies the configuration details of a scheduled-trigger flow that you define. Currently,
+    /// these settings only apply to the scheduled-trigger type.
     /// </summary>
     public partial class ScheduledTriggerProperties
     {
@@ -42,7 +43,11 @@ namespace Amazon.CustomerProfiles.Model
         private string _timezone;
 
         /// <summary>
-        /// Gets and sets the property DataPullMode.
+        /// Gets and sets the property DataPullMode. 
+        /// <para>
+        /// Specifies whether a scheduled flow has an incremental data transfer or a complete
+        /// data transfer for each flow run.
+        /// </para>
         /// </summary>
         public DataPullMode DataPullMode
         {
@@ -57,7 +62,11 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FirstExecutionFrom.
+        /// Gets and sets the property FirstExecutionFrom. 
+        /// <para>
+        /// Specifies the date range for the records to import from the connector in the first
+        /// flow run.
+        /// </para>
         /// </summary>
         public DateTime FirstExecutionFrom
         {
@@ -72,7 +81,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScheduleEndTime.
+        /// Gets and sets the property ScheduleEndTime. 
+        /// <para>
+        /// Specifies the scheduled end time for a scheduled-trigger flow.
+        /// </para>
         /// </summary>
         public DateTime ScheduleEndTime
         {
@@ -87,7 +99,11 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScheduleExpression.
+        /// Gets and sets the property ScheduleExpression. 
+        /// <para>
+        /// The scheduling expression that determines the rate at which the schedule will run,
+        /// for example rate (5 minutes).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
         public string ScheduleExpression
@@ -103,7 +119,11 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScheduleOffset.
+        /// Gets and sets the property ScheduleOffset. 
+        /// <para>
+        /// Specifies the optional offset that is added to the time interval for a schedule-triggered
+        /// flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=36000)]
         public long ScheduleOffset
@@ -119,7 +139,10 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScheduleStartTime.
+        /// Gets and sets the property ScheduleStartTime. 
+        /// <para>
+        /// Specifies the scheduled start time for a scheduled-trigger flow.
+        /// </para>
         /// </summary>
         public DateTime ScheduleStartTime
         {
@@ -134,7 +157,11 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timezone.
+        /// Gets and sets the property Timezone. 
+        /// <para>
+        /// Specifies the time zone used when referring to the date and time of a scheduled-triggered
+        /// flow, such as America/New_York.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string Timezone
