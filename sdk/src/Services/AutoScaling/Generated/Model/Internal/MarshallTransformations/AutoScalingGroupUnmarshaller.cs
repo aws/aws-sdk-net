@@ -224,6 +224,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.VPCZoneIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("WarmPoolConfiguration", targetDepth))
+                    {
+                        var unmarshaller = WarmPoolConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.WarmPoolConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("WarmPoolSize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.WarmPoolSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -1219,6 +1219,120 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("AutoScaling")]
+        public void DeleteWarmPoolMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<DeleteWarmPoolRequest>();
+            var marshaller = new DeleteWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteWarmPoolResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteWarmPoolResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void DeleteWarmPool_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<DeleteWarmPoolRequest>();
+            var marshaller = new DeleteWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteWarmPoolResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void DeleteWarmPool_ResourceContentionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<DeleteWarmPoolRequest>();
+            var marshaller = new DeleteWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceContentionException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteWarmPoolResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void DeleteWarmPool_ResourceInUseExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<DeleteWarmPoolRequest>();
+            var marshaller = new DeleteWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceInUseException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteWarmPoolResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void DeleteWarmPool_ScalingActivityInProgressExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<DeleteWarmPoolRequest>();
+            var marshaller = new DeleteWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ScalingActivityInProgressException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteWarmPoolResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
         public void DescribeAccountLimitsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeAccountLimits");
@@ -2304,6 +2418,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("AutoScaling")]
+        public void DescribeWarmPoolMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<DescribeWarmPoolRequest>();
+            var marshaller = new DescribeWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeWarmPoolResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeWarmPoolResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void DescribeWarmPool_InvalidNextTokenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<DescribeWarmPoolRequest>();
+            var marshaller = new DescribeWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidNextTokenException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeWarmPoolResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void DescribeWarmPool_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<DescribeWarmPoolRequest>();
+            var marshaller = new DescribeWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeWarmPoolResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void DescribeWarmPool_ResourceContentionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<DescribeWarmPoolRequest>();
+            var marshaller = new DescribeWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceContentionException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeWarmPoolResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
         public void DetachInstancesMarshallTest()
         {
             var operation = service_model.FindOperation("DetachInstances");
@@ -2995,6 +3200,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = PutScheduledUpdateGroupActionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void PutWarmPoolMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<PutWarmPoolRequest>();
+            var marshaller = new PutWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = PutWarmPoolResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutWarmPoolResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void PutWarmPool_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<PutWarmPoolRequest>();
+            var marshaller = new PutWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = PutWarmPoolResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void PutWarmPool_ResourceContentionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutWarmPool");
+
+            var request = InstantiateClassGenerator.Execute<PutWarmPoolRequest>();
+            var marshaller = new PutWarmPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceContentionException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = PutWarmPoolResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

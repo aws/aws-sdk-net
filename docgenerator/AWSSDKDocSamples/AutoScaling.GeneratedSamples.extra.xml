@@ -143,12 +143,12 @@
         <value>
             <example>
                 <para>
-                    This example creates an Auto Scaling group and attaches the specified Classic Load Balancer.
+                    This example creates an Auto Scaling group with a mixed instances policy. It specifies the c5.large, c5a.large, and c6g.large instance types and defines a different launch template for the c6g.large instance type.
                 </para>
                 <code
-                    title="To create an Auto Scaling group with an attached load balancer"
+                    title="To create an Auto Scaling group with a mixed instances policy"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
-                    region="autoscaling-create-auto-scaling-group-3" />
+                    region="to-create-an-auto-scaling-group-with-a-mixed-instances-policy-1617815269039" />
             </example>
         </value>
     </doc>
@@ -928,6 +928,25 @@
                     title="To add a scheduled action to an Auto Scaling group"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-put-scheduled-update-group-action-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.PutWarmPool(Amazon.AutoScaling.Model.PutWarmPoolRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.PutWarmPool(Amazon.AutoScaling.Model.PutWarmPoolRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.PutWarmPoolRequest" />
+            <member name="T:Amazon.AutoScaling.Model.PutWarmPoolResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds a warm pool to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To add a warm pool to an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="to-add-a-warm-pool-to-an-auto-scaling-group-1617818810383" />
             </example>
         </value>
     </doc>

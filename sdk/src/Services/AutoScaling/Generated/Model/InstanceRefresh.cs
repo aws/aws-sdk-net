@@ -38,6 +38,7 @@ namespace Amazon.AutoScaling.Model
         private string _instanceRefreshId;
         private int? _instancesToUpdate;
         private int? _percentageComplete;
+        private InstanceRefreshProgressDetails _progressDetails;
         private DateTime? _startTime;
         private InstanceRefreshStatus _status;
         private string _statusReason;
@@ -137,6 +138,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetPercentageComplete()
         {
             return this._percentageComplete.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProgressDetails. 
+        /// <para>
+        /// Additional progress details for an Auto Scaling group that has a warm pool.
+        /// </para>
+        /// </summary>
+        public InstanceRefreshProgressDetails ProgressDetails
+        {
+            get { return this._progressDetails; }
+            set { this._progressDetails = value; }
+        }
+
+        // Check to see if ProgressDetails property is set
+        internal bool IsSetProgressDetails()
+        {
+            return this._progressDetails != null;
         }
 
         /// <summary>

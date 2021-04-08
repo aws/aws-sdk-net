@@ -248,6 +248,42 @@ namespace Amazon.AutoScaling
         /// Constant TerminatingWait for LifecycleState
         /// </summary>
         public static readonly LifecycleState TerminatingWait = new LifecycleState("Terminating:Wait");
+        /// <summary>
+        /// Constant WarmedPending for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedPending = new LifecycleState("Warmed:Pending");
+        /// <summary>
+        /// Constant WarmedPendingProceed for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedPendingProceed = new LifecycleState("Warmed:Pending:Proceed");
+        /// <summary>
+        /// Constant WarmedPendingWait for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedPendingWait = new LifecycleState("Warmed:Pending:Wait");
+        /// <summary>
+        /// Constant WarmedRunning for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedRunning = new LifecycleState("Warmed:Running");
+        /// <summary>
+        /// Constant WarmedStopped for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedStopped = new LifecycleState("Warmed:Stopped");
+        /// <summary>
+        /// Constant WarmedTerminated for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedTerminated = new LifecycleState("Warmed:Terminated");
+        /// <summary>
+        /// Constant WarmedTerminating for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedTerminating = new LifecycleState("Warmed:Terminating");
+        /// <summary>
+        /// Constant WarmedTerminatingProceed for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedTerminatingProceed = new LifecycleState("Warmed:Terminating:Proceed");
+        /// <summary>
+        /// Constant WarmedTerminatingWait for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedTerminatingWait = new LifecycleState("Warmed:Terminating:Wait");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -534,6 +570,102 @@ namespace Amazon.AutoScaling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScalingActivityStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WarmPoolState.
+    /// </summary>
+    public class WarmPoolState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Running for WarmPoolState
+        /// </summary>
+        public static readonly WarmPoolState Running = new WarmPoolState("Running");
+        /// <summary>
+        /// Constant Stopped for WarmPoolState
+        /// </summary>
+        public static readonly WarmPoolState Stopped = new WarmPoolState("Stopped");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WarmPoolState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WarmPoolState FindValue(string value)
+        {
+            return FindValue<WarmPoolState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WarmPoolState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WarmPoolStatus.
+    /// </summary>
+    public class WarmPoolStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PendingDelete for WarmPoolStatus
+        /// </summary>
+        public static readonly WarmPoolStatus PendingDelete = new WarmPoolStatus("PendingDelete");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WarmPoolStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WarmPoolStatus FindValue(string value)
+        {
+            return FindValue<WarmPoolStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WarmPoolStatus(string value)
         {
             return FindValue(value);
         }

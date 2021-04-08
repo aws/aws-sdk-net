@@ -118,9 +118,12 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
-                HealthCheckGracePeriod = 120,
+                HealthCheckGracePeriod = 300,
                 HealthCheckType = "ELB",
-                LaunchConfigurationName = "my-launch-config",
+                LaunchTemplate = new LaunchTemplateSpecification {
+                    LaunchTemplateId = "lt-0a20c965061f64abc",
+                    Version = "$Default"
+                },
                 MaxSize = 3,
                 MinSize = 1,
                 TargetGroupARNs = new List<string> {
@@ -135,22 +138,39 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingCreateAutoScalingGroup()
         {
-            #region autoscaling-create-auto-scaling-group-3
+            #region to-create-an-auto-scaling-group-with-a-mixed-instances-policy-1617815269039
 
             var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
             {
-                AutoScalingGroupName = "my-auto-scaling-group",
-                AvailabilityZones = new List<string> {
-                    "us-west-2c"
+                AutoScalingGroupName = "my-asg",
+                DesiredCapacity = 3,
+                MaxSize = 5,
+                MinSize = 1,
+                MixedInstancesPolicy = new MixedInstancesPolicy {
+                    InstancesDistribution = new InstancesDistribution {
+                        OnDemandBaseCapacity = 1,
+                        OnDemandPercentageAboveBaseCapacity = 50,
+                        SpotAllocationStrategy = "capacity-optimized"
+                    },
+                    LaunchTemplate = new LaunchTemplate {
+                        LaunchTemplateSpecification = new LaunchTemplateSpecification {
+                            LaunchTemplateName = "my-launch-template-for-x86",
+                            Version = "$Latest"
+                        },
+                        Overrides = new List<LaunchTemplateOverrides> {
+                            new LaunchTemplateOverrides {
+                                InstanceType = "c6g.large",
+                                LaunchTemplateSpecification = new LaunchTemplateSpecification {
+                                    LaunchTemplateName = "my-launch-template-for-arm",
+                                    Version = "$Latest"
+                                }
+                            },
+                            new LaunchTemplateOverrides { InstanceType = "c5.large" },
+                            new LaunchTemplateOverrides { InstanceType = "c5a.large" }
+                        }
+                    }
                 },
-                HealthCheckGracePeriod = 120,
-                HealthCheckType = "ELB",
-                LaunchConfigurationName = "my-launch-config",
-                LoadBalancerNames = new List<string> {
-                    "my-load-balancer"
-                },
-                MaxSize = 3,
-                MinSize = 1
+                VPCZoneIdentifier = "subnet-057fa0918fEXAMPLE, subnet-610acd08EXAMPLE"
             });
 
 
@@ -775,7 +795,7 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                 TargetTrackingConfiguration = new TargetTrackingConfiguration {
                     PredefinedMetricSpecification = new PredefinedMetricSpecification {
                         PredefinedMetricType = "ALBRequestCountPerTarget",
-                        ResourceLabel = "app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d"
+                        ResourceLabel = "app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff"
                     },
                     TargetValue = 1000
                 }
@@ -800,6 +820,21 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                 MinSize = 2,
                 ScheduledActionName = "my-scheduled-action",
                 StartTimeUtc = new DateTime(2014, 5, 12, 1, 0, 0, DateTimeKind.Utc)
+            });
+
+
+            #endregion
+        }
+
+        public void AutoScalingPutWarmPool()
+        {
+            #region to-add-a-warm-pool-to-an-auto-scaling-group-1617818810383
+
+            var response = client.PutWarmPool(new PutWarmPoolRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group",
+                MinSize = 30,
+                PoolState = "Stopped"
             });
 
 

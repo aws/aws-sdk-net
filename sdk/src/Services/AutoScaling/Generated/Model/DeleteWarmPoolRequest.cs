@@ -29,32 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteAutoScalingGroup operation.
-    /// Deletes the specified Auto Scaling group.
-    /// 
-    ///  
-    /// <para>
-    /// If the group has instances or scaling activities in progress, you must specify the
-    /// option to force the deletion in order for it to succeed.
-    /// </para>
-    ///  
-    /// <para>
-    /// If the group has policies, deleting the group deletes the policies, the underlying
-    /// alarm actions, and any alarm that no longer has an associated action.
-    /// </para>
-    ///  
-    /// <para>
-    /// To remove instances from the Auto Scaling group before deleting it, call the <a>DetachInstances</a>
-    /// API with the list of instances and the option to decrement the desired capacity. This
-    /// ensures that Amazon EC2 Auto Scaling does not launch replacement instances.
-    /// </para>
-    ///  
-    /// <para>
-    /// To terminate all instances before deleting the Auto Scaling group, call the <a>UpdateAutoScalingGroup</a>
-    /// API and set the minimum size and desired capacity of the Auto Scaling group to zero.
-    /// </para>
+    /// Container for the parameters to the DeleteWarmPool operation.
+    /// Deletes the warm pool for the specified Auto Scaling group.
     /// </summary>
-    public partial class DeleteAutoScalingGroupRequest : AmazonAutoScalingRequest
+    public partial class DeleteWarmPoolRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
         private bool? _forceDelete;
@@ -81,9 +59,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ForceDelete. 
         /// <para>
-        /// Specifies that the group is to be deleted along with all instances associated with
-        /// the group, without waiting for all instances to be terminated. This parameter also
-        /// deletes any outstanding lifecycle actions associated with the group.
+        /// Specifies that the warm pool is to be deleted along with all instances associated
+        /// with the warm pool, without waiting for all instances to be terminated. This parameter
+        /// also deletes any outstanding lifecycle actions associated with the warm pool instances.
         /// </para>
         /// </summary>
         public bool ForceDelete

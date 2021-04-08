@@ -144,6 +144,38 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// The warm pools feature supports the following additional metrics: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>WarmPoolDesiredCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WarmPoolWarmedCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WarmPoolPendingCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WarmPoolTerminatingCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WarmPoolTotalCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupAndWarmPoolDesiredCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupAndWarmPoolTotalCapacity</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// If you omit this parameter, all metrics are enabled. 
         /// </para>
         /// </summary>

@@ -30,7 +30,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SetInstanceProtection operation.
-    /// Updates the instance protection settings of the specified instances.
+    /// Updates the instance protection settings of the specified instances. This operation
+    /// cannot be called on instances in a warm pool.
     /// 
     ///  
     /// <para>

@@ -30,8 +30,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the StartInstanceRefresh operation.
-    /// Starts a new instance refresh operation, which triggers a rolling replacement of all
-    /// previously launched instances in the Auto Scaling group with a new group of instances.
+    /// Starts a new instance refresh operation, which triggers a rolling replacement of previously
+    /// launched instances in the Auto Scaling group with a new group of instances.
     /// 
     ///  
     /// <para>

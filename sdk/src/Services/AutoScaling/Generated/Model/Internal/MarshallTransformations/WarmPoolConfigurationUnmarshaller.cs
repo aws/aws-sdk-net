@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InstanceRefresh Object
+    /// Response Unmarshaller for WarmPoolConfiguration Object
     /// </summary>  
-    public class InstanceRefreshUnmarshaller : IUnmarshaller<InstanceRefresh, XmlUnmarshallerContext>, IUnmarshaller<InstanceRefresh, JsonUnmarshallerContext>
+    public class WarmPoolConfigurationUnmarshaller : IUnmarshaller<WarmPoolConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WarmPoolConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InstanceRefresh Unmarshall(XmlUnmarshallerContext context)
+        public WarmPoolConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceRefresh unmarshalledObject = new InstanceRefresh();
+            WarmPoolConfiguration unmarshalledObject = new WarmPoolConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,58 +54,28 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AutoScalingGroupName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("EndTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("InstanceRefreshId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceRefreshId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("InstancesToUpdate", targetDepth))
+                    if (context.TestExpression("MaxGroupPreparedCapacity", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.InstancesToUpdate = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MaxGroupPreparedCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("PercentageComplete", targetDepth))
+                    if (context.TestExpression("MinSize", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.PercentageComplete = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MinSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ProgressDetails", targetDepth))
+                    if (context.TestExpression("PoolState", targetDepth))
                     {
-                        var unmarshaller = InstanceRefreshProgressDetailsUnmarshaller.Instance;
-                        unmarshalledObject.ProgressDetails = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StartTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PoolState = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StatusReason", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -123,18 +93,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InstanceRefresh Unmarshall(JsonUnmarshallerContext context)
+        public WarmPoolConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static InstanceRefreshUnmarshaller _instance = new InstanceRefreshUnmarshaller();        
+        private static WarmPoolConfigurationUnmarshaller _instance = new WarmPoolConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceRefreshUnmarshaller Instance
+        public static WarmPoolConfigurationUnmarshaller Instance
         {
             get
             {

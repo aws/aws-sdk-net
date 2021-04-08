@@ -113,6 +113,34 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <code>GroupTotalCapacity</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WarmPoolDesiredCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WarmPoolWarmedCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WarmPoolPendingCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WarmPoolTerminatingCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WarmPoolTotalCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupAndWarmPoolDesiredCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupAndWarmPoolTotalCapacity</code> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you omit this parameter, all metrics are disabled. 

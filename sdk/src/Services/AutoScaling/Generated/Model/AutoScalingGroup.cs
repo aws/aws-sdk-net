@@ -60,6 +60,8 @@ namespace Amazon.AutoScaling.Model
         private List<string> _targetGroupARNs = new List<string>();
         private List<string> _terminationPolicies = new List<string>();
         private string _vpcZoneIdentifier;
+        private WarmPoolConfiguration _warmPoolConfiguration;
+        private int? _warmPoolSize;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupARN. 
@@ -570,6 +572,42 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetVPCZoneIdentifier()
         {
             return this._vpcZoneIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmPoolConfiguration. 
+        /// <para>
+        /// The warm pool for the group.
+        /// </para>
+        /// </summary>
+        public WarmPoolConfiguration WarmPoolConfiguration
+        {
+            get { return this._warmPoolConfiguration; }
+            set { this._warmPoolConfiguration = value; }
+        }
+
+        // Check to see if WarmPoolConfiguration property is set
+        internal bool IsSetWarmPoolConfiguration()
+        {
+            return this._warmPoolConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmPoolSize. 
+        /// <para>
+        /// The current size of the warm pool.
+        /// </para>
+        /// </summary>
+        public int WarmPoolSize
+        {
+            get { return this._warmPoolSize.GetValueOrDefault(); }
+            set { this._warmPoolSize = value; }
+        }
+
+        // Check to see if WarmPoolSize property is set
+        internal bool IsSetWarmPoolSize()
+        {
+            return this._warmPoolSize.HasValue; 
         }
 
     }
