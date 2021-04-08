@@ -36,7 +36,9 @@ namespace Amazon.RoboMaker.Model
         private string _application;
         private string _applicationVersion;
         private LaunchConfig _launchConfig;
+        private List<Tool> _tools = new List<Tool>();
         private List<UploadConfiguration> _uploadConfigurations = new List<UploadConfiguration>();
+        private bool? _useDefaultTools;
         private bool? _useDefaultUploadConfigurations;
         private List<WorldConfig> _worldConfigs = new List<WorldConfig>();
 
@@ -98,6 +100,25 @@ namespace Amazon.RoboMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tools. 
+        /// <para>
+        /// Information about tools configured for the simulation application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<Tool> Tools
+        {
+            get { return this._tools; }
+            set { this._tools = value; }
+        }
+
+        // Check to see if Tools property is set
+        internal bool IsSetTools()
+        {
+            return this._tools != null && this._tools.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property UploadConfigurations. 
         /// <para>
         /// Information about upload configurations for the simulation application.
@@ -114,6 +135,26 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetUploadConfigurations()
         {
             return this._uploadConfigurations != null && this._uploadConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseDefaultTools. 
+        /// <para>
+        /// A Boolean indicating whether to use default simulation application tools. The default
+        /// tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool UseDefaultTools
+        {
+            get { return this._useDefaultTools.GetValueOrDefault(); }
+            set { this._useDefaultTools = value; }
+        }
+
+        // Check to see if UseDefaultTools property is set
+        internal bool IsSetUseDefaultTools()
+        {
+            return this._useDefaultTools.HasValue; 
         }
 
         /// <summary>

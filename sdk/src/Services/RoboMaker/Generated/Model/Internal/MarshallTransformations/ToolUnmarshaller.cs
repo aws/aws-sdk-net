@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RobotApplicationConfig Object
+    /// Response Unmarshaller for Tool Object
     /// </summary>  
-    public class RobotApplicationConfigUnmarshaller : IUnmarshaller<RobotApplicationConfig, XmlUnmarshallerContext>, IUnmarshaller<RobotApplicationConfig, JsonUnmarshallerContext>
+    public class ToolUnmarshaller : IUnmarshaller<Tool, XmlUnmarshallerContext>, IUnmarshaller<Tool, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RobotApplicationConfig IUnmarshaller<RobotApplicationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Tool IUnmarshaller<Tool, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,45 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RobotApplicationConfig Unmarshall(JsonUnmarshallerContext context)
+        public Tool Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RobotApplicationConfig unmarshalledObject = new RobotApplicationConfig();
+            Tool unmarshalledObject = new Tool();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("application", targetDepth))
+                if (context.TestExpression("command", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Application = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Command = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("applicationVersion", targetDepth))
+                if (context.TestExpression("exitBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExitBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("launchConfig", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
-                    var unmarshaller = LaunchConfigUnmarshaller.Instance;
-                    unmarshalledObject.LaunchConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tools", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tool, ToolUnmarshaller>(ToolUnmarshaller.Instance);
-                    unmarshalledObject.Tools = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("uploadConfigurations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<UploadConfiguration, UploadConfigurationUnmarshaller>(UploadConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.UploadConfigurations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("useDefaultTools", targetDepth))
+                if (context.TestExpression("streamOutputToCloudWatch", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.UseDefaultTools = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamOutputToCloudWatch = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("useDefaultUploadConfigurations", targetDepth))
+                if (context.TestExpression("streamUI", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.UseDefaultUploadConfigurations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamUI = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +100,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static RobotApplicationConfigUnmarshaller _instance = new RobotApplicationConfigUnmarshaller();        
+        private static ToolUnmarshaller _instance = new ToolUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RobotApplicationConfigUnmarshaller Instance
+        public static ToolUnmarshaller Instance
         {
             get
             {

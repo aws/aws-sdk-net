@@ -85,9 +85,17 @@ namespace Amazon.RoboMaker
     {
 
         /// <summary>
+        /// Constant BadLambdaAssociated for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode BadLambdaAssociated = new DeploymentJobErrorCode("BadLambdaAssociated");
+        /// <summary>
         /// Constant BadPermissionError for DeploymentJobErrorCode
         /// </summary>
         public static readonly DeploymentJobErrorCode BadPermissionError = new DeploymentJobErrorCode("BadPermissionError");
+        /// <summary>
+        /// Constant DeploymentFleetDoesNotExist for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode DeploymentFleetDoesNotExist = new DeploymentJobErrorCode("DeploymentFleetDoesNotExist");
         /// <summary>
         /// Constant DownloadConditionFailed for DeploymentJobErrorCode
         /// </summary>
@@ -108,6 +116,10 @@ namespace Amazon.RoboMaker
         /// Constant FailureThresholdBreached for DeploymentJobErrorCode
         /// </summary>
         public static readonly DeploymentJobErrorCode FailureThresholdBreached = new DeploymentJobErrorCode("FailureThresholdBreached");
+        /// <summary>
+        /// Constant FleetDeploymentTimeout for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode FleetDeploymentTimeout = new DeploymentJobErrorCode("FleetDeploymentTimeout");
         /// <summary>
         /// Constant GreengrassDeploymentFailed for DeploymentJobErrorCode
         /// </summary>
@@ -156,6 +168,10 @@ namespace Amazon.RoboMaker
         /// Constant RobotAgentConnectionTimeout for DeploymentJobErrorCode
         /// </summary>
         public static readonly DeploymentJobErrorCode RobotAgentConnectionTimeout = new DeploymentJobErrorCode("RobotAgentConnectionTimeout");
+        /// <summary>
+        /// Constant RobotApplicationDoesNotExist for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode RobotApplicationDoesNotExist = new DeploymentJobErrorCode("RobotApplicationDoesNotExist");
         /// <summary>
         /// Constant RobotDeploymentAborted for DeploymentJobErrorCode
         /// </summary>
@@ -260,6 +276,56 @@ namespace Amazon.RoboMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExitBehavior.
+    /// </summary>
+    public class ExitBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL for ExitBehavior
+        /// </summary>
+        public static readonly ExitBehavior FAIL = new ExitBehavior("FAIL");
+        /// <summary>
+        /// Constant RESTART for ExitBehavior
+        /// </summary>
+        public static readonly ExitBehavior RESTART = new ExitBehavior("RESTART");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExitBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExitBehavior FindValue(string value)
+        {
+            return FindValue<ExitBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExitBehavior(string value)
         {
             return FindValue(value);
         }
@@ -813,6 +879,10 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly SimulationJobErrorCode RobotApplicationCrash = new SimulationJobErrorCode("RobotApplicationCrash");
         /// <summary>
+        /// Constant RobotApplicationHealthCheckFailure for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode RobotApplicationHealthCheckFailure = new SimulationJobErrorCode("RobotApplicationHealthCheckFailure");
+        /// <summary>
         /// Constant RobotApplicationVersionMismatchedEtag for SimulationJobErrorCode
         /// </summary>
         public static readonly SimulationJobErrorCode RobotApplicationVersionMismatchedEtag = new SimulationJobErrorCode("RobotApplicationVersionMismatchedEtag");
@@ -821,6 +891,10 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly SimulationJobErrorCode SimulationApplicationCrash = new SimulationJobErrorCode("SimulationApplicationCrash");
         /// <summary>
+        /// Constant SimulationApplicationHealthCheckFailure for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode SimulationApplicationHealthCheckFailure = new SimulationJobErrorCode("SimulationApplicationHealthCheckFailure");
+        /// <summary>
         /// Constant SimulationApplicationVersionMismatchedEtag for SimulationJobErrorCode
         /// </summary>
         public static readonly SimulationJobErrorCode SimulationApplicationVersionMismatchedEtag = new SimulationJobErrorCode("SimulationApplicationVersionMismatchedEtag");
@@ -828,6 +902,10 @@ namespace Amazon.RoboMaker
         /// Constant SubnetIpLimitExceeded for SimulationJobErrorCode
         /// </summary>
         public static readonly SimulationJobErrorCode SubnetIpLimitExceeded = new SimulationJobErrorCode("SubnetIpLimitExceeded");
+        /// <summary>
+        /// Constant ThrottlingError for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode ThrottlingError = new SimulationJobErrorCode("ThrottlingError");
         /// <summary>
         /// Constant UploadContentMismatchError for SimulationJobErrorCode
         /// </summary>

@@ -90,7 +90,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property UploadBehavior. 
         /// <para>
-        /// Specifies how to upload the files:
+        /// Specifies when to upload the files:
         /// </para>
         ///  <dl> <dt>UPLOAD_ON_TERMINATE</dt> <dd> 
         /// <para>

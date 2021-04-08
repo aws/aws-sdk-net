@@ -68,6 +68,22 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTools())
+            {
+                context.Writer.WritePropertyName("tools");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectToolsListValue in requestObject.Tools)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ToolMarshaller.Instance;
+                    marshaller.Marshall(requestObjectToolsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetUploadConfigurations())
             {
                 context.Writer.WritePropertyName("uploadConfigurations");
@@ -82,6 +98,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetUseDefaultTools())
+            {
+                context.Writer.WritePropertyName("useDefaultTools");
+                context.Writer.Write(requestObject.UseDefaultTools);
             }
 
             if(requestObject.IsSetUseDefaultUploadConfigurations())
