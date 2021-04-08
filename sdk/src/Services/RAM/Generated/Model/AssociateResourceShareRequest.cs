@@ -61,7 +61,9 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// The principals.
+        /// The principals to associate with the resource share. The possible values are IDs of
+        /// AWS accounts, and the ARNs of organizational units (OU) or organizations from AWS
+        /// Organizations.
         /// </para>
         /// </summary>
         public List<string> Principals
