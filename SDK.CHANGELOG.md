@@ -1,3 +1,11 @@
+### 3.7.12.0 (2021-04-09 18:12 UTC)
+* EC2 (3.7.4.0)
+	* Add paginator support to DescribeStoreImageTasks and update documentation.
+* Redshift (3.7.2.0)
+	* Add support for case sensitive table level restore
+* Shield (3.7.1.0)
+	* CreateProtection now throws InvalidParameterException instead of InternalErrorException when system tags (tag with keys prefixed with "aws:") are passed in.
+
 ### 3.7.11.0 (2021-04-08 18:15 UTC)
 * AppStream (3.7.1.0)
 	* This release provides support for image updates
