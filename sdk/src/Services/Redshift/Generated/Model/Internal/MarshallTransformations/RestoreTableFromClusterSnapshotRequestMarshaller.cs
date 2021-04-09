@@ -62,6 +62,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
+                if(publicRequest.IsSetEnableCaseSensitiveIdentifier())
+                {
+                    request.Parameters.Add("EnableCaseSensitiveIdentifier", StringUtils.FromBool(publicRequest.EnableCaseSensitiveIdentifier));
+                }
                 if(publicRequest.IsSetNewTableName())
                 {
                     request.Parameters.Add("NewTableName", StringUtils.FromString(publicRequest.NewTableName));

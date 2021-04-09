@@ -49,6 +49,7 @@ namespace Amazon.Redshift.Model
     public partial class RestoreTableFromClusterSnapshotRequest : AmazonRedshiftRequest
     {
         private string _clusterIdentifier;
+        private bool? _enableCaseSensitiveIdentifier;
         private string _newTableName;
         private string _snapshotIdentifier;
         private string _sourceDatabaseName;
@@ -74,6 +75,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterIdentifier()
         {
             return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableCaseSensitiveIdentifier. 
+        /// <para>
+        /// Indicates whether name identifiers for database, schema, and table are case sensitive.
+        /// If <code>true</code>, the names are case sensitive. If <code>false</code> (default),
+        /// the names are not case sensitive.
+        /// </para>
+        /// </summary>
+        public bool EnableCaseSensitiveIdentifier
+        {
+            get { return this._enableCaseSensitiveIdentifier.GetValueOrDefault(); }
+            set { this._enableCaseSensitiveIdentifier = value; }
+        }
+
+        // Check to see if EnableCaseSensitiveIdentifier property is set
+        internal bool IsSetEnableCaseSensitiveIdentifier()
+        {
+            return this._enableCaseSensitiveIdentifier.HasValue; 
         }
 
         /// <summary>
