@@ -299,15 +299,6 @@ namespace Amazon.Shield
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
-        /// 
-        ///  
-        /// <para>
-        ///  <code>Type</code> is the type of limit that would be exceeded.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>Limit</code> is the threshold that would be exceeded.
-        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.NoAssociatedRoleException">
         /// The ARN of the role that you specifed does not exist.
@@ -368,15 +359,6 @@ namespace Amazon.Shield
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
-        /// 
-        ///  
-        /// <para>
-        ///  <code>Type</code> is the type of limit that would be exceeded.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>Limit</code> is the threshold that would be exceeded.
-        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.NoAssociatedRoleException">
         /// The ARN of the role that you specifed does not exist.
@@ -603,15 +585,6 @@ namespace Amazon.Shield
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
-        /// 
-        ///  
-        /// <para>
-        ///  <code>Type</code> is the type of limit that would be exceeded.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>Limit</code> is the threshold that would be exceeded.
-        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
@@ -661,15 +634,6 @@ namespace Amazon.Shield
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
-        /// 
-        ///  
-        /// <para>
-        ///  <code>Type</code> is the type of limit that would be exceeded.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>Limit</code> is the threshold that would be exceeded.
-        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
@@ -843,21 +807,16 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
+        /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidResourceException">
         /// Exception that indicates that the resource is invalid. You might not have access to
         /// the resource, or the resource might not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
-        /// 
-        ///  
-        /// <para>
-        ///  <code>Type</code> is the type of limit that would be exceeded.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>Limit</code> is the threshold that would be exceeded.
-        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
@@ -909,21 +868,16 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
+        /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidResourceException">
         /// Exception that indicates that the resource is invalid. You might not have access to
         /// the resource, or the resource might not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
-        /// 
-        ///  
-        /// <para>
-        ///  <code>Type</code> is the type of limit that would be exceeded.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>Limit</code> is the threshold that would be exceeded.
-        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
@@ -969,15 +923,6 @@ namespace Amazon.Shield
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
-        /// 
-        ///  
-        /// <para>
-        ///  <code>Type</code> is the type of limit that would be exceeded.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>Limit</code> is the threshold that would be exceeded.
-        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
@@ -1022,15 +967,6 @@ namespace Amazon.Shield
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
-        /// 
-        ///  
-        /// <para>
-        ///  <code>Type</code> is the type of limit that would be exceeded.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>Limit</code> is the threshold that would be exceeded.
-        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.

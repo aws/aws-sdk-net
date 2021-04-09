@@ -88,6 +88,10 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                 {
                     return InvalidOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
+                {
+                    return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceException"))
                 {
                     return InvalidResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

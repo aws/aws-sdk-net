@@ -30,15 +30,6 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Exception that indicates that the operation would exceed a limit.
-    /// 
-    ///  
-    /// <para>
-    ///  <code>Type</code> is the type of limit that would be exceeded.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>Limit</code> is the threshold that would be exceeded.
-    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -136,7 +127,10 @@ namespace Amazon.Shield.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property Limit.
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The threshold that would be exceeded.
+        /// </para>
         /// </summary>
         public long Limit
         {
@@ -151,7 +145,10 @@ namespace Amazon.Shield.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of limit that would be exceeded.
+        /// </para>
         /// </summary>
         public string Type
         {
