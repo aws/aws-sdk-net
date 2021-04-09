@@ -336,6 +336,11 @@ namespace Amazon.EC2.Model
         IDescribeStaleSecurityGroupsPaginator DescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeStoreImageTasks operation
+        ///</summary>
+        IDescribeStoreImageTasksPaginator DescribeStoreImageTasks(DescribeStoreImageTasksRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSubnets operation
         ///</summary>
         IDescribeSubnetsPaginator DescribeSubnets(DescribeSubnetsRequest request);

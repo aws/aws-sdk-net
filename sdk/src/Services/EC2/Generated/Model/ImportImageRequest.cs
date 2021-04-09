@@ -31,8 +31,13 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ImportImage operation.
     /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
-    /// Image (AMI). For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
-    /// a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
+    /// Image (AMI).
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+    /// a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ImportImageRequest : AmazonEC2Request
     {

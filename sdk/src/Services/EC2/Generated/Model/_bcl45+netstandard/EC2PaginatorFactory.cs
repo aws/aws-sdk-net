@@ -532,6 +532,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeStoreImageTasks operation
+        ///</summary>
+        public IDescribeStoreImageTasksPaginator DescribeStoreImageTasks(DescribeStoreImageTasksRequest request) 
+        {
+            return new DescribeStoreImageTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeSubnets operation
         ///</summary>
         public IDescribeSubnetsPaginator DescribeSubnets(DescribeSubnetsRequest request) 

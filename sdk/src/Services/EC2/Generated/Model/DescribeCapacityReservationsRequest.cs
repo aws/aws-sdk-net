@@ -134,6 +134,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
+        ///  <code>start-date</code> - The date and time at which the Capacity Reservation was
+        /// started.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>end-date</code> - The date and time at which the Capacity Reservation expires.
         /// When a Capacity Reservation expires, the reserved capacity is released and you can
         /// no longer launch instances into it. The Capacity Reservation's state changes to expired

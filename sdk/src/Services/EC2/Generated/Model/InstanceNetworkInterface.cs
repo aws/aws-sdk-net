@@ -273,7 +273,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceDestCheck. 
         /// <para>
-        /// Indicates whether to validate network traffic to or from this network interface.
+        /// Indicates whether source/destination checking is enabled.
         /// </para>
         /// </summary>
         public bool SourceDestCheck

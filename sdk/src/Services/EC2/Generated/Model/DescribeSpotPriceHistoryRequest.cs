@@ -35,10 +35,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// When you specify a start and end time, this operation returns the prices of the instance
-    /// types within the time range that you specified and the time when the price changed.
-    /// The price is valid within the time period that you specified; the response merely
-    /// indicates the last time that the price changed.
+    /// When you specify a start and end time, the operation returns the prices of the instance
+    /// types within that time range. It also returns the last price change before the start
+    /// time, which is the effective price as of the start time.
     /// </para>
     /// </summary>
     public partial class DescribeSpotPriceHistoryRequest : AmazonEC2Request

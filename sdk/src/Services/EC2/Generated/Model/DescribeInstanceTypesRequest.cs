@@ -167,7 +167,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of
-        /// Elastic Fabric Adapters (EFAs) per instance. (<code>true</code> | <code>false</code>).
+        /// Elastic Fabric Adapters (EFAs) per instance.
         /// </para>
         ///  </li> <li> 
         /// <para>

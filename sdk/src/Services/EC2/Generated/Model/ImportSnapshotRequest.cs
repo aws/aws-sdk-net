@@ -31,6 +31,12 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ImportSnapshot operation.
     /// Imports a disk into an EBS snapshot.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-import-snapshot.html">Importing
+    /// a disk as a snapshot using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ImportSnapshotRequest : AmazonEC2Request
     {

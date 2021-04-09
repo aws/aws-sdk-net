@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// If the Spot <code>AllocationStrategy</code> is set to <code>capacityOptimizedPrioritized</code>,
         /// Spot Fleet uses priority on a best-effort basis to determine which launch template
-        /// override to use first in fulfilling Spot capacity, but optimizes for capacity first.
+        /// override to use in fulfilling Spot capacity, but optimizes for capacity first.
         /// </para>
         ///  
         /// <para>
