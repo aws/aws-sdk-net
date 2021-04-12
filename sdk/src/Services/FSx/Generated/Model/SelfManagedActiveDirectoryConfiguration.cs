@@ -31,6 +31,8 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// The configuration that Amazon FSx uses to join the Windows File Server instance to
     /// your self-managed (including on-premises) Microsoft Active Directory (AD) directory.
+    /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
+    /// Using Amazon FSx with your self-managed Microsoft Active Directory</a>.
     /// </summary>
     public partial class SelfManagedActiveDirectoryConfiguration
     {
@@ -45,24 +47,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DnsIps. 
         /// <para>
         /// A list of up to two IP addresses of DNS servers or domain controllers in the self-managed
-        /// AD directory. The IP addresses need to be either in the same VPC CIDR range as the
-        /// one in which your Amazon FSx file system is being created, or in the private IP version
-        /// 4 (IPv4) address ranges, as specified in <a href="http://www.faqs.org/rfcs/rfc1918.html">RFC
-        /// 1918</a>:
+        /// AD directory. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// 10.0.0.0 - 10.255.255.255 (10/8 prefix)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]
         public List<string> DnsIps

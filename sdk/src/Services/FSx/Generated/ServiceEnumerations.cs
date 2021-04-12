@@ -267,6 +267,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly BackupLifecycle AVAILABLE = new BackupLifecycle("AVAILABLE");
         /// <summary>
+        /// Constant COPYING for BackupLifecycle
+        /// </summary>
+        public static readonly BackupLifecycle COPYING = new BackupLifecycle("COPYING");
+        /// <summary>
         /// Constant CREATING for BackupLifecycle
         /// </summary>
         public static readonly BackupLifecycle CREATING = new BackupLifecycle("CREATING");
@@ -1027,6 +1031,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly ServiceLimit FILE_SYSTEM_COUNT = new ServiceLimit("FILE_SYSTEM_COUNT");
         /// <summary>
+        /// Constant TOTAL_IN_PROGRESS_COPY_BACKUPS for ServiceLimit
+        /// </summary>
+        public static readonly ServiceLimit TOTAL_IN_PROGRESS_COPY_BACKUPS = new ServiceLimit("TOTAL_IN_PROGRESS_COPY_BACKUPS");
+        /// <summary>
         /// Constant TOTAL_STORAGE for ServiceLimit
         /// </summary>
         public static readonly ServiceLimit TOTAL_STORAGE = new ServiceLimit("TOTAL_STORAGE");
@@ -1038,6 +1046,10 @@ namespace Amazon.FSx
         /// Constant TOTAL_USER_INITIATED_BACKUPS for ServiceLimit
         /// </summary>
         public static readonly ServiceLimit TOTAL_USER_INITIATED_BACKUPS = new ServiceLimit("TOTAL_USER_INITIATED_BACKUPS");
+        /// <summary>
+        /// Constant TOTAL_USER_TAGS for ServiceLimit
+        /// </summary>
+        public static readonly ServiceLimit TOTAL_USER_TAGS = new ServiceLimit("TOTAL_USER_TAGS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

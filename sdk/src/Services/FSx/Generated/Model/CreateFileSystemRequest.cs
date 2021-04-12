@@ -270,7 +270,8 @@ namespace Amazon.FSx.Model
         /// Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two
         /// subnet IDs, one for the preferred file server and one for the standby file server.
         /// You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration
-        /// &gt; PreferredSubnetID</code> property.
+        /// &gt; PreferredSubnetID</code> property. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
+        /// Availability and durability: Single-AZ and Multi-AZ file systems</a>.
         /// </para>
         ///  
         /// <para>

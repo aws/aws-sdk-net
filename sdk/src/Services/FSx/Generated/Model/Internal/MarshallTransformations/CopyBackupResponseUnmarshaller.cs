@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteBackup operation
+    /// Response Unmarshaller for CopyBackup operation
     /// </summary>  
-    public class DeleteBackupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CopyBackupResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteBackupResponse response = new DeleteBackupResponse();
+            CopyBackupResponse response = new CopyBackupResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BackupId", targetDepth))
+                if (context.TestExpression("Backup", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.BackupId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Lifecycle", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Lifecycle = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BackupUnmarshaller.Instance;
+                    response.Backup = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,21 +80,9 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("BackupBeingCopied"))
-                {
-                    return BackupBeingCopiedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("BackupInProgress"))
-                {
-                    return BackupInProgressExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BackupNotFound"))
                 {
                     return BackupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("BackupRestoring"))
-                {
-                    return BackupRestoringExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequest"))
                 {
@@ -110,17 +92,45 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     return IncompatibleParameterErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IncompatibleRegionForMultiAZ"))
+                {
+                    return IncompatibleRegionForMultiAZExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDestinationKmsKey"))
+                {
+                    return InvalidDestinationKmsKeyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRegion"))
+                {
+                    return InvalidRegionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSourceKmsKey"))
+                {
+                    return InvalidSourceKmsKeyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceLimitExceeded"))
+                {
+                    return ServiceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("SourceBackupUnavailable"))
+                {
+                    return SourceBackupUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
+                {
+                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonFSxException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteBackupResponseUnmarshaller _instance = new DeleteBackupResponseUnmarshaller();        
+        private static CopyBackupResponseUnmarshaller _instance = new CopyBackupResponseUnmarshaller();        
 
-        internal static DeleteBackupResponseUnmarshaller GetInstance()
+        internal static CopyBackupResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +138,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteBackupResponseUnmarshaller Instance
+        public static CopyBackupResponseUnmarshaller Instance
         {
             get
             {

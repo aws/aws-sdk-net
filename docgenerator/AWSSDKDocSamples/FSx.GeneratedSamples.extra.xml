@@ -2,6 +2,25 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.CopyBackup(Amazon.FSx.Model.CopyBackupRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.CopyBackup(Amazon.FSx.Model.CopyBackupRequest)" />
+            <member name="T:Amazon.FSx.Model.CopyBackupRequest" />
+            <member name="T:Amazon.FSx.Model.CopyBackupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation copies an Amazon FSx backup.
+                </para>
+                <code
+                    title="To copy a backup"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-copy-a-backup-1481847318640" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.FSx.IAmazonFSx.CreateBackup(Amazon.FSx.Model.CreateBackupRequest)" />
             <member name="M:Amazon.FSx.AmazonFSxClient.CreateBackup(Amazon.FSx.Model.CreateBackupRequest)" />
             <member name="T:Amazon.FSx.Model.CreateBackupRequest" />

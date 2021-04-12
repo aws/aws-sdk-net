@@ -34,52 +34,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ActiveDirectoryBackupAttributes Object
+    /// Response Unmarshaller for BackupBeingCopiedException Object
     /// </summary>  
-    public class ActiveDirectoryBackupAttributesUnmarshaller : IUnmarshaller<ActiveDirectoryBackupAttributes, XmlUnmarshallerContext>, IUnmarshaller<ActiveDirectoryBackupAttributes, JsonUnmarshallerContext>
+    public class BackupBeingCopiedExceptionUnmarshaller : IErrorResponseUnmarshaller<BackupBeingCopiedException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ActiveDirectoryBackupAttributes IUnmarshaller<ActiveDirectoryBackupAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public BackupBeingCopiedException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ActiveDirectoryBackupAttributes Unmarshall(JsonUnmarshallerContext context)
+        public BackupBeingCopiedException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            ActiveDirectoryBackupAttributes unmarshalledObject = new ActiveDirectoryBackupAttributes();
+            BackupBeingCopiedException unmarshalledObject = new BackupBeingCopiedException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ActiveDirectoryId", targetDepth))
+                if (context.TestExpression("BackupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveDirectoryId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,13 +75,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-
-        private static ActiveDirectoryBackupAttributesUnmarshaller _instance = new ActiveDirectoryBackupAttributesUnmarshaller();        
+        private static BackupBeingCopiedExceptionUnmarshaller _instance = new BackupBeingCopiedExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActiveDirectoryBackupAttributesUnmarshaller Instance
+        public static BackupBeingCopiedExceptionUnmarshaller Instance
         {
             get
             {

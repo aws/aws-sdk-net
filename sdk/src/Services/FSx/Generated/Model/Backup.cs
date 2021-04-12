@@ -29,19 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// A backup of an Amazon FSx file system. For more information see:
-    /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
-    /// with backups for Windows file systems</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
-    /// with backups for Lustre file systems</a> 
-    /// </para>
-    ///  </li> </ul>
+    /// A backup of an Amazon FSx file system.
     /// </summary>
     public partial class Backup
     {
@@ -52,8 +40,11 @@ namespace Amazon.FSx.Model
         private FileSystem _fileSystem;
         private string _kmsKeyId;
         private BackupLifecycle _lifecycle;
+        private string _ownerId;
         private int? _progressPercent;
         private string _resourceARN;
+        private string _sourceBackupId;
+        private string _sourceBackupRegion;
         private List<Tag> _tags = new List<Tag>();
         private BackupType _type;
 
@@ -197,6 +188,10 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>COPYING</code> - Amazon FSx is copying the backup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
         /// </para>
         ///  </li> <li> 
@@ -216,6 +211,22 @@ namespace Amazon.FSx.Model
         internal bool IsSetLifecycle()
         {
             return this._lifecycle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId.
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>
@@ -251,6 +262,41 @@ namespace Amazon.FSx.Model
         internal bool IsSetResourceARN()
         {
             return this._resourceARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceBackupId.
+        /// </summary>
+        [AWSProperty(Min=12, Max=128)]
+        public string SourceBackupId
+        {
+            get { return this._sourceBackupId; }
+            set { this._sourceBackupId = value; }
+        }
+
+        // Check to see if SourceBackupId property is set
+        internal bool IsSetSourceBackupId()
+        {
+            return this._sourceBackupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceBackupRegion. 
+        /// <para>
+        /// The source Region of the backup. Specifies the Region from where this backup is copied.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public string SourceBackupRegion
+        {
+            get { return this._sourceBackupRegion; }
+            set { this._sourceBackupRegion = value; }
+        }
+
+        // Check to see if SourceBackupRegion property is set
+        internal bool IsSetSourceBackupRegion()
+        {
+            return this._sourceBackupRegion != null;
         }
 
         /// <summary>

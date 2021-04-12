@@ -106,6 +106,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OwnerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProgressPercent", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -116,6 +122,18 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceBackupId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceBackupId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceBackupRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceBackupRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))

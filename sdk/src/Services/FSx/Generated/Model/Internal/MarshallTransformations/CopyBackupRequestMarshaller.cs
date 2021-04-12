@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateFileSystemFromBackup Request Marshaller
+    /// CopyBackup Request Marshaller
     /// </summary>       
-    public class CreateFileSystemFromBackupRequestMarshaller : IMarshaller<IRequest, CreateFileSystemFromBackupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CopyBackupRequestMarshaller : IMarshaller<IRequest, CopyBackupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateFileSystemFromBackupRequest)input);
+            return this.Marshall((CopyBackupRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateFileSystemFromBackupRequest publicRequest)
+        public IRequest Marshall(CopyBackupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.FSx");
-            string target = "AWSSimbaAPIService_v20180301.CreateFileSystemFromBackup";
+            string target = "AWSSimbaAPIService_v20180301.CopyBackup";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-03-01";            
@@ -67,12 +67,6 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBackupId())
-                {
-                    context.Writer.WritePropertyName("BackupId");
-                    context.Writer.Write(publicRequest.BackupId);
-                }
-
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
@@ -84,49 +78,28 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetCopyTags())
+                {
+                    context.Writer.WritePropertyName("CopyTags");
+                    context.Writer.Write(publicRequest.CopyTags);
+                }
+
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     context.Writer.WritePropertyName("KmsKeyId");
                     context.Writer.Write(publicRequest.KmsKeyId);
                 }
 
-                if(publicRequest.IsSetLustreConfiguration())
+                if(publicRequest.IsSetSourceBackupId())
                 {
-                    context.Writer.WritePropertyName("LustreConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateFileSystemLustreConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LustreConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("SourceBackupId");
+                    context.Writer.Write(publicRequest.SourceBackupId);
                 }
 
-                if(publicRequest.IsSetSecurityGroupIds())
+                if(publicRequest.IsSetSourceRegion())
                 {
-                    context.Writer.WritePropertyName("SecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
-                    {
-                            context.Writer.Write(publicRequestSecurityGroupIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetStorageType())
-                {
-                    context.Writer.WritePropertyName("StorageType");
-                    context.Writer.Write(publicRequest.StorageType);
-                }
-
-                if(publicRequest.IsSetSubnetIds())
-                {
-                    context.Writer.WritePropertyName("SubnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-                    {
-                            context.Writer.Write(publicRequestSubnetIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("SourceRegion");
+                    context.Writer.Write(publicRequest.SourceRegion);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -145,17 +118,6 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetWindowsConfiguration())
-                {
-                    context.Writer.WritePropertyName("WindowsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateFileSystemWindowsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WindowsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -165,9 +127,9 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateFileSystemFromBackupRequestMarshaller _instance = new CreateFileSystemFromBackupRequestMarshaller();        
+        private static CopyBackupRequestMarshaller _instance = new CopyBackupRequestMarshaller();        
 
-        internal static CreateFileSystemFromBackupRequestMarshaller GetInstance()
+        internal static CopyBackupRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -175,7 +137,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateFileSystemFromBackupRequestMarshaller Instance
+        public static CopyBackupRequestMarshaller Instance
         {
             get
             {

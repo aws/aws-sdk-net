@@ -401,6 +401,129 @@ namespace Amazon.FSx
 
         #endregion
         
+        #region  CopyBackup
+
+        /// <summary>
+        /// Copies an existing backup within the same AWS account to another Region (cross-Region
+        /// copy) or within the same Region (in-Region copy). You can have up to five backup copy
+        /// requests in progress to a single destination Region per account.
+        /// 
+        ///  
+        /// <para>
+        /// You can use cross-Region backup copies for cross-region disaster recovery. You periodically
+        /// take backups and copy them to another Region so that in the event of a disaster in
+        /// the primary Region, you can restore from backup and recover availability quickly in
+        /// the other Region. You can make cross-Region copies only within your AWS partition.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can also use backup copies to clone your file data set to another Region or within
+        /// the same Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>SourceRegion</code> parameter to specify the AWS Region from
+        /// which the backup will be copied. For example, if you make the call from the <code>us-west-1</code>
+        /// Region and want to copy a backup from the <code>us-east-2</code> Region, you specify
+        /// <code>us-east-2</code> in the <code>SourceRegion</code> parameter to make a cross-Region
+        /// copy. If you don't specify a Region, the backup copy is created in the same Region
+        /// where the request is sent from (in-Region copy).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on creating backup copies, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html">
+        /// Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying
+        /// backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyBackup service method.</param>
+        /// 
+        /// <returns>The response from the CopyBackup service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BackupNotFoundException">
+        /// No Amazon FSx backups were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleRegionForMultiAZException">
+        /// Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the destination
+        /// Region, so the copied backup can't be restored.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidDestinationKmsKeyException">
+        /// The AWS Key Management Service (AWS KMS) key of the destination backup is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidRegionException">
+        /// The Region provided for <code>Source Region</code> is invalid or is in a different
+        /// AWS partition.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidSourceKmsKeyException">
+        /// The AWS Key Management Service (AWS KMS) key of the source backup is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SourceBackupUnavailableException">
+        /// The request was rejected because the lifecycle status of the source backup is not
+        /// <code>AVAILABLE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">REST API Reference for CopyBackup Operation</seealso>
+        public virtual CopyBackupResponse CopyBackup(CopyBackupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyBackupResponseUnmarshaller.Instance;
+
+            return Invoke<CopyBackupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyBackup operation on AmazonFSxClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyBackup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">REST API Reference for CopyBackup Operation</seealso>
+        public virtual IAsyncResult BeginCopyBackup(CopyBackupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyBackupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyBackup.</param>
+        /// 
+        /// <returns>Returns a  CopyBackupResult from FSx.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">REST API Reference for CopyBackup Operation</seealso>
+        public virtual CopyBackupResponse EndCopyBackup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CopyBackupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateBackup
 
         /// <summary>
@@ -908,6 +1031,9 @@ namespace Amazon.FSx
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
         /// 
         /// <returns>The response from the DeleteBackup service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BackupBeingCopiedException">
+        /// You can't delete a backup while it's being copied.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.BackupInProgressException">
         /// Another backup is already under way. Wait for completion before initiating additional
         /// backups of this file system.

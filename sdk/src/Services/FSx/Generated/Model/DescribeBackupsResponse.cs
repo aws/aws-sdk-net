@@ -39,7 +39,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Backups. 
         /// <para>
-        /// Any array of backups.
+        /// An array of backups.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

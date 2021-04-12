@@ -77,6 +77,7 @@ namespace Amazon.FSx.Model
     {
         private string _backupId;
         private string _clientRequestToken;
+        private string _kmsKeyId;
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
         private List<string> _securityGroupIds = new List<string>();
         private StorageType _storageType;
@@ -119,6 +120,22 @@ namespace Amazon.FSx.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.FSx.Model
     {
         private string _activeDirectoryId;
         private string _domainName;
+        private string _resourceARN;
 
         /// <summary>
         /// Gets and sets the property ActiveDirectoryId. 
@@ -73,6 +74,22 @@ namespace Amazon.FSx.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceARN.
+        /// </summary>
+        [AWSProperty(Min=8, Max=512)]
+        public string ResourceARN
+        {
+            get { return this._resourceARN; }
+            set { this._resourceARN = value; }
+        }
+
+        // Check to see if ResourceARN property is set
+        internal bool IsSetResourceARN()
+        {
+            return this._resourceARN != null;
         }
 
     }

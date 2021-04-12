@@ -12,6 +12,21 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
     class FSxSamples : ISample
     {
         static IAmazonFSx client = new AmazonFSxClient();
+        public void FSxCopyBackup()
+        {
+            #region to-copy-a-backup-1481847318640
+
+            var response = client.CopyBackup(new CopyBackupRequest 
+            {
+                SourceBackupId = "backup-03e3c82e0183b7b6b",
+                SourceRegion = "us-east-2"
+            });
+
+            Backup backup = response.Backup;
+
+            #endregion
+        }
+
         public void FSxCreateBackup()
         {
             #region to-create-a-new-backup-1481840798597

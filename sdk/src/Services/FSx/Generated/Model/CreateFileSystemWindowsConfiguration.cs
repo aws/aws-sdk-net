@@ -94,7 +94,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can contain alphanumeric characters and the hyphen (-).
+        /// Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
         /// </para>
         ///  </li> <li> 
         /// <para>

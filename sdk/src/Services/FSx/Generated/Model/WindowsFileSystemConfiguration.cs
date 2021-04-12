@@ -50,8 +50,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ActiveDirectoryId. 
         /// <para>
-        /// The ID for an existing Microsoft Active Directory instance that the file system should
-        /// join when it's created.
+        /// The ID for an existing AWS Managed Microsoft Active Directory instance that the file
+        /// system is joined to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -246,7 +246,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value
         /// is the same as that for <code>SubnetIDs</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
-        /// and Durability: Single-AZ and Multi-AZ File Systems</a> 
+        /// and durability: Single-AZ and Multi-AZ file systems</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=24)]
@@ -309,7 +309,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
-        /// The throughput of an Amazon FSx file system, measured in megabytes per second.
+        /// The throughput of the Amazon FSx file system, measured in megabytes per second.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=2048)]
