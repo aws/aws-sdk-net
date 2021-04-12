@@ -246,7 +246,7 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DebugSessionEnabled.  
+        /// Gets and sets the property DebugSessionEnabled. 
         /// <para>
         /// Specifies if session debugging is enabled for this batch build. For more information,
         /// see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing

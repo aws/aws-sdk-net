@@ -33,9 +33,25 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class S3LogsConfig
     {
+        private BucketOwnerAccess _bucketOwnerAccess;
         private bool? _encryptionDisabled;
         private string _location;
         private LogsConfigStatusType _status;
+
+        /// <summary>
+        /// Gets and sets the property BucketOwnerAccess.
+        /// </summary>
+        public BucketOwnerAccess BucketOwnerAccess
+        {
+            get { return this._bucketOwnerAccess; }
+            set { this._bucketOwnerAccess = value; }
+        }
+
+        // Check to see if BucketOwnerAccess property is set
+        internal bool IsSetBucketOwnerAccess()
+        {
+            return this._bucketOwnerAccess != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EncryptionDisabled. 

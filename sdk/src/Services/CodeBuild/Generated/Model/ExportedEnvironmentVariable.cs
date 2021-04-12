@@ -29,7 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about an exported environment variable.
+    /// Contains information about an exported environment variable. 
+    /// 
+    ///  
+    /// <para>
+    /// Exported environment variables are used in conjunction with AWS CodePipeline to export
+    /// environment variables from the current build stage to subsequent stages in the pipeline.
+    /// For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+    /// with variables</a> in the <i>AWS CodePipeline User Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  During a build, the value of a variable is available starting with the <code>install</code>
+    /// phase. It can be updated between the start of the <code>install</code> phase and the
+    /// end of the <code>post_build</code> phase. After the <code>post_build</code> phase
+    /// ends, the value of exported variables cannot change.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ExportedEnvironmentVariable
     {
@@ -39,7 +55,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of this exported environment variable. 
+        /// The name of the exported environment variable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -58,16 +74,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value assigned to this exported environment variable. 
+        /// The value assigned to the exported environment variable.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  During a build, the value of a variable is available starting with the <code>install</code>
-        /// phase. It can be updated between the start of the <code>install</code> phase and the
-        /// end of the <code>post_build</code> phase. After the <code>post_build</code> phase
-        /// ends, the value of exported variables cannot change.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string Value
         {

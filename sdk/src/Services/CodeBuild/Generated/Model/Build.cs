@@ -326,7 +326,14 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ExportedEnvironmentVariables. 
         /// <para>
-        ///  A list of exported environment variables for this build. 
+        /// A list of exported environment variables for this build.
+        /// </para>
+        ///  
+        /// <para>
+        /// Exported environment variables are used in conjunction with AWS CodePipeline to export
+        /// environment variables from the current build stage to subsequent stages in the pipeline.
+        /// For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+        /// with variables</a> in the <i>AWS CodePipeline User Guide</i>.
         /// </para>
         /// </summary>
         public List<ExportedEnvironmentVariable> ExportedEnvironmentVariables
