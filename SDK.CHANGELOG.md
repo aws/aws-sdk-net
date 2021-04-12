@@ -1,3 +1,14 @@
+### 3.7.13.0 (2021-04-12 18:15 UTC)
+* CodeBuild (3.7.1.0)
+	* AWS CodeBuild now allows you to set the access permissions for build artifacts, project artifacts, and log files that are uploaded to an Amazon S3 bucket that is owned by another account.
+* FSx (3.7.1.0)
+	* Support for cross-region and cross-account backup copies
+* Core 3.7.0.11
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.12.0 (2021-04-09 18:12 UTC)
 * EC2 (3.7.4.0)
 	* Add paginator support to DescribeStoreImageTasks and update documentation.
