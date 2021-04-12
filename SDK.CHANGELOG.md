@@ -1,3 +1,7 @@
+### 3.7.13.1 (2021-04-12 21:04 UTC)
+* S3 (3.7.0.12)
+	* Fix STS token query parameter casing while using S3 PresignedURLs with SigV2.
+
 ### 3.7.13.0 (2021-04-12 18:15 UTC)
 * CodeBuild (3.7.1.0)
 	* AWS CodeBuild now allows you to set the access permissions for build artifacts, project artifacts, and log files that are uploaded to an Amazon S3 bucket that is owned by another account.
