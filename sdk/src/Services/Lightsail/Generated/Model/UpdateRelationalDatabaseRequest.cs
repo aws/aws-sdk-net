@@ -154,12 +154,24 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The password for the master user of your database. The password can include any printable
-        /// ASCII character except "/", """, or "@".
+        /// The password for the master user. The password can include any printable ASCII character
+        /// except "/", """, or "@".
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain 8 to 41 characters.
+        /// My<b>SQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 41 characters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 128 characters.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -290,7 +302,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RelationalDatabaseName. 
         /// <para>
-        /// The name of your database to update.
+        /// The name of your Lightsail database resource to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
