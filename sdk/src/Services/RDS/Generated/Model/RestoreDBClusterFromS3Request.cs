@@ -670,9 +670,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
-        /// 
+        /// for each AWS Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+        /// Backup window</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
         ///  
         /// <para>

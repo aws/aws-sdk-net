@@ -147,8 +147,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be
-        /// provided.
+        /// If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.
         /// </para>
         ///  </li> <li> 
         /// <para>

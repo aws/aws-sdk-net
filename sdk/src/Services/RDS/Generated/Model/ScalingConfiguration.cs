@@ -146,6 +146,10 @@ namespace Amazon.RDS.Model
         /// The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode
         /// is paused.
         /// </para>
+        ///  
+        /// <para>
+        /// Specify a value between 300 and 86,400 seconds.
+        /// </para>
         /// </summary>
         public int SecondsUntilAutoPause
         {

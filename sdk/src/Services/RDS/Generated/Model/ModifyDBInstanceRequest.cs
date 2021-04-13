@@ -230,13 +230,16 @@ namespace Amazon.RDS.Model
         /// The number of days to retain automated backups. Setting this parameter to a positive
         /// number enables backups. Setting this parameter to 0 disables automated backups.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Changing this parameter can result in an outage if you change from 0 to a non-zero
-        /// value or from a non-zero value to 0. These changes are applied during the next maintenance
-        /// window unless the <code>ApplyImmediately</code> parameter is enabled for this request.
-        /// If you change the parameter from one non-zero value to another non-zero value, the
-        /// change is asynchronously applied as soon as possible.
+        /// Enabling and disabling backups can result in a brief I/O suspension that lasts from
+        /// a few seconds to a few minutes, depending on the size and class of your DB instance.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code>
+        /// parameter is enabled for this request. If you change the parameter from one non-zero
+        /// value to another non-zero value, the change is asynchronously applied as soon as possible.
         /// </para>
         ///  
         /// <para>
@@ -1239,7 +1242,9 @@ namespace Amazon.RDS.Model
         ///  The daily time range during which automated backups are created if automated backups
         /// are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing
         /// this parameter doesn't result in an outage and the change is asynchronously applied
-        /// as soon as possible. 
+        /// as soon as possible. The default is a 30-minute window selected at random from an
+        /// 8-hour block of time for each AWS Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+        /// window</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -1295,6 +1300,11 @@ namespace Amazon.RDS.Model
         /// DB instance. If moving this window to the current time, there must be at least 30
         /// minutes between the current time and end of the window to ensure pending changes are
         /// applied.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+        /// RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
