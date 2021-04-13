@@ -164,6 +164,7 @@ namespace Amazon.SecurityToken
                     request.SerialNumber = options.MfaSerialNumber;
                     request.TokenCode = options.MfaTokenCode;
                     request.Policy = options.Policy;
+                    request.SourceIdentity = options.SourceIdentity;
 
                     if (options.DurationSeconds.HasValue)
                     {

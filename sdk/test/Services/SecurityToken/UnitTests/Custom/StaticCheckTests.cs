@@ -35,7 +35,7 @@ namespace AWSSDK.UnitTests
         {
             AssertExtensions.AssertPropertiesUnchanged(
                 typeof(AssumeRoleRequest),
-                "967009A2213DDD5F69B1B78A8BF5B8B44225370BB391873186B018936E13FB46",
+                "A75E398328A157C4BF8C34BC6E86E784E7F47C34A2854387F64652B3729752EA",
                 "The AssumeRoleAWSCredentialsOptions class and the ICoreAmazonSTS.CredentialsFromAssumeRoleAuthentication method implementation may need to be updated.");
         }
 

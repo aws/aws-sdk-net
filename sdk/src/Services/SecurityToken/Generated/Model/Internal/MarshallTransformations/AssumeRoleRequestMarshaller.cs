@@ -94,6 +94,10 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SerialNumber", StringUtils.FromString(publicRequest.SerialNumber));
                 }
+                if(publicRequest.IsSetSourceIdentity())
+                {
+                    request.Parameters.Add("SourceIdentity", StringUtils.FromString(publicRequest.SourceIdentity));
+                }
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;

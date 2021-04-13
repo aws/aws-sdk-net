@@ -38,41 +38,6 @@ namespace Amazon.SecurityToken.Model
     /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
     /// the AWS STS API operations</a> in the <i>IAM User Guide</i>.
     /// 
-    ///  <important> 
-    /// <para>
-    /// You cannot use AWS account root user credentials to call <code>AssumeRole</code>.
-    /// You must use credentials for an IAM user or an IAM role to call <code>AssumeRole</code>.
-    /// </para>
-    ///  </important> 
-    /// <para>
-    /// For cross-account access, imagine that you own multiple accounts and need to access
-    /// resources in each account. You could create long-term credentials in each account
-    /// to access those resources. However, managing all those credentials and remembering
-    /// which one can access which account can be time consuming. Instead, you can create
-    /// one set of long-term credentials in one account. Then use temporary security credentials
-    /// to access all the other accounts by assuming roles in those accounts. For more information
-    /// about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
-    /// Roles</a> in the <i>IAM User Guide</i>. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Session Duration</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// By default, the temporary security credentials created by <code>AssumeRole</code>
-    /// last for one hour. However, you can use the optional <code>DurationSeconds</code>
-    /// parameter to specify the duration of your session. You can provide a value from 900
-    /// seconds (15 minutes) up to the maximum session duration setting for the role. This
-    /// setting can have a value from 1 hour to 12 hours. To learn how to view the maximum
-    /// value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
-    /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
-    /// The maximum session duration limit applies when you use the <code>AssumeRole*</code>
-    /// API operations or the <code>assume-role*</code> CLI commands. However the limit does
-    /// not apply when you use those operations to create a console URL. For more information,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-    /// IAM Roles</a> in the <i>IAM User Guide</i>.
-    /// </para>
     ///  
     /// <para>
     ///  <b>Permissions</b> 
@@ -88,7 +53,7 @@ namespace Amazon.SecurityToken.Model
     /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
     /// policies</a> to this operation. You can pass a single JSON policy document to use
     /// as an inline session policy. You can also specify up to 10 managed policies to use
-    /// as managed session policies. The plain text that you use for both inline and managed
+    /// as managed session policies. The plaintext that you use for both inline and managed
     /// session policies can't exceed 2,048 characters. Passing policies to this operation
     /// returns new temporary credentials. The resulting session's permissions are the intersection
     /// of the role's identity-based policy and the session policies. You can use the role's
@@ -191,6 +156,7 @@ namespace Amazon.SecurityToken.Model
         private string _roleArn;
         private string _roleSessionName;
         private string _serialNumber;
+        private string _sourceIdentity;
         private List<Tag> _tags = new List<Tag>();
         private string _tokenCode;
         private List<string> _transitiveTagKeys = new List<string>();
@@ -198,12 +164,13 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
         /// <para>
-        /// The duration, in seconds, of the role session. The value can range from 900 seconds
-        /// (15 minutes) up to the maximum session duration setting for the role. This setting
-        /// can have a value from 1 hour to 12 hours. If you specify a value higher than this
-        /// setting, the operation fails. For example, if you specify a session duration of 12
-        /// hours, but your administrator set the maximum session duration to 6 hours, your operation
-        /// fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+        /// The duration, in seconds, of the role session. The value specified can can range from
+        /// 900 seconds (15 minutes) up to the maximum session duration that is set for the role.
+        /// The maximum session duration setting can have a value from 1 hour to 12 hours. If
+        /// you specify a value higher than this setting or the administrator setting (whichever
+        /// is lower), the operation fails. For example, if you specify a session duration of
+        /// 12 hours, but your administrator set the maximum session duration to 6 hours, your
+        /// operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
         /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -287,7 +254,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// The plain text that you use for both inline and managed session policies can't exceed
+        /// The plaintext that you use for both inline and managed session policies can't exceed
         /// 2,048 characters. The JSON policy characters can be any ASCII character from the space
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
@@ -296,7 +263,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// An AWS conversion compresses the passed session policies and session tags into a packed
         /// binary format that has a separate limit. Your request can fail for this limit even
-        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
         /// request are to the upper size limit. 
         /// </para>
@@ -324,7 +291,7 @@ namespace Amazon.SecurityToken.Model
         ///  
         /// <para>
         /// This parameter is optional. You can provide up to 10 managed policy ARNs. However,
-        /// the plain text that you use for both inline and managed session policies can't exceed
+        /// the plaintext that you use for both inline and managed session policies can't exceed
         /// 2,048 characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
         /// </para>
@@ -332,7 +299,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// An AWS conversion compresses the passed session policies and session tags into a packed
         /// binary format that has a separate limit. Your request can fail for this limit even
-        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
         /// request are to the upper size limit. 
         /// </para>
@@ -443,6 +410,43 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceIdentity. 
+        /// <para>
+        /// The source identity specified by the principal that is calling the <code>AssumeRole</code>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can require users to specify a source identity when they assume a role. You do
+        /// this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy.
+        /// You can use source identity information in AWS CloudTrail logs to determine who took
+        /// actions with a role. You can use the <code>aws:SourceIdentity</code> condition key
+        /// to further control access to AWS resources based on the value of source identity.
+        /// For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+        /// and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The regex used to validate this parameter is a string of characters consisting of
+        /// upper- and lower-case alphanumeric characters with no spaces. You can also include
+        /// underscores or any of the following characters: =,.@-. You cannot use a value that
+        /// begins with the text <code>aws:</code>. This prefix is reserved for AWS internal use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=64)]
+        public string SourceIdentity
+        {
+            get { return this._sourceIdentity; }
+            set { this._sourceIdentity = value; }
+        }
+
+        // Check to see if SourceIdentity property is set
+        internal bool IsSetSourceIdentity()
+        {
+            return this._sourceIdentity != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of session tags that you want to pass. Each session tag consists of a key name
@@ -451,7 +455,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is optional. You can pass up to 50 session tags. The plain text session
+        /// This parameter is optional. You can pass up to 50 session tags. The plaintext session
         /// tag keys can’t exceed 128 characters, and the values can’t exceed 256 characters.
         /// For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
         /// and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -460,7 +464,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// An AWS conversion compresses the passed session policies and session tags into a packed
         /// binary format that has a separate limit. Your request can fail for this limit even
-        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
         /// request are to the upper size limit. 
         /// </para>
@@ -505,9 +509,9 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property TokenCode. 
         /// <para>
         /// The value provided by the MFA device, if the trust policy of the role being assumed
-        /// requires MFA (that is, if the policy includes a condition that tests for MFA). If
-        /// the role being assumed requires MFA and if the <code>TokenCode</code> value is missing
-        /// or expired, the <code>AssumeRole</code> call returns an "access denied" error.
+        /// requires MFA. (In other words, if the policy includes a condition that tests for MFA).
+        /// If the role being assumed requires MFA and if the <code>TokenCode</code> value is
+        /// missing or expired, the <code>AssumeRole</code> call returns an "access denied" error.
         /// </para>
         ///  
         /// <para>

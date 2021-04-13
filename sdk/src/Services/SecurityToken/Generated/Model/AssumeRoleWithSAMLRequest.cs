@@ -65,7 +65,18 @@ namespace Amazon.SecurityToken.Model
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
     /// IAM Roles</a> in the <i>IAM User Guide</i>.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-role-chaining">Role
+    /// chaining</a> limits your AWS CLI or AWS API role session to a maximum of one hour.
+    /// When you use the <code>AssumeRole</code> API operation to assume a role, you can specify
+    /// the duration of your role session with the <code>DurationSeconds</code> parameter.
+    /// You can specify a parameter value of up to 43200 seconds (12 hours), depending on
+    /// the maximum session duration setting for your role. However, if you assume a role
+    /// using role chaining and provide a <code>DurationSeconds</code> parameter value greater
+    /// than one hour, the operation fails.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Permissions</b> 
     /// </para>
@@ -80,7 +91,7 @@ namespace Amazon.SecurityToken.Model
     /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
     /// policies</a> to this operation. You can pass a single JSON policy document to use
     /// as an inline session policy. You can also specify up to 10 managed policies to use
-    /// as managed session policies. The plain text that you use for both inline and managed
+    /// as managed session policies. The plaintext that you use for both inline and managed
     /// session policies can't exceed 2,048 characters. Passing policies to this operation
     /// returns new temporary credentials. The resulting session's permissions are the intersection
     /// of the role's identity-based policy and the session policies. You can use the role's
@@ -117,7 +128,7 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+    /// You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
     /// characters and the values can’t exceed 256 characters. For these and additional limits,
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
     /// and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -126,7 +137,7 @@ namespace Amazon.SecurityToken.Model
     /// <para>
     /// An AWS conversion compresses the passed session policies and session tags into a packed
     /// binary format that has a separate limit. Your request can fail for this limit even
-    /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+    /// if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
     /// response element indicates by percentage how close the policies and tags for your
     /// request are to the upper size limit. 
     /// </para>
@@ -256,7 +267,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// The plain text that you use for both inline and managed session policies can't exceed
+        /// The plaintext that you use for both inline and managed session policies can't exceed
         /// 2,048 characters. The JSON policy characters can be any ASCII character from the space
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
@@ -265,7 +276,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// An AWS conversion compresses the passed session policies and session tags into a packed
         /// binary format that has a separate limit. Your request can fail for this limit even
-        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
         /// request are to the upper size limit. 
         /// </para>
@@ -293,7 +304,7 @@ namespace Amazon.SecurityToken.Model
         ///  
         /// <para>
         /// This parameter is optional. You can provide up to 10 managed policy ARNs. However,
-        /// the plain text that you use for both inline and managed session policies can't exceed
+        /// the plaintext that you use for both inline and managed session policies can't exceed
         /// 2,048 characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
         /// </para>
@@ -301,7 +312,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// An AWS conversion compresses the passed session policies and session tags into a packed
         /// binary format that has a separate limit. Your request can fail for this limit even
-        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
         /// request are to the upper size limit. 
         /// </para>
@@ -369,7 +380,7 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property SAMLAssertion. 
         /// <para>
-        /// The base-64 encoded SAML authentication response provided by the IdP.
+        /// The base64 encoded SAML authentication response provided by the IdP.
         /// </para>
         ///  
         /// <para>

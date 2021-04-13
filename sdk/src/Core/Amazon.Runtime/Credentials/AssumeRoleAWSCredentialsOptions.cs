@@ -79,5 +79,11 @@ namespace Amazon.Runtime
         /// A callback that's used to obtain the MFA token code when the AssumeRoleAWSCredentials are refreshed.
         /// </summary>
         public Func<string> MfaTokenCodeCallback { get; set; }
+
+        /// <summary>
+        /// The source identity specified by the principal that is calling the <code>AssumeRole</code>
+        /// operation.
+        /// </summary>
+        public string SourceIdentity { get; set; }
     }
 }

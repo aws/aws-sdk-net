@@ -36,6 +36,12 @@
     <pattern>[\w+=/:,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityToken.Model.AssumeRoleRequest.SourceIdentity</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.TokenCode</property>
     <min>6</min>
     <max>6</max>
@@ -44,6 +50,12 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleResponse.PackedPolicySize</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.AssumeRoleResponse.SourceIdentity</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.DurationSeconds</property>
@@ -76,6 +88,12 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLResponse.PackedPolicySize</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLResponse.SourceIdentity</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.DurationSeconds</property>
@@ -113,6 +131,12 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityResponse.PackedPolicySize</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityResponse.SourceIdentity</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityResponse.SubjectFromWebIdentityToken</property>

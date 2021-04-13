@@ -111,6 +111,12 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                         response.Provider = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SourceIdentity", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SourceIdentity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SubjectFromWebIdentityToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

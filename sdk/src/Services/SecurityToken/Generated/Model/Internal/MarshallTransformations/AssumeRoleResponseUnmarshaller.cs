@@ -99,6 +99,12 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                         response.PackedPolicySize = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SourceIdentity", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SourceIdentity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 
