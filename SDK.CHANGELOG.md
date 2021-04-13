@@ -1,3 +1,20 @@
+### 3.7.14.0 (2021-04-13 20:48 UTC)
+* ComprehendMedical (3.7.1.0)
+	* The InferICD10CM API now returns TIME_EXPRESSION entities that refer to medical conditions.
+* Lightsail (3.7.1.5)
+	* Documentation updates for Amazon Lightsail.
+* RDS (3.7.0.11)
+	* Clarify that enabling or disabling automated backups causes a brief downtime, not an outage.
+* Redshift (3.7.3.0)
+	* Added support to enable AQUA in Amazon Redshift clusters.
+* SecurityToken (3.7.1.0)
+	* Updated to use new Core, version 3.7.0.12
+	* This release adds the SourceIdentity parameter that can be set when assuming a role.
+* Core 3.7.0.12
+	* Added SourceIdentity property to AssumeRoleAWSCredentialsOptions
+
+	* All services packages updated to require new Core
+
 ### 3.7.13.1 (2021-04-12 21:04 UTC)
 * S3 (3.7.0.12)
 	* Fix STS token query parameter casing while using S3 PresignedURLs with SigV2.
