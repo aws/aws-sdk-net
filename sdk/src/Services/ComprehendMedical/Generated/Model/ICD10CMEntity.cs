@@ -225,7 +225,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Describes the specific type of entity with category of entities. InferICD10CM detects
-        /// entities of the type <code>DX_NAME</code>.
+        /// entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
         /// </para>
         /// </summary>
         public ICD10CMEntityType Type

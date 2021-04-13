@@ -37,9 +37,11 @@ namespace Amazon.ComprehendMedical.Model
     public partial class ICD10CMAttribute
     {
         private int? _beginOffset;
+        private ICD10CMEntityType _category;
         private int? _endOffset;
         private int? _id;
         private float? _relationshipScore;
+        private ICD10CMRelationshipType _relationshipType;
         private float? _score;
         private string _text;
         private List<ICD10CMTrait> _traits = new List<ICD10CMTrait>();
@@ -62,6 +64,24 @@ namespace Amazon.ComprehendMedical.Model
         internal bool IsSetBeginOffset()
         {
             return this._beginOffset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+        /// </para>
+        /// </summary>
+        public ICD10CMEntityType Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
         }
 
         /// <summary>
@@ -119,6 +139,25 @@ namespace Amazon.ComprehendMedical.Model
         internal bool IsSetRelationshipScore()
         {
             return this._relationshipScore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelationshipType. 
+        /// <para>
+        /// The type of relationship between the entity and attribute. Type for the relationship
+        /// can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+        /// </para>
+        /// </summary>
+        public ICD10CMRelationshipType RelationshipType
+        {
+            get { return this._relationshipType; }
+            set { this._relationshipType = value; }
+        }
+
+        // Check to see if RelationshipType property is set
+        internal bool IsSetRelationshipType()
+        {
+            return this._relationshipType != null;
         }
 
         /// <summary>

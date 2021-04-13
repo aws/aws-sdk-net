@@ -30,8 +30,7 @@ namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
     /// The input properties for an entities detection job. This includes the name of the
-    /// S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for
-    /// more information.
+    /// S3 bucket and the path to the files to be analyzed.
     /// </summary>
     public partial class InputDataConfig
     {

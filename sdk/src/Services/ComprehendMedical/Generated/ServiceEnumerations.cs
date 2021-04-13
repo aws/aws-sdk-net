@@ -352,6 +352,14 @@ namespace Amazon.ComprehendMedical
         /// Constant SYSTEM_ORGAN_SITE for ICD10CMAttributeType
         /// </summary>
         public static readonly ICD10CMAttributeType SYSTEM_ORGAN_SITE = new ICD10CMAttributeType("SYSTEM_ORGAN_SITE");
+        /// <summary>
+        /// Constant TIME_EXPRESSION for ICD10CMAttributeType
+        /// </summary>
+        public static readonly ICD10CMAttributeType TIME_EXPRESSION = new ICD10CMAttributeType("TIME_EXPRESSION");
+        /// <summary>
+        /// Constant TIME_TO_DX_NAME for ICD10CMAttributeType
+        /// </summary>
+        public static readonly ICD10CMAttributeType TIME_TO_DX_NAME = new ICD10CMAttributeType("TIME_TO_DX_NAME");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -444,6 +452,10 @@ namespace Amazon.ComprehendMedical
         /// Constant DX_NAME for ICD10CMEntityType
         /// </summary>
         public static readonly ICD10CMEntityType DX_NAME = new ICD10CMEntityType("DX_NAME");
+        /// <summary>
+        /// Constant TIME_EXPRESSION for ICD10CMEntityType
+        /// </summary>
+        public static readonly ICD10CMEntityType TIME_EXPRESSION = new ICD10CMEntityType("TIME_EXPRESSION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -474,6 +486,56 @@ namespace Amazon.ComprehendMedical
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ICD10CMEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ICD10CMRelationshipType.
+    /// </summary>
+    public class ICD10CMRelationshipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OVERLAP for ICD10CMRelationshipType
+        /// </summary>
+        public static readonly ICD10CMRelationshipType OVERLAP = new ICD10CMRelationshipType("OVERLAP");
+        /// <summary>
+        /// Constant SYSTEM_ORGAN_SITE for ICD10CMRelationshipType
+        /// </summary>
+        public static readonly ICD10CMRelationshipType SYSTEM_ORGAN_SITE = new ICD10CMRelationshipType("SYSTEM_ORGAN_SITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ICD10CMRelationshipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ICD10CMRelationshipType FindValue(string value)
+        {
+            return FindValue<ICD10CMRelationshipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ICD10CMRelationshipType(string value)
         {
             return FindValue(value);
         }
