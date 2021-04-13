@@ -115,7 +115,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var xmlWriterSettings = new XmlWriterSettings()
                 {
                     Encoding = Encoding.UTF8,
-                    OmitXmlDeclaration = true
+                    OmitXmlDeclaration = true,
+                    NewLineHandling = NewLineHandling.None
                 };
                 using (var xmlWriter = XmlWriter.Create(stringWriter, xmlWriterSettings))
                 {
