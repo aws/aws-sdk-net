@@ -4718,6 +4718,52 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  ModifyAquaConfiguration
+
+
+        /// <summary>
+        /// Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAquaConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyAquaConfiguration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">REST API Reference for ModifyAquaConfiguration Operation</seealso>
+        ModifyAquaConfigurationResponse ModifyAquaConfiguration(ModifyAquaConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyAquaConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAquaConfiguration operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyAquaConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">REST API Reference for ModifyAquaConfiguration Operation</seealso>
+        IAsyncResult BeginModifyAquaConfiguration(ModifyAquaConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyAquaConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyAquaConfiguration.</param>
+        /// 
+        /// <returns>Returns a  ModifyAquaConfigurationResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">REST API Reference for ModifyAquaConfiguration Operation</seealso>
+        ModifyAquaConfigurationResponse EndModifyAquaConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyCluster
 
 

@@ -66,6 +66,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllowVersionUpgrade", StringUtils.FromBool(publicRequest.AllowVersionUpgrade));
                 }
+                if(publicRequest.IsSetAquaConfigurationStatus())
+                {
+                    request.Parameters.Add("AquaConfigurationStatus", StringUtils.FromString(publicRequest.AquaConfigurationStatus));
+                }
                 if(publicRequest.IsSetAutomatedSnapshotRetentionPeriod())
                 {
                     request.Parameters.Add("AutomatedSnapshotRetentionPeriod", StringUtils.FromInt(publicRequest.AutomatedSnapshotRetentionPeriod));
