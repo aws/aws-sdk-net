@@ -94,6 +94,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.EntitlementArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("listenerAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ListenerAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mediaLiveInputArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -38,6 +38,7 @@ namespace Amazon.MediaConnect.Model
         private string _destination;
         private Encryption _encryption;
         private string _entitlementArn;
+        private string _listenerAddress;
         private string _mediaLiveInputArn;
         private string _name;
         private string _outputArn;
@@ -121,6 +122,25 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetEntitlementArn()
         {
             return this._entitlementArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListenerAddress. The IP address that the receiver requires
+        /// in order to establish a connection with the flow. For public networking, the ListenerAddress
+        /// is represented by the elastic IP address of the flow. For private networking, the
+        /// ListenerAddress is represented by the elastic network interface IP address of the
+        /// VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+        /// </summary>
+        public string ListenerAddress
+        {
+            get { return this._listenerAddress; }
+            set { this._listenerAddress = value; }
+        }
+
+        // Check to see if ListenerAddress property is set
+        internal bool IsSetListenerAddress()
+        {
+            return this._listenerAddress != null;
         }
 
         /// <summary>
