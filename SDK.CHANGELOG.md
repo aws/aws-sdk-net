@@ -1,3 +1,13 @@
+### 3.7.15.0 (2021-04-14 18:15 UTC)
+* CodeStarconnections (3.7.1.0)
+	* This release adds tagging support for CodeStar Connections Host resources
+* ConfigService (3.7.2.0)
+	* Add exception for DeleteRemediationConfiguration and DescribeRemediationExecutionStatus
+* MediaConnect (3.7.1.0)
+	* For flows that use Listener protocols, you can now easily locate an output's outbound IP address for a private internet. Additionally, MediaConnect now supports the Waiters feature that makes it easier to poll for the status of a flow until it reaches its desired state.
+* Route53 (3.7.0.12)
+	* Documentation updates for route53
+
 ### 3.7.14.0 (2021-04-13 20:48 UTC)
 * ComprehendMedical (3.7.1.0)
 	* The InferICD10CM API now returns TIME_EXPRESSION entities that refer to medical conditions.

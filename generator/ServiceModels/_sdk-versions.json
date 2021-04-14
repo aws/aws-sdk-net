@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.14.0",
+    "ProductVersion" : "3.7.15.0",
     "CoreVersion"    : "3.7.0.12",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -70,7 +70,7 @@
             "InPreview"               : false
         },
         "ConfigService"     : {
-            "Version" : "3.7.1.8",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.12"
@@ -298,7 +298,7 @@
             "InPreview"               : false
         },
         "Route53"              : {
-            "Version" : "3.7.0.11",
+            "Version" : "3.7.0.12",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.12"
@@ -1290,7 +1290,7 @@
             "InPreview"               : false
         },
         "MediaConnect"                    : {
-            "Version" : "3.7.0.11",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.12"
@@ -1754,7 +1754,7 @@
             "InPreview"               : false
         },
         "CodeStarconnections"             : {
-            "Version" : "3.7.0.11",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.12"
