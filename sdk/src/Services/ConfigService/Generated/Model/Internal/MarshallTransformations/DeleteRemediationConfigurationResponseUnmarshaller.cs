@@ -73,6 +73,10 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 {
                     return InsufficientPermissionsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+                {
+                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchRemediationConfigurationException"))
                 {
                     return NoSuchRemediationConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

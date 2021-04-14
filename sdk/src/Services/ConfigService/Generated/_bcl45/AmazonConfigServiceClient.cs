@@ -1761,6 +1761,10 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
         /// You specified an AWS Config rule without a remediation configuration.
         /// </exception>
@@ -1821,6 +1825,10 @@ namespace Amazon.ConfigService
         /// To read Amazon S3 bucket.
         /// </para>
         ///  </li> </ul> </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
         /// You specified an AWS Config rule without a remediation configuration.
@@ -2408,6 +2416,8 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns a list of the conformance packs and their associated compliance status with
         /// the count of compliant and noncompliant AWS Config rules within each conformance pack.
+        /// Also returns the total rule count which includes compliant rules, noncompliant rules,
+        /// and rules that cannot be evaluated due to insufficient data.
         /// 
         ///  <note> 
         /// <para>
@@ -2458,6 +2468,8 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns a list of the conformance packs and their associated compliance status with
         /// the count of compliant and noncompliant AWS Config rules within each conformance pack.
+        /// Also returns the total rule count which includes compliant rules, noncompliant rules,
+        /// and rules that cannot be evaluated due to insufficient data.
         /// 
         ///  <note> 
         /// <para>
@@ -4622,6 +4634,10 @@ namespace Amazon.ConfigService
         /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
         /// You specified an AWS Config rule without a remediation configuration.
         /// </exception>
@@ -4651,6 +4667,10 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
         /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
         /// You specified an AWS Config rule without a remediation configuration.
@@ -4971,7 +4991,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns the count of compliant and noncompliant conformance packs across all AWS Accounts
-        /// and AWS Regions. You can filter based on AWS Account ID or AWS Region.
+        /// and AWS Regions in an aggregator. You can filter based on AWS Account ID or AWS Region.
         /// 
         ///  <note> 
         /// <para>
@@ -5021,7 +5041,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns the count of compliant and noncompliant conformance packs across all AWS Accounts
-        /// and AWS Regions. You can filter based on AWS Account ID or AWS Region.
+        /// and AWS Regions in an aggregator. You can filter based on AWS Account ID or AWS Region.
         /// 
         ///  <note> 
         /// <para>

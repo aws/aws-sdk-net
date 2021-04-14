@@ -31,7 +31,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the GetAggregateConformancePackComplianceSummary operation.
     /// Returns the count of compliant and noncompliant conformance packs across all AWS Accounts
-    /// and AWS Regions. You can filter based on AWS Account ID or AWS Region.
+    /// and AWS Regions in an aggregator. You can filter based on AWS Account ID or AWS Region.
     /// 
     ///  <note> 
     /// <para>
