@@ -101,6 +101,7 @@ namespace Amazon.CodeStarconnections.Model
         /// The status of the requested host.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Status
         {
             get { return this._status; }

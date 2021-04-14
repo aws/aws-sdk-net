@@ -135,6 +135,7 @@ namespace Amazon.CodeStarconnections.Model
         /// and VPC_CONFIG_FAILED_INITIALIZATION.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Status
         {
             get { return this._status; }

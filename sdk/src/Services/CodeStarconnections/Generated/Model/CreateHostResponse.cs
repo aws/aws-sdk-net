@@ -34,6 +34,7 @@ namespace Amazon.CodeStarconnections.Model
     public partial class CreateHostResponse : AmazonWebServiceResponse
     {
         private string _hostArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property HostArn. 
@@ -52,6 +53,22 @@ namespace Amazon.CodeStarconnections.Model
         internal bool IsSetHostArn()
         {
             return this._hostArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

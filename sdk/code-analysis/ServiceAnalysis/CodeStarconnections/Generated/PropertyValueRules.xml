@@ -73,6 +73,12 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeStarconnections.Model.GetHostResponse.Status</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.ListConnectionsRequest.HostArnFilter</property>
     <min>0</min>
     <max>256</max>
@@ -182,6 +188,12 @@
     <property>Amazon.CodeStarconnections.Model.Host.ProviderEndpoint</property>
     <min>1</min>
     <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStarconnections.Model.Host.Status</property>
+    <min>1</min>
+    <max>64</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
