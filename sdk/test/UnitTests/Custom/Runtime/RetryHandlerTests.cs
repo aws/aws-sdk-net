@@ -67,7 +67,7 @@ namespace AWSSDK.UnitTests
         public void RetryForSslErrorZeroReturn()
         {
             Tester.Reset();
-            var sslException = new AuthenticationException("Authentication failed, see inner exception", new Exception("SSL Handshake failed with OpenSSL error - SSL_ERROR_ZERO_RETURN"));
+            var sslException = new Exception("Root exception", new AuthenticationException("Authentication failed, see inner exception", new Exception("SSL Handshake failed with OpenSSL error - SSL_ERROR_ZERO_RETURN")));
             Tester.Action = (int callCount) =>
             {
                 throw sslException;
@@ -78,7 +78,7 @@ namespace AWSSDK.UnitTests
                 var request = CreateTestContext();
                 RuntimePipeline.InvokeSync(request);
             },
-            typeof(AuthenticationException));
+            typeof(Exception));
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
         }
 

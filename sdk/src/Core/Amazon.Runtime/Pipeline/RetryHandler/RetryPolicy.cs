@@ -358,17 +358,21 @@ namespace Amazon.Runtime
         private const string sslErrorZeroReturn = "SSL_ERROR_ZERO_RETURN";
         public static bool IsTransientSslError(Exception exception)
         {
-            if (exception is AuthenticationException)
+            var isAuthenticationException = false;
+            // Scan down the exceptions chain for a sslErrorZeroReturn keyword in the Message,
+            // given that the one of the parent exceptions is AuthenticationException.
+            // Based on https://github.com/aws/aws-sdk-net/issues/1556
+            while (exception != null)
             {
-                var innerException = exception.InnerException;
-                while (innerException != null)
+                if (exception is AuthenticationException)
                 {
-                    if (innerException.Message.Contains(sslErrorZeroReturn))
-                    {
-                        return true;
-                    }
-                    innerException = innerException.InnerException;
+                    isAuthenticationException = true;
                 }
+                if (isAuthenticationException && exception.Message.Contains(sslErrorZeroReturn))
+                {
+                    return true;
+                }
+                exception = exception.InnerException;
             }
             return false;
         }
