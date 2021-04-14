@@ -127,7 +127,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"Service": "api-service.dnssec.route53.aws.internal"</code> 
+        ///  <code>"Service": "dnssec.route53.aws.amazonaws.com"</code> 
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>

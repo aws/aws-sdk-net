@@ -649,6 +649,11 @@ namespace Amazon.Route53
         /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
         /// and SOA records are available, the status of the zone changes to <code>INSYNC</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code>
+        /// permission.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedZone service method.</param>
         /// 
@@ -1743,8 +1748,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate
-        /// it. The KSK must be deactived before you can delete it regardless of whether the hosted
-        /// zone is enabled for DNSSEC signing.
+        /// it. The KSK must be deactivated before you can delete it regardless of whether the
+        /// hosted zone is enabled for DNSSEC signing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeySigningKey service method.</param>
         /// 
@@ -4442,7 +4447,12 @@ namespace Amazon.Route53
         /// <summary>
         /// Gets the value that Amazon Route 53 returns in response to a DNS request for a specified
         /// record name and type. You can optionally specify the IP address of a DNS resolver,
-        /// an EDNS0 client subnet IP address, and a subnet mask.
+        /// an EDNS0 client subnet IP address, and a subnet mask. 
+        /// 
+        ///  
+        /// <para>
+        /// This call only supports querying public hosted zones.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestDNSAnswer service method.</param>
         /// 

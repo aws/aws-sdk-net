@@ -83,6 +83,11 @@ namespace Amazon.Route53.Model
     /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
     /// and SOA records are available, the status of the zone changes to <code>INSYNC</code>.
     /// </para>
+    ///  
+    /// <para>
+    /// The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code>
+    /// permission.
+    /// </para>
     /// </summary>
     public partial class CreateHostedZoneRequest : AmazonRoute53Request
     {
