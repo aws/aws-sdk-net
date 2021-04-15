@@ -126,7 +126,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.WebIdentityToken</property>
     <min>4</min>
-    <max>2048</max>
+    <max>20000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityResponse.PackedPolicySize</property>
