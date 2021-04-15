@@ -68,6 +68,14 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeEndpointSettings operation
+        ///</summary>
+        public IDescribeEndpointSettingsPaginator DescribeEndpointSettings(DescribeEndpointSettingsRequest request) 
+        {
+            return new DescribeEndpointSettingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeEndpointTypes operation
         ///</summary>
         public IDescribeEndpointTypesPaginator DescribeEndpointTypes(DescribeEndpointTypesRequest request) 

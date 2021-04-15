@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TestConnection operation
+    /// Response Unmarshaller for DescribeEndpointSettings operation
     /// </summary>  
-    public class TestConnectionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeEndpointSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            TestConnectionResponse response = new TestConnectionResponse();
+            DescribeEndpointSettingsResponse response = new DescribeEndpointSettingsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Connection", targetDepth))
+                if (context.TestExpression("EndpointSettings", targetDepth))
                 {
-                    var unmarshaller = ConnectionUnmarshaller.Instance;
-                    response.Connection = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<EndpointSetting, EndpointSettingUnmarshaller>(EndpointSettingUnmarshaller.Instance);
+                    response.EndpointSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Marker", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Marker = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,33 +86,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedFault"))
-                {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceStateFault"))
-                {
-                    return InvalidResourceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSKeyNotAccessibleFault"))
-                {
-                    return KMSKeyNotAccessibleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundFault"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceQuotaExceededFault"))
-                {
-                    return ResourceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonDatabaseMigrationServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static TestConnectionResponseUnmarshaller _instance = new TestConnectionResponseUnmarshaller();        
+        private static DescribeEndpointSettingsResponseUnmarshaller _instance = new DescribeEndpointSettingsResponseUnmarshaller();        
 
-        internal static TestConnectionResponseUnmarshaller GetInstance()
+        internal static DescribeEndpointSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +100,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TestConnectionResponseUnmarshaller Instance
+        public static DescribeEndpointSettingsResponseUnmarshaller Instance
         {
             get
             {

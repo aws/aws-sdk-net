@@ -1258,6 +1258,36 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeEndpointSettings
+
+
+        /// <summary>
+        /// Returns information about the possible endpoint settings available when you create
+        /// an endpoint for a specific database engine.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEndpointSettings service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointSettings">REST API Reference for DescribeEndpointSettings Operation</seealso>
+        DescribeEndpointSettingsResponse DescribeEndpointSettings(DescribeEndpointSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about the possible endpoint settings available when you create
+        /// an endpoint for a specific database engine.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEndpointSettings service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointSettings">REST API Reference for DescribeEndpointSettings Operation</seealso>
+        Task<DescribeEndpointSettingsResponse> DescribeEndpointSettingsAsync(DescribeEndpointSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeEndpointTypes
 
 
@@ -2350,6 +2380,9 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// AWS DMS cannot access the AWS KMS key.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -2375,6 +2408,9 @@ namespace Amazon.DatabaseMigrationService
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -2831,6 +2867,9 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the TestConnection service method.</param>
         /// 
         /// <returns>The response from the TestConnection service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
@@ -2857,6 +2896,9 @@ namespace Amazon.DatabaseMigrationService
         /// </param>
         /// 
         /// <returns>The response from the TestConnection service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>

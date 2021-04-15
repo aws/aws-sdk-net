@@ -118,6 +118,48 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.PartitionIncludeSchemaTable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SaslPassword", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SaslPassword = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SaslUsername", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SaslUsername = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecurityProtocol", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecurityProtocol = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SslCaCertificateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SslCaCertificateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SslClientCertificateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SslClientCertificateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SslClientKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SslClientKeyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SslClientKeyPassword", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SslClientKeyPassword = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Topic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

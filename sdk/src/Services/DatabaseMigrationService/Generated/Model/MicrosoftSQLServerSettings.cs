@@ -38,6 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _databaseName;
         private string _password;
         private int? _port;
+        private bool? _querySingleAlwaysOnNode;
         private bool? _readBackupOnly;
         private SafeguardPolicy _safeguardPolicy;
         private string _secretsManagerAccessRoleArn;
@@ -45,6 +46,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _serverName;
         private bool? _useBcpFullLoad;
         private string _username;
+        private bool? _useThirdPartyBackupDevice;
 
         /// <summary>
         /// Gets and sets the property BcpPacketSize. 
@@ -136,6 +138,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuerySingleAlwaysOnNode. 
+        /// <para>
+        /// Cleans and recreates table metadata information on the replication instance when a
+        /// mismatch occurs. An example is a situation where running an alter DDL statement on
+        /// a table might result in different information about the table cached in the replication
+        /// instance.
+        /// </para>
+        /// </summary>
+        public bool QuerySingleAlwaysOnNode
+        {
+            get { return this._querySingleAlwaysOnNode.GetValueOrDefault(); }
+            set { this._querySingleAlwaysOnNode = value; }
+        }
+
+        // Check to see if QuerySingleAlwaysOnNode property is set
+        internal bool IsSetQuerySingleAlwaysOnNode()
+        {
+            return this._querySingleAlwaysOnNode.HasValue; 
         }
 
         /// <summary>
@@ -303,6 +326,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetUsername()
         {
             return this._username != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseThirdPartyBackupDevice. 
+        /// <para>
+        /// When this attribute is set to <code>Y</code>, DMS processes third-party transaction
+        /// log backups if they are created in native format.
+        /// </para>
+        /// </summary>
+        public bool UseThirdPartyBackupDevice
+        {
+            get { return this._useThirdPartyBackupDevice.GetValueOrDefault(); }
+            set { this._useThirdPartyBackupDevice = value; }
+        }
+
+        // Check to see if UseThirdPartyBackupDevice property is set
+        internal bool IsSetUseThirdPartyBackupDevice()
+        {
+            return this._useThirdPartyBackupDevice.HasValue; 
         }
 
     }

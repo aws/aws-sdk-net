@@ -804,7 +804,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) used by the service access IAM role. It is a required
-        /// parameter that enables DMS to write and read objects from an 3S bucket.
+        /// parameter that enables DMS to write and read objects from an S3 bucket.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn

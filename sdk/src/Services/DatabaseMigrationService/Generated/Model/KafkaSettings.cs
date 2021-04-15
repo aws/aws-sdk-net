@@ -44,14 +44,25 @@ namespace Amazon.DatabaseMigrationService.Model
         private MessageFormatValue _messageFormat;
         private int? _messageMaxBytes;
         private bool? _partitionIncludeSchemaTable;
+        private string _saslPassword;
+        private string _saslUsername;
+        private KafkaSecurityProtocol _securityProtocol;
+        private string _sslCaCertificateArn;
+        private string _sslClientCertificateArn;
+        private string _sslClientKeyArn;
+        private string _sslClientKeyPassword;
         private string _topic;
 
         /// <summary>
         /// Gets and sets the property Broker. 
         /// <para>
-        /// The broker location and port of the Kafka broker that hosts your Kafka instance. Specify
-        /// the broker in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For
-        /// example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
+        /// A comma-separated list of one or more broker locations in your Kafka cluster that
+        /// host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i>
+        /// </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
+        /// For more information and examples of specifying a list of broker locations, see <a
+        /// href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+        /// Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS Data
+        /// Migration Service User Guide</i>. 
         /// </para>
         /// </summary>
         public string Broker
@@ -221,6 +232,143 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPartitionIncludeSchemaTable()
         {
             return this._partitionIncludeSchemaTable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SaslPassword. 
+        /// <para>
+        /// The secure password you created when you first set up your MSK cluster to validate
+        /// a client identity and make an encrypted connection between server and client using
+        /// SASL-SSL authentication.
+        /// </para>
+        /// </summary>
+        public string SaslPassword
+        {
+            get { return this._saslPassword; }
+            set { this._saslPassword = value; }
+        }
+
+        // Check to see if SaslPassword property is set
+        internal bool IsSetSaslPassword()
+        {
+            return this._saslPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SaslUsername. 
+        /// <para>
+        ///  The secure username you created when you first set up your MSK cluster to validate
+        /// a client identity and make an encrypted connection between server and client using
+        /// SASL-SSL authentication.
+        /// </para>
+        /// </summary>
+        public string SaslUsername
+        {
+            get { return this._saslUsername; }
+            set { this._saslUsername = value; }
+        }
+
+        // Check to see if SaslUsername property is set
+        internal bool IsSetSaslUsername()
+        {
+            return this._saslUsername != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityProtocol. 
+        /// <para>
+        /// Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS).
+        /// Options include <code>ssl-encryption</code>, <code>ssl-authentication</code>, and
+        /// <code>sasl-ssl</code>. <code>sasl-ssl</code> requires <code>SaslUsername</code> and
+        /// <code>SaslPassword</code>.
+        /// </para>
+        /// </summary>
+        public KafkaSecurityProtocol SecurityProtocol
+        {
+            get { return this._securityProtocol; }
+            set { this._securityProtocol = value; }
+        }
+
+        // Check to see if SecurityProtocol property is set
+        internal bool IsSetSecurityProtocol()
+        {
+            return this._securityProtocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SslCaCertificateArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert
+        /// that AWS DMS uses to securely connect to your Kafka target endpoint.
+        /// </para>
+        /// </summary>
+        public string SslCaCertificateArn
+        {
+            get { return this._sslCaCertificateArn; }
+            set { this._sslCaCertificateArn = value; }
+        }
+
+        // Check to see if SslCaCertificateArn property is set
+        internal bool IsSetSslCaCertificateArn()
+        {
+            return this._sslCaCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SslClientCertificateArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the client certificate used to securely connect
+        /// to a Kafka target endpoint.
+        /// </para>
+        /// </summary>
+        public string SslClientCertificateArn
+        {
+            get { return this._sslClientCertificateArn; }
+            set { this._sslClientCertificateArn = value; }
+        }
+
+        // Check to see if SslClientCertificateArn property is set
+        internal bool IsSetSslClientCertificateArn()
+        {
+            return this._sslClientCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SslClientKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the client private key used to securely connect
+        /// to a Kafka target endpoint.
+        /// </para>
+        /// </summary>
+        public string SslClientKeyArn
+        {
+            get { return this._sslClientKeyArn; }
+            set { this._sslClientKeyArn = value; }
+        }
+
+        // Check to see if SslClientKeyArn property is set
+        internal bool IsSetSslClientKeyArn()
+        {
+            return this._sslClientKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SslClientKeyPassword. 
+        /// <para>
+        ///  The password for the client private key used to securely connect to a Kafka target
+        /// endpoint.
+        /// </para>
+        /// </summary>
+        public string SslClientKeyPassword
+        {
+            get { return this._sslClientKeyPassword; }
+            set { this._sslClientKeyPassword = value; }
+        }
+
+        // Check to see if SslClientKeyPassword property is set
+        internal bool IsSetSslClientKeyPassword()
+        {
+            return this._sslClientKeyPassword != null;
         }
 
         /// <summary>

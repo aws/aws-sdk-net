@@ -99,6 +99,48 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PartitionIncludeSchemaTable);
             }
 
+            if(requestObject.IsSetSaslPassword())
+            {
+                context.Writer.WritePropertyName("SaslPassword");
+                context.Writer.Write(requestObject.SaslPassword);
+            }
+
+            if(requestObject.IsSetSaslUsername())
+            {
+                context.Writer.WritePropertyName("SaslUsername");
+                context.Writer.Write(requestObject.SaslUsername);
+            }
+
+            if(requestObject.IsSetSecurityProtocol())
+            {
+                context.Writer.WritePropertyName("SecurityProtocol");
+                context.Writer.Write(requestObject.SecurityProtocol);
+            }
+
+            if(requestObject.IsSetSslCaCertificateArn())
+            {
+                context.Writer.WritePropertyName("SslCaCertificateArn");
+                context.Writer.Write(requestObject.SslCaCertificateArn);
+            }
+
+            if(requestObject.IsSetSslClientCertificateArn())
+            {
+                context.Writer.WritePropertyName("SslClientCertificateArn");
+                context.Writer.Write(requestObject.SslClientCertificateArn);
+            }
+
+            if(requestObject.IsSetSslClientKeyArn())
+            {
+                context.Writer.WritePropertyName("SslClientKeyArn");
+                context.Writer.Write(requestObject.SslClientKeyArn);
+            }
+
+            if(requestObject.IsSetSslClientKeyPassword())
+            {
+                context.Writer.WritePropertyName("SslClientKeyPassword");
+                context.Writer.Write(requestObject.SslClientKeyPassword);
+            }
+
             if(requestObject.IsSetTopic())
             {
                 context.Writer.WritePropertyName("Topic");

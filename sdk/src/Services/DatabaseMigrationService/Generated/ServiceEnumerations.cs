@@ -565,6 +565,122 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type EndpointSettingTypeValue.
+    /// </summary>
+    public class EndpointSettingTypeValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Boolean for EndpointSettingTypeValue
+        /// </summary>
+        public static readonly EndpointSettingTypeValue Boolean = new EndpointSettingTypeValue("boolean");
+        /// <summary>
+        /// Constant Enum for EndpointSettingTypeValue
+        /// </summary>
+        public static readonly EndpointSettingTypeValue Enum = new EndpointSettingTypeValue("enum");
+        /// <summary>
+        /// Constant Integer for EndpointSettingTypeValue
+        /// </summary>
+        public static readonly EndpointSettingTypeValue Integer = new EndpointSettingTypeValue("integer");
+        /// <summary>
+        /// Constant String for EndpointSettingTypeValue
+        /// </summary>
+        public static readonly EndpointSettingTypeValue String = new EndpointSettingTypeValue("string");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointSettingTypeValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointSettingTypeValue FindValue(string value)
+        {
+            return FindValue<EndpointSettingTypeValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointSettingTypeValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KafkaSecurityProtocol.
+    /// </summary>
+    public class KafkaSecurityProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Plaintext for KafkaSecurityProtocol
+        /// </summary>
+        public static readonly KafkaSecurityProtocol Plaintext = new KafkaSecurityProtocol("plaintext");
+        /// <summary>
+        /// Constant SaslSsl for KafkaSecurityProtocol
+        /// </summary>
+        public static readonly KafkaSecurityProtocol SaslSsl = new KafkaSecurityProtocol("sasl-ssl");
+        /// <summary>
+        /// Constant SslAuthentication for KafkaSecurityProtocol
+        /// </summary>
+        public static readonly KafkaSecurityProtocol SslAuthentication = new KafkaSecurityProtocol("ssl-authentication");
+        /// <summary>
+        /// Constant SslEncryption for KafkaSecurityProtocol
+        /// </summary>
+        public static readonly KafkaSecurityProtocol SslEncryption = new KafkaSecurityProtocol("ssl-encryption");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KafkaSecurityProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KafkaSecurityProtocol FindValue(string value)
+        {
+            return FindValue<KafkaSecurityProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KafkaSecurityProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MessageFormatValue.
     /// </summary>
     public class MessageFormatValue : ConstantClass

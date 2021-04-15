@@ -231,6 +231,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ServerName);
             }
 
+            if(requestObject.IsSetSpatialDataOptionToGeoJsonFunctionName())
+            {
+                context.Writer.WritePropertyName("SpatialDataOptionToGeoJsonFunctionName");
+                context.Writer.Write(requestObject.SpatialDataOptionToGeoJsonFunctionName);
+            }
+
             if(requestObject.IsSetUseAlternateFolderForOnline())
             {
                 context.Writer.WritePropertyName("UseAlternateFolderForOnline");

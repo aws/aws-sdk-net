@@ -34,6 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class MySQLSettings
     {
         private string _afterConnectScript;
+        private bool? _cleanSourceMetadataOnMismatch;
         private string _databaseName;
         private int? _eventsPollInterval;
         private int? _maxFileSize;
@@ -64,6 +65,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetAfterConnectScript()
         {
             return this._afterConnectScript != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CleanSourceMetadataOnMismatch. 
+        /// <para>
+        /// Adjusts the behavior of DMS when migrating from an SQL Server source database that
+        /// is hosted as part of an Always On availability group cluster. If you need DMS to poll
+        /// all the nodes in the Always On cluster for transaction backups, set this attribute
+        /// to <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool CleanSourceMetadataOnMismatch
+        {
+            get { return this._cleanSourceMetadataOnMismatch.GetValueOrDefault(); }
+            set { this._cleanSourceMetadataOnMismatch = value; }
+        }
+
+        // Check to see if CleanSourceMetadataOnMismatch property is set
+        internal bool IsSetCleanSourceMetadataOnMismatch()
+        {
+            return this._cleanSourceMetadataOnMismatch.HasValue; 
         }
 
         /// <summary>

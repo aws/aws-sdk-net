@@ -250,6 +250,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ServerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SpatialDataOptionToGeoJsonFunctionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SpatialDataOptionToGeoJsonFunctionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UseAlternateFolderForOnline", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

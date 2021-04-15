@@ -64,6 +64,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _securityDbEncryption;
         private string _securityDbEncryptionName;
         private string _serverName;
+        private string _spatialDataOptionToGeoJsonFunctionName;
         private bool? _useAlternateFolderForOnline;
         private string _usePathPrefix;
         private string _username;
@@ -740,6 +741,28 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpatialDataOptionToGeoJsonFunctionName. 
+        /// <para>
+        /// Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format.
+        /// By default, DMS calls the <code>SDO2GEOJSON</code> custom function if present and
+        /// accessible. Or you can create your own custom function that mimics the operation of
+        /// <code>SDOGEOJSON</code> and set <code>SpatialDataOptionToGeoJsonFunctionName</code>
+        /// to call it instead. 
+        /// </para>
+        /// </summary>
+        public string SpatialDataOptionToGeoJsonFunctionName
+        {
+            get { return this._spatialDataOptionToGeoJsonFunctionName; }
+            set { this._spatialDataOptionToGeoJsonFunctionName = value; }
+        }
+
+        // Check to see if SpatialDataOptionToGeoJsonFunctionName property is set
+        internal bool IsSetSpatialDataOptionToGeoJsonFunctionName()
+        {
+            return this._spatialDataOptionToGeoJsonFunctionName != null;
         }
 
         /// <summary>

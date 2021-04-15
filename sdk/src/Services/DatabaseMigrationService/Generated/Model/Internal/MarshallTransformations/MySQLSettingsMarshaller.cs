@@ -51,6 +51,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AfterConnectScript);
             }
 
+            if(requestObject.IsSetCleanSourceMetadataOnMismatch())
+            {
+                context.Writer.WritePropertyName("CleanSourceMetadataOnMismatch");
+                context.Writer.Write(requestObject.CleanSourceMetadataOnMismatch);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");

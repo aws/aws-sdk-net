@@ -94,6 +94,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QuerySingleAlwaysOnNode", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.QuerySingleAlwaysOnNode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReadBackupOnly", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -134,6 +140,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseThirdPartyBackupDevice", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseThirdPartyBackupDevice = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

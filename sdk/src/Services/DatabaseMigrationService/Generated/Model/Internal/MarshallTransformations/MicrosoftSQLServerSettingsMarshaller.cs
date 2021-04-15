@@ -75,6 +75,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Port);
             }
 
+            if(requestObject.IsSetQuerySingleAlwaysOnNode())
+            {
+                context.Writer.WritePropertyName("QuerySingleAlwaysOnNode");
+                context.Writer.Write(requestObject.QuerySingleAlwaysOnNode);
+            }
+
             if(requestObject.IsSetReadBackupOnly())
             {
                 context.Writer.WritePropertyName("ReadBackupOnly");
@@ -115,6 +121,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Username");
                 context.Writer.Write(requestObject.Username);
+            }
+
+            if(requestObject.IsSetUseThirdPartyBackupDevice())
+            {
+                context.Writer.WritePropertyName("UseThirdPartyBackupDevice");
+                context.Writer.Write(requestObject.UseThirdPartyBackupDevice);
             }
 
         }
