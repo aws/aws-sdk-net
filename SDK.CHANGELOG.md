@@ -1,3 +1,14 @@
+### 3.7.16.0 (2021-04-15 18:12 UTC)
+* DatabaseMigrationService (3.7.1.0)
+	* AWS DMS added support of TLS for Kafka endpoint. Added Describe endpoint setting API for DMS endpoints.
+* SecurityToken (3.7.1.1)
+	* STS now supports assume role with Web Identity using JWT token length upto 20000 characters
+* Core 3.7.0.13
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.15.0 (2021-04-14 18:15 UTC)
 * CodeStarconnections (3.7.1.0)
 	* This release adds tagging support for CodeStar Connections Host resources
