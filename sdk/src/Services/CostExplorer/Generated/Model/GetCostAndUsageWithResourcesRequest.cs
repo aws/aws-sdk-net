@@ -93,6 +93,7 @@ namespace Amazon.CostExplorer.Model
         /// <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Granularity Granularity
         {
             get { return this._granularity; }

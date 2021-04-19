@@ -1546,6 +1546,10 @@ namespace Amazon.CostExplorer
         /// Constant EC2_INSTANCE_SP for SupportedSavingsPlansType
         /// </summary>
         public static readonly SupportedSavingsPlansType EC2_INSTANCE_SP = new SupportedSavingsPlansType("EC2_INSTANCE_SP");
+        /// <summary>
+        /// Constant SAGEMAKER_SP for SupportedSavingsPlansType
+        /// </summary>
+        public static readonly SupportedSavingsPlansType SAGEMAKER_SP = new SupportedSavingsPlansType("SAGEMAKER_SP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
