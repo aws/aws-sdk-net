@@ -1,3 +1,14 @@
+### 3.7.17.0 (2021-04-19 18:12 UTC)
+* CostExplorer (3.7.1.0)
+	* Adding support for Sagemaker savings plans in GetSavingsPlansPurchaseRecommendation API
+* SavingsPlans (3.7.1.0)
+	* Added support for Amazon SageMaker in Machine Learning Savings Plans
+* Core 3.7.0.14
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.16.0 (2021-04-15 18:12 UTC)
 * DatabaseMigrationService (3.7.1.0)
 	* AWS DMS added support of TLS for Kafka endpoint. Added Describe endpoint setting API for DMS endpoints.
