@@ -246,6 +246,10 @@ namespace Amazon.SavingsPlans
         /// Constant Lambda for SavingsPlanProductType
         /// </summary>
         public static readonly SavingsPlanProductType Lambda = new SavingsPlanProductType("Lambda");
+        /// <summary>
+        /// Constant SageMaker for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType SageMaker = new SavingsPlanProductType("SageMaker");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -499,6 +503,14 @@ namespace Amazon.SavingsPlans
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AmazonECS = new SavingsPlanRateServiceCode("AmazonECS");
         /// <summary>
+        /// Constant AmazonEKS for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonEKS = new SavingsPlanRateServiceCode("AmazonEKS");
+        /// <summary>
+        /// Constant AmazonSageMaker for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonSageMaker = new SavingsPlanRateServiceCode("AmazonSageMaker");
+        /// <summary>
         /// Constant AWSLambda for SavingsPlanRateServiceCode
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AWSLambda = new SavingsPlanRateServiceCode("AWSLambda");
@@ -750,6 +762,10 @@ namespace Amazon.SavingsPlans
         /// Constant EC2Instance for SavingsPlanType
         /// </summary>
         public static readonly SavingsPlanType EC2Instance = new SavingsPlanType("EC2Instance");
+        /// <summary>
+        /// Constant SageMaker for SavingsPlanType
+        /// </summary>
+        public static readonly SavingsPlanType SageMaker = new SavingsPlanType("SageMaker");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
