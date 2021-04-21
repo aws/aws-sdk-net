@@ -104,6 +104,12 @@
     <pattern>^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GroundStation.Model.S3RecordingConfig.Prefix</property>
+    <min>1</min>
+    <max>900</max>
+    <pattern>^([a-zA-Z0-9_\-=/]|\{satellite_id\}|\{config\-name}|\{s3\-config-id}|\{year\}|\{month\}|\{day\}){1,900}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GroundStation.Model.SatelliteListItem.NoradSatelliteID</property>
     <min>1</min>
     <max>99999</max>

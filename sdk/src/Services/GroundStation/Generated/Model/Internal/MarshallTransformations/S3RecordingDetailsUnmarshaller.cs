@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfigDetails Object
+    /// Response Unmarshaller for S3RecordingDetails Object
     /// </summary>  
-    public class ConfigDetailsUnmarshaller : IUnmarshaller<ConfigDetails, XmlUnmarshallerContext>, IUnmarshaller<ConfigDetails, JsonUnmarshallerContext>
+    public class S3RecordingDetailsUnmarshaller : IUnmarshaller<S3RecordingDetails, XmlUnmarshallerContext>, IUnmarshaller<S3RecordingDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConfigDetails IUnmarshaller<ConfigDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3RecordingDetails IUnmarshaller<S3RecordingDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConfigDetails Unmarshall(JsonUnmarshallerContext context)
+        public S3RecordingDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConfigDetails unmarshalledObject = new ConfigDetails();
+            S3RecordingDetails unmarshalledObject = new S3RecordingDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("antennaDemodDecodeDetails", targetDepth))
+                if (context.TestExpression("bucketArn", targetDepth))
                 {
-                    var unmarshaller = AntennaDemodDecodeDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AntennaDemodDecodeDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("endpointDetails", targetDepth))
+                if (context.TestExpression("keyTemplate", targetDepth))
                 {
-                    var unmarshaller = EndpointDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EndpointDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3RecordingDetails", targetDepth))
-                {
-                    var unmarshaller = S3RecordingDetailsUnmarshaller.Instance;
-                    unmarshalledObject.S3RecordingDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConfigDetailsUnmarshaller _instance = new ConfigDetailsUnmarshaller();        
+        private static S3RecordingDetailsUnmarshaller _instance = new S3RecordingDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigDetailsUnmarshaller Instance
+        public static S3RecordingDetailsUnmarshaller Instance
         {
             get
             {

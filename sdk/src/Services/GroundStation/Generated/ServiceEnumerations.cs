@@ -151,6 +151,10 @@ namespace Amazon.GroundStation
         /// </summary>
         public static readonly ConfigCapabilityType DataflowEndpoint = new ConfigCapabilityType("dataflow-endpoint");
         /// <summary>
+        /// Constant S3Recording for ConfigCapabilityType
+        /// </summary>
+        public static readonly ConfigCapabilityType S3Recording = new ConfigCapabilityType("s3-recording");
+        /// <summary>
         /// Constant Tracking for ConfigCapabilityType
         /// </summary>
         public static readonly ConfigCapabilityType Tracking = new ConfigCapabilityType("tracking");

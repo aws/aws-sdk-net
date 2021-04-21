@@ -454,6 +454,7 @@
       "type":"boolean",
       "box":true
     },
+    "BucketArn":{"type":"string"},
     "CancelContactRequest":{
       "type":"structure",
       "required":["contactId"],
@@ -474,14 +475,16 @@
         "antenna-uplink",
         "dataflow-endpoint",
         "tracking",
-        "uplink-echo"
+        "uplink-echo",
+        "s3-recording"
       ]
     },
     "ConfigDetails":{
       "type":"structure",
       "members":{
         "antennaDemodDecodeDetails":{"shape":"AntennaDemodDecodeDetails"},
-        "endpointDetails":{"shape":"EndpointDetails"}
+        "endpointDetails":{"shape":"EndpointDetails"},
+        "s3RecordingDetails":{"shape":"S3RecordingDetails"}
       },
       "union":true
     },
@@ -513,6 +516,7 @@
         "antennaDownlinkDemodDecodeConfig":{"shape":"AntennaDownlinkDemodDecodeConfig"},
         "antennaUplinkConfig":{"shape":"AntennaUplinkConfig"},
         "dataflowEndpointConfig":{"shape":"DataflowEndpointConfig"},
+        "s3RecordingConfig":{"shape":"S3RecordingConfig"},
         "trackingConfig":{"shape":"TrackingConfig"},
         "uplinkEchoConfig":{"shape":"UplinkEchoConfig"}
       },
@@ -1252,6 +1256,31 @@
       "exception":true
     },
     "RoleArn":{"type":"string"},
+    "S3KeyPrefix":{
+      "type":"string",
+      "max":900,
+      "min":1,
+      "pattern":"^([a-zA-Z0-9_\\-=/]|\\{satellite_id\\}|\\{config\\-name}|\\{s3\\-config-id}|\\{year\\}|\\{month\\}|\\{day\\}){1,900}$"
+    },
+    "S3RecordingConfig":{
+      "type":"structure",
+      "required":[
+        "bucketArn",
+        "roleArn"
+      ],
+      "members":{
+        "bucketArn":{"shape":"BucketArn"},
+        "prefix":{"shape":"S3KeyPrefix"},
+        "roleArn":{"shape":"RoleArn"}
+      }
+    },
+    "S3RecordingDetails":{
+      "type":"structure",
+      "members":{
+        "bucketArn":{"shape":"BucketArn"},
+        "keyTemplate":{"shape":"String"}
+      }
+    },
     "SafeName":{
       "type":"string",
       "max":256,

@@ -35,6 +35,7 @@ namespace Amazon.GroundStation.Model
     {
         private AntennaDemodDecodeDetails _antennaDemodDecodeDetails;
         private EndpointDetails _endpointDetails;
+        private S3RecordingDetails _s3RecordingDetails;
 
         /// <summary>
         /// Gets and sets the property AntennaDemodDecodeDetails. 
@@ -67,6 +68,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetEndpointDetails()
         {
             return this._endpointDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3RecordingDetails. 
+        /// <para>
+        /// Details for an S3 recording <code>Config</code> in a contact.
+        /// </para>
+        /// </summary>
+        public S3RecordingDetails S3RecordingDetails
+        {
+            get { return this._s3RecordingDetails; }
+            set { this._s3RecordingDetails = value; }
+        }
+
+        // Check to see if S3RecordingDetails property is set
+        internal bool IsSetS3RecordingDetails()
+        {
+            return this._s3RecordingDetails != null;
         }
 
     }

@@ -42,6 +42,7 @@ namespace Amazon.GroundStation.Model
         private AntennaDownlinkDemodDecodeConfig _antennaDownlinkDemodDecodeConfig;
         private AntennaUplinkConfig _antennaUplinkConfig;
         private DataflowEndpointConfig _dataflowEndpointConfig;
+        private S3RecordingConfig _s3RecordingConfig;
         private TrackingConfig _trackingConfig;
         private UplinkEchoConfig _uplinkEchoConfig;
 
@@ -118,6 +119,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetDataflowEndpointConfig()
         {
             return this._dataflowEndpointConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3RecordingConfig. 
+        /// <para>
+        /// Information about an S3 recording <code>Config</code>.
+        /// </para>
+        /// </summary>
+        public S3RecordingConfig S3RecordingConfig
+        {
+            get { return this._s3RecordingConfig; }
+            set { this._s3RecordingConfig = value; }
+        }
+
+        // Check to see if S3RecordingConfig property is set
+        internal bool IsSetS3RecordingConfig()
+        {
+            return this._s3RecordingConfig != null;
         }
 
         /// <summary>

@@ -88,6 +88,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataflowEndpointConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3RecordingConfig", targetDepth))
+                {
+                    var unmarshaller = S3RecordingConfigUnmarshaller.Instance;
+                    unmarshalledObject.S3RecordingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trackingConfig", targetDepth))
                 {
                     var unmarshaller = TrackingConfigUnmarshaller.Instance;

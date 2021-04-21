@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfigDetails Object
+    /// Response Unmarshaller for S3RecordingConfig Object
     /// </summary>  
-    public class ConfigDetailsUnmarshaller : IUnmarshaller<ConfigDetails, XmlUnmarshallerContext>, IUnmarshaller<ConfigDetails, JsonUnmarshallerContext>
+    public class S3RecordingConfigUnmarshaller : IUnmarshaller<S3RecordingConfig, XmlUnmarshallerContext>, IUnmarshaller<S3RecordingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConfigDetails IUnmarshaller<ConfigDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3RecordingConfig IUnmarshaller<S3RecordingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConfigDetails Unmarshall(JsonUnmarshallerContext context)
+        public S3RecordingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConfigDetails unmarshalledObject = new ConfigDetails();
+            S3RecordingConfig unmarshalledObject = new S3RecordingConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("antennaDemodDecodeDetails", targetDepth))
+                if (context.TestExpression("bucketArn", targetDepth))
                 {
-                    var unmarshaller = AntennaDemodDecodeDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AntennaDemodDecodeDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("endpointDetails", targetDepth))
+                if (context.TestExpression("prefix", targetDepth))
                 {
-                    var unmarshaller = EndpointDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EndpointDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3RecordingDetails", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth))
                 {
-                    var unmarshaller = S3RecordingDetailsUnmarshaller.Instance;
-                    unmarshalledObject.S3RecordingDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConfigDetailsUnmarshaller _instance = new ConfigDetailsUnmarshaller();        
+        private static S3RecordingConfigUnmarshaller _instance = new S3RecordingConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigDetailsUnmarshaller Instance
+        public static S3RecordingConfigUnmarshaller Instance
         {
             get
             {

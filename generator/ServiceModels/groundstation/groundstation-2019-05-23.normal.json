@@ -507,6 +507,7 @@
       "type":"boolean",
       "box":true
     },
+    "BucketArn":{"type":"string"},
     "CancelContactRequest":{
       "type":"structure",
       "required":["contactId"],
@@ -529,7 +530,8 @@
         "antenna-uplink",
         "dataflow-endpoint",
         "tracking",
-        "uplink-echo"
+        "uplink-echo",
+        "s3-recording"
       ]
     },
     "ConfigDetails":{
@@ -539,7 +541,11 @@
           "shape":"AntennaDemodDecodeDetails",
           "documentation":"<p>Details for antenna demod decode <code>Config</code> in a contact.</p>"
         },
-        "endpointDetails":{"shape":"EndpointDetails"}
+        "endpointDetails":{"shape":"EndpointDetails"},
+        "s3RecordingDetails":{
+          "shape":"S3RecordingDetails",
+          "documentation":"<p>Details for an S3 recording <code>Config</code> in a contact.</p>"
+        }
       },
       "documentation":"<p>Details for certain <code>Config</code> object types in a contact.</p>",
       "union":true
@@ -606,6 +612,10 @@
         "dataflowEndpointConfig":{
           "shape":"DataflowEndpointConfig",
           "documentation":"<p>Information about the dataflow endpoint <code>Config</code>.</p>"
+        },
+        "s3RecordingConfig":{
+          "shape":"S3RecordingConfig",
+          "documentation":"<p>Information about an S3 recording <code>Config</code>.</p>"
         },
         "trackingConfig":{
           "shape":"TrackingConfig",
@@ -1835,6 +1845,48 @@
       "exception":true
     },
     "RoleArn":{"type":"string"},
+    "S3KeyPrefix":{
+      "type":"string",
+      "max":900,
+      "min":1,
+      "pattern":"^([a-zA-Z0-9_\\-=/]|\\{satellite_id\\}|\\{config\\-name}|\\{s3\\-config-id}|\\{year\\}|\\{month\\}|\\{day\\}){1,900}$"
+    },
+    "S3RecordingConfig":{
+      "type":"structure",
+      "required":[
+        "bucketArn",
+        "roleArn"
+      ],
+      "members":{
+        "bucketArn":{
+          "shape":"BucketArn",
+          "documentation":"<p>ARN of the bucket to record to.</p>"
+        },
+        "prefix":{
+          "shape":"S3KeyPrefix",
+          "documentation":"<p>S3 Key prefix to prefice data files.</p>"
+        },
+        "roleArn":{
+          "shape":"RoleArn",
+          "documentation":"<p>ARN of the role Ground Station assumes to write data to the bucket.</p>"
+        }
+      },
+      "documentation":"<p>Information about an S3 recording <code>Config</code>.</p>"
+    },
+    "S3RecordingDetails":{
+      "type":"structure",
+      "members":{
+        "bucketArn":{
+          "shape":"BucketArn",
+          "documentation":"<p>ARN of the bucket used.</p>"
+        },
+        "keyTemplate":{
+          "shape":"String",
+          "documentation":"<p>Template of the S3 key used.</p>"
+        }
+      },
+      "documentation":"<p>Details about an S3 recording <code>Config</code> used in a contact.</p>"
+    },
     "SafeName":{
       "type":"string",
       "max":256,

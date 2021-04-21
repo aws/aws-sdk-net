@@ -89,6 +89,17 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3RecordingConfig())
+            {
+                context.Writer.WritePropertyName("s3RecordingConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3RecordingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3RecordingConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTrackingConfig())
             {
                 context.Writer.WritePropertyName("trackingConfig");
