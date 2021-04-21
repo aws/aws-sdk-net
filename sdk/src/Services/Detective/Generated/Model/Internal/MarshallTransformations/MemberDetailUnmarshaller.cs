@@ -130,6 +130,18 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                     unmarshalledObject.UpdatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VolumeUsageInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.VolumeUsageInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeUsageUpdatedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.VolumeUsageUpdatedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
