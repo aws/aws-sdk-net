@@ -1,3 +1,15 @@
+### 3.7.18.0 (2021-04-21 18:37 UTC)
+* CloudFormation (3.7.1.10)
+	* Added support for creating and updating stack sets with self-managed permissions from templates that reference macros.
+* Detective (3.7.2.0)
+	* Added parameters to track the data volume in bytes for a member account. Deprecated the existing parameters that tracked the volume as a percentage of the allowed volume for a behavior graph. Changes reflected in MemberDetails object.
+* GroundStation (3.7.1.0)
+	* Support new S3 Recording Config allowing customers to write downlink data directly to S3.
+* Kendra (3.7.2.0)
+	* Amazon Kendra now enables users to override index-level boosting configurations for each query.
+* Redshift (3.7.4.0)
+	* Add operations: AddPartner, DescribePartners, DeletePartner, and UpdatePartnerStatus to support tracking integration status with data partners.
+
 ### 3.7.17.0 (2021-04-19 18:12 UTC)
 * CostExplorer (3.7.1.0)
 	* Adding support for Sagemaker savings plans in GetSavingsPlansPurchaseRecommendation API
