@@ -57,7 +57,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Reserved for Amazon Redshift internal use.
+        /// An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code>
+        /// request. If this parameter is specified, the response includes only records beyond
+        /// the marker, up to the value specified by the <code>MaxRecords</code> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

@@ -375,6 +375,69 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  AddPartner
+
+
+        /// <summary>
+        /// Adds a partner integration to a cluster. This operation authorizes a partner to push
+        /// status updates for the specified database. To complete the integration, you also set
+        /// up the integration on the partner website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddPartner service method.</param>
+        /// 
+        /// <returns>The response from the AddPartner service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.PartnerNotFoundException">
+        /// The name of the partner was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner">REST API Reference for AddPartner Operation</seealso>
+        public virtual AddPartnerResponse AddPartner(AddPartnerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPartnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPartnerResponseUnmarshaller.Instance;
+
+            return Invoke<AddPartnerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds a partner integration to a cluster. This operation authorizes a partner to push
+        /// status updates for the specified database. To complete the integration, you also set
+        /// up the integration on the partner website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddPartner service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddPartner service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.PartnerNotFoundException">
+        /// The name of the partner was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner">REST API Reference for AddPartner Operation</seealso>
+        public virtual Task<AddPartnerResponse> AddPartnerAsync(AddPartnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPartnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPartnerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AddPartnerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AuthorizeClusterSecurityGroupIngress
 
 
@@ -3091,6 +3154,67 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DeletePartner
+
+
+        /// <summary>
+        /// Deletes a partner integration from a cluster. Data can still flow to the cluster until
+        /// the integration is deleted at the partner's website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartner service method.</param>
+        /// 
+        /// <returns>The response from the DeletePartner service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.PartnerNotFoundException">
+        /// The name of the partner was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">REST API Reference for DeletePartner Operation</seealso>
+        public virtual DeletePartnerResponse DeletePartner(DeletePartnerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePartnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePartnerResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePartnerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a partner integration from a cluster. Data can still flow to the cluster until
+        /// the integration is deleted at the partner's website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartner service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePartner service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.PartnerNotFoundException">
+        /// The name of the partner was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">REST API Reference for DeletePartner Operation</seealso>
+        public virtual Task<DeletePartnerResponse> DeletePartnerAsync(DeletePartnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePartnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePartnerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePartnerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteScheduledAction
 
 
@@ -5513,6 +5637,59 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DescribeOrderableClusterOptionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeOrderableClusterOptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePartners
+
+
+        /// <summary>
+        /// Returns information about the partner integrations defined for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePartners service method.</param>
+        /// 
+        /// <returns>The response from the DescribePartners service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">REST API Reference for DescribePartners Operation</seealso>
+        public virtual DescribePartnersResponse DescribePartners(DescribePartnersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePartnersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePartnersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePartnersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the partner integrations defined for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePartners service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePartners service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">REST API Reference for DescribePartners Operation</seealso>
+        public virtual Task<DescribePartnersResponse> DescribePartnersAsync(DescribePartnersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePartnersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePartnersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePartnersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9236,6 +9413,65 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = RotateEncryptionKeyResponseUnmarshaller.Instance;
             
             return InvokeAsync<RotateEncryptionKeyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePartnerStatus
+
+
+        /// <summary>
+        /// Updates the status of a partner integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePartnerStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePartnerStatus service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.PartnerNotFoundException">
+        /// The name of the partner was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus">REST API Reference for UpdatePartnerStatus Operation</seealso>
+        public virtual UpdatePartnerStatusResponse UpdatePartnerStatus(UpdatePartnerStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePartnerStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePartnerStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePartnerStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the status of a partner integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePartnerStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePartnerStatus service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.PartnerNotFoundException">
+        /// The name of the partner was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus">REST API Reference for UpdatePartnerStatus Operation</seealso>
+        public virtual Task<UpdatePartnerStatusResponse> UpdatePartnerStatusAsync(UpdatePartnerStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePartnerStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePartnerStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePartnerStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion

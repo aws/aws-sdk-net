@@ -9,6 +9,37 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.AddPartnerRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AddPartnerRequest.ClusterIdentifier</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AddPartnerRequest.DatabaseName</property>
+    <max>127</max>
+    <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AddPartnerRequest.PartnerName</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AddPartnerResponse.DatabaseName</property>
+    <max>127</max>
+    <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AddPartnerResponse.PartnerName</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeClusterSecurityGroupIngressRequest.CIDRIP</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -433,6 +464,37 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.DeletePartnerRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeletePartnerRequest.ClusterIdentifier</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeletePartnerRequest.DatabaseName</property>
+    <max>127</max>
+    <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeletePartnerRequest.PartnerName</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeletePartnerResponse.DatabaseName</property>
+    <max>127</max>
+    <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeletePartnerResponse.PartnerName</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteScheduledActionRequest.ScheduledActionName</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -731,6 +793,27 @@
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeOrderableClusterOptionsResponse.Marker</property>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribePartnersRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribePartnersRequest.ClusterIdentifier</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribePartnersRequest.DatabaseName</property>
+    <max>127</max>
+    <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribePartnersRequest.PartnerName</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodeOfferingsRequest.Marker</property>
@@ -1365,6 +1448,42 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.UpdatePartnerStatusRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.UpdatePartnerStatusRequest.ClusterIdentifier</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.UpdatePartnerStatusRequest.DatabaseName</property>
+    <max>127</max>
+    <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.UpdatePartnerStatusRequest.PartnerName</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.UpdatePartnerStatusRequest.StatusMessage</property>
+    <max>262144</max>
+    <pattern>^[\x20-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.UpdatePartnerStatusResponse.DatabaseName</property>
+    <max>127</max>
+    <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.UpdatePartnerStatusResponse.PartnerName</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.AccountAttribute.AttributeName</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1791,6 +1910,21 @@
   <property-value-rule>
     <property>Amazon.Redshift.Model.Parameter.Source</property>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.PartnerIntegrationInfo.DatabaseName</property>
+    <max>127</max>
+    <pattern>^[\p{L}_][\p{L}\p{N}@$#_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.PartnerIntegrationInfo.PartnerName</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.PartnerIntegrationInfo.StatusMessage</property>
+    <max>262144</max>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PendingModifiedValues.ClusterIdentifier</property>

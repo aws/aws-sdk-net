@@ -116,6 +116,22 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeEndpointAccess operation
+        ///</summary>
+        public IDescribeEndpointAccessPaginator DescribeEndpointAccess(DescribeEndpointAccessRequest request) 
+        {
+            return new DescribeEndpointAccessPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeEndpointAuthorization operation
+        ///</summary>
+        public IDescribeEndpointAuthorizationPaginator DescribeEndpointAuthorization(DescribeEndpointAuthorizationRequest request) 
+        {
+            return new DescribeEndpointAuthorizationPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeEvents operation
         ///</summary>
         public IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request) 

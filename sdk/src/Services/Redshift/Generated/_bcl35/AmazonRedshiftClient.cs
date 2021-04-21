@@ -348,6 +348,71 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  AddPartner
+
+        /// <summary>
+        /// Adds a partner integration to a cluster. This operation authorizes a partner to push
+        /// status updates for the specified database. To complete the integration, you also set
+        /// up the integration on the partner website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddPartner service method.</param>
+        /// 
+        /// <returns>The response from the AddPartner service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.PartnerNotFoundException">
+        /// The name of the partner was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner">REST API Reference for AddPartner Operation</seealso>
+        public virtual AddPartnerResponse AddPartner(AddPartnerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPartnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPartnerResponseUnmarshaller.Instance;
+
+            return Invoke<AddPartnerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddPartner operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddPartner operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddPartner
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner">REST API Reference for AddPartner Operation</seealso>
+        public virtual IAsyncResult BeginAddPartner(AddPartnerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPartnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPartnerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddPartner operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddPartner.</param>
+        /// 
+        /// <returns>Returns a  AddPartnerResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner">REST API Reference for AddPartner Operation</seealso>
+        public virtual AddPartnerResponse EndAddPartner(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddPartnerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AuthorizeClusterSecurityGroupIngress
 
         /// <summary>
@@ -2711,6 +2776,70 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DeletePartner
+
+        /// <summary>
+        /// Deletes a partner integration from a cluster. Data can still flow to the cluster until
+        /// the integration is deleted at the partner's website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartner service method.</param>
+        /// 
+        /// <returns>The response from the DeletePartner service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.PartnerNotFoundException">
+        /// The name of the partner was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">REST API Reference for DeletePartner Operation</seealso>
+        public virtual DeletePartnerResponse DeletePartner(DeletePartnerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePartnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePartnerResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePartnerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePartner operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartner operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePartner
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">REST API Reference for DeletePartner Operation</seealso>
+        public virtual IAsyncResult BeginDeletePartner(DeletePartnerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePartnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePartnerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePartner operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePartner.</param>
+        /// 
+        /// <returns>Returns a  DeletePartnerResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">REST API Reference for DeletePartner Operation</seealso>
+        public virtual DeletePartnerResponse EndDeletePartner(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePartnerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteScheduledAction
 
         /// <summary>
@@ -4767,6 +4896,66 @@ namespace Amazon.Redshift
         public virtual DescribeOrderableClusterOptionsResponse EndDescribeOrderableClusterOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeOrderableClusterOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribePartners
+
+        /// <summary>
+        /// Returns information about the partner integrations defined for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePartners service method.</param>
+        /// 
+        /// <returns>The response from the DescribePartners service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">REST API Reference for DescribePartners Operation</seealso>
+        public virtual DescribePartnersResponse DescribePartners(DescribePartnersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePartnersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePartnersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePartnersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePartners operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePartners operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePartners
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">REST API Reference for DescribePartners Operation</seealso>
+        public virtual IAsyncResult BeginDescribePartners(DescribePartnersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePartnersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePartnersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePartners operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePartners.</param>
+        /// 
+        /// <returns>Returns a  DescribePartnersResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">REST API Reference for DescribePartners Operation</seealso>
+        public virtual DescribePartnersResponse EndDescribePartners(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePartnersResponse>(asyncResult);
         }
 
         #endregion
@@ -8065,6 +8254,69 @@ namespace Amazon.Redshift
         public virtual RotateEncryptionKeyResponse EndRotateEncryptionKey(IAsyncResult asyncResult)
         {
             return EndInvoke<RotateEncryptionKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePartnerStatus
+
+        /// <summary>
+        /// Updates the status of a partner integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePartnerStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePartnerStatus service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.PartnerNotFoundException">
+        /// The name of the partner was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
+        /// The partner integration is not authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus">REST API Reference for UpdatePartnerStatus Operation</seealso>
+        public virtual UpdatePartnerStatusResponse UpdatePartnerStatus(UpdatePartnerStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePartnerStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePartnerStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePartnerStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePartnerStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePartnerStatus operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePartnerStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus">REST API Reference for UpdatePartnerStatus Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePartnerStatus(UpdatePartnerStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePartnerStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePartnerStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePartnerStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePartnerStatus.</param>
+        /// 
+        /// <returns>Returns a  UpdatePartnerStatusResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus">REST API Reference for UpdatePartnerStatus Operation</seealso>
+        public virtual UpdatePartnerStatusResponse EndUpdatePartnerStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePartnerStatusResponse>(asyncResult);
         }
 
         #endregion

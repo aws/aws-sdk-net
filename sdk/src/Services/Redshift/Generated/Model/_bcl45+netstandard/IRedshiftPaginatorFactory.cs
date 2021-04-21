@@ -76,6 +76,16 @@ namespace Amazon.Redshift.Model
         IDescribeDefaultClusterParametersPaginator DescribeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request);
 
         /// <summary>
+        /// Paginator for DescribeEndpointAccess operation
+        ///</summary>
+        IDescribeEndpointAccessPaginator DescribeEndpointAccess(DescribeEndpointAccessRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeEndpointAuthorization operation
+        ///</summary>
+        IDescribeEndpointAuthorizationPaginator DescribeEndpointAuthorization(DescribeEndpointAuthorizationRequest request);
+
+        /// <summary>
         /// Paginator for DescribeEvents operation
         ///</summary>
         IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);
