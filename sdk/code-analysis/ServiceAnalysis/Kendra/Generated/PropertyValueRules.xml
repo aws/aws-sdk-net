@@ -900,6 +900,11 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.DocumentRelevanceConfiguration.Name</property>
+    <min>1</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.DocumentsMetadataConfiguration.S3Prefix</property>
     <min>1</min>
     <max>1024</max>

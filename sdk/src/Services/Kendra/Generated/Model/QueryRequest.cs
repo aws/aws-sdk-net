@@ -68,6 +68,7 @@ namespace Amazon.Kendra.Model
     public partial class QueryRequest : AmazonKendraRequest
     {
         private AttributeFilter _attributeFilter;
+        private List<DocumentRelevanceConfiguration> _documentRelevanceOverrideConfigurations = new List<DocumentRelevanceConfiguration>();
         private List<Facet> _facets = new List<Facet>();
         private string _indexId;
         private int? _pageNumber;
@@ -102,6 +103,44 @@ namespace Amazon.Kendra.Model
         internal bool IsSetAttributeFilter()
         {
             return this._attributeFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentRelevanceOverrideConfigurations. 
+        /// <para>
+        /// Overrides relevance tuning configurations of fields or attributes set at the index
+        /// level.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use this API to override the relevance tuning configured at the index level,
+        /// but there is no relevance tuning configured at the index level, then Amazon Kendra
+        /// does not apply any relevance tuning.
+        /// </para>
+        ///  
+        /// <para>
+        /// If there is relevance tuning configured at the index level, but you do not use this
+        /// API to override any relevance tuning in the index, then Amazon Kendra uses the relevance
+        /// tuning that is configured at the index level.
+        /// </para>
+        ///  
+        /// <para>
+        /// If there is relevance tuning configured for fields at the index level, but you use
+        /// this API to override only some of these fields, then for the fields you did not override,
+        /// the importance is set to 1.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public List<DocumentRelevanceConfiguration> DocumentRelevanceOverrideConfigurations
+        {
+            get { return this._documentRelevanceOverrideConfigurations; }
+            set { this._documentRelevanceOverrideConfigurations = value; }
+        }
+
+        // Check to see if DocumentRelevanceOverrideConfigurations property is set
+        internal bool IsSetDocumentRelevanceOverrideConfigurations()
+        {
+            return this._documentRelevanceOverrideConfigurations != null && this._documentRelevanceOverrideConfigurations.Count > 0; 
         }
 
         /// <summary>

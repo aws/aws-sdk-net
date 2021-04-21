@@ -78,6 +78,22 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDocumentRelevanceOverrideConfigurations())
+                {
+                    context.Writer.WritePropertyName("DocumentRelevanceOverrideConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDocumentRelevanceOverrideConfigurationsListValue in publicRequest.DocumentRelevanceOverrideConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DocumentRelevanceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDocumentRelevanceOverrideConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetFacets())
                 {
                     context.Writer.WritePropertyName("Facets");
