@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroup operation.
-    /// Deletes a group. Currently only groups with no members can be deleted.
+    /// Deletes a group.
     /// 
     ///  
     /// <para>

@@ -114,6 +114,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
         /// with client secret). 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session
+        /// value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The value of the <code>USERNAME</code> attribute must be the user's actual username,

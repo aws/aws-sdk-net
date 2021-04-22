@@ -42,7 +42,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MfaConfiguration. 
         /// <para>
-        /// The MFA configuration. Valid values include:
+        /// The MFA configuration. Users who don't have an MFA factor set up won't be able to
+        /// sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+        /// Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>

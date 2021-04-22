@@ -45,7 +45,8 @@ namespace Amazon.CognitoIdentityProvider
     /// </para>
     ///  
     /// <para>
-    /// For more information, see the Amazon Cognito Documentation.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html">Amazon
+    /// Cognito Documentation</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCognitoIdentityProviderClient : AmazonServiceClient, IAmazonCognitoIdentityProvider
@@ -3693,7 +3694,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DeleteGroup
 
         /// <summary>
-        /// Deletes a group. Currently only groups with no members can be deleted.
+        /// Deletes a group.
         /// 
         ///  
         /// <para>

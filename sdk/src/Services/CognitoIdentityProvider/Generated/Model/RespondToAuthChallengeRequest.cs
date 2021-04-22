@@ -125,6 +125,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code>
         /// requires plus <code>DEVICE_KEY</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session
+        /// value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> ChallengeResponses
