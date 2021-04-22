@@ -87,6 +87,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.DataSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EstimatedTimeRemainingInMinutes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.EstimatedTimeRemainingInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FieldStatistics", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, Statistics, StringUnmarshaller, StatisticsUnmarshaller>(StringUnmarshaller.Instance, StatisticsUnmarshaller.Instance);

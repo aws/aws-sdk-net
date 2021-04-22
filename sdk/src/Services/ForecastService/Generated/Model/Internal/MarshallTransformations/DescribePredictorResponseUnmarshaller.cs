@@ -81,6 +81,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.EncryptionConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EstimatedTimeRemainingInMinutes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.EstimatedTimeRemainingInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EvaluationParameters", targetDepth))
                 {
                     var unmarshaller = EvaluationParametersUnmarshaller.Instance;

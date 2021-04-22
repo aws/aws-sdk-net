@@ -38,6 +38,7 @@ namespace Amazon.ForecastService.Model
         private DateTime? _creationTime;
         private List<string> _datasetImportJobArns = new List<string>();
         private EncryptionConfig _encryptionConfig;
+        private long? _estimatedTimeRemainingInMinutes;
         private EvaluationParameters _evaluationParameters;
         private FeaturizationConfig _featurizationConfig;
         private int? _forecastHorizon;
@@ -145,6 +146,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetEncryptionConfig()
         {
             return this._encryptionConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedTimeRemainingInMinutes. 
+        /// <para>
+        /// The estimated time in minutes for the predictor training job to complete.
+        /// </para>
+        /// </summary>
+        public long EstimatedTimeRemainingInMinutes
+        {
+            get { return this._estimatedTimeRemainingInMinutes.GetValueOrDefault(); }
+            set { this._estimatedTimeRemainingInMinutes = value; }
+        }
+
+        // Check to see if EstimatedTimeRemainingInMinutes property is set
+        internal bool IsSetEstimatedTimeRemainingInMinutes()
+        {
+            return this._estimatedTimeRemainingInMinutes.HasValue; 
         }
 
         /// <summary>

@@ -39,6 +39,7 @@ namespace Amazon.ForecastService.Model
         private string _datasetImportJobName;
         private double? _dataSize;
         private DataSource _dataSource;
+        private long? _estimatedTimeRemainingInMinutes;
         private Dictionary<string, Statistics> _fieldStatistics = new Dictionary<string, Statistics>();
         private string _geolocationFormat;
         private DateTime? _lastModificationTime;
@@ -164,6 +165,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetDataSource()
         {
             return this._dataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedTimeRemainingInMinutes. 
+        /// <para>
+        /// The estimated time in minutes for the dataset import job to complete.
+        /// </para>
+        /// </summary>
+        public long EstimatedTimeRemainingInMinutes
+        {
+            get { return this._estimatedTimeRemainingInMinutes.GetValueOrDefault(); }
+            set { this._estimatedTimeRemainingInMinutes = value; }
+        }
+
+        // Check to see if EstimatedTimeRemainingInMinutes property is set
+        internal bool IsSetEstimatedTimeRemainingInMinutes()
+        {
+            return this._estimatedTimeRemainingInMinutes.HasValue; 
         }
 
         /// <summary>

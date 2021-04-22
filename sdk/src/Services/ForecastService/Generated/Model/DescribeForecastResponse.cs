@@ -35,6 +35,7 @@ namespace Amazon.ForecastService.Model
     {
         private DateTime? _creationTime;
         private string _datasetGroupArn;
+        private long? _estimatedTimeRemainingInMinutes;
         private string _forecastArn;
         private string _forecastName;
         private List<string> _forecastTypes = new List<string>();
@@ -78,6 +79,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetDatasetGroupArn()
         {
             return this._datasetGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedTimeRemainingInMinutes. 
+        /// <para>
+        /// The estimated time in minutes for the forecast job to complete.
+        /// </para>
+        /// </summary>
+        public long EstimatedTimeRemainingInMinutes
+        {
+            get { return this._estimatedTimeRemainingInMinutes.GetValueOrDefault(); }
+            set { this._estimatedTimeRemainingInMinutes = value; }
+        }
+
+        // Check to see if EstimatedTimeRemainingInMinutes property is set
+        internal bool IsSetEstimatedTimeRemainingInMinutes()
+        {
+            return this._estimatedTimeRemainingInMinutes.HasValue; 
         }
 
         /// <summary>

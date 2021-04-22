@@ -63,6 +63,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.DatasetGroupArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EstimatedTimeRemainingInMinutes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.EstimatedTimeRemainingInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ForecastArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
