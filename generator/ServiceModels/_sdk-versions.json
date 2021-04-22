@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.18.0",
+    "ProductVersion" : "3.7.19.0",
     "CoreVersion"    : "3.7.0.14",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -168,7 +168,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.7.1.5",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.14"
@@ -538,7 +538,7 @@
             "InPreview"               : false
         },
         "CognitoIdentityProvider"         : {
-            "Version" : "3.7.0.13",
+            "Version" : "3.7.0.14",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.14"
@@ -1306,7 +1306,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "3.7.0.13",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.14"
@@ -1498,7 +1498,7 @@
             "InPreview"               : false
         },
         "ForecastService"                 : {
-            "Version" : "3.7.0.13",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.14"

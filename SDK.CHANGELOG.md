@@ -1,3 +1,13 @@
+### 3.7.19.0 (2021-04-22 18:13 UTC)
+* CognitoIdentityProvider (3.7.0.14)
+	* Documentation updates for cognito-idp
+* ElastiCache (3.7.2.0)
+	* This release introduces log delivery of Redis slow log from Amazon ElastiCache.
+* ForecastService (3.7.1.0)
+	* This release adds EstimatedTimeRemaining minutes field to the DescribeDatasetImportJob, DescribePredictor, DescribeForecast API response which denotes the time remaining to complete the job IN_PROGRESS.
+* SecurityHub (3.7.1.0)
+	* Replaced the term "master" with "administrator". Added new actions to replace AcceptInvitation, GetMasterAccount, and DisassociateFromMasterAccount. In Member, replaced MasterId with AdministratorId.
+
 ### 3.7.18.0 (2021-04-21 18:37 UTC)
 * CloudFormation (3.7.1.10)
 	* Added support for creating and updating stack sets with self-managed permissions from templates that reference macros.
