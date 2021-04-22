@@ -442,7 +442,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// For clusters running Redis, this value must be 1. For clusters running Memcached,
-        /// this value must be between 1 and 20.
+        /// this value must be between 1 and 40.
         /// </para>
         /// </summary>
         public int NumCacheNodes

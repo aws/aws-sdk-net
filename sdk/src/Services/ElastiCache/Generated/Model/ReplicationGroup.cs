@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         private string _description;
         private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
         private string _kmsKeyId;
+        private List<LogDeliveryConfiguration> _logDeliveryConfigurations = new List<LogDeliveryConfiguration>();
         private List<string> _memberClusters = new List<string>();
         private List<string> _memberClustersOutpostArns = new List<string>();
         private MultiAZStatus _multiAZ;
@@ -281,6 +282,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogDeliveryConfigurations. 
+        /// <para>
+        /// Returns the destination, format and type of the logs. 
+        /// </para>
+        /// </summary>
+        public List<LogDeliveryConfiguration> LogDeliveryConfigurations
+        {
+            get { return this._logDeliveryConfigurations; }
+            set { this._logDeliveryConfigurations = value; }
+        }
+
+        // Check to see if LogDeliveryConfigurations property is set
+        internal bool IsSetLogDeliveryConfigurations()
+        {
+            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
         }
 
         /// <summary>

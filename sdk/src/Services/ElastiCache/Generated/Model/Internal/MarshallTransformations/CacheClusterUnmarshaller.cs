@@ -158,6 +158,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LogDeliveryConfigurations/LogDeliveryConfiguration", targetDepth))
+                    {
+                        var unmarshaller = LogDeliveryConfigurationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LogDeliveryConfigurations.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("NotificationConfiguration", targetDepth))
                     {
                         var unmarshaller = NotificationConfigurationUnmarshaller.Instance;
@@ -198,6 +205,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ReplicationGroupId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReplicationGroupLogDeliveryEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ReplicationGroupLogDeliveryEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SecurityGroups/member", targetDepth))

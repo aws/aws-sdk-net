@@ -46,6 +46,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = new List<string>();
         private string _engineVersion;
+        private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = new List<LogDeliveryConfigurationRequest>();
         private List<string> _newAvailabilityZones = new List<string>();
         private string _notificationTopicArn;
         private string _notificationTopicStatus;
@@ -371,7 +372,29 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NewAvailabilityZones. 
+        /// Gets and sets the property LogDeliveryConfigurations. 
+        /// <para>
+        /// Specifies the destination, format and type of the logs.
+        /// </para>
+        /// </summary>
+        public List<LogDeliveryConfigurationRequest> LogDeliveryConfigurations
+        {
+            get { return this._logDeliveryConfigurations; }
+            set { this._logDeliveryConfigurations = value; }
+        }
+
+        // Check to see if LogDeliveryConfigurations property is set
+        internal bool IsSetLogDeliveryConfigurations()
+        {
+            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NewAvailabilityZones. <note> 
+        /// <para>
+        /// This option is only supported on Memcached clusters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The list of Availability Zones where the new Memcached cache nodes are created.
         /// </para>
@@ -381,10 +404,6 @@ namespace Amazon.ElastiCache.Model
         /// than the sum of the number of active cache nodes and the number of cache nodes pending
         /// creation (which may be zero). The number of Availability Zones supplied in this list
         /// must match the cache nodes being added in this request.
-        /// </para>
-        ///  
-        /// <para>
-        /// This option is only supported on Memcached clusters.
         /// </para>
         ///  
         /// <para>
@@ -572,7 +591,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// For clusters running Redis, this value must be 1. For clusters running Memcached,
-        /// this value must be between 1 and 20.
+        /// this value must be between 1 and 40.
         /// </para>
         ///  <note> 
         /// <para>

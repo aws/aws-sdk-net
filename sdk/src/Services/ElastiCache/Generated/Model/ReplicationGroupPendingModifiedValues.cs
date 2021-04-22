@@ -36,6 +36,7 @@ namespace Amazon.ElastiCache.Model
     {
         private AuthTokenUpdateStatus _authTokenStatus;
         private PendingAutomaticFailoverStatus _automaticFailoverStatus;
+        private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
         private string _primaryClusterId;
         private ReshardingStatus _resharding;
         private UserGroupsUpdateStatus _userGroups;
@@ -74,6 +75,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAutomaticFailoverStatus()
         {
             return this._automaticFailoverStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogDeliveryConfigurations. 
+        /// <para>
+        /// The log delivery configurations being modified 
+        /// </para>
+        /// </summary>
+        public List<PendingLogDeliveryConfiguration> LogDeliveryConfigurations
+        {
+            get { return this._logDeliveryConfigurations; }
+            set { this._logDeliveryConfigurations = value; }
+        }
+
+        // Check to see if LogDeliveryConfigurations property is set
+        internal bool IsSetLogDeliveryConfigurations()
+        {
+            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
         }
 
         /// <summary>

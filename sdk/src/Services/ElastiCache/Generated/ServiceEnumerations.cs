@@ -337,6 +337,214 @@ namespace Amazon.ElastiCache
 
 
     /// <summary>
+    /// Constants used for properties of type DestinationType.
+    /// </summary>
+    public class DestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudwatchLogs for DestinationType
+        /// </summary>
+        public static readonly DestinationType CloudwatchLogs = new DestinationType("cloudwatch-logs");
+        /// <summary>
+        /// Constant KinesisFirehose for DestinationType
+        /// </summary>
+        public static readonly DestinationType KinesisFirehose = new DestinationType("kinesis-firehose");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationType FindValue(string value)
+        {
+            return FindValue<DestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogDeliveryConfigurationStatus.
+    /// </summary>
+    public class LogDeliveryConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for LogDeliveryConfigurationStatus
+        /// </summary>
+        public static readonly LogDeliveryConfigurationStatus Active = new LogDeliveryConfigurationStatus("active");
+        /// <summary>
+        /// Constant Disabling for LogDeliveryConfigurationStatus
+        /// </summary>
+        public static readonly LogDeliveryConfigurationStatus Disabling = new LogDeliveryConfigurationStatus("disabling");
+        /// <summary>
+        /// Constant Enabling for LogDeliveryConfigurationStatus
+        /// </summary>
+        public static readonly LogDeliveryConfigurationStatus Enabling = new LogDeliveryConfigurationStatus("enabling");
+        /// <summary>
+        /// Constant Error for LogDeliveryConfigurationStatus
+        /// </summary>
+        public static readonly LogDeliveryConfigurationStatus Error = new LogDeliveryConfigurationStatus("error");
+        /// <summary>
+        /// Constant Modifying for LogDeliveryConfigurationStatus
+        /// </summary>
+        public static readonly LogDeliveryConfigurationStatus Modifying = new LogDeliveryConfigurationStatus("modifying");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogDeliveryConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogDeliveryConfigurationStatus FindValue(string value)
+        {
+            return FindValue<LogDeliveryConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogDeliveryConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogFormat.
+    /// </summary>
+    public class LogFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Json for LogFormat
+        /// </summary>
+        public static readonly LogFormat Json = new LogFormat("json");
+        /// <summary>
+        /// Constant Text for LogFormat
+        /// </summary>
+        public static readonly LogFormat Text = new LogFormat("text");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogFormat FindValue(string value)
+        {
+            return FindValue<LogFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogType.
+    /// </summary>
+    public class LogType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SlowLog for LogType
+        /// </summary>
+        public static readonly LogType SlowLog = new LogType("slow-log");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogType FindValue(string value)
+        {
+            return FindValue<LogType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MultiAZStatus.
     /// </summary>
     public class MultiAZStatus : ConstantClass

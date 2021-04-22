@@ -66,6 +66,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutomaticFailoverStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LogDeliveryConfigurations/member", targetDepth))
+                    {
+                        var unmarshaller = PendingLogDeliveryConfigurationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LogDeliveryConfigurations.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("PrimaryClusterId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

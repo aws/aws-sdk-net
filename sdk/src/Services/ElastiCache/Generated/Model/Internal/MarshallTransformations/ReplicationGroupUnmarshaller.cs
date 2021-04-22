@@ -120,6 +120,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LogDeliveryConfigurations/LogDeliveryConfiguration", targetDepth))
+                    {
+                        var unmarshaller = LogDeliveryConfigurationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LogDeliveryConfigurations.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("MemberClusters/ClusterId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

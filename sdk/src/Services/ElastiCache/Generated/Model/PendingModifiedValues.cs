@@ -38,6 +38,7 @@ namespace Amazon.ElastiCache.Model
         private List<string> _cacheNodeIdsToRemove = new List<string>();
         private string _cacheNodeType;
         private string _engineVersion;
+        private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
         private int? _numCacheNodes;
 
         /// <summary>
@@ -119,6 +120,24 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogDeliveryConfigurations. 
+        /// <para>
+        /// The log delivery configurations being modified 
+        /// </para>
+        /// </summary>
+        public List<PendingLogDeliveryConfiguration> LogDeliveryConfigurations
+        {
+            get { return this._logDeliveryConfigurations; }
+            set { this._logDeliveryConfigurations = value; }
+        }
+
+        // Check to see if LogDeliveryConfigurations property is set
+        internal bool IsSetLogDeliveryConfigurations()
+        {
+            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NumCacheNodes. 
         /// <para>
         /// The new number of cache nodes for the cluster.
@@ -126,7 +145,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// For clusters running Redis, this value must be 1. For clusters running Memcached,
-        /// this value must be between 1 and 20.
+        /// this value must be between 1 and 40.
         /// </para>
         /// </summary>
         public int NumCacheNodes

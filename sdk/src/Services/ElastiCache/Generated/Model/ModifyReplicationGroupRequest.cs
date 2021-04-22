@@ -60,6 +60,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = new List<string>();
         private string _engineVersion;
+        private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = new List<LogDeliveryConfigurationRequest>();
         private bool? _multiAZEnabled;
         private string _nodeGroupId;
         private string _notificationTopicArn;
@@ -309,6 +310,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogDeliveryConfigurations. 
+        /// <para>
+        /// Specifies the destination, format and type of the logs.
+        /// </para>
+        /// </summary>
+        public List<LogDeliveryConfigurationRequest> LogDeliveryConfigurations
+        {
+            get { return this._logDeliveryConfigurations; }
+            set { this._logDeliveryConfigurations = value; }
+        }
+
+        // Check to see if LogDeliveryConfigurations property is set
+        internal bool IsSetLogDeliveryConfigurations()
+        {
+            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
         }
 
         /// <summary>

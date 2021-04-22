@@ -50,6 +50,7 @@ namespace Amazon.ElastiCache.Model
         private Endpoint _configurationEndpoint;
         private string _engine;
         private string _engineVersion;
+        private List<LogDeliveryConfiguration> _logDeliveryConfigurations = new List<LogDeliveryConfiguration>();
         private NotificationConfiguration _notificationConfiguration;
         private int? _numCacheNodes;
         private PendingModifiedValues _pendingModifiedValues;
@@ -57,6 +58,7 @@ namespace Amazon.ElastiCache.Model
         private string _preferredMaintenanceWindow;
         private string _preferredOutpostArn;
         private string _replicationGroupId;
+        private bool? _replicationGroupLogDeliveryEnabled;
         private List<SecurityGroupMembership> _securityGroups = new List<SecurityGroupMembership>();
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
@@ -555,6 +557,24 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogDeliveryConfigurations. 
+        /// <para>
+        /// Returns the destination, format and type of the logs.
+        /// </para>
+        /// </summary>
+        public List<LogDeliveryConfiguration> LogDeliveryConfigurations
+        {
+            get { return this._logDeliveryConfigurations; }
+            set { this._logDeliveryConfigurations = value; }
+        }
+
+        // Check to see if LogDeliveryConfigurations property is set
+        internal bool IsSetLogDeliveryConfigurations()
+        {
+            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NotificationConfiguration. 
         /// <para>
         /// Describes a notification topic and its status. Notification topics are used for publishing
@@ -582,7 +602,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// For clusters running Redis, this value must be 1. For clusters running Memcached,
-        /// this value must be between 1 and 20.
+        /// this value must be between 1 and 40.
         /// </para>
         /// </summary>
         public int NumCacheNodes
@@ -722,6 +742,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetReplicationGroupId()
         {
             return this._replicationGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationGroupLogDeliveryEnabled. 
+        /// <para>
+        /// A boolean value indicating whether log delivery is enabled for the replication group.
+        /// </para>
+        /// </summary>
+        public bool ReplicationGroupLogDeliveryEnabled
+        {
+            get { return this._replicationGroupLogDeliveryEnabled.GetValueOrDefault(); }
+            set { this._replicationGroupLogDeliveryEnabled = value; }
+        }
+
+        // Check to see if ReplicationGroupLogDeliveryEnabled property is set
+        internal bool IsSetReplicationGroupLogDeliveryEnabled()
+        {
+            return this._replicationGroupLogDeliveryEnabled.HasValue; 
         }
 
         /// <summary>

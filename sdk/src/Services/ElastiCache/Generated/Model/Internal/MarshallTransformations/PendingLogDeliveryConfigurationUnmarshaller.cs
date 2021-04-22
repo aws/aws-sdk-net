@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PendingModifiedValues Object
+    /// Response Unmarshaller for PendingLogDeliveryConfiguration Object
     /// </summary>  
-    public class PendingModifiedValuesUnmarshaller : IUnmarshaller<PendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<PendingModifiedValues, JsonUnmarshallerContext>
+    public class PendingLogDeliveryConfigurationUnmarshaller : IUnmarshaller<PendingLogDeliveryConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PendingLogDeliveryConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PendingModifiedValues Unmarshall(XmlUnmarshallerContext context)
+        public PendingLogDeliveryConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            PendingModifiedValues unmarshalledObject = new PendingModifiedValues();
+            PendingLogDeliveryConfiguration unmarshalledObject = new PendingLogDeliveryConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,42 +54,28 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AuthTokenStatus", targetDepth))
+                    if (context.TestExpression("DestinationDetails", targetDepth))
+                    {
+                        var unmarshaller = DestinationDetailsUnmarshaller.Instance;
+                        unmarshalledObject.DestinationDetails = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DestinationType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AuthTokenStatus = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DestinationType = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("CacheNodeIdsToRemove/CacheNodeId", targetDepth))
+                    if (context.TestExpression("LogFormat", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.CacheNodeIdsToRemove.Add(item);
+                        unmarshalledObject.LogFormat = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("CacheNodeType", targetDepth))
+                    if (context.TestExpression("LogType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CacheNodeType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("EngineVersion", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LogDeliveryConfigurations/member", targetDepth))
-                    {
-                        var unmarshaller = PendingLogDeliveryConfigurationUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.LogDeliveryConfigurations.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("NumCacheNodes", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.NumCacheNodes = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LogType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -107,18 +93,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PendingModifiedValues Unmarshall(JsonUnmarshallerContext context)
+        public PendingLogDeliveryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static PendingModifiedValuesUnmarshaller _instance = new PendingModifiedValuesUnmarshaller();        
+        private static PendingLogDeliveryConfigurationUnmarshaller _instance = new PendingLogDeliveryConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PendingModifiedValuesUnmarshaller Instance
+        public static PendingLogDeliveryConfigurationUnmarshaller Instance
         {
             get
             {
