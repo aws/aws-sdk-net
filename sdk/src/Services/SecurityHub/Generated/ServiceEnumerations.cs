@@ -292,6 +292,10 @@ namespace Amazon.SecurityHub
         /// Constant SEND_FINDINGS_TO_SECURITY_HUB for IntegrationType
         /// </summary>
         public static readonly IntegrationType SEND_FINDINGS_TO_SECURITY_HUB = new IntegrationType("SEND_FINDINGS_TO_SECURITY_HUB");
+        /// <summary>
+        /// Constant UPDATE_FINDINGS_IN_SECURITY_HUB for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType UPDATE_FINDINGS_IN_SECURITY_HUB = new IntegrationType("UPDATE_FINDINGS_IN_SECURITY_HUB");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

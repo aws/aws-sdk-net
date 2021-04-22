@@ -34,6 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class Member
     {
         private string _accountId;
+        private string _administratorId;
         private string _email;
         private DateTime? _invitedAt;
         private string _masterId;
@@ -56,6 +57,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdministratorId. 
+        /// <para>
+        /// The AWS account ID of the Security Hub administrator account associated with this
+        /// member account.
+        /// </para>
+        /// </summary>
+        public string AdministratorId
+        {
+            get { return this._administratorId; }
+            set { this._administratorId = value; }
+        }
+
+        // Check to see if AdministratorId property is set
+        internal bool IsSetAdministratorId()
+        {
+            return this._administratorId != null;
         }
 
         /// <summary>
@@ -97,10 +117,15 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MasterId. 
         /// <para>
-        /// The AWS account ID of the Security Hub master account associated with this member
-        /// account.
+        /// This is replaced by <code>AdministratorID</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS account ID of the Security Hub administrator account associated with this
+        /// member account.
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated, use AdministratorId instead.")]
         public string MasterId
         {
             get { return this._masterId; }
@@ -116,7 +141,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MemberStatus. 
         /// <para>
-        /// The status of the relationship between the member account and its master account.
+        /// The status of the relationship between the member account and its administrator account.
         /// 
         /// </para>
         ///  
@@ -125,13 +150,13 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATED</code> - Indicates that the master account added the member account,
-        /// but has not yet invited the member account.
+        ///  <code>CREATED</code> - Indicates that the administrator account added the member
+        /// account, but has not yet invited the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVITED</code> - Indicates that the master account invited the member account.
-        /// The member account has not yet responded to the invitation.
+        ///  <code>INVITED</code> - Indicates that the administrator account invited the member
+        /// account. The member account has not yet responded to the invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -140,17 +165,18 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REMOVED</code> - Indicates that the master account disassociated the member
-        /// account.
+        ///  <code>REMOVED</code> - Indicates that the administrator account disassociated the
+        /// member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>RESIGNED</code> - Indicates that the member account disassociated themselves
-        /// from the master account.
+        /// from the administrator account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - Indicates that the master account deleted the member account.
+        ///  <code>DELETED</code> - Indicates that the administrator account deleted the member
+        /// account.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -31,9 +31,9 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the CreateMembers operation.
     /// Creates a member association in Security Hub between the specified accounts and the
-    /// account used to make the request, which is the master account. If you are integrated
-    /// with Organizations, then the master account is the Security Hub administrator account
-    /// that is designated by the organization management account.
+    /// account used to make the request, which is the administrator account. If you are integrated
+    /// with Organizations, then the administrator account is designated by the organization
+    /// management account.
     /// 
     ///  
     /// <para>
@@ -72,14 +72,15 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  
     /// <para>
-    /// A permissions policy is added that permits the master account to view the findings
+    /// A permissions policy is added that permits the administrator account to view the findings
     /// generated in the member account. When Security Hub is enabled in a member account,
-    /// findings are sent to both the member and master accounts. 
+    /// the member account findings are also visible to the administrator account. 
     /// </para>
     ///  
     /// <para>
-    /// To remove the association between the master and member accounts, use the <code> <a>DisassociateFromMasterAccount</a>
-    /// </code> or <code> <a>DisassociateMembers</a> </code> operation.
+    /// To remove the association between the administrator and member accounts, use the <code>
+    /// <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a>
+    /// </code> operation.
     /// </para>
     /// </summary>
     public partial class CreateMembersRequest : AmazonSecurityHubRequest
@@ -89,8 +90,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountDetails. 
         /// <para>
-        /// The list of accounts to associate with the Security Hub master account. For each account,
-        /// the list includes the account ID and optionally the email address.
+        /// The list of accounts to associate with the Security Hub administrator account. For
+        /// each account, the list includes the account ID and optionally the email address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -46,7 +46,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ActivationUrl. 
         /// <para>
-        /// The URL used to activate the product.
+        /// The URL to the service or product documentation about the integration with Security
+        /// Hub, including how to activate the integration.
         /// </para>
         /// </summary>
         public string ActivationUrl
@@ -122,13 +123,19 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends
-        /// findings to Security Hub.
+        ///  <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security
+        /// Hub.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration
-        /// receives findings from Security Hub.
+        ///  <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings
+        /// from Security Hub.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
+        /// findings to Security Hub, but does make updates to the findings that it receives from
+        /// Security Hub.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -147,7 +154,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MarketplaceUrl. 
         /// <para>
-        /// The URL for the page that contains more information about the product.
+        /// For integrations with AWS services, the AWS Console URL from which to activate the
+        /// service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For integrations with third-party products, the AWS Marketplace URL from which to
+        /// subscribe to or purchase the product.
         /// </para>
         /// </summary>
         public string MarketplaceUrl

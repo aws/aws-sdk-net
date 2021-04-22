@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AcceptAdministratorInvitationRequest.AdministratorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AcceptAdministratorInvitationRequest.InvitationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AcceptInvitationRequest.InvitationId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -2645,6 +2653,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.MapFilter.Value</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.Member.AdministratorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

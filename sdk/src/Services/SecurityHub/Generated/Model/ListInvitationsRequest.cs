@@ -34,8 +34,8 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// This operation is only used by accounts that do not belong to an organization. Organization
-    /// accounts do not receive invitations.
+    /// This operation is only used by accounts that are managed by invitation. Accounts that
+    /// are managed using the integration with AWS Organizations do not receive invitations.
     /// </para>
     /// </summary>
     public partial class ListInvitationsRequest : AmazonSecurityHubRequest

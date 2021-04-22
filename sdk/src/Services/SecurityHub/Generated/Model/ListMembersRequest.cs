@@ -30,7 +30,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMembers operation.
-    /// Lists details about all member accounts for the current Security Hub master account.
+    /// Lists details about all member accounts for the current Security Hub administrator
+    /// account.
     /// 
     ///  
     /// <para>
@@ -91,12 +92,13 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property OnlyAssociated. 
         /// <para>
         /// Specifies which member accounts to include in the response based on their relationship
-        /// status with the master account. The default value is <code>TRUE</code>.
+        /// status with the administrator account. The default value is <code>TRUE</code>.
         /// </para>
         ///  
         /// <para>
         /// If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes
-        /// member accounts whose relationship status with the master is set to <code>ENABLED</code>.
+        /// member accounts whose relationship status with the administrator account is set to
+        /// <code>ENABLED</code>.
         /// </para>
         ///  
         /// <para>

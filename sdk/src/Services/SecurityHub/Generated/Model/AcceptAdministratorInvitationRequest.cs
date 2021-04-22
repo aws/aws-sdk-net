@@ -29,14 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the AcceptInvitation operation.
-    /// This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.
-    /// 
-    ///  
-    /// <para>
+    /// Container for the parameters to the AcceptAdministratorInvitation operation.
     /// Accepts the invitation to be a member account and be monitored by the Security Hub
     /// administrator account that the invitation was sent from.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// This operation is only used by member accounts that are not added through Organizations.
@@ -47,10 +43,29 @@ namespace Amazon.SecurityHub.Model
     /// account to view findings generated in the member account.
     /// </para>
     /// </summary>
-    public partial class AcceptInvitationRequest : AmazonSecurityHubRequest
+    public partial class AcceptAdministratorInvitationRequest : AmazonSecurityHubRequest
     {
+        private string _administratorId;
         private string _invitationId;
-        private string _masterId;
+
+        /// <summary>
+        /// Gets and sets the property AdministratorId. 
+        /// <para>
+        /// The account ID of the Security Hub administrator account that sent the invitation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string AdministratorId
+        {
+            get { return this._administratorId; }
+            set { this._administratorId = value; }
+        }
+
+        // Check to see if AdministratorId property is set
+        internal bool IsSetAdministratorId()
+        {
+            return this._administratorId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InvitationId. 
@@ -69,25 +84,6 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetInvitationId()
         {
             return this._invitationId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MasterId. 
-        /// <para>
-        /// The account ID of the Security Hub administrator account that sent the invitation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string MasterId
-        {
-            get { return this._masterId; }
-            set { this._masterId = value; }
-        }
-
-        // Check to see if MasterId property is set
-        internal bool IsSetMasterId()
-        {
-            return this._masterId != null;
         }
 
     }

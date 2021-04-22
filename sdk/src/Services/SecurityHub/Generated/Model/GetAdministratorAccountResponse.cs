@@ -29,22 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateFromMasterAccount operation.
-    /// This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
-    /// 
-    ///  
-    /// <para>
-    /// Disassociates the current Security Hub member account from the associated administrator
-    /// account.
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation is only used by accounts that are not part of an organization. For
-    /// organization accounts, only the administrator account can disassociate a member account.
-    /// </para>
+    /// This is the response object from the GetAdministratorAccount operation.
     /// </summary>
-    public partial class DisassociateFromMasterAccountRequest : AmazonSecurityHubRequest
+    public partial class GetAdministratorAccountResponse : AmazonWebServiceResponse
     {
+        private Invitation _administrator;
+
+        /// <summary>
+        /// Gets and sets the property Administrator.
+        /// </summary>
+        public Invitation Administrator
+        {
+            get { return this._administrator; }
+            set { this._administrator = value; }
+        }
+
+        // Check to see if Administrator property is set
+        internal bool IsSetAdministrator()
+        {
+            return this._administrator != null;
+        }
 
     }
 }

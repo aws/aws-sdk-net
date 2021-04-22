@@ -38,8 +38,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Master. 
         /// <para>
-        /// A list of details about the Security Hub master account for the current member account.
-        /// 
+        /// A list of details about the Security Hub administrator account for the current member
+        /// account. 
         /// </para>
         /// </summary>
         public Invitation Master

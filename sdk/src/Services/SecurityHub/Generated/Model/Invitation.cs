@@ -41,7 +41,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID of the Security Hub master account that the invitation was sent from.
+        /// The account ID of the Security Hub administrator account that the invitation was sent
+        /// from.
         /// </para>
         /// </summary>
         public string AccountId
@@ -95,7 +96,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MemberStatus. 
         /// <para>
-        /// The current status of the association between the member and master accounts.
+        /// The current status of the association between the member and administrator accounts.
         /// </para>
         /// </summary>
         public string MemberStatus

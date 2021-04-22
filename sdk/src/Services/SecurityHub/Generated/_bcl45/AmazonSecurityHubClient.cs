@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub
     /// <para>
     /// For example, if your Region is set to <code>us-west-2</code>, when you use <code>
     /// <a>CreateMembers</a> </code> to add a member account to Security Hub, the association
-    /// of the member account with the master account is created only in the <code>us-west-2</code>
+    /// of the member account with the administrator account is created only in the <code>us-west-2</code>
     /// Region. Security Hub must be enabled for the member account in the same Region that
     /// the invitation was sent from.
     /// </para>
@@ -307,12 +307,12 @@ namespace Amazon.SecurityHub
         #endregion
 
 
-        #region  AcceptInvitation
+        #region  AcceptAdministratorInvitation
 
 
         /// <summary>
         /// Accepts the invitation to be a member account and be monitored by the Security Hub
-        /// master account that the invitation was sent from.
+        /// administrator account that the invitation was sent from.
         /// 
         ///  
         /// <para>
@@ -320,7 +320,112 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// When the member account accepts the invitation, permission is granted to the master
+        /// When the member account accepts the invitation, permission is granted to the administrator
+        /// account to view findings generated in the member account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAdministratorInvitation service method.</param>
+        /// 
+        /// <returns>The response from the AcceptAdministratorInvitation service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptAdministratorInvitation">REST API Reference for AcceptAdministratorInvitation Operation</seealso>
+        public virtual AcceptAdministratorInvitationResponse AcceptAdministratorInvitation(AcceptAdministratorInvitationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptAdministratorInvitationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptAdministratorInvitationResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptAdministratorInvitationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Accepts the invitation to be a member account and be monitored by the Security Hub
+        /// administrator account that the invitation was sent from.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only used by member accounts that are not added through Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the member account accepts the invitation, permission is granted to the administrator
+        /// account to view findings generated in the member account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAdministratorInvitation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptAdministratorInvitation service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptAdministratorInvitation">REST API Reference for AcceptAdministratorInvitation Operation</seealso>
+        public virtual Task<AcceptAdministratorInvitationResponse> AcceptAdministratorInvitationAsync(AcceptAdministratorInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptAdministratorInvitationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptAdministratorInvitationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AcceptAdministratorInvitationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AcceptInvitation
+
+
+        /// <summary>
+        /// This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.
+        /// 
+        ///  
+        /// <para>
+        /// Accepts the invitation to be a member account and be monitored by the Security Hub
+        /// administrator account that the invitation was sent from.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only used by member accounts that are not added through Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the member account accepts the invitation, permission is granted to the administrator
         /// account to view findings generated in the member account.
         /// </para>
         /// </summary>
@@ -347,6 +452,7 @@ namespace Amazon.SecurityHub
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        [Obsolete("This API has been deprecated, use AcceptAdministratorInvitation API instead.")]
         public virtual AcceptInvitationResponse AcceptInvitation(AcceptInvitationRequest request)
         {
             var options = new InvokeOptions();
@@ -358,16 +464,20 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Accepts the invitation to be a member account and be monitored by the Security Hub
-        /// master account that the invitation was sent from.
+        /// This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.
         /// 
+        ///  
+        /// <para>
+        /// Accepts the invitation to be a member account and be monitored by the Security Hub
+        /// administrator account that the invitation was sent from.
+        /// </para>
         ///  
         /// <para>
         /// This operation is only used by member accounts that are not added through Organizations.
         /// </para>
         ///  
         /// <para>
-        /// When the member account accepts the invitation, permission is granted to the master
+        /// When the member account accepts the invitation, permission is granted to the administrator
         /// account to view findings generated in the member account.
         /// </para>
         /// </summary>
@@ -397,6 +507,7 @@ namespace Amazon.SecurityHub
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        [Obsolete("This API has been deprecated, use AcceptAdministratorInvitation API instead.")]
         public virtual Task<AcceptInvitationResponse> AcceptInvitationAsync(AcceptInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -778,9 +889,9 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Used by Security Hub customers to update information about their investigation into
-        /// a finding. Requested by master accounts or member accounts. Master accounts can update
-        /// findings for their account and their member accounts. Member accounts can update findings
-        /// for their account.
+        /// a finding. Requested by administrator accounts or member accounts. Administrator accounts
+        /// can update findings for their account and their member accounts. Member accounts can
+        /// update findings for their account.
         /// 
         ///  
         /// <para>
@@ -789,8 +900,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// Master and member accounts can use <code>BatchUpdateFindings</code> to update the
-        /// following finding fields and objects.
+        /// Administrator and member accounts can use <code>BatchUpdateFindings</code> to update
+        /// the following finding fields and objects.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -868,9 +979,9 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Used by Security Hub customers to update information about their investigation into
-        /// a finding. Requested by master accounts or member accounts. Master accounts can update
-        /// findings for their account and their member accounts. Member accounts can update findings
-        /// for their account.
+        /// a finding. Requested by administrator accounts or member accounts. Administrator accounts
+        /// can update findings for their account and their member accounts. Member accounts can
+        /// update findings for their account.
         /// 
         ///  
         /// <para>
@@ -879,8 +990,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// Master and member accounts can use <code>BatchUpdateFindings</code> to update the
-        /// following finding fields and objects.
+        /// Administrator and member accounts can use <code>BatchUpdateFindings</code> to update
+        /// the following finding fields and objects.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1147,9 +1258,9 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Creates a member association in Security Hub between the specified accounts and the
-        /// account used to make the request, which is the master account. If you are integrated
-        /// with Organizations, then the master account is the Security Hub administrator account
-        /// that is designated by the organization management account.
+        /// account used to make the request, which is the administrator account. If you are integrated
+        /// with Organizations, then the administrator account is designated by the organization
+        /// management account.
         /// 
         ///  
         /// <para>
@@ -1188,14 +1299,15 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// A permissions policy is added that permits the master account to view the findings
+        /// A permissions policy is added that permits the administrator account to view the findings
         /// generated in the member account. When Security Hub is enabled in a member account,
-        /// findings are sent to both the member and master accounts. 
+        /// the member account findings are also visible to the administrator account. 
         /// </para>
         ///  
         /// <para>
-        /// To remove the association between the master and member accounts, use the <code> <a>DisassociateFromMasterAccount</a>
-        /// </code> or <code> <a>DisassociateMembers</a> </code> operation.
+        /// To remove the association between the administrator and member accounts, use the <code>
+        /// <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a>
+        /// </code> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -1233,9 +1345,9 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Creates a member association in Security Hub between the specified accounts and the
-        /// account used to make the request, which is the master account. If you are integrated
-        /// with Organizations, then the master account is the Security Hub administrator account
-        /// that is designated by the organization management account.
+        /// account used to make the request, which is the administrator account. If you are integrated
+        /// with Organizations, then the administrator account is designated by the organization
+        /// management account.
         /// 
         ///  
         /// <para>
@@ -1274,14 +1386,15 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// A permissions policy is added that permits the master account to view the findings
+        /// A permissions policy is added that permits the administrator account to view the findings
         /// generated in the member account. When Security Hub is enabled in a member account,
-        /// findings are sent to both the member and master accounts. 
+        /// the member account findings are also visible to the administrator account. 
         /// </para>
         ///  
         /// <para>
-        /// To remove the association between the master and member accounts, use the <code> <a>DisassociateFromMasterAccount</a>
-        /// </code> or <code> <a>DisassociateMembers</a> </code> operation.
+        /// To remove the association between the administrator and member accounts, use the <code>
+        /// <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a>
+        /// </code> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -2396,15 +2509,15 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// When you disable Security Hub for a master account, it doesn't disable Security Hub
-        /// for any associated member accounts.
+        /// When you disable Security Hub for an administrator account, it doesn't disable Security
+        /// Hub for any associated member accounts.
         /// </para>
         ///  
         /// <para>
         /// When you disable Security Hub, your existing findings and insights and any Security
         /// Hub configuration settings are deleted after 90 days and cannot be recovered. Any
-        /// standards that were enabled are disabled, and your master and member account associations
-        /// are removed.
+        /// standards that were enabled are disabled, and your administrator and member account
+        /// associations are removed.
         /// </para>
         ///  
         /// <para>
@@ -2448,15 +2561,15 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// When you disable Security Hub for a master account, it doesn't disable Security Hub
-        /// for any associated member accounts.
+        /// When you disable Security Hub for an administrator account, it doesn't disable Security
+        /// Hub for any associated member accounts.
         /// </para>
         ///  
         /// <para>
         /// When you disable Security Hub, your existing findings and insights and any Security
         /// Hub configuration settings are deleted after 90 days and cannot be recovered. Any
-        /// standards that were enabled are disabled, and your master and member account associations
-        /// are removed.
+        /// standards that were enabled are disabled, and your administrator and member account
+        /// associations are removed.
         /// </para>
         ///  
         /// <para>
@@ -2497,17 +2610,114 @@ namespace Amazon.SecurityHub
 
         #endregion
         
-        #region  DisassociateFromMasterAccount
+        #region  DisassociateFromAdministratorAccount
 
 
         /// <summary>
-        /// Disassociates the current Security Hub member account from the associated master account.
+        /// Disassociates the current Security Hub member account from the associated administrator
+        /// account.
         /// 
         ///  
         /// <para>
         /// This operation is only used by accounts that are not part of an organization. For
-        /// organization accounts, only the master account (the designated Security Hub administrator)
-        /// can disassociate a member account.
+        /// organization accounts, only the administrator account can disassociate a member account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromAdministratorAccount service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFromAdministratorAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromAdministratorAccount">REST API Reference for DisassociateFromAdministratorAccount Operation</seealso>
+        public virtual DisassociateFromAdministratorAccountResponse DisassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFromAdministratorAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFromAdministratorAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateFromAdministratorAccountResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates the current Security Hub member account from the associated administrator
+        /// account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only used by accounts that are not part of an organization. For
+        /// organization accounts, only the administrator account can disassociate a member account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromAdministratorAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateFromAdministratorAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromAdministratorAccount">REST API Reference for DisassociateFromAdministratorAccount Operation</seealso>
+        public virtual Task<DisassociateFromAdministratorAccountResponse> DisassociateFromAdministratorAccountAsync(DisassociateFromAdministratorAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFromAdministratorAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFromAdministratorAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateFromAdministratorAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateFromMasterAccount
+
+
+        /// <summary>
+        /// This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
+        /// 
+        ///  
+        /// <para>
+        /// Disassociates the current Security Hub member account from the associated administrator
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only used by accounts that are not part of an organization. For
+        /// organization accounts, only the administrator account can disassociate a member account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
@@ -2533,6 +2743,7 @@ namespace Amazon.SecurityHub
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        [Obsolete("This API has been deprecated, use DisassociateFromAdministratorAccount API instead.")]
         public virtual DisassociateFromMasterAccountResponse DisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -2544,13 +2755,17 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disassociates the current Security Hub member account from the associated master account.
+        /// This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
         /// 
         ///  
         /// <para>
+        /// Disassociates the current Security Hub member account from the associated administrator
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation is only used by accounts that are not part of an organization. For
-        /// organization accounts, only the master account (the designated Security Hub administrator)
-        /// can disassociate a member account.
+        /// organization accounts, only the administrator account can disassociate a member account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
@@ -2579,6 +2794,7 @@ namespace Amazon.SecurityHub
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        [Obsolete("This API has been deprecated, use DisassociateFromAdministratorAccount API instead.")]
         public virtual Task<DisassociateFromMasterAccountResponse> DisassociateFromMasterAccountAsync(DisassociateFromMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2594,12 +2810,12 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disassociates the specified member accounts from the associated master account.
+        /// Disassociates the specified member accounts from the associated administrator account.
         /// 
         ///  
         /// <para>
-        /// Can be used to disassociate both accounts that are in an organization and accounts
-        /// that were invited manually.
+        /// Can be used to disassociate both accounts that are managed using Organizations and
+        /// accounts that were invited manually.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
@@ -2636,12 +2852,12 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disassociates the specified member accounts from the associated master account.
+        /// Disassociates the specified member accounts from the associated administrator account.
         /// 
         ///  
         /// <para>
-        /// Can be used to disassociate both accounts that are in an organization and accounts
-        /// that were invited manually.
+        /// Can be used to disassociate both accounts that are managed using Organizations and
+        /// accounts that were invited manually.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
@@ -3004,6 +3220,99 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = EnableSecurityHubResponseUnmarshaller.Instance;
             
             return InvokeAsync<EnableSecurityHubResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAdministratorAccount
+
+
+        /// <summary>
+        /// Provides the details for the Security Hub administrator account for the current member
+        /// account.
+        /// 
+        ///  
+        /// <para>
+        /// Can be used by both member accounts that are managed using Organizations and accounts
+        /// that were invited manually.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdministratorAccount service method.</param>
+        /// 
+        /// <returns>The response from the GetAdministratorAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAdministratorAccount">REST API Reference for GetAdministratorAccount Operation</seealso>
+        public virtual GetAdministratorAccountResponse GetAdministratorAccount(GetAdministratorAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdministratorAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdministratorAccountResponseUnmarshaller.Instance;
+
+            return Invoke<GetAdministratorAccountResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides the details for the Security Hub administrator account for the current member
+        /// account.
+        /// 
+        ///  
+        /// <para>
+        /// Can be used by both member accounts that are managed using Organizations and accounts
+        /// that were invited manually.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdministratorAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAdministratorAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAdministratorAccount">REST API Reference for GetAdministratorAccount Operation</seealso>
+        public virtual Task<GetAdministratorAccountResponse> GetAdministratorAccountAsync(GetAdministratorAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdministratorAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdministratorAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAdministratorAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3391,12 +3700,17 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Provides the details for the Security Hub master account for the current member account.
+        /// This method is deprecated. Instead, use <code>GetAdministratorAccount</code>.
         /// 
         ///  
         /// <para>
-        /// Can be used by both member accounts that are in an organization and accounts that
-        /// were invited manually.
+        /// Provides the details for the Security Hub administrator account for the current member
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Can be used by both member accounts that are managed using Organizations and accounts
+        /// that were invited manually.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
@@ -3422,6 +3736,7 @@ namespace Amazon.SecurityHub
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        [Obsolete("This API has been deprecated, use GetAdministratorAccount API instead.")]
         public virtual GetMasterAccountResponse GetMasterAccount(GetMasterAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -3433,12 +3748,17 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Provides the details for the Security Hub master account for the current member account.
+        /// This method is deprecated. Instead, use <code>GetAdministratorAccount</code>.
         /// 
         ///  
         /// <para>
-        /// Can be used by both member accounts that are in an organization and accounts that
-        /// were invited manually.
+        /// Provides the details for the Security Hub administrator account for the current member
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Can be used by both member accounts that are managed using Organizations and accounts
+        /// that were invited manually.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
@@ -3467,6 +3787,7 @@ namespace Amazon.SecurityHub
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        [Obsolete("This API has been deprecated, use GetAdministratorAccount API instead.")]
         public virtual Task<GetMasterAccountResponse> GetMasterAccountAsync(GetMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3487,13 +3808,13 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// A master account can be either a delegated Security Hub administrator account for
-        /// an organization or a master account that enabled Security Hub manually.
+        /// An administrator account can be either the delegated Security Hub administrator account
+        /// for an organization or an administrator account that enabled Security Hub manually.
         /// </para>
         ///  
         /// <para>
-        /// The results include both member accounts that are in an organization and accounts
-        /// that were invited manually.
+        /// The results include both member accounts that are managed using Organizations and
+        /// accounts that were invited manually.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
@@ -3535,13 +3856,13 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// A master account can be either a delegated Security Hub administrator account for
-        /// an organization or a master account that enabled Security Hub manually.
+        /// An administrator account can be either the delegated Security Hub administrator account
+        /// for an organization or an administrator account that enabled Security Hub manually.
         /// </para>
         ///  
         /// <para>
-        /// The results include both member accounts that are in an organization and accounts
-        /// that were invited manually.
+        /// The results include both member accounts that are managed using Organizations and
+        /// accounts that were invited manually.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
@@ -3585,8 +3906,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Invites other AWS accounts to become member accounts for the Security Hub master account
-        /// that the invitation is sent from.
+        /// Invites other AWS accounts to become member accounts for the Security Hub administrator
+        /// account that the invitation is sent from.
         /// 
         ///  
         /// <para>
@@ -3601,8 +3922,8 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// When the account owner enables Security Hub and accepts the invitation to become a
-        /// member account, the master account can view the findings generated from the member
-        /// account.
+        /// member account, the administrator account can view the findings generated from the
+        /// member account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
@@ -3639,8 +3960,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Invites other AWS accounts to become member accounts for the Security Hub master account
-        /// that the invitation is sent from.
+        /// Invites other AWS accounts to become member accounts for the Security Hub administrator
+        /// account that the invitation is sent from.
         /// 
         ///  
         /// <para>
@@ -3655,8 +3976,8 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// When the account owner enables Security Hub and accepts the invitation to become a
-        /// member account, the master account can view the findings generated from the member
-        /// account.
+        /// member account, the administrator account can view the findings generated from the
+        /// member account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
@@ -3771,8 +4092,8 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// This operation is only used by accounts that do not belong to an organization. Organization
-        /// accounts do not receive invitations.
+        /// This operation is only used by accounts that are managed by invitation. Accounts that
+        /// are managed using the integration with AWS Organizations do not receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
@@ -3810,8 +4131,8 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// This operation is only used by accounts that do not belong to an organization. Organization
-        /// accounts do not receive invitations.
+        /// This operation is only used by accounts that are managed by invitation. Accounts that
+        /// are managed using the integration with AWS Organizations do not receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
@@ -3852,7 +4173,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists details about all member accounts for the current Security Hub master account.
+        /// Lists details about all member accounts for the current Security Hub administrator
+        /// account.
         /// 
         ///  
         /// <para>
@@ -3891,7 +4213,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists details about all member accounts for the current Security Hub master account.
+        /// Lists details about all member accounts for the current Security Hub administrator
+        /// account.
         /// 
         ///  
         /// <para>

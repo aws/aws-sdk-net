@@ -30,8 +30,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the InviteMembers operation.
-    /// Invites other AWS accounts to become member accounts for the Security Hub master account
-    /// that the invitation is sent from.
+    /// Invites other AWS accounts to become member accounts for the Security Hub administrator
+    /// account that the invitation is sent from.
     /// 
     ///  
     /// <para>
@@ -46,8 +46,8 @@ namespace Amazon.SecurityHub.Model
     ///  
     /// <para>
     /// When the account owner enables Security Hub and accepts the invitation to become a
-    /// member account, the master account can view the findings generated from the member
-    /// account.
+    /// member account, the administrator account can view the findings generated from the
+    /// member account.
     /// </para>
     /// </summary>
     public partial class InviteMembersRequest : AmazonSecurityHubRequest

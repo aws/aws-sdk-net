@@ -35,13 +35,13 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// A master account can be either a delegated Security Hub administrator account for
-    /// an organization or a master account that enabled Security Hub manually.
+    /// An administrator account can be either the delegated Security Hub administrator account
+    /// for an organization or an administrator account that enabled Security Hub manually.
     /// </para>
     ///  
     /// <para>
-    /// The results include both member accounts that are in an organization and accounts
-    /// that were invited manually.
+    /// The results include both member accounts that are managed using Organizations and
+    /// accounts that were invited manually.
     /// </para>
     /// </summary>
     public partial class GetMembersRequest : AmazonSecurityHubRequest

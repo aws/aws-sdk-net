@@ -29,21 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateFromMasterAccount operation.
-    /// This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
-    /// 
-    ///  
-    /// <para>
+    /// Container for the parameters to the DisassociateFromAdministratorAccount operation.
     /// Disassociates the current Security Hub member account from the associated administrator
     /// account.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// This operation is only used by accounts that are not part of an organization. For
     /// organization accounts, only the administrator account can disassociate a member account.
     /// </para>
     /// </summary>
-    public partial class DisassociateFromMasterAccountRequest : AmazonSecurityHubRequest
+    public partial class DisassociateFromAdministratorAccountRequest : AmazonSecurityHubRequest
     {
 
     }
