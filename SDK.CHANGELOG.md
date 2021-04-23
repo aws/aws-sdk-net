@@ -1,3 +1,14 @@
+### 3.7.20.0 (2021-04-23 18:25 UTC)
+* MediaPackage (3.7.2.0)
+	* Add support for Widevine DRM on CMAF origin endpoints. Both Widevine and FairPlay DRMs can now be used simultaneously, with CBCS encryption.
+* SimpleNotificationService (3.7.1.0)
+	* Amazon SNS adds two new attributes, TemplateId and EntityId, for using sender IDs to send SMS messages to destinations in India.
+* Core 3.7.0.15
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.19.0 (2021-04-22 18:13 UTC)
 * CognitoIdentityProvider (3.7.0.14)
 	* Documentation updates for cognito-idp
