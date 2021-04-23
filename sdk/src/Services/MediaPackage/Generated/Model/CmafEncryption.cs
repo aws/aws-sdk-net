@@ -33,8 +33,27 @@ namespace Amazon.MediaPackage.Model
     /// </summary>
     public partial class CmafEncryption
     {
+        private string _constantInitializationVector;
         private int? _keyRotationIntervalSeconds;
         private SpekeKeyProvider _spekeKeyProvider;
+
+        /// <summary>
+        /// Gets and sets the property ConstantInitializationVector. An optional 128-bit, 16-byte
+        /// hex value represented by a 32-character string, used in conjunction with the key for
+        /// encrypting blocks. If you don't specify a value, then MediaPackage creates the constant
+        /// initialization vector (IV).
+        /// </summary>
+        public string ConstantInitializationVector
+        {
+            get { return this._constantInitializationVector; }
+            set { this._constantInitializationVector = value; }
+        }
+
+        // Check to see if ConstantInitializationVector property is set
+        internal bool IsSetConstantInitializationVector()
+        {
+            return this._constantInitializationVector != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KeyRotationIntervalSeconds. Time (in seconds) between each

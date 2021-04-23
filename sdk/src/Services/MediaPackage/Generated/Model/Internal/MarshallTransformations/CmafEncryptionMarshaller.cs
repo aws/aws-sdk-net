@@ -45,6 +45,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CmafEncryption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConstantInitializationVector())
+            {
+                context.Writer.WritePropertyName("constantInitializationVector");
+                context.Writer.Write(requestObject.ConstantInitializationVector);
+            }
+
             if(requestObject.IsSetKeyRotationIntervalSeconds())
             {
                 context.Writer.WritePropertyName("keyRotationIntervalSeconds");
