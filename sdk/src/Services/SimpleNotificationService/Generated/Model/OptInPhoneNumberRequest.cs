@@ -45,7 +45,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// The phone number to opt in.
+        /// The phone number to opt in. Use E.164 format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
