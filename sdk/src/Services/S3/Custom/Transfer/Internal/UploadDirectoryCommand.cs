@@ -70,6 +70,7 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionMethod = this._request.ServerSideEncryptionMethod,
                 ServerSideEncryptionKeyManagementServiceKeyId = this._request.ServerSideEncryptionKeyManagementServiceKeyId,
                 TagSet = this._request.TagSet,
+                CalculateContentMD5Header = this._request.CalculateContentMD5Header,
 #if (BCL && !BCL45)
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._request.Timeout)
 #endif

@@ -1040,6 +1040,32 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Generates an MD5 Digest for the stream specified
+        /// </summary>
+        /// <param name="input">The Stream for which the MD5 Digest needs
+        /// to be computed.</param>
+        /// <returns>A string representation of the hash with base64 encoding
+        /// </returns>
+        public static string GenerateMD5ChecksumForStream(Stream input)
+        {
+            string hash = null;
+
+            if (!input.CanSeek)
+                throw new InvalidOperationException("Input stream must be seekable");
+
+            // Use an MD5 instance to compute the hash for the stream
+            byte[] hashed = CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(input);
+
+            // Convert the hash to a Base64 Encoded string and return it
+            hash = Convert.ToBase64String(hashed);
+
+            // Now that the hash has been generated, reset the stream to its origin so that the stream's data can be processed
+            input.Position = 0;
+
+            return hash;
+        }
+
+        /// <summary>
         /// Generates an MD5 Digest for the string-based content
         /// </summary>
         /// <param name="content">The content for which the MD5 Digest needs

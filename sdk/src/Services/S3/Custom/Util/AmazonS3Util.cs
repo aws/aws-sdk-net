@@ -294,6 +294,18 @@ namespace Amazon.S3.Util
         }
 
         /// <summary>
+        /// Generates an MD5 Digest for the stream specified
+        /// </summary>
+        /// <param name="input">The Stream for which the MD5 Digest needs
+        /// to be computed.</param>
+        /// <returns>A string representation of the hash with base64 encoding
+        /// </returns>
+        public static string GenerateMD5ChecksumForStream(Stream input)
+        {
+            return AWSSDKUtils.GenerateMD5ChecksumForStream(input);
+        }
+
+        /// <summary>
         /// Generates an MD5 Digest for the string-based content
         /// </summary>
         /// <param name="content">The content for which the MD5 Digest needs

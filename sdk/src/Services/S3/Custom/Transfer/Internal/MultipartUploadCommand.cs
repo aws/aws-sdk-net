@@ -217,6 +217,8 @@ namespace Amazon.S3.Transfer.Internal
             if (useSigV4)
                 ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).UseSigV4 = true;
 
+            uploadRequest.CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header;
+
             return uploadRequest;
         }
 

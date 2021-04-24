@@ -86,6 +86,8 @@ namespace Amazon.S3.Transfer.Internal
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)putRequest).AddBeforeRequestHandler(this.RequestEventHandler);
 
             putRequest.InputStream = this._fileTransporterRequest.InputStream;
+            putRequest.CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header;
+
             return putRequest;
         }
 

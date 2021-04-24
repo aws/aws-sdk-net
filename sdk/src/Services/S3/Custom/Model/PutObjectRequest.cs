@@ -161,6 +161,7 @@ namespace Amazon.S3.Model
         private S3StorageClass storageClass;
         private List<Tag> tagset = new List<Tag>();
         private string websiteRedirectLocation;
+        private bool calculateContentMD5Header = false;
 
         /// <summary>
         /// Overriden to turn off sending SHA256 header.
@@ -769,6 +770,14 @@ namespace Amazon.S3.Model
             }
         }
 
+        /// <summary>
+        /// Gets or sets whether the Content-MD5 header should be calculated for upload.
+        /// </summary>
+        public bool CalculateContentMD5Header
+        {
+            get { return this.calculateContentMD5Header; }
+            set { this.calculateContentMD5Header = value; }
+        }
     }
 }
     

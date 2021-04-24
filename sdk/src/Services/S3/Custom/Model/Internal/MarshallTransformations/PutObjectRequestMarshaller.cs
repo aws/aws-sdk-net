@@ -125,7 +125,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     request.Headers.Add(HeaderKeys.ContentLengthHeader, length.ToString(CultureInfo.InvariantCulture));
 
                 request.DisablePayloadSigning = putObjectRequest.DisablePayloadSigning;
-                
+
+                // Calculate Content-MD5 if not already set
+                if (!putObjectRequest.IsSetMD5Digest() && putObjectRequest.CalculateContentMD5Header)
+                {
+                    string md5 = AmazonS3Util.GenerateMD5ChecksumForStream(putObjectRequest.InputStream);
+
+                    if (!string.IsNullOrEmpty(md5))
+                    {
+                        request.Headers[HeaderKeys.ContentMD5Header] = md5;
+                    }
+                }
+
                 if (!(putObjectRequest.DisableMD5Stream ?? AWSConfigsS3.DisableMD5Stream))
                 {
                     // Wrap input stream in MD5Stream

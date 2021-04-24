@@ -51,7 +51,7 @@ namespace Amazon.S3.Transfer
         ServerSideEncryptionMethod encryption;
         string serverSideEncryptionKeyManagementServiceKeyId;
         private List<Tag> tagset;
-
+        private bool calculateContentMD5Header = false;
 
         /// <summary>
         /// 	Gets or sets the directory where files are uploaded from.
@@ -259,6 +259,14 @@ namespace Amazon.S3.Transfer
             set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
         }
 
+        /// <summary>
+        /// Gets or sets whether the Content-MD5 header should be calculated for upload.
+        /// </summary>
+        public bool CalculateContentMD5Header
+        {
+            get { return this.calculateContentMD5Header; }
+            set { this.calculateContentMD5Header = value; }
+        }
 
         /// <summary>
         /// Gets or sets the UploadFilesConcurrently property.

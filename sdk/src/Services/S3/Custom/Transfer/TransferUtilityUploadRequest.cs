@@ -57,6 +57,7 @@ namespace Amazon.S3.Transfer
         private List<Tag> tagset;
 
         private Stream inputStream;
+        private bool calculateContentMD5Header = false;
 
         #region BucketName
 
@@ -509,6 +510,15 @@ namespace Amazon.S3.Transfer
         /// source of data integrity verification.</para>
         /// </summary>
         public bool? DisablePayloadSigning { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether the Content-MD5 header should be calculated for upload.
+        /// </summary>
+        public bool CalculateContentMD5Header
+        {
+            get { return this.calculateContentMD5Header; }
+            set { this.calculateContentMD5Header = value; }
+        }
     }
 
     /// <summary>

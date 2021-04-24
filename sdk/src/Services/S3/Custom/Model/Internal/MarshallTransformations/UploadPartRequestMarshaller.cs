@@ -86,6 +86,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 request.DisablePayloadSigning = uploadPartRequest.DisablePayloadSigning;
 
+                // Calculate Content-MD5 if not already set
+                if (!uploadPartRequest.IsSetMD5Digest() && uploadPartRequest.CalculateContentMD5Header)
+                {
+                    string md5 = AmazonS3Util.GenerateMD5ChecksumForStream(partialStream);
+                    if (!string.IsNullOrEmpty(md5))
+                    {
+                        request.Headers[HeaderKeys.ContentMD5Header] = md5;
+                    }
+                }
+
                 if (!(uploadPartRequest.DisableMD5Stream ?? AWSConfigsS3.DisableMD5Stream))
                 {
                     // Wrap input stream in MD5Stream; after this we can no longer seek or position the stream

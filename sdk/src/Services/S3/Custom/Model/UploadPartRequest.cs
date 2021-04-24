@@ -182,7 +182,8 @@ namespace Amazon.S3.Model
         private long? filePosition;
         private bool useChunkEncoding = true;
         private bool lastPart;
-        
+        private bool calculateContentMD5Header = false;
+
         /// <summary>
         /// Input stream for the request; content for the request will be read from the stream.
         /// </summary>
@@ -561,6 +562,15 @@ namespace Amazon.S3.Model
         }
 
         internal int IVSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether the Content-MD5 header should be calculated for upload.
+        /// </summary>
+        public bool CalculateContentMD5Header
+        {
+            get { return this.calculateContentMD5Header; }
+            set { this.calculateContentMD5Header = value; }
+        }
     }
 }
 
