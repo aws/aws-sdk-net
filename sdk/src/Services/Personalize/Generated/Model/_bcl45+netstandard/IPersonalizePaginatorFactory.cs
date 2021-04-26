@@ -36,6 +36,11 @@ namespace Amazon.Personalize.Model
         IListCampaignsPaginator ListCampaigns(ListCampaignsRequest request);
 
         /// <summary>
+        /// Paginator for ListDatasetExportJobs operation
+        ///</summary>
+        IListDatasetExportJobsPaginator ListDatasetExportJobs(ListDatasetExportJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListDatasetGroups operation
         ///</summary>
         IListDatasetGroupsPaginator ListDatasetGroups(ListDatasetGroupsRequest request);
@@ -54,6 +59,11 @@ namespace Amazon.Personalize.Model
         /// Paginator for ListEventTrackers operation
         ///</summary>
         IListEventTrackersPaginator ListEventTrackers(ListEventTrackersRequest request);
+
+        /// <summary>
+        /// Paginator for ListFilters operation
+        ///</summary>
+        IListFiltersPaginator ListFilters(ListFiltersRequest request);
 
         /// <summary>
         /// Paginator for ListRecipes operation

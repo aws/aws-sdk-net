@@ -343,6 +343,86 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  CreateDatasetExportJob
+
+
+        /// <summary>
+        /// Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow
+        /// Amazon Personalize to export the training data, you must specify an service-linked
+        /// AWS Identity and Access Management (IAM) role that gives Amazon Personalize <code>PutObject</code>
+        /// permissions for your Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
+        /// export job permissions requirements</a> in the Amazon Personalize developer guide.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Status</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A dataset export job can be in one of the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify
+        /// the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete
+        /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
+        /// includes a <code>failureReason</code> key, which describes why the job failed. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDatasetExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateDatasetExportJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">REST API Reference for CreateDatasetExportJob Operation</seealso>
+        CreateDatasetExportJobResponse CreateDatasetExportJob(CreateDatasetExportJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDatasetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDatasetExportJob operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDatasetExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">REST API Reference for CreateDatasetExportJob Operation</seealso>
+        IAsyncResult BeginCreateDatasetExportJob(CreateDatasetExportJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDatasetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDatasetExportJob.</param>
+        /// 
+        /// <returns>Returns a  CreateDatasetExportJobResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">REST API Reference for CreateDatasetExportJob Operation</seealso>
+        CreateDatasetExportJobResponse EndCreateDatasetExportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDatasetGroup
 
 
@@ -476,9 +556,11 @@ namespace Amazon.Personalize
         /// <summary>
         /// Creates a job that imports training data from your data source (an Amazon S3 bucket)
         /// to an Amazon Personalize dataset. To allow Amazon Personalize to import the training
-        /// data, you must specify an AWS Identity and Access Management (IAM) role that has permission
-        /// to read from the data source, as Amazon Personalize makes a copy of your data and
-        /// processes it in an internal AWS system.
+        /// data, you must specify an AWS Identity and Access Management (IAM) service role that
+        /// has permission to read from the data source, as Amazon Personalize makes a copy of
+        /// your data and processes it in an internal AWS system. For information on granting
+        /// access to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+        /// Amazon Personalize Access to Amazon S3 Resources</a>. 
         /// 
         ///  <important> 
         /// <para>
@@ -1609,6 +1691,53 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  DescribeDatasetExportJob
+
+
+        /// <summary>
+        /// Describes the dataset export job created by <a>CreateDatasetExportJob</a>, including
+        /// the export job status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDatasetExportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDatasetExportJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob">REST API Reference for DescribeDatasetExportJob Operation</seealso>
+        DescribeDatasetExportJobResponse DescribeDatasetExportJob(DescribeDatasetExportJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDatasetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDatasetExportJob operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDatasetExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob">REST API Reference for DescribeDatasetExportJob Operation</seealso>
+        IAsyncResult BeginDescribeDatasetExportJob(DescribeDatasetExportJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDatasetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDatasetExportJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeDatasetExportJobResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob">REST API Reference for DescribeDatasetExportJob Operation</seealso>
+        DescribeDatasetExportJobResponse EndDescribeDatasetExportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeDatasetGroup
 
 
@@ -2195,6 +2324,56 @@ namespace Amazon.Personalize
         /// <returns>Returns a  ListCampaignsResult from Personalize.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListCampaigns">REST API Reference for ListCampaigns Operation</seealso>
         ListCampaignsResponse EndListCampaigns(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDatasetExportJobs
+
+
+        /// <summary>
+        /// Returns a list of dataset export jobs that use the given dataset. When a dataset is
+        /// not specified, all the dataset export jobs associated with the account are listed.
+        /// The response provides the properties for each dataset export job, including the Amazon
+        /// Resource Name (ARN). For more information on dataset export jobs, see <a>CreateDatasetExportJob</a>.
+        /// For more information on datasets, see <a>CreateDataset</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListDatasetExportJobs service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">REST API Reference for ListDatasetExportJobs Operation</seealso>
+        ListDatasetExportJobsResponse ListDatasetExportJobs(ListDatasetExportJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDatasetExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetExportJobs operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDatasetExportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">REST API Reference for ListDatasetExportJobs Operation</seealso>
+        IAsyncResult BeginListDatasetExportJobs(ListDatasetExportJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDatasetExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDatasetExportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListDatasetExportJobsResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">REST API Reference for ListDatasetExportJobs Operation</seealso>
+        ListDatasetExportJobsResponse EndListDatasetExportJobs(IAsyncResult asyncResult);
 
         #endregion
         

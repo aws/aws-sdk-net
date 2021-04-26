@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Provides a summary of the properties of a dataset import job. For a complete listing,
-    /// call the <a>DescribeDatasetImportJob</a> API.
+    /// Provides a summary of the properties of a dataset export job. For a complete listing,
+    /// call the <a>DescribeDatasetExportJob</a> API.
     /// </summary>
-    public partial class DatasetImportJobSummary
+    public partial class DatasetExportJobSummary
     {
         private DateTime? _creationDateTime;
-        private string _datasetImportJobArn;
+        private string _datasetExportJobArn;
         private string _failureReason;
         private string _jobName;
         private DateTime? _lastUpdatedDateTime;
@@ -44,7 +44,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
         /// <para>
-        /// The date and time (in Unix time) that the dataset import job was created.
+        /// The date and time (in Unix time) that the dataset export job was created.
         /// </para>
         /// </summary>
         public DateTime CreationDateTime
@@ -60,28 +60,28 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatasetImportJobArn. 
+        /// Gets and sets the property DatasetExportJobArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the dataset import job.
+        /// The Amazon Resource Name (ARN) of the dataset export job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
-        public string DatasetImportJobArn
+        public string DatasetExportJobArn
         {
-            get { return this._datasetImportJobArn; }
-            set { this._datasetImportJobArn = value; }
+            get { return this._datasetExportJobArn; }
+            set { this._datasetExportJobArn = value; }
         }
 
-        // Check to see if DatasetImportJobArn property is set
-        internal bool IsSetDatasetImportJobArn()
+        // Check to see if DatasetExportJobArn property is set
+        internal bool IsSetDatasetExportJobArn()
         {
-            return this._datasetImportJobArn != null;
+            return this._datasetExportJobArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If a dataset import job fails, the reason behind the failure.
+        /// If a dataset export job fails, the reason behind the failure.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -99,7 +99,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the dataset import job.
+        /// The name of the dataset export job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -118,7 +118,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedDateTime. 
         /// <para>
-        /// The date and time (in Unix time) that the dataset import job status was last updated.
+        /// The date and time (in Unix time) that the dataset export job status was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedDateTime
@@ -136,11 +136,11 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the dataset import job.
+        /// The status of the dataset export job.
         /// </para>
         ///  
         /// <para>
-        /// A dataset import job can be in one of the following states:
+        /// A dataset export job can be in one of the following states:
         /// </para>
         ///  <ul> <li> 
         /// <para>

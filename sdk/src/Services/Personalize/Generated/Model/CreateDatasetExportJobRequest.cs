@@ -29,27 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateDatasetImportJob operation.
-    /// Creates a job that imports training data from your data source (an Amazon S3 bucket)
-    /// to an Amazon Personalize dataset. To allow Amazon Personalize to import the training
-    /// data, you must specify an AWS Identity and Access Management (IAM) service role that
-    /// has permission to read from the data source, as Amazon Personalize makes a copy of
-    /// your data and processes it in an internal AWS system. For information on granting
-    /// access to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
-    /// Amazon Personalize Access to Amazon S3 Resources</a>. 
+    /// Container for the parameters to the CreateDatasetExportJob operation.
+    /// Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow
+    /// Amazon Personalize to export the training data, you must specify an service-linked
+    /// AWS Identity and Access Management (IAM) role that gives Amazon Personalize <code>PutObject</code>
+    /// permissions for your Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
+    /// export job permissions requirements</a> in the Amazon Personalize developer guide.
     /// 
-    ///  <important> 
-    /// <para>
-    /// The dataset import job replaces any existing data in the dataset that you imported
-    /// in bulk.
-    /// </para>
-    ///  </important> 
+    /// 
+    ///  
     /// <para>
     ///  <b>Status</b> 
     /// </para>
     ///  
     /// <para>
-    /// A dataset import job can be in one of the following states:
+    /// A dataset export job can be in one of the following states:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -57,39 +51,24 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To get the status of the import job, call <a>DescribeDatasetImportJob</a>, providing
-    /// the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete
+    ///  To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify
+    /// the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete
     /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
-    /// includes a <code>failureReason</code> key, which describes why the job failed.
+    /// includes a <code>failureReason</code> key, which describes why the job failed. 
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// Importing takes time. You must wait until the status shows as ACTIVE before training
-    /// a model using the dataset.
-    /// </para>
-    ///  </note> <p class="title"> <b>Related APIs</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>ListDatasetImportJobs</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeDatasetImportJob</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
-    public partial class CreateDatasetImportJobRequest : AmazonPersonalizeRequest
+    public partial class CreateDatasetExportJobRequest : AmazonPersonalizeRequest
     {
         private string _datasetArn;
-        private DataSource _dataSource;
+        private IngestionMode _ingestionMode;
         private string _jobName;
+        private DatasetExportJobOutput _jobOutput;
         private string _roleArn;
 
         /// <summary>
         /// Gets and sets the property DatasetArn. 
         /// <para>
-        /// The ARN of the dataset that receives the imported data.
+        /// The Amazon Resource Name (ARN) of the dataset that contains the data to export.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -106,28 +85,31 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSource. 
+        /// Gets and sets the property IngestionMode. 
         /// <para>
-        /// The Amazon S3 bucket that contains the training data to import.
+        /// The data to export, based on how you imported the data. You can choose to export only
+        /// <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code>
+        /// data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems
+        /// operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public DataSource DataSource
+        public IngestionMode IngestionMode
         {
-            get { return this._dataSource; }
-            set { this._dataSource = value; }
+            get { return this._ingestionMode; }
+            set { this._ingestionMode = value; }
         }
 
-        // Check to see if DataSource property is set
-        internal bool IsSetDataSource()
+        // Check to see if IngestionMode property is set
+        internal bool IsSetIngestionMode()
         {
-            return this._dataSource != null;
+            return this._ingestionMode != null;
         }
 
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name for the dataset import job.
+        /// The name for the dataset export job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -144,9 +126,29 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobOutput. 
+        /// <para>
+        /// The path to the Amazon S3 bucket where the job's output is stored.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DatasetExportJobOutput JobOutput
+        {
+            get { return this._jobOutput; }
+            set { this._jobOutput = value; }
+        }
+
+        // Check to see if JobOutput property is set
+        internal bool IsSetJobOutput()
+        {
+            return this._jobOutput != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role that has permissions to read from the Amazon S3 data source.
+        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management service role
+        /// that has permissions to add data to your output Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

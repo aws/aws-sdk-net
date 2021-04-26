@@ -29,37 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// This is the response object from the ListBatchInferenceJobs operation.
+    /// This is the response object from the ListDatasetExportJobs operation.
     /// </summary>
-    public partial class ListBatchInferenceJobsResponse : AmazonWebServiceResponse
+    public partial class ListDatasetExportJobsResponse : AmazonWebServiceResponse
     {
-        private List<BatchInferenceJobSummary> _batchInferenceJobs = new List<BatchInferenceJobSummary>();
+        private List<DatasetExportJobSummary> _datasetExportJobs = new List<DatasetExportJobSummary>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property BatchInferenceJobs. 
+        /// Gets and sets the property DatasetExportJobs. 
         /// <para>
-        /// A list containing information on each job that is returned.
+        /// The list of dataset export jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
-        public List<BatchInferenceJobSummary> BatchInferenceJobs
+        public List<DatasetExportJobSummary> DatasetExportJobs
         {
-            get { return this._batchInferenceJobs; }
-            set { this._batchInferenceJobs = value; }
+            get { return this._datasetExportJobs; }
+            set { this._datasetExportJobs = value; }
         }
 
-        // Check to see if BatchInferenceJobs property is set
-        internal bool IsSetBatchInferenceJobs()
+        // Check to see if DatasetExportJobs property is set
+        internal bool IsSetDatasetExportJobs()
         {
-            return this._batchInferenceJobs != null && this._batchInferenceJobs.Count > 0; 
+            return this._datasetExportJobs != null && this._datasetExportJobs.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results. The value is <code>null</code>
-        /// when there are no more results to return.
+        /// A token for getting the next set of dataset export jobs (if they exist).
         /// </para>
         /// </summary>
         [AWSProperty(Max=1300)]

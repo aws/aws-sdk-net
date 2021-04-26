@@ -66,7 +66,8 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property FilterArn. 
         /// <para>
         /// The ARN of the filter to apply to the batch inference job. For more information on
-        /// using filters, see Using Filters with Amazon Personalize.
+        /// using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+        /// Batch Recommendations</a>..
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -162,7 +163,7 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The ARN of the Amazon Identity and Access Management role that has permissions to
-        /// read and write to your input and out Amazon S3 buckets respectively.
+        /// read and write to your input and output Amazon S3 buckets respectively.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

@@ -483,6 +483,114 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  CreateDatasetExportJob
+
+
+        /// <summary>
+        /// Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow
+        /// Amazon Personalize to export the training data, you must specify an service-linked
+        /// AWS Identity and Access Management (IAM) role that gives Amazon Personalize <code>PutObject</code>
+        /// permissions for your Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
+        /// export job permissions requirements</a> in the Amazon Personalize developer guide.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Status</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A dataset export job can be in one of the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify
+        /// the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete
+        /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
+        /// includes a <code>failureReason</code> key, which describes why the job failed. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDatasetExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateDatasetExportJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">REST API Reference for CreateDatasetExportJob Operation</seealso>
+        CreateDatasetExportJobResponse CreateDatasetExportJob(CreateDatasetExportJobRequest request);
+
+
+
+        /// <summary>
+        /// Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow
+        /// Amazon Personalize to export the training data, you must specify an service-linked
+        /// AWS Identity and Access Management (IAM) role that gives Amazon Personalize <code>PutObject</code>
+        /// permissions for your Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
+        /// export job permissions requirements</a> in the Amazon Personalize developer guide.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Status</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A dataset export job can be in one of the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify
+        /// the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete
+        /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
+        /// includes a <code>failureReason</code> key, which describes why the job failed. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDatasetExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDatasetExportJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">REST API Reference for CreateDatasetExportJob Operation</seealso>
+        Task<CreateDatasetExportJobResponse> CreateDatasetExportJobAsync(CreateDatasetExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDatasetGroup
 
 
@@ -691,9 +799,11 @@ namespace Amazon.Personalize
         /// <summary>
         /// Creates a job that imports training data from your data source (an Amazon S3 bucket)
         /// to an Amazon Personalize dataset. To allow Amazon Personalize to import the training
-        /// data, you must specify an AWS Identity and Access Management (IAM) role that has permission
-        /// to read from the data source, as Amazon Personalize makes a copy of your data and
-        /// processes it in an internal AWS system.
+        /// data, you must specify an AWS Identity and Access Management (IAM) service role that
+        /// has permission to read from the data source, as Amazon Personalize makes a copy of
+        /// your data and processes it in an internal AWS system. For information on granting
+        /// access to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+        /// Amazon Personalize Access to Amazon S3 Resources</a>. 
         /// 
         ///  <important> 
         /// <para>
@@ -762,9 +872,11 @@ namespace Amazon.Personalize
         /// <summary>
         /// Creates a job that imports training data from your data source (an Amazon S3 bucket)
         /// to an Amazon Personalize dataset. To allow Amazon Personalize to import the training
-        /// data, you must specify an AWS Identity and Access Management (IAM) role that has permission
-        /// to read from the data source, as Amazon Personalize makes a copy of your data and
-        /// processes it in an internal AWS system.
+        /// data, you must specify an AWS Identity and Access Management (IAM) service role that
+        /// has permission to read from the data source, as Amazon Personalize makes a copy of
+        /// your data and processes it in an internal AWS system. For information on granting
+        /// access to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+        /// Amazon Personalize Access to Amazon S3 Resources</a>. 
         /// 
         ///  <important> 
         /// <para>
@@ -2079,6 +2191,48 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  DescribeDatasetExportJob
+
+
+        /// <summary>
+        /// Describes the dataset export job created by <a>CreateDatasetExportJob</a>, including
+        /// the export job status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDatasetExportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDatasetExportJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob">REST API Reference for DescribeDatasetExportJob Operation</seealso>
+        DescribeDatasetExportJobResponse DescribeDatasetExportJob(DescribeDatasetExportJobRequest request);
+
+
+
+        /// <summary>
+        /// Describes the dataset export job created by <a>CreateDatasetExportJob</a>, including
+        /// the export job status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDatasetExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDatasetExportJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob">REST API Reference for DescribeDatasetExportJob Operation</seealso>
+        Task<DescribeDatasetExportJobResponse> DescribeDatasetExportJobAsync(DescribeDatasetExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeDatasetGroup
 
 
@@ -2630,6 +2784,54 @@ namespace Amazon.Personalize
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListCampaigns">REST API Reference for ListCampaigns Operation</seealso>
         Task<ListCampaignsResponse> ListCampaignsAsync(ListCampaignsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDatasetExportJobs
+
+
+        /// <summary>
+        /// Returns a list of dataset export jobs that use the given dataset. When a dataset is
+        /// not specified, all the dataset export jobs associated with the account are listed.
+        /// The response provides the properties for each dataset export job, including the Amazon
+        /// Resource Name (ARN). For more information on dataset export jobs, see <a>CreateDatasetExportJob</a>.
+        /// For more information on datasets, see <a>CreateDataset</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListDatasetExportJobs service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">REST API Reference for ListDatasetExportJobs Operation</seealso>
+        ListDatasetExportJobsResponse ListDatasetExportJobs(ListDatasetExportJobsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of dataset export jobs that use the given dataset. When a dataset is
+        /// not specified, all the dataset export jobs associated with the account are listed.
+        /// The response provides the properties for each dataset export job, including the Amazon
+        /// Resource Name (ARN). For more information on dataset export jobs, see <a>CreateDatasetExportJob</a>.
+        /// For more information on datasets, see <a>CreateDataset</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetExportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatasetExportJobs service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">REST API Reference for ListDatasetExportJobs Operation</seealso>
+        Task<ListDatasetExportJobsResponse> ListDatasetExportJobsAsync(ListDatasetExportJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

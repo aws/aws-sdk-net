@@ -72,6 +72,27 @@
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateDatasetExportJobRequest.DatasetArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateDatasetExportJobRequest.JobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateDatasetExportJobRequest.RoleArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateDatasetExportJobResponse.DatasetExportJobArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.CreateDatasetGroupRequest.Name</property>
     <min>1</min>
     <max>63</max>
@@ -255,6 +276,11 @@
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.DescribeDatasetExportJobRequest.DatasetExportJobArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.DescribeDatasetGroupRequest.DatasetGroupArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
@@ -343,6 +369,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListCampaignsResponse.NextToken</property>
+    <max>1300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListDatasetExportJobsRequest.DatasetArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListDatasetExportJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListDatasetExportJobsRequest.NextToken</property>
+    <max>1300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListDatasetExportJobsResponse.NextToken</property>
     <max>1300</max>
   </property-value-rule>
   <property-value-rule>
@@ -695,6 +739,46 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.Dataset.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetExportJob.DatasetArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetExportJob.DatasetExportJobArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetExportJob.JobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetExportJob.RoleArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetExportJob.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetExportJobSummary.DatasetExportJobArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetExportJobSummary.JobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetExportJobSummary.Status</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

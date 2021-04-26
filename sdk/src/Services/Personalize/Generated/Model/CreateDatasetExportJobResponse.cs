@@ -29,34 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Describes the data source that contains the data to upload to a dataset.
+    /// This is the response object from the CreateDatasetExportJob operation.
     /// </summary>
-    public partial class DataSource
+    public partial class CreateDatasetExportJobResponse : AmazonWebServiceResponse
     {
-        private string _dataLocation;
+        private string _datasetExportJobArn;
 
         /// <summary>
-        /// Gets and sets the property DataLocation. 
+        /// Gets and sets the property DatasetExportJobArn. 
         /// <para>
-        /// The path to the Amazon S3 bucket where the data that you want to upload to your dataset
-        /// is stored. For example: 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>s3://bucket-name/folder-name/</code> 
+        /// The Amazon Resource Name (ARN) of the dataset export job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
-        public string DataLocation
+        public string DatasetExportJobArn
         {
-            get { return this._dataLocation; }
-            set { this._dataLocation = value; }
+            get { return this._datasetExportJobArn; }
+            set { this._datasetExportJobArn = value; }
         }
 
-        // Check to see if DataLocation property is set
-        internal bool IsSetDataLocation()
+        // Check to see if DatasetExportJobArn property is set
+        internal bool IsSetDatasetExportJobArn()
         {
-            return this._dataLocation != null;
+            return this._datasetExportJobArn != null;
         }
 
     }

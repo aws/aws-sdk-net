@@ -120,6 +120,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Personalize")]
+        public void ListDatasetExportJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDatasetExportJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListDatasetExportJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListDatasetExportJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListDatasetExportJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListDatasetExportJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Personalize")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListDatasetExportJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDatasetExportJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListDatasetExportJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListDatasetExportJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListDatasetExportJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Personalize")]
         public void ListDatasetGroupsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListDatasetGroupsRequest>();
@@ -264,6 +303,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListEventTrackers(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListEventTrackers(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Personalize")]
+        public void ListFiltersTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFiltersRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFiltersResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFiltersResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFilters(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFilters(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Personalize")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFiltersTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFiltersRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFiltersResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFilters(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFilters(request);
 
             // Should work the first time
             paginator.Responses.ToList();

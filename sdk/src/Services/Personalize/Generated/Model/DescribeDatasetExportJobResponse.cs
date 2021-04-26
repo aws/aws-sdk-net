@@ -29,34 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Describes the data source that contains the data to upload to a dataset.
+    /// This is the response object from the DescribeDatasetExportJob operation.
     /// </summary>
-    public partial class DataSource
+    public partial class DescribeDatasetExportJobResponse : AmazonWebServiceResponse
     {
-        private string _dataLocation;
+        private DatasetExportJob _datasetExportJob;
 
         /// <summary>
-        /// Gets and sets the property DataLocation. 
+        /// Gets and sets the property DatasetExportJob. 
         /// <para>
-        /// The path to the Amazon S3 bucket where the data that you want to upload to your dataset
-        /// is stored. For example: 
+        /// Information about the dataset export job, including the status.
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://bucket-name/folder-name/</code> 
+        /// The status is one of the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATE PENDING
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE IN_PROGRESS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE FAILED
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=256)]
-        public string DataLocation
+        public DatasetExportJob DatasetExportJob
         {
-            get { return this._dataLocation; }
-            set { this._dataLocation = value; }
+            get { return this._datasetExportJob; }
+            set { this._datasetExportJob = value; }
         }
 
-        // Check to see if DataLocation property is set
-        internal bool IsSetDataLocation()
+        // Check to see if DatasetExportJob property is set
+        internal bool IsSetDatasetExportJob()
         {
-            return this._dataLocation != null;
+            return this._datasetExportJob != null;
         }
 
     }
