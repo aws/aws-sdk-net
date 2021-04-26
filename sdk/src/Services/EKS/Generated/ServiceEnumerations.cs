@@ -178,6 +178,10 @@ namespace Amazon.EKS
         /// Constant AL2_x86_64_GPU for AMITypes
         /// </summary>
         public static readonly AMITypes AL2_x86_64_GPU = new AMITypes("AL2_x86_64_GPU");
+        /// <summary>
+        /// Constant CUSTOM for AMITypes
+        /// </summary>
+        public static readonly AMITypes CUSTOM = new AMITypes("CUSTOM");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -882,6 +886,14 @@ namespace Amazon.EKS
         /// Constant LabelsToRemove for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType LabelsToRemove = new UpdateParamType("LabelsToRemove");
+        /// <summary>
+        /// Constant LaunchTemplateName for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType LaunchTemplateName = new UpdateParamType("LaunchTemplateName");
+        /// <summary>
+        /// Constant LaunchTemplateVersion for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType LaunchTemplateVersion = new UpdateParamType("LaunchTemplateVersion");
         /// <summary>
         /// Constant MaxSize for UpdateParamType
         /// </summary>

@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// The current number of nodes that the managed node group should maintain.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public int DesiredSize
         {
             get { return this._desiredSize.GetValueOrDefault(); }
@@ -86,7 +86,7 @@ namespace Amazon.EKS.Model
         /// must be greater than zero.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public int MinSize
         {
             get { return this._minSize.GetValueOrDefault(); }
