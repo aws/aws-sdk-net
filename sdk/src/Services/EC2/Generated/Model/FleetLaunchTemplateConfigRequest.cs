@@ -66,7 +66,6 @@ namespace Amazon.EC2.Model
         /// items is allowed across all launch templates.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
         public List<FleetLaunchTemplateOverridesRequest> Overrides
         {
             get { return this._overrides; }
