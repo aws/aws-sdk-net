@@ -46,9 +46,8 @@ namespace Amazon.CodeGuruReviewer.Model
     ///  
     /// <para>
     /// Bitbucket and GitHub Enterprise Server repositories are managed by AWS CodeStar Connections
-    /// to connect to CodeGuru Reviewer. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/reviewer-ug/step-one.html#select-repository-source-provider">Connect
-    /// to a repository source provider</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i>
-    /// 
+    /// to connect to CodeGuru Reviewer. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-associate-repository.html">Associate
+    /// a repository</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i> 
     /// </para>
     ///  <note> 
     /// <para>
@@ -62,6 +61,7 @@ namespace Amazon.CodeGuruReviewer.Model
     public partial class AssociateRepositoryRequest : AmazonCodeGuruReviewerRequest
     {
         private string _clientRequestToken;
+        private KMSKeyDetails _kmsKeyDetails;
         private Repository _repository;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -83,6 +83,34 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyDetails. 
+        /// <para>
+        /// A <code>KMSKeyDetails</code> object that contains:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The encryption option for this repository association. It is either owned by AWS Key
+        /// Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ID of the AWS KMS key that is associated with this respository association.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public KMSKeyDetails KMSKeyDetails
+        {
+            get { return this._kmsKeyDetails; }
+            set { this._kmsKeyDetails = value; }
+        }
+
+        // Check to see if KMSKeyDetails property is set
+        internal bool IsSetKMSKeyDetails()
+        {
+            return this._kmsKeyDetails != null;
         }
 
         /// <summary>

@@ -39,6 +39,7 @@ namespace Amazon.CodeGuruReviewer.Model
         private string _associationId;
         private string _connectionArn;
         private DateTime? _createdTimeStamp;
+        private KMSKeyDetails _kmsKeyDetails;
         private DateTime? _lastUpdatedTimeStamp;
         private string _name;
         private string _owner;
@@ -123,6 +124,34 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetCreatedTimeStamp()
         {
             return this._createdTimeStamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyDetails. 
+        /// <para>
+        /// A <code>KMSKeyDetails</code> object that contains:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The encryption option for this repository association. It is either owned by AWS Key
+        /// Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ID of the AWS KMS key that is associated with this respository association.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public KMSKeyDetails KMSKeyDetails
+        {
+            get { return this._kmsKeyDetails; }
+            set { this._kmsKeyDetails = value; }
+        }
+
+        // Check to see if KMSKeyDetails property is set
+        internal bool IsSetKMSKeyDetails()
+        {
+            return this._kmsKeyDetails != null;
         }
 
         /// <summary>

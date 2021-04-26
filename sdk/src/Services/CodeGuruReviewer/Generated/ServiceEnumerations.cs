@@ -25,6 +25,56 @@ namespace Amazon.CodeGuruReviewer
 {
 
     /// <summary>
+    /// Constants used for properties of type EncryptionOption.
+    /// </summary>
+    public class EncryptionOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_OWNED_CMK for EncryptionOption
+        /// </summary>
+        public static readonly EncryptionOption AWS_OWNED_CMK = new EncryptionOption("AWS_OWNED_CMK");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED_CMK for EncryptionOption
+        /// </summary>
+        public static readonly EncryptionOption CUSTOMER_MANAGED_CMK = new EncryptionOption("CUSTOMER_MANAGED_CMK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionOption FindValue(string value)
+        {
+            return FindValue<EncryptionOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobState.
     /// </summary>
     public class JobState : ConstantClass

@@ -245,6 +245,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.KMSKeyDetails.KMSKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RecommendationFeedback.CodeReviewArn</property>
     <min>1</min>
     <max>1600</max>

@@ -88,6 +88,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedTimeStamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KMSKeyDetails", targetDepth))
+                {
+                    var unmarshaller = KMSKeyDetailsUnmarshaller.Instance;
+                    unmarshalledObject.KMSKeyDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastUpdatedTimeStamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

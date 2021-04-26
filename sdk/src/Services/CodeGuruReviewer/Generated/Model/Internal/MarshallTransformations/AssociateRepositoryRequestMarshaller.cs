@@ -76,6 +76,17 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetKMSKeyDetails())
+                {
+                    context.Writer.WritePropertyName("KMSKeyDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KMSKeyDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KMSKeyDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRepository())
                 {
                     context.Writer.WritePropertyName("Repository");

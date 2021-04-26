@@ -34,14 +34,14 @@ namespace Amazon.CodeGuruReviewer.Model
     ///  <ul> <li> 
     /// <para>
     ///  <code>PullRequest</code> - A code review that is automatically triggered by a pull
-    /// request on an assocaited repository. Because this type of code review is automatically
+    /// request on an associated repository. Because this type of code review is automatically
     /// generated, you cannot specify this code review type using <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
     /// <code>CreateCodeReview</code> </a>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified
-    /// branch in an associated respository. The assocated repository is specified using its
+    /// branch in an associated repository. The associated repository is specified using its
     /// ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
     /// <code>CreateCodeReview</code> </a>. 
     /// </para>
@@ -54,8 +54,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RepositoryAnalysis. 
         /// <para>
-        ///  A code review that analyzes all code under a specified branch in an associated respository.
-        /// The assocated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
+        ///  A code review that analyzes all code under a specified branch in an associated repository.
+        /// The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
         /// <code>CreateCodeReview</code> </a>. 
         /// </para>
         /// </summary>
