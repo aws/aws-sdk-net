@@ -45,6 +45,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SidewalkSendDataToDevice requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetMessageType())
+            {
+                context.Writer.WritePropertyName("MessageType");
+                context.Writer.Write(requestObject.MessageType);
+            }
+
             if(requestObject.IsSetSeq())
             {
                 context.Writer.WritePropertyName("Seq");

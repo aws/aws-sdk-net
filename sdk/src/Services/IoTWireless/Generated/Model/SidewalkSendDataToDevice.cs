@@ -33,7 +33,23 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class SidewalkSendDataToDevice
     {
+        private MessageType _messageType;
         private int? _seq;
+
+        /// <summary>
+        /// Gets and sets the property MessageType.
+        /// </summary>
+        public MessageType MessageType
+        {
+            get { return this._messageType; }
+            set { this._messageType = value; }
+        }
+
+        // Check to see if MessageType property is set
+        internal bool IsSetMessageType()
+        {
+            return this._messageType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Seq. 
