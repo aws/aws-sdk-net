@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings that specify how your still graphic overlay appears.
+    /// These settings apply to a specific graphic overlay. You can include multiple overlays
+    /// in your job.
     /// </summary>
     public partial class InsertableImage
     {

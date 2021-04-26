@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for Dolby Vision
+    /// With AWS Elemental MediaConvert, you can create profile 5 Dolby Vision outputs from
+    /// MXF and IMF sources that contain mastering information as frame-interleaved Dolby
+    /// Vision metadata.
     /// </summary>
     public partial class DolbyVision
     {

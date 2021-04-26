@@ -36,9 +36,9 @@ namespace Amazon.MediaConvert.Model
         private WebvttStylePassthrough _stylePassthrough;
 
         /// <summary>
-        /// Gets and sets the property StylePassthrough. If your input captions format is teletext
-        /// or teletext inside of STL, enable this setting to pass through style, color, and position
-        /// information to your WebVTT output captions.
+        /// Gets and sets the property StylePassthrough. Choose Enabled (ENABLED) to have MediaConvert
+        /// use the font style, color, and position information from the captions source in the
+        /// input. Keep the default value, Disabled (DISABLED), for simplified output captions.
         /// </summary>
         public WebvttStylePassthrough StylePassthrough
         {

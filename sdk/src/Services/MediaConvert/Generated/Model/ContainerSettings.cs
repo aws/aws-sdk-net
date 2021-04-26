@@ -44,7 +44,8 @@ namespace Amazon.MediaConvert.Model
         private MxfSettings _mxfSettings;
 
         /// <summary>
-        /// Gets and sets the property CmfcSettings. Settings for MP4 segments in CMAF
+        /// Gets and sets the property CmfcSettings. These settings relate to the fragmented MP4
+        /// container for the segments in your CMAF outputs.
         /// </summary>
         public CmfcSettings CmfcSettings
         {
@@ -113,7 +114,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property M3u8Settings. Settings for TS segments in HLS
+        /// Gets and sets the property M3u8Settings. These settings relate to the MPEG-2 transport
+        /// stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS outputs.
         /// </summary>
         public M3u8Settings M3u8Settings
         {
@@ -128,7 +130,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MovSettings. Settings for MOV Container.
+        /// Gets and sets the property MovSettings. These settings relate to your QuickTime MOV
+        /// output container.
         /// </summary>
         public MovSettings MovSettings
         {
@@ -143,8 +146,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mp4Settings. Settings for MP4 container. You can create
-        /// audio-only AAC outputs with this container.
+        /// Gets and sets the property Mp4Settings. These settings relate to your MP4 output container.
+        /// You can create audio only outputs with this container. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html#output-codecs-and-containers-supported-for-audio-only.
         /// </summary>
         public Mp4Settings Mp4Settings
         {
@@ -159,7 +162,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MpdSettings. Settings for MP4 segments in DASH
+        /// Gets and sets the property MpdSettings. These settings relate to the fragmented MP4
+        /// container for the segments in your DASH outputs.
         /// </summary>
         public MpdSettings MpdSettings
         {
@@ -174,7 +178,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MxfSettings. MXF settings
+        /// Gets and sets the property MxfSettings. These settings relate to your MXF output container.
         /// </summary>
         public MxfSettings MxfSettings
         {

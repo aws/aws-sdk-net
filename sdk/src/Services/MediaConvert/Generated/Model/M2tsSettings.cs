@@ -192,8 +192,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DvbNitSettings. Inserts DVB Network Information Table (NIT)
-        /// at the specified table repetition interval.
+        /// Gets and sets the property DvbNitSettings. Use these settings to insert a DVB Network
+        /// Information Table (NIT) in the transport stream of this output. When you work directly
+        /// in your JSON job specification, include this object only when your job has a transport
+        /// stream output and the container settings contain the object M2tsSettings.
         /// </summary>
         public DvbNitSettings DvbNitSettings
         {
@@ -208,8 +210,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DvbSdtSettings. Inserts DVB Service Description Table (NIT)
-        /// at the specified table repetition interval.
+        /// Gets and sets the property DvbSdtSettings. Use these settings to insert a DVB Service
+        /// Description Table (SDT) in the transport stream of this output. When you work directly
+        /// in your JSON job specification, include this object only when your job has a transport
+        /// stream output and the container settings contain the object M2tsSettings.
         /// </summary>
         public DvbSdtSettings DvbSdtSettings
         {
@@ -241,8 +245,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DvbTdtSettings. Inserts DVB Time and Date Table (TDT) at
-        /// the specified table repetition interval.
+        /// Gets and sets the property DvbTdtSettings. Use these settings to insert a DVB Time
+        /// and Date Table (TDT) in the transport stream of this output. When you work directly
+        /// in your JSON job specification, include this object only when your job has a transport
+        /// stream output and the container settings contain the object M2tsSettings.
         /// </summary>
         public DvbTdtSettings DvbTdtSettings
         {

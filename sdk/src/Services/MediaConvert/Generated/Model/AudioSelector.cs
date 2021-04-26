@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Selector for Audio
+    /// Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the
+    /// input that you will use in your outputs. You can use multiple Audio selectors per
+    /// input.
     /// </summary>
     public partial class AudioSelector
     {

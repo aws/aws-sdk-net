@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for TS segments in HLS
+    /// These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the
+    /// MPEG2-TS segments in your HLS outputs.
     /// </summary>
     public partial class M3u8Settings
     {

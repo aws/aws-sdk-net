@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// DVB-Sub Destination Settings
+    /// Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as
+    /// your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
+    /// When you work directly in your JSON job specification, include this object and any
+    /// required children when you set destinationType to DVB_SUB.
     /// </summary>
     public partial class DvbSubDestinationSettings
     {

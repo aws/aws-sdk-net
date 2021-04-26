@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix
-    /// into the output.
+    /// Settings for burning the output timecode and specified prefix into the output.
     /// </summary>
     public partial class TimecodeBurnin
     {

@@ -29,7 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Description of audio output
+    /// Settings related to one audio tab on the MediaConvert console. In your job JSON, an
+    /// instance of AudioDescription is equivalent to one audio tab in the console. Usually,
+    /// one audio tab corresponds to one output audio track. Depending on how you set up your
+    /// input audio selectors and whether you use audio selector groups, one audio tab can
+    /// correspond to a group of output audio tracks.
     /// </summary>
     public partial class AudioDescription
     {
@@ -144,14 +148,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CodecSettings. Audio codec settings (CodecSettings) under
-        /// (AudioDescriptions) contains the group of settings related to audio encoding. The
-        /// settings in this group vary depending on the value that you choose for Audio codec
-        /// (Codec). For each codec enum that you choose, define the corresponding settings object.
-        /// The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
-        /// Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings
-        /// * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS,
-        /// OpusSettings
+        /// Gets and sets the property CodecSettings. Settings related to audio encoding. The
+        /// settings in this group vary depending on the value that you choose for your audio
+        /// codec.
         /// </summary>
         public AudioCodecSettings CodecSettings
         {

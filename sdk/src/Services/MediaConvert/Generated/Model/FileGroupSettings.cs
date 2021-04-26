@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS.
+    /// Settings related to your File output group. MediaConvert uses this group of settings
+    /// to generate a single standalone file, rather than a streaming package. When you work
+    /// directly in your JSON job specification, include this object and any required children
+    /// when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
     /// </summary>
     public partial class FileGroupSettings
     {

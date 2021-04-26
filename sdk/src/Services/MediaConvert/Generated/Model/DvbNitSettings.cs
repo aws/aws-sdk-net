@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+    /// Use these settings to insert a DVB Network Information Table (NIT) in the transport
+    /// stream of this output. When you work directly in your JSON job specification, include
+    /// this object only when your job has a transport stream output and the container settings
+    /// contain the object M2tsSettings.
     /// </summary>
     public partial class DvbNitSettings
     {

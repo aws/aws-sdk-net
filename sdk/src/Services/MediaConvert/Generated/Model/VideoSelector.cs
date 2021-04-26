@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Selector for video.
+    /// Input video selectors contain the video settings for the input. Each of your inputs
+    /// can have up to one video selector.
     /// </summary>
     public partial class VideoSelector
     {

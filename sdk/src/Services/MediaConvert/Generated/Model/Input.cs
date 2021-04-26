@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Specifies media input
+    /// Use inputs to define the source files used in your transcoding job. For more information,
+    /// see https://docs.aws.amazon.com/mediaconvert/latest/ug/specify-input-settings.html.
+    /// You can use multiple video inputs to do input stitching. For more information, see
+    /// https://docs.aws.amazon.com/mediaconvert/latest/ug/assembling-multiple-inputs-and-input-clips.html
     /// </summary>
     public partial class Input
     {
@@ -55,9 +58,11 @@ namespace Amazon.MediaConvert.Model
         private VideoSelector _videoSelector;
 
         /// <summary>
-        /// Gets and sets the property AudioSelectorGroups. Specifies set of audio selectors within
-        /// an input to combine. An input may have multiple audio selector groups. See "Audio
-        /// Selector Group":#inputs-audio_selector_group for more information.
+        /// Gets and sets the property AudioSelectorGroups. Use audio selector groups to combine
+        /// multiple sidecar audio inputs so that you can assign them to a single output audio
+        /// tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler
+        /// to assign multiple input tracks into a single audio selector rather than use an audio
+        /// selector group.
         /// </summary>
         public Dictionary<string, AudioSelectorGroup> AudioSelectorGroups
         {
@@ -414,7 +419,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoSelector. Selector for video.
+        /// Gets and sets the property VideoSelector. Input video selectors contain the video
+        /// settings for the input. Each of your inputs can have up to one video selector.
         /// </summary>
         public VideoSelector VideoSelector
         {

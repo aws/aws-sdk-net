@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for MP4 container. You can create audio-only AAC outputs with this container.
+    /// These settings relate to your MP4 output container. You can create audio only outputs
+    /// with this container. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html#output-codecs-and-containers-supported-for-audio-only.
     /// </summary>
     public partial class Mp4Settings
     {

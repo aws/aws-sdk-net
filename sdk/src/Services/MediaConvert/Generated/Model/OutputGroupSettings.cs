@@ -41,9 +41,10 @@ namespace Amazon.MediaConvert.Model
         private OutputGroupType _type;
 
         /// <summary>
-        /// Gets and sets the property CmafGroupSettings. Required when you set (Type) under (OutputGroups)>(OutputGroupSettings)
-        /// to CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a single
-        /// video, audio, or caption output.
+        /// Gets and sets the property CmafGroupSettings. Settings related to your CMAF output
+        /// package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set Type, under OutputGroupSettings, to CMAF_GROUP_SETTINGS.
         /// </summary>
         public CmafGroupSettings CmafGroupSettings
         {
@@ -58,8 +59,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DashIsoGroupSettings. Required when you set (Type) under
-        /// (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
+        /// Gets and sets the property DashIsoGroupSettings. Settings related to your DASH output
+        /// package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set Type, under OutputGroupSettings, to DASH_ISO_GROUP_SETTINGS.
         /// </summary>
         public DashIsoGroupSettings DashIsoGroupSettings
         {
@@ -74,7 +77,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FileGroupSettings. Required when you set (Type) under (OutputGroups)>(OutputGroupSettings)
+        /// Gets and sets the property FileGroupSettings. Settings related to your File output
+        /// group. MediaConvert uses this group of settings to generate a single standalone file,
+        /// rather than a streaming package. When you work directly in your JSON job specification,
+        /// include this object and any required children when you set Type, under OutputGroupSettings,
         /// to FILE_GROUP_SETTINGS.
         /// </summary>
         public FileGroupSettings FileGroupSettings
@@ -90,8 +96,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HlsGroupSettings. Required when you set (Type) under (OutputGroups)>(OutputGroupSettings)
-        /// to HLS_GROUP_SETTINGS.
+        /// Gets and sets the property HlsGroupSettings. Settings related to your HLS output package.
+        /// For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set Type, under OutputGroupSettings, to HLS_GROUP_SETTINGS.
         /// </summary>
         public HlsGroupSettings HlsGroupSettings
         {
@@ -106,8 +114,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MsSmoothGroupSettings. Required when you set (Type) under
-        /// (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS.
+        /// Gets and sets the property MsSmoothGroupSettings. Settings related to your Microsoft
+        /// Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set Type, under OutputGroupSettings, to MS_SMOOTH_GROUP_SETTINGS.
         /// </summary>
         public MsSmoothGroupSettings MsSmoothGroupSettings
         {

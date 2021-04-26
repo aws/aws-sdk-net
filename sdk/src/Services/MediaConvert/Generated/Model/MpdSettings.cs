@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for MP4 segments in DASH
+    /// These settings relate to the fragmented MP4 container for the segments in your DASH
+    /// outputs.
     /// </summary>
     public partial class MpdSettings
     {

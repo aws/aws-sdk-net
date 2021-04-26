@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Set up captions in your outputs by first selecting them from your input here.
+    /// Use captions selectors to specify the captions data from your input that you use in
+    /// your outputs. You can use up to 20 captions selectors per input.
     /// </summary>
     public partial class CaptionSelector
     {

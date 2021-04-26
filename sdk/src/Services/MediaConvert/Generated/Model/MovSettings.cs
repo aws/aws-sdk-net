@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for MOV Container.
+    /// These settings relate to your QuickTime MOV output container.
     /// </summary>
     public partial class MovSettings
     {

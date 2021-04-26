@@ -190,10 +190,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Specify the number
-        /// of B-frames. With AV1, MediaConvert supports only 7 or 15.
+        /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Specify from the number
+        /// of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose
+        /// a larger number for a lower bitrate and smaller file size; choose a smaller number
+        /// for better video quality.
         /// </summary>
-        [AWSProperty(Min=7, Max=15)]
+        [AWSProperty(Min=0, Max=15)]
         public int NumberBFramesBetweenReferenceFrames
         {
             get { return this._numberBFramesBetweenReferenceFrames.GetValueOrDefault(); }

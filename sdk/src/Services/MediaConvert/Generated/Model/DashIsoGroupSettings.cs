@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
+    /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
+    /// When you work directly in your JSON job specification, include this object and any
+    /// required children when you set Type, under OutputGroupSettings, to DASH_ISO_GROUP_SETTINGS.
     /// </summary>
     public partial class DashIsoGroupSettings
     {

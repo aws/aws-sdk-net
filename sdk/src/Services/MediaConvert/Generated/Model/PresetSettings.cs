@@ -56,8 +56,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CaptionDescriptions. Caption settings for this preset.
-        /// There can be multiple caption settings in a single output.
+        /// Gets and sets the property CaptionDescriptions. This object holds groups of settings
+        /// related to captions for one output. For each output that has captions, include one
+        /// instance of CaptionDescriptions.
         /// </summary>
         public List<CaptionDescriptionPreset> CaptionDescriptions
         {
@@ -87,10 +88,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoDescription. (VideoDescription) contains a group of
+        /// Gets and sets the property VideoDescription. VideoDescription contains a group of
         /// video encoding settings. The specific video settings depend on the video codec that
-        /// you choose when you specify a value for Video codec (codec). Include one instance
-        /// of (VideoDescription) per output.
+        /// you choose for the property codec. Include one instance of  VideoDescription per output.
         /// </summary>
         public VideoDescription VideoDescription
         {

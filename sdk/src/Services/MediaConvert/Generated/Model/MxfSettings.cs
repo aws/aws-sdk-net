@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// MXF settings
+    /// These settings relate to your MXF output container.
     /// </summary>
     public partial class MxfSettings
     {

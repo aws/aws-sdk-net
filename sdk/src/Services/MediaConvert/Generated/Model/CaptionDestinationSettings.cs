@@ -29,8 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Specific settings required by destination type. Note that burnin_destination_settings
-    /// are not available if the source of the caption data is Embedded or Teletext.
+    /// Settings related to one captions tab on the MediaConvert console. In your job JSON,
+    /// an instance of captions DestinationSettings is equivalent to one captions tab in the
+    /// console. Usually, one captions tab corresponds to one output captions track. Depending
+    /// on your output captions format, one tab might correspond to a set of output captions
+    /// tracks. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
     /// </summary>
     public partial class CaptionDestinationSettings
     {
@@ -45,7 +48,11 @@ namespace Amazon.MediaConvert.Model
         private WebvttDestinationSettings _webvttDestinationSettings;
 
         /// <summary>
-        /// Gets and sets the property BurninDestinationSettings. Burn-In Destination Settings.
+        /// Gets and sets the property BurninDestinationSettings. Settings related to burn-in
+        /// captions. Set up burn-in captions in the same output as your video. For more information,
+        /// see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set destinationType to BURN_IN.
         /// </summary>
         public BurninDestinationSettings BurninDestinationSettings
         {
@@ -61,11 +68,12 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property DestinationType. Specify the format for this set of captions
-        /// on this output. The default format is embedded without SCTE-20. Other options are
-        /// embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT.
-        /// If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create
-        /// an output that complies with the SCTE-43 spec. To create a non-compliant output where
-        /// the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+        /// on this output. The default format is embedded without SCTE-20. Note that your choice
+        /// of video output container constrains your choice of output captions format. For more
+        /// information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html.
+        /// If you are using SCTE-20 and you want to create an output that complies with the SCTE-43
+        /// spec, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a non-compliant
+        /// output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
         /// </summary>
         public CaptionDestinationType DestinationType
         {
@@ -80,7 +88,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DvbSubDestinationSettings. DVB-Sub Destination Settings
+        /// Gets and sets the property DvbSubDestinationSettings. Settings related to DVB-Sub
+        /// captions. Set up DVB-Sub captions in the same output as your video. For more information,
+        /// see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set destinationType to DVB_SUB.
         /// </summary>
         public DvbSubDestinationSettings DvbSubDestinationSettings
         {
@@ -95,8 +107,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmbeddedDestinationSettings. Settings specific to embedded/ancillary
-        /// caption outputs, including 608/708 Channel destination number.
+        /// Gets and sets the property EmbeddedDestinationSettings. Settings related to CEA/EIA-608
+        /// and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded captions
+        /// in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set destinationType to EMBEDDED, EMBEDDED_PLUS_SCTE20,
+        /// or SCTE20_PLUS_EMBEDDED.
         /// </summary>
         public EmbeddedDestinationSettings EmbeddedDestinationSettings
         {
@@ -111,8 +127,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImscDestinationSettings. Settings specific to IMSC caption
-        /// outputs.
+        /// Gets and sets the property ImscDestinationSettings. Settings related to IMSC captions.
+        /// IMSC is a sidecar format that holds captions in a file that is separate from the video
+        /// container. Set up sidecar captions in the same output group, but different output
+        /// from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set destinationType to IMSC.
         /// </summary>
         public ImscDestinationSettings ImscDestinationSettings
         {
@@ -127,7 +147,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SccDestinationSettings. Settings for SCC caption output.
+        /// Gets and sets the property SccDestinationSettings. Settings related to SCC captions.
+        /// SCC is a sidecar format that holds captions in a file that is separate from the video
+        /// container. Set up sidecar captions in the same output group, but different output
+        /// from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set destinationType to SCC.
         /// </summary>
         public SccDestinationSettings SccDestinationSettings
         {
@@ -142,8 +167,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TeletextDestinationSettings. Settings for Teletext caption
-        /// output
+        /// Gets and sets the property TeletextDestinationSettings. Settings related to teletext
+        /// captions. Set up teletext captions in the same output as your video. For more information,
+        /// see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set destinationType to TELETEXT.
         /// </summary>
         public TeletextDestinationSettings TeletextDestinationSettings
         {
@@ -158,8 +186,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TtmlDestinationSettings. Settings specific to TTML caption
-        /// outputs, including Pass style information (TtmlStylePassthrough).
+        /// Gets and sets the property TtmlDestinationSettings. Settings related to TTML captions.
+        /// TTML is a sidecar format that holds captions in a file that is separate from the video
+        /// container. Set up sidecar captions in the same output group, but different output
+        /// from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set destinationType to TTML.
         /// </summary>
         public TtmlDestinationSettings TtmlDestinationSettings
         {

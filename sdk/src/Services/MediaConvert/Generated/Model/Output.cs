@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// An output object describes the settings for a single output file or stream in an output
-    /// group.
+    /// Each output in your job is a collection of settings that describes how you want MediaConvert
+    /// to encode a single output file or stream. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/create-outputs.html.
     /// </summary>
     public partial class Output
     {
@@ -168,10 +168,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoDescription. (VideoDescription) contains a group of
+        /// Gets and sets the property VideoDescription. VideoDescription contains a group of
         /// video encoding settings. The specific video settings depend on the video codec that
-        /// you choose when you specify a value for Video codec (codec). Include one instance
-        /// of (VideoDescription) per output.
+        /// you choose for the property codec. Include one instance of  VideoDescription per output.
         /// </summary>
         public VideoDescription VideoDescription
         {

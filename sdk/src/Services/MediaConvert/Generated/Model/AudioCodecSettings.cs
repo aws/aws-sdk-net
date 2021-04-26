@@ -29,13 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group
-    /// of settings related to audio encoding. The settings in this group vary depending on
-    /// the value that you choose for Audio codec (Codec). For each codec enum that you choose,
-    /// define the corresponding settings object. The following lists the codec enum, settings
-    /// object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings
-    /// * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
-    /// * VORBIS, VorbisSettings * OPUS, OpusSettings
+    /// Settings related to audio encoding. The settings in this group vary depending on the
+    /// value that you choose for your audio codec.
     /// </summary>
     public partial class AudioCodecSettings
     {
@@ -104,7 +99,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Codec. Type of Audio codec.
+        /// Gets and sets the property Codec. Choose the audio codec for this output. Note that
+        /// the option Dolby Digital passthrough (PASSTHROUGH) applies only to Dolby Digital and
+        /// Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported
+        /// with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+        /// For audio-only outputs, make sure that both your input audio codec and your output
+        /// audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+        /// and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
         /// </summary>
         public AudioCodec Codec
         {

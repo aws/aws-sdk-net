@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for video outputs
+    /// Settings related to video encoding of your output. The specific video settings depend
+    /// on the video codec that you choose. When you work directly in your JSON job specification,
+    /// include one instance of Video description (VideoDescription) per output.
     /// </summary>
     public partial class VideoDescription
     {

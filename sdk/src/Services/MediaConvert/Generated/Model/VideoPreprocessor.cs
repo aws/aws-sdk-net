@@ -43,9 +43,9 @@ namespace Amazon.MediaConvert.Model
         private TimecodeBurnin _timecodeBurnin;
 
         /// <summary>
-        /// Gets and sets the property ColorCorrector. Enable the Color corrector (ColorCorrector)
-        /// feature if necessary. Enable or disable this feature for each output individually.
-        /// This setting is disabled by default.
+        /// Gets and sets the property ColorCorrector. Use these settings to convert the color
+        /// space or to modify properties such as hue and contrast for this output. For more information,
+        /// see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
         /// </summary>
         public ColorCorrector ColorCorrector
         {
@@ -60,8 +60,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Deinterlacer. Use Deinterlacer (Deinterlacer) to produce
-        /// smoother motion and a clearer picture.
+        /// Gets and sets the property Deinterlacer. Use the deinterlacer to produce smoother
+        /// motion and a clearer picture. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
         /// </summary>
         public Deinterlacer Deinterlacer
         {
@@ -143,8 +143,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimecodeBurnin. Timecode burn-in (TimecodeBurnIn)--Burns
-        /// the output timecode and specified prefix into the output.
+        /// Gets and sets the property TimecodeBurnin. Settings for burning the output timecode
+        /// and specified prefix into the output.
         /// </summary>
         public TimecodeBurnin TimecodeBurnin
         {
