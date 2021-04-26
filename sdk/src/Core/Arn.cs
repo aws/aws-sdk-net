@@ -98,7 +98,7 @@ namespace Amazon
                     return true;
                 }
             }
-            catch (ArgumentException) { }
+            catch (Exception) { }
             arn = null;
             return false;
         }
