@@ -938,9 +938,15 @@ namespace Amazon.KinesisAnalyticsV2
         ///  
         /// <para>
         /// The IAM role or user used to call this API defines the permissions to access the extension.
-        /// Once the presigned URL is created, no additional permission is required to access
+        /// After the presigned URL is created, no additional permission is required to access
         /// this URL. IAM authorization policies for this API are also enforced for every HTTP
         /// request that attempts to connect to the extension. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You control the amount of time that the URL will be valid using the <code>SessionExpirationDurationInSeconds</code>
+        /// parameter. If you do not provide this parameter, the returned URL is valid for twelve
+        /// hours.
         /// </para>
         ///  <note> 
         /// <para>
@@ -980,9 +986,15 @@ namespace Amazon.KinesisAnalyticsV2
         ///  
         /// <para>
         /// The IAM role or user used to call this API defines the permissions to access the extension.
-        /// Once the presigned URL is created, no additional permission is required to access
+        /// After the presigned URL is created, no additional permission is required to access
         /// this URL. IAM authorization policies for this API are also enforced for every HTTP
         /// request that attempts to connect to the extension. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You control the amount of time that the URL will be valid using the <code>SessionExpirationDurationInSeconds</code>
+        /// parameter. If you do not provide this parameter, the returned URL is valid for twelve
+        /// hours.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2462,6 +2474,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidRequestException">
         /// The request JSON is not valid for the operation.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.LimitExceededException">
+        /// The number of allowed resources has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
         /// The application is not available for this operation.
         /// </exception>
@@ -2520,6 +2535,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidRequestException">
         /// The request JSON is not valid for the operation.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.LimitExceededException">
+        /// The number of allowed resources has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
         /// The application is not available for this operation.
         /// </exception>
@@ -2534,6 +2552,89 @@ namespace Amazon.KinesisAnalyticsV2
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateApplicationMaintenanceConfiguration
+
+
+        /// <summary>
+        /// Updates the configuration for the automatic maintenance that Kinesis Data Analytics
+        /// performs on the application. For information about automatic application maintenance,
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
+        /// Data Analytics for Apache Flink Maintenance</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationMaintenanceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApplicationMaintenanceConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">REST API Reference for UpdateApplicationMaintenanceConfiguration Operation</seealso>
+        public virtual UpdateApplicationMaintenanceConfigurationResponse UpdateApplicationMaintenanceConfiguration(UpdateApplicationMaintenanceConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationMaintenanceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationMaintenanceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApplicationMaintenanceConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the configuration for the automatic maintenance that Kinesis Data Analytics
+        /// performs on the application. For information about automatic application maintenance,
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
+        /// Data Analytics for Apache Flink Maintenance</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationMaintenanceConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApplicationMaintenanceConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">REST API Reference for UpdateApplicationMaintenanceConfiguration Operation</seealso>
+        public virtual Task<UpdateApplicationMaintenanceConfigurationResponse> UpdateApplicationMaintenanceConfigurationAsync(UpdateApplicationMaintenanceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationMaintenanceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationMaintenanceConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateApplicationMaintenanceConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -463,6 +463,18 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationMaintenanceConfigurationRequest.ApplicationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationMaintenanceConfigurationResponse.ApplicationARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
@@ -489,6 +501,24 @@
     <min>1</min>
     <max>2048</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationMaintenanceConfigurationDescription.ApplicationMaintenanceWindowEndTime</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>([01][0-9]|2[0-3]):[0-5][0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationMaintenanceConfigurationDescription.ApplicationMaintenanceWindowStartTime</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>([01][0-9]|2[0-3]):[0-5][0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationMaintenanceConfigurationUpdate.ApplicationMaintenanceWindowStartTimeUpdate</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>([01][0-9]|2[0-3]):[0-5][0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationRestoreConfiguration.SnapshotName</property>

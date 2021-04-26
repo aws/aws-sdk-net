@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateApplication operation
+    /// Response Unmarshaller for UpdateApplicationMaintenanceConfiguration operation
     /// </summary>  
-    public class UpdateApplicationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateApplicationMaintenanceConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateApplicationResponse response = new UpdateApplicationResponse();
+            UpdateApplicationMaintenanceConfigurationResponse response = new UpdateApplicationMaintenanceConfigurationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApplicationDetail", targetDepth))
+                if (context.TestExpression("ApplicationARN", targetDepth))
                 {
-                    var unmarshaller = ApplicationDetailUnmarshaller.Instance;
-                    response.ApplicationDetail = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApplicationARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ApplicationMaintenanceConfigurationDescription", targetDepth))
+                {
+                    var unmarshaller = ApplicationMaintenanceConfigurationDescriptionUnmarshaller.Instance;
+                    response.ApplicationMaintenanceConfigurationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,29 +86,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("CodeValidationException"))
-                {
-                    return CodeValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
                 {
                     return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidApplicationConfigurationException"))
-                {
-                    return InvalidApplicationConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
                 {
                     return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
-                {
-                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
                 {
@@ -112,13 +102,17 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
+                {
+                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonKinesisAnalyticsV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateApplicationResponseUnmarshaller _instance = new UpdateApplicationResponseUnmarshaller();        
+        private static UpdateApplicationMaintenanceConfigurationResponseUnmarshaller _instance = new UpdateApplicationMaintenanceConfigurationResponseUnmarshaller();        
 
-        internal static UpdateApplicationResponseUnmarshaller GetInstance()
+        internal static UpdateApplicationMaintenanceConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +120,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateApplicationResponseUnmarshaller Instance
+        public static UpdateApplicationMaintenanceConfigurationResponseUnmarshaller Instance
         {
             get
             {

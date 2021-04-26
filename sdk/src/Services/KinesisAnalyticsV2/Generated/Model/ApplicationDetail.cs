@@ -37,6 +37,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private string _applicationARN;
         private ApplicationConfigurationDescription _applicationConfigurationDescription;
         private string _applicationDescription;
+        private ApplicationMaintenanceConfigurationDescription _applicationMaintenanceConfigurationDescription;
         private string _applicationName;
         private ApplicationStatus _applicationStatus;
         private long? _applicationVersionId;
@@ -100,6 +101,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationDescription()
         {
             return this._applicationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationMaintenanceConfigurationDescription. 
+        /// <para>
+        /// Describes the time window for automatic application maintenance.
+        /// </para>
+        /// </summary>
+        public ApplicationMaintenanceConfigurationDescription ApplicationMaintenanceConfigurationDescription
+        {
+            get { return this._applicationMaintenanceConfigurationDescription; }
+            set { this._applicationMaintenanceConfigurationDescription = value; }
+        }
+
+        // Check to see if ApplicationMaintenanceConfigurationDescription property is set
+        internal bool IsSetApplicationMaintenanceConfigurationDescription()
+        {
+            return this._applicationMaintenanceConfigurationDescription != null;
         }
 
         /// <summary>
@@ -217,8 +236,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property RuntimeEnvironment. 
         /// <para>
-        /// The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>,
-        /// or <code>FLINK-1_8</code>).
+        /// The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+        /// <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -531,9 +531,15 @@ namespace Amazon.KinesisAnalyticsV2
         ///  
         /// <para>
         /// The IAM role or user used to call this API defines the permissions to access the extension.
-        /// Once the presigned URL is created, no additional permission is required to access
+        /// After the presigned URL is created, no additional permission is required to access
         /// this URL. IAM authorization policies for this API are also enforced for every HTTP
         /// request that attempts to connect to the extension. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You control the amount of time that the URL will be valid using the <code>SessionExpirationDurationInSeconds</code>
+        /// parameter. If you do not provide this parameter, the returned URL is valid for twelve
+        /// hours.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1679,6 +1685,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidRequestException">
         /// The request JSON is not valid for the operation.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.LimitExceededException">
+        /// The number of allowed resources has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
         /// The application is not available for this operation.
         /// </exception>
@@ -1713,6 +1722,67 @@ namespace Amazon.KinesisAnalyticsV2
         /// <returns>Returns a  UpdateApplicationResult from KinesisAnalyticsV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateApplicationMaintenanceConfiguration
+
+
+        /// <summary>
+        /// Updates the configuration for the automatic maintenance that Kinesis Data Analytics
+        /// performs on the application. For information about automatic application maintenance,
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
+        /// Data Analytics for Apache Flink Maintenance</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationMaintenanceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApplicationMaintenanceConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">REST API Reference for UpdateApplicationMaintenanceConfiguration Operation</seealso>
+        UpdateApplicationMaintenanceConfigurationResponse UpdateApplicationMaintenanceConfiguration(UpdateApplicationMaintenanceConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApplicationMaintenanceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationMaintenanceConfiguration operation on AmazonKinesisAnalyticsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplicationMaintenanceConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">REST API Reference for UpdateApplicationMaintenanceConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateApplicationMaintenanceConfiguration(UpdateApplicationMaintenanceConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateApplicationMaintenanceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplicationMaintenanceConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateApplicationMaintenanceConfigurationResult from KinesisAnalyticsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">REST API Reference for UpdateApplicationMaintenanceConfiguration Operation</seealso>
+        UpdateApplicationMaintenanceConfigurationResponse EndUpdateApplicationMaintenanceConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

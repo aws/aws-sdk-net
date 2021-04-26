@@ -36,9 +36,15 @@ namespace Amazon.KinesisAnalyticsV2.Model
     ///  
     /// <para>
     /// The IAM role or user used to call this API defines the permissions to access the extension.
-    /// Once the presigned URL is created, no additional permission is required to access
+    /// After the presigned URL is created, no additional permission is required to access
     /// this URL. IAM authorization policies for this API are also enforced for every HTTP
     /// request that attempts to connect to the extension. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You control the amount of time that the URL will be valid using the <code>SessionExpirationDurationInSeconds</code>
+    /// parameter. If you do not provide this parameter, the returned URL is valid for twelve
+    /// hours.
     /// </para>
     ///  <note> 
     /// <para>
