@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.20.0",
+    "ProductVersion" : "3.7.21.0",
     "CoreVersion"    : "3.7.0.15",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.4.5",
+            "Version" : "3.7.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.15"
@@ -826,7 +826,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.7.1.12",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.15"
@@ -898,7 +898,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.7.1.8",
+            "Version" : "3.7.1.9",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.15"
@@ -1138,7 +1138,7 @@
             "InPreview"               : false
         },
         "EKS"                             : {
-            "Version" : "3.7.0.14",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.15"
@@ -1282,7 +1282,7 @@
             "InPreview"               : false
         },
         "KinesisAnalyticsV2"              : {
-            "Version" : "3.7.0.14",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.15"
@@ -1442,7 +1442,7 @@
             "InPreview"               : false
         },
         "Personalize"                     : {
-            "Version" : "3.7.0.14",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.15"
@@ -1698,7 +1698,7 @@
             "InPreview"               : false
         },
         "CodeGuruReviewer"                : {
-            "Version" : "3.7.0.14",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.15"
@@ -2018,7 +2018,7 @@
             "InPreview"               : false
         },
         "IoTWireless"                     : {
-            "Version" : "3.7.2.10",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.15"

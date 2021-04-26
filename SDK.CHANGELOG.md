@@ -1,3 +1,21 @@
+### 3.7.21.0 (2021-04-26 18:17 UTC)
+* CodeGuruReviewer (3.7.1.0)
+	* Include KMS Key Details in Repository Association APIs to enable usage of customer managed KMS Keys.
+* EC2 (3.7.5.0)
+	* Adding support for Red Hat Enterprise Linux with HA for Reserved Instances.
+* EKS (3.7.1.0)
+	* This release updates existing Amazon EKS input validation so customers will see an InvalidParameterException instead of a ParamValidationError when they enter 0 for minSize and/or desiredSize. It also adds LaunchTemplate information to update responses and a new "CUSTOM" value for AMIType.
+* Glue (3.7.2.0)
+	* Adding Kafka Client Auth Related Parameters
+* IoTWireless (3.7.3.0)
+	* Add a new optional field MessageType to support Sidewalk devices in SendDataToWirelessDevice API
+* KinesisAnalyticsV2 (3.7.1.0)
+	* Amazon Kinesis Data Analytics now supports custom application maintenance configuration using UpdateApplicationMaintenanceConfiguration API for Apache Flink applications. Customers will have visibility when their application is under maintenance status using 'MAINTENANCE' application status.
+* MediaConvert (3.7.1.9)
+	* Documentation updates for mediaconvert
+* Personalize (3.7.1.0)
+	* Added support for exporting data imported into an Amazon Personalize dataset to a specified data source (Amazon S3 bucket).
+
 ### 3.7.20.0 (2021-04-23 18:25 UTC)
 * MediaPackage (3.7.2.0)
 	* Add support for Widevine DRM on CMAF origin endpoints. Both Widevine and FairPlay DRMs can now be used simultaneously, with CBCS encryption.
