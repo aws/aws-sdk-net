@@ -175,6 +175,33 @@ namespace Amazon.Glue.Model
         ///  <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or
         /// CUSTOM connection.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore
+        /// file for Kafka client side authentication (Optional).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided
+        /// keystore (Optional).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys,
+        /// so this is the password to access the client key to be used with the Kafka server
+        /// side key (Optional).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+        /// the Kafka client keystore password (if the user has the AWS Glue encrypt passwords
+        /// setting selected).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka
+        /// client key password (if the user has the AWS Glue encrypt passwords setting selected).
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

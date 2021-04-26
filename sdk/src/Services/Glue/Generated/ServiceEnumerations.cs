@@ -427,6 +427,14 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey CUSTOM_JDBC_CERT_STRING = new ConnectionPropertyKey("CUSTOM_JDBC_CERT_STRING");
         /// <summary>
+        /// Constant ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD");
+        /// <summary>
+        /// Constant ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD");
+        /// <summary>
         /// Constant ENCRYPTED_PASSWORD for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey ENCRYPTED_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_PASSWORD");
@@ -466,6 +474,18 @@ namespace Amazon.Glue
         /// Constant KAFKA_BOOTSTRAP_SERVERS for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey KAFKA_BOOTSTRAP_SERVERS = new ConnectionPropertyKey("KAFKA_BOOTSTRAP_SERVERS");
+        /// <summary>
+        /// Constant KAFKA_CLIENT_KEY_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_CLIENT_KEY_PASSWORD = new ConnectionPropertyKey("KAFKA_CLIENT_KEY_PASSWORD");
+        /// <summary>
+        /// Constant KAFKA_CLIENT_KEYSTORE for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_CLIENT_KEYSTORE = new ConnectionPropertyKey("KAFKA_CLIENT_KEYSTORE");
+        /// <summary>
+        /// Constant KAFKA_CLIENT_KEYSTORE_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_CLIENT_KEYSTORE_PASSWORD = new ConnectionPropertyKey("KAFKA_CLIENT_KEYSTORE_PASSWORD");
         /// <summary>
         /// Constant KAFKA_CUSTOM_CERT for ConnectionPropertyKey
         /// </summary>
