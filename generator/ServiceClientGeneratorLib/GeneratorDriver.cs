@@ -963,7 +963,7 @@ namespace ServiceClientGenerator
                     }
 
                     var verTokens = version.Split('.');
-                    var versionRange = string.Format("[{0}{3}, {1}.{2}{3})", version, verTokens[0], int.Parse(verTokens[1]) + 1, previewFlag);
+                    var versionRange = string.Format("[{0}{2}, {1}.0{2})", version, int.Parse(verTokens[0]) + 1, previewFlag);
 
                     awsDependencies.Add(string.Format("AWSSDK.{0}", service), versionRange);
                 }
