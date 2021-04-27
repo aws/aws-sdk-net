@@ -1,3 +1,12 @@
+### 3.7.22.0 (2021-04-27 18:14 UTC)
+* AuditManager (3.7.2.0)
+	* This release restricts using backslashes in control, assessment, and framework names. The controlSetName field of the UpdateAssessmentFrameworkControlSet API now allows strings without backslashes.
+* Core 3.7.0.16
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.21.0 (2021-04-26 18:17 UTC)
 * CodeGuruReviewer (3.7.1.0)
 	* Include KMS Key Details in Repository Association APIs to enable usage of customer managed KMS Keys.
