@@ -165,6 +165,72 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ValidateObjectMetadataAndHeaders(key);
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestSingleUploadWithSpacesInMetadata()
+        {
+            string metadataName = "document";
+            string metadataValue = " A  B  C  ";
+            // Test simple PutObject upload
+            var key = "contentBodyPut" + random.Next();
+            PutObjectRequest putObjectRequest = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = "This is the content body!",
+            };
+
+            putObjectRequest.Metadata[metadataName] = metadataValue;
+
+            Client.PutObject(putObjectRequest);
+            using (var response = Client.GetObject(bucketName, key)) // Validate metadata
+            {
+                Assert.AreEqual(metadataValue.Trim(), response.Metadata[metadataName]);
+            }
+
+            using (var tu = new TransferUtility(Client))
+            {
+                // Test small TransferUtility upload
+                key = "transferUtilitySmall" + random.Next();
+                UtilityMethods.GenerateFile(tempFile, smallFileSize);
+                var smallRequest = new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    FilePath = tempFile
+                };
+
+                smallRequest.Metadata[metadataName] = metadataValue;
+
+                tu.Upload(smallRequest);
+                using (var response = Client.GetObject(bucketName, key)) // Validate metadata
+                {
+                    Assert.AreEqual(metadataValue.Trim(), response.Metadata[metadataName]);
+                }
+
+                // Test large TransferUtility upload
+                // disable clock skew testing, this is a multithreaded operation
+                using (RetryUtilities.DisableClockSkewCorrection())
+                {
+                    key = "transferUtilityLarge" + random.Next();
+                    UtilityMethods.GenerateFile(tempFile, largeFileSize);
+                    var largeRequest = new TransferUtilityUploadRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key,
+                        FilePath = tempFile
+                    };
+                    largeRequest.Metadata[metadataName] = metadataValue;
+
+                    tu.Upload(largeRequest);
+                    using (var response = Client.GetObject(bucketName, key)) // Validate metadata
+                    {
+                        Assert.AreEqual(metadataValue.Trim(), response.Metadata[metadataName]);
+                    }
+                }
+            }
+        }
+
         void UploadDirectory(long size,
             TransferUtilityTests.DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, bool validate = true)
         {

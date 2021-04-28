@@ -150,16 +150,18 @@ namespace Amazon.Runtime.Internal.Auth
 
         static string BuildCanonicalizedHeaders(IDictionary<string, string> headers)
         {
+            // Refer "Constructing the CanonicalizedAmzHeaders element" section at https://docs.aws.amazon.com/AmazonS3/latest/userguide/RESTAuthentication.html.
             var sb = new StringBuilder(256);
-
-            // Refer "Constructing the CanonicalizedAmzHeaders element" section at https://docs.aws.amazon.com/AmazonS3/latest/userguide/RESTAuthentication.html. Steps 1 and Steps 2 requires all headers to be in lowercase and lexicographically sorted by header name. StringComparer.OrdinalIgnoreCase incorrectly places '_' after lowercase chracters.
+            
+            // Steps 1 and Steps 2 requires all headers to be in lowercase and lexicographically sorted by header name. StringComparer.OrdinalIgnoreCase incorrectly places '_' after lowercase chracters.
             foreach (var key in headers.Keys.OrderBy(x => x.ToLowerInvariant(), StringComparer.Ordinal))
             {
                 var lowerKey = key.ToLowerInvariant();
                 if (!lowerKey.StartsWith("x-amz-", StringComparison.Ordinal))
                     continue;
 
-                sb.Append(String.Concat(lowerKey, ":", headers[key], "\n"));
+                // Step 5: Trim any spaces around the colon in the header (based on testing spaces at the end of value also needs to be removed).
+                sb.Append(String.Concat(lowerKey, ":", headers[key].Trim(), "\n"));
             }
 
             return sb.ToString();
