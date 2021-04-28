@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         /// The maximum number of contacts that can be in the queue before it is considered full.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Min=0)]
         public int MaxContacts
         {
             get { return this._maxContacts.GetValueOrDefault(); }

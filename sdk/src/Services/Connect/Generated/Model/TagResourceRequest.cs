@@ -74,7 +74,7 @@ namespace Amazon.Connect.Model
         /// One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
