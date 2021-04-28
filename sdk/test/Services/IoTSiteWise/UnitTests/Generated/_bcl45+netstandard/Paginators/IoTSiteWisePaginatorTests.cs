@@ -120,6 +120,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("IoTSiteWise")]
+        public void GetInterpolatedAssetPropertyValuesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetInterpolatedAssetPropertyValuesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetInterpolatedAssetPropertyValuesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetInterpolatedAssetPropertyValuesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetInterpolatedAssetPropertyValues(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetInterpolatedAssetPropertyValues(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IoTSiteWise")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetInterpolatedAssetPropertyValuesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetInterpolatedAssetPropertyValuesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetInterpolatedAssetPropertyValuesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetInterpolatedAssetPropertyValues(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetInterpolatedAssetPropertyValues(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IoTSiteWise")]
         public void ListAccessPoliciesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListAccessPoliciesRequest>();

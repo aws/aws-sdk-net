@@ -36,6 +36,11 @@ namespace Amazon.IoTSiteWise.Model
         IGetAssetPropertyValueHistoryPaginator GetAssetPropertyValueHistory(GetAssetPropertyValueHistoryRequest request);
 
         /// <summary>
+        /// Paginator for GetInterpolatedAssetPropertyValues operation
+        ///</summary>
+        IGetInterpolatedAssetPropertyValuesPaginator GetInterpolatedAssetPropertyValues(GetInterpolatedAssetPropertyValuesRequest request);
+
+        /// <summary>
         /// Paginator for ListAccessPolicies operation
         ///</summary>
         IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request);

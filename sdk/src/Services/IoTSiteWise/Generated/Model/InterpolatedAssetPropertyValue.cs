@@ -29,32 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains information about an AWS Identity and Access Management (IAM) role. For more
-    /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
-    /// roles</a> in the <i>IAM User Guide</i>.
+    /// Contains information about an interpolated asset property value.
     /// </summary>
-    public partial class IAMRoleIdentity
+    public partial class InterpolatedAssetPropertyValue
     {
-        private string _arn;
+        private TimeInNanos _timestamp;
+        private Variant _value;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// ARNs</a> in the <i>IAM User Guide</i>.
-        /// </para>
+        /// Gets and sets the property Timestamp.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
-        public string Arn
+        [AWSProperty(Required=true)]
+        public TimeInNanos Timestamp
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._timestamp; }
+            set { this._timestamp = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
         {
-            return this._arn != null;
+            return this._timestamp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public Variant Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

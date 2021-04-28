@@ -29,41 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListGateways operation.
-    /// Retrieves a paginated list of gateways.
+    /// This is the response object from the GetInterpolatedAssetPropertyValues operation.
     /// </summary>
-    public partial class ListGatewaysRequest : AmazonIoTSiteWiseRequest
+    public partial class GetInterpolatedAssetPropertyValuesResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<InterpolatedAssetPropertyValue> _interpolatedAssetPropertyValues = new List<InterpolatedAssetPropertyValue>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property InterpolatedAssetPropertyValues. 
         /// <para>
-        /// The maximum number of results to be returned per paginated request.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: 50
+        /// The requested interpolated values.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        [AWSProperty(Required=true)]
+        public List<InterpolatedAssetPropertyValue> InterpolatedAssetPropertyValues
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._interpolatedAssetPropertyValues; }
+            set { this._interpolatedAssetPropertyValues = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if InterpolatedAssetPropertyValues property is set
+        internal bool IsSetInterpolatedAssetPropertyValues()
         {
-            return this._maxResults.HasValue; 
+            return this._interpolatedAssetPropertyValues != null && this._interpolatedAssetPropertyValues.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to be used for the next set of paginated results.
+        /// The token for the next set of results, or null if there are no additional results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

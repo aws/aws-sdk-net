@@ -133,7 +133,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The token to be used for the next set of paginated results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

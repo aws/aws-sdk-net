@@ -52,6 +52,14 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for GetInterpolatedAssetPropertyValues operation
+        ///</summary>
+        public IGetInterpolatedAssetPropertyValuesPaginator GetInterpolatedAssetPropertyValues(GetInterpolatedAssetPropertyValuesRequest request) 
+        {
+            return new GetInterpolatedAssetPropertyValuesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAccessPolicies operation
         ///</summary>
         public IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request) 

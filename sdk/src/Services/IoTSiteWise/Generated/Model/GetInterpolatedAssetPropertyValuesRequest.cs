@@ -29,9 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetAssetPropertyValueHistory operation.
-    /// Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-    /// historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// Container for the parameters to the GetInterpolatedAssetPropertyValues operation.
+    /// Get interpolated values for an asset property for a specified time interval, during
+    /// a period of time. For example, you can use the this operation to return the interpolated
+    /// temperature values for a wind turbine every 24 hours over a duration of 7 days.
     /// 
     ///  
     /// <para>
@@ -48,17 +49,20 @@ namespace Amazon.IoTSiteWise.Model
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class GetAssetPropertyValueHistoryRequest : AmazonIoTSiteWiseRequest
+    public partial class GetInterpolatedAssetPropertyValuesRequest : AmazonIoTSiteWiseRequest
     {
         private string _assetId;
-        private DateTime? _endDate;
+        private long? _endTimeInSeconds;
+        private int? _endTimeOffsetInNanos;
+        private long? _intervalInSeconds;
         private int? _maxResults;
         private string _nextToken;
         private string _propertyAlias;
         private string _propertyId;
-        private List<string> _qualities = new List<string>();
-        private DateTime? _startDate;
-        private TimeOrdering _timeOrdering;
+        private Quality _quality;
+        private long? _startTimeInSeconds;
+        private int? _startTimeOffsetInNanos;
+        private string _type;
 
         /// <summary>
         /// Gets and sets the property AssetId. 
@@ -80,35 +84,72 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndDate. 
+        /// Gets and sets the property EndTimeInSeconds. 
         /// <para>
-        /// The inclusive end of the range from which to query historical data, expressed in seconds
+        /// The inclusive end of the range from which to interpolate data, expressed in seconds
         /// in Unix epoch time.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        [AWSProperty(Required=true, Min=1, Max=31556889864403199)]
+        public long EndTimeInSeconds
         {
-            get { return this._endDate.GetValueOrDefault(); }
-            set { this._endDate = value; }
+            get { return this._endTimeInSeconds.GetValueOrDefault(); }
+            set { this._endTimeInSeconds = value; }
         }
 
-        // Check to see if EndDate property is set
-        internal bool IsSetEndDate()
+        // Check to see if EndTimeInSeconds property is set
+        internal bool IsSetEndTimeInSeconds()
         {
-            return this._endDate.HasValue; 
+            return this._endTimeInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndTimeOffsetInNanos. 
+        /// <para>
+        /// The nanosecond offset converted from <code>endTimeInSeconds</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=999999999)]
+        public int EndTimeOffsetInNanos
+        {
+            get { return this._endTimeOffsetInNanos.GetValueOrDefault(); }
+            set { this._endTimeOffsetInNanos = value; }
+        }
+
+        // Check to see if EndTimeOffsetInNanos property is set
+        internal bool IsSetEndTimeOffsetInNanos()
+        {
+            return this._endTimeOffsetInNanos.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntervalInSeconds. 
+        /// <para>
+        /// The time interval in seconds over which to interpolate data. Each interval starts
+        /// when the previous one ends.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=320000000)]
+        public long IntervalInSeconds
+        {
+            get { return this._intervalInSeconds.GetValueOrDefault(); }
+            set { this._intervalInSeconds = value; }
+        }
+
+        // Check to see if IntervalInSeconds property is set
+        internal bool IsSetIntervalInSeconds()
+        {
+            return this._intervalInSeconds.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to be returned per paginated request.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: 100
+        /// The maximum number of results to be returned per paginated request. If not specified,
+        /// the default value is 10.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=250)]
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -182,63 +223,85 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Qualities. 
+        /// Gets and sets the property Quality. 
         /// <para>
-        /// The quality by which to filter asset data.
+        /// The quality of the asset property value. You can use this parameter as a filter to
+        /// choose only the asset property values that have a specific quality.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
-        public List<string> Qualities
+        [AWSProperty(Required=true)]
+        public Quality Quality
         {
-            get { return this._qualities; }
-            set { this._qualities = value; }
+            get { return this._quality; }
+            set { this._quality = value; }
         }
 
-        // Check to see if Qualities property is set
-        internal bool IsSetQualities()
+        // Check to see if Quality property is set
+        internal bool IsSetQuality()
         {
-            return this._qualities != null && this._qualities.Count > 0; 
+            return this._quality != null;
         }
 
         /// <summary>
-        /// Gets and sets the property StartDate. 
+        /// Gets and sets the property StartTimeInSeconds. 
         /// <para>
-        /// The exclusive start of the range from which to query historical data, expressed in
-        /// seconds in Unix epoch time.
+        /// The exclusive start of the range from which to interpolate data, expressed in seconds
+        /// in Unix epoch time.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        [AWSProperty(Required=true, Min=1, Max=31556889864403199)]
+        public long StartTimeInSeconds
         {
-            get { return this._startDate.GetValueOrDefault(); }
-            set { this._startDate = value; }
+            get { return this._startTimeInSeconds.GetValueOrDefault(); }
+            set { this._startTimeInSeconds = value; }
         }
 
-        // Check to see if StartDate property is set
-        internal bool IsSetStartDate()
+        // Check to see if StartTimeInSeconds property is set
+        internal bool IsSetStartTimeInSeconds()
         {
-            return this._startDate.HasValue; 
+            return this._startTimeInSeconds.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property TimeOrdering. 
+        /// Gets and sets the property StartTimeOffsetInNanos. 
         /// <para>
-        /// The chronological sorting order of the requested information.
+        /// The nanosecond offset converted from <code>startTimeInSeconds</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=999999999)]
+        public int StartTimeOffsetInNanos
+        {
+            get { return this._startTimeOffsetInNanos.GetValueOrDefault(); }
+            set { this._startTimeOffsetInNanos = value; }
+        }
+
+        // Check to see if StartTimeOffsetInNanos property is set
+        internal bool IsSetStartTimeOffsetInNanos()
+        {
+            return this._startTimeOffsetInNanos.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The interpolation type.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>ASCENDING</code> 
+        /// Valid values: <code>LINEAR_INTERPOLATION</code> 
         /// </para>
         /// </summary>
-        public TimeOrdering TimeOrdering
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string Type
         {
-            get { return this._timeOrdering; }
-            set { this._timeOrdering = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if TimeOrdering property is set
-        internal bool IsSetTimeOrdering()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._timeOrdering != null;
+            return this._type != null;
         }
 
     }
