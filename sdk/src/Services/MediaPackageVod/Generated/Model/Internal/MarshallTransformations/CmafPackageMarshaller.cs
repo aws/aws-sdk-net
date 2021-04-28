@@ -72,6 +72,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetIncludeEncoderConfigurationInSegments())
+            {
+                context.Writer.WritePropertyName("includeEncoderConfigurationInSegments");
+                context.Writer.Write(requestObject.IncludeEncoderConfigurationInSegments);
+            }
+
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");

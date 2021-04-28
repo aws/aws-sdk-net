@@ -35,6 +35,7 @@ namespace Amazon.MediaPackageVod.Model
     {
         private List<DashManifest> _dashManifests = new List<DashManifest>();
         private DashEncryption _encryption;
+        private bool? _includeEncoderConfigurationInSegments;
         private List<string> _periodTriggers = new List<string>();
         private int? _segmentDurationSeconds;
         private SegmentTemplateFormat _segmentTemplateFormat;
@@ -68,6 +69,25 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetEncryption()
         {
             return this._encryption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeEncoderConfigurationInSegments. When includeEncoderConfigurationInSegments
+        /// is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture
+        /// Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment
+        /// instead of in the init fragment. This lets you use different SPS/PPS/VPS settings
+        /// for your assets during content playback.
+        /// </summary>
+        public bool IncludeEncoderConfigurationInSegments
+        {
+            get { return this._includeEncoderConfigurationInSegments.GetValueOrDefault(); }
+            set { this._includeEncoderConfigurationInSegments = value; }
+        }
+
+        // Check to see if IncludeEncoderConfigurationInSegments property is set
+        internal bool IsSetIncludeEncoderConfigurationInSegments()
+        {
+            return this._includeEncoderConfigurationInSegments.HasValue; 
         }
 
         /// <summary>

@@ -76,6 +76,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsManifests = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("includeEncoderConfigurationInSegments", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeEncoderConfigurationInSegments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("segmentDurationSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

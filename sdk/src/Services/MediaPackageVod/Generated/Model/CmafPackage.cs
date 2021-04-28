@@ -35,6 +35,7 @@ namespace Amazon.MediaPackageVod.Model
     {
         private CmafEncryption _encryption;
         private List<HlsManifest> _hlsManifests = new List<HlsManifest>();
+        private bool? _includeEncoderConfigurationInSegments;
         private int? _segmentDurationSeconds;
 
         /// <summary>
@@ -66,6 +67,25 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetHlsManifests()
         {
             return this._hlsManifests != null && this._hlsManifests.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeEncoderConfigurationInSegments. When includeEncoderConfigurationInSegments
+        /// is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture
+        /// Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment
+        /// instead of in the init fragment. This lets you use different SPS/PPS/VPS settings
+        /// for your assets during content playback.
+        /// </summary>
+        public bool IncludeEncoderConfigurationInSegments
+        {
+            get { return this._includeEncoderConfigurationInSegments.GetValueOrDefault(); }
+            set { this._includeEncoderConfigurationInSegments = value; }
+        }
+
+        // Check to see if IncludeEncoderConfigurationInSegments property is set
+        internal bool IsSetIncludeEncoderConfigurationInSegments()
+        {
+            return this._includeEncoderConfigurationInSegments.HasValue; 
         }
 
         /// <summary>
