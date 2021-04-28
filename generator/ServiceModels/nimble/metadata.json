@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Amazon Nimble Studio is a virtual studio service that empowers visual effects, animation, and interactive content teams to create content securely within a scalable, private cloud service.",
+  "generate-client-constructors": true
+}
