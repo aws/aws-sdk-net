@@ -65,7 +65,10 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AccountsUrl.
+        /// Gets and sets the property AccountsUrl. 
+        /// <para>
+        /// Returns the value of the AccountsUrl property.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5120)]
         public string AccountsUrl

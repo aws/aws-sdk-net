@@ -174,7 +174,11 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegionConcurrencyType.
+        /// Gets and sets the property RegionConcurrencyType. 
+        /// <para>
+        /// The concurrency type of deploying StackSets operations in regions, could be in parallel
+        /// or one region at a time.
+        /// </para>
         /// </summary>
         public RegionConcurrencyType RegionConcurrencyType
         {
