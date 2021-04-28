@@ -1,3 +1,15 @@
+### 3.7.23.0 (2021-04-28 18:14 UTC)
+* CloudFormation (3.7.2.0)
+	* Add CallAs parameter to GetTemplateSummary to enable use with StackSets delegated administrator integration
+* Connect (3.7.1.0)
+	* Updated max number of tags that can be attached from 200 to 50. MaxContacts is now an optional parameter for the UpdateQueueMaxContact API.
+* IoTSiteWise (3.7.1.0)
+	* AWS IoT SiteWise interpolation API will get interpolated values for an asset property per specified time interval during a period of time.
+* MediaPackageVod (3.7.1.0)
+	* MediaPackage now offers the option to place your Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) encoder metadata in every video segment instead of in the init fragment for DASH and CMAF endpoints.
+* NimbleStudio (3.7.0.0)
+	* Amazon Nimble Studio is a virtual studio service that empowers visual effects, animation, and interactive content teams to create content securely within a scalable, private cloud service.
+
 ### 3.7.22.0 (2021-04-27 18:14 UTC)
 * AuditManager (3.7.2.0)
 	* This release restricts using backslashes in control, assessment, and framework names. The controlSetName field of the UpdateAssessmentFrameworkControlSet API now allows strings without backslashes.

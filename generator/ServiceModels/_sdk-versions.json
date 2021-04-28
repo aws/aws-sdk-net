@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.22.0",
+    "ProductVersion" : "3.7.23.0",
     "CoreVersion"    : "3.7.0.16",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -30,7 +30,7 @@
             "InPreview"               : false
         },
         "CloudFormation" : {
-            "Version" : "3.7.1.12",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.16"
@@ -1058,7 +1058,7 @@
             "InPreview"               : false
         },
         "Connect"                         : {
-            "Version" : "3.7.0.15",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.16"
@@ -1394,7 +1394,7 @@
             "InPreview"               : false
         },
         "MediaPackageVod"                 : {
-            "Version" : "3.7.0.15",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.16"
@@ -1770,7 +1770,7 @@
             "InPreview"               : false
         },
         "IoTSiteWise"                     : {
-            "Version" : "3.7.0.15",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.16"
@@ -2099,6 +2099,14 @@
         },
         "LookoutEquipment"                : {
             "Version" : "3.7.0.6",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.0.16"
+            },
+            "InPreview"               : false
+        },
+        "NimbleStudio"                    : {
+            "Version" : "3.7.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.16"
