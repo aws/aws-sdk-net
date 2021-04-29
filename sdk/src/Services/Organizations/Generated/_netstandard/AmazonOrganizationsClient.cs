@@ -38,7 +38,108 @@ namespace Amazon.Organizations
     /// <summary>
     /// Implementation for accessing Organizations
     ///
-    /// AWS Organizations
+    /// AWS Organizations is a web service that enables you to consolidate your multiple AWS
+    /// accounts into an <i>organization</i> and centrally manage your accounts and their
+    /// resources.
+    /// 
+    ///  
+    /// <para>
+    /// This guide provides descriptions of the Organizations operations. For more information
+    /// about using this service, see the <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">AWS
+    /// Organizations User Guide</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Support and feedback for AWS Organizations</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// We welcome your feedback. Send your comments to <a href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a>
+    /// or post your feedback and questions in the <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS
+    /// Organizations support forum</a>. For more information about the AWS support forums,
+    /// see <a href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Endpoint to call When using the AWS CLI or the AWS SDK</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For the current release of Organizations, specify the <code>us-east-1</code> region
+    /// for all AWS API and AWS CLI calls made from the commercial AWS Regions outside of
+    /// China. If calling from one of the AWS Regions in China, then specify <code>cn-northwest-1</code>.
+    /// You can do this in the AWS CLI by using these parameters and commands:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Use the following parameter with each command to specify both the endpoint and its
+    /// region:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>--endpoint-url https://organizations.us-east-1.amazonaws.com</code> <i>(from
+    /// commercial AWS Regions outside of China)</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// or
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>--endpoint-url https://organizations.cn-northwest-1.amazonaws.com.cn</code>
+    /// <i>(from AWS Regions in China)</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use the default endpoint, but configure your default region with this command:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws configure set default.region us-east-1</code> <i>(from commercial AWS Regions
+    /// outside of China)</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// or
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws configure set default.region cn-northwest-1</code> <i>(from AWS Regions
+    /// in China)</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use the following parameter with each command to specify the endpoint:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>--region us-east-1</code> <i>(from commercial AWS Regions outside of China)</i>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// or
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>--region cn-northwest-1</code> <i>(from AWS Regions in China)</i> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Recording API Requests</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// AWS Organizations supports AWS CloudTrail, a service that records AWS API calls for
+    /// your AWS account and delivers log files to an Amazon S3 bucket. By using information
+    /// collected by AWS CloudTrail, you can determine which requests the Organizations service
+    /// received, who made the request and when, and so on. For more about AWS Organizations
+    /// and its support for AWS CloudTrail, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_incident-response.html#orgs_cloudtrail-integration">Logging
+    /// AWS Organizations Events with AWS CloudTrail</a> in the <i>AWS Organizations User
+    /// Guide</i>. To learn more about AWS CloudTrail, including how to turn it on and find
+    /// your log files, see the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS
+    /// CloudTrail User Guide</a>.
+    /// </para>
     /// </summary>
     public partial class AmazonOrganizationsClient : AmazonServiceClient, IAmazonOrganizations
     {
@@ -640,9 +741,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -735,7 +836,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -1223,8 +1324,8 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For information
-        /// on using AWS CloudTrail with AWS Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
-        /// the Activity in Your Organization</a> in the <i>AWS Organizations User Guide.</i>
+        /// on using AWS CloudTrail with AWS Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
+        /// and monitoring in AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -1335,9 +1436,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1430,7 +1531,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -1871,9 +1972,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1966,7 +2067,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -2280,9 +2381,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2375,7 +2476,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -2676,9 +2777,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2771,7 +2872,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -3075,9 +3176,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3170,7 +3271,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -4282,9 +4383,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4377,7 +4478,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -5057,9 +5158,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5152,7 +5253,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -6115,9 +6216,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6210,7 +6311,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -6581,9 +6682,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6676,7 +6777,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -6981,9 +7082,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7076,7 +7177,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -7688,9 +7789,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7783,7 +7884,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -8087,9 +8188,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8182,7 +8283,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -8518,9 +8619,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8613,7 +8714,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -9003,6 +9104,12 @@ namespace Amazon.Organizations
         /// object in the organization are deleted. AWS accounts outside of an organization do
         /// not support tags.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A newly created account has a waiting period before it can be removed from its organization.
+        /// If you get an error that indicates that a wait period is required, then try again
+        /// in a few days.
+        /// </para>
         ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LeaveOrganization service method.</param>
@@ -9044,9 +9151,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9139,7 +9246,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -9829,9 +9936,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9924,7 +10031,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -10604,9 +10711,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10699,7 +10806,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -10994,9 +11101,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11089,7 +11196,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -13405,9 +13512,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13500,7 +13607,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -13832,9 +13939,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13927,7 +14034,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -14239,9 +14346,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14334,7 +14441,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -14645,9 +14752,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14740,7 +14847,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 
@@ -15226,9 +15333,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-        /// the organization. You can't remove the management account. Instead, after you remove
-        /// all member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15321,7 +15428,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-        /// To create an organization, the master must have an valid business license. For more
+        /// To create an organization, the master must have a valid business license. For more
         /// information, contact customer support.
         /// </para>
         ///  </li> <li> 

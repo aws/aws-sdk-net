@@ -111,8 +111,8 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached
-        /// the limit on the number of accounts in your organization.
+        /// ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit
+        /// on the number of accounts in your organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -152,7 +152,7 @@ namespace Amazon.Organizations.Model
         ///  </li> <li> 
         /// <para>
         /// INTERNAL_FAILURE: The account could not be created because of an internal failure.
-        /// Try again later. If the problem persists, contact Customer Support.
+        /// Try again later. If the problem persists, contact AWS Customer Support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -254,7 +254,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The status of the request.
+        /// The status of the asynchronous request to create an AWS account.
         /// </para>
         /// </summary>
         public CreateAccountState State

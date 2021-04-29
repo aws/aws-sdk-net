@@ -42,9 +42,9 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </note> <ul> <li> 
     /// <para>
-    /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
-    /// the organization. You can't remove the management account. Instead, after you remove
-    /// all member accounts, delete the organization itself.
+    /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+    /// from the organization. You can't remove the management account. Instead, after you
+    /// remove all member accounts, delete the organization itself.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -137,7 +137,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-    /// To create an organization, the master must have an valid business license. For more
+    /// To create an organization, the master must have a valid business license. For more
     /// information, contact customer support.
     /// </para>
     ///  </li> <li> 

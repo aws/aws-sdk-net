@@ -36,8 +36,9 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists
-    /// for only 30 days after entering that state After that they are deleted.
+    ///  <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, or
+    /// <code>DECLINED</code> show up in lists for only 30 days after entering that state
+    /// After that they are deleted.
     /// </para>
     /// </summary>
     public partial class Handshake

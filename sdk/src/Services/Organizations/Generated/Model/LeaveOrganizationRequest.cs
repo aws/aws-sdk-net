@@ -95,6 +95,12 @@ namespace Amazon.Organizations.Model
     /// object in the organization are deleted. AWS accounts outside of an organization do
     /// not support tags.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A newly created account has a waiting period before it can be removed from its organization.
+    /// If you get an error that indicates that a wait period is required, then try again
+    /// in a few days.
+    /// </para>
     ///  </li> </ul> </important>
     /// </summary>
     public partial class LeaveOrganizationRequest : AmazonOrganizationsRequest
