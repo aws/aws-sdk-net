@@ -98,7 +98,9 @@ namespace Amazon
                     return true;
                 }
             }
-            catch (ArgumentException) { }
+#pragma warning disable CA1031 // Do not catch general exception types
+            catch (Exception) { }
+#pragma warning restore CA1031 // Do not catch general exception types
             arn = null;
             return false;
         }
