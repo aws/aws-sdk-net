@@ -30,20 +30,24 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about the number of S3 buckets that use certain types of server-side
-    /// encryption by default or don't encrypt new objects by default.
+    /// encryption by default or don't encrypt new objects by default. For detailed information
+    /// about these settings, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Setting
+    /// default server-side encryption behavior for Amazon S3 buckets</a> in the <i>Amazon
+    /// Simple Storage Service User Guide</i>.
     /// </summary>
     public partial class BucketCountByEncryptionType
     {
         private long? _kmsManaged;
         private long? _s3Managed;
         private long? _unencrypted;
+        private long? _unknown;
 
         /// <summary>
         /// Gets and sets the property KmsManaged.  
         /// <para>
         /// The total number of buckets that use an AWS Key Management Service (AWS KMS) customer
         /// master key (CMK) to encrypt new objects by default. These buckets use AWS managed
-        /// AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+        /// AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS) by default.
         /// </para>
         /// </summary>
         public long KmsManaged
@@ -62,7 +66,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property S3Managed. 
         /// <para>
         /// The total number of buckets that use an Amazon S3 managed key to encrypt new objects
-        /// by default. These buckets use Amazon S3 managed encryption (SSE-S3).
+        /// by default. These buckets use Amazon S3 managed encryption (SSE-S3) by default.
         /// </para>
         /// </summary>
         public long S3Managed
@@ -94,6 +98,26 @@ namespace Amazon.Macie2.Model
         internal bool IsSetUnencrypted()
         {
             return this._unencrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unknown. 
+        /// <para>
+        /// The total number of buckets that Amazon Macie doesn't have current encryption metadata
+        /// for. Macie can't provide current data about the default encryption settings for these
+        /// buckets.
+        /// </para>
+        /// </summary>
+        public long Unknown
+        {
+            get { return this._unknown.GetValueOrDefault(); }
+            set { this._unknown = value; }
+        }
+
+        // Check to see if Unknown property is set
+        internal bool IsSetUnknown()
+        {
+            return this._unknown.HasValue; 
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BucketCountByEncryptionType Object
+    /// Response Unmarshaller for BucketCountPolicyAllowsUnencryptedObjectUploads Object
     /// </summary>  
-    public class BucketCountByEncryptionTypeUnmarshaller : IUnmarshaller<BucketCountByEncryptionType, XmlUnmarshallerContext>, IUnmarshaller<BucketCountByEncryptionType, JsonUnmarshallerContext>
+    public class BucketCountPolicyAllowsUnencryptedObjectUploadsUnmarshaller : IUnmarshaller<BucketCountPolicyAllowsUnencryptedObjectUploads, XmlUnmarshallerContext>, IUnmarshaller<BucketCountPolicyAllowsUnencryptedObjectUploads, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BucketCountByEncryptionType IUnmarshaller<BucketCountByEncryptionType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BucketCountPolicyAllowsUnencryptedObjectUploads IUnmarshaller<BucketCountPolicyAllowsUnencryptedObjectUploads, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BucketCountByEncryptionType Unmarshall(JsonUnmarshallerContext context)
+        public BucketCountPolicyAllowsUnencryptedObjectUploads Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BucketCountByEncryptionType unmarshalledObject = new BucketCountByEncryptionType();
+            BucketCountPolicyAllowsUnencryptedObjectUploads unmarshalledObject = new BucketCountPolicyAllowsUnencryptedObjectUploads();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("kmsManaged", targetDepth))
+                if (context.TestExpression("allowsUnencryptedObjectUploads", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.KmsManaged = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowsUnencryptedObjectUploads = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3Managed", targetDepth))
+                if (context.TestExpression("deniesUnencryptedObjectUploads", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.S3Managed = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("unencrypted", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Unencrypted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeniesUnencryptedObjectUploads = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unknown", targetDepth))
@@ -94,12 +88,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         }
 
 
-        private static BucketCountByEncryptionTypeUnmarshaller _instance = new BucketCountByEncryptionTypeUnmarshaller();        
+        private static BucketCountPolicyAllowsUnencryptedObjectUploadsUnmarshaller _instance = new BucketCountPolicyAllowsUnencryptedObjectUploadsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BucketCountByEncryptionTypeUnmarshaller Instance
+        public static BucketCountPolicyAllowsUnencryptedObjectUploadsUnmarshaller Instance
         {
             get
             {

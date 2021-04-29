@@ -38,6 +38,7 @@ namespace Amazon.Macie2.Model
         private long? _kmsManaged;
         private long? _s3Managed;
         private long? _unencrypted;
+        private long? _unknown;
 
         /// <summary>
         /// Gets and sets the property CustomerManaged. 
@@ -113,6 +114,25 @@ namespace Amazon.Macie2.Model
         internal bool IsSetUnencrypted()
         {
             return this._unencrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unknown. 
+        /// <para>
+        /// The total number of objects that Amazon Macie doesn't have current encryption metadata
+        /// for. Macie can't provide current data about the encryption settings for these objects.
+        /// </para>
+        /// </summary>
+        public long Unknown
+        {
+            get { return this._unknown.GetValueOrDefault(); }
+            set { this._unknown = value; }
+        }
+
+        // Check to see if Unknown property is set
+        internal bool IsSetUnknown()
+        {
+            return this._unknown.HasValue; 
         }
 
     }

@@ -113,7 +113,7 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// An array that lists specific character sequences (keywords), one of which must be
         /// within proximity (maximumMatchDistance) of the regular expression to match. The array
-        /// can contain as many as 50 keywords. Each keyword can contain 4 - 90 characters. Keywords
+        /// can contain as many as 50 keywords. Each keyword can contain 3 - 90 characters. Keywords
         /// aren't case sensitive.
         /// </para>
         /// </summary>

@@ -34,6 +34,7 @@ namespace Amazon.Macie2.Model
     public partial class BucketMetadata
     {
         private string _accountId;
+        private AllowsUnencryptedObjectUploads _allowsUnencryptedObjectUploads;
         private string _bucketArn;
         private DateTime? _bucketCreatedAt;
         private string _bucketName;
@@ -71,6 +72,44 @@ namespace Amazon.Macie2.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowsUnencryptedObjectUploads. 
+        /// <para>
+        /// Specifies whether the bucket policy for the bucket requires server-side encryption
+        /// of objects when objects are uploaded to the bucket. Possible values are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// FALSE - The bucket policy requires server-side encryption of new objects. PutObject
+        /// requests must include the x-amz-server-side-encryption header and the value for that
+        /// header must be AES256 or aws:kms.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't
+        /// require server-side encryption of new objects. If a bucket policy exists, it doesn't
+        /// require PutObject requests to include the x-amz-server-side-encryption header and
+        /// it doesn't require the value for that header to be AES256 or aws:kms.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side
+        /// encryption of new objects.
+        /// </para>
+        /// </li></ul>
+        /// </summary>
+        public AllowsUnencryptedObjectUploads AllowsUnencryptedObjectUploads
+        {
+            get { return this._allowsUnencryptedObjectUploads; }
+            set { this._allowsUnencryptedObjectUploads = value; }
+        }
+
+        // Check to see if AllowsUnencryptedObjectUploads property is set
+        internal bool IsSetAllowsUnencryptedObjectUploads()
+        {
+            return this._allowsUnencryptedObjectUploads != null;
         }
 
         /// <summary>

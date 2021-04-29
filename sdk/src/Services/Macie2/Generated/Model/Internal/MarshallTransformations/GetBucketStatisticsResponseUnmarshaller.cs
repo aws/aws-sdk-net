@@ -69,6 +69,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     response.BucketCountByEncryptionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("bucketCountByObjectEncryptionRequirement", targetDepth))
+                {
+                    var unmarshaller = BucketCountPolicyAllowsUnencryptedObjectUploadsUnmarshaller.Instance;
+                    response.BucketCountByObjectEncryptionRequirement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bucketCountBySharedAccessType", targetDepth))
                 {
                     var unmarshaller = BucketCountBySharedAccessTypeUnmarshaller.Instance;

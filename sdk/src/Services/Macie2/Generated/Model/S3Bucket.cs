@@ -33,6 +33,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class S3Bucket
     {
+        private AllowsUnencryptedObjectUploads _allowsUnencryptedObjectUploads;
         private string _arn;
         private DateTime? _createdAt;
         private ServerSideEncryption _defaultServerSideEncryption;
@@ -40,6 +41,44 @@ namespace Amazon.Macie2.Model
         private S3BucketOwner _owner;
         private BucketPublicAccess _publicAccess;
         private List<KeyValuePair> _tags = new List<KeyValuePair>();
+
+        /// <summary>
+        /// Gets and sets the property AllowsUnencryptedObjectUploads. 
+        /// <para>
+        /// Specifies whether the bucket policy for the bucket requires server-side encryption
+        /// of objects when objects are uploaded to the bucket. Possible values are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// FALSE - The bucket policy requires server-side encryption of new objects. PutObject
+        /// requests must include the x-amz-server-side-encryption header and the value for that
+        /// header must be AES256 or aws:kms.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't
+        /// require server-side encryption of new objects. If a bucket policy exists, it doesn't
+        /// require PutObject requests to include the x-amz-server-side-encryption header and
+        /// it doesn't require the value for that header to be AES256 or aws:kms.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side
+        /// encryption of objects.
+        /// </para>
+        /// </li></ul>
+        /// </summary>
+        public AllowsUnencryptedObjectUploads AllowsUnencryptedObjectUploads
+        {
+            get { return this._allowsUnencryptedObjectUploads; }
+            set { this._allowsUnencryptedObjectUploads = value; }
+        }
+
+        // Check to see if AllowsUnencryptedObjectUploads property is set
+        internal bool IsSetAllowsUnencryptedObjectUploads()
+        {
+            return this._allowsUnencryptedObjectUploads != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -117,7 +156,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The display name and account identifier for the user who owns the bucket.
+        /// The display name and AWS account ID for the user who owns the bucket.
         /// </para>
         /// </summary>
         public S3BucketOwner Owner

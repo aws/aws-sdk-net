@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about the permissions settings of a bucket policy for an S3 bucket.
+    /// Provides information about the permissions settings of the bucket policy for an S3
+    /// bucket.
     /// </summary>
     public partial class BucketPolicy
     {

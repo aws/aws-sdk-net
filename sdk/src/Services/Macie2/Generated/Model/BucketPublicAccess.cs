@@ -72,7 +72,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PermissionConfiguration. 
         /// <para>
-        /// The account-level and bucket-level permissions for the bucket.
+        /// The account-level and bucket-level permissions settings for the bucket.
         /// </para>
         /// </summary>
         public BucketPermissionConfiguration PermissionConfiguration
