@@ -362,7 +362,10 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkConfiguration.
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// An object representing the network configuration for the service.
+        /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
         {

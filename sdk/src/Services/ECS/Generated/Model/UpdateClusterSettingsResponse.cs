@@ -36,7 +36,10 @@ namespace Amazon.ECS.Model
         private Cluster _cluster;
 
         /// <summary>
-        /// Gets and sets the property Cluster.
+        /// Gets and sets the property Cluster. 
+        /// <para>
+        /// Details about the cluster
+        /// </para>
         /// </summary>
         public Cluster Cluster
         {

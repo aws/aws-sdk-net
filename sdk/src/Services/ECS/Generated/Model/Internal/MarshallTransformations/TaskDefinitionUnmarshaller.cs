@@ -88,6 +88,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeregisteredAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ephemeralStorage", targetDepth))
+                {
+                    var unmarshaller = EphemeralStorageUnmarshaller.Instance;
+                    unmarshalledObject.EphemeralStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("executionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

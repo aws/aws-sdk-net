@@ -36,7 +36,10 @@ namespace Amazon.ECS.Model
         private CapacityProvider _capacityProvider;
 
         /// <summary>
-        /// Gets and sets the property CapacityProvider.
+        /// Gets and sets the property CapacityProvider. 
+        /// <para>
+        /// The details of the capacity provider.
+        /// </para>
         /// </summary>
         public CapacityProvider CapacityProvider
         {

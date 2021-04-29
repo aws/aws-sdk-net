@@ -46,6 +46,7 @@ namespace Amazon.ECS.Model
         private DateTime? _createdAt;
         private string _desiredStatus;
         private bool? _enableExecuteCommand;
+        private EphemeralStorage _ephemeralStorage;
         private DateTime? _executionStoppedAt;
         private string _group;
         private HealthStatus _healthStatus;
@@ -346,6 +347,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetEnableExecuteCommand()
         {
             return this._enableExecuteCommand.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemeralStorage. 
+        /// <para>
+        /// The ephemeral storage settings for the task.
+        /// </para>
+        /// </summary>
+        public EphemeralStorage EphemeralStorage
+        {
+            get { return this._ephemeralStorage; }
+            set { this._ephemeralStorage = value; }
+        }
+
+        // Check to see if EphemeralStorage property is set
+        internal bool IsSetEphemeralStorage()
+        {
+            return this._ephemeralStorage != null;
         }
 
         /// <summary>

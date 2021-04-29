@@ -142,6 +142,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableExecuteCommand = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ephemeralStorage", targetDepth))
+                {
+                    var unmarshaller = EphemeralStorageUnmarshaller.Instance;
+                    unmarshalledObject.EphemeralStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("executionStoppedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

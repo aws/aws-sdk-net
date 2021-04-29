@@ -62,7 +62,11 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scale.
+        /// Gets and sets the property Scale. 
+        /// <para>
+        /// A floating-point percentage of the desired number of tasks to place and keep running
+        /// in the task set.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Scale Scale

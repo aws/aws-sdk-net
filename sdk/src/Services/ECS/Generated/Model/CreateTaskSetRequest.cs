@@ -208,7 +208,10 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkConfiguration.
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// An object representing the network configuration for a task set.
+        /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
         {
@@ -243,7 +246,11 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scale.
+        /// Gets and sets the property Scale. 
+        /// <para>
+        /// A floating-point percentage of the desired number of tasks to place and keep running
+        /// in the task set.
+        /// </para>
         /// </summary>
         public Scale Scale
         {

@@ -37,7 +37,10 @@ namespace Amazon.ECS.Model
         private ManagedTerminationProtection _managedTerminationProtection;
 
         /// <summary>
-        /// Gets and sets the property ManagedScaling.
+        /// Gets and sets the property ManagedScaling. 
+        /// <para>
+        /// The managed scaling settings for the Auto Scaling group capacity provider.
+        /// </para>
         /// </summary>
         public ManagedScaling ManagedScaling
         {

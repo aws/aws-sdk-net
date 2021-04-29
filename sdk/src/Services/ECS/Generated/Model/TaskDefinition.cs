@@ -40,6 +40,7 @@ namespace Amazon.ECS.Model
         private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
         private string _cpu;
         private DateTime? _deregisteredAt;
+        private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private string _family;
         private List<InferenceAccelerator> _inferenceAccelerators = new List<InferenceAccelerator>();
@@ -163,6 +164,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetDeregisteredAt()
         {
             return this._deregisteredAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemeralStorage. 
+        /// <para>
+        /// The ephemeral storage settings to use for tasks run with the task definition.
+        /// </para>
+        /// </summary>
+        public EphemeralStorage EphemeralStorage
+        {
+            get { return this._ephemeralStorage; }
+            set { this._ephemeralStorage = value; }
+        }
+
+        // Check to see if EphemeralStorage property is set
+        internal bool IsSetEphemeralStorage()
+        {
+            return this._ephemeralStorage != null;
         }
 
         /// <summary>

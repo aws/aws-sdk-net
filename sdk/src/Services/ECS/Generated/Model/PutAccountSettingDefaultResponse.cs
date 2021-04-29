@@ -36,7 +36,10 @@ namespace Amazon.ECS.Model
         private Setting _setting;
 
         /// <summary>
-        /// Gets and sets the property Setting.
+        /// Gets and sets the property Setting. 
+        /// <para>
+        /// The current setting for a resource.
+        /// </para>
         /// </summary>
         public Setting Setting
         {

@@ -272,7 +272,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DeploymentController. 
         /// <para>
-        /// The deployment controller to use for the service.
+        /// The deployment controller to use for the service. If no deployment controller is specified,
+        /// the default value of <code>ECS</code> is used.
         /// </para>
         /// </summary>
         public DeploymentController DeploymentController
@@ -710,15 +711,14 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceRegistries. 
         /// <para>
-        /// The details of the service discovery registries to assign to this service. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// The details of the service discovery registry to associate with this service. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// discovery</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Service discovery is supported for Fargate tasks if you are using platform version
-        /// v1.1.0 or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-        /// Fargate platform versions</a>.
+        /// Each service may be associated with one service registry. Multiple service registries
+        /// per service isn't supported.
         /// </para>
         ///  </note>
         /// </summary>

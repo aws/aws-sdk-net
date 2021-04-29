@@ -138,6 +138,12 @@ namespace Amazon.ECS.Model
         /// this field is omitted, the account settings are listed only for the authenticated
         /// user.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Federated users assume the account setting of the root user and can't have explicit
+        /// account settings set for them.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string PrincipalArn
         {

@@ -35,6 +35,7 @@ namespace Amazon.ECS.Model
     {
         private List<ContainerOverride> _containerOverrides = new List<ContainerOverride>();
         private string _cpu;
+        private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private List<InferenceAcceleratorOverride> _inferenceAcceleratorOverrides = new List<InferenceAcceleratorOverride>();
         private string _memory;
@@ -74,6 +75,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetCpu()
         {
             return this._cpu != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemeralStorage. 
+        /// <para>
+        /// The ephemeral storage setting override for the task.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only supported for tasks hosted on AWS Fargate using platform version
+        /// <code>1.4.0</code> or later.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public EphemeralStorage EphemeralStorage
+        {
+            get { return this._ephemeralStorage; }
+            set { this._ephemeralStorage = value; }
+        }
+
+        // Check to see if EphemeralStorage property is set
+        internal bool IsSetEphemeralStorage()
+        {
+            return this._ephemeralStorage != null;
         }
 
         /// <summary>

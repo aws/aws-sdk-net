@@ -67,6 +67,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Cpu);
             }
 
+            if(requestObject.IsSetEphemeralStorage())
+            {
+                context.Writer.WritePropertyName("ephemeralStorage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EphemeralStorageMarshaller.Instance;
+                marshaller.Marshall(requestObject.EphemeralStorage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("executionRoleArn");
