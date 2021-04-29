@@ -20,6 +20,7 @@ using static AWSSDK.UnitTests.UnmarshallerTests;
 using Amazon.Util;
 using AWSSDK_DotNet.CommonTest.Utils;
 using Amazon.Runtime.Internal.Auth;
+using System.Security.Authentication;
 
 namespace AWSSDK.UnitTests
 {
@@ -57,6 +58,27 @@ namespace AWSSDK.UnitTests
                 RuntimePipeline.InvokeSync(request);
             },
             typeof(IOException));
+            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryForSslErrorZeroReturn()
+        {
+            Tester.Reset();
+            var sslException = new Exception("Root exception", new AuthenticationException("Authentication failed, see inner exception", new Exception("SSL Handshake failed with OpenSSL error - SSL_ERROR_ZERO_RETURN")));
+            Tester.Action = (int callCount) =>
+            {
+                throw sslException;
+            };
+
+            Utils.AssertExceptionExpected(() =>
+            {
+                var request = CreateTestContext();
+                RuntimePipeline.InvokeSync(request);
+            },
+            typeof(Exception));
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
         }
 

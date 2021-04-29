@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Security.Authentication;
 using System.Threading;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
@@ -320,6 +321,11 @@ namespace Amazon.Runtime
                 }
             }
 
+            if (IsTransientSslError(exception))
+            {
+                return true;
+            }
+
 #if NETSTANDARD
             // Version 7.35 libcurl which is the default version installed with Ubuntu 14.04 
             // has issues under high concurrency causing response streams being disposed
@@ -346,6 +352,28 @@ namespace Amazon.Runtime
                 }
             }
 #endif
+            return false;
+        }
+
+        private const string sslErrorZeroReturn = "SSL_ERROR_ZERO_RETURN";
+        public static bool IsTransientSslError(Exception exception)
+        {
+            var isAuthenticationException = false;
+            // Scan down the exceptions chain for a sslErrorZeroReturn keyword in the Message,
+            // given that the one of the parent exceptions is AuthenticationException.
+            // Based on https://github.com/aws/aws-sdk-net/issues/1556
+            while (exception != null)
+            {
+                if (exception is AuthenticationException)
+                {
+                    isAuthenticationException = true;
+                }
+                if (isAuthenticationException && exception.Message.Contains(sslErrorZeroReturn))
+                {
+                    return true;
+                }
+                exception = exception.InnerException;
+            }
             return false;
         }
 
