@@ -1314,7 +1314,6 @@ namespace ServiceClientGenerator
             }
         }
 
-
         private static void RemoveOrphanedServices(string path, IEnumerable<string> codeGeneratedServiceList)
         {
             foreach (var directoryName in Directory.GetDirectories(path))
@@ -1324,6 +1323,70 @@ namespace ServiceClientGenerator
                     Directory.Delete(directoryName, true);
                 }
             }
+        }
+
+        /// <summary>
+        /// Constructs endpoint constant name from a region code
+        /// e.g. us-east-1 -> USEast1
+        /// </summary>
+        public static string ConstructEndpointName(string regionCode)
+        {
+            var parts = regionCode.Split('-');
+            var name = parts[0].ToUpper();
+
+            for (int i = 1; i < parts.Length; i++)
+            {
+                // for backward compatibility, only "northwest" is transformed into upper camel case 
+                var part = parts[i] == "northwest" ? "NorthWest" : parts[i].ToUpperFirstCharacter();
+                // special case for "Gov" regions, we add "Cloud" to it
+                part = part == "Gov" ? part + "Cloud" : part;
+                name += part;
+            }
+
+            return name;
+        }
+
+        public static List<EndpointConstant> ExtractEndpoints(GeneratorOptions options)
+        {
+            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            var endpointsJsonFile = Path.Combine(coreFilesRoot, "endpoints.json");
+
+            var endpointsJson = JsonMapper.ToObject(File.ReadAllText(endpointsJsonFile));
+            var endpoints = new List<EndpointConstant>();
+
+            foreach (JsonData partition in endpointsJson["partitions"])
+            {
+                JsonData regions = partition["regions"];
+                foreach (var regionCode in regions.PropertyNames)
+                {
+                    var regionName = regions[regionCode]["description"].ToString();
+                    endpoints.Add(new EndpointConstant { Name = ConstructEndpointName(regionCode), RegionCode = regionCode, RegionName = regionName });
+                }
+            }
+
+            return endpoints;
+        }
+
+        public static void GenerateEndpoints(GeneratorOptions options)
+        {
+            Console.WriteLine("Generating endpoints constants...");
+
+            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            var endpointsFilesRoot = Path.Combine(coreFilesRoot, "RegionEndpoint");
+            const string fileName = "RegionEndpoint.generated.cs";
+
+            var endpoints = ExtractEndpoints(options);
+
+            var generator = new EndpointsGenerator
+            {
+                Session = new Dictionary<string, object>
+                {
+                    ["endpoints"] = endpoints
+                }
+            };
+            generator.Initialize();
+            var text = generator.TransformText();
+            WriteFile(endpointsFilesRoot, null, fileName, text);
         }
     }
 }

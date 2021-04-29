@@ -1,0 +1,46 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter name="endpoints" type="System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant>" #>
+/*******************************************************************************
+ *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
+ *  this file except in compliance with the License. A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ *  or in the "license" file accompanying this file.
+ *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ *  specific language governing permissions and limitations under the License.
+ * *****************************************************************************
+ *    __  _    _  ___
+ *   (  )( \/\/ )/ __)
+ *   /__\ \    / \__ \
+ *  (_)(_) \/\/  (___/
+ *
+ *  AWS SDK for .NET
+ *
+ */
+namespace Amazon
+{
+    /// <summary>
+    /// This class contains region information used to lazily compute the service endpoints. The static constants representing the 
+    /// regions can be used while constructing the AWS client instead of looking up the exact endpoint URL.
+    /// </summary>
+    public partial class RegionEndpoint
+    {
+        /// <summary>
+        /// The US East (Virginia) regional endpoint.
+        /// S3-specific, use for backward compatibility only.
+        /// </summary>
+        private static readonly RegionEndpoint USEast1Regional = GetEndpoint("us-east-1-regional", "US East (Virginia) regional");
+
+<# foreach(var endpoint in endpoints) { #>
+        /// <summary>
+        /// The <#= endpoint.RegionName #> endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint <#= endpoint.Name #> = GetEndpoint("<#= endpoint.RegionCode #>", "<#= endpoint.RegionName #>");
+
+<# } #>
+    }
+}

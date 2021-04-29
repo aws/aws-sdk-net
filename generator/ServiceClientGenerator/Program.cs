@@ -68,6 +68,7 @@ namespace ServiceClientGenerator
                     GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
                     GeneratorDriver.UpdateNuGetPackagesInReadme(generationManifest, options);
                     GeneratorDriver.UpdateCodeAnalysisSolution(generationManifest, options);
+                    GeneratorDriver.GenerateEndpoints(options);
                 }
                 else
                 {
@@ -97,7 +98,6 @@ namespace ServiceClientGenerator
                     {
                         GeneratorDriver.RemoveOrphanedShapes(driver.FilesWrittenToGeneratorFolder, driver.GeneratedFilesRoot);
                     }
-                    
                 }
             }
             catch (Exception e)

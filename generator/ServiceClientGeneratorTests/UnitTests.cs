@@ -72,5 +72,15 @@ namespace ServiceClientGeneratorTests
             Assert.Equal(childName, ((OperationPaginatorConfigOption)methodResult).Member.PropertyName);
 
         }
+
+        [Theory]
+        [InlineData("us-east-1", "USEast1")]
+        [InlineData("cn-northwest-1", "CNNorthWest1")]
+        [InlineData("ap-southeast-1", "APSoutheast1")]
+        [InlineData("us-gov-east-1", "USGovCloudEast1")]
+        public void TestEndpointNameConstruction(string regionCode, string expectedName)
+        {
+            Assert.Equal(GeneratorDriver.ConstructEndpointName(regionCode), expectedName);
+        }
     }
 }

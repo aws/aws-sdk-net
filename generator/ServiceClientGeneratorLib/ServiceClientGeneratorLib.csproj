@@ -125,6 +125,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreAssemblyInfo.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\SourceFiles\EndpointsGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointsGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\SourceFiles\InternalSDKUtils.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -432,6 +437,10 @@
     <None Update="Generators\SourceFiles\ServicePaginatorFactoryInterface.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServicePaginatorFactoryInterface.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\EndpointsGenerator.tt">
+      <LastGenOutput>EndpointsGenerator.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
     </None>
     <None Update="Generators\TestFiles\AWSQueryEC2MarshallingTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
