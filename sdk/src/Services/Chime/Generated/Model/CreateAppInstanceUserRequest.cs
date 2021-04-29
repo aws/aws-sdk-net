@@ -67,7 +67,7 @@ namespace Amazon.Chime.Model
         /// The user ID of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string AppInstanceUserId
         {
             get { return this._appInstanceUserId; }

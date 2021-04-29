@@ -97,7 +97,7 @@
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateAppInstanceUserRequest.AppInstanceUserId</property>
     <min>1</min>
-    <max>50</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateAppInstanceUserRequest.ClientRequestToken</property>
