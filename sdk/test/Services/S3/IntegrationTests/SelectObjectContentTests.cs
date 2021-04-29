@@ -43,22 +43,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static readonly string TestContent = GetResourceText(TestFileKey);
         private static readonly string VerificationContent = GetResourceText(VerificationFilePath);
 
+        // 1st line in input is considered as headers in CSVInput test configuration, hence not returned in output.
+        private static readonly string TestCSVContent = "A,B\r\n1,2\r\n3,4\r\n";
+        private static readonly string CSVVerificationContent = "1,2\n3,4\n";
+
         private const string SelectQuery = "select * from S3Object s where s.LOCATIONID = 'VALE'";
 
         private static string _bucketName;
         private static string _keyName;
+        private static string _csvKeyName;
 
         [ClassInitialize]
         public static void Initialize(TestContext testContext)
         {
             _bucketName = S3TestUtils.CreateBucketWithWait(Client);
             _keyName = UtilityMethods.GenerateName(nameof(SelectObjectContentTests));
+            _csvKeyName = UtilityMethods.GenerateName(nameof(SelectObjectContentTests));
 
             Client.PutObject(new PutObjectRequest()
             {
                 BucketName = _bucketName,
                 Key = _keyName,
                 ContentBody = TestContent
+            });
+
+            Client.PutObject(new PutObjectRequest()
+            {
+                BucketName = _bucketName,
+                Key = _csvKeyName,
+                ContentBody = TestCSVContent
             });
         }
 
@@ -120,6 +133,77 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             eventStream.Dispose();
 
             AssertRecordsEqualsExpected(testContent);
+        }
+
+        /// <summary>
+        /// Tests the Event-Driven method for checking an EventStream returned from SelectObjectContent based on RecordDelimiter settings for CSV InputSerialization and OutputSerialization.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestCallCSVInputOutputDelimiterEvents()
+        {
+            string selectQuery = "select * from s3object";
+            InputSerialization inputSerialization = new InputSerialization()
+            {
+                CSV = new CSVInput()
+                {
+                    FileHeaderInfo = FileHeaderInfo.Use,
+                    RecordDelimiter = "\r\n"
+                }
+            };
+            OutputSerialization outputSerialization = new OutputSerialization()
+            {
+                CSV = new CSVOutput()
+                {
+                    RecordDelimiter = "\n"
+                }
+            };
+
+            var eventStream = GetSelectObjectContentEventStream(_bucketName, _csvKeyName, selectQuery, inputSerialization, outputSerialization);
+
+            var testContent = "";
+            var recordsEvents = new List<RecordsEvent>();
+
+            eventStream.RecordsEventReceived += (sender, args) => recordsEvents.Add(args.EventStreamEvent);
+            eventStream.StartProcessing();
+            SpinWait.SpinUntil(() => recordsEvents.Count > 0, TimeSpan.FromSeconds(5));
+
+            using (var streamReader = new StreamReader(recordsEvents[0].Payload, Encoding.UTF8))
+            {
+                testContent = streamReader.ReadToEnd();
+            }
+            eventStream.Dispose();
+
+            Assert.IsTrue(string.Equals(CSVVerificationContent, testContent));
+        }
+
+        private ISelectObjectContentEventStream GetSelectObjectContentEventStream(
+            string bucketName, 
+            string key, 
+            string selectQuery, 
+            InputSerialization inputSerialization, 
+            OutputSerialization outputSerialization, 
+            ScanRange scanRange = null)
+        {
+            if (string.IsNullOrWhiteSpace(bucketName)) throw new ArgumentNullException("bucketName");
+            if (string.IsNullOrWhiteSpace(key)) throw new ArgumentNullException("key");
+            if (string.IsNullOrWhiteSpace(selectQuery)) throw new ArgumentNullException("selectQuery");
+            if (inputSerialization == null) throw new ArgumentNullException("inputSerialization");
+            if (outputSerialization == null) throw new ArgumentNullException("outputSerialization");
+
+            SelectObjectContentRequest selectObjectContentRequest = new SelectObjectContentRequest()
+            {
+                Bucket = bucketName,
+                Key = key,
+                ExpressionType = ExpressionType.SQL,
+                Expression = selectQuery,
+                InputSerialization = inputSerialization,
+                OutputSerialization = outputSerialization
+            };
+
+            if (scanRange != null) selectObjectContentRequest.ScanRange = scanRange;
+
+            return Client.SelectObjectContent(selectObjectContentRequest).Payload;
         }
 
         private ISelectObjectContentEventStream GetSelectObjectContentEventStream()
