@@ -1,3 +1,13 @@
+### 3.7.24.0 (2021-04-29 18:16 UTC)
+* Chime (3.7.1.0)
+	* Increase AppInstanceUserId length to 64 characters
+* ECS (3.7.1.0)
+	* Add support for EphemeralStorage on TaskDefinition and TaskOverride
+* Macie2 (3.7.1.0)
+	* The Amazon Macie API now provides S3 bucket metadata that indicates whether a bucket policy requires server-side encryption of objects when objects are uploaded to the bucket.
+* Organizations (3.7.0.16)
+	* Minor text updates for AWS Organizations API Reference
+
 ### 3.7.23.0 (2021-04-28 18:14 UTC)
 * CloudFormation (3.7.2.0)
 	* Add CallAs parameter to GetTemplateSummary to enable use with StackSets delegated administrator integration

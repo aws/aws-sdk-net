@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.23.0",
+    "ProductVersion" : "3.7.24.0",
     "CoreVersion"    : "3.7.0.16",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -160,7 +160,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.7.0.15",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.16"
@@ -746,7 +746,7 @@
             "InPreview"               : false
         },
         "Organizations"                   : {
-            "Version" : "3.7.0.15",
+            "Version" : "3.7.0.16",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.16"
@@ -1170,7 +1170,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.7.0.15",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.16"
@@ -1778,7 +1778,7 @@
             "InPreview"               : false
         },
         "Macie2"                          : {
-            "Version" : "3.7.0.15",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.16"
