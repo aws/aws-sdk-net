@@ -86,6 +86,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DefaultExpirationDays);
                 }
 
+                if(publicRequest.IsSetMatching())
+                {
+                    context.Writer.WritePropertyName("Matching");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MatchingRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Matching, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

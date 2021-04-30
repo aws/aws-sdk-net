@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDomain operation.
-    /// Returns information about a specific domain.
+    /// This is the response object from the MergeProfiles operation.
     /// </summary>
-    public partial class GetDomainRequest : AmazonCustomerProfilesRequest
+    public partial class MergeProfilesResponse : AmazonWebServiceResponse
     {
-        private string _domainName;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
+        /// Gets and sets the property Message. 
         /// <para>
-        /// The unique name of the domain.
+        /// A message that indicates the merge request is complete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string DomainName
+        public string Message
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
         {
-            return this._domainName != null;
+            return this._message != null;
         }
 
     }

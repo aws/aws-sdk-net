@@ -29,50 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateProfile operation.
-    /// Updates the properties of a profile. The ProfileId is required for updating a customer
-    /// profile.
-    /// 
-    ///  
-    /// <para>
-    /// When calling the UpdateProfile API, specifying an empty string value means that any
-    /// existing value will be removed. Not specifying a string value means that any value
-    /// already there will be kept.
-    /// </para>
+    /// A duplicate customer profile that is to be merged into a main profile.
     /// </summary>
-    public partial class UpdateProfileRequest : AmazonCustomerProfilesRequest
+    public partial class FieldSourceProfileIds
     {
         private string _accountNumber;
         private string _additionalInformation;
-        private UpdateAddress _address;
+        private string _address;
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
-        private UpdateAddress _billingAddress;
+        private string _billingAddress;
         private string _birthDate;
         private string _businessEmailAddress;
         private string _businessName;
         private string _businessPhoneNumber;
-        private string _domainName;
         private string _emailAddress;
         private string _firstName;
-        private Gender _gender;
+        private string _gender;
         private string _homePhoneNumber;
         private string _lastName;
-        private UpdateAddress _mailingAddress;
+        private string _mailingAddress;
         private string _middleName;
         private string _mobilePhoneNumber;
-        private PartyType _partyType;
+        private string _partyType;
         private string _personalEmailAddress;
         private string _phoneNumber;
-        private string _profileId;
-        private UpdateAddress _shippingAddress;
+        private string _shippingAddress;
 
         /// <summary>
         /// Gets and sets the property AccountNumber. 
         /// <para>
-        /// A unique account number that you have given to the customer.
+        /// A unique identifier for the account number field to be merged. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string AccountNumber
         {
             get { return this._accountNumber; }
@@ -88,10 +76,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property AdditionalInformation. 
         /// <para>
-        /// Any additional information relevant to the customer’s profile.
+        /// A unique identifier for the additional information field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
         public string AdditionalInformation
         {
             get { return this._additionalInformation; }
@@ -107,10 +94,10 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        /// A generic address associated with the customer that is not mailing, shipping, or billing.
+        /// A unique identifier for the party type field to be merged.
         /// </para>
         /// </summary>
-        public UpdateAddress Address
+        public string Address
         {
             get { return this._address; }
             set { this._address = value; }
@@ -125,7 +112,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A key value pair of attributes of a customer profile.
+        /// A unique identifier for the attributes field to be merged.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -143,10 +130,10 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property BillingAddress. 
         /// <para>
-        /// The customer’s billing address.
+        /// A unique identifier for the billing type field to be merged.
         /// </para>
         /// </summary>
-        public UpdateAddress BillingAddress
+        public string BillingAddress
         {
             get { return this._billingAddress; }
             set { this._billingAddress = value; }
@@ -161,10 +148,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property BirthDate. 
         /// <para>
-        /// The customer’s birth date. 
+        /// A unique identifier for the birthdate field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string BirthDate
         {
             get { return this._birthDate; }
@@ -180,10 +166,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property BusinessEmailAddress. 
         /// <para>
-        /// The customer’s business email address.
+        /// A unique identifier for the party type field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string BusinessEmailAddress
         {
             get { return this._businessEmailAddress; }
@@ -199,10 +184,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property BusinessName. 
         /// <para>
-        /// The name of the customer’s business.
+        /// A unique identifier for the business name field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string BusinessName
         {
             get { return this._businessName; }
@@ -218,10 +202,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property BusinessPhoneNumber. 
         /// <para>
-        /// The customer’s business phone number.
+        /// A unique identifier for the business phone number field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string BusinessPhoneNumber
         {
             get { return this._businessPhoneNumber; }
@@ -235,32 +218,11 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
-        /// <para>
-        /// The unique name of the domain.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string DomainName
-        {
-            get { return this._domainName; }
-            set { this._domainName = value; }
-        }
-
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
-        {
-            return this._domainName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The customer’s email address, which has not been specified as a personal or business
-        /// address. 
+        /// A unique identifier for the email address field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -276,10 +238,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property FirstName. 
         /// <para>
-        /// The customer’s first name.
+        /// A unique identifier for the first name field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -295,10 +256,10 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Gender. 
         /// <para>
-        /// The gender with which the customer identifies. 
+        /// A unique identifier for the gender field to be merged.
         /// </para>
         /// </summary>
-        public Gender Gender
+        public string Gender
         {
             get { return this._gender; }
             set { this._gender = value; }
@@ -313,10 +274,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property HomePhoneNumber. 
         /// <para>
-        /// The customer’s home phone number.
+        /// A unique identifier for the home phone number field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string HomePhoneNumber
         {
             get { return this._homePhoneNumber; }
@@ -332,10 +292,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property LastName. 
         /// <para>
-        /// The customer’s last name.
+        /// A unique identifier for the last name field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string LastName
         {
             get { return this._lastName; }
@@ -351,10 +310,10 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property MailingAddress. 
         /// <para>
-        /// The customer’s mailing address.
+        /// A unique identifier for the mailing address field to be merged.
         /// </para>
         /// </summary>
-        public UpdateAddress MailingAddress
+        public string MailingAddress
         {
             get { return this._mailingAddress; }
             set { this._mailingAddress = value; }
@@ -369,10 +328,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property MiddleName. 
         /// <para>
-        /// The customer’s middle name.
+        /// A unique identifier for the middle name field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string MiddleName
         {
             get { return this._middleName; }
@@ -388,10 +346,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property MobilePhoneNumber. 
         /// <para>
-        /// The customer’s mobile phone number.
+        /// A unique identifier for the mobile phone number field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string MobilePhoneNumber
         {
             get { return this._mobilePhoneNumber; }
@@ -407,10 +364,10 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property PartyType. 
         /// <para>
-        /// The type of profile used to describe the customer.
+        /// A unique identifier for the party type field to be merged.
         /// </para>
         /// </summary>
-        public PartyType PartyType
+        public string PartyType
         {
             get { return this._partyType; }
             set { this._partyType = value; }
@@ -425,10 +382,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property PersonalEmailAddress. 
         /// <para>
-        /// The customer’s personal email address.
+        /// A unique identifier for the personal email address field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string PersonalEmailAddress
         {
             get { return this._personalEmailAddress; }
@@ -444,11 +400,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. 
+        /// A unique identifier for the phone number field to be merged.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
@@ -462,31 +416,12 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfileId. 
-        /// <para>
-        /// The unique identifier of a customer profile.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ProfileId
-        {
-            get { return this._profileId; }
-            set { this._profileId = value; }
-        }
-
-        // Check to see if ProfileId property is set
-        internal bool IsSetProfileId()
-        {
-            return this._profileId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ShippingAddress. 
         /// <para>
-        /// The customer’s shipping address.
+        /// A unique identifier for the shipping address field to be merged.
         /// </para>
         /// </summary>
-        public UpdateAddress ShippingAddress
+        public string ShippingAddress
         {
             get { return this._shippingAddress; }
             set { this._shippingAddress = value; }

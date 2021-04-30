@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateDomain operation
+    /// Response Unmarshaller for MergeProfiles operation
     /// </summary>  
-    public class CreateDomainResponseUnmarshaller : JsonResponseUnmarshaller
+    public class MergeProfilesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,58 +45,16 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateDomainResponse response = new CreateDomainResponse();
+            MergeProfilesResponse response = new MergeProfilesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeadLetterQueueUrl", targetDepth))
+                if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeadLetterQueueUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultEncryptionKey", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DefaultEncryptionKey = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultExpirationDays", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.DefaultExpirationDays = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Matching", targetDepth))
-                {
-                    var unmarshaller = MatchingResponseUnmarshaller.Instance;
-                    response.Matching = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    response.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -122,10 +80,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
-                {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -146,9 +100,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             return new AmazonCustomerProfilesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateDomainResponseUnmarshaller _instance = new CreateDomainResponseUnmarshaller();        
+        private static MergeProfilesResponseUnmarshaller _instance = new MergeProfilesResponseUnmarshaller();        
 
-        internal static CreateDomainResponseUnmarshaller GetInstance()
+        internal static MergeProfilesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -156,7 +110,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDomainResponseUnmarshaller Instance
+        public static MergeProfilesResponseUnmarshaller Instance
         {
             get
             {

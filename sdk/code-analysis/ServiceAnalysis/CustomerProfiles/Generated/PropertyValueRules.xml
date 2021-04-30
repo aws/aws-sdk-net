@@ -276,6 +276,31 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetMatchesRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetMatchesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetMatchesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetMatchesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetMatchesResponse.PotentialMatches</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.GetProfileObjectTypeRequest.DomainName</property>
     <min>1</min>
     <max>64</max>
@@ -465,6 +490,16 @@
     <property>Amazon.CustomerProfiles.Model.ListTagsForResourceRequest.ResourceArn</property>
     <max>256</max>
     <pattern>^arn:[a-z0-9]{1,10}:profile</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.MergeProfilesRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.MergeProfilesRequest.MainProfileId</property>
+    <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.PutIntegrationRequest.DomainName</property>
@@ -796,6 +831,86 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.AccountNumber</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.AdditionalInformation</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.Address</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.BillingAddress</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.BirthDate</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.BusinessEmailAddress</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.BusinessName</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.BusinessPhoneNumber</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.EmailAddress</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.FirstName</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.Gender</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.HomePhoneNumber</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.LastName</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.MailingAddress</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.MiddleName</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.MobilePhoneNumber</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.PartyType</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.PersonalEmailAddress</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.PhoneNumber</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.ShippingAddress</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.FlowDefinition.Description</property>
     <max>2048</max>
     <pattern>[\w!@#\-.?,\s]*</pattern>
@@ -888,6 +1003,11 @@
     <property>Amazon.CustomerProfiles.Model.MarketoSourceProperties.Object</property>
     <max>512</max>
     <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.MatchItem.MatchId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.ObjectTypeField.Source</property>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateDomain Request Marshaller
+    /// MergeProfiles Request Marshaller
     /// </summary>       
-    public class UpdateDomainRequestMarshaller : IMarshaller<IRequest, UpdateDomainRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class MergeProfilesRequestMarshaller : IMarshaller<IRequest, MergeProfilesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateDomainRequest)input);
+            return this.Marshall((MergeProfilesRequest)input);
         }
 
         /// <summary>
@@ -52,63 +52,48 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateDomainRequest publicRequest)
+        public IRequest Marshall(MergeProfilesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";            
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
-            request.ResourcePath = "/domains/{DomainName}";
+            request.ResourcePath = "/domains/{DomainName}/profiles/objects/merge";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeadLetterQueueUrl())
+                if(publicRequest.IsSetFieldSourceProfileIds())
                 {
-                    context.Writer.WritePropertyName("DeadLetterQueueUrl");
-                    context.Writer.Write(publicRequest.DeadLetterQueueUrl);
-                }
-
-                if(publicRequest.IsSetDefaultEncryptionKey())
-                {
-                    context.Writer.WritePropertyName("DefaultEncryptionKey");
-                    context.Writer.Write(publicRequest.DefaultEncryptionKey);
-                }
-
-                if(publicRequest.IsSetDefaultExpirationDays())
-                {
-                    context.Writer.WritePropertyName("DefaultExpirationDays");
-                    context.Writer.Write(publicRequest.DefaultExpirationDays);
-                }
-
-                if(publicRequest.IsSetMatching())
-                {
-                    context.Writer.WritePropertyName("Matching");
+                    context.Writer.WritePropertyName("FieldSourceProfileIds");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = MatchingRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Matching, context);
+                    var marshaller = FieldSourceProfileIdsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FieldSourceProfileIds, context);
 
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTags())
+                if(publicRequest.IsSetMainProfileId())
                 {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    context.Writer.WritePropertyName("MainProfileId");
+                    context.Writer.Write(publicRequest.MainProfileId);
+                }
+
+                if(publicRequest.IsSetProfileIdsToBeMerged())
+                {
+                    context.Writer.WritePropertyName("ProfileIdsToBeMerged");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProfileIdsToBeMergedListValue in publicRequest.ProfileIdsToBeMerged)
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                            context.Writer.Write(publicRequestProfileIdsToBeMergedListValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         
@@ -120,9 +105,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateDomainRequestMarshaller _instance = new UpdateDomainRequestMarshaller();        
+        private static MergeProfilesRequestMarshaller _instance = new MergeProfilesRequestMarshaller();        
 
-        internal static UpdateDomainRequestMarshaller GetInstance()
+        internal static MergeProfilesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -130,7 +115,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateDomainRequestMarshaller Instance
+        public static MergeProfilesRequestMarshaller Instance
         {
             get
             {

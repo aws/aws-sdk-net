@@ -46,6 +46,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _defaultEncryptionKey;
         private int? _defaultExpirationDays;
         private string _domainName;
+        private MatchingRequest _matching;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -127,6 +128,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Matching. 
+        /// <para>
+        /// The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+        /// </para>
+        /// </summary>
+        public MatchingRequest Matching
+        {
+            get { return this._matching; }
+            set { this._matching = value; }
+        }
+
+        // Check to see if Matching property is set
+        internal bool IsSetMatching()
+        {
+            return this._matching != null;
         }
 
         /// <summary>

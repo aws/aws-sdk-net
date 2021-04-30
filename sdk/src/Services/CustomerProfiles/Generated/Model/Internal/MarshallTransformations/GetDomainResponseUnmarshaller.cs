@@ -87,6 +87,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Matching", targetDepth))
+                {
+                    var unmarshaller = MatchingResponseUnmarshaller.Instance;
+                    response.Matching = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Stats", targetDepth))
                 {
                     var unmarshaller = DomainStatsUnmarshaller.Instance;

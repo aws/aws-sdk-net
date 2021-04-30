@@ -823,6 +823,113 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetMatches
+
+        internal virtual GetMatchesResponse GetMatches(GetMatchesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMatchesResponseUnmarshaller.Instance;
+
+            return Invoke<GetMatchesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Before calling this API, use <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+        /// or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
+        /// to enable identity resolution: set <code>Matching</code> to true.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetMatches returns potentially matching profiles, based on the results of the latest
+        /// run of a machine learning process. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon Connect runs a batch process every Saturday at 12AM UTC to identify matching
+        /// profiles. The results are returned up to seven days after the Saturday run.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Amazon Connect uses the following profile attributes to identify matches:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PhoneNumber
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HomePhoneNumber
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// BusinessPhoneNumber
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MobilePhoneNumber
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EmailAddress
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PersonalEmailAddress
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// BusinessEmailAddress
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FullName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// BusinessName
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMatches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMatches service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches">REST API Reference for GetMatches Operation</seealso>
+        public virtual Task<GetMatchesResponse> GetMatchesAsync(GetMatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMatchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMatchesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetProfileObjectType
 
         internal virtual GetProfileObjectTypeResponse GetProfileObjectType(GetProfileObjectTypeRequest request)
@@ -1267,6 +1374,103 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  MergeProfiles
+
+        internal virtual MergeProfilesResponse MergeProfiles(MergeProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergeProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergeProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<MergeProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Runs an AWS Lambda job that does the following:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main
+        /// profile.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All the <code>ProfileToBeMerged</code> will be deleted at the end.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the
+        /// main profile.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Standard fields are merged as follows:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Fields are always "union"-ed if there are no conflicts in standard fields or attributeKeys.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When there are conflicting fields:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// If no <code>SourceProfileIds</code> entry is specified, the main Profile value is
+        /// always taken. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a <code>SourceProfileIds</code> entry is specified, the specified profileId is
+        /// always taken, even if it is a NULL value.
+        /// </para>
+        ///  </li> </ol> </li> </ol> </li> </ol> 
+        /// <para>
+        /// You can use MergeProfiles together with <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>,
+        /// which returns potentially matching profiles, or use it with the results of another
+        /// matching system. After profiles have been merged, they cannot be separated (unmerged).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergeProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MergeProfiles service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MergeProfiles">REST API Reference for MergeProfiles Operation</seealso>
+        public virtual Task<MergeProfilesResponse> MergeProfilesAsync(MergeProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergeProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergeProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<MergeProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutIntegration
 
         internal virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
@@ -1616,7 +1820,7 @@ namespace Amazon.CustomerProfiles
         /// 
         ///  
         /// <para>
-        /// Once a domain is created, the name can’t be changed.
+        /// After a domain is created, the name can’t be changed.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomain service method.</param>

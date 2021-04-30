@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDomain operation.
-    /// Returns information about a specific domain.
+    /// The flag that enables the matching process of duplicate profiles.
     /// </summary>
-    public partial class GetDomainRequest : AmazonCustomerProfilesRequest
+    public partial class MatchingResponse
     {
-        private string _domainName;
+        private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
+        /// Gets and sets the property Enabled. 
         /// <para>
-        /// The unique name of the domain.
+        /// The flag that enables the matching process of duplicate profiles.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string DomainName
+        public bool Enabled
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._domainName != null;
+            return this._enabled.HasValue; 
         }
 
     }

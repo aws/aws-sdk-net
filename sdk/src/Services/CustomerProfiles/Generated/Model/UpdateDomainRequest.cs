@@ -35,7 +35,7 @@ namespace Amazon.CustomerProfiles.Model
     /// 
     ///  
     /// <para>
-    /// Once a domain is created, the name can’t be changed.
+    /// After a domain is created, the name can’t be changed.
     /// </para>
     /// </summary>
     public partial class UpdateDomainRequest : AmazonCustomerProfilesRequest
@@ -44,6 +44,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _defaultEncryptionKey;
         private int? _defaultExpirationDays;
         private string _domainName;
+        private MatchingRequest _matching;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The unique name for the domain.
+        /// The unique name of the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -127,6 +128,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Matching. 
+        /// <para>
+        /// The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+        /// </para>
+        /// </summary>
+        public MatchingRequest Matching
+        {
+            get { return this._matching; }
+            set { this._matching = value; }
+        }
+
+        // Check to see if Matching property is set
+        internal bool IsSetMatching()
+        {
+            return this._matching != null;
         }
 
         /// <summary>

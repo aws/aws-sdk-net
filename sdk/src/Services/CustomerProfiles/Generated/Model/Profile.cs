@@ -78,7 +78,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property AdditionalInformation. 
         /// <para>
-        /// Any additional information relevant to the customer's profile.
+        /// Any additional information relevant to the customer’s profile.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -151,7 +151,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property BirthDate. 
         /// <para>
-        /// The customer’s birth date.
+        /// The customer’s birth date. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -227,8 +227,8 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The customer's email address, which has not been specified as a personal or business
-        /// address.
+        /// The customer’s email address, which has not been specified as a personal or business
+        /// address. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -266,7 +266,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Gender. 
         /// <para>
-        /// The gender with which the customer identifies.
+        /// The gender with which the customer identifies. 
         /// </para>
         /// </summary>
         public Gender Gender
