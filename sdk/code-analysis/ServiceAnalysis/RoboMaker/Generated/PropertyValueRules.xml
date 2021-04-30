@@ -1497,7 +1497,7 @@
     <property>Amazon.RoboMaker.Model.SimulationSoftwareSuite.Version</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>7|9|Kinetic|Melodic|Dashing</pattern>
+    <pattern>7|9|11|Kinetic|Melodic|Dashing|Foxy</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.Source.S3Bucket</property>

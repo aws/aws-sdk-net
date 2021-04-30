@@ -559,6 +559,10 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly RobotSoftwareSuiteVersionType Dashing = new RobotSoftwareSuiteVersionType("Dashing");
         /// <summary>
+        /// Constant Foxy for RobotSoftwareSuiteVersionType
+        /// </summary>
+        public static readonly RobotSoftwareSuiteVersionType Foxy = new RobotSoftwareSuiteVersionType("Foxy");
+        /// <summary>
         /// Constant Kinetic for RobotSoftwareSuiteVersionType
         /// </summary>
         public static readonly RobotSoftwareSuiteVersionType Kinetic = new RobotSoftwareSuiteVersionType("Kinetic");
