@@ -33,9 +33,8 @@ namespace Amazon.Personalize.Model
     /// Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow
     /// Amazon Personalize to export the training data, you must specify an service-linked
     /// AWS Identity and Access Management (IAM) role that gives Amazon Personalize <code>PutObject</code>
-    /// permissions for your Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
-    /// export job permissions requirements</a> in the Amazon Personalize developer guide.
-    /// 
+    /// permissions for your Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
+    /// a dataset</a> in the Amazon Personalize developer guide. 
     /// 
     ///  
     /// <para>
