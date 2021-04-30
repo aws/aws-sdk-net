@@ -1,3 +1,12 @@
+### 3.7.24.1 (2021-04-30 02:38 UTC)
+* S3 (3.7.0.18)
+	* Fixes an issue where RecordDelimiter '\n' in CSV InputSerialization/OutputSerialization does not work for AmazonS3Client.SelectObjectContentAsync
+* Core 3.7.0.17
+	* Update service nuget ranges to [3.7.X, 4.0).
+Added retry logic for intermittent SSL_ERROR_ZERO_RETURN.
+Fixed Arn.TryParse method to never throw exceptions.
+	* All services packages updated to require new Core
+
 ### 3.7.24.0 (2021-04-29 18:16 UTC)
 * Chime (3.7.1.0)
 	* Increase AppInstanceUserId length to 64 characters
