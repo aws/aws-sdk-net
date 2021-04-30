@@ -1090,6 +1090,92 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DeleteResourceTree
+
+
+        /// <summary>
+        /// Deletes an entire resource tree. This operation will delete the parent resource and
+        /// its child resources.
+        /// 
+        ///  
+        /// <para>
+        /// Child resources are resources that were created from another resource. For example,
+        /// when a forecast is generated from a predictor, the forecast is the child resource
+        /// and the predictor is the parent resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Forecast resources possess the following parent-child resource hierarchies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast
+        /// export jobs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Dataset</b>: dataset import jobs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Forecast</b>: forecast export jobs
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will
+        /// not delete datasets or exported files stored in Amazon S3. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceTree service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceTree service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree">REST API Reference for DeleteResourceTree Operation</seealso>
+        DeleteResourceTreeResponse DeleteResourceTree(DeleteResourceTreeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourceTree operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceTree operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourceTree
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree">REST API Reference for DeleteResourceTree Operation</seealso>
+        IAsyncResult BeginDeleteResourceTree(DeleteResourceTreeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourceTree operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourceTree.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourceTreeResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree">REST API Reference for DeleteResourceTree Operation</seealso>
+        DeleteResourceTreeResponse EndDeleteResourceTree(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeDataset
 
 

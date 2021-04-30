@@ -151,7 +151,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property EstimatedTimeRemainingInMinutes. 
         /// <para>
-        /// The estimated time in minutes for the predictor training job to complete.
+        /// The estimated time remaining in minutes for the predictor training job to complete.
         /// </para>
         /// </summary>
         public long EstimatedTimeRemainingInMinutes

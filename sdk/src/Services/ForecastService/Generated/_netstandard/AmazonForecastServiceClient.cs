@@ -1220,6 +1220,86 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DeleteResourceTree
+
+        internal virtual DeleteResourceTreeResponse DeleteResourceTree(DeleteResourceTreeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceTreeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceTreeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceTreeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an entire resource tree. This operation will delete the parent resource and
+        /// its child resources.
+        /// 
+        ///  
+        /// <para>
+        /// Child resources are resources that were created from another resource. For example,
+        /// when a forecast is generated from a predictor, the forecast is the child resource
+        /// and the predictor is the parent resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Forecast resources possess the following parent-child resource hierarchies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast
+        /// export jobs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Dataset</b>: dataset import jobs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Forecast</b>: forecast export jobs
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will
+        /// not delete datasets or exported files stored in Amazon S3. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceTree service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourceTree service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree">REST API Reference for DeleteResourceTree Operation</seealso>
+        public virtual Task<DeleteResourceTreeResponse> DeleteResourceTreeAsync(DeleteResourceTreeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceTreeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceTreeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourceTreeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDataset
 
         internal virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
