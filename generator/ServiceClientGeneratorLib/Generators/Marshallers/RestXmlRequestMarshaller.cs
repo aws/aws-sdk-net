@@ -204,9 +204,10 @@ namespace ServiceClientGenerator.Generators.Marshallers
         #line hidden
         
         #line 91 "C:\dev\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\t\t\tvar stringWriter = new StringWriter(CultureInfo.InvariantCulture);\r\n\t\t\tusing (" +
-        "var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encodin" +
-        "g = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))\r\n\t\t\t{   \r\n");
+this.Write(@"			var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
+			using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+			{   
+");
 
         
         #line default
