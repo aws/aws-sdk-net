@@ -105,6 +105,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=20)]
         public string LastModifiedDate
         {
             get { return this._lastModifiedDate; }
@@ -123,6 +124,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// The name for the entity. This value is not unique. It is defined by the seller.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -144,6 +146,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// and only existing buyers can view it). 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Visibility
         {
             get { return this._visibility; }

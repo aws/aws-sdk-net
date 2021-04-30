@@ -42,6 +42,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// The error code that identifies the type of error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=72)]
         public string ErrorCode
         {
             get { return this._errorCode; }
@@ -60,6 +61,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// The message for the error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }

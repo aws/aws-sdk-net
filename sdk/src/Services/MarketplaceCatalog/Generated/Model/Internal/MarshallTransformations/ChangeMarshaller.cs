@@ -45,6 +45,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Change requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetChangeName())
+            {
+                context.Writer.WritePropertyName("ChangeName");
+                context.Writer.Write(requestObject.ChangeName);
+            }
+
             if(requestObject.IsSetChangeType())
             {
                 context.Writer.WritePropertyName("ChangeType");

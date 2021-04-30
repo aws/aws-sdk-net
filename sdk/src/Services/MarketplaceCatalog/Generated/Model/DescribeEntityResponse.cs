@@ -122,6 +122,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=20)]
         public string LastModifiedDate
         {
             get { return this._lastModifiedDate; }

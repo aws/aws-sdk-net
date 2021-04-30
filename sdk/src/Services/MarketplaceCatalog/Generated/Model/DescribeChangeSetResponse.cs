@@ -169,6 +169,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// to any of the changes in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string FailureDescription
         {
             get { return this._failureDescription; }

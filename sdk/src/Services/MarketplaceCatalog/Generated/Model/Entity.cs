@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// A product entity contains data that describes your product, its supported features,
-    /// and how it can be used or launched by your customer.
+    /// An entity contains data that describes your product, its supported features, and how
+    /// it can be used or launched by your customer.
     /// </summary>
     public partial class Entity
     {

@@ -33,9 +33,29 @@ namespace Amazon.MarketplaceCatalog.Model
     /// </summary>
     public partial class Change
     {
+        private string _changeName;
         private string _changeType;
         private string _details;
         private Entity _entity;
+
+        /// <summary>
+        /// Gets and sets the property ChangeName. 
+        /// <para>
+        /// Optional name for the change.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=72)]
+        public string ChangeName
+        {
+            get { return this._changeName; }
+            set { this._changeName = value; }
+        }
+
+        // Check to see if ChangeName property is set
+        internal bool IsSetChangeName()
+        {
+            return this._changeName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChangeType. 
