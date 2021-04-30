@@ -1,3 +1,17 @@
+### 3.7.25.0 (2021-04-30 18:15 UTC)
+* CloudFront (3.7.1.0)
+	* CloudFront now supports CloudFront Functions, a native feature of CloudFront that enables you to write lightweight functions in JavaScript for high-scale, latency-sensitive CDN customizations.
+* CustomerProfiles (3.7.2.0)
+	* This release introduces GetMatches and MergeProfiles APIs to fetch and merge duplicate profiles
+* ForecastService (3.7.2.0)
+	* Added new DeleteResourceTree operation that helps in deleting all the child resources of a given resource including the given resource.
+* MarketplaceCatalog (3.7.1.0)
+	* Allows user defined names for Changes in a ChangeSet. Users can use ChangeNames to reference properties in another Change within a ChangeSet. This feature allows users to make changes to an entity when the entity identifier is not yet available while constructing the StartChangeSet request.
+* Personalize (3.7.1.3)
+	* Update URL for dataset export job documentation.
+* RoboMaker (3.7.2.0)
+	* Adds ROS2 Foxy as a supported Robot Software Suite Version and Gazebo 11 as a supported Simulation Software Suite Version
+
 ### 3.7.24.1 (2021-04-30 02:38 UTC)
 * S3 (3.7.0.18)
 	* Fixes an issue where RecordDelimiter '\n' in CSV InputSerialization/OutputSerialization does not work for AmazonS3Client.SelectObjectContentAsync
