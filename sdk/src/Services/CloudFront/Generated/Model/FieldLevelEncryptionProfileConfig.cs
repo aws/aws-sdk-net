@@ -60,7 +60,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// An optional comment for the field-level encryption profile.
+        /// An optional comment for the field-level encryption profile. The comment cannot be
+        /// longer than 128 characters.
         /// </para>
         /// </summary>
         public string Comment

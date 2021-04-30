@@ -138,21 +138,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// Any comments you want to include about the distribution.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't want to specify a comment, include an empty <code>Comment</code> element.
-        /// </para>
-        ///  
-        /// <para>
-        /// To delete an existing comment, update the distribution configuration and include an
-        /// empty <code>Comment</code> element.
-        /// </para>
-        ///  
-        /// <para>
-        /// To add or change a comment, update the distribution configuration and specify the
-        /// new comment.
+        /// An optional comment to describe the distribution. The comment cannot be longer than
+        /// 128 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

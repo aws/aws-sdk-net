@@ -399,6 +399,102 @@ namespace Amazon.CloudFront
 
 
     /// <summary>
+    /// Constants used for properties of type FunctionRuntime.
+    /// </summary>
+    public class FunctionRuntime : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudfrontJs10 for FunctionRuntime
+        /// </summary>
+        public static readonly FunctionRuntime CloudfrontJs10 = new FunctionRuntime("cloudfront-js-1.0");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FunctionRuntime(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FunctionRuntime FindValue(string value)
+        {
+            return FindValue<FunctionRuntime>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FunctionRuntime(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FunctionStage.
+    /// </summary>
+    public class FunctionStage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEVELOPMENT for FunctionStage
+        /// </summary>
+        public static readonly FunctionStage DEVELOPMENT = new FunctionStage("DEVELOPMENT");
+        /// <summary>
+        /// Constant LIVE for FunctionStage
+        /// </summary>
+        public static readonly FunctionStage LIVE = new FunctionStage("LIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FunctionStage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FunctionStage FindValue(string value)
+        {
+            return FindValue<FunctionStage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FunctionStage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GeoRestrictionType.
     /// </summary>
     public class GeoRestrictionType : ConstantClass

@@ -76,6 +76,7 @@ namespace Amazon.CloudFront.Model
         private long? _defaultTTL;
         private string _fieldLevelEncryptionId;
         private ForwardedValues _forwardedValues;
+        private FunctionAssociations _functionAssociations;
         private LambdaFunctionAssociations _lambdaFunctionAssociations;
         private long? _maxTTL;
         private long? _minTTL;
@@ -110,6 +111,11 @@ namespace Amazon.CloudFront.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
         /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
         /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>.
+        /// We recommend that you use a <code>CachePolicyId</code>.
         /// </para>
         /// </summary>
         public string CachePolicyId
@@ -219,6 +225,11 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
+        /// A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>.
+        /// We recommend that you use a <code>CachePolicyId</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// A complex type that specifies how CloudFront handles query strings, cookies, and HTTP
         /// headers.
         /// </para>
@@ -234,6 +245,26 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetForwardedValues()
         {
             return this._forwardedValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FunctionAssociations. 
+        /// <para>
+        /// A list of CloudFront functions that are associated with this cache behavior. CloudFront
+        /// functions must be published to the <code>LIVE</code> stage to associate them with
+        /// a cache behavior.
+        /// </para>
+        /// </summary>
+        public FunctionAssociations FunctionAssociations
+        {
+            get { return this._functionAssociations; }
+            set { this._functionAssociations = value; }
+        }
+
+        // Check to see if FunctionAssociations property is set
+        internal bool IsSetFunctionAssociations()
+        {
+            return this._functionAssociations != null;
         }
 
         /// <summary>

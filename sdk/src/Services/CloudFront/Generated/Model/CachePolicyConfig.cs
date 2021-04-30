@@ -67,7 +67,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// A comment to describe the cache policy.
+        /// A comment to describe the cache policy. The comment cannot be longer than 128 characters.
         /// </para>
         /// </summary>
         public string Comment

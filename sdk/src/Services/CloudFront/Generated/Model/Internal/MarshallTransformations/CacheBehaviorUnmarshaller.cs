@@ -91,6 +91,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.ForwardedValues = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("FunctionAssociations", targetDepth))
+                    {
+                        var unmarshaller = FunctionAssociationsUnmarshaller.Instance;
+                        unmarshalledObject.FunctionAssociations = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LambdaFunctionAssociations", targetDepth))
                     {
                         var unmarshaller = LambdaFunctionAssociationsUnmarshaller.Instance;

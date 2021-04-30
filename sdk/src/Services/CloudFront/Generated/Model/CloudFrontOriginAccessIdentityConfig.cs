@@ -94,7 +94,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// Any comments you want to include about the origin access identity. 
+        /// An optional comment to describe the origin access identity. The comment cannot be
+        /// longer than 128 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

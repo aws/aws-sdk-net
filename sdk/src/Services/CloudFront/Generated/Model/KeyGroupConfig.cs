@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// A comment to describe the key group.
+        /// A comment to describe the key group. The comment cannot be longer than 128 characters.
         /// </para>
         /// </summary>
         public string Comment

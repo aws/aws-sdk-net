@@ -272,6 +272,9 @@ namespace Amazon.CloudFront
         /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
         /// has been specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
         /// The specified geo restriction parameter is not valid.
         /// </exception>
@@ -344,6 +347,12 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different AWS account.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
         /// </exception>
@@ -380,6 +389,11 @@ namespace Amazon.CloudFront
         /// Processing your request would cause you to exceed the maximum number of distributions
         /// allowed.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
         /// Processing your request would cause the maximum number of distributions with Lambda
         /// function associations per owner to be exceeded.
@@ -387,6 +401,11 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
         /// The maximum number of distributions have been associated with the specified Lambda
         /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// Your request contains too many headers in forwarded values.
@@ -492,6 +511,9 @@ namespace Amazon.CloudFront
         /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
         /// has been specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
         /// The specified geo restriction parameter is not valid.
         /// </exception>
@@ -567,6 +589,12 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different AWS account.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
         /// </exception>
@@ -603,6 +631,11 @@ namespace Amazon.CloudFront
         /// Processing your request would cause you to exceed the maximum number of distributions
         /// allowed.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
         /// Processing your request would cause the maximum number of distributions with Lambda
         /// function associations per owner to be exceeded.
@@ -610,6 +643,11 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
         /// The maximum number of distributions have been associated with the specified Lambda
         /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// Your request contains too many headers in forwarded values.
@@ -803,6 +841,81 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateFunction
+
+
+        /// <summary>
+        /// Creates a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// To create a function, you provide the function code and some configuration information
+        /// about the function. The response contains an Amazon Resource Name (ARN) that uniquely
+        /// identifies the function.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage,
+        /// you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code>
+        /// to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>.
+        /// When it’s live, you can attach the function to a distribution’s cache behavior, using
+        /// the function’s ARN.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
+        /// 
+        /// <returns>The response from the CreateFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionAlreadyExistsException">
+        /// A function with the same name already exists in this AWS account. To create a function,
+        /// you must provide a unique name. To update an existing function, use <code>UpdateFunction</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
+        /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionsException">
+        /// You have reached the maximum number of CloudFront functions for this AWS account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
+        CreateFunctionResponse CreateFunction(CreateFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
+        IAsyncResult BeginCreateFunction(CreateFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFunction.</param>
+        /// 
+        /// <returns>Returns a  CreateFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
+        CreateFunctionResponse EndCreateFunction(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateInvalidation
 
 
@@ -958,6 +1071,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
         CreateMonitoringSubscriptionResponse CreateMonitoringSubscription(CreateMonitoringSubscriptionRequest request);
@@ -1417,7 +1533,7 @@ namespace Amazon.CloudFront
         /// The cache policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy">REST API Reference for DeleteCachePolicy Operation</seealso>
         DeleteCachePolicyResponse DeleteCachePolicy(DeleteCachePolicyRequest request);
@@ -1471,7 +1587,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
@@ -1495,7 +1611,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request);
@@ -1550,7 +1666,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         DeleteDistributionResponse DeleteDistribution();
@@ -1575,7 +1691,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request);
@@ -1630,7 +1746,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
         DeleteFieldLevelEncryptionConfigResponse DeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request);
@@ -1685,7 +1801,7 @@ namespace Amazon.CloudFront
         /// The specified profile for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
         DeleteFieldLevelEncryptionProfileResponse DeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request);
@@ -1718,6 +1834,70 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  DeleteFunction
+
+
+        /// <summary>
+        /// Deletes a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a function if it’s associated with a cache behavior. First, update
+        /// your distributions to remove the function association from all cache behaviors, then
+        /// delete the function.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a function, you must provide the function’s name and version (<code>ETag</code>
+        /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionInUseException">
+        /// Cannot delete the function because it’s attached to one or more cache behaviors.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        IAsyncResult BeginDeleteFunction(DeleteFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFunction.</param>
+        /// 
+        /// <returns>Returns a  DeleteFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        DeleteFunctionResponse EndDeleteFunction(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteKeyGroup
 
 
@@ -1747,7 +1927,7 @@ namespace Amazon.CloudFront
         /// A resource that was specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
         /// Cannot delete this resource because it is in use.
@@ -1797,6 +1977,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
         DeleteMonitoringSubscriptionResponse DeleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request);
@@ -1867,7 +2050,7 @@ namespace Amazon.CloudFront
         /// behaviors.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy">REST API Reference for DeleteOriginRequestPolicy Operation</seealso>
         DeleteOriginRequestPolicyResponse DeleteOriginRequestPolicy(DeleteOriginRequestPolicyRequest request);
@@ -1919,7 +2102,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PublicKeyInUseException">
         /// The specified public key is in use.
@@ -2097,7 +2280,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// The specified CloudFront distribution is not disabled. You must disable the distribution
@@ -2180,7 +2363,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// The specified CloudFront distribution is not disabled. You must disable the distribution
@@ -2214,6 +2397,56 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  DeleteStreamingDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         DeleteStreamingDistributionResponse EndDeleteStreamingDistribution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeFunction
+
+
+        /// <summary>
+        /// Gets configuration information and metadata about a CloudFront function, but not the
+        /// function’s code. To get a function’s code, use <code>GetFunction</code>.
+        /// 
+        ///  
+        /// <para>
+        /// To get configuration information and metadata about a function, you must provide the
+        /// function’s name and stage. To get these values, you can use <code>ListFunctions</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFunction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction">REST API Reference for DescribeFunction Operation</seealso>
+        DescribeFunctionResponse DescribeFunction(DescribeFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction">REST API Reference for DescribeFunction Operation</seealso>
+        IAsyncResult BeginDescribeFunction(DescribeFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFunction.</param>
+        /// 
+        /// <returns>Returns a  DescribeFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction">REST API Reference for DescribeFunction Operation</seealso>
+        DescribeFunctionResponse EndDescribeFunction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2758,6 +2991,56 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetFunction
+
+
+        /// <summary>
+        /// Gets the code of a CloudFront function. To get configuration information and metadata
+        /// about a function, use <code>DescribeFunction</code>.
+        /// 
+        ///  
+        /// <para>
+        /// To get a function’s code, you must provide the function’s name and stage. To get these
+        /// values, you can use <code>ListFunctions</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
+        /// 
+        /// <returns>The response from the GetFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        GetFunctionResponse GetFunction(GetFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        IAsyncResult BeginGetFunction(GetFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFunction.</param>
+        /// 
+        /// <returns>Returns a  GetFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        GetFunctionResponse EndGetFunction(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetInvalidation
 
 
@@ -2925,6 +3208,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
         GetMonitoringSubscriptionResponse GetMonitoringSubscription(GetMonitoringSubscriptionRequest request);
@@ -3883,6 +4169,63 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListFunctions
+
+
+        /// <summary>
+        /// Gets a list of all CloudFront functions in your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to return only the functions that are in the specified
+        /// stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
+        /// 
+        /// <returns>The response from the ListFunctions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        ListFunctionsResponse ListFunctions(ListFunctionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFunctions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFunctions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        IAsyncResult BeginListFunctions(ListFunctionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFunctions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFunctions.</param>
+        /// 
+        /// <returns>Returns a  ListFunctionsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        ListFunctionsResponse EndListFunctions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListInvalidations
 
 
@@ -4254,6 +4597,71 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  PublishFunction
+
+
+        /// <summary>
+        /// Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code>
+        /// stage to <code>LIVE</code>. This automatically updates all cache behaviors that are
+        /// using this function to use the newly published copy in the <code>LIVE</code> stage.
+        /// 
+        ///  
+        /// <para>
+        /// When a function is published to the <code>LIVE</code> stage, you can attach the function
+        /// to a distribution’s cache behavior, using the function’s Amazon Resource Name (ARN).
+        /// </para>
+        ///  
+        /// <para>
+        /// To publish a function, you must provide the function’s name and version (<code>ETag</code>
+        /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishFunction service method.</param>
+        /// 
+        /// <returns>The response from the PublishFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction">REST API Reference for PublishFunction Operation</seealso>
+        PublishFunctionResponse PublishFunction(PublishFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction">REST API Reference for PublishFunction Operation</seealso>
+        IAsyncResult BeginPublishFunction(PublishFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PublishFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublishFunction.</param>
+        /// 
+        /// <returns>Returns a  PublishFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction">REST API Reference for PublishFunction Operation</seealso>
+        PublishFunctionResponse EndPublishFunction(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -4303,6 +4711,75 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  TagResourceResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TestFunction
+
+
+        /// <summary>
+        /// Tests a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// To test a function, you provide an <i>event object</i> that represents an HTTP request
+        /// or response that your CloudFront distribution could receive in production. CloudFront
+        /// runs the function, passing it the event object that you provided, and returns the
+        /// function’s result (the modified event object) in the response. The response also contains
+        /// function logs and error messages, if any exist. For more information about testing
+        /// functions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing
+        /// functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To test a function, you provide the function’s name and version (<code>ETag</code>
+        /// value) along with the event object. To get the function’s name and version, you can
+        /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestFunction service method.</param>
+        /// 
+        /// <returns>The response from the TestFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TestFunctionFailedException">
+        /// The CloudFront function failed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction">REST API Reference for TestFunction Operation</seealso>
+        TestFunctionResponse TestFunction(TestFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction">REST API Reference for TestFunction Operation</seealso>
+        IAsyncResult BeginTestFunction(TestFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestFunction.</param>
+        /// 
+        /// <returns>Returns a  TestFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction">REST API Reference for TestFunction Operation</seealso>
+        TestFunctionResponse EndTestFunction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4411,7 +4888,7 @@ namespace Amazon.CloudFront
         /// The cache policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
         /// The number of cookies in the cache policy exceeds the maximum. For more information,
@@ -4491,7 +4968,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request);
@@ -4659,6 +5136,9 @@ namespace Amazon.CloudFront
         /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
         /// has been specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
         /// The specified geo restriction parameter is not valid.
         /// </exception>
@@ -4730,8 +5210,14 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different AWS account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -4765,6 +5251,11 @@ namespace Amazon.CloudFront
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
         /// Processing your request would cause the maximum number of distributions with Lambda
         /// function associations per owner to be exceeded.
@@ -4772,6 +5263,11 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
         /// The maximum number of distributions have been associated with the specified Lambda
         /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// Your request contains too many headers in forwarded values.
@@ -4868,7 +5364,7 @@ namespace Amazon.CloudFront
         /// The specified profile for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
         /// No profile specified for the field-level encryption query argument.
@@ -4947,7 +5443,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
         /// The maximum number of encryption entities for field-level encryption have been created.
@@ -4983,6 +5479,74 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  UpdateFieldLevelEncryptionProfileResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
         UpdateFieldLevelEncryptionProfileResponse EndUpdateFieldLevelEncryptionProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateFunction
+
+
+        /// <summary>
+        /// Updates a CloudFront function.
+        /// 
+        ///  
+        /// <para>
+        /// You can update a function’s code or the comment that describes the function. You cannot
+        /// update a function’s name.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update a function, you provide the function’s name and version (<code>ETag</code>
+        /// value) along with the updated function code. To get the name and version, you can
+        /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
+        /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
+        /// The function does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
+        UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
+        IAsyncResult BeginUpdateFunction(UpdateFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFunction.</param>
+        /// 
+        /// <returns>Returns a  UpdateFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
+        UpdateFunctionResponse EndUpdateFunction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5031,7 +5595,7 @@ namespace Amazon.CloudFront
         /// A resource that was specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
         /// The number of public keys in this key group is more than the maximum allowed. For
@@ -5123,7 +5687,7 @@ namespace Amazon.CloudFront
         /// name. To modify an existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInOriginRequestPolicyException">
         /// The number of cookies in the origin request policy exceeds the maximum. For more information,
@@ -5199,7 +5763,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
         UpdatePublicKeyResponse UpdatePublicKey(UpdatePublicKeyRequest request);
@@ -5344,7 +5908,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
