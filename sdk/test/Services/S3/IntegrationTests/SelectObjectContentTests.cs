@@ -57,8 +57,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static void Initialize(TestContext testContext)
         {
             _bucketName = S3TestUtils.CreateBucketWithWait(Client);
-            _keyName = UtilityMethods.GenerateName(nameof(SelectObjectContentTests));
-            _csvKeyName = UtilityMethods.GenerateName(nameof(SelectObjectContentTests));
+            _keyName = UtilityMethods.GenerateName(nameof(SelectObjectContentTests) + "_json");
+            _csvKeyName = UtilityMethods.GenerateName(nameof(SelectObjectContentTests) + "_csv");
 
             Client.PutObject(new PutObjectRequest()
             {
