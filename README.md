@@ -283,6 +283,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release adds support for Amazon EMR on EKS, a simple way to run Spark on Kubernetes.
 * [AWSSDK.EventBridge](https://www.nuget.org/packages/AWSSDK.EventBridge/)
 	* Amazon EventBridge is a serverless event bus service that makes it easy to connect your applications with data from a variety of sources, including AWS services, partner applications, and your own applications.
+* [AWSSDK.Finspace](https://www.nuget.org/packages/AWSSDK.Finspace/)
+	* This is the initial SDK release for the management APIs for Amazon FinSpace. Amazon FinSpace is a data management and analytics service for the financial services industry (FSI).
 * [AWSSDK.FinSpaceData](https://www.nuget.org/packages/AWSSDK.FinSpaceData/)
 	* This is the initial SDK release for the data APIs for Amazon FinSpace. Amazon FinSpace is a data management and analytics application for the financial services industry (FSI).
 * [AWSSDK.FIS](https://www.nuget.org/packages/AWSSDK.FIS/)

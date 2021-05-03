@@ -448,6 +448,10 @@
       <Project>{939272C0-C5BD-4D23-8590-9D0B2D8B4188}</Project>
       <Name>AWSSDK.EventBridge.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Finspace/AWSSDK.Finspace.CodeAnalysis.csproj">
+      <Project>{A317696D-8B45-4824-8307-48AD118452D4}</Project>
+      <Name>AWSSDK.Finspace.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/FinSpaceData/AWSSDK.FinSpaceData.CodeAnalysis.csproj">
       <Project>{3C8003FE-42D4-4A87-95DA-E86F486B7FDE}</Project>
       <Name>AWSSDK.FinSpaceData.CodeAnalysis</Name>
