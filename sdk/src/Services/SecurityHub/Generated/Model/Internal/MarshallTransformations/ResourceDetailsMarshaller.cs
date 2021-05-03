@@ -177,6 +177,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsEc2NetworkAcl())
+            {
+                context.Writer.WritePropertyName("AwsEc2NetworkAcl");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2NetworkAclDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2NetworkAcl, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEc2NetworkInterface())
             {
                 context.Writer.WritePropertyName("AwsEc2NetworkInterface");
@@ -199,6 +210,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsEc2Subnet())
+            {
+                context.Writer.WritePropertyName("AwsEc2Subnet");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2SubnetDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2Subnet, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEc2Volume())
             {
                 context.Writer.WritePropertyName("AwsEc2Volume");
@@ -217,6 +239,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsEc2VpcDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsEc2Vpc, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsElasticBeanstalkEnvironment())
+            {
+                context.Writer.WritePropertyName("AwsElasticBeanstalkEnvironment");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsElasticBeanstalkEnvironmentDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsElasticBeanstalkEnvironment, context);
 
                 context.Writer.WriteObjectEnd();
             }

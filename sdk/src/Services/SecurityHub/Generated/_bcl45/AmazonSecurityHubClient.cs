@@ -416,6 +416,14 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
+        /// The Security Hub console continues to use <code>AcceptInvitation</code>. It will eventually
+        /// change to use <code>AcceptAdministratorInvitation</code>. Any IAM policies that specifically
+        /// control access to this function must continue to use <code>AcceptInvitation</code>.
+        /// You should also add <code>AcceptAdministratorInvitation</code> to your policies to
+        /// ensure that the correct permissions are in place after the console begins to use <code>AcceptAdministratorInvitation</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Accepts the invitation to be a member account and be monitored by the Security Hub
         /// administrator account that the invitation was sent from.
         /// </para>
@@ -466,6 +474,14 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.
         /// 
+        ///  
+        /// <para>
+        /// The Security Hub console continues to use <code>AcceptInvitation</code>. It will eventually
+        /// change to use <code>AcceptAdministratorInvitation</code>. Any IAM policies that specifically
+        /// control access to this function must continue to use <code>AcceptInvitation</code>.
+        /// You should also add <code>AcceptAdministratorInvitation</code> to your policies to
+        /// ensure that the correct permissions are in place after the console begins to use <code>AcceptAdministratorInvitation</code>.
+        /// </para>
         ///  
         /// <para>
         /// Accepts the invitation to be a member account and be monitored by the Security Hub
@@ -2711,6 +2727,15 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
+        /// The Security Hub console continues to use <code>DisassociateFromMasterAccount</code>.
+        /// It will eventually change to use <code>DisassociateFromAdministratorAccount</code>.
+        /// Any IAM policies that specifically control access to this function must continue to
+        /// use <code>DisassociateFromMasterAccount</code>. You should also add <code>DisassociateFromAdministratorAccount</code>
+        /// to your policies to ensure that the correct permissions are in place after the console
+        /// begins to use <code>DisassociateFromAdministratorAccount</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Disassociates the current Security Hub member account from the associated administrator
         /// account.
         /// </para>
@@ -2757,6 +2782,15 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
         /// 
+        ///  
+        /// <para>
+        /// The Security Hub console continues to use <code>DisassociateFromMasterAccount</code>.
+        /// It will eventually change to use <code>DisassociateFromAdministratorAccount</code>.
+        /// Any IAM policies that specifically control access to this function must continue to
+        /// use <code>DisassociateFromMasterAccount</code>. You should also add <code>DisassociateFromAdministratorAccount</code>
+        /// to your policies to ensure that the correct permissions are in place after the console
+        /// begins to use <code>DisassociateFromAdministratorAccount</code>.
+        /// </para>
         ///  
         /// <para>
         /// Disassociates the current Security Hub member account from the associated administrator
@@ -3704,6 +3738,14 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
+        /// The Security Hub console continues to use <code>GetMasterAccount</code>. It will eventually
+        /// change to use <code>GetAdministratorAccount</code>. Any IAM policies that specifically
+        /// control access to this function must continue to use <code>GetMasterAccount</code>.
+        /// You should also add <code>GetAdministratorAccount</code> to your policies to ensure
+        /// that the correct permissions are in place after the console begins to use <code>GetAdministratorAccount</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Provides the details for the Security Hub administrator account for the current member
         /// account.
         /// </para>
@@ -3750,6 +3792,14 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// This method is deprecated. Instead, use <code>GetAdministratorAccount</code>.
         /// 
+        ///  
+        /// <para>
+        /// The Security Hub console continues to use <code>GetMasterAccount</code>. It will eventually
+        /// change to use <code>GetAdministratorAccount</code>. Any IAM policies that specifically
+        /// control access to this function must continue to use <code>GetMasterAccount</code>.
+        /// You should also add <code>GetAdministratorAccount</code> to your policies to ensure
+        /// that the correct permissions are in place after the console begins to use <code>GetAdministratorAccount</code>.
+        /// </para>
         ///  
         /// <para>
         /// Provides the details for the Security Hub administrator account for the current member

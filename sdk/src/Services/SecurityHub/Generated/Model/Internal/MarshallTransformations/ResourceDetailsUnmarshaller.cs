@@ -136,6 +136,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsEc2Instance = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsEc2NetworkAcl", targetDepth))
+                {
+                    var unmarshaller = AwsEc2NetworkAclDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2NetworkAcl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsEc2NetworkInterface", targetDepth))
                 {
                     var unmarshaller = AwsEc2NetworkInterfaceDetailsUnmarshaller.Instance;
@@ -148,6 +154,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsEc2SecurityGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsEc2Subnet", targetDepth))
+                {
+                    var unmarshaller = AwsEc2SubnetDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2Subnet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsEc2Volume", targetDepth))
                 {
                     var unmarshaller = AwsEc2VolumeDetailsUnmarshaller.Instance;
@@ -158,6 +170,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsEc2VpcDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsEc2Vpc = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsElasticBeanstalkEnvironment", targetDepth))
+                {
+                    var unmarshaller = AwsElasticBeanstalkEnvironmentDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsElasticBeanstalkEnvironment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsElasticsearchDomain", targetDepth))

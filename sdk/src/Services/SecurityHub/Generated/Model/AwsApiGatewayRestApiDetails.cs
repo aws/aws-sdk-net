@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// contains information about a REST API in version 1 of Amazon API Gateway.
+    /// Contains information about a REST API in version 1 of Amazon API Gateway.
     /// </summary>
     public partial class AwsApiGatewayRestApiDetails
     {
