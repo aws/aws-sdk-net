@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.25.0",
+    "ProductVersion" : "3.7.26.0",
     "CoreVersion"    : "3.7.0.17",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -738,7 +738,7 @@
             "InPreview"               : false
         },
         "MTurk"                           : {
-            "Version" : "3.7.0.16",
+            "Version" : "3.7.0.17",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.17"
@@ -1170,7 +1170,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.7.1.1",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.17"
@@ -1306,7 +1306,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "3.7.1.3",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.17"
@@ -2107,6 +2107,22 @@
         },
         "NimbleStudio"                    : {
             "Version" : "3.7.0.1",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.0.17"
+            },
+            "InPreview"               : false
+        },
+        "FinSpaceData"                    : {
+            "Version" : "3.7.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.0.17"
+            },
+            "InPreview"               : false
+        },
+        "Finspace"                        : {
+            "Version" : "3.7.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.17"

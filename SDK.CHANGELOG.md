@@ -1,3 +1,15 @@
+### 3.7.26.0 (2021-05-03 20:53 UTC)
+* Chime (3.7.2.0)
+	* Added new BatchCreateChannelMembership API to support multiple membership creation for channels
+* Finspace (3.7.0.0)
+	* This is the initial SDK release for the management APIs for Amazon FinSpace. Amazon FinSpace is a data management and analytics service for the financial services industry (FSI).
+* FinSpaceData (3.7.0.0)
+	* This is the initial SDK release for the data APIs for Amazon FinSpace. Amazon FinSpace is a data management and analytics application for the financial services industry (FSI).
+* MTurk (3.7.0.17)
+	* Documentation updates for Amazon Mechanical Turk, GetAccountBalanceOperation operation
+* SecurityHub (3.7.2.0)
+	* Updated ASFF to add the following new resource details objects: AwsEc2NetworkAcl, AwsEc2Subnet, and AwsElasticBeanstalkEnvironment.
+
 ### 3.7.25.0 (2021-04-30 18:15 UTC)
 * CloudFront (3.7.1.0)
 	* CloudFront now supports CloudFront Functions, a native feature of CloudFront that enables you to write lightweight functions in JavaScript for high-scale, latency-sensitive CDN customizations.
