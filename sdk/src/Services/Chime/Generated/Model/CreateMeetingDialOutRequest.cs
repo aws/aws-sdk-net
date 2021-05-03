@@ -70,7 +70,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property JoinToken. 
         /// <para>
-        /// Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.htmlCreateAttendee">CreateAttendee</a>
+        /// Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
         /// action to get a join token.
         /// </para>
         /// </summary>

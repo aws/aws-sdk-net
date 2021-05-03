@@ -36,8 +36,8 @@ namespace Amazon.Chime.Model
     /// 
     ///  
     /// <para>
-    ///  Deleted phone numbers remain in the <b>Deletion queue</b> for 7 days before they
-    /// are deleted permanently. 
+    /// Deleted phone numbers remain in the <b>Deletion queue</b> for 7 days before they are
+    /// deleted permanently.
     /// </para>
     /// </summary>
     public partial class DeletePhoneNumberRequest : AmazonChimeRequest

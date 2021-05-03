@@ -37,8 +37,7 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account
-    /// 
+    /// Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -139,7 +138,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Privacy. 
         /// <para>
-        ///  The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code>
+        /// The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code>
         /// retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private
         /// channels. 
         /// </para>

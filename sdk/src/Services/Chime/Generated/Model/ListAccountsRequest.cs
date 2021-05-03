@@ -32,7 +32,7 @@ namespace Amazon.Chime.Model
     /// Container for the parameters to the ListAccounts operation.
     /// Lists the Amazon Chime accounts under the administrator's AWS account. You can filter
     /// accounts by account name prefix. To find out which Amazon Chime account a user belongs
-    /// to, toucan filter by the user's email address, which returns one account result.
+    /// to, you can filter by the user's email address, which returns one account result.
     /// </summary>
     public partial class ListAccountsRequest : AmazonChimeRequest
     {

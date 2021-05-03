@@ -47,8 +47,8 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  
     /// <para>
-    ///  After 90 days, deleted accounts are permanently removed from your <code>Disabled</code>
-    /// accounts list. 
+    /// After 90 days, deleted accounts are permanently removed from your <code>Disabled</code>
+    /// accounts list.
     /// </para>
     /// </summary>
     public partial class DeleteAccountRequest : AmazonChimeRequest

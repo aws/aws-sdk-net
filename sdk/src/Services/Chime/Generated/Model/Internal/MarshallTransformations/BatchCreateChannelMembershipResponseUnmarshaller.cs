@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteChannelMembership operation
+    /// Response Unmarshaller for BatchCreateChannelMembership operation
     /// </summary>  
-    public class DeleteChannelMembershipResponseUnmarshaller : JsonResponseUnmarshaller
+    public class BatchCreateChannelMembershipResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteChannelMembershipResponse response = new DeleteChannelMembershipResponse();
+            BatchCreateChannelMembershipResponse response = new BatchCreateChannelMembershipResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("BatchChannelMemberships", targetDepth))
+                {
+                    var unmarshaller = BatchChannelMembershipsUnmarshaller.Instance;
+                    response.BatchChannelMemberships = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Errors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BatchCreateChannelMembershipError, BatchCreateChannelMembershipErrorUnmarshaller>(BatchCreateChannelMembershipErrorUnmarshaller.Instance);
+                    response.Errors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -73,10 +90,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
                     return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -101,9 +114,9 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             return new AmazonChimeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteChannelMembershipResponseUnmarshaller _instance = new DeleteChannelMembershipResponseUnmarshaller();        
+        private static BatchCreateChannelMembershipResponseUnmarshaller _instance = new BatchCreateChannelMembershipResponseUnmarshaller();        
 
-        internal static DeleteChannelMembershipResponseUnmarshaller GetInstance()
+        internal static BatchCreateChannelMembershipResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +124,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteChannelMembershipResponseUnmarshaller Instance
+        public static BatchCreateChannelMembershipResponseUnmarshaller Instance
         {
             get
             {
