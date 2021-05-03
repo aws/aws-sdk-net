@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This is the initial SDK release for the data APIs for Amazon FinSpace. Amazon FinSpace is a data management and analytics application for the financial services industry (FSI).",
+  "generate-client-constructors": true
+}
