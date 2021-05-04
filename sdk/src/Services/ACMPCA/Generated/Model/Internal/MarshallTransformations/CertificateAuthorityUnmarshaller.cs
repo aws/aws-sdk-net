@@ -88,6 +88,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KeyStorageSecurityStandard", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyStorageSecurityStandard = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastStateChangeAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

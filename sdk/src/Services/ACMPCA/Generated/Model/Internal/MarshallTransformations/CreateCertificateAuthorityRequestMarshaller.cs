@@ -90,6 +90,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdempotencyToken);
                 }
 
+                if(publicRequest.IsSetKeyStorageSecurityStandard())
+                {
+                    context.Writer.WritePropertyName("KeyStorageSecurityStandard");
+                    context.Writer.Write(publicRequest.KeyStorageSecurityStandard);
+                }
+
                 if(publicRequest.IsSetRevocationConfiguration())
                 {
                     context.Writer.WritePropertyName("RevocationConfiguration");

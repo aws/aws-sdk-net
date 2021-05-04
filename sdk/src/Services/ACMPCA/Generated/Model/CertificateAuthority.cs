@@ -45,6 +45,7 @@ namespace Amazon.ACMPCA.Model
         private CertificateAuthorityConfiguration _certificateAuthorityConfiguration;
         private DateTime? _createdAt;
         private FailureReason _failureReason;
+        private KeyStorageSecurityStandard _keyStorageSecurityStandard;
         private DateTime? _lastStateChangeAt;
         private DateTime? _notAfter;
         private DateTime? _notBefore;
@@ -127,6 +128,37 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyStorageSecurityStandard. 
+        /// <para>
+        /// Defines a cryptographic key management compliance standard used for handling CA keys.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
+        /// explicitly specify this parameter and value when creating a CA in that Region. Specifying
+        /// a different value (or no value) results in an <code>InvalidArgsException</code> with
+        /// the message "A certificate authority cannot be created in this region with the specified
+        /// security standard."
+        /// </para>
+        /// </summary>
+        public KeyStorageSecurityStandard KeyStorageSecurityStandard
+        {
+            get { return this._keyStorageSecurityStandard; }
+            set { this._keyStorageSecurityStandard = value; }
+        }
+
+        // Check to see if KeyStorageSecurityStandard property is set
+        internal bool IsSetKeyStorageSecurityStandard()
+        {
+            return this._keyStorageSecurityStandard != null;
         }
 
         /// <summary>

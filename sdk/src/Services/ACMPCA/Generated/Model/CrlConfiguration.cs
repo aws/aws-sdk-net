@@ -40,7 +40,7 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  
     /// <para>
-    /// ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption.
+    /// ACM Private CA assets that are stored in Amazon S3 can be protected with encryption.
     /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
     /// Your CRLs</a>.
     /// </para>

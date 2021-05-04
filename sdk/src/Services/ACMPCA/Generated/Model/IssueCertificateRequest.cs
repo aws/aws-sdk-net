@@ -65,8 +65,8 @@ namespace Amazon.ACMPCA.Model
         ///  
         /// <para>
         /// If conflicting or duplicate certificate information is supplied during certificate
-        /// issuance, ACM Private CA applies <a href="xxxxx">order of operation rules</a> to determine
-        /// what information is used.
+        /// issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
+        /// of operation rules</a> to determine what information is used.
         /// </para>
         /// </summary>
         public ApiPassthrough ApiPassthrough

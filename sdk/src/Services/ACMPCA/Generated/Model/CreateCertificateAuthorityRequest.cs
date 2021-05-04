@@ -42,7 +42,7 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  
     /// <para>
-    /// ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption.
+    /// ACM Private CA assets that are stored in Amazon S3 can be protected with encryption.
     /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
     /// Your CRLs</a>.
     /// </para>
@@ -60,6 +60,7 @@ namespace Amazon.ACMPCA.Model
         private CertificateAuthorityConfiguration _certificateAuthorityConfiguration;
         private CertificateAuthorityType _certificateAuthorityType;
         private string _idempotencyToken;
+        private KeyStorageSecurityStandard _keyStorageSecurityStandard;
         private RevocationConfiguration _revocationConfiguration;
         private List<Tag> _tags = new List<Tag>();
 
@@ -125,6 +126,37 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetIdempotencyToken()
         {
             return this._idempotencyToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyStorageSecurityStandard. 
+        /// <para>
+        /// Specifies a cryptographic key management compliance standard used for handling CA
+        /// keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
+        /// explicitly specify this parameter and value when creating a CA in that Region. Specifying
+        /// a different value (or no value) results in an <code>InvalidArgsException</code> with
+        /// the message "A certificate authority cannot be created in this region with the specified
+        /// security standard."
+        /// </para>
+        /// </summary>
+        public KeyStorageSecurityStandard KeyStorageSecurityStandard
+        {
+            get { return this._keyStorageSecurityStandard; }
+            set { this._keyStorageSecurityStandard = value; }
+        }
+
+        // Check to see if KeyStorageSecurityStandard property is set
+        internal bool IsSetKeyStorageSecurityStandard()
+        {
+            return this._keyStorageSecurityStandard != null;
         }
 
         /// <summary>
