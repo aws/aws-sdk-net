@@ -1,3 +1,15 @@
+### 3.7.27.0 (2021-05-04 18:13 UTC)
+* ACMPCA (3.7.1.0)
+	* This release adds the KeyStorageSecurityStandard parameter to the CreateCertificateAuthority API to allow customers to mandate a security standard to which the CA key will be stored within.
+* AWSHealth (3.7.0.17)
+	* Documentation updates for health
+* Chime (3.7.3.0)
+	* This release adds the ability to search for and order international phone numbers for Amazon Chime SIP media applications.
+* DevOpsGuru (3.7.1.0)
+	* Added GetCostEstimation and StartCostEstimation to get the monthly resource usage cost and added ability to view resource health by AWS service name and to search insights be AWS service name.
+* SageMaker (3.7.2.0)
+	* Enable retrying Training and Tuning Jobs that fail with InternalServerError by setting RetryStrategy.
+
 ### 3.7.26.0 (2021-05-03 20:53 UTC)
 * Chime (3.7.2.0)
 	* Added new BatchCreateChannelMembership API to support multiple membership creation for channels
