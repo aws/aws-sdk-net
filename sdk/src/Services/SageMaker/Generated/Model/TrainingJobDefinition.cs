@@ -121,9 +121,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StoppingCondition. 
         /// <para>
-        /// Specifies a limit to how long a model training job can run. When the job reaches the
-        /// time limit, Amazon SageMaker ends the training job. Use this API to cap model training
-        /// costs.
+        /// Specifies a limit to how long a model training job can run. It also specifies how
+        /// long a managed Spot training job has to complete. When the job reaches the time limit,
+        /// Amazon SageMaker ends the training job. Use this API to cap model training costs.
         /// </para>
         ///  
         /// <para>

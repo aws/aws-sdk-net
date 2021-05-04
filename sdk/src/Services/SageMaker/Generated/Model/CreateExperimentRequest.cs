@@ -42,10 +42,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments,
-    /// trials, and trial components are automatically tracked, logged, and indexed. When
-    /// you use the AWS SDK for Python (Boto), you must use the logging APIs provided by the
-    /// SDK.
+    /// When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials,
+    /// and trial components are automatically tracked, logged, and indexed. When you use
+    /// the AWS SDK for Python (Boto), you must use the logging APIs provided by the SDK.
     /// </para>
     ///  
     /// <para>

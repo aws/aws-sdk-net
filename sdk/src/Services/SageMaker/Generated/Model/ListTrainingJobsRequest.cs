@@ -37,8 +37,11 @@ namespace Amazon.SageMaker.Model
     /// When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time,
     /// the <code>MaxResults</code> number of training jobs are first retrieved ignoring the
     /// <code>StatusEquals</code> parameter and then they are filtered by the <code>StatusEquals</code>
-    /// parameter, which is returned as a response. For example, if <code>ListTrainingJobs</code>
-    /// is invoked with the following parameters:
+    /// parameter, which is returned as a response.
+    /// </para>
+    ///  
+    /// <para>
+    /// For example, if <code>ListTrainingJobs</code> is invoked with the following parameters:
     /// </para>
     ///  
     /// <para>
@@ -46,9 +49,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// Then, 100 trainings jobs with any status including those other than <code>InProgress</code>
-    /// are selected first (sorted according the creation time, from the latest to the oldest)
-    /// and those with status <code>InProgress</code> are returned.
+    /// First, 100 trainings jobs with any status, including those other than <code>InProgress</code>,
+    /// are selected (sorted according to the creation time, from the most current to the
+    /// oldest). Next, those with a status of <code>InProgress</code> are returned.
     /// </para>
     ///  
     /// <para>

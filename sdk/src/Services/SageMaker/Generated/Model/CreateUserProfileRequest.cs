@@ -113,6 +113,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Each tag consists of a key and an optional value. Tag keys must be unique per resource.
         /// </para>
+        ///  
+        /// <para>
+        /// Tags that you specify for the User Profile are also added to all Apps that the User
+        /// Profile launches.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
@@ -130,7 +135,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property UserProfileName. 
         /// <para>
-        /// A name for the UserProfile.
+        /// A name for the UserProfile. This value is not case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property UserProfileName. 
         /// <para>
-        /// The user profile name.
+        /// The user profile name. This value is not case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

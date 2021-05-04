@@ -29,32 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteExperiment operation.
-    /// Deletes an SageMaker experiment. All trials associated with the experiment must be
-    /// deleted first. Use the <a>ListTrials</a> API to get a list of the trials associated
-    /// with the experiment.
+    /// The retry strategy to use when a training job fails due to an <code>InternalServerError</code>.
+    /// <code>RetryStrategy</code> is specified as part of the <code>CreateTrainingJob</code>
+    /// and <code>CreateHyperParameterTuningJob</code> requests. You can add the <code>StoppingCondition</code>
+    /// parameter to the request to limit the training time for the complete job.
     /// </summary>
-    public partial class DeleteExperimentRequest : AmazonSageMakerRequest
+    public partial class RetryStrategy
     {
-        private string _experimentName;
+        private int? _maximumRetryAttempts;
 
         /// <summary>
-        /// Gets and sets the property ExperimentName. 
+        /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// The name of the experiment to delete.
+        /// The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code>
+        /// is changed to <code>STARTING</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=120)]
-        public string ExperimentName
+        [AWSProperty(Required=true, Min=1, Max=30)]
+        public int MaximumRetryAttempts
         {
-            get { return this._experimentName; }
-            set { this._experimentName = value; }
+            get { return this._maximumRetryAttempts.GetValueOrDefault(); }
+            set { this._maximumRetryAttempts = value; }
         }
 
-        // Check to see if ExperimentName property is set
-        internal bool IsSetExperimentName()
+        // Check to see if MaximumRetryAttempts property is set
+        internal bool IsSetMaximumRetryAttempts()
         {
-            return this._experimentName != null;
+            return this._maximumRetryAttempts.HasValue; 
         }
 
     }

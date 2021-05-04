@@ -8155,6 +8155,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly SecondaryStatus PreparingTrainingStack = new SecondaryStatus("PreparingTrainingStack");
         /// <summary>
+        /// Constant Restarting for SecondaryStatus
+        /// </summary>
+        public static readonly SecondaryStatus Restarting = new SecondaryStatus("Restarting");
+        /// <summary>
         /// Constant Starting for SecondaryStatus
         /// </summary>
         public static readonly SecondaryStatus Starting = new SecondaryStatus("Starting");

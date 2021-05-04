@@ -40,6 +40,13 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The maximum runtime allowed in seconds.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data
+        /// quality and model explainability, this can be up to 3600 seconds for an hourly schedule.
+        /// For model bias and model quality hourly schedules, this can be up to 1800 seconds.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=86400)]
         public int MaxRuntimeInSeconds

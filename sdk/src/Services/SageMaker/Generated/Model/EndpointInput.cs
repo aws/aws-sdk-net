@@ -180,7 +180,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3DataDistributionType. 
         /// <para>
         /// Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3
-        /// key. Defauts to <code>FullyReplicated</code> 
+        /// key. Defaults to <code>FullyReplicated</code> 
         /// </para>
         /// </summary>
         public ProcessingS3DataDistributionType S3DataDistributionType

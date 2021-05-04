@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+    /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+    /// or <code>Artifact</code>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
     ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon
     /// SageMaker to save the results of model training. 
     /// </para>
-    ///   </li> <li> 
+    ///  </li> <li> 
     /// <para>
     ///  <code>ResourceConfig</code> - Identifies the resources, ML compute instances, and
     /// ML storage volumes to deploy for model training. In distributed training, you specify
@@ -90,11 +90,16 @@ namespace Amazon.SageMaker.Model
     /// <para>
     ///  <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code>
     /// to set a time limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify
-    /// how long you are willing to wait for a managed spot training job to complete. 
+    /// how long a managed spot training job has to complete. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>Environment</code> - The environment variables to set in the Docker container.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RetryStrategy</code> - The number of times to retry the job when the job fails
+    /// due to an <code>InternalServerError</code>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -119,6 +124,7 @@ namespace Amazon.SageMaker.Model
         private ProfilerConfig _profilerConfig;
         private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = new List<ProfilerRuleConfiguration>();
         private ResourceConfig _resourceConfig;
+        private RetryStrategy _retryStrategy;
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
         private List<Tag> _tags = new List<Tag>();
@@ -455,6 +461,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RetryStrategy. 
+        /// <para>
+        /// The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+        /// </para>
+        /// </summary>
+        public RetryStrategy RetryStrategy
+        {
+            get { return this._retryStrategy; }
+            set { this._retryStrategy = value; }
+        }
+
+        // Check to see if RetryStrategy property is set
+        internal bool IsSetRetryStrategy()
+        {
+            return this._retryStrategy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
@@ -492,9 +516,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StoppingCondition. 
         /// <para>
-        /// Specifies a limit to how long a model training job can run. When the job reaches the
-        /// time limit, Amazon SageMaker ends the training job. Use this API to cap model training
-        /// costs.
+        /// Specifies a limit to how long a model training job can run. It also specifies how
+        /// long a managed Spot training job has to complete. When the job reaches the time limit,
+        /// Amazon SageMaker ends the training job. Use this API to cap model training costs.
         /// </para>
         ///  
         /// <para>

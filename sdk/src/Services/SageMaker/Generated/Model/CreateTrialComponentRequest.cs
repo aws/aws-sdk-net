@@ -40,10 +40,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments,
-    /// trials, and trial components are automatically tracked, logged, and indexed. When
-    /// you use the AWS SDK for Python (Boto), you must use the logging APIs provided by the
-    /// SDK.
+    /// When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials,
+    /// and trial components are automatically tracked, logged, and indexed. When you use
+    /// the AWS SDK for Python (Boto), you must use the logging APIs provided by the SDK.
     /// </para>
     ///  
     /// <para>
@@ -52,10 +51,10 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <code>CreateTrialComponent</code> can only be invoked from within an Amazon SageMaker
-    /// managed environment. This includes Amazon SageMaker training jobs, processing jobs,
-    /// transform jobs, and Amazon SageMaker notebooks. A call to <code>CreateTrialComponent</code>
-    /// from outside one of these environments results in an error.
+    ///  <code>CreateTrialComponent</code> can only be invoked from within an SageMaker managed
+    /// environment. This includes SageMaker training jobs, processing jobs, transform jobs,
+    /// and SageMaker notebooks. A call to <code>CreateTrialComponent</code> from outside
+    /// one of these environments results in an error.
     /// </para>
     ///  </note>
     /// </summary>

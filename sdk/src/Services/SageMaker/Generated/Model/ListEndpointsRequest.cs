@@ -123,7 +123,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of endpoints to return in the response.
+        /// The maximum number of endpoints to return in the response. This value defaults to
+        /// 10.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

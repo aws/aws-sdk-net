@@ -259,6 +259,10 @@ namespace Amazon.SageMaker.Model
         /// Tag keys must be unique per resource. Tags are searchable using the <code>Search</code>
         /// API.
         /// </para>
+        ///  
+        /// <para>
+        /// Tags that you specify for the Domain are also added to all Apps that the Domain launches.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

@@ -30,7 +30,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePipeline operation.
-    /// Deletes a pipeline if there are no in-progress executions.
+    /// Deletes a pipeline if there are no running instances of the pipeline. To delete a
+    /// pipeline, you must stop all running instances of the pipeline using the <code>StopPipelineExecution</code>
+    /// API. When you delete a pipeline, all instances of the pipeline are deleted.
     /// </summary>
     public partial class DeletePipelineRequest : AmazonSageMakerRequest
     {

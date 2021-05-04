@@ -238,6 +238,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRetryStrategy())
+                {
+                    context.Writer.WritePropertyName("RetryStrategy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RetryStrategyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RetryStrategy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("RoleArn");

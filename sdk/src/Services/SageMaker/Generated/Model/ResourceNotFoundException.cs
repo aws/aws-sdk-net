@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Resource being access is not found.
+    /// The resource being accessed was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

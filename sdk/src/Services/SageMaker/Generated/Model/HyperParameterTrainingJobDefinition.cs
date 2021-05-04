@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private List<Channel> _inputDataConfig = new List<Channel>();
         private OutputDataConfig _outputDataConfig;
         private ResourceConfig _resourceConfig;
+        private RetryStrategy _retryStrategy;
         private string _roleArn;
         private Dictionary<string, string> _staticHyperParameters = new Dictionary<string, string>();
         private StoppingCondition _stoppingCondition;
@@ -250,6 +251,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RetryStrategy. 
+        /// <para>
+        /// The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+        /// </para>
+        /// </summary>
+        public RetryStrategy RetryStrategy
+        {
+            get { return this._retryStrategy; }
+            set { this._retryStrategy = value; }
+        }
+
+        // Check to see if RetryStrategy property is set
+        internal bool IsSetRetryStrategy()
+        {
+            return this._retryStrategy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that
@@ -292,9 +311,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property StoppingCondition. 
         /// <para>
         /// Specifies a limit to how long a model hyperparameter training job can run. It also
-        /// specifies how long you are willing to wait for a managed spot training job to complete.
-        /// When the job reaches the a limit, Amazon SageMaker ends the training job. Use this
-        /// API to cap model training costs.
+        /// specifies how long a managed spot training job has to complete. When the job reaches
+        /// the time limit, Amazon SageMaker ends the training job. Use this API to cap model
+        /// training costs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

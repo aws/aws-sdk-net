@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies a limit to how long a model training or compilation job can run. It also
-    /// specifies how long you are willing to wait for a managed spot training job to complete.
-    /// When the job reaches the time limit, Amazon SageMaker ends the training or compilation
-    /// job. Use this API to cap model training costs.
+    /// Specifies a limit to how long a model training job, model compilation job, or hyperparameter
+    /// tuning job can run. It also specifies how long a managed Spot training job has to
+    /// complete. When the job reaches the time limit, Amazon SageMaker ends the training
+    /// or compilation job. Use this API to cap model training costs.
     /// 
     ///  
     /// <para>
@@ -65,9 +65,17 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxRuntimeInSeconds. 
         /// <para>
-        /// The maximum length of time, in seconds, that the training or compilation job can run.
-        /// If job does not complete during this time, Amazon SageMaker ends the job. If value
-        /// is not specified, default value is 1 day. The maximum value is 28 days.
+        /// The maximum length of time, in seconds, that a training or compilation job can run.
+        /// If the job does not complete during this time, Amazon SageMaker ends the job.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code>
+        /// specifies the maximum time for all of the attempts in total, not each individual attempt.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is 1 day. The maximum value is 28 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -86,10 +94,15 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxWaitTimeInSeconds. 
         /// <para>
-        /// The maximum length of time, in seconds, how long you are willing to wait for a managed
-        /// spot training job to complete. It is the amount of time spent waiting for Spot capacity
-        /// plus the amount of time the training job runs. It must be equal to or greater than
-        /// <code>MaxRuntimeInSeconds</code>. 
+        /// The maximum length of time, in seconds, that a managed Spot training job has to complete.
+        /// It is the amount of time spent waiting for Spot capacity plus the amount of time the
+        /// job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>.
+        /// If the job does not complete during this time, Amazon SageMaker ends the job.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code>
+        /// specifies the maximum time for all of the attempts in total, not each individual attempt.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

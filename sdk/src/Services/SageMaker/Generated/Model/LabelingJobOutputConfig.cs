@@ -96,7 +96,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// An Amazon Simple Notification Service (Amazon SNS) output topic ARN.
+        /// An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code>
+        /// if you want to do real time chaining to another streaming job and receive an Amazon
+        /// SNS notifications each time a data object is submitted by a worker.
         /// </para>
         ///  
         /// <para>

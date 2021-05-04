@@ -207,6 +207,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ResourceConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RetryStrategy", targetDepth))
+                {
+                    var unmarshaller = RetryStrategyUnmarshaller.Instance;
+                    response.RetryStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
