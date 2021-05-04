@@ -35,6 +35,7 @@ namespace Amazon.DevOpsGuru.Model
     {
         private List<CloudFormationHealth> _cloudFormation = new List<CloudFormationHealth>();
         private string _nextToken;
+        private List<ServiceHealth> _service = new List<ServiceHealth>();
 
         /// <summary>
         /// Gets and sets the property CloudFormation. 
@@ -74,6 +75,25 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Service. 
+        /// <para>
+        /// An array of <code>ServiceHealth</code> objects that describes the health of the AWS
+        /// services associated with the resources in the collection.
+        /// </para>
+        /// </summary>
+        public List<ServiceHealth> Service
+        {
+            get { return this._service; }
+            set { this._service = value; }
+        }
+
+        // Check to see if Service property is set
+        internal bool IsSetService()
+        {
+            return this._service != null && this._service.Count > 0; 
         }
 
     }

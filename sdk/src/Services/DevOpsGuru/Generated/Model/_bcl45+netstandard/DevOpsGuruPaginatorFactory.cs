@@ -44,6 +44,14 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
+        /// Paginator for GetCostEstimation operation
+        ///</summary>
+        public IGetCostEstimationPaginator GetCostEstimation(GetCostEstimationRequest request) 
+        {
+            return new GetCostEstimationPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetResourceCollection operation
         ///</summary>
         public IGetResourceCollectionPaginator GetResourceCollection(GetResourceCollectionRequest request) 

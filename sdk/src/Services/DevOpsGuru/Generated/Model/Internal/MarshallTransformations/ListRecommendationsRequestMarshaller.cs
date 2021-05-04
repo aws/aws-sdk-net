@@ -71,6 +71,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InsightId);
                 }
 
+                if(publicRequest.IsSetLocale())
+                {
+                    context.Writer.WritePropertyName("Locale");
+                    context.Writer.Write(publicRequest.Locale);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");

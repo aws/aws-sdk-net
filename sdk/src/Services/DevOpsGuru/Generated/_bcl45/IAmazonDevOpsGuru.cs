@@ -509,7 +509,8 @@ namespace Amazon.DevOpsGuru
         /// Time to Recover (MTTR) for all closed insights in resource collections in your account.
         /// You specify the type of AWS resources collection. The one type of AWS resource collection
         /// supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only
-        /// the AWS resources that are defined in the stacks.
+        /// the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation
+        /// stacks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeResourceCollectionHealth service method.</param>
         /// 
@@ -540,7 +541,8 @@ namespace Amazon.DevOpsGuru
         /// Time to Recover (MTTR) for all closed insights in resource collections in your account.
         /// You specify the type of AWS resources collection. The one type of AWS resource collection
         /// supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only
-        /// the AWS resources that are defined in the stacks.
+        /// the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation
+        /// stacks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeResourceCollectionHealth service method.</param>
         /// <param name="cancellationToken">
@@ -633,6 +635,78 @@ namespace Amazon.DevOpsGuru
 
         #endregion
         
+        #region  GetCostEstimation
+
+
+        /// <summary>
+        /// Returns an estimate of the monthly cost for DevOps Guru to analyze your AWS resources.
+        /// For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
+        /// your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon
+        /// DevOps Guru pricing</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostEstimation service method.</param>
+        /// 
+        /// <returns>The response from the GetCostEstimation service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation">REST API Reference for GetCostEstimation Operation</seealso>
+        GetCostEstimationResponse GetCostEstimation(GetCostEstimationRequest request);
+
+
+
+        /// <summary>
+        /// Returns an estimate of the monthly cost for DevOps Guru to analyze your AWS resources.
+        /// For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
+        /// your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon
+        /// DevOps Guru pricing</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostEstimation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCostEstimation service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation">REST API Reference for GetCostEstimation Operation</seealso>
+        Task<GetCostEstimationResponse> GetCostEstimationAsync(GetCostEstimationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetResourceCollection
 
 
@@ -640,6 +714,7 @@ namespace Amazon.DevOpsGuru
         /// Returns lists AWS resources that are of the specified resource collection type. The
         /// one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps
         /// Guru can be configured to analyze only the AWS resources that are defined in the stacks.
+        /// You can specify up to 500 AWS CloudFormation stacks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceCollection service method.</param>
         /// 
@@ -672,6 +747,7 @@ namespace Amazon.DevOpsGuru
         /// Returns lists AWS resources that are of the specified resource collection type. The
         /// one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps
         /// Guru can be configured to analyze only the AWS resources that are defined in the stacks.
+        /// You can specify up to 500 AWS CloudFormation stacks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceCollection service method.</param>
         /// <param name="cancellationToken">
@@ -1267,14 +1343,87 @@ namespace Amazon.DevOpsGuru
 
         #endregion
         
+        #region  StartCostEstimation
+
+
+        /// <summary>
+        /// Starts the creation of an estimate of the monthly cost to analyze your AWS resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCostEstimation service method.</param>
+        /// 
+        /// <returns>The response from the StartCostEstimation service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ConflictException">
+        /// An exception that is thrown when a conflict occurs.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation">REST API Reference for StartCostEstimation Operation</seealso>
+        StartCostEstimationResponse StartCostEstimation(StartCostEstimationRequest request);
+
+
+
+        /// <summary>
+        /// Starts the creation of an estimate of the monthly cost to analyze your AWS resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCostEstimation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCostEstimation service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ConflictException">
+        /// An exception that is thrown when a conflict occurs.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation">REST API Reference for StartCostEstimation Operation</seealso>
+        Task<StartCostEstimationResponse> StartCostEstimationAsync(StartCostEstimationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateResourceCollection
 
 
         /// <summary>
         /// Updates the collection of resources that DevOps Guru analyzes. The one type of AWS
         /// resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-        /// to analyze only the AWS resources that are defined in the stacks. This method also
-        /// creates the IAM role required for you to use DevOps Guru.
+        /// to analyze only the AWS resources that are defined in the stacks. You can specify
+        /// up to 500 AWS CloudFormation stacks. This method also creates the IAM role required
+        /// for you to use DevOps Guru.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourceCollection service method.</param>
         /// 
@@ -1306,8 +1455,9 @@ namespace Amazon.DevOpsGuru
         /// <summary>
         /// Updates the collection of resources that DevOps Guru analyzes. The one type of AWS
         /// resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-        /// to analyze only the AWS resources that are defined in the stacks. This method also
-        /// creates the IAM role required for you to use DevOps Guru.
+        /// to analyze only the AWS resources that are defined in the stacks. You can specify
+        /// up to 500 AWS CloudFormation stacks. This method also creates the IAM role required
+        /// for you to use DevOps Guru.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourceCollection service method.</param>
         /// <param name="cancellationToken">

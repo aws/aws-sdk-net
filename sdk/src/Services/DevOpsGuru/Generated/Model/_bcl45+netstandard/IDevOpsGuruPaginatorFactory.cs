@@ -31,6 +31,11 @@ namespace Amazon.DevOpsGuru.Model
         IDescribeResourceCollectionHealthPaginator DescribeResourceCollectionHealth(DescribeResourceCollectionHealthRequest request);
 
         /// <summary>
+        /// Paginator for GetCostEstimation operation
+        ///</summary>
+        IGetCostEstimationPaginator GetCostEstimation(GetCostEstimationRequest request);
+
+        /// <summary>
         /// Paginator for GetResourceCollection operation
         ///</summary>
         IGetResourceCollectionPaginator GetResourceCollection(GetResourceCollectionRequest request);

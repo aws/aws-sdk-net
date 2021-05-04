@@ -63,6 +63,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Service", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceHealth, ServiceHealthUnmarshaller>(ServiceHealthUnmarshaller.Instance);
+                    response.Service = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

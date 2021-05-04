@@ -61,7 +61,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <para>
         ///  The requested list of AWS resource collections. The one type of AWS resource collection
         /// supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only
-        /// the AWS resources that are defined in the stacks. 
+        /// the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation
+        /// stacks. 
         /// </para>
         /// </summary>
         public ResourceCollectionFilter ResourceCollection

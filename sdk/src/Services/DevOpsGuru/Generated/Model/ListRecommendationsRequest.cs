@@ -36,6 +36,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class ListRecommendationsRequest : AmazonDevOpsGuruRequest
     {
         private string _insightId;
+        private Locale _locale;
         private string _nextToken;
 
         /// <summary>
@@ -55,6 +56,24 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetInsightId()
         {
             return this._insightId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// A locale that specifies the language to use for recommendations.
+        /// </para>
+        /// </summary>
+        public Locale Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
         }
 
         /// <summary>

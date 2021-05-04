@@ -39,7 +39,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ProactiveInsight. 
         /// <para>
-        ///  An <code>ProactiveInsight</code> object that represents the requested insight. 
+        ///  A <code>ProactiveInsight</code> object that represents the requested insight. 
         /// </para>
         /// </summary>
         public ProactiveInsight ProactiveInsight
@@ -57,7 +57,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ReactiveInsight. 
         /// <para>
-        ///  An <code>ReactiveInsight</code> object that represents the requested insight. 
+        ///  A <code>ReactiveInsight</code> object that represents the requested insight. 
         /// </para>
         /// </summary>
         public ReactiveInsight ReactiveInsight

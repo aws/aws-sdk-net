@@ -38,7 +38,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property CloudFormation. 
         /// <para>
-        ///  An collection of AWS CloudFormation stacks. 
+        ///  An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation
+        /// stacks. 
         /// </para>
         /// </summary>
         public UpdateCloudFormationCollectionFilter CloudFormation

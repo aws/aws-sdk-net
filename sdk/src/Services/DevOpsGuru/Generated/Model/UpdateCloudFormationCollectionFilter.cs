@@ -30,6 +30,7 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Contains the names of AWS CloudFormation stacks used to update a collection of stacks.
+    /// You can specify up to 500 AWS CloudFormation stacks.
     /// </summary>
     public partial class UpdateCloudFormationCollectionFilter
     {
@@ -38,7 +39,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property StackNames. 
         /// <para>
-        ///  An array of the name of stacks to update. 
+        ///  An array of the names of the AWS CloudFormation stacks to update. You can specify
+        /// up to 500 AWS CloudFormation stacks. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

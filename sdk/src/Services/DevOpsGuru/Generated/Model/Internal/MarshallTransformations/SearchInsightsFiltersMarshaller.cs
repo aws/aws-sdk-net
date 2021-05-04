@@ -56,6 +56,17 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetServiceCollection())
+            {
+                context.Writer.WritePropertyName("ServiceCollection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ServiceCollectionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServiceCollection, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSeverities())
             {
                 context.Writer.WritePropertyName("Severities");

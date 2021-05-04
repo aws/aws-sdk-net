@@ -37,6 +37,7 @@ namespace Amazon.DevOpsGuru.Model
         private InsightTimeRange _insightTimeRange;
         private string _name;
         private ResourceCollection _resourceCollection;
+        private ServiceCollection _serviceCollection;
         private InsightSeverity _severity;
         private InsightStatus _status;
 
@@ -106,6 +107,24 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetResourceCollection()
         {
             return this._resourceCollection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceCollection. 
+        /// <para>
+        /// A collection of the names of AWS services.
+        /// </para>
+        /// </summary>
+        public ServiceCollection ServiceCollection
+        {
+            get { return this._serviceCollection; }
+            set { this._serviceCollection = value; }
+        }
+
+        // Check to see if ServiceCollection property is set
+        internal bool IsSetServiceCollection()
+        {
+            return this._serviceCollection != null;
         }
 
         /// <summary>

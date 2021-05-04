@@ -34,7 +34,8 @@ namespace Amazon.DevOpsGuru.Model
     /// Time to Recover (MTTR) for all closed insights in resource collections in your account.
     /// You specify the type of AWS resources collection. The one type of AWS resource collection
     /// supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only
-    /// the AWS resources that are defined in the stacks.
+    /// the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation
+    /// stacks.
     /// </summary>
     public partial class DescribeResourceCollectionHealthRequest : AmazonDevOpsGuruRequest
     {
@@ -67,7 +68,7 @@ namespace Amazon.DevOpsGuru.Model
         ///  An AWS resource collection type. This type specifies how analyzed AWS resources are
         /// defined. The one type of AWS resource collection supported is AWS CloudFormation stacks.
         /// DevOps Guru can be configured to analyze only the AWS resources that are defined in
-        /// the stacks. 
+        /// the stacks. You can specify up to 500 AWS CloudFormation stacks. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

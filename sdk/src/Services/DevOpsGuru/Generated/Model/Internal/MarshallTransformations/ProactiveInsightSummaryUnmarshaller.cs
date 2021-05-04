@@ -94,6 +94,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceCollection = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServiceCollection", targetDepth))
+                {
+                    var unmarshaller = ServiceCollectionUnmarshaller.Instance;
+                    unmarshalledObject.ServiceCollection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Severity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

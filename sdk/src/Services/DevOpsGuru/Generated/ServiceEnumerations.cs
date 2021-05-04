@@ -203,6 +203,106 @@ namespace Amazon.DevOpsGuru
 
 
     /// <summary>
+    /// Constants used for properties of type CostEstimationServiceResourceState.
+    /// </summary>
+    public class CostEstimationServiceResourceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for CostEstimationServiceResourceState
+        /// </summary>
+        public static readonly CostEstimationServiceResourceState ACTIVE = new CostEstimationServiceResourceState("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for CostEstimationServiceResourceState
+        /// </summary>
+        public static readonly CostEstimationServiceResourceState INACTIVE = new CostEstimationServiceResourceState("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CostEstimationServiceResourceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CostEstimationServiceResourceState FindValue(string value)
+        {
+            return FindValue<CostEstimationServiceResourceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CostEstimationServiceResourceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CostEstimationStatus.
+    /// </summary>
+    public class CostEstimationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for CostEstimationStatus
+        /// </summary>
+        public static readonly CostEstimationStatus COMPLETED = new CostEstimationStatus("COMPLETED");
+        /// <summary>
+        /// Constant ONGOING for CostEstimationStatus
+        /// </summary>
+        public static readonly CostEstimationStatus ONGOING = new CostEstimationStatus("ONGOING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CostEstimationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CostEstimationStatus FindValue(string value)
+        {
+            return FindValue<CostEstimationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CostEstimationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventClass.
     /// </summary>
     public class EventClass : ConstantClass
@@ -531,6 +631,92 @@ namespace Amazon.DevOpsGuru
 
 
     /// <summary>
+    /// Constants used for properties of type Locale.
+    /// </summary>
+    public class Locale : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DE_DE for Locale
+        /// </summary>
+        public static readonly Locale DE_DE = new Locale("DE_DE");
+        /// <summary>
+        /// Constant EN_GB for Locale
+        /// </summary>
+        public static readonly Locale EN_GB = new Locale("EN_GB");
+        /// <summary>
+        /// Constant EN_US for Locale
+        /// </summary>
+        public static readonly Locale EN_US = new Locale("EN_US");
+        /// <summary>
+        /// Constant ES_ES for Locale
+        /// </summary>
+        public static readonly Locale ES_ES = new Locale("ES_ES");
+        /// <summary>
+        /// Constant FR_FR for Locale
+        /// </summary>
+        public static readonly Locale FR_FR = new Locale("FR_FR");
+        /// <summary>
+        /// Constant IT_IT for Locale
+        /// </summary>
+        public static readonly Locale IT_IT = new Locale("IT_IT");
+        /// <summary>
+        /// Constant JA_JP for Locale
+        /// </summary>
+        public static readonly Locale JA_JP = new Locale("JA_JP");
+        /// <summary>
+        /// Constant KO_KR for Locale
+        /// </summary>
+        public static readonly Locale KO_KR = new Locale("KO_KR");
+        /// <summary>
+        /// Constant PT_BR for Locale
+        /// </summary>
+        public static readonly Locale PT_BR = new Locale("PT_BR");
+        /// <summary>
+        /// Constant ZH_CN for Locale
+        /// </summary>
+        public static readonly Locale ZH_CN = new Locale("ZH_CN");
+        /// <summary>
+        /// Constant ZH_TW for Locale
+        /// </summary>
+        public static readonly Locale ZH_TW = new Locale("ZH_TW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Locale(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Locale FindValue(string value)
+        {
+            return FindValue<Locale>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Locale(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OptInStatus.
     /// </summary>
     public class OptInStatus : ConstantClass
@@ -590,6 +776,10 @@ namespace Amazon.DevOpsGuru
         /// Constant AWS_CLOUD_FORMATION for ResourceCollectionType
         /// </summary>
         public static readonly ResourceCollectionType AWS_CLOUD_FORMATION = new ResourceCollectionType("AWS_CLOUD_FORMATION");
+        /// <summary>
+        /// Constant AWS_SERVICE for ResourceCollectionType
+        /// </summary>
+        public static readonly ResourceCollectionType AWS_SERVICE = new ResourceCollectionType("AWS_SERVICE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -620,6 +810,148 @@ namespace Amazon.DevOpsGuru
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceCollectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceName.
+    /// </summary>
+    public class ServiceName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API_GATEWAY for ServiceName
+        /// </summary>
+        public static readonly ServiceName API_GATEWAY = new ServiceName("API_GATEWAY");
+        /// <summary>
+        /// Constant APPLICATION_ELB for ServiceName
+        /// </summary>
+        public static readonly ServiceName APPLICATION_ELB = new ServiceName("APPLICATION_ELB");
+        /// <summary>
+        /// Constant AUTO_SCALING_GROUP for ServiceName
+        /// </summary>
+        public static readonly ServiceName AUTO_SCALING_GROUP = new ServiceName("AUTO_SCALING_GROUP");
+        /// <summary>
+        /// Constant CLOUD_FRONT for ServiceName
+        /// </summary>
+        public static readonly ServiceName CLOUD_FRONT = new ServiceName("CLOUD_FRONT");
+        /// <summary>
+        /// Constant DYNAMO_DB for ServiceName
+        /// </summary>
+        public static readonly ServiceName DYNAMO_DB = new ServiceName("DYNAMO_DB");
+        /// <summary>
+        /// Constant EC2 for ServiceName
+        /// </summary>
+        public static readonly ServiceName EC2 = new ServiceName("EC2");
+        /// <summary>
+        /// Constant ECS for ServiceName
+        /// </summary>
+        public static readonly ServiceName ECS = new ServiceName("ECS");
+        /// <summary>
+        /// Constant EKS for ServiceName
+        /// </summary>
+        public static readonly ServiceName EKS = new ServiceName("EKS");
+        /// <summary>
+        /// Constant ELASTI_CACHE for ServiceName
+        /// </summary>
+        public static readonly ServiceName ELASTI_CACHE = new ServiceName("ELASTI_CACHE");
+        /// <summary>
+        /// Constant ELASTIC_BEANSTALK for ServiceName
+        /// </summary>
+        public static readonly ServiceName ELASTIC_BEANSTALK = new ServiceName("ELASTIC_BEANSTALK");
+        /// <summary>
+        /// Constant ELB for ServiceName
+        /// </summary>
+        public static readonly ServiceName ELB = new ServiceName("ELB");
+        /// <summary>
+        /// Constant ES for ServiceName
+        /// </summary>
+        public static readonly ServiceName ES = new ServiceName("ES");
+        /// <summary>
+        /// Constant KINESIS for ServiceName
+        /// </summary>
+        public static readonly ServiceName KINESIS = new ServiceName("KINESIS");
+        /// <summary>
+        /// Constant LAMBDA for ServiceName
+        /// </summary>
+        public static readonly ServiceName LAMBDA = new ServiceName("LAMBDA");
+        /// <summary>
+        /// Constant NAT_GATEWAY for ServiceName
+        /// </summary>
+        public static readonly ServiceName NAT_GATEWAY = new ServiceName("NAT_GATEWAY");
+        /// <summary>
+        /// Constant NETWORK_ELB for ServiceName
+        /// </summary>
+        public static readonly ServiceName NETWORK_ELB = new ServiceName("NETWORK_ELB");
+        /// <summary>
+        /// Constant RDS for ServiceName
+        /// </summary>
+        public static readonly ServiceName RDS = new ServiceName("RDS");
+        /// <summary>
+        /// Constant REDSHIFT for ServiceName
+        /// </summary>
+        public static readonly ServiceName REDSHIFT = new ServiceName("REDSHIFT");
+        /// <summary>
+        /// Constant ROUTE_53 for ServiceName
+        /// </summary>
+        public static readonly ServiceName ROUTE_53 = new ServiceName("ROUTE_53");
+        /// <summary>
+        /// Constant S3 for ServiceName
+        /// </summary>
+        public static readonly ServiceName S3 = new ServiceName("S3");
+        /// <summary>
+        /// Constant SAGE_MAKER for ServiceName
+        /// </summary>
+        public static readonly ServiceName SAGE_MAKER = new ServiceName("SAGE_MAKER");
+        /// <summary>
+        /// Constant SNS for ServiceName
+        /// </summary>
+        public static readonly ServiceName SNS = new ServiceName("SNS");
+        /// <summary>
+        /// Constant SQS for ServiceName
+        /// </summary>
+        public static readonly ServiceName SQS = new ServiceName("SQS");
+        /// <summary>
+        /// Constant STEP_FUNCTIONS for ServiceName
+        /// </summary>
+        public static readonly ServiceName STEP_FUNCTIONS = new ServiceName("STEP_FUNCTIONS");
+        /// <summary>
+        /// Constant SWF for ServiceName
+        /// </summary>
+        public static readonly ServiceName SWF = new ServiceName("SWF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceName FindValue(string value)
+        {
+            return FindValue<ServiceName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceName(string value)
         {
             return FindValue(value);
         }

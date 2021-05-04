@@ -35,6 +35,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class SearchInsightsFilters
     {
         private ResourceCollection _resourceCollection;
+        private ServiceCollection _serviceCollection;
         private List<string> _severities = new List<string>();
         private List<string> _statuses = new List<string>();
 
@@ -51,6 +52,24 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetResourceCollection()
         {
             return this._resourceCollection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceCollection. 
+        /// <para>
+        /// A collection of the names of AWS services.
+        /// </para>
+        /// </summary>
+        public ServiceCollection ServiceCollection
+        {
+            get { return this._serviceCollection; }
+            set { this._serviceCollection = value; }
+        }
+
+        // Check to see if ServiceCollection property is set
+        internal bool IsSetServiceCollection()
+        {
+            return this._serviceCollection != null;
         }
 
         /// <summary>
