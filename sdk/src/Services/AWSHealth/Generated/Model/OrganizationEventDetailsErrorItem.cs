@@ -30,7 +30,7 @@ namespace Amazon.AWSHealth.Model
 {
     /// <summary>
     /// Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
-    /// operation cannot find a specified event.
+    /// operation can't find a specified event.
     /// </summary>
     public partial class OrganizationEventDetailsErrorItem
     {
@@ -43,7 +43,7 @@ namespace Amazon.AWSHealth.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
-        /// operation cannot find a specified event.
+        /// operation can't find a specified event.
         /// </para>
         /// </summary>
         [AWSProperty(Max=12)]
@@ -64,6 +64,28 @@ namespace Amazon.AWSHealth.Model
         /// <para>
         /// A message that describes the error.
         /// </para>
+        ///  
+        /// <para>
+        /// If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive
+        /// one of the following errors, follow the recommendations in the message:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// We couldn't find a public event that matches your request. To find an event that is
+        /// account specific, you must enter an AWS account ID in the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// We couldn't find an account specific event for the specified AWS account. To find
+        /// an event that is public, you must enter a null value for the AWS account ID in the
+        /// request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your AWS account doesn't include the AWS Support plan required to use the AWS Health
+        /// API. You must have either a Business or Enterprise Support plan.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ErrorMessage
         {
@@ -98,8 +120,16 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArn. 
         /// <para>
-        /// The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-        /// </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code> format.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, an event ARN might look like the following:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
         /// 
         /// </para>
         /// </summary>

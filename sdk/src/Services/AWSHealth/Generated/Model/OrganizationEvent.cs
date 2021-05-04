@@ -48,8 +48,16 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-        /// </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code> format.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, an event ARN might look like the following:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
         /// 
         /// </para>
         /// </summary>
@@ -200,7 +208,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The AWS service that is affected by the event. For example, EC2, RDS.
+        /// The AWS service that is affected by the event, such as EC2 and RDS.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=30)]

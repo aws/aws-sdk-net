@@ -52,7 +52,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of AWS availability zones.
+        /// A list of AWS Availability Zones.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -227,7 +227,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// A list of AWS regions.
+        /// A list of AWS Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

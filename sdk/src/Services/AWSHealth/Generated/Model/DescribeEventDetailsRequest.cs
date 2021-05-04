@@ -33,13 +33,13 @@ namespace Amazon.AWSHealth.Model
     /// Returns detailed information about one or more specified events. Information includes
     /// standard event data (AWS Region, service, and so on, as returned by <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>),
     /// a detailed event description, and possible additional metadata that depends upon the
-    /// nature of the event. Affected entities are not included. To retrieve those, use the
-    /// <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a>
+    /// nature of the event. Affected entities are not included. To retrieve the entities,
+    /// use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a>
     /// operation.
     /// 
     ///  
     /// <para>
-    /// If a specified event cannot be retrieved, an error message is returned for that event.
+    /// If a specified event can't be retrieved, an error message is returned for that event.
     /// </para>
     ///  <note> 
     /// <para>
