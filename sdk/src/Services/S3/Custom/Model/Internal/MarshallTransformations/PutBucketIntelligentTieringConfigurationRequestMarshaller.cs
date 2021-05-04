@@ -16,6 +16,7 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Util;
 using Amazon.Util;
 using System.IO;
@@ -65,8 +66,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 			request.AddSubResource("id", PutBucketIntelligentTieringConfigurationRequest.IntelligentTieringId);
 
-			var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
-			using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
+			var stringWriter = new XMLEncodedStringWriter(System.Globalization.CultureInfo.InvariantCulture);
+			using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize}))
 			{
 
 				if (intelligentTieringConfiguration != null)

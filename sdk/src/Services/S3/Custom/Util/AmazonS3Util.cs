@@ -34,6 +34,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Linq;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Util
 {
@@ -499,8 +500,8 @@ namespace Amazon.S3.Util
 
         internal static string SerializeTaggingToXml(Tagging tagging)
         {
-            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
+            var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
                 xmlWriter.WriteStartElement("Tagging", "");
 

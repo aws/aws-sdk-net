@@ -22,6 +22,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
 using Amazon.Util;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable 1591
 
@@ -53,12 +54,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.AddSubResource("accelerate");
 
-            var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
+            var stringWriter = new XMLEncodedStringWriter(System.Globalization.CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter,
             new XmlWriterSettings()
                 {
                     Encoding = Encoding.UTF8,
-                    OmitXmlDeclaration = true
+                    OmitXmlDeclaration = true,
+                    NewLineHandling = NewLineHandling.Entitize
                 }))
             {
                 var accelerateConfiguration = putBucketAccelerateRequest.AccelerateConfiguration;

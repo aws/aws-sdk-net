@@ -75,8 +75,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
 			request.ResourcePath = uriResourcePath;
 
-            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
+            var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 if (publicRequest.IsSetObjectLockConfiguration())
                 {

@@ -27,6 +27,7 @@ using System.Xml;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Util;
 using Amazon.Util;
 
@@ -110,13 +111,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddSubResource("select-type", "2");
 
             // Parameters
-            using (var stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture))
             {
                 var xmlWriterSettings = new XmlWriterSettings()
                 {
                     Encoding = Encoding.UTF8,
                     OmitXmlDeclaration = true,
-                    NewLineHandling = NewLineHandling.None
+                    NewLineHandling = NewLineHandling.Entitize
                 };
                 using (var xmlWriter = XmlWriter.Create(stringWriter, xmlWriterSettings))
                 {
