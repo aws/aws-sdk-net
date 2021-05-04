@@ -1247,6 +1247,10 @@ namespace Amazon.Chime
         /// </summary>
         public static readonly PhoneNumberProductType BusinessCalling = new PhoneNumberProductType("BusinessCalling");
         /// <summary>
+        /// Constant SipMediaApplicationDialIn for PhoneNumberProductType
+        /// </summary>
+        public static readonly PhoneNumberProductType SipMediaApplicationDialIn = new PhoneNumberProductType("SipMediaApplicationDialIn");
+        /// <summary>
         /// Constant VoiceConnector for PhoneNumberProductType
         /// </summary>
         public static readonly PhoneNumberProductType VoiceConnector = new PhoneNumberProductType("VoiceConnector");

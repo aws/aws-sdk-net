@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SearchAvailablePhoneNumbers operation
+    /// Response Unmarshaller for ListSupportedPhoneNumberCountries operation
     /// </summary>  
-    public class SearchAvailablePhoneNumbersResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListSupportedPhoneNumberCountriesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            SearchAvailablePhoneNumbersResponse response = new SearchAvailablePhoneNumbersResponse();
+            ListSupportedPhoneNumberCountriesResponse response = new ListSupportedPhoneNumberCountriesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("E164PhoneNumbers", targetDepth))
+                if (context.TestExpression("PhoneNumberCountries", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.E164PhoneNumbers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<PhoneNumberCountry, PhoneNumberCountryUnmarshaller>(PhoneNumberCountryUnmarshaller.Instance);
+                    response.PhoneNumberCountries = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,9 +112,9 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             return new AmazonChimeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static SearchAvailablePhoneNumbersResponseUnmarshaller _instance = new SearchAvailablePhoneNumbersResponseUnmarshaller();        
+        private static ListSupportedPhoneNumberCountriesResponseUnmarshaller _instance = new ListSupportedPhoneNumberCountriesResponseUnmarshaller();        
 
-        internal static SearchAvailablePhoneNumbersResponseUnmarshaller GetInstance()
+        internal static ListSupportedPhoneNumberCountriesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +122,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchAvailablePhoneNumbersResponseUnmarshaller Instance
+        public static ListSupportedPhoneNumberCountriesResponseUnmarshaller Instance
         {
             get
             {

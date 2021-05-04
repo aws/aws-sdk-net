@@ -37,6 +37,7 @@ namespace Amazon.Chime.Model
         private string _callingName;
         private CallingNameStatus _callingNameStatus;
         private PhoneNumberCapabilities _capabilities;
+        private string _country;
         private DateTime? _createdTimestamp;
         private DateTime? _deletionTimestamp;
         private string _e164PhoneNumber;
@@ -116,6 +117,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetCapabilities()
         {
             return this._capabilities != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// The phone number country. Format: ISO 3166-1 alpha-2.
+        /// </para>
+        /// </summary>
+        public string Country
+        {
+            get { return this._country; }
+            set { this._country = value; }
+        }
+
+        // Check to see if Country property is set
+        internal bool IsSetCountry()
+        {
+            return this._country != null;
         }
 
         /// <summary>

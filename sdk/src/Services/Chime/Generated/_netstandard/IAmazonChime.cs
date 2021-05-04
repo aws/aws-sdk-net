@@ -536,19 +536,19 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Updates phone number product types or calling names. You can update one attribute
-        /// at a time for each <code>UpdatePhoneNumberRequestItem</code> . For example, you can
-        /// update either the product type or the calling name. 
+        /// at a time for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can
+        /// update the product type or the calling name.
         /// 
         ///  
         /// <para>
-        /// For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice
-        /// Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector product
-        /// type.
+        /// For toll-free numbers, you cannot use the Amazon Chime Business Calling product type.
+        /// For numbers outside the US, you must use the Amazon Chime SIP Media Application Dial-In
+        /// product type.
         /// </para>
         ///  
         /// <para>
-        /// Updates to outbound calling names can take up to 72 hours to complete. Pending updates
-        /// to outbound calling names must be complete before you can request another update.
+        /// Updates to outbound calling names can take 72 hours to complete. Pending updates to
+        /// outbound calling names must be complete before you can request another update.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePhoneNumber service method.</param>
@@ -1304,9 +1304,9 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business
-        /// Calling and Amazon Chime Voice Connector product types. For toll-free numbers, you
-        /// must use the Amazon Chime Voice Connector product type.
+        /// Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot
+        /// use the Amazon Chime Business Calling product type. For numbers outside the US, you
+        /// must use the Amazon Chime SIP Media Application Dial-In product type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePhoneNumberOrder service method.</param>
         /// <param name="cancellationToken">
@@ -2309,7 +2309,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Moves the specified phone number into the <b>Deletionqueue</b>. A phone number must
+        /// Moves the specified phone number into the <b>Deletion queue</b>. A phone number must
         /// be disassociated from any users or Amazon Chime Voice Connectors before it can be
         /// deleted.
         /// 
@@ -5110,7 +5110,7 @@ namespace Amazon.Chime
 
         /// <summary>
         /// List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>.
-        /// By default, sorted by creation timestamp in descending order .
+        /// By default, sorted by creation timestamp in descending order.
         /// 
         ///  <note> 
         /// <para>
@@ -5637,6 +5637,45 @@ namespace Amazon.Chime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSipRules">REST API Reference for ListSipRules Operation</seealso>
         Task<ListSipRulesResponse> ListSipRulesAsync(ListSipRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSupportedPhoneNumberCountries
+
+
+
+        /// <summary>
+        /// Lists supported phone number countries.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSupportedPhoneNumberCountries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSupportedPhoneNumberCountries service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSupportedPhoneNumberCountries">REST API Reference for ListSupportedPhoneNumberCountries Operation</seealso>
+        Task<ListSupportedPhoneNumberCountriesResponse> ListSupportedPhoneNumberCountriesAsync(ListSupportedPhoneNumberCountriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6631,7 +6670,11 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Searches phone numbers that can be ordered.
+        /// Searches for phone numbers that can be ordered. For US numbers, provide at least one
+        /// of the following search filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>,
+        /// or <code>TollFreePrefix</code>. If you provide <code>City</code>, you must also provide
+        /// <code>State</code>. Numbers outside the US only support the <code>PhoneNumberType</code>
+        /// filter, which you must use.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAvailablePhoneNumbers service method.</param>
         /// <param name="cancellationToken">
@@ -7350,12 +7393,14 @@ namespace Amazon.Chime
         /// 
         ///  
         /// <para>
-        /// For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+        /// For toll-free numbers, you cannot use the Amazon Chime Business Calling product type.
+        /// For numbers outside the U.S., you must use the Amazon Chime SIP Media Application
+        /// Dial-In product type.
         /// </para>
         ///  
         /// <para>
-        /// Updates to outbound calling names can take up to 72 hours to complete. Pending updates
-        /// to outbound calling names must be complete before you can request another update.
+        /// Updates to outbound calling names can take 72 hours to complete. Pending updates to
+        /// outbound calling names must be complete before you can request another update.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumber service method.</param>

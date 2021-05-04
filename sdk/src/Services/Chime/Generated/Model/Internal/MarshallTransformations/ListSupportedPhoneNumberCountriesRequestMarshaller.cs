@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SearchAvailablePhoneNumbers Request Marshaller
+    /// ListSupportedPhoneNumberCountries Request Marshaller
     /// </summary>       
-    public class SearchAvailablePhoneNumbersRequestMarshaller : IMarshaller<IRequest, SearchAvailablePhoneNumbersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListSupportedPhoneNumberCountriesRequestMarshaller : IMarshaller<IRequest, ListSupportedPhoneNumberCountriesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((SearchAvailablePhoneNumbersRequest)input);
+            return this.Marshall((ListSupportedPhoneNumberCountriesRequest)input);
         }
 
         /// <summary>
@@ -52,45 +52,23 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(SearchAvailablePhoneNumbersRequest publicRequest)
+        public IRequest Marshall(ListSupportedPhoneNumberCountriesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Chime");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "GET";
 
-            request.AddSubResource("type", "phone-numbers");
             
-            if (publicRequest.IsSetAreaCode())
-                request.Parameters.Add("area-code", StringUtils.FromString(publicRequest.AreaCode));
-            
-            if (publicRequest.IsSetCity())
-                request.Parameters.Add("city", StringUtils.FromString(publicRequest.City));
-            
-            if (publicRequest.IsSetCountry())
-                request.Parameters.Add("country", StringUtils.FromString(publicRequest.Country));
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetPhoneNumberType())
-                request.Parameters.Add("phone-number-type", StringUtils.FromString(publicRequest.PhoneNumberType));
-            
-            if (publicRequest.IsSetState())
-                request.Parameters.Add("state", StringUtils.FromString(publicRequest.State));
-            
-            if (publicRequest.IsSetTollFreePrefix())
-                request.Parameters.Add("toll-free-prefix", StringUtils.FromString(publicRequest.TollFreePrefix));
-            request.ResourcePath = "/search";
+            if (publicRequest.IsSetProductType())
+                request.Parameters.Add("product-type", StringUtils.FromString(publicRequest.ProductType));
+            request.ResourcePath = "/phone-number-countries";
             request.UseQueryString = true;
 
             return request;
         }
-        private static SearchAvailablePhoneNumbersRequestMarshaller _instance = new SearchAvailablePhoneNumbersRequestMarshaller();        
+        private static ListSupportedPhoneNumberCountriesRequestMarshaller _instance = new ListSupportedPhoneNumberCountriesRequestMarshaller();        
 
-        internal static SearchAvailablePhoneNumbersRequestMarshaller GetInstance()
+        internal static ListSupportedPhoneNumberCountriesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -98,7 +76,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchAvailablePhoneNumbersRequestMarshaller Instance
+        public static ListSupportedPhoneNumberCountriesRequestMarshaller Instance
         {
             get
             {

@@ -88,6 +88,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Country", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Country = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

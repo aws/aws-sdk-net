@@ -29,28 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeChannelBan operation.
+    /// This is the response object from the ListSupportedPhoneNumberCountries operation.
     /// </summary>
-    public partial class DescribeChannelBanResponse : AmazonWebServiceResponse
+    public partial class ListSupportedPhoneNumberCountriesResponse : AmazonWebServiceResponse
     {
-        private ChannelBan _channelBan;
+        private List<PhoneNumberCountry> _phoneNumberCountries = new List<PhoneNumberCountry>();
 
         /// <summary>
-        /// Gets and sets the property ChannelBan. 
+        /// Gets and sets the property PhoneNumberCountries. 
         /// <para>
-        /// The details of the ban.
+        /// The supported phone number countries.
         /// </para>
         /// </summary>
-        public ChannelBan ChannelBan
+        public List<PhoneNumberCountry> PhoneNumberCountries
         {
-            get { return this._channelBan; }
-            set { this._channelBan = value; }
+            get { return this._phoneNumberCountries; }
+            set { this._phoneNumberCountries = value; }
         }
 
-        // Check to see if ChannelBan property is set
-        internal bool IsSetChannelBan()
+        // Check to see if PhoneNumberCountries property is set
+        internal bool IsSetPhoneNumberCountries()
         {
-            return this._channelBan != null;
+            return this._phoneNumberCountries != null && this._phoneNumberCountries.Count > 0; 
         }
 
     }

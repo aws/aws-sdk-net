@@ -974,5 +974,44 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             paginator.Responses.ToList();
         }
 
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Chime")]
+        public void SearchAvailablePhoneNumbersTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchAvailablePhoneNumbersRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<SearchAvailablePhoneNumbersResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<SearchAvailablePhoneNumbersResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.SearchAvailablePhoneNumbers(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.SearchAvailablePhoneNumbers(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Chime")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void SearchAvailablePhoneNumbersTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchAvailablePhoneNumbersRequest>();
+
+            var response = InstantiateClassGenerator.Execute<SearchAvailablePhoneNumbersResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.SearchAvailablePhoneNumbers(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.SearchAvailablePhoneNumbers(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
     }
 }

@@ -16,42 +16,18 @@
 /*
  * Do not modify this file. This file is generated from the chime-2018-05-01.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeChannelBan operation.
-    /// </summary>
-    public partial class DescribeChannelBanResponse : AmazonWebServiceResponse
+    /// Paginator for the SearchAvailablePhoneNumbers operation
+    ///</summary>
+    public interface ISearchAvailablePhoneNumbersPaginator
     {
-        private ChannelBan _channelBan;
-
         /// <summary>
-        /// Gets and sets the property ChannelBan. 
-        /// <para>
-        /// The details of the ban.
-        /// </para>
+        /// Enumerable containing all full responses for the operation
         /// </summary>
-        public ChannelBan ChannelBan
-        {
-            get { return this._channelBan; }
-            set { this._channelBan = value; }
-        }
-
-        // Check to see if ChannelBan property is set
-        internal bool IsSetChannelBan()
-        {
-            return this._channelBan != null;
-        }
-
+        IPaginatedEnumerable<SearchAvailablePhoneNumbersResponse> Responses { get; }
     }
 }

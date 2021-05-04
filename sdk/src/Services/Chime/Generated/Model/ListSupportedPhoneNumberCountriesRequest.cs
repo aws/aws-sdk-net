@@ -29,34 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreatePhoneNumberOrder operation.
-    /// Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot
-    /// use the Amazon Chime Business Calling product type. For numbers outside the US, you
-    /// must use the Amazon Chime SIP Media Application Dial-In product type.
+    /// Container for the parameters to the ListSupportedPhoneNumberCountries operation.
+    /// Lists supported phone number countries.
     /// </summary>
-    public partial class CreatePhoneNumberOrderRequest : AmazonChimeRequest
+    public partial class ListSupportedPhoneNumberCountriesRequest : AmazonChimeRequest
     {
-        private List<string> _e164PhoneNumbers = new List<string>();
         private PhoneNumberProductType _productType;
-
-        /// <summary>
-        /// Gets and sets the property E164PhoneNumbers. 
-        /// <para>
-        /// List of phone numbers, in E.164 format.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> E164PhoneNumbers
-        {
-            get { return this._e164PhoneNumbers; }
-            set { this._e164PhoneNumbers = value; }
-        }
-
-        // Check to see if E164PhoneNumbers property is set
-        internal bool IsSetE164PhoneNumbers()
-        {
-            return this._e164PhoneNumbers != null && this._e164PhoneNumbers.Count > 0; 
-        }
 
         /// <summary>
         /// Gets and sets the property ProductType. 

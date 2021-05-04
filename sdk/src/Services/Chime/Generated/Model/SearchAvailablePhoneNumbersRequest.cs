@@ -30,7 +30,11 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchAvailablePhoneNumbers operation.
-    /// Searches phone numbers that can be ordered.
+    /// Searches for phone numbers that can be ordered. For US numbers, provide at least one
+    /// of the following search filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>,
+    /// or <code>TollFreePrefix</code>. If you provide <code>City</code>, you must also provide
+    /// <code>State</code>. Numbers outside the US only support the <code>PhoneNumberType</code>
+    /// filter, which you must use.
     /// </summary>
     public partial class SearchAvailablePhoneNumbersRequest : AmazonChimeRequest
     {
@@ -39,13 +43,14 @@ namespace Amazon.Chime.Model
         private string _country;
         private int? _maxResults;
         private string _nextToken;
+        private PhoneNumberType _phoneNumberType;
         private string _state;
         private string _tollFreePrefix;
 
         /// <summary>
         /// Gets and sets the property AreaCode. 
         /// <para>
-        /// The area code used to filter results.
+        /// The area code used to filter results. Only applies to the US.
         /// </para>
         /// </summary>
         public string AreaCode
@@ -63,7 +68,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property City. 
         /// <para>
-        /// The city used to filter results.
+        /// The city used to filter results. Only applies to the US.
         /// </para>
         /// </summary>
         public string City
@@ -81,7 +86,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Country. 
         /// <para>
-        /// The country used to filter results.
+        /// The country used to filter results. Defaults to the US Format: ISO 3166-1 alpha-2.
         /// </para>
         /// </summary>
         public string Country
@@ -118,7 +123,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results.
+        /// The token used to retrieve the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -134,9 +139,28 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PhoneNumberType. 
+        /// <para>
+        /// The phone number type used to filter results. Required for non-US numbers.
+        /// </para>
+        /// </summary>
+        public PhoneNumberType PhoneNumberType
+        {
+            get { return this._phoneNumberType; }
+            set { this._phoneNumberType = value; }
+        }
+
+        // Check to see if PhoneNumberType property is set
+        internal bool IsSetPhoneNumberType()
+        {
+            return this._phoneNumberType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state used to filter results.
+        /// The state used to filter results. Required only if you provide <code>City</code>.
+        /// Only applies to the US.
         /// </para>
         /// </summary>
         public string State
@@ -154,7 +178,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property TollFreePrefix. 
         /// <para>
-        /// The toll-free prefix that you use to filter results.
+        /// The toll-free prefix that you use to filter results. Only applies to the US.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=3)]

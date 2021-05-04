@@ -31,7 +31,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the ListChannelMessages operation.
     /// List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>.
-    /// By default, sorted by creation timestamp in descending order .
+    /// By default, sorted by creation timestamp in descending order.
     /// 
     ///  <note> 
     /// <para>

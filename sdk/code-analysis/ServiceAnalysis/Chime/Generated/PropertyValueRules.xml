@@ -1514,6 +1514,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.SearchAvailablePhoneNumbersRequest.Country</property>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.SearchAvailablePhoneNumbersRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
@@ -2208,8 +2212,16 @@
     <pattern>^$|^[a-zA-Z0-9 ]{2,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.PhoneNumber.Country</property>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.PhoneNumber.E164PhoneNumber</property>
     <pattern>^\+?[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.PhoneNumberCountry.CountryCode</property>
+    <pattern>[A-Z]{2}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.PhoneNumberError.PhoneNumberId</property>

@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePhoneNumber operation.
-    /// Moves the specified phone number into the <b>Deletionqueue</b>. A phone number must
+    /// Moves the specified phone number into the <b>Deletion queue</b>. A phone number must
     /// be disassociated from any users or Amazon Chime Voice Connectors before it can be
     /// deleted.
     /// 

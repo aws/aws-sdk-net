@@ -29,47 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// This is the response object from the SearchAvailablePhoneNumbers operation.
+    /// The phone number country.
     /// </summary>
-    public partial class SearchAvailablePhoneNumbersResponse : AmazonWebServiceResponse
+    public partial class PhoneNumberCountry
     {
-        private List<string> _e164PhoneNumbers = new List<string>();
-        private string _nextToken;
+        private string _countryCode;
+        private List<string> _supportedPhoneNumberTypes = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property E164PhoneNumbers. 
+        /// Gets and sets the property CountryCode. 
         /// <para>
-        /// List of phone numbers, in E.164 format.
+        /// The phone number country code. Format: ISO 3166-1 alpha-2.
         /// </para>
         /// </summary>
-        public List<string> E164PhoneNumbers
+        public string CountryCode
         {
-            get { return this._e164PhoneNumbers; }
-            set { this._e164PhoneNumbers = value; }
+            get { return this._countryCode; }
+            set { this._countryCode = value; }
         }
 
-        // Check to see if E164PhoneNumbers property is set
-        internal bool IsSetE164PhoneNumbers()
+        // Check to see if CountryCode property is set
+        internal bool IsSetCountryCode()
         {
-            return this._e164PhoneNumbers != null && this._e164PhoneNumbers.Count > 0; 
+            return this._countryCode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property SupportedPhoneNumberTypes. 
         /// <para>
-        /// The token used to retrieve the next page of search results.
+        /// The supported phone number types. 
         /// </para>
         /// </summary>
-        public string NextToken
+        public List<string> SupportedPhoneNumberTypes
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._supportedPhoneNumberTypes; }
+            set { this._supportedPhoneNumberTypes = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if SupportedPhoneNumberTypes property is set
+        internal bool IsSetSupportedPhoneNumberTypes()
         {
-            return this._nextToken != null;
+            return this._supportedPhoneNumberTypes != null && this._supportedPhoneNumberTypes.Count > 0; 
         }
 
     }
