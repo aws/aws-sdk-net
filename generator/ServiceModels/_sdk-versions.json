@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.27.1",
+    "ProductVersion" : "3.7.28.0",
     "CoreVersion"    : "3.7.0.17",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -946,7 +946,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.7.2.0",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.17"
@@ -1282,7 +1282,7 @@
             "InPreview"               : false
         },
         "KinesisAnalyticsV2"              : {
-            "Version" : "3.7.1.2",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.17"
@@ -1994,7 +1994,7 @@
             "InPreview"               : false
         },
         "AuditManager"                    : {
-            "Version" : "3.7.2.1",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.17"
@@ -2106,7 +2106,7 @@
             "InPreview"               : false
         },
         "NimbleStudio"                    : {
-            "Version" : "3.7.0.1",
+            "Version" : "3.7.0.2",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.17"

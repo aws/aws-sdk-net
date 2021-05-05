@@ -1,3 +1,13 @@
+### 3.7.28.0 (2021-05-05 19:40 UTC)
+* AuditManager (3.7.3.0)
+	* This release updates the CreateAssessmentFrameworkControlSet and UpdateAssessmentFrameworkControlSet API data types. For both of these data types, the control set name is now a required attribute.
+* KinesisAnalyticsV2 (3.7.2.0)
+	* Amazon Kinesis Analytics now supports RollbackApplication for Apache Flink applications to revert the application to the previous running version
+* NimbleStudio (3.7.0.2)
+	* Documentation Updates for Amazon Nimble Studio.
+* SageMaker (3.7.3.0)
+	* Amazon SageMaker Autopilot now provides the ability to automatically deploy the best model to an endpoint
+
 ### 3.7.27.1 (2021-05-05 02:45 UTC)
 * Finspace (3.7.0.1)
 	* Documentation updates for FinSpace API.
