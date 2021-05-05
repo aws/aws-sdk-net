@@ -55,7 +55,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateEnvironmentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Finspace");
-            request.Headers["Content-Type"] = "application/json";
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-03-12";            
             request.HttpMethod = "PUT";
 
