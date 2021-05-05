@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.27.0",
+    "ProductVersion" : "3.7.27.1",
     "CoreVersion"    : "3.7.0.17",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -2114,7 +2114,7 @@
             "InPreview"               : false
         },
         "FinSpaceData"                    : {
-            "Version" : "3.7.0.0",
+            "Version" : "3.7.0.1",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.17"
@@ -2122,7 +2122,7 @@
             "InPreview"               : false
         },
         "Finspace"                        : {
-            "Version" : "3.7.0.0",
+            "Version" : "3.7.0.1",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.17"

@@ -1,3 +1,9 @@
+### 3.7.27.1 (2021-05-05 02:45 UTC)
+* Finspace (3.7.0.1)
+	* Documentation updates for FinSpace API.
+* FinSpaceData (3.7.0.1)
+	* Documentation updates for FinSpaceData API.
+
 ### 3.7.27.0 (2021-05-04 18:13 UTC)
 * ACMPCA (3.7.1.0)
 	* This release adds the KeyStorageSecurityStandard parameter to the CreateCertificateAuthority API to allow customers to mandate a security standard to which the CA key will be stored within.
