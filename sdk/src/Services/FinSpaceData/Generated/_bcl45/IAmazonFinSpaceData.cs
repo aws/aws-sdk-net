@@ -31,7 +31,7 @@ namespace Amazon.FinSpaceData
     /// <summary>
     /// Interface for accessing FinSpaceData
     ///
-    /// The FinSpace APIs let you take actions inside FinSpace.
+    /// The FinSpace APIs let you take actions inside the FinSpace environment.
     /// </summary>
     public partial interface IAmazonFinSpaceData : IAmazonService, IDisposable
     {

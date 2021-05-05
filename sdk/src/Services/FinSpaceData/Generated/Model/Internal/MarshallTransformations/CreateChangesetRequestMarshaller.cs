@@ -55,7 +55,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateChangesetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.FinSpaceData");
-            request.Headers["Content-Type"] = "application/json";
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-13";            
             request.HttpMethod = "POST";
 

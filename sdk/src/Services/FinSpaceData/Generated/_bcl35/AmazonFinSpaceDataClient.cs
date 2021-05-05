@@ -35,7 +35,7 @@ namespace Amazon.FinSpaceData
     /// <summary>
     /// Implementation for accessing FinSpaceData
     ///
-    /// The FinSpace APIs let you take actions inside FinSpace.
+    /// The FinSpace APIs let you take actions inside the FinSpace environment.
     /// </summary>
     public partial class AmazonFinSpaceDataClient : AmazonServiceClient, IAmazonFinSpaceData
     {
