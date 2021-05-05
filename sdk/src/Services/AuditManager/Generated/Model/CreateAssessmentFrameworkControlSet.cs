@@ -63,7 +63,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the specified control set. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=300)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Name
         {
             get { return this._name; }

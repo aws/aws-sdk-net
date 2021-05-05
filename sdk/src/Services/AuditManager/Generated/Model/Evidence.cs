@@ -54,7 +54,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentReportSelection. 
         /// <para>
-        ///  Specifies whether the evidence is inclded in the assessment report. 
+        ///  Specifies whether the evidence is included in the assessment report. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
