@@ -7,6 +7,12 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationCloudWatchLoggingOptionRequest.ConditionalToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationCloudWatchLoggingOptionRequest.CurrentApplicationVersionId</property>
     <min>1</min>
     <max>999999999</max>
@@ -129,6 +135,12 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationRequest.ConditionalToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationRequest.CurrentApplicationVersionId</property>
     <min>1</min>
     <max>999999999</max>
@@ -206,6 +218,12 @@
     <min>1</min>
     <max>50</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationCloudWatchLoggingOptionRequest.ConditionalToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationCloudWatchLoggingOptionRequest.CurrentApplicationVersionId</property>
@@ -326,6 +344,12 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationRequest.ConditionalToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationRequest.CurrentApplicationVersionId</property>
     <min>1</min>
     <max>999999999</max>
@@ -422,6 +446,17 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.RollbackApplicationRequest.ApplicationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.RollbackApplicationRequest.CurrentApplicationVersionId</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.StartApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
@@ -450,6 +485,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationRequest.ConditionalToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationRequest.CurrentApplicationVersionId</property>
@@ -495,6 +536,22 @@
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ApplicationVersionId</property>
     <min>1</min>
     <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ApplicationVersionRolledBackFrom</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ApplicationVersionUpdatedFrom</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ConditionalToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ServiceExecutionRole</property>

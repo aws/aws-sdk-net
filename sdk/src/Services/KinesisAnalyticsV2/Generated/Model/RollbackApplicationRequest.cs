@@ -29,32 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddApplicationInput operation.
-    /// Adds a streaming source to your SQL-based Kinesis Data Analytics application. 
+    /// Container for the parameters to the RollbackApplication operation.
+    /// Reverts the application to the previous running version. You can roll back an application
+    /// if you suspect it is stuck in a transient status. 
     /// 
     ///  
     /// <para>
-    /// You can add a streaming source when you create an application, or you can use this
-    /// operation to add a streaming source after you create an application. For more information,
-    /// see <a>CreateApplication</a>.
+    /// You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code>
+    /// status.
     /// </para>
     ///  
     /// <para>
-    /// Any configuration update, including adding a streaming source using this operation,
-    /// results in a new version of the application. You can use the <a>DescribeApplication</a>
-    /// operation to find the current application version. 
+    /// When you rollback an application, it loads state data from the last successful snapshot.
+    /// If the application has no snapshots, Kinesis Data Analytics rejects the rollback request.
+    /// </para>
+    ///  
+    /// <para>
+    /// This action is not supported for Kinesis Data Analytics for SQL applications.
     /// </para>
     /// </summary>
-    public partial class AddApplicationInputRequest : AmazonKinesisAnalyticsV2Request
+    public partial class RollbackApplicationRequest : AmazonKinesisAnalyticsV2Request
     {
         private string _applicationName;
         private long? _currentApplicationVersionId;
-        private Input _input;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of your existing application to which you want to add the streaming source.
+        /// The name of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -73,9 +75,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// The current version of your application. You must provide the <code>ApplicationVersionID</code>
-        /// or the <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation
-        /// to find the current application version.
+        /// The current application version ID. You can retrieve the application version ID using
+        /// <a>DescribeApplication</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
@@ -89,25 +90,6 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetCurrentApplicationVersionId()
         {
             return this._currentApplicationVersionId.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Input. 
-        /// <para>
-        /// The <a>Input</a> to add.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Input Input
-        {
-            get { return this._input; }
-            set { this._input = value; }
-        }
-
-        // Check to see if Input property is set
-        internal bool IsSetInput()
-        {
-            return this._input != null;
         }
 
     }

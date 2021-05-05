@@ -52,6 +52,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class AddApplicationVpcConfigurationRequest : AmazonKinesisAnalyticsV2Request
     {
         private string _applicationName;
+        private string _conditionalToken;
         private long? _currentApplicationVersionId;
         private VpcConfiguration _vpcConfiguration;
 
@@ -75,15 +76,37 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConditionalToken. 
+        /// <para>
+        /// A value you use to implement strong concurrency for application updates. You must
+        /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.
+        /// You get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string ConditionalToken
+        {
+            get { return this._conditionalToken; }
+            set { this._conditionalToken = value; }
+        }
+
+        // Check to see if ConditionalToken property is set
+        internal bool IsSetConditionalToken()
+        {
+            return this._conditionalToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
         /// The version of the application to which you want to add the VPC configuration. You
-        /// can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the <code>ConcurrentModificationException</code>
+        /// must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.
+        /// You can use the <a>DescribeApplication</a> operation to get the current application
+        /// version. If the version specified is not the current version, the <code>ConcurrentModificationException</code>
         /// is returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=999999999)]
+        [AWSProperty(Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }

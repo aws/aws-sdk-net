@@ -100,6 +100,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetConditionalToken())
+                {
+                    context.Writer.WritePropertyName("ConditionalToken");
+                    context.Writer.Write(publicRequest.ConditionalToken);
+                }
+
                 if(publicRequest.IsSetCurrentApplicationVersionId())
                 {
                     context.Writer.WritePropertyName("CurrentApplicationVersionId");

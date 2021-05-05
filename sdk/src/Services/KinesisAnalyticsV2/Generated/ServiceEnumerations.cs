@@ -105,6 +105,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// </summary>
         public static readonly ApplicationStatus READY = new ApplicationStatus("READY");
         /// <summary>
+        /// Constant ROLLING_BACK for ApplicationStatus
+        /// </summary>
+        public static readonly ApplicationStatus ROLLING_BACK = new ApplicationStatus("ROLLING_BACK");
+        /// <summary>
         /// Constant RUNNING for ApplicationStatus
         /// </summary>
         public static readonly ApplicationStatus RUNNING = new ApplicationStatus("RUNNING");

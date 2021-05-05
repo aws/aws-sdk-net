@@ -1601,6 +1601,108 @@ namespace Amazon.KinesisAnalyticsV2
 
         #endregion
         
+        #region  RollbackApplication
+
+
+        /// <summary>
+        /// Reverts the application to the previous running version. You can roll back an application
+        /// if you suspect it is stuck in a transient status. 
+        /// 
+        ///  
+        /// <para>
+        /// You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code>
+        /// status.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you rollback an application, it loads state data from the last successful snapshot.
+        /// If the application has no snapshots, Kinesis Data Analytics rejects the rollback request.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported for Kinesis Data Analytics for SQL applications.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RollbackApplication service method.</param>
+        /// 
+        /// <returns>The response from the RollbackApplication service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidRequestException">
+        /// The request JSON is not valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication">REST API Reference for RollbackApplication Operation</seealso>
+        RollbackApplicationResponse RollbackApplication(RollbackApplicationRequest request);
+
+
+
+        /// <summary>
+        /// Reverts the application to the previous running version. You can roll back an application
+        /// if you suspect it is stuck in a transient status. 
+        /// 
+        ///  
+        /// <para>
+        /// You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code>
+        /// status.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you rollback an application, it loads state data from the last successful snapshot.
+        /// If the application has no snapshots, Kinesis Data Analytics rejects the rollback request.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported for Kinesis Data Analytics for SQL applications.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RollbackApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RollbackApplication service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidRequestException">
+        /// The request JSON is not valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication">REST API Reference for RollbackApplication Operation</seealso>
+        Task<RollbackApplicationResponse> RollbackApplicationAsync(RollbackApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartApplication
 
 

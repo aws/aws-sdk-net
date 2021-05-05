@@ -36,6 +36,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     {
         private string _applicationName;
         private CloudWatchLoggingOption _cloudWatchLoggingOption;
+        private string _conditionalToken;
         private long? _currentApplicationVersionId;
 
         /// <summary>
@@ -77,13 +78,35 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrentApplicationVersionId. 
+        /// Gets and sets the property ConditionalToken. 
         /// <para>
-        /// The version ID of the Kinesis Data Analytics application. You can retrieve the application
-        /// version ID using <a>DescribeApplication</a>.
+        /// A value you use to implement strong concurrency for application updates. You must
+        /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.
+        /// You get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=999999999)]
+        [AWSProperty(Min=1, Max=512)]
+        public string ConditionalToken
+        {
+            get { return this._conditionalToken; }
+            set { this._conditionalToken = value; }
+        }
+
+        // Check to see if ConditionalToken property is set
+        internal bool IsSetConditionalToken()
+        {
+            return this._conditionalToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentApplicationVersionId. 
+        /// <para>
+        /// The version ID of the Kinesis Data Analytics application. You must provide the <code>ApplicationVersionID</code>
+        /// or the <code>ConditionalToken</code>.You can retrieve the application version ID using
+        /// <a>DescribeApplication</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }

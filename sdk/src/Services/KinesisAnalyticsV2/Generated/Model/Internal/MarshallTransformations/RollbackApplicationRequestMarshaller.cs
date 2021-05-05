@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AddApplicationCloudWatchLoggingOption Request Marshaller
+    /// RollbackApplication Request Marshaller
     /// </summary>       
-    public class AddApplicationCloudWatchLoggingOptionRequestMarshaller : IMarshaller<IRequest, AddApplicationCloudWatchLoggingOptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RollbackApplicationRequestMarshaller : IMarshaller<IRequest, RollbackApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AddApplicationCloudWatchLoggingOptionRequest)input);
+            return this.Marshall((RollbackApplicationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AddApplicationCloudWatchLoggingOptionRequest publicRequest)
+        public IRequest Marshall(RollbackApplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisAnalyticsV2");
-            string target = "KinesisAnalytics_20180523.AddApplicationCloudWatchLoggingOption";
+            string target = "KinesisAnalytics_20180523.RollbackApplication";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-23";            
@@ -73,23 +73,6 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApplicationName);
                 }
 
-                if(publicRequest.IsSetCloudWatchLoggingOption())
-                {
-                    context.Writer.WritePropertyName("CloudWatchLoggingOption");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CloudWatchLoggingOptionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CloudWatchLoggingOption, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConditionalToken())
-                {
-                    context.Writer.WritePropertyName("ConditionalToken");
-                    context.Writer.Write(publicRequest.ConditionalToken);
-                }
-
                 if(publicRequest.IsSetCurrentApplicationVersionId())
                 {
                     context.Writer.WritePropertyName("CurrentApplicationVersionId");
@@ -105,9 +88,9 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static AddApplicationCloudWatchLoggingOptionRequestMarshaller _instance = new AddApplicationCloudWatchLoggingOptionRequestMarshaller();        
+        private static RollbackApplicationRequestMarshaller _instance = new RollbackApplicationRequestMarshaller();        
 
-        internal static AddApplicationCloudWatchLoggingOptionRequestMarshaller GetInstance()
+        internal static RollbackApplicationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +98,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddApplicationCloudWatchLoggingOptionRequestMarshaller Instance
+        public static RollbackApplicationRequestMarshaller Instance
         {
             get
             {
