@@ -29,37 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Provides information about the location that is configured for storing model artifacts.
-    /// 
-    /// 
-    ///  
-    /// <para>
-    /// Model artifacts are the output that results from training a model, and typically consist
-    /// of trained parameters, a model defintion that describes how to compute inferences,
-    /// and other metadata.
-    /// </para>
+    /// Provides information about the endpoint of the model deployment.
     /// </summary>
-    public partial class ModelArtifacts
+    public partial class ModelDeployResult
     {
-        private string _s3ModelArtifacts;
+        private string _endpointName;
 
         /// <summary>
-        /// Gets and sets the property S3ModelArtifacts. 
+        /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.
+        /// The name of the endpoint to which the model has been deployed.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If model deployment fails, this field is omitted from the response.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
-        public string S3ModelArtifacts
+        [AWSProperty(Max=63)]
+        public string EndpointName
         {
-            get { return this._s3ModelArtifacts; }
-            set { this._s3ModelArtifacts = value; }
+            get { return this._endpointName; }
+            set { this._endpointName = value; }
         }
 
-        // Check to see if S3ModelArtifacts property is set
-        internal bool IsSetS3ModelArtifacts()
+        // Check to see if EndpointName property is set
+        internal bool IsSetEndpointName()
         {
-            return this._s3ModelArtifacts != null;
+            return this._endpointName != null;
         }
 
     }

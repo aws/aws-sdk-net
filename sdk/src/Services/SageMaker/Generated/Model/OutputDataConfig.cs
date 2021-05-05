@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// account. Amazon SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>.
         /// If you use a bucket policy with an <code>s3:PutObject</code> permission that only
         /// allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
-        /// to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+        /// to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
         /// Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> 
         /// </para>
         ///  

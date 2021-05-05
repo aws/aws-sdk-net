@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Represents an amount of money in United States dollars/
+    /// Represents an amount of money in United States dollars.
     /// </summary>
     public partial class USD
     {

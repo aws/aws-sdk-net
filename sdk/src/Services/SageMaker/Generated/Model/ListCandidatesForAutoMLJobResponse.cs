@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Candidates. 
         /// <para>
-        /// Summaries about the Candidates.
+        /// Summaries about the <code>AutoMLCandidates</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

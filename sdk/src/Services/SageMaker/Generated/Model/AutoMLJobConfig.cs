@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityConfig. 
         /// <para>
-        /// Security configuration for traffic encryption or Amazon VPC settings.
+        /// The security configuration for traffic encryption or Amazon VPC settings.
         /// </para>
         /// </summary>
         public AutoMLSecurityConfig SecurityConfig

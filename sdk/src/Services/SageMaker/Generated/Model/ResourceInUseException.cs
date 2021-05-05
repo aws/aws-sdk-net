@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The resource being accessed is in use.
+    /// Resource being accessed is in use.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

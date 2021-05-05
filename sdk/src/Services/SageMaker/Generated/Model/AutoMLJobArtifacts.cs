@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Artifacts that are generation during a job.
+    /// The artifacts that are generated during an AutoML job.
     /// </summary>
     public partial class AutoMLJobArtifacts
     {
@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CandidateDefinitionNotebookLocation. 
         /// <para>
-        /// The URL to the notebook location.
+        /// The URL of the notebook location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DataExplorationNotebookLocation. 
         /// <para>
-        /// The URL to the notebook location.
+        /// The URL of the notebook location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Location of artifacts for an AutoML candidate job.
+    /// The location of artifacts for an AutoML candidate job.
     /// </summary>
     public partial class CandidateArtifactLocations
     {
@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Explainability. 
         /// <para>
-        /// The S3 prefix to the explainability artifacts generated for the AutoML candidate.
+        /// The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -305,7 +305,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddAssociation">REST API Reference for AddAssociation Operation</seealso>
         public virtual Task<AddAssociationResponse> AddAssociationAsync(AddAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -352,6 +352,16 @@ namespace Amazon.SageMaker
         /// job are also added to all training jobs that the hyperparameter tuning job launches,
         /// add the tags when you first create the tuning job by specifying them in the <code>Tags</code>
         /// parameter of <a>CreateHyperParameterTuningJob</a> 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Tags that you add to a SageMaker Studio Domain or User Profile by calling this API
+        /// are also added to any Apps that the Domain or User Profile launches after you call
+        /// this API, but not to Apps that the Domain or User Profile launched before you called
+        /// this API. To make sure that the tags associated with a Domain or User Profile are
+        /// also added to all Apps that the Domain or User Profile launches, add the tags when
+        /// you first create the Domain or User Profile by specifying them in the <code>Tags</code>
+        /// parameter of <a>CreateDomain</a> or <a>CreateUserProfile</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -402,7 +412,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AssociateTrialComponent">REST API Reference for AssociateTrialComponent Operation</seealso>
         public virtual Task<AssociateTrialComponentResponse> AssociateTrialComponentAsync(AssociateTrialComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -527,7 +537,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateApp service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -570,7 +580,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateAppImageConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">REST API Reference for CreateAppImageConfig Operation</seealso>
         public virtual Task<CreateAppImageConfigResponse> CreateAppImageConfigAsync(CreateAppImageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -667,7 +677,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateAutoMLJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -795,7 +805,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateCompilationJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -888,7 +898,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateDataQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -929,7 +939,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateDeviceFleet service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1026,7 +1036,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateDomain service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1423,7 +1433,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateFeatureGroup service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1464,7 +1474,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateFlowDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1507,7 +1517,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateHumanTaskUi service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1552,7 +1562,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateHyperParameterTuningJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1596,7 +1606,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateImage service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1639,14 +1649,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateImageVersion service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">REST API Reference for CreateImageVersion Operation</seealso>
         public virtual Task<CreateImageVersionResponse> CreateImageVersionAsync(CreateImageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1738,7 +1748,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateLabelingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1859,7 +1869,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateModelBiasJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1900,7 +1910,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateModelExplainabilityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2046,7 +2056,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateModelQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2088,7 +2098,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2293,7 +2303,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2343,7 +2353,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreatePresignedDomainUrl service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">REST API Reference for CreatePresignedDomainUrl Operation</seealso>
         public virtual Task<CreatePresignedDomainUrlResponse> CreatePresignedDomainUrlAsync(CreatePresignedDomainUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2442,14 +2452,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateProcessingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProcessingJob">REST API Reference for CreateProcessingJob Operation</seealso>
         public virtual Task<CreateProcessingJobResponse> CreateProcessingJobAsync(CreateProcessingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2600,14 +2610,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateTrainingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">REST API Reference for CreateTrainingJob Operation</seealso>
         public virtual Task<CreateTrainingJobResponse> CreateTrainingJobAsync(CreateTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2686,14 +2696,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateTransformJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">REST API Reference for CreateTransformJob Operation</seealso>
         public virtual Task<CreateTransformJobResponse> CreateTransformJobAsync(CreateTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2752,7 +2762,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">REST API Reference for CreateTrial Operation</seealso>
         public virtual Task<CreateTrialResponse> CreateTrialAsync(CreateTrialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2859,7 +2869,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateUserProfile service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2965,7 +2975,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateWorkteam service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -3006,7 +3016,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteAction service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAction">REST API Reference for DeleteAction Operation</seealso>
         public virtual Task<DeleteActionResponse> DeleteActionAsync(DeleteActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3077,10 +3087,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteApp service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3117,7 +3127,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteAppImageConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig">REST API Reference for DeleteAppImageConfig Operation</seealso>
         public virtual Task<DeleteAppImageConfigResponse> DeleteAppImageConfigAsync(DeleteAppImageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3155,7 +3165,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteArtifact service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteArtifact">REST API Reference for DeleteArtifact Operation</seealso>
         public virtual Task<DeleteArtifactResponse> DeleteArtifactAsync(DeleteArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3192,7 +3202,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteAssociation service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         public virtual Task<DeleteAssociationResponse> DeleteAssociationAsync(DeleteAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3263,7 +3273,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteContext service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteContext">REST API Reference for DeleteContext Operation</seealso>
         public virtual Task<DeleteContextResponse> DeleteContextAsync(DeleteContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3300,7 +3310,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteDataQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition">REST API Reference for DeleteDataQualityJobDefinition Operation</seealso>
         public virtual Task<DeleteDataQualityJobDefinitionResponse> DeleteDataQualityJobDefinitionAsync(DeleteDataQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3337,7 +3347,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteDeviceFleet service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet">REST API Reference for DeleteDeviceFleet Operation</seealso>
         public virtual Task<DeleteDeviceFleetResponse> DeleteDeviceFleetAsync(DeleteDeviceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3376,10 +3386,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteDomain service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3506,7 +3516,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteExperiment service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
         public virtual Task<DeleteExperimentResponse> DeleteExperimentAsync(DeleteExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3552,7 +3562,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteFeatureGroup service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFeatureGroup">REST API Reference for DeleteFeatureGroup Operation</seealso>
         public virtual Task<DeleteFeatureGroupResponse> DeleteFeatureGroupAsync(DeleteFeatureGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3589,10 +3599,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteFlowDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFlowDefinition">REST API Reference for DeleteFlowDefinition Operation</seealso>
         public virtual Task<DeleteFlowDefinitionResponse> DeleteFlowDefinitionAsync(DeleteFlowDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3635,7 +3645,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteHumanTaskUi service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">REST API Reference for DeleteHumanTaskUi Operation</seealso>
         public virtual Task<DeleteHumanTaskUiResponse> DeleteHumanTaskUiAsync(DeleteHumanTaskUiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3673,10 +3683,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteImage service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
         public virtual Task<DeleteImageResponse> DeleteImageAsync(DeleteImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3714,10 +3724,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteImageVersion service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">REST API Reference for DeleteImageVersion Operation</seealso>
         public virtual Task<DeleteImageVersionResponse> DeleteImageVersionAsync(DeleteImageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3791,7 +3801,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteModelBiasJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition">REST API Reference for DeleteModelBiasJobDefinition Operation</seealso>
         public virtual Task<DeleteModelBiasJobDefinitionResponse> DeleteModelBiasJobDefinitionAsync(DeleteModelBiasJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3828,7 +3838,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteModelExplainabilityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition">REST API Reference for DeleteModelExplainabilityJobDefinition Operation</seealso>
         public virtual Task<DeleteModelExplainabilityJobDefinitionResponse> DeleteModelExplainabilityJobDefinitionAsync(DeleteModelExplainabilityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3978,7 +3988,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteModelQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition">REST API Reference for DeleteModelQualityJobDefinition Operation</seealso>
         public virtual Task<DeleteModelQualityJobDefinitionResponse> DeleteModelQualityJobDefinitionAsync(DeleteModelQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4016,7 +4026,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMonitoringSchedule">REST API Reference for DeleteMonitoringSchedule Operation</seealso>
         public virtual Task<DeleteMonitoringScheduleResponse> DeleteMonitoringScheduleAsync(DeleteMonitoringScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4132,7 +4142,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4206,6 +4216,12 @@ namespace Amazon.SageMaker
         /// tags are not removed from training jobs that the hyperparameter tuning job launched
         /// before you called this API.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When you call this API to delete tags from a SageMaker Studio Domain or User Profile,
+        /// the deleted tags are not removed from Apps that the SageMaker Studio Domain or User
+        /// Profile launched before you called this API.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
@@ -4250,7 +4266,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteTrial service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrial">REST API Reference for DeleteTrial Operation</seealso>
         public virtual Task<DeleteTrialResponse> DeleteTrialAsync(DeleteTrialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4289,7 +4305,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteTrialComponent service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrialComponent">REST API Reference for DeleteTrialComponent Operation</seealso>
         public virtual Task<DeleteTrialComponentResponse> DeleteTrialComponentAsync(DeleteTrialComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4327,10 +4343,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteUserProfile service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
         public virtual Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4488,7 +4504,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeAction service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
         public virtual Task<DescribeActionResponse> DescribeActionAsync(DescribeActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4559,7 +4575,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeApp service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeApp">REST API Reference for DescribeApp Operation</seealso>
         public virtual Task<DescribeAppResponse> DescribeAppAsync(DescribeAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4596,7 +4612,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeAppImageConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig">REST API Reference for DescribeAppImageConfig Operation</seealso>
         public virtual Task<DescribeAppImageConfigResponse> DescribeAppImageConfigAsync(DescribeAppImageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4633,7 +4649,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeArtifact service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeArtifact">REST API Reference for DescribeArtifact Operation</seealso>
         public virtual Task<DescribeArtifactResponse> DescribeArtifactAsync(DescribeArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4670,7 +4686,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeAutoMLJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJob">REST API Reference for DescribeAutoMLJob Operation</seealso>
         public virtual Task<DescribeAutoMLJobResponse> DescribeAutoMLJobAsync(DescribeAutoMLJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4747,7 +4763,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeCompilationJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCompilationJob">REST API Reference for DescribeCompilationJob Operation</seealso>
         public virtual Task<DescribeCompilationJobResponse> DescribeCompilationJobAsync(DescribeCompilationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4784,7 +4800,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeContext service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeContext">REST API Reference for DescribeContext Operation</seealso>
         public virtual Task<DescribeContextResponse> DescribeContextAsync(DescribeContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4821,7 +4837,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeDataQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition">REST API Reference for DescribeDataQualityJobDefinition Operation</seealso>
         public virtual Task<DescribeDataQualityJobDefinitionResponse> DescribeDataQualityJobDefinitionAsync(DescribeDataQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4858,7 +4874,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeDevice service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
         public virtual Task<DescribeDeviceResponse> DescribeDeviceAsync(DescribeDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4895,7 +4911,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeDeviceFleet service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet">REST API Reference for DescribeDeviceFleet Operation</seealso>
         public virtual Task<DescribeDeviceFleetResponse> DescribeDeviceFleetAsync(DescribeDeviceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4932,7 +4948,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeDomain service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4969,7 +4985,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeEdgePackagingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob">REST API Reference for DescribeEdgePackagingJob Operation</seealso>
         public virtual Task<DescribeEdgePackagingJobResponse> DescribeEdgePackagingJobAsync(DescribeEdgePackagingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5075,7 +5091,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeExperiment service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeExperiment">REST API Reference for DescribeExperiment Operation</seealso>
         public virtual Task<DescribeExperimentResponse> DescribeExperimentAsync(DescribeExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5114,7 +5130,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeFeatureGroup service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureGroup">REST API Reference for DescribeFeatureGroup Operation</seealso>
         public virtual Task<DescribeFeatureGroupResponse> DescribeFeatureGroupAsync(DescribeFeatureGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5151,7 +5167,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeFlowDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFlowDefinition">REST API Reference for DescribeFlowDefinition Operation</seealso>
         public virtual Task<DescribeFlowDefinitionResponse> DescribeFlowDefinitionAsync(DescribeFlowDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5188,7 +5204,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeHumanTaskUi service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHumanTaskUi">REST API Reference for DescribeHumanTaskUi Operation</seealso>
         public virtual Task<DescribeHumanTaskUiResponse> DescribeHumanTaskUiAsync(DescribeHumanTaskUiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5225,7 +5241,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeHyperParameterTuningJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
         public virtual Task<DescribeHyperParameterTuningJobResponse> DescribeHyperParameterTuningJobAsync(DescribeHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5262,7 +5278,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeImage service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">REST API Reference for DescribeImage Operation</seealso>
         public virtual Task<DescribeImageResponse> DescribeImageAsync(DescribeImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5299,7 +5315,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeImageVersion service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">REST API Reference for DescribeImageVersion Operation</seealso>
         public virtual Task<DescribeImageVersionResponse> DescribeImageVersionAsync(DescribeImageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5336,7 +5352,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeLabelingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLabelingJob">REST API Reference for DescribeLabelingJob Operation</seealso>
         public virtual Task<DescribeLabelingJobResponse> DescribeLabelingJobAsync(DescribeLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5407,7 +5423,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeModelBiasJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition">REST API Reference for DescribeModelBiasJobDefinition Operation</seealso>
         public virtual Task<DescribeModelBiasJobDefinitionResponse> DescribeModelBiasJobDefinitionAsync(DescribeModelBiasJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5444,7 +5460,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeModelExplainabilityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition">REST API Reference for DescribeModelExplainabilityJobDefinition Operation</seealso>
         public virtual Task<DescribeModelExplainabilityJobDefinitionResponse> DescribeModelExplainabilityJobDefinitionAsync(DescribeModelExplainabilityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5556,7 +5572,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeModelQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition">REST API Reference for DescribeModelQualityJobDefinition Operation</seealso>
         public virtual Task<DescribeModelQualityJobDefinitionResponse> DescribeModelQualityJobDefinitionAsync(DescribeModelQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5593,7 +5609,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMonitoringSchedule">REST API Reference for DescribeMonitoringSchedule Operation</seealso>
         public virtual Task<DescribeMonitoringScheduleResponse> DescribeMonitoringScheduleAsync(DescribeMonitoringScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5704,7 +5720,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribePipeline service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipeline">REST API Reference for DescribePipeline Operation</seealso>
         public virtual Task<DescribePipelineResponse> DescribePipelineAsync(DescribePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5741,7 +5757,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribePipelineDefinitionForExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineDefinitionForExecution">REST API Reference for DescribePipelineDefinitionForExecution Operation</seealso>
         public virtual Task<DescribePipelineDefinitionForExecutionResponse> DescribePipelineDefinitionForExecutionAsync(DescribePipelineDefinitionForExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5778,7 +5794,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribePipelineExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineExecution">REST API Reference for DescribePipelineExecution Operation</seealso>
         public virtual Task<DescribePipelineExecutionResponse> DescribePipelineExecutionAsync(DescribePipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5815,7 +5831,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeProcessingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProcessingJob">REST API Reference for DescribeProcessingJob Operation</seealso>
         public virtual Task<DescribeProcessingJobResponse> DescribeProcessingJobAsync(DescribeProcessingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5930,7 +5946,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeTrainingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob">REST API Reference for DescribeTrainingJob Operation</seealso>
         public virtual Task<DescribeTrainingJobResponse> DescribeTrainingJobAsync(DescribeTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5967,7 +5983,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeTransformJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">REST API Reference for DescribeTransformJob Operation</seealso>
         public virtual Task<DescribeTransformJobResponse> DescribeTransformJobAsync(DescribeTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6004,7 +6020,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeTrial service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrial">REST API Reference for DescribeTrial Operation</seealso>
         public virtual Task<DescribeTrialResponse> DescribeTrialAsync(DescribeTrialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6041,7 +6057,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeTrialComponent service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrialComponent">REST API Reference for DescribeTrialComponent Operation</seealso>
         public virtual Task<DescribeTrialComponentResponse> DescribeTrialComponentAsync(DescribeTrialComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6078,7 +6094,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeUserProfile service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
         public virtual Task<DescribeUserProfileResponse> DescribeUserProfileAsync(DescribeUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6239,7 +6255,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DisassociateTrialComponent service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisassociateTrialComponent">REST API Reference for DisassociateTrialComponent Operation</seealso>
         public virtual Task<DisassociateTrialComponentResponse> DisassociateTrialComponentAsync(DisassociateTrialComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6454,7 +6470,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListActions service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListActions">REST API Reference for ListActions Operation</seealso>
         public virtual Task<ListActionsResponse> ListActionsAsync(ListActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6595,7 +6611,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListArtifacts service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
         public virtual Task<ListArtifactsResponse> ListArtifactsAsync(ListArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6632,7 +6648,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListAssociations service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public virtual Task<ListAssociationsResponse> ListAssociationsAsync(ListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6703,7 +6719,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListCandidatesForAutoMLJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCandidatesForAutoMLJob">REST API Reference for ListCandidatesForAutoMLJob Operation</seealso>
         public virtual Task<ListCandidatesForAutoMLJobResponse> ListCandidatesForAutoMLJobAsync(ListCandidatesForAutoMLJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6814,7 +6830,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListContexts service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListContexts">REST API Reference for ListContexts Operation</seealso>
         public virtual Task<ListContextsResponse> ListContextsAsync(ListContextsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7298,7 +7314,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListImageVersions service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">REST API Reference for ListImageVersions Operation</seealso>
         public virtual Task<ListImageVersionsResponse> ListImageVersionsAsync(ListImageVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7369,7 +7385,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListLabelingJobsForWorkteam service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLabelingJobsForWorkteam">REST API Reference for ListLabelingJobsForWorkteam Operation</seealso>
         public virtual Task<ListLabelingJobsForWorkteamResponse> ListLabelingJobsForWorkteamAsync(ListLabelingJobsForWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7748,7 +7764,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListPipelineExecutions service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
         public virtual Task<ListPipelineExecutionsResponse> ListPipelineExecutionsAsync(ListPipelineExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7785,7 +7801,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListPipelineExecutionSteps service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutionSteps">REST API Reference for ListPipelineExecutionSteps Operation</seealso>
         public virtual Task<ListPipelineExecutionStepsResponse> ListPipelineExecutionStepsAsync(ListPipelineExecutionStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7822,7 +7838,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListPipelineParametersForExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineParametersForExecution">REST API Reference for ListPipelineParametersForExecution Operation</seealso>
         public virtual Task<ListPipelineParametersForExecutionResponse> ListPipelineParametersForExecutionAsync(ListPipelineParametersForExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8098,7 +8114,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListTrainingJobsForHyperParameterTuningJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">REST API Reference for ListTrainingJobsForHyperParameterTuningJob Operation</seealso>
         public virtual Task<ListTrainingJobsForHyperParameterTuningJobResponse> ListTrainingJobsForHyperParameterTuningJobAsync(ListTrainingJobsForHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8185,7 +8201,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListTrialComponents service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents">REST API Reference for ListTrialComponents Operation</seealso>
         public virtual Task<ListTrialComponentsResponse> ListTrialComponentsAsync(ListTrialComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8226,7 +8242,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListTrials service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">REST API Reference for ListTrials Operation</seealso>
         public virtual Task<ListTrialsResponse> ListTrialsAsync(ListTrialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8443,7 +8459,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the RenderUiTemplate service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RenderUiTemplate">REST API Reference for RenderUiTemplate Operation</seealso>
         public virtual Task<RenderUiTemplateResponse> RenderUiTemplateAsync(RenderUiTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8528,7 +8544,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StartMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">REST API Reference for StartMonitoringSchedule Operation</seealso>
         public virtual Task<StartMonitoringScheduleResponse> StartMonitoringScheduleAsync(StartMonitoringScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8610,7 +8626,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         public virtual Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(StartPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8647,7 +8663,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopAutoMLJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAutoMLJob">REST API Reference for StopAutoMLJob Operation</seealso>
         public virtual Task<StopAutoMLJobResponse> StopAutoMLJobAsync(StopAutoMLJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8697,7 +8713,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopCompilationJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopCompilationJob">REST API Reference for StopCompilationJob Operation</seealso>
         public virtual Task<StopCompilationJobResponse> StopCompilationJobAsync(StopCompilationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8777,7 +8793,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopHyperParameterTuningJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
         public virtual Task<StopHyperParameterTuningJobResponse> StopHyperParameterTuningJobAsync(StopHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8815,7 +8831,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopLabelingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopLabelingJob">REST API Reference for StopLabelingJob Operation</seealso>
         public virtual Task<StopLabelingJobResponse> StopLabelingJobAsync(StopLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8852,7 +8868,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMonitoringSchedule">REST API Reference for StopMonitoringSchedule Operation</seealso>
         public virtual Task<StopMonitoringScheduleResponse> StopMonitoringScheduleAsync(StopMonitoringScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8934,7 +8950,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopPipelineExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution">REST API Reference for StopPipelineExecution Operation</seealso>
         public virtual Task<StopPipelineExecutionResponse> StopPipelineExecutionAsync(StopPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8971,7 +8987,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopProcessingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopProcessingJob">REST API Reference for StopProcessingJob Operation</seealso>
         public virtual Task<StopProcessingJobResponse> StopProcessingJobAsync(StopProcessingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9017,7 +9033,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopTrainingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTrainingJob">REST API Reference for StopTrainingJob Operation</seealso>
         public virtual Task<StopTrainingJobResponse> StopTrainingJobAsync(StopTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9062,7 +9078,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopTransformJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">REST API Reference for StopTransformJob Operation</seealso>
         public virtual Task<StopTransformJobResponse> StopTransformJobAsync(StopTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9103,7 +9119,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAction">REST API Reference for UpdateAction Operation</seealso>
         public virtual Task<UpdateActionResponse> UpdateActionAsync(UpdateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9140,7 +9156,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateAppImageConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig">REST API Reference for UpdateAppImageConfig Operation</seealso>
         public virtual Task<UpdateAppImageConfigResponse> UpdateAppImageConfigAsync(UpdateAppImageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9181,7 +9197,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateArtifact">REST API Reference for UpdateArtifact Operation</seealso>
         public virtual Task<UpdateArtifactResponse> UpdateArtifactAsync(UpdateArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9256,7 +9272,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateContext">REST API Reference for UpdateContext Operation</seealso>
         public virtual Task<UpdateContextResponse> UpdateContextAsync(UpdateContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9293,7 +9309,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateDeviceFleet service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet">REST API Reference for UpdateDeviceFleet Operation</seealso>
         public virtual Task<UpdateDeviceFleetResponse> UpdateDeviceFleetAsync(UpdateDeviceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9364,14 +9380,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateDomain service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDomain">REST API Reference for UpdateDomain Operation</seealso>
         public virtual Task<UpdateDomainResponse> UpdateDomainAsync(UpdateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9516,7 +9532,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
         public virtual Task<UpdateExperimentResponse> UpdateExperimentAsync(UpdateExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9554,10 +9570,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateImage service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">REST API Reference for UpdateImage Operation</seealso>
         public virtual Task<UpdateImageResponse> UpdateImageAsync(UpdateImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9632,7 +9648,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringSchedule">REST API Reference for UpdateMonitoringSchedule Operation</seealso>
         public virtual Task<UpdateMonitoringScheduleResponse> UpdateMonitoringScheduleAsync(UpdateMonitoringScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9748,7 +9764,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdatePipeline service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9785,7 +9801,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdatePipelineExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineExecution">REST API Reference for UpdatePipelineExecution Operation</seealso>
         public virtual Task<UpdatePipelineExecutionResponse> UpdatePipelineExecutionAsync(UpdatePipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9822,7 +9838,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateTrainingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob">REST API Reference for UpdateTrainingJob Operation</seealso>
         public virtual Task<UpdateTrainingJobResponse> UpdateTrainingJobAsync(UpdateTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9863,7 +9879,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrial">REST API Reference for UpdateTrial Operation</seealso>
         public virtual Task<UpdateTrialResponse> UpdateTrialAsync(UpdateTrialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9904,7 +9920,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrialComponent">REST API Reference for UpdateTrialComponent Operation</seealso>
         public virtual Task<UpdateTrialComponentResponse> UpdateTrialComponentAsync(UpdateTrialComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9941,14 +9957,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateUserProfile service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         public virtual Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

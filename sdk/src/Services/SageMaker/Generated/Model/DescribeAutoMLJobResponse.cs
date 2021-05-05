@@ -47,6 +47,8 @@ namespace Amazon.SageMaker.Model
         private bool? _generateCandidateDefinitionsOnly;
         private List<AutoMLChannel> _inputDataConfig = new List<AutoMLChannel>();
         private DateTime? _lastModifiedTime;
+        private ModelDeployConfig _modelDeployConfig;
+        private ModelDeployResult _modelDeployResult;
         private AutoMLOutputDataConfig _outputDataConfig;
         private List<AutoMLPartialFailureReason> _partialFailureReasons = new List<AutoMLPartialFailureReason>();
         private ProblemType _problemType;
@@ -75,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobArtifacts. 
         /// <para>
-        /// Returns information on the job's artifacts found in AutoMLJobArtifacts.
+        /// Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.
         /// </para>
         /// </summary>
         public AutoMLJobArtifacts AutoMLJobArtifacts
@@ -167,7 +169,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobStatus. 
         /// <para>
-        /// Returns the status of the AutoML job's AutoMLJobStatus.
+        /// Returns the status of the AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -186,7 +188,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property BestCandidate. 
         /// <para>
-        /// Returns the job's BestCandidate.
+        /// Returns the job's best <code>AutoMLCandidate</code>.
         /// </para>
         /// </summary>
         public AutoMLCandidate BestCandidate
@@ -241,7 +243,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// Returns the job's FailureReason.
+        /// Returns the failure reason for an AutoML job, when applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -260,7 +262,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property GenerateCandidateDefinitionsOnly. 
         /// <para>
-        /// Returns the job's output from GenerateCandidateDefinitionsOnly.
+        /// Indicates whether the output for an AutoML job generates candidate definitions only.
         /// </para>
         /// </summary>
         public bool GenerateCandidateDefinitionsOnly
@@ -314,6 +316,43 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelDeployConfig. 
+        /// <para>
+        /// Indicates whether the model was deployed automatically to an endpoint and the name
+        /// of that endpoint if deployed automatically.
+        /// </para>
+        /// </summary>
+        public ModelDeployConfig ModelDeployConfig
+        {
+            get { return this._modelDeployConfig; }
+            set { this._modelDeployConfig = value; }
+        }
+
+        // Check to see if ModelDeployConfig property is set
+        internal bool IsSetModelDeployConfig()
+        {
+            return this._modelDeployConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDeployResult. 
+        /// <para>
+        /// Provides information about endpoint for the model deployment.
+        /// </para>
+        /// </summary>
+        public ModelDeployResult ModelDeployResult
+        {
+            get { return this._modelDeployResult; }
+            set { this._modelDeployResult = value; }
+        }
+
+        // Check to see if ModelDeployResult property is set
+        internal bool IsSetModelDeployResult()
+        {
+            return this._modelDeployResult != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// Returns the job's output data config.
@@ -335,7 +374,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PartialFailureReasons. 
         /// <para>
-        /// Returns a list of reasons for partial failures within an AutoML job. 
+        /// Returns a list of reasons for partial failures within an AutoML job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -372,9 +411,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResolvedAttributes. 
         /// <para>
-        /// This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you do not
-        /// provide these values, they are auto-inferred. If you do provide them, they are the
-        /// values you provide.
+        /// This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and <code>CompletionCriteria</code>.
+        /// If you do not provide these values, they are auto-inferred. If you do provide them,
+        /// the values used are the ones you provide.
         /// </para>
         /// </summary>
         public ResolvedAttributes ResolvedAttributes

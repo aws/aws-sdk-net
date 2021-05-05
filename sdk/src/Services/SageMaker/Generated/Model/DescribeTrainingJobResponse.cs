@@ -688,7 +688,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PreparingTrainingStack</code> 
+        ///  <code>PreparingTraining</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

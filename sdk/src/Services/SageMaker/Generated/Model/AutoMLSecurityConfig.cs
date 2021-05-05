@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// VPC configuration.
+        /// The VPC configuration.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

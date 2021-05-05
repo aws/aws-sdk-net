@@ -117,6 +117,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetModelDeployConfig())
+                {
+                    context.Writer.WritePropertyName("ModelDeployConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelDeployConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelDeployConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOutputDataConfig())
                 {
                     context.Writer.WritePropertyName("OutputDataConfig");

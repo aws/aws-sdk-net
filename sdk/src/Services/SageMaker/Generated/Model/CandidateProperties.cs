@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CandidateArtifactLocations. 
         /// <para>
-        /// The S3 prefix to the artifacts generated for an AutoML candidate.
+        /// The Amazon S3 prefix to the artifacts generated for an AutoML candidate.
         /// </para>
         /// </summary>
         public CandidateArtifactLocations CandidateArtifactLocations

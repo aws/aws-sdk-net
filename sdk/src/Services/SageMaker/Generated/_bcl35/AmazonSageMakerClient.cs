@@ -270,7 +270,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddAssociation">REST API Reference for AddAssociation Operation</seealso>
         public virtual AddAssociationResponse AddAssociation(AddAssociationRequest request)
@@ -341,6 +341,16 @@ namespace Amazon.SageMaker
         /// add the tags when you first create the tuning job by specifying them in the <code>Tags</code>
         /// parameter of <a>CreateHyperParameterTuningJob</a> 
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Tags that you add to a SageMaker Studio Domain or User Profile by calling this API
+        /// are also added to any Apps that the Domain or User Profile launches after you call
+        /// this API, but not to Apps that the Domain or User Profile launched before you called
+        /// this API. To make sure that the tags associated with a Domain or User Profile are
+        /// also added to all Apps that the Domain or User Profile launches, add the tags when
+        /// you first create the Domain or User Profile by specifying them in the <code>Tags</code>
+        /// parameter of <a>CreateDomain</a> or <a>CreateUserProfile</a>.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
@@ -407,7 +417,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AssociateTrialComponent">REST API Reference for AssociateTrialComponent Operation</seealso>
         public virtual AssociateTrialComponentResponse AssociateTrialComponent(AssociateTrialComponentRequest request)
@@ -592,7 +602,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateApp service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -655,7 +665,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateAppImageConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">REST API Reference for CreateAppImageConfig Operation</seealso>
         public virtual CreateAppImageConfigResponse CreateAppImageConfig(CreateAppImageConfigRequest request)
@@ -792,7 +802,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateAutoMLJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -960,7 +970,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateCompilationJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1093,7 +1103,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateDataQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1154,7 +1164,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateDeviceFleet service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1271,7 +1281,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateDomain service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1768,7 +1778,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateFeatureGroup service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1829,7 +1839,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateFlowDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1892,7 +1902,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateHumanTaskUi service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -1957,7 +1967,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateHyperParameterTuningJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2021,7 +2031,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateImage service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2084,14 +2094,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateImageVersion service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">REST API Reference for CreateImageVersion Operation</seealso>
         public virtual CreateImageVersionResponse CreateImageVersion(CreateImageVersionRequest request)
@@ -2203,7 +2213,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateLabelingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2364,7 +2374,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateModelBiasJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2425,7 +2435,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateModelExplainabilityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2631,7 +2641,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateModelQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2693,7 +2703,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -2958,7 +2968,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
@@ -3028,7 +3038,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreatePresignedDomainUrl service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">REST API Reference for CreatePresignedDomainUrl Operation</seealso>
         public virtual CreatePresignedDomainUrlResponse CreatePresignedDomainUrl(CreatePresignedDomainUrlRequest request)
@@ -3167,14 +3177,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateProcessingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProcessingJob">REST API Reference for CreateProcessingJob Operation</seealso>
         public virtual CreateProcessingJobResponse CreateProcessingJob(CreateProcessingJobRequest request)
@@ -3365,14 +3375,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateTrainingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">REST API Reference for CreateTrainingJob Operation</seealso>
         public virtual CreateTrainingJobResponse CreateTrainingJob(CreateTrainingJobRequest request)
@@ -3471,14 +3481,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateTransformJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">REST API Reference for CreateTransformJob Operation</seealso>
         public virtual CreateTransformJobResponse CreateTransformJob(CreateTransformJobRequest request)
@@ -3557,7 +3567,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">REST API Reference for CreateTrial Operation</seealso>
         public virtual CreateTrialResponse CreateTrial(CreateTrialRequest request)
@@ -3704,7 +3714,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateUserProfile service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -3850,7 +3860,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateWorkteam service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
@@ -3911,7 +3921,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteAction service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAction">REST API Reference for DeleteAction Operation</seealso>
         public virtual DeleteActionResponse DeleteAction(DeleteActionRequest request)
@@ -4022,10 +4032,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteApp service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
@@ -4082,7 +4092,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteAppImageConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig">REST API Reference for DeleteAppImageConfig Operation</seealso>
         public virtual DeleteAppImageConfigResponse DeleteAppImageConfig(DeleteAppImageConfigRequest request)
@@ -4140,7 +4150,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteArtifact service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteArtifact">REST API Reference for DeleteArtifact Operation</seealso>
         public virtual DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest request)
@@ -4197,7 +4207,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteAssociation service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         public virtual DeleteAssociationResponse DeleteAssociation(DeleteAssociationRequest request)
@@ -4308,7 +4318,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteContext service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteContext">REST API Reference for DeleteContext Operation</seealso>
         public virtual DeleteContextResponse DeleteContext(DeleteContextRequest request)
@@ -4365,7 +4375,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteDataQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition">REST API Reference for DeleteDataQualityJobDefinition Operation</seealso>
         public virtual DeleteDataQualityJobDefinitionResponse DeleteDataQualityJobDefinition(DeleteDataQualityJobDefinitionRequest request)
@@ -4422,7 +4432,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteDeviceFleet service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet">REST API Reference for DeleteDeviceFleet Operation</seealso>
         public virtual DeleteDeviceFleetResponse DeleteDeviceFleet(DeleteDeviceFleetRequest request)
@@ -4481,10 +4491,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteDomain service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
@@ -4671,7 +4681,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteExperiment service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
         public virtual DeleteExperimentResponse DeleteExperiment(DeleteExperimentRequest request)
@@ -4737,7 +4747,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteFeatureGroup service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFeatureGroup">REST API Reference for DeleteFeatureGroup Operation</seealso>
         public virtual DeleteFeatureGroupResponse DeleteFeatureGroup(DeleteFeatureGroupRequest request)
@@ -4794,10 +4804,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteFlowDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFlowDefinition">REST API Reference for DeleteFlowDefinition Operation</seealso>
         public virtual DeleteFlowDefinitionResponse DeleteFlowDefinition(DeleteFlowDefinitionRequest request)
@@ -4860,7 +4870,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteHumanTaskUi service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">REST API Reference for DeleteHumanTaskUi Operation</seealso>
         public virtual DeleteHumanTaskUiResponse DeleteHumanTaskUi(DeleteHumanTaskUiRequest request)
@@ -4918,10 +4928,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteImage service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
         public virtual DeleteImageResponse DeleteImage(DeleteImageRequest request)
@@ -4979,10 +4989,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteImageVersion service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">REST API Reference for DeleteImageVersion Operation</seealso>
         public virtual DeleteImageVersionResponse DeleteImageVersion(DeleteImageVersionRequest request)
@@ -5096,7 +5106,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteModelBiasJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition">REST API Reference for DeleteModelBiasJobDefinition Operation</seealso>
         public virtual DeleteModelBiasJobDefinitionResponse DeleteModelBiasJobDefinition(DeleteModelBiasJobDefinitionRequest request)
@@ -5153,7 +5163,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteModelExplainabilityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition">REST API Reference for DeleteModelExplainabilityJobDefinition Operation</seealso>
         public virtual DeleteModelExplainabilityJobDefinitionResponse DeleteModelExplainabilityJobDefinition(DeleteModelExplainabilityJobDefinitionRequest request)
@@ -5383,7 +5393,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteModelQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition">REST API Reference for DeleteModelQualityJobDefinition Operation</seealso>
         public virtual DeleteModelQualityJobDefinitionResponse DeleteModelQualityJobDefinition(DeleteModelQualityJobDefinitionRequest request)
@@ -5441,7 +5451,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMonitoringSchedule">REST API Reference for DeleteMonitoringSchedule Operation</seealso>
         public virtual DeleteMonitoringScheduleResponse DeleteMonitoringSchedule(DeleteMonitoringScheduleRequest request)
@@ -5617,7 +5627,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
@@ -5734,6 +5744,12 @@ namespace Amazon.SageMaker
         /// tags are not removed from training jobs that the hyperparameter tuning job launched
         /// before you called this API.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When you call this API to delete tags from a SageMaker Studio Domain or User Profile,
+        /// the deleted tags are not removed from Apps that the SageMaker Studio Domain or User
+        /// Profile launched before you called this API.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
@@ -5795,7 +5811,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteTrial service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrial">REST API Reference for DeleteTrial Operation</seealso>
         public virtual DeleteTrialResponse DeleteTrial(DeleteTrialRequest request)
@@ -5854,7 +5870,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteTrialComponent service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrialComponent">REST API Reference for DeleteTrialComponent Operation</seealso>
         public virtual DeleteTrialComponentResponse DeleteTrialComponent(DeleteTrialComponentRequest request)
@@ -5912,10 +5928,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteUserProfile service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
         public virtual DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
@@ -6153,7 +6169,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeAction service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
         public virtual DescribeActionResponse DescribeAction(DescribeActionRequest request)
@@ -6264,7 +6280,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeApp service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeApp">REST API Reference for DescribeApp Operation</seealso>
         public virtual DescribeAppResponse DescribeApp(DescribeAppRequest request)
@@ -6321,7 +6337,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeAppImageConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig">REST API Reference for DescribeAppImageConfig Operation</seealso>
         public virtual DescribeAppImageConfigResponse DescribeAppImageConfig(DescribeAppImageConfigRequest request)
@@ -6378,7 +6394,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeArtifact service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeArtifact">REST API Reference for DescribeArtifact Operation</seealso>
         public virtual DescribeArtifactResponse DescribeArtifact(DescribeArtifactRequest request)
@@ -6435,7 +6451,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeAutoMLJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJob">REST API Reference for DescribeAutoMLJob Operation</seealso>
         public virtual DescribeAutoMLJobResponse DescribeAutoMLJob(DescribeAutoMLJobRequest request)
@@ -6552,7 +6568,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeCompilationJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCompilationJob">REST API Reference for DescribeCompilationJob Operation</seealso>
         public virtual DescribeCompilationJobResponse DescribeCompilationJob(DescribeCompilationJobRequest request)
@@ -6609,7 +6625,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeContext service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeContext">REST API Reference for DescribeContext Operation</seealso>
         public virtual DescribeContextResponse DescribeContext(DescribeContextRequest request)
@@ -6666,7 +6682,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeDataQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition">REST API Reference for DescribeDataQualityJobDefinition Operation</seealso>
         public virtual DescribeDataQualityJobDefinitionResponse DescribeDataQualityJobDefinition(DescribeDataQualityJobDefinitionRequest request)
@@ -6723,7 +6739,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeDevice service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
         public virtual DescribeDeviceResponse DescribeDevice(DescribeDeviceRequest request)
@@ -6780,7 +6796,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeDeviceFleet service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet">REST API Reference for DescribeDeviceFleet Operation</seealso>
         public virtual DescribeDeviceFleetResponse DescribeDeviceFleet(DescribeDeviceFleetRequest request)
@@ -6837,7 +6853,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeDomain service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
@@ -6894,7 +6910,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeEdgePackagingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob">REST API Reference for DescribeEdgePackagingJob Operation</seealso>
         public virtual DescribeEdgePackagingJobResponse DescribeEdgePackagingJob(DescribeEdgePackagingJobRequest request)
@@ -7060,7 +7076,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeExperiment service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeExperiment">REST API Reference for DescribeExperiment Operation</seealso>
         public virtual DescribeExperimentResponse DescribeExperiment(DescribeExperimentRequest request)
@@ -7119,7 +7135,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeFeatureGroup service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureGroup">REST API Reference for DescribeFeatureGroup Operation</seealso>
         public virtual DescribeFeatureGroupResponse DescribeFeatureGroup(DescribeFeatureGroupRequest request)
@@ -7176,7 +7192,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeFlowDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFlowDefinition">REST API Reference for DescribeFlowDefinition Operation</seealso>
         public virtual DescribeFlowDefinitionResponse DescribeFlowDefinition(DescribeFlowDefinitionRequest request)
@@ -7233,7 +7249,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeHumanTaskUi service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHumanTaskUi">REST API Reference for DescribeHumanTaskUi Operation</seealso>
         public virtual DescribeHumanTaskUiResponse DescribeHumanTaskUi(DescribeHumanTaskUiRequest request)
@@ -7290,7 +7306,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeHyperParameterTuningJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
         public virtual DescribeHyperParameterTuningJobResponse DescribeHyperParameterTuningJob(DescribeHyperParameterTuningJobRequest request)
@@ -7347,7 +7363,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeImage service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">REST API Reference for DescribeImage Operation</seealso>
         public virtual DescribeImageResponse DescribeImage(DescribeImageRequest request)
@@ -7404,7 +7420,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeImageVersion service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">REST API Reference for DescribeImageVersion Operation</seealso>
         public virtual DescribeImageVersionResponse DescribeImageVersion(DescribeImageVersionRequest request)
@@ -7461,7 +7477,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeLabelingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLabelingJob">REST API Reference for DescribeLabelingJob Operation</seealso>
         public virtual DescribeLabelingJobResponse DescribeLabelingJob(DescribeLabelingJobRequest request)
@@ -7572,7 +7588,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeModelBiasJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition">REST API Reference for DescribeModelBiasJobDefinition Operation</seealso>
         public virtual DescribeModelBiasJobDefinitionResponse DescribeModelBiasJobDefinition(DescribeModelBiasJobDefinitionRequest request)
@@ -7629,7 +7645,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeModelExplainabilityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition">REST API Reference for DescribeModelExplainabilityJobDefinition Operation</seealso>
         public virtual DescribeModelExplainabilityJobDefinitionResponse DescribeModelExplainabilityJobDefinition(DescribeModelExplainabilityJobDefinitionRequest request)
@@ -7801,7 +7817,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeModelQualityJobDefinition service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition">REST API Reference for DescribeModelQualityJobDefinition Operation</seealso>
         public virtual DescribeModelQualityJobDefinitionResponse DescribeModelQualityJobDefinition(DescribeModelQualityJobDefinitionRequest request)
@@ -7858,7 +7874,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMonitoringSchedule">REST API Reference for DescribeMonitoringSchedule Operation</seealso>
         public virtual DescribeMonitoringScheduleResponse DescribeMonitoringSchedule(DescribeMonitoringScheduleRequest request)
@@ -8029,7 +8045,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribePipeline service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipeline">REST API Reference for DescribePipeline Operation</seealso>
         public virtual DescribePipelineResponse DescribePipeline(DescribePipelineRequest request)
@@ -8086,7 +8102,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribePipelineDefinitionForExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineDefinitionForExecution">REST API Reference for DescribePipelineDefinitionForExecution Operation</seealso>
         public virtual DescribePipelineDefinitionForExecutionResponse DescribePipelineDefinitionForExecution(DescribePipelineDefinitionForExecutionRequest request)
@@ -8143,7 +8159,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribePipelineExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineExecution">REST API Reference for DescribePipelineExecution Operation</seealso>
         public virtual DescribePipelineExecutionResponse DescribePipelineExecution(DescribePipelineExecutionRequest request)
@@ -8200,7 +8216,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeProcessingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProcessingJob">REST API Reference for DescribeProcessingJob Operation</seealso>
         public virtual DescribeProcessingJobResponse DescribeProcessingJob(DescribeProcessingJobRequest request)
@@ -8375,7 +8391,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeTrainingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob">REST API Reference for DescribeTrainingJob Operation</seealso>
         public virtual DescribeTrainingJobResponse DescribeTrainingJob(DescribeTrainingJobRequest request)
@@ -8432,7 +8448,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeTransformJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">REST API Reference for DescribeTransformJob Operation</seealso>
         public virtual DescribeTransformJobResponse DescribeTransformJob(DescribeTransformJobRequest request)
@@ -8489,7 +8505,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeTrial service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrial">REST API Reference for DescribeTrial Operation</seealso>
         public virtual DescribeTrialResponse DescribeTrial(DescribeTrialRequest request)
@@ -8546,7 +8562,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeTrialComponent service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrialComponent">REST API Reference for DescribeTrialComponent Operation</seealso>
         public virtual DescribeTrialComponentResponse DescribeTrialComponent(DescribeTrialComponentRequest request)
@@ -8603,7 +8619,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DescribeUserProfile service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
         public virtual DescribeUserProfileResponse DescribeUserProfile(DescribeUserProfileRequest request)
@@ -8844,7 +8860,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DisassociateTrialComponent service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisassociateTrialComponent">REST API Reference for DisassociateTrialComponent Operation</seealso>
         public virtual DisassociateTrialComponentResponse DisassociateTrialComponent(DisassociateTrialComponentRequest request)
@@ -9179,7 +9195,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListActions service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListActions">REST API Reference for ListActions Operation</seealso>
         public virtual ListActionsResponse ListActions(ListActionsRequest request)
@@ -9400,7 +9416,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListArtifacts service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
         public virtual ListArtifactsResponse ListArtifacts(ListArtifactsRequest request)
@@ -9457,7 +9473,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListAssociations service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public virtual ListAssociationsResponse ListAssociations(ListAssociationsRequest request)
@@ -9568,7 +9584,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListCandidatesForAutoMLJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCandidatesForAutoMLJob">REST API Reference for ListCandidatesForAutoMLJob Operation</seealso>
         public virtual ListCandidatesForAutoMLJobResponse ListCandidatesForAutoMLJob(ListCandidatesForAutoMLJobRequest request)
@@ -9739,7 +9755,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListContexts service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListContexts">REST API Reference for ListContexts Operation</seealso>
         public virtual ListContextsResponse ListContexts(ListContextsRequest request)
@@ -10503,7 +10519,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListImageVersions service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">REST API Reference for ListImageVersions Operation</seealso>
         public virtual ListImageVersionsResponse ListImageVersions(ListImageVersionsRequest request)
@@ -10614,7 +10630,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListLabelingJobsForWorkteam service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLabelingJobsForWorkteam">REST API Reference for ListLabelingJobsForWorkteam Operation</seealso>
         public virtual ListLabelingJobsForWorkteamResponse ListLabelingJobsForWorkteam(ListLabelingJobsForWorkteamRequest request)
@@ -11213,7 +11229,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListPipelineExecutions service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
         public virtual ListPipelineExecutionsResponse ListPipelineExecutions(ListPipelineExecutionsRequest request)
@@ -11270,7 +11286,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListPipelineExecutionSteps service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutionSteps">REST API Reference for ListPipelineExecutionSteps Operation</seealso>
         public virtual ListPipelineExecutionStepsResponse ListPipelineExecutionSteps(ListPipelineExecutionStepsRequest request)
@@ -11327,7 +11343,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListPipelineParametersForExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineParametersForExecution">REST API Reference for ListPipelineParametersForExecution Operation</seealso>
         public virtual ListPipelineParametersForExecutionResponse ListPipelineParametersForExecution(ListPipelineParametersForExecutionRequest request)
@@ -11743,7 +11759,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListTrainingJobsForHyperParameterTuningJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">REST API Reference for ListTrainingJobsForHyperParameterTuningJob Operation</seealso>
         public virtual ListTrainingJobsForHyperParameterTuningJobResponse ListTrainingJobsForHyperParameterTuningJob(ListTrainingJobsForHyperParameterTuningJobRequest request)
@@ -11870,7 +11886,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListTrialComponents service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents">REST API Reference for ListTrialComponents Operation</seealso>
         public virtual ListTrialComponentsResponse ListTrialComponents(ListTrialComponentsRequest request)
@@ -11931,7 +11947,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the ListTrials service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">REST API Reference for ListTrials Operation</seealso>
         public virtual ListTrialsResponse ListTrials(ListTrialsRequest request)
@@ -12268,7 +12284,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the RenderUiTemplate service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RenderUiTemplate">REST API Reference for RenderUiTemplate Operation</seealso>
         public virtual RenderUiTemplateResponse RenderUiTemplate(RenderUiTemplateRequest request)
@@ -12393,7 +12409,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StartMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">REST API Reference for StartMonitoringSchedule Operation</seealso>
         public virtual StartMonitoringScheduleResponse StartMonitoringSchedule(StartMonitoringScheduleRequest request)
@@ -12515,7 +12531,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         public virtual StartPipelineExecutionResponse StartPipelineExecution(StartPipelineExecutionRequest request)
@@ -12572,7 +12588,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopAutoMLJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAutoMLJob">REST API Reference for StopAutoMLJob Operation</seealso>
         public virtual StopAutoMLJobResponse StopAutoMLJob(StopAutoMLJobRequest request)
@@ -12642,7 +12658,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopCompilationJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopCompilationJob">REST API Reference for StopCompilationJob Operation</seealso>
         public virtual StopCompilationJobResponse StopCompilationJob(StopCompilationJobRequest request)
@@ -12762,7 +12778,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopHyperParameterTuningJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
         public virtual StopHyperParameterTuningJobResponse StopHyperParameterTuningJob(StopHyperParameterTuningJobRequest request)
@@ -12820,7 +12836,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopLabelingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopLabelingJob">REST API Reference for StopLabelingJob Operation</seealso>
         public virtual StopLabelingJobResponse StopLabelingJob(StopLabelingJobRequest request)
@@ -12877,7 +12893,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMonitoringSchedule">REST API Reference for StopMonitoringSchedule Operation</seealso>
         public virtual StopMonitoringScheduleResponse StopMonitoringSchedule(StopMonitoringScheduleRequest request)
@@ -12999,7 +13015,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopPipelineExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution">REST API Reference for StopPipelineExecution Operation</seealso>
         public virtual StopPipelineExecutionResponse StopPipelineExecution(StopPipelineExecutionRequest request)
@@ -13056,7 +13072,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopProcessingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopProcessingJob">REST API Reference for StopProcessingJob Operation</seealso>
         public virtual StopProcessingJobResponse StopProcessingJob(StopProcessingJobRequest request)
@@ -13122,7 +13138,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopTrainingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTrainingJob">REST API Reference for StopTrainingJob Operation</seealso>
         public virtual StopTrainingJobResponse StopTrainingJob(StopTrainingJobRequest request)
@@ -13187,7 +13203,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StopTransformJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">REST API Reference for StopTransformJob Operation</seealso>
         public virtual StopTransformJobResponse StopTransformJob(StopTransformJobRequest request)
@@ -13248,7 +13264,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAction">REST API Reference for UpdateAction Operation</seealso>
         public virtual UpdateActionResponse UpdateAction(UpdateActionRequest request)
@@ -13305,7 +13321,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateAppImageConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig">REST API Reference for UpdateAppImageConfig Operation</seealso>
         public virtual UpdateAppImageConfigResponse UpdateAppImageConfig(UpdateAppImageConfigRequest request)
@@ -13366,7 +13382,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateArtifact">REST API Reference for UpdateArtifact Operation</seealso>
         public virtual UpdateArtifactResponse UpdateArtifact(UpdateArtifactRequest request)
@@ -13481,7 +13497,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateContext">REST API Reference for UpdateContext Operation</seealso>
         public virtual UpdateContextResponse UpdateContext(UpdateContextRequest request)
@@ -13538,7 +13554,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateDeviceFleet service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet">REST API Reference for UpdateDeviceFleet Operation</seealso>
         public virtual UpdateDeviceFleetResponse UpdateDeviceFleet(UpdateDeviceFleetRequest request)
@@ -13649,14 +13665,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateDomain service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDomain">REST API Reference for UpdateDomain Operation</seealso>
         public virtual UpdateDomainResponse UpdateDomain(UpdateDomainRequest request)
@@ -13861,7 +13877,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
         public virtual UpdateExperimentResponse UpdateExperiment(UpdateExperimentRequest request)
@@ -13919,10 +13935,10 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateImage service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">REST API Reference for UpdateImage Operation</seealso>
         public virtual UpdateImageResponse UpdateImage(UpdateImageRequest request)
@@ -14037,7 +14053,7 @@ namespace Amazon.SageMaker
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringSchedule">REST API Reference for UpdateMonitoringSchedule Operation</seealso>
         public virtual UpdateMonitoringScheduleResponse UpdateMonitoringSchedule(UpdateMonitoringScheduleRequest request)
@@ -14213,7 +14229,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdatePipeline service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
@@ -14270,7 +14286,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdatePipelineExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineExecution">REST API Reference for UpdatePipelineExecution Operation</seealso>
         public virtual UpdatePipelineExecutionResponse UpdatePipelineExecution(UpdatePipelineExecutionRequest request)
@@ -14327,7 +14343,7 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateTrainingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob">REST API Reference for UpdateTrainingJob Operation</seealso>
         public virtual UpdateTrainingJobResponse UpdateTrainingJob(UpdateTrainingJobRequest request)
@@ -14388,7 +14404,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrial">REST API Reference for UpdateTrial Operation</seealso>
         public virtual UpdateTrialResponse UpdateTrial(UpdateTrialRequest request)
@@ -14449,7 +14465,7 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrialComponent">REST API Reference for UpdateTrialComponent Operation</seealso>
         public virtual UpdateTrialComponentResponse UpdateTrialComponent(UpdateTrialComponentRequest request)
@@ -14506,14 +14522,14 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateUserProfile service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
-        /// The resource being accessed is in use.
+        /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
         /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
         /// too many training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
-        /// The resource being accessed was not found.
+        /// Resource being access is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         public virtual UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)

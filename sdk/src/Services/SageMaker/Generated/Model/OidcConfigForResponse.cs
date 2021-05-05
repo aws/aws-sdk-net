@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// The OIDC IdP client ID used to configure your private workforce.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=1024)]
         public string ClientId
         {
             get { return this._clientId; }

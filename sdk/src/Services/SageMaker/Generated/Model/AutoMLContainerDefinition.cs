@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// Environment variables to set in the container. For more information, see .
+        /// The environment variables to set in the container. For more information, see .
         /// </para>
         /// </summary>
         [AWSProperty(Max=16)]

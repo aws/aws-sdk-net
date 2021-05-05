@@ -136,7 +136,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WorkRequesterAccountId.
+        /// Gets and sets the property WorkRequesterAccountId. 
+        /// <para>
+        /// The AWS account ID of the account used to start the labeling job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string WorkRequesterAccountId

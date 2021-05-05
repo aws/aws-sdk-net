@@ -42,6 +42,12 @@ namespace Amazon.SageMaker.Model
     /// tags are not removed from training jobs that the hyperparameter tuning job launched
     /// before you called this API.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// When you call this API to delete tags from a SageMaker Studio Domain or User Profile,
+    /// the deleted tags are not removed from Apps that the SageMaker Studio Domain or User
+    /// Profile launched before you called this API.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class DeleteTagsRequest : AmazonSageMakerRequest

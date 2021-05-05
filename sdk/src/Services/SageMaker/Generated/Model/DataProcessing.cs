@@ -77,7 +77,8 @@ namespace Amazon.SageMaker.Model
         /// are <code>None</code> and <code>Input</code>. The default value is <code>None</code>,
         /// which specifies not to join the input with the transformed data. If you want the batch
         /// transform job to join the original input data with the transformed data, set <code>JoinSource</code>
-        /// to <code>Input</code>. 
+        /// to <code>Input</code>. You can specify <code>OutputFilter</code> as an additional
+        /// filter to select a portion of the joined dataset and store it in the output file.
         /// </para>
         ///  
         /// <para>
@@ -90,10 +91,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For CSV files, Amazon SageMaker combines the transformed data with the input data
-        /// at the end of the input data and stores it in the output file. The joined data has
-        /// the joined input data followed by the transformed data and the output is a CSV file.
-        /// 
+        /// For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed
+        /// data with the input by appending each transformed row to the end of the input. The
+        /// joined data has the original input data followed by the transformed data and the output
+        /// is a CSV file.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information on how joining in applied, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+        /// for Associating Inferences with Input Records</a>.
         /// </para>
         /// </summary>
         public JoinSource JoinSource

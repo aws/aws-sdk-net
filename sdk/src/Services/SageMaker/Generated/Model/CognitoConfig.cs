@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The client ID for your Amazon Cognito user pool.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string ClientId
         {
             get { return this._clientId; }

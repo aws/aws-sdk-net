@@ -135,6 +135,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelDeployConfig", targetDepth))
+                {
+                    var unmarshaller = ModelDeployConfigUnmarshaller.Instance;
+                    response.ModelDeployConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModelDeployResult", targetDepth))
+                {
+                    var unmarshaller = ModelDeployResultUnmarshaller.Instance;
+                    response.ModelDeployResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutputDataConfig", targetDepth))
                 {
                     var unmarshaller = AutoMLOutputDataConfigUnmarshaller.Instance;

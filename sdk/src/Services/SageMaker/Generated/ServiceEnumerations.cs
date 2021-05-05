@@ -1039,6 +1039,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AutoMLJobSecondaryStatus Completed = new AutoMLJobSecondaryStatus("Completed");
         /// <summary>
+        /// Constant DeployingModel for AutoMLJobSecondaryStatus
+        /// </summary>
+        public static readonly AutoMLJobSecondaryStatus DeployingModel = new AutoMLJobSecondaryStatus("DeployingModel");
+        /// <summary>
         /// Constant ExplainabilityError for AutoMLJobSecondaryStatus
         /// </summary>
         public static readonly AutoMLJobSecondaryStatus ExplainabilityError = new AutoMLJobSecondaryStatus("ExplainabilityError");
@@ -1062,6 +1066,10 @@ namespace Amazon.SageMaker
         /// Constant MaxCandidatesReached for AutoMLJobSecondaryStatus
         /// </summary>
         public static readonly AutoMLJobSecondaryStatus MaxCandidatesReached = new AutoMLJobSecondaryStatus("MaxCandidatesReached");
+        /// <summary>
+        /// Constant ModelDeploymentError for AutoMLJobSecondaryStatus
+        /// </summary>
+        public static readonly AutoMLJobSecondaryStatus ModelDeploymentError = new AutoMLJobSecondaryStatus("ModelDeploymentError");
         /// <summary>
         /// Constant ModelTuning for AutoMLJobSecondaryStatus
         /// </summary>

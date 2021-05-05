@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Information about the steps for a Candidate, and what step it is working on.
+    /// Information about the steps for a candidate and what step it is working on.
     /// </summary>
     public partial class AutoMLCandidateStep
     {
@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CandidateStepArn. 
         /// <para>
-        /// The ARN for the Candidate's step.
+        /// The ARN for the candidate's step.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CandidateStepName. 
         /// <para>
-        /// The name for the Candidate's step.
+        /// The name for the candidate's step.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CandidateStepType. 
         /// <para>
-        /// Whether the Candidate is at the transform, training, or processing step.
+        /// Whether the candidate is at the transform, training, or processing step.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

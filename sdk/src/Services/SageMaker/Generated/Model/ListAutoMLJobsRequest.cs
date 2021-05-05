@@ -178,7 +178,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The parameter by which to sort the results. The default is AutoMLJobName.
+        /// The parameter by which to sort the results. The default is <code>Name</code>.
         /// </para>
         /// </summary>
         public AutoMLSortBy SortBy
@@ -196,7 +196,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order for the results. The default is Descending.
+        /// The sort order for the results. The default is <code>Descending</code>.
         /// </para>
         /// </summary>
         public AutoMLSortOrder SortOrder
