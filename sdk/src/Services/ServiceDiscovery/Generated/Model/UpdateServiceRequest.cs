@@ -57,7 +57,7 @@ namespace Amazon.ServiceDiscovery.Model
     ///  </li> <li> 
     /// <para>
     /// If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
-    /// <code>UpdateService</code> request, the configuration is not deleted from the service.
+    /// <code>UpdateService</code> request, the configuration isn't deleted from the service.
     /// </para>
     ///  </li> </ul> 
     /// <para>

@@ -154,23 +154,23 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The status of the operation. Values include the following:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>SUBMITTED</dt> <dd> 
         /// <para>
-        ///  <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.
+        /// This is the initial state immediately after you submit a request.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>PENDING</dt> <dd> 
         /// <para>
-        ///  <b>PENDING</b>: AWS Cloud Map is performing the operation.
+        /// AWS Cloud Map is performing the operation.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>SUCCESS</dt> <dd> 
         /// <para>
-        ///  <b>SUCCESS</b>: The operation succeeded.
+        /// The operation succeeded.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>FAIL</dt> <dd> 
         /// <para>
-        ///  <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.
+        /// The operation failed. For the failure reason, see <code>ErrorMessage</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         public OperationStatus Status
         {
@@ -189,19 +189,19 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The name of the target entity that is associated with the operation:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>NAMESPACE</dt> <dd> 
         /// <para>
-        ///  <b>NAMESPACE</b>: The namespace ID is returned in the <code>ResourceId</code> property.
+        /// The namespace ID is returned in the <code>ResourceId</code> property.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>SERVICE</dt> <dd> 
         /// <para>
-        ///  <b>SERVICE</b>: The service ID is returned in the <code>ResourceId</code> property.
+        /// The service ID is returned in the <code>ResourceId</code> property.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>INSTANCE</dt> <dd> 
         /// <para>
-        ///  <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code> property.
+        /// The instance ID is returned in the <code>ResourceId</code> property.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         public Dictionary<string, string> Targets
         {

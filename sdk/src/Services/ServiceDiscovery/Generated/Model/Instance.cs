@@ -56,20 +56,12 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// Supported attribute keys include the following:
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>AWS_ALIAS_DNS_NAME</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b/> 
-        /// </para>
-        ///  
+        ///  <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> 
         /// <para>
         /// If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to
         /// an Elastic Load Balancing load balancer, specify the DNS name that is associated with
-        /// the load balancer. For information about how to get the DNS name, see "DNSName" in
-        /// the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+        /// the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
+        /// in the <i>Route 53 API Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -88,7 +80,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </li> <li> 
         /// <para>
         /// If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
-        /// settings, AWS Cloud Map will create the health check, but it won't associate the health
+        /// settings, AWS Cloud Map creates the health check, but it won't associate the health
         /// check with the alias record.
         /// </para>
         ///  </li> <li> 
@@ -101,20 +93,19 @@ namespace Amazon.ServiceDiscovery.Model
         /// If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for
         /// any of the <code>AWS_INSTANCE</code> attributes.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>AWS_EC2_INSTANCE_ID</b> 
-        /// </para>
-        ///  
+        ///  </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> 
         /// <para>
         ///  <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code>
         /// attribute contains the primary private IPv4 address.
         /// </para>
-        ///  
+        ///  </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> 
         /// <para>
-        ///  <b>AWS_INSTANCE_CNAME</b> 
+        /// If the service configuration includes <code>HealthCheckCustomConfig</code>, you can
+        /// optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of
+        /// the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
+        /// specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
         /// </para>
-        ///  
+        ///  </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> 
         /// <para>
         /// If the service configuration includes a <code>CNAME</code> record, the domain name
         /// that you want Route 53 to return in response to DNS queries, for example, <code>example.com</code>.
@@ -124,11 +115,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// This value is required if the service specified by <code>ServiceId</code> includes
         /// settings for an <code>CNAME</code> record.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>AWS_INSTANCE_IPV4</b> 
-        /// </para>
-        ///  
+        ///  </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> 
         /// <para>
         /// If the service configuration includes an <code>A</code> record, the IPv4 address that
         /// you want Route 53 to return in response to DNS queries, for example, <code>192.0.2.44</code>.
@@ -140,11 +127,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>,
         /// or both.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>AWS_INSTANCE_IPV6</b> 
-        /// </para>
-        ///  
+        ///  </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> 
         /// <para>
         /// If the service configuration includes an <code>AAAA</code> record, the IPv6 address
         /// that you want Route 53 to return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
@@ -156,11 +139,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
         /// <code>AWS_INSTANCE_IPV6</code>, or both.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>AWS_INSTANCE_PORT</b> 
-        /// </para>
-        ///  
+        ///  </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> 
         /// <para>
         /// If the service includes an <code>SRV</code> record, the value that you want Route 53
         /// to return for the port.
@@ -175,6 +154,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// This value is required if you specified settings for an <code>SRV</code> record or
         /// a Route 53 health check when you created the service.
         /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public Dictionary<string, string> Attributes
         {

@@ -48,11 +48,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// <para>
     /// Note the following about configuring health checks.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b> <code>A</code> and <code>AAAA</code> records</b> 
-    /// </para>
-    ///  
+    ///  <dl> <dt>A and AAAA records</dt> <dd> 
     /// <para>
     /// If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code>
     /// records, AWS Cloud Map creates a health check that uses the IPv4 address to check
@@ -60,21 +56,13 @@ namespace Amazon.ServiceDiscovery.Model
     /// is unhealthy, Route 53 considers both the <code>A</code> and <code>AAAA</code> records
     /// to be unhealthy. 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b> <code>CNAME</code> records</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>CNAME records</dt> <dd> 
     /// <para>
     /// You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code>
     /// includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code>
     /// request will fail with an <code>InvalidInput</code> error.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Request interval</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>Request interval</dt> <dd> 
     /// <para>
     /// A Route 53 health checker in each health-checking region sends a health check request
     /// to an endpoint every 30 seconds. On average, your endpoint receives a health check
@@ -82,20 +70,12 @@ namespace Amazon.ServiceDiscovery.Model
     /// another, so you'll sometimes see several requests per second followed by a few seconds
     /// with no health checks at all.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Health checking regions</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>Health checking regions</dt> <dd> 
     /// <para>
     /// Health checkers perform checks from all Route 53 health-checking regions. For a list
     /// of the current regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Alias records</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>Alias records</dt> <dd> 
     /// <para>
     /// When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code>
     /// attribute, AWS Cloud Map creates a Route 53 alias record. Note the following:
@@ -112,16 +92,13 @@ namespace Amazon.ServiceDiscovery.Model
     /// If you include <code>HealthCheckConfig</code> and then use the service to register
     /// an instance that creates an alias record, Route 53 doesn't create the health check.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Charges for health checks</b> 
-    /// </para>
-    ///  
+    ///  </li> </ul> </dd> <dt>Charges for health checks</dt> <dd> 
     /// <para>
     /// Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information
     /// about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
     /// Route 53 Pricing</a>.
     /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class HealthCheckConfig
     {
@@ -133,8 +110,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property FailureThreshold. 
         /// <para>
         /// The number of consecutive health checks that an endpoint must pass or fail for Route 53
-        /// to change the current status of the endpoint from unhealthy to healthy or vice versa.
-        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+        /// to change the current status of the endpoint from unhealthy to healthy or the other
+        /// way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
         /// Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer
         /// Guide</i>.
         /// </para>
@@ -156,8 +133,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property ResourcePath. 
         /// <para>
         /// The path that you want Route 53 to request when performing health checks. The path
-        /// can be any value for which your endpoint will return an HTTP status code of 2xx or
-        /// 3xx when the endpoint is healthy, such as the file <code>/docs/route53-health-check.html</code>.
+        /// can be any value for which your endpoint returns an HTTP status code of a 2xx or 3xx
+        /// format when the endpoint is healthy, such as the file <code>/docs/route53-health-check.html</code>.
         /// Route 53 automatically adds the DNS name for the service. If you don't specify a value
         /// for <code>ResourcePath</code>, the default value is <code>/</code>.
         /// </para>

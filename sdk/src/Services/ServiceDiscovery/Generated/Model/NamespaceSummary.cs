@@ -139,7 +139,10 @@ namespace Amazon.ServiceDiscovery.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Properties.
+        /// Gets and sets the property Properties. 
+        /// <para>
+        /// The properties of the namespace.
+        /// </para>
         /// </summary>
         public NamespaceProperties Properties
         {

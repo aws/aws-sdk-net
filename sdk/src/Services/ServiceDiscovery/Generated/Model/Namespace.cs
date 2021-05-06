@@ -88,7 +88,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and that allows failed requests to be
-        /// retried without the risk of executing an operation twice. 
+        /// retried without the risk of running an operation twice. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -203,22 +203,22 @@ namespace Amazon.ServiceDiscovery.Model
         /// The type of the namespace. The methods for discovering instances depends on the value
         /// that you specify:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>HTTP</dt> <dd> 
         /// <para>
-        ///  <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS
-        /// Cloud Map <code>DiscoverInstances</code> API.
+        /// Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code>
+        /// API.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>DNS_PUBLIC</dt> <dd> 
         /// <para>
-        ///  <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and
-        /// using the <code>DiscoverInstances</code> API.
+        /// Instances can be discovered using public DNS queries and using the <code>DiscoverInstances</code>
+        /// API.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>DNS_PRIVATE</dt> <dd> 
         /// <para>
-        ///  <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and
-        /// using the <code>DiscoverInstances</code> API.
+        /// Instances can be discovered using DNS queries in VPCs and using the <code>DiscoverInstances</code>
+        /// API.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         public NamespaceType Type
         {

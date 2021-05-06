@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// The health check for the instance that is specified by <code>ServiceId</code> and
-    /// <code>InstanceId</code> is not a custom health check.
+    /// The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code>
+    /// isn't a custom health check.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -52,7 +52,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code>
-        /// requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
+        /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code>
         /// can be any unique string, for example, a date/time stamp.
         /// </para>
         /// </summary>
@@ -110,9 +110,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to add to the namespace. Each tag consists of a key and an optional value,
-        /// both of which you define. Tag keys can have a maximum character length of 128 characters,
-        /// and tag values can have a maximum length of 256 characters.
+        /// The tags to add to the namespace. Each tag consists of a key and an optional value
+        /// that you define. Tags keys can be up to 128 characters in length, and tag values can
+        /// be up to 256 characters in length.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

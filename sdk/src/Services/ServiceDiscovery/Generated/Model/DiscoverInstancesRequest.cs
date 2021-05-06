@@ -85,7 +85,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The name of the namespace that you specified when you registered the instance.
+        /// The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code>
+        /// member of the <code>Properties</code> member of the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -128,7 +129,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// Filters to scope the results based on custom attributes for the instance. For example,
         /// <code>{version=v1, az=1a}</code>. Only instances that match all the specified key-value
-        /// pairs will be returned.
+        /// pairs are returned.
         /// </para>
         /// </summary>
         public Dictionary<string, string> QueryParameters

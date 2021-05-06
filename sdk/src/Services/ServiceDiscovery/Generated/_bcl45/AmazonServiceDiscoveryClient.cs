@@ -38,13 +38,12 @@ namespace Amazon.ServiceDiscovery
     /// <summary>
     /// Implementation for accessing ServiceDiscovery
     ///
-    /// AWS Cloud Map lets you configure public DNS, private DNS, or HTTP namespaces that
-    /// your microservice applications run in. When an instance of the service becomes available,
-    /// you can call the AWS Cloud Map API to register the instance with AWS Cloud Map. For
-    /// public or private DNS namespaces, AWS Cloud Map automatically creates DNS records
-    /// and an optional health check. Clients that submit public or private DNS queries, or
-    /// HTTP requests, for the service receive an answer that contains up to eight healthy
-    /// records.
+    /// With AWS Cloud Map, you can configure public DNS, private DNS, or HTTP namespaces
+    /// that your microservice applications run in. When an instance becomes available, you
+    /// can call the AWS Cloud Map API to register the instance with AWS Cloud Map. For public
+    /// or private DNS namespaces, AWS Cloud Map automatically creates DNS records and an
+    /// optional health check. Clients that submit public or private DNS queries, or HTTP
+    /// requests, for the service receive an answer that contains up to eight healthy records.
     /// </summary>
     public partial class AmazonServiceDiscoveryClient : AmazonServiceClient, IAmazonServiceDiscovery
     {
@@ -359,12 +358,12 @@ namespace Amazon.ServiceDiscovery
 
 
         /// <summary>
-        /// Creates a private namespace based on DNS, which will be visible only inside a specified
+        /// Creates a private namespace based on DNS, which is visible only inside a specified
         /// Amazon VPC. The namespace defines your service naming scheme. For example, if you
         /// name your namespace <code>example.com</code> and name your service <code>backend</code>,
-        /// the resulting DNS name for the service will be <code>backend.example.com</code>. For
-        /// the current quota on the number of namespaces that you can create using the same AWS
-        /// account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
+        /// the resulting DNS name for the service is <code>backend.example.com</code>. For the
+        /// current quota on the number of namespaces that you can create using the same AWS account,
+        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
         /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateDnsNamespace service method.</param>
@@ -400,12 +399,12 @@ namespace Amazon.ServiceDiscovery
 
 
         /// <summary>
-        /// Creates a private namespace based on DNS, which will be visible only inside a specified
+        /// Creates a private namespace based on DNS, which is visible only inside a specified
         /// Amazon VPC. The namespace defines your service naming scheme. For example, if you
         /// name your namespace <code>example.com</code> and name your service <code>backend</code>,
-        /// the resulting DNS name for the service will be <code>backend.example.com</code>. For
-        /// the current quota on the number of namespaces that you can create using the same AWS
-        /// account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
+        /// the resulting DNS name for the service is <code>backend.example.com</code>. For the
+        /// current quota on the number of namespaces that you can create using the same AWS account,
+        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
         /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateDnsNamespace service method.</param>
@@ -448,12 +447,11 @@ namespace Amazon.ServiceDiscovery
 
 
         /// <summary>
-        /// Creates a public namespace based on DNS, which will be visible on the internet. The
-        /// namespace defines your service naming scheme. For example, if you name your namespace
-        /// <code>example.com</code> and name your service <code>backend</code>, the resulting
-        /// DNS name for the service will be <code>backend.example.com</code>. For the current
-        /// quota on the number of namespaces that you can create using the same AWS account,
-        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
+        /// Creates a public namespace based on DNS, which is visible on the internet. The namespace
+        /// defines your service naming scheme. For example, if you name your namespace <code>example.com</code>
+        /// and name your service <code>backend</code>, the resulting DNS name for the service
+        /// is <code>backend.example.com</code>. For the current quota on the number of namespaces
+        /// that you can create using the same AWS account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
         /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicDnsNamespace service method.</param>
@@ -489,12 +487,11 @@ namespace Amazon.ServiceDiscovery
 
 
         /// <summary>
-        /// Creates a public namespace based on DNS, which will be visible on the internet. The
-        /// namespace defines your service naming scheme. For example, if you name your namespace
-        /// <code>example.com</code> and name your service <code>backend</code>, the resulting
-        /// DNS name for the service will be <code>backend.example.com</code>. For the current
-        /// quota on the number of namespaces that you can create using the same AWS account,
-        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
+        /// Creates a public namespace based on DNS, which is visible on the internet. The namespace
+        /// defines your service naming scheme. For example, if you name your namespace <code>example.com</code>
+        /// and name your service <code>backend</code>, the resulting DNS name for the service
+        /// is <code>backend.example.com</code>. For the current quota on the number of namespaces
+        /// that you can create using the same AWS account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
         /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicDnsNamespace service method.</param>
@@ -1920,8 +1917,8 @@ namespace Amazon.ServiceDiscovery
         /// 
         /// <returns>The response from the UpdateInstanceCustomHealthStatus service method, as returned by ServiceDiscovery.</returns>
         /// <exception cref="Amazon.ServiceDiscovery.Model.CustomHealthNotFoundException">
-        /// The health check for the instance that is specified by <code>ServiceId</code> and
-        /// <code>InstanceId</code> is not a custom health check.
+        /// The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code>
+        /// isn't a custom health check.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.InstanceNotFoundException">
         /// No instance exists with the specified ID, or the instance was recently registered,
@@ -1969,8 +1966,8 @@ namespace Amazon.ServiceDiscovery
         /// 
         /// <returns>The response from the UpdateInstanceCustomHealthStatus service method, as returned by ServiceDiscovery.</returns>
         /// <exception cref="Amazon.ServiceDiscovery.Model.CustomHealthNotFoundException">
-        /// The health check for the instance that is specified by <code>ServiceId</code> and
-        /// <code>InstanceId</code> is not a custom health check.
+        /// The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code>
+        /// isn't a custom health check.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.InstanceNotFoundException">
         /// No instance exists with the specified ID, or the instance was recently registered,
@@ -2027,7 +2024,7 @@ namespace Amazon.ServiceDiscovery
         ///  </li> <li> 
         /// <para>
         /// If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
-        /// <code>UpdateService</code> request, the configuration is not deleted from the service.
+        /// <code>UpdateService</code> request, the configuration isn't deleted from the service.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2089,7 +2086,7 @@ namespace Amazon.ServiceDiscovery
         ///  </li> <li> 
         /// <para>
         /// If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
-        /// <code>UpdateService</code> request, the configuration is not deleted from the service.
+        /// <code>UpdateService</code> request, the configuration isn't deleted from the service.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -101,7 +101,12 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The name of the namespace that you specified when you registered the instance.
+        ///  <code/> <code/> <code/> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code>
+        /// member of the <code>Properties</code> member of the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

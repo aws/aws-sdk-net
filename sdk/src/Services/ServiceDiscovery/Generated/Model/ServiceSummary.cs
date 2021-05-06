@@ -102,7 +102,11 @@ namespace Amazon.ServiceDiscovery.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DnsConfig.
+        /// Gets and sets the property DnsConfig. 
+        /// <para>
+        /// Information about the Route 53 DNS records that you want AWS Cloud Map to create when
+        /// you register an instance.
+        /// </para>
         /// </summary>
         public DnsConfig DnsConfig
         {
@@ -117,7 +121,12 @@ namespace Amazon.ServiceDiscovery.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HealthCheckConfig.
+        /// Gets and sets the property HealthCheckConfig. 
+        /// <para>
+        ///  <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check.
+        /// If you specify settings for a health check, AWS Cloud Map associates the health check
+        /// with the records that you specify in <code>DnsConfig</code>.
+        /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig
         {
@@ -132,7 +141,29 @@ namespace Amazon.ServiceDiscovery.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HealthCheckCustomConfig.
+        /// Gets and sets the property HealthCheckCustomConfig. 
+        /// <para>
+        /// Information about an optional custom health check. A custom health check, which requires
+        /// that you use a third-party health checker to evaluate the health of your resources,
+        /// is useful in the following circumstances:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't use a health check that is defined by <code>HealthCheckConfig</code> because
+        /// the resource isn't available over the internet. For example, you can use a custom
+        /// health check when the instance is in an Amazon VPC. (To check the health of resources
+        /// in a VPC, the health checker must also be in the VPC.)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You want to use a third-party health checker regardless of where your resources are.
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+        /// or <code>HealthCheckConfig</code> but not both.
+        /// </para>
+        ///  </important>
         /// </summary>
         public HealthCheckCustomConfig HealthCheckCustomConfig
         {

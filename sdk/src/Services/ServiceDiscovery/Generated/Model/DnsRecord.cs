@@ -76,23 +76,23 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>A</code> 
+        ///  <b> <code>A</code> </b> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AAAA</code> 
+        ///  <b> <code>AAAA</code> </b> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>A</code> and <code>AAAA</code> 
+        ///  <b> <code>A</code> </b> and <b> <code>AAAA</code> </b> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SRV</code> 
+        ///  <b> <code>SRV</code> </b> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CNAME</code> 
+        ///  <b> <code>CNAME</code> </b> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -108,27 +108,15 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The following values are supported:
         /// </para>
-        ///  
-        /// <para>
-        ///  <code>A</code> <b> <code/> </b> 
-        /// </para>
-        ///  
+        ///  <dl> <dt>A</dt> <dd> 
         /// <para>
         /// Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
         /// </para>
-        ///  
-        /// <para>
-        ///  <code>AAAA</code> <b> <code/> </b> 
-        /// </para>
-        ///  
+        ///  </dd> <dt>AAAA</dt> <dd> 
         /// <para>
         /// Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
         /// </para>
-        ///  
-        /// <para>
-        ///  <code>CNAME</code> <b> <code/> </b> 
-        /// </para>
-        ///  
+        ///  </dd> <dt>CNAME</dt> <dd> 
         /// <para>
         /// Route 53 returns the domain name of the resource, such as www.example.com. Note the
         /// following:
@@ -148,11 +136,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// You can't specify both <code>CNAME</code> for <code>Type</code> and settings for <code>HealthCheckConfig</code>.
         /// If you do, the request will fail with an <code>InvalidInput</code> error.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>SRV</b> 
-        /// </para>
-        ///  
+        ///  </li> </ul> </dd> <dt>SRV</dt> <dd> 
         /// <para>
         /// Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code>
         /// record uses the following values:
@@ -196,7 +180,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// For example, if the value of <code>InstanceId</code> is <code>test</code>, the name
         /// of the service is <code>backend</code>, and the name of the namespace is <code>example.com</code>,
-        /// the value of <code>service-hostname</code> is:
+        /// the value of <code>service-hostname</code> is the following:
         /// </para>
         ///  
         /// <para>
@@ -221,7 +205,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// element in the documentation about <code>CreateService</code> for information about
         /// how to specify the correct name format.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </dd> </dl>
         /// </summary>
         [AWSProperty(Required=true)]
         public RecordType Type

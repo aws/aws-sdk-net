@@ -44,22 +44,22 @@ namespace Amazon.ServiceDiscovery.Model
         /// The operator that you want to use to determine whether <code>ListNamespaces</code>
         /// returns a namespace. Valid values for <code>condition</code> include:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>EQ</dt> <dd> 
         /// <para>
-        ///  <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can choose
-        /// to list only public namespaces or private namespaces, but not both. <code>EQ</code>
-        /// is the default condition and can be omitted.
+        /// When you specify <code>EQ</code> for the condition, you can choose to list only public
+        /// namespaces or private namespaces, but not both. <code>EQ</code> is the default condition
+        /// and can be omitted.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>IN</dt> <dd> 
         /// <para>
-        ///  <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose
-        /// to list public namespaces, private namespaces, or both. 
+        /// When you specify <code>IN</code> for the condition, you can choose to list public
+        /// namespaces, private namespaces, or both. 
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>BETWEEN</dt> <dd> 
         /// <para>
-        ///  <code>BETWEEN</code>: Not applicable
+        ///  Not applicable
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         public FilterCondition Condition
         {
