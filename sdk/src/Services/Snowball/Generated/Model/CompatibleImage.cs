@@ -45,7 +45,7 @@ namespace Amazon.Snowball.Model
         /// The unique identifier for an individual Snow device AMI.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string AmiId
         {
             get { return this._amiId; }
@@ -64,7 +64,7 @@ namespace Amazon.Snowball.Model
         /// The optional name of a compatible image.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }

@@ -235,6 +235,56 @@ namespace Amazon.Snowball
 
 
     /// <summary>
+    /// Constants used for properties of type LongTermPricingType.
+    /// </summary>
+    public class LongTermPricingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OneYear for LongTermPricingType
+        /// </summary>
+        public static readonly LongTermPricingType OneYear = new LongTermPricingType("OneYear");
+        /// <summary>
+        /// Constant ThreeYear for LongTermPricingType
+        /// </summary>
+        public static readonly LongTermPricingType ThreeYear = new LongTermPricingType("ThreeYear");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LongTermPricingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LongTermPricingType FindValue(string value)
+        {
+            return FindValue<LongTermPricingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LongTermPricingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ShipmentState.
     /// </summary>
     public class ShipmentState : ConstantClass
@@ -415,6 +465,10 @@ namespace Amazon.Snowball
         /// </summary>
         public static readonly SnowballCapacity T100 = new SnowballCapacity("T100");
         /// <summary>
+        /// Constant T14 for SnowballCapacity
+        /// </summary>
+        public static readonly SnowballCapacity T14 = new SnowballCapacity("T14");
+        /// <summary>
         /// Constant T42 for SnowballCapacity
         /// </summary>
         public static readonly SnowballCapacity T42 = new SnowballCapacity("T42");
@@ -496,6 +550,10 @@ namespace Amazon.Snowball
         /// Constant SNC1_HDD for SnowballType
         /// </summary>
         public static readonly SnowballType SNC1_HDD = new SnowballType("SNC1_HDD");
+        /// <summary>
+        /// Constant SNC1_SSD for SnowballType
+        /// </summary>
+        public static readonly SnowballType SNC1_SSD = new SnowballType("SNC1_SSD");
         /// <summary>
         /// Constant STANDARD for SnowballType
         /// </summary>

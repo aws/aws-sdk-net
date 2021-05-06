@@ -73,7 +73,7 @@ namespace Amazon.Snowball.Model
         /// The automatically generated ID for a cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -128,7 +128,7 @@ namespace Amazon.Snowball.Model
         /// The optional description of the cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }

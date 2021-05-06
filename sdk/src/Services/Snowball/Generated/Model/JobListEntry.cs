@@ -67,7 +67,7 @@ namespace Amazon.Snowball.Model
         /// 2016-08-11</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -108,7 +108,7 @@ namespace Amazon.Snowball.Model
         /// The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string JobId
         {
             get { return this._jobId; }

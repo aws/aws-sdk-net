@@ -53,7 +53,7 @@ namespace Amazon.Snowball.Model
     ///  
     /// <para>
     /// The credentials of a given job, including its manifest file and unlock code, expire
-    /// 90 days after the job is created.
+    /// 360 days after the job is created.
     /// </para>
     /// </summary>
     public partial class GetJobManifestRequest : AmazonSnowballRequest

@@ -288,7 +288,132 @@ namespace Amazon.Snowball
         /// center. Your AWS account must have the right trust policies and permissions in place
         /// to create a job for a Snow device. If you're creating a job for a node in a cluster,
         /// you only need to provide the <code>clusterId</code> value; the other job attributes
-        /// are inherited from the cluster.
+        /// are inherited from the cluster. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the Snowball; Edge device type is supported when ordering clustered jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The device capacity is optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// Availability of device types differ by AWS Region. For more information about region
+        /// availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
+        /// Regional Services</a>.
+        /// </para>
+        ///  </note>  <p class="title"> <b>AWS Snow Family device types and their capacities.</b>
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Snow Family device type: <b>SNC1_SSD</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T14
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowcone 
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Snow Family device type: <b>SNC1_HDD</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowcone 
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>EDGE_S</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T98
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Storage Optimized for data transfer only 
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>EDGE_CG</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T42
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Compute Optimized with GPU
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>EDGE_C</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T42
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Compute Optimized without GPU
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>EDGE</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Storage Optimized with EC2 Compute
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>STANDARD</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T50
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Original Snowball device
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+        /// 
+        /// </para>
+        ///  </note> </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>STANDARD</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T80
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Original Snowball device
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+        /// 
+        /// </para>
+        ///  </note> </li> </ul>  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
@@ -325,7 +450,132 @@ namespace Amazon.Snowball
         /// center. Your AWS account must have the right trust policies and permissions in place
         /// to create a job for a Snow device. If you're creating a job for a node in a cluster,
         /// you only need to provide the <code>clusterId</code> value; the other job attributes
-        /// are inherited from the cluster.
+        /// are inherited from the cluster. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the Snowball; Edge device type is supported when ordering clustered jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The device capacity is optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// Availability of device types differ by AWS Region. For more information about region
+        /// availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
+        /// Regional Services</a>.
+        /// </para>
+        ///  </note>  <p class="title"> <b>AWS Snow Family device types and their capacities.</b>
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Snow Family device type: <b>SNC1_SSD</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T14
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowcone 
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Snow Family device type: <b>SNC1_HDD</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowcone 
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>EDGE_S</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T98
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Storage Optimized for data transfer only 
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>EDGE_CG</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T42
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Compute Optimized with GPU
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>EDGE_C</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T42
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Compute Optimized without GPU
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>EDGE</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Storage Optimized with EC2 Compute
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>STANDARD</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T50
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Original Snowball device
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+        /// 
+        /// </para>
+        ///  </note> </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>STANDARD</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T80
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Original Snowball device
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+        /// 
+        /// </para>
+        ///  </note> </li> </ul>  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
@@ -357,6 +607,46 @@ namespace Amazon.Snowball
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLongTermPricing
+
+
+        /// <summary>
+        /// Creates a job with long term usage option for a device. The long term usage is a one
+        /// year or three year long term pricing type for the device. You are billed upfront and
+        /// AWS give discounts for long term pricing. For detailed information see XXXXXXXX
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLongTermPricing service method.</param>
+        /// 
+        /// <returns>The response from the CreateLongTermPricing service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">REST API Reference for CreateLongTermPricing Operation</seealso>
+        CreateLongTermPricingResponse CreateLongTermPricing(CreateLongTermPricingRequest request);
+
+
+
+        /// <summary>
+        /// Creates a job with long term usage option for a device. The long term usage is a one
+        /// year or three year long term pricing type for the device. You are billed upfront and
+        /// AWS give discounts for long term pricing. For detailed information see XXXXXXXX
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLongTermPricing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLongTermPricing service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">REST API Reference for CreateLongTermPricing Operation</seealso>
+        Task<CreateLongTermPricingResponse> CreateLongTermPricingAsync(CreateLongTermPricingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -675,7 +965,7 @@ namespace Amazon.Snowball
         ///  
         /// <para>
         /// The credentials of a given job, including its manifest file and unlock code, expire
-        /// 90 days after the job is created.
+        /// 360 days after the job is created.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobManifest service method.</param>
@@ -718,7 +1008,7 @@ namespace Amazon.Snowball
         ///  
         /// <para>
         /// The credentials of a given job, including its manifest file and unlock code, expire
-        /// 90 days after the job is created.
+        /// 360 days after the job is created.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobManifest service method.</param>
@@ -745,7 +1035,7 @@ namespace Amazon.Snowball
 
         /// <summary>
         /// Returns the <code>UnlockCode</code> code value for the specified job. A particular
-        /// <code>UnlockCode</code> value can be accessed for up to 90 days after the associated
+        /// <code>UnlockCode</code> value can be accessed for up to 360 days after the associated
         /// job has been created.
         /// 
         ///  
@@ -781,7 +1071,7 @@ namespace Amazon.Snowball
 
         /// <summary>
         /// Returns the <code>UnlockCode</code> code value for the specified job. A particular
-        /// <code>UnlockCode</code> value can be accessed for up to 90 days after the associated
+        /// <code>UnlockCode</code> value can be accessed for up to 360 days after the associated
         /// job has been created.
         /// 
         ///  
@@ -1098,6 +1388,52 @@ namespace Amazon.Snowball
 
         #endregion
         
+        #region  ListLongTermPricing
+
+
+        /// <summary>
+        /// Lists all long term pricing types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLongTermPricing service method.</param>
+        /// 
+        /// <returns>The response from the ListLongTermPricing service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing">REST API Reference for ListLongTermPricing Operation</seealso>
+        ListLongTermPricingResponse ListLongTermPricing(ListLongTermPricingRequest request);
+
+
+
+        /// <summary>
+        /// Lists all long term pricing types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLongTermPricing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLongTermPricing service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing">REST API Reference for ListLongTermPricing Operation</seealso>
+        Task<ListLongTermPricingResponse> ListLongTermPricingAsync(ListLongTermPricingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateCluster
 
 
@@ -1301,6 +1637,42 @@ namespace Amazon.Snowball
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJobShipmentState">REST API Reference for UpdateJobShipmentState Operation</seealso>
         Task<UpdateJobShipmentStateResponse> UpdateJobShipmentStateAsync(UpdateJobShipmentStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateLongTermPricing
+
+
+        /// <summary>
+        /// Updates the long term pricing type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLongTermPricing service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLongTermPricing service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing">REST API Reference for UpdateLongTermPricing Operation</seealso>
+        UpdateLongTermPricingResponse UpdateLongTermPricing(UpdateLongTermPricingRequest request);
+
+
+
+        /// <summary>
+        /// Updates the long term pricing type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLongTermPricing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLongTermPricing service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing">REST API Reference for UpdateLongTermPricing Operation</seealso>
+        Task<UpdateLongTermPricingResponse> UpdateLongTermPricingAsync(UpdateLongTermPricingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

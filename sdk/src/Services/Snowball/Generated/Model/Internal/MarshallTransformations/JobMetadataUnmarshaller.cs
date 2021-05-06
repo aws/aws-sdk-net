@@ -136,6 +136,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     unmarshalledObject.KmsKeyARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LongTermPricingId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LongTermPricingId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Notification", targetDepth))
                 {
                     var unmarshaller = NotificationUnmarshaller.Instance;

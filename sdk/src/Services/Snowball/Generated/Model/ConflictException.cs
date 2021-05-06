@@ -127,7 +127,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property ConflictResource.
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string ConflictResource
         {
             get { return this._conflictResource; }

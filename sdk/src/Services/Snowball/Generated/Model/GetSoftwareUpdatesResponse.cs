@@ -44,7 +44,7 @@ namespace Amazon.Snowball.Model
         /// to <code>GetSoftwareUpdates</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string UpdatesURI
         {
             get { return this._updatesURI; }

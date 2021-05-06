@@ -68,7 +68,7 @@ namespace Amazon.Snowball.Model
         /// A link to an Amazon S3 presigned URL where the job completion report is located.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string JobCompletionReportURI
         {
             get { return this._jobCompletionReportURI; }
@@ -87,7 +87,7 @@ namespace Amazon.Snowball.Model
         /// A link to an Amazon S3 presigned URL where the job failure log is located.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string JobFailureLogURI
         {
             get { return this._jobFailureLogURI; }
@@ -106,7 +106,7 @@ namespace Amazon.Snowball.Model
         /// A link to an Amazon S3 presigned URL where the job success log is located.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string JobSuccessLogURI
         {
             get { return this._jobSuccessLogURI; }

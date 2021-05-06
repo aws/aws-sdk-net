@@ -29,38 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// This is the response object from the ListJobs operation.
+    /// This is the response object from the ListLongTermPricing operation.
     /// </summary>
-    public partial class ListJobsResponse : AmazonWebServiceResponse
+    public partial class ListLongTermPricingResponse : AmazonWebServiceResponse
     {
-        private List<JobListEntry> _jobListEntries = new List<JobListEntry>();
+        private List<LongTermPricingListEntry> _longTermPricingEntries = new List<LongTermPricingListEntry>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property JobListEntries. 
+        /// Gets and sets the property LongTermPricingEntries. 
         /// <para>
-        /// Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-        /// that indicates whether the job is a job part, in the case of export jobs. 
+        /// Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information
+        /// about the <code>LongTermPricing</code> type. 
         /// </para>
         /// </summary>
-        public List<JobListEntry> JobListEntries
+        public List<LongTermPricingListEntry> LongTermPricingEntries
         {
-            get { return this._jobListEntries; }
-            set { this._jobListEntries = value; }
+            get { return this._longTermPricingEntries; }
+            set { this._longTermPricingEntries = value; }
         }
 
-        // Check to see if JobListEntries property is set
-        internal bool IsSetJobListEntries()
+        // Check to see if LongTermPricingEntries property is set
+        internal bool IsSetLongTermPricingEntries()
         {
-            return this._jobListEntries != null && this._jobListEntries.Count > 0; 
+            return this._longTermPricingEntries != null && this._longTermPricingEntries.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. If you use this automatically generated <code>NextToken</code>
-        /// value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code>
-        /// objects will start from this point in the array.
+        /// Because HTTP requests are stateless, this is the starting point for your next list
+        /// of returned <code>ListLongTermPricing</code> list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

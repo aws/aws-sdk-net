@@ -68,7 +68,7 @@ namespace Amazon.Snowball.Model
         /// point for your returned list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

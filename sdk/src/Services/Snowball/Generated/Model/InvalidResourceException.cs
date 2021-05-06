@@ -130,7 +130,7 @@ namespace Amazon.Snowball.Model
         /// The provided resource value is invalid.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string ResourceType
         {
             get { return this._resourceType; }

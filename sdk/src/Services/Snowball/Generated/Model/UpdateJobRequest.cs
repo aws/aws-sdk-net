@@ -72,7 +72,7 @@ namespace Amazon.Snowball.Model
         /// The updated description of this job's <a>JobMetadata</a> object.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -205,6 +205,12 @@ namespace Amazon.Snowball.Model
         /// <para>
         /// The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a>
         /// object. The 50 TB Snowballs are only available in the US regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+        /// (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+        /// (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.
         /// </para>
         /// </summary>
         public SnowballCapacity SnowballCapacityPreference

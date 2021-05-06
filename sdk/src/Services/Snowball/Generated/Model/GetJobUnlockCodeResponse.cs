@@ -39,10 +39,10 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property UnlockCode. 
         /// <para>
         /// The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code>
-        /// value can be accessed for up to 90 days after the job has been created.
+        /// value can be accessed for up to 360 days after the job has been created.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string UnlockCode
         {
             get { return this._unlockCode; }

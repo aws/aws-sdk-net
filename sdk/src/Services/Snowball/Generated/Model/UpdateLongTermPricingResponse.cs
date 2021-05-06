@@ -29,32 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// This is the response object from the CreateAddress operation.
+    /// This is the response object from the UpdateLongTermPricing operation.
     /// </summary>
-    public partial class CreateAddressResponse : AmazonWebServiceResponse
+    public partial class UpdateLongTermPricingResponse : AmazonWebServiceResponse
     {
-        private string _addressId;
-
-        /// <summary>
-        /// Gets and sets the property AddressId. 
-        /// <para>
-        /// The automatically generated ID for a specific address. You'll use this ID when you
-        /// create a job to specify which address you want the Snow device for that job shipped
-        /// to.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string AddressId
-        {
-            get { return this._addressId; }
-            set { this._addressId = value; }
-        }
-
-        // Check to see if AddressId property is set
-        internal bool IsSetAddressId()
-        {
-            return this._addressId != null;
-        }
 
     }
 }

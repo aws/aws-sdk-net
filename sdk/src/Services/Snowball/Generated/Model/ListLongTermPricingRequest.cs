@@ -29,38 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// This is the response object from the ListJobs operation.
+    /// Container for the parameters to the ListLongTermPricing operation.
+    /// Lists all long term pricing types.
     /// </summary>
-    public partial class ListJobsResponse : AmazonWebServiceResponse
+    public partial class ListLongTermPricingRequest : AmazonSnowballRequest
     {
-        private List<JobListEntry> _jobListEntries = new List<JobListEntry>();
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property JobListEntries. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-        /// that indicates whether the job is a job part, in the case of export jobs. 
+        /// The maximum number of <code>ListLongTermPricing</code> objects to return.
         /// </para>
         /// </summary>
-        public List<JobListEntry> JobListEntries
+        [AWSProperty(Min=0, Max=100)]
+        public int MaxResults
         {
-            get { return this._jobListEntries; }
-            set { this._jobListEntries = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if JobListEntries property is set
-        internal bool IsSetJobListEntries()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._jobListEntries != null && this._jobListEntries.Count > 0; 
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. If you use this automatically generated <code>NextToken</code>
-        /// value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code>
-        /// objects will start from this point in the array.
+        /// Because HTTP requests are stateless, this is the starting point for your next list
+        /// of <code>ListLongTermPricing</code> to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

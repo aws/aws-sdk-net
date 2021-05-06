@@ -63,7 +63,7 @@ namespace Amazon.Snowball.Model
         /// The ID of the AMI on the Snow device.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string SnowballAmiId
         {
             get { return this._snowballAmiId; }

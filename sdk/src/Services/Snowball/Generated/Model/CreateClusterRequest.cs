@@ -74,7 +74,7 @@ namespace Amazon.Snowball.Model
         /// Data Cluster-01</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -111,6 +111,12 @@ namespace Amazon.Snowball.Model
         /// <para>
         /// The type of job for this cluster. Currently, the only job type supported for clusters
         /// is <code>LOCAL_USE</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+        /// (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+        /// (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -279,8 +285,14 @@ namespace Amazon.Snowball.Model
         /// For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device
         /// type.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+        /// (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+        /// (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SnowballType SnowballType
         {
             get { return this._snowballType; }

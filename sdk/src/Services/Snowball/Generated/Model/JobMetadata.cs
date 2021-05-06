@@ -47,6 +47,7 @@ namespace Amazon.Snowball.Model
         private JobState _jobState;
         private JobType _jobType;
         private string _kmsKeyARN;
+        private string _longTermPricingId;
         private Notification _notification;
         private JobResource _resources;
         private string _roleARN;
@@ -80,7 +81,7 @@ namespace Amazon.Snowball.Model
         /// The 39-character ID for the cluster, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -137,7 +138,7 @@ namespace Amazon.Snowball.Model
         /// The description of the job, provided at job creation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -191,7 +192,7 @@ namespace Amazon.Snowball.Model
         /// The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string JobId
         {
             get { return this._jobId; }
@@ -283,6 +284,25 @@ namespace Amazon.Snowball.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LongTermPricingId. 
+        /// <para>
+        /// The ID of the long term pricing type for the device.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=41, Max=41)]
+        public string LongTermPricingId
+        {
+            get { return this._longTermPricingId; }
+            set { this._longTermPricingId = value; }
+        }
+
+        // Check to see if LongTermPricingId property is set
+        internal bool IsSetLongTermPricingId()
+        {
+            return this._longTermPricingId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Notification. 
         /// <para>
         /// The Amazon Simple Notification Service (Amazon SNS) notification settings associated
@@ -367,6 +387,12 @@ namespace Amazon.Snowball.Model
         /// The Snow device capacity preference for this job, specified at job creation. In US
         /// regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80
         /// TB capacity Snowballs.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+        /// (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+        /// (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.
         /// </para>
         /// </summary>
         public SnowballCapacity SnowballCapacityPreference

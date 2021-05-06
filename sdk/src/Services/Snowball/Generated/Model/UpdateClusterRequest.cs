@@ -90,7 +90,7 @@ namespace Amazon.Snowball.Model
         /// The updated description of this cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }

@@ -114,6 +114,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KmsKeyARN);
                 }
 
+                if(publicRequest.IsSetLongTermPricingId())
+                {
+                    context.Writer.WritePropertyName("LongTermPricingId");
+                    context.Writer.Write(publicRequest.LongTermPricingId);
+                }
+
                 if(publicRequest.IsSetNotification())
                 {
                     context.Writer.WritePropertyName("Notification");

@@ -63,7 +63,7 @@ namespace Amazon.Snowball.Model
         /// jobs will start from this point in the array.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

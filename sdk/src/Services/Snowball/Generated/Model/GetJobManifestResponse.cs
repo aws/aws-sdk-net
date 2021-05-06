@@ -42,7 +42,7 @@ namespace Amazon.Snowball.Model
         /// value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string ManifestURI
         {
             get { return this._manifestURI; }
