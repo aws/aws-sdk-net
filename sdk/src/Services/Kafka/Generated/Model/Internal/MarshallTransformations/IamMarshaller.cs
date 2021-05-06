@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Sasl Marshaller
+    /// Iam Marshaller
     /// </summary>       
-    public class SaslMarshaller : IRequestMarshaller<Sasl, JsonMarshallerContext> 
+    public class IamMarshaller : IRequestMarshaller<Iam, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Sasl requestObject, JsonMarshallerContext context)
+        public void Marshall(Iam requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetIam())
+            if(requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("iam");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = IamMarshaller.Instance;
-                marshaller.Marshall(requestObject.Iam, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetScram())
-            {
-                context.Writer.WritePropertyName("scram");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ScramMarshaller.Instance;
-                marshaller.Marshall(requestObject.Scram, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.Write(requestObject.Enabled);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SaslMarshaller Instance = new SaslMarshaller();
+        public readonly static IamMarshaller Instance = new IamMarshaller();
 
     }
 }

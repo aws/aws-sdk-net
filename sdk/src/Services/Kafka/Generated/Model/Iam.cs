@@ -29,47 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Details for client authentication using SASL.
+    /// Details for IAM access control.
     /// </summary>
-    public partial class Sasl
+    public partial class Iam
     {
-        private Iam _iam;
-        private Scram _scram;
+        private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property Iam.             
+        /// Gets and sets the property Enabled.             
         /// <para>
         /// Indicates whether IAM access control is enabled.
         /// </para>
         /// </summary>
-        public Iam Iam
+        public bool Enabled
         {
-            get { return this._iam; }
-            set { this._iam = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if Iam property is set
-        internal bool IsSetIam()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._iam != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Scram.             
-        /// <para>
-        /// Details for SASL/SCRAM client authentication.
-        /// </para>
-        /// </summary>
-        public Scram Scram
-        {
-            get { return this._scram; }
-            set { this._scram = value; }
-        }
-
-        // Check to see if Scram property is set
-        internal bool IsSetScram()
-        {
-            return this._scram != null;
+            return this._enabled.HasValue; 
         }
 
     }

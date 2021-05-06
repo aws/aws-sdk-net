@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Sasl Object
+    /// Response Unmarshaller for Iam Object
     /// </summary>  
-    public class SaslUnmarshaller : IUnmarshaller<Sasl, XmlUnmarshallerContext>, IUnmarshaller<Sasl, JsonUnmarshallerContext>
+    public class IamUnmarshaller : IUnmarshaller<Iam, XmlUnmarshallerContext>, IUnmarshaller<Iam, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Sasl IUnmarshaller<Sasl, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Iam IUnmarshaller<Iam, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Sasl Unmarshall(JsonUnmarshallerContext context)
+        public Iam Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Sasl unmarshalledObject = new Sasl();
+            Iam unmarshalledObject = new Iam();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("iam", targetDepth))
+                if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = IamUnmarshaller.Instance;
-                    unmarshalledObject.Iam = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("scram", targetDepth))
-                {
-                    var unmarshaller = ScramUnmarshaller.Instance;
-                    unmarshalledObject.Scram = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static SaslUnmarshaller _instance = new SaslUnmarshaller();        
+        private static IamUnmarshaller _instance = new IamUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SaslUnmarshaller Instance
+        public static IamUnmarshaller Instance
         {
             get
             {
