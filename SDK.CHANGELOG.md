@@ -1,3 +1,18 @@
+### 3.7.29.0 (2021-05-06 18:13 UTC)
+* Kafka (3.7.1.0)
+	* IAM Access Control for Amazon MSK enables you to create clusters that use IAM to authenticate clients and to allow or deny Apache Kafka actions for those clients.
+* ServiceDiscovery (3.7.1.0)
+	* Bugfix: Improved input validation for RegisterInstance action, InstanceId field
+* SimpleSystemsManagement (3.7.2.0)
+	* SSM feature release - ChangeCalendar integration with StateManager.
+* Snowball (3.7.1.0)
+	* AWS Snow Family adds APIs for ordering and managing Snow jobs with long term pricing
+* Core 3.7.0.18
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.28.0 (2021-05-05 19:40 UTC)
 * AuditManager (3.7.3.0)
 	* This release updates the CreateAssessmentFrameworkControlSet and UpdateAssessmentFrameworkControlSet API data types. For both of these data types, the control set name is now a required attribute.
