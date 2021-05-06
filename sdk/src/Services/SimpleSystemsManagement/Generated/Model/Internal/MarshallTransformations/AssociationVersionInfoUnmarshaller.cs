@@ -88,6 +88,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociationVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CalendarNames", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CalendarNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ComplianceSeverity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

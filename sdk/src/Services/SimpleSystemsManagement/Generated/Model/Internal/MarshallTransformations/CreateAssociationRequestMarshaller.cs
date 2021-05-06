@@ -85,6 +85,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutomationTargetParameterName);
                 }
 
+                if(publicRequest.IsSetCalendarNames())
+                {
+                    context.Writer.WritePropertyName("CalendarNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCalendarNamesListValue in publicRequest.CalendarNames)
+                    {
+                            context.Writer.Write(publicRequestCalendarNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetComplianceSeverity())
                 {
                     context.Writer.WritePropertyName("ComplianceSeverity");

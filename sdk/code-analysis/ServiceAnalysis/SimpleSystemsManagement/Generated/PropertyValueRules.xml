@@ -3388,7 +3388,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.PatchRule.ApproveAfterDays</property>
     <min>0</min>
-    <max>100</max>
+    <max>360</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.PatchRule.ApproveUntilDate</property>
@@ -3634,7 +3634,7 @@
     <property>Amazon.SimpleSystemsManagement.Model.TargetLocation.ExecutionRoleName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>[\w+=,.@/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.TargetLocation.TargetLocationMaxConcurrency</property>

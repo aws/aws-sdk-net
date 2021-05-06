@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private bool? _applyOnlyAtCronInterval;
         private string _associationName;
         private string _automationTargetParameterName;
+        private List<string> _calendarNames = new List<string>();
         private AssociationComplianceSeverity _complianceSeverity;
         private string _documentVersion;
         private string _instanceId;
@@ -78,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ApplyOnlyAtCronInterval. 
         /// <para>
-        /// By default, when you create a new associations, the system runs it immediately after
+        /// By default, when you create a new association, the system runs it immediately after
         /// it is created and then according to the schedule you specified. Specify this option
         /// if you don't want an association to run immediately after you create it. This parameter
         /// is not supported for rate expressions.
@@ -132,6 +133,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAutomationTargetParameterName()
         {
             return this._automationTargetParameterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CalendarNames. 
+        /// <para>
+        /// The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type
+        /// documents you want to gate your associations under. The associations only run when
+        /// that Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+        /// Systems Manager Change Calendar</a>.
+        /// </para>
+        /// </summary>
+        public List<string> CalendarNames
+        {
+            get { return this._calendarNames; }
+            set { this._calendarNames = value; }
+        }
+
+        // Check to see if CalendarNames property is set
+        internal bool IsSetCalendarNames()
+        {
+            return this._calendarNames != null && this._calendarNames.Count > 0; 
         }
 
         /// <summary>

@@ -48,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// on Debian Server or Ubuntu Server.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=360)]
         public int ApproveAfterDays
         {
             get { return this._approveAfterDays.GetValueOrDefault(); }
