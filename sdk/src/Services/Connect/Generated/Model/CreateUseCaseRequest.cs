@@ -30,17 +30,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUseCase operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Creates a use case for an AppIntegration association.
-    /// </para>
     /// </summary>
     public partial class CreateUseCaseRequest : AmazonConnectRequest
     {
         private string _instanceId;
         private string _integrationAssociationId;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private UseCaseType _useCaseType;
 
         /// <summary>
@@ -79,6 +75,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetIntegrationAssociationId()
         {
             return this._integrationAssociationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

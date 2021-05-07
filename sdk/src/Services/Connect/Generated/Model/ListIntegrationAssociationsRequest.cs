@@ -30,13 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIntegrationAssociations operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Provides summary information about the AppIntegration associations for the specified
     /// Amazon Connect instance.
-    /// </para>
     /// </summary>
     public partial class ListIntegrationAssociationsRequest : AmazonConnectRequest
     {

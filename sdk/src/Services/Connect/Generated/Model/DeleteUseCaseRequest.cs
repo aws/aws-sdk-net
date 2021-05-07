@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUseCase operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Deletes a use case from an AppIntegration association.
-    /// </para>
     /// </summary>
     public partial class DeleteUseCaseRequest : AmazonConnectRequest
     {

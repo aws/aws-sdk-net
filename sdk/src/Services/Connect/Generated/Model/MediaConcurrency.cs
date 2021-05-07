@@ -61,6 +61,18 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The number of contacts an agent can have on a channel simultaneously.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
         public int Concurrency

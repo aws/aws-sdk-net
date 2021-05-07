@@ -48,7 +48,7 @@ namespace Amazon.Connect.Model
     ///  <ul> <li> 
     /// <para>
     /// API rate limit is exceeded. API TPS throttling returns a <code>TooManyRequests</code>
-    /// exception from the API Gateway.
+    /// exception.
     /// </para>
     ///  </li> <li> 
     /// <para>

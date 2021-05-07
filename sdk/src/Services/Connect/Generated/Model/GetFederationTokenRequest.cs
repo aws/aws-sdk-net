@@ -31,6 +31,18 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the GetFederationToken operation.
     /// Retrieves a token for federation.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API doesn't support root users. If you try to invoke GetFederationToken with
+    /// root credentials, an error message similar to the following one appears: 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>Provided identity: Principal: .... User: .... cannot be used for federation
+    /// with Amazon Connect</code> 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetFederationTokenRequest : AmazonConnectRequest
     {

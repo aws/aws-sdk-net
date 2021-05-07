@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUseCases operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
-    /// Lists the use cases. 
-    /// </para>
+    /// Lists the use cases.
     /// </summary>
     public partial class ListUseCasesRequest : AmazonConnectRequest
     {

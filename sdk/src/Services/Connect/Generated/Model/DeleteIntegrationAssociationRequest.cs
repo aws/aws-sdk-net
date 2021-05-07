@@ -30,13 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIntegrationAssociation operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Deletes an AppIntegration association from an Amazon Connect instance. The association
     /// must not have any use cases associated with it.
-    /// </para>
     /// </summary>
     public partial class DeleteIntegrationAssociationRequest : AmazonConnectRequest
     {

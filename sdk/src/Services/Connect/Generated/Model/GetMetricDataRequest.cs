@@ -82,6 +82,11 @@ namespace Amazon.Connect.Model
         /// in the filter. You can include both queue IDs and queue ARNs in the same request.
         /// VOICE, CHAT, and TASK channels are supported.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public Filters Filters
@@ -102,10 +107,6 @@ namespace Amazon.Connect.Model
         /// The grouping applied to the metrics returned. For example, when results are grouped
         /// by queue, the metrics returned are grouped by queue. The values returned apply to
         /// the metrics for each queue rather than aggregated for all queues.
-        /// </para>
-        ///  
-        /// <para>
-        /// The only supported grouping is <code>QUEUE</code>.
         /// </para>
         ///  
         /// <para>
@@ -327,6 +328,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>SERVICE_LEVEL</dt> <dd> 
         /// <para>
+        /// You can include up to 20 SERVICE_LEVEL metrics in a request.
+        /// </para>
+        ///  
+        /// <para>
         /// Unit: PERCENT
         /// </para>
         ///  
@@ -335,8 +340,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Threshold: Only "Less than" comparisons are supported, with the following service
-        /// level thresholds: 15, 20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600
+        /// Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
+        /// (for "Less than"). 
         /// </para>
         ///  </dd> </dl>
         /// </summary>

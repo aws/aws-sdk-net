@@ -36,6 +36,14 @@ namespace Amazon.Connect.Model
     /// <para>
     /// Deletes the Amazon Connect instance.
     /// </para>
+    ///  
+    /// <para>
+    /// Amazon Connect enforces a limit on the total number of instances that you can create
+    /// or delete in 30 days. If you exceed this limit, you will get an error message indicating
+    /// there has been an excessive number of attempts at creating or deleting instances.
+    /// You must wait 30 days before you can restart creating and deleting instances in your
+    /// account.
+    /// </para>
     /// </summary>
     public partial class DeleteInstanceRequest : AmazonConnectRequest
     {
