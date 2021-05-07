@@ -1,3 +1,11 @@
+### 3.7.30.0 (2021-05-07 18:11 UTC)
+* Connect (3.7.2.0)
+	* Adds tagging support for Connect APIs CreateIntegrationAssociation and CreateUseCase.
+* LakeFormation (3.7.1.0)
+	* This release adds Tag Based Access Control to AWS Lake Formation service
+* LookoutMetrics (3.7.2.0)
+	* Enforcing UUID style for parameters that are already in UUID format today. Documentation specifying eventual consistency of lookoutmetrics resources.
+
 ### 3.7.29.0 (2021-05-06 18:13 UTC)
 * Kafka (3.7.1.0)
 	* IAM Access Control for Amazon MSK enables you to create clusters that use IAM to authenticate clients and to allow or deny Apache Kafka actions for those clients.
