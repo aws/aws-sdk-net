@@ -129,6 +129,22 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly DataLakeResourceType DATABASE = new DataLakeResourceType("DATABASE");
         /// <summary>
+        /// Constant LF_TAG for DataLakeResourceType
+        /// </summary>
+        public static readonly DataLakeResourceType LF_TAG = new DataLakeResourceType("LF_TAG");
+        /// <summary>
+        /// Constant LF_TAG_POLICY for DataLakeResourceType
+        /// </summary>
+        public static readonly DataLakeResourceType LF_TAG_POLICY = new DataLakeResourceType("LF_TAG_POLICY");
+        /// <summary>
+        /// Constant LF_TAG_POLICY_DATABASE for DataLakeResourceType
+        /// </summary>
+        public static readonly DataLakeResourceType LF_TAG_POLICY_DATABASE = new DataLakeResourceType("LF_TAG_POLICY_DATABASE");
+        /// <summary>
+        /// Constant LF_TAG_POLICY_TABLE for DataLakeResourceType
+        /// </summary>
+        public static readonly DataLakeResourceType LF_TAG_POLICY_TABLE = new DataLakeResourceType("LF_TAG_POLICY_TABLE");
+        /// <summary>
         /// Constant TABLE for DataLakeResourceType
         /// </summary>
         public static readonly DataLakeResourceType TABLE = new DataLakeResourceType("TABLE");
@@ -237,6 +253,14 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly Permission ALTER = new Permission("ALTER");
         /// <summary>
+        /// Constant ALTER_TAG for Permission
+        /// </summary>
+        public static readonly Permission ALTER_TAG = new Permission("ALTER_TAG");
+        /// <summary>
+        /// Constant ASSOCIATE_TAG for Permission
+        /// </summary>
+        public static readonly Permission ASSOCIATE_TAG = new Permission("ASSOCIATE_TAG");
+        /// <summary>
         /// Constant CREATE_DATABASE for Permission
         /// </summary>
         public static readonly Permission CREATE_DATABASE = new Permission("CREATE_DATABASE");
@@ -244,6 +268,10 @@ namespace Amazon.LakeFormation
         /// Constant CREATE_TABLE for Permission
         /// </summary>
         public static readonly Permission CREATE_TABLE = new Permission("CREATE_TABLE");
+        /// <summary>
+        /// Constant CREATE_TAG for Permission
+        /// </summary>
+        public static readonly Permission CREATE_TAG = new Permission("CREATE_TAG");
         /// <summary>
         /// Constant DATA_LOCATION_ACCESS for Permission
         /// </summary>
@@ -253,9 +281,17 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly Permission DELETE = new Permission("DELETE");
         /// <summary>
+        /// Constant DELETE_TAG for Permission
+        /// </summary>
+        public static readonly Permission DELETE_TAG = new Permission("DELETE_TAG");
+        /// <summary>
         /// Constant DESCRIBE for Permission
         /// </summary>
         public static readonly Permission DESCRIBE = new Permission("DESCRIBE");
+        /// <summary>
+        /// Constant DESCRIBE_TAG for Permission
+        /// </summary>
+        public static readonly Permission DESCRIBE_TAG = new Permission("DESCRIBE_TAG");
         /// <summary>
         /// Constant DROP for Permission
         /// </summary>
@@ -298,6 +334,106 @@ namespace Amazon.LakeFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Permission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceShareType.
+    /// </summary>
+    public class ResourceShareType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ResourceShareType
+        /// </summary>
+        public static readonly ResourceShareType ALL = new ResourceShareType("ALL");
+        /// <summary>
+        /// Constant FOREIGN for ResourceShareType
+        /// </summary>
+        public static readonly ResourceShareType FOREIGN = new ResourceShareType("FOREIGN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceShareType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceShareType FindValue(string value)
+        {
+            return FindValue<ResourceShareType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceShareType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATABASE for ResourceType
+        /// </summary>
+        public static readonly ResourceType DATABASE = new ResourceType("DATABASE");
+        /// <summary>
+        /// Constant TABLE for ResourceType
+        /// </summary>
+        public static readonly ResourceType TABLE = new ResourceType("TABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
         }

@@ -36,6 +36,8 @@ namespace Amazon.LakeFormation.Model
         private CatalogResource _catalog;
         private DatabaseResource _database;
         private DataLocationResource _dataLocation;
+        private LFTagKeyResource _lfTag;
+        private LFTagPolicyResource _lfTagPolicy;
         private TableResource _table;
         private TableWithColumnsResource _tableWithColumns;
 
@@ -95,6 +97,42 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetDataLocation()
         {
             return this._dataLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LFTag. 
+        /// <para>
+        /// The tag key and values attached to a resource.
+        /// </para>
+        /// </summary>
+        public LFTagKeyResource LFTag
+        {
+            get { return this._lfTag; }
+            set { this._lfTag = value; }
+        }
+
+        // Check to see if LFTag property is set
+        internal bool IsSetLFTag()
+        {
+            return this._lfTag != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LFTagPolicy. 
+        /// <para>
+        /// A list of tag conditions that define a resource's tag policy.
+        /// </para>
+        /// </summary>
+        public LFTagPolicyResource LFTagPolicy
+        {
+            get { return this._lfTagPolicy; }
+            set { this._lfTagPolicy = value; }
+        }
+
+        // Check to see if LFTagPolicy property is set
+        internal bool IsSetLFTagPolicy()
+        {
+            return this._lfTagPolicy != null;
         }
 
         /// <summary>

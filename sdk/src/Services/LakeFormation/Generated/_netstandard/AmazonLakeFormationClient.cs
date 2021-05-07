@@ -261,6 +261,58 @@ namespace Amazon.LakeFormation
         #endregion
 
 
+        #region  AddLFTagsToResource
+
+        internal virtual AddLFTagsToResourceResponse AddLFTagsToResource(AddLFTagsToResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddLFTagsToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddLFTagsToResourceResponseUnmarshaller.Instance;
+
+            return Invoke<AddLFTagsToResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Attaches one or more tags to an existing resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddLFTagsToResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddLFTagsToResource service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AddLFTagsToResource">REST API Reference for AddLFTagsToResource Operation</seealso>
+        public virtual Task<AddLFTagsToResourceResponse> AddLFTagsToResourceAsync(AddLFTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddLFTagsToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddLFTagsToResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddLFTagsToResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGrantPermissions
 
         internal virtual BatchGrantPermissionsResponse BatchGrantPermissions(BatchGrantPermissionsRequest request)
@@ -337,6 +389,112 @@ namespace Amazon.LakeFormation
             options.ResponseUnmarshaller = BatchRevokePermissionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchRevokePermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLFTag
+
+        internal virtual CreateLFTagResponse CreateLFTag(CreateLFTagRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLFTagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLFTagResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLFTagResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a tag with the specified name and values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLFTag service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLFTag service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTag">REST API Reference for CreateLFTag Operation</seealso>
+        public virtual Task<CreateLFTagResponse> CreateLFTagAsync(CreateLFTagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLFTagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLFTagResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLFTagResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLFTag
+
+        internal virtual DeleteLFTagResponse DeleteLFTag(DeleteLFTagRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLFTagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLFTagResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLFTagResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified tag key name. If the attribute key does not exist or the tag
+        /// does not exist, then the operation will not do anything. If the attribute key exists,
+        /// then the operation checks if any resources are tagged with this attribute key, if
+        /// yes, the API throws a 400 Exception with the message "Delete not allowed" as the tag
+        /// key is still attached with resources. You can consider untagging resources with this
+        /// tag key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLFTag service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLFTag service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag">REST API Reference for DeleteLFTag Operation</seealso>
+        public virtual Task<DeleteLFTagResponse> DeleteLFTagAsync(DeleteLFTagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLFTagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLFTagResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLFTagResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -532,6 +690,107 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  GetLFTag
+
+        internal virtual GetLFTagResponse GetLFTag(GetLFTagRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLFTagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLFTagResponseUnmarshaller.Instance;
+
+            return Invoke<GetLFTagResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a tag definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLFTag service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLFTag service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTag">REST API Reference for GetLFTag Operation</seealso>
+        public virtual Task<GetLFTagResponse> GetLFTagAsync(GetLFTagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLFTagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLFTagResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLFTagResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourceLFTags
+
+        internal virtual GetResourceLFTagsResponse GetResourceLFTags(GetResourceLFTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceLFTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceLFTagsResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceLFTagsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the tags applied to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceLFTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceLFTags service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetResourceLFTags">REST API Reference for GetResourceLFTags Operation</seealso>
+        public virtual Task<GetResourceLFTagsResponse> GetResourceLFTagsAsync(GetResourceLFTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceLFTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceLFTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourceLFTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GrantPermissions
 
         internal virtual GrantPermissionsResponse GrantPermissions(GrantPermissionsRequest request)
@@ -578,6 +837,52 @@ namespace Amazon.LakeFormation
             options.ResponseUnmarshaller = GrantPermissionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GrantPermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLFTags
+
+        internal virtual ListLFTagsResponse ListLFTags(ListLFTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLFTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLFTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLFTagsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists tags that the requester has permission to view.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLFTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLFTags service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTags">REST API Reference for ListLFTags Operation</seealso>
+        public virtual Task<ListLFTagsResponse> ListLFTagsAsync(ListLFTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLFTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLFTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLFTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -803,6 +1108,63 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  RemoveLFTagsFromResource
+
+        internal virtual RemoveLFTagsFromResourceResponse RemoveLFTagsFromResource(RemoveLFTagsFromResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveLFTagsFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveLFTagsFromResourceResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveLFTagsFromResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a tag from the resource. Only database, table, or tableWithColumns resource
+        /// are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code>
+        /// to specify column input.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveLFTagsFromResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveLFTagsFromResource service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RemoveLFTagsFromResource">REST API Reference for RemoveLFTagsFromResource Operation</seealso>
+        public virtual Task<RemoveLFTagsFromResourceResponse> RemoveLFTagsFromResourceAsync(RemoveLFTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveLFTagsFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveLFTagsFromResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveLFTagsFromResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RevokePermissions
 
         internal virtual RevokePermissionsResponse RevokePermissions(RevokePermissionsRequest request)
@@ -843,6 +1205,174 @@ namespace Amazon.LakeFormation
             options.ResponseUnmarshaller = RevokePermissionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<RevokePermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchDatabasesByLFTags
+
+        internal virtual SearchDatabasesByLFTagsResponse SearchDatabasesByLFTags(SearchDatabasesByLFTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchDatabasesByLFTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDatabasesByLFTagsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchDatabasesByLFTagsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation allows a search on <code>DATABASE</code> resources by <code>TagCondition</code>.
+        /// This operation is used by admins who want to grant user permissions on certain <code>TagConditions</code>.
+        /// Before making a grant, the admin can use <code>SearchDatabasesByTags</code> to find
+        /// all resources where the given <code>TagConditions</code> are valid to verify whether
+        /// the returned resources can be shared.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchDatabasesByLFTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchDatabasesByLFTags service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchDatabasesByLFTags">REST API Reference for SearchDatabasesByLFTags Operation</seealso>
+        public virtual Task<SearchDatabasesByLFTagsResponse> SearchDatabasesByLFTagsAsync(SearchDatabasesByLFTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchDatabasesByLFTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDatabasesByLFTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchDatabasesByLFTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchTablesByLFTags
+
+        internal virtual SearchTablesByLFTagsResponse SearchTablesByLFTags(SearchTablesByLFTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchTablesByLFTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTablesByLFTagsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchTablesByLFTagsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s.
+        /// This will be used by admins who want to grant user permissions on certain LFTags.
+        /// Before making a grant, the admin can use <code>SearchTablesByLFTags</code> to find
+        /// all resources where the given <code>LFTag</code>s are valid to verify whether the
+        /// returned resources can be shared.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTablesByLFTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchTablesByLFTags service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchTablesByLFTags">REST API Reference for SearchTablesByLFTags Operation</seealso>
+        public virtual Task<SearchTablesByLFTagsResponse> SearchTablesByLFTagsAsync(SearchTablesByLFTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchTablesByLFTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTablesByLFTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchTablesByLFTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLFTag
+
+        internal virtual UpdateLFTagResponse UpdateLFTag(UpdateLFTagRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLFTagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLFTagResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLFTagResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the list of possible values for the specified tag key. If the tag does not
+        /// exist, the operation throws an EntityNotFoundException. The values in the delete key
+        /// values will be deleted from list of possible values. If any value in the delete key
+        /// values is attached to a resource, then API errors out with a 400 Exception - "Update
+        /// not allowed". Untag the attribute before deleting the tag key's value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLFTag service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLFTag service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTag">REST API Reference for UpdateLFTag Operation</seealso>
+        public virtual Task<UpdateLFTagResponse> UpdateLFTagAsync(UpdateLFTagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLFTagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLFTagResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateLFTagResponse>(request, options, cancellationToken);
         }
 
         #endregion

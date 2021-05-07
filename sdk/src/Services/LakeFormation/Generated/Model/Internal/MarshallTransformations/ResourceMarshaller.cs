@@ -78,6 +78,28 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLFTag())
+            {
+                context.Writer.WritePropertyName("LFTag");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LFTagKeyResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.LFTag, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLFTagPolicy())
+            {
+                context.Writer.WritePropertyName("LFTagPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LFTagPolicyResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.LFTagPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTable())
             {
                 context.Writer.WritePropertyName("Table");

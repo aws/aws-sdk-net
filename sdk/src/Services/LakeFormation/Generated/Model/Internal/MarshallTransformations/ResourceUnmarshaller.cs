@@ -82,6 +82,18 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LFTag", targetDepth))
+                {
+                    var unmarshaller = LFTagKeyResourceUnmarshaller.Instance;
+                    unmarshalledObject.LFTag = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LFTagPolicy", targetDepth))
+                {
+                    var unmarshaller = LFTagPolicyResourceUnmarshaller.Instance;
+                    unmarshalledObject.LFTagPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Table", targetDepth))
                 {
                     var unmarshaller = TableResourceUnmarshaller.Instance;
