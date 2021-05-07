@@ -40,7 +40,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// THe ARN of the IAM role that has access to the target SNS topic.
+        /// The ARN of the IAM role that has access to the target SNS topic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

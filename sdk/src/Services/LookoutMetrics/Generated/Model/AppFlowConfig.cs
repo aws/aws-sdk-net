@@ -39,7 +39,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property FlowName. 
         /// <para>
-        /// The name of the flow.
+        ///  name of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

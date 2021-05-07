@@ -465,6 +465,13 @@ namespace Amazon.LookoutMetrics
 
         /// <summary>
         /// Describes an alert.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Lookout for Metrics API actions are eventually consistent. If you do a read
+        /// operation on a resource immediately after creating or modifying it, use retries to
+        /// allow time for the write operation to complete.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlert service method.</param>
         /// 
@@ -577,6 +584,13 @@ namespace Amazon.LookoutMetrics
 
         /// <summary>
         /// Describes a detector.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Lookout for Metrics API actions are eventually consistent. If you do a read
+        /// operation on a resource immediately after creating or modifying it, use retries to
+        /// allow time for the write operation to complete.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetector service method.</param>
         /// 
@@ -633,6 +647,13 @@ namespace Amazon.LookoutMetrics
 
         /// <summary>
         /// Describes a dataset.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Lookout for Metrics API actions are eventually consistent. If you do a read
+        /// operation on a resource immediately after creating or modifying it, use retries to
+        /// allow time for the write operation to complete.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricSet service method.</param>
         /// 
@@ -857,6 +878,13 @@ namespace Amazon.LookoutMetrics
 
         /// <summary>
         /// Lists the alerts attached to a detector.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Lookout for Metrics API actions are eventually consistent. If you do a read
+        /// operation on a resource immediately after creating or modifying it, use retries to
+        /// allow time for the write operation to complete.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAlerts service method.</param>
         /// 
@@ -913,6 +941,13 @@ namespace Amazon.LookoutMetrics
 
         /// <summary>
         /// Lists the detectors in the current AWS Region.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Lookout for Metrics API actions are eventually consistent. If you do a read
+        /// operation on a resource immediately after creating or modifying it, use retries to
+        /// allow time for the write operation to complete.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnomalyDetectors service method.</param>
         /// 
@@ -1081,6 +1116,13 @@ namespace Amazon.LookoutMetrics
 
         /// <summary>
         /// Lists the datasets in the current AWS Region.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Lookout for Metrics API actions are eventually consistent. If you do a read
+        /// operation on a resource immediately after creating or modifying it, use retries to
+        /// allow time for the write operation to complete.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMetricSets service method.</param>
         /// 

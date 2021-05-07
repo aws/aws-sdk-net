@@ -31,6 +31,13 @@ namespace Amazon.LookoutMetrics.Model
     /// <summary>
     /// Container for the parameters to the ListAlerts operation.
     /// Lists the alerts attached to a detector.
+    /// 
+    ///  
+    /// <para>
+    /// Amazon Lookout for Metrics API actions are eventually consistent. If you do a read
+    /// operation on a resource immediately after creating or modifying it, use retries to
+    /// allow time for the write operation to complete.
+    /// </para>
     /// </summary>
     public partial class ListAlertsRequest : AmazonLookoutMetricsRequest
     {
