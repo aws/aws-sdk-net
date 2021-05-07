@@ -156,16 +156,6 @@ namespace Amazon.Runtime
 
         private void ValidateCredentialsInputs()
         {
-            if (string.IsNullOrEmpty(Options.ClientName))
-            {
-                throw new ArgumentNullException($"Options property cannot be empty: {nameof(Options.ClientName)}");
-            }
-
-            if (Options.SsoVerificationCallback == null)
-            {
-                throw new ArgumentNullException($"Options property cannot be empty: {nameof(Options.SsoVerificationCallback)}");
-            }
-
             // Get the name of any empty properties
             var emptyPropertyNames = new Dictionary<string, string>
                 {
@@ -236,6 +226,16 @@ namespace Amazon.Runtime
             // Get and cache a SSO token if necessary
             if (string.IsNullOrWhiteSpace(token))
             {
+                if (string.IsNullOrEmpty(Options.ClientName))
+                {
+                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(Options.ClientName)}");
+                }
+
+                if (Options.SsoVerificationCallback == null)
+                {
+                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(Options.SsoVerificationCallback)}");
+                }
+
                 var response = oidc.GetSsoToken(new GetSsoTokenRequest()
                 {
                     ClientName = GetSsoClientName(),
@@ -275,6 +275,16 @@ namespace Amazon.Runtime
             // Get and cache a SSO token if necessary
             if (string.IsNullOrWhiteSpace(token))
             {
+                if (string.IsNullOrEmpty(Options.ClientName))
+                {
+                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(Options.ClientName)}");
+                }
+
+                if (Options.SsoVerificationCallback == null)
+                {
+                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(Options.SsoVerificationCallback)}");
+                }
+
                 var response = await oidc.GetSsoTokenAsync(new GetSsoTokenRequest()
                 {
                     ClientName = GetSsoClientName(),
