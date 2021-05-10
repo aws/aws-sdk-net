@@ -89,8 +89,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	void ProcessRequestBodyMembers(string variableName, Operation operation)
 	{
 #>
-			var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
-			using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
+			var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
+			using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
 			{   
 <#+
 		if(operation.RequestPayloadMember==null)

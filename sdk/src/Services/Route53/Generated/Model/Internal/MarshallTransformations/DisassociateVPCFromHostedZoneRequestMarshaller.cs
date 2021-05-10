@@ -61,8 +61,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.HostedZoneId));
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}/disassociatevpc";
 
-            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
+            var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("DisassociateVPCFromHostedZoneRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
                 

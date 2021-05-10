@@ -58,8 +58,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketRequest.BucketName));
 
-            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
+            var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
                 string regionCode = null;
                 var region = putBucketRequest.BucketRegion;

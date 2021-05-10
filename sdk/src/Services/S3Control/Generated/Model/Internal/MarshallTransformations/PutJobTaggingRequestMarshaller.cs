@@ -64,8 +64,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.JobId));
             request.ResourcePath = "/v20180820/jobs/{id}/tagging";
 
-            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
+            var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("PutJobTaggingRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
                 var publicRequestTags = publicRequest.Tags;

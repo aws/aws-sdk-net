@@ -23,6 +23,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
 using System.Globalization;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable 1591
 
@@ -58,8 +59,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.AddSubResource("id", S3Transforms.ToStringValue(putBucketAnalyticsConfigurationRequest.AnalyticsId));
             }
 
-            var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
+            var stringWriter = new XMLEncodedStringWriter(System.Globalization.CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
                 if (putBucketAnalyticsConfigurationRequest.IsSetAnalyticsConfiguration())
                 {
