@@ -99,7 +99,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The name of your cluster. If you do not specify a name for your cluster, you create
         /// a cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase),
-        /// numbers, and hyphens are allowed. 
+        /// numbers, underscores, and hyphens are allowed. 
         /// </para>
         /// </summary>
         public string ClusterName

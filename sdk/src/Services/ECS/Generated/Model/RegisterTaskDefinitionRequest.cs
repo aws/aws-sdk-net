@@ -215,7 +215,7 @@ namespace Amazon.ECS.Model
         /// You must specify a <code>family</code> for a task definition, which allows you to
         /// track multiple versions of the same task definition. The <code>family</code> is used
         /// as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers,
-        /// and hyphens are allowed.
+        /// underscores, and hyphens are allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

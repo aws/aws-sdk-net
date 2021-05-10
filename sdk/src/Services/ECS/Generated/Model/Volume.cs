@@ -144,9 +144,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, and
-        /// hyphens are allowed. This name is referenced in the <code>sourceVolume</code> parameter
-        /// of container definition <code>mountPoints</code>.
+        /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores,
+        /// and hyphens are allowed. This name is referenced in the <code>sourceVolume</code>
+        /// parameter of container definition <code>mountPoints</code>.
         /// </para>
         /// </summary>
         public string Name
