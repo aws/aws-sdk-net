@@ -29,47 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// The encryption configuration for the cluster.
+    /// An object representing the details of an update to a taints payload.
     /// </summary>
-    public partial class EncryptionConfig
+    public partial class UpdateTaintsPayload
     {
-        private Provider _provider;
-        private List<string> _resources = new List<string>();
+        private List<Taint> _addOrUpdateTaints = new List<Taint>();
+        private List<Taint> _removeTaints = new List<Taint>();
 
         /// <summary>
-        /// Gets and sets the property Provider. 
+        /// Gets and sets the property AddOrUpdateTaints. 
         /// <para>
-        /// AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
+        /// Kubernetes taints to be added or updated.
         /// </para>
         /// </summary>
-        public Provider Provider
+        public List<Taint> AddOrUpdateTaints
         {
-            get { return this._provider; }
-            set { this._provider = value; }
+            get { return this._addOrUpdateTaints; }
+            set { this._addOrUpdateTaints = value; }
         }
 
-        // Check to see if Provider property is set
-        internal bool IsSetProvider()
+        // Check to see if AddOrUpdateTaints property is set
+        internal bool IsSetAddOrUpdateTaints()
         {
-            return this._provider != null;
+            return this._addOrUpdateTaints != null && this._addOrUpdateTaints.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Resources. 
+        /// Gets and sets the property RemoveTaints. 
         /// <para>
-        /// Specifies the resources to be encrypted. The only supported value is "secrets".
+        /// Kubernetes taints to be removed.
         /// </para>
         /// </summary>
-        public List<string> Resources
+        public List<Taint> RemoveTaints
         {
-            get { return this._resources; }
-            set { this._resources = value; }
+            get { return this._removeTaints; }
+            set { this._removeTaints = value; }
         }
 
-        // Check to see if Resources property is set
-        internal bool IsSetResources()
+        // Check to see if RemoveTaints property is set
+        internal bool IsSetRemoveTaints()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._removeTaints != null && this._removeTaints.Count > 0; 
         }
 
     }

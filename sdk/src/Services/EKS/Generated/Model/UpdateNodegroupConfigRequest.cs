@@ -43,6 +43,7 @@ namespace Amazon.EKS.Model
         private UpdateLabelsPayload _labels;
         private string _nodegroupName;
         private NodegroupScalingConfig _scalingConfig;
+        private UpdateTaintsPayload _taints;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -135,6 +136,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetScalingConfig()
         {
             return this._scalingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Taints. 
+        /// <para>
+        /// The Kubernetes taints to be applied to the nodes in the node group after the update.
+        /// </para>
+        /// </summary>
+        public UpdateTaintsPayload Taints
+        {
+            get { return this._taints; }
+            set { this._taints = value; }
+        }
+
+        // Check to see if Taints property is set
+        internal bool IsSetTaints()
+        {
+            return this._taints != null;
         }
 
     }

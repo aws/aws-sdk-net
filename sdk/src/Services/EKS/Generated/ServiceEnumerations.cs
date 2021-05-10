@@ -845,6 +845,60 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type TaintEffect.
+    /// </summary>
+    public class TaintEffect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_EXECUTE for TaintEffect
+        /// </summary>
+        public static readonly TaintEffect NO_EXECUTE = new TaintEffect("NO_EXECUTE");
+        /// <summary>
+        /// Constant NO_SCHEDULE for TaintEffect
+        /// </summary>
+        public static readonly TaintEffect NO_SCHEDULE = new TaintEffect("NO_SCHEDULE");
+        /// <summary>
+        /// Constant PREFER_NO_SCHEDULE for TaintEffect
+        /// </summary>
+        public static readonly TaintEffect PREFER_NO_SCHEDULE = new TaintEffect("PREFER_NO_SCHEDULE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaintEffect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaintEffect FindValue(string value)
+        {
+            return FindValue<TaintEffect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaintEffect(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UpdateParamType.
     /// </summary>
     public class UpdateParamType : ConstantClass
@@ -922,6 +976,14 @@ namespace Amazon.EKS
         /// Constant ServiceAccountRoleArn for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ServiceAccountRoleArn = new UpdateParamType("ServiceAccountRoleArn");
+        /// <summary>
+        /// Constant TaintsToAdd for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType TaintsToAdd = new UpdateParamType("TaintsToAdd");
+        /// <summary>
+        /// Constant TaintsToRemove for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType TaintsToRemove = new UpdateParamType("TaintsToRemove");
         /// <summary>
         /// Constant Version for UpdateParamType
         /// </summary>

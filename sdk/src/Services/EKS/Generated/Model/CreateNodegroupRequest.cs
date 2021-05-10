@@ -63,6 +63,7 @@ namespace Amazon.EKS.Model
         private NodegroupScalingConfig _scalingConfig;
         private List<string> _subnets = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<Taint> _taints = new List<Taint>();
         private string _version;
 
         /// <summary>
@@ -355,10 +356,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Subnets. 
         /// <para>
         /// The subnets to use for the Auto Scaling group that is created for your node group.
-        /// These subnets must have the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code>
-        /// with a value of <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with
-        /// the name of your cluster. If you specify <code>launchTemplate</code>, then don't specify
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
+        /// If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
         /// <code>SubnetId</code> </a> in your launch template, or the node group deployment will
         /// fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the Amazon EKS User Guide.
@@ -397,6 +395,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Taints. 
+        /// <para>
+        /// The Kubernetes taints to be applied to the nodes in the node group.
+        /// </para>
+        /// </summary>
+        public List<Taint> Taints
+        {
+            get { return this._taints; }
+            set { this._taints = value; }
+        }
+
+        // Check to see if Taints property is set
+        internal bool IsSetTaints()
+        {
+            return this._taints != null && this._taints.Count > 0; 
         }
 
         /// <summary>

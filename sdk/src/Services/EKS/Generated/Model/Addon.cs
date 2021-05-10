@@ -211,8 +211,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata that you apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define. Cluster
+        /// The metadata that you apply to the add-on to assist with categorization and organization.
+        /// Each tag consists of a key and an optional value, both of which you define. Add-on
         /// tags do not propagate to any other resources associated with the cluster. 
         /// </para>
         /// </summary>

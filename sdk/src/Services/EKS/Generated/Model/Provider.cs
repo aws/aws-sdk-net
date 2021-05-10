@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK) used
-    /// to encrypt the secrets.
+    /// Identifies the AWS Key Management Service (AWS KMS) key used to encrypt the secrets.
     /// </summary>
     public partial class Provider
     {
@@ -39,12 +38,11 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property KeyArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must
-        /// be symmetric, created in the same region as the cluster, and if the CMK was created
-        /// in a different account, the user must have access to the CMK. For more information,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-        /// Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service Developer
-        /// Guide</i>.
+        /// Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric,
+        /// created in the same region as the cluster, and if the KMS key was created in a different
+        /// account, the user must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
+        /// Users in Other Accounts to Use a KMS key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         public string KeyArn

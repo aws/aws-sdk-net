@@ -53,6 +53,7 @@ namespace Amazon.EKS.Model
         private NodegroupStatus _status;
         private List<string> _subnets = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<Taint> _taints = new List<Taint>();
         private string _version;
 
         /// <summary>
@@ -441,6 +442,27 @@ namespace Amazon.EKS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Taints. 
+        /// <para>
+        /// The Kubernetes taints to be applied to the nodes in the node group when they are created.
+        /// Effect is one of <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>.
+        /// Kubernetes taints can be used together with tolerations to control how workloads are
+        /// scheduled to your nodes.
+        /// </para>
+        /// </summary>
+        public List<Taint> Taints
+        {
+            get { return this._taints; }
+            set { this._taints = value; }
+        }
+
+        // Check to see if Taints property is set
+        internal bool IsSetTaints()
+        {
+            return this._taints != null && this._taints.Count > 0; 
         }
 
         /// <summary>

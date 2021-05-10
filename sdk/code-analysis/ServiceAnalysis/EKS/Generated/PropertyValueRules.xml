@@ -99,4 +99,14 @@
     <property>Amazon.EKS.Model.NodegroupScalingConfig.MinSize</property>
     <min>0</min>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.Taint.Key</property>
+    <min>1</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.Taint.Value</property>
+    <min>0</min>
+    <max>63</max>
+  </property-value-rule>
 </property-value-rules>

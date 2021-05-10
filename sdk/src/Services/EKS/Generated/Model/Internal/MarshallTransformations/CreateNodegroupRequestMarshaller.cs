@@ -198,6 +198,22 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTaints())
+                {
+                    context.Writer.WritePropertyName("taints");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTaintsListValue in publicRequest.Taints)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TaintMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTaintsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetVersion())
                 {
                     context.Writer.WritePropertyName("version");
