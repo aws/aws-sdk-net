@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private AvailBlanking _availBlanking;
         private EsamSettings _esam;
         private List<InputTemplate> _inputs = new List<InputTemplate>();
+        private KantarWatermarkSettings _kantarWatermark;
         private MotionImageInserter _motionImageInserter;
         private NielsenConfiguration _nielsenConfiguration;
         private NielsenNonLinearWatermarkSettings _nielsenNonLinearWatermark;
@@ -110,6 +111,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetInputs()
         {
             return this._inputs != null && this._inputs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KantarWatermark. Use these settings only when you use Kantar
+        /// watermarking. Specify the values that MediaConvert uses to generate and place Kantar
+        /// watermarks in your output audio. These settings apply to every output in your job.
+        /// In addition to specifying these values, you also need to store your Kantar credentials
+        /// in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+        /// </summary>
+        public KantarWatermarkSettings KantarWatermark
+        {
+            get { return this._kantarWatermark; }
+            set { this._kantarWatermark = value; }
+        }
+
+        // Check to see if KantarWatermark property is set
+        internal bool IsSetKantarWatermark()
+        {
+            return this._kantarWatermark != null;
         }
 
         /// <summary>

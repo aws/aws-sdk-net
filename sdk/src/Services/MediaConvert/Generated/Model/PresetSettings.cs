@@ -90,7 +90,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property VideoDescription. VideoDescription contains a group of
         /// video encoding settings. The specific video settings depend on the video codec that
-        /// you choose for the property codec. Include one instance of  VideoDescription per output.
+        /// you choose for the property codec. Include one instance of VideoDescription per output.
         /// </summary>
         public VideoDescription VideoDescription
         {

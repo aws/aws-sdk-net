@@ -5181,6 +5181,60 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type DvbddsHandling.
+    /// </summary>
+    public class DvbddsHandling : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_DISPLAY_WINDOW for DvbddsHandling
+        /// </summary>
+        public static readonly DvbddsHandling NO_DISPLAY_WINDOW = new DvbddsHandling("NO_DISPLAY_WINDOW");
+        /// <summary>
+        /// Constant NONE for DvbddsHandling
+        /// </summary>
+        public static readonly DvbddsHandling NONE = new DvbddsHandling("NONE");
+        /// <summary>
+        /// Constant SPECIFIED for DvbddsHandling
+        /// </summary>
+        public static readonly DvbddsHandling SPECIFIED = new DvbddsHandling("SPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DvbddsHandling(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DvbddsHandling FindValue(string value)
+        {
+            return FindValue<DvbddsHandling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DvbddsHandling(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DvbSubtitleAlignment.
     /// </summary>
     public class DvbSubtitleAlignment : ConstantClass
@@ -11114,6 +11168,60 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputRotate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputSampleRange.
+    /// </summary>
+    public class InputSampleRange : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FOLLOW for InputSampleRange
+        /// </summary>
+        public static readonly InputSampleRange FOLLOW = new InputSampleRange("FOLLOW");
+        /// <summary>
+        /// Constant FULL_RANGE for InputSampleRange
+        /// </summary>
+        public static readonly InputSampleRange FULL_RANGE = new InputSampleRange("FULL_RANGE");
+        /// <summary>
+        /// Constant LIMITED_RANGE for InputSampleRange
+        /// </summary>
+        public static readonly InputSampleRange LIMITED_RANGE = new InputSampleRange("LIMITED_RANGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputSampleRange(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputSampleRange FindValue(string value)
+        {
+            return FindValue<InputSampleRange>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputSampleRange(string value)
         {
             return FindValue(value);
         }

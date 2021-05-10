@@ -39,11 +39,15 @@ namespace Amazon.MediaConvert.Model
         private DvbSubtitleAlignment _alignment;
         private DvbSubtitleBackgroundColor _backgroundColor;
         private int? _backgroundOpacity;
+        private DvbddsHandling _ddsHandling;
+        private int? _ddsXCoordinate;
+        private int? _ddsYCoordinate;
         private DvbSubtitleFontColor _fontColor;
         private int? _fontOpacity;
         private int? _fontResolution;
         private FontScript _fontScript;
         private int? _fontSize;
+        private int? _height;
         private DvbSubtitleOutlineColor _outlineColor;
         private int? _outlineSize;
         private DvbSubtitleShadowColor _shadowColor;
@@ -52,6 +56,7 @@ namespace Amazon.MediaConvert.Model
         private int? _shadowYOffset;
         private DvbSubtitlingType _subtitlingType;
         private DvbSubtitleTeletextSpacing _teletextSpacing;
+        private int? _width;
         private int? _xPosition;
         private int? _yPosition;
 
@@ -109,6 +114,81 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetBackgroundOpacity()
         {
             return this._backgroundOpacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DdsHandling. Specify how MediaConvert handles the display
+        /// definition segment (DDS). Keep the default, None (NONE), to exclude the DDS from this
+        /// set of captions. Choose No display window (NO_DISPLAY_WINDOW) to have MediaConvert
+        /// include the DDS but not include display window data. In this case, MediaConvert writes
+        /// that information to the page composition segment (PCS) instead. Choose Specify (SPECIFIED)
+        /// to have MediaConvert set up the display window based on the values that you specify
+        /// in related job settings. For video resolutions that are 576 pixels or smaller in height,
+        /// MediaConvert doesn't include the DDS, regardless of the value you choose for DDS handling
+        /// (ddsHandling). In this case, it doesn't write the display window data to the PCS either.
+        /// Related settings: Use the settings DDS x-coordinate (ddsXCoordinate) and DDS y-coordinate
+        /// (ddsYCoordinate) to specify the offset between the top left corner of the display
+        /// window and the top left corner of the video frame. All burn-in and DVB-Sub font settings
+        /// must match.
+        /// </summary>
+        public DvbddsHandling DdsHandling
+        {
+            get { return this._ddsHandling; }
+            set { this._ddsHandling = value; }
+        }
+
+        // Check to see if DdsHandling property is set
+        internal bool IsSetDdsHandling()
+        {
+            return this._ddsHandling != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DdsXCoordinate. Use this setting, along with DDS y-coordinate
+        /// (ddsYCoordinate), to specify the upper left corner of the display definition segment
+        /// (DDS) display window. With this setting, specify the distance, in pixels, between
+        /// the left side of the frame and the left side of the DDS display window. Keep the default
+        /// value, 0, to have MediaConvert automatically choose this offset. Related setting:
+        /// When you use this setting, you must set DDS handling (ddsHandling) to a value other
+        /// than None (NONE). MediaConvert uses these values to determine whether to write page
+        /// position data to the DDS or to the page composition segment (PCS). All burn-in and
+        /// DVB-Sub font settings must match.
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int DdsXCoordinate
+        {
+            get { return this._ddsXCoordinate.GetValueOrDefault(); }
+            set { this._ddsXCoordinate = value; }
+        }
+
+        // Check to see if DdsXCoordinate property is set
+        internal bool IsSetDdsXCoordinate()
+        {
+            return this._ddsXCoordinate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DdsYCoordinate. Use this setting, along with DDS x-coordinate
+        /// (ddsXCoordinate), to specify the upper left corner of the display definition segment
+        /// (DDS) display window. With this setting, specify the distance, in pixels, between
+        /// the top of the frame and the top of the DDS display window. Keep the default value,
+        /// 0, to have MediaConvert automatically choose this offset. Related setting: When you
+        /// use this setting, you must set DDS handling (ddsHandling) to a value other than None
+        /// (NONE). MediaConvert uses these values to determine whether to write page position
+        /// data to the DDS or to the page composition segment (PCS). All burn-in and DVB-Sub
+        /// font settings must match.
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int DdsYCoordinate
+        {
+            get { return this._ddsYCoordinate.GetValueOrDefault(); }
+            set { this._ddsYCoordinate = value; }
+        }
+
+        // Check to see if DdsYCoordinate property is set
+        internal bool IsSetDdsYCoordinate()
+        {
+            return this._ddsYCoordinate.HasValue; 
         }
 
         /// <summary>
@@ -197,6 +277,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFontSize()
         {
             return this._fontSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Height. Specify the height, in pixels, of this set of DVB-Sub
+        /// captions. The default value is 576 pixels. Related setting: When you use this setting,
+        /// you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in
+        /// and DVB-Sub font settings must match.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
+        public int Height
+        {
+            get { return this._height.GetValueOrDefault(); }
+            set { this._height = value; }
+        }
+
+        // Check to see if Height property is set
+        internal bool IsSetHeight()
+        {
+            return this._height.HasValue; 
         }
 
         /// <summary>
@@ -340,6 +439,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTeletextSpacing()
         {
             return this._teletextSpacing != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Width. Specify the width, in pixels, of this set of DVB-Sub
+        /// captions. The default value is 720 pixels. Related setting: When you use this setting,
+        /// you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in
+        /// and DVB-Sub font settings must match.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
+        public int Width
+        {
+            get { return this._width.GetValueOrDefault(); }
+            set { this._width = value; }
+        }
+
+        // Check to see if Width property is set
+        internal bool IsSetWidth()
+        {
+            return this._width.HasValue; 
         }
 
         /// <summary>

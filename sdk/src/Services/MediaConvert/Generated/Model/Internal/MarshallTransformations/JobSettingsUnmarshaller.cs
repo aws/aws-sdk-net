@@ -88,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Inputs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kantarWatermark", targetDepth))
+                {
+                    var unmarshaller = KantarWatermarkSettingsUnmarshaller.Instance;
+                    unmarshalledObject.KantarWatermark = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("motionImageInserter", targetDepth))
                 {
                     var unmarshaller = MotionImageInserterUnmarshaller.Instance;

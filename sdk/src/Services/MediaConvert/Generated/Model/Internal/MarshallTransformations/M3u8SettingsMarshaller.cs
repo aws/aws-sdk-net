@@ -68,6 +68,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetMaxPcrInterval())
+            {
+                context.Writer.WritePropertyName("maxPcrInterval");
+                context.Writer.Write(requestObject.MaxPcrInterval);
+            }
+
             if(requestObject.IsSetNielsenId3())
             {
                 context.Writer.WritePropertyName("nielsenId3");

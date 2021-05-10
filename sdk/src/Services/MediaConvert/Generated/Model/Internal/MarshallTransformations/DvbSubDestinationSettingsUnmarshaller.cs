@@ -82,6 +82,24 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.BackgroundOpacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ddsHandling", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DdsHandling = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ddsXCoordinate", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DdsXCoordinate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ddsYCoordinate", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DdsYCoordinate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fontColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +128,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.FontSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("height", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("outlineColor", targetDepth))
@@ -158,6 +182,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TeletextSpacing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("width", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Width = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("xPosition", targetDepth))

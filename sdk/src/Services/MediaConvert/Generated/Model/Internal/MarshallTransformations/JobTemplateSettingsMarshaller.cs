@@ -89,6 +89,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetKantarWatermark())
+            {
+                context.Writer.WritePropertyName("kantarWatermark");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KantarWatermarkSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.KantarWatermark, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMotionImageInserter())
             {
                 context.Writer.WritePropertyName("motionImageInserter");

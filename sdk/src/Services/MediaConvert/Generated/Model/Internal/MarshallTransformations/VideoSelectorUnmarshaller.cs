@@ -106,6 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Rotate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sampleRange", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SampleRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

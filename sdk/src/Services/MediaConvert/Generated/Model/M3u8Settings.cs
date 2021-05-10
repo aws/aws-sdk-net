@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private M3u8AudioDuration _audioDuration;
         private int? _audioFramesPerPes;
         private List<int> _audioPids = new List<int>();
+        private int? _maxPcrInterval;
         private M3u8NielsenId3 _nielsenId3;
         private int? _patInterval;
         private M3u8PcrControl _pcrControl;
@@ -110,6 +111,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAudioPids()
         {
             return this._audioPids != null && this._audioPids.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxPcrInterval. Specify the maximum time, in milliseconds,
+        /// between Program Clock References (PCRs) inserted into the transport stream.
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public int MaxPcrInterval
+        {
+            get { return this._maxPcrInterval.GetValueOrDefault(); }
+            set { this._maxPcrInterval = value; }
+        }
+
+        // Check to see if MaxPcrInterval property is set
+        internal bool IsSetMaxPcrInterval()
+        {
+            return this._maxPcrInterval.HasValue; 
         }
 
         /// <summary>

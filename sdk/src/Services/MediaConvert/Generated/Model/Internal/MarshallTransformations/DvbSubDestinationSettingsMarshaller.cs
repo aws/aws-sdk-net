@@ -63,6 +63,24 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BackgroundOpacity);
             }
 
+            if(requestObject.IsSetDdsHandling())
+            {
+                context.Writer.WritePropertyName("ddsHandling");
+                context.Writer.Write(requestObject.DdsHandling);
+            }
+
+            if(requestObject.IsSetDdsXCoordinate())
+            {
+                context.Writer.WritePropertyName("ddsXCoordinate");
+                context.Writer.Write(requestObject.DdsXCoordinate);
+            }
+
+            if(requestObject.IsSetDdsYCoordinate())
+            {
+                context.Writer.WritePropertyName("ddsYCoordinate");
+                context.Writer.Write(requestObject.DdsYCoordinate);
+            }
+
             if(requestObject.IsSetFontColor())
             {
                 context.Writer.WritePropertyName("fontColor");
@@ -91,6 +109,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("fontSize");
                 context.Writer.Write(requestObject.FontSize);
+            }
+
+            if(requestObject.IsSetHeight())
+            {
+                context.Writer.WritePropertyName("height");
+                context.Writer.Write(requestObject.Height);
             }
 
             if(requestObject.IsSetOutlineColor())
@@ -139,6 +163,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("teletextSpacing");
                 context.Writer.Write(requestObject.TeletextSpacing);
+            }
+
+            if(requestObject.IsSetWidth())
+            {
+                context.Writer.WritePropertyName("width");
+                context.Writer.Write(requestObject.Width);
             }
 
             if(requestObject.IsSetXPosition())

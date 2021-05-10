@@ -92,6 +92,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Rotate);
             }
 
+            if(requestObject.IsSetSampleRange())
+            {
+                context.Writer.WritePropertyName("sampleRange");
+                context.Writer.Write(requestObject.SampleRange);
+            }
+
         }
 
         /// <summary>

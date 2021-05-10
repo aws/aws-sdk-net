@@ -41,6 +41,7 @@ namespace Amazon.MediaConvert.Model
         private int? _pid;
         private int? _programNumber;
         private InputRotate _rotate;
+        private InputSampleRange _sampleRange;
 
         /// <summary>
         /// Gets and sets the property AlphaBehavior. Ignore this setting unless this input is
@@ -188,6 +189,29 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetRotate()
         {
             return this._rotate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SampleRange. Use this setting when your input video codec
+        /// is AVC-Intra. Ignore this setting for all other inputs. If the sample range metadata
+        /// in your input video is accurate, or if you don't know about sample range, keep the
+        /// default value, Follow (FOLLOW), for this setting. When you do, the service automatically
+        /// detects your input sample range. If your input video has metadata indicating the wrong
+        /// sample range, specify the accurate sample range here. When you do, MediaConvert ignores
+        /// any sample range information in the input metadata. Regardless of whether MediaConvert
+        /// uses the input sample range or the sample range that you specify, MediaConvert uses
+        /// the sample range for transcoding and also writes it to the output metadata.
+        /// </summary>
+        public InputSampleRange SampleRange
+        {
+            get { return this._sampleRange; }
+            set { this._sampleRange = value; }
+        }
+
+        // Check to see if SampleRange property is set
+        internal bool IsSetSampleRange()
+        {
+            return this._sampleRange != null;
         }
 
     }

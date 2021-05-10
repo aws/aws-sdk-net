@@ -374,6 +374,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.DdsXCoordinate</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.DdsYCoordinate</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.FontOpacity</property>
     <min>0</min>
     <max>255</max>
@@ -387,6 +397,11 @@
     <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.FontSize</property>
     <min>0</min>
     <max>96</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.Height</property>
+    <min>1</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.OutlineSize</property>
@@ -406,6 +421,11 @@
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.ShadowYOffset</property>
     <min>-2147483648</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.Width</property>
+    <min>1</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -945,6 +965,66 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.ChannelName</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.ContentReference</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[a-zA-Z0-9_\/_+=.@-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.CredentialsSecretName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[a-zA-Z0-9_\/_+=.@-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.KantarLicenseId</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.KantarServerUrl</property>
+    <pattern>^https:\/\/.*.kantarmedia.com$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.LogDestination</property>
+    <pattern>^s3:\/\/</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.Metadata3</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.Metadata4</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.Metadata5</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.Metadata6</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.Metadata7</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.Metadata8</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.M2tsScte35Esam.Scte35EsamPid</property>
     <min>32</min>
     <max>8182</max>
@@ -1028,6 +1108,11 @@
     <property>Amazon.MediaConvert.Model.M3u8Settings.AudioFramesPerPes</property>
     <min>0</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.M3u8Settings.MaxPcrInterval</property>
+    <min>0</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.M3u8Settings.PatInterval</property>
