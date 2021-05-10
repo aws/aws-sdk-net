@@ -28,32 +28,32 @@ using Amazon.Runtime;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Base class for SelectAggregateResourceConfig paginators.
+    /// Base class for DescribeOrganizationConfigRules paginators.
     /// </summary>
-    internal sealed partial class SelectAggregateResourceConfigPaginator : IPaginator<SelectAggregateResourceConfigResponse>, ISelectAggregateResourceConfigPaginator
+    internal sealed partial class DescribeOrganizationConfigRulesPaginator : IPaginator<DescribeOrganizationConfigRulesResponse>, IDescribeOrganizationConfigRulesPaginator
     {
         private readonly IAmazonConfigService _client;
-        private readonly SelectAggregateResourceConfigRequest _request;
+        private readonly DescribeOrganizationConfigRulesRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<SelectAggregateResourceConfigResponse> Responses => new PaginatedResponse<SelectAggregateResourceConfigResponse>(this);
+        public IPaginatedEnumerable<DescribeOrganizationConfigRulesResponse> Responses => new PaginatedResponse<DescribeOrganizationConfigRulesResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the Results
+        /// Enumerable containing all of the OrganizationConfigRules
         /// </summary>
-        public IPaginatedEnumerable<string> Results => 
-            new PaginatedResultKeyResponse<SelectAggregateResourceConfigResponse, string>(this, (i) => i.Results);
+        public IPaginatedEnumerable<OrganizationConfigRule> OrganizationConfigRules => 
+            new PaginatedResultKeyResponse<DescribeOrganizationConfigRulesResponse, OrganizationConfigRule>(this, (i) => i.OrganizationConfigRules);
 
-        internal SelectAggregateResourceConfigPaginator(IAmazonConfigService client, SelectAggregateResourceConfigRequest request)
+        internal DescribeOrganizationConfigRulesPaginator(IAmazonConfigService client, DescribeOrganizationConfigRulesRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<SelectAggregateResourceConfigResponse> IPaginator<SelectAggregateResourceConfigResponse>.Paginate()
+        IEnumerable<DescribeOrganizationConfigRulesResponse> IPaginator<DescribeOrganizationConfigRulesResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -61,11 +61,11 @@ namespace Amazon.ConfigService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            SelectAggregateResourceConfigResponse response;
+            DescribeOrganizationConfigRulesResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.SelectAggregateResourceConfig(_request);
+                response = _client.DescribeOrganizationConfigRules(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -73,7 +73,7 @@ namespace Amazon.ConfigService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SelectAggregateResourceConfigResponse> IPaginator<SelectAggregateResourceConfigResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeOrganizationConfigRulesResponse> IPaginator<DescribeOrganizationConfigRulesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -81,11 +81,11 @@ namespace Amazon.ConfigService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            SelectAggregateResourceConfigResponse response;
+            DescribeOrganizationConfigRulesResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.SelectAggregateResourceConfigAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.DescribeOrganizationConfigRulesAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

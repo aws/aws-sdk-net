@@ -21,18 +21,18 @@ using Amazon.Runtime;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Paginator for the SelectAggregateResourceConfig operation
+    /// Paginator for the GetOrganizationConfigRuleDetailedStatus operation
     ///</summary>
-    public interface ISelectAggregateResourceConfigPaginator
+    public interface IGetOrganizationConfigRuleDetailedStatusPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<SelectAggregateResourceConfigResponse> Responses { get; }
+        IPaginatedEnumerable<GetOrganizationConfigRuleDetailedStatusResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the Results
+        /// Enumerable containing all of the OrganizationConfigRuleDetailedStatus
         /// </summary>
-        IPaginatedEnumerable<string> Results { get; }
+        IPaginatedEnumerable<MemberAccountStatus> OrganizationConfigRuleDetailedStatus { get; }
     }
 }

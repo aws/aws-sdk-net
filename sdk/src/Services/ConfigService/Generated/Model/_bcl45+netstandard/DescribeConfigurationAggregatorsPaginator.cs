@@ -28,32 +28,32 @@ using Amazon.Runtime;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Base class for SelectAggregateResourceConfig paginators.
+    /// Base class for DescribeConfigurationAggregators paginators.
     /// </summary>
-    internal sealed partial class SelectAggregateResourceConfigPaginator : IPaginator<SelectAggregateResourceConfigResponse>, ISelectAggregateResourceConfigPaginator
+    internal sealed partial class DescribeConfigurationAggregatorsPaginator : IPaginator<DescribeConfigurationAggregatorsResponse>, IDescribeConfigurationAggregatorsPaginator
     {
         private readonly IAmazonConfigService _client;
-        private readonly SelectAggregateResourceConfigRequest _request;
+        private readonly DescribeConfigurationAggregatorsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<SelectAggregateResourceConfigResponse> Responses => new PaginatedResponse<SelectAggregateResourceConfigResponse>(this);
+        public IPaginatedEnumerable<DescribeConfigurationAggregatorsResponse> Responses => new PaginatedResponse<DescribeConfigurationAggregatorsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the Results
+        /// Enumerable containing all of the ConfigurationAggregators
         /// </summary>
-        public IPaginatedEnumerable<string> Results => 
-            new PaginatedResultKeyResponse<SelectAggregateResourceConfigResponse, string>(this, (i) => i.Results);
+        public IPaginatedEnumerable<ConfigurationAggregator> ConfigurationAggregators => 
+            new PaginatedResultKeyResponse<DescribeConfigurationAggregatorsResponse, ConfigurationAggregator>(this, (i) => i.ConfigurationAggregators);
 
-        internal SelectAggregateResourceConfigPaginator(IAmazonConfigService client, SelectAggregateResourceConfigRequest request)
+        internal DescribeConfigurationAggregatorsPaginator(IAmazonConfigService client, DescribeConfigurationAggregatorsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<SelectAggregateResourceConfigResponse> IPaginator<SelectAggregateResourceConfigResponse>.Paginate()
+        IEnumerable<DescribeConfigurationAggregatorsResponse> IPaginator<DescribeConfigurationAggregatorsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -61,11 +61,11 @@ namespace Amazon.ConfigService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            SelectAggregateResourceConfigResponse response;
+            DescribeConfigurationAggregatorsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.SelectAggregateResourceConfig(_request);
+                response = _client.DescribeConfigurationAggregators(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -73,7 +73,7 @@ namespace Amazon.ConfigService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SelectAggregateResourceConfigResponse> IPaginator<SelectAggregateResourceConfigResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeConfigurationAggregatorsResponse> IPaginator<DescribeConfigurationAggregatorsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -81,11 +81,11 @@ namespace Amazon.ConfigService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            SelectAggregateResourceConfigResponse response;
+            DescribeConfigurationAggregatorsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.SelectAggregateResourceConfigAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.DescribeConfigurationAggregatorsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

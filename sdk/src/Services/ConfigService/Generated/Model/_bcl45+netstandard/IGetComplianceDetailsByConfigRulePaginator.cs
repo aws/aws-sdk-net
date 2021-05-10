@@ -21,18 +21,18 @@ using Amazon.Runtime;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Paginator for the SelectAggregateResourceConfig operation
+    /// Paginator for the GetComplianceDetailsByConfigRule operation
     ///</summary>
-    public interface ISelectAggregateResourceConfigPaginator
+    public interface IGetComplianceDetailsByConfigRulePaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<SelectAggregateResourceConfigResponse> Responses { get; }
+        IPaginatedEnumerable<GetComplianceDetailsByConfigRuleResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the Results
+        /// Enumerable containing all of the EvaluationResults
         /// </summary>
-        IPaginatedEnumerable<string> Results { get; }
+        IPaginatedEnumerable<EvaluationResult> EvaluationResults { get; }
     }
 }

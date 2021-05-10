@@ -28,32 +28,32 @@ using Amazon.Runtime;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Base class for SelectAggregateResourceConfig paginators.
+    /// Base class for DescribeComplianceByConfigRule paginators.
     /// </summary>
-    internal sealed partial class SelectAggregateResourceConfigPaginator : IPaginator<SelectAggregateResourceConfigResponse>, ISelectAggregateResourceConfigPaginator
+    internal sealed partial class DescribeComplianceByConfigRulePaginator : IPaginator<DescribeComplianceByConfigRuleResponse>, IDescribeComplianceByConfigRulePaginator
     {
         private readonly IAmazonConfigService _client;
-        private readonly SelectAggregateResourceConfigRequest _request;
+        private readonly DescribeComplianceByConfigRuleRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<SelectAggregateResourceConfigResponse> Responses => new PaginatedResponse<SelectAggregateResourceConfigResponse>(this);
+        public IPaginatedEnumerable<DescribeComplianceByConfigRuleResponse> Responses => new PaginatedResponse<DescribeComplianceByConfigRuleResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the Results
+        /// Enumerable containing all of the ComplianceByConfigRules
         /// </summary>
-        public IPaginatedEnumerable<string> Results => 
-            new PaginatedResultKeyResponse<SelectAggregateResourceConfigResponse, string>(this, (i) => i.Results);
+        public IPaginatedEnumerable<ComplianceByConfigRule> ComplianceByConfigRules => 
+            new PaginatedResultKeyResponse<DescribeComplianceByConfigRuleResponse, ComplianceByConfigRule>(this, (i) => i.ComplianceByConfigRules);
 
-        internal SelectAggregateResourceConfigPaginator(IAmazonConfigService client, SelectAggregateResourceConfigRequest request)
+        internal DescribeComplianceByConfigRulePaginator(IAmazonConfigService client, DescribeComplianceByConfigRuleRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<SelectAggregateResourceConfigResponse> IPaginator<SelectAggregateResourceConfigResponse>.Paginate()
+        IEnumerable<DescribeComplianceByConfigRuleResponse> IPaginator<DescribeComplianceByConfigRuleResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -61,11 +61,11 @@ namespace Amazon.ConfigService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            SelectAggregateResourceConfigResponse response;
+            DescribeComplianceByConfigRuleResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.SelectAggregateResourceConfig(_request);
+                response = _client.DescribeComplianceByConfigRule(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -73,7 +73,7 @@ namespace Amazon.ConfigService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SelectAggregateResourceConfigResponse> IPaginator<SelectAggregateResourceConfigResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeComplianceByConfigRuleResponse> IPaginator<DescribeComplianceByConfigRuleResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -81,11 +81,11 @@ namespace Amazon.ConfigService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            SelectAggregateResourceConfigResponse response;
+            DescribeComplianceByConfigRuleResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.SelectAggregateResourceConfigAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.DescribeComplianceByConfigRuleAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
