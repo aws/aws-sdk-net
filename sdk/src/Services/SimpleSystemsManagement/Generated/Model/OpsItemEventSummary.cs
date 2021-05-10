@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Summary information about an OpsItem event.
+    /// Summary information about an OpsItem event or that associated an OpsItem with a related
+    /// item.
     /// </summary>
     public partial class OpsItemEventSummary
     {

@@ -34,6 +34,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DocumentIdentifier
     {
         private string _author;
+        private DateTime? _createdDate;
+        private string _displayName;
         private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _documentVersion;
@@ -77,6 +79,45 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAuthor()
         {
             return this._author != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// The date the Systems Manager document was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedDate
+        {
+            get { return this._createdDate.GetValueOrDefault(); }
+            set { this._createdDate = value; }
+        }
+
+        // Check to see if CreatedDate property is set
+        internal bool IsSetCreatedDate()
+        {
+            return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// An optional field where you can specify a friendly name for the Systems Manager document.
+        /// This value can differ for each version of the document. If you want to update this
+        /// value, see <a>UpdateDocument</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
+
+        // Check to see if DisplayName property is set
+        internal bool IsSetDisplayName()
+        {
+            return this._displayName != null;
         }
 
         /// <summary>

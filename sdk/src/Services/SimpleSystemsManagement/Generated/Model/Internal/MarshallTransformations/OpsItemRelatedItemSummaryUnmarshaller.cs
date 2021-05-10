@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DocumentVersionInfo Object
+    /// Response Unmarshaller for OpsItemRelatedItemSummary Object
     /// </summary>  
-    public class DocumentVersionInfoUnmarshaller : IUnmarshaller<DocumentVersionInfo, XmlUnmarshallerContext>, IUnmarshaller<DocumentVersionInfo, JsonUnmarshallerContext>
+    public class OpsItemRelatedItemSummaryUnmarshaller : IUnmarshaller<OpsItemRelatedItemSummary, XmlUnmarshallerContext>, IUnmarshaller<OpsItemRelatedItemSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DocumentVersionInfo IUnmarshaller<DocumentVersionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OpsItemRelatedItemSummary IUnmarshaller<OpsItemRelatedItemSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,75 +53,69 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DocumentVersionInfo Unmarshall(JsonUnmarshallerContext context)
+        public OpsItemRelatedItemSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DocumentVersionInfo unmarshalledObject = new DocumentVersionInfo();
+            OpsItemRelatedItemSummary unmarshalledObject = new OpsItemRelatedItemSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedDate", targetDepth))
+                if (context.TestExpression("AssociationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AssociationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssociationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreatedBy", targetDepth))
+                {
+                    var unmarshaller = OpsItemIdentityUnmarshaller.Instance;
+                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreatedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DisplayName", targetDepth))
+                if (context.TestExpression("LastModifiedBy", targetDepth))
+                {
+                    var unmarshaller = OpsItemIdentityUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OpsItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpsItemId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DocumentFormat", targetDepth))
+                if (context.TestExpression("ResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DocumentVersion", targetDepth))
+                if (context.TestExpression("ResourceUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IsDefaultVersion", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsDefaultVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ReviewStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReviewStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StatusInformation", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusInformation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VersionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VersionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -130,12 +124,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
 
 
-        private static DocumentVersionInfoUnmarshaller _instance = new DocumentVersionInfoUnmarshaller();        
+        private static OpsItemRelatedItemSummaryUnmarshaller _instance = new OpsItemRelatedItemSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DocumentVersionInfoUnmarshaller Instance
+        public static OpsItemRelatedItemSummaryUnmarshaller Instance
         {
             get
             {

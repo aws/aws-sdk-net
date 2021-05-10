@@ -236,6 +236,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         IListOpsItemEventsPaginator ListOpsItemEvents(ListOpsItemEventsRequest request);
 
         /// <summary>
+        /// Paginator for ListOpsItemRelatedItems operation
+        ///</summary>
+        IListOpsItemRelatedItemsPaginator ListOpsItemRelatedItems(ListOpsItemRelatedItemsRequest request);
+
+        /// <summary>
         /// Paginator for ListOpsMetadata operation
         ///</summary>
         IListOpsMetadataPaginator ListOpsMetadata(ListOpsMetadataRequest request);

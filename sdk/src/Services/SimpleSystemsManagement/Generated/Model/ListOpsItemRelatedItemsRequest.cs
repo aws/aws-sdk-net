@@ -29,44 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAutomationStepExecutions operation.
-    /// Information about all active and terminated step executions in an Automation workflow.
+    /// Container for the parameters to the ListOpsItemRelatedItems operation.
+    /// Lists all related-item resources associated with an OpsItem.
     /// </summary>
-    public partial class DescribeAutomationStepExecutionsRequest : AmazonSimpleSystemsManagementRequest
+    public partial class ListOpsItemRelatedItemsRequest : AmazonSimpleSystemsManagementRequest
     {
-        private string _automationExecutionId;
-        private List<StepExecutionFilter> _filters = new List<StepExecutionFilter>();
+        private List<OpsItemRelatedItemsFilter> _filters = new List<OpsItemRelatedItemsFilter>();
         private int? _maxResults;
         private string _nextToken;
-        private bool? _reverseOrder;
-
-        /// <summary>
-        /// Gets and sets the property AutomationExecutionId. 
-        /// <para>
-        /// The Automation execution ID for which you want step execution descriptions.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
-        public string AutomationExecutionId
-        {
-            get { return this._automationExecutionId; }
-            set { this._automationExecutionId = value; }
-        }
-
-        // Check to see if AutomationExecutionId property is set
-        internal bool IsSetAutomationExecutionId()
-        {
-            return this._automationExecutionId != null;
-        }
+        private string _opsItemId;
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters to limit the number of step executions returned by the request.
+        /// One or more OpsItem filters. Use a filter to return a more specific list of results.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=6)]
-        public List<StepExecutionFilter> Filters
+        public List<OpsItemRelatedItemsFilter> Filters
         {
             get { return this._filters; }
             set { this._filters = value; }
@@ -118,22 +98,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReverseOrder. 
+        /// Gets and sets the property OpsItemId. 
         /// <para>
-        /// Indicates whether to list step executions in reverse order by start time. The default
-        /// value is 'false'.
+        /// The ID of the OpsItem for which you want to list all related-item resources.
         /// </para>
         /// </summary>
-        public bool ReverseOrder
+        public string OpsItemId
         {
-            get { return this._reverseOrder.GetValueOrDefault(); }
-            set { this._reverseOrder = value; }
+            get { return this._opsItemId; }
+            set { this._opsItemId = value; }
         }
 
-        // Check to see if ReverseOrder property is set
-        internal bool IsSetReverseOrder()
+        // Check to see if OpsItemId property is set
+        internal bool IsSetOpsItemId()
         {
-            return this._reverseOrder.HasValue; 
+            return this._opsItemId != null;
         }
 
     }

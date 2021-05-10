@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociateOpsItemRelatedItemRequest.OpsItemId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CancelCommandRequest.CommandId</property>
     <min>36</min>
     <max>36</max>
@@ -89,6 +93,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateDocumentRequest.DisplayName</property>
+    <max>1024</max>
+    <pattern>^[\w\.\-\:\/ ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateDocumentRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
@@ -152,7 +161,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateOpsItemRequest.Description</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -660,6 +669,10 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DisassociateOpsItemRelatedItemRequest.OpsItemId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetAutomationExecutionRequest.AutomationExecutionId</property>
     <min>36</min>
     <max>36</max>
@@ -778,6 +791,11 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDocumentResponse.Content</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDocumentResponse.DisplayName</property>
+    <max>1024</max>
+    <pattern>^[\w\.\-\:\/ ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDocumentResponse.DocumentVersion</property>
@@ -1255,6 +1273,15 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListOpsItemRelatedItemsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListOpsItemRelatedItemsRequest.OpsItemId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListOpsMetadataRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -1687,6 +1714,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentRequest.DisplayName</property>
+    <max>1024</max>
+    <pattern>^[\w\.\-\:\/ ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentRequest.DocumentVersion</property>
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
@@ -1954,7 +1986,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Description</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2571,6 +2603,11 @@
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.DisplayName</property>
+    <max>1024</max>
+    <pattern>^[\w\.\-\:\/ ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.DocumentVersion</property>
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
@@ -2606,6 +2643,11 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentFilter.Value</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentIdentifier.DisplayName</property>
+    <max>1024</max>
+    <pattern>^[\w\.\-\:\/ ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentIdentifier.DocumentVersion</property>
@@ -2651,6 +2693,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.DocumentReviewerResponseSource.Reviewer</property>
     <max>50</max>
     <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentVersionInfo.DisplayName</property>
+    <max>1024</max>
+    <pattern>^[\w\.\-\:\/ ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentVersionInfo.DocumentVersion</property>
@@ -3178,7 +3225,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsItem.Description</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3211,6 +3258,14 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsItemDataValue.Value</property>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItemRelatedItemAlreadyExistsException.OpsItemId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItemRelatedItemSummary.OpsItemId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.Category</property>

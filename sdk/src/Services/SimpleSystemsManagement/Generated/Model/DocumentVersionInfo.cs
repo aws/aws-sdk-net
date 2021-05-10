@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DocumentVersionInfo
     {
         private DateTime? _createdDate;
+        private string _displayName;
         private DocumentFormat _documentFormat;
         private string _documentVersion;
         private bool? _isDefaultVersion;
@@ -59,6 +60,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The friendly name of the Systems Manager document. This value can differ for each
+        /// version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
+
+        // Check to see if DisplayName property is set
+        internal bool IsSetDisplayName()
+        {
+            return this._displayName != null;
         }
 
         /// <summary>

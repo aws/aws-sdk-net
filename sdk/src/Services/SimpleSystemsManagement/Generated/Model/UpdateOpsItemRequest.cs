@@ -123,7 +123,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// reading this OpsItem for the first time understand the issue. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string Description
         {
             get { return this._description; }

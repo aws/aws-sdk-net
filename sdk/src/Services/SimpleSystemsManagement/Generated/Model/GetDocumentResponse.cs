@@ -35,6 +35,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private List<AttachmentContent> _attachmentsContent = new List<AttachmentContent>();
         private string _content;
+        private DateTime? _createdDate;
+        private string _displayName;
         private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _documentVersion;
@@ -81,6 +83,44 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// The date the Systems Manager document was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedDate
+        {
+            get { return this._createdDate.GetValueOrDefault(); }
+            set { this._createdDate = value; }
+        }
+
+        // Check to see if CreatedDate property is set
+        internal bool IsSetCreatedDate()
+        {
+            return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The friendly name of the Systems Manager document. This value can differ for each
+        /// version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
+
+        // Check to see if DisplayName property is set
+        internal bool IsSetDisplayName()
+        {
+            return this._displayName != null;
         }
 
         /// <summary>

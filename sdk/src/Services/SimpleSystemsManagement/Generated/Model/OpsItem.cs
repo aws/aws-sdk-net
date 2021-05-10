@@ -157,7 +157,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The OpsItem description.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string Description
         {
             get { return this._description; }

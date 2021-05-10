@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateDocument Request Marshaller
+    /// ListOpsItemRelatedItems Request Marshaller
     /// </summary>       
-    public class UpdateDocumentRequestMarshaller : IMarshaller<IRequest, UpdateDocumentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListOpsItemRelatedItemsRequestMarshaller : IMarshaller<IRequest, ListOpsItemRelatedItemsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateDocumentRequest)input);
+            return this.Marshall((ListOpsItemRelatedItemsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateDocumentRequest publicRequest)
+        public IRequest Marshall(ListOpsItemRelatedItemsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleSystemsManagement");
-            string target = "AmazonSSM.UpdateDocument";
+            string target = "AmazonSSM.ListOpsItemRelatedItems";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-06";            
@@ -67,62 +67,38 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttachments())
+                if(publicRequest.IsSetFilters())
                 {
-                    context.Writer.WritePropertyName("Attachments");
+                    context.Writer.WritePropertyName("Filters");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
                     {
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AttachmentsSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAttachmentsListValue, context);
+                        var marshaller = OpsItemRelatedItemsFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetContent())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.Write(publicRequest.Content);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetDisplayName())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetDocumentFormat())
+                if(publicRequest.IsSetOpsItemId())
                 {
-                    context.Writer.WritePropertyName("DocumentFormat");
-                    context.Writer.Write(publicRequest.DocumentFormat);
-                }
-
-                if(publicRequest.IsSetDocumentVersion())
-                {
-                    context.Writer.WritePropertyName("DocumentVersion");
-                    context.Writer.Write(publicRequest.DocumentVersion);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTargetType())
-                {
-                    context.Writer.WritePropertyName("TargetType");
-                    context.Writer.Write(publicRequest.TargetType);
-                }
-
-                if(publicRequest.IsSetVersionName())
-                {
-                    context.Writer.WritePropertyName("VersionName");
-                    context.Writer.Write(publicRequest.VersionName);
+                    context.Writer.WritePropertyName("OpsItemId");
+                    context.Writer.Write(publicRequest.OpsItemId);
                 }
 
         
@@ -134,9 +110,9 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateDocumentRequestMarshaller _instance = new UpdateDocumentRequestMarshaller();        
+        private static ListOpsItemRelatedItemsRequestMarshaller _instance = new ListOpsItemRelatedItemsRequestMarshaller();        
 
-        internal static UpdateDocumentRequestMarshaller GetInstance()
+        internal static ListOpsItemRelatedItemsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -144,7 +120,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateDocumentRequestMarshaller Instance
+        public static ListOpsItemRelatedItemsRequestMarshaller Instance
         {
             get
             {

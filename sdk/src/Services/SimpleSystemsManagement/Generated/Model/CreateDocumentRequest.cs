@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private List<AttachmentsSource> _attachments = new List<AttachmentsSource>();
         private string _content;
+        private string _displayName;
         private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _name;
@@ -122,6 +123,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// An optional field where you can specify a friendly name for the Systems Manager document.
+        /// This value can differ for each version of the document. You can update this value
+        /// at a later time using the <a>UpdateDocument</a> action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
+
+        // Check to see if DisplayName property is set
+        internal bool IsSetDisplayName()
+        {
+            return this._displayName != null;
         }
 
         /// <summary>

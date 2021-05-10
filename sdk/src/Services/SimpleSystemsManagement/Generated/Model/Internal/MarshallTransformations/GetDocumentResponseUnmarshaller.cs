@@ -63,6 +63,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.Content = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreatedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.CreatedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DocumentFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

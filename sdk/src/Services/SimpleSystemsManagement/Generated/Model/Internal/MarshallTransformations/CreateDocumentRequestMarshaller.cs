@@ -89,6 +89,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Content);
                 }
 
+                if(publicRequest.IsSetDisplayName())
+                {
+                    context.Writer.WritePropertyName("DisplayName");
+                    context.Writer.Write(publicRequest.DisplayName);
+                }
+
                 if(publicRequest.IsSetDocumentFormat())
                 {
                     context.Writer.WritePropertyName("DocumentFormat");
