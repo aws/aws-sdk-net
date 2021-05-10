@@ -70,10 +70,28 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.GatewayEui = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JoinEuiFilters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<List<string>, ListUnmarshaller<string, StringUnmarshaller>>(new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.JoinEuiFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetIdFilters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.NetIdFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RfRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RfRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubBands", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.SubBands = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

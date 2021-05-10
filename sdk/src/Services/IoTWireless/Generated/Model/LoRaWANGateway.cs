@@ -34,7 +34,10 @@ namespace Amazon.IoTWireless.Model
     public partial class LoRaWANGateway
     {
         private string _gatewayEui;
+        private List<List<string>> _joinEuiFilters = new List<List<string>>();
+        private List<string> _netIdFilters = new List<string>();
         private string _rfRegion;
+        private List<int> _subBands = new List<int>();
 
         /// <summary>
         /// Gets and sets the property GatewayEui. 
@@ -55,6 +58,38 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JoinEuiFilters.
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<List<string>> JoinEuiFilters
+        {
+            get { return this._joinEuiFilters; }
+            set { this._joinEuiFilters = value; }
+        }
+
+        // Check to see if JoinEuiFilters property is set
+        internal bool IsSetJoinEuiFilters()
+        {
+            return this._joinEuiFilters != null && this._joinEuiFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetIdFilters.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> NetIdFilters
+        {
+            get { return this._netIdFilters; }
+            set { this._netIdFilters = value; }
+        }
+
+        // Check to see if NetIdFilters property is set
+        internal bool IsSetNetIdFilters()
+        {
+            return this._netIdFilters != null && this._netIdFilters.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RfRegion. 
         /// <para>
         /// The frequency band (RFRegion) value.
@@ -71,6 +106,22 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetRfRegion()
         {
             return this._rfRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubBands.
+        /// </summary>
+        [AWSProperty(Min=0, Max=8)]
+        public List<int> SubBands
+        {
+            get { return this._subBands; }
+            set { this._subBands = value; }
+        }
+
+        // Check to see if SubBands property is set
+        internal bool IsSetSubBands()
+        {
+            return this._subBands != null && this._subBands.Count > 0; 
         }
 
     }

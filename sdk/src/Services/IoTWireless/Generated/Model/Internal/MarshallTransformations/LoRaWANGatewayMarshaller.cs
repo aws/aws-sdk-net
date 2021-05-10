@@ -51,10 +51,48 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.GatewayEui);
             }
 
+            if(requestObject.IsSetJoinEuiFilters())
+            {
+                context.Writer.WritePropertyName("JoinEuiFilters");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectJoinEuiFiltersListValue in requestObject.JoinEuiFilters)
+                {
+                    context.Writer.WriteArrayStart();
+                    foreach(var requestObjectJoinEuiFiltersListValueListValue in requestObjectJoinEuiFiltersListValue)
+                    {
+                            context.Writer.Write(requestObjectJoinEuiFiltersListValueListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetNetIdFilters())
+            {
+                context.Writer.WritePropertyName("NetIdFilters");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNetIdFiltersListValue in requestObject.NetIdFilters)
+                {
+                        context.Writer.Write(requestObjectNetIdFiltersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetRfRegion())
             {
                 context.Writer.WritePropertyName("RfRegion");
                 context.Writer.Write(requestObject.RfRegion);
+            }
+
+            if(requestObject.IsSetSubBands())
+            {
+                context.Writer.WritePropertyName("SubBands");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSubBandsListValue in requestObject.SubBands)
+                {
+                        context.Writer.Write(requestObjectSubBandsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

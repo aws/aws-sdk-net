@@ -36,7 +36,9 @@ namespace Amazon.IoTWireless.Model
     {
         private string _description;
         private string _id;
+        private List<List<string>> _joinEuiFilters = new List<List<string>>();
         private string _name;
+        private List<string> _netIdFilters = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -77,6 +79,22 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JoinEuiFilters.
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<List<string>> JoinEuiFilters
+        {
+            get { return this._joinEuiFilters; }
+            set { this._joinEuiFilters = value; }
+        }
+
+        // Check to see if JoinEuiFilters property is set
+        internal bool IsSetJoinEuiFilters()
+        {
+            return this._joinEuiFilters != null && this._joinEuiFilters.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The new name of the resource.
@@ -93,6 +111,22 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetIdFilters.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> NetIdFilters
+        {
+            get { return this._netIdFilters; }
+            set { this._netIdFilters = value; }
+        }
+
+        // Check to see if NetIdFilters property is set
+        internal bool IsSetNetIdFilters()
+        {
+            return this._netIdFilters != null && this._netIdFilters.Count > 0; 
         }
 
     }

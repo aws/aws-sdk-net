@@ -127,7 +127,10 @@ namespace Amazon.IoTWireless.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ResourceId.
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// Id of the not found resource.
+        /// </para>
         /// </summary>
         public string ResourceId
         {
@@ -142,7 +145,10 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType.
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// Type of the font found resource.
+        /// </para>
         /// </summary>
         public string ResourceType
         {

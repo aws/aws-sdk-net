@@ -124,7 +124,10 @@ namespace Amazon.IoTWireless.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ResourceName.
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// Name of the resource that exceeds maximum number of tags allowed.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
         public string ResourceName
