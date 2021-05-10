@@ -30,9 +30,8 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDomain operation.
-    /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">
-    /// <code>DomainDescription</code> </a> object that contains information about the requested
-    /// domain.
+    /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">DomainDescription</a>
+    /// object that contains information about the requested domain.
     /// </summary>
     public partial class DescribeDomainRequest : AmazonCodeArtifactRequest
     {

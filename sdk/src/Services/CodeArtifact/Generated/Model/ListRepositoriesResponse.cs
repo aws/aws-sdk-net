@@ -58,8 +58,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Repositories. 
         /// <para>
-        ///  The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-        /// <code>RepositorySummary</code> </a> objects. 
+        ///  The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+        /// objects. 
         /// </para>
         /// </summary>
         public List<RepositorySummary> Repositories

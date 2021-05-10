@@ -30,9 +30,8 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPackageVersions operation.
-    /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-    /// <code>PackageVersionSummary</code> </a> objects for package versions in a repository
-    /// that match the request parameters.
+    /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+    /// objects for package versions in a repository that match the request parameters.
     /// </summary>
     public partial class ListPackageVersionsRequest : AmazonCodeArtifactRequest
     {

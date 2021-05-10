@@ -58,8 +58,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Packages. 
         /// <para>
-        ///  The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-        /// <code>PackageSummary</code> </a> objects. 
+        ///  The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+        /// objects. 
         /// </para>
         /// </summary>
         public List<PackageSummary> Packages

@@ -36,14 +36,14 @@ namespace Amazon.CodeArtifact.Model
     /// 
     ///  
     /// <para>
-    ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
-    /// <code>ListPackageVersions</code> </a> and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
-    /// <code>status</code> </a> parameter to <code>Disposed</code>. 
+    ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
+    /// and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
+    /// parameter to <code>Disposed</code>. 
     /// </para>
     ///  
     /// <para>
-    ///  To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
-    /// <code>DescribePackageVersion</code> </a>.. 
+    ///  To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>.
+    /// 
     /// </para>
     /// </summary>
     public partial class DisposePackageVersionsRequest : AmazonCodeArtifactRequest

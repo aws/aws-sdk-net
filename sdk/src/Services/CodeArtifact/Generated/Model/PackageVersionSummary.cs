@@ -30,9 +30,8 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Details about a package version, including its status, version, and revision. The
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
-    /// <code>ListPackageVersions</code> </a> operation returns a list of <code>PackageVersionSummary</code>
-    /// objects.
+    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
+    /// operation returns a list of <code>PackageVersionSummary</code> objects.
     /// </summary>
     public partial class PackageVersionSummary
     {

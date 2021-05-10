@@ -908,9 +908,8 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">
-        /// <code>DomainDescription</code> </a> object that contains information about the requested
-        /// domain.
+        /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">DomainDescription</a>
+        /// object that contains information about the requested domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomain service method.</param>
         /// 
@@ -967,9 +966,8 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">
-        /// <code>PackageVersionDescription</code> </a> object that contains information about
-        /// the requested package version.
+        /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
+        /// object that contains information about the requested package version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePackageVersion service method.</param>
         /// 
@@ -1157,14 +1155,14 @@ namespace Amazon.CodeArtifact
         /// 
         ///  
         /// <para>
-        ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
-        /// <code>ListPackageVersions</code> </a> and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
-        /// <code>status</code> </a> parameter to <code>Disposed</code>. 
+        ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
+        /// and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
+        /// parameter to <code>Disposed</code>. 
         /// </para>
         ///  
         /// <para>
-        ///  To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
-        /// <code>DescribePackageVersion</code> </a>.. 
+        ///  To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisposePackageVersions service method.</param>
@@ -1688,9 +1686,8 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-        /// <code>PackageSummary</code> </a> objects for packages in a repository that match the
-        /// request parameters.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+        /// objects for packages in a repository that match the request parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackages service method.</param>
         /// 
@@ -1747,8 +1744,8 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-        /// <code>AssetSummary</code> </a> objects for assets in a package version.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+        /// objects for assets in a package version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersionAssets service method.</param>
         /// 
@@ -1806,12 +1803,11 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns the direct dependencies for a package version. The dependencies are returned
-        /// as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-        /// <code>PackageDependency</code> </a> objects. CodeArtifact extracts the dependencies
-        /// for a package version from the metadata file for the package format (for example,
-        /// the <code>package.json</code> file for npm packages and the <code>pom.xml</code> file
-        /// for Maven). Any package version dependencies that are not listed in the configuration
-        /// file are not returned.
+        /// as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+        /// objects. CodeArtifact extracts the dependencies for a package version from the metadata
+        /// file for the package format (for example, the <code>package.json</code> file for npm
+        /// packages and the <code>pom.xml</code> file for Maven). Any package version dependencies
+        /// that are not listed in the configuration file are not returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersionDependencies service method.</param>
         /// 
@@ -1868,9 +1864,8 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-        /// <code>PackageVersionSummary</code> </a> objects for package versions in a repository
-        /// that match the request parameters.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+        /// objects for package versions in a repository that match the request parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
         /// 
@@ -1927,10 +1922,9 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-        /// <code>RepositorySummary</code> </a> objects. Each <code>RepositorySummary</code> contains
-        /// information about a repository in the specified AWS account and that matches the input
-        /// parameters.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+        /// objects. Each <code>RepositorySummary</code> contains information about a repository
+        /// in the specified AWS account and that matches the input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositories service method.</param>
         /// 
@@ -1983,10 +1977,9 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-        /// <code>RepositorySummary</code> </a> objects. Each <code>RepositorySummary</code> contains
-        /// information about a repository in the specified domain and that matches the input
-        /// parameters.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+        /// objects. Each <code>RepositorySummary</code> contains information about a repository
+        /// in the specified domain and that matches the input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositoriesInDomain service method.</param>
         /// 

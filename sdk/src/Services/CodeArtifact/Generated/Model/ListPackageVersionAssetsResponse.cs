@@ -44,8 +44,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Assets. 
         /// <para>
-        ///  The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-        /// <code>AssetSummary</code> </a> objects. 
+        ///  The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+        /// objects. 
         /// </para>
         /// </summary>
         public List<AssetSummary> Assets

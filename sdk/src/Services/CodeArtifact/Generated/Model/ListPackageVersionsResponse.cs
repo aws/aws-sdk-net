@@ -176,8 +176,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Versions. 
         /// <para>
-        ///  The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-        /// <code>PackageVersionSummary</code> </a> objects. 
+        ///  The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+        /// objects. 
         /// </para>
         /// </summary>
         public List<PackageVersionSummary> Versions
