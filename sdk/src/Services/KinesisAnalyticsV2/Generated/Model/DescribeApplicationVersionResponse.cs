@@ -29,29 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the updated maintenance configuration for the application.
+    /// This is the response object from the DescribeApplicationVersion operation.
     /// </summary>
-    public partial class ApplicationMaintenanceConfigurationUpdate
+    public partial class DescribeApplicationVersionResponse : AmazonWebServiceResponse
     {
-        private string _applicationMaintenanceWindowStartTimeUpdate;
+        private ApplicationDetail _applicationVersionDetail;
 
         /// <summary>
-        /// Gets and sets the property ApplicationMaintenanceWindowStartTimeUpdate. 
-        /// <para>
-        /// The updated start time for the maintenance window.
-        /// </para>
+        /// Gets and sets the property ApplicationVersionDetail.
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=5)]
-        public string ApplicationMaintenanceWindowStartTimeUpdate
+        public ApplicationDetail ApplicationVersionDetail
         {
-            get { return this._applicationMaintenanceWindowStartTimeUpdate; }
-            set { this._applicationMaintenanceWindowStartTimeUpdate = value; }
+            get { return this._applicationVersionDetail; }
+            set { this._applicationVersionDetail = value; }
         }
 
-        // Check to see if ApplicationMaintenanceWindowStartTimeUpdate property is set
-        internal bool IsSetApplicationMaintenanceWindowStartTimeUpdate()
+        // Check to see if ApplicationVersionDetail property is set
+        internal bool IsSetApplicationVersionDetail()
         {
-            return this._applicationMaintenanceWindowStartTimeUpdate != null;
+            return this._applicationVersionDetail != null;
         }
 
     }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the time window for automatic application maintenance.
+    /// The details of the maintenance configuration for the application.
     /// </summary>
     public partial class ApplicationMaintenanceConfigurationDescription
     {
@@ -39,7 +39,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationMaintenanceWindowEndTime. 
         /// <para>
-        /// The end time for the automatic maintenance window.
+        /// The end time for the maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=5)]
@@ -58,7 +58,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationMaintenanceWindowStartTime. 
         /// <para>
-        /// The start time for the automatic maintenance window.
+        /// The start time for the maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=5)]

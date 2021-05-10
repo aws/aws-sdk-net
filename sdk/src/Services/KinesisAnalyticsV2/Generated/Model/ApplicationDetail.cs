@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private ApplicationStatus _applicationStatus;
         private long? _applicationVersionId;
         private long? _applicationVersionRolledBackFrom;
+        private long? _applicationVersionRolledBackTo;
         private long? _applicationVersionUpdatedFrom;
         private List<CloudWatchLoggingOptionDescription> _cloudWatchLoggingOptionDescriptions = new List<CloudWatchLoggingOptionDescription>();
         private string _conditionalToken;
@@ -109,7 +110,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationMaintenanceConfigurationDescription. 
         /// <para>
-        /// Describes the time window for automatic application maintenance.
+        /// The details of the maintenance configuration for the application.
         /// </para>
         /// </summary>
         public ApplicationMaintenanceConfigurationDescription ApplicationMaintenanceConfigurationDescription
@@ -200,6 +201,25 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationVersionRolledBackFrom()
         {
             return this._applicationVersionRolledBackFrom.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationVersionRolledBackTo. 
+        /// <para>
+        /// The version to which you want to roll back the application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=999999999)]
+        public long ApplicationVersionRolledBackTo
+        {
+            get { return this._applicationVersionRolledBackTo.GetValueOrDefault(); }
+            set { this._applicationVersionRolledBackTo = value; }
+        }
+
+        // Check to see if ApplicationVersionRolledBackTo property is set
+        internal bool IsSetApplicationVersionRolledBackTo()
+        {
+            return this._applicationVersionRolledBackTo.HasValue; 
         }
 
         /// <summary>

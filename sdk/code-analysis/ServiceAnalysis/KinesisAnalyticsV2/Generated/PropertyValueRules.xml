@@ -390,6 +390,17 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationVersionRequest.ApplicationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationVersionRequest.ApplicationVersionId</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DiscoverInputSchemaRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
@@ -436,6 +447,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationSnapshotsResponse.NextToken</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationVersionsRequest.ApplicationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationVersionsRequest.Limit</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationVersionsResponse.NextToken</property>
     <min>1</min>
     <max>512</max>
   </property-value-rule>
@@ -543,6 +575,11 @@
     <max>999999999</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ApplicationVersionRolledBackTo</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ApplicationVersionUpdatedFrom</property>
     <min>1</min>
     <max>999999999</max>
@@ -597,6 +634,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationSummary.ApplicationVersionId</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationVersionSummary.ApplicationVersionId</property>
     <min>1</min>
     <max>999999999</max>
   </property-value-rule>

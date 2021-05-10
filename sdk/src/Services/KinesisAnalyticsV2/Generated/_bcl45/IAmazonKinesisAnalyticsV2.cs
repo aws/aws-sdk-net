@@ -1371,6 +1371,70 @@ namespace Amazon.KinesisAnalyticsV2
 
         #endregion
         
+        #region  DescribeApplicationVersion
+
+
+        /// <summary>
+        /// Provides a detailed description of a specified version of the application. To see
+        /// a list of all the versions of an application, invoke the <a>ListApplicationVersions</a>
+        /// operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersion service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicationVersion service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion">REST API Reference for DescribeApplicationVersion Operation</seealso>
+        DescribeApplicationVersionResponse DescribeApplicationVersion(DescribeApplicationVersionRequest request);
+
+
+
+        /// <summary>
+        /// Provides a detailed description of a specified version of the application. To see
+        /// a list of all the versions of an application, invoke the <a>ListApplicationVersions</a>
+        /// operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplicationVersion service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion">REST API Reference for DescribeApplicationVersion Operation</seealso>
+        Task<DescribeApplicationVersionResponse> DescribeApplicationVersionAsync(DescribeApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DiscoverInputSchema
 
 
@@ -1544,6 +1608,80 @@ namespace Amazon.KinesisAnalyticsV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationSnapshots">REST API Reference for ListApplicationSnapshots Operation</seealso>
         Task<ListApplicationSnapshotsResponse> ListApplicationSnapshotsAsync(ListApplicationSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListApplicationVersions
+
+
+        /// <summary>
+        /// Lists all the versions for the specified application, including versions that were
+        /// rolled back. The response also includes a summary of the configuration associated
+        /// with each version.
+        /// 
+        ///  
+        /// <para>
+        /// To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a>
+        /// operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationVersions service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions">REST API Reference for ListApplicationVersions Operation</seealso>
+        ListApplicationVersionsResponse ListApplicationVersions(ListApplicationVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all the versions for the specified application, including versions that were
+        /// rolled back. The response also includes a summary of the configuration associated
+        /// with each version.
+        /// 
+        ///  
+        /// <para>
+        /// To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a>
+        /// operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApplicationVersions service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions">REST API Reference for ListApplicationVersions Operation</seealso>
+        Task<ListApplicationVersionsResponse> ListApplicationVersionsAsync(ListApplicationVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2111,10 +2249,35 @@ namespace Amazon.KinesisAnalyticsV2
 
 
         /// <summary>
-        /// Updates the configuration for the automatic maintenance that Kinesis Data Analytics
-        /// performs on the application. For information about automatic application maintenance,
-        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
+        /// Updates the maintenance configuration of the Kinesis Data Analytics application. 
+        /// 
+        ///  
+        /// <para>
+        /// You can invoke this operation on an application that is in one of the two following
+        /// states: <code>READY</code> or <code>RUNNING</code>. If you invoke it when the application
+        /// is in a state other than these two states, it throws a <code>ResourceInUseException</code>.
+        /// The service makes use of the updated configuration the next time it schedules maintenance
+        /// for the application. If you invoke this operation after the service schedules maintenance,
+        /// the service will apply the configuration update the next time it schedules maintenance
+        /// for the application. This means that you might not see the maintenance configuration
+        /// update applied to the maintenance process that follows a successful invocation of
+        /// this operation, but to the following maintenance process instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// To see the current maintenance configuration of your application, invoke the <a>DescribeApplication</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about application maintenance, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
         /// Data Analytics for Apache Flink Maintenance</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationMaintenanceConfiguration service method.</param>
         /// 
@@ -2143,10 +2306,35 @@ namespace Amazon.KinesisAnalyticsV2
 
 
         /// <summary>
-        /// Updates the configuration for the automatic maintenance that Kinesis Data Analytics
-        /// performs on the application. For information about automatic application maintenance,
-        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
+        /// Updates the maintenance configuration of the Kinesis Data Analytics application. 
+        /// 
+        ///  
+        /// <para>
+        /// You can invoke this operation on an application that is in one of the two following
+        /// states: <code>READY</code> or <code>RUNNING</code>. If you invoke it when the application
+        /// is in a state other than these two states, it throws a <code>ResourceInUseException</code>.
+        /// The service makes use of the updated configuration the next time it schedules maintenance
+        /// for the application. If you invoke this operation after the service schedules maintenance,
+        /// the service will apply the configuration update the next time it schedules maintenance
+        /// for the application. This means that you might not see the maintenance configuration
+        /// update applied to the maintenance process that follows a successful invocation of
+        /// this operation, but to the following maintenance process instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// To see the current maintenance configuration of your application, invoke the <a>DescribeApplication</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about application maintenance, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
         /// Data Analytics for Apache Flink Maintenance</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationMaintenanceConfiguration service method.</param>
         /// <param name="cancellationToken">

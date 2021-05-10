@@ -112,6 +112,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationVersionRolledBackFrom = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ApplicationVersionRolledBackTo", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationVersionRolledBackTo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ApplicationVersionUpdatedFrom", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
