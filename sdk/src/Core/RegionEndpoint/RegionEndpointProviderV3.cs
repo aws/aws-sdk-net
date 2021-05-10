@@ -117,7 +117,9 @@ namespace Amazon.Internal
 
             string serviceEndpoint = RegionName;
 
-            if (!isRegionalized && !string.IsNullOrEmpty(partitionEndpoint))
+            // Use the partition's default endpoint if the service is not regionalized, like Route53, and there is no
+            // endpoint defined for the this service name.
+            if (!isRegionalized && service["endpoints"][serviceEndpoint] == null &&!string.IsNullOrEmpty(partitionEndpoint))
             {
                 serviceEndpoint = partitionEndpoint;
             }
