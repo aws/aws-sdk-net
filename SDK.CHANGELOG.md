@@ -1,3 +1,26 @@
+### 3.7.31.0 (2021-05-10 18:19 UTC)
+* CodeArtifact (3.7.0.18)
+	* Documentation updates for CodeArtifact
+* ConfigService (3.7.3.0)
+	* Adds paginator to multiple APIs: By default, the paginator allows user to iterate over the results and allows the CLI to return up to 1000 results.
+* ECS (3.7.1.3)
+	* This release contains updates for Amazon ECS.
+* EKS (3.7.2.0)
+	* This release updates create-nodegroup and update-nodegroup-config APIs for adding/updating taints on managed nodegroups.
+* IoTWireless (3.7.4.0)
+	* Add three new optional fields to support filtering and configurable sub-band in WirelessGateway APIs. The filtering is for all the RF region supported. The sub-band configuration is only applicable to LoRa gateways of US915 or AU915 RF region.
+* KinesisAnalyticsV2 (3.7.3.0)
+	* Amazon Kinesis Analytics now supports ListApplicationVersions and DescribeApplicationVersion API for Apache Flink applications
+* MediaConvert (3.7.2.0)
+	* AWS Elemental MediaConvert SDK has added support for Kantar SNAP File Audio Watermarking with a Kantar Watermarking account, and Display Definition Segment(DDS) segment data controls for DVB-Sub caption outputs.
+* SimpleSystemsManagement (3.7.3.0)
+	* This release adds new APIs to associate, disassociate and list related items in SSM OpsCenter; and this release adds DisplayName as a version-level attribute for SSM Documents and introduces two new document types: ProblemAnalysis, ProblemAnalysisTemplate.
+* Core 3.7.0.19
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.30.0 (2021-05-07 18:11 UTC)
 * Connect (3.7.2.0)
 	* Adds tagging support for Connect APIs CreateIntegrationAssociation and CreateUseCase.
