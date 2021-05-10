@@ -1,3 +1,20 @@
+### 3.7.31.1 (2021-05-10 21:35 UTC)
+* CloudFront (3.7.1.3)
+	* Updated to use new Core, version 3.7.0.20
+	* Encode additional end-of-line characters in requests for XML-based services
+* Route53 (3.7.0.20)
+	* Updated to use new Core, version 3.7.0.20
+	* Encode additional end-of-line characters in requests for XML-based services
+* S3 (3.7.0.21)
+	* Updated to use new Core, version 3.7.0.20
+	* Encode additional end-of-line characters in requests for XML-based services
+* S3Control (3.7.0.19)
+	* Updated to use new Core, version 3.7.0.20
+	* Encode additional end-of-line characters in requests for XML-based services
+* Core 3.7.0.20
+	* Fixes an issue where leading/trailing space(s) in metadata value causes signature mismatch error while uploading an S3 object; Encode additional end-of-line characters in requests for XML-based services; Add support for fips-aws-global pseudo region
+	* All services packages updated to require new Core
+
 ### 3.7.31.0 (2021-05-10 18:19 UTC)
 * CodeArtifact (3.7.0.18)
 	* Documentation updates for CodeArtifact
