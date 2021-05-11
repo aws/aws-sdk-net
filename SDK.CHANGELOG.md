@@ -1,3 +1,11 @@
+### 3.7.32.0 (2021-05-11 18:34 UTC)
+* S3Control (3.7.0.20)
+	* Documentation updates for Amazon S3-control
+* SSMContacts (3.7.0.0)
+	* AWS Systems Manager Incident Manager enables faster resolution of critical application availability and performance issues, management of contacts and post incident analysis
+* SSMIncidents (3.7.0.0)
+	* AWS Systems Manager Incident Manager enables faster resolution of critical application availability and performance issues, management of contacts and post-incident analysis
+
 ### 3.7.31.1 (2021-05-10 21:35 UTC)
 * CloudFront (3.7.1.3)
 	* Updated to use new Core, version 3.7.0.20

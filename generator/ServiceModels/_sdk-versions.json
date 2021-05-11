@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.31.1",
+    "ProductVersion" : "3.7.32.0",
     "CoreVersion"    : "3.7.0.20",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1194,7 +1194,7 @@
             "InPreview"               : false
         },
         "S3Control"                       : {
-            "Version" : "3.7.0.19",
+            "Version" : "3.7.0.20",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.20"
@@ -2123,6 +2123,22 @@
         },
         "Finspace"                        : {
             "Version" : "3.7.0.4",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.0.20"
+            },
+            "InPreview"               : false
+        },
+        "SSMIncidents"                    : {
+            "Version" : "3.7.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.0.20"
+            },
+            "InPreview"               : false
+        },
+        "SSMContacts"                     : {
+            "Version" : "3.7.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.20"
