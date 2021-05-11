@@ -34,12 +34,12 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// This action deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket
     /// tags, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
-    /// in the <i>Amazon Simple Storage Service API</i>. 
+    /// in the <i>Amazon S3 API Reference</i>. 
     /// </para>
     ///  </note> 
     /// <para>
     /// Deletes the tags from the Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-    /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
+    /// Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>

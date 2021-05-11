@@ -34,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// This action deletes an Amazon S3 on Outposts bucket policy. To delete an S3 bucket
     /// policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html">DeleteBucketPolicy</a>
-    /// in the <i>Amazon Simple Storage Service API</i>. 
+    /// in the <i>Amazon S3 API Reference</i>. 
     /// </para>
     ///  </note> 
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.S3Control.Model
     /// have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the specified
     /// Outposts bucket and belong to the bucket owner's account to use this action. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-    /// Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User Guide</i>.
+    /// Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>

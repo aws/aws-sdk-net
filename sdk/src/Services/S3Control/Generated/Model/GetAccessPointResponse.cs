@@ -142,6 +142,12 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// Contains the virtual private cloud (VPC) configuration for the specified access point.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This element is empty if this access point is an Amazon S3 on Outposts access point
+        /// that is used by other AWS services.
+        /// </para>
+        ///  </note>
         /// </summary>
         public VpcConfiguration VpcConfiguration
         {

@@ -31,8 +31,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Container for the parameters to the CreateAccessPointForObjectLambda operation.
     /// Creates an Object Lambda Access Point. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming
-    /// objects with Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service
-    /// User Guide</i>.
+    /// objects with Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.
     /// 
     ///  
     /// <para>

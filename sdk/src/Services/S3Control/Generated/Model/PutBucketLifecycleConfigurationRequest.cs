@@ -34,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// This action puts a lifecycle configuration to an Amazon S3 on Outposts bucket. To
     /// put a lifecycle configuration to an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
-    /// in the <i>Amazon Simple Storage Service API</i>. 
+    /// in the <i>Amazon S3 API Reference</i>. 
     /// </para>
     ///  </note> 
     /// <para>

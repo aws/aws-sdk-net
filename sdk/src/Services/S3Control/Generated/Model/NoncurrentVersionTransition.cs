@@ -43,7 +43,7 @@ namespace Amazon.S3Control.Model
         /// the associated action. For information about the noncurrent days calculations, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">
         /// How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon
-        /// Simple Storage Service Developer Guide</i>.
+        /// S3 User Guide</i>.
         /// </para>
         /// </summary>
         public int NoncurrentDays

@@ -34,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// This action gets an Amazon S3 on Outposts bucket's lifecycle configuration. To get
     /// an S3 bucket's lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
-    /// in the <i>Amazon Simple Storage Service API</i>. 
+    /// in the <i>Amazon S3 API Reference</i>. 
     /// </para>
     ///  </note> 
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.S3Control.Model
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
     /// Amazon S3 on Outposts</a> and for information about lifecycle configuration, see <a
     /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">
-    /// Object Lifecycle Management</a> in <i>Amazon Simple Storage Service User Guide</i>.
+    /// Object Lifecycle Management</a> in <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>

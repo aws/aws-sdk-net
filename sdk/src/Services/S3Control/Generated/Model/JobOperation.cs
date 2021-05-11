@@ -31,7 +31,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// The operation that you want this job to perform on every object listed in the manifest.
     /// For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a>
-    /// in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// in the <i>Amazon S3 User Guide</i>.
     /// </summary>
     public partial class JobOperation
     {

@@ -33,7 +33,7 @@ namespace Amazon.S3Control.Model
     /// You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3
     /// objects. Batch Operations can run a single action on lists of Amazon S3 objects that
     /// you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
-    /// Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -185,7 +185,7 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The action that you want this job to perform on every object listed in the manifest.
         /// For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a>
-        /// in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

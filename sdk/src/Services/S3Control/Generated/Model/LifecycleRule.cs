@@ -49,7 +49,7 @@ namespace Amazon.S3Control.Model
         /// S3 waits before permanently removing all parts of the upload. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
         /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon
-        /// Simple Storage Service Developer Guide</i>.
+        /// S3 User Guide</i>.
         /// </para>
         /// </summary>
         public AbortIncompleteMultipartUpload AbortIncompleteMultipartUpload
