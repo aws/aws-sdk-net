@@ -1024,6 +1024,10 @@
       <Project>{DC3A5D55-1333-440D-9A0F-CE4841E19E9A}</Project>
       <Name>AWSSDK.SQS.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SSMIncidents/AWSSDK.SSMIncidents.CodeAnalysis.csproj">
+      <Project>{6680B639-338F-4ACA-8021-D44F72D7187A}</Project>
+      <Name>AWSSDK.SSMIncidents.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SSO/AWSSDK.SSO.CodeAnalysis.csproj">
       <Project>{1D5634B9-7F53-48CC-BC00-4CE57AE8457E}</Project>
       <Name>AWSSDK.SSO.CodeAnalysis</Name>
