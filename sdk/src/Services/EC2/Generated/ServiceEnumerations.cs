@@ -7041,6 +7041,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType T4gXlarge = new InstanceType("t4g.xlarge");
         /// <summary>
+        /// Constant U12tb1112xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U12tb1112xlarge = new InstanceType("u-12tb1.112xlarge");
+        /// <summary>
         /// Constant U12tb1Metal for InstanceType
         /// </summary>
         public static readonly InstanceType U12tb1Metal = new InstanceType("u-12tb1.metal");
@@ -7053,9 +7057,21 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType U24tb1Metal = new InstanceType("u-24tb1.metal");
         /// <summary>
+        /// Constant U6tb1112xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U6tb1112xlarge = new InstanceType("u-6tb1.112xlarge");
+        /// <summary>
+        /// Constant U6tb156xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U6tb156xlarge = new InstanceType("u-6tb1.56xlarge");
+        /// <summary>
         /// Constant U6tb1Metal for InstanceType
         /// </summary>
         public static readonly InstanceType U6tb1Metal = new InstanceType("u-6tb1.metal");
+        /// <summary>
+        /// Constant U9tb1112xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U9tb1112xlarge = new InstanceType("u-9tb1.112xlarge");
         /// <summary>
         /// Constant U9tb1Metal for InstanceType
         /// </summary>
