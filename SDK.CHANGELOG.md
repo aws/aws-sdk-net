@@ -1,3 +1,12 @@
+### 3.7.33.0 (2021-05-12 18:11 UTC)
+* EC2 (3.7.6.0)
+	* High Memory virtual instances are powered by Intel Sky Lake CPUs and offer up to 12TB of memory.
+* Core 3.7.0.21
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.32.0 (2021-05-11 18:34 UTC)
 * S3Control (3.7.0.20)
 	* Documentation updates for Amazon S3-control
