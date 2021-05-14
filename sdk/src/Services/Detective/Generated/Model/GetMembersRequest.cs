@@ -41,7 +41,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property AccountIds. 
         /// <para>
         /// The list of AWS account identifiers for the member account for which to return member
-        /// details.
+        /// details. You can request details for up to 50 member accounts at a time.
         /// </para>
         ///  
         /// <para>

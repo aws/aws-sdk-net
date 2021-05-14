@@ -45,7 +45,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property AccountIds. 
         /// <para>
         /// The list of AWS account identifiers for the member accounts to delete from the behavior
-        /// graph.
+        /// graph. You can delete up to 50 member accounts at a time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

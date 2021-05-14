@@ -38,7 +38,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag values that are assigned to the behavior graph.
+        /// The tag values that are assigned to the behavior graph. The request returns up to
+        /// 50 tag values.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

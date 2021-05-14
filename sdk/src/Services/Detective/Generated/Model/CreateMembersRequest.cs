@@ -73,8 +73,8 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property Accounts. 
         /// <para>
         /// The list of AWS accounts to invite to become member accounts in the behavior graph.
-        /// For each invited account, the account list contains the account identifier and the
-        /// AWS account root user email address.
+        /// You can invite up to 50 accounts at a time. For each invited account, the account
+        /// list contains the account identifier and the AWS account root user email address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

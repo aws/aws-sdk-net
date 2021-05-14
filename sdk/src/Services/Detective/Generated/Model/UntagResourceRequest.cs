@@ -59,7 +59,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The tag keys of the tags to remove from the behavior graph.
+        /// The tag keys of the tags to remove from the behavior graph. You can remove up to 50
+        /// tags at a time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
