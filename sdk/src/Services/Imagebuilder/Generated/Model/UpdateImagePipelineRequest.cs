@@ -30,8 +30,16 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateImagePipeline operation.
-    /// Updates a new image pipeline. Image pipelines enable you to automate the creation
-    /// and distribution of images.
+    /// Updates an image pipeline. Image pipelines enable you to automate the creation and
+    /// distribution of images.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// UpdateImagePipeline does not support selective updates for the pipeline. You must
+    /// specify all of the required properties in the update request, not just the properties
+    /// that have changed.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateImagePipelineRequest : AmazonImagebuilderRequest
     {

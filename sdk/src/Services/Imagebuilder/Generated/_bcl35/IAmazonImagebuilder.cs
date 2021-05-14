@@ -363,7 +363,8 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Creates a new image. This request will create a new image along with all of the configured
-        /// output resources defined in the distribution configuration.
+        /// output resources defined in the distribution configuration. You must specify exactly
+        /// one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
         /// 
@@ -3117,8 +3118,16 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates a new image pipeline. Image pipelines enable you to automate the creation
-        /// and distribution of images.
+        /// Updates an image pipeline. Image pipelines enable you to automate the creation and
+        /// distribution of images.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// UpdateImagePipeline does not support selective updates for the pipeline. You must
+        /// specify all of the required properties in the update request, not just the properties
+        /// that have changed.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateImagePipeline service method.</param>
         /// 
