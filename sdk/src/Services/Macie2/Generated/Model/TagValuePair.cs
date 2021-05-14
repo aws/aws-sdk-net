@@ -29,8 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies a tag key or tag key and value pair to use in a tag-based condition for
-    /// a classification job.
+    /// Specifies a tag key or tag key and value pair to use in a tag-based condition that
+    /// determines whether an S3 object is included or excluded from a classification job.
+    /// Tag keys and values are case sensitive. Also, Amazon Macie doesn't support use of
+    /// partial values or wildcard characters in tag-based conditions.
     /// </summary>
     public partial class TagValuePair
     {

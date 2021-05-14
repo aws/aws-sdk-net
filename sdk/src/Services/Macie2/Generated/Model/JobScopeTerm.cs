@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies a property- or tag-based condition that defines criteria for including or
-    /// excluding objects from a classification job.
+    /// excluding S3 objects from a classification job.
     /// </summary>
     public partial class JobScopeTerm
     {
@@ -41,7 +41,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property SimpleScopeTerm. 
         /// <para>
         /// A property-based condition that defines a property, operator, and one or more values
-        /// for including or excluding an object from the job.
+        /// for including or excluding objects from the job.
         /// </para>
         /// </summary>
         public SimpleScopeTerm SimpleScopeTerm
@@ -60,7 +60,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property TagScopeTerm. 
         /// <para>
         /// A tag-based condition that defines the operator and tag keys or tag key and value
-        /// pairs for including or excluding an object from the job.
+        /// pairs for including or excluding objects from the job.
         /// </para>
         /// </summary>
         public TagScopeTerm TagScopeTerm

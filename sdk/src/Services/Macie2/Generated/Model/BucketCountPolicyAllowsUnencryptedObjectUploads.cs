@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about the number of S3 buckets whose bucket policies do and don't
+    /// Provides information about the number of S3 buckets whose bucket policies do or don't
     /// require server-side encryption of objects when objects are uploaded to the buckets.
     /// </summary>
     public partial class BucketCountPolicyAllowsUnencryptedObjectUploads

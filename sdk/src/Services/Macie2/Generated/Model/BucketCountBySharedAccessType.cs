@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about the number of S3 buckets that are and aren't shared with
+    /// Provides information about the number of S3 buckets that are or aren't shared with
     /// other AWS accounts.
     /// </summary>
     public partial class BucketCountBySharedAccessType

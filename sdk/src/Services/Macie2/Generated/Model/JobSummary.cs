@@ -34,6 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class JobSummary
     {
+        private S3BucketCriteriaForJob _bucketCriteria;
         private List<S3BucketDefinitionForJob> _bucketDefinitions = new List<S3BucketDefinitionForJob>();
         private DateTime? _createdAt;
         private string _jobId;
@@ -44,9 +45,33 @@ namespace Amazon.Macie2.Model
         private UserPausedDetails _userPausedDetails;
 
         /// <summary>
+        /// Gets and sets the property BucketCriteria. 
+        /// <para>
+        /// The property- and tag-based conditions that determine which S3 buckets are included
+        /// or excluded from the job's analysis. Each time the job runs, the job uses these criteria
+        /// to determine which buckets to analyze. A job's definition can contain a bucketCriteria
+        /// object or a bucketDefinitions array, not both.
+        /// </para>
+        /// </summary>
+        public S3BucketCriteriaForJob BucketCriteria
+        {
+            get { return this._bucketCriteria; }
+            set { this._bucketCriteria = value; }
+        }
+
+        // Check to see if BucketCriteria property is set
+        internal bool IsSetBucketCriteria()
+        {
+            return this._bucketCriteria != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BucketDefinitions. 
         /// <para>
-        /// The S3 buckets that the job is configured to analyze.
+        /// An array of objects, one for each AWS account that owns specific S3 buckets for the
+        /// job to analyze. Each object specifies the account ID for an account and one or more
+        /// buckets to analyze for that account. A job's definition can contain a bucketDefinitions
+        /// array or a bucketCriteria object, not both.
         /// </para>
         /// </summary>
         public List<S3BucketDefinitionForJob> BucketDefinitions

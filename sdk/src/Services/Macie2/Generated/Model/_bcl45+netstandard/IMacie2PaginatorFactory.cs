@@ -69,5 +69,10 @@ namespace Amazon.Macie2.Model
         /// Paginator for ListOrganizationAdminAccounts operation
         ///</summary>
         IListOrganizationAdminAccountsPaginator ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchResources operation
+        ///</summary>
+        ISearchResourcesPaginator SearchResources(SearchResourcesRequest request);
     }
 }

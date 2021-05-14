@@ -106,5 +106,13 @@ namespace Amazon.Macie2.Model
         {
             return new ListOrganizationAdminAccountsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for SearchResources operation
+        ///</summary>
+        public ISearchResourcesPaginator SearchResources(SearchResourcesRequest request) 
+        {
+            return new SearchResourcesPaginator(this.client, request);
+        }
     }
 }

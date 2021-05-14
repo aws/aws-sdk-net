@@ -30,8 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies one or more property- and tag-based conditions that define criteria for
-    /// including or excluding objects from a classification job. If you specify more than
-    /// one condition, Amazon Macie uses an AND operator to join the conditions.
+    /// including or excluding S3 objects from a classification job.
     /// </summary>
     public partial class JobScopingBlock
     {
@@ -41,7 +40,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property And. 
         /// <para>
         /// An array of conditions, one for each condition that determines which objects to include
-        /// or exclude from the job.
+        /// or exclude from the job. If you specify more than one condition, Amazon Macie uses
+        /// AND logic to join the conditions.
         /// </para>
         /// </summary>
         public List<JobScopeTerm> And

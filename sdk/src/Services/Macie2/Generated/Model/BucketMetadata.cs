@@ -428,13 +428,14 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SizeInBytesCompressed. 
         /// <para>
-        /// The total compressed storage size, in bytes, of the bucket.
+        /// The total storage size, in bytes, of the objects that are compressed (.gz, .gzip,
+        /// .zip) files in the bucket.
         /// </para>
         ///  
         /// <para>
         /// If versioning is enabled for the bucket, Macie calculates this value based on the
-        /// size of the latest version of each object in the bucket. This value doesn't reflect
-        /// the storage size of all versions of each object in the bucket.
+        /// size of the latest version of each applicable object in the bucket. This value doesn't
+        /// reflect the storage size of all versions of each applicable object in the bucket.
         /// </para>
         /// </summary>
         public long SizeInBytesCompressed

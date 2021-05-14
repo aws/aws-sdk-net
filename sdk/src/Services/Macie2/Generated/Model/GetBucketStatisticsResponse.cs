@@ -107,7 +107,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountByObjectEncryptionRequirement. 
         /// <para>
-        /// The total number of buckets whose bucket policies do and don't require server-side
+        /// The total number of buckets whose bucket policies do or don't require server-side
         /// encryption of objects when objects are uploaded to the buckets.
         /// </para>
         /// </summary>
@@ -126,7 +126,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountBySharedAccessType. 
         /// <para>
-        /// The total number of buckets that are and aren't shared with another AWS account.
+        /// The total number of buckets that are or aren't shared with another AWS account.
         /// </para>
         /// </summary>
         public BucketCountBySharedAccessType BucketCountBySharedAccessType
@@ -252,13 +252,15 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SizeInBytesCompressed. 
         /// <para>
-        /// The total compressed storage size, in bytes, of the buckets.
+        /// The total storage size, in bytes, of the objects that are compressed (.gz, .gzip,
+        /// .zip) files in the buckets.
         /// </para>
         ///  
         /// <para>
         /// If versioning is enabled for any of the buckets, Macie calculates this value based
-        /// on the size of the latest version of each object in those buckets. This value doesn't
-        /// reflect the storage size of all versions of the objects in the buckets.
+        /// on the size of the latest version of each applicable object in those buckets. This
+        /// value doesn't reflect the storage size of all versions of the applicable objects in
+        /// the buckets.
         /// </para>
         /// </summary>
         public long SizeInBytesCompressed

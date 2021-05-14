@@ -3118,6 +3118,68 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  SearchResources
+
+        internal virtual SearchResourcesResponse SearchResources(SearchResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchResourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves (queries) statistical data and other information about AWS resources that
+        /// Amazon Macie monitors and analyzes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchResources service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources">REST API Reference for SearchResources Operation</seealso>
+        public virtual Task<SearchResourcesResponse> SearchResourcesAsync(SearchResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)

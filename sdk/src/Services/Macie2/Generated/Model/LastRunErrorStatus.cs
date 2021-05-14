@@ -30,9 +30,9 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies whether any account- or bucket-level access errors occurred when a classification
-    /// job ran. For example, the job is configured to analyze data for a member account that
-    /// was suspended, or the job is configured to analyze an S3 bucket that Amazon Macie
-    /// isn't allowed to access.
+    /// job ran. For information about using logging data to investigate these errors, see
+    /// <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-monitor-cw-logs.html">Monitoring
+    /// sensitive data discovery jobs</a> in the <i>Amazon Macie User Guide</i>.
     /// </summary>
     public partial class LastRunErrorStatus
     {

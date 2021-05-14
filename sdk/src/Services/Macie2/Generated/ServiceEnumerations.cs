@@ -1509,6 +1509,172 @@ namespace Amazon.Macie2
 
 
     /// <summary>
+    /// Constants used for properties of type SearchResourcesComparator.
+    /// </summary>
+    public class SearchResourcesComparator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQ for SearchResourcesComparator
+        /// </summary>
+        public static readonly SearchResourcesComparator EQ = new SearchResourcesComparator("EQ");
+        /// <summary>
+        /// Constant NE for SearchResourcesComparator
+        /// </summary>
+        public static readonly SearchResourcesComparator NE = new SearchResourcesComparator("NE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchResourcesComparator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchResourcesComparator FindValue(string value)
+        {
+            return FindValue<SearchResourcesComparator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchResourcesComparator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchResourcesSimpleCriterionKey.
+    /// </summary>
+    public class SearchResourcesSimpleCriterionKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for SearchResourcesSimpleCriterionKey
+        /// </summary>
+        public static readonly SearchResourcesSimpleCriterionKey ACCOUNT_ID = new SearchResourcesSimpleCriterionKey("ACCOUNT_ID");
+        /// <summary>
+        /// Constant S3_BUCKET_EFFECTIVE_PERMISSION for SearchResourcesSimpleCriterionKey
+        /// </summary>
+        public static readonly SearchResourcesSimpleCriterionKey S3_BUCKET_EFFECTIVE_PERMISSION = new SearchResourcesSimpleCriterionKey("S3_BUCKET_EFFECTIVE_PERMISSION");
+        /// <summary>
+        /// Constant S3_BUCKET_NAME for SearchResourcesSimpleCriterionKey
+        /// </summary>
+        public static readonly SearchResourcesSimpleCriterionKey S3_BUCKET_NAME = new SearchResourcesSimpleCriterionKey("S3_BUCKET_NAME");
+        /// <summary>
+        /// Constant S3_BUCKET_SHARED_ACCESS for SearchResourcesSimpleCriterionKey
+        /// </summary>
+        public static readonly SearchResourcesSimpleCriterionKey S3_BUCKET_SHARED_ACCESS = new SearchResourcesSimpleCriterionKey("S3_BUCKET_SHARED_ACCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchResourcesSimpleCriterionKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchResourcesSimpleCriterionKey FindValue(string value)
+        {
+            return FindValue<SearchResourcesSimpleCriterionKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchResourcesSimpleCriterionKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchResourcesSortAttributeName.
+    /// </summary>
+    public class SearchResourcesSortAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for SearchResourcesSortAttributeName
+        /// </summary>
+        public static readonly SearchResourcesSortAttributeName ACCOUNT_ID = new SearchResourcesSortAttributeName("ACCOUNT_ID");
+        /// <summary>
+        /// Constant RESOURCE_NAME for SearchResourcesSortAttributeName
+        /// </summary>
+        public static readonly SearchResourcesSortAttributeName RESOURCE_NAME = new SearchResourcesSortAttributeName("RESOURCE_NAME");
+        /// <summary>
+        /// Constant S3_CLASSIFIABLE_OBJECT_COUNT for SearchResourcesSortAttributeName
+        /// </summary>
+        public static readonly SearchResourcesSortAttributeName S3_CLASSIFIABLE_OBJECT_COUNT = new SearchResourcesSortAttributeName("S3_CLASSIFIABLE_OBJECT_COUNT");
+        /// <summary>
+        /// Constant S3_CLASSIFIABLE_SIZE_IN_BYTES for SearchResourcesSortAttributeName
+        /// </summary>
+        public static readonly SearchResourcesSortAttributeName S3_CLASSIFIABLE_SIZE_IN_BYTES = new SearchResourcesSortAttributeName("S3_CLASSIFIABLE_SIZE_IN_BYTES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchResourcesSortAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchResourcesSortAttributeName FindValue(string value)
+        {
+            return FindValue<SearchResourcesSortAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchResourcesSortAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SensitiveDataItemCategory.
     /// </summary>
     public class SensitiveDataItemCategory : ConstantClass
@@ -1672,6 +1838,64 @@ namespace Amazon.Macie2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SharedAccess(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SimpleCriterionKeyForJob.
+    /// </summary>
+    public class SimpleCriterionKeyForJob : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for SimpleCriterionKeyForJob
+        /// </summary>
+        public static readonly SimpleCriterionKeyForJob ACCOUNT_ID = new SimpleCriterionKeyForJob("ACCOUNT_ID");
+        /// <summary>
+        /// Constant S3_BUCKET_EFFECTIVE_PERMISSION for SimpleCriterionKeyForJob
+        /// </summary>
+        public static readonly SimpleCriterionKeyForJob S3_BUCKET_EFFECTIVE_PERMISSION = new SimpleCriterionKeyForJob("S3_BUCKET_EFFECTIVE_PERMISSION");
+        /// <summary>
+        /// Constant S3_BUCKET_NAME for SimpleCriterionKeyForJob
+        /// </summary>
+        public static readonly SimpleCriterionKeyForJob S3_BUCKET_NAME = new SimpleCriterionKeyForJob("S3_BUCKET_NAME");
+        /// <summary>
+        /// Constant S3_BUCKET_SHARED_ACCESS for SimpleCriterionKeyForJob
+        /// </summary>
+        public static readonly SimpleCriterionKeyForJob S3_BUCKET_SHARED_ACCESS = new SimpleCriterionKeyForJob("S3_BUCKET_SHARED_ACCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SimpleCriterionKeyForJob(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SimpleCriterionKeyForJob FindValue(string value)
+        {
+            return FindValue<SimpleCriterionKeyForJob>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SimpleCriterionKeyForJob(string value)
         {
             return FindValue(value);
         }

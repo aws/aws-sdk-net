@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies a property-based condition that determines whether an object is included
+    /// Specifies a property-based condition that determines whether an S3 object is included
     /// or excluded from a classification job.
     /// </summary>
     public partial class SimpleScopeTerm
@@ -131,13 +131,13 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// TAG - A string that represents a tag key for an object. For advanced options, use
-        /// a TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
-        /// condition for the job.
+        /// a TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based condition
+        /// for the job.
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// Macie doesn't support use of wildcard characters in values. Also, string values are
-        /// case sensitive.
+        /// Macie doesn't support use of wildcard characters in these values. Also, string values
+        /// are case sensitive.
         /// </para>
         /// </summary>
         public List<string> Values

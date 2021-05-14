@@ -389,5 +389,44 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             paginator.Responses.ToList();
         }
 
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Macie2")]
+        public void SearchResourcesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchResourcesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<SearchResourcesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<SearchResourcesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.SearchResources(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.SearchResources(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Macie2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void SearchResourcesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchResourcesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<SearchResourcesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.SearchResources(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.SearchResources(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
     }
 }

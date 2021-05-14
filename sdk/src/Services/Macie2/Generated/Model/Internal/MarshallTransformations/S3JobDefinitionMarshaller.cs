@@ -45,6 +45,17 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3JobDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBucketCriteria())
+            {
+                context.Writer.WritePropertyName("bucketCriteria");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3BucketCriteriaForJobMarshaller.Instance;
+                marshaller.Marshall(requestObject.BucketCriteria, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBucketDefinitions())
             {
                 context.Writer.WritePropertyName("bucketDefinitions");

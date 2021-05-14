@@ -30,19 +30,46 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies which S3 buckets contain the objects that a classification job analyzes,
-    /// and the scope of that analysis.
+    /// and the scope of that analysis. The bucket specification can be static (bucketDefinitions)
+    /// or dynamic (bucketCriteria). If it's static, the job analyzes objects in the same
+    /// predefined set of buckets each time the job runs. If it's dynamic, the job analyzes
+    /// objects in any buckets that match the specified criteria each time the job starts
+    /// to run.
     /// </summary>
     public partial class S3JobDefinition
     {
+        private S3BucketCriteriaForJob _bucketCriteria;
         private List<S3BucketDefinitionForJob> _bucketDefinitions = new List<S3BucketDefinitionForJob>();
         private Scoping _scoping;
 
         /// <summary>
+        /// Gets and sets the property BucketCriteria. 
+        /// <para>
+        /// The property- and tag-based conditions that determine which S3 buckets to include
+        /// or exclude from the analysis. Each time the job runs, the job uses these criteria
+        /// to determine which buckets contain objects to analyze. A job's definition can contain
+        /// a bucketCriteria object or a bucketDefinitions array, not both.
+        /// </para>
+        /// </summary>
+        public S3BucketCriteriaForJob BucketCriteria
+        {
+            get { return this._bucketCriteria; }
+            set { this._bucketCriteria = value; }
+        }
+
+        // Check to see if BucketCriteria property is set
+        internal bool IsSetBucketCriteria()
+        {
+            return this._bucketCriteria != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BucketDefinitions. 
         /// <para>
-        /// An array of objects, one for each AWS account that owns buckets to analyze. Each object
-        /// specifies the account ID for an account and one or more buckets to analyze for the
-        /// account.
+        /// An array of objects, one for each AWS account that owns specific S3 buckets to analyze.
+        /// Each object specifies the account ID for an account and one or more buckets to analyze
+        /// for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria
+        /// object, not both.
         /// </para>
         /// </summary>
         public List<S3BucketDefinitionForJob> BucketDefinitions
@@ -60,8 +87,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Scoping. 
         /// <para>
-        /// The property- and tag-based conditions that determine which objects to include or
-        /// exclude from the analysis.
+        /// The property- and tag-based conditions that determine which S3 objects to include
+        /// or exclude from the analysis. Each time the job runs, the job uses these criteria
+        /// to determine which objects to analyze.
         /// </para>
         /// </summary>
         public Scoping Scoping
