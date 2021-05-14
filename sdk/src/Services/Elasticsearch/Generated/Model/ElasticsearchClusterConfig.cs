@@ -34,6 +34,7 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class ElasticsearchClusterConfig
     {
+        private ColdStorageOptions _coldStorageOptions;
         private int? _dedicatedMasterCount;
         private bool? _dedicatedMasterEnabled;
         private ESPartitionInstanceType _dedicatedMasterType;
@@ -44,6 +45,24 @@ namespace Amazon.Elasticsearch.Model
         private ESWarmPartitionInstanceType _warmType;
         private ZoneAwarenessConfig _zoneAwarenessConfig;
         private bool? _zoneAwarenessEnabled;
+
+        /// <summary>
+        /// Gets and sets the property ColdStorageOptions. 
+        /// <para>
+        /// Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+        /// </para>
+        /// </summary>
+        public ColdStorageOptions ColdStorageOptions
+        {
+            get { return this._coldStorageOptions; }
+            set { this._coldStorageOptions = value; }
+        }
+
+        // Check to see if ColdStorageOptions property is set
+        internal bool IsSetColdStorageOptions()
+        {
+            return this._coldStorageOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DedicatedMasterCount. 

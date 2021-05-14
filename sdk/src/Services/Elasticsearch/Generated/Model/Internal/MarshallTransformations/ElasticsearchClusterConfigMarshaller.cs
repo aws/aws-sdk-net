@@ -45,6 +45,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ElasticsearchClusterConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetColdStorageOptions())
+            {
+                context.Writer.WritePropertyName("ColdStorageOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ColdStorageOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColdStorageOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDedicatedMasterCount())
             {
                 context.Writer.WritePropertyName("DedicatedMasterCount");

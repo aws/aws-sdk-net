@@ -64,6 +64,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ColdStorageOptions", targetDepth))
+                {
+                    var unmarshaller = ColdStorageOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ColdStorageOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DedicatedMasterCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
