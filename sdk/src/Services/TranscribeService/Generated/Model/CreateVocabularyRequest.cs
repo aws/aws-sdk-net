@@ -43,7 +43,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the vocabulary entries.
+        /// The language code of the vocabulary entries. For a list of languages and their corresponding
+        /// language codes, see <a>what-is-transcribe</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,7 +92,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about custom vocabularies, see <a href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+        /// For more information about custom vocabularies, see <a href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
         /// Vocabularies</a>.
         /// </para>
         /// </summary>

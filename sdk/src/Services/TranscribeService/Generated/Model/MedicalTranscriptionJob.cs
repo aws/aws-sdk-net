@@ -34,6 +34,7 @@ namespace Amazon.TranscribeService.Model
     public partial class MedicalTranscriptionJob
     {
         private DateTime? _completionTime;
+        private MedicalContentIdentificationType _contentIdentificationType;
         private DateTime? _creationTime;
         private string _failureReason;
         private LanguageCode _languageCode;
@@ -64,6 +65,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetCompletionTime()
         {
             return this._completionTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentIdentificationType. 
+        /// <para>
+        /// Shows the type of content that you've configured Amazon Transcribe Medical to identify
+        /// in a transcription job. If the value is <code>PHI</code>, you've configured the job
+        /// to identify personal health information (PHI) in the transcription output.
+        /// </para>
+        /// </summary>
+        public MedicalContentIdentificationType ContentIdentificationType
+        {
+            get { return this._contentIdentificationType; }
+            set { this._contentIdentificationType = value; }
+        }
+
+        // Check to see if ContentIdentificationType property is set
+        internal bool IsSetContentIdentificationType()
+        {
+            return this._contentIdentificationType != null;
         }
 
         /// <summary>

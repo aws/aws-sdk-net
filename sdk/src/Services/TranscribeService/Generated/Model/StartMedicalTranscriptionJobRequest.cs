@@ -34,6 +34,7 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class StartMedicalTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
+        private MedicalContentIdentificationType _contentIdentificationType;
         private LanguageCode _languageCode;
         private Media _media;
         private MediaFormat _mediaFormat;
@@ -45,6 +46,26 @@ namespace Amazon.TranscribeService.Model
         private MedicalTranscriptionSetting _settings;
         private Specialty _specialty;
         private Type _type;
+
+        /// <summary>
+        /// Gets and sets the property ContentIdentificationType. 
+        /// <para>
+        /// You can configure Amazon Transcribe Medical to label content in the transcription
+        /// output. If you specify <code>PHI</code>, Amazon Transcribe Medical labels the personal
+        /// health information (PHI) that it identifies in the transcription output.
+        /// </para>
+        /// </summary>
+        public MedicalContentIdentificationType ContentIdentificationType
+        {
+            get { return this._contentIdentificationType; }
+            set { this._contentIdentificationType = value; }
+        }
+
+        // Check to see if ContentIdentificationType property is set
+        internal bool IsSetContentIdentificationType()
+        {
+            return this._contentIdentificationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 
