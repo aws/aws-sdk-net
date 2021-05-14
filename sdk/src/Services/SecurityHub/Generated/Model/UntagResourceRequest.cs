@@ -59,7 +59,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The tag keys associated with the tags to remove from the resource.
+        /// The tag keys associated with the tags to remove from the resource. You can remove
+        /// up to 50 tags at a time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
