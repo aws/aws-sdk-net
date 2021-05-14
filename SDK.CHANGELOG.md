@@ -1,3 +1,26 @@
+### 3.7.34.0 (2021-05-14 18:18 UTC)
+* CloudWatchEvents (3.7.2.0)
+	* Update InputTransformer variable limit from 10 to 100 variables.
+* Detective (3.7.2.8)
+	* Updated descriptions of array parameters to add the restrictions on the array and value lengths.
+* Elasticsearch (3.7.1.0)
+	* Adds support for cold storage.
+* EventBridge (3.7.2.0)
+	* Update InputTransformer variable limit from 10 to 100 variables.
+* Imagebuilder (3.7.1.14)
+	* Text-only updates for bundled documentation feedback tickets - spring 2021.
+* Macie2 (3.7.2.0)
+	* This release of the Amazon Macie API adds support for defining run-time, S3 bucket criteria for classification jobs. It also adds resources for querying data about AWS resources that Macie monitors.
+* SecurityHub (3.7.2.5)
+	* Updated descriptions to add notes on array lengths.
+* TranscribeService (3.7.3.0)
+	* Transcribe Medical now supports identification of PHI entities within transcripts
+* Core 3.7.0.22
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.33.0 (2021-05-12 18:11 UTC)
 * EC2 (3.7.6.0)
 	* High Memory virtual instances are powered by Intel Sky Lake CPUs and offer up to 12TB of memory.
