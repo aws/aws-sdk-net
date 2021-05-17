@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AugmentedAIRuntime.Model
 {
     /// <summary>
-    /// We couldn't find the requested resource.
+    /// We couldn't find the requested resource. Check that your resources exists and were
+    /// created in the same AWS Region as your request, and try your request again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

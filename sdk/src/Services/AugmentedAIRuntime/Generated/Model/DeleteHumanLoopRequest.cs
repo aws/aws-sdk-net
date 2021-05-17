@@ -31,6 +31,12 @@ namespace Amazon.AugmentedAIRuntime.Model
     /// <summary>
     /// Container for the parameters to the DeleteHumanLoop operation.
     /// Deletes the specified human loop for a flow definition.
+    /// 
+    ///  
+    /// <para>
+    /// If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>.
+    /// 
+    /// </para>
     /// </summary>
     public partial class DeleteHumanLoopRequest : AmazonAugmentedAIRuntimeRequest
     {

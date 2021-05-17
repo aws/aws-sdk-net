@@ -66,6 +66,11 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <para>
         /// A failure code that identifies the type of failure.
         /// </para>
+        ///  
+        /// <para>
+        /// Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+        /// 
+        /// </para>
         /// </summary>
         public string FailureCode
         {

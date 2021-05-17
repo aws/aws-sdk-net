@@ -30,7 +30,8 @@ namespace Amazon.AugmentedAIRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHumanLoop operation.
-    /// Returns information about the specified human loop.
+    /// Returns information about the specified human loop. If the human loop was deleted,
+    /// this operation will return a <code>ResourceNotFoundException</code> error.
     /// </summary>
     public partial class DescribeHumanLoopRequest : AmazonAugmentedAIRuntimeRequest
     {
