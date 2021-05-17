@@ -100,6 +100,10 @@
       <Project>{E016F5A7-11FD-4EEC-9FCF-47F95A920CE5}</Project>
       <Name>AWSSDK.ApplicationAutoScaling.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ApplicationCostProfiler/AWSSDK.ApplicationCostProfiler.CodeAnalysis.csproj">
+      <Project>{6BCAAFDE-31E0-46AD-8004-00ADDF70944E}</Project>
+      <Name>AWSSDK.ApplicationCostProfiler.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ApplicationDiscoveryService/AWSSDK.ApplicationDiscoveryService.CodeAnalysis.csproj">
       <Project>{D0A3A036-D542-4A77-8119-8E98B034E211}</Project>
       <Name>AWSSDK.ApplicationDiscoveryService.CodeAnalysis</Name>

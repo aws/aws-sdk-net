@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "APIs for AWS Application Cost Profiler.",
+  "generate-client-constructors": true
+}

@@ -109,6 +109,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.
 * [AWSSDK.ApplicationAutoScaling](https://www.nuget.org/packages/AWSSDK.ApplicationAutoScaling/)
 	* Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Amazon EC2 Auto Scaling.
+* [AWSSDK.ApplicationCostProfiler](https://www.nuget.org/packages/AWSSDK.ApplicationCostProfiler/)
+	* APIs for AWS Application Cost Profiler.
 * [AWSSDK.ApplicationDiscoveryService](https://www.nuget.org/packages/AWSSDK.ApplicationDiscoveryService/)
 	* AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.
 * [AWSSDK.ApplicationInsights](https://www.nuget.org/packages/AWSSDK.ApplicationInsights/)
