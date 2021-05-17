@@ -111,6 +111,22 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxLatency);
                 }
 
+                if(publicRequest.IsSetMediaStreamOutputConfigurations())
+                {
+                    context.Writer.WritePropertyName("mediaStreamOutputConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMediaStreamOutputConfigurationsListValue in publicRequest.MediaStreamOutputConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MediaStreamOutputConfigurationRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMediaStreamOutputConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMinLatency())
                 {
                     context.Writer.WritePropertyName("minLatency");

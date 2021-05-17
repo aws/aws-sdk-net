@@ -100,6 +100,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.IngestPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mediaStreamSourceConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MediaStreamSourceConfiguration, MediaStreamSourceConfigurationUnmarshaller>(MediaStreamSourceConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.MediaStreamSourceConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

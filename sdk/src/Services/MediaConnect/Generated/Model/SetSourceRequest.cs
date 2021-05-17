@@ -39,6 +39,8 @@ namespace Amazon.MediaConnect.Model
         private int? _ingestPort;
         private int? _maxBitrate;
         private int? _maxLatency;
+        private int? _maxSyncBuffer;
+        private List<MediaStreamSourceConfigurationRequest> _mediaStreamSourceConfigurations = new List<MediaStreamSourceConfigurationRequest>();
         private int? _minLatency;
         private string _name;
         private Protocol _protocol;
@@ -141,6 +143,38 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMaxLatency()
         {
             return this._maxLatency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxSyncBuffer. The size of the buffer (in milliseconds)
+        /// to use to sync incoming source data.
+        /// </summary>
+        public int MaxSyncBuffer
+        {
+            get { return this._maxSyncBuffer.GetValueOrDefault(); }
+            set { this._maxSyncBuffer = value; }
+        }
+
+        // Check to see if MaxSyncBuffer property is set
+        internal bool IsSetMaxSyncBuffer()
+        {
+            return this._maxSyncBuffer.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaStreamSourceConfigurations. The media streams that
+        /// are associated with the source, and the parameters for those associations.
+        /// </summary>
+        public List<MediaStreamSourceConfigurationRequest> MediaStreamSourceConfigurations
+        {
+            get { return this._mediaStreamSourceConfigurations; }
+            set { this._mediaStreamSourceConfigurations = value; }
+        }
+
+        // Check to see if MediaStreamSourceConfigurations property is set
+        internal bool IsSetMediaStreamSourceConfigurations()
+        {
+            return this._mediaStreamSourceConfigurations != null && this._mediaStreamSourceConfigurations.Count > 0; 
         }
 
         /// <summary>

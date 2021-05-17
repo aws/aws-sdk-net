@@ -35,6 +35,7 @@ namespace Amazon.MediaConnect.Model
     {
         private string _name;
         private List<string> _networkInterfaceIds = new List<string>();
+        private NetworkInterfaceType _networkInterfaceType;
         private string _roleArn;
         private List<string> _securityGroupIds = new List<string>();
         private string _subnetId;
@@ -71,6 +72,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetNetworkInterfaceIds()
         {
             return this._networkInterfaceIds != null && this._networkInterfaceIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceType. The type of network interface.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public NetworkInterfaceType NetworkInterfaceType
+        {
+            get { return this._networkInterfaceType; }
+            set { this._networkInterfaceType = value; }
+        }
+
+        // Check to see if NetworkInterfaceType property is set
+        internal bool IsSetNetworkInterfaceType()
+        {
+            return this._networkInterfaceType != null;
         }
 
         /// <summary>

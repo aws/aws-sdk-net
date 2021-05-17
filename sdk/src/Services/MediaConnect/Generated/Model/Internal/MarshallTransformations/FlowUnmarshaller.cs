@@ -94,6 +94,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.FlowArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mediaStreams", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MediaStream, MediaStreamUnmarshaller>(MediaStreamUnmarshaller.Instance);
+                    unmarshalledObject.MediaStreams = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

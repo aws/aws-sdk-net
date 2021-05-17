@@ -106,6 +106,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaLiveInputArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mediaStreamOutputConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MediaStreamOutputConfiguration, MediaStreamOutputConfigurationUnmarshaller>(MediaStreamOutputConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.MediaStreamOutputConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

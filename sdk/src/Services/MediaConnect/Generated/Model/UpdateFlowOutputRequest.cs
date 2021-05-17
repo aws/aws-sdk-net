@@ -40,6 +40,7 @@ namespace Amazon.MediaConnect.Model
         private UpdateEncryption _encryption;
         private string _flowArn;
         private int? _maxLatency;
+        private List<MediaStreamOutputConfigurationRequest> _mediaStreamOutputConfigurations = new List<MediaStreamOutputConfigurationRequest>();
         private int? _minLatency;
         private string _outputArn;
         private int? _port;
@@ -146,6 +147,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMaxLatency()
         {
             return this._maxLatency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaStreamOutputConfigurations. The media streams that
+        /// are associated with the output, and the parameters for those associations.
+        /// </summary>
+        public List<MediaStreamOutputConfigurationRequest> MediaStreamOutputConfigurations
+        {
+            get { return this._mediaStreamOutputConfigurations; }
+            set { this._mediaStreamOutputConfigurations = value; }
+        }
+
+        // Check to see if MediaStreamOutputConfigurations property is set
+        internal bool IsSetMediaStreamOutputConfigurations()
+        {
+            return this._mediaStreamOutputConfigurations != null && this._mediaStreamOutputConfigurations.Count > 0; 
         }
 
         /// <summary>

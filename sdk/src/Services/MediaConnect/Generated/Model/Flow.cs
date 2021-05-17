@@ -38,6 +38,7 @@ namespace Amazon.MediaConnect.Model
         private string _egressIp;
         private List<Entitlement> _entitlements = new List<Entitlement>();
         private string _flowArn;
+        private List<MediaStream> _mediaStreams = new List<MediaStream>();
         private string _name;
         private List<Output> _outputs = new List<Output>();
         private Source _source;
@@ -127,6 +128,23 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetFlowArn()
         {
             return this._flowArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaStreams. The media streams that are associated with
+        /// the flow. After you associate a media stream with a source, you can also associate
+        /// it with outputs on the flow.
+        /// </summary>
+        public List<MediaStream> MediaStreams
+        {
+            get { return this._mediaStreams; }
+            set { this._mediaStreams = value; }
+        }
+
+        // Check to see if MediaStreams property is set
+        internal bool IsSetMediaStreams()
+        {
+            return this._mediaStreams != null && this._mediaStreams.Count > 0; 
         }
 
         /// <summary>

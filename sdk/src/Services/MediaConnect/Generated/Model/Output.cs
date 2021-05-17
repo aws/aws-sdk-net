@@ -40,6 +40,7 @@ namespace Amazon.MediaConnect.Model
         private string _entitlementArn;
         private string _listenerAddress;
         private string _mediaLiveInputArn;
+        private List<MediaStreamOutputConfiguration> _mediaStreamOutputConfigurations = new List<MediaStreamOutputConfiguration>();
         private string _name;
         private string _outputArn;
         private int? _port;
@@ -158,6 +159,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMediaLiveInputArn()
         {
             return this._mediaLiveInputArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaStreamOutputConfigurations. The configuration for
+        /// each media stream that is associated with the output.
+        /// </summary>
+        public List<MediaStreamOutputConfiguration> MediaStreamOutputConfigurations
+        {
+            get { return this._mediaStreamOutputConfigurations; }
+            set { this._mediaStreamOutputConfigurations = value; }
+        }
+
+        // Check to see if MediaStreamOutputConfigurations property is set
+        internal bool IsSetMediaStreamOutputConfigurations()
+        {
+            return this._mediaStreamOutputConfigurations != null && this._mediaStreamOutputConfigurations.Count > 0; 
         }
 
         /// <summary>

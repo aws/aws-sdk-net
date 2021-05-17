@@ -34,6 +34,7 @@ namespace Amazon.MediaConnect.Model
     public partial class VpcInterfaceRequest
     {
         private string _name;
+        private NetworkInterfaceType _networkInterfaceType;
         private string _roleArn;
         private List<string> _securityGroupIds = new List<string>();
         private string _subnetId;
@@ -53,6 +54,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceType. The type of network interface. If
+        /// this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
+        /// </summary>
+        public NetworkInterfaceType NetworkInterfaceType
+        {
+            get { return this._networkInterfaceType; }
+            set { this._networkInterfaceType = value; }
+        }
+
+        // Check to see if NetworkInterfaceType property is set
+        internal bool IsSetNetworkInterfaceType()
+        {
+            return this._networkInterfaceType != null;
         }
 
         /// <summary>

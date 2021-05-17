@@ -79,6 +79,76 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type Colorimetry.
+    /// </summary>
+    public class Colorimetry : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BT2020 for Colorimetry
+        /// </summary>
+        public static readonly Colorimetry BT2020 = new Colorimetry("BT2020");
+        /// <summary>
+        /// Constant BT2100 for Colorimetry
+        /// </summary>
+        public static readonly Colorimetry BT2100 = new Colorimetry("BT2100");
+        /// <summary>
+        /// Constant BT601 for Colorimetry
+        /// </summary>
+        public static readonly Colorimetry BT601 = new Colorimetry("BT601");
+        /// <summary>
+        /// Constant BT709 for Colorimetry
+        /// </summary>
+        public static readonly Colorimetry BT709 = new Colorimetry("BT709");
+        /// <summary>
+        /// Constant ST20651 for Colorimetry
+        /// </summary>
+        public static readonly Colorimetry ST20651 = new Colorimetry("ST2065-1");
+        /// <summary>
+        /// Constant ST20653 for Colorimetry
+        /// </summary>
+        public static readonly Colorimetry ST20653 = new Colorimetry("ST2065-3");
+        /// <summary>
+        /// Constant XYZ for Colorimetry
+        /// </summary>
+        public static readonly Colorimetry XYZ = new Colorimetry("XYZ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Colorimetry(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Colorimetry FindValue(string value)
+        {
+            return FindValue<Colorimetry>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Colorimetry(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DurationUnits.
     /// </summary>
     public class DurationUnits : ConstantClass
@@ -118,6 +188,114 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DurationUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncoderProfile.
+    /// </summary>
+    public class EncoderProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for EncoderProfile
+        /// </summary>
+        public static readonly EncoderProfile High = new EncoderProfile("high");
+        /// <summary>
+        /// Constant Main for EncoderProfile
+        /// </summary>
+        public static readonly EncoderProfile Main = new EncoderProfile("main");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncoderProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncoderProfile FindValue(string value)
+        {
+            return FindValue<EncoderProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncoderProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncodingName.
+    /// </summary>
+    public class EncodingName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Jxsv for EncodingName
+        /// </summary>
+        public static readonly EncodingName Jxsv = new EncodingName("jxsv");
+        /// <summary>
+        /// Constant Pcm for EncodingName
+        /// </summary>
+        public static readonly EncodingName Pcm = new EncodingName("pcm");
+        /// <summary>
+        /// Constant Raw for EncodingName
+        /// </summary>
+        public static readonly EncodingName Raw = new EncodingName("raw");
+        /// <summary>
+        /// Constant Smpte291 for EncodingName
+        /// </summary>
+        public static readonly EncodingName Smpte291 = new EncodingName("smpte291");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncodingName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncodingName FindValue(string value)
+        {
+            return FindValue<EncodingName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncodingName(string value)
         {
             return FindValue(value);
         }
@@ -229,6 +407,110 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type MediaStreamType.
+    /// </summary>
+    public class MediaStreamType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AncillaryData for MediaStreamType
+        /// </summary>
+        public static readonly MediaStreamType AncillaryData = new MediaStreamType("ancillary-data");
+        /// <summary>
+        /// Constant Audio for MediaStreamType
+        /// </summary>
+        public static readonly MediaStreamType Audio = new MediaStreamType("audio");
+        /// <summary>
+        /// Constant Video for MediaStreamType
+        /// </summary>
+        public static readonly MediaStreamType Video = new MediaStreamType("video");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaStreamType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaStreamType FindValue(string value)
+        {
+            return FindValue<MediaStreamType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaStreamType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkInterfaceType.
+    /// </summary>
+    public class NetworkInterfaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Efa for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Efa = new NetworkInterfaceType("efa");
+        /// <summary>
+        /// Constant Ena for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Ena = new NetworkInterfaceType("ena");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkInterfaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkInterfaceType FindValue(string value)
+        {
+            return FindValue<NetworkInterfaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkInterfaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PriceUnits.
     /// </summary>
     public class PriceUnits : ConstantClass
@@ -281,6 +563,10 @@ namespace Amazon.MediaConnect
     {
 
         /// <summary>
+        /// Constant Cdi for Protocol
+        /// </summary>
+        public static readonly Protocol Cdi = new Protocol("cdi");
+        /// <summary>
         /// Constant Rist for Protocol
         /// </summary>
         public static readonly Protocol Rist = new Protocol("rist");
@@ -296,6 +582,10 @@ namespace Amazon.MediaConnect
         /// Constant SrtListener for Protocol
         /// </summary>
         public static readonly Protocol SrtListener = new Protocol("srt-listener");
+        /// <summary>
+        /// Constant St2110Jpegxs for Protocol
+        /// </summary>
+        public static readonly Protocol St2110Jpegxs = new Protocol("st2110-jpegxs");
         /// <summary>
         /// Constant ZixiPull for Protocol
         /// </summary>
@@ -334,6 +624,60 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Protocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Range.
+    /// </summary>
+    public class Range : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL for Range
+        /// </summary>
+        public static readonly Range FULL = new Range("FULL");
+        /// <summary>
+        /// Constant FULLPROTECT for Range
+        /// </summary>
+        public static readonly Range FULLPROTECT = new Range("FULLPROTECT");
+        /// <summary>
+        /// Constant NARROW for Range
+        /// </summary>
+        public static readonly Range NARROW = new Range("NARROW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Range(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Range FindValue(string value)
+        {
+            return FindValue<Range>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Range(string value)
         {
             return FindValue(value);
         }
@@ -438,6 +782,60 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScanMode.
+    /// </summary>
+    public class ScanMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Interlace for ScanMode
+        /// </summary>
+        public static readonly ScanMode Interlace = new ScanMode("interlace");
+        /// <summary>
+        /// Constant Progressive for ScanMode
+        /// </summary>
+        public static readonly ScanMode Progressive = new ScanMode("progressive");
+        /// <summary>
+        /// Constant ProgressiveSegmentedFrame for ScanMode
+        /// </summary>
+        public static readonly ScanMode ProgressiveSegmentedFrame = new ScanMode("progressive-segmented-frame");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanMode FindValue(string value)
+        {
+            return FindValue<ScanMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanMode(string value)
         {
             return FindValue(value);
         }
@@ -608,6 +1006,84 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Tcs.
+    /// </summary>
+    public class Tcs : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BT2100LINHLG for Tcs
+        /// </summary>
+        public static readonly Tcs BT2100LINHLG = new Tcs("BT2100LINHLG");
+        /// <summary>
+        /// Constant BT2100LINPQ for Tcs
+        /// </summary>
+        public static readonly Tcs BT2100LINPQ = new Tcs("BT2100LINPQ");
+        /// <summary>
+        /// Constant DENSITY for Tcs
+        /// </summary>
+        public static readonly Tcs DENSITY = new Tcs("DENSITY");
+        /// <summary>
+        /// Constant HLG for Tcs
+        /// </summary>
+        public static readonly Tcs HLG = new Tcs("HLG");
+        /// <summary>
+        /// Constant LINEAR for Tcs
+        /// </summary>
+        public static readonly Tcs LINEAR = new Tcs("LINEAR");
+        /// <summary>
+        /// Constant PQ for Tcs
+        /// </summary>
+        public static readonly Tcs PQ = new Tcs("PQ");
+        /// <summary>
+        /// Constant SDR for Tcs
+        /// </summary>
+        public static readonly Tcs SDR = new Tcs("SDR");
+        /// <summary>
+        /// Constant ST20651 for Tcs
+        /// </summary>
+        public static readonly Tcs ST20651 = new Tcs("ST2065-1");
+        /// <summary>
+        /// Constant ST4281 for Tcs
+        /// </summary>
+        public static readonly Tcs ST4281 = new Tcs("ST428-1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Tcs(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Tcs FindValue(string value)
+        {
+            return FindValue<Tcs>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Tcs(string value)
         {
             return FindValue(value);
         }

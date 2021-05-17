@@ -51,6 +51,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetNetworkInterfaceType())
+            {
+                context.Writer.WritePropertyName("networkInterfaceType");
+                context.Writer.Write(requestObject.NetworkInterfaceType);
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

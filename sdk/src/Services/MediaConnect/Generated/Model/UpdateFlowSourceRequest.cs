@@ -41,6 +41,8 @@ namespace Amazon.MediaConnect.Model
         private int? _ingestPort;
         private int? _maxBitrate;
         private int? _maxLatency;
+        private int? _maxSyncBuffer;
+        private List<MediaStreamSourceConfigurationRequest> _mediaStreamSourceConfigurations = new List<MediaStreamSourceConfigurationRequest>();
         private int? _minLatency;
         private Protocol _protocol;
         private string _sourceArn;
@@ -163,6 +165,38 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxSyncBuffer. The size of the buffer (in milliseconds)
+        /// to use to sync incoming source data.
+        /// </summary>
+        public int MaxSyncBuffer
+        {
+            get { return this._maxSyncBuffer.GetValueOrDefault(); }
+            set { this._maxSyncBuffer = value; }
+        }
+
+        // Check to see if MaxSyncBuffer property is set
+        internal bool IsSetMaxSyncBuffer()
+        {
+            return this._maxSyncBuffer.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaStreamSourceConfigurations. The media streams that
+        /// are associated with the source, and the parameters for those associations.
+        /// </summary>
+        public List<MediaStreamSourceConfigurationRequest> MediaStreamSourceConfigurations
+        {
+            get { return this._mediaStreamSourceConfigurations; }
+            set { this._mediaStreamSourceConfigurations = value; }
+        }
+
+        // Check to see if MediaStreamSourceConfigurations property is set
+        internal bool IsSetMediaStreamSourceConfigurations()
+        {
+            return this._mediaStreamSourceConfigurations != null && this._mediaStreamSourceConfigurations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MinLatency. The minimum latency in milliseconds for SRT-based
         /// streams. In streams that use the SRT protocol, this value that you set on your MediaConnect
         /// source or output represents the minimal potential latency of that connection. The
@@ -229,8 +263,8 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaceName. The name of the VPC Interface to configure
-        /// this Source with.
+        /// Gets and sets the property VpcInterfaceName. The name of the VPC interface to use
+        /// for this source.
         /// </summary>
         public string VpcInterfaceName
         {

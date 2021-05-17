@@ -37,6 +37,7 @@ namespace Amazon.MediaConnect.Model
     {
         private string _availabilityZone;
         private List<GrantEntitlementRequest> _entitlements = new List<GrantEntitlementRequest>();
+        private List<AddMediaStreamRequest> _mediaStreams = new List<AddMediaStreamRequest>();
         private string _name;
         private List<AddOutputRequest> _outputs = new List<AddOutputRequest>();
         private SetSourceRequest _source;
@@ -75,6 +76,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetEntitlements()
         {
             return this._entitlements != null && this._entitlements.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaStreams. The media streams that you want to add to
+        /// the flow. You can associate these media streams with sources and outputs on the flow.
+        /// </summary>
+        public List<AddMediaStreamRequest> MediaStreams
+        {
+            get { return this._mediaStreams; }
+            set { this._mediaStreams = value; }
+        }
+
+        // Check to see if MediaStreams property is set
+        internal bool IsSetMediaStreams()
+        {
+            return this._mediaStreams != null && this._mediaStreams.Count > 0; 
         }
 
         /// <summary>

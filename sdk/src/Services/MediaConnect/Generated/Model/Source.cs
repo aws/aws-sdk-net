@@ -39,6 +39,7 @@ namespace Amazon.MediaConnect.Model
         private string _entitlementArn;
         private string _ingestIp;
         private int? _ingestPort;
+        private List<MediaStreamSourceConfiguration> _mediaStreamSourceConfigurations = new List<MediaStreamSourceConfiguration>();
         private string _name;
         private string _sourceArn;
         private Transport _transport;
@@ -144,6 +145,22 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MediaStreamSourceConfigurations. The media streams that
+        /// are associated with the source, and the parameters for those associations.
+        /// </summary>
+        public List<MediaStreamSourceConfiguration> MediaStreamSourceConfigurations
+        {
+            get { return this._mediaStreamSourceConfigurations; }
+            set { this._mediaStreamSourceConfigurations = value; }
+        }
+
+        // Check to see if MediaStreamSourceConfigurations property is set
+        internal bool IsSetMediaStreamSourceConfigurations()
+        {
+            return this._mediaStreamSourceConfigurations != null && this._mediaStreamSourceConfigurations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. The name of the source.
         /// </summary>
         [AWSProperty(Required=true)]
@@ -192,8 +209,8 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaceName. The name of the VPC Interface this Source
-        /// is configured with.
+        /// Gets and sets the property VpcInterfaceName. The name of the VPC interface that is
+        /// used for this source.
         /// </summary>
         public string VpcInterfaceName
         {

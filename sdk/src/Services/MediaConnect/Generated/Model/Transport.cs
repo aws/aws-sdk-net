@@ -36,6 +36,7 @@ namespace Amazon.MediaConnect.Model
         private List<string> _cidrAllowList = new List<string>();
         private int? _maxBitrate;
         private int? _maxLatency;
+        private int? _maxSyncBuffer;
         private int? _minLatency;
         private Protocol _protocol;
         private string _remoteId;
@@ -89,6 +90,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMaxLatency()
         {
             return this._maxLatency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxSyncBuffer. The size of the buffer (in milliseconds)
+        /// to use to sync incoming source data.
+        /// </summary>
+        public int MaxSyncBuffer
+        {
+            get { return this._maxSyncBuffer.GetValueOrDefault(); }
+            set { this._maxSyncBuffer = value; }
+        }
+
+        // Check to see if MaxSyncBuffer property is set
+        internal bool IsSetMaxSyncBuffer()
+        {
+            return this._maxSyncBuffer.HasValue; 
         }
 
         /// <summary>
