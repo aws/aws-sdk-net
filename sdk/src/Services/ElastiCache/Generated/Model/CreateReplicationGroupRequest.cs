@@ -1147,7 +1147,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserGroupIds. 
         /// <para>
-        /// The list of user groups to associate with the replication group.
+        /// The user group to associate with the replication group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

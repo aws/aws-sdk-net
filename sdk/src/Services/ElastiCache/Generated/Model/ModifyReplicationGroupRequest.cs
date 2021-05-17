@@ -645,7 +645,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserGroupIdsToAdd. 
         /// <para>
-        /// A list of user group IDs.
+        /// The user group you are associating with the replication group.
         /// </para>
         /// </summary>
         public List<string> UserGroupIdsToAdd
@@ -663,8 +663,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserGroupIdsToRemove. 
         /// <para>
-        /// A list of users groups to remove, meaning the users in the group no longer can access
-        /// thereplication group.
+        /// The user group to remove, meaning the users in the group no longer can access the
+        /// replication group.
         /// </para>
         /// </summary>
         public List<string> UserGroupIdsToRemove
