@@ -42,10 +42,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Request to start suite run based on suite definition Id.
+        /// Suite definition Id of the test suite.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=12, Max=36)]
         public string SuiteDefinitionId
         {
             get { return this._suiteDefinitionId; }
@@ -61,7 +61,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionVersion. 
         /// <para>
-        /// Request to start suite run based on suite definition version.
+        /// Suite definition version of the test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]
@@ -80,7 +80,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteRunConfiguration. 
         /// <para>
-        /// Request to start suite run based on suite configuration.
+        /// Suite run configuration.
         /// </para>
         /// </summary>
         public SuiteRunConfiguration SuiteRunConfiguration

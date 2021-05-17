@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListTestCases Request Marshaller
+    /// StopSuiteRun Request Marshaller
     /// </summary>       
-    public class ListTestCasesRequestMarshaller : IMarshaller<IRequest, ListTestCasesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StopSuiteRunRequestMarshaller : IMarshaller<IRequest, StopSuiteRunRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListTestCasesRequest)input);
+            return this.Marshall((StopSuiteRunRequest)input);
         }
 
         /// <summary>
@@ -52,29 +52,26 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListTestCasesRequest publicRequest)
+        public IRequest Marshall(StopSuiteRunRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTDeviceAdvisor");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-09-18";            
-            request.HttpMethod = "GET";
+            request.HttpMethod = "POST";
 
-            
-            if (publicRequest.IsSetIntendedForQualification())
-                request.Parameters.Add("intendedForQualification", StringUtils.FromBool(publicRequest.IntendedForQualification));
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/testCases";
-            request.UseQueryString = true;
+            if (!publicRequest.IsSetSuiteDefinitionId())
+                throw new AmazonIoTDeviceAdvisorException("Request object does not have required field SuiteDefinitionId set");
+            request.AddPathResource("{suiteDefinitionId}", StringUtils.FromString(publicRequest.SuiteDefinitionId));
+            if (!publicRequest.IsSetSuiteRunId())
+                throw new AmazonIoTDeviceAdvisorException("Request object does not have required field SuiteRunId set");
+            request.AddPathResource("{suiteRunId}", StringUtils.FromString(publicRequest.SuiteRunId));
+            request.ResourcePath = "/suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}/stop";
 
             return request;
         }
-        private static ListTestCasesRequestMarshaller _instance = new ListTestCasesRequestMarshaller();        
+        private static StopSuiteRunRequestMarshaller _instance = new StopSuiteRunRequestMarshaller();        
 
-        internal static ListTestCasesRequestMarshaller GetInstance()
+        internal static StopSuiteRunRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -82,7 +79,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListTestCasesRequestMarshaller Instance
+        public static StopSuiteRunRequestMarshaller Instance
         {
             get
             {

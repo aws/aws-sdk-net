@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Get suite definition information.
+    /// Information about the suite definition.
     /// </summary>
     public partial class SuiteDefinitionInformation
     {
@@ -42,7 +42,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Gets the information of when the test suite was created.
+        /// Date (in Unix epoch time) when the test suite was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -60,7 +60,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property DefaultDevices. 
         /// <para>
-        /// Specifies the devices under test.
+        /// Specifies the devices under test for the test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
@@ -79,7 +79,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property IntendedForQualification. 
         /// <para>
-        /// Gets the test suites which will be used for qualification.
+        /// Specifies if the test suite is intended for qualification.
         /// </para>
         /// </summary>
         public bool IntendedForQualification
@@ -97,10 +97,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Get suite definition Id.
+        /// Suite definition Id of the test suite.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string SuiteDefinitionId
         {
             get { return this._suiteDefinitionId; }
@@ -116,7 +116,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionName. 
         /// <para>
-        /// Get test suite name.
+        /// Suite name of the test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

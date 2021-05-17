@@ -81,7 +81,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Creates a Device Advisor test suite with suite UUID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string SuiteDefinitionId
         {
             get { return this._suiteDefinitionId; }

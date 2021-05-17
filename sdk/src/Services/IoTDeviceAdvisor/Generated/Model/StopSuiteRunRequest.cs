@@ -29,47 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Provides test case definition.
+    /// Container for the parameters to the StopSuiteRun operation.
+    /// Stops a Device Advisor test suite run that is currently running.
     /// </summary>
-    public partial class TestCaseDefinition
+    public partial class StopSuiteRunRequest : AmazonIoTDeviceAdvisorRequest
     {
-        private string _id;
-        private string _testCaseVersion;
+        private string _suiteDefinitionId;
+        private string _suiteRunId;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Provides test case definition Id.
+        /// Suite definition Id of the test suite run to be stopped.
         /// </para>
         /// </summary>
-        public string Id
+        [AWSProperty(Required=true, Min=12, Max=36)]
+        public string SuiteDefinitionId
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._suiteDefinitionId; }
+            set { this._suiteDefinitionId = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if SuiteDefinitionId property is set
+        internal bool IsSetSuiteDefinitionId()
         {
-            return this._id != null;
+            return this._suiteDefinitionId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TestCaseVersion. 
+        /// Gets and sets the property SuiteRunId. 
         /// <para>
-        /// Provides test case definition version.
+        /// Suite run Id of the test suite run to be stopped.
         /// </para>
         /// </summary>
-        public string TestCaseVersion
+        [AWSProperty(Required=true, Min=12, Max=36)]
+        public string SuiteRunId
         {
-            get { return this._testCaseVersion; }
-            set { this._testCaseVersion = value; }
+            get { return this._suiteRunId; }
+            set { this._suiteRunId = value; }
         }
 
-        // Check to see if TestCaseVersion property is set
-        internal bool IsSetTestCaseVersion()
+        // Check to see if SuiteRunId property is set
+        internal bool IsSetSuiteRunId()
         {
-            return this._testCaseVersion != null;
+            return this._suiteRunId != null;
         }
 
     }

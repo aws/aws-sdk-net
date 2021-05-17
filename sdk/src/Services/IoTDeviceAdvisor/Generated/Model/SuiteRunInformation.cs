@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Get suite run information.
+    /// Information about the suite run.
     /// </summary>
     public partial class SuiteRunInformation
     {
@@ -47,7 +47,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Get suite run information based on time suite was created.
+        /// Date (in Unix epoch time) when the suite run was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -65,7 +65,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property EndAt. 
         /// <para>
-        /// Get suite run information based on end time of the run.
+        /// Date (in Unix epoch time) when the suite run ended.
         /// </para>
         /// </summary>
         public DateTime EndAt
@@ -83,7 +83,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// Get suite run information based on result of the test suite run.
+        /// Number of test cases that failed in the suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -102,7 +102,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property Passed. 
         /// <para>
-        /// Get suite run information based on result of the test suite run.
+        /// Number of test cases that passed in the suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -121,7 +121,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// Get suite run information based on start time of the run.
+        /// Date (in Unix epoch time) when the suite run was started.
         /// </para>
         /// </summary>
         public DateTime StartedAt
@@ -139,7 +139,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Get suite run information based on test run status.
+        /// Status of the suite run.
         /// </para>
         /// </summary>
         public SuiteRunStatus Status
@@ -157,10 +157,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Get suite run information based on suite definition Id.
+        /// Suite definition Id of the suite run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string SuiteDefinitionId
         {
             get { return this._suiteDefinitionId; }
@@ -176,7 +176,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionName. 
         /// <para>
-        /// Get suite run information based on suite definition name.
+        /// Suite definition name of the suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -195,7 +195,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionVersion. 
         /// <para>
-        /// Get suite run information based on suite definition version.
+        /// Suite definition version of the suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]
@@ -214,10 +214,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteRunId. 
         /// <para>
-        /// Get suite run information based on suite run Id.
+        /// Suite run Id of the suite run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string SuiteRunId
         {
             get { return this._suiteRunId; }

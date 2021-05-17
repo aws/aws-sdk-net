@@ -16,18 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the iotdeviceadvisor-2020-09-18.normal.json service model.
  */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Paginator for the ListTestCases operation
-    ///</summary>
-    public interface IListTestCasesPaginator
+    /// This is the response object from the StopSuiteRun operation.
+    /// </summary>
+    public partial class StopSuiteRunResponse : AmazonWebServiceResponse
     {
-        /// <summary>
-        /// Enumerable containing all full responses for the operation
-        /// </summary>
-        IPaginatedEnumerable<ListTestCasesResponse> Responses { get; }
+
     }
 }

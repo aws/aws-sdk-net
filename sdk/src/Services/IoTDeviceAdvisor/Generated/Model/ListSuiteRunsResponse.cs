@@ -39,7 +39,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Next pagination token for list suite run response.
+        /// A token to retrieve the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]
@@ -58,7 +58,8 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteRunsList. 
         /// <para>
-        /// Lists the runs of the specified Device Advisor test suite.
+        /// An array of objects that provide summaries of information about the suite runs in
+        /// the list.
         /// </para>
         /// </summary>
         public List<SuiteRunInformation> SuiteRunsList

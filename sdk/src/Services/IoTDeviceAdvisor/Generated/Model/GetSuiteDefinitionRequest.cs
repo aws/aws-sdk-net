@@ -40,10 +40,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Requests suite definition Id with GetSuiteDefinition API call.
+        /// Suite definition Id of the test suite to get.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=12, Max=36)]
         public string SuiteDefinitionId
         {
             get { return this._suiteDefinitionId; }
@@ -59,7 +59,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionVersion. 
         /// <para>
-        /// Requests the suite definition version of a test suite.
+        /// Suite definition version of the test suite to get.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]

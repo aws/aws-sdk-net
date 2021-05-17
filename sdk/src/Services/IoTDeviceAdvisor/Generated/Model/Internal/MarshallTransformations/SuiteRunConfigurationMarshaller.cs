@@ -56,17 +56,6 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetSecondaryDevice())
-            {
-                context.Writer.WritePropertyName("secondaryDevice");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DeviceUnderTestMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecondaryDevice, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetSelectedTestList())
             {
                 context.Writer.WritePropertyName("selectedTestList");

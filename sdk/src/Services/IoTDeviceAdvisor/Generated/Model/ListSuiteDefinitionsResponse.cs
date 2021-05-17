@@ -39,7 +39,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Creates a Device Advisor test suite.
+        /// A token used to get the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]
@@ -58,7 +58,8 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionInformationList. 
         /// <para>
-        /// Lists test suite information using List suite definition.
+        /// An array of objects that provide summaries of information about the suite definitions
+        /// in the list.
         /// </para>
         /// </summary>
         public List<SuiteDefinitionInformation> SuiteDefinitionInformationList

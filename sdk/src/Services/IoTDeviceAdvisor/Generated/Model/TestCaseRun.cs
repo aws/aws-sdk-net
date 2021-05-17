@@ -139,7 +139,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Provides test case run definition Id.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string TestCaseDefinitionId
         {
             get { return this._testCaseDefinitionId; }
@@ -176,7 +176,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Provides test case run Id.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string TestCaseRunId
         {
             get { return this._testCaseRunId; }

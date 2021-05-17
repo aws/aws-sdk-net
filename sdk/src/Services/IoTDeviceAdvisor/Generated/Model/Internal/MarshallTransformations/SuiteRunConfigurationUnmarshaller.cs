@@ -70,12 +70,6 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrimaryDevice = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("secondaryDevice", targetDepth))
-                {
-                    var unmarshaller = DeviceUnderTestUnmarshaller.Instance;
-                    unmarshalledObject.SecondaryDevice = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("selectedTestList", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -34,10 +34,5 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Paginator for ListSuiteRuns operation
         ///</summary>
         IListSuiteRunsPaginator ListSuiteRuns(ListSuiteRunsRequest request);
-
-        /// <summary>
-        /// Paginator for ListTestCases operation
-        ///</summary>
-        IListTestCasesPaginator ListTestCases(ListTestCasesRequest request);
     }
 }

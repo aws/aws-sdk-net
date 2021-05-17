@@ -58,6 +58,14 @@ namespace Amazon.IoTDeviceAdvisor
         /// Constant RUNNING for Status
         /// </summary>
         public static readonly Status RUNNING = new Status("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for Status
+        /// </summary>
+        public static readonly Status STOPPED = new Status("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for Status
+        /// </summary>
+        public static readonly Status STOPPING = new Status("STOPPING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -128,6 +136,14 @@ namespace Amazon.IoTDeviceAdvisor
         /// Constant RUNNING for SuiteRunStatus
         /// </summary>
         public static readonly SuiteRunStatus RUNNING = new SuiteRunStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for SuiteRunStatus
+        /// </summary>
+        public static readonly SuiteRunStatus STOPPED = new SuiteRunStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for SuiteRunStatus
+        /// </summary>
+        public static readonly SuiteRunStatus STOPPING = new SuiteRunStatus("STOPPING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

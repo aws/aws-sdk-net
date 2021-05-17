@@ -739,63 +739,6 @@ namespace Amazon.IoTDeviceAdvisor
 
         #endregion
         
-        #region  ListTestCases
-
-        /// <summary>
-        /// Lists all the test cases in the test suite.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListTestCases service method.</param>
-        /// 
-        /// <returns>The response from the ListTestCases service method, as returned by IoTDeviceAdvisor.</returns>
-        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
-        public virtual ListTestCasesResponse ListTestCases(ListTestCasesRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
-
-            return Invoke<ListTestCasesResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListTestCases operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTestCases operation on AmazonIoTDeviceAdvisorClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTestCases
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
-        public virtual IAsyncResult BeginListTestCases(ListTestCasesRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  ListTestCases operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTestCases.</param>
-        /// 
-        /// <returns>Returns a  ListTestCasesResult from IoTDeviceAdvisor.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
-        public virtual ListTestCasesResponse EndListTestCases(IAsyncResult asyncResult)
-        {
-            return EndInvoke<ListTestCasesResponse>(asyncResult);
-        }
-
-        #endregion
-        
         #region  StartSuiteRun
 
         /// <summary>
@@ -855,6 +798,69 @@ namespace Amazon.IoTDeviceAdvisor
         public virtual StartSuiteRunResponse EndStartSuiteRun(IAsyncResult asyncResult)
         {
             return EndInvoke<StartSuiteRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopSuiteRun
+
+        /// <summary>
+        /// Stops a Device Advisor test suite run that is currently running.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSuiteRun service method.</param>
+        /// 
+        /// <returns>The response from the StopSuiteRun service method, as returned by IoTDeviceAdvisor.</returns>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
+        /// Sends Internal Failure Exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
+        /// Sends Resource Not Found Exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
+        /// Sends invalid request exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">REST API Reference for StopSuiteRun Operation</seealso>
+        public virtual StopSuiteRunResponse StopSuiteRun(StopSuiteRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSuiteRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSuiteRunResponseUnmarshaller.Instance;
+
+            return Invoke<StopSuiteRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopSuiteRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopSuiteRun operation on AmazonIoTDeviceAdvisorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopSuiteRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">REST API Reference for StopSuiteRun Operation</seealso>
+        public virtual IAsyncResult BeginStopSuiteRun(StopSuiteRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSuiteRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSuiteRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopSuiteRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopSuiteRun.</param>
+        /// 
+        /// <returns>Returns a  StopSuiteRunResult from IoTDeviceAdvisor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">REST API Reference for StopSuiteRun Operation</seealso>
+        public virtual StopSuiteRunResponse EndStopSuiteRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopSuiteRunResponse>(asyncResult);
         }
 
         #endregion

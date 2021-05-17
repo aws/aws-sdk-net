@@ -43,7 +43,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Updates a Device Advisor test suite with TimeStamp of when it was created.
+        /// Timestamp of when the test suite was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -61,7 +61,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// Updates a Device Advisor test suite with TimeStamp of when it was updated.
+        /// Timestamp of when the test suite was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -79,7 +79,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionArn. 
         /// <para>
-        /// Updates a Device Advisor test suite with Amazon Resource name.
+        /// Amazon Resource name of the updated test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -98,10 +98,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Updates a Device Advisor test suite with suite UUID.
+        /// Suite definition Id of the updated test suite.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string SuiteDefinitionId
         {
             get { return this._suiteDefinitionId; }
@@ -117,7 +117,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionName. 
         /// <para>
-        /// Updates a Device Advisor test suite with suite definition name.
+        /// Suite definition name of the updated test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -136,7 +136,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionVersion. 
         /// <para>
-        /// Updates a Device Advisor test suite with suite definition version.
+        /// Suite definition version of the updated test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]

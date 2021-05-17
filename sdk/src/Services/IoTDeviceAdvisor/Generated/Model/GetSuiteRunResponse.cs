@@ -48,7 +48,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// Gets the information about Device Advisor test suite run based on end time.
+        /// Date (in Unix epoch time) when the test suite run ended.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -66,7 +66,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property ErrorReason. 
         /// <para>
-        /// Gets the information about Device Advisor test suite run based on error.
+        /// Error reason for any test suite run failure.
         /// </para>
         /// </summary>
         public string ErrorReason
@@ -84,7 +84,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Gets the information about Device Advisor test suite run based on start time.
+        /// Date (in Unix epoch time) when the test suite run was started.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -102,7 +102,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Gets the information about Device Advisor test suite run based on its status.
+        /// Status for the test suite run.
         /// </para>
         /// </summary>
         public SuiteRunStatus Status
@@ -120,11 +120,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Gets the information about Device Advisor test suite run based on suite definition
-        /// Id.
+        /// Suite definition Id for the test suite run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string SuiteDefinitionId
         {
             get { return this._suiteDefinitionId; }
@@ -140,8 +139,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionVersion. 
         /// <para>
-        /// Gets the information about Device Advisor test suite run based on suite definition
-        /// version.
+        /// Suite definition version for the test suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]
@@ -179,7 +177,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteRunConfiguration. 
         /// <para>
-        /// Gets the information about Device Advisor test suite run based on suite configuration.
+        /// Suite run configuration for the test suite run.
         /// </para>
         /// </summary>
         public SuiteRunConfiguration SuiteRunConfiguration
@@ -197,10 +195,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteRunId. 
         /// <para>
-        /// Gets the information about Device Advisor test suite run based on suite run Id.
+        /// Suite run Id for the test suite run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string SuiteRunId
         {
             get { return this._suiteRunId; }
@@ -235,7 +233,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property TestResult. 
         /// <para>
-        /// Gets the information about Device Advisor test suite run based on test case runs.
+        /// Test results for the test suite run.
         /// </para>
         /// </summary>
         public TestResult TestResult

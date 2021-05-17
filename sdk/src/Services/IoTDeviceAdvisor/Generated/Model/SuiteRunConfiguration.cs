@@ -34,7 +34,6 @@ namespace Amazon.IoTDeviceAdvisor.Model
     public partial class SuiteRunConfiguration
     {
         private DeviceUnderTest _primaryDevice;
-        private DeviceUnderTest _secondaryDevice;
         private List<string> _selectedTestList = new List<string>();
 
         /// <summary>
@@ -53,24 +52,6 @@ namespace Amazon.IoTDeviceAdvisor.Model
         internal bool IsSetPrimaryDevice()
         {
             return this._primaryDevice != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SecondaryDevice. 
-        /// <para>
-        /// Gets the secondary device for suite run.
-        /// </para>
-        /// </summary>
-        public DeviceUnderTest SecondaryDevice
-        {
-            get { return this._secondaryDevice; }
-            set { this._secondaryDevice = value; }
-        }
-
-        // Check to see if SecondaryDevice property is set
-        internal bool IsSetSecondaryDevice()
-        {
-            return this._secondaryDevice != null;
         }
 
         /// <summary>

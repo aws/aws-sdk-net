@@ -40,11 +40,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Requests the information about Device Advisor test suite run based on suite definition
-        /// Id.
+        /// Suite definition Id for the test suite run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=12, Max=36)]
         public string SuiteDefinitionId
         {
             get { return this._suiteDefinitionId; }
@@ -60,10 +59,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteRunId. 
         /// <para>
-        /// Requests the information about Device Advisor test suite run based on suite run Id.
+        /// Suite run Id for the test suite run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=12, Max=36)]
         public string SuiteRunId
         {
             get { return this._suiteRunId; }

@@ -38,7 +38,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property QualificationReportDownloadUrl. 
         /// <para>
-        /// Gets the download URL of the qualification report.
+        /// Download URL of the qualification report.
         /// </para>
         /// </summary>
         public string QualificationReportDownloadUrl

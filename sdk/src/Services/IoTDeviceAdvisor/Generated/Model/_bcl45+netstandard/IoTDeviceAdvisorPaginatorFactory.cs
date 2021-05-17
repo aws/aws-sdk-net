@@ -50,13 +50,5 @@ namespace Amazon.IoTDeviceAdvisor.Model
         {
             return new ListSuiteRunsPaginator(this.client, request);
         }
-
-        /// <summary>
-        /// Paginator for ListTestCases operation
-        ///</summary>
-        public IListTestCasesPaginator ListTestCases(ListTestCasesRequest request) 
-        {
-            return new ListTestCasesPaginator(this.client, request);
-        }
     }
 }

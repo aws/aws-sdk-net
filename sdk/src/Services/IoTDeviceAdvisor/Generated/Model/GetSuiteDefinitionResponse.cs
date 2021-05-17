@@ -45,7 +45,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Gets the timestamp of the time suite was created with GetSuiteDefinition API call.
+        /// Date (in Unix epoch time) when the suite definition was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -63,7 +63,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedAt. 
         /// <para>
-        /// Gets the timestamp of the time suite was modified with GetSuiteDefinition API call.
+        /// Date (in Unix epoch time) when the suite definition was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedAt
@@ -81,7 +81,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property LatestVersion. 
         /// <para>
-        /// Gets latest suite definition version with GetSuiteDefinition API call.
+        /// Latest suite definition version of the suite definition.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]
@@ -119,7 +119,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionConfiguration. 
         /// <para>
-        /// Gets the suite configuration with GetSuiteDefinition API call.
+        /// Suite configuration of the suite definition.
         /// </para>
         /// </summary>
         public SuiteDefinitionConfiguration SuiteDefinitionConfiguration
@@ -137,10 +137,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Gets suite definition Id with GetSuiteDefinition API call.
+        /// Suite definition Id of the suite definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string SuiteDefinitionId
         {
             get { return this._suiteDefinitionId; }
@@ -156,7 +156,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionVersion. 
         /// <para>
-        /// Gets suite definition version with GetSuiteDefinition API call.
+        /// Suite definition version of the suite definition.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]

@@ -40,10 +40,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// Show Group Result Id.
+        /// Group result Id.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -59,7 +59,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// Show Group Result Name.
+        /// Group Result Name.
         /// </para>
         /// </summary>
         public string GroupName
@@ -77,7 +77,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property Tests. 
         /// <para>
-        /// Show Group Result.
+        /// Tests under Group Result.
         /// </para>
         /// </summary>
         public List<TestCaseRun> Tests

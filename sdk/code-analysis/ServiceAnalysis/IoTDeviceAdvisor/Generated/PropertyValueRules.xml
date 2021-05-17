@@ -7,7 +7,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.CreateSuiteDefinitionResponse.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -17,12 +17,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.DeleteSuiteDefinitionRequest.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.GetSuiteDefinitionRequest.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -42,7 +42,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.GetSuiteDefinitionResponse.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -52,17 +52,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.GetSuiteRunRequest.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.GetSuiteRunRequest.SuiteRunId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.GetSuiteRunResponse.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -77,17 +77,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.GetSuiteRunResponse.SuiteRunId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.GetSuiteRunReportRequest.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.GetSuiteRunReportRequest.SuiteRunId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -114,7 +114,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.ListSuiteRunsRequest.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -132,21 +132,8 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoTDeviceAdvisor.Model.ListTestCasesRequest.MaxResults</property>
-    <min>1</min>
-    <max>50</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTDeviceAdvisor.Model.ListTestCasesRequest.NextToken</property>
-    <max>2000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTDeviceAdvisor.Model.ListTestCasesResponse.NextToken</property>
-    <max>2000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.StartSuiteRunRequest.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -161,7 +148,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.StartSuiteRunResponse.SuiteRunId</property>
-    <min>36</min>
+    <min>12</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTDeviceAdvisor.Model.StopSuiteRunRequest.SuiteDefinitionId</property>
+    <min>12</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTDeviceAdvisor.Model.StopSuiteRunRequest.SuiteRunId</property>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -176,7 +173,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.UpdateSuiteDefinitionRequest.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -186,7 +183,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.UpdateSuiteDefinitionResponse.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -211,7 +208,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.GroupResult.GroupId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -231,7 +228,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.SuiteDefinitionInformation.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -251,7 +248,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.SuiteRunInformation.SuiteDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -266,17 +263,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.SuiteRunInformation.SuiteRunId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.TestCaseRun.TestCaseDefinitionId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.TestCaseRun.TestCaseRunId</property>
-    <min>36</min>
+    <min>12</min>
     <max>36</max>
   </property-value-rule>
 </property-value-rules>

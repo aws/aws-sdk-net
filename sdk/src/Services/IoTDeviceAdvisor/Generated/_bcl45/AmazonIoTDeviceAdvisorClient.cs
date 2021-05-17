@@ -714,53 +714,6 @@ namespace Amazon.IoTDeviceAdvisor
 
         #endregion
         
-        #region  ListTestCases
-
-
-        /// <summary>
-        /// Lists all the test cases in the test suite.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListTestCases service method.</param>
-        /// 
-        /// <returns>The response from the ListTestCases service method, as returned by IoTDeviceAdvisor.</returns>
-        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
-        public virtual ListTestCasesResponse ListTestCases(ListTestCasesRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
-
-            return Invoke<ListTestCasesResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Lists all the test cases in the test suite.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListTestCases service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListTestCases service method, as returned by IoTDeviceAdvisor.</returns>
-        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
-        public virtual Task<ListTestCasesResponse> ListTestCasesAsync(ListTestCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<ListTestCasesResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  StartSuiteRun
 
 
@@ -816,6 +769,65 @@ namespace Amazon.IoTDeviceAdvisor
             options.ResponseUnmarshaller = StartSuiteRunResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartSuiteRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopSuiteRun
+
+
+        /// <summary>
+        /// Stops a Device Advisor test suite run that is currently running.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSuiteRun service method.</param>
+        /// 
+        /// <returns>The response from the StopSuiteRun service method, as returned by IoTDeviceAdvisor.</returns>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
+        /// Sends Internal Failure Exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
+        /// Sends Resource Not Found Exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
+        /// Sends invalid request exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">REST API Reference for StopSuiteRun Operation</seealso>
+        public virtual StopSuiteRunResponse StopSuiteRun(StopSuiteRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSuiteRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSuiteRunResponseUnmarshaller.Instance;
+
+            return Invoke<StopSuiteRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a Device Advisor test suite run that is currently running.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSuiteRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopSuiteRun service method, as returned by IoTDeviceAdvisor.</returns>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
+        /// Sends Internal Failure Exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
+        /// Sends Resource Not Found Exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
+        /// Sends invalid request exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">REST API Reference for StopSuiteRun Operation</seealso>
+        public virtual Task<StopSuiteRunResponse> StopSuiteRunAsync(StopSuiteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSuiteRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSuiteRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopSuiteRunResponse>(request, options, cancellationToken);
         }
 
         #endregion

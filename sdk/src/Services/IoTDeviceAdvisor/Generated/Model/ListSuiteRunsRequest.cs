@@ -43,7 +43,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// MaxResults for list suite run API request.
+        /// The maximum number of results to return at once.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -62,7 +62,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Next pagination token for list suite run request.
+        /// A token to retrieve the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]
@@ -81,11 +81,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Lists the runs of the specified Device Advisor test suite based on suite definition
-        /// Id.
+        /// Lists the test suite runs of the specified test suite based on suite definition Id.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=12, Max=36)]
         public string SuiteDefinitionId
         {
             get { return this._suiteDefinitionId; }
@@ -101,8 +100,8 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionVersion. 
         /// <para>
-        /// Lists the runs of the specified Device Advisor test suite based on suite definition
-        /// version.
+        /// Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified
+        /// test suite based on suite definition version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]

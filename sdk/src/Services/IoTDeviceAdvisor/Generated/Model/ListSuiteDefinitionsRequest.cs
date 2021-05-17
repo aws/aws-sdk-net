@@ -40,7 +40,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Request the list of all the Device Advisor test suites.
+        /// The maximum number of results to return at once.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -59,7 +59,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Requests the Device Advisor test suites next token.
+        /// A token used to get the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]
