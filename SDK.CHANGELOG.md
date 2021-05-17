@@ -1,3 +1,17 @@
+### 3.7.35.0 (2021-05-17 18:16 UTC)
+* ApplicationCostProfiler (3.7.0.0)
+	* APIs for AWS Application Cost Profiler.
+* AugmentedAIRuntime (3.7.0.22)
+	* Documentation updates for Amazon A2I Runtime model
+* ElastiCache (3.7.2.9)
+	* Documentation updates for elasticache
+* IoTDeviceAdvisor (3.7.1.0)
+	* AWS IoT Core Device Advisor is fully managed test capability for IoT devices. Device manufacturers can use Device Advisor to test their IoT devices for reliable and secure connectivity with AWS IoT.
+* MediaConnect (3.7.2.0)
+	* MediaConnect now supports JPEG XS for AWS Cloud Digital Interface (AWS CDI) uncompressed workflows, allowing you to establish a bridge between your on-premises live video network and the AWS Cloud.
+* Neptune (3.7.1.0)
+	* Neptune support for CopyTagsToSnapshots
+
 ### 3.7.34.0 (2021-05-14 18:18 UTC)
 * CloudWatchEvents (3.7.2.0)
 	* Update InputTransformer variable limit from 10 to 100 variables.

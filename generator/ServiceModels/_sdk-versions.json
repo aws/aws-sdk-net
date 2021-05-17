@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.34.0",
+    "ProductVersion" : "3.7.35.0",
     "CoreVersion"    : "3.7.0.22",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -168,7 +168,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.7.2.8",
+            "Version" : "3.7.2.9",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -1122,7 +1122,7 @@
             "InPreview"               : false
         },
         "Neptune"                         : {
-            "Version" : "3.7.0.21",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -1290,7 +1290,7 @@
             "InPreview"               : false
         },
         "MediaConnect"                    : {
-            "Version" : "3.7.1.10",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -1722,7 +1722,7 @@
             "InPreview"               : false
         },
         "AugmentedAIRuntime"              : {
-            "Version" : "3.7.0.21",
+            "Version" : "3.7.0.22",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -2034,7 +2034,7 @@
             "InPreview"               : false
         },
         "IoTDeviceAdvisor"                : {
-            "Version" : "3.7.0.21",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -2139,6 +2139,14 @@
         },
         "SSMContacts"                     : {
             "Version" : "3.7.0.2",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.0.22"
+            },
+            "InPreview"               : false
+        },
+        "ApplicationCostProfiler"         : {
+            "Version" : "3.7.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
