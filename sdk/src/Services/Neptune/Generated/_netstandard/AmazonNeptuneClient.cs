@@ -1049,7 +1049,7 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet in
-        /// at least two AZs in the AWS Region.
+        /// at least two AZs in the Amazon Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSubnetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1740,15 +1740,15 @@ namespace Amazon.Neptune
         /// 
         ///  
         /// <para>
-        /// When sharing snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code>
-        /// returns the <code>restore</code> attribute and a list of IDs for the AWS accounts
+        /// When sharing snapshots with other Amazon accounts, <code>DescribeDBClusterSnapshotAttributes</code>
+        /// returns the <code>restore</code> attribute and a list of IDs for the Amazon accounts
         /// that are authorized to copy or restore the manual DB cluster snapshot. If <code>all</code>
         /// is included in the list of values for the <code>restore</code> attribute, then the
-        /// manual DB cluster snapshot is public and can be copied or restored by all AWS accounts.
+        /// manual DB cluster snapshot is public and can be copied or restored by all Amazon accounts.
         /// </para>
         ///  
         /// <para>
-        /// To add or remove access for an AWS account to copy or restore a manual DB cluster
+        /// To add or remove access for an Amazon account to copy or restore a manual DB cluster
         /// snapshot, or to make the manual DB cluster snapshot public or private, use the <a>ModifyDBClusterSnapshotAttribute</a>
         /// API action.
         /// </para>
@@ -2614,20 +2614,20 @@ namespace Amazon.Neptune
         /// 
         ///  
         /// <para>
-        /// To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code>
+        /// To share a manual DB cluster snapshot with other Amazon accounts, specify <code>restore</code>
         /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
-        /// add a list of IDs of the AWS accounts that are authorized to restore the manual DB
-        /// cluster snapshot. Use the value <code>all</code> to make the manual DB cluster snapshot
-        /// public, which means that it can be copied or restored by all AWS accounts. Do not
-        /// add the <code>all</code> value for any manual DB cluster snapshots that contain private
-        /// information that you don't want available to all AWS accounts. If a manual DB cluster
-        /// snapshot is encrypted, it can be shared, but only by specifying a list of authorized
-        /// AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code>
-        /// as a value for that parameter in this case.
+        /// add a list of IDs of the Amazon accounts that are authorized to restore the manual
+        /// DB cluster snapshot. Use the value <code>all</code> to make the manual DB cluster
+        /// snapshot public, which means that it can be copied or restored by all Amazon accounts.
+        /// Do not add the <code>all</code> value for any manual DB cluster snapshots that contain
+        /// private information that you don't want available to all Amazon accounts. If a manual
+        /// DB cluster snapshot is encrypted, it can be shared, but only by specifying a list
+        /// of authorized Amazon account IDs for the <code>ValuesToAdd</code> parameter. You can't
+        /// use <code>all</code> as a value for that parameter in this case.
         /// </para>
         ///  
         /// <para>
-        /// To view which AWS accounts have access to copy or restore a manual DB cluster snapshot,
+        /// To view which Amazon accounts have access to copy or restore a manual DB cluster snapshot,
         /// or whether a manual DB cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a>
         /// API action.
         /// </para>
@@ -2833,7 +2833,7 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet
-        /// in at least two AZs in the AWS Region.
+        /// in at least two AZs in the Amazon Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSubnetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -3470,7 +3470,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Starts an Amazon Neptune DB cluster that was stopped using the AWS console, the AWS
+        /// Starts an Amazon Neptune DB cluster that was stopped using the AWS console, the Amazon
         /// CLI stop-db-cluster command, or the StopDBCluster API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDBCluster service method.</param>

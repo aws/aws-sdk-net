@@ -128,8 +128,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property IncludePublic. 
         /// <para>
         /// True to include manual DB cluster snapshots that are public and can be copied or restored
-        /// by any AWS account, and otherwise false. The default is <code>false</code>. The default
-        /// is false.
+        /// by any Amazon account, and otherwise false. The default is <code>false</code>. The
+        /// default is false.
         /// </para>
         ///  
         /// <para>
@@ -152,14 +152,14 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property IncludeShared. 
         /// <para>
-        /// True to include shared manual DB cluster snapshots from other AWS accounts that this
-        /// AWS account has been given permission to copy or restore, and otherwise false. The
-        /// default is <code>false</code>.
+        /// True to include shared manual DB cluster snapshots from other Amazon accounts that
+        /// this AWS account has been given permission to copy or restore, and otherwise false.
+        /// The default is <code>false</code>.
         /// </para>
         ///  
         /// <para>
-        /// You can give an AWS account permission to restore a manual DB cluster snapshot from
-        /// another AWS account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+        /// You can give an Amazon account permission to restore a manual DB cluster snapshot
+        /// from another Amazon account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.
         /// </para>
         /// </summary>
         public bool IncludeShared
@@ -231,7 +231,7 @@ namespace Amazon.Neptune.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>automated</code> - Return all DB cluster snapshots that have been automatically
-        /// taken by Amazon Neptune for my AWS account.
+        /// taken by Amazon Neptune for my Amazon account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -241,7 +241,7 @@ namespace Amazon.Neptune.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>shared</code> - Return all manual DB cluster snapshots that have been shared
-        /// to my AWS account.
+        /// to my Amazon account.
         /// </para>
         ///  </li> <li> 
         /// <para>

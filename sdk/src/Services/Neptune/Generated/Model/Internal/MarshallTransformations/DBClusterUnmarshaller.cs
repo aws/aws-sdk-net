@@ -67,6 +67,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         unmarshalledObject.AssociatedRoles.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("AutomaticRestartTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.AutomaticRestartTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AvailabilityZones/AvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -96,6 +102,18 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CopyTagsToSnapshot", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.CopyTagsToSnapshot = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CrossAccountClone", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.CrossAccountClone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DatabaseName", targetDepth))

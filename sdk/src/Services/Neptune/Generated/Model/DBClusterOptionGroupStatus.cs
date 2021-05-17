@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains status information for a DB cluster option group.
+    /// Not supported by Neptune.
     /// </summary>
     public partial class DBClusterOptionGroupStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBClusterOptionGroupName. 
         /// <para>
-        /// Specifies the name of the DB cluster option group.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string DBClusterOptionGroupName
@@ -57,7 +57,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the status of the DB cluster option group.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string Status

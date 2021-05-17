@@ -48,7 +48,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CustomerAwsId. 
         /// <para>
-        /// The AWS customer account associated with the event notification subscription.
+        /// The Amazon customer account associated with the event notification subscription.
         /// </para>
         /// </summary>
         public string CustomerAwsId

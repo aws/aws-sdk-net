@@ -81,6 +81,162 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Neptune")]
+        public void DescribeDBClusterParameterGroupsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterParameterGroupsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeDBClusterParameterGroupsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeDBClusterParameterGroupsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeDBClusterParameterGroups(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeDBClusterParameterGroups(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeDBClusterParameterGroupsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterParameterGroupsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeDBClusterParameterGroupsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeDBClusterParameterGroups(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeDBClusterParameterGroups(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
+        public void DescribeDBClusterParametersTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterParametersRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeDBClusterParametersResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeDBClusterParametersResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeDBClusterParameters(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeDBClusterParameters(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeDBClusterParametersTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterParametersRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeDBClusterParametersResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeDBClusterParameters(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeDBClusterParameters(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
+        public void DescribeDBClustersTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDBClustersRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeDBClustersResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeDBClustersResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeDBClusters(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeDBClusters(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeDBClustersTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDBClustersRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeDBClustersResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeDBClusters(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeDBClusters(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
+        public void DescribeDBClusterSnapshotsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterSnapshotsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeDBClusterSnapshotsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeDBClusterSnapshotsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeDBClusterSnapshots(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeDBClusterSnapshots(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeDBClusterSnapshotsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterSnapshotsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeDBClusterSnapshotsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeDBClusterSnapshots(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeDBClusterSnapshots(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
         public void DescribeDBEngineVersionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeDBEngineVersionsRequest>();
@@ -420,6 +576,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.DescribeOrderableDBInstanceOptions(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.DescribeOrderableDBInstanceOptions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
+        public void DescribePendingMaintenanceActionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribePendingMaintenanceActionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribePendingMaintenanceActionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribePendingMaintenanceActionsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribePendingMaintenanceActions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribePendingMaintenanceActions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribePendingMaintenanceActionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribePendingMaintenanceActionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribePendingMaintenanceActionsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribePendingMaintenanceActions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribePendingMaintenanceActions(request);
 
             // Should work the first time
             paginator.Responses.ToList();

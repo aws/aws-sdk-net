@@ -78,11 +78,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// The new amount of storage (in gibibytes) to allocate for the DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. Storage is managed by the DB Cluster.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -489,8 +485,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false.
+        /// True to enable mapping of Amazon Identity and Access Management (IAM) accounts to
+        /// database accounts, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -498,8 +494,8 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB
-        /// cluster. For more information, see <a>ModifyDBCluster</a>.
+        /// Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the
+        /// DB cluster. For more information, see <a>ModifyDBCluster</a>.
         /// </para>
         ///  
         /// <para>
@@ -587,7 +583,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// Not supported.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -605,7 +601,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// Not applicable.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string MasterUserPassword

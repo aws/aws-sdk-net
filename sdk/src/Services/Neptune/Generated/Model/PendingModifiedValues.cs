@@ -199,12 +199,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// The license model for the DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
-        /// | <code>general-public-license</code> 
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -222,8 +217,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// Contains the pending or currently-in-progress change of the master credentials for
-        /// the DB instance.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string MasterUserPassword

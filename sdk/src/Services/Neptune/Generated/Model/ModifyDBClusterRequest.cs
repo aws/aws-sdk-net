@@ -38,6 +38,7 @@ namespace Amazon.Neptune.Model
         private bool? _applyImmediately;
         private int? _backupRetentionPeriod;
         private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
+        private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private bool? _deletionProtection;
@@ -61,12 +62,11 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code>
-        /// and <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code>
-        /// parameter value to false, then changes to the <code>NewDBClusterIdentifier</code>
-        /// and <code>MasterUserPassword</code> values are applied during the next maintenance
-        /// window. All other changes are applied immediately, regardless of the value of the
-        /// <code>ApplyImmediately</code> parameter.
+        /// The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code>
+        /// values. If you set the <code>ApplyImmediately</code> parameter value to false, then
+        /// changes to <code>NewDBClusterIdentifier</code> values are applied during the next
+        /// maintenance window. All other changes are applied immediately, regardless of the value
+        /// of the <code>ApplyImmediately</code> parameter.
         /// </para>
         ///  
         /// <para>
@@ -134,6 +134,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetCloudwatchLogsExportConfiguration()
         {
             return this._cloudwatchLogsExportConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        ///  <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster
+        /// that is created.</i> 
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
         }
 
         /// <summary>
@@ -205,8 +224,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false.
+        /// True to enable mapping of Amazon Identity and Access Management (IAM) accounts to
+        /// database accounts, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -253,12 +272,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The new password for the master database user. This password can contain any printable
-        /// ASCII character except "/", """, or "@".
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -315,7 +329,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        ///  <i>(Not supported by Neptune)</i> 
+        ///  <i>Not supported by Neptune.</i> 
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -365,7 +379,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region.
+        /// for each Amazon Region.
         /// </para>
         ///  
         /// <para>
@@ -414,7 +428,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region, occurring on a random day of the week.
+        /// for each Amazon Region, occurring on a random day of the week.
         /// </para>
         ///  
         /// <para>

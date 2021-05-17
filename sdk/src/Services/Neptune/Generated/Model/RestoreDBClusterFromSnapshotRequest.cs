@@ -47,6 +47,7 @@ namespace Amazon.Neptune.Model
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonNeptuneRequest
     {
         private List<string> _availabilityZones = new List<string>();
+        private bool? _copyTagsToSnapshot;
         private string _databaseName;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
@@ -80,6 +81,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        ///  <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB
+        /// cluster that is created.</i> 
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
         }
 
         /// <summary>
@@ -234,8 +254,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false.
+        /// True to enable mapping of Amazon Identity and Access Management (IAM) accounts to
+        /// database accounts, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -302,13 +322,13 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB
-        /// snapshot or DB cluster snapshot.
+        /// The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a
+        /// DB snapshot or DB cluster snapshot.
         /// </para>
         ///  
         /// <para>
         /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
-        /// If you are restoring a DB cluster with the same AWS account that owns the KMS encryption
+        /// If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption
         /// key used to encrypt the new DB cluster, then you can use the KMS key alias instead
         /// of the ARN for the KMS encryption key.
         /// </para>

@@ -226,8 +226,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled, and otherwise false.
+        /// True if mapping of Amazon Identity and Access Management (IAM) accounts to database
+        /// accounts is enabled, and otherwise false.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -245,7 +245,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
+        /// If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted
         /// DB cluster snapshot.
         /// </para>
         /// </summary>
@@ -282,7 +282,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// Provides the master username for the DB cluster snapshot.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string MasterUsername

@@ -50,6 +50,7 @@ namespace Amazon.Neptune.Model
         private List<string> _availabilityZones = new List<string>();
         private int? _backupRetentionPeriod;
         private string _characterSetName;
+        private bool? _copyTagsToSnapshot;
         private string _databaseName;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
@@ -138,6 +139,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetCharacterSetName()
         {
             return this._characterSetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        ///  <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster
+        /// that is created.</i> 
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
         }
 
         /// <summary>
@@ -293,7 +313,12 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// Not supported by Neptune.
+        /// If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication
+        /// for the entire DB cluster (this cannot be set at an instance level).
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code>.
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -356,12 +381,12 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for an encrypted DB cluster.
+        /// The Amazon KMS key identifier for an encrypted DB cluster.
         /// </para>
         ///  
         /// <para>
         /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
-        /// If you are creating a DB cluster with the same AWS account that owns the KMS encryption
+        /// If you are creating a DB cluster with the same Amazon account that owns the KMS encryption
         /// key used to encrypt the new DB cluster, then you can use the KMS key alias instead
         /// of the ARN for the KMS encryption key.
         /// </para>
@@ -382,14 +407,14 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// AWS KMS creates the default encryption key for your AWS account. Your AWS account
-        /// has a different default encryption key for each AWS Region.
+        /// Amazon KMS creates the default encryption key for your Amazon account. Your Amazon
+        /// account has a different default encryption key for each Amazon Region.
         /// </para>
         ///  
         /// <para>
-        /// If you create a Read Replica of an encrypted DB cluster in another AWS Region, you
-        /// must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-        /// Region. This key is used to encrypt the Read Replica in that AWS Region.
+        /// If you create a Read Replica of an encrypted DB cluster in another Amazon Region,
+        /// you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination
+        /// Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -407,25 +432,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The name of the master user for the DB cluster.
+        /// Not supported by Neptune.
         /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must be 1 to 16 letters or numbers.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be a reserved word for the chosen database engine.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string MasterUsername
         {
@@ -442,12 +450,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The password for the master database user. This password can contain any printable
-        /// ASCII character except "/", """, or "@".
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -511,7 +514,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        /// for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
         /// 
         /// </para>
@@ -562,7 +565,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region, occurring on a random day of the week. To see the time blocks
+        /// for each Amazon Region, occurring on a random day of the week. To see the time blocks
         /// available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
         /// 

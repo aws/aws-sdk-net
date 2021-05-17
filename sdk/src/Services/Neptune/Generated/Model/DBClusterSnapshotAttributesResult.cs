@@ -34,8 +34,8 @@ namespace Amazon.Neptune.Model
     /// 
     ///  
     /// <para>
-    /// Manual DB cluster snapshot attributes are used to authorize other AWS accounts to
-    /// copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a>
+    /// Manual DB cluster snapshot attributes are used to authorize other Amazon accounts
+    /// to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a>
     /// API action.
     /// </para>
     /// </summary>

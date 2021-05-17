@@ -194,8 +194,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false.
+        /// True to enable mapping of Amazon Identity and Access Management (IAM) accounts to
+        /// database accounts, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -217,13 +217,13 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted
-        /// DB cluster.
+        /// The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an
+        /// encrypted DB cluster.
         /// </para>
         ///  
         /// <para>
         /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
-        /// If you are restoring a DB cluster with the same AWS account that owns the KMS encryption
+        /// If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption
         /// key used to encrypt the new DB cluster, then you can use the KMS key alias instead
         /// of the ARN for the KMS encryption key.
         /// </para>

@@ -67,6 +67,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetCopyTagsToSnapshot())
+                {
+                    request.Parameters.Add("CopyTagsToSnapshot", StringUtils.FromBool(publicRequest.CopyTagsToSnapshot));
+                }
                 if(publicRequest.IsSetDatabaseName())
                 {
                     request.Parameters.Add("DatabaseName", StringUtils.FromString(publicRequest.DatabaseName));

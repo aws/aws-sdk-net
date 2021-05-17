@@ -40,11 +40,14 @@ namespace Amazon.Neptune.Model
     {
         private int? _allocatedStorage;
         private List<DBClusterRole> _associatedRoles = new List<DBClusterRole>();
+        private DateTime? _automaticRestartTime;
         private List<string> _availabilityZones = new List<string>();
         private int? _backupRetentionPeriod;
         private string _characterSetName;
         private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
+        private bool? _copyTagsToSnapshot;
+        private bool? _crossAccountClone;
         private string _databaseName;
         private string _dbClusterArn;
         private string _dbClusterIdentifier;
@@ -98,9 +101,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property AssociatedRoles. 
         /// <para>
-        /// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated
-        /// with the DB cluster. IAM roles that are associated with a DB cluster grant permission
-        /// for the DB cluster to access other AWS services on your behalf.
+        /// Provides a list of the Amazon Identity and Access Management (IAM) roles that are
+        /// associated with the DB cluster. IAM roles that are associated with a DB cluster grant
+        /// permission for the DB cluster to access other Amazon services on your behalf.
         /// </para>
         /// </summary>
         public List<DBClusterRole> AssociatedRoles
@@ -113,6 +116,24 @@ namespace Amazon.Neptune.Model
         internal bool IsSetAssociatedRoles()
         {
             return this._associatedRoles != null && this._associatedRoles.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomaticRestartTime. 
+        /// <para>
+        /// Time at which the DB cluster will be automatically restarted.
+        /// </para>
+        /// </summary>
+        public DateTime AutomaticRestartTime
+        {
+            get { return this._automaticRestartTime.GetValueOrDefault(); }
+            set { this._automaticRestartTime = value; }
+        }
+
+        // Check to see if AutomaticRestartTime property is set
+        internal bool IsSetAutomaticRestartTime()
+        {
+            return this._automaticRestartTime.HasValue; 
         }
 
         /// <summary>
@@ -155,7 +176,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
-        ///  <i>(Not supported by Neptune)</i> 
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string CharacterSetName
@@ -205,6 +226,43 @@ namespace Amazon.Neptune.Model
         internal bool IsSetClusterCreateTime()
         {
             return this._clusterCreateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        ///  <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster
+        /// that is created.</i> 
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrossAccountClone. 
+        /// <para>
+        /// If set to <code>true</code>, the DB cluster can be cloned across accounts.
+        /// </para>
+        /// </summary>
+        public bool CrossAccountClone
+        {
+            get { return this._crossAccountClone.GetValueOrDefault(); }
+            set { this._crossAccountClone = value; }
+        }
+
+        // Check to see if CrossAccountClone property is set
+        internal bool IsSetCrossAccountClone()
+        {
+            return this._crossAccountClone.HasValue; 
         }
 
         /// <summary>
@@ -285,7 +343,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBClusterOptionGroupMemberships. 
         /// <para>
-        ///  <i>(Not supported by Neptune)</i> 
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public List<DBClusterOptionGroupStatus> DBClusterOptionGroupMemberships
@@ -321,9 +379,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// The AWS Region-unique, immutable identifier for the DB cluster. This identifier is
-        /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB cluster is
-        /// accessed.
+        /// The Amazon Region-unique, immutable identifier for the DB cluster. This identifier
+        /// is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB cluster
+        /// is accessed.
         /// </para>
         /// </summary>
         public string DbClusterResourceId
@@ -488,8 +546,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled, and otherwise false.
+        /// True if mapping of Amazon Identity and Access Management (IAM) accounts to database
+        /// accounts is enabled, and otherwise false.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -507,7 +565,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
+        /// If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted
         /// DB cluster.
         /// </para>
         /// </summary>
@@ -544,7 +602,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// Contains the master username for the DB cluster.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string MasterUsername

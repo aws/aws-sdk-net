@@ -44,6 +44,38 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeDBClusterParameterGroups operation
+        ///</summary>
+        public IDescribeDBClusterParameterGroupsPaginator DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request) 
+        {
+            return new DescribeDBClusterParameterGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterParameters operation
+        ///</summary>
+        public IDescribeDBClusterParametersPaginator DescribeDBClusterParameters(DescribeDBClusterParametersRequest request) 
+        {
+            return new DescribeDBClusterParametersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusters operation
+        ///</summary>
+        public IDescribeDBClustersPaginator DescribeDBClusters(DescribeDBClustersRequest request) 
+        {
+            return new DescribeDBClustersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterSnapshots operation
+        ///</summary>
+        public IDescribeDBClusterSnapshotsPaginator DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request) 
+        {
+            return new DescribeDBClusterSnapshotsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDBEngineVersions operation
         ///</summary>
         public IDescribeDBEngineVersionsPaginator DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request) 
@@ -113,6 +145,14 @@ namespace Amazon.Neptune.Model
         public IDescribeOrderableDBInstanceOptionsPaginator DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request) 
         {
             return new DescribeOrderableDBInstanceOptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribePendingMaintenanceActions operation
+        ///</summary>
+        public IDescribePendingMaintenanceActionsPaginator DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request) 
+        {
+            return new DescribePendingMaintenanceActionsPaginator(this.client, request);
         }
     }
 }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Provides information on the option groups the DB instance is a member of.
+    /// Not supported by Neptune.
     /// </summary>
     public partial class OptionGroupMembership
     {
@@ -39,7 +39,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// The name of the option group that the instance belongs to.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -57,10 +57,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>,
-        /// <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
-        /// <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>,
-        /// and <code>failed</code>.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string Status

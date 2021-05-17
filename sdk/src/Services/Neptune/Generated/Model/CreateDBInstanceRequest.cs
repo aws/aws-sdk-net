@@ -81,17 +81,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// The amount of storage (in gibibytes) to allocate for the DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. Neptune cluster volumes automatically grow as the amount of data in
-        /// your database increases, though you are only charged for the space that you use in
-        /// a Neptune cluster volume.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -136,7 +126,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+        /// Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.
         /// </para>
         ///  
         /// <para>
@@ -145,7 +135,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         ///  Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter
-        /// is set to <code>true</code>. The specified Availability Zone must be in the same AWS
+        /// is set to <code>true</code>. The specified Availability Zone must be in the same Amazon
         /// Region as the current endpoint.
         /// </para>
         /// </summary>
@@ -268,7 +258,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions.
+        /// Not all DB instance classes are available in all Amazon Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -505,11 +495,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable AWS Identity and Access Management (IAM) authentication for Neptune.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code> 
+        /// Not supported by Neptune (ignored).
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -606,12 +592,12 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for an encrypted DB instance.
+        /// The Amazon KMS key identifier for an encrypted DB instance.
         /// </para>
         ///  
         /// <para>
         /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
-        /// If you are creating a DB instance with the same AWS account that owns the KMS encryption
+        /// If you are creating a DB instance with the same Amazon account that owns the KMS encryption
         /// key used to encrypt the new DB instance, then you can use the KMS key alias instead
         /// of the ARN for the KM encryption key.
         /// </para>
@@ -624,8 +610,8 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value
         /// for the <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default
-        /// encryption key. AWS KMS creates the default encryption key for your AWS account. Your
-        /// AWS account has a different default encryption key for each AWS Region.
+        /// encryption key. Amazon KMS creates the default encryption key for your Amazon account.
+        /// Your Amazon account has a different default encryption key for each Amazon Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -666,7 +652,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The name for the master user. Not used.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -684,12 +670,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The password for the master user. The password can include any printable ASCII character
-        /// except "/", """, or "@".
-        /// </para>
-        ///  
-        /// <para>
-        ///  Not used.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -878,7 +859,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region, occurring on a random day of the week.
+        /// for each Amazon Region, occurring on a random day of the week.
         /// </para>
         ///  
         /// <para>

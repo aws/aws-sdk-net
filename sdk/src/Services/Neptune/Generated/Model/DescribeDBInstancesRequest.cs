@@ -96,8 +96,8 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, to invoke this API from the AWS CLI and filter so that only Neptune DB
-        /// instances are returned, you could use the following command:
+        /// For example, to invoke this API from the Amazon CLI and filter so that only Neptune
+        /// DB instances are returned, you could use the following command:
         /// </para>
         /// </summary>
         public List<Filter> Filters
