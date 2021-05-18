@@ -120,6 +120,10 @@
       <Project>{16CFB3C8-BF63-4517-ADC4-87F48F7D4B22}</Project>
       <Name>AWSSDK.AppRegistry.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AppRunner/AWSSDK.AppRunner.CodeAnalysis.csproj">
+      <Project>{5E6B22E5-3140-40A7-A1DC-1EF63F1F4566}</Project>
+      <Name>AWSSDK.AppRunner.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AppStream/AWSSDK.AppStream.CodeAnalysis.csproj">
       <Project>{D26A9B8A-A715-4131-A1C8-9882EA414C4B}</Project>
       <Name>AWSSDK.AppStream.CodeAnalysis</Name>

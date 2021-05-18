@@ -1,0 +1,190 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the apprunner-2020-05-15.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.AppRunner.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateService operation.
+    /// Create an AWS App Runner service. After the service is created, the action also automatically
+    /// starts a deployment.
+    /// 
+    ///  
+    /// <para>
+    /// This is an asynchronous operation. On a successful call, you can use the returned
+    /// <code>OperationId</code> and the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a>
+    /// call to track the operation's progress.
+    /// </para>
+    /// </summary>
+    public partial class CreateServiceRequest : AmazonAppRunnerRequest
+    {
+        private string _autoScalingConfigurationArn;
+        private EncryptionConfiguration _encryptionConfiguration;
+        private HealthCheckConfiguration _healthCheckConfiguration;
+        private InstanceConfiguration _instanceConfiguration;
+        private string _serviceName;
+        private SourceConfiguration _sourceConfiguration;
+        private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property AutoScalingConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource
+        /// that you want to associate with your service. If not provided, App Runner associates
+        /// the latest revision of a default auto scaling configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
+        public string AutoScalingConfigurationArn
+        {
+            get { return this._autoScalingConfigurationArn; }
+            set { this._autoScalingConfigurationArn = value; }
+        }
+
+        // Check to see if AutoScalingConfigurationArn property is set
+        internal bool IsSetAutoScalingConfigurationArn()
+        {
+            return this._autoScalingConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// An optional custom encryption key that App Runner uses to encrypt the copy of your
+        /// source repository that it maintains and your service logs. By default, App Runner
+        /// uses an AWS managed CMK.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckConfiguration. 
+        /// <para>
+        /// The settings for the health check that AWS App Runner performs to monitor the health
+        /// of your service.
+        /// </para>
+        /// </summary>
+        public HealthCheckConfiguration HealthCheckConfiguration
+        {
+            get { return this._healthCheckConfiguration; }
+            set { this._healthCheckConfiguration = value; }
+        }
+
+        // Check to see if HealthCheckConfiguration property is set
+        internal bool IsSetHealthCheckConfiguration()
+        {
+            return this._healthCheckConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceConfiguration. 
+        /// <para>
+        /// The runtime configuration of instances (scaling units) of the App Runner service.
+        /// </para>
+        /// </summary>
+        public InstanceConfiguration InstanceConfiguration
+        {
+            get { return this._instanceConfiguration; }
+            set { this._instanceConfiguration = value; }
+        }
+
+        // Check to see if InstanceConfiguration property is set
+        internal bool IsSetInstanceConfiguration()
+        {
+            return this._instanceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceName. 
+        /// <para>
+        /// A name for the new service. It must be unique across all the running App Runner services
+        /// in your AWS account in the AWS Region.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=4, Max=40)]
+        public string ServiceName
+        {
+            get { return this._serviceName; }
+            set { this._serviceName = value; }
+        }
+
+        // Check to see if ServiceName property is set
+        internal bool IsSetServiceName()
+        {
+            return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceConfiguration. 
+        /// <para>
+        /// The source to deploy to the App Runner service. It can be a code or an image repository.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public SourceConfiguration SourceConfiguration
+        {
+            get { return this._sourceConfiguration; }
+            set { this._sourceConfiguration = value; }
+        }
+
+        // Check to see if SourceConfiguration property is set
+        internal bool IsSetSourceConfiguration()
+        {
+            return this._sourceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An optional list of metadata items that you can associate with your service resource.
+        /// A tag is a key-value pair.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+    }
+}

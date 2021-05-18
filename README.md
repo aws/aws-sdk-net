@@ -119,6 +119,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS App Mesh is a service mesh that makes it easy to monitor and control communications between microservices of an application. AWS App Mesh APIs are available for preview in eu-west-1, us-east-1, us-east-2, and us-west-2 regions.
 * [AWSSDK.AppRegistry](https://www.nuget.org/packages/AWSSDK.AppRegistry/)
 	* AWS Service Catalog AppRegistry provides a repository of your applications, their resources, and the application metadata that you use within your enterprise.
+* [AWSSDK.AppRunner](https://www.nuget.org/packages/AWSSDK.AppRunner/)
+	* AWS App Runner is a service that provides a fast, simple, and cost-effective way to deploy from source code or a container image directly to a scalable and secure web application in the AWS Cloud.
 * [AWSSDK.AppStream](https://www.nuget.org/packages/AWSSDK.AppStream/)
 	* Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.
 * [AWSSDK.AppSync](https://www.nuget.org/packages/AWSSDK.AppSync/)
