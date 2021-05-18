@@ -1069,6 +1069,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.OptimizationObjective.ItemAttribute</property>
+    <min>1</min>
+    <max>150</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.Recipe.AlgorithmArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>

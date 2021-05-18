@@ -94,6 +94,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.HpoConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("optimizationObjective", targetDepth))
+                {
+                    var unmarshaller = OptimizationObjectiveUnmarshaller.Instance;
+                    unmarshalledObject.OptimizationObjective = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

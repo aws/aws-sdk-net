@@ -38,6 +38,7 @@ namespace Amazon.Personalize.Model
         private string _eventValueThreshold;
         private Dictionary<string, string> _featureTransformationParameters = new Dictionary<string, string>();
         private HPOConfig _hpoConfig;
+        private OptimizationObjective _optimizationObjective;
 
         /// <summary>
         /// Gets and sets the property AlgorithmHyperParameters. 
@@ -132,6 +133,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetHpoConfig()
         {
             return this._hpoConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptimizationObjective. 
+        /// <para>
+        /// Describes the additional objective for the solution, such as maximizing streaming
+        /// minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing
+        /// a solution</a>.
+        /// </para>
+        /// </summary>
+        public OptimizationObjective OptimizationObjective
+        {
+            get { return this._optimizationObjective; }
+            set { this._optimizationObjective = value; }
+        }
+
+        // Check to see if OptimizationObjective property is set
+        internal bool IsSetOptimizationObjective()
+        {
+            return this._optimizationObjective != null;
         }
 
     }

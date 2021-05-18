@@ -101,6 +101,17 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOptimizationObjective())
+            {
+                context.Writer.WritePropertyName("optimizationObjective");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OptimizationObjectiveMarshaller.Instance;
+                marshaller.Marshall(requestObject.OptimizationObjective, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
