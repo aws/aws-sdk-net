@@ -29,24 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTokens operation.
-    /// Lists your tokens.
+    /// Container for the parameters to the ListLicenseManagerReportGenerators operation.
+    /// Lists the report generators for your account.
     /// </summary>
-    public partial class ListTokensRequest : AmazonLicenseManagerRequest
+    public partial class ListLicenseManagerReportGeneratorsRequest : AmazonLicenseManagerRequest
     {
         private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _tokenIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters to scope the results. The following filter is supported:
+        /// Filters to scope the results. The following filters are supported: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LicenseArns</code> 
+        ///  <code>LicenseConfigurationArn</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -97,24 +96,6 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TokenIds. 
-        /// <para>
-        /// Token IDs.
-        /// </para>
-        /// </summary>
-        public List<string> TokenIds
-        {
-            get { return this._tokenIds; }
-            set { this._tokenIds = value; }
-        }
-
-        // Check to see if TokenIds property is set
-        internal bool IsSetTokenIds()
-        {
-            return this._tokenIds != null && this._tokenIds.Count > 0; 
         }
 
     }

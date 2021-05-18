@@ -54,7 +54,7 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KeyFingerprint</code> 
+        ///  <code>Fingerprint</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

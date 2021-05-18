@@ -46,11 +46,23 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LicenseARN</code> 
+        ///  <code>ProductSKU</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Status</code> 
+        ///  <code>LicenseIssuerName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LicenseArn</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GrantStatus</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GranterAccountId</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

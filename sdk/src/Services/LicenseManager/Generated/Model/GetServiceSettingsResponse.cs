@@ -60,8 +60,8 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseManagerResourceShareArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account
-        /// will provide member accounts with access to this share.
+        /// Amazon Resource Name (ARN) of the AWS resource share. The License Manager management
+        /// account provides member accounts with access to this share.
         /// </para>
         /// </summary>
         public string LicenseManagerResourceShareArn

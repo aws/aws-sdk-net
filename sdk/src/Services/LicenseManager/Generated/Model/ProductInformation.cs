@@ -39,12 +39,20 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ProductInformationFilterList. 
         /// <para>
-        /// Product information filters.
+        /// A Product information filter consists of a <code>ProductInformationFilterComparator</code>
+        /// which is a logical operator, a <code>ProductInformationFilterName</code> which specifies
+        /// the type of filter being declared, and a <code>ProductInformationFilterValue</code>
+        /// that specifies the value to filter on. 
         /// </para>
         ///  
         /// <para>
-        /// The following filters and logical operators are supported when the resource type is
-        /// <code>SSM_MANAGED</code>:
+        /// Accepted values for <code>ProductInformationFilterName</code> are listed here along
+        /// with descriptions and valid options for <code>ProductInformationFilterComparator</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -68,6 +76,19 @@ namespace Amazon.LicenseManager.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Tag:key</code> - The key of a tag attached to an AWS resource you wish to exclude
+        /// from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for
+        /// your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>.
+        /// <code>ProductInformationFilterValue</code> is optional if you are not using values
+        /// for the key. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AccountId</code> - The 12-digit ID of an AWS account you wish to exclude from
+        /// automated discovery. Logical operator is <code>NOT_EQUALS</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

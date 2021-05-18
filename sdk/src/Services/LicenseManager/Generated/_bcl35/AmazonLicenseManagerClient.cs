@@ -874,6 +874,85 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  CreateLicenseManagerReportGenerator
+
+        /// <summary>
+        /// Creates a new report generator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseManagerReportGenerator service method.</param>
+        /// 
+        /// <returns>The response from the CreateLicenseManagerReportGenerator service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseManagerReportGenerator">REST API Reference for CreateLicenseManagerReportGenerator Operation</seealso>
+        public virtual CreateLicenseManagerReportGeneratorResponse CreateLicenseManagerReportGenerator(CreateLicenseManagerReportGeneratorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLicenseManagerReportGeneratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseManagerReportGeneratorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLicenseManagerReportGeneratorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLicenseManagerReportGenerator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseManagerReportGenerator operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLicenseManagerReportGenerator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseManagerReportGenerator">REST API Reference for CreateLicenseManagerReportGenerator Operation</seealso>
+        public virtual IAsyncResult BeginCreateLicenseManagerReportGenerator(CreateLicenseManagerReportGeneratorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLicenseManagerReportGeneratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseManagerReportGeneratorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLicenseManagerReportGenerator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLicenseManagerReportGenerator.</param>
+        /// 
+        /// <returns>Returns a  CreateLicenseManagerReportGeneratorResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseManagerReportGenerator">REST API Reference for CreateLicenseManagerReportGenerator Operation</seealso>
+        public virtual CreateLicenseManagerReportGeneratorResponse EndCreateLicenseManagerReportGenerator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLicenseManagerReportGeneratorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLicenseVersion
 
         /// <summary>
@@ -1265,6 +1344,92 @@ namespace Amazon.LicenseManager
         public virtual DeleteLicenseConfigurationResponse EndDeleteLicenseConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLicenseConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLicenseManagerReportGenerator
+
+        /// <summary>
+        /// Delete an existing report generator.
+        /// 
+        ///  
+        /// <para>
+        /// This action deletes the report generator, which stops it from generating future reports
+        /// and cannot be reversed. However, the previous reports from this generator will remain
+        /// in your S3 bucket.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseManagerReportGenerator service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLicenseManagerReportGenerator service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseManagerReportGenerator">REST API Reference for DeleteLicenseManagerReportGenerator Operation</seealso>
+        public virtual DeleteLicenseManagerReportGeneratorResponse DeleteLicenseManagerReportGenerator(DeleteLicenseManagerReportGeneratorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseManagerReportGeneratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseManagerReportGeneratorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLicenseManagerReportGeneratorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLicenseManagerReportGenerator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseManagerReportGenerator operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLicenseManagerReportGenerator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseManagerReportGenerator">REST API Reference for DeleteLicenseManagerReportGenerator Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLicenseManagerReportGenerator(DeleteLicenseManagerReportGeneratorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseManagerReportGeneratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseManagerReportGeneratorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLicenseManagerReportGenerator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLicenseManagerReportGenerator.</param>
+        /// 
+        /// <returns>Returns a  DeleteLicenseManagerReportGeneratorResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseManagerReportGenerator">REST API Reference for DeleteLicenseManagerReportGenerator Operation</seealso>
+        public virtual DeleteLicenseManagerReportGeneratorResponse EndDeleteLicenseManagerReportGenerator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLicenseManagerReportGeneratorResponse>(asyncResult);
         }
 
         #endregion
@@ -1711,6 +1876,85 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  GetLicenseManagerReportGenerator
+
+        /// <summary>
+        /// Gets information on the specified report generator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseManagerReportGenerator service method.</param>
+        /// 
+        /// <returns>The response from the GetLicenseManagerReportGenerator service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseManagerReportGenerator">REST API Reference for GetLicenseManagerReportGenerator Operation</seealso>
+        public virtual GetLicenseManagerReportGeneratorResponse GetLicenseManagerReportGenerator(GetLicenseManagerReportGeneratorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLicenseManagerReportGeneratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseManagerReportGeneratorResponseUnmarshaller.Instance;
+
+            return Invoke<GetLicenseManagerReportGeneratorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLicenseManagerReportGenerator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseManagerReportGenerator operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLicenseManagerReportGenerator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseManagerReportGenerator">REST API Reference for GetLicenseManagerReportGenerator Operation</seealso>
+        public virtual IAsyncResult BeginGetLicenseManagerReportGenerator(GetLicenseManagerReportGeneratorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLicenseManagerReportGeneratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseManagerReportGeneratorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLicenseManagerReportGenerator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLicenseManagerReportGenerator.</param>
+        /// 
+        /// <returns>Returns a  GetLicenseManagerReportGeneratorResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseManagerReportGenerator">REST API Reference for GetLicenseManagerReportGenerator Operation</seealso>
+        public virtual GetLicenseManagerReportGeneratorResponse EndGetLicenseManagerReportGenerator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetLicenseManagerReportGeneratorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetLicenseUsage
 
         /// <summary>
@@ -2146,6 +2390,85 @@ namespace Amazon.LicenseManager
         public virtual ListLicenseConfigurationsResponse EndListLicenseConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListLicenseConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListLicenseManagerReportGenerators
+
+        /// <summary>
+        /// Lists the report generators for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseManagerReportGenerators service method.</param>
+        /// 
+        /// <returns>The response from the ListLicenseManagerReportGenerators service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseManagerReportGenerators">REST API Reference for ListLicenseManagerReportGenerators Operation</seealso>
+        public virtual ListLicenseManagerReportGeneratorsResponse ListLicenseManagerReportGenerators(ListLicenseManagerReportGeneratorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicenseManagerReportGeneratorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseManagerReportGeneratorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLicenseManagerReportGeneratorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLicenseManagerReportGenerators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseManagerReportGenerators operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLicenseManagerReportGenerators
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseManagerReportGenerators">REST API Reference for ListLicenseManagerReportGenerators Operation</seealso>
+        public virtual IAsyncResult BeginListLicenseManagerReportGenerators(ListLicenseManagerReportGeneratorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicenseManagerReportGeneratorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseManagerReportGeneratorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLicenseManagerReportGenerators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLicenseManagerReportGenerators.</param>
+        /// 
+        /// <returns>Returns a  ListLicenseManagerReportGeneratorsResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseManagerReportGenerators">REST API Reference for ListLicenseManagerReportGenerators Operation</seealso>
+        public virtual ListLicenseManagerReportGeneratorsResponse EndListLicenseManagerReportGenerators(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLicenseManagerReportGeneratorsResponse>(asyncResult);
         }
 
         #endregion
@@ -3091,6 +3414,91 @@ namespace Amazon.LicenseManager
         public virtual UpdateLicenseConfigurationResponse EndUpdateLicenseConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLicenseConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateLicenseManagerReportGenerator
+
+        /// <summary>
+        /// Updates a report generator.
+        /// 
+        ///  
+        /// <para>
+        /// After you make changes to a report generator, it will start generating new reports
+        /// within 60 minutes of being updated.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLicenseManagerReportGenerator service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLicenseManagerReportGenerator service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseManagerReportGenerator">REST API Reference for UpdateLicenseManagerReportGenerator Operation</seealso>
+        public virtual UpdateLicenseManagerReportGeneratorResponse UpdateLicenseManagerReportGenerator(UpdateLicenseManagerReportGeneratorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLicenseManagerReportGeneratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLicenseManagerReportGeneratorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLicenseManagerReportGeneratorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLicenseManagerReportGenerator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLicenseManagerReportGenerator operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLicenseManagerReportGenerator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseManagerReportGenerator">REST API Reference for UpdateLicenseManagerReportGenerator Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLicenseManagerReportGenerator(UpdateLicenseManagerReportGeneratorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLicenseManagerReportGeneratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLicenseManagerReportGeneratorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLicenseManagerReportGenerator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLicenseManagerReportGenerator.</param>
+        /// 
+        /// <returns>Returns a  UpdateLicenseManagerReportGeneratorResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseManagerReportGenerator">REST API Reference for UpdateLicenseManagerReportGenerator Operation</seealso>
+        public virtual UpdateLicenseManagerReportGeneratorResponse EndUpdateLicenseManagerReportGenerator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLicenseManagerReportGeneratorResponse>(asyncResult);
         }
 
         #endregion
