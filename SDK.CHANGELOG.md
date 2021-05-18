@@ -1,3 +1,11 @@
+### 3.7.36.1 (2021-05-18 21:53 UTC)
+* S3 (3.7.0.24)
+	* Updated to use new Core, version 3.7.0.23
+	* Prevent null exception due to null header keys during request signing
+* Core 3.7.0.23
+	* Delay SSO Options Validation; Prevent null exception due to null header keys during request signing
+	* All services packages updated to require new Core
+
 ### 3.7.36.0 (2021-05-18 18:16 UTC)
 * AppRunner (3.7.0.0)
 	* AWS App Runner is a service that provides a fast, simple, and cost-effective way to deploy from source code or a container image directly to a scalable and secure web application in the AWS Cloud.
