@@ -28,6 +28,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             { "date", DateTime.Now.ToFileTime().ToString() },
             { "test", "true" },
+            { "null-value", null },
             { "aaa", "aaa" },
             { "a-a-a", "adada" },
             { "a|a|a", "apapa" },
@@ -74,6 +75,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void TestSingleUploads()
         {
+            TestSingleUploadsHelper(Client);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestSingleUploadsSigV2()
+        {
+            var client = new AmazonS3Client(new AmazonS3Config { SignatureVersion = "2" });
+            TestSingleUploadsHelper(client);
+            client.Dispose();
+        }
+
+        public void TestSingleUploadsHelper(AmazonS3Client client)
+        {
             // Test simple PutObject upload
             var key = "contentBodyPut" + random.Next();
             PutObjectRequest putObjectRequest = new PutObjectRequest()
@@ -84,10 +99,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
             SetMetadataAndHeaders(putObjectRequest);
-            Client.PutObject(putObjectRequest);
+            client.PutObject(putObjectRequest);
             ValidateObjectMetadataAndHeaders(key);
 
-            using (var tu = new TransferUtility(Client))
+            using (var tu = new TransferUtility(client))
             {
                 // Test small TransferUtility upload
                 key = "transferUtilitySmall" + random.Next();
@@ -122,11 +137,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         /// <summary>
-        /// Ensure that when escaped, a request with unicode metadata succeeds.
+        /// Ensure that when escaped, a SigV4 request with unicode metadata succeeds.
         /// </summary>
         [TestMethod]
         [TestCategory("S3")]
         public void TestSingleUploadWithUnicodeMetadata()
+        {
+            TestSingleUploadWithUnicodeMetadataHelper(Client);
+        }
+
+        /// <summary>
+        /// Ensure that when escaped, a SigV2 request with unicode metadata succeeds
+        /// </summary>
+        [TestMethod]
+        public void TestSingleUploadWithUnicodeMetadataSigV2()
+        {
+            var client = new AmazonS3Client(new AmazonS3Config { SignatureVersion = "2" });
+            TestSingleUploadWithUnicodeMetadataHelper(client);
+            client.Dispose();
+        }
+
+        public void TestSingleUploadWithUnicodeMetadataHelper(AmazonS3Client client)
         {
             // Test simple PutObject upload
             AWSConfigsS3.EnableUnicodeEncodingForObjectMetadata = true;
@@ -144,11 +175,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
             SetMetadataAndHeaders(putObjectRequest, true);
-            Client.PutObject(putObjectRequest);
+            client.PutObject(putObjectRequest);
             ValidateObjectMetadataAndHeaders(key, true);
             AWSConfigsS3.EnableUnicodeEncodingForObjectMetadata = false;
         }
-        
 
         [TestMethod]
         [TestCategory("S3")]
@@ -312,7 +342,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             foreach (var kvp in unicode ? unicodeMetadata : metadata)
             {
                 var name = kvp.Key;
-                var expectedValue = kvp.Value;
+                var expectedValue = (kvp.Value == null) ? "" : kvp.Value;   // putting a null value comes back as an empty string
                 var actualValue = response.Metadata[name];
                 Assert.AreEqual(expectedValue, actualValue);
             }
@@ -320,7 +350,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             foreach (var kvp in headers)
             {
                 var name = kvp.Key;
-                var expectedValue = kvp.Value;
+                var expectedValue = (kvp.Value == null) ? "" : kvp.Value;
                 var actualValue = response.Headers[name];
                 Assert.AreEqual(expectedValue, actualValue);
             }

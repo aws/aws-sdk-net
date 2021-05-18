@@ -769,7 +769,7 @@ namespace Amazon.Runtime.Internal.Auth
                 // Refer https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html. (Step #4: "To create the canonical headers list, convert all header names to lowercase and remove leading spaces and trailing spaces. Convert sequential spaces in the header value to a single space.").
                 builder.Append(entry.Key.ToLowerInvariant());
                 builder.Append(":");
-                builder.Append(AWSSDKUtils.CompressSpaces(entry.Value).Trim());
+                builder.Append(AWSSDKUtils.CompressSpaces(entry.Value)?.Trim());
                 builder.Append("\n");
             }
             return builder.ToString();

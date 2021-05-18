@@ -334,13 +334,16 @@ namespace Amazon.S3.Util
         private static string EscapeNonAscii(string text)
         {
             var sb = new StringBuilder("");
-            foreach (char c in text)
+            if (text != null)
             {
-                sb.Append(
-                    ((int)c > 127) 
-                    ? Uri.EscapeDataString(c.ToString()) 
-                    : c.ToString()
-                );
+                foreach (char c in text)
+                {
+                    sb.Append(
+                        ((int)c > 127)
+                        ? Uri.EscapeDataString(c.ToString())
+                        : c.ToString()
+                    );
+                }
             }
             return sb.ToString();
         }

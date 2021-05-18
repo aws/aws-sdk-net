@@ -161,7 +161,7 @@ namespace Amazon.Runtime.Internal.Auth
                     continue;
 
                 // Step 5: Trim any spaces around the colon in the header (based on testing spaces at the end of value also needs to be removed).
-                sb.Append(String.Concat(lowerKey, ":", headers[key].Trim(), "\n"));
+                sb.Append(String.Concat(lowerKey, ":", headers[key]?.Trim(), "\n"));
             }
 
             return sb.ToString();
