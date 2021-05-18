@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// The AWS Support case ID returned by a successful completion of the <a>CreateCase</a>
-    /// operation.
+    /// The support case ID returned by a successful completion of the <a>CreateCase</a> operation.
     /// </summary>
     public partial class CreateCaseResponse : AmazonWebServiceResponse
     {
@@ -39,7 +38,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property CaseId. 
         /// <para>
-        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric
+        /// The support case ID requested or returned in the call. The case ID is an alphanumeric
         /// string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> 
         /// </para>
         /// </summary>

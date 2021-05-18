@@ -35,49 +35,49 @@ namespace Amazon.AWSSupport.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <b>caseId.</b> The AWS Support case ID requested or returned in the call. The case
-    /// ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
+    ///  <b>caseId</b> - The support case ID requested or returned in the call. The case ID
+    /// is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>categoryCode.</b> The category of problem for the AWS Support case. Corresponds
-    /// to the CategoryCode values returned by a call to <a>DescribeServices</a>.
+    ///  <b>categoryCode</b> - The category of problem for the support case. Corresponds to
+    /// the <code>CategoryCode</code> values returned by a call to <a>DescribeServices</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>displayId.</b> The identifier for the case on pages in the AWS Support Center.
+    ///  <b>displayId</b> - The identifier for the case on pages in the AWS Support Center.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>language.</b> The ISO 639-1 code for the language in which AWS provides support.
+    ///  <b>language</b> - The ISO 639-1 code for the language in which AWS provides support.
     /// AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters
     /// must be passed explicitly for operations that take them.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>nextToken.</b> A resumption point for pagination.
+    ///  <b>nextToken</b> - A resumption point for pagination.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of
+    ///  <b>recentCommunications</b> - One or more <a>Communication</a> objects. Fields of
     /// these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>,
     /// <code>submittedBy</code>, and <code>timeCreated</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>serviceCode.</b> The identifier for the AWS service that corresponds to the service
+    ///  <b>serviceCode</b> - The identifier for the AWS service that corresponds to the service
     /// code defined in the call to <a>DescribeServices</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>severityCode.</b> The severity code assigned to the case. Contains one of the
+    ///  <b>severityCode</b> - The severity code assigned to the case. Contains one of the
     /// values returned by the call to <a>DescribeSeverityLevels</a>. The possible values
     /// are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>,
     /// and <code>critical</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>status.</b> The status of the case in the AWS Support Center. Valid values:
+    ///  <b>status</b> - The status of the case in the AWS Support Center. Valid values:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -105,15 +105,15 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>subject.</b> The subject line of the case.
+    ///  <b>subject</b> - The subject line of the case.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>submittedBy.</b> The email address of the account that submitted the case.
+    ///  <b>submittedBy</b> - The email address of the account that submitted the case.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>timeCreated.</b> The time the case was created, in ISO-8601 format.
+    ///  <b>timeCreated</b> - The time the case was created, in ISO-8601 format.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -135,7 +135,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property CaseId. 
         /// <para>
-        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric
+        /// The support case ID requested or returned in the call. The case ID is an alphanumeric
         /// string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
         /// 
         /// </para>
@@ -155,7 +155,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property CategoryCode. 
         /// <para>
-        /// The category of problem for the AWS Support case.
+        /// The category of problem for the support case.
         /// </para>
         /// </summary>
         public string CategoryCode

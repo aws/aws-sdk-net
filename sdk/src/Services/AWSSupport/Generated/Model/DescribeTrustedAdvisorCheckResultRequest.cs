@@ -56,8 +56,8 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>status</b> - The alert status of the check: "ok" (green), "warning" (yellow),
-    /// "error" (red), or "not_available".
+    ///  <b>status</b> - The alert status of the check can be <code>ok</code> (green), <code>warning</code>
+    /// (yellow), <code>error</code> (red), or <code>not_available</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -69,12 +69,12 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> </ul> <note> <ul> <li> 
     /// <para>
-    /// You must have a Business or Enterprise support plan to use the AWS Support API. 
+    /// You must have a Business or Enterprise Support plan to use the AWS Support API. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you call the AWS Support API from an account that does not have a Business or Enterprise
-    /// support plan, the <code>SubscriptionRequiredException</code> error message appears.
+    /// Support plan, the <code>SubscriptionRequiredException</code> error message appears.
     /// For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS
     /// Support</a>.
     /// </para>

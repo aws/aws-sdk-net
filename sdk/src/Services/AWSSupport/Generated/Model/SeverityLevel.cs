@@ -68,30 +68,33 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The values returned by the API differ from the values that are displayed in the AWS
-        /// Support Center. For example, for the code "low", the API name is "Low", but the name
-        /// in the Support Center is "General guidance". These are the Support Center code/name
-        /// mappings:
+        /// The values returned by the API are different from the values that appear in the AWS
+        /// Support Center. For example, the API uses the code <code>low</code>, but the name
+        /// appears as General guidance in Support Center. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the API code names and how they appear in the console:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>low</code>: General guidance
+        ///  <code>low</code> - General guidance
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>normal</code>: System impaired
+        ///  <code>normal</code> - System impaired
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>high</code>: Production system impaired
+        ///  <code>high</code> - Production system impaired
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>urgent</code>: Production system down
+        ///  <code>urgent</code> - Production system down
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>critical</code>: Business-critical system down
+        ///  <code>critical</code> - Business-critical system down
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
