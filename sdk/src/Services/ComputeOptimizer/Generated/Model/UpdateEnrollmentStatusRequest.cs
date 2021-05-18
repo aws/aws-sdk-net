@@ -41,16 +41,16 @@ namespace Amazon.ComputeOptimizer.Model
     ///  
     /// <para>
     /// You must have the appropriate permissions to opt in to Compute Optimizer, to view
-    /// its recommendations, and to opt out. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/security-iam.html">Controlling
-    /// access with AWS Identity and Access Management</a> in the <i>Compute Optimizer User
-    /// Guide</i>.
+    /// its recommendations, and to opt out. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling
+    /// access with AWS Identity and Access Management</a> in the <i>AWS Compute Optimizer
+    /// User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// When you opt in, Compute Optimizer automatically creates a Service-Linked Role in
-    /// your account to access its data. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/using-service-linked-roles.html">Using
-    /// Service-Linked Roles for AWS Compute Optimizer</a> in the <i>Compute Optimizer User
-    /// Guide</i>.
+    /// your account to access its data. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
+    /// Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class UpdateEnrollmentStatusRequest : AmazonComputeOptimizerRequest
@@ -90,8 +90,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute
         /// Optimizer begins analyzing the configuration and utilization metrics of your AWS resources
-        /// after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics
-        /// analyzed by AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+        /// after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
+        /// analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

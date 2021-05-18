@@ -150,6 +150,60 @@ namespace Amazon.ComputeOptimizer
 
         #endregion
                 
+        #region  ExportEBSVolumeRecommendations
+
+
+
+        /// <summary>
+        /// Exports optimization recommendations for Amazon EBS volumes.
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are exported in a comma-separated values (.csv) file, and its metadata
+        /// in a JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage
+        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have only one Amazon EBS volume export job in progress per AWS Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportEBSVolumeRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportEBSVolumeRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
+        /// The request exceeds a limit of the service.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to AWS Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations">REST API Reference for ExportEBSVolumeRecommendations Operation</seealso>
+        Task<ExportEBSVolumeRecommendationsResponse> ExportEBSVolumeRecommendationsAsync(ExportEBSVolumeRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ExportEC2InstanceRecommendations
 
 
@@ -201,6 +255,60 @@ namespace Amazon.ComputeOptimizer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations">REST API Reference for ExportEC2InstanceRecommendations Operation</seealso>
         Task<ExportEC2InstanceRecommendationsResponse> ExportEC2InstanceRecommendationsAsync(ExportEC2InstanceRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ExportLambdaFunctionRecommendations
+
+
+
+        /// <summary>
+        /// Exports optimization recommendations for AWS Lambda functions.
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are exported in a comma-separated values (.csv) file, and its metadata
+        /// in a JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage
+        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have only one Lambda function export job in progress per AWS Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportLambdaFunctionRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportLambdaFunctionRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
+        /// The request exceeds a limit of the service.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to AWS Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations">REST API Reference for ExportLambdaFunctionRecommendations Operation</seealso>
+        Task<ExportLambdaFunctionRecommendationsResponse> ExportLambdaFunctionRecommendationsAsync(ExportLambdaFunctionRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -574,16 +682,16 @@ namespace Amazon.ComputeOptimizer
         ///  
         /// <para>
         /// You must have the appropriate permissions to opt in to Compute Optimizer, to view
-        /// its recommendations, and to opt out. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/security-iam.html">Controlling
-        /// access with AWS Identity and Access Management</a> in the <i>Compute Optimizer User
-        /// Guide</i>.
+        /// its recommendations, and to opt out. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling
+        /// access with AWS Identity and Access Management</a> in the <i>AWS Compute Optimizer
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// When you opt in, Compute Optimizer automatically creates a Service-Linked Role in
-        /// your account to access its data. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/using-service-linked-roles.html">Using
-        /// Service-Linked Roles for AWS Compute Optimizer</a> in the <i>Compute Optimizer User
-        /// Guide</i>.
+        /// your account to access its data. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
+        /// Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnrollmentStatus service method.</param>

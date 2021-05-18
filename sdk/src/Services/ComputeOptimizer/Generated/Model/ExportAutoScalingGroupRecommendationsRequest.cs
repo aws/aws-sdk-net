@@ -159,7 +159,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The member accounts must also be opted in to Compute Optimizer.
+        /// The member accounts must also be opted in to Compute Optimizer, and trusted access
+        /// for Compute Optimizer must be enabled in the organization account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+        /// Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
