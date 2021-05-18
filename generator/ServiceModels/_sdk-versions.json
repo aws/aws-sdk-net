@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.35.0",
+    "ProductVersion" : "3.7.36.0",
     "CoreVersion"    : "3.7.0.22",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -22,7 +22,7 @@
             "InPreview"               : false
         },
         "AWSSupport"  : {
-            "Version" : "3.7.0.21",
+            "Version" : "3.7.0.22",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -1314,7 +1314,7 @@
             "InPreview"               : false
         },
         "LicenseManager"                  : {
-            "Version" : "3.7.0.21",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -1442,7 +1442,7 @@
             "InPreview"               : false
         },
         "Personalize"                     : {
-            "Version" : "3.7.1.8",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -1666,7 +1666,7 @@
             "InPreview"               : false
         },
         "ComputeOptimizer"                : {
-            "Version" : "3.7.0.21",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -1770,7 +1770,7 @@
             "InPreview"               : false
         },
         "IoTSiteWise"                     : {
-            "Version" : "3.7.1.6",
+            "Version" : "3.7.1.7",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -2066,7 +2066,7 @@
             "InPreview"               : false
         },
         "LexModelsV2"                     : {
-            "Version" : "3.7.0.21",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.22"
@@ -2146,6 +2146,14 @@
             "InPreview"               : false
         },
         "ApplicationCostProfiler"         : {
+            "Version" : "3.7.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.0.22"
+            },
+            "InPreview"               : false
+        },
+        "AppRunner"                       : {
             "Version" : "3.7.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {

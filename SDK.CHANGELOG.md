@@ -1,3 +1,19 @@
+### 3.7.36.0 (2021-05-18 18:16 UTC)
+* AppRunner (3.7.0.0)
+	* AWS App Runner is a service that provides a fast, simple, and cost-effective way to deploy from source code or a container image directly to a scalable and secure web application in the AWS Cloud.
+* AWSSupport (3.7.0.22)
+	* Documentation updates for support
+* ComputeOptimizer (3.7.1.0)
+	* This release enables compute optimizer to support exporting  recommendations to Amazon S3 for EBS volumes and Lambda Functions.
+* IoTSiteWise (3.7.1.7)
+	* Documentation updates for AWS IoT SiteWise.
+* LexModelsV2 (3.7.1.0)
+	* This release adds support for exporting and importing Lex V2 bots and bot locales. It also adds validations to enforce minimum number of tags on Lex V2 resources. For details, see https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html
+* LicenseManager (3.7.1.0)
+	* AWS License Manager now supports periodic report generation.
+* Personalize (3.7.2.0)
+	* Amazon Personalize now supports the ability to optimize a solution for a custom objective in addition to maximizing relevance.
+
 ### 3.7.35.0 (2021-05-17 18:16 UTC)
 * ApplicationCostProfiler (3.7.0.0)
 	* APIs for AWS Application Cost Profiler.
