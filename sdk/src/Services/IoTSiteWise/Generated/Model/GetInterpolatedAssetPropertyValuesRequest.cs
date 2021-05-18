@@ -34,7 +34,11 @@ namespace Amazon.IoTSiteWise.Model
     /// a period of time. For example, you can use the this operation to return the interpolated
     /// temperature values for a wind turbine every 24 hours over a duration of 7 days.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// This API isn't available in China (Beijing).
+    /// </para>
+    ///  </note> 
     /// <para>
     /// To identify an asset property, you must specify one of the following:
     /// </para>

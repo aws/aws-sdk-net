@@ -490,8 +490,8 @@ namespace Amazon.IoTSiteWise
         ///  </li> </ul> <important> 
         /// <para>
         /// With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp
-        /// of no more than 7 days in the past and no more than 5 minutes in the future. AWS IoT
-        /// SiteWise rejects timestamps outside of the inclusive range of [-7 days, +5 minutes]
+        /// of no more than 7 days in the past and no more than 10 minutes in the future. AWS
+        /// IoT SiteWise rejects timestamps outside of the inclusive range of [-7 days, +10 minutes]
         /// and returns a <code>TimestampOutOfRangeException</code> error.
         /// </para>
         ///  
@@ -2392,7 +2392,11 @@ namespace Amazon.IoTSiteWise
         /// a period of time. For example, you can use the this operation to return the interpolated
         /// temperature values for a wind turbine every 24 hours over a duration of 7 days.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This API isn't available in China (Beijing).
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To identify an asset property, you must specify one of the following:
         /// </para>
