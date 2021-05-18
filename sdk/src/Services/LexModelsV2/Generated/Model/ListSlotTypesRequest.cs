@@ -105,7 +105,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property LocaleId. 
         /// <para>
         /// The identifier of the language and locale of the slot types to list. The string must
-        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+        /// languages</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

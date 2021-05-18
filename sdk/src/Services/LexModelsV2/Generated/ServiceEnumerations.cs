@@ -347,6 +347,10 @@ namespace Amazon.LexModelsV2
         /// </summary>
         public static readonly BotLocaleStatus Failed = new BotLocaleStatus("Failed");
         /// <summary>
+        /// Constant Importing for BotLocaleStatus
+        /// </summary>
+        public static readonly BotLocaleStatus Importing = new BotLocaleStatus("Importing");
+        /// <summary>
         /// Constant NotBuilt for BotLocaleStatus
         /// </summary>
         public static readonly BotLocaleStatus NotBuilt = new BotLocaleStatus("NotBuilt");
@@ -458,6 +462,10 @@ namespace Amazon.LexModelsV2
         /// Constant Failed for BotStatus
         /// </summary>
         public static readonly BotStatus Failed = new BotStatus("Failed");
+        /// <summary>
+        /// Constant Importing for BotStatus
+        /// </summary>
+        public static readonly BotStatus Importing = new BotStatus("Importing");
         /// <summary>
         /// Constant Inactive for BotStatus
         /// </summary>
@@ -641,6 +649,452 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type ExportFilterName.
+    /// </summary>
+    public class ExportFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ExportResourceType for ExportFilterName
+        /// </summary>
+        public static readonly ExportFilterName ExportResourceType = new ExportFilterName("ExportResourceType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportFilterName FindValue(string value)
+        {
+            return FindValue<ExportFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportFilterOperator.
+    /// </summary>
+    public class ExportFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CO for ExportFilterOperator
+        /// </summary>
+        public static readonly ExportFilterOperator CO = new ExportFilterOperator("CO");
+        /// <summary>
+        /// Constant EQ for ExportFilterOperator
+        /// </summary>
+        public static readonly ExportFilterOperator EQ = new ExportFilterOperator("EQ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportFilterOperator FindValue(string value)
+        {
+            return FindValue<ExportFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportSortAttribute.
+    /// </summary>
+    public class ExportSortAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LastUpdatedDateTime for ExportSortAttribute
+        /// </summary>
+        public static readonly ExportSortAttribute LastUpdatedDateTime = new ExportSortAttribute("LastUpdatedDateTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportSortAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportSortAttribute FindValue(string value)
+        {
+            return FindValue<ExportSortAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportSortAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportStatus.
+    /// </summary>
+    public class ExportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus Completed = new ExportStatus("Completed");
+        /// <summary>
+        /// Constant Deleting for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus Deleting = new ExportStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus Failed = new ExportStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus InProgress = new ExportStatus("InProgress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportStatus FindValue(string value)
+        {
+            return FindValue<ExportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportExportFileFormat.
+    /// </summary>
+    public class ImportExportFileFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LexJson for ImportExportFileFormat
+        /// </summary>
+        public static readonly ImportExportFileFormat LexJson = new ImportExportFileFormat("LexJson");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportExportFileFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportExportFileFormat FindValue(string value)
+        {
+            return FindValue<ImportExportFileFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportExportFileFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportFilterName.
+    /// </summary>
+    public class ImportFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ImportResourceType for ImportFilterName
+        /// </summary>
+        public static readonly ImportFilterName ImportResourceType = new ImportFilterName("ImportResourceType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportFilterName FindValue(string value)
+        {
+            return FindValue<ImportFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportFilterOperator.
+    /// </summary>
+    public class ImportFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CO for ImportFilterOperator
+        /// </summary>
+        public static readonly ImportFilterOperator CO = new ImportFilterOperator("CO");
+        /// <summary>
+        /// Constant EQ for ImportFilterOperator
+        /// </summary>
+        public static readonly ImportFilterOperator EQ = new ImportFilterOperator("EQ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportFilterOperator FindValue(string value)
+        {
+            return FindValue<ImportFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportSortAttribute.
+    /// </summary>
+    public class ImportSortAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LastUpdatedDateTime for ImportSortAttribute
+        /// </summary>
+        public static readonly ImportSortAttribute LastUpdatedDateTime = new ImportSortAttribute("LastUpdatedDateTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportSortAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportSortAttribute FindValue(string value)
+        {
+            return FindValue<ImportSortAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportSortAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportStatus.
+    /// </summary>
+    public class ImportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus Completed = new ImportStatus("Completed");
+        /// <summary>
+        /// Constant Deleting for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus Deleting = new ImportStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus Failed = new ImportStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus InProgress = new ImportStatus("InProgress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportStatus FindValue(string value)
+        {
+            return FindValue<ImportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IntentFilterName.
     /// </summary>
     public class IntentFilterName : ConstantClass
@@ -780,6 +1234,56 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IntentSortAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MergeStrategy.
+    /// </summary>
+    public class MergeStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FailOnConflict for MergeStrategy
+        /// </summary>
+        public static readonly MergeStrategy FailOnConflict = new MergeStrategy("FailOnConflict");
+        /// <summary>
+        /// Constant Overwrite for MergeStrategy
+        /// </summary>
+        public static readonly MergeStrategy Overwrite = new MergeStrategy("Overwrite");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MergeStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MergeStrategy FindValue(string value)
+        {
+            return FindValue<MergeStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MergeStrategy(string value)
         {
             return FindValue(value);
         }

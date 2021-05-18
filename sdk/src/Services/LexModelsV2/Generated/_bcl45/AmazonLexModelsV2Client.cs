@@ -677,6 +677,109 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  CreateExport
+
+
+        /// <summary>
+        /// Creates a zip archive containing the contents of a bot or a bot locale. The archive
+        /// contains a directory structure that contains JSON files that define the bot.
+        /// 
+        ///  
+        /// <para>
+        /// You can create an archive that contains the complete definition of a bot, or you can
+        /// specify that the archive contain only the definition of a single bot locale.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about exporting bots, and about the structure of the export archive,
+        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html">
+        /// Importing and exporting bots </a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExport service method.</param>
+        /// 
+        /// <returns>The response from the CreateExport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateExport">REST API Reference for CreateExport Operation</seealso>
+        public virtual CreateExportResponse CreateExport(CreateExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExportResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a zip archive containing the contents of a bot or a bot locale. The archive
+        /// contains a directory structure that contains JSON files that define the bot.
+        /// 
+        ///  
+        /// <para>
+        /// You can create an archive that contains the complete definition of a bot, or you can
+        /// specify that the archive contain only the definition of a single bot locale.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about exporting bots, and about the structure of the export archive,
+        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html">
+        /// Importing and exporting bots </a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateExport">REST API Reference for CreateExport Operation</seealso>
+        public virtual Task<CreateExportResponse> CreateExportAsync(CreateExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateExportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateIntent
 
 
@@ -1012,6 +1115,79 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = CreateSlotTypeResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateSlotTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUploadUrl
+
+
+        /// <summary>
+        /// Gets a pre-signed S3 write URL that you use to upload the zip archive when importing
+        /// a bot or a bot locale.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUploadUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreateUploadUrl service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateUploadUrl">REST API Reference for CreateUploadUrl Operation</seealso>
+        public virtual CreateUploadUrlResponse CreateUploadUrl(CreateUploadUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUploadUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUploadUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUploadUrlResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a pre-signed S3 write URL that you use to upload the zip archive when importing
+        /// a bot or a bot locale.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUploadUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUploadUrl service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateUploadUrl">REST API Reference for CreateUploadUrl Operation</seealso>
+        public virtual Task<CreateUploadUrlResponse> CreateUploadUrlAsync(CreateUploadUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUploadUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUploadUrlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateUploadUrlResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1362,6 +1538,148 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = DeleteBotVersionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteBotVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteExport
+
+
+        /// <summary>
+        /// Removes a previous export and the associated files stored in an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExport service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport">REST API Reference for DeleteExport Operation</seealso>
+        public virtual DeleteExportResponse DeleteExport(DeleteExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExportResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a previous export and the associated files stored in an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport">REST API Reference for DeleteExport Operation</seealso>
+        public virtual Task<DeleteExportResponse> DeleteExportAsync(DeleteExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteExportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteImport
+
+
+        /// <summary>
+        /// Removes a previous import and the associated file stored in an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImport service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteImport">REST API Reference for DeleteImport Operation</seealso>
+        public virtual DeleteImportResponse DeleteImport(DeleteImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImportResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a previous import and the associated file stored in an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteImport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteImport">REST API Reference for DeleteImport Operation</seealso>
+        public virtual Task<DeleteImportResponse> DeleteImportAsync(DeleteImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteImportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1901,6 +2219,136 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = DescribeBotVersionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeBotVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeExport
+
+
+        /// <summary>
+        /// Gets information about a specific export.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeExport">REST API Reference for DescribeExport Operation</seealso>
+        public virtual DescribeExportResponse DescribeExport(DescribeExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about a specific export.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeExport">REST API Reference for DescribeExport Operation</seealso>
+        public virtual Task<DescribeExportResponse> DescribeExportAsync(DescribeExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeExportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeImport
+
+
+        /// <summary>
+        /// Gets information about a specific import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeImport">REST API Reference for DescribeImport Operation</seealso>
+        public virtual DescribeImportResponse DescribeImport(DescribeImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about a specific import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeImport">REST API Reference for DescribeImport Operation</seealso>
+        public virtual Task<DescribeImportResponse> DescribeImportAsync(DescribeImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeImportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2550,6 +2998,124 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  ListExports
+
+
+        /// <summary>
+        /// Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual ListExportsResponse ListExports(ListExportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListExportsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListImports
+
+
+        /// <summary>
+        /// Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual ListImportsResponse ListImports(ListImportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListImportsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListIntents
 
 
@@ -2808,6 +3374,85 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartImport
+
+
+        /// <summary>
+        /// Starts importing a bot or bot locale from a zip archive that you uploaded to an S3
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
+        /// 
+        /// <returns>The response from the StartImport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual StartImportResponse StartImport(StartImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts importing a bot or bot locale from a zip archive that you uploaded to an S3
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartImport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual Task<StartImportResponse> StartImportAsync(StartImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartImportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3171,6 +3816,83 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = UpdateBotLocaleResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateBotLocaleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateExport
+
+
+        /// <summary>
+        /// Updates the password used to encrypt an export zip archive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExport service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">REST API Reference for UpdateExport Operation</seealso>
+        public virtual UpdateExportResponse UpdateExport(UpdateExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExportResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the password used to encrypt an export zip archive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExport service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">REST API Reference for UpdateExport Operation</seealso>
+        public virtual Task<UpdateExportResponse> UpdateExportAsync(UpdateExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateExportResponse>(request, options, cancellationToken);
         }
 
         #endregion

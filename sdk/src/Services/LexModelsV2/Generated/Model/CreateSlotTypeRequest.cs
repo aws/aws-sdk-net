@@ -112,7 +112,8 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// The identifier of the language and locale that the slot type will be used in. The
         /// string must match one of the supported locales. All of the bots, intents, and slots
-        /// used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+        /// used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+        /// languages</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -328,7 +328,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property LocaleId. 
         /// <para>
         /// The identifier of the language and locale where this intent is used. All of the bots,
-        /// slot types, and slots used by the intent must have the same locale.
+        /// slot types, and slots used by the intent must have the same locale. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+        /// languages</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

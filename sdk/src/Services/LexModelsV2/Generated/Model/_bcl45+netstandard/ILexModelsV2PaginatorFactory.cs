@@ -56,6 +56,16 @@ namespace Amazon.LexModelsV2.Model
         IListBuiltInSlotTypesPaginator ListBuiltInSlotTypes(ListBuiltInSlotTypesRequest request);
 
         /// <summary>
+        /// Paginator for ListExports operation
+        ///</summary>
+        IListExportsPaginator ListExports(ListExportsRequest request);
+
+        /// <summary>
+        /// Paginator for ListImports operation
+        ///</summary>
+        IListImportsPaginator ListImports(ListImportsRequest request);
+
+        /// <summary>
         /// Paginator for ListIntents operation
         ///</summary>
         IListIntentsPaginator ListIntents(ListIntentsRequest request);

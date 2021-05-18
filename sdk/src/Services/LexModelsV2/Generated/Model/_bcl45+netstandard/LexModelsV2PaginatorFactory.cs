@@ -84,6 +84,22 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListExports operation
+        ///</summary>
+        public IListExportsPaginator ListExports(ListExportsRequest request) 
+        {
+            return new ListExportsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImports operation
+        ///</summary>
+        public IListImportsPaginator ListImports(ListImportsRequest request) 
+        {
+            return new ListImportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListIntents operation
         ///</summary>
         public IListIntentsPaginator ListIntents(ListIntentsRequest request) 
