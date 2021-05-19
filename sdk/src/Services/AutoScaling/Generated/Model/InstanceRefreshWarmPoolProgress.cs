@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Reports the progress of an instance fresh on instances that are in the warm pool.
+    /// Reports the progress of an instance refresh on instances that are in the warm pool.
     /// </summary>
     public partial class InstanceRefreshWarmPoolProgress
     {
@@ -61,7 +61,7 @@ namespace Amazon.AutoScaling.Model
         /// The percentage of instances in the warm pool that have been replaced. For each instance
         /// replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up
         /// time. When the instance's health status changes to healthy and the specified warm-up
-        /// time passes, the instance is considered updated and added to the percentage complete.
+        /// time passes, the instance is considered updated and is added to the percentage complete.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

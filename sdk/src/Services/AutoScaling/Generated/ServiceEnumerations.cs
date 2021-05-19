@@ -441,6 +441,280 @@ namespace Amazon.AutoScaling
 
 
     /// <summary>
+    /// Constants used for properties of type PredefinedLoadMetricType.
+    /// </summary>
+    public class PredefinedLoadMetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALBTargetGroupRequestCount for PredefinedLoadMetricType
+        /// </summary>
+        public static readonly PredefinedLoadMetricType ALBTargetGroupRequestCount = new PredefinedLoadMetricType("ALBTargetGroupRequestCount");
+        /// <summary>
+        /// Constant ASGTotalCPUUtilization for PredefinedLoadMetricType
+        /// </summary>
+        public static readonly PredefinedLoadMetricType ASGTotalCPUUtilization = new PredefinedLoadMetricType("ASGTotalCPUUtilization");
+        /// <summary>
+        /// Constant ASGTotalNetworkIn for PredefinedLoadMetricType
+        /// </summary>
+        public static readonly PredefinedLoadMetricType ASGTotalNetworkIn = new PredefinedLoadMetricType("ASGTotalNetworkIn");
+        /// <summary>
+        /// Constant ASGTotalNetworkOut for PredefinedLoadMetricType
+        /// </summary>
+        public static readonly PredefinedLoadMetricType ASGTotalNetworkOut = new PredefinedLoadMetricType("ASGTotalNetworkOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PredefinedLoadMetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PredefinedLoadMetricType FindValue(string value)
+        {
+            return FindValue<PredefinedLoadMetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PredefinedLoadMetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PredefinedMetricPairType.
+    /// </summary>
+    public class PredefinedMetricPairType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALBRequestCount for PredefinedMetricPairType
+        /// </summary>
+        public static readonly PredefinedMetricPairType ALBRequestCount = new PredefinedMetricPairType("ALBRequestCount");
+        /// <summary>
+        /// Constant ASGCPUUtilization for PredefinedMetricPairType
+        /// </summary>
+        public static readonly PredefinedMetricPairType ASGCPUUtilization = new PredefinedMetricPairType("ASGCPUUtilization");
+        /// <summary>
+        /// Constant ASGNetworkIn for PredefinedMetricPairType
+        /// </summary>
+        public static readonly PredefinedMetricPairType ASGNetworkIn = new PredefinedMetricPairType("ASGNetworkIn");
+        /// <summary>
+        /// Constant ASGNetworkOut for PredefinedMetricPairType
+        /// </summary>
+        public static readonly PredefinedMetricPairType ASGNetworkOut = new PredefinedMetricPairType("ASGNetworkOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PredefinedMetricPairType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PredefinedMetricPairType FindValue(string value)
+        {
+            return FindValue<PredefinedMetricPairType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PredefinedMetricPairType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PredefinedScalingMetricType.
+    /// </summary>
+    public class PredefinedScalingMetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALBRequestCountPerTarget for PredefinedScalingMetricType
+        /// </summary>
+        public static readonly PredefinedScalingMetricType ALBRequestCountPerTarget = new PredefinedScalingMetricType("ALBRequestCountPerTarget");
+        /// <summary>
+        /// Constant ASGAverageCPUUtilization for PredefinedScalingMetricType
+        /// </summary>
+        public static readonly PredefinedScalingMetricType ASGAverageCPUUtilization = new PredefinedScalingMetricType("ASGAverageCPUUtilization");
+        /// <summary>
+        /// Constant ASGAverageNetworkIn for PredefinedScalingMetricType
+        /// </summary>
+        public static readonly PredefinedScalingMetricType ASGAverageNetworkIn = new PredefinedScalingMetricType("ASGAverageNetworkIn");
+        /// <summary>
+        /// Constant ASGAverageNetworkOut for PredefinedScalingMetricType
+        /// </summary>
+        public static readonly PredefinedScalingMetricType ASGAverageNetworkOut = new PredefinedScalingMetricType("ASGAverageNetworkOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PredefinedScalingMetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PredefinedScalingMetricType FindValue(string value)
+        {
+            return FindValue<PredefinedScalingMetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PredefinedScalingMetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PredictiveScalingMaxCapacityBreachBehavior.
+    /// </summary>
+    public class PredictiveScalingMaxCapacityBreachBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HonorMaxCapacity for PredictiveScalingMaxCapacityBreachBehavior
+        /// </summary>
+        public static readonly PredictiveScalingMaxCapacityBreachBehavior HonorMaxCapacity = new PredictiveScalingMaxCapacityBreachBehavior("HonorMaxCapacity");
+        /// <summary>
+        /// Constant IncreaseMaxCapacity for PredictiveScalingMaxCapacityBreachBehavior
+        /// </summary>
+        public static readonly PredictiveScalingMaxCapacityBreachBehavior IncreaseMaxCapacity = new PredictiveScalingMaxCapacityBreachBehavior("IncreaseMaxCapacity");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PredictiveScalingMaxCapacityBreachBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PredictiveScalingMaxCapacityBreachBehavior FindValue(string value)
+        {
+            return FindValue<PredictiveScalingMaxCapacityBreachBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PredictiveScalingMaxCapacityBreachBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PredictiveScalingMode.
+    /// </summary>
+    public class PredictiveScalingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ForecastAndScale for PredictiveScalingMode
+        /// </summary>
+        public static readonly PredictiveScalingMode ForecastAndScale = new PredictiveScalingMode("ForecastAndScale");
+        /// <summary>
+        /// Constant ForecastOnly for PredictiveScalingMode
+        /// </summary>
+        public static readonly PredictiveScalingMode ForecastOnly = new PredictiveScalingMode("ForecastOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PredictiveScalingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PredictiveScalingMode FindValue(string value)
+        {
+            return FindValue<PredictiveScalingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PredictiveScalingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RefreshStrategy.
     /// </summary>
     public class RefreshStrategy : ConstantClass

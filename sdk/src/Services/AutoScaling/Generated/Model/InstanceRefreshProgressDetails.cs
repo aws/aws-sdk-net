@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LivePoolProgress. 
         /// <para>
-        /// Indicates the progress of an instance fresh on instances that are in the Auto Scaling
+        /// Indicates the progress of an instance refresh on instances that are in the Auto Scaling
         /// group.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property WarmPoolProgress. 
         /// <para>
-        /// Indicates the progress of an instance fresh on instances that are in the warm pool.
+        /// Indicates the progress of an instance refresh on instances that are in the warm pool.
         /// </para>
         /// </summary>
         public InstanceRefreshWarmPoolProgress WarmPoolProgress

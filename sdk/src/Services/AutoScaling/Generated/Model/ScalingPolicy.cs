@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         private string _policyARN;
         private string _policyName;
         private string _policyType;
+        private PredictiveScalingConfiguration _predictiveScalingConfiguration;
         private int? _scalingAdjustment;
         private List<StepAdjustment> _stepAdjustments = new List<StepAdjustment>();
         private TargetTrackingConfiguration _targetTrackingConfiguration;
@@ -274,6 +275,10 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <code>SimpleScaling</code> (default)
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PredictiveScaling</code> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
@@ -292,6 +297,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetPolicyType()
         {
             return this._policyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PredictiveScalingConfiguration. 
+        /// <para>
+        /// A predictive scaling policy.
+        /// </para>
+        /// </summary>
+        public PredictiveScalingConfiguration PredictiveScalingConfiguration
+        {
+            get { return this._predictiveScalingConfiguration; }
+            set { this._predictiveScalingConfiguration = value; }
+        }
+
+        // Check to see if PredictiveScalingConfiguration property is set
+        internal bool IsSetPredictiveScalingConfiguration()
+        {
+            return this._predictiveScalingConfiguration != null;
         }
 
         /// <summary>

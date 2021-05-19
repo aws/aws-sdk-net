@@ -2877,6 +2877,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("AutoScaling")]
+        public void GetPredictiveScalingForecastMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPredictiveScalingForecast");
+
+            var request = InstantiateClassGenerator.Execute<GetPredictiveScalingForecastRequest>();
+            var marshaller = new GetPredictiveScalingForecastRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetPredictiveScalingForecastResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetPredictiveScalingForecastResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void GetPredictiveScalingForecast_ResourceContentionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPredictiveScalingForecast");
+
+            var request = InstantiateClassGenerator.Execute<GetPredictiveScalingForecastRequest>();
+            var marshaller = new GetPredictiveScalingForecastRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceContentionException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetPredictiveScalingForecastResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
         public void PutLifecycleHookMarshallTest()
         {
             var operation = service_model.FindOperation("PutLifecycleHook");

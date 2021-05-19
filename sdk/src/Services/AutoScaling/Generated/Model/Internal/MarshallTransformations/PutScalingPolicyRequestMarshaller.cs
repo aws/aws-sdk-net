@@ -98,6 +98,70 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PolicyType", StringUtils.FromString(publicRequest.PolicyType));
                 }
+                if(publicRequest.IsSetPredictiveScalingConfiguration())
+                {
+                    if(publicRequest.PredictiveScalingConfiguration.IsSetMaxCapacityBreachBehavior())
+                    {
+                        request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MaxCapacityBreachBehavior", StringUtils.FromString(publicRequest.PredictiveScalingConfiguration.MaxCapacityBreachBehavior));
+                    }
+                    if(publicRequest.PredictiveScalingConfiguration.IsSetMaxCapacityBuffer())
+                    {
+                        request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MaxCapacityBuffer", StringUtils.FromInt(publicRequest.PredictiveScalingConfiguration.MaxCapacityBuffer));
+                    }
+                    if(publicRequest.PredictiveScalingConfiguration.IsSetMetricSpecifications())
+                    {
+                        int publicRequestPredictiveScalingConfigurationlistValueIndex = 1;
+                        foreach(var publicRequestPredictiveScalingConfigurationlistValue in publicRequest.PredictiveScalingConfiguration.MetricSpecifications)
+                        {
+                            if(publicRequestPredictiveScalingConfigurationlistValue.IsSetPredefinedLoadMetricSpecification())
+                            {
+                                if(publicRequestPredictiveScalingConfigurationlistValue.PredefinedLoadMetricSpecification.IsSetPredefinedMetricType())
+                                {
+                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "PredefinedLoadMetricSpecification" + "." + "PredefinedMetricType", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValue.PredefinedLoadMetricSpecification.PredefinedMetricType));
+                                }
+                                if(publicRequestPredictiveScalingConfigurationlistValue.PredefinedLoadMetricSpecification.IsSetResourceLabel())
+                                {
+                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "PredefinedLoadMetricSpecification" + "." + "ResourceLabel", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValue.PredefinedLoadMetricSpecification.ResourceLabel));
+                                }
+                            }
+                            if(publicRequestPredictiveScalingConfigurationlistValue.IsSetPredefinedMetricPairSpecification())
+                            {
+                                if(publicRequestPredictiveScalingConfigurationlistValue.PredefinedMetricPairSpecification.IsSetPredefinedMetricType())
+                                {
+                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "PredefinedMetricPairSpecification" + "." + "PredefinedMetricType", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValue.PredefinedMetricPairSpecification.PredefinedMetricType));
+                                }
+                                if(publicRequestPredictiveScalingConfigurationlistValue.PredefinedMetricPairSpecification.IsSetResourceLabel())
+                                {
+                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "PredefinedMetricPairSpecification" + "." + "ResourceLabel", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValue.PredefinedMetricPairSpecification.ResourceLabel));
+                                }
+                            }
+                            if(publicRequestPredictiveScalingConfigurationlistValue.IsSetPredefinedScalingMetricSpecification())
+                            {
+                                if(publicRequestPredictiveScalingConfigurationlistValue.PredefinedScalingMetricSpecification.IsSetPredefinedMetricType())
+                                {
+                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "PredefinedScalingMetricSpecification" + "." + "PredefinedMetricType", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValue.PredefinedScalingMetricSpecification.PredefinedMetricType));
+                                }
+                                if(publicRequestPredictiveScalingConfigurationlistValue.PredefinedScalingMetricSpecification.IsSetResourceLabel())
+                                {
+                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "PredefinedScalingMetricSpecification" + "." + "ResourceLabel", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValue.PredefinedScalingMetricSpecification.ResourceLabel));
+                                }
+                            }
+                            if(publicRequestPredictiveScalingConfigurationlistValue.IsSetTargetValue())
+                            {
+                                request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "TargetValue", StringUtils.FromDouble(publicRequestPredictiveScalingConfigurationlistValue.TargetValue));
+                            }
+                            publicRequestPredictiveScalingConfigurationlistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.PredictiveScalingConfiguration.IsSetMode())
+                    {
+                        request.Parameters.Add("PredictiveScalingConfiguration" + "." + "Mode", StringUtils.FromString(publicRequest.PredictiveScalingConfiguration.Mode));
+                    }
+                    if(publicRequest.PredictiveScalingConfiguration.IsSetSchedulingBufferTime())
+                    {
+                        request.Parameters.Add("PredictiveScalingConfiguration" + "." + "SchedulingBufferTime", StringUtils.FromInt(publicRequest.PredictiveScalingConfiguration.SchedulingBufferTime));
+                    }
+                }
                 if(publicRequest.IsSetScalingAdjustment())
                 {
                     request.Parameters.Add("ScalingAdjustment", StringUtils.FromInt(publicRequest.ScalingAdjustment));

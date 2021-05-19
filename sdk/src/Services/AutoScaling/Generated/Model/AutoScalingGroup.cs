@@ -53,6 +53,7 @@ namespace Amazon.AutoScaling.Model
         private MixedInstancesPolicy _mixedInstancesPolicy;
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
+        private int? _predictedCapacity;
         private string _serviceLinkedRoleARN;
         private string _status;
         private List<SuspendedProcess> _suspendedProcesses = new List<SuspendedProcess>();
@@ -441,6 +442,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetPlacementGroup()
         {
             return this._placementGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PredictedCapacity. 
+        /// <para>
+        /// The predicted capacity of the group when it has a predictive scaling policy.
+        /// </para>
+        /// </summary>
+        public int PredictedCapacity
+        {
+            get { return this._predictedCapacity.GetValueOrDefault(); }
+            set { this._predictedCapacity = value; }
+        }
+
+        // Check to see if PredictedCapacity property is set
+        internal bool IsSetPredictedCapacity()
+        {
+            return this._predictedCapacity.HasValue; 
         }
 
         /// <summary>

@@ -127,6 +127,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.PolicyType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PredictiveScalingConfiguration", targetDepth))
+                    {
+                        var unmarshaller = PredictiveScalingConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.PredictiveScalingConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ScalingAdjustment", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

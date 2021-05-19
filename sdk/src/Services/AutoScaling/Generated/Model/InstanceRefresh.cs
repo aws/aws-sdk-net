@@ -124,7 +124,7 @@ namespace Amazon.AutoScaling.Model
         /// The percentage of the instance refresh that is complete. For each instance replacement,
         /// Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When
         /// the instance's health status changes to healthy and the specified warm-up time passes,
-        /// the instance is considered updated and added to the percentage complete.
+        /// the instance is considered updated and is added to the percentage complete.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

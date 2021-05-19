@@ -178,6 +178,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.PlacementGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PredictedCapacity", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.PredictedCapacity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ServiceLinkedRoleARN", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

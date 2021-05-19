@@ -41,8 +41,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxGroupPreparedCapacity. 
         /// <para>
-        /// The total maximum number of instances that are allowed to be in the warm pool or in
-        /// any state except <code>Terminated</code> for the Auto Scaling group.
+        /// The maximum number of instances that are allowed to be in the warm pool or in any
+        /// state except <code>Terminated</code> for the Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1)]
@@ -80,8 +80,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PoolState. 
         /// <para>
-        /// The instance state to transition to after the lifecycle actions are complete: <code>Stopped</code>
-        /// or <code>Running</code>.
+        /// The instance state to transition to after the lifecycle actions are complete.
         /// </para>
         /// </summary>
         public WarmPoolState PoolState

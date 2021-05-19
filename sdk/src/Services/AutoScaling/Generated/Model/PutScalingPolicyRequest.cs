@@ -30,14 +30,26 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutScalingPolicy operation.
-    /// Creates or updates a scaling policy for an Auto Scaling group.
+    /// Creates or updates a scaling policy for an Auto Scaling group. Scaling policies are
+    /// used to scale an Auto Scaling group based on configurable metrics. If no policies
+    /// are defined, the dynamic scaling and predictive scaling features are not used. 
     /// 
     ///  
     /// <para>
-    /// For more information about using scaling policies to scale your Auto Scaling group,
-    /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+    /// For more information about using dynamic scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
     /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
     /// and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about using predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
+    /// scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can view the scaling policies for an Auto Scaling group using the <a>DescribePolicies</a>
+    /// API call. If you are no longer using a scaling policy, you can delete it by calling
+    /// the <a>DeletePolicy</a> API.
     /// </para>
     /// </summary>
     public partial class PutScalingPolicyRequest : AmazonAutoScalingRequest
@@ -52,6 +64,7 @@ namespace Amazon.AutoScaling.Model
         private int? _minAdjustmentStep;
         private string _policyName;
         private string _policyType;
+        private PredictiveScalingConfiguration _predictiveScalingConfiguration;
         private int? _scalingAdjustment;
         private List<StepAdjustment> _stepAdjustments = new List<StepAdjustment>();
         private TargetTrackingConfiguration _targetTrackingConfiguration;
@@ -287,6 +300,10 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <code>SimpleScaling</code> (default)
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PredictiveScaling</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -300,6 +317,38 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetPolicyType()
         {
             return this._policyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PredictiveScalingConfiguration. 
+        /// <para>
+        /// A predictive scaling policy. Provides support for only predefined metrics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Predictive scaling works with CPU utilization, network in/out, and the Application
+        /// Load Balancer request count.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Required if the policy type is <code>PredictiveScaling</code>.
+        /// </para>
+        /// </summary>
+        public PredictiveScalingConfiguration PredictiveScalingConfiguration
+        {
+            get { return this._predictiveScalingConfiguration; }
+            set { this._predictiveScalingConfiguration = value; }
+        }
+
+        // Check to see if PredictiveScalingConfiguration property is set
+        internal bool IsSetPredictiveScalingConfiguration()
+        {
+            return this._predictiveScalingConfiguration != null;
         }
 
         /// <summary>
@@ -353,7 +402,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetTrackingConfiguration. 
         /// <para>
-        /// A target tracking scaling policy. Includes support for predefined or customized metrics.
+        /// A target tracking scaling policy. Provides support for predefined or customized metrics.
         /// </para>
         ///  
         /// <para>

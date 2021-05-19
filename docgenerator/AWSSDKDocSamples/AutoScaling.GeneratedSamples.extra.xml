@@ -352,7 +352,7 @@
         <value>
             <example>
                 <para>
-                    This example describes the Auto Scaling limits for your AWS account.
+                    This example describes the Amazon EC2 Auto Scaling service quotas for your account.
                 </para>
                 <code
                     title="To describe your Auto Scaling account limits"
