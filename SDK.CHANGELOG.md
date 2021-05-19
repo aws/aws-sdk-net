@@ -1,3 +1,22 @@
+### 3.7.37.0 (2021-05-19 18:14 UTC)
+* AutoScaling (3.7.2.0)
+	* With this release, customers can easily use Predictive Scaling as a policy directly through Amazon EC2 Auto Scaling configurations to proactively scale their applications ahead of predicted demand.
+* EKS (3.7.3.0)
+	* Update the EKS AddonActive waiter.
+* IdentityManagement (3.7.2.0)
+	* Add pagination to ListUserTags operation
+* KinesisAnalyticsV2 (3.7.4.0)
+	* Kinesis Data Analytics now allows rapid iteration on Apache Flink stream processing through the Kinesis Data Analytics Studio feature.
+* Lightsail (3.7.1.17)
+	* Documentation updates for Amazon Lightsail.
+* Rekognition (3.7.1.0)
+	* Amazon Rekognition Custom Labels adds support for customer managed encryption, using AWS Key Management Service, of image files copied into the service and files written back to the customer.
+* Core 3.7.0.24
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.36.1 (2021-05-18 21:53 UTC)
 * S3 (3.7.0.24)
 	* Updated to use new Core, version 3.7.0.23
