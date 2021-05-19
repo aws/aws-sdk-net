@@ -939,6 +939,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("IdentityManagement")]
+        public void ListUserTagsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListUserTagsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListUserTagsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListUserTagsResponse>();
+            secondResponse.IsTruncated = false;
+
+            _mockClient.SetupSequence(x => x.ListUserTags(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListUserTags(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IdentityManagement")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListUserTagsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListUserTagsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListUserTagsResponse>();
+            response.IsTruncated = false;
+
+            _mockClient.Setup(x => x.ListUserTags(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListUserTags(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IdentityManagement")]
         public void ListVirtualMFADevicesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListVirtualMFADevicesRequest>();

@@ -220,6 +220,14 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Paginator for ListUserTags operation
+        ///</summary>
+        public IListUserTagsPaginator ListUserTags(ListUserTagsRequest request) 
+        {
+            return new ListUserTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListVirtualMFADevices operation
         ///</summary>
         public IListVirtualMFADevicesPaginator ListVirtualMFADevices(ListVirtualMFADevicesRequest request) 

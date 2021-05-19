@@ -141,6 +141,11 @@ namespace Amazon.IdentityManagement.Model
         IListUsersPaginator ListUsers(ListUsersRequest request);
 
         /// <summary>
+        /// Paginator for ListUserTags operation
+        ///</summary>
+        IListUserTagsPaginator ListUserTags(ListUserTagsRequest request);
+
+        /// <summary>
         /// Paginator for ListVirtualMFADevices operation
         ///</summary>
         IListVirtualMFADevicesPaginator ListVirtualMFADevices(ListVirtualMFADevicesRequest request);
