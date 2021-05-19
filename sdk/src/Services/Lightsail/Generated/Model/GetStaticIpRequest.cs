@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStaticIp operation.
-    /// Returns information about a specific static IP.
+    /// Returns information about an Amazon Lightsail static IP.
     /// </summary>
     public partial class GetStaticIpRequest : AmazonLightsailRequest
     {

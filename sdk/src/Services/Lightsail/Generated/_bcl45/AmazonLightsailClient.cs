@@ -13134,7 +13134,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Returns information about a specific static IP.
+        /// Returns information about an Amazon Lightsail static IP.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStaticIp service method.</param>
         /// 
@@ -13183,7 +13183,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Returns information about a specific static IP.
+        /// Returns information about an Amazon Lightsail static IP.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStaticIp service method.</param>
         /// <param name="cancellationToken">
