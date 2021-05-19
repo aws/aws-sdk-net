@@ -31,7 +31,13 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Returns a list of tags in an Amazon Rekognition collection, stream processor, or
-    /// Custom Labels model.
+    /// Custom Labels model. 
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>rekognition:ListTagsForResource</code>
+    /// action. 
+    /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonRekognitionRequest
     {

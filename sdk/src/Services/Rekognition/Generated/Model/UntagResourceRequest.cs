@@ -31,7 +31,13 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes one or more tags from an Amazon Rekognition collection, stream processor,
-    /// or Custom Labels model.
+    /// or Custom Labels model. 
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>rekognition:UntagResource</code>
+    /// action. 
+    /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonRekognitionRequest
     {

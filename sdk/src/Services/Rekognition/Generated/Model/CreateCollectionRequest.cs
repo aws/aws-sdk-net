@@ -52,7 +52,8 @@ namespace Amazon.Rekognition.Model
     ///  </note> 
     /// <para>
     /// This operation requires permissions to perform the <code>rekognition:CreateCollection</code>
-    /// action.
+    /// action. If you want to tag your collection, you also require permission to perform
+    /// the <code>rekognition:TagResource</code> operation.
     /// </para>
     /// </summary>
     public partial class CreateCollectionRequest : AmazonRekognitionRequest

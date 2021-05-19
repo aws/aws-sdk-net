@@ -312,7 +312,8 @@ namespace Amazon.Rekognition
         ///  </note> 
         /// <para>
         /// This operation requires permissions to perform the <code>rekognition:CreateCollection</code>
-        /// action.
+        /// action. If you want to tag your collection, you also require permission to perform
+        /// the <code>rekognition:TagResource</code> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCollection service method.</param>
@@ -333,11 +334,11 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceAlreadyExistsException">
-        /// A collection with the specified ID already exists.
+        /// A resource with the specified ID already exists.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
-        /// The size of the collection or tag list exceeds the allowed limit. For more information,
-        /// see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -370,7 +371,8 @@ namespace Amazon.Rekognition
         ///  </note> 
         /// <para>
         /// This operation requires permissions to perform the <code>rekognition:CreateCollection</code>
-        /// action.
+        /// action. If you want to tag your collection, you also require permission to perform
+        /// the <code>rekognition:TagResource</code> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCollection service method.</param>
@@ -394,11 +396,11 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceAlreadyExistsException">
-        /// A collection with the specified ID already exists.
+        /// A resource with the specified ID already exists.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
-        /// The size of the collection or tag list exceeds the allowed limit. For more information,
-        /// see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -562,11 +564,11 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
-        /// The size of the collection or tag list exceeds the allowed limit. For more information,
-        /// see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -632,11 +634,11 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
-        /// The size of the collection or tag list exceeds the allowed limit. For more information,
-        /// see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -673,6 +675,12 @@ namespace Amazon.Rekognition
         /// After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a>
         /// to stop processing. You can delete the stream processor by calling <a>DeleteStreamProcessor</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:CreateStreamProcessor</code>
+        /// action. If you want to tag your stream processor, you also require permission to perform
+        /// the <code>rekognition:TagResource</code> operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamProcessor service method.</param>
         /// 
@@ -702,8 +710,8 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
-        /// The size of the collection or tag list exceeds the allowed limit. For more information,
-        /// see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -737,6 +745,12 @@ namespace Amazon.Rekognition
         /// After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a>
         /// to stop processing. You can delete the stream processor by calling <a>DeleteStreamProcessor</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:CreateStreamProcessor</code>
+        /// action. If you want to tag your stream processor, you also require permission to perform
+        /// the <code>rekognition:TagResource</code> operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamProcessor service method.</param>
         /// <param name="cancellationToken">
@@ -769,8 +783,8 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
-        /// The size of the collection or tag list exceeds the allowed limit. For more information,
-        /// see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -811,7 +825,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -852,7 +866,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -893,7 +907,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -934,7 +948,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -978,7 +992,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1022,7 +1036,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1072,7 +1086,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1122,7 +1136,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1162,7 +1176,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1202,7 +1216,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1244,7 +1258,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1286,7 +1300,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1411,7 +1425,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1456,7 +1470,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1492,7 +1506,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1528,7 +1542,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -1627,7 +1641,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
         /// The requested resource isn't ready. For example, this exception occurs when you call
@@ -1730,7 +1744,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
         /// The requested resource isn't ready. For example, this exception occurs when you call
@@ -2717,7 +2731,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -2764,7 +2778,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -2861,7 +2875,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -2958,7 +2972,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3040,7 +3054,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3122,7 +3136,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3185,7 +3199,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3248,7 +3262,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3325,7 +3339,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3402,7 +3416,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3476,7 +3490,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3550,7 +3564,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3632,7 +3646,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3714,7 +3728,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3792,7 +3806,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3870,7 +3884,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -3940,7 +3954,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4010,7 +4024,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4199,11 +4213,11 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
-        /// The size of the collection or tag list exceeds the allowed limit. For more information,
-        /// see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4392,11 +4406,11 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
-        /// The size of the collection or tag list exceeds the allowed limit. For more information,
-        /// see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4445,7 +4459,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4494,7 +4508,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4540,7 +4554,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4586,7 +4600,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4669,7 +4683,13 @@ namespace Amazon.Rekognition
 
         /// <summary>
         /// Returns a list of tags in an Amazon Rekognition collection, stream processor, or
-        /// Custom Labels model.
+        /// Custom Labels model. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:ListTagsForResource</code>
+        /// action. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -4689,7 +4709,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4701,7 +4721,13 @@ namespace Amazon.Rekognition
 
         /// <summary>
         /// Returns a list of tags in an Amazon Rekognition collection, stream processor, or
-        /// Custom Labels model.
+        /// Custom Labels model. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:ListTagsForResource</code>
+        /// action. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -4724,7 +4750,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4953,7 +4979,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -5014,7 +5040,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -5059,6 +5085,11 @@ namespace Amazon.Rekognition
         /// indicating how similar the face is to the input face. In the response, the operation
         /// also returns the bounding box (and a confidence level that the bounding box contains
         /// a face) of the face that Amazon Rekognition used for the input image. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If no faces are detected in the input image, <code>SearchFacesByImage</code> returns
+        /// an <code>InvalidParameterException</code> error. 
         /// </para>
         ///  
         /// <para>
@@ -5115,7 +5146,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -5157,6 +5188,11 @@ namespace Amazon.Rekognition
         /// indicating how similar the face is to the input face. In the response, the operation
         /// also returns the bounding box (and a confidence level that the bounding box contains
         /// a face) of the face that Amazon Rekognition used for the input image. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If no faces are detected in the input image, <code>SearchFacesByImage</code> returns
+        /// an <code>InvalidParameterException</code> error. 
         /// </para>
         ///  
         /// <para>
@@ -5216,7 +5252,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -5695,7 +5731,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -5762,7 +5798,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6102,7 +6138,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6162,7 +6198,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6361,7 +6397,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6400,7 +6436,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6572,7 +6608,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6610,7 +6646,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6647,7 +6683,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6684,7 +6720,7 @@ namespace Amazon.Rekognition
         /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6700,7 +6736,13 @@ namespace Amazon.Rekognition
         /// <summary>
         /// Adds one or more key-value tags to an Amazon Rekognition collection, stream processor,
         /// or Custom Labels model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a>.
+        /// AWS Resources</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:TagResource</code>
+        /// action. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -6720,11 +6762,11 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
-        /// The size of the collection or tag list exceeds the allowed limit. For more information,
-        /// see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6737,7 +6779,13 @@ namespace Amazon.Rekognition
         /// <summary>
         /// Adds one or more key-value tags to an Amazon Rekognition collection, stream processor,
         /// or Custom Labels model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a>.
+        /// AWS Resources</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:TagResource</code>
+        /// action. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -6760,11 +6808,11 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
-        /// The size of the collection or tag list exceeds the allowed limit. For more information,
-        /// see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6779,7 +6827,13 @@ namespace Amazon.Rekognition
 
         /// <summary>
         /// Removes one or more tags from an Amazon Rekognition collection, stream processor,
-        /// or Custom Labels model.
+        /// or Custom Labels model. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:UntagResource</code>
+        /// action. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -6799,7 +6853,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -6811,7 +6865,13 @@ namespace Amazon.Rekognition
 
         /// <summary>
         /// Removes one or more tags from an Amazon Rekognition collection, stream processor,
-        /// or Custom Labels model.
+        /// or Custom Labels model. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:UntagResource</code>
+        /// action. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -6834,7 +6894,7 @@ namespace Amazon.Rekognition
         /// limit, contact Amazon Rekognition.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
-        /// The collection specified in the request cannot be found.
+        /// The resource specified in the request cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.

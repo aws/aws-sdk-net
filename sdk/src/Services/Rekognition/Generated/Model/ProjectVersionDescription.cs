@@ -36,6 +36,7 @@ namespace Amazon.Rekognition.Model
         private long? _billableTrainingTimeInSeconds;
         private DateTime? _creationTimestamp;
         private EvaluationResult _evaluationResult;
+        private string _kmsKeyId;
         private GroundTruthManifest _manifestSummary;
         private int? _minInferenceUnits;
         private OutputConfig _outputConfig;
@@ -101,6 +102,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetEvaluationResult()
         {
             return this._evaluationResult != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifer for the AWS Key Management Service (AWS KMS) customer master key that
+        /// was used to encrypt the model during training. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

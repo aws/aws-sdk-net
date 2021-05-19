@@ -53,6 +53,12 @@ namespace Amazon.Rekognition.Model
     /// After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a>
     /// to stop processing. You can delete the stream processor by calling <a>DeleteStreamProcessor</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>rekognition:CreateStreamProcessor</code>
+    /// action. If you want to tag your stream processor, you also require permission to perform
+    /// the <code>rekognition:TagResource</code> operation.
+    /// </para>
     /// </summary>
     public partial class CreateStreamProcessorRequest : AmazonRekognitionRequest
     {

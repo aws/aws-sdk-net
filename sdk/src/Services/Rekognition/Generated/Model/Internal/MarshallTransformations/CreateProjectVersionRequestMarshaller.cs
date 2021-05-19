@@ -67,6 +67,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+
                 if(publicRequest.IsSetOutputConfig())
                 {
                     context.Writer.WritePropertyName("OutputConfig");

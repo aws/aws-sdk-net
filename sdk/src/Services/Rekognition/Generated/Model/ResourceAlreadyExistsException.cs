@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// A collection with the specified ID already exists.
+    /// A resource with the specified ID already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

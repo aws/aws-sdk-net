@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// The collection specified in the request cannot be found.
+    /// The resource specified in the request cannot be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

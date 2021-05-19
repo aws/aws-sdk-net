@@ -64,6 +64,11 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
+    /// If no faces are detected in the input image, <code>SearchFacesByImage</code> returns
+    /// an <code>InvalidParameterException</code> error. 
+    /// </para>
+    ///  
+    /// <para>
     /// For an example, Searching for a Face Using an Image in the Amazon Rekognition Developer
     /// Guide.
     /// </para>

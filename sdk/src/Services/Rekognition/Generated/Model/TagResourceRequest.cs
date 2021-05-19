@@ -32,7 +32,13 @@ namespace Amazon.Rekognition.Model
     /// Container for the parameters to the TagResource operation.
     /// Adds one or more key-value tags to an Amazon Rekognition collection, stream processor,
     /// or Custom Labels model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS Resources</a>.
+    /// AWS Resources</a>. 
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>rekognition:TagResource</code>
+    /// action. 
+    /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonRekognitionRequest
     {

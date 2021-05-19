@@ -56,12 +56,42 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class CreateProjectVersionRequest : AmazonRekognitionRequest
     {
+        private string _kmsKeyId;
         private OutputConfig _outputConfig;
         private string _projectArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private TestingData _testingData;
         private TrainingData _trainingData;
         private string _versionName;
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
+        /// You can supply the Amazon Resource Name (ARN) of your CMK, the ID of your CMK, or
+        /// an alias for your CMK. The key is used to encrypt training and test images copied
+        /// into the service for model training. Your source images are unaffected. The key is
+        /// also used to encrypt training results and manifest files written to the output Amazon
+        /// S3 bucket (<code>OutputConfig</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for <code>KmsKeyId</code>, images copied into the service
+        /// are encrypted using a key that AWS owns and manages.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OutputConfig. 
