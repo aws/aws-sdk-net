@@ -84,6 +84,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApplicationDescription);
                 }
 
+                if(publicRequest.IsSetApplicationMode())
+                {
+                    context.Writer.WritePropertyName("ApplicationMode");
+                    context.Writer.Write(publicRequest.ApplicationMode);
+                }
+
                 if(publicRequest.IsSetApplicationName())
                 {
                     context.Writer.WritePropertyName("ApplicationName");

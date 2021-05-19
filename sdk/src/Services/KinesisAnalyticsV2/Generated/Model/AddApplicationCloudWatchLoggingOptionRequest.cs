@@ -81,8 +81,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ConditionalToken. 
         /// <para>
         /// A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.
+        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.
         /// You get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+        /// For better concurrency support, use the <code>ConditionalToken</code> parameter instead
+        /// of <code>CurrentApplicationVersionId</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -101,9 +103,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// The version ID of the Kinesis Data Analytics application. You must provide the <code>ApplicationVersionID</code>
+        /// The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code>
         /// or the <code>ConditionalToken</code>.You can retrieve the application version ID using
-        /// <a>DescribeApplication</a>.
+        /// <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code>
+        /// parameter instead of <code>CurrentApplicationVersionId</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]

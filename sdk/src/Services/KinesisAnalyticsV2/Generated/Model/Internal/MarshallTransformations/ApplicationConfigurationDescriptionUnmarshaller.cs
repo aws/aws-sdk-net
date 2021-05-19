@@ -106,6 +106,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.VpcConfigurationDescriptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ZeppelinApplicationConfigurationDescription", targetDepth))
+                {
+                    var unmarshaller = ZeppelinApplicationConfigurationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.ZeppelinApplicationConfigurationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

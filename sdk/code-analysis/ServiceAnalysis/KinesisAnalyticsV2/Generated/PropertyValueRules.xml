@@ -748,6 +748,24 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.GlueDataCatalogConfiguration.DatabaseARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.GlueDataCatalogConfigurationDescription.DatabaseARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.GlueDataCatalogConfigurationUpdate.DatabaseARNUpdate</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.Input.NamePrefix</property>
     <min>1</min>
     <max>32</max>
@@ -944,6 +962,24 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.MavenReference.ArtifactId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.MavenReference.GroupId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.MavenReference.Version</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.Output.Name</property>
     <min>1</min>
     <max>32</max>
@@ -1076,6 +1112,42 @@
     <property>Amazon.KinesisAnalyticsV2.Model.S3Configuration.FileKey</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocation.BasePath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9/!-_.*'()]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocation.BucketARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocationDescription.BasePath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9/!-_.*'()]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocationDescription.BucketARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocationUpdate.BasePathUpdate</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9/!-_.*'()]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocationUpdate.BucketARNUpdate</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentLocation.BucketARN</property>

@@ -39,6 +39,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private FlinkApplicationConfiguration _flinkApplicationConfiguration;
         private SqlApplicationConfiguration _sqlApplicationConfiguration;
         private List<VpcConfiguration> _vpcConfigurations = new List<VpcConfiguration>();
+        private ZeppelinApplicationConfiguration _zeppelinApplicationConfiguration;
 
         /// <summary>
         /// Gets and sets the property ApplicationCodeConfiguration. 
@@ -46,7 +47,6 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The code location and type parameters for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ApplicationCodeConfiguration ApplicationCodeConfiguration
         {
             get { return this._applicationCodeConfiguration; }
@@ -147,6 +147,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetVpcConfigurations()
         {
             return this._vpcConfigurations != null && this._vpcConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZeppelinApplicationConfiguration. 
+        /// <para>
+        /// The configuration parameters for a Kinesis Data Analytics Studio notebook.
+        /// </para>
+        /// </summary>
+        public ZeppelinApplicationConfiguration ZeppelinApplicationConfiguration
+        {
+            get { return this._zeppelinApplicationConfiguration; }
+            set { this._zeppelinApplicationConfiguration = value; }
+        }
+
+        // Check to see if ZeppelinApplicationConfiguration property is set
+        internal bool IsSetZeppelinApplicationConfiguration()
+        {
+            return this._zeppelinApplicationConfiguration != null;
         }
 
     }

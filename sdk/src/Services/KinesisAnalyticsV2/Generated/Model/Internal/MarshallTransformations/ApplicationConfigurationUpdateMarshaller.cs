@@ -116,6 +116,17 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetZeppelinApplicationConfigurationUpdate())
+            {
+                context.Writer.WritePropertyName("ZeppelinApplicationConfigurationUpdate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ZeppelinApplicationConfigurationUpdateMarshaller.Instance;
+                marshaller.Marshall(requestObject.ZeppelinApplicationConfigurationUpdate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

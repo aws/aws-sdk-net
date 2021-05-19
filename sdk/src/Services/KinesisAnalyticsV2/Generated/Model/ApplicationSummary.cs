@@ -35,6 +35,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class ApplicationSummary
     {
         private string _applicationARN;
+        private ApplicationMode _applicationMode;
         private string _applicationName;
         private ApplicationStatus _applicationStatus;
         private long? _applicationVersionId;
@@ -57,6 +58,25 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationARN()
         {
             return this._applicationARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationMode. 
+        /// <para>
+        /// For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>.
+        /// For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+        /// </para>
+        /// </summary>
+        public ApplicationMode ApplicationMode
+        {
+            get { return this._applicationMode; }
+            set { this._applicationMode = value; }
+        }
+
+        // Check to see if ApplicationMode property is set
+        internal bool IsSetApplicationMode()
+        {
+            return this._applicationMode != null;
         }
 
         /// <summary>
@@ -119,8 +139,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property RuntimeEnvironment. 
         /// <para>
-        /// The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-        /// <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+        /// The runtime environment for the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

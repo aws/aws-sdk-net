@@ -41,7 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property S3ContentLocation. 
         /// <para>
-        /// Information about the Amazon S3 bucket containing the application code.
+        /// Information about the Amazon S3 bucket that contains the application code.
         /// </para>
         /// </summary>
         public S3ContentLocation S3ContentLocation

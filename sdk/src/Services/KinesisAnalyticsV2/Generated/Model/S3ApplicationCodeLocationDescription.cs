@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the location of a Flink-based Kinesis Data Analytics application's code
-    /// stored in an S3 bucket.
+    /// Describes the location of an application's code stored in an S3 bucket.
     /// </summary>
     public partial class S3ApplicationCodeLocationDescription
     {

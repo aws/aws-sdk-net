@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Describes updates to the execution property groups for a Flink-based Kinesis Data
-    /// Analytics application.
+    /// Analytics application or a Studio notebook.
     /// </summary>
     public partial class EnvironmentPropertyUpdates
     {

@@ -39,11 +39,12 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private FlinkApplicationConfigurationUpdate _flinkApplicationConfigurationUpdate;
         private SqlApplicationConfigurationUpdate _sqlApplicationConfigurationUpdate;
         private List<VpcConfigurationUpdate> _vpcConfigurationUpdates = new List<VpcConfigurationUpdate>();
+        private ZeppelinApplicationConfigurationUpdate _zeppelinApplicationConfigurationUpdate;
 
         /// <summary>
         /// Gets and sets the property ApplicationCodeConfigurationUpdate. 
         /// <para>
-        /// Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
+        /// Describes updates to an application's code configuration.
         /// </para>
         /// </summary>
         public ApplicationCodeConfigurationUpdate ApplicationCodeConfigurationUpdate
@@ -147,6 +148,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetVpcConfigurationUpdates()
         {
             return this._vpcConfigurationUpdates != null && this._vpcConfigurationUpdates.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZeppelinApplicationConfigurationUpdate. 
+        /// <para>
+        /// Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+        /// </para>
+        /// </summary>
+        public ZeppelinApplicationConfigurationUpdate ZeppelinApplicationConfigurationUpdate
+        {
+            get { return this._zeppelinApplicationConfigurationUpdate; }
+            set { this._zeppelinApplicationConfigurationUpdate = value; }
+        }
+
+        // Check to see if ZeppelinApplicationConfigurationUpdate property is set
+        internal bool IsSetZeppelinApplicationConfigurationUpdate()
+        {
+            return this._zeppelinApplicationConfigurationUpdate != null;
         }
 
     }

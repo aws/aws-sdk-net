@@ -38,6 +38,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     {
         private ApplicationConfiguration _applicationConfiguration;
         private string _applicationDescription;
+        private ApplicationMode _applicationMode;
         private string _applicationName;
         private List<CloudWatchLoggingOption> _cloudWatchLoggingOptions = new List<CloudWatchLoggingOption>();
         private RuntimeEnvironment _runtimeEnvironment;
@@ -79,6 +80,26 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationDescription()
         {
             return this._applicationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationMode. 
+        /// <para>
+        /// Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook.
+        /// To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code>
+        /// mode.
+        /// </para>
+        /// </summary>
+        public ApplicationMode ApplicationMode
+        {
+            get { return this._applicationMode; }
+            set { this._applicationMode = value; }
+        }
+
+        // Check to see if ApplicationMode property is set
+        internal bool IsSetApplicationMode()
+        {
+            return this._applicationMode != null;
         }
 
         /// <summary>

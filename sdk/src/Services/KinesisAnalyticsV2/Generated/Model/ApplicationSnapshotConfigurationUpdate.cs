@@ -39,8 +39,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property SnapshotsEnabledUpdate. 
         /// <para>
-        /// Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data
-        /// Analytics application.
+        /// Describes updates to whether snapshots are enabled for an application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

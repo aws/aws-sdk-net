@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes updates to parameters for how a Flink-based Kinesis Data Analytics application
-    /// executes multiple tasks simultaneously.
+    /// Describes updates to parameters for how an application executes multiple tasks simultaneously.
     /// </summary>
     public partial class ParallelismConfigurationUpdate
     {
@@ -43,7 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property AutoScalingEnabledUpdate. 
         /// <para>
         /// Describes updates to whether the Kinesis Data Analytics service can increase the parallelism
-        /// of the application in response to increased throughput.
+        /// of a Flink-based Kinesis Data Analytics application in response to increased throughput.
         /// </para>
         /// </summary>
         public bool AutoScalingEnabledUpdate

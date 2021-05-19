@@ -25,6 +25,56 @@ namespace Amazon.KinesisAnalyticsV2
 {
 
     /// <summary>
+    /// Constants used for properties of type ApplicationMode.
+    /// </summary>
+    public class ApplicationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERACTIVE for ApplicationMode
+        /// </summary>
+        public static readonly ApplicationMode INTERACTIVE = new ApplicationMode("INTERACTIVE");
+        /// <summary>
+        /// Constant STREAMING for ApplicationMode
+        /// </summary>
+        public static readonly ApplicationMode STREAMING = new ApplicationMode("STREAMING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationMode FindValue(string value)
+        {
+            return FindValue<ApplicationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplicationRestoreType.
     /// </summary>
     public class ApplicationRestoreType : ConstantClass
@@ -158,6 +208,56 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ApplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ArtifactType.
+    /// </summary>
+    public class ArtifactType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEPENDENCY_JAR for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType DEPENDENCY_JAR = new ArtifactType("DEPENDENCY_JAR");
+        /// <summary>
+        /// Constant UDF for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType UDF = new ArtifactType("UDF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ArtifactType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArtifactType FindValue(string value)
+        {
+            return FindValue<ArtifactType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArtifactType(string value)
         {
             return FindValue(value);
         }
@@ -506,6 +606,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// Constant SQL1_0 for RuntimeEnvironment
         /// </summary>
         public static readonly RuntimeEnvironment SQL1_0 = new RuntimeEnvironment("SQL-1_0");
+        /// <summary>
+        /// Constant ZEPPELINFLINK1_0 for RuntimeEnvironment
+        /// </summary>
+        public static readonly RuntimeEnvironment ZEPPELINFLINK1_0 = new RuntimeEnvironment("ZEPPELIN-FLINK-1_0");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -610,6 +714,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// Constant FLINK_DASHBOARD_URL for UrlType
         /// </summary>
         public static readonly UrlType FLINK_DASHBOARD_URL = new UrlType("FLINK_DASHBOARD_URL");
+        /// <summary>
+        /// Constant ZEPPELIN_UI_URL for UrlType
+        /// </summary>
+        public static readonly UrlType ZEPPELIN_UI_URL = new UrlType("ZEPPELIN_UI_URL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -60,7 +60,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationVersionId. 
         /// <para>
-        /// Provides the current application version.
+        /// Provides the current application version. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]

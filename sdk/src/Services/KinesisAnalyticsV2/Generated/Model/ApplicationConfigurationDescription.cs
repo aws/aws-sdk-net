@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private RunConfigurationDescription _runConfigurationDescription;
         private SqlApplicationConfigurationDescription _sqlApplicationConfigurationDescription;
         private List<VpcConfigurationDescription> _vpcConfigurationDescriptions = new List<VpcConfigurationDescription>();
+        private ZeppelinApplicationConfigurationDescription _zeppelinApplicationConfigurationDescription;
 
         /// <summary>
         /// Gets and sets the property ApplicationCodeConfigurationDescription. 
@@ -167,6 +168,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetVpcConfigurationDescriptions()
         {
             return this._vpcConfigurationDescriptions != null && this._vpcConfigurationDescriptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZeppelinApplicationConfigurationDescription. 
+        /// <para>
+        /// The configuration parameters for a Kinesis Data Analytics Studio notebook.
+        /// </para>
+        /// </summary>
+        public ZeppelinApplicationConfigurationDescription ZeppelinApplicationConfigurationDescription
+        {
+            get { return this._zeppelinApplicationConfigurationDescription; }
+            set { this._zeppelinApplicationConfigurationDescription = value; }
+        }
+
+        // Check to see if ZeppelinApplicationConfigurationDescription property is set
+        internal bool IsSetZeppelinApplicationConfigurationDescription()
+        {
+            return this._zeppelinApplicationConfigurationDescription != null;
         }
 
     }

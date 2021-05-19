@@ -38,6 +38,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private ApplicationConfigurationDescription _applicationConfigurationDescription;
         private string _applicationDescription;
         private ApplicationMaintenanceConfigurationDescription _applicationMaintenanceConfigurationDescription;
+        private ApplicationMode _applicationMode;
         private string _applicationName;
         private ApplicationStatus _applicationStatus;
         private long? _applicationVersionId;
@@ -73,7 +74,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationConfigurationDescription. 
         /// <para>
-        /// Provides details about the application's Java, SQL, or Scala code and starting parameters.
+        /// Describes details about the application code and starting parameters for a Kinesis
+        /// Data Analytics application.
         /// </para>
         /// </summary>
         public ApplicationConfigurationDescription ApplicationConfigurationDescription
@@ -123,6 +125,25 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationMaintenanceConfigurationDescription()
         {
             return this._applicationMaintenanceConfigurationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationMode. 
+        /// <para>
+        /// To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+        /// However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+        /// </para>
+        /// </summary>
+        public ApplicationMode ApplicationMode
+        {
+            get { return this._applicationMode; }
+            set { this._applicationMode = value; }
+        }
+
+        // Check to see if ApplicationMode property is set
+        internal bool IsSetApplicationMode()
+        {
+            return this._applicationMode != null;
         }
 
         /// <summary>

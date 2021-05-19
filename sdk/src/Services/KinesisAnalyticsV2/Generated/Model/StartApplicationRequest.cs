@@ -63,7 +63,6 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public RunConfiguration RunConfiguration
         {
             get { return this._runConfiguration; }
