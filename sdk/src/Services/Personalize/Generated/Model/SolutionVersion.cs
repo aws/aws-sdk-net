@@ -279,6 +279,14 @@ namespace Amazon.Personalize.Model
         /// <para>
         /// CREATE FAILED
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE STOPPING
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE STOPPED
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]

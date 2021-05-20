@@ -1359,7 +1359,27 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// CREATE PENDING
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE IN_PROGRESS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE FAILED
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE STOPPING
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE STOPPED
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3622,6 +3642,93 @@ namespace Amazon.Personalize
         public virtual ListSolutionVersionsResponse EndListSolutionVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSolutionVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopSolutionVersionCreation
+
+        /// <summary>
+        /// Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Depending on the current state of the solution version, the solution version state
+        /// changes as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATE_PENDING &gt; CREATE_STOPPED
+        /// </para>
+        ///  
+        /// <para>
+        /// or
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You are billed for all of the training completed up until you stop the solution version
+        /// creation. You cannot resume creating a solution version once it has been stopped.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSolutionVersionCreation service method.</param>
+        /// 
+        /// <returns>The response from the StopSolutionVersionCreation service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation">REST API Reference for StopSolutionVersionCreation Operation</seealso>
+        public virtual StopSolutionVersionCreationResponse StopSolutionVersionCreation(StopSolutionVersionCreationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSolutionVersionCreationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSolutionVersionCreationResponseUnmarshaller.Instance;
+
+            return Invoke<StopSolutionVersionCreationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopSolutionVersionCreation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopSolutionVersionCreation operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopSolutionVersionCreation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation">REST API Reference for StopSolutionVersionCreation Operation</seealso>
+        public virtual IAsyncResult BeginStopSolutionVersionCreation(StopSolutionVersionCreationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSolutionVersionCreationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSolutionVersionCreationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopSolutionVersionCreation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopSolutionVersionCreation.</param>
+        /// 
+        /// <returns>Returns a  StopSolutionVersionCreationResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation">REST API Reference for StopSolutionVersionCreation Operation</seealso>
+        public virtual StopSolutionVersionCreationResponse EndStopSolutionVersionCreation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopSolutionVersionCreationResponse>(asyncResult);
         }
 
         #endregion

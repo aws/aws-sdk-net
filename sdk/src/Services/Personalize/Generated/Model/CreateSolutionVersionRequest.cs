@@ -44,7 +44,27 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+    /// CREATE PENDING
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CREATE IN_PROGRESS
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// ACTIVE
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CREATE FAILED
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CREATE STOPPING
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CREATE STOPPED
     /// </para>
     ///  </li> </ul> 
     /// <para>
