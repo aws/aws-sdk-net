@@ -1,3 +1,18 @@
+### 3.7.38.0 (2021-05-20 18:14 UTC)
+* IdentityManagement (3.7.2.1)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* LexModelsV2 (3.7.2.0)
+	* Customers can now use resource-based policies to control access to their Lex V2 bots. This release adds APIs to attach and manage permissions for a bot or a bot alias. For details, see: https://docs.aws.amazon.com/lexv2/latest/dg/security_iam_service-with-iam.html
+* Personalize (3.7.3.0)
+	* Added new API to stop a solution version creation that is pending or in progress for Amazon Personalize
+* QuickSight (3.7.1.0)
+	* Add ARN based Row Level Security support to CreateDataSet/UpdateDataSet APIs.
+* Core 3.7.0.25
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.37.0 (2021-05-19 18:14 UTC)
 * AutoScaling (3.7.2.0)
 	* With this release, customers can easily use Predictive Scaling as a policy directly through Amazon EC2 Auto Scaling configurations to proactively scale their applications ahead of predicted demand.
