@@ -44,6 +44,7 @@ namespace Amazon.QuickSight.Model
     public partial class RowLevelPermissionDataSet
     {
         private string _arn;
+        private RowLevelPermissionFormatVersion _formatVersion;
         private string _awsNamespace;
         private RowLevelPermissionPolicy _permissionPolicy;
 
@@ -64,6 +65,32 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FormatVersion. 
+        /// <para>
+        /// The user or group rules associated with the dataset that contains permissions for
+        /// RLS.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code>
+        /// is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required.
+        /// When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and
+        /// <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.
+        /// </para>
+        /// </summary>
+        public RowLevelPermissionFormatVersion FormatVersion
+        {
+            get { return this._formatVersion; }
+            set { this._formatVersion = value; }
+        }
+
+        // Check to see if FormatVersion property is set
+        internal bool IsSetFormatVersion()
+        {
+            return this._formatVersion != null;
         }
 
         /// <summary>

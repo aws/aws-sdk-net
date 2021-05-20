@@ -51,6 +51,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Arn);
             }
 
+            if(requestObject.IsSetFormatVersion())
+            {
+                context.Writer.WritePropertyName("FormatVersion");
+                context.Writer.Write(requestObject.FormatVersion);
+            }
+
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("Namespace");
