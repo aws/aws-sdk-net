@@ -649,6 +649,56 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type Effect.
+    /// </summary>
+    public class Effect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allow for Effect
+        /// </summary>
+        public static readonly Effect Allow = new Effect("Allow");
+        /// <summary>
+        /// Constant Deny for Effect
+        /// </summary>
+        public static readonly Effect Deny = new Effect("Deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Effect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Effect FindValue(string value)
+        {
+            return FindValue<Effect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Effect(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportFilterName.
     /// </summary>
     public class ExportFilterName : ConstantClass

@@ -699,6 +699,120 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  CreateResourcePolicy
+
+        internal virtual CreateResourcePolicyResponse CreateResourcePolicy(CreateResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new resource policy with the specified policy statements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateResourcePolicy service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicy">REST API Reference for CreateResourcePolicy Operation</seealso>
+        public virtual Task<CreateResourcePolicyResponse> CreateResourcePolicyAsync(CreateResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateResourcePolicyStatement
+
+        internal virtual CreateResourcePolicyStatementResponse CreateResourcePolicyStatement(CreateResourcePolicyStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourcePolicyStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourcePolicyStatementResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourcePolicyStatementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds a new resource policy statement to a bot or bot alias. If a resource policy exists,
+        /// the statement is added to the current resource policy. If a policy doesn't exist,
+        /// a new policy is created.
+        /// 
+        ///  
+        /// <para>
+        /// You can create a resource policy statement that allows cross-account access.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourcePolicyStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateResourcePolicyStatement service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicyStatement">REST API Reference for CreateResourcePolicyStatement Operation</seealso>
+        public virtual Task<CreateResourcePolicyStatementResponse> CreateResourcePolicyStatementAsync(CreateResourcePolicyStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourcePolicyStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourcePolicyStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateResourcePolicyStatementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSlot
 
         internal virtual CreateSlotResponse CreateSlot(CreateSlotRequest request)
@@ -1246,6 +1360,102 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+        internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes an existing policy from a bot or bot alias. If the resource doesn't have a
+        /// policy attached, Amazon Lex returns an exception.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicyStatement
+
+        internal virtual DeleteResourcePolicyStatementResponse DeleteResourcePolicyStatement(DeleteResourcePolicyStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyStatementResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyStatementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a policy statement from a resource policy. If you delete the last statement
+        /// from a policy, the policy is deleted. If you specify a statement ID that doesn't exist
+        /// in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex
+        /// returns an exception.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicyStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicyStatement service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicyStatement">REST API Reference for DeleteResourcePolicyStatement Operation</seealso>
+        public virtual Task<DeleteResourcePolicyStatementResponse> DeleteResourcePolicyStatementAsync(DeleteResourcePolicyStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyStatementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSlot
 
         internal virtual DeleteSlotResponse DeleteSlot(DeleteSlotRequest request)
@@ -1690,6 +1900,49 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = DescribeIntentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeIntentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeResourcePolicy
+
+        internal virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the resource policy and policy revision for a bot or bot alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeResourcePolicy service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        public virtual Task<DescribeResourcePolicyResponse> DescribeResourcePolicyAsync(DescribeResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2762,6 +3015,59 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = UpdateIntentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateIntentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateResourcePolicy
+
+        internal virtual UpdateResourcePolicyResponse UpdateResourcePolicy(UpdateResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Replaces the existing resource policy for a bot or bot alias with a new one. If the
+        /// policy doesn't exist, Amazon Lex returns an exception.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResourcePolicy service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateResourcePolicy">REST API Reference for UpdateResourcePolicy Operation</seealso>
+        public virtual Task<UpdateResourcePolicyResponse> UpdateResourcePolicyAsync(UpdateResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
