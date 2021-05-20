@@ -144,7 +144,8 @@ namespace Amazon.S3.Internal
                     {
                         isHttp = config.UseHttp;
                         var scheme = isHttp ? "http" : "https";
-                        ub = new UriBuilder($"{scheme}://{accessPoint}-{s3Arn.AccountId}.s3-accesspoint{(config.UseDualstackEndpoint ? ".dualstack" : "")}.{s3Arn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
+                        var fipsSuffix = regionEndpoint?.SystemName?.ToLower().Contains("fips") == true ? "-fips" : "";
+                        ub = new UriBuilder($"{scheme}://{accessPoint}-{s3Arn.AccountId}.s3-accesspoint{fipsSuffix}{(config.UseDualstackEndpoint ? ".dualstack" : "")}.{s3Arn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
                     }
                     
                     request.Endpoint = ub.Uri;
@@ -164,7 +165,8 @@ namespace Amazon.S3.Internal
                     {
                         isHttp = s3Config.UseHttp;
                         var scheme = isHttp ? "http" : "https";
-                        ub = new UriBuilder($"{scheme}://{accessPoint}-{s3Arn.AccountId}.{s3ObjectLambdaServiceName}.{s3Arn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
+                        var fipsSuffix = regionEndpoint?.SystemName?.ToLower().Contains("fips") == true ? "-fips" : "";
+                        ub = new UriBuilder($"{scheme}://{accessPoint}-{s3Arn.AccountId}.{s3ObjectLambdaServiceName}{fipsSuffix}.{s3Arn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
                     }
 
                     request.Endpoint = ub.Uri;
@@ -312,6 +314,10 @@ namespace Amazon.S3.Internal
             {
                 throw new AmazonClientException("AWS region is missing in access point ARN");
             }
+            if (HasValidFips(s3Arn, s3Config, region)) // will throw on invalid configs
+            {
+                return;
+            }
             if (!string.Equals(region.PartitionName, s3Arn.Partition, StringComparison.Ordinal))
             {
                 throw new AmazonClientException("The access point used in the request is in a different AWS partition then the region configured for the AmazonS3Client.");
@@ -320,6 +326,7 @@ namespace Amazon.S3.Internal
             {
                 return;
             }
+
             if (!s3Config.UseArnRegion)
             {
                 throw new AmazonClientException(
@@ -349,6 +356,10 @@ namespace Amazon.S3.Internal
             if (s3Config.UseDualstackEndpoint)
             {
                 throw new AmazonClientException("Invalid configuration S3ObjectLambda access points do not support dualstack");
+            }
+            if (HasValidFips(arn, s3Config, region)) // will throw on invalid configs
+            {
+                return;
             }
             if (string.IsNullOrEmpty(arn.AccountId))
             {
@@ -394,8 +405,8 @@ namespace Amazon.S3.Internal
             {
                 throw new AmazonClientException("Invalid configuration, cross partition outpost access point ARN");
             }
-            if ((s3Config.UseArnRegion && arn.Region.StartsWith("fips-"))
-                || (!s3Config.UseArnRegion && region.SystemName.StartsWith("fips-")))
+            if (region.SystemName?.StartsWith("fips-") == true ||
+                s3Config.UseArnRegion && arn.Region.StartsWith("fips-"))
             {
                 throw new AmazonClientException("Invalid configuration outpost access points do not support Fips- regions");
             }
@@ -409,6 +420,39 @@ namespace Amazon.S3.Internal
         private static Uri GetAccelerateEndpoint(string bucketName, AmazonS3Config config)
         {
             return new Uri($"{(config.UseHttp ? "http://" : "https://")}{bucketName}.{config.AccelerateEndpoint}");
+        }
+
+        /// <summary>
+        /// Checks the validity of a Fips configuration for Access Point and Object Lambda
+        /// (NOT OUTPOST - fips isn't supported in outpost) 
+        /// </summary>
+        /// <returns>
+        /// Valid Fips Config: <c>true</c>
+        /// No Fips Config: <c>false</c>
+        /// Invalid Fips Config: exception
+        /// </returns>
+        /// <exception cref="AmazonClientException">
+        /// Thrown if an invalid Fips configuration is found.
+        /// </exception>
+        private static bool HasValidFips(Arn arn, AmazonS3Config s3Config, RegionEndpoint region)
+        {
+            if (arn.Region.Contains("fips"))
+            {
+                throw new AmazonClientException("Invalid ARN, FIPS region not allowed in ARN");
+            }
+            if (region.SystemName.StartsWith("fips-"))
+            { 
+                if (region.SystemName.Contains(arn.Region))
+                {
+                    return true;
+                }
+                else if (s3Config.UseArnRegion)
+                {
+                    throw new AmazonClientException("Invalid configuration, FIPS region does not match ARN region");
+                }
+            }
+
+            return false;
         }
 
         private static void ValidateHttpsOnlyHeaders(IRequest request)

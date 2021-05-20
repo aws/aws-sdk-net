@@ -14,8 +14,22 @@ using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests
 {
+    [Flags]
+    public enum S3ConfigFlags { None=0, ArnRegion = 2, Accelerate=4, Dualstack=8, Fips=16 }    
+
     public class S3ArnTestUtils
     {
+        public static AmazonS3Config BuildFromRegionSystemName(string region, S3ConfigFlags flags)
+        {
+            return new AmazonS3Config
+            {
+                RegionEndpoint = RegionEndpoint.GetBySystemName(region),
+                UseArnRegion = (flags & S3ConfigFlags.ArnRegion) != 0,
+                UseDualstackEndpoint = (flags & S3ConfigFlags.Dualstack) != 0,
+                UseAccelerateEndpoint = (flags & S3ConfigFlags.Accelerate) != 0,
+            };
+        }
+
         public static IRequest RunMockRequest(AmazonWebServiceRequest request, IMarshaller<IRequest, AmazonWebServiceRequest> marshaller)
         {
             var config = new AmazonS3Config
