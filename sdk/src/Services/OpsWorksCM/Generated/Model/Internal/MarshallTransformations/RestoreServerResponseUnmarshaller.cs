@@ -47,6 +47,17 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
         {
             RestoreServerResponse response = new RestoreServerResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Server", targetDepth))
+                {
+                    var unmarshaller = CMServerUnmarshaller.Instance;
+                    response.Server = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

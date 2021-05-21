@@ -33,6 +33,22 @@ namespace Amazon.OpsWorksCM.Model
     /// </summary>
     public partial class RestoreServerResponse : AmazonWebServiceResponse
     {
+        private CMServer _server;
+
+        /// <summary>
+        /// Gets and sets the property Server.
+        /// </summary>
+        public CMServer Server
+        {
+            get { return this._server; }
+            set { this._server = value; }
+        }
+
+        // Check to see if Server property is set
+        internal bool IsSetServer()
+        {
+            return this._server != null;
+        }
 
     }
 }

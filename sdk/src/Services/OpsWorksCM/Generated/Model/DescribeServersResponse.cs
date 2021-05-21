@@ -69,11 +69,23 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code>
-        /// contains PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by
-        /// the Puppet API over TCP port number 8140. The CA certificate is also used to sign
-        /// node certificates.
+        ///  <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code>
+        /// contains the following two responses:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the
+        /// Puppet API over TCP port number 8140. The CA certificate is also used to sign node
+        /// certificates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation
+        /// list is for internal maintenance purposes only. For more information about the Puppet
+        /// certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man
+        /// Page: puppet certificate_revocation_list</a> in the Puppet documentation.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<CMServer> Servers
         {
