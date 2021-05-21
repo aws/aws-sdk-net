@@ -37,8 +37,12 @@ namespace Amazon.ForecastService.Model
         private double? _avg;
         private int? _count;
         private int? _countDistinct;
+        private long? _countDistinctLong;
+        private long? _countLong;
         private int? _countNan;
+        private long? _countNanLong;
         private int? _countNull;
+        private long? _countNullLong;
         private string _max;
         private string _min;
         private double? _stddev;
@@ -64,7 +68,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of values in the field.
+        /// The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.
         /// </para>
         /// </summary>
         public int Count
@@ -82,7 +86,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property CountDistinct. 
         /// <para>
-        /// The number of distinct values in the field.
+        /// The number of distinct values in the field. If the response value is -1, refer to
+        /// <code>CountDistinctLong</code>.
         /// </para>
         /// </summary>
         public int CountDistinct
@@ -98,9 +103,48 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CountDistinctLong. 
+        /// <para>
+        /// The number of distinct values in the field. <code>CountDistinctLong</code> is used
+        /// instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.
+        /// </para>
+        /// </summary>
+        public long CountDistinctLong
+        {
+            get { return this._countDistinctLong.GetValueOrDefault(); }
+            set { this._countDistinctLong = value; }
+        }
+
+        // Check to see if CountDistinctLong property is set
+        internal bool IsSetCountDistinctLong()
+        {
+            return this._countDistinctLong.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CountLong. 
+        /// <para>
+        /// The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code>
+        /// if the value is greater than 2,147,483,647.
+        /// </para>
+        /// </summary>
+        public long CountLong
+        {
+            get { return this._countLong.GetValueOrDefault(); }
+            set { this._countLong = value; }
+        }
+
+        // Check to see if CountLong property is set
+        internal bool IsSetCountLong()
+        {
+            return this._countLong.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CountNan. 
         /// <para>
-        /// The number of NAN (not a number) values in the field.
+        /// The number of NAN (not a number) values in the field. If the response value is -1,
+        /// refer to <code>CountNanLong</code>.
         /// </para>
         /// </summary>
         public int CountNan
@@ -116,9 +160,28 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CountNanLong. 
+        /// <para>
+        /// The number of NAN (not a number) values in the field. <code>CountNanLong</code> is
+        /// used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.
+        /// </para>
+        /// </summary>
+        public long CountNanLong
+        {
+            get { return this._countNanLong.GetValueOrDefault(); }
+            set { this._countNanLong = value; }
+        }
+
+        // Check to see if CountNanLong property is set
+        internal bool IsSetCountNanLong()
+        {
+            return this._countNanLong.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CountNull. 
         /// <para>
-        /// The number of null values in the field.
+        /// The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.
         /// </para>
         /// </summary>
         public int CountNull
@@ -131,6 +194,25 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetCountNull()
         {
             return this._countNull.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CountNullLong. 
+        /// <para>
+        /// The number of null values in the field. <code>CountNullLong</code> is used instead
+        /// of <code>CountNull</code> if the value is greater than 2,147,483,647.
+        /// </para>
+        /// </summary>
+        public long CountNullLong
+        {
+            get { return this._countNullLong.GetValueOrDefault(); }
+            set { this._countNullLong = value; }
+        }
+
+        // Check to see if CountNullLong property is set
+        internal bool IsSetCountNullLong()
+        {
+            return this._countNullLong.HasValue; 
         }
 
         /// <summary>

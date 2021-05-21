@@ -82,16 +82,40 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CountDistinct = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CountDistinctLong", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.CountDistinctLong = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CountLong", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.CountLong = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CountNan", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.CountNan = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CountNanLong", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.CountNanLong = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CountNull", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.CountNull = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CountNullLong", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.CountNullLong = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Max", targetDepth))

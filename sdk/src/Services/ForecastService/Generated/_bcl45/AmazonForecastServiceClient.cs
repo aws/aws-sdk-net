@@ -1819,12 +1819,12 @@ namespace Amazon.ForecastService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast
-        /// export jobs
+        ///  <b>Dataset</b>: dataset import jobs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Dataset</b>: dataset import jobs
+        ///  <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast
+        /// export jobs
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1882,12 +1882,12 @@ namespace Amazon.ForecastService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast
-        /// export jobs
+        ///  <b>Dataset</b>: dataset import jobs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Dataset</b>: dataset import jobs
+        ///  <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast
+        /// export jobs
         /// </para>
         ///  </li> <li> 
         /// <para>
