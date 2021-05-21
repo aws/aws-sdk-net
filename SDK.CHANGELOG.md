@@ -1,3 +1,18 @@
+### 3.7.39.0 (2021-05-21 18:14 UTC)
+* ElasticFileSystem (3.7.1.0)
+	* EFS now supports account preferences. Utilizing the new capability, users can customize some aspects of their experience using EFS APIs and the EFS Console. The first preference clients are able to set is whether to start using longer File System and Mount Target IDs before EFS migrates to such IDs.
+* ForecastService (3.7.3.0)
+	* Updated attribute statistics in DescribeDatasetImportJob response to support Long values
+* OpsWorksCM (3.7.0.25)
+	* New PUPPET_API_CRL attribute returned by DescribeServers API; new EngineVersion of 2019 available for Puppet Enterprise servers.
+* S3 (3.7.0.27)
+	* Documentation updates for Amazon S3
+* Core 3.7.0.26
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.38.0 (2021-05-20 18:14 UTC)
 * IdentityManagement (3.7.2.1)
 	* Documentation updates for AWS Identity and Access Management (IAM).
