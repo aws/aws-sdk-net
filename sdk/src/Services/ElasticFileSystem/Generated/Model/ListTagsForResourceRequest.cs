@@ -68,8 +68,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// You can use <code>NextToken</code> in a subsequent request to fetch the next page
-        /// of access point descriptions if the response payload was paginated.
+        /// (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the
+        /// next page of access point descriptions if the response payload was paginated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

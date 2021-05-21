@@ -141,6 +141,106 @@ namespace Amazon.ElasticFileSystem
 
 
     /// <summary>
+    /// Constants used for properties of type Resource.
+    /// </summary>
+    public class Resource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILE_SYSTEM for Resource
+        /// </summary>
+        public static readonly Resource FILE_SYSTEM = new Resource("FILE_SYSTEM");
+        /// <summary>
+        /// Constant MOUNT_TARGET for Resource
+        /// </summary>
+        public static readonly Resource MOUNT_TARGET = new Resource("MOUNT_TARGET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Resource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Resource FindValue(string value)
+        {
+            return FindValue<Resource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Resource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceIdType.
+    /// </summary>
+    public class ResourceIdType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LONG_ID for ResourceIdType
+        /// </summary>
+        public static readonly ResourceIdType LONG_ID = new ResourceIdType("LONG_ID");
+        /// <summary>
+        /// Constant SHORT_ID for ResourceIdType
+        /// </summary>
+        public static readonly ResourceIdType SHORT_ID = new ResourceIdType("SHORT_ID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceIdType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceIdType FindValue(string value)
+        {
+            return FindValue<ResourceIdType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceIdType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Status.
     /// </summary>
     public class Status : ConstantClass

@@ -35,8 +35,9 @@ namespace Amazon.ElasticFileSystem
     /// use with Amazon EC2 instances in the AWS Cloud. With Amazon EFS, storage capacity
     /// is elastic, growing and shrinking automatically as you add and remove files, so your
     /// applications have the storage they need, when they need it. For more information,
-    /// see the <a href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User
-    /// Guide</a>.
+    /// see the <a href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon
+    /// Elastic File System API Reference</a> and the <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon
+    /// Elastic File System User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonElasticFileSystem : IAmazonService, IDisposable
@@ -649,12 +650,19 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - CreateTags is deprecated and not maintained. Please use the API action
+        /// to create tags for EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates or overwrites tags associated with a file system. Each tag is a key-value
         /// pair. If a tag key specified in the request already exists on the file system, this
         /// operation overwrites its value with the value provided in the request. If you add
         /// the <code>Name</code> tag to your file system, Amazon EFS returns it in the response
         /// to the <a>DescribeFileSystems</a> operation. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permission for the <code>elasticfilesystem:CreateTags</code>
@@ -1101,11 +1109,18 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - DeleteTags is deprecated and not maintained. Please use the API action
+        /// to remove tags from EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes the specified tags from a file system. If the <code>DeleteTags</code> request
         /// includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't cause an
         /// error. For more information about tags and related restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
         /// Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions for the <code>elasticfilesystem:DeleteTags</code>
@@ -1221,6 +1236,49 @@ namespace Amazon.ElasticFileSystem
         /// <returns>Returns a  DescribeAccessPointsResult from ElasticFileSystem.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints">REST API Reference for DescribeAccessPoints Operation</seealso>
         DescribeAccessPointsResponse EndDescribeAccessPoints(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAccountPreferences
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountPreferences service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountPreferences service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences">REST API Reference for DescribeAccountPreferences Operation</seealso>
+        DescribeAccountPreferencesResponse DescribeAccountPreferences(DescribeAccountPreferencesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountPreferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountPreferences operation on AmazonElasticFileSystemClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountPreferences
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences">REST API Reference for DescribeAccountPreferences Operation</seealso>
+        IAsyncResult BeginDescribeAccountPreferences(DescribeAccountPreferencesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccountPreferences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountPreferences.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccountPreferencesResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences">REST API Reference for DescribeAccountPreferences Operation</seealso>
+        DescribeAccountPreferencesResponse EndDescribeAccountPreferences(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1700,11 +1758,18 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the
+        /// API action to remove tags from EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the tags associated with a file system. The order of tags returned in the
         /// response of one <code>DescribeTags</code> call and the order of tags returned across
         /// the responses of a multiple-call iteration (when using pagination) is unspecified.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code>
@@ -1730,11 +1795,18 @@ namespace Amazon.ElasticFileSystem
         DescribeTagsResponse DescribeTags(string fileSystemId);
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the
+        /// API action to remove tags from EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the tags associated with a file system. The order of tags returned in the
         /// response of one <code>DescribeTags</code> call and the order of tags returned across
         /// the responses of a multiple-call iteration (when using pagination) is unspecified.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code>
@@ -1933,6 +2005,49 @@ namespace Amazon.ElasticFileSystem
         /// <returns>Returns a  ModifyMountTargetSecurityGroupsResult from ElasticFileSystem.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         ModifyMountTargetSecurityGroupsResponse EndModifyMountTargetSecurityGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutAccountPreferences
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountPreferences service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountPreferences service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutAccountPreferences">REST API Reference for PutAccountPreferences Operation</seealso>
+        PutAccountPreferencesResponse PutAccountPreferences(PutAccountPreferencesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccountPreferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountPreferences operation on AmazonElasticFileSystemClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccountPreferences
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutAccountPreferences">REST API Reference for PutAccountPreferences Operation</seealso>
+        IAsyncResult BeginPutAccountPreferences(PutAccountPreferencesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccountPreferences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccountPreferences.</param>
+        /// 
+        /// <returns>Returns a  PutAccountPreferencesResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutAccountPreferences">REST API Reference for PutAccountPreferences Operation</seealso>
+        PutAccountPreferencesResponse EndPutAccountPreferences(IAsyncResult asyncResult);
 
         #endregion
         

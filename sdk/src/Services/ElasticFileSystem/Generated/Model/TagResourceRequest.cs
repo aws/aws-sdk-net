@@ -47,7 +47,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID specifying the EFS resource that you want to create a tag for. 
+        /// The ID specifying the EFS resource that you want to create a tag for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -64,7 +64,11 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
+        /// pair.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Tag> Tags

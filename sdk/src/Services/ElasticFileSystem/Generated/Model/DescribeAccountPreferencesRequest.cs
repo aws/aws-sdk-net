@@ -29,51 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// A tag is a key-value pair. Allowed characters are letters, white space, and numbers
-    /// that can be represented in UTF-8, and the following characters:<code> + - = . _ :
-    /// /</code>.
+    /// Container for the parameters to the DescribeAccountPreferences operation.
+    /// 
     /// </summary>
-    public partial class Tag
+    public partial class DescribeAccountPreferencesRequest : AmazonElasticFileSystemRequest
     {
-        private string _key;
-        private string _value;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Key. 
-        /// <para>
-        /// The tag key (String). The key can't start with <code>aws:</code>.
-        /// </para>
+        /// Gets and sets the property MaxResults.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        [AWSProperty(Min=1)]
+        public int MaxResults
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._key != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The value of the tag key.
-        /// </para>
+        /// Gets and sets the property NextToken.
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
-        public string Value
+        [AWSProperty(Min=1, Max=128)]
+        public string NextToken
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._value != null;
+            return this._nextToken != null;
         }
 
     }

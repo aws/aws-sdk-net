@@ -45,7 +45,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
+        ///  <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>

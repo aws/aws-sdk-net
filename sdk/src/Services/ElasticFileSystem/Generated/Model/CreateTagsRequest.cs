@@ -30,12 +30,19 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTags operation.
+    /// <note> 
+    /// <para>
+    /// DEPRECATED - CreateTags is deprecated and not maintained. Please use the API action
+    /// to create tags for EFS resources.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Creates or overwrites tags associated with a file system. Each tag is a key-value
     /// pair. If a tag key specified in the request already exists on the file system, this
     /// operation overwrites its value with the value provided in the request. If you add
     /// the <code>Name</code> tag to your file system, Amazon EFS returns it in the response
     /// to the <a>DescribeFileSystems</a> operation. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation requires permission for the <code>elasticfilesystem:CreateTags</code>

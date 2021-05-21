@@ -29,51 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// A tag is a key-value pair. Allowed characters are letters, white space, and numbers
-    /// that can be represented in UTF-8, and the following characters:<code> + - = . _ :
-    /// /</code>.
+    /// 
     /// </summary>
-    public partial class Tag
+    public partial class ResourceIdPreference
     {
-        private string _key;
-        private string _value;
+        private ResourceIdType _resourceIdType;
+        private List<string> _resources = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Key. 
-        /// <para>
-        /// The tag key (String). The key can't start with <code>aws:</code>.
-        /// </para>
+        /// Gets and sets the property ResourceIdType.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        public ResourceIdType ResourceIdType
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._resourceIdType; }
+            set { this._resourceIdType = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if ResourceIdType property is set
+        internal bool IsSetResourceIdType()
         {
-            return this._key != null;
+            return this._resourceIdType != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The value of the tag key.
-        /// </para>
+        /// Gets and sets the property Resources.
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
-        public string Value
+        public List<string> Resources
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._resources; }
+            set { this._resources = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if Resources property is set
+        internal bool IsSetResources()
         {
-            return this._value != null;
+            return this._resources != null && this._resources.Count > 0; 
         }
 
     }

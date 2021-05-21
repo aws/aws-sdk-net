@@ -37,8 +37,9 @@ namespace Amazon.ElasticFileSystem
     /// use with Amazon EC2 instances in the AWS Cloud. With Amazon EFS, storage capacity
     /// is elastic, growing and shrinking automatically as you add and remove files, so your
     /// applications have the storage they need, when they need it. For more information,
-    /// see the <a href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User
-    /// Guide</a>.
+    /// see the <a href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon
+    /// Elastic File System API Reference</a> and the <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon
+    /// Elastic File System User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonElasticFileSystem : IAmazonService, IDisposable
@@ -1087,12 +1088,19 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - CreateTags is deprecated and not maintained. Please use the API action
+        /// to create tags for EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates or overwrites tags associated with a file system. Each tag is a key-value
         /// pair. If a tag key specified in the request already exists on the file system, this
         /// operation overwrites its value with the value provided in the request. If you add
         /// the <code>Name</code> tag to your file system, Amazon EFS returns it in the response
         /// to the <a>DescribeFileSystems</a> operation. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permission for the <code>elasticfilesystem:CreateTags</code>
@@ -1120,12 +1128,19 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - CreateTags is deprecated and not maintained. Please use the API action
+        /// to create tags for EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates or overwrites tags associated with a file system. Each tag is a key-value
         /// pair. If a tag key specified in the request already exists on the file system, this
         /// operation overwrites its value with the value provided in the request. If you add
         /// the <code>Name</code> tag to your file system, Amazon EFS returns it in the response
         /// to the <a>DescribeFileSystems</a> operation. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permission for the <code>elasticfilesystem:CreateTags</code>
@@ -1733,11 +1748,18 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - DeleteTags is deprecated and not maintained. Please use the API action
+        /// to remove tags from EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes the specified tags from a file system. If the <code>DeleteTags</code> request
         /// includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't cause an
         /// error. For more information about tags and related restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
         /// Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions for the <code>elasticfilesystem:DeleteTags</code>
@@ -1765,11 +1787,18 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - DeleteTags is deprecated and not maintained. Please use the API action
+        /// to remove tags from EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes the specified tags from a file system. If the <code>DeleteTags</code> request
         /// includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't cause an
         /// error. For more information about tags and related restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
         /// Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions for the <code>elasticfilesystem:DeleteTags</code>
@@ -1872,6 +1901,40 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints">REST API Reference for DescribeAccessPoints Operation</seealso>
         Task<DescribeAccessPointsResponse> DescribeAccessPointsAsync(DescribeAccessPointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAccountPreferences
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountPreferences service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountPreferences service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences">REST API Reference for DescribeAccountPreferences Operation</seealso>
+        DescribeAccountPreferencesResponse DescribeAccountPreferences(DescribeAccountPreferencesRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountPreferences service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences">REST API Reference for DescribeAccountPreferences Operation</seealso>
+        Task<DescribeAccountPreferencesResponse> DescribeAccountPreferencesAsync(DescribeAccountPreferencesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2517,11 +2580,18 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the
+        /// API action to remove tags from EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the tags associated with a file system. The order of tags returned in the
         /// response of one <code>DescribeTags</code> call and the order of tags returned across
         /// the responses of a multiple-call iteration (when using pagination) is unspecified.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code>
@@ -2547,11 +2617,18 @@ namespace Amazon.ElasticFileSystem
         DescribeTagsResponse DescribeTags(string fileSystemId);
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the
+        /// API action to remove tags from EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the tags associated with a file system. The order of tags returned in the
         /// response of one <code>DescribeTags</code> call and the order of tags returned across
         /// the responses of a multiple-call iteration (when using pagination) is unspecified.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code>
@@ -2578,11 +2655,18 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the
+        /// API action to remove tags from EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the tags associated with a file system. The order of tags returned in the
         /// response of one <code>DescribeTags</code> call and the order of tags returned across
         /// the responses of a multiple-call iteration (when using pagination) is unspecified.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code>
@@ -2612,11 +2696,18 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the
+        /// API action to remove tags from EFS resources.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Returns the tags associated with a file system. The order of tags returned in the
         /// response of one <code>DescribeTags</code> call and the order of tags returned across
         /// the responses of a multiple-call iteration (when using pagination) is unspecified.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code>
@@ -2833,6 +2924,40 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         Task<ModifyMountTargetSecurityGroupsResponse> ModifyMountTargetSecurityGroupsAsync(ModifyMountTargetSecurityGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutAccountPreferences
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountPreferences service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountPreferences service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutAccountPreferences">REST API Reference for PutAccountPreferences Operation</seealso>
+        PutAccountPreferencesResponse PutAccountPreferences(PutAccountPreferencesRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountPreferences service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutAccountPreferences">REST API Reference for PutAccountPreferences Operation</seealso>
+        Task<PutAccountPreferencesResponse> PutAccountPreferencesAsync(PutAccountPreferencesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
