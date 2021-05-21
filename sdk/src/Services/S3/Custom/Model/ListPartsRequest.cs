@@ -25,32 +25,93 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the ListParts operation.
-    /// <para>Lists the parts that have been uploaded for a specific multipart upload.</para>
+    /// Lists the parts that have been uploaded for a specific multipart upload. This operation
+    /// must include the upload ID, which you obtain by sending the initiate multipart upload
+    /// request (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>).
+    /// This request returns a maximum of 1,000 uploaded parts. The default number of parts
+    /// returned is 1,000 parts. You can restrict the number of parts returned by specifying
+    /// the <code>max-parts</code> request parameter. If your multipart upload consists of
+    /// more than 1,000 parts, the response returns an <code>IsTruncated</code> field with
+    /// the value of true, and a <code>NextPartNumberMarker</code> element. In subsequent
+    /// <code>ListParts</code> requests you can include the part-number-marker query string
+    /// parameter and set its value to the <code>NextPartNumberMarker</code> field value from
+    /// the previous response.
+    /// 
+    ///  
+    /// <para>
+    /// For more information on multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
+    /// Objects Using Multipart Upload</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information on permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+    /// Upload and Permissions</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>ListParts</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListPartsRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private EncodingType encoding;
+        private string expectedBucketOwner;
         private string key;
         private int? maxParts;
         private string partNumberMarker;
-        private string uploadId;
-        private EncodingType encoding;
         private RequestPayer requestPayer;
-        private string expectedBucketOwner;
+        private string uploadId;
 
         /// <summary>
-        /// <para>The name of the bucket to which the parts are being uploaded.</para>
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point 
-        /// ARN in place of the bucket name. For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> 
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
-        ///  <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        ///  The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        ///  When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
-        ///  For more information about S3 on Outposts ARNs, see 
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket to which the parts are being uploaded. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -58,10 +119,52 @@ namespace Amazon.S3.Model
             set { this.bucketName = value; }
         }
 
-        // Check to see if Bucket property is set
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Requests Amazon S3 to encode the object keys in the response and specifies
+        /// the encoding method to use. An object key may contain any Unicode character;
+        /// however, XML 1.0 parser cannot parse some characters, such as characters
+        /// with an ASCII value from 0 to 10. For characters that are not supported in
+        /// XML 1.0, you can add this parameter to request that Amazon S3 encode the
+        /// keys in the response.
+        /// </summary>
+        public EncodingType Encoding
+        {
+            get { return this.encoding; }
+            set { this.encoding = value; }
+        }
+
+        // Check to see if DeleteMarker property is set
+        internal bool IsSetEncoding()
+        {
+            return this.encoding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
         /// <summary>
@@ -86,8 +189,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxParts. 
+        /// <para>
         /// Sets the maximum number of parts to return.
-        ///  
+        /// </para>
         /// </summary>
         public int MaxParts
         {
@@ -102,8 +207,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.
-        ///  
+        /// Gets and sets the property PartNumberMarker. 
+        /// <para>
+        /// Specifies the part after which listing should begin. Only parts with higher part numbers
+        /// will be listed.
+        /// </para>
         /// </summary>
         public string PartNumberMarker
         {
@@ -115,42 +223,6 @@ namespace Amazon.S3.Model
         internal bool IsSetPartNumberMarker()
         {
             return this.partNumberMarker != null;
-        }
-
-        /// <summary>
-        /// Upload ID identifying the multipart upload whose parts are being listed.
-        ///  
-        /// </summary>
-        public string UploadId
-        {
-            get { return this.uploadId; }
-            set { this.uploadId = value; }
-        }
-
-        // Check to see if UploadId property is set
-        internal bool IsSetUploadId()
-        {
-            return this.uploadId != null;
-        }
-
-        /// <summary>
-        /// Requests Amazon S3 to encode the object keys in the response and specifies
-        /// the encoding method to use. An object key may contain any Unicode character;
-        /// however, XML 1.0 parser cannot parse some characters, such as characters
-        /// with an ASCII value from 0 to 10. For characters that are not supported in
-        /// XML 1.0, you can add this parameter to request that Amazon S3 encode the
-        /// keys in the response.
-        /// </summary>
-        public EncodingType Encoding
-        {
-            get { return this.encoding; }
-            set { this.encoding = value; }
-        }
-
-        // Check to see if DeleteMarker property is set
-        internal bool IsSetEncoding()
-        {
-            return this.encoding != null;
         }
 
         /// <summary>
@@ -173,23 +245,23 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property UploadId. 
+        /// <para>
+        /// Upload ID identifying the multipart upload whose parts are being listed.
+        /// </para>
         /// </summary>
-        public string ExpectedBucketOwner
+        public string UploadId
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this.uploadId; }
+            set { this.uploadId = value; }
         }
 
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
+        // Check to see if UploadId property is set
+        internal bool IsSetUploadId()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return this.uploadId != null;
         }
+
     }
 }
     

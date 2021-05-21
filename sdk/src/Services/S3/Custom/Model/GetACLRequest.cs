@@ -29,6 +29,8 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class GetACLRequest : AmazonWebServiceRequest
     {
+        private string expectedBucketOwner;
+
         /// <summary>
         /// <para>The bucket name that contains the object for which to get the ACL information.</para>
         /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
@@ -44,6 +46,25 @@ namespace Amazon.S3.Model
         internal bool IsSetBucket()
         {
             return this.BucketName != null;
+        }
+
+        /// <summary>
+        /// The account ID of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
         /// <summary>
@@ -72,27 +93,6 @@ namespace Amazon.S3.Model
         internal bool IsSetVersionId()
         {
             return this.VersionId != null;
-        }
-
-        private string expectedBucketOwner;
-
-        /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
-        /// </summary>
-        public string ExpectedBucketOwner
-        {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
-        {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
     }
 }

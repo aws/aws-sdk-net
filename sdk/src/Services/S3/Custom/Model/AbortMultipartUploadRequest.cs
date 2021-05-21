@@ -24,15 +24,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The parameters to request an abort of a multipart upload.
+    /// Container for the parameters to the AbortMultipartUpload operation.
+    /// This action aborts a multipart upload. After a multipart upload is aborted, no additional
+    /// parts can be uploaded using that upload ID. The storage consumed by any previously
+    /// uploaded parts will be freed. However, if any part uploads are currently in progress,
+    /// those part uploads might or might not succeed. As a result, it might be necessary
+    /// to abort a given multipart upload multiple times in order to completely free all storage
+    /// consumed by all parts. 
+    /// 
+    ///  
+    /// <para>
+    /// To verify that all parts have been removed, so you don't get charged for the part
+    /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+    /// action and ensure that the parts list is empty.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about permissions required to use the multipart upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+    /// Upload and Permissions</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>AbortMultipartUpload</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    /// <remarks>
-    /// After a multipart upload is aborted, no additional parts can be uploaded using that upload ID. 
-    /// The storage consumed by any previously uploaded parts will be freed. However, if any part uploads 
-    /// are currently in progress, those part uploads might or might not succeed. As a result, it might be 
-    /// necessary to abort a given multipart upload multiple times in order to completely free all storage 
-    /// consumed by all parts.
-    /// </remarks>
     public partial class AbortMultipartUploadRequest : AmazonWebServiceRequest
     {
         private string bucketName;
@@ -42,18 +83,28 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
 
         /// <summary>
-        /// <para>The bucket name to which the upload was taking place. </para>
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point 
-        /// ARN in place of the bucket name. For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> 
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
-        /// For more information about S3 on Outposts ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The bucket name to which the upload was taking place. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -61,10 +112,32 @@ namespace Amazon.S3.Model
             set { this.bucketName = value; }
         }
 
-        // Check to see if Bucket property is set
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
         /// <summary>
@@ -89,21 +162,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The upload id for the in-progress multipart upload that should be aborted.
-        /// </summary>
-        public string UploadId
-        {
-            get { return this.uploadId; }
-            set { this.uploadId = value; }
-        }
-
-        // Check to see if UploadId property is set
-        internal bool IsSetUploadId()
-        {
-            return this.uploadId != null;
-        }
-
-        /// <summary>
         /// Confirms that the requester knows that she or he will be charged for the request.
         /// Bucket owners need not specify this parameter in their requests.
         /// </summary>
@@ -123,22 +181,21 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property UploadId. 
+        /// <para>
+        /// Upload ID that identifies the multipart upload.
+        /// </para>
         /// </summary>
-        public string ExpectedBucketOwner
+        public string UploadId
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this.uploadId; }
+            set { this.uploadId = value; }
         }
 
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
+        // Check to see if UploadId property is set
+        internal bool IsSetUploadId()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return this.uploadId != null;
         }
     }
 }

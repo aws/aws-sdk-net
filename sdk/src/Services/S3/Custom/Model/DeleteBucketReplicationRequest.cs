@@ -25,7 +25,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Request object for the DeleteBucketReplication operation.
+    /// Container for the parameters to the DeleteBucketReplication operation.
+    /// Deletes the replication configuration from the bucket.
+    /// 
+    ///  
+    /// <para>
+    /// To use this operation, you must have permissions to perform the <code>s3:PutReplicationConfiguration</code>
+    /// action. The bucket owner has these permissions by default and can grant it to others.
+    /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+    /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+    /// Access Permissions to Your Amazon S3 Resources</a>. 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// It can take a while for the deletion of a replication configuration to fully propagate.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  For information about replication configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
+    /// in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>DeleteBucketReplication</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html">PutBucketReplication</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteBucketReplicationRequest : AmazonWebServiceRequest
     {
@@ -56,8 +90,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {

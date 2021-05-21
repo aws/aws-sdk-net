@@ -20,40 +20,98 @@ using System;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    ///  Container for the parameters to the DeleteObjectTaggingRequest operation.
+    /// Container for the parameters to the DeleteObjectTagging operation.
+    /// Removes the entire tag set from the specified object. For more information about managing
+    /// object tags, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">
+    /// Object Tagging</a>.
+    /// 
+    ///  
+    /// <para>
+    /// To use this operation, you must have permission to perform the <code>s3:DeleteObjectTagging</code>
+    /// action.
+    /// </para>
+    ///  
+    /// <para>
+    /// To delete tags of a specific object version, add the <code>versionId</code> query
+    /// parameter in the request. You will need permission for the <code>s3:DeleteObjectVersionTagging</code>
+    /// action.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public class DeleteObjectTaggingRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private string expectedBucketOwner;
         private string key;
         private string versionId;
-        private string expectedBucketOwner;
 
         /// <summary>
-        /// <para>The bucket name containing the objects from which to remove the tags.</para>
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using an access point through the AWS SDKs, you provide the access point 
-        /// ARN in place of the bucket name. For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> 
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
-        /// For more information about S3 on Outposts ARNs, 
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The bucket name containing the objects from which to remove the tags. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
             get { return this.bucketName; }
             set { this.bucketName = value; }
         }
-        /// <summary>
-        /// Check to see if Bucket property is set 
-        /// </summary>
+
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
             return !string.IsNullOrEmpty(this.bucketName);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
         /// <summary>
@@ -80,7 +138,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The identifier for the specific version of the object to be deleted, if required.
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// The versionId of the object that the tag-set will be removed from.
+        /// </para>
         /// </summary>
         public string VersionId
         {
@@ -88,32 +149,10 @@ namespace Amazon.S3.Model
             set { this.versionId = value; }
         }
 
-        /// <summary>
-        /// Checks if VersionId property is set.
-        /// </summary>
-        /// <returns>true if VersionId property is set.</returns>
+        // Check to see if VersionId property is set
         internal bool IsSetVersionId()
         {
             return !string.IsNullOrEmpty(this.versionId);
-        }
-
-        /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
-        /// </summary>
-        public string ExpectedBucketOwner
-        {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
-        {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
     }
 }

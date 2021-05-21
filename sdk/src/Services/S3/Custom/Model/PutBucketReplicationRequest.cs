@@ -25,17 +25,103 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketReplication operation.
-    /// <para>Sets replication configuration for your bucket. If a replication configuration exists, this replaces it.</para>
+    /// Creates a replication configuration or replaces an existing one. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
+    /// in the <i>Amazon S3 User Guide</i>. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To perform this operation, the user or role performing the action must have the <a
+    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
+    /// permission.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Specify the replication configuration in the request body. In the replication configuration,
+    /// you provide the name of the destination bucket or buckets where you want Amazon S3
+    /// to replicate objects, the IAM role that Amazon S3 can assume to replicate objects
+    /// on your behalf, and other relevant information.
+    /// </para>
+    ///  
+    /// <para>
+    /// A replication configuration must include at least one rule, and can contain a maximum
+    /// of 1,000. Each rule identifies a subset of objects to replicate by filtering the objects
+    /// in the source bucket. To choose additional subsets of objects to replicate, add a
+    /// rule for each subset.
+    /// </para>
+    ///  
+    /// <para>
+    /// To specify a subset of the objects in the source bucket to apply a replication rule
+    /// to, add the Filter element as a child of the Rule element. You can filter objects
+    /// based on an object key prefix, one or more object tags, or both. When you add the
+    /// Filter element in the configuration, you must also add the following elements: <code>DeleteMarkerReplication</code>,
+    /// <code>Status</code>, and <code>Priority</code>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you are using an earlier version of the replication configuration, Amazon S3 handles
+    /// replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward
+    /// Compatibility</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// For information about enabling versioning on a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html">Using
+    /// Versioning</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// By default, a resource owner, in this case the AWS account that created the bucket,
+    /// can perform this operation. The resource owner can also grant others permissions to
+    /// perform the operation. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+    /// Permissions in a Policy</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+    /// Access Permissions to Your Amazon S3 Resources</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Handling Replication of Encrypted Objects</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// By default, Amazon S3 doesn't replicate objects that are stored at rest using server-side
+    /// encryption with CMKs stored in AWS KMS. To replicate AWS KMS-encrypted objects, add
+    /// the following: <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>,
+    /// <code>Status</code>, <code>EncryptionConfiguration</code>, and <code>ReplicaKmsKeyID</code>.
+    /// For information about replication configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-config-for-kms-objects.html">Replicating
+    /// Objects Created with SSE Using CMKs stored in AWS KMS</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information on <code>PutBucketReplication</code> errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ReplicationErrorCodeList">List
+    /// of replication-related error codes</a> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>PutBucketReplication</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html">DeleteBucketReplication</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PutBucketReplicationRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private string expectedBucketOwner;
         private ReplicationConfiguration configuration;
         private string token;
-        private string expectedBucketOwner;
 
         /// <summary>
-        /// The name of the bucket to have the replication configuration applied.
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -47,6 +133,28 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
         /// <summary>
@@ -65,7 +173,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>A token to allow Object Lock to be enabled for an existing bucket.</para>
+        /// Gets and sets the property Token. 
+        /// <para>
+        /// A token to allow Object Lock to be enabled for an existing bucket.
+        /// </para>
         /// </summary>
         public string Token
         {
@@ -79,24 +190,6 @@ namespace Amazon.S3.Model
             return this.token != null;
         }
 
-        /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
-        /// </summary>
-        public string ExpectedBucketOwner
-        {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
-        {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
-        }
     }
 }
 

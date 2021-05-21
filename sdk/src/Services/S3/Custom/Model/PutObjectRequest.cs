@@ -25,40 +25,164 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutObject operation.
-    /// <para>Adds an object to a bucket.</para>
+    /// Adds an object to a bucket. You must have WRITE permissions on a bucket to add an
+    /// object to it.
+    /// 
+    ///  
+    /// <para>
+    /// Amazon S3 never adds partial objects; if you receive a success response, Amazon S3
+    /// added the entire object to the bucket.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon S3 is a distributed system. If it receives multiple write requests for the
+    /// same object simultaneously, it overwrites all but the last object written. Amazon
+    /// S3 does not provide object locking; if you need this, make sure to build it into your
+    /// application layer or use versioning instead.
+    /// </para>
+    ///  
+    /// <para>
+    /// To ensure that data is not corrupted traversing the network, use the <code>Content-MD5</code>
+    /// header. When you use this header, Amazon S3 checks the object against the provided
+    /// MD5 value and, if they do not match, returns an error. Additionally, you can calculate
+    /// the MD5 while putting an object to Amazon S3 and compare the returned ETag to the
+    /// calculated MD5 value.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  The <code>Content-MD5</code> header is required for any request to upload an object
+    /// with a retention period configured using Amazon S3 Object Lock. For more information
+    /// about Amazon S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">Amazon
+    /// S3 Object Lock Overview</a> in the <i>Amazon S3 User Guide</i>. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  <b>Server-side Encryption</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can optionally request server-side encryption. With server-side encryption, Amazon
+    /// S3 encrypts your data as it writes it to disks in its data centers and decrypts the
+    /// data when you access it. You have the option to provide your own encryption key or
+    /// use AWS managed encryption keys (SSE-S3 or SSE-KMS). For more information, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+    /// Server-Side Encryption</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you request server-side encryption using AWS Key Management Service (SSE-KMS),
+    /// you can enable an S3 Bucket Key at the object-level. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket
+    /// Keys</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Access Control List (ACL)-Specific Request Headers</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use headers to grant ACL- based permissions. By default, all objects are private.
+    /// Only the owner has full access control. When adding a new object, you can grant permissions
+    /// to individual AWS accounts or to predefined groups defined by Amazon S3. These permissions
+    /// are then added to the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+    /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
+    /// ACLs Using the REST API</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Storage Class Options</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects.
+    /// The STANDARD storage class provides high durability and high availability. Depending
+    /// on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts
+    /// only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+    /// Classes</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Versioning</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you enable versioning for a bucket, Amazon S3 automatically generates a unique
+    /// version ID for the object being stored. Amazon S3 returns this ID in the response.
+    /// When you enable versioning for a bucket, if Amazon S3 receives multiple write requests
+    /// for the same object simultaneously, it stores all of the objects.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/AddingObjectstoVersioningEnabledBuckets.html">Adding
+    /// Objects to Versioning Enabled Buckets</a>. For information about returning the versioning
+    /// state of a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>.
+    /// 
+    /// </para>
+    ///  <p class="title"> <b>Related Resources</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PutObjectRequest : PutWithACLRequest
     {
         private S3CannedACL cannedACL;
+        private bool? bucketKeyEnabled;
         private string bucketName;
+        private string contentBody;
+        private string expectedBucketOwner;
         private string key;
-        private S3StorageClass storageClass;
-        private string websiteRedirectLocation;
+        private Stream inputStream;
+        private string filePath;
+        private bool autoCloseStream = true;
+        private bool autoResetStreamPosition = true;
+        private bool useChunkEncoding = true;
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
-
+        private string md5Digest;
+        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
+        private ObjectLockMode objectLockMode;
+        private DateTime? objectLockRetainUntilDate;
+        private RequestPayer requestPayer;
         private ServerSideEncryptionMethod serverSideEncryption;
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private string serverSideEncryptionKeyManagementServiceEncryptionContext;
-
-        private Stream inputStream;
-        private string filePath;
-        private string contentBody;
-        private bool autoCloseStream = true;
-        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
-        private ObjectLockMode objectLockMode;
-        private DateTime? objectLockRetainUntilDate;
-        private bool autoResetStreamPosition = true;
-        private bool useChunkEncoding = true;
-        private RequestPayer requestPayer;
-        private string expectedBucketOwner;
-
-        private string md5Digest;
+        private S3StorageClass storageClass;
         private List<Tag> tagset = new List<Tag>();
-        private bool? bucketKeyEnabled;
+        private string websiteRedirectLocation;
+
+        /// <summary>
+        /// Overriden to turn off sending SHA256 header.
+        /// </summary>
+        protected override bool IncludeSHA256Header
+        {
+            get
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Overriden to turn on expect 100 continue.
+        /// </summary>
+        protected override bool Expect100Continue
+        {
+            get
+            {
+                return true;
+            }
+        }
 
         /// <summary>
         /// A canned access control list (CACL) to apply to the object.
@@ -75,6 +199,439 @@ namespace Amazon.S3.Model
         internal bool IsSetCannedACL()
         {
             return cannedACL != null && cannedACL != S3CannedACL.NoACL;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketKeyEnabled. 
+        /// <para>
+        /// Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
+        /// server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code>
+        /// causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying this header with a PUT action doesn't affect bucket-level settings for
+        /// S3 Bucket Key.
+        /// </para>
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The bucket name to which the PUT action was initiated. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string BucketName
+        {
+            get { return this.bucketName; }
+            set { this.bucketName = value; }
+        }
+
+        // Check to see if Bucket property is set
+        internal bool IsSetBucket()
+        {
+            return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// An MD5 digest for the content.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The base64 encoded 128-bit MD5 digest of the message
+        /// (without the headers) according to RFC 1864. This header
+        /// can be used as a message integrity check to verify that
+        /// the data is the same data that was originally sent.
+        /// </para>
+        /// <para>
+        /// If supplied, after the file has been uploaded to S3,
+        /// S3 checks to ensure that the MD5 hash of the uploaded file
+        /// matches the hash supplied.
+        /// </para>
+        /// <para>
+        /// Although it is optional, we recommend using the
+        /// Content-MD5 mechanism as an end-to-end integrity check.
+        /// </para>
+        /// </remarks>
+        public string MD5Digest
+        {
+            get { return this.md5Digest; }
+            set { this.md5Digest = value; }
+        }
+
+        /// <summary>
+        /// Checks if MD5Digest property is set.
+        /// </summary>
+        /// <returns>true if MD5Digest property is set.</returns>
+        internal bool IsSetMD5Digest()
+        {
+            return !System.String.IsNullOrEmpty(this.md5Digest);
+        }
+
+        /// <summary>
+        /// This is a convenience property for Headers.ContentType.
+        /// </summary>
+        public string ContentType
+        {
+            get { return this.Headers.ContentType; }
+            set { this.Headers.ContentType = value; }
+        }
+
+        /// <summary>
+        /// The account ID of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+        }
+
+        /// <summary>
+        /// Gets and sets Key property. This key is used to identify the object in S3.
+        /// </summary>
+        public string Key
+        {
+            get { return this.key; }
+            set { this.key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this.key != null;
+        }
+
+        /// <summary>
+        /// The collection of meta data for the request.
+        /// </summary>
+        public MetadataCollection Metadata
+        {
+            get
+            {
+                if (this.metadataCollection == null)
+                    this.metadataCollection = new MetadataCollection();
+                return this.metadataCollection;
+            }
+            internal set
+            {
+                this.metadataCollection = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockLegalHoldStatus. 
+        /// <para>
+        /// Specifies whether a legal hold will be applied to this object. For more information
+        /// about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
+        /// Lock</a>.
+        /// </para>
+        /// </summary>
+        public ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
+        {
+            get { return this.objectLockLegalHoldStatus; }
+            set { this.objectLockLegalHoldStatus = value; }
+        }
+
+        // Check to see if ObjectLockLegalHoldStatus property is set
+        internal bool IsSetObjectLockLegalHoldStatus()
+        {
+            return this.objectLockLegalHoldStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockMode. 
+        /// <para>
+        /// The Object Lock mode that you want to apply to this object.
+        /// </para>
+        /// </summary>
+        public ObjectLockMode ObjectLockMode
+        {
+            get { return this.objectLockMode; }
+            set { this.objectLockMode = value; }
+        }
+
+        // Check to see if ObjectLockMode property is set
+        internal bool IsSetObjectLockMode()
+        {
+            return this.objectLockMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockRetainUntilDate. 
+        /// <para>
+        /// The date and time when you want this object's Object Lock to expire.
+        /// </para>
+        /// </summary>
+        public DateTime ObjectLockRetainUntilDate
+        {
+            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            set { this.objectLockRetainUntilDate = value; }
+        }
+
+        // Check to see if ObjectLockRetainUntilDate property is set
+        internal bool IsSetObjectLockRetainUntilDate()
+        {
+            return this.objectLockRetainUntilDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Confirms that the requester knows that she or he will be charged for the request.
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequetsPayer is set.
+        /// </summary>
+        /// <returns>true, if RequestPayer property is set.</returns>
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
+        }
+
+        /// <summary>
+        /// The Server-side encryption algorithm used when storing this object in S3.
+        ///  
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.serverSideEncryption; }
+            set { this.serverSideEncryption = value; }
+        }
+
+        // Check to see if ServerSideEncryption property is set
+        internal bool IsSetServerSideEncryptionMethod()
+        {
+            return this.serverSideEncryption != null && this.serverSideEncryption != ServerSideEncryptionMethod.None;
+        }
+
+        /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        ///  
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
+        {
+            get { return this.serverSideCustomerEncryption; }
+            set { this.serverSideCustomerEncryption = value; }
+        }
+
+        // Check to see if ServerSideEncryptionCustomerMethod property is set
+        internal bool IsSetServerSideEncryptionCustomerMethod()
+        {
+            return this.serverSideCustomerEncryption != null && this.serverSideCustomerEncryption != ServerSideEncryptionCustomerMethod.None;
+        }
+
+        /// <summary>
+        /// The base64-encoded encryption key for Amazon S3 to use to encrypt the object
+        /// <para>
+        /// Using the encryption key you provide as part of your request Amazon S3 manages both the encryption, as it writes 
+        /// to disks, and decryption, when you access your objects. Therefore, you don't need to maintain any data encryption code. The only 
+        /// thing you do is manage the encryption keys you provide.
+        /// </para>
+        /// <para>
+        /// When you retrieve an object, you must provide the same encryption key as part of your request. Amazon S3 first verifies 
+        /// the encryption key you provided matches, and then decrypts the object before returning the object data to you.
+        /// </para>
+        /// <para>
+        /// Important: Amazon S3 does not store the encryption key you provide.
+        /// </para>
+        /// </summary>
+        public string ServerSideEncryptionCustomerProvidedKey
+        {
+            get { return this.serverSideEncryptionCustomerProvidedKey; }
+            set { this.serverSideEncryptionCustomerProvidedKey = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionCustomerProvidedKey property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionCustomerProvidedKey property is set.</returns>
+        internal bool IsSetServerSideEncryptionCustomerProvidedKey()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionCustomerProvidedKey);
+        }
+
+        /// <summary>
+        /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
+        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
+        /// </summary>
+        public string ServerSideEncryptionCustomerProvidedKeyMD5
+        {
+            get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
+            set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionCustomerProvidedKeyMD5 property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionCustomerProvidedKey property is set.</returns>
+        internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionCustomerProvidedKeyMD5);
+        }
+
+        /// <summary>
+        /// Specifies the AWS KMS Encryption Context to use for object encryption.
+        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
+        /// </summary>
+        public string ServerSideEncryptionKeyManagementServiceEncryptionContext
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceEncryptionContext; }
+            set { this.serverSideEncryptionKeyManagementServiceEncryptionContext = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionKeyManagementServiceEncryptionContext property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionKeyManagementServiceEncryptionContext property is set.</returns>
+        internal bool IsSetServerSideEncryptionKeyManagementServiceEncryptionContext()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceEncryptionContext);
+        }
+
+        /// <summary>
+        /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
+        /// If a key id is not specified, the default key will be used for encryption and decryption.
+        /// </summary>
+        public string ServerSideEncryptionKeyManagementServiceKeyId
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
+        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageClass. 
+        /// <para>
+        /// By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects.
+        /// The STANDARD storage class provides high durability and high availability. Depending
+        /// on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts
+        /// only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// Classes</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public S3StorageClass StorageClass
+        {
+            get { return this.storageClass; }
+            set { this.storageClass = value; }
+        }
+
+        // Check to see if StorageClass property is set
+        internal bool IsSetStorageClass()
+        {
+            return this.storageClass != null;
+        }
+
+        /// <summary>
+        /// The tag-set for the object. The tag-set must be encoded as URL Query parameters.
+        /// </summary>
+        public List<Tag> TagSet
+        {
+            get { return this.tagset; }
+            set { this.tagset = value; }
+        }
+
+        /// <summary>
+        /// Checks if Tagging property is set
+        /// </summary>
+        /// <returns>true if Tagging is set.</returns>
+        internal bool IsSetTagSet()
+        {
+            return (this.tagset != null) && (this.tagset.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebsiteRedirectLocation. 
+        /// <para>
+        /// If the bucket is configured as a website, redirects requests for this object to another
+        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this
+        /// header in the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+        /// Key and Metadata</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the following example, the request header sets the redirect to an object (anotherPage.html)
+        /// in the same bucket:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>x-amz-website-redirect-location: /anotherPage.html</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In the following example, the request header sets the object redirect to another website:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>x-amz-website-redirect-location: http://www.example.com/</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+        /// Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How
+        /// to Configure Website Page Redirects</a>. 
+        /// </para>
+        /// </summary>
+        public string WebsiteRedirectLocation
+        {
+            get { return this.websiteRedirectLocation; }
+            set { this.websiteRedirectLocation = value; }
+        }
+
+        // Check to see if WebsiteRedirectLocation property is set
+        internal bool IsSetWebsiteRedirectLocation()
+        {
+            return this.websiteRedirectLocation != null;
         }
 
         /// <summary>
@@ -181,32 +738,6 @@ namespace Amazon.S3.Model
         public bool? DisablePayloadSigning { get; set; }
 
         /// <summary>
-        /// <para> The bucket name to which the PUT operation was initiated.</para>
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point 
-        /// ARN in place of the bucket name. For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> 
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
-        /// For more information about S3 on Outposts ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
-        /// </summary>
-        public string BucketName
-        {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
-        }
-
-        // Check to see if Bucket property is set
-        internal bool IsSetBucket()
-        {
-            return this.bucketName != null;
-        }
-
-        /// <summary>
         /// The collection of headers for the request.
         /// </summary>
         public HeadersCollection Headers
@@ -224,250 +755,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The collection of meta data for the request.
-        /// </summary>
-        public MetadataCollection Metadata
-        {
-            get
-            {
-                if (this.metadataCollection == null)
-                    this.metadataCollection = new MetadataCollection();
-                return this.metadataCollection;
-            }
-            internal set
-            {
-                this.metadataCollection = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets and sets Key property. This key is used to identify the object in S3.
-        /// </summary>
-        public string Key
-        {
-            get { return this.key; }
-            set { this.key = value; }
-        }
-
-        // Check to see if Key property is set
-        internal bool IsSetKey()
-        {
-            return this.key != null;
-        }
-
-        /// <summary>
-        /// The Server-side encryption algorithm used when storing this object in S3.
-        ///  
-        /// </summary>
-        public ServerSideEncryptionMethod ServerSideEncryptionMethod
-        {
-            get { return this.serverSideEncryption; }
-            set { this.serverSideEncryption = value; }
-        }
-
-        // Check to see if ServerSideEncryption property is set
-        internal bool IsSetServerSideEncryptionMethod()
-        {
-            return this.serverSideEncryption != null && this.serverSideEncryption != ServerSideEncryptionMethod.None;
-        }
-
-        /// <summary>
-        /// The Server-side encryption algorithm to be used with the customer provided key.
-        ///  
-        /// </summary>
-        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
-        {
-            get { return this.serverSideCustomerEncryption; }
-            set { this.serverSideCustomerEncryption = value; }
-        }
-
-        // Check to see if ServerSideEncryptionCustomerMethod property is set
-        internal bool IsSetServerSideEncryptionCustomerMethod()
-        {
-            return this.serverSideCustomerEncryption != null && this.serverSideCustomerEncryption != ServerSideEncryptionCustomerMethod.None;
-        }
-
-        /// <summary>
-        /// The base64-encoded encryption key for Amazon S3 to use to encrypt the object
-        /// <para>
-        /// Using the encryption key you provide as part of your request Amazon S3 manages both the encryption, as it writes 
-        /// to disks, and decryption, when you access your objects. Therefore, you don't need to maintain any data encryption code. The only 
-        /// thing you do is manage the encryption keys you provide.
-        /// </para>
-        /// <para>
-        /// When you retrieve an object, you must provide the same encryption key as part of your request. Amazon S3 first verifies 
-        /// the encryption key you provided matches, and then decrypts the object before returning the object data to you.
-        /// </para>
-        /// <para>
-        /// Important: Amazon S3 does not store the encryption key you provide.
-        /// </para>
-        /// </summary>
-        public string ServerSideEncryptionCustomerProvidedKey
-        {
-            get { return this.serverSideEncryptionCustomerProvidedKey; }
-            set { this.serverSideEncryptionCustomerProvidedKey = value; }
-        }
-
-        /// <summary>
-        /// Checks if ServerSideEncryptionCustomerProvidedKey property is set.
-        /// </summary>
-        /// <returns>true if ServerSideEncryptionCustomerProvidedKey property is set.</returns>
-        internal bool IsSetServerSideEncryptionCustomerProvidedKey()
-        {
-            return !System.String.IsNullOrEmpty(this.serverSideEncryptionCustomerProvidedKey);
-        }
-
-        /// <summary>
-        /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
-        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
-        /// </summary>
-        public string ServerSideEncryptionCustomerProvidedKeyMD5
-        {
-            get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
-            set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
-        }
-
-        /// <summary>
-        /// Checks if ServerSideEncryptionCustomerProvidedKeyMD5 property is set.
-        /// </summary>
-        /// <returns>true if ServerSideEncryptionCustomerProvidedKey property is set.</returns>
-        internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5()
-        {
-            return !System.String.IsNullOrEmpty(this.serverSideEncryptionCustomerProvidedKeyMD5);
-        }
-
-
-        /// <summary>
-        /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
-        /// If a key id is not specified, the default key will be used for encryption and decryption.
-        /// </summary>
-        public string ServerSideEncryptionKeyManagementServiceKeyId
-        {
-            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
-            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
-        }
-
-        /// <summary>
-        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
-        /// </summary>
-        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
-        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
-        {
-            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
-        }
-
-        /// <summary>
-        /// Specifies the AWS KMS Encryption Context to use for object encryption.
-        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
-        /// </summary>
-        public string ServerSideEncryptionKeyManagementServiceEncryptionContext
-        {
-            get { return this.serverSideEncryptionKeyManagementServiceEncryptionContext; }
-            set { this.serverSideEncryptionKeyManagementServiceEncryptionContext = value; }
-        }
-
-        /// <summary>
-        /// Checks if ServerSideEncryptionKeyManagementServiceEncryptionContext property is set.
-        /// </summary>
-        /// <returns>true if ServerSideEncryptionKeyManagementServiceEncryptionContext property is set.</returns>
-        internal bool IsSetServerSideEncryptionKeyManagementServiceEncryptionContext()
-        {
-            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceEncryptionContext);
-        }
-
-
-
-        /// <summary>
-        /// <para>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. 
-        /// The STANDARD storage class provides high durability and high availability. 
-        /// Depending on performance needs, you can specify a different Storage Class. 
-        /// Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html\">Storage Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</para>
-        /// </summary>
-        public S3StorageClass StorageClass
-        {
-            get { return this.storageClass; }
-            set { this.storageClass = value; }
-        }
-
-        // Check to see if StorageClass property is set
-        internal bool IsSetStorageClass()
-        {
-            return this.storageClass != null;
-        }
-		
-        /// <summary>
-        /// Gets and sets the property ObjectLockLegalHoldStatus. 
-        /// <para>
-        /// The Legal Hold status that you want to apply to the specified object.
-        /// </para>
-        /// </summary>
-        public ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
-        {
-            get { return this.objectLockLegalHoldStatus; }
-            set { this.objectLockLegalHoldStatus = value; }
-        }
-
-        // Check to see if ObjectLockLegalHoldStatus property is set
-        internal bool IsSetObjectLockLegalHoldStatus()
-        {
-            return this.objectLockLegalHoldStatus != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockMode. 
-        /// <para>
-        /// The Object Lock mode that you want to apply to this object.
-        /// </para>
-        /// </summary>
-        public ObjectLockMode ObjectLockMode
-        {
-            get { return this.objectLockMode; }
-            set { this.objectLockMode = value; }
-        }
-
-        // Check to see if ObjectLockMode property is set
-        internal bool IsSetObjectLockMode()
-        {
-            return this.objectLockMode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockRetainUntilDate. 
-        /// <para>
-        /// The date and time when you want this object's Object Lock to expire.
-        /// </para>
-        /// </summary>
-        public DateTime ObjectLockRetainUntilDate
-        {
-            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
-            set { this.objectLockRetainUntilDate = value; }
-        }
-
-        // Check to see if ObjectLockRetainUntilDate property is set
-        internal bool IsSetObjectLockRetainUntilDate()
-        {
-            return this.objectLockRetainUntilDate.HasValue; 
-        }
-
-        /// <summary>
-        /// If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL.
-        /// Amazon S3 stores the value of this header in the object metadata.
-        ///  
-        /// </summary>
-        public string WebsiteRedirectLocation
-        {
-            get { return this.websiteRedirectLocation; }
-            set { this.websiteRedirectLocation = value; }
-        }
-
-        // Check to see if WebsiteRedirectLocation property is set
-        internal bool IsSetWebsiteRedirectLocation()
-        {
-            return this.websiteRedirectLocation != null;
-        }
-
-        /// <summary>
         /// Attach a callback that will be called as data is being sent to the AWS Service.
         /// </summary>
         public EventHandler<Amazon.Runtime.StreamTransferProgressArgs> StreamTransferProgress
@@ -482,145 +769,6 @@ namespace Amazon.S3.Model
             }
         }
 
-        /// <summary>
-        /// This is a convenience property for Headers.ContentType.
-        /// </summary>
-        public string ContentType
-        {
-            get { return this.Headers.ContentType; }
-            set { this.Headers.ContentType = value; }
-        }
-
-        /// <summary>
-        /// An MD5 digest for the content.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// The base64 encoded 128-bit MD5 digest of the message
-        /// (without the headers) according to RFC 1864. This header
-        /// can be used as a message integrity check to verify that
-        /// the data is the same data that was originally sent.
-        /// </para>
-        /// <para>
-        /// If supplied, after the file has been uploaded to S3,
-        /// S3 checks to ensure that the MD5 hash of the uploaded file
-        /// matches the hash supplied.
-        /// </para>
-        /// <para>
-        /// Although it is optional, we recommend using the
-        /// Content-MD5 mechanism as an end-to-end integrity check.
-        /// </para>
-        /// </remarks>
-        public string MD5Digest
-        {
-            get { return this.md5Digest; }
-            set { this.md5Digest = value; }
-        }
-
-        /// <summary>
-        /// Checks if MD5Digest property is set.
-        /// </summary>
-        /// <returns>true if MD5Digest property is set.</returns>
-        internal bool IsSetMD5Digest()
-        {
-            return !System.String.IsNullOrEmpty(this.md5Digest);
-        }
-
-        /// <summary>
-        /// Overriden to turn off sending SHA256 header.
-        /// </summary>
-        protected override bool IncludeSHA256Header
-        {
-            get
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Overriden to turn on expect 100 continue.
-        /// </summary>
-        protected override bool Expect100Continue
-        {
-            get
-            {
-                return true;
-            }
-        }
-
-        /// <summary>
-        /// Confirms that the requester knows that she or he will be charged for the request.
-        /// Bucket owners need not specify this parameter in their requests.
-        /// </summary>
-        public RequestPayer RequestPayer
-        {
-            get { return this.requestPayer; }
-            set { this.requestPayer = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if RequetsPayer is set.
-        /// </summary>
-        /// <returns>true, if RequestPayer property is set.</returns>
-        internal bool IsSetRequestPayer()
-        {
-            return requestPayer != null;
-        }
-
-        /// <summary>
-        /// The tag-set for the object. The tag-set must be encoded as URL Query parameters.
-        /// </summary>
-        public List<Tag> TagSet
-        {
-            get { return this.tagset; }
-            set { this.tagset = value; }
-        }
-
-        /// <summary>
-        /// Checks if Tagging property is set
-        /// </summary>
-        /// <returns>true if Tagging is set.</returns>
-        internal bool IsSetTagSet()
-        {
-            return (this.tagset != null) && (this.tagset.Count > 0);
-        }
-
-        /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
-        /// </summary>
-        public string ExpectedBucketOwner
-        {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
-        {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
-        }
-
-        /// <summary>
-        /// <para>Specifies whether Amazon S3 should use bucket key for object encryption 
-        /// with server-side encryption using AWS KMS (SSE-KMS). Setting this header 
-        /// to <code>true</code> causes Amazon S3 to use bucket key for object encryption with 
-        /// SSE-KMS.</para> <para>Specifying this header with a PUT operation doesn�t affect 
-        /// bucket-level settings for bucket key.</para>",
-        /// </summary>
-        public bool BucketKeyEnabled
-        {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
-            set { this.bucketKeyEnabled = value; }
-        }
-
-        internal bool IsSetBucketKeyEnabled()
-        {
-            return bucketKeyEnabled.HasValue;
-        }
     }
 }
     

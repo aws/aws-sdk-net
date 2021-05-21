@@ -25,33 +25,82 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the ListObjects operation.
-    /// <para>Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a
-    /// subset of the objects in a bucket.</para>
+    /// Returns some or all (up to 1,000) of the objects in a bucket. You can use the request
+    /// parameters as selection criteria to return a subset of the objects in a bucket. A
+    /// 200 OK response can contain valid or invalid XML. Be sure to design your application
+    /// to parse the contents of the response and handle it appropriately.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This action has been revised. We recommend that you use the newer version, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>,
+    /// when developing applications. For backward compatibility, Amazon S3 continues to support
+    /// <code>ListObjects</code>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// The following operations are related to <code>ListObjects</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListObjectsRequest : AmazonWebServiceRequest
     {
         private string bucketName;
         private string delimiter;
+        private EncodingType encoding;
+        private string expectedBucketOwner;
         private string marker;
         private int? maxKeys;
         private string prefix;
-        private EncodingType encoding;
         private RequestPayer requestPayer;
-        private string expectedBucketOwner;
-
 
         /// <summary>
-        /// <para>The name of the bucket containing the objects.</para> 
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. 
-        /// For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para> 
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
-        /// For more information about S3 on Outposts ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket containing the objects.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -59,7 +108,7 @@ namespace Amazon.S3.Model
             set { this.bucketName = value; }
         }
 
-        // Check to see if Bucket property is set
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
@@ -81,6 +130,48 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Requests Amazon S3 to encode the object keys in the response and specifies
+        /// the encoding method to use. An object key may contain any Unicode character;
+        /// however, XML 1.0 parser cannot parse some characters, such as characters
+        /// with an ASCII value from 0 to 10. For characters that are not supported in
+        /// XML 1.0, you can add this parameter to request that Amazon S3 encode the
+        /// keys in the response.
+        /// </summary>
+        public EncodingType Encoding
+        {
+            get { return this.encoding; }
+            set { this.encoding = value; }
+        }
+
+        // Check to see if DeleteMarker property is set
+        internal bool IsSetEncoding()
+        {
+            return this.encoding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+        }
+
+        /// <summary>
         /// Specifies the key to start with when listing objects in a bucket.
         /// </summary>
         public string Marker
@@ -96,7 +187,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more.
+        /// Gets and sets the property MaxKeys. 
+        /// <para>
+        /// Sets the maximum number of keys returned in the response. By default the action returns
+        /// up to 1,000 key names. The response might contain fewer keys but will never contain
+        /// more. 
+        /// </para>
         /// </summary>
         public int MaxKeys
         {
@@ -126,28 +222,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Requests Amazon S3 to encode the object keys in the response and specifies
-        /// the encoding method to use. An object key may contain any Unicode character;
-        /// however, XML 1.0 parser cannot parse some characters, such as characters
-        /// with an ASCII value from 0 to 10. For characters that are not supported in
-        /// XML 1.0, you can add this parameter to request that Amazon S3 encode the
-        /// keys in the response.
-        /// </summary>
-        public EncodingType Encoding
-        {
-            get { return this.encoding; }
-            set { this.encoding = value; }
-        }
-
-        // Check to see if DeleteMarker property is set
-        internal bool IsSetEncoding()
-        {
-            return this.encoding != null;
-        }
-
-        /// <summary>
-        /// Confirms that the requester knows that she or he will be charged for the list objects request.
-        /// Bucket owners need not specify this parameter in their requests.
+        /// Gets and sets the property RequestPayer. 
+        /// <para>
+        /// Confirms that the requester knows that she or he will be charged for the list objects
+        /// request. Bucket owners need not specify this parameter in their requests.
+        /// </para>
         /// </summary>
         public RequestPayer RequestPayer
         {
@@ -164,24 +243,6 @@ namespace Amazon.S3.Model
             return requestPayer != null;
         }
 
-        /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
-        /// </summary>
-        public string ExpectedBucketOwner
-        {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
-        {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
-        }
     }
 }
     

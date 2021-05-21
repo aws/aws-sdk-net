@@ -20,7 +20,10 @@ using System.IO;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>Logging Enabled
+    /// <summary>
+    /// Describes where logs are stored and the prefix that Amazon S3 assigns to all log object
+    /// keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT
+    /// Bucket logging</a> in the <i>Amazon S3 API Reference</i>.
     /// </summary>
     public class S3BucketLoggingConfig
     {
@@ -55,7 +58,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// This element lets you specify a prefix for the keys that the log files will be stored under.
+        /// Gets and sets the property TargetPrefix. 
+        /// <para>
+        /// A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets
+        /// in a single bucket, you can use a prefix to distinguish which log files came from
+        /// which bucket.
+        /// </para>
         /// </summary>
         public string TargetPrefix { get; set; }
 

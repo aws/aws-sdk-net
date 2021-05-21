@@ -52,6 +52,25 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// The account ID of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+        }
+
+        /// <summary>
         /// The key of the S3 object that was being uploaded.
         /// </summary>
         /// <remarks>
@@ -162,21 +181,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The upload id for the in-progress multipart upload that should be completed.
-        /// </summary>
-        public string UploadId
-        {
-            get { return this.uploadId; }
-            set { this.uploadId = value; }
-        }
-
-        // Check to see if UploadId property is set
-        internal bool IsSetUploadId()
-        {
-            return this.uploadId != null;
-        }
-
-        /// <summary>
         /// Confirms that the requester knows that she or he will be charged for the request.
         /// Bucket owners need not specify this parameter in their requests.
         /// </summary>
@@ -196,22 +200,18 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// The upload id for the in-progress multipart upload that should be completed.
         /// </summary>
-        public string ExpectedBucketOwner
+        public string UploadId
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this.uploadId; }
+            set { this.uploadId = value; }
         }
 
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
+        // Check to see if UploadId property is set
+        internal bool IsSetUploadId()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return this.uploadId != null;
         }
     }
 }

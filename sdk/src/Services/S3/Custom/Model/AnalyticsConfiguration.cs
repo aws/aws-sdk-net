@@ -30,21 +30,6 @@ namespace Amazon.S3.Model
         private AnalyticsFilter analyticsFilter;
         private StorageClassAnalysis storageClassAnalysis;
 
-        /// <summary>
-        /// The identifier used to represent an analytics configuration.
-        /// </summary>
-        public string AnalyticsId
-        {
-            get { return this.analyticsId; }
-            set { this.analyticsId = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetAnalyticsId()
-        {
-            return !(string.IsNullOrEmpty(this.analyticsId));
-        }
-
 
         /// <summary>
         /// The filter used to describe a set of objects for analyses. 
@@ -63,6 +48,20 @@ namespace Amazon.S3.Model
             return this.analyticsFilter != null;
         }
 
+        /// <summary>
+        /// The identifier used to represent an analytics configuration.
+        /// </summary>
+        public string AnalyticsId
+        {
+            get { return this.analyticsId; }
+            set { this.analyticsId = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetAnalyticsId()
+        {
+            return !(string.IsNullOrEmpty(this.analyticsId));
+        }
 
         /// <summary>
         /// If present, it indicates that data related to access patterns will be collected 

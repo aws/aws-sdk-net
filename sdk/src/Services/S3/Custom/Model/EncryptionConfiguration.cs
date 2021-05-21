@@ -22,15 +22,22 @@ using System.IO;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// EncryptionConfiguration class
+    /// Specifies encryption-related information for an Amazon S3 bucket that is a destination
+    /// for replicated objects.
     /// </summary>
     public class EncryptionConfiguration
     {
         private string replicaKmsKeyID;
 
         /// <summary>
-        /// The ID of the AWS KMS key for the region where the destination bucket
-        /// resides. Amazon S3 uses this key to encrypt the replica object.
+        /// Gets and sets the property ReplicaKmsKeyID. 
+        /// <para>
+        /// Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key stored
+        /// in AWS Key Management Service (KMS) for the destination bucket. Amazon S3 uses this
+        /// key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed
+        /// KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         public string ReplicaKmsKeyID
         {

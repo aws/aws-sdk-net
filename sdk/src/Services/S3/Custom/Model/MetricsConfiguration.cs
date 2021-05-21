@@ -22,28 +22,17 @@ using System.IO;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Class for MetricsConfiguration
+    /// Specifies a metrics configuration for the CloudWatch request metrics (specified by
+    /// the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing
+    /// metrics configuration, note that this is a full replacement of the existing metrics
+    /// configuration. If you don't include the elements you want to keep, they are erased.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">
+    /// PUT Bucket metrics</a> in the <i>Amazon S3 API Reference</i>.
     /// </summary>
     public class MetricsConfiguration
     {
-        private string metricsId;
         private MetricsFilter metricsFilter;
-
-        /// <summary>
-        /// The ID used to identify the metrics configuration.
-        /// </summary>
-        public string MetricsId
-        {
-            get { return this.metricsId; }
-            set { this.metricsId = value; }
-        }
-
-        // Check to see if MetricsId property is set
-        internal bool IsSetMetricsId()
-        {
-            return this.metricsId != null;
-        }
-
+        private string metricsId;
         
         /// <summary>
         /// Specifies a metrics configuration filter. 
@@ -61,5 +50,21 @@ namespace Amazon.S3.Model
         {
             return this.metricsFilter != null;
         }
+
+        /// <summary>
+        /// The ID used to identify the metrics configuration.
+        /// </summary>
+        public string MetricsId
+        {
+            get { return this.metricsId; }
+            set { this.metricsId = value; }
+        }
+
+        // Check to see if MetricsId property is set
+        internal bool IsSetMetricsId()
+        {
+            return this.metricsId != null;
+        }
+
     }
 }

@@ -18,19 +18,39 @@ using System.Collections.Generic;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Rules Item
+    /// Specifies lifecycle rules for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html">Put
+    /// Bucket Lifecycle Configuration</a> in the <i>Amazon S3 API Reference</i>. For examples,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples">Put
+    /// Bucket Lifecycle Configuration Examples</a>.
     /// </summary>
     public class LifecycleRule
     {
-        private string id;
-        private string prefix;
-        private LifecycleRuleExpiration expiration;
-        private LifecycleRuleStatus status = LifecycleRuleStatus.Disabled;
-        private LifecycleRuleNoncurrentVersionExpiration noncurrentVersionExpiration;
-        private List<LifecycleTransition> transitions;
-        private List<LifecycleRuleNoncurrentVersionTransition> noncurrentVersionTransitions;
         private LifecycleRuleAbortIncompleteMultipartUpload abortIncompleteMultipartUpload;
+        private LifecycleRuleExpiration expiration;
+        private string id;
+        private LifecycleRuleNoncurrentVersionExpiration noncurrentVersionExpiration;
+        private List<LifecycleRuleNoncurrentVersionTransition> noncurrentVersionTransitions;
+        private string prefix;
+        private LifecycleRuleStatus status = LifecycleRuleStatus.Disabled;
+        private List<LifecycleTransition> transitions;
+
         private LifecycleFilter filter;
+
+        /// <summary>
+        /// Specifies the days since the initiation of an Incomplete Multipart Upload
+        /// that Lifecycle will wait before permanently removing all parts of the upload.
+        /// </summary>
+        public LifecycleRuleAbortIncompleteMultipartUpload AbortIncompleteMultipartUpload
+        {
+            get { return this.abortIncompleteMultipartUpload; }
+            set { this.abortIncompleteMultipartUpload = value; }
+        }
+
+        // Check to see if AbortIncompleteMultipartUpload property is set
+        internal bool IsSetAbortIncompleteMultipartUpload()
+        {
+            return this.abortIncompleteMultipartUpload != null;
+        }
 
         /// <summary>
         /// Defines the length of time, in days, before objects expire.
@@ -63,20 +83,18 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Prefix identifying one or more objects to which the rule applies.
-        ///  
+        /// Defines the length of time, in days, before noncurrent versions expire.
         /// </summary>
-        [Obsolete("This property is obsolete.  Use the Filter property instead.")]
-        public string Prefix
+        public LifecycleRuleNoncurrentVersionExpiration NoncurrentVersionExpiration
         {
-            get { return this.prefix; }
-            set { this.prefix = value; }
+            get { return this.noncurrentVersionExpiration; }
+            set { this.noncurrentVersionExpiration = value; }
         }
 
-        // Check to see if Prefix property is set
-        internal bool IsSetPrefix()
+        // Check to see if Expiration property is set
+        internal bool IsSetNoncurrentVersionExpiration()
         {
-            return this.prefix != null;
+            return this.noncurrentVersionExpiration != null;
         }
 
         /// <summary>
@@ -143,21 +161,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Defines the length of time, in days, before noncurrent versions expire.
-        /// </summary>
-        public LifecycleRuleNoncurrentVersionExpiration NoncurrentVersionExpiration
-        {
-            get { return this.noncurrentVersionExpiration; }
-            set { this.noncurrentVersionExpiration = value; }
-        }
-
-        // Check to see if Expiration property is set
-        internal bool IsSetNoncurrentVersionExpiration()
-        {
-            return this.noncurrentVersionExpiration != null;
-        }
-
-        /// <summary>
         /// The transition rule that describes when noncurrent versions transition to
         /// a different storage class.
         /// <para>
@@ -191,29 +194,6 @@ namespace Amazon.S3.Model
             return this.NoncurrentVersionTransitions != null && this.NoncurrentVersionTransitions.Count > 0 && this.NoncurrentVersionTransitions[0] != null;
         }
 
-
-        /// <summary>
-        /// The transition rules that describe when objects transition to a different storage class.
-        /// </summary>
-        public List<LifecycleTransition> Transitions
-        {
-            get
-            {
-                if (this.transitions == null)
-                    this.transitions = new List<LifecycleTransition>();
-
-                return this.transitions;
-            }
-            set { this.transitions = value; }
-        }
-
-        // Check to see if Transitions property is set
-        internal bool IsSetTransitions()
-        {
-            return this.transitions != null && this.transitions.Count > 0;
-        }
-
-
         /// <summary>
         /// The transition rules that describe when noncurrent versions transition to
         /// a different storage class.
@@ -236,21 +216,43 @@ namespace Amazon.S3.Model
             return this.noncurrentVersionTransitions != null && this.noncurrentVersionTransitions.Count > 0;
         }
 
+        /// <summary>
+        /// Prefix identifying one or more objects to which the rule applies.
+        ///  
+        /// </summary>
+        [Obsolete("This property is obsolete.  Use the Filter property instead.")]
+        public string Prefix
+        {
+            get { return this.prefix; }
+            set { this.prefix = value; }
+        }
+
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
+        {
+            return this.prefix != null;
+        }
 
         /// <summary>
-        /// Specifies the days since the initiation of an Incomplete Multipart Upload
-        /// that Lifecycle will wait before permanently removing all parts of the upload.
+        /// The transition rules that describe when objects transition to a different storage class.
         /// </summary>
-        public LifecycleRuleAbortIncompleteMultipartUpload AbortIncompleteMultipartUpload
+        public List<LifecycleTransition> Transitions
         {
-            get { return this.abortIncompleteMultipartUpload; }
-            set { this.abortIncompleteMultipartUpload = value; }
+            get
+            {
+                if (this.transitions == null)
+                    this.transitions = new List<LifecycleTransition>();
+
+                return this.transitions;
+            }
+            set { this.transitions = value; }
         }
 
-        // Check to see if AbortIncompleteMultipartUpload property is set
-        internal bool IsSetAbortIncompleteMultipartUpload()
+        // Check to see if Transitions property is set
+        internal bool IsSetTransitions()
         {
-            return this.abortIncompleteMultipartUpload != null;
+            return this.transitions != null && this.transitions.Count > 0;
         }
+
     }
 }

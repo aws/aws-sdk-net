@@ -22,20 +22,25 @@ using System.IO;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Class for MetricsConfiguration
+    /// Specifies the inventory configuration for an Amazon S3 bucket. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html">GET
+    /// Bucket inventory</a> in the <i>Amazon S3 API Reference</i>.
     /// </summary>
     public class InventoryConfiguration
     {
         private InventoryDestination inventoryDestination;
-        private bool isEnabled;
         private InventoryFilter inventoryFilter;
         private string inventoryId;
+        private bool isEnabled;
         private InventoryIncludedObjectVersions inventoryIncludedObjectVersions;
         private List<InventoryOptionalField> inventoryOptionalFields = new List<InventoryOptionalField>();
         private InventorySchedule inventorySchedule;
 
         /// <summary>
+        /// Gets and sets the property Destination. 
+        /// <para>
         /// Contains information about where to publish the inventory results.
+        /// </para>
         /// </summary>
         public InventoryDestination Destination
         {
@@ -47,15 +52,6 @@ namespace Amazon.S3.Model
         internal bool IsSetDestination()
         {
             return this.inventoryDestination != null;
-        }
-
-        /// <summary>
-        /// Specifies whether the inventory is enabled or disabled.
-        /// </summary>
-        public bool IsEnabled
-        {
-            get { return this.isEnabled; }
-            set { this.isEnabled = value; }
         }
 
         /// <summary>
@@ -72,6 +68,7 @@ namespace Amazon.S3.Model
         {
             return this.inventoryFilter != null;
         }
+        
         /// <summary>
         /// The ID used to identify the inventory configuration.
         /// </summary>
@@ -88,7 +85,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Specifies which object version(s) to included in the inventory results.
+        /// Gets and sets the property IncludedObjectVersions. 
+        /// <para>
+        /// Object versions to include in the inventory list. If set to <code>All</code>, the
+        /// list includes all the object versions, which adds the version-related fields <code>VersionId</code>,
+        /// <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>,
+        /// the list does not contain these version-related fields.
+        /// </para>
         /// </summary>
         public InventoryIncludedObjectVersions IncludedObjectVersions
         {
@@ -96,10 +99,24 @@ namespace Amazon.S3.Model
             set { this.inventoryIncludedObjectVersions = value; }
         }
 
-        // Check to see if InventoryIncludedObjectVersions property is set
+        // Check to see if IncludedObjectVersions property is set
         internal bool IsSetIncludedObjectVersions()
         {
             return this.inventoryIncludedObjectVersions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsEnabled. 
+        /// <para>
+        /// Specifies whether the inventory is enabled or disabled. If set to <code>True</code>,
+        /// an inventory list is generated. If set to <code>False</code>, no inventory list is
+        /// generated.
+        /// </para>
+        /// </summary>
+        public bool IsEnabled
+        {
+            get { return this.isEnabled; }
+            set { this.isEnabled = value; }
         }
 
         /// <summary>
@@ -118,7 +135,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Schedule. 
+        /// <para>
         /// Specifies the schedule for generating inventory results.
+        /// </para>
         /// </summary>
         public InventorySchedule Schedule
         {

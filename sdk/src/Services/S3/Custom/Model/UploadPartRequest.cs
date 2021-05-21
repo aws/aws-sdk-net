@@ -24,65 +24,165 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The parameters to request upload of a part in a multipart upload operation.
+    /// Container for the parameters to the UploadPart operation.
+    /// Uploads a part in a multipart upload.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// In this operation, you provide part data in your request. However, you have an option
+    /// to specify your existing Amazon S3 object as a data source for the part you are uploading.
+    /// To upload a part from an existing object, you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
+    /// operation. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// You must initiate a multipart upload (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>)
+    /// before you can upload any part. In response to your initiate request, Amazon S3 returns
+    /// an upload ID, a unique identifier, that you must include in your upload part request.
+    /// </para>
+    ///  
+    /// <para>
+    /// Part numbers can be any number from 1 to 10,000, inclusive. A part number uniquely
+    /// identifies a part and also defines its position within the object being created. If
+    /// you upload a new part using the same part number that was used with a previous part,
+    /// the previously uploaded part is overwritten. Each part must be at least 5 MB in size,
+    /// except the last part. There is no size limit on the last part of your multipart upload.
+    /// </para>
+    ///  
+    /// <para>
+    /// To ensure that data is not corrupted when traversing the network, specify the <code>Content-MD5</code>
+    /// header in the upload part request. Amazon S3 checks the part data against the provided
+    /// MD5 value. If they do not match, Amazon S3 returns an error. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If the upload request is signed with Signature Version 4, then AWS S3 uses the <code>x-amz-content-sha256</code>
+    /// header as a checksum instead of <code>Content-MD5</code>. For more information see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
+    /// Requests: Using the Authorization Header (AWS Signature Version 4)</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+    /// must either complete or abort multipart upload in order to stop getting charged for
+    /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
+    /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information on multipart uploads, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+    /// Upload Overview</a> in the <i>Amazon S3 User Guide </i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information on the permissions required to use the multipart upload API, go to
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+    /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can optionally request server-side encryption where Amazon S3 encrypts your data
+    /// as it writes it to disks in its data centers and decrypts it for you when you access
+    /// it. You have the option of providing your own encryption key, or you can use the AWS
+    /// managed encryption keys. If you choose to provide your own encryption key, the request
+    /// headers you provide in the request must match the headers you used in the request
+    /// to initiate the upload by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
+    /// For more information, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+    /// Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Server-side encryption is supported by the S3 Multipart Upload actions. Unless you
+    /// are using a customer-provided encryption key, you don't need to specify the encryption
+    /// parameters in each UploadPart request. Instead, you only need to specify the server-side
+    /// encryption parameters in the initial Initiate Multipart request. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you requested server-side encryption using a customer-provided encryption key in
+    /// your initiate multipart upload request, you must provide identical encryption information
+    /// in each part upload using the following headers.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-customer-algorithm
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-customer-key
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-customer-key-MD5
+    /// </para>
+    ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
+    /// </para>
+    ///  <ul> <li> <ul> <li> 
+    /// <para>
+    ///  <i>Code: NoSuchUpload</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>Cause: The specified multipart upload does not exist. The upload ID might be invalid,
+    /// or the multipart upload might have been aborted or completed.</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i> HTTP Status Code: 404 Not Found </i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>SOAP Fault Code Prefix: Client</i> 
+    /// </para>
+    ///  </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    /// <remarks>
-    /// <para>
-    /// If PartSize is not specified then the rest of the content from the file
-    /// or stream will be sent to Amazon S3.
-    /// </para>
-    /// <para>
-    /// You must set either the FilePath or InputStream.  If FilePath is set then the FilePosition
-    /// property must be set.
-    /// </para>
-    /// </remarks>
     public partial class UploadPartRequest : AmazonWebServiceRequest
     {
         private Stream inputStream;
         private string bucketName;
+        private string md5Digest;
+        private string expectedBucketOwner;
         private string key;
         private int? partNumber;
-        private string uploadId;
-        private long? partSize;
-        private string md5Digest;
-
+        private RequestPayer requestPayer;
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
-
+        private string uploadId;
+        private long? partSize;
         private string filePath;
         private long? filePosition;
         private bool useChunkEncoding = true;
-
         private bool lastPart;
-        private RequestPayer requestPayer;
-        private string expectedBucketOwner;
-
-        internal int IVSize { get; set; }
-
-        /// <summary>
-        /// Caller needs to set this to true when uploading the last part. This property only needs to be set
-        /// when using the AmazonS3EncryptionClient.
-        /// </summary>
-        public bool IsLastPart
-        {
-            get { return this.lastPart; }
-            set { this.lastPart = value; }
-        }
-
-        /// <summary>
-        /// <para><b>WARNING: Setting DisableMD5Stream to true disables the MD5 data integrity check 
-        /// on this request.</b></para>
-        /// <para>When true, MD5Stream will not be used in the upload request. This may increase 
-        /// upload performance under high CPU loads. The default value is null. When null, the 
-        /// AWSConfigsS3.DisableMD5Stream property value will be used.</para>
-        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
-        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
-        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
-        /// source of data integrity verification.</para>
-        /// </summary>
-        public bool? DisableMD5Stream { get; set; }
-
+        
         /// <summary>
         /// Input stream for the request; content for the request will be read from the stream.
         /// </summary>
@@ -99,17 +199,28 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>The name of the bucket to which the multipart upload was initiated.</para> 
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. 
-        /// For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para> 
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
-        /// For more information about S3 on Outposts ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket to which the multipart upload was initiated.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -117,10 +228,32 @@ namespace Amazon.S3.Model
             set { this.bucketName = value; }
         }
 
-        // Check to see if Bucket property is set
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
         /// <summary>
@@ -145,8 +278,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Part number of part being uploaded.
-        ///  
+        /// Gets and sets the property PartNumber. 
+        /// <para>
+        /// Part number of part being uploaded. This is a positive integer between 1 and 10,000.
+        /// </para>
         /// </summary>
         public int PartNumber
         {
@@ -161,51 +296,26 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The size of the part to be uploaded.
+        /// Confirms that the requester knows that she or he will be charged for the request.
+        /// Bucket owners need not specify this parameter in their requests.
         /// </summary>
-        public long PartSize
+        public RequestPayer RequestPayer
         {
-            get { return this.partSize.GetValueOrDefault(); }
-            set { this.partSize = value; }
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
         }
 
-        /// <summary>
-        /// Checks if PartSize property is set.
-        /// </summary>
-        /// <returns>true if PartSize property is set.</returns>
-        internal bool IsSetPartSize()
+        // Check to see if RequestPayer property is set
+        internal bool IsSetRequestPayer()
         {
-            return this.partSize.HasValue;
-        }
-
-        /// <summary>
-        /// Upload ID identifying the multipart upload whose part is being uploaded.
-        ///  
-        /// </summary>
-        public string UploadId
-        {
-            get { return this.uploadId; }
-            set { this.uploadId = value; }
-        }
-
-        // Check to see if UploadId property is set
-        internal bool IsSetUploadId()
-        {
-            return this.uploadId != null;
-        }
-
-        /// <summary>
-        /// An MD5 digest for the part.
-        /// </summary>
-        public string MD5Digest
-        {
-            get { return this.md5Digest; }
-            set { this.md5Digest = value; }
+            return requestPayer != null;
         }
 
         /// <summary>
         /// The Server-side encryption algorithm to be used with the customer provided key.
-        ///  
+        /// <para>
+        /// Specifies the algorithm to use to when encrypting the object (for example, AES256).
+        /// </para>
         /// </summary>
         public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
         {
@@ -268,6 +378,80 @@ namespace Amazon.S3.Model
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionCustomerProvidedKeyMD5);
         }	
 
+        /// <summary>
+        /// Upload ID identifying the multipart upload whose part is being uploaded.
+        /// </summary>
+        public string UploadId
+        {
+            get { return this.uploadId; }
+            set { this.uploadId = value; }
+        }
+
+        // Check to see if UploadId property is set
+        internal bool IsSetUploadId()
+        {
+            return this.uploadId != null;
+        }
+
+        /// <summary>
+        /// Caller needs to set this to true when uploading the last part. This property only needs to be set
+        /// when using the AmazonS3EncryptionClient.
+        /// </summary>
+        public bool IsLastPart
+        {
+            get { return this.lastPart; }
+            set { this.lastPart = value; }
+        }
+
+        /// <summary>
+        /// <para><b>WARNING: Setting DisableMD5Stream to true disables the MD5 data integrity check 
+        /// on this request.</b></para>
+        /// <para>When true, MD5Stream will not be used in the upload request. This may increase 
+        /// upload performance under high CPU loads. The default value is null. When null, the 
+        /// AWSConfigsS3.DisableMD5Stream property value will be used.</para>
+        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
+        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
+        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
+        /// source of data integrity verification.</para>
+        /// </summary>
+        public bool? DisableMD5Stream { get; set; }
+
+        /// <summary>
+        /// An MD5 digest for the part.
+        /// </summary>
+        public string MD5Digest
+        {
+            get { return this.md5Digest; }
+            set { this.md5Digest = value; }
+        }
+
+        /// <summary>
+        /// Checks if the MD5Digest property is set.
+        /// </summary>
+        /// <returns>true if Md5Digest property is set.</returns>
+        internal bool IsSetMD5Digest()
+        {
+            return !string.IsNullOrEmpty(this.md5Digest);
+        }
+
+        /// <summary>
+        /// The size of the part to be uploaded.
+        /// </summary>
+        public long PartSize
+        {
+            get { return this.partSize.GetValueOrDefault(); }
+            set { this.partSize = value; }
+        }
+
+        /// <summary>
+        /// Checks if PartSize property is set.
+        /// </summary>
+        /// <returns>true if PartSize property is set.</returns>
+        internal bool IsSetPartSize()
+        {
+            return this.partSize.HasValue;
+        }
+        
         /// <summary>
 		/// <para>
         /// Full path and name of a file from which the content for the part is retrieved.
@@ -340,15 +524,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if the MD5Digest property is set.
-        /// </summary>
-        /// <returns>true if Md5Digest property is set.</returns>
-        internal bool IsSetMD5Digest()
-        {
-            return !string.IsNullOrEmpty(this.md5Digest);
-        }
-
-        /// <summary>
         /// Attach a callback that will be called as data is being sent to the AWS Service.
         /// </summary>
         public EventHandler<Amazon.Runtime.StreamTransferProgressArgs> StreamTransferProgress
@@ -362,7 +537,6 @@ namespace Amazon.S3.Model
                 ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)this).StreamUploadProgressCallback = value;
             }
         }
-
 
         /// <summary>
         /// Overriden to turn off sending SHA256 header.
@@ -386,43 +560,7 @@ namespace Amazon.S3.Model
             }
         }
 
-        /// <summary>
-        /// Confirms that the requester knows that she or he will be charged for the request.
-        /// Bucket owners need not specify this parameter in their requests.
-        /// </summary>
-        public RequestPayer RequestPayer
-        {
-            get { return this.requestPayer; }
-            set { this.requestPayer = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if RequetsPayer is set.
-        /// </summary>
-        /// <returns>true, if RequestPayer property is set.</returns>
-        internal bool IsSetRequestPayer()
-        {
-            return requestPayer != null;
-        }
-
-        /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
-        /// </summary>
-        public string ExpectedBucketOwner
-        {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
-        {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
-        }
+        internal int IVSize { get; set; }
     }
 }
 

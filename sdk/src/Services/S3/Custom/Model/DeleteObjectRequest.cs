@@ -24,45 +24,84 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The parameters to request deletion of an object in a bucket. 
-    /// The operation removes the null version (if there is one) of an object and inserts a delete marker, which 
-    /// becomes the latest version of the object.
+    /// Container for the parameters to the DeleteObject operation.
+    /// Removes the null version (if there is one) of an object and inserts a delete marker,
+    /// which becomes the latest version of the object. If there isn't a null version, Amazon
+    /// S3 does not remove any objects but will still respond that the command was successful.
+    /// 
+    ///  
+    /// <para>
+    /// To remove a specific version, you must be the bucket owner and you must use the version
+    /// Id subresource. Using this subresource permanently deletes the version. If the object
+    /// deleted is a delete marker, Amazon S3 sets the response header, <code>x-amz-delete-marker</code>,
+    /// to true. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If the object you want to delete is in a bucket where the bucket versioning configuration
+    /// is MFA Delete enabled, you must include the <code>x-amz-mfa</code> request header
+    /// in the DELETE <code>versionId</code> request. Requests that include <code>x-amz-mfa</code>
+    /// must use HTTPS. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  For more information about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+    /// MFA Delete</a>. To see sample requests that use versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+    /// Request</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can delete objects by explicitly calling DELETE Object or configure its lifecycle
+    /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+    /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+    /// from removing or deleting objects from your bucket, you must deny them the <code>s3:DeleteObject</code>,
+    /// <code>s3:DeleteObjectVersion</code>, and <code>s3:PutLifeCycleConfiguration</code>
+    /// actions. 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following action is related to <code>DeleteObject</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    /// <remarks>
-    /// <para>
-    /// To remove a specific version, you must be the bucket owner and you must use the versionId subresource. 
-    /// Using this subresource permanently deletes the version.
-    /// </para>
-    /// <para>
-    /// If the object you want to delete is in a bucket where the bucket versioning configuration is MFA Delete enabled, 
-    /// you must include specify the MFA serial number and value in the request.
-    /// </para>
-    /// <para>
-    /// If there isn't a null version, Amazon S3 does not remove any objects.     
-    /// </para>
-    /// </remarks>
     public partial class DeleteObjectRequest : AmazonWebServiceRequest
     {
         private string bucketName;
 		private bool? bypassGovernanceRetention;
+        private string expectedBucketOwner;
         private string key;
-        private string versionId;
         private MfaCodes mfaCodes;
         private RequestPayer requestPayer;
-        private string expectedBucketOwner;
-
+        private string versionId;
+        
         /// <summary>
-        /// <para>The bucket name of the bucket containing the object. </para>
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname.
-        /// The access point hostname takes the form<i> AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name.
-        /// For more information about access point ARNs, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para> 
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name.
-        /// For more information about S3 on Outposts ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The bucket name of the bucket containing the object. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -75,9 +114,13 @@ namespace Amazon.S3.Model
         {
             return this.bucketName != null;
         }
-		
-		/// <summary>
-        /// Gets and sets the property BypassGovernanceRetention.
+
+        /// <summary>
+        /// Gets and sets the property BypassGovernanceRetention. 
+        /// <para>
+        /// Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
+        /// this operation.
+        /// </para>
         /// </summary>
         public bool BypassGovernanceRetention
         {
@@ -89,6 +132,25 @@ namespace Amazon.S3.Model
         internal bool IsSetBypassGovernanceRetention()
         {
             return this.bypassGovernanceRetention.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
         /// <summary>
@@ -110,24 +172,6 @@ namespace Amazon.S3.Model
         internal bool IsSetKey()
         {
             return this.key != null;
-        }
-
-        /// <summary>
-        /// The identifier for the specific version of the object to be deleted, if required.
-        /// </summary>
-        public string VersionId
-        {
-            get { return this.versionId; }
-            set { this.versionId = value; }
-        }
-
-        /// <summary>
-        /// Checks if VersionId property is set.
-        /// </summary>
-        /// <returns>true if VersionId property is set.</returns>
-        internal bool IsSetVersionId()
-        {
-            return !System.String.IsNullOrEmpty(this.versionId);
         }
 
         /// <summary>
@@ -175,24 +219,26 @@ namespace Amazon.S3.Model
         {
             return requestPayer != null;
         }
-
+        
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// VersionId used to reference a specific version of the object.
+        /// </para>
         /// </summary>
-        public string ExpectedBucketOwner
+        public string VersionId
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this.versionId; }
+            set { this.versionId = value; }
         }
 
         /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
+        /// Checks if VersionId property is set.
         /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
+        /// <returns>true if VersionId property is set.</returns>
+        internal bool IsSetVersionId()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return !System.String.IsNullOrEmpty(this.versionId);
         }
     }
 }

@@ -22,7 +22,8 @@ using System.IO;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// SseKmsEncryptedObjects class
+    /// A container for filter information for the selection of S3 objects encrypted with
+    /// AWS KMS.
     /// </summary>
     public class SseKmsEncryptedObjects
     {

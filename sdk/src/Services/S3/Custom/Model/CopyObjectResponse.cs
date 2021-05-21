@@ -35,21 +35,28 @@ namespace Amazon.S3.Model
         private bool? bucketKeyEnabled;
 
         /// <summary>
-        /// Gets and sets the ETag property.
+        /// <para>Indicates whether the copied object uses bucket key for server-side 
+        /// encryption with AWS KMS (SSE-KMS).</para>
         /// </summary>
-        public string ETag
+        public bool BucketKeyEnabled
         {
-            get { return this.eTag; }
-            set { this.eTag = value; }
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
         }
 
         /// <summary>
-        /// Gets and sets the LastModified property.
+        /// Gets and sets the SourceVersionId property.
+        /// This is the Version Id of the Source Object
         /// </summary>
-        public string LastModified
+        public string SourceVersionId
         {
-            get { return this.lastModified; }
-            set { this.lastModified = value; }
+            get { return this.srcVersionId; }
+            set { this.srcVersionId = value; }
         }
 
         /// <summary>
@@ -64,24 +71,22 @@ namespace Amazon.S3.Model
             set { this.expiration = value; }
         }
 
-
         /// <summary>
-        /// Gets and sets the SourceVersionId property.
-        /// This is the Version Id of the Source Object
+        /// If present, indicates that the requester was successfully charged for the request.
         /// </summary>
-        public string SourceVersionId
+        public RequestCharged RequestCharged
         {
-            get { return this.srcVersionId; }
-            set { this.srcVersionId = value; }
+            get { return this.requestCharged; }
+            set { this.requestCharged = value; }
         }
 
         /// <summary>
-        /// Version ID of the newly created copy.
+        /// Checks to see if RequestCharged is set.
         /// </summary>
-        public string VersionId
+        /// <returns>true, if RequestCharged property is set.</returns>
+        internal bool IsSetRequestCharged()
         {
-            get { return this.versionId; }
-            set { this.versionId = value; }
+            return requestCharged != null;
         }
 
         /// <summary>
@@ -113,15 +118,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
-        /// </summary>
-        public string ServerSideEncryptionKeyManagementServiceKeyId
-        {
-            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
-            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
-        }
-
-        /// <summary>
         /// Specifies the AWS KMS Encryption Context to use for object encryption.
         /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
         /// </summary>
@@ -132,36 +128,39 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// If present, indicates that the requester was successfully charged for the request.
+        /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// </summary>
-        public RequestCharged RequestCharged
+        public string ServerSideEncryptionKeyManagementServiceKeyId
         {
-            get { return this.requestCharged; }
-            set { this.requestCharged = value; }
+            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
         }
 
         /// <summary>
-        /// Checks to see if RequestCharged is set.
+        /// Version ID of the newly created copy.
         /// </summary>
-        /// <returns>true, if RequestCharged property is set.</returns>
-        internal bool IsSetRequestCharged()
+        public string VersionId
         {
-            return requestCharged != null;
+            get { return this.versionId; }
+            set { this.versionId = value; }
+        }
+        
+        /// <summary>
+        /// Gets and sets the ETag property.
+        /// </summary>
+        public string ETag
+        {
+            get { return this.eTag; }
+            set { this.eTag = value; }
         }
 
         /// <summary>
-        /// <para>Indicates whether the copied object uses bucket key for server-side 
-        /// encryption with AWS KMS (SSE-KMS).</para>
+        /// Gets and sets the LastModified property.
         /// </summary>
-        public bool BucketKeyEnabled
+        public string LastModified
         {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
-            set { this.bucketKeyEnabled = value; }
-        }
-
-        internal bool IsSetBucketKeyEnabled()
-        {
-            return bucketKeyEnabled.HasValue;
+            get { return this.lastModified; }
+            set { this.lastModified = value; }
         }
     }
 }

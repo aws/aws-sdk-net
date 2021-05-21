@@ -25,46 +25,256 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetObject operation.
-    /// <para>Retrieves objects from Amazon S3.</para>
+    /// Retrieves objects from Amazon S3. To use <code>GET</code>, you must have <code>READ</code>
+    /// access to the object. If you grant <code>READ</code> access to the anonymous user,
+    /// you can return the object without using an authorization header.
+    /// 
+    ///  
+    /// <para>
+    /// An Amazon S3 bucket has no directory hierarchy such as you would find in a typical
+    /// computer file system. You can, however, create a logical hierarchy by using object
+    /// key names that imply a folder structure. For example, instead of naming an object
+    /// <code>sample.jpg</code>, you can name it <code>photos/2006/February/sample.jpg</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To get an object from such a logical hierarchy, specify the full key name for the
+    /// object in the <code>GET</code> operation. For a virtual hosted-style request example,
+    /// if you have the object <code>photos/2006/February/sample.jpg</code>, specify the resource
+    /// as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example,
+    /// if you have the object <code>photos/2006/February/sample.jpg</code> in the bucket
+    /// named <code>examplebucket</code>, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
+    /// For more information about request types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP
+    /// Host Header Bucket Specification</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To distribute large files to many people, you can save bandwidth costs by using BitTorrent.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
+    /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive
+    /// storage class, or S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive
+    /// tiers, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+    /// Otherwise, this action returns an <code>InvalidObjectStateError</code> error. For
+    /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
+    /// Archived Objects</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
+    /// not be sent for GET requests if your object uses server-side encryption with CMKs
+    /// stored in AWS KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption
+    /// keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
+    /// BadRequest error.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you encrypt an object by using server-side encryption with customer-provided encryption
+    /// keys (SSE-C) when you store the object in Amazon S3, then when you GET the object,
+    /// you must use the following headers:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-customer-algorithm
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-customer-key
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-customer-key-MD5
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
+    /// Encryption (Using Customer-Provided Encryption Keys)</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Assuming you have permission to read object tags (permission for the <code>s3:GetObjectVersionTagging</code>
+    /// action), the response also returns the <code>x-amz-tagging-count</code> header that
+    /// provides the count of number of tags associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+    /// to retrieve the tag set associated with an object.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You need the <code>s3:GetObject</code> permission for this operation. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+    /// Permissions in a Policy</a>. If the object you request does not exist, the error Amazon
+    /// S3 returns depends on whether you also have the <code>s3:ListBucket</code> permission.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will
+    /// return an HTTP status code 404 ("no such key") error.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return
+    /// an HTTP status code 403 ("access denied") error.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Versioning</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// By default, the GET action returns the current version of an object. To return a different
+    /// version, use the <code>versionId</code> subresource.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
+    /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Overriding Response Header Values</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// There are times when you want to override certain response header values in a GET
+    /// response. For example, you might override the Content-Disposition response header
+    /// value in your GET request.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can override values for a set of response headers using the following query parameters.
+    /// These response header values are sent only on a successful request, that is, when
+    /// status code 200 OK is returned. The set of headers you can override using these parameters
+    /// is a subset of the headers that Amazon S3 accepts when you create an object. The response
+    /// headers that you can override for the GET response are <code>Content-Type</code>,
+    /// <code>Content-Language</code>, <code>Expires</code>, <code>Cache-Control</code>, <code>Content-Disposition</code>,
+    /// and <code>Content-Encoding</code>. To override these header values in the GET response,
+    /// you use the following request parameters.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// You must sign the request, either using an Authorization header or a presigned URL,
+    /// when using these parameters. They cannot be used with an unsigned (anonymous) request.
+    /// </para>
+    ///  </note> <ul> <li> 
+    /// <para>
+    ///  <code>response-content-type</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>response-content-language</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>response-expires</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>response-cache-control</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>response-content-disposition</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>response-content-encoding</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Additional Considerations about Request Headers</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If both of the <code>If-Match</code> and <code>If-Unmodified-Since</code> headers
+    /// are present in the request as follows: <code>If-Match</code> condition evaluates to
+    /// <code>true</code>, and; <code>If-Unmodified-Since</code> condition evaluates to <code>false</code>;
+    /// then, S3 returns 200 OK and the data requested. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If both of the <code>If-None-Match</code> and <code>If-Modified-Since</code> headers
+    /// are present in the request as follows:<code> If-None-Match</code> condition evaluates
+    /// to <code>false</code>, and; <code>If-Modified-Since</code> condition evaluates to
+    /// <code>true</code>; then, S3 returns 304 Not Modified response code.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
+    /// 7232</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>GetObject</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetObjectRequest : AmazonWebServiceRequest
     {
         private string bucketName;
-
+        private string expectedBucketOwner;
         DateTime? modifiedSinceDate;
         DateTime? unmodifiedSinceDate;
         DateTime? modifiedSinceDateUtc;
         DateTime? unmodifiedSinceDateUtc;
         string etagToMatch;
         string etagToNotMatch;
-
         private string key;
+        private int? partNumber;
         private ByteRange byteRange;
+        private RequestPayer requestPayer;
         private DateTime? responseExpires;
         private DateTime? responseExpiresUtc;
-        private string versionId;
         private ResponseHeaderOverrides responseHeaders;
-
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
-        private RequestPayer requestPayer;
-        private string expectedBucketOwner;
-
-        private int? partNumber;
-
+        private string versionId;
+        
         /// <summary>
-        /// <para>The bucket name containing the object. </para> 
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. 
-        /// For more information about access point ARNs, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para> 
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
-        /// For more information about S3 on Outposts ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The bucket name containing the object. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -72,26 +282,32 @@ namespace Amazon.S3.Model
             set { this.bucketName = value; }
         }
 
-        // Check to see if Bucket property is set
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
         }
 
         /// <summary>
-        /// ETag to be matched as a pre-condition for returning the object,
-        /// otherwise a PreconditionFailed signal is returned.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// </para>
         /// </summary>
-        public string EtagToMatch
+        public string ExpectedBucketOwner
         {
-            get { return this.etagToMatch; }
-            set { this.etagToMatch = value; }
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
         }
 
-        // Check to see if EtagToMatch property is set
-        internal bool IsSetEtagToMatch()
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
         {
-            return this.etagToMatch != null;
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
         /// <summary>
@@ -139,22 +355,6 @@ namespace Amazon.S3.Model
         internal bool IsSetModifiedSinceDateUtc()
         {
             return this.modifiedSinceDateUtc.HasValue;
-        }
-
-        /// <summary>
-        /// ETag that should not be matched as a pre-condition for returning the object,
-        /// otherwise a PreconditionFailed signal is returned.
-        /// </summary>
-        public string EtagToNotMatch
-        {
-            get { return this.etagToNotMatch; }
-            set { this.etagToNotMatch = value; }
-        }
-
-        // Check to see if EtagToNotMatch property is set
-        internal bool IsSetEtagToNotMatch()
-        {
-            return this.etagToNotMatch != null;
         }
 
         /// <summary>
@@ -226,37 +426,52 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Downloads the specified range bytes of an object.
+        /// Part number of the object being read. This is a positive integer between 1 and 10,000.
+        /// Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object.
         /// </summary>
-        public ByteRange ByteRange
+        public int? PartNumber
         {
-            get { return this.byteRange; }
-            set { this.byteRange = value; }
-        }
+            get { return this.partNumber; }
+            set
+            {
+                if (value.HasValue)
+                {
+                    if (value < 1 || 10000 < value)
+                    {
+                        throw new ArgumentException("PartNumber must be a positve integer between 1 and 10,000.");
+                    }
+                }
 
-        // Check to see if ByteRange property is set
-        internal bool IsSetByteRange()
-        {
-            return this.byteRange != null && this.byteRange.FormattedByteRange != null;
+                this.partNumber = value;
+            }
         }
 
         /// <summary>
-        /// A set of response headers that should be returned with the object.
+        /// Checks if PartNumber property is set.
         /// </summary>
-        public ResponseHeaderOverrides ResponseHeaderOverrides
+        /// <returns>true if PartNumber property is set.</returns>
+        internal bool IsSetPartNumber()
         {
-            get
-            {
-                if (this.responseHeaders == null)
-                {
-                    this.responseHeaders = new ResponseHeaderOverrides();
-                }
-                return this.responseHeaders;
-            }
-            set
-            {
-                this.responseHeaders = value;
-            }
+            return this.partNumber.HasValue;
+        }
+
+        /// <summary>
+        /// Confirms that the requester knows that she or he will be charged for the request.
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequetsPayer is set.
+        /// </summary>
+        /// <returns>true, if RequestPayer property is set.</returns>
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
         }
 
         /// <summary>
@@ -302,21 +517,6 @@ namespace Amazon.S3.Model
         internal bool IsSetResponseExpiresUtc()
         {
             return this.responseExpiresUtc.HasValue;
-        }
-
-        /// <summary>
-        /// VersionId used to reference a specific version of the object.
-        /// </summary>
-        public string VersionId
-        {
-            get { return this.versionId; }
-            set { this.versionId = value; }
-        }
-
-        // Check to see if VersionId property is set
-        internal bool IsSetVersionId()
-        {
-            return this.versionId != null;
         }
 
         /// <summary>
@@ -385,71 +585,84 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Part number of the object being read. This is a positive integer between 1 and 10,000.
-        /// Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object.
+        /// VersionId used to reference a specific version of the object.
         /// </summary>
-        public int? PartNumber
+        public string VersionId
         {
-            get { return this.partNumber; }
+            get { return this.versionId; }
+            set { this.versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this.versionId != null;
+        }
+
+        /// <summary>
+        /// ETag to be matched as a pre-condition for returning the object,
+        /// otherwise a PreconditionFailed signal is returned.
+        /// </summary>
+        public string EtagToMatch
+        {
+            get { return this.etagToMatch; }
+            set { this.etagToMatch = value; }
+        }
+
+        // Check to see if EtagToMatch property is set
+        internal bool IsSetEtagToMatch()
+        {
+            return this.etagToMatch != null;
+        }
+
+        /// <summary>
+        /// ETag that should not be matched as a pre-condition for returning the object,
+        /// otherwise a PreconditionFailed signal is returned.
+        /// </summary>
+        public string EtagToNotMatch
+        {
+            get { return this.etagToNotMatch; }
+            set { this.etagToNotMatch = value; }
+        }
+
+        // Check to see if EtagToNotMatch property is set
+        internal bool IsSetEtagToNotMatch()
+        {
+            return this.etagToNotMatch != null;
+        }
+        
+        /// <summary>
+        /// Downloads the specified range bytes of an object.
+        /// </summary>
+        public ByteRange ByteRange
+        {
+            get { return this.byteRange; }
+            set { this.byteRange = value; }
+        }
+
+        // Check to see if ByteRange property is set
+        internal bool IsSetByteRange()
+        {
+            return this.byteRange != null && this.byteRange.FormattedByteRange != null;
+        }
+
+        /// <summary>
+        /// A set of response headers that should be returned with the object.
+        /// </summary>
+        public ResponseHeaderOverrides ResponseHeaderOverrides
+        {
+            get
+            {
+                if (this.responseHeaders == null)
+                {
+                    this.responseHeaders = new ResponseHeaderOverrides();
+                }
+                return this.responseHeaders;
+            }
             set
             {
-                if (value.HasValue)
-                {
-                    if (value < 1 || 10000 < value)
-                    {
-                        throw new ArgumentException("PartNumber must be a positve integer between 1 and 10,000.");
-                    }
-                }
-
-                this.partNumber = value;
+                this.responseHeaders = value;
             }
-        }
-
-        /// <summary>
-        /// Checks if PartNumber property is set.
-        /// </summary>
-        /// <returns>true if PartNumber property is set.</returns>
-        internal bool IsSetPartNumber()
-        {
-            return this.partNumber.HasValue;
-        }
-
-        /// <summary>
-        /// Confirms that the requester knows that she or he will be charged for the request.
-        /// Bucket owners need not specify this parameter in their requests.
-        /// </summary>
-        public RequestPayer RequestPayer
-        {
-            get { return this.requestPayer; }
-            set { this.requestPayer = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if RequetsPayer is set.
-        /// </summary>
-        /// <returns>true, if RequestPayer property is set.</returns>
-        internal bool IsSetRequestPayer()
-        {
-            return requestPayer != null;
-        }
-
-        /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
-        /// </summary>
-        public string ExpectedBucketOwner
-        {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
-        {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
     }
 }

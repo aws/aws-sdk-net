@@ -21,17 +21,62 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Destination configuration for a replication rule.
+    /// Specifies information about where to publish analysis or configuration results for
+    /// an Amazon S3 bucket and S3 Replication Time Control (S3 RTC).
     /// </summary>
     public class ReplicationDestination
     {
-        private string bucketArn;
-        private S3StorageClass storageClass;
-        private EncryptionConfiguration encryptionConfiguration;
         private AccessControlTranslation accessControlTranslation;
         private string accountId;
-        private ReplicationTime replicationTime;
+        private string bucketArn;
+        private EncryptionConfiguration encryptionConfiguration;
         private Metrics metrics;
+        private ReplicationTime replicationTime;
+        private S3StorageClass storageClass;
+
+        /// <summary>
+        /// Gets and sets the property AccessControlTranslation. 
+        /// <para>
+        /// Specify this only in a cross-account scenario (where source and destination bucket
+        /// owners are not the same), and you want to change replica ownership to the AWS account
+        /// that owns the destination bucket. If this is not specified in the replication configuration,
+        /// the replicas are owned by same AWS account that owns the source object.
+        /// </para>
+        /// </summary>
+        public AccessControlTranslation AccessControlTranslation
+        {
+            get { return this.accessControlTranslation; }
+            set { this.accessControlTranslation = value; }
+        }
+
+        // Check to see if AccessControlTranslation property is set
+        public bool IsSetAccessControlTranslation()
+        {
+            return this.accessControlTranslation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon
+        /// S3 to change replica ownership to the AWS account that owns the destination bucket
+        /// by specifying the <code>AccessControlTranslation</code> property, this is the account
+        /// ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
+        /// Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this.accountId; }
+            set { this.accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        public bool IsSetAccountId()
+        {
+            return !(string.IsNullOrEmpty(this.accountId));
+        }
 
         /// <summary>
         /// <para> Amazon resource name (ARN) of the bucket where you want Amazon
@@ -55,64 +100,12 @@ namespace Amazon.S3.Model
             return !System.String.IsNullOrEmpty(this.bucketArn);
         }
 
-
         /// <summary>
-        /// The class of storage used to store the object.
-        ///  
-        /// </summary>
-        public S3StorageClass StorageClass
-        {
-            get { return this.storageClass; }
-            set { this.storageClass = value; }
-        }
-
-        // Check to see if StorageClass property is set
-        internal bool IsSetStorageClass()
-        {
-            return this.storageClass != null;
-        }
-        /// <summary>
-        /// <para> Account ID of the destination bucket. Currently Amazon S3 verifies this
-        /// value only if Access Control Translation is enabled. </para> <para> In a cross-account
-        /// scenario, if you tell Amazon S3 to change replica ownership to the AWS account
-        /// that owns the destination bucket by adding the <code>AccessControlTranslation</code>
-        /// element, this is the account ID of the destination bucket owner. </para>
-        /// </summary>
-        public string AccountId
-        {
-            get { return this.accountId; }
-            set { this.accountId = value; }
-        }
-        // Check to see if AccountId property is set
-        public bool IsSetAccountId()
-        {
-            return !(string.IsNullOrEmpty(this.accountId));
-        }
-
-        /// <summary>
-        /// <para> Container for information regarding the access control for replicas. </para>
-        /// <para> Use only in a cross-account scenario, where source and destination bucket
-        /// owners are not the same, when you want to change replica ownership to the AWS
-        /// account that owns the destination bucket. If you don't add this element to the
-        /// replication configuration, the replicas are owned by same AWS account that
-        /// owns the source object. </para>
-        /// </summary>
-        public AccessControlTranslation AccessControlTranslation
-        {
-            get { return this.accessControlTranslation; }
-            set { this.accessControlTranslation = value; }
-        }
-
-        // Check to see if AccessControlTranslation property is set
-        public bool IsSetAccessControlTranslation()
-        {
-            return this.accessControlTranslation != null;
-        }
-
-        /// <summary>
-        /// <para> Container that provides encryption-related information. You must
-        /// specify this element if the <code>SourceSelectionCriteria</code> is
-        /// specified. </para>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// A container that provides information about encryption. If <code>SourceSelectionCriteria</code>
+        /// is specified, you must specify this element.
+        /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration
         {
@@ -127,8 +120,31 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// A container specifying the time when all objects and operations on objects are 
-        /// replicated. Must be specified together with a <code>Metrics</code> block.
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        ///  A container specifying replication metrics-related settings enabling replication
+        /// metrics and events. 
+        /// </para>
+        /// </summary>
+        public Metrics Metrics
+        {
+            get { return this.metrics; }
+            set { this.metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this.metrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationTime. 
+        /// <para>
+        ///  A container specifying S3 Replication Time Control (S3 RTC), including whether S3
+        /// RTC is enabled and the time when all objects and operations on objects must be replicated.
+        /// Must be specified together with a <code>Metrics</code> block. 
+        /// </para>
         /// </summary>
         public ReplicationTime ReplicationTime
         {
@@ -143,18 +159,28 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>A container specifying settings for configuring replication metrics and events. </para>
+        /// Gets and sets the property StorageClass. 
+        /// <para>
+        ///  The storage class to use when replicating objects, such as S3 Standard or reduced
+        /// redundancy. By default, Amazon S3 uses the storage class of the source object to create
+        /// the object replica. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
+        /// Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.
+        /// </para>
         /// </summary>
-        public Metrics Metrics
+        public S3StorageClass StorageClass
         {
-            get { return this.metrics; }
-            set { this.metrics = value; }
+            get { return this.storageClass; }
+            set { this.storageClass = value; }
         }
 
-        // Check to see if Metrics property is set
-        internal bool IsSetMetrics()
+        // Check to see if StorageClass property is set
+        internal bool IsSetStorageClass()
         {
-            return this.metrics != null;
+            return this.storageClass != null;
         }
     }
 }

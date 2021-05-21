@@ -25,53 +25,338 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the InitiateMultipartUpload operation.
-    /// <para>Initiates a multipart upload and returns an upload ID.</para>
+    /// This action initiates a multipart upload and returns an upload ID. This upload ID
+    /// is used to associate all of the parts in the specific multipart upload. You specify
+    /// this upload ID in each of your subsequent upload part requests (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>).
+    /// You also include this upload ID in the final request to either complete or abort the
+    /// multipart upload request.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+    /// Upload Overview</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you have configured a lifecycle rule to abort incomplete multipart uploads, the
+    /// upload must complete within the number of days specified in the bucket lifecycle configuration.
+    /// Otherwise, the incomplete multipart upload becomes eligible for an abort action and
+    /// Amazon S3 aborts the multipart upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
+    /// Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about the permissions required to use the multipart upload API, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+    /// Upload and Permissions</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For request signing, multipart upload is just a series of regular requests. You initiate
+    /// a multipart upload, send one or more requests to upload parts, and then complete the
+    /// multipart upload process. You sign each request individually. There is nothing special
+    /// about signing multipart upload requests. For more information about signing, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+    /// Requests (AWS Signature Version 4)</a>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  After you initiate a multipart upload and upload one or more parts, to stop being
+    /// charged for storing the uploaded parts, you must either complete or abort the multipart
+    /// upload. Amazon S3 frees up the space used to store the parts and stop charging you
+    /// for storing them only after you either complete or abort a multipart upload. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// You can optionally request server-side encryption. For server-side encryption, Amazon
+    /// S3 encrypts your data as it writes it to disks in its data centers and decrypts it
+    /// when you access it. You can provide your own encryption key, or use AWS Key Management
+    /// Service (AWS KMS) customer master keys (CMKs) or Amazon S3-managed encryption keys.
+    /// If you choose to provide your own encryption key, the request headers you provide
+    /// in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+    /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
+    /// requests must match the headers you used in the request to initiate the upload by
+    /// using <code>CreateMultipartUpload</code>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To perform a multipart upload with encryption using an AWS KMS CMK, the requester
+    /// must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
+    /// actions on the key. These permissions are required because Amazon S3 must decrypt
+    /// and read data from the encrypted file parts before it completes the multipart upload.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+    /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If your AWS Identity and Access Management (IAM) user or role is in the same AWS account
+    /// as the AWS KMS CMK, then you must have these permissions on the key policy. If your
+    /// IAM user or role belongs to a different account than the key, then you must have the
+    /// permissions on both the key policy and your IAM user or role.
+    /// </para>
+    ///  
+    /// <para>
+    ///  For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
+    /// Data Using Server-Side Encryption</a>.
+    /// </para>
+    ///  <dl> <dt>Access Permissions</dt> <dd> 
+    /// <para>
+    /// When copying an object, you can optionally specify the accounts or groups that should
+    /// be granted specific permissions on the new object. There are two ways to grant the
+    /// permissions using the request headers:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Specify a canned ACL with the <code>x-amz-acl</code> request header. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+    /// ACL</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
+    /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
+    /// These parameters map to the set of permissions that Amazon S3 supports in an ACL.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+    /// Control List (ACL) Overview</a>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can use either a canned ACL or specify access permissions explicitly. You cannot
+    /// do both.
+    /// </para>
+    ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
+    /// <para>
+    /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
+    /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
+    /// as it writes it to disks in its data centers and decrypts it when you access it. The
+    /// option you use depends on whether you want to use AWS managed encryption keys or provide
+    /// your own encryption key. 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
+    /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
+    /// encrypt data, specify the following headers in the request.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-aws-kms-key-id
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-context
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+    /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
+    /// CMK in AWS KMS to protect the data.
+    /// </para>
+    ///  </note> <important> 
+    /// <para>
+    /// All GET and PUT requests for an object protected by AWS KMS fail if you don't make
+    /// them with SSL or by using SigV4.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+    /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use customer-provided encryption keys – If you want to manage your own encryption
+    /// keys, provide all the following headers in the request.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-customer-algorithm
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-customer-key
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-server-side-encryption-customer-key-MD5
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+    /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+    /// </para>
+    ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
+    /// 
+    /// <para>
+    /// You also can use the following access control–related headers with this operation.
+    /// By default, all objects are private. Only the owner has full access control. When
+    /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
+    /// groups defined by Amazon S3. These permissions are then added to the access control
+    /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+    /// ACLs</a>. With this operation, you can grant access permissions using one of the following
+    /// two methods:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+    /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+    /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+    /// ACL</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Specify access permissions explicitly — To explicitly grant access permissions to
+    /// specific AWS accounts or groups, use the following headers. Each header maps to specific
+    /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+    /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
+    /// get the specific permission. To grant permissions explicitly, use:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// x-amz-grant-read
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-grant-write
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-grant-read-acp
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-grant-write-acp
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// x-amz-grant-full-control
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You specify each grantee as a type=value pair, where the type is one of the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>uri</code> – if you are granting permissions to a predefined group
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+    /// account
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Using email addresses to specify a grantee is only supported in the following AWS
+    /// Regions: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// US East (N. Virginia)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// US West (N. California)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  US West (Oregon)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  Asia Pacific (Singapore)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Asia Pacific (Sydney)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Asia Pacific (Tokyo)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Europe (Ireland)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// South America (São Paulo)
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+    /// and Endpoints</a> in the AWS General Reference.
+    /// </para>
+    ///  </note> </li> </ul> 
+    /// <para>
+    /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+    /// identified by account IDs permissions to read object data and its metadata:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> 
+    /// </para>
+    ///  </li> </ul> </dd> </dl> 
+    /// <para>
+    /// The following operations are related to <code>CreateMultipartUpload</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class InitiateMultipartUploadRequest : PutWithACLRequest
     {
         private S3CannedACL cannedACL;
+        private bool? bucketKeyEnabled;
         private string bucketName;
+        private string expectedBucketOwner;
         private string key;
-        private S3StorageClass storageClass;
-        private string websiteRedirectLocation;
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
-
+        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
+        private ObjectLockMode objectLockMode;
+        private DateTime? objectLockRetainUntilDate;
+        private RequestPayer requestPayer;
         private ServerSideEncryptionMethod serverSideEncryption;
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private string serverSideEncryptionKeyManagementServiceEncryptionContext;
-        private RequestPayer requestPayer;
-        private string expectedBucketOwner;
-
-        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
-        private ObjectLockMode objectLockMode;
-        private DateTime? objectLockRetainUntilDate;
-        
+        private S3StorageClass storageClass;
         private List<Tag> tagset = new List<Tag>();
-        private bool? bucketKeyEnabled;
-
-        /// <summary>
-        /// Envelope Key to Encrypt data
-        /// </summary>
-        internal byte[] EnvelopeKey { get; set; }
-
-        /// <summary>
-        /// Encrypted Envelope Key to Encrypt data
-        /// </summary>
-        internal byte[] EncryptedEnvelopeKey { get; set; }
-
-        /// <summary>
-        /// Initialization Vector for encryption
-        /// </summary>
-        internal byte[] IV { get; set; }
-
-        /// <summary>
-        /// Storage mode for encryption information.
-        /// </summary>
-        internal Amazon.S3.Encryption.CryptoStorageMode StorageMode { get; set; }
+        private string websiteRedirectLocation;
 
         /// <summary>
         /// A canned access control list (ACL) to apply to the object.
@@ -91,17 +376,53 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>The name of the bucket to which to initiate the upload</para> 
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. 
-        /// For more information about access point ARNs, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name.
-        /// For more information about S3 on Outposts ARNs, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// Gets and sets the property BucketKeyEnabled. 
+        /// <para>
+        /// Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
+        /// server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code>
+        /// causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying this header with an object action doesn't affect bucket-level settings
+        /// for S3 Bucket Key.
+        /// </para>
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        // Check to see if BucketKeyEnabled property is set
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket to which to initiate the upload
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -113,6 +434,34 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// This is a convenience property for Headers.ContentType.
+        /// </summary>
+        public string ContentType
+        {
+            get { return this.Headers.ContentType; }
+            set { this.Headers.ContentType = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
         /// <summary>
@@ -137,63 +486,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. 
-        /// The STANDARD storage class provides high durability and high availability. 
-        /// Depending on performance needs, you can specify a different Storage Class. 
-        /// Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, 
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.
-        /// </summary>
-        /// <remarks>
-        /// Default: S3StorageClass.Standard. Set this property
-        /// only if you want reduced redundancy for this object.
-        /// Please refer to 
-        /// <see cref="T:Amazon.S3.S3StorageClass"/> for
-        /// information on S3 Storage Classes.
-        /// </remarks>
-        public S3StorageClass StorageClass
-        {
-            get { return this.storageClass; }
-            set { this.storageClass = value; }
-        }
-
-        // Check to see if StorageClass property is set
-        internal bool IsSetStorageClass()
-        {
-            return this.storageClass != null;
-        }
-
-        /// <summary>
-        /// If the bucketName is configured as a website, redirects requests for this object to another object in the same bucketName or to an external URL.
-        /// Amazon S3 stores the value of this header in the object metadata.
-        ///  
-        /// </summary>
-        public string WebsiteRedirectLocation
-        {
-            get { return this.websiteRedirectLocation; }
-            set { this.websiteRedirectLocation = value; }
-        }
-
-        // Check to see if WebsiteRedirectLocation property is set
-        internal bool IsSetWebsiteRedirectLocation()
-        {
-            return this.websiteRedirectLocation != null;
-        }
-
-        /// <summary>
-        /// The collection of headers for the request.
-        /// </summary>
-        public HeadersCollection Headers
-        {
-            get
-            {
-                if (this.headersCollection == null)
-                    this.headersCollection = new HeadersCollection();
-                return this.headersCollection;
-            }
-            internal set { this.headersCollection = value; }
-        }
-
-        /// <summary>
         /// The collection of meta data for the request.
         /// </summary>
         public MetadataCollection Metadata
@@ -208,12 +500,76 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// This is a convenience property for Headers.ContentType.
+        /// Gets and sets the property ObjectLockLegalHoldStatus. 
+        /// <para>
+        /// Specifies whether you want to apply a Legal Hold to the uploaded object.
+        /// </para>
         /// </summary>
-        public string ContentType
+        public ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
         {
-            get { return this.Headers.ContentType; }
-            set { this.Headers.ContentType = value; }
+            get { return this.objectLockLegalHoldStatus; }
+            set { this.objectLockLegalHoldStatus = value; }
+        }
+
+        // Check to see if ObjectLockLegalHoldStatus property is set
+        internal bool IsSetObjectLockLegalHoldStatus()
+        {
+            return this.objectLockLegalHoldStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockMode. 
+        /// <para>
+        /// Specifies the Object Lock mode that you want to apply to the uploaded object.
+        /// </para>
+        /// </summary>
+        public ObjectLockMode ObjectLockMode
+        {
+            get { return this.objectLockMode; }
+            set { this.objectLockMode = value; }
+        }
+
+        // Check to see if ObjectLockMode property is set
+        internal bool IsSetObjectLockMode()
+        {
+            return this.objectLockMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockRetainUntilDate. 
+        /// <para>
+        /// Specifies the date and time when you want the Object Lock to expire.
+        /// </para>
+        /// </summary>
+        public DateTime ObjectLockRetainUntilDate
+        {
+            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            set { this.objectLockRetainUntilDate = value; }
+        }
+
+        // Check to see if ObjectLockRetainUntilDate property is set
+        internal bool IsSetObjectLockRetainUntilDate()
+        {
+            return this.objectLockRetainUntilDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Confirms that the requester knows that she or he will be charged for the request.
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequetsPayer is set.
+        /// </summary>
+        /// <returns>true, if RequestPayer property is set.</returns>
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
         }
 
         /// <summary>
@@ -337,76 +693,25 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Confirms that the requester knows that she or he will be charged for the request.
-        /// Bucket owners need not specify this parameter in their requests.
-        /// </summary>
-        public RequestPayer RequestPayer
-        {
-            get { return this.requestPayer; }
-            set { this.requestPayer = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if RequetsPayer is set.
-        /// </summary>
-        /// <returns>true, if RequestPayer property is set.</returns>
-        internal bool IsSetRequestPayer()
-        {
-            return requestPayer != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockLegalHoldStatus. 
+        /// Gets and sets the property StorageClass. 
         /// <para>
-        /// Specifies whether you want to apply a Legal Hold to the uploaded object.
+        /// By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects.
+        /// The STANDARD storage class provides high durability and high availability. Depending
+        /// on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts
+        /// only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// Classes</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
-        public ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
+        public S3StorageClass StorageClass
         {
-            get { return this.objectLockLegalHoldStatus; }
-            set { this.objectLockLegalHoldStatus = value; }
+            get { return this.storageClass; }
+            set { this.storageClass = value; }
         }
 
-        // Check to see if ObjectLockLegalHoldStatus property is set
-        internal bool IsSetObjectLockLegalHoldStatus()
+        // Check to see if StorageClass property is set
+        internal bool IsSetStorageClass()
         {
-            return this.objectLockLegalHoldStatus != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockMode. 
-        /// <para>
-        /// Specifies the Object Lock mode that you want to apply to the uploaded object.
-        /// </para>
-        /// </summary>
-        public ObjectLockMode ObjectLockMode
-        {
-            get { return this.objectLockMode; }
-            set { this.objectLockMode = value; }
-        }
-
-        // Check to see if ObjectLockMode property is set
-        internal bool IsSetObjectLockMode()
-        {
-            return this.objectLockMode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockRetainUntilDate. 
-        /// <para>
-        /// Specifies the date and time when you want the Object Lock to expire.
-        /// </para>
-        /// </summary>
-        public DateTime ObjectLockRetainUntilDate
-        {
-            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
-            set { this.objectLockRetainUntilDate = value; }
-        }
-
-        // Check to see if ObjectLockRetainUntilDate property is set
-        internal bool IsSetObjectLockRetainUntilDate()
-        {
-            return this.objectLockRetainUntilDate.HasValue; 
+            return this.storageClass != null;
         }
 
         /// <summary>
@@ -428,41 +733,58 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property WebsiteRedirectLocation. 
+        /// <para>
+        /// If the bucket is configured as a website, redirects requests for this object to another
+        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this
+        /// header in the object metadata.
+        /// </para>
         /// </summary>
-        public string ExpectedBucketOwner
+        public string WebsiteRedirectLocation
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this.websiteRedirectLocation; }
+            set { this.websiteRedirectLocation = value; }
+        }
+
+        // Check to see if WebsiteRedirectLocation property is set
+        internal bool IsSetWebsiteRedirectLocation()
+        {
+            return this.websiteRedirectLocation != null;
         }
 
         /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
+        /// The collection of headers for the request.
         /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
+        public HeadersCollection Headers
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            get
+            {
+                if (this.headersCollection == null)
+                    this.headersCollection = new HeadersCollection();
+                return this.headersCollection;
+            }
+            internal set { this.headersCollection = value; }
         }
 
         /// <summary>
-        /// <para>Specifies whether Amazon S3 should use bucket key for object 
-        /// encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header 
-        /// to <code>true</code> causes Amazon S3 to use bucket key for object 
-        /// encryption with SSE-KMS.</para> <para>Specifying this 
-        /// header with an object operation doesn�t affect bucket-level settings for bucket key.</para>
+        /// Envelope Key to Encrypt data
         /// </summary>
-        public bool BucketKeyEnabled
-        {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
-            set { this.bucketKeyEnabled = value; }
-        }
+        internal byte[] EnvelopeKey { get; set; }
 
-        internal bool IsSetBucketKeyEnabled()
-        {
-            return bucketKeyEnabled.HasValue;
-        }
+        /// <summary>
+        /// Encrypted Envelope Key to Encrypt data
+        /// </summary>
+        internal byte[] EncryptedEnvelopeKey { get; set; }
+
+        /// <summary>
+        /// Initialization Vector for encryption
+        /// </summary>
+        internal byte[] IV { get; set; }
+
+        /// <summary>
+        /// Storage mode for encryption information.
+        /// </summary>
+        internal Amazon.S3.Encryption.CryptoStorageMode StorageMode { get; set; }
     }
 }
     

@@ -30,21 +30,6 @@ namespace Amazon.S3.Model
         private string prefix;
 
         /// <summary>
-        /// The file format used when exporting data to Amazon S3.
-        /// </summary>
-        public string Format
-        {
-            get { return this.analyticsS3ExportFileFormat; }
-            set { this.analyticsS3ExportFileFormat = value; }
-        }
-
-        // Check to see if Format property is set
-        internal bool IsSetFormat()
-        {
-            return this.analyticsS3ExportFileFormat != null;
-        }
-
-        /// <summary>
         /// The account ID that owns the destination bucket. If no account ID is provided, the owner will not be validated prior to exporting data.
         /// </summary>
         public string BucketAccountId
@@ -72,6 +57,21 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return !(string.IsNullOrEmpty(this.bucketName));
+        }
+
+        /// <summary>
+        /// The file format used when exporting data to Amazon S3.
+        /// </summary>
+        public string Format
+        {
+            get { return this.analyticsS3ExportFileFormat; }
+            set { this.analyticsS3ExportFileFormat = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this.analyticsS3ExportFileFormat != null;
         }
 
         /// <summary>

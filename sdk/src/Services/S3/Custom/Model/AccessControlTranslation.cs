@@ -21,14 +21,18 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// AccessControlTranslation class
+    /// A container for information about access control for replicas.
     /// </summary>
     public class AccessControlTranslation
     {
         private OwnerOverride owner;
 
         /// <summary>
-        /// The override value for the owner of the replica object.
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
+        /// bucket replication</a> in the <i>Amazon S3 API Reference</i>.
+        /// </para>
         /// </summary>
         public OwnerOverride Owner
         {

@@ -26,33 +26,57 @@ namespace Amazon.S3.Model
     /// </summary>
     public class ListObjectsV2Response : AmazonWebServiceResponse
     {
-        private bool? isTruncated;
-        private List<S3Object> contents = new List<S3Object>();
-        private string name;
-        private string prefix;
-        private string delimiter;
-        private int? maxKeys;
         private List<string> commonPrefixes = new List<string>();
-        private EncodingType encoding;
-        private int? keyCount;
+        private List<S3Object> contents = new List<S3Object>();
         private string continuationToken;
+        private string delimiter;
+        private EncodingType encoding;
+        private bool? isTruncated;
+        private int? keyCount;
+        private int? maxKeys;
+        private string name;
         private string nextContinuationToken;
+        private string prefix;
         private string startAfter;
 
         /// <summary>
-        /// A flag that indicates whether or not Amazon S3 returned all of the results that satisfied 
-        /// the search criteria.
+        /// Gets and sets the property CommonPrefixes. 
+        /// <para>
+        /// All of the keys (up to 1,000) rolled up into a common prefix count as a single return
+        /// when calculating the number of returns.
+        /// </para>
+        ///  
+        /// <para>
+        /// A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code>
+        /// and the next occurrence of the string specified by a delimiter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory
+        /// specified by <code>Prefix</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>)
+        /// as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>.
+        /// All of the keys that roll up into a common prefix count as a single return when calculating
+        /// the number of returns. 
+        /// </para>
         /// </summary>
-        public bool IsTruncated
+        public List<string> CommonPrefixes
         {
-            get { return this.isTruncated ?? default(bool); }
-            set { this.isTruncated = value; }
+            get { return this.commonPrefixes; }
+            set { this.commonPrefixes = value; }
         }
 
-        // Check to see if IsTruncated property is set
-        internal bool IsSetIsTruncated()
+        // Check to see if CommonPrefixes property is set
+        internal bool IsSetCommonPrefixes()
         {
-            return this.isTruncated.HasValue;
+            return this.commonPrefixes.Count > 0;
         }
 
         /// <summary>
@@ -71,48 +95,111 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>Bucket name.</para>
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point 
-        /// ARN in place of the bucket name. For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> 
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
-        /// For more information about S3 on Outposts ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// ContinuationToken indicates Amazon S3 that the list is being continued
+        /// on this bucket with a token.
+        /// ContinuationToken is obfuscated and is not a real key
         /// </summary>
-        public string Name
+        public string ContinuationToken
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this.continuationToken; }
+            set { this.continuationToken = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if ContinuationToken property is set
+        internal bool IsSetContinuationToken()
         {
-            return this.name != null;
+            return this.continuationToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the Prefix property.
+        /// Gets and sets the property Delimiter. 
+        /// <para>
+        /// Causes keys that contain the same string between the prefix and the first occurrence
+        /// of the delimiter to be rolled up into a single result element in the CommonPrefixes
+        /// collection. These rolled-up keys are not returned elsewhere in the response. Each
+        /// rolled-up result counts as only one return against the <code>MaxKeys</code> value.
+        /// </para>
         /// </summary>
-        public string Prefix
+        public string Delimiter
         {
-            get { return this.prefix; }
-            set { this.prefix = value; }
-        }
-
-        // Check to see if Prefix property is set
-        internal bool IsSetPrefix()
-        {
-            return this.prefix != null;
+            get { return this.delimiter; }
+            set { this.delimiter = value; }
         }
 
         /// <summary>
-        /// Gets and sets the MaxKeys property. This is max number of object keys returned by the list operation.
+        /// Encoding type used by Amazon S3 to encode object keys in the response.
+        /// <para>
+        /// Encoding type used by Amazon S3 to encode object key names in the XML response.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify the encoding-type request parameter, Amazon S3 includes this element
+        /// in the response, and returns encoded key name values in the following response elements:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.
+        /// </para>
+        /// </summary>
+        public EncodingType Encoding
+        {
+            get { return this.encoding; }
+            set { this.encoding = value; }
+        }
+
+        // Check to see if DeleteMarker property is set
+        internal bool IsSetEncoding()
+        {
+            return this.encoding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// Set to false if all of the results were returned. Set to true if more keys are available
+        /// to return. If the number of results exceeds that specified by MaxKeys, all of the
+        /// results might not be returned.
+        /// </para>
+        /// </summary>
+        public bool IsTruncated
+        {
+            get { return this.isTruncated ?? default(bool); }
+            set { this.isTruncated = value; }
+        }
+
+        // Check to see if IsTruncated property is set
+        internal bool IsSetIsTruncated()
+        {
+            return this.isTruncated.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyCount. 
+        /// <para>
+        /// KeyCount is the number of keys returned with this request. KeyCount will always be
+        /// less than or equals to MaxKeys field. Say you ask for 50 keys, your result will include
+        /// less than equals 50 keys 
+        /// </para>
+        /// </summary>
+        public int KeyCount
+        {
+            get { return this.keyCount ?? default(int); }
+            set { this.keyCount = value; }
+        }
+
+        // Check to see if KeyCount property is set
+        internal bool IsSetKeyCount()
+        {
+            return this.keyCount.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxKeys. 
+        /// <para>
+        /// Sets the maximum number of keys returned in the response. By default the action returns
+        /// up to 1,000 key names. The response might contain fewer keys but will never contain
+        /// more.
+        /// </para>
         /// </summary>
         public int MaxKeys
         {
@@ -127,95 +214,56 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the CommonPrefixes property.
-        /// CommonPrefixes contains all (if there are any) keys between Prefix and the next occurrence 
-        /// of the string specified by delimiter
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The bucket name.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
-        public List<string> CommonPrefixes
+        public string Name
         {
-            get { return this.commonPrefixes; }
-            set { this.commonPrefixes = value; }
+            get { return this.name; }
+            set { this.name = value; }
         }
 
-        // Check to see if CommonPrefixes property is set
-        internal bool IsSetCommonPrefixes()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this.commonPrefixes.Count > 0;
+            return this.name != null;
         }
 
         /// <summary>
-        /// Gets and sets the Delimiter property.
-        /// Causes keys that contain the same string between the prefix and the 
-        /// first occurrence of the delimiter to be rolled up into a single result 
-        /// element in the CommonPrefixes collection.
-        /// </summary>
-        /// <remarks>
-        /// These rolled-up keys are not returned elsewhere in the response.
-        /// </remarks>
-        public string Delimiter
-        {
-            get { return this.delimiter; }
-            set { this.delimiter = value; }
-        }
-
-        /// <summary>
-        /// Encoding type used by Amazon S3 to encode object keys in the response.
-        /// </summary>
-        public EncodingType Encoding
-        {
-            get { return this.encoding; }
-            set { this.encoding = value; }
-        }
-
-        // Check to see if DeleteMarker property is set
-        internal bool IsSetEncoding()
-        {
-            return this.encoding != null;
-        }
-
-
-        /// <summary>
-        /// KeyCount is the number of keys returned with this request.
-        /// KeyCount will always be less than or equal to MaxKeys field.
-        /// </summary>
-        public int KeyCount
-        {
-            get { return this.keyCount ?? default(int); }
-            set { this.keyCount = value; }
-        }
-        // Check to see if KeyCount property is set
-        internal bool IsSetKeyCount()
-        {
-            return this.keyCount.HasValue;
-        }
-
-        /// <summary>
-        /// ContinuationToken indicates Amazon S3 that the list is being continued
-        /// on this bucket with a token.
-        /// ContinuationToken is obfuscated and is not a real key
-        /// </summary>
-        public string ContinuationToken
-        {
-            get { return this.continuationToken; }
-            set { this.continuationToken = value; }
-        }
-        // Check to see if ContinuationToken property is set
-        internal bool IsSetContinuationToken()
-        {
-            return this.continuationToken != null;
-        }
-
-        /// <summary>
-        /// NextContinuationToken is sent when isTruncated is true which means there
-        /// are more keys in the bucket that can be listed. The next ListObjectV2 call
-        /// to Amazon S3 can be continued with this NextContinuationToken.
-        /// NextContinuationToken is obfuscated and is not a real key.
+        /// Gets and sets the property NextContinuationToken. 
+        /// <para>
+        ///  <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true,
+        /// which means there are more keys in the bucket that can be listed. The next list requests
+        /// to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code>
+        /// is obfuscated and is not a real key
+        /// </para>
         /// </summary>
         public string NextContinuationToken
         {
             get { return this.nextContinuationToken; }
             set { this.nextContinuationToken = value; }
         }
+
         // Check to see if NextContinuationToken property is set
         internal bool IsSetNextContinuationToken()
         {
@@ -223,16 +271,36 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// StartAfter is where you want Amazon S3 to start listing from.
-        /// Amazon S3 starts listing after this specified key.
-        /// StartAfter can be any key in the bucket.
+        /// Gets and sets the property Prefix. 
+        /// <para>
+        ///  Keys that begin with the indicated prefix.
+        /// </para>
+        /// </summary>
+        public string Prefix
+        {
+            get { return this.prefix; }
+            set { this.prefix = value; }
+        }
+
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
+        {
+            return this.prefix != null;
+        }
+        
+        /// <summary>
+        /// Gets and sets the property StartAfter. 
+        /// <para>
+        /// If StartAfter was sent with the request, it is included in the response.
+        /// </para>
         /// </summary>
         public string StartAfter
         {
             get { return this.startAfter; }
             set { this.startAfter = value; }
         }
-        // Check to see if StartKey property is set
+
+        // Check to see if StartAfter property is set
         internal bool IsSetStartAfter()
         {
             return this.startAfter != null;

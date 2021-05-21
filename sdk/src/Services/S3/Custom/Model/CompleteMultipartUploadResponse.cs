@@ -33,32 +33,47 @@ namespace Amazon.S3.Model
         private bool? bucketKeyEnabled;
 
         /// <summary>
-        /// Gets and sets the URI that identifies the newly created object.
+        /// Gets and sets the property BucketKeyEnabled. 
+        /// <para>
+        /// Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption
+        /// with AWS KMS (SSE-KMS).
+        /// </para>
         /// </summary>
-        public string Location
+        public bool BucketKeyEnabled
         {
-            get { return this.location; }
-            set { this.location = value; }
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
         }
 
-        // Check to see if Location property is set
-        internal bool IsSetLocation()
+        // Check to see if BucketKeyEnabled property is set
+        internal bool IsSetBucketKeyEnabled()
         {
-            return this.location != null;
+            return bucketKeyEnabled.HasValue;
         }
 
         /// <summary>
-        /// <para>The name of the bucket that contains the newly created object.</para> 
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
-        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. 
-        /// For more information about access point ARNs, 
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
-        /// For more information about S3 on Outposts ARNs, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket that contains the newly created object.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access
+        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        /// When using this action with an access point through the AWS SDKs, you provide the
+        /// access point ARN in place of the bucket name. For more information about access point
+        /// ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+        /// access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+        /// When using this action using S3 on Outposts through the AWS SDKs, you provide the
+        /// Outposts bucket ARN in place of the bucket name. For more information about S3 on
+        /// Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -66,30 +81,21 @@ namespace Amazon.S3.Model
             set { this.bucketName = value; }
         }
 
-        // Check to see if Bucket property is set
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
         }
 
         /// <summary>
-        /// Gets and sets the object key of the newly created object.
-        /// </summary>
-        public string Key
-        {
-            get { return this.key; }
-            set { this.key = value; }
-        }
-
-        // Check to see if Key property is set
-        internal bool IsSetKey()
-        {
-            return this.key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets Entity tag that identifies the newly created object's data. Objects with different
-        /// object data will have different entity tags. The entity tag is an opaque string.
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// Entity tag that identifies the newly created object's data. Objects with different
+        /// object data will have different entity tags. The entity tag is an opaque string. The
+        /// entity tag may or may not be an MD5 digest of the object data. If the entity tag is
+        /// not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters
+        /// and/or will consist of less than 32 or more than 32 hexadecimal digits.
+        /// </para>
         /// </summary>
         public string ETag
         {
@@ -104,10 +110,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Expiration property.
-        /// Specifies the expiration date for the object and the
-        /// rule governing the expiration.
-        /// Is null if expiration is not applicable.
+        /// Gets and sets the property Expiration. 
+        /// <para>
+        /// If the object expiration is configured, this will contain the expiration date (expiry-date)
+        /// and rule ID (rule-id). The value of rule-id is URL encoded.
+        /// </para>
         /// </summary>
         public Expiration Expiration
         {
@@ -116,49 +123,39 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the ServerSideEncryptionMethod property.
-        /// Specifies the encryption used on the server to
-        /// store the content.
-        /// Default is None.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The object key of the newly created object.
+        /// </para>
         /// </summary>
-        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        public string Key
         {
-            get { return this.serverSideEncryption; }
-            set { this.serverSideEncryption = value; }
+            get { return this.key; }
+            set { this.key = value; }
         }
 
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this.key != null;
+        }
+        
         /// <summary>
-        /// Gets and sets the VersionId property.
-        /// This is the version-id of the S3 object
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The URI that identifies the newly created object.
+        /// </para>
         /// </summary>
-        public string VersionId
+        public string Location
         {
-            get { return this.versionId; }
-            set { this.versionId = value; }
+            get { return this.location; }
+            set { this.location = value; }
         }
 
-        // Check to see if VersionId property is set
-        internal bool IsSetVersionId()
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
         {
-            return this.versionId != null;
-        }
-
-        /// <summary>
-        /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
-        /// </summary>
-        public string ServerSideEncryptionKeyManagementServiceKeyId
-        {
-            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
-            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
-        }
-
-        /// <summary>
-        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
-        /// </summary>
-        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
-        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
-        {
-            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+            return this.location != null;
         }
 
         /// <summary>
@@ -178,21 +175,57 @@ namespace Amazon.S3.Model
         {
             return requestCharged != null;
         }
+        
+        /// <summary>
+        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// Default is None.
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.serverSideEncryption; }
+            set { this.serverSideEncryption = value; }
+        }
+
+        
+        /// <summary>
+        /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
+        /// </summary>
+        public string ServerSideEncryptionKeyManagementServiceKeyId
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
+        }
 
         /// <summary>
-        /// <para>Indicates whether the multipart upload uses bucket key for server-side encryption with 
-        /// AWS KMS (SSE-KMS).</para>
+        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
         /// </summary>
-        public bool BucketKeyEnabled
+        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
+        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
         {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
-            set { this.bucketKeyEnabled = value; }
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
         }
 
-        internal bool IsSetBucketKeyEnabled()
+        /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// Version ID of the newly created object, in case the bucket has versioning turned on.
+        /// </para>
+        /// </summary>
+        public string VersionId
         {
-            return bucketKeyEnabled.HasValue;
+            get { return this.versionId; }
+            set { this.versionId = value; }
         }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this.versionId != null;
+        }
+
+        
 
     }
 }

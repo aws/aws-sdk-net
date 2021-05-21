@@ -24,35 +24,252 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutAcl operation.
-    /// <para>uses the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket</para>
+    /// Container for the parameters to the PutACL operation.
+    /// Sets the permissions on an existing bucket using access control lists (ACL). For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+    /// ACLs</a>. To set the ACL of a bucket, you must have <code>WRITE_ACP</code> permission.
+    /// 
+    ///  
+    /// <para>
+    /// You can use one of the following two ways to set a bucket's permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Specify the ACL in the request body
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Specify permissions using request headers
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// You cannot specify access permission using both the body and the request headers.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Depending on your application needs, you may choose to set the ACL on a bucket using
+    /// either the request body or the headers. For example, if you have an existing application
+    /// that updates a bucket ACL using the request body, then you can continue to use that
+    /// approach.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Access Permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can set access permissions using one of the following methods:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Specify a canned ACL with the <code>x-amz-acl</code> request header. Amazon S3 supports
+    /// a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined
+    /// set of grantees and permissions. Specify the canned ACL name as the value of <code>x-amz-acl</code>.
+    /// If you use this header, you cannot use other access control-specific headers in your
+    /// request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+    /// ACL</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
+    /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
+    /// When using these headers, you specify explicit access permissions and grantees (AWS
+    /// accounts or Amazon S3 groups) who will receive the permission. If you use these ACL-specific
+    /// headers, you cannot use the <code>x-amz-acl</code> header to set a canned ACL. These
+    /// parameters map to the set of permissions that Amazon S3 supports in an ACL. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+    /// Control List (ACL) Overview</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You specify each grantee as a type=value pair, where the type is one of the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>uri</code> – if you are granting permissions to a predefined group
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+    /// account
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Using email addresses to specify a grantee is only supported in the following AWS
+    /// Regions: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// US East (N. Virginia)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// US West (N. California)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  US West (Oregon)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  Asia Pacific (Singapore)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Asia Pacific (Sydney)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Asia Pacific (Tokyo)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Europe (Ireland)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// South America (São Paulo)
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+    /// and Endpoints</a> in the AWS General Reference.
+    /// </para>
+    ///  </note> </li> </ul> 
+    /// <para>
+    /// For example, the following <code>x-amz-grant-write</code> header grants create, overwrite,
+    /// and delete objects permission to LogDelivery group predefined by Amazon S3 and two
+    /// AWS accounts identified by their email addresses.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>x-amz-grant-write: uri="http://acs.amazonaws.com/groups/s3/LogDelivery", id="111122223333",
+    /// id="555566667777" </code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can use either a canned ACL or specify access permissions explicitly. You cannot
+    /// do both.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Grantee Values</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can specify the person (grantee) to whom you're assigning access rights (using
+    /// request elements) in the following ways:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// By the person's ID:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CanonicalUser"&gt;&lt;ID&gt;&lt;&gt;ID&lt;&gt;&lt;/ID&gt;&lt;DisplayName&gt;&lt;&gt;GranteesEmail&lt;&gt;&lt;/DisplayName&gt;
+    /// &lt;/Grantee&gt;</code> 
+    /// </para>
+    ///  
+    /// <para>
+    /// DisplayName is optional and ignored in the request
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// By URI:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Group"&gt;&lt;URI&gt;&lt;&gt;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&lt;&gt;&lt;/URI&gt;&lt;/Grantee&gt;</code>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// By Email address:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;lt;/Grantee&gt;</code>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// The grantee is resolved to the CanonicalUser and, in a response to a GET Object acl
+    /// request, appears as the CanonicalUser. 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Using email addresses to specify a grantee is only supported in the following AWS
+    /// Regions: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// US East (N. Virginia)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// US West (N. California)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  US West (Oregon)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  Asia Pacific (Singapore)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Asia Pacific (Sydney)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Asia Pacific (Tokyo)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Europe (Ireland)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// South America (São Paulo)
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+    /// and Endpoints</a> in the AWS General Reference.
+    /// </para>
+    ///  </note> </li> </ul> <p class="title"> <b>Related Resources</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PutACLRequest : AmazonWebServiceRequest
     {
-        private S3CannedACL cannedACL;
         private S3AccessControlList accessControlPolicy;
+        private S3CannedACL cannedACL;
         private string bucket;
+        private string expectedBucketOwner;
         private string key;
         private string versionId;
-        private string expectedBucketOwner;
-
-        /// <summary>
-        /// The canned ACL to apply to the bucket.
-        ///  
-        /// </summary>
-        public S3CannedACL CannedACL
-        {
-            get { return this.cannedACL; }
-            set { this.cannedACL = value; }
-        }
-
-        // Check to see if CannedACL property is set
-        internal bool IsSetCannedACL()
-        {
-            return this.cannedACL != null;
-        }
-
-
+        
         /// <summary>
         /// Custom ACLs to be applied to the bucket or object.
         /// </summary>
@@ -69,6 +286,22 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// The canned ACL to apply to the bucket.
+        ///  
+        /// </summary>
+        public S3CannedACL CannedACL
+        {
+            get { return this.cannedACL; }
+            set { this.cannedACL = value; }
+        }
+
+        // Check to see if CannedACL property is set
+        internal bool IsSetCannedACL()
+        {
+            return this.cannedACL != null;
+        }
+        
+        /// <summary>
         /// <para>The bucket name that contains the object to which you want to attach the ACL.</para>
         /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
         /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
@@ -81,6 +314,25 @@ namespace Amazon.S3.Model
         {
             get { return this.bucket; }
             set { this.bucket = value; }
+        }
+
+        /// <summary>
+        /// The account ID of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
         // Check to see if BucketName property is set
@@ -141,24 +393,6 @@ namespace Amazon.S3.Model
             return this.versionId != null;
         }
 
-        /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
-        /// </summary>
-        public string ExpectedBucketOwner
-        {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
-        {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
-        }
     }
 }
     

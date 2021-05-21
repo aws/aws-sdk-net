@@ -25,7 +25,6 @@ namespace Amazon.S3.Model
     /// </summary>
     public class MultipartUpload
     {
-
         private string key;
         private string uploadId;
         private Owner owner;
