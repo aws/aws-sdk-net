@@ -76,6 +76,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentInstance = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FindingReasonCodes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FindingReasonCodes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModifyRecommendationDetail", targetDepth))
                 {
                     var unmarshaller = ModifyRecommendationDetailUnmarshaller.Instance;

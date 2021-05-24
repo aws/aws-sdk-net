@@ -94,6 +94,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExpectedResourceUtilization = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlatformDifferences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PlatformDifferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceDetails", targetDepth))
                 {
                     var unmarshaller = ResourceDetailsUnmarshaller.Instance;

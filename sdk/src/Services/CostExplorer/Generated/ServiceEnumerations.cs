@@ -645,6 +645,112 @@ namespace Amazon.CostExplorer
 
 
     /// <summary>
+    /// Constants used for properties of type FindingReasonCode.
+    /// </summary>
+    public class FindingReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPU_OVER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode CPU_OVER_PROVISIONED = new FindingReasonCode("CPU_OVER_PROVISIONED");
+        /// <summary>
+        /// Constant CPU_UNDER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode CPU_UNDER_PROVISIONED = new FindingReasonCode("CPU_UNDER_PROVISIONED");
+        /// <summary>
+        /// Constant DISK_IOPS_OVER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode DISK_IOPS_OVER_PROVISIONED = new FindingReasonCode("DISK_IOPS_OVER_PROVISIONED");
+        /// <summary>
+        /// Constant DISK_IOPS_UNDER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode DISK_IOPS_UNDER_PROVISIONED = new FindingReasonCode("DISK_IOPS_UNDER_PROVISIONED");
+        /// <summary>
+        /// Constant DISK_THROUGHPUT_OVER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode DISK_THROUGHPUT_OVER_PROVISIONED = new FindingReasonCode("DISK_THROUGHPUT_OVER_PROVISIONED");
+        /// <summary>
+        /// Constant DISK_THROUGHPUT_UNDER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode DISK_THROUGHPUT_UNDER_PROVISIONED = new FindingReasonCode("DISK_THROUGHPUT_UNDER_PROVISIONED");
+        /// <summary>
+        /// Constant EBS_IOPS_OVER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode EBS_IOPS_OVER_PROVISIONED = new FindingReasonCode("EBS_IOPS_OVER_PROVISIONED");
+        /// <summary>
+        /// Constant EBS_IOPS_UNDER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode EBS_IOPS_UNDER_PROVISIONED = new FindingReasonCode("EBS_IOPS_UNDER_PROVISIONED");
+        /// <summary>
+        /// Constant EBS_THROUGHPUT_OVER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode EBS_THROUGHPUT_OVER_PROVISIONED = new FindingReasonCode("EBS_THROUGHPUT_OVER_PROVISIONED");
+        /// <summary>
+        /// Constant EBS_THROUGHPUT_UNDER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode EBS_THROUGHPUT_UNDER_PROVISIONED = new FindingReasonCode("EBS_THROUGHPUT_UNDER_PROVISIONED");
+        /// <summary>
+        /// Constant MEMORY_OVER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode MEMORY_OVER_PROVISIONED = new FindingReasonCode("MEMORY_OVER_PROVISIONED");
+        /// <summary>
+        /// Constant MEMORY_UNDER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode MEMORY_UNDER_PROVISIONED = new FindingReasonCode("MEMORY_UNDER_PROVISIONED");
+        /// <summary>
+        /// Constant NETWORK_BANDWIDTH_OVER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode NETWORK_BANDWIDTH_OVER_PROVISIONED = new FindingReasonCode("NETWORK_BANDWIDTH_OVER_PROVISIONED");
+        /// <summary>
+        /// Constant NETWORK_BANDWIDTH_UNDER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode NETWORK_BANDWIDTH_UNDER_PROVISIONED = new FindingReasonCode("NETWORK_BANDWIDTH_UNDER_PROVISIONED");
+        /// <summary>
+        /// Constant NETWORK_PPS_OVER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode NETWORK_PPS_OVER_PROVISIONED = new FindingReasonCode("NETWORK_PPS_OVER_PROVISIONED");
+        /// <summary>
+        /// Constant NETWORK_PPS_UNDER_PROVISIONED for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode NETWORK_PPS_UNDER_PROVISIONED = new FindingReasonCode("NETWORK_PPS_UNDER_PROVISIONED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FindingReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingReasonCode FindValue(string value)
+        {
+            return FindValue<FindingReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Granularity.
     /// </summary>
     public class Granularity : ConstantClass
@@ -1218,6 +1324,68 @@ namespace Amazon.CostExplorer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PaymentOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PlatformDifference.
+    /// </summary>
+    public class PlatformDifference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HYPERVISOR for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference HYPERVISOR = new PlatformDifference("HYPERVISOR");
+        /// <summary>
+        /// Constant INSTANCE_STORE_AVAILABILITY for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference INSTANCE_STORE_AVAILABILITY = new PlatformDifference("INSTANCE_STORE_AVAILABILITY");
+        /// <summary>
+        /// Constant NETWORK_INTERFACE for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference NETWORK_INTERFACE = new PlatformDifference("NETWORK_INTERFACE");
+        /// <summary>
+        /// Constant STORAGE_INTERFACE for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference STORAGE_INTERFACE = new PlatformDifference("STORAGE_INTERFACE");
+        /// <summary>
+        /// Constant VIRTUALIZATION_TYPE for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference VIRTUALIZATION_TYPE = new PlatformDifference("VIRTUALIZATION_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlatformDifference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlatformDifference FindValue(string value)
+        {
+            return FindValue<PlatformDifference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlatformDifference(string value)
         {
             return FindValue(value);
         }

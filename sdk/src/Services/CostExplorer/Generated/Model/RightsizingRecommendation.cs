@@ -35,6 +35,7 @@ namespace Amazon.CostExplorer.Model
     {
         private string _accountId;
         private CurrentInstance _currentInstance;
+        private List<string> _findingReasonCodes = new List<string>();
         private ModifyRecommendationDetail _modifyRecommendationDetail;
         private RightsizingType _rightsizingType;
         private TerminateRecommendationDetail _terminateRecommendationDetail;
@@ -74,6 +75,25 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetCurrentInstance()
         {
             return this._currentInstance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingReasonCodes. 
+        /// <para>
+        ///  The list of possible reasons why the recommendation is generated such as under or
+        /// over utilization of specific metrics (for example, CPU, Memory, Network). 
+        /// </para>
+        /// </summary>
+        public List<string> FindingReasonCodes
+        {
+            get { return this._findingReasonCodes; }
+            set { this._findingReasonCodes = value; }
+        }
+
+        // Check to see if FindingReasonCodes property is set
+        internal bool IsSetFindingReasonCodes()
+        {
+            return this._findingReasonCodes != null && this._findingReasonCodes.Count > 0; 
         }
 
         /// <summary>

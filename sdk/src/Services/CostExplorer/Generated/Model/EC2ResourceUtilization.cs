@@ -33,10 +33,31 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class EC2ResourceUtilization
     {
+        private DiskResourceUtilization _diskResourceUtilization;
         private EBSResourceUtilization _ebsResourceUtilization;
         private string _maxCpuUtilizationPercentage;
         private string _maxMemoryUtilizationPercentage;
         private string _maxStorageUtilizationPercentage;
+        private NetworkResourceUtilization _networkResourceUtilization;
+
+        /// <summary>
+        /// Gets and sets the property DiskResourceUtilization. 
+        /// <para>
+        ///  The field that contains a list of disk (local storage) metrics associated with the
+        /// current instance. 
+        /// </para>
+        /// </summary>
+        public DiskResourceUtilization DiskResourceUtilization
+        {
+            get { return this._diskResourceUtilization; }
+            set { this._diskResourceUtilization = value; }
+        }
+
+        // Check to see if DiskResourceUtilization property is set
+        internal bool IsSetDiskResourceUtilization()
+        {
+            return this._diskResourceUtilization != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EBSResourceUtilization. 
@@ -113,6 +134,25 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetMaxStorageUtilizationPercentage()
         {
             return this._maxStorageUtilizationPercentage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkResourceUtilization. 
+        /// <para>
+        ///  The network field that contains a list of network metrics associated with the current
+        /// instance. 
+        /// </para>
+        /// </summary>
+        public NetworkResourceUtilization NetworkResourceUtilization
+        {
+            get { return this._networkResourceUtilization; }
+            set { this._networkResourceUtilization = value; }
+        }
+
+        // Check to see if NetworkResourceUtilization property is set
+        internal bool IsSetNetworkResourceUtilization()
+        {
+            return this._networkResourceUtilization != null;
         }
 
     }

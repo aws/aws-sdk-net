@@ -38,6 +38,7 @@ namespace Amazon.CostExplorer.Model
         private string _estimatedMonthlyCost;
         private string _estimatedMonthlySavings;
         private ResourceUtilization _expectedResourceUtilization;
+        private List<string> _platformDifferences = new List<string>();
         private ResourceDetails _resourceDetails;
 
         /// <summary>
@@ -131,6 +132,25 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetExpectedResourceUtilization()
         {
             return this._expectedResourceUtilization != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformDifferences. 
+        /// <para>
+        ///  Explains the actions you might need to take in order to successfully migrate your
+        /// workloads from the current instance type to the recommended instance type. 
+        /// </para>
+        /// </summary>
+        public List<string> PlatformDifferences
+        {
+            get { return this._platformDifferences; }
+            set { this._platformDifferences = value; }
+        }
+
+        // Check to see if PlatformDifferences property is set
+        internal bool IsSetPlatformDifferences()
+        {
+            return this._platformDifferences != null && this._platformDifferences.Count > 0; 
         }
 
         /// <summary>

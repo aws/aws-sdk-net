@@ -714,6 +714,30 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.DiskResourceUtilization.DiskReadBytesPerSecond</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.DiskResourceUtilization.DiskReadOpsPerSecond</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.DiskResourceUtilization.DiskWriteBytesPerSecond</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.DiskResourceUtilization.DiskWriteOpsPerSecond</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.EBSResourceUtilization.EbsReadBytesPerSecond</property>
     <min>0</min>
     <max>1024</max>
@@ -907,6 +931,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GroupDefinition.Key</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.NetworkResourceUtilization.NetworkInBytesPerSecond</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.NetworkResourceUtilization.NetworkOutBytesPerSecond</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.NetworkResourceUtilization.NetworkPacketsInPerSecond</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.NetworkResourceUtilization.NetworkPacketsOutPerSecond</property>
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>

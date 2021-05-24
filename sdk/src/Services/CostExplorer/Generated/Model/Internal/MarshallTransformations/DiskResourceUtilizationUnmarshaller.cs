@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EC2ResourceUtilization Object
+    /// Response Unmarshaller for DiskResourceUtilization Object
     /// </summary>  
-    public class EC2ResourceUtilizationUnmarshaller : IUnmarshaller<EC2ResourceUtilization, XmlUnmarshallerContext>, IUnmarshaller<EC2ResourceUtilization, JsonUnmarshallerContext>
+    public class DiskResourceUtilizationUnmarshaller : IUnmarshaller<DiskResourceUtilization, XmlUnmarshallerContext>, IUnmarshaller<DiskResourceUtilization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EC2ResourceUtilization IUnmarshaller<EC2ResourceUtilization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DiskResourceUtilization IUnmarshaller<DiskResourceUtilization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,39 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EC2ResourceUtilization Unmarshall(JsonUnmarshallerContext context)
+        public DiskResourceUtilization Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EC2ResourceUtilization unmarshalledObject = new EC2ResourceUtilization();
+            DiskResourceUtilization unmarshalledObject = new DiskResourceUtilization();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DiskResourceUtilization", targetDepth))
-                {
-                    var unmarshaller = DiskResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.DiskResourceUtilization = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EBSResourceUtilization", targetDepth))
-                {
-                    var unmarshaller = EBSResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.EBSResourceUtilization = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxCpuUtilizationPercentage", targetDepth))
+                if (context.TestExpression("DiskReadBytesPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxCpuUtilizationPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DiskReadBytesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaxMemoryUtilizationPercentage", targetDepth))
+                if (context.TestExpression("DiskReadOpsPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxMemoryUtilizationPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DiskReadOpsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaxStorageUtilizationPercentage", targetDepth))
+                if (context.TestExpression("DiskWriteBytesPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxStorageUtilizationPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DiskWriteBytesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NetworkResourceUtilization", targetDepth))
+                if (context.TestExpression("DiskWriteOpsPerSecond", targetDepth))
                 {
-                    var unmarshaller = NetworkResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkResourceUtilization = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DiskWriteOpsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +94,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
 
 
-        private static EC2ResourceUtilizationUnmarshaller _instance = new EC2ResourceUtilizationUnmarshaller();        
+        private static DiskResourceUtilizationUnmarshaller _instance = new DiskResourceUtilizationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EC2ResourceUtilizationUnmarshaller Instance
+        public static DiskResourceUtilizationUnmarshaller Instance
         {
             get
             {

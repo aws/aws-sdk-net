@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EC2ResourceUtilization Object
+    /// Response Unmarshaller for NetworkResourceUtilization Object
     /// </summary>  
-    public class EC2ResourceUtilizationUnmarshaller : IUnmarshaller<EC2ResourceUtilization, XmlUnmarshallerContext>, IUnmarshaller<EC2ResourceUtilization, JsonUnmarshallerContext>
+    public class NetworkResourceUtilizationUnmarshaller : IUnmarshaller<NetworkResourceUtilization, XmlUnmarshallerContext>, IUnmarshaller<NetworkResourceUtilization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EC2ResourceUtilization IUnmarshaller<EC2ResourceUtilization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NetworkResourceUtilization IUnmarshaller<NetworkResourceUtilization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,39 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EC2ResourceUtilization Unmarshall(JsonUnmarshallerContext context)
+        public NetworkResourceUtilization Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EC2ResourceUtilization unmarshalledObject = new EC2ResourceUtilization();
+            NetworkResourceUtilization unmarshalledObject = new NetworkResourceUtilization();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DiskResourceUtilization", targetDepth))
-                {
-                    var unmarshaller = DiskResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.DiskResourceUtilization = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EBSResourceUtilization", targetDepth))
-                {
-                    var unmarshaller = EBSResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.EBSResourceUtilization = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxCpuUtilizationPercentage", targetDepth))
+                if (context.TestExpression("NetworkInBytesPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxCpuUtilizationPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkInBytesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaxMemoryUtilizationPercentage", targetDepth))
+                if (context.TestExpression("NetworkOutBytesPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxMemoryUtilizationPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkOutBytesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaxStorageUtilizationPercentage", targetDepth))
+                if (context.TestExpression("NetworkPacketsInPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxStorageUtilizationPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkPacketsInPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NetworkResourceUtilization", targetDepth))
+                if (context.TestExpression("NetworkPacketsOutPerSecond", targetDepth))
                 {
-                    var unmarshaller = NetworkResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkResourceUtilization = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkPacketsOutPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +94,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
 
 
-        private static EC2ResourceUtilizationUnmarshaller _instance = new EC2ResourceUtilizationUnmarshaller();        
+        private static NetworkResourceUtilizationUnmarshaller _instance = new NetworkResourceUtilizationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EC2ResourceUtilizationUnmarshaller Instance
+        public static NetworkResourceUtilizationUnmarshaller Instance
         {
             get
             {
