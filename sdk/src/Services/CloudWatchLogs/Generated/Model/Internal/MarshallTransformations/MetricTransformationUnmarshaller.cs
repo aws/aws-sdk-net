@@ -70,6 +70,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dimensions", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("metricName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("unit", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

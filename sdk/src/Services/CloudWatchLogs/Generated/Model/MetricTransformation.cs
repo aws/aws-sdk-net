@@ -34,9 +34,11 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class MetricTransformation
     {
         private double? _defaultValue;
+        private Dictionary<string, string> _dimensions = new Dictionary<string, string>();
         private string _metricName;
         private string _metricNamespace;
         private string _metricValue;
+        private StandardUnit _unit;
 
         /// <summary>
         /// Gets and sets the property DefaultValue. 
@@ -55,6 +57,45 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDefaultValue()
         {
             return this._defaultValue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Dimensions. 
+        /// <para>
+        /// The fields to use as dimensions for the metric. One metric filter can include as many
+        /// as three dimensions.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Metrics extracted from log events are charged as custom metrics. To prevent unexpected
+        /// high charges, do not specify high-cardinality fields such as <code>IPAddress</code>
+        /// or <code>requestID</code> as dimensions. Each different value found for a dimension
+        /// is treated as a separate metric and accrues charges as a separate custom metric. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To help prevent accidental high charges, Amazon disables a metric filter if it generates
+        /// 1000 different name/value pairs for the dimensions that you have specified within
+        /// a certain amount of time.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also set up a billing alarm to alert you if your charges are higher than expected.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+        /// Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public Dictionary<string, string> Dimensions
+        {
+            get { return this._dimensions; }
+            set { this._dimensions = value; }
+        }
+
+        // Check to see if Dimensions property is set
+        internal bool IsSetDimensions()
+        {
+            return this._dimensions != null && this._dimensions.Count > 0; 
         }
 
         /// <summary>
@@ -114,6 +155,24 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetMetricValue()
         {
             return this._metricValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unit. 
+        /// <para>
+        /// The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.
+        /// </para>
+        /// </summary>
+        public StandardUnit Unit
+        {
+            get { return this._unit; }
+            set { this._unit = value; }
+        }
+
+        // Check to see if Unit property is set
+        internal bool IsSetUnit()
+        {
+            return this._unit != null;
         }
 
     }

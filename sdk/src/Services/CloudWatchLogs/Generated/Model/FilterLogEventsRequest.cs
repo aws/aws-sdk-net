@@ -246,11 +246,6 @@ namespace Amazon.CloudWatchLogs.Model
         /// The start of the time range, expressed as the number of milliseconds after Jan 1,
         /// 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.
         /// </para>
-        ///  
-        /// <para>
-        /// If you omit <code>startTime</code> and <code>endTime</code> the most recent log events
-        /// are retrieved, to up 1 MB or 10,000 log events.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
         public long StartTime

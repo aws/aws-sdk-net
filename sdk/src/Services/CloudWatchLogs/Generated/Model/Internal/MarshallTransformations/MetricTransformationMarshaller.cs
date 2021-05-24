@@ -51,6 +51,20 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DefaultValue);
             }
 
+            if(requestObject.IsSetDimensions())
+            {
+                context.Writer.WritePropertyName("dimensions");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectDimensionsKvp in requestObject.Dimensions)
+                {
+                    context.Writer.WritePropertyName(requestObjectDimensionsKvp.Key);
+                    var requestObjectDimensionsValue = requestObjectDimensionsKvp.Value;
+
+                        context.Writer.Write(requestObjectDimensionsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("metricName");
@@ -67,6 +81,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("metricValue");
                 context.Writer.Write(requestObject.MetricValue);
+            }
+
+            if(requestObject.IsSetUnit())
+            {
+                context.Writer.WritePropertyName("unit");
+                context.Writer.Write(requestObject.Unit);
             }
 
         }

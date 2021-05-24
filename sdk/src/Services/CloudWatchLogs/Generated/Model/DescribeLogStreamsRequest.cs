@@ -177,9 +177,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>lastEventTimeStamp</code> represents the time of the most recent log event
+        ///  <code>lastEventTimestamp</code> represents the time of the most recent log event
         /// in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code> updates on an eventual
+        /// after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual
         /// consistency basis. It typically updates in less than an hour from ingestion, but in
         /// rare situations might take longer.
         /// </para>

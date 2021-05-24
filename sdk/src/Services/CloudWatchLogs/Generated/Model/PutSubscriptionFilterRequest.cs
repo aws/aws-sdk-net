@@ -61,10 +61,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// There can only be one subscription filter associated with a log group. If you are
-    /// updating an existing filter, you must specify the correct name in <code>filterName</code>.
-    /// Otherwise, the call fails because you cannot associate a second filter with a log
-    /// group.
+    /// Each log group can have up to two subscription filters associated with it. If you
+    /// are updating an existing filter, you must specify the correct name in <code>filterName</code>.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -96,6 +95,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// A logical destination (specified using an ARN) belonging to a different account, for
         /// cross-account delivery.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are setting up a cross-account subscription, the destination must have an IAM
+        /// policy associated with it that allows the sender to send logs to the destination.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -147,8 +152,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property FilterName. 
         /// <para>
         /// A name for the subscription filter. If you are updating an existing filter, you must
-        /// specify the correct name in <code>filterName</code>. Otherwise, the call fails because
-        /// you cannot associate a second filter with a log group. To find the name of the filter
+        /// specify the correct name in <code>filterName</code>. To find the name of the filter
         /// currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.
         /// </para>
         /// </summary>

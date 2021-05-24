@@ -186,9 +186,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property To. 
         /// <para>
-        /// The end time of the range for the request, expressed as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-        /// exported.
+        /// The end time of the range for the request, expreswatchlogsdocused as the number of
+        /// milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this
+        /// time are not exported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
