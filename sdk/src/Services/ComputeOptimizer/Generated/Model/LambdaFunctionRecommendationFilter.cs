@@ -30,6 +30,15 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Describes a filter that returns a more specific list of AWS Lambda function recommendations.
+    /// Use this filter with the <code>GetLambdaFunctionRecommendations</code> action.
+    /// 
+    ///  
+    /// <para>
+    /// You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code>
+    /// action, <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code>
+    /// action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code>
+    /// and <code>GetEC2InstanceRecommendations</code> actions.
+    /// </para>
     /// </summary>
     public partial class LambdaFunctionRecommendationFilter
     {
@@ -77,12 +86,12 @@ namespace Amazon.ComputeOptimizer.Model
         ///  <ul> <li> 
         /// <para>
         /// Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code>
-        /// if you specified the <code>name</code> parameter as <code>Finding</code>.
+        /// if you specify the <code>name</code> parameter as <code>Finding</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>,
-        /// or <code>Inconclusive</code> if you specified the <code>name</code> parameter as <code>FindingReasonCode</code>.
+        /// or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

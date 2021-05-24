@@ -84,7 +84,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Finding. 
         /// <para>
-        /// The finding classification for the function.
+        /// The finding classification of the function.
         /// </para>
         ///  
         /// <para>
@@ -146,7 +146,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Reason codes include:
+        /// Finding reason codes for functions include:
         /// </para>
         ///  <ul> <li> 
         /// <para>

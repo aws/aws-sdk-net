@@ -118,7 +118,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Finding. 
         /// <para>
-        /// The finding classification for the Auto Scaling group.
+        /// The finding classification of the Auto Scaling group.
         /// </para>
         ///  
         /// <para>

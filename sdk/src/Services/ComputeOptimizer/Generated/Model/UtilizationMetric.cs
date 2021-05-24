@@ -120,6 +120,74 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// Unit: Bytes
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance
+        /// store volumes available to the instance in a specified period of time.
+        /// </para>
+        ///  
+        /// <para>
+        /// If there are no instance store volumes, either the value is <code>0</code> or the
+        /// metric is not reported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all
+        /// instance store volumes available to the instance in a specified period of time.
+        /// </para>
+        ///  
+        /// <para>
+        /// If there are no instance store volumes, either the value is <code>0</code> or the
+        /// metric is not reported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store
+        /// volumes available to the instance. This metric is used to determine the volume of
+        /// the data the application reads from the disk of the instance. This can be used to
+        /// determine the speed of the application.
+        /// </para>
+        ///  
+        /// <para>
+        /// If there are no instance store volumes, either the value is <code>0</code> or the
+        /// metric is not reported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store
+        /// volumes available to the instance. This metric is used to determine the volume of
+        /// the data the application writes onto the disk of the instance. This can be used to
+        /// determine the speed of the application.
+        /// </para>
+        ///  
+        /// <para>
+        /// If there are no instance store volumes, either the value is <code>0</code> or the
+        /// metric is not reported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance
+        /// on all network interfaces. This metric identifies the volume of incoming network traffic
+        /// to a single instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance
+        /// on all network interfaces. This metric identifies the volume of outgoing network traffic
+        /// from a single instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the
+        /// instance on all network interfaces. This metric identifies the volume of incoming
+        /// traffic in terms of the number of packets on a single instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the
+        /// instance on all network interfaces. This metric identifies the volume of outgoing
+        /// traffic in terms of the number of packets on a single instance.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public MetricName Name

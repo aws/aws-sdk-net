@@ -313,6 +313,22 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField UtilizationMetricsCpuMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsCpuMaximum");
         /// <summary>
+        /// Constant UtilizationMetricsDiskReadBytesPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsDiskReadBytesPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsDiskReadBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsDiskReadOpsPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsDiskReadOpsPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsDiskReadOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsDiskWriteBytesPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsDiskWriteBytesPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsDiskWriteBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsDiskWriteOpsPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsDiskWriteOpsPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsDiskWriteOpsPerSecondMaximum");
+        /// <summary>
         /// Constant UtilizationMetricsEbsReadBytesPerSecondMaximum for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsReadBytesPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsReadBytesPerSecondMaximum");
@@ -332,6 +348,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsMemoryMaximum for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField UtilizationMetricsMemoryMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsMemoryMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkInBytesPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsNetworkInBytesPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsNetworkInBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkOutBytesPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsNetworkOutBytesPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsNetworkOutBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkPacketsInPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsNetworkPacketsInPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsNetworkPacketsInPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkPacketsOutPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsNetworkPacketsOutPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsNetworkPacketsOutPerSecondMaximum");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -415,6 +447,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField Finding = new ExportableInstanceField("Finding");
         /// <summary>
+        /// Constant FindingReasonCodes for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField FindingReasonCodes = new ExportableInstanceField("FindingReasonCodes");
+        /// <summary>
         /// Constant InstanceArn for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField InstanceArn = new ExportableInstanceField("InstanceArn");
@@ -450,6 +486,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsPerformanceRisk for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsPerformanceRisk = new ExportableInstanceField("RecommendationOptionsPerformanceRisk");
+        /// <summary>
+        /// Constant RecommendationOptionsPlatformDifferences for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsPlatformDifferences = new ExportableInstanceField("RecommendationOptionsPlatformDifferences");
         /// <summary>
         /// Constant RecommendationOptionsProjectedUtilizationMetricsCpuMaximum for ExportableInstanceField
         /// </summary>
@@ -487,6 +527,22 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField UtilizationMetricsCpuMaximum = new ExportableInstanceField("UtilizationMetricsCpuMaximum");
         /// <summary>
+        /// Constant UtilizationMetricsDiskReadBytesPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsDiskReadBytesPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsDiskReadBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsDiskReadOpsPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsDiskReadOpsPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsDiskReadOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsDiskWriteBytesPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsDiskWriteBytesPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsDiskWriteBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsDiskWriteOpsPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsDiskWriteOpsPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsDiskWriteOpsPerSecondMaximum");
+        /// <summary>
         /// Constant UtilizationMetricsEbsReadBytesPerSecondMaximum for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField UtilizationMetricsEbsReadBytesPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsReadBytesPerSecondMaximum");
@@ -506,6 +562,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsMemoryMaximum for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField UtilizationMetricsMemoryMaximum = new ExportableInstanceField("UtilizationMetricsMemoryMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkInBytesPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsNetworkInBytesPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsNetworkInBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkOutBytesPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsNetworkOutBytesPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsNetworkOutBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkPacketsInPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsNetworkPacketsInPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsNetworkPacketsInPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkPacketsOutPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsNetworkPacketsOutPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsNetworkPacketsOutPerSecondMaximum");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -867,6 +939,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly FilterName Finding = new FilterName("Finding");
         /// <summary>
+        /// Constant FindingReasonCodes for FilterName
+        /// </summary>
+        public static readonly FilterName FindingReasonCodes = new FilterName("FindingReasonCodes");
+        /// <summary>
         /// Constant RecommendationSourceType for FilterName
         /// </summary>
         public static readonly FilterName RecommendationSourceType = new FilterName("RecommendationSourceType");
@@ -1008,6 +1084,112 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceRecommendationFindingReasonCode.
+    /// </summary>
+    public class InstanceRecommendationFindingReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPUOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode CPUOverprovisioned = new InstanceRecommendationFindingReasonCode("CPUOverprovisioned");
+        /// <summary>
+        /// Constant CPUUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode CPUUnderprovisioned = new InstanceRecommendationFindingReasonCode("CPUUnderprovisioned");
+        /// <summary>
+        /// Constant DiskIOPSOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode DiskIOPSOverprovisioned = new InstanceRecommendationFindingReasonCode("DiskIOPSOverprovisioned");
+        /// <summary>
+        /// Constant DiskIOPSUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode DiskIOPSUnderprovisioned = new InstanceRecommendationFindingReasonCode("DiskIOPSUnderprovisioned");
+        /// <summary>
+        /// Constant DiskThroughputOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode DiskThroughputOverprovisioned = new InstanceRecommendationFindingReasonCode("DiskThroughputOverprovisioned");
+        /// <summary>
+        /// Constant DiskThroughputUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode DiskThroughputUnderprovisioned = new InstanceRecommendationFindingReasonCode("DiskThroughputUnderprovisioned");
+        /// <summary>
+        /// Constant EBSIOPSOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode EBSIOPSOverprovisioned = new InstanceRecommendationFindingReasonCode("EBSIOPSOverprovisioned");
+        /// <summary>
+        /// Constant EBSIOPSUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode EBSIOPSUnderprovisioned = new InstanceRecommendationFindingReasonCode("EBSIOPSUnderprovisioned");
+        /// <summary>
+        /// Constant EBSThroughputOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode EBSThroughputOverprovisioned = new InstanceRecommendationFindingReasonCode("EBSThroughputOverprovisioned");
+        /// <summary>
+        /// Constant EBSThroughputUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode EBSThroughputUnderprovisioned = new InstanceRecommendationFindingReasonCode("EBSThroughputUnderprovisioned");
+        /// <summary>
+        /// Constant MemoryOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode MemoryOverprovisioned = new InstanceRecommendationFindingReasonCode("MemoryOverprovisioned");
+        /// <summary>
+        /// Constant MemoryUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode MemoryUnderprovisioned = new InstanceRecommendationFindingReasonCode("MemoryUnderprovisioned");
+        /// <summary>
+        /// Constant NetworkBandwidthOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode NetworkBandwidthOverprovisioned = new InstanceRecommendationFindingReasonCode("NetworkBandwidthOverprovisioned");
+        /// <summary>
+        /// Constant NetworkBandwidthUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode NetworkBandwidthUnderprovisioned = new InstanceRecommendationFindingReasonCode("NetworkBandwidthUnderprovisioned");
+        /// <summary>
+        /// Constant NetworkPPSOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode NetworkPPSOverprovisioned = new InstanceRecommendationFindingReasonCode("NetworkPPSOverprovisioned");
+        /// <summary>
+        /// Constant NetworkPPSUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode NetworkPPSUnderprovisioned = new InstanceRecommendationFindingReasonCode("NetworkPPSUnderprovisioned");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceRecommendationFindingReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceRecommendationFindingReasonCode FindValue(string value)
+        {
+            return FindValue<InstanceRecommendationFindingReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceRecommendationFindingReasonCode(string value)
         {
             return FindValue(value);
         }
@@ -1495,6 +1677,22 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly MetricName Cpu = new MetricName("Cpu");
         /// <summary>
+        /// Constant DISK_READ_BYTES_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName DISK_READ_BYTES_PER_SECOND = new MetricName("DISK_READ_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant DISK_READ_OPS_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName DISK_READ_OPS_PER_SECOND = new MetricName("DISK_READ_OPS_PER_SECOND");
+        /// <summary>
+        /// Constant DISK_WRITE_BYTES_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName DISK_WRITE_BYTES_PER_SECOND = new MetricName("DISK_WRITE_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant DISK_WRITE_OPS_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName DISK_WRITE_OPS_PER_SECOND = new MetricName("DISK_WRITE_OPS_PER_SECOND");
+        /// <summary>
         /// Constant EBS_READ_BYTES_PER_SECOND for MetricName
         /// </summary>
         public static readonly MetricName EBS_READ_BYTES_PER_SECOND = new MetricName("EBS_READ_BYTES_PER_SECOND");
@@ -1514,6 +1712,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant Memory for MetricName
         /// </summary>
         public static readonly MetricName Memory = new MetricName("Memory");
+        /// <summary>
+        /// Constant NETWORK_IN_BYTES_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName NETWORK_IN_BYTES_PER_SECOND = new MetricName("NETWORK_IN_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant NETWORK_OUT_BYTES_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName NETWORK_OUT_BYTES_PER_SECOND = new MetricName("NETWORK_OUT_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant NETWORK_PACKETS_IN_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName NETWORK_PACKETS_IN_PER_SECOND = new MetricName("NETWORK_PACKETS_IN_PER_SECOND");
+        /// <summary>
+        /// Constant NETWORK_PACKETS_OUT_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName NETWORK_PACKETS_OUT_PER_SECOND = new MetricName("NETWORK_PACKETS_OUT_PER_SECOND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1594,6 +1808,68 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MetricStatistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PlatformDifference.
+    /// </summary>
+    public class PlatformDifference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Hypervisor for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference Hypervisor = new PlatformDifference("Hypervisor");
+        /// <summary>
+        /// Constant InstanceStoreAvailability for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference InstanceStoreAvailability = new PlatformDifference("InstanceStoreAvailability");
+        /// <summary>
+        /// Constant NetworkInterface for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference NetworkInterface = new PlatformDifference("NetworkInterface");
+        /// <summary>
+        /// Constant StorageInterface for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference StorageInterface = new PlatformDifference("StorageInterface");
+        /// <summary>
+        /// Constant VirtualizationType for PlatformDifference
+        /// </summary>
+        public static readonly PlatformDifference VirtualizationType = new PlatformDifference("VirtualizationType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlatformDifference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlatformDifference FindValue(string value)
+        {
+            return FindValue<PlatformDifference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlatformDifference(string value)
         {
             return FindValue(value);
         }

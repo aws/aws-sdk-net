@@ -76,6 +76,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.PerformanceRisk = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("platformDifferences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PlatformDifferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("projectedUtilizationMetrics", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<UtilizationMetric, UtilizationMetricUnmarshaller>(UtilizationMetricUnmarshaller.Instance);

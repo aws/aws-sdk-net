@@ -62,12 +62,16 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Performance risk is the likelihood of the recommended volume type not meeting the
-        /// performance requirement of your workload.
+        /// Performance risk is the likelihood of the recommended volume type meeting the performance
+        /// requirement of your workload.
         /// </para>
         ///  
         /// <para>
-        /// The lowest performance risk is categorized as <code>0</code>, and the highest as <code>5</code>.
+        /// The value ranges from <code>0</code> to <code>5</code>, with <code>0</code> meaning
+        /// that the recommended resource is predicted to always provide enough hardware capability.
+        /// The higher the performance risk is, the more likely you should validate whether the
+        /// recommendation will meet the performance requirements of your workload before migrating
+        /// your resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

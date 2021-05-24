@@ -63,12 +63,19 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Performance risk is the likelihood of the recommended instance type not meeting the
-        /// performance requirement of your workload.
+        /// Performance risk indicates the likelihood of the recommended instance type not meeting
+        /// the resource needs of your workload. Compute Optimizer calculates an individual performance
+        /// risk score for each specification of the recommended instance, including CPU, memory,
+        /// EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network
+        /// PPS. The performance risk of the recommended instance is calculated as the maximum
+        /// performance risk score across the analyzed resource specifications.
         /// </para>
         ///  
         /// <para>
-        /// The lowest performance risk is categorized as <code>0</code>, and the highest as <code>5</code>.
+        /// The value ranges from 0 to 5, with 0 meaning that the recommended resource is predicted
+        /// to always provide enough hardware capability. The higher the performance risk is,
+        /// the more likely you should validate whether the recommended resource meets the performance
+        /// requirements of your workload before migrating your resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

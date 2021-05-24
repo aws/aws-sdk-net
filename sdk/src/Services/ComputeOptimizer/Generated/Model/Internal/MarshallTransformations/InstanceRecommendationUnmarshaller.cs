@@ -82,6 +82,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Finding = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("findingReasonCodes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FindingReasonCodes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

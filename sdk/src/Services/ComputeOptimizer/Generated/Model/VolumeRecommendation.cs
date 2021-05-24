@@ -81,7 +81,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Finding. 
         /// <para>
-        /// The finding classification for the volume.
+        /// The finding classification of the volume.
         /// </para>
         ///  
         /// <para>

@@ -36,6 +36,7 @@ namespace Amazon.ComputeOptimizer.Model
         private string _accountId;
         private string _currentInstanceType;
         private Finding _finding;
+        private List<string> _findingReasonCodes = new List<string>();
         private string _instanceArn;
         private string _instanceName;
         private DateTime? _lastRefreshTimestamp;
@@ -83,7 +84,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Finding. 
         /// <para>
-        /// The finding classification for the instance.
+        /// The finding classification of the instance.
         /// </para>
         ///  
         /// <para>
@@ -108,8 +109,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  <b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications
         /// of your instance, such as CPU, memory, and network, meet the performance requirements
-        /// of your workload and is not over provisioned. An optimized instance runs your workloads
-        /// with optimal performance and infrastructure cost. For optimized resources, AWS Compute
+        /// of your workload and is not over provisioned. For optimized resources, AWS Compute
         /// Optimizer might recommend a new generation instance type.
         /// </para>
         ///  </li> </ul>
@@ -124,6 +124,170 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetFinding()
         {
             return this._finding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingReasonCodes. 
+        /// <para>
+        /// The reason for the finding classification of the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Finding reason codes for instances include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be
+        /// sized down while still meeting the performance requirements of your workload. This
+        /// is identified by analyzing the <code>CPUUtilization</code> metric of the current instance
+        /// during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't
+        /// meet the performance requirements of your workload and there is an alternative instance
+        /// type that provides better CPU performance. This is identified by analyzing the <code>CPUUtilization</code>
+        /// metric of the current instance during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration
+        /// can be sized down while still meeting the performance requirements of your workload.
+        /// This is identified by analyzing the memory utilization metric of the current instance
+        /// during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration
+        /// doesn't meet the performance requirements of your workload and there is an alternative
+        /// instance type that provides better memory performance. This is identified by analyzing
+        /// the memory utilization metric of the current instance during the look-back period.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Memory utilization is analyzed only for resources that have the unified CloudWatch
+        /// agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+        /// memory utilization with the Amazon CloudWatch Agent</a> in the <i>AWS Compute Optimizer
+        /// User Guide</i>. On Linux instances, Compute Optimizer analyses the <code>mem_used_percent</code>
+        /// metric in the <code>CWAgent</code> namespace, or the legacy <code>MemoryUtilization</code>
+        /// metric in the <code>System/Linux</code> namespace. On Windows instances, Compute Optimizer
+        /// analyses the <code>Memory % Committed Bytes In Use</code> metric in the <code>CWAgent</code>
+        /// namespace.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
+        /// configuration can be sized down while still meeting the performance requirements of
+        /// your workload. This is identified by analyzing the <code>VolumeReadOps</code> and
+        /// <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current instance
+        /// during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
+        /// configuration doesn't meet the performance requirements of your workload and there
+        /// is an alternative instance type that provides better EBS throughput performance. This
+        /// is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code>
+        /// metrics of EBS volumes attached to the current instance during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
+        /// can be sized down while still meeting the performance requirements of your workload.
+        /// This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>
+        /// metric of EBS volumes attached to the current instance during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration
+        /// doesn't meet the performance requirements of your workload and there is an alternative
+        /// instance type that provides better EBS IOPS performance. This is identified by analyzing
+        /// the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metric of EBS volumes
+        /// attached to the current instance during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth
+        /// configuration can be sized down while still meeting the performance requirements of
+        /// your workload. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code>
+        /// metrics of the current instance during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth
+        /// configuration doesn't meet the performance requirements of your workload and there
+        /// is an alternative instance type that provides better network bandwidth performance.
+        /// This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code>
+        /// metrics of the current instance during the look-back period. This finding reason happens
+        /// when the <code>NetworkIn</code> or <code>NetworkOut</code> performance of an instance
+        /// is impacted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets
+        /// per second) configuration can be sized down while still meeting the performance requirements
+        /// of your workload. This is identified by analyzing the <code>NetworkPacketsIn</code>
+        /// and <code>NetworkPacketsIn</code> metrics of the current instance during the look-back
+        /// period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets
+        /// per second) configuration doesn't meet the performance requirements of your workload
+        /// and there is an alternative instance type that provides better network PPS performance.
+        /// This is identified by analyzing the <code>NetworkPacketsIn</code> and <code>NetworkPacketsIn</code>
+        /// metrics of the current instance during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration
+        /// can be sized down while still meeting the performance requirements of your workload.
+        /// This is identified by analyzing the <code>DiskReadOps</code> and <code>DiskWriteOps</code>
+        /// metrics of the current instance during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration
+        /// doesn't meet the performance requirements of your workload and there is an alternative
+        /// instance type that provides better disk IOPS performance. This is identified by analyzing
+        /// the <code>DiskReadOps</code> and <code>DiskWriteOps</code> metrics of the current
+        /// instance during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput
+        /// configuration can be sized down while still meeting the performance requirements of
+        /// your workload. This is identified by analyzing the <code>DiskReadBytes</code> and
+        /// <code>DiskWriteBytes</code> metrics of the current instance during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput
+        /// configuration doesn't meet the performance requirements of your workload and there
+        /// is an alternative instance type that provides better disk throughput performance.
+        /// This is identified by analyzing the <code>DiskReadBytes</code> and <code>DiskWriteBytes</code>
+        /// metrics of the current instance during the look-back period.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List
+        /// the available CloudWatch metrics for your instances</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>. For more information about EBS volume metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html">Amazon
+        /// CloudWatch metrics for Amazon EBS</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<string> FindingReasonCodes
+        {
+            get { return this._findingReasonCodes; }
+            set { this._findingReasonCodes = value; }
+        }
+
+        // Check to see if FindingReasonCodes property is set
+        internal bool IsSetFindingReasonCodes()
+        {
+            return this._findingReasonCodes != null && this._findingReasonCodes.Count > 0; 
         }
 
         /// <summary>

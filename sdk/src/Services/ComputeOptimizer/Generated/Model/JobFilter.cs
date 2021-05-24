@@ -30,10 +30,14 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Describes a filter that returns a more specific list of recommendation export jobs.
+    /// Use this filter with the <code>DescribeRecommendationExportJobs</code> action.
     /// 
     ///  
     /// <para>
-    /// This filter is used with the <code>DescribeRecommendationExportJobs</code> action.
+    /// You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code>
+    /// action, <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code>
+    /// action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code>
+    /// and <code>GetEC2InstanceRecommendations</code> actions.
     /// </para>
     /// </summary>
     public partial class JobFilter
@@ -81,14 +85,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified
-        /// the <code>name</code> parameter as <code>ResourceType</code>. There is no filter for
-        /// EBS volumes because volume recommendations cannot be exported at this time.
+        /// Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the
+        /// <code>name</code> parameter as <code>ResourceType</code>. There is no filter for EBS
+        /// volumes because volume recommendations cannot be exported at this time.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>
-        /// if you specified the <code>name</code> parameter as <code>JobStatus</code>.
+        /// if you specify the <code>name</code> parameter as <code>JobStatus</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
