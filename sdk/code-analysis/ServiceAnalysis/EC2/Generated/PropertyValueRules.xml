@@ -11,6 +11,10 @@
     <max>1283</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CreateCapacityReservationRequest.OutpostArn</property>
+    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
@@ -513,6 +517,10 @@
     <property>Amazon.EC2.Model.AssociatedRole.AssociatedRoleArn</property>
     <min>1</min>
     <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CapacityReservation.OutpostArn</property>
+    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CoipPool.PoolArn</property>

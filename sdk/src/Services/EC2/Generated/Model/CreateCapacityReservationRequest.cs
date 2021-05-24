@@ -73,6 +73,7 @@ namespace Amazon.EC2.Model
         private InstanceMatchCriteria _instanceMatchCriteria;
         private CapacityReservationInstancePlatform _instancePlatform;
         private string _instanceType;
+        private string _outpostArn;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private CapacityReservationTenancy _tenancy;
 
@@ -330,6 +331,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

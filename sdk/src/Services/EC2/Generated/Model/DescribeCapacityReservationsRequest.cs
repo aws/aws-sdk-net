@@ -102,6 +102,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
+        ///  <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which
+        /// the Capacity Reservation was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation
         /// can be in one of the following states:
         /// </para>
