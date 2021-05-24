@@ -71,6 +71,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomFederationProviderUrl())
+                {
+                    context.Writer.WritePropertyName("CustomFederationProviderUrl");
+                    context.Writer.Write(publicRequest.CustomFederationProviderUrl);
+                }
+
                 if(publicRequest.IsSetCustomPermissionsName())
                 {
                     context.Writer.WritePropertyName("CustomPermissionsName");
@@ -81,6 +87,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Email");
                     context.Writer.Write(publicRequest.Email);
+                }
+
+                if(publicRequest.IsSetExternalLoginFederationProviderType())
+                {
+                    context.Writer.WritePropertyName("ExternalLoginFederationProviderType");
+                    context.Writer.Write(publicRequest.ExternalLoginFederationProviderType);
+                }
+
+                if(publicRequest.IsSetExternalLoginId())
+                {
+                    context.Writer.WritePropertyName("ExternalLoginId");
+                    context.Writer.Write(publicRequest.ExternalLoginId);
                 }
 
                 if(publicRequest.IsSetIamArn())

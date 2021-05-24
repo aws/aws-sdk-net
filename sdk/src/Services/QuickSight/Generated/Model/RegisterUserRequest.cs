@@ -36,8 +36,11 @@ namespace Amazon.QuickSight.Model
     public partial class RegisterUserRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
+        private string _customFederationProviderUrl;
         private string _customPermissionsName;
         private string _email;
+        private string _externalLoginFederationProviderType;
+        private string _externalLoginId;
         private string _iamArn;
         private IdentityType _identityType;
         private string _awsNamespace;
@@ -63,6 +66,27 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomFederationProviderUrl. 
+        /// <para>
+        /// The URL of the custom OpenID Connect (OIDC) provider that provides identity to let
+        /// a user federate into QuickSight with an associated AWS Identity and Access Management
+        /// (IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code>
+        /// parameter is set to <code>CUSTOM_OIDC</code>.
+        /// </para>
+        /// </summary>
+        public string CustomFederationProviderUrl
+        {
+            get { return this._customFederationProviderUrl; }
+            set { this._customFederationProviderUrl = value; }
+        }
+
+        // Check to see if CustomFederationProviderUrl property is set
+        internal bool IsSetCustomFederationProviderUrl()
+        {
+            return this._customFederationProviderUrl != null;
         }
 
         /// <summary>
@@ -142,6 +166,57 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetEmail()
         {
             return this._email != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalLoginFederationProviderType. 
+        /// <para>
+        /// The type of supported external login provider that provides identity to let a user
+        /// federate into Amazon QuickSight with an associated AWS Identity and Access Management
+        /// (IAM) role. The type of supported external login provider can be one of the following.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+        /// When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl"
+        /// parameter which is only needed when the external provider is custom.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code>
+        /// type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom
+        /// OIDC provider URL.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ExternalLoginFederationProviderType
+        {
+            get { return this._externalLoginFederationProviderType; }
+            set { this._externalLoginFederationProviderType = value; }
+        }
+
+        // Check to see if ExternalLoginFederationProviderType property is set
+        internal bool IsSetExternalLoginFederationProviderType()
+        {
+            return this._externalLoginFederationProviderType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalLoginId. 
+        /// <para>
+        /// The identity ID for a user in the external login provider.
+        /// </para>
+        /// </summary>
+        public string ExternalLoginId
+        {
+            get { return this._externalLoginId; }
+            set { this._externalLoginId = value; }
+        }
+
+        // Check to see if ExternalLoginId property is set
+        internal bool IsSetExternalLoginId()
+        {
+            return this._externalLoginId != null;
         }
 
         /// <summary>

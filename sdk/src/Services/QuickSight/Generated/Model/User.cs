@@ -37,6 +37,9 @@ namespace Amazon.QuickSight.Model
         private string _arn;
         private string _customPermissionsName;
         private string _email;
+        private string _externalLoginFederationProviderType;
+        private string _externalLoginFederationProviderUrl;
+        private string _externalLoginId;
         private IdentityType _identityType;
         private string _principalId;
         private UserRole _role;
@@ -115,6 +118,71 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetEmail()
         {
             return this._email != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalLoginFederationProviderType. 
+        /// <para>
+        /// The type of supported external login provider that provides identity to let the user
+        /// federate into Amazon QuickSight with an associated IAM role. The type can be one of
+        /// the following.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ExternalLoginFederationProviderType
+        {
+            get { return this._externalLoginFederationProviderType; }
+            set { this._externalLoginFederationProviderType = value; }
+        }
+
+        // Check to see if ExternalLoginFederationProviderType property is set
+        internal bool IsSetExternalLoginFederationProviderType()
+        {
+            return this._externalLoginFederationProviderType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalLoginFederationProviderUrl. 
+        /// <para>
+        /// The URL of the external login provider.
+        /// </para>
+        /// </summary>
+        public string ExternalLoginFederationProviderUrl
+        {
+            get { return this._externalLoginFederationProviderUrl; }
+            set { this._externalLoginFederationProviderUrl = value; }
+        }
+
+        // Check to see if ExternalLoginFederationProviderUrl property is set
+        internal bool IsSetExternalLoginFederationProviderUrl()
+        {
+            return this._externalLoginFederationProviderUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalLoginId. 
+        /// <para>
+        /// The identity ID for the user in the external login provider.
+        /// </para>
+        /// </summary>
+        public string ExternalLoginId
+        {
+            get { return this._externalLoginId; }
+            set { this._externalLoginId = value; }
+        }
+
+        // Check to see if ExternalLoginId property is set
+        internal bool IsSetExternalLoginId()
+        {
+            return this._externalLoginId != null;
         }
 
         /// <summary>

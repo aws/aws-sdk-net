@@ -88,6 +88,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Email = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExternalLoginFederationProviderType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExternalLoginFederationProviderType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExternalLoginFederationProviderUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExternalLoginFederationProviderUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExternalLoginId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExternalLoginId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IdentityType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
