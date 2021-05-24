@@ -1,3 +1,20 @@
+### 3.7.40.0 (2021-05-24 18:16 UTC)
+* CloudWatchLogs (3.7.1.0)
+	* This release provides dimensions and unit support for metric filters.
+* ComputeOptimizer (3.7.2.0)
+	* Adds support for 1) additional instance types, 2) additional instance metrics, 3) finding reasons for instance recommendations, and 4) platform differences between a current instance and a recommended instance type.
+* CostExplorer (3.7.2.0)
+	* Introduced FindingReasonCodes, PlatformDifferences, DiskResourceUtilization and NetworkResourceUtilization to GetRightsizingRecommendation action
+* EC2 (3.7.7.0)
+	* This release adds support for creating and managing EC2 On-Demand Capacity Reservations on Outposts.
+* QuickSight (3.7.2.0)
+	* Add new parameters on RegisterUser and UpdateUser APIs to assign or update external ID associated to QuickSight users federated through web identity.
+* Core 3.7.0.27
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.39.0 (2021-05-21 18:14 UTC)
 * ElasticFileSystem (3.7.1.0)
 	* EFS now supports account preferences. Utilizing the new capability, users can customize some aspects of their experience using EFS APIs and the EFS Console. The first preference clients are able to set is whether to start using longer File System and Mount Target IDs before EFS migrates to such IDs.
