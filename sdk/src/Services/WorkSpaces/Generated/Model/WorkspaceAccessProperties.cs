@@ -38,6 +38,7 @@ namespace Amazon.WorkSpaces.Model
         private AccessPropertyValue _deviceTypeAndroid;
         private AccessPropertyValue _deviceTypeChromeOs;
         private AccessPropertyValue _deviceTypeIos;
+        private AccessPropertyValue _deviceTypeLinux;
         private AccessPropertyValue _deviceTypeOsx;
         private AccessPropertyValue _deviceTypeWeb;
         private AccessPropertyValue _deviceTypeWindows;
@@ -95,6 +96,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetDeviceTypeIos()
         {
             return this._deviceTypeIos != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceTypeLinux. 
+        /// <para>
+        /// Indicates whether users can use Linux clients to access their WorkSpaces.
+        /// </para>
+        /// </summary>
+        public AccessPropertyValue DeviceTypeLinux
+        {
+            get { return this._deviceTypeLinux; }
+            set { this._deviceTypeLinux = value; }
+        }
+
+        // Check to see if DeviceTypeLinux property is set
+        internal bool IsSetDeviceTypeLinux()
+        {
+            return this._deviceTypeLinux != null;
         }
 
         /// <summary>

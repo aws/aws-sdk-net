@@ -139,7 +139,7 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// To add tags at the same time that you're creating the bundle, you must create an IAM
+        /// To add tags at the same time when you're creating the bundle, you must create an IAM
         /// policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.
         /// 
         /// </para>

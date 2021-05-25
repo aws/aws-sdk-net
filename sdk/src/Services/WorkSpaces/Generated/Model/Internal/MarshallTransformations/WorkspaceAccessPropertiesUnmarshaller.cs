@@ -82,6 +82,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceTypeIos = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeviceTypeLinux", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeviceTypeLinux = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceTypeOsx", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

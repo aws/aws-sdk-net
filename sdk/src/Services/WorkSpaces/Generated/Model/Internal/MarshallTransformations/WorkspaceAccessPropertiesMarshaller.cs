@@ -63,6 +63,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DeviceTypeIos);
             }
 
+            if(requestObject.IsSetDeviceTypeLinux())
+            {
+                context.Writer.WritePropertyName("DeviceTypeLinux");
+                context.Writer.Write(requestObject.DeviceTypeLinux);
+            }
+
             if(requestObject.IsSetDeviceTypeOsx())
             {
                 context.Writer.WritePropertyName("DeviceTypeOsx");
