@@ -88,19 +88,20 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectoryMappings. 
         /// <para>
-        /// Specifies the logical directory mappings that specify what Amazon S3 paths and keys
-        /// should be visible to your user and how you want to make them visible. You will need
-        /// to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where <code>Entry</code>
-        /// shows how the path is made visible and <code>Target</code> is the actual Amazon S3
-        /// path. If you only specify a target, it will be displayed as is. You will need to also
-        /// make sure that your AWS Identity and Access Management (IAM) role provides access
-        /// to paths in <code>Target</code>.
+        /// Specifies the logical directory mappings that specify what Amazon S3 or EFS paths
+        /// and keys should be visible to your user and how you want to make them visible. You
+        /// will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+        /// <code>Entry</code> shows how the path is made visible and <code>Target</code> is the
+        /// actual Amazon S3 or EFS path. If you only specify a target, it will be displayed as
+        /// is. You will need to also make sure that your AWS Identity and Access Management (IAM)
+        /// role provides access to paths in <code>Target</code>.
         /// </para>
         ///  
         /// <para>
         /// In most cases, you can use this value instead of the scope-down policy to lock your
-        /// user down to the designated home directory ("chroot"). To do this, you can set <code>Entry</code>
-        /// to '/' and set <code>Target</code> to the HomeDirectory parameter value.
+        /// user down to the designated home directory ("<code>chroot</code>"). To do this, you
+        /// can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+        /// parameter value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -121,10 +122,10 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Specifies the type of landing directory (folder) you mapped for your users to see
         /// when they log into the file transfer protocol-enabled server. If you set it to <code>PATH</code>,
-        /// the user will see the absolute Amazon S3 bucket paths as is in their file transfer
+        /// the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
         /// protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings
-        /// in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths
-        /// visible to your users.
+        /// in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
+        /// paths visible to your users.
         /// </para>
         /// </summary>
         public HomeDirectoryType HomeDirectoryType
@@ -159,7 +160,15 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PosixProfile.
+        /// Gets and sets the property PosixProfile. 
+        /// <para>
+        /// Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
+        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that
+        /// controls your users' access to your Amazon Elastic File System (Amazon EFS) file systems.
+        /// The POSIX permissions that are set on files and directories in your file system determine
+        /// the level of access your users get when transferring files into and out of your Amazon
+        /// EFS file systems.
+        /// </para>
         /// </summary>
         public PosixProfile PosixProfile
         {
@@ -176,11 +185,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// Specifies the IAM role that controls your users' access to your Amazon S3 bucket.
-        /// The policies attached to this role will determine the level of access you want to
-        /// provide your users when transferring files into and out of your Amazon S3 bucket or
-        /// buckets. The IAM role should also contain a trust relationship that allows a server
-        /// to access your resources when servicing your users' transfer requests.
+        /// The IAM role that controls your users' access to your Amazon S3 bucket. The policies
+        /// attached to this role will determine the level of access you want to provide your
+        /// users when transferring files into and out of your Amazon S3 bucket or buckets. The
+        /// IAM role should also contain a trust relationship that allows a server to access your
+        /// resources when servicing your users' transfer requests.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

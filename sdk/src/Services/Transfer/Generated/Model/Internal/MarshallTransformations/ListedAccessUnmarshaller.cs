@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IdentityProviderDetails Object
+    /// Response Unmarshaller for ListedAccess Object
     /// </summary>  
-    public class IdentityProviderDetailsUnmarshaller : IUnmarshaller<IdentityProviderDetails, XmlUnmarshallerContext>, IUnmarshaller<IdentityProviderDetails, JsonUnmarshallerContext>
+    public class ListedAccessUnmarshaller : IUnmarshaller<ListedAccess, XmlUnmarshallerContext>, IUnmarshaller<ListedAccess, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        IdentityProviderDetails IUnmarshaller<IdentityProviderDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ListedAccess IUnmarshaller<ListedAccess, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public IdentityProviderDetails Unmarshall(JsonUnmarshallerContext context)
+        public ListedAccess Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IdentityProviderDetails unmarshalledObject = new IdentityProviderDetails();
+            ListedAccess unmarshalledObject = new ListedAccess();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DirectoryId", targetDepth))
+                if (context.TestExpression("ExternalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InvocationRole", targetDepth))
+                if (context.TestExpression("HomeDirectory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InvocationRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HomeDirectory = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Url", targetDepth))
+                if (context.TestExpression("HomeDirectoryType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HomeDirectoryType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Role", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Role = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         }
 
 
-        private static IdentityProviderDetailsUnmarshaller _instance = new IdentityProviderDetailsUnmarshaller();        
+        private static ListedAccessUnmarshaller _instance = new ListedAccessUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IdentityProviderDetailsUnmarshaller Instance
+        public static ListedAccessUnmarshaller Instance
         {
             get
             {

@@ -29,7 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// 
+    /// The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>),
+    /// and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users'
+    /// access to your Amazon EFS file systems. The POSIX permissions that are set on files
+    /// and directories in your file system determine the level of access your users get when
+    /// transferring files into and out of your Amazon EFS file systems.
     /// </summary>
     public partial class PosixProfile
     {
@@ -38,7 +42,10 @@ namespace Amazon.Transfer.Model
         private long? _uid;
 
         /// <summary>
-        /// Gets and sets the property Gid.
+        /// Gets and sets the property Gid. 
+        /// <para>
+        /// The POSIX group ID used for all EFS operations by this user.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
         public long Gid
@@ -54,7 +61,10 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecondaryGids.
+        /// Gets and sets the property SecondaryGids. 
+        /// <para>
+        /// The secondary POSIX group IDs used for all EFS operations by this user.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16)]
         public List<long> SecondaryGids
@@ -70,7 +80,10 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Uid.
+        /// Gets and sets the property Uid. 
+        /// <para>
+        /// The POSIX user ID used for all EFS operations by this user.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
         public long Uid

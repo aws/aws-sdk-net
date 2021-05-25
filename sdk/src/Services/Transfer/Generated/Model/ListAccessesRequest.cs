@@ -29,41 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify.
-    /// The resource can be a user, server, or role.
+    /// Container for the parameters to the ListAccesses operation.
+    /// Lists the details for all the accesses you have on your server.
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonTransferRequest
+    public partial class ListAccessesRequest : AmazonTransferRequest
     {
-        private string _arn;
         private int? _maxResults;
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN
-        /// is an identifier for a specific AWS resource, such as a server, user, or role.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=1600)]
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
+        private string _serverId;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specifies the number of tags to return as a response to the <code>ListTagsForResource</code>
-        /// request.
+        /// Specifies the maximum number of access SIDs to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -82,10 +60,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When you request additional results from the <code>ListTagsForResource</code> operation,
-        /// a <code>NextToken</code> parameter is returned in the input. You can then pass in
-        /// a subsequent command to the <code>NextToken</code> parameter to continue listing additional
-        /// tags.
+        /// When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code>
+        /// parameter is returned in the output. You can then pass in a subsequent command to
+        /// the <code>NextToken</code> parameter to continue listing additional accesses.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]
@@ -99,6 +76,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerId. 
+        /// <para>
+        /// A system-assigned unique identifier for a server that has users assigned to it.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=19, Max=19)]
+        public string ServerId
+        {
+            get { return this._serverId; }
+            set { this._serverId = value; }
+        }
+
+        // Check to see if ServerId property is set
+        internal bool IsSetServerId()
+        {
+            return this._serverId != null;
         }
 
     }

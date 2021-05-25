@@ -110,6 +110,18 @@ namespace Amazon.Transfer.Model
         /// server to act on a user's behalf. It allows the server to inherit the trust relationship
         /// that enables that user to perform file operations to their Amazon S3 bucket.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The IAM role that controls your users' access to your Amazon S3 bucket for servers
+        /// with <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policies attached to this role determine the level of access you want to provide
+        /// your users when transferring files into and out of your S3 buckets or EFS file systems.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string Role

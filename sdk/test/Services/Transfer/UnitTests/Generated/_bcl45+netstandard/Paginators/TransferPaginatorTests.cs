@@ -42,6 +42,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Transfer")]
+        public void ListAccessesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAccessesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAccessesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAccessesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAccesses(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAccesses(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Transfer")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAccessesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAccessesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAccessesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAccesses(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAccesses(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Transfer")]
         public void ListSecurityPoliciesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListSecurityPoliciesRequest>();

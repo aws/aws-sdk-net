@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IdentityProviderDetails Object
+    /// Response Unmarshaller for DescribedAccess Object
     /// </summary>  
-    public class IdentityProviderDetailsUnmarshaller : IUnmarshaller<IdentityProviderDetails, XmlUnmarshallerContext>, IUnmarshaller<IdentityProviderDetails, JsonUnmarshallerContext>
+    public class DescribedAccessUnmarshaller : IUnmarshaller<DescribedAccess, XmlUnmarshallerContext>, IUnmarshaller<DescribedAccess, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        IdentityProviderDetails IUnmarshaller<IdentityProviderDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DescribedAccess IUnmarshaller<DescribedAccess, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,57 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public IdentityProviderDetails Unmarshall(JsonUnmarshallerContext context)
+        public DescribedAccess Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IdentityProviderDetails unmarshalledObject = new IdentityProviderDetails();
+            DescribedAccess unmarshalledObject = new DescribedAccess();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DirectoryId", targetDepth))
+                if (context.TestExpression("ExternalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InvocationRole", targetDepth))
+                if (context.TestExpression("HomeDirectory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InvocationRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HomeDirectory = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Url", targetDepth))
+                if (context.TestExpression("HomeDirectoryMappings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HomeDirectoryMapEntry, HomeDirectoryMapEntryUnmarshaller>(HomeDirectoryMapEntryUnmarshaller.Instance);
+                    unmarshalledObject.HomeDirectoryMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HomeDirectoryType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HomeDirectoryType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Policy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Policy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PosixProfile", targetDepth))
+                {
+                    var unmarshaller = PosixProfileUnmarshaller.Instance;
+                    unmarshalledObject.PosixProfile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Role", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Role = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +112,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         }
 
 
-        private static IdentityProviderDetailsUnmarshaller _instance = new IdentityProviderDetailsUnmarshaller();        
+        private static DescribedAccessUnmarshaller _instance = new DescribedAccessUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IdentityProviderDetailsUnmarshaller Instance
+        public static DescribedAccessUnmarshaller Instance
         {
             get
             {

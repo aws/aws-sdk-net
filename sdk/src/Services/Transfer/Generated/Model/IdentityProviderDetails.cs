@@ -35,8 +35,28 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class IdentityProviderDetails
     {
+        private string _directoryId;
         private string _invocationRole;
         private string _url;
+
+        /// <summary>
+        /// Gets and sets the property DirectoryId. 
+        /// <para>
+        /// The identifier of the AWS Directory Service directory that you want to stop sharing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string DirectoryId
+        {
+            get { return this._directoryId; }
+            set { this._directoryId = value; }
+        }
+
+        // Check to see if DirectoryId property is set
+        internal bool IsSetDirectoryId()
+        {
+            return this._directoryId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InvocationRole. 

@@ -62,7 +62,10 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Domain.
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// Specifies the domain of the storage system that is used for file transfers.
+        /// </para>
         /// </summary>
         public Domain Domain
         {
@@ -99,9 +102,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
         /// Specifies the authentication method used to validate a user for a server that was
-        /// specified. This can include Secure Shell (SSH), user name and password combinations,
-        /// or your own custom authentication method. Valid values include <code>SERVICE_MANAGED</code>
-        /// or <code>API_GATEWAY</code>.
+        /// specified. This can include Secure Shell (SSH), Active Directory groups, user name
+        /// and password combinations, or your own custom authentication method. 
         /// </para>
         /// </summary>
         public IdentityProviderType IdentityProviderType

@@ -36,6 +36,14 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Paginator for ListAccesses operation
+        ///</summary>
+        public IListAccessesPaginator ListAccesses(ListAccessesRequest request) 
+        {
+            return new ListAccessesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityPolicies operation
         ///</summary>
         public IListSecurityPoliciesPaginator ListSecurityPolicies(ListSecurityPoliciesRequest request) 

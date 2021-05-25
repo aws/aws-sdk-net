@@ -89,7 +89,10 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Domain.
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// Specifies the domain of the storage system that is used for file transfers.
+        /// </para>
         /// </summary>
         public Domain Domain
         {
@@ -165,7 +168,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property IdentityProviderDetails. 
         /// <para>
         /// Specifies information to call a customer-supplied authentication API. This field is
-        /// not populated when the <code>IdentityProviderType</code> of a server is <code>SERVICE_MANAGED</code>.
+        /// not populated when the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code>
+        /// or <code>SERVICE_MANAGED</code>.
         /// </para>
         /// </summary>
         public IdentityProviderDetails IdentityProviderDetails
@@ -183,10 +187,13 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
-        /// Specifies the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>
-        /// means that you are using this server to store and access user credentials within the
-        /// service. A value of <code>API_GATEWAY</code> indicates that you have integrated an
-        /// API Gateway endpoint that will be invoked for authenticating your user into the service.
+        /// Specifies the mode of authentication method enabled for this service. A value of <code>AWS_DIRECTORY_SERVICE</code>
+        /// means that you are providing access to Active Directory groups in AWS Managed Active
+        /// Directory or Microsoft Active Directory in your on-premises environment or in AWS
+        /// using AD Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using
+        /// this server to store and access user credentials within the service. A value of <code>API_GATEWAY</code>
+        /// indicates that you have integrated an API Gateway endpoint that will be invoked for
+        /// authenticating your user into the service.
         /// </para>
         /// </summary>
         public IdentityProviderType IdentityProviderType
@@ -205,8 +212,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property LoggingRole. 
         /// <para>
         /// Specifies the AWS Identity and Access Management (IAM) role that allows a server to
-        /// turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity can
-        /// be viewed in your CloudWatch logs.
+        /// turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+        /// activity can be viewed in your CloudWatch logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

@@ -189,6 +189,10 @@ namespace Amazon.Transfer
         /// </summary>
         public static readonly IdentityProviderType API_GATEWAY = new IdentityProviderType("API_GATEWAY");
         /// <summary>
+        /// Constant AWS_DIRECTORY_SERVICE for IdentityProviderType
+        /// </summary>
+        public static readonly IdentityProviderType AWS_DIRECTORY_SERVICE = new IdentityProviderType("AWS_DIRECTORY_SERVICE");
+        /// <summary>
         /// Constant SERVICE_MANAGED for IdentityProviderType
         /// </summary>
         public static readonly IdentityProviderType SERVICE_MANAGED = new IdentityProviderType("SERVICE_MANAGED");
