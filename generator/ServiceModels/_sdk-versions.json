@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.40.0",
+    "ProductVersion" : "3.7.41.0",
     "CoreVersion"    : "3.7.0.27",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -386,7 +386,7 @@
             "InPreview"               : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.7.0.26",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.27"
@@ -466,7 +466,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.7.1.22",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.27"
@@ -1258,7 +1258,7 @@
             "InPreview"               : false
         },
         "Transfer"                        : {
-            "Version" : "3.7.0.26",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.27"

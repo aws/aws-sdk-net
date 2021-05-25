@@ -1,3 +1,11 @@
+### 3.7.41.0 (2021-05-25 18:12 UTC)
+* IoT (3.7.2.0)
+	* This release includes support for a new feature: Job templates for AWS IoT Device Management Jobs. The release includes job templates as a new resource and APIs for managing job templates.
+* Transfer (3.7.1.0)
+	* AWS Transfer Family customers can now use AWS Managed Active Directory or AD Connector to authenticate their end users, enabling seamless migration of file transfer workflows that rely on AD authentication, without changing end users' credentials or needing a custom authorizer.
+* WorkSpaces (3.7.1.0)
+	* Adds support for Linux device types in WorkspaceAccessProperties
+
 ### 3.7.40.0 (2021-05-24 18:16 UTC)
 * CloudWatchLogs (3.7.1.0)
 	* This release provides dimensions and unit support for metric filters.
