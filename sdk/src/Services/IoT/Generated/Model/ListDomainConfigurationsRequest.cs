@@ -32,12 +32,6 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the ListDomainConfigurations operation.
     /// Gets a list of domain configurations for the user. This list is sorted alphabetically
     /// by domain configuration name.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The domain configuration feature is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ListDomainConfigurationsRequest : AmazonIoTRequest
     {

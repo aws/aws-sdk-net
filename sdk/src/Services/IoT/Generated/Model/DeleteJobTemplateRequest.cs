@@ -29,30 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDomainConfiguration operation.
-    /// Deletes the specified domain configuration.
+    /// Container for the parameters to the DeleteJobTemplate operation.
+    /// Deletes the specified job template.
     /// </summary>
-    public partial class DeleteDomainConfigurationRequest : AmazonIoTRequest
+    public partial class DeleteJobTemplateRequest : AmazonIoTRequest
     {
-        private string _domainConfigurationName;
+        private string _jobTemplateId;
 
         /// <summary>
-        /// Gets and sets the property DomainConfigurationName. 
+        /// Gets and sets the property JobTemplateId. 
         /// <para>
-        /// The name of the domain configuration to be deleted.
+        /// The unique identifier of the job template to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string DomainConfigurationName
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string JobTemplateId
         {
-            get { return this._domainConfigurationName; }
-            set { this._domainConfigurationName = value; }
+            get { return this._jobTemplateId; }
+            set { this._jobTemplateId = value; }
         }
 
-        // Check to see if DomainConfigurationName property is set
-        internal bool IsSetDomainConfigurationName()
+        // Check to see if JobTemplateId property is set
+        internal bool IsSetJobTemplateId()
         {
-            return this._domainConfigurationName != null;
+            return this._jobTemplateId != null;
         }
 
     }

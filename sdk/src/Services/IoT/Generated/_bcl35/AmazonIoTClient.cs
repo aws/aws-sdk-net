@@ -2260,12 +2260,6 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a domain configuration.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The domain configuration feature is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomainConfiguration service method.</param>
         /// 
@@ -2483,6 +2477,78 @@ namespace Amazon.IoT
         public virtual CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateJobTemplate
+
+        /// <summary>
+        /// Creates a job template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateJobTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// A resource with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual CreateJobTemplateResponse CreateJobTemplate(CreateJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJobTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual IAsyncResult BeginCreateJobTemplate(CreateJobTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJobTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateJobTemplateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual CreateJobTemplateResponse EndCreateJobTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateJobTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -4614,12 +4680,6 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the specified domain configuration.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The domain configuration feature is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainConfiguration service method.</param>
         /// 
@@ -4907,6 +4967,72 @@ namespace Amazon.IoT
         public virtual DeleteJobExecutionResponse EndDeleteJobExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteJobExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteJobTemplate
+
+        /// <summary>
+        /// Deletes the specified job template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJobTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual DeleteJobTemplateResponse DeleteJobTemplate(DeleteJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTemplate operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJobTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDeleteJobTemplate(DeleteJobTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJobTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteJobTemplateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual DeleteJobTemplateResponse EndDeleteJobTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteJobTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -7297,12 +7423,6 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets summary information about a domain configuration.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The domain configuration feature is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomainConfiguration service method.</param>
         /// 
@@ -7722,6 +7842,72 @@ namespace Amazon.IoT
         public virtual DescribeJobExecutionResponse EndDescribeJobExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeJobTemplate
+
+        /// <summary>
+        /// Returns information about a job template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJobTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual DescribeJobTemplateResponse DescribeJobTemplate(DescribeJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobTemplate operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJobTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDescribeJobTemplate(DescribeJobTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobTemplate.</param>
+        /// 
+        /// <returns>Returns a  DescribeJobTemplateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual DescribeJobTemplateResponse EndDescribeJobTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeJobTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -11318,12 +11504,6 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets a list of domain configurations for the user. This list is sorted alphabetically
         /// by domain configuration name.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The domain configuration feature is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainConfigurations service method.</param>
         /// 
@@ -11652,6 +11832,69 @@ namespace Amazon.IoT
         public virtual ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListJobTemplates
+
+        /// <summary>
+        /// Returns a list of job templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListJobTemplates service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual ListJobTemplatesResponse ListJobTemplates(ListJobTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual IAsyncResult BeginListJobTemplates(ListJobTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListJobTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListJobTemplatesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual ListJobTemplatesResponse EndListJobTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListJobTemplatesResponse>(asyncResult);
         }
 
         #endregion
@@ -16587,12 +16830,6 @@ namespace Amazon.IoT
         /// <summary>
         /// Updates values stored in the domain configuration. Domain configurations for default
         /// endpoints can't be updated.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The domain configuration feature is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfiguration service method.</param>
         /// 

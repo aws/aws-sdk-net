@@ -32,12 +32,6 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the UpdateDomainConfiguration operation.
     /// Updates values stored in the domain configuration. Domain configurations for default
     /// endpoints can't be updated.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The domain configuration feature is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class UpdateDomainConfigurationRequest : AmazonIoTRequest
     {

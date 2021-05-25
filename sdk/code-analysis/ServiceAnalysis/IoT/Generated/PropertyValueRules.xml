@@ -340,6 +340,12 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateJobRequest.JobTemplateArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateJobRequest.NamespaceId</property>
     <min>1</min>
     <max>64</max>
@@ -352,6 +358,38 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateJobResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateJobTemplateRequest.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateJobTemplateRequest.Document</property>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateJobTemplateRequest.DocumentSource</property>
+    <min>1</min>
+    <max>1350</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateJobTemplateRequest.JobTemplateId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateJobTemplateResponse.JobTemplateArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateJobTemplateResponse.JobTemplateId</property>
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
@@ -707,6 +745,12 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteJobTemplateRequest.JobTemplateId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DeleteMitigationActionRequest.ActionName</property>
     <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
@@ -957,6 +1001,38 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeJobTemplateRequest.JobTemplateId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeJobTemplateResponse.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeJobTemplateResponse.Document</property>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeJobTemplateResponse.DocumentSource</property>
+    <min>1</min>
+    <max>1350</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeJobTemplateResponse.JobTemplateArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeJobTemplateResponse.JobTemplateId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeMitigationActionRequest.ActionName</property>
@@ -1573,6 +1649,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListJobTemplatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListMitigationActionsRequest.MaxResults</property>
@@ -2808,6 +2889,12 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.Job.JobTemplateArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.Job.NamespaceId</property>
     <min>1</min>
     <max>64</max>
@@ -2826,7 +2913,6 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.JobExecutionsRolloutConfig.MaximumPerMinute</property>
     <min>1</min>
-    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.JobExecutionSummaryForThing.JobId</property>
@@ -2845,6 +2931,23 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.JobTemplateSummary.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.JobTemplateSummary.JobTemplateArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.JobTemplateSummary.JobTemplateId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.KeyPair.PrivateKey</property>

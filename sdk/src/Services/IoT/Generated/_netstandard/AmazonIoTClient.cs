@@ -1866,12 +1866,6 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a domain configuration.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The domain configuration feature is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomainConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2018,6 +2012,58 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateJobTemplate
+
+        internal virtual CreateJobTemplateResponse CreateJobTemplate(CreateJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a job template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateJobTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// A resource with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual Task<CreateJobTemplateResponse> CreateJobTemplateAsync(CreateJobTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateJobTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3678,12 +3724,6 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Deletes the specified domain configuration.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The domain configuration feature is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -3880,6 +3920,52 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = DeleteJobExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteJobExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteJobTemplate
+
+        internal virtual DeleteJobTemplateResponse DeleteJobTemplate(DeleteJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified job template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteJobTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual Task<DeleteJobTemplateResponse> DeleteJobTemplateAsync(DeleteJobTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteJobTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5676,12 +5762,6 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets summary information about a domain configuration.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The domain configuration feature is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomainConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -5973,6 +6053,52 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeJobExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeJobTemplate
+
+        internal virtual DescribeJobTemplateResponse DescribeJobTemplate(DescribeJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a job template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeJobTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual Task<DescribeJobTemplateResponse> DescribeJobTemplateAsync(DescribeJobTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeJobTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8640,12 +8766,6 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets a list of domain configurations for the user. This list is sorted alphabetically
         /// by domain configuration name.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The domain configuration feature is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -8863,6 +8983,49 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListJobTemplates
+
+        internal virtual ListJobTemplatesResponse ListJobTemplates(ListJobTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of job templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobTemplates service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual Task<ListJobTemplatesResponse> ListJobTemplatesAsync(ListJobTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12580,12 +12743,6 @@ namespace Amazon.IoT
         /// <summary>
         /// Updates values stored in the domain configuration. Domain configurations for default
         /// endpoints can't be updated.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The domain configuration feature is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfiguration service method.</param>
         /// <param name="cancellationToken">

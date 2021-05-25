@@ -29,51 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the AttachPolicy operation.
-    /// Attaches a policy to the specified target.
+    /// This is the response object from the CreateJobTemplate operation.
     /// </summary>
-    public partial class AttachPolicyRequest : AmazonIoTRequest
+    public partial class CreateJobTemplateResponse : AmazonWebServiceResponse
     {
-        private string _policyName;
-        private string _target;
+        private string _jobTemplateArn;
+        private string _jobTemplateId;
 
         /// <summary>
-        /// Gets and sets the property PolicyName. 
+        /// Gets and sets the property JobTemplateArn. 
         /// <para>
-        /// The name of the policy to attach.
+        /// The ARN of the job template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string PolicyName
+        [AWSProperty(Min=1, Max=1600)]
+        public string JobTemplateArn
         {
-            get { return this._policyName; }
-            set { this._policyName = value; }
+            get { return this._jobTemplateArn; }
+            set { this._jobTemplateArn = value; }
         }
 
-        // Check to see if PolicyName property is set
-        internal bool IsSetPolicyName()
+        // Check to see if JobTemplateArn property is set
+        internal bool IsSetJobTemplateArn()
         {
-            return this._policyName != null;
+            return this._jobTemplateArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Target. 
+        /// Gets and sets the property JobTemplateId. 
         /// <para>
-        /// The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a>
-        /// to which the policy is attached. For example, a thing group or a certificate.
+        /// The unique identifier of the job template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Target
+        [AWSProperty(Min=1, Max=64)]
+        public string JobTemplateId
         {
-            get { return this._target; }
-            set { this._target = value; }
+            get { return this._jobTemplateId; }
+            set { this._jobTemplateId = value; }
         }
 
-        // Check to see if Target property is set
-        internal bool IsSetTarget()
+        // Check to see if JobTemplateId property is set
+        internal bool IsSetJobTemplateId()
         {
-            return this._target != null;
+            return this._jobTemplateId != null;
         }
 
     }

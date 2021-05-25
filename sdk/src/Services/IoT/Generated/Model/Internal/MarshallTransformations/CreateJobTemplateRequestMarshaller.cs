@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateJob Request Marshaller
+    /// CreateJobTemplate Request Marshaller
     /// </summary>       
-    public class CreateJobRequestMarshaller : IMarshaller<IRequest, CreateJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateJobTemplateRequestMarshaller : IMarshaller<IRequest, CreateJobTemplateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateJobRequest)input);
+            return this.Marshall((CreateJobTemplateRequest)input);
         }
 
         /// <summary>
@@ -52,17 +52,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateJobRequest publicRequest)
+        public IRequest Marshall(CreateJobTemplateRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "PUT";
 
-            if (!publicRequest.IsSetJobId())
-                throw new AmazonIoTException("Request object does not have required field JobId set");
-            request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
-            request.ResourcePath = "/jobs/{jobId}";
+            if (!publicRequest.IsSetJobTemplateId())
+                throw new AmazonIoTException("Request object does not have required field JobTemplateId set");
+            request.AddPathResource("{jobTemplateId}", StringUtils.FromString(publicRequest.JobTemplateId));
+            request.ResourcePath = "/job-templates/{jobTemplateId}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -97,6 +97,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DocumentSource);
                 }
 
+                if(publicRequest.IsSetJobArn())
+                {
+                    context.Writer.WritePropertyName("jobArn");
+                    context.Writer.Write(publicRequest.JobArn);
+                }
+
                 if(publicRequest.IsSetJobExecutionsRolloutConfig())
                 {
                     context.Writer.WritePropertyName("jobExecutionsRolloutConfig");
@@ -106,18 +112,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.JobExecutionsRolloutConfig, context);
 
                     context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobTemplateArn())
-                {
-                    context.Writer.WritePropertyName("jobTemplateArn");
-                    context.Writer.Write(publicRequest.JobTemplateArn);
-                }
-
-                if(publicRequest.IsSetNamespaceId())
-                {
-                    context.Writer.WritePropertyName("namespaceId");
-                    context.Writer.Write(publicRequest.NamespaceId);
                 }
 
                 if(publicRequest.IsSetPresignedUrlConfig())
@@ -147,23 +141,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetTargets())
-                {
-                    context.Writer.WritePropertyName("targets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetsListValue in publicRequest.Targets)
-                    {
-                            context.Writer.Write(publicRequestTargetsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTargetSelection())
-                {
-                    context.Writer.WritePropertyName("targetSelection");
-                    context.Writer.Write(publicRequest.TargetSelection);
-                }
-
                 if(publicRequest.IsSetTimeoutConfig())
                 {
                     context.Writer.WritePropertyName("timeoutConfig");
@@ -184,9 +161,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateJobRequestMarshaller _instance = new CreateJobRequestMarshaller();        
+        private static CreateJobTemplateRequestMarshaller _instance = new CreateJobTemplateRequestMarshaller();        
 
-        internal static CreateJobRequestMarshaller GetInstance()
+        internal static CreateJobTemplateRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -194,7 +171,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateJobRequestMarshaller Instance
+        public static CreateJobTemplateRequestMarshaller Instance
         {
             get
             {

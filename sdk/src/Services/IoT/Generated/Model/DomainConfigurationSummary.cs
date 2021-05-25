@@ -46,11 +46,7 @@ namespace Amazon.IoT.Model
     /// <para>
     /// CredentialProvider
     /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    /// The domain configuration feature is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
+    ///  </li> </ul>
     /// </summary>
     public partial class DomainConfigurationSummary
     {

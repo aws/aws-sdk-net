@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         private string _documentSource;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobId;
+        private string _jobTemplateArn;
         private string _namespaceId;
         private PresignedUrlConfig _presignedUrlConfig;
         private List<Tag> _tags = new List<Tag>();
@@ -87,7 +88,26 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// The job document.
+        /// The job document. Required if you don't specify a value for <code>documentSource</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32768)]
+        public string Document
+        {
+            get { return this._document; }
+            set { this._document = value; }
+        }
+
+        // Check to see if Document property is set
+        internal bool IsSetDocument()
+        {
+            return this._document != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentSource. 
+        /// <para>
+        /// An S3 link to the job document. Required if you don't specify a value for <code>document</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -109,25 +129,6 @@ namespace Amazon.IoT.Model
         /// to which you are linking.
         /// </para>
         ///  </note>
-        /// </summary>
-        [AWSProperty(Max=32768)]
-        public string Document
-        {
-            get { return this._document; }
-            set { this._document = value; }
-        }
-
-        // Check to see if Document property is set
-        internal bool IsSetDocument()
-        {
-            return this._document != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DocumentSource. 
-        /// <para>
-        /// An S3 link to the job document.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1350)]
         public string DocumentSource
@@ -178,6 +179,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobTemplateArn. 
+        /// <para>
+        /// The ARN of the job template used to create the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
+        public string JobTemplateArn
+        {
+            get { return this._jobTemplateArn; }
+            set { this._jobTemplateArn = value; }
+        }
+
+        // Check to see if JobTemplateArn property is set
+        internal bool IsSetJobTemplateArn()
+        {
+            return this._jobTemplateArn != null;
         }
 
         /// <summary>

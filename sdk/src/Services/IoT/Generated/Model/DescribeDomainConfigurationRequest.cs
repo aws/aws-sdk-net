@@ -31,12 +31,6 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DescribeDomainConfiguration operation.
     /// Gets summary information about a domain configuration.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The domain configuration feature is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DescribeDomainConfigurationRequest : AmazonIoTRequest
     {

@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobId;
         private JobProcessDetails _jobProcessDetails;
+        private string _jobTemplateArn;
         private DateTime? _lastUpdatedAt;
         private string _namespaceId;
         private PresignedUrlConfig _presignedUrlConfig;
@@ -234,6 +235,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetJobProcessDetails()
         {
             return this._jobProcessDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobTemplateArn. 
+        /// <para>
+        /// The ARN of the job template used to create the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
+        public string JobTemplateArn
+        {
+            get { return this._jobTemplateArn; }
+            set { this._jobTemplateArn = value; }
+        }
+
+        // Check to see if JobTemplateArn property is set
+        internal bool IsSetJobTemplateArn()
+        {
+            return this._jobTemplateArn != null;
         }
 
         /// <summary>

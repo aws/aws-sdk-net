@@ -29,51 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the AttachPolicy operation.
-    /// Attaches a policy to the specified target.
+    /// Container for the parameters to the ListJobTemplates operation.
+    /// Returns a list of job templates.
     /// </summary>
-    public partial class AttachPolicyRequest : AmazonIoTRequest
+    public partial class ListJobTemplatesRequest : AmazonIoTRequest
     {
-        private string _policyName;
-        private string _target;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property PolicyName. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The name of the policy to attach.
+        /// The maximum number of results to return in the list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string PolicyName
+        [AWSProperty(Min=1, Max=250)]
+        public int MaxResults
         {
-            get { return this._policyName; }
-            set { this._policyName = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if PolicyName property is set
-        internal bool IsSetPolicyName()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._policyName != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Target. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a>
-        /// to which the policy is attached. For example, a thing group or a certificate.
+        /// The token to use to return the next set of results in the list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Target
+        public string NextToken
         {
-            get { return this._target; }
-            set { this._target = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Target property is set
-        internal bool IsSetTarget()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._target != null;
+            return this._nextToken != null;
         }
 
     }
