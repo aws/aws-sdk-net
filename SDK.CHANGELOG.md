@@ -1,3 +1,22 @@
+### 3.7.42.0 (2021-05-26 22:23 UTC)
+* ACMPCA (3.7.2.0)
+	* This release enables customers to store CRLs in S3 buckets with Block Public Access enabled. The release adds the S3ObjectAcl parameter to the CreateCertificateAuthority and UpdateCertificateAuthority APIs to allow customers to choose whether their CRL will be publicly available.
+* CloudFront (3.7.1.11)
+	* Documentation fix for CloudFront
+* ECS (3.7.2.0)
+	* The release adds support for registering External instances to your Amazon ECS clusters.
+* MWAA (3.7.1.0)
+	* Adds scheduler count selection for Environments using Airflow version 2.0.2 or later.
+* Outposts (3.7.1.0)
+	* Add ConflictException to DeleteOutpost, CreateOutpost
+* QLDB (3.7.1.0)
+	* Support STANDARD permissions mode in CreateLedger and DescribeLedger. Add UpdateLedgerPermissionsMode to update permissions mode on existing ledgers.
+* Core 3.7.0.28
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.41.0 (2021-05-25 18:12 UTC)
 * IoT (3.7.2.0)
 	* This release includes support for a new feature: Job templates for AWS IoT Device Management Jobs. The release includes job templates as a new resource and APIs for managing job templates.
