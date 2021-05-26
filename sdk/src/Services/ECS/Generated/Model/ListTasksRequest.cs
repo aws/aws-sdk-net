@@ -30,15 +30,14 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTasks operation.
-    /// Returns a list of tasks for a specified cluster. You can filter the results by family
-    /// name, by a particular container instance, or by the desired status of the task with
-    /// the <code>family</code>, <code>containerInstance</code>, and <code>desiredStatus</code>
-    /// parameters.
+    /// Returns a list of tasks. You can filter the results by cluster, task definition family,
+    /// container instance, launch type, what IAM principal started the task, or by the desired
+    /// status of the task.
     /// 
     ///  
     /// <para>
     /// Recently stopped tasks might appear in the returned results. Currently, stopped tasks
-    /// appear in the returned results for at least one hour. 
+    /// appear in the returned results for at least one hour.
     /// </para>
     /// </summary>
     public partial class ListTasksRequest : AmazonECSRequest
@@ -56,8 +55,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the tasks
-        /// to list. If you do not specify a cluster, the default cluster is assumed.
+        /// The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering
+        /// the <code>ListTasks</code> results. If you do not specify a cluster, the default cluster
+        /// is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -75,7 +75,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstance. 
         /// <para>
-        /// The container instance ID or full ARN of the container instance with which to filter
+        /// The container instance ID or full ARN of the container instance to use when filtering
         /// the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits
         /// the results to tasks that belong to that container instance.
         /// </para>
@@ -95,12 +95,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DesiredStatus. 
         /// <para>
-        /// The task desired status with which to filter the <code>ListTasks</code> results. Specifying
-        /// a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that
-        /// Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful
-        /// for debugging tasks that are not starting properly or have died or finished. The default
-        /// status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the
-        /// desired status to <code>RUNNING</code>.
+        /// The task desired status to use when filtering the <code>ListTasks</code> results.
+        /// Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results
+        /// to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This
+        /// can be useful for debugging tasks that are not starting properly or have died or finished.
+        /// The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS
+        /// has set the desired status to <code>RUNNING</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -125,8 +125,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Family. 
         /// <para>
-        /// The name of the family with which to filter the <code>ListTasks</code> results. Specifying
-        /// a <code>family</code> limits the results to tasks that belong to that family.
+        /// The name of the task definition family to use when filtering the <code>ListTasks</code>
+        /// results. Specifying a <code>family</code> limits the results to tasks that belong
+        /// to that family.
         /// </para>
         /// </summary>
         public string Family
@@ -144,7 +145,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type for services to list.
+        /// The launch type to use when filtering the <code>ListTasks</code> results.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -213,8 +214,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the service with which to filter the <code>ListTasks</code> results. Specifying
-        /// a <code>serviceName</code> limits the results to tasks that belong to that service.
+        /// The name of the service to use when filtering the <code>ListTasks</code> results.
+        /// Specifying a <code>serviceName</code> limits the results to tasks that belong to that
+        /// service.
         /// </para>
         /// </summary>
         public string ServiceName

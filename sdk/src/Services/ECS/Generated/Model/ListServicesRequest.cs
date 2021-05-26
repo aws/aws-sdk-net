@@ -30,7 +30,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServices operation.
-    /// Lists the services that are running in a specified cluster.
+    /// Returns a list of services. You can filter the results by cluster, launch type, and
+    /// scheduling strategy.
     /// </summary>
     public partial class ListServicesRequest : AmazonECSRequest
     {
@@ -43,8 +44,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the services
-        /// to list. If you do not specify a cluster, the default cluster is assumed.
+        /// The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering
+        /// the <code>ListServices</code> results. If you do not specify a cluster, the default
+        /// cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -62,7 +64,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type for the services to list.
+        /// The launch type to use when filtering the <code>ListServices</code> results.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -131,7 +133,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SchedulingStrategy. 
         /// <para>
-        /// The scheduling strategy for services to list.
+        /// The scheduling strategy to use when filtering the <code>ListServices</code> results.
         /// </para>
         /// </summary>
         public SchedulingStrategy SchedulingStrategy

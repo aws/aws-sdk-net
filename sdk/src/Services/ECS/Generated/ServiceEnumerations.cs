@@ -421,6 +421,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly Compatibility EC2 = new Compatibility("EC2");
         /// <summary>
+        /// Constant EXTERNAL for Compatibility
+        /// </summary>
+        public static readonly Compatibility EXTERNAL = new Compatibility("EXTERNAL");
+        /// <summary>
         /// Constant FARGATE for Compatibility
         /// </summary>
         public static readonly Compatibility FARGATE = new Compatibility("FARGATE");
@@ -1260,6 +1264,10 @@ namespace Amazon.ECS
         /// Constant EC2 for LaunchType
         /// </summary>
         public static readonly LaunchType EC2 = new LaunchType("EC2");
+        /// <summary>
+        /// Constant EXTERNAL for LaunchType
+        /// </summary>
+        public static readonly LaunchType EXTERNAL = new LaunchType("EXTERNAL");
         /// <summary>
         /// Constant FARGATE for LaunchType
         /// </summary>

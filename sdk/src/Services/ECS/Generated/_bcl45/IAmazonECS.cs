@@ -2113,7 +2113,8 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Lists the services that are running in a specified cluster.
+        /// Returns a list of services. You can filter the results by cluster, launch type, and
+        /// scheduling strategy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// 
@@ -2139,7 +2140,8 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Lists the services that are running in a specified cluster.
+        /// Returns a list of services. You can filter the results by cluster, launch type, and
+        /// scheduling strategy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// <param name="cancellationToken">
@@ -2351,15 +2353,14 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Returns a list of tasks for a specified cluster. You can filter the results by family
-        /// name, by a particular container instance, or by the desired status of the task with
-        /// the <code>family</code>, <code>containerInstance</code>, and <code>desiredStatus</code>
-        /// parameters.
+        /// Returns a list of tasks. You can filter the results by cluster, task definition family,
+        /// container instance, launch type, what IAM principal started the task, or by the desired
+        /// status of the task.
         /// 
         ///  
         /// <para>
         /// Recently stopped tasks might appear in the returned results. Currently, stopped tasks
-        /// appear in the returned results for at least one hour. 
+        /// appear in the returned results for at least one hour.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTasks service method.</param>
@@ -2390,15 +2391,14 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Returns a list of tasks for a specified cluster. You can filter the results by family
-        /// name, by a particular container instance, or by the desired status of the task with
-        /// the <code>family</code>, <code>containerInstance</code>, and <code>desiredStatus</code>
-        /// parameters.
+        /// Returns a list of tasks. You can filter the results by cluster, task definition family,
+        /// container instance, launch type, what IAM principal started the task, or by the desired
+        /// status of the task.
         /// 
         ///  
         /// <para>
         /// Recently stopped tasks might appear in the returned results. Currently, stopped tasks
-        /// appear in the returned results for at least one hour. 
+        /// appear in the returned results for at least one hour.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTasks service method.</param>
