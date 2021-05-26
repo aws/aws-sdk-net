@@ -36,6 +36,7 @@ namespace Amazon.Outposts.Model
         private string _accountId;
         private string _description;
         private string _name;
+        private string _siteArn;
         private string _siteId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -58,7 +59,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property Description.
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=1001)]
         public string Description
         {
             get { return this._description; }
@@ -85,6 +86,22 @@ namespace Amazon.Outposts.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SiteArn.
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string SiteArn
+        {
+            get { return this._siteArn; }
+            set { this._siteArn = value; }
+        }
+
+        // Check to see if SiteArn property is set
+        internal bool IsSetSiteArn()
+        {
+            return this._siteArn != null;
         }
 
         /// <summary>

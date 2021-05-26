@@ -112,6 +112,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SiteArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SiteArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SiteId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

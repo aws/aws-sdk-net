@@ -4,19 +4,19 @@
     <property>Amazon.Outposts.Model.CreateOutpostRequest.AvailabilityZone</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>[a-z\d-]+</pattern>
+    <pattern>^([a-zA-Z]+-){1,3}([a-zA-Z]+)?(\d+[a-zA-Z]?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.CreateOutpostRequest.AvailabilityZoneId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-z]+[0-9]+-az[0-9]+</pattern>
+    <pattern>^[a-zA-Z]+\d-[a-zA-Z]+\d$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.CreateOutpostRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
-    <pattern>^[\S ]+$</pattern>
+    <pattern>^[\S ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.CreateOutpostRequest.Name</property>
@@ -28,7 +28,7 @@
     <property>Amazon.Outposts.Model.CreateOutpostRequest.SiteId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>os-[a-f0-9]{17}</pattern>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.DeleteOutpostRequest.OutpostId</property>
@@ -40,7 +40,7 @@
     <property>Amazon.Outposts.Model.DeleteSiteRequest.SiteId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>os-[a-f0-9]{17}</pattern>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostRequest.OutpostId</property>
@@ -57,7 +57,7 @@
     <property>Amazon.Outposts.Model.GetOutpostInstanceTypesRequest.NextToken</property>
     <min>1</min>
     <max>1005</max>
-    <pattern>.*\S.*</pattern>
+    <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostInstanceTypesRequest.OutpostId</property>
@@ -69,7 +69,7 @@
     <property>Amazon.Outposts.Model.GetOutpostInstanceTypesResponse.NextToken</property>
     <min>1</min>
     <max>1005</max>
-    <pattern>.*\S.*</pattern>
+    <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostInstanceTypesResponse.OutpostArn</property>
@@ -92,13 +92,13 @@
     <property>Amazon.Outposts.Model.ListOutpostsRequest.NextToken</property>
     <min>1</min>
     <max>1005</max>
-    <pattern>.*\S.*</pattern>
+    <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListOutpostsResponse.NextToken</property>
     <min>1</min>
     <max>1005</max>
-    <pattern>.*\S.*</pattern>
+    <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListSitesRequest.MaxResults</property>
@@ -109,13 +109,13 @@
     <property>Amazon.Outposts.Model.ListSitesRequest.NextToken</property>
     <min>1</min>
     <max>1005</max>
-    <pattern>.*\S.*</pattern>
+    <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListSitesResponse.NextToken</property>
     <min>1</min>
     <max>1005</max>
-    <pattern>.*\S.*</pattern>
+    <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -133,22 +133,28 @@
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:([a-z\d-]+)/)[a-z]{2,8}-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.ConflictException.ResourceId</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[\S \n]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.Outpost.AvailabilityZone</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>[a-z\d-]+</pattern>
+    <pattern>^([a-zA-Z]+-){1,3}([a-zA-Z]+)?(\d+[a-zA-Z]?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Outpost.AvailabilityZoneId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-z]+[0-9]+-az[0-9]+</pattern>
+    <pattern>^[a-zA-Z]+\d-[a-zA-Z]+\d$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Outpost.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
-    <pattern>^[\S ]+$</pattern>
+    <pattern>^[\S ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Outpost.Name</property>
@@ -175,20 +181,27 @@
     <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.Outpost.SiteArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/(os-[a-f0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.Outpost.SiteId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>os-[a-f0-9]{17}</pattern>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Site.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Site.Description</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1001</max>
     <pattern>^[\S ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -198,9 +211,15 @@
     <pattern>^[\S ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.Site.SiteArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/(os-[a-f0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.Site.SiteId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>os-[a-f0-9]{17}</pattern>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
   </property-value-rule>
 </property-value-rules>

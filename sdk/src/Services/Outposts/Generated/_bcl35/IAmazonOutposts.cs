@@ -60,6 +60,9 @@ namespace Amazon.Outposts
         /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
         /// You do not have permission to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.Outposts.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>
@@ -115,6 +118,9 @@ namespace Amazon.Outposts
         /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
         /// You do not have permission to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.Outposts.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>
@@ -166,6 +172,9 @@ namespace Amazon.Outposts
         /// <returns>The response from the DeleteSite service method, as returned by Outposts.</returns>
         /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
         /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.Outposts.Model.InternalServerException">
         /// An internal error has occurred.

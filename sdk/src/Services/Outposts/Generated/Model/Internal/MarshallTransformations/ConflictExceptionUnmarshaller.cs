@@ -34,70 +34,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Site Object
+    /// Response Unmarshaller for ConflictException Object
     /// </summary>  
-    public class SiteUnmarshaller : IUnmarshaller<Site, XmlUnmarshallerContext>, IUnmarshaller<Site, JsonUnmarshallerContext>
+    public class ConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Site IUnmarshaller<Site, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ConflictException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public Site Unmarshall(JsonUnmarshallerContext context)
+        public ConflictException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            Site unmarshalledObject = new Site();
+            ConflictException unmarshalledObject = new ConflictException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("ResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SiteArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SiteArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SiteId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SiteId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -105,13 +81,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-
-        private static SiteUnmarshaller _instance = new SiteUnmarshaller();        
+        private static ConflictExceptionUnmarshaller _instance = new ConflictExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SiteUnmarshaller Instance
+        public static ConflictExceptionUnmarshaller Instance
         {
             get
             {
