@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// Error information of update, if applicable.
+    /// An object containing the error encountered with the last update: <code>ErrorCode</code>,
+    /// <code>ErrorMessage</code>.
     /// </summary>
     public partial class UpdateError
     {
@@ -39,7 +40,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// Error code of update.
+        /// The error code that corresponds to the error with the last update.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -57,7 +58,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// Error message of update.
+        /// The error message that corresponds to the error code.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

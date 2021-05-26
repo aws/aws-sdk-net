@@ -30,7 +30,7 @@ namespace Amazon.MWAA.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEnvironment operation.
-    /// Get details of an existing environment.
+    /// Retrieves the details of an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
     /// </summary>
     public partial class GetEnvironmentRequest : AmazonMWAARequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the environment to retrieve.
+        /// The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]

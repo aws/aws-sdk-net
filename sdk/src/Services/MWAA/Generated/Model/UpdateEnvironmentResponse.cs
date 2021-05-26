@@ -38,7 +38,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN to update of your Amazon MWAA environment.
+        /// The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]

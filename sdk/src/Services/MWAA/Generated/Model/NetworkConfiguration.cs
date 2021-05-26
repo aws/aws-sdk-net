@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// Provide the security group and subnet IDs for the workers and scheduler.
+    /// The VPC networking components used to secure and enable network traffic between the
+    /// AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+    /// networking on Amazon MWAA</a>.
     /// </summary>
     public partial class NetworkConfiguration
     {
@@ -39,7 +41,9 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+        /// A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security
+        /// group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+        /// in your VPC on Amazon MWAA</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -58,8 +62,9 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the
-        /// same VPC, in two different availability zones.
+        /// A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private
+        /// subnets in two different availability zones. A subnet must be attached to the same
+        /// VPC as the security group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]

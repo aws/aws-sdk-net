@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// A JSON blob that provides configuration to use for logging with respect to the various
-    /// Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs,
-    /// and WorkerLogs.
+    /// Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).
+    /// Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.
     /// </summary>
     public partial class ModuleLoggingConfigurationInput
     {
@@ -41,7 +40,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Defines that the logging module is enabled.
+        /// Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>)
+        /// in CloudWatch Logs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,9 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property LogLevel. 
         /// <para>
-        /// Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+        /// Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>)
+        /// to CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
+        /// <code>INFO</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

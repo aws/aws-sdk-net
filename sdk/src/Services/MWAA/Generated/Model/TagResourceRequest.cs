@@ -30,7 +30,8 @@ namespace Amazon.MWAA.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Add tag to the MWAA environments.
+    /// Associates key-value tag pairs to your Amazon Managed Workflows for Apache Airflow
+    /// (MWAA) environment.
     /// </summary>
     public partial class TagResourceRequest : AmazonMWAARequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The tag resource ARN of the MWAA environments.
+        /// The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1224)]
@@ -59,7 +60,9 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag resource tag of the MWAA environments.
+        /// The key-value tag pairs you want to associate to your environment. For example, <code>"Environment":
+        /// "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

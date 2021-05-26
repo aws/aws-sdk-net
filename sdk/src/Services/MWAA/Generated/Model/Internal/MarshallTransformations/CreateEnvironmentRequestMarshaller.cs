@@ -170,6 +170,12 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RequirementsS3Path);
                 }
 
+                if(publicRequest.IsSetSchedulers())
+                {
+                    context.Writer.WritePropertyName("Schedulers");
+                    context.Writer.Write(publicRequest.Schedulers);
+                }
+
                 if(publicRequest.IsSetSourceBucketArn())
                 {
                     context.Writer.WritePropertyName("SourceBucketArn");

@@ -39,7 +39,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Environments. 
         /// <para>
-        /// The list of Amazon MWAA Environments.
+        /// Returns the list of Amazon MWAA environments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The Next Token when listing MWAA environments.
+        /// Retrieves the next page of the results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

@@ -172,6 +172,12 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     unmarshalledObject.RequirementsS3Path = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Schedulers", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Schedulers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

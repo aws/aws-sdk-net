@@ -38,7 +38,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// A JSON blob with environment details.
+        /// An object containing all available details about the environment.
         /// </para>
         /// </summary>
         public Environment Environment

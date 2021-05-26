@@ -30,7 +30,8 @@ namespace Amazon.MWAA.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Remove a tag from the MWAA environments.
+    /// Removes key-value tag pairs associated to your Amazon Managed Workflows for Apache
+    /// Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
     /// </summary>
     public partial class UntagResourceRequest : AmazonMWAARequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The tag resource ARN of the MWAA environments.
+        /// The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1224)]
@@ -59,7 +60,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The tag resource key of the MWAA environments.
+        /// The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

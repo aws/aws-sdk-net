@@ -30,7 +30,7 @@ namespace Amazon.MWAA.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEnvironments operation.
-    /// List Amazon MWAA Environments.
+    /// Lists the Amazon Managed Workflows for Apache Airflow (MWAA) environments.
     /// </summary>
     public partial class ListEnvironmentsRequest : AmazonMWAARequest
     {
@@ -40,7 +40,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum results when listing MWAA environments.
+        /// The maximum number of results to retrieve per page. For example, <code>5</code> environments
+        /// per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -59,7 +60,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The Next Token when listing MWAA environments.
+        /// Retrieves the next page of the results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

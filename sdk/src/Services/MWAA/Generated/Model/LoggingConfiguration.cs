@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// The Logging Configuration of your Amazon MWAA environment.
+    /// Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>,
+    /// <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
     /// </summary>
     public partial class LoggingConfiguration
     {

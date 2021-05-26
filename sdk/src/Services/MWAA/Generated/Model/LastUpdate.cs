@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// Last update information for the environment.
+    /// The status of the last update on the environment, and any errors that were encountered.
     /// </summary>
     public partial class LastUpdate
     {
@@ -40,7 +40,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Time that last update occurred.
+        /// The day and time of the last update on the environment.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -58,7 +58,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Error string of last update, if applicable.
+        /// The error that was encountered during the last update of the environment.
         /// </para>
         /// </summary>
         public UpdateError Error
@@ -76,7 +76,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+        /// The status of the last update on the environment. Valid values: <code>SUCCESS</code>,
+        /// <code>PENDING</code>, <code>FAILED</code>.
         /// </para>
         /// </summary>
         public UpdateStatus Status

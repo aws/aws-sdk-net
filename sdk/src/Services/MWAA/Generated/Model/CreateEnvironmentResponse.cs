@@ -38,7 +38,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The resulting Amazon MWAA envirnonment ARN.
+        /// The Amazon Resource Name (ARN) returned in the response for the environment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]

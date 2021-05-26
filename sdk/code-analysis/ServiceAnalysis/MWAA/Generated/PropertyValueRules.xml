@@ -78,6 +78,10 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MWAA.Model.CreateEnvironmentRequest.Schedulers</property>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.SourceBucketArn</property>
     <min>1</min>
     <max>1224</max>
@@ -218,6 +222,10 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.Schedulers</property>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.SourceBucketArn</property>
     <min>1</min>
     <max>1224</max>
@@ -305,6 +313,10 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAA.Model.Environment.Schedulers</property>
+    <max>5</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.ServiceRoleArn</property>

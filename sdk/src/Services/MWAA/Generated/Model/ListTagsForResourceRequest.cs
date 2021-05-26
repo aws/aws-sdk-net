@@ -30,7 +30,8 @@ namespace Amazon.MWAA.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List the tags for MWAA environments.
+    /// Lists the key-value tag pairs associated to the Amazon Managed Workflows for Apache
+    /// Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonMWAARequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the MWAA environment.
+        /// The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1224)]

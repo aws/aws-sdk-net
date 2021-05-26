@@ -87,7 +87,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// JSON blob that describes the environment to create.
+        /// Creates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
@@ -104,7 +104,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// JSON blob that describes the environment to create.
+        /// Creates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -181,7 +181,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Delete an existing environment.
+        /// Deletes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
         /// 
@@ -201,7 +201,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Delete an existing environment.
+        /// Deletes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -227,7 +227,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Get details of an existing environment.
+        /// Retrieves the details of an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// 
@@ -247,7 +247,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Get details of an existing environment.
+        /// Retrieves the details of an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -273,7 +273,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// List Amazon MWAA Environments.
+        /// Lists the Amazon Managed Workflows for Apache Airflow (MWAA) environments.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironments service method.</param>
         /// 
@@ -290,7 +290,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// List Amazon MWAA Environments.
+        /// Lists the Amazon Managed Workflows for Apache Airflow (MWAA) environments.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironments service method.</param>
         /// <param name="cancellationToken">
@@ -313,7 +313,8 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// List the tags for MWAA environments.
+        /// Lists the key-value tag pairs associated to the Amazon Managed Workflows for Apache
+        /// Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -333,7 +334,8 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// List the tags for MWAA environments.
+        /// Lists the key-value tag pairs associated to the Amazon Managed Workflows for Apache
+        /// Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -399,7 +401,8 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Add tag to the MWAA environments.
+        /// Associates key-value tag pairs to your Amazon Managed Workflows for Apache Airflow
+        /// (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -419,7 +422,8 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Add tag to the MWAA environments.
+        /// Associates key-value tag pairs to your Amazon Managed Workflows for Apache Airflow
+        /// (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -445,7 +449,8 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Remove a tag from the MWAA environments.
+        /// Removes key-value tag pairs associated to your Amazon Managed Workflows for Apache
+        /// Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -465,7 +470,8 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Remove a tag from the MWAA environments.
+        /// Removes key-value tag pairs associated to your Amazon Managed Workflows for Apache
+        /// Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -491,7 +497,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Update an MWAA environment.
+        /// Updates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method.</param>
         /// 
@@ -511,7 +517,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Update an MWAA environment.
+        /// Updates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method.</param>
         /// <param name="cancellationToken">
