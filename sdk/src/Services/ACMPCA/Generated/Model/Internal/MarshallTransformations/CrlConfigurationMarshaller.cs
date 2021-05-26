@@ -69,6 +69,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.S3BucketName);
             }
 
+            if(requestObject.IsSetS3ObjectAcl())
+            {
+                context.Writer.WritePropertyName("S3ObjectAcl");
+                context.Writer.Write(requestObject.S3ObjectAcl);
+            }
+
         }
 
         /// <summary>

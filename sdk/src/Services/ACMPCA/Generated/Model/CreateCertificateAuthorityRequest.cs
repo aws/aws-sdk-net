@@ -140,11 +140,11 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-        /// explicitly specify this parameter and value when creating a CA in that Region. Specifying
-        /// a different value (or no value) results in an <code>InvalidArgsException</code> with
-        /// the message "A certificate authority cannot be created in this region with the specified
-        /// security standard."
+        /// Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3.
+        /// When creating a CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code>
+        /// as the argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results
+        /// in an <code>InvalidArgsException</code> with the message, "A certificate authority
+        /// cannot be created in this region with the specified security standard."
         /// </para>
         /// </summary>
         public KeyStorageSecurityStandard KeyStorageSecurityStandard

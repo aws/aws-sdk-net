@@ -135,6 +135,7 @@ namespace Amazon.ACMPCA.Model
         private bool? _enabled;
         private int? _expirationInDays;
         private string _s3BucketName;
+        private S3ObjectAcl _s3ObjectAcl;
 
         /// <summary>
         /// Gets and sets the property CustomCname. 
@@ -206,8 +207,8 @@ namespace Amazon.ACMPCA.Model
         /// <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL
         /// Distribution Points</b> extension of the issued certificate. You can change the name
         /// of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
-        /// action. You must specify a bucket policy that allows ACM Private CA to write the CRL
-        /// to your bucket.
+        /// action. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+        /// policy</a> that allows ACM Private CA to write the CRL to your bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
@@ -221,6 +222,46 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetS3BucketName()
         {
             return this._s3BucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3ObjectAcl. 
+        /// <para>
+        /// Determines whether the CRL will be publicly readable or privately held in the CRL
+        /// Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public
+        /// internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket
+        /// can access the CRL, and your PKI clients may need an alternative method of access.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If no value is specified, the default is <code>PUBLIC_READ</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Note:</i> This default can cause CA creation to fail in some circumstances. If
+        /// you have have enabled the Block Public Access (BPA) feature in your S3 account, then
+        /// you must specify the value of this parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>,
+        /// and not doing so results in an error. If you have disabled BPA in S3, then you can
+        /// specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code>
+        /// as the value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
+        /// public access to the S3 bucket</a>.
+        /// </para>
+        /// </summary>
+        public S3ObjectAcl S3ObjectAcl
+        {
+            get { return this._s3ObjectAcl; }
+            set { this._s3ObjectAcl = value; }
+        }
+
+        // Check to see if S3ObjectAcl property is set
+        internal bool IsSetS3ObjectAcl()
+        {
+            return this._s3ObjectAcl != null;
         }
 
     }

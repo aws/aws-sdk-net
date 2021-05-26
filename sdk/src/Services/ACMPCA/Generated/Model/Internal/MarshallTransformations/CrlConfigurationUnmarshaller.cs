@@ -88,6 +88,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3ObjectAcl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3ObjectAcl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
