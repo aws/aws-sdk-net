@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateLedger operation
+    /// Response Unmarshaller for UpdateLedgerPermissionsMode operation
     /// </summary>  
-    public class CreateLedgerResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateLedgerPermissionsModeResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateLedgerResponse response = new CreateLedgerResponse();
+            UpdateLedgerPermissionsModeResponse response = new UpdateLedgerPermissionsModeResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -55,18 +55,6 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreationDateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationDateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeletionProtection", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.DeletionProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -79,12 +67,6 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PermissionsMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -114,25 +96,17 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
-                {
-                    return ResourceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
-                {
-                    return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonQLDBException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateLedgerResponseUnmarshaller _instance = new CreateLedgerResponseUnmarshaller();        
+        private static UpdateLedgerPermissionsModeResponseUnmarshaller _instance = new UpdateLedgerPermissionsModeResponseUnmarshaller();        
 
-        internal static CreateLedgerResponseUnmarshaller GetInstance()
+        internal static UpdateLedgerPermissionsModeResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -140,7 +114,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateLedgerResponseUnmarshaller Instance
+        public static UpdateLedgerPermissionsModeResponseUnmarshaller Instance
         {
             get
             {

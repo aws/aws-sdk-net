@@ -196,6 +196,10 @@ namespace Amazon.QLDB
         /// Constant ALLOW_ALL for PermissionsMode
         /// </summary>
         public static readonly PermissionsMode ALLOW_ALL = new PermissionsMode("ALLOW_ALL");
+        /// <summary>
+        /// Constant STANDARD for PermissionsMode
+        /// </summary>
+        public static readonly PermissionsMode STANDARD = new PermissionsMode("STANDARD");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

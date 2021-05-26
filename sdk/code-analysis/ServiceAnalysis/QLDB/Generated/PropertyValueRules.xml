@@ -264,6 +264,23 @@
     <pattern>(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QLDB.Model.UpdateLedgerPermissionsModeRequest.Name</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QLDB.Model.UpdateLedgerPermissionsModeResponse.Arn</property>
+    <min>20</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QLDB.Model.UpdateLedgerPermissionsModeResponse.Name</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QLDB.Model.JournalKinesisStreamDescription.Arn</property>
     <min>20</min>
     <max>1600</max>

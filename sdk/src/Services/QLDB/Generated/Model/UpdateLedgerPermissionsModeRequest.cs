@@ -29,53 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QLDB.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateLedger operation.
-    /// Creates a new ledger in your AWS account.
+    /// Container for the parameters to the UpdateLedgerPermissionsMode operation.
+    /// Updates the permissions mode of a ledger.
     /// </summary>
-    public partial class CreateLedgerRequest : AmazonQLDBRequest
+    public partial class UpdateLedgerPermissionsModeRequest : AmazonQLDBRequest
     {
-        private bool? _deletionProtection;
         private string _name;
         private PermissionsMode _permissionsMode;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property DeletionProtection. 
-        /// <para>
-        /// The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.
-        /// </para>
-        ///  
-        /// <para>
-        /// If deletion protection is enabled, you must first disable it before you can delete
-        /// the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can
-        /// disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
-        /// The QLDB console disables deletion protection for you when you use it to delete a
-        /// ledger.
-        /// </para>
-        /// </summary>
-        public bool DeletionProtection
-        {
-            get { return this._deletionProtection.GetValueOrDefault(); }
-            set { this._deletionProtection = value; }
-        }
-
-        // Check to see if DeletionProtection property is set
-        internal bool IsSetDeletionProtection()
-        {
-            return this._deletionProtection.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the ledger that you want to create. The name must be unique among all
-        /// of your ledgers in the current AWS Region.
-        /// </para>
-        ///  
-        /// <para>
-        /// Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas
-        /// in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.
+        /// The name of the ledger.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -94,8 +59,8 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property PermissionsMode. 
         /// <para>
-        /// The permissions mode to assign to the ledger that you want to create. This parameter
-        /// can have one of the following values:
+        /// The permissions mode to assign to the ledger. This parameter can have one of the following
+        /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -139,26 +104,6 @@ namespace Amazon.QLDB.Model
         internal bool IsSetPermissionsMode()
         {
             return this._permissionsMode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The key-value pairs to add as tags to the ledger that you want to create. Tag keys
-        /// are case sensitive. Tag values are case sensitive and can be null.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=200)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

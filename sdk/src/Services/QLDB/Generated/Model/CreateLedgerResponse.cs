@@ -37,6 +37,7 @@ namespace Amazon.QLDB.Model
         private DateTime? _creationDateTime;
         private bool? _deletionProtection;
         private string _name;
+        private PermissionsMode _permissionsMode;
         private LedgerState _state;
 
         /// <summary>
@@ -121,6 +122,24 @@ namespace Amazon.QLDB.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionsMode. 
+        /// <para>
+        /// The permissions mode of the ledger that you created.
+        /// </para>
+        /// </summary>
+        public PermissionsMode PermissionsMode
+        {
+            get { return this._permissionsMode; }
+            set { this._permissionsMode = value; }
+        }
+
+        // Check to see if PermissionsMode property is set
+        internal bool IsSetPermissionsMode()
+        {
+            return this._permissionsMode != null;
         }
 
         /// <summary>

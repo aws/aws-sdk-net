@@ -637,6 +637,30 @@ namespace Amazon.QLDB
         Task<UpdateLedgerResponse> UpdateLedgerAsync(UpdateLedgerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
+                
+        #region  UpdateLedgerPermissionsMode
+
+
+
+        /// <summary>
+        /// Updates the permissions mode of a ledger.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLedgerPermissionsMode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLedgerPermissionsMode service method, as returned by QLDB.</returns>
+        /// <exception cref="Amazon.QLDB.Model.InvalidParameterException">
+        /// One or more parameters in the request aren't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QLDB.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode">REST API Reference for UpdateLedgerPermissionsMode Operation</seealso>
+        Task<UpdateLedgerPermissionsModeResponse> UpdateLedgerPermissionsModeAsync(UpdateLedgerPermissionsModeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
     }
 }
