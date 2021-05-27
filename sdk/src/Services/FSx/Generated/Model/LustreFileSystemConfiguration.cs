@@ -36,6 +36,7 @@ namespace Amazon.FSx.Model
         private int? _automaticBackupRetentionDays;
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
+        private DataCompressionType _dataCompressionType;
         private DataRepositoryConfiguration _dataRepositoryConfiguration;
         private LustreDeploymentType _deploymentType;
         private DriveCacheType _driveCacheType;
@@ -96,6 +97,38 @@ namespace Amazon.FSx.Model
         internal bool IsSetDailyAutomaticBackupStartTime()
         {
             return this._dailyAutomaticBackupStartTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataCompressionType. 
+        /// <para>
+        /// The data compression configuration for the file system. <code>DataCompressionType</code>
+        /// can have the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NONE</code> - Data compression is turned off for the file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre
+        /// data compression</a>.
+        /// </para>
+        /// </summary>
+        public DataCompressionType DataCompressionType
+        {
+            get { return this._dataCompressionType; }
+            set { this._dataCompressionType = value; }
+        }
+
+        // Check to see if DataCompressionType property is set
+        internal bool IsSetDataCompressionType()
+        {
+            return this._dataCompressionType != null;
         }
 
         /// <summary>

@@ -57,8 +57,8 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information on creating backup copies, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html">
-    /// Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying
+    /// For more information on creating backup copies, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
+    /// Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
     /// backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.
     /// </para>
     /// </summary>

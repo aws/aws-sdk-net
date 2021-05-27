@@ -80,6 +80,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// DataCompressionType
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// StorageCapacity
     /// </para>
     ///  </li> <li> 

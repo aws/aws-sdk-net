@@ -69,6 +69,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
             }
 
+            if(requestObject.IsSetDataCompressionType())
+            {
+                context.Writer.WritePropertyName("DataCompressionType");
+                context.Writer.Write(requestObject.DataCompressionType);
+            }
+
             if(requestObject.IsSetDeploymentType())
             {
                 context.Writer.WritePropertyName("DeploymentType");

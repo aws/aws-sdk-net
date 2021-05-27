@@ -82,6 +82,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DailyAutomaticBackupStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataCompressionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataCompressionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataRepositoryConfiguration", targetDepth))
                 {
                     var unmarshaller = DataRepositoryConfigurationUnmarshaller.Instance;
