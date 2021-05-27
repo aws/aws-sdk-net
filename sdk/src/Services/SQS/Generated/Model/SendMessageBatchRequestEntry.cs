@@ -162,8 +162,8 @@ namespace Amazon.SQS.Model
         /// The token used for deduplication of messages within a 5-minute minimum deduplication
         /// interval. If a message with a particular <code>MessageDeduplicationId</code> is sent
         /// successfully, subsequent messages with the same <code>MessageDeduplicationId</code>
-        /// are accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-        /// Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// are accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
+        /// Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

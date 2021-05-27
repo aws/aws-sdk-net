@@ -239,15 +239,15 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-        /// Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO
+        /// queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid
         /// values are <code>true</code> and <code>false</code>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-        /// Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. Note the
+        /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once
+        /// processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. Note the
         /// following: 
         /// </para>
         ///  <ul> <li> 
@@ -290,18 +290,8 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        ///  <b>Preview: High throughput for FIFO queues</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>High throughput for Amazon SQS FIFO queues is in preview release and is subject
-        /// to change.</b> This feature provides a high number of transactions per second (TPS)
-        /// for messages in FIFO queues. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-        /// related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// This preview includes two new attributes:
+        /// The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high
+        /// throughput for FIFO queues</a>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -331,33 +321,12 @@ namespace Amazon.SQS.Model
         ///  </li> </ul> 
         /// <para>
         /// If you set these attributes to anything other than the values shown for enabling high
-        /// throughput, standard throughput is in effect and deduplication occurs as specified.
+        /// throughput, normal throughput is in effect and deduplication occurs as specified.
         /// </para>
         ///  
         /// <para>
-        /// This preview is available in the following AWS Regions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// US East (Ohio); us-east-2
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US East (N. Virginia); us-east-1
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US West (Oregon); us-west-2
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Europe (Ireland); eu-west-1
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about high throughput for FIFO queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">Preview:
-        /// High throughput for FIFO queues</a> in the <i>Amazon Simple Queue Service Developer
-        /// Guide</i>.
+        /// For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
+        /// related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
