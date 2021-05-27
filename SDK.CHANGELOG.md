@@ -1,3 +1,12 @@
+### 3.7.43.1 (2021-05-27 22:21 UTC)
+* S3 (3.7.0.31)
+	* Updated to use new Core, version 3.7.0.30
+	* Added logic to automatically calculate MD5 for simple/multi-part uploads in TransferUtility. Add S3 Arn support for FIPS.
+* Textract (3.7.0.29)
+	* Changed description for AWSSDK.Textract package.
+* Core 3.7.0.30
+	* Auto-generation of standard endpoints added.
+
 ### 3.7.43.0 (2021-05-27 18:15 UTC)
 * DeviceFarm (3.7.1.0)
 	* Introduces support for using our desktop testing service with applications hosted within your Virtual Private Cloud (VPC).
