@@ -40,7 +40,7 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The code associated with the error.
+        /// The error code.
         /// </para>
         /// </summary>
         public ErrorCode ErrorCode
@@ -58,7 +58,7 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// More information about the error.
+        /// A message that describes the error.
         /// </para>
         /// </summary>
         public string ErrorMessage

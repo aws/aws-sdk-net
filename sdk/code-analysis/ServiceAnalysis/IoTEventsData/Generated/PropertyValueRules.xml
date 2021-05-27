@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.DescribeAlarmRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.DescribeAlarmRequest.KeyValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEventsData.Model.DescribeDetectorRequest.DetectorModelName</property>
     <min>1</min>
     <max>128</max>
@@ -11,6 +23,17 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.ListAlarmsRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.ListAlarmsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEventsData.Model.ListDetectorsRequest.DetectorModelName</property>
@@ -27,6 +50,77 @@
     <property>Amazon.IoTEventsData.Model.ListDetectorsRequest.StateName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.AcknowledgeActionConfiguration.Note</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.AcknowledgeAlarmActionRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.AcknowledgeAlarmActionRequest.KeyValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.AcknowledgeAlarmActionRequest.Note</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.AcknowledgeAlarmActionRequest.RequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.Alarm.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.Alarm.AlarmModelVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.Alarm.KeyValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.Alarm.Severity</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.AlarmSummary.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.AlarmSummary.AlarmModelVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.AlarmSummary.KeyValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.BatchAlarmActionErrorEntry.RequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEventsData.Model.BatchPutMessageErrorEntry.MessageId</property>
@@ -90,13 +184,117 @@
     <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.DisableActionConfiguration.Note</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.DisableAlarmActionRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.DisableAlarmActionRequest.KeyValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.DisableAlarmActionRequest.Note</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.DisableAlarmActionRequest.RequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.EnableActionConfiguration.Note</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.EnableAlarmActionRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.EnableAlarmActionRequest.KeyValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.EnableAlarmActionRequest.Note</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.EnableAlarmActionRequest.RequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEventsData.Model.Message.InputName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEventsData.Model.Message.MessageId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.ResetActionConfiguration.Note</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.ResetAlarmActionRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.ResetAlarmActionRequest.KeyValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.ResetAlarmActionRequest.Note</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.ResetAlarmActionRequest.RequestId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.SnoozeActionConfiguration.Note</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.SnoozeAlarmActionRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.SnoozeAlarmActionRequest.KeyValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.SnoozeAlarmActionRequest.Note</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.SnoozeAlarmActionRequest.RequestId</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
@@ -110,6 +308,11 @@
     <property>Amazon.IoTEventsData.Model.TimerDefinition.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.TimestampValue.TimeInMillis</property>
+    <min>1</min>
+    <max>9223372036854775807</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEventsData.Model.UpdateDetectorRequest.DetectorModelName</property>

@@ -36,6 +36,7 @@ namespace Amazon.IoTEventsData.Model
         private string _inputName;
         private string _messageId;
         private MemoryStream _payload;
+        private TimestampValue _timestamp;
 
         /// <summary>
         /// Gets and sets the property InputName. 
@@ -94,6 +95,24 @@ namespace Amazon.IoTEventsData.Model
         internal bool IsSetPayload()
         {
             return this._payload != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The timestamp associated with the message.
+        /// </para>
+        /// </summary>
+        public TimestampValue Timestamp
+        {
+            get { return this._timestamp; }
+            set { this._timestamp = value; }
+        }
+
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
+        {
+            return this._timestamp != null;
         }
 
     }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
-    /// Information about the error that occured when attempting to update a detector.
+    /// Information about the error that occurred when attempting to update a detector.
     /// </summary>
     public partial class BatchUpdateDetectorErrorEntry
     {
@@ -40,7 +40,7 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The code of the error.
+        /// The error code.
         /// </para>
         /// </summary>
         public ErrorCode ErrorCode
@@ -58,7 +58,7 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// A message describing the error.
+        /// A message that describes the error.
         /// </para>
         /// </summary>
         public string ErrorMessage

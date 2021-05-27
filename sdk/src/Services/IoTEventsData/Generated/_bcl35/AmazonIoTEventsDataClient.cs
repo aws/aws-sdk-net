@@ -36,9 +36,15 @@ namespace Amazon.IoTEventsData
     /// Implementation for accessing IoTEventsData
     ///
     /// AWS IoT Events monitors your equipment or device fleets for failures or changes in
-    /// operation, and triggers actions when such events occur. AWS IoT Events Data API commands
-    /// enable you to send inputs to detectors, list detectors, and view or update a detector's
-    /// status.
+    /// operation, and triggers actions when such events occur. You can use AWS IoT Events
+    /// Data API commands to send inputs to detectors, list detectors, and view or update
+    /// a detector's status.
+    /// 
+    ///  
+    /// <para>
+    ///  For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html">What
+    /// is AWS IoT Events?</a> in the <i>AWS IoT Events Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AmazonIoTEventsDataClient : AmazonServiceClient, IAmazonIoTEventsData
     {
@@ -240,6 +246,207 @@ namespace Amazon.IoTEventsData
         #endregion
 
 
+        #region  BatchAcknowledgeAlarm
+
+        /// <summary>
+        /// Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code>
+        /// state after you acknowledge them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAcknowledgeAlarm service method.</param>
+        /// 
+        /// <returns>The response from the BatchAcknowledgeAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm">REST API Reference for BatchAcknowledgeAlarm Operation</seealso>
+        public virtual BatchAcknowledgeAlarmResponse BatchAcknowledgeAlarm(BatchAcknowledgeAlarmRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAcknowledgeAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAcknowledgeAlarmResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAcknowledgeAlarmResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAcknowledgeAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAcknowledgeAlarm operation on AmazonIoTEventsDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchAcknowledgeAlarm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm">REST API Reference for BatchAcknowledgeAlarm Operation</seealso>
+        public virtual IAsyncResult BeginBatchAcknowledgeAlarm(BatchAcknowledgeAlarmRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAcknowledgeAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAcknowledgeAlarmResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchAcknowledgeAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchAcknowledgeAlarm.</param>
+        /// 
+        /// <returns>Returns a  BatchAcknowledgeAlarmResult from IoTEventsData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm">REST API Reference for BatchAcknowledgeAlarm Operation</seealso>
+        public virtual BatchAcknowledgeAlarmResponse EndBatchAcknowledgeAlarm(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchAcknowledgeAlarmResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDisableAlarm
+
+        /// <summary>
+        /// Disables one or more alarms. The alarms change to the <code>DISABLED</code> state
+        /// after you disable them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisableAlarm service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisableAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDisableAlarm">REST API Reference for BatchDisableAlarm Operation</seealso>
+        public virtual BatchDisableAlarmResponse BatchDisableAlarm(BatchDisableAlarmRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisableAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisableAlarmResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDisableAlarmResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDisableAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisableAlarm operation on AmazonIoTEventsDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDisableAlarm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDisableAlarm">REST API Reference for BatchDisableAlarm Operation</seealso>
+        public virtual IAsyncResult BeginBatchDisableAlarm(BatchDisableAlarmRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisableAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisableAlarmResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDisableAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDisableAlarm.</param>
+        /// 
+        /// <returns>Returns a  BatchDisableAlarmResult from IoTEventsData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDisableAlarm">REST API Reference for BatchDisableAlarm Operation</seealso>
+        public virtual BatchDisableAlarmResponse EndBatchDisableAlarm(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDisableAlarmResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchEnableAlarm
+
+        /// <summary>
+        /// Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after
+        /// you enable them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchEnableAlarm service method.</param>
+        /// 
+        /// <returns>The response from the BatchEnableAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchEnableAlarm">REST API Reference for BatchEnableAlarm Operation</seealso>
+        public virtual BatchEnableAlarmResponse BatchEnableAlarm(BatchEnableAlarmRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchEnableAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchEnableAlarmResponseUnmarshaller.Instance;
+
+            return Invoke<BatchEnableAlarmResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchEnableAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchEnableAlarm operation on AmazonIoTEventsDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchEnableAlarm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchEnableAlarm">REST API Reference for BatchEnableAlarm Operation</seealso>
+        public virtual IAsyncResult BeginBatchEnableAlarm(BatchEnableAlarmRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchEnableAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchEnableAlarmResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchEnableAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchEnableAlarm.</param>
+        /// 
+        /// <returns>Returns a  BatchEnableAlarmResult from IoTEventsData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchEnableAlarm">REST API Reference for BatchEnableAlarm Operation</seealso>
+        public virtual BatchEnableAlarmResponse EndBatchEnableAlarm(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchEnableAlarmResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchPutMessage
 
         /// <summary>
@@ -253,7 +460,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the BatchPutMessage service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.
@@ -310,6 +517,140 @@ namespace Amazon.IoTEventsData
 
         #endregion
         
+        #region  BatchResetAlarm
+
+        /// <summary>
+        /// Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after
+        /// you reset them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchResetAlarm service method.</param>
+        /// 
+        /// <returns>The response from the BatchResetAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchResetAlarm">REST API Reference for BatchResetAlarm Operation</seealso>
+        public virtual BatchResetAlarmResponse BatchResetAlarm(BatchResetAlarmRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchResetAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchResetAlarmResponseUnmarshaller.Instance;
+
+            return Invoke<BatchResetAlarmResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchResetAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchResetAlarm operation on AmazonIoTEventsDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchResetAlarm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchResetAlarm">REST API Reference for BatchResetAlarm Operation</seealso>
+        public virtual IAsyncResult BeginBatchResetAlarm(BatchResetAlarmRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchResetAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchResetAlarmResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchResetAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchResetAlarm.</param>
+        /// 
+        /// <returns>Returns a  BatchResetAlarmResult from IoTEventsData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchResetAlarm">REST API Reference for BatchResetAlarm Operation</seealso>
+        public virtual BatchResetAlarmResponse EndBatchResetAlarm(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchResetAlarmResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchSnoozeAlarm
+
+        /// <summary>
+        /// Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code>
+        /// state after you set them to the snooze mode.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchSnoozeAlarm service method.</param>
+        /// 
+        /// <returns>The response from the BatchSnoozeAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchSnoozeAlarm">REST API Reference for BatchSnoozeAlarm Operation</seealso>
+        public virtual BatchSnoozeAlarmResponse BatchSnoozeAlarm(BatchSnoozeAlarmRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchSnoozeAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchSnoozeAlarmResponseUnmarshaller.Instance;
+
+            return Invoke<BatchSnoozeAlarmResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchSnoozeAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchSnoozeAlarm operation on AmazonIoTEventsDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchSnoozeAlarm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchSnoozeAlarm">REST API Reference for BatchSnoozeAlarm Operation</seealso>
+        public virtual IAsyncResult BeginBatchSnoozeAlarm(BatchSnoozeAlarmRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchSnoozeAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchSnoozeAlarmResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchSnoozeAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchSnoozeAlarm.</param>
+        /// 
+        /// <returns>Returns a  BatchSnoozeAlarmResult from IoTEventsData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchSnoozeAlarm">REST API Reference for BatchSnoozeAlarm Operation</seealso>
+        public virtual BatchSnoozeAlarmResponse EndBatchSnoozeAlarm(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchSnoozeAlarmResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchUpdateDetector
 
         /// <summary>
@@ -320,7 +661,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the BatchUpdateDetector service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.
@@ -377,6 +718,75 @@ namespace Amazon.IoTEventsData
 
         #endregion
         
+        #region  DescribeAlarm
+
+        /// <summary>
+        /// Retrieves information about an alarm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarm service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeAlarm">REST API Reference for DescribeAlarm Operation</seealso>
+        public virtual DescribeAlarmResponse DescribeAlarm(DescribeAlarmRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlarmResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAlarmResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarm operation on AmazonIoTEventsDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAlarm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeAlarm">REST API Reference for DescribeAlarm Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAlarm(DescribeAlarmRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlarmResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarm.</param>
+        /// 
+        /// <returns>Returns a  DescribeAlarmResult from IoTEventsData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeAlarm">REST API Reference for DescribeAlarm Operation</seealso>
+        public virtual DescribeAlarmResponse EndDescribeAlarm(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAlarmResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDetector
 
         /// <summary>
@@ -386,7 +796,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the DescribeDetector service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.
@@ -446,6 +856,76 @@ namespace Amazon.IoTEventsData
 
         #endregion
         
+        #region  ListAlarms
+
+        /// <summary>
+        /// Lists one or more alarms. The operation returns only the metadata associated with
+        /// each alarm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarms service method.</param>
+        /// 
+        /// <returns>The response from the ListAlarms service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListAlarms">REST API Reference for ListAlarms Operation</seealso>
+        public virtual ListAlarmsResponse ListAlarms(ListAlarmsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlarmsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAlarmsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAlarms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarms operation on AmazonIoTEventsDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAlarms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListAlarms">REST API Reference for ListAlarms Operation</seealso>
+        public virtual IAsyncResult BeginListAlarms(ListAlarmsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlarmsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAlarms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAlarms.</param>
+        /// 
+        /// <returns>Returns a  ListAlarmsResult from IoTEventsData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListAlarms">REST API Reference for ListAlarms Operation</seealso>
+        public virtual ListAlarmsResponse EndListAlarms(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAlarmsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDetectors
 
         /// <summary>
@@ -455,7 +935,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the ListDetectors service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.

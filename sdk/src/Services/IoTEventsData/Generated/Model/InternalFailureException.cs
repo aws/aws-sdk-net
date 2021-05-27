@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
-    /// An internal failure occured.
+    /// An internal failure occurred.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

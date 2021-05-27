@@ -32,14 +32,182 @@ namespace Amazon.IoTEventsData
     /// Interface for accessing IoTEventsData
     ///
     /// AWS IoT Events monitors your equipment or device fleets for failures or changes in
-    /// operation, and triggers actions when such events occur. AWS IoT Events Data API commands
-    /// enable you to send inputs to detectors, list detectors, and view or update a detector's
-    /// status.
+    /// operation, and triggers actions when such events occur. You can use AWS IoT Events
+    /// Data API commands to send inputs to detectors, list detectors, and view or update
+    /// a detector's status.
+    /// 
+    ///  
+    /// <para>
+    ///  For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html">What
+    /// is AWS IoT Events?</a> in the <i>AWS IoT Events Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonIoTEventsData : IAmazonService, IDisposable
     {
 
 
+        
+        #region  BatchAcknowledgeAlarm
+
+
+        /// <summary>
+        /// Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code>
+        /// state after you acknowledge them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAcknowledgeAlarm service method.</param>
+        /// 
+        /// <returns>The response from the BatchAcknowledgeAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm">REST API Reference for BatchAcknowledgeAlarm Operation</seealso>
+        BatchAcknowledgeAlarmResponse BatchAcknowledgeAlarm(BatchAcknowledgeAlarmRequest request);
+
+
+
+        /// <summary>
+        /// Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code>
+        /// state after you acknowledge them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAcknowledgeAlarm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchAcknowledgeAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm">REST API Reference for BatchAcknowledgeAlarm Operation</seealso>
+        Task<BatchAcknowledgeAlarmResponse> BatchAcknowledgeAlarmAsync(BatchAcknowledgeAlarmRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchDisableAlarm
+
+
+        /// <summary>
+        /// Disables one or more alarms. The alarms change to the <code>DISABLED</code> state
+        /// after you disable them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisableAlarm service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisableAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDisableAlarm">REST API Reference for BatchDisableAlarm Operation</seealso>
+        BatchDisableAlarmResponse BatchDisableAlarm(BatchDisableAlarmRequest request);
+
+
+
+        /// <summary>
+        /// Disables one or more alarms. The alarms change to the <code>DISABLED</code> state
+        /// after you disable them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisableAlarm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDisableAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDisableAlarm">REST API Reference for BatchDisableAlarm Operation</seealso>
+        Task<BatchDisableAlarmResponse> BatchDisableAlarmAsync(BatchDisableAlarmRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchEnableAlarm
+
+
+        /// <summary>
+        /// Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after
+        /// you enable them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchEnableAlarm service method.</param>
+        /// 
+        /// <returns>The response from the BatchEnableAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchEnableAlarm">REST API Reference for BatchEnableAlarm Operation</seealso>
+        BatchEnableAlarmResponse BatchEnableAlarm(BatchEnableAlarmRequest request);
+
+
+
+        /// <summary>
+        /// Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after
+        /// you enable them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchEnableAlarm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchEnableAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchEnableAlarm">REST API Reference for BatchEnableAlarm Operation</seealso>
+        Task<BatchEnableAlarmResponse> BatchEnableAlarmAsync(BatchEnableAlarmRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
         #region  BatchPutMessage
 
@@ -55,7 +223,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the BatchPutMessage service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.
@@ -85,7 +253,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the BatchPutMessage service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.
@@ -101,6 +269,114 @@ namespace Amazon.IoTEventsData
 
         #endregion
         
+        #region  BatchResetAlarm
+
+
+        /// <summary>
+        /// Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after
+        /// you reset them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchResetAlarm service method.</param>
+        /// 
+        /// <returns>The response from the BatchResetAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchResetAlarm">REST API Reference for BatchResetAlarm Operation</seealso>
+        BatchResetAlarmResponse BatchResetAlarm(BatchResetAlarmRequest request);
+
+
+
+        /// <summary>
+        /// Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after
+        /// you reset them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchResetAlarm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchResetAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchResetAlarm">REST API Reference for BatchResetAlarm Operation</seealso>
+        Task<BatchResetAlarmResponse> BatchResetAlarmAsync(BatchResetAlarmRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchSnoozeAlarm
+
+
+        /// <summary>
+        /// Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code>
+        /// state after you set them to the snooze mode.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchSnoozeAlarm service method.</param>
+        /// 
+        /// <returns>The response from the BatchSnoozeAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchSnoozeAlarm">REST API Reference for BatchSnoozeAlarm Operation</seealso>
+        BatchSnoozeAlarmResponse BatchSnoozeAlarm(BatchSnoozeAlarmRequest request);
+
+
+
+        /// <summary>
+        /// Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code>
+        /// state after you set them to the snooze mode.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchSnoozeAlarm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchSnoozeAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchSnoozeAlarm">REST API Reference for BatchSnoozeAlarm Operation</seealso>
+        Task<BatchSnoozeAlarmResponse> BatchSnoozeAlarmAsync(BatchSnoozeAlarmRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchUpdateDetector
 
 
@@ -112,7 +388,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the BatchUpdateDetector service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.
@@ -139,7 +415,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the BatchUpdateDetector service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.
@@ -155,6 +431,64 @@ namespace Amazon.IoTEventsData
 
         #endregion
         
+        #region  DescribeAlarm
+
+
+        /// <summary>
+        /// Retrieves information about an alarm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarm service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeAlarm">REST API Reference for DescribeAlarm Operation</seealso>
+        DescribeAlarmResponse DescribeAlarm(DescribeAlarmRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about an alarm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarm service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeAlarm">REST API Reference for DescribeAlarm Operation</seealso>
+        Task<DescribeAlarmResponse> DescribeAlarmAsync(DescribeAlarmRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeDetector
 
 
@@ -165,7 +499,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the DescribeDetector service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.
@@ -194,7 +528,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the DescribeDetector service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.
@@ -213,6 +547,66 @@ namespace Amazon.IoTEventsData
 
         #endregion
         
+        #region  ListAlarms
+
+
+        /// <summary>
+        /// Lists one or more alarms. The operation returns only the metadata associated with
+        /// each alarm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarms service method.</param>
+        /// 
+        /// <returns>The response from the ListAlarms service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListAlarms">REST API Reference for ListAlarms Operation</seealso>
+        ListAlarmsResponse ListAlarms(ListAlarmsRequest request);
+
+
+
+        /// <summary>
+        /// Lists one or more alarms. The operation returns only the metadata associated with
+        /// each alarm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAlarms service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListAlarms">REST API Reference for ListAlarms Operation</seealso>
+        Task<ListAlarmsResponse> ListAlarmsAsync(ListAlarmsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListDetectors
 
 
@@ -223,7 +617,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the ListDetectors service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.
@@ -252,7 +646,7 @@ namespace Amazon.IoTEventsData
         /// 
         /// <returns>The response from the ListDetectors service method, as returned by IoTEventsData.</returns>
         /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
-        /// An internal failure occured.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
         /// The request was invalid.

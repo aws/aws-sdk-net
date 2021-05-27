@@ -63,6 +63,17 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
                 context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Payload));
             }
 
+            if(requestObject.IsSetTimestamp())
+            {
+                context.Writer.WritePropertyName("timestamp");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimestampValueMarshaller.Instance;
+                marshaller.Marshall(requestObject.Timestamp, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
