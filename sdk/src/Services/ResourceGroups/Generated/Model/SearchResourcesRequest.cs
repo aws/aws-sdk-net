@@ -45,6 +45,18 @@ namespace Amazon.ResourceGroups.Model
     /// <para>
     ///  <code>resource-groups:SearchResources</code> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>cloudformation:DescribeStacks</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>cloudformation:ListStackResources</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>tag:GetResources</code> 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class SearchResourcesRequest : AmazonResourceGroupsRequest

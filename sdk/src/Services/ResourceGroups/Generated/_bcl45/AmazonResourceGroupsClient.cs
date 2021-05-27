@@ -1072,6 +1072,18 @@ namespace Amazon.ResourceGroups
         /// <para>
         ///  <code>resource-groups:ListGroupResources</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:DescribeStacks</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:ListStackResources</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag:GetResources</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupResources service method.</param>
@@ -1124,6 +1136,18 @@ namespace Amazon.ResourceGroups
         ///  <ul> <li> 
         /// <para>
         ///  <code>resource-groups:ListGroupResources</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:DescribeStacks</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:ListStackResources</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag:GetResources</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1394,6 +1418,18 @@ namespace Amazon.ResourceGroups
         /// <para>
         ///  <code>resource-groups:SearchResources</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:DescribeStacks</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:ListStackResources</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag:GetResources</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
@@ -1444,6 +1480,18 @@ namespace Amazon.ResourceGroups
         ///  <ul> <li> 
         /// <para>
         ///  <code>resource-groups:SearchResources</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:DescribeStacks</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:ListStackResources</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag:GetResources</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
