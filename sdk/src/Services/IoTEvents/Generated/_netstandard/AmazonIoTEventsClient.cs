@@ -243,6 +243,64 @@ namespace Amazon.IoTEvents
         #endregion
 
 
+        #region  CreateAlarmModel
+
+        internal virtual CreateAlarmModelResponse CreateAlarmModel(CreateAlarmModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAlarmModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAlarmModelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAlarmModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the
+        /// alarm to get notified when the value is outside a specified range. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create
+        /// an alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlarmModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateAlarmModel">REST API Reference for CreateAlarmModel Operation</seealso>
+        public virtual Task<CreateAlarmModelResponse> CreateAlarmModelAsync(CreateAlarmModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAlarmModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAlarmModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAlarmModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDetectorModel
 
         internal virtual CreateDetectorModelResponse CreateDetectorModel(CreateDetectorModelRequest request)
@@ -343,6 +401,59 @@ namespace Amazon.IoTEvents
             options.ResponseUnmarshaller = CreateInputResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateInputResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAlarmModel
+
+        internal virtual DeleteAlarmModelResponse DeleteAlarmModel(DeleteAlarmModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAlarmModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlarmModelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAlarmModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an alarm model. Any alarm instances that were created based on this alarm
+        /// model are also deleted. This action can't be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteAlarmModel">REST API Reference for DeleteAlarmModel Operation</seealso>
+        public virtual Task<DeleteAlarmModelResponse> DeleteAlarmModelAsync(DeleteAlarmModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAlarmModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlarmModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAlarmModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -451,6 +562,56 @@ namespace Amazon.IoTEvents
 
         #endregion
         
+        #region  DescribeAlarmModel
+
+        internal virtual DescribeAlarmModelResponse DescribeAlarmModel(DescribeAlarmModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlarmModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlarmModelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAlarmModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code>
+        /// parameter, the latest version is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeAlarmModel">REST API Reference for DescribeAlarmModel Operation</seealso>
+        public virtual Task<DescribeAlarmModelResponse> DescribeAlarmModelAsync(DescribeAlarmModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlarmModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlarmModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAlarmModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDetectorModel
 
         internal virtual DescribeDetectorModelResponse DescribeDetectorModel(DescribeDetectorModelRequest request)
@@ -515,7 +676,14 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Retrieves execution information about a detector model analysis
+        /// Retrieves runtime information about a detector model analysis.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After AWS IoT Events starts analyzing your detector model, you have up to 24 hours
+        /// to retrieve the analysis results.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModelAnalysis service method.</param>
         /// <param name="cancellationToken">
@@ -666,6 +834,13 @@ namespace Amazon.IoTEvents
 
         /// <summary>
         /// Retrieves one or more analysis results of the detector model.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After AWS IoT Events starts analyzing your detector model, you have up to 24 hours
+        /// to retrieve the analysis results.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDetectorModelAnalysisResults service method.</param>
         /// <param name="cancellationToken">
@@ -696,6 +871,103 @@ namespace Amazon.IoTEvents
             options.ResponseUnmarshaller = GetDetectorModelAnalysisResultsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDetectorModelAnalysisResultsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAlarmModels
+
+        internal virtual ListAlarmModelsResponse ListAlarmModels(ListAlarmModelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlarmModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmModelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAlarmModelsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the alarm models that you created. The operation returns only the metadata associated
+        /// with each alarm model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmModels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAlarmModels service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModels">REST API Reference for ListAlarmModels Operation</seealso>
+        public virtual Task<ListAlarmModelsResponse> ListAlarmModelsAsync(ListAlarmModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlarmModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmModelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAlarmModelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAlarmModelVersions
+
+        internal virtual ListAlarmModelVersionsResponse ListAlarmModelVersions(ListAlarmModelVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlarmModelVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmModelVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAlarmModelVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the versions of an alarm model. The operation returns only the metadata
+        /// associated with each alarm model version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmModelVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAlarmModelVersions service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModelVersions">REST API Reference for ListAlarmModelVersions Operation</seealso>
+        public virtual Task<ListAlarmModelVersionsResponse> ListAlarmModelVersionsAsync(ListAlarmModelVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlarmModelVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmModelVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAlarmModelVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -793,6 +1065,55 @@ namespace Amazon.IoTEvents
             options.ResponseUnmarshaller = ListDetectorModelVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDetectorModelVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInputRoutings
+
+        internal virtual ListInputRoutingsResponse ListInputRoutings(ListInputRoutingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInputRoutingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInputRoutingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInputRoutingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists one or more input routings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInputRoutings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInputRoutings service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputRoutings">REST API Reference for ListInputRoutings Operation</seealso>
+        public virtual Task<ListInputRoutingsResponse> ListInputRoutingsAsync(ListInputRoutingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInputRoutingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInputRoutingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListInputRoutingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -966,8 +1287,8 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
-        /// detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting
+        /// a detector model</a> in the <i>AWS IoT Events Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDetectorModelAnalysis service method.</param>
         /// <param name="cancellationToken">
@@ -1100,6 +1421,59 @@ namespace Amazon.IoTEvents
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAlarmModel
+
+        internal virtual UpdateAlarmModelResponse UpdateAlarmModel(UpdateAlarmModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAlarmModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAlarmModelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAlarmModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an alarm model. Any alarms that were created based on the previous version
+        /// are deleted and then created again as new data arrives.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlarmModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateAlarmModel">REST API Reference for UpdateAlarmModel Operation</seealso>
+        public virtual Task<UpdateAlarmModelResponse> UpdateAlarmModelAsync(UpdateAlarmModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAlarmModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAlarmModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAlarmModelResponse>(request, options, cancellationToken);
         }
 
         #endregion

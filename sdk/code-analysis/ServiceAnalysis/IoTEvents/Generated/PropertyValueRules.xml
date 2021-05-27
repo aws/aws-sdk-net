@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.IoTEvents.Model.CreateAlarmModelRequest.AlarmModelDescription</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.CreateAlarmModelRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.CreateAlarmModelRequest.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.CreateAlarmModelRequest.RoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.CreateAlarmModelRequest.Severity</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.CreateAlarmModelResponse.AlarmModelVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEvents.Model.CreateDetectorModelRequest.DetectorModelDescription</property>
     <max>128</max>
   </property-value-rule>
@@ -32,6 +63,12 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTEvents.Model.DeleteAlarmModelRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEvents.Model.DeleteDetectorModelRequest.DetectorModelName</property>
     <min>1</min>
     <max>128</max>
@@ -42,6 +79,48 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.DescribeAlarmModelRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.DescribeAlarmModelRequest.AlarmModelVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.DescribeAlarmModelResponse.AlarmModelDescription</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.DescribeAlarmModelResponse.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.DescribeAlarmModelResponse.AlarmModelVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.DescribeAlarmModelResponse.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.DescribeAlarmModelResponse.RoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.DescribeAlarmModelResponse.Severity</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.DescribeDetectorModelRequest.DetectorModelName</property>
@@ -61,6 +140,22 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTEvents.Model.ListAlarmModelsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.ListAlarmModelVersionsRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.ListAlarmModelVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEvents.Model.ListDetectorModelsRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
@@ -73,6 +168,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.ListDetectorModelVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.ListInputRoutingsRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
   </property-value-rule>
@@ -95,6 +195,31 @@
     <property>Amazon.IoTEvents.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.UpdateAlarmModelRequest.AlarmModelDescription</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.UpdateAlarmModelRequest.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.UpdateAlarmModelRequest.RoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.UpdateAlarmModelRequest.Severity</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.UpdateAlarmModelResponse.AlarmModelVersion</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.UpdateDetectorModelRequest.DetectorModelDescription</property>
@@ -120,6 +245,32 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.AlarmModelSummary.AlarmModelDescription</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.AlarmModelSummary.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.AlarmModelVersionSummary.AlarmModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.AlarmModelVersionSummary.AlarmModelVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.AlarmModelVersionSummary.RoleArn</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.Attribute.JsonPath</property>
@@ -240,6 +391,12 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTEvents.Model.IotEventsInputIdentifier.InputName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEvents.Model.IotTopicPublishAction.MqttTopic</property>
     <min>1</min>
     <max>128</max>
@@ -262,6 +419,11 @@
     <property>Amazon.IoTEvents.Model.ResetTimerAction.TimerName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.RoutedResource.Arn</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.SetTimerAction.DurationExpression</property>
@@ -288,6 +450,16 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.SimpleRule.InputProperty</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.SimpleRule.Threshold</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.SNSTopicPublishAction.TargetArn</property>

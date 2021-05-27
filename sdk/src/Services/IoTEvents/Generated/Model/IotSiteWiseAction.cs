@@ -164,7 +164,6 @@ namespace Amazon.IoTEvents.Model
         /// value (TQV) information. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AssetPropertyValue PropertyValue
         {
             get { return this._propertyValue; }

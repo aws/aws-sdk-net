@@ -30,7 +30,14 @@ namespace Amazon.IoTEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDetectorModelAnalysis operation.
-    /// Retrieves execution information about a detector model analysis
+    /// Retrieves runtime information about a detector model analysis.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// After AWS IoT Events starts analyzing your detector model, you have up to 24 hours
+    /// to retrieve the analysis results.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeDetectorModelAnalysisRequest : AmazonIoTEventsRequest
     {

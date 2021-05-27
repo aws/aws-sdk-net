@@ -41,6 +41,70 @@ namespace Amazon.IoTEvents
 
 
         
+        #region  CreateAlarmModel
+
+
+        /// <summary>
+        /// Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the
+        /// alarm to get notified when the value is outside a specified range. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create
+        /// an alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlarmModel service method.</param>
+        /// 
+        /// <returns>The response from the CreateAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateAlarmModel">REST API Reference for CreateAlarmModel Operation</seealso>
+        CreateAlarmModelResponse CreateAlarmModel(CreateAlarmModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAlarmModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlarmModel operation on AmazonIoTEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAlarmModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateAlarmModel">REST API Reference for CreateAlarmModel Operation</seealso>
+        IAsyncResult BeginCreateAlarmModel(CreateAlarmModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAlarmModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAlarmModel.</param>
+        /// 
+        /// <returns>Returns a  CreateAlarmModelResult from IoTEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateAlarmModel">REST API Reference for CreateAlarmModel Operation</seealso>
+        CreateAlarmModelResponse EndCreateAlarmModel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDetectorModel
 
 
@@ -154,6 +218,65 @@ namespace Amazon.IoTEvents
         /// <returns>Returns a  CreateInputResult from IoTEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateInput">REST API Reference for CreateInput Operation</seealso>
         CreateInputResponse EndCreateInput(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAlarmModel
+
+
+        /// <summary>
+        /// Deletes an alarm model. Any alarm instances that were created based on this alarm
+        /// model are also deleted. This action can't be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmModel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteAlarmModel">REST API Reference for DeleteAlarmModel Operation</seealso>
+        DeleteAlarmModelResponse DeleteAlarmModel(DeleteAlarmModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAlarmModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmModel operation on AmazonIoTEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAlarmModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteAlarmModel">REST API Reference for DeleteAlarmModel Operation</seealso>
+        IAsyncResult BeginDeleteAlarmModel(DeleteAlarmModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAlarmModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAlarmModel.</param>
+        /// 
+        /// <returns>Returns a  DeleteAlarmModelResult from IoTEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteAlarmModel">REST API Reference for DeleteAlarmModel Operation</seealso>
+        DeleteAlarmModelResponse EndDeleteAlarmModel(IAsyncResult asyncResult);
 
         #endregion
         
@@ -273,6 +396,62 @@ namespace Amazon.IoTEvents
 
         #endregion
         
+        #region  DescribeAlarmModel
+
+
+        /// <summary>
+        /// Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code>
+        /// parameter, the latest version is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmModel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeAlarmModel">REST API Reference for DescribeAlarmModel Operation</seealso>
+        DescribeAlarmModelResponse DescribeAlarmModel(DescribeAlarmModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAlarmModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmModel operation on AmazonIoTEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAlarmModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeAlarmModel">REST API Reference for DescribeAlarmModel Operation</seealso>
+        IAsyncResult BeginDescribeAlarmModel(DescribeAlarmModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAlarmModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarmModel.</param>
+        /// 
+        /// <returns>Returns a  DescribeAlarmModelResult from IoTEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeAlarmModel">REST API Reference for DescribeAlarmModel Operation</seealso>
+        DescribeAlarmModelResponse EndDescribeAlarmModel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeDetectorModel
 
 
@@ -333,7 +512,14 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Retrieves execution information about a detector model analysis
+        /// Retrieves runtime information about a detector model analysis.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After AWS IoT Events starts analyzing your detector model, you have up to 24 hours
+        /// to retrieve the analysis results.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModelAnalysis service method.</param>
         /// 
@@ -502,6 +688,13 @@ namespace Amazon.IoTEvents
 
         /// <summary>
         /// Retrieves one or more analysis results of the detector model.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After AWS IoT Events starts analyzing your detector model, you have up to 24 hours
+        /// to retrieve the analysis results.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDetectorModelAnalysisResults service method.</param>
         /// 
@@ -549,6 +742,115 @@ namespace Amazon.IoTEvents
         /// <returns>Returns a  GetDetectorModelAnalysisResultsResult from IoTEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">REST API Reference for GetDetectorModelAnalysisResults Operation</seealso>
         GetDetectorModelAnalysisResultsResponse EndGetDetectorModelAnalysisResults(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAlarmModels
+
+
+        /// <summary>
+        /// Lists the alarm models that you created. The operation returns only the metadata associated
+        /// with each alarm model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmModels service method.</param>
+        /// 
+        /// <returns>The response from the ListAlarmModels service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModels">REST API Reference for ListAlarmModels Operation</seealso>
+        ListAlarmModelsResponse ListAlarmModels(ListAlarmModelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAlarmModels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmModels operation on AmazonIoTEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAlarmModels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModels">REST API Reference for ListAlarmModels Operation</seealso>
+        IAsyncResult BeginListAlarmModels(ListAlarmModelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAlarmModels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAlarmModels.</param>
+        /// 
+        /// <returns>Returns a  ListAlarmModelsResult from IoTEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModels">REST API Reference for ListAlarmModels Operation</seealso>
+        ListAlarmModelsResponse EndListAlarmModels(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAlarmModelVersions
+
+
+        /// <summary>
+        /// Lists all the versions of an alarm model. The operation returns only the metadata
+        /// associated with each alarm model version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmModelVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListAlarmModelVersions service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModelVersions">REST API Reference for ListAlarmModelVersions Operation</seealso>
+        ListAlarmModelVersionsResponse ListAlarmModelVersions(ListAlarmModelVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAlarmModelVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmModelVersions operation on AmazonIoTEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAlarmModelVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModelVersions">REST API Reference for ListAlarmModelVersions Operation</seealso>
+        IAsyncResult BeginListAlarmModelVersions(ListAlarmModelVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAlarmModelVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAlarmModelVersions.</param>
+        /// 
+        /// <returns>Returns a  ListAlarmModelVersionsResult from IoTEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModelVersions">REST API Reference for ListAlarmModelVersions Operation</seealso>
+        ListAlarmModelVersionsResponse EndListAlarmModelVersions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -658,6 +960,61 @@ namespace Amazon.IoTEvents
         /// <returns>Returns a  ListDetectorModelVersionsResult from IoTEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListDetectorModelVersions">REST API Reference for ListDetectorModelVersions Operation</seealso>
         ListDetectorModelVersionsResponse EndListDetectorModelVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListInputRoutings
+
+
+        /// <summary>
+        /// Lists one or more input routings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInputRoutings service method.</param>
+        /// 
+        /// <returns>The response from the ListInputRoutings service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputRoutings">REST API Reference for ListInputRoutings Operation</seealso>
+        ListInputRoutingsResponse ListInputRoutings(ListInputRoutingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInputRoutings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInputRoutings operation on AmazonIoTEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInputRoutings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputRoutings">REST API Reference for ListInputRoutings Operation</seealso>
+        IAsyncResult BeginListInputRoutings(ListInputRoutingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInputRoutings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInputRoutings.</param>
+        /// 
+        /// <returns>Returns a  ListInputRoutingsResult from IoTEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputRoutings">REST API Reference for ListInputRoutings Operation</seealso>
+        ListInputRoutingsResponse EndListInputRoutings(IAsyncResult asyncResult);
 
         #endregion
         
@@ -838,8 +1195,8 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
-        /// detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting
+        /// a detector model</a> in the <i>AWS IoT Events Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDetectorModelAnalysis service method.</param>
         /// 
@@ -1001,6 +1358,65 @@ namespace Amazon.IoTEvents
         /// <returns>Returns a  UntagResourceResult from IoTEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAlarmModel
+
+
+        /// <summary>
+        /// Updates an alarm model. Any alarms that were created based on the previous version
+        /// are deleted and then created again as new data arrives.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlarmModel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateAlarmModel">REST API Reference for UpdateAlarmModel Operation</seealso>
+        UpdateAlarmModelResponse UpdateAlarmModel(UpdateAlarmModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAlarmModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlarmModel operation on AmazonIoTEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAlarmModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateAlarmModel">REST API Reference for UpdateAlarmModel Operation</seealso>
+        IAsyncResult BeginUpdateAlarmModel(UpdateAlarmModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAlarmModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAlarmModel.</param>
+        /// 
+        /// <returns>Returns a  UpdateAlarmModelResult from IoTEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateAlarmModel">REST API Reference for UpdateAlarmModel Operation</seealso>
+        UpdateAlarmModelResponse EndUpdateAlarmModel(IAsyncResult asyncResult);
 
         #endregion
         

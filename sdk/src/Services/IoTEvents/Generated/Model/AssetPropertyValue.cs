@@ -105,7 +105,6 @@ namespace Amazon.IoTEvents.Model
         /// The value to send to an asset property.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AssetPropertyVariant Value
         {
             get { return this._value; }

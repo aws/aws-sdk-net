@@ -31,6 +31,13 @@ namespace Amazon.IoTEvents.Model
     /// <summary>
     /// Container for the parameters to the GetDetectorModelAnalysisResults operation.
     /// Retrieves one or more analysis results of the detector model.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// After AWS IoT Events starts analyzing your detector model, you have up to 24 hours
+    /// to retrieve the analysis results.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetDetectorModelAnalysisResultsRequest : AmazonIoTEventsRequest
     {

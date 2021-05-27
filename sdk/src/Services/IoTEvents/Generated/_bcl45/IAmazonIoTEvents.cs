@@ -41,6 +41,82 @@ namespace Amazon.IoTEvents
 
 
         
+        #region  CreateAlarmModel
+
+
+        /// <summary>
+        /// Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the
+        /// alarm to get notified when the value is outside a specified range. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create
+        /// an alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlarmModel service method.</param>
+        /// 
+        /// <returns>The response from the CreateAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateAlarmModel">REST API Reference for CreateAlarmModel Operation</seealso>
+        CreateAlarmModelResponse CreateAlarmModel(CreateAlarmModelRequest request);
+
+
+
+        /// <summary>
+        /// Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the
+        /// alarm to get notified when the value is outside a specified range. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create
+        /// an alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlarmModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateAlarmModel">REST API Reference for CreateAlarmModel Operation</seealso>
+        Task<CreateAlarmModelResponse> CreateAlarmModelAsync(CreateAlarmModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDetectorModel
 
 
@@ -166,6 +242,72 @@ namespace Amazon.IoTEvents
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateInput">REST API Reference for CreateInput Operation</seealso>
         Task<CreateInputResponse> CreateInputAsync(CreateInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAlarmModel
+
+
+        /// <summary>
+        /// Deletes an alarm model. Any alarm instances that were created based on this alarm
+        /// model are also deleted. This action can't be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmModel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteAlarmModel">REST API Reference for DeleteAlarmModel Operation</seealso>
+        DeleteAlarmModelResponse DeleteAlarmModel(DeleteAlarmModelRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an alarm model. Any alarm instances that were created based on this alarm
+        /// model are also deleted. This action can't be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteAlarmModel">REST API Reference for DeleteAlarmModel Operation</seealso>
+        Task<DeleteAlarmModelResponse> DeleteAlarmModelAsync(DeleteAlarmModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -297,6 +439,66 @@ namespace Amazon.IoTEvents
 
         #endregion
         
+        #region  DescribeAlarmModel
+
+
+        /// <summary>
+        /// Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code>
+        /// parameter, the latest version is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmModel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeAlarmModel">REST API Reference for DescribeAlarmModel Operation</seealso>
+        DescribeAlarmModelResponse DescribeAlarmModel(DescribeAlarmModelRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code>
+        /// parameter, the latest version is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeAlarmModel">REST API Reference for DescribeAlarmModel Operation</seealso>
+        Task<DescribeAlarmModelResponse> DescribeAlarmModelAsync(DescribeAlarmModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeDetectorModel
 
 
@@ -361,7 +563,14 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Retrieves execution information about a detector model analysis
+        /// Retrieves runtime information about a detector model analysis.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After AWS IoT Events starts analyzing your detector model, you have up to 24 hours
+        /// to retrieve the analysis results.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModelAnalysis service method.</param>
         /// 
@@ -387,7 +596,14 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Retrieves execution information about a detector model analysis
+        /// Retrieves runtime information about a detector model analysis.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After AWS IoT Events starts analyzing your detector model, you have up to 24 hours
+        /// to retrieve the analysis results.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModelAnalysis service method.</param>
         /// <param name="cancellationToken">
@@ -542,6 +758,13 @@ namespace Amazon.IoTEvents
 
         /// <summary>
         /// Retrieves one or more analysis results of the detector model.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After AWS IoT Events starts analyzing your detector model, you have up to 24 hours
+        /// to retrieve the analysis results.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDetectorModelAnalysisResults service method.</param>
         /// 
@@ -568,6 +791,13 @@ namespace Amazon.IoTEvents
 
         /// <summary>
         /// Retrieves one or more analysis results of the detector model.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After AWS IoT Events starts analyzing your detector model, you have up to 24 hours
+        /// to retrieve the analysis results.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDetectorModelAnalysisResults service method.</param>
         /// <param name="cancellationToken">
@@ -592,6 +822,120 @@ namespace Amazon.IoTEvents
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">REST API Reference for GetDetectorModelAnalysisResults Operation</seealso>
         Task<GetDetectorModelAnalysisResultsResponse> GetDetectorModelAnalysisResultsAsync(GetDetectorModelAnalysisResultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAlarmModels
+
+
+        /// <summary>
+        /// Lists the alarm models that you created. The operation returns only the metadata associated
+        /// with each alarm model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmModels service method.</param>
+        /// 
+        /// <returns>The response from the ListAlarmModels service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModels">REST API Reference for ListAlarmModels Operation</seealso>
+        ListAlarmModelsResponse ListAlarmModels(ListAlarmModelsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the alarm models that you created. The operation returns only the metadata associated
+        /// with each alarm model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmModels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAlarmModels service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModels">REST API Reference for ListAlarmModels Operation</seealso>
+        Task<ListAlarmModelsResponse> ListAlarmModelsAsync(ListAlarmModelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAlarmModelVersions
+
+
+        /// <summary>
+        /// Lists all the versions of an alarm model. The operation returns only the metadata
+        /// associated with each alarm model version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmModelVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListAlarmModelVersions service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModelVersions">REST API Reference for ListAlarmModelVersions Operation</seealso>
+        ListAlarmModelVersionsResponse ListAlarmModelVersions(ListAlarmModelVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all the versions of an alarm model. The operation returns only the metadata
+        /// associated with each alarm model version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmModelVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAlarmModelVersions service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModelVersions">REST API Reference for ListAlarmModelVersions Operation</seealso>
+        Task<ListAlarmModelVersionsResponse> ListAlarmModelVersionsAsync(ListAlarmModelVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -706,6 +1050,64 @@ namespace Amazon.IoTEvents
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListDetectorModelVersions">REST API Reference for ListDetectorModelVersions Operation</seealso>
         Task<ListDetectorModelVersionsResponse> ListDetectorModelVersionsAsync(ListDetectorModelVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListInputRoutings
+
+
+        /// <summary>
+        /// Lists one or more input routings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInputRoutings service method.</param>
+        /// 
+        /// <returns>The response from the ListInputRoutings service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputRoutings">REST API Reference for ListInputRoutings Operation</seealso>
+        ListInputRoutingsResponse ListInputRoutings(ListInputRoutingsRequest request);
+
+
+
+        /// <summary>
+        /// Lists one or more input routings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInputRoutings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInputRoutings service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputRoutings">REST API Reference for ListInputRoutings Operation</seealso>
+        Task<ListInputRoutingsResponse> ListInputRoutingsAsync(ListInputRoutingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -903,8 +1305,8 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
-        /// detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting
+        /// a detector model</a> in the <i>AWS IoT Events Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDetectorModelAnalysis service method.</param>
         /// 
@@ -930,8 +1332,8 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
-        /// detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+        /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting
+        /// a detector model</a> in the <i>AWS IoT Events Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDetectorModelAnalysis service method.</param>
         /// <param name="cancellationToken">
@@ -1080,6 +1482,72 @@ namespace Amazon.IoTEvents
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAlarmModel
+
+
+        /// <summary>
+        /// Updates an alarm model. Any alarms that were created based on the previous version
+        /// are deleted and then created again as new data arrives.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlarmModel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateAlarmModel">REST API Reference for UpdateAlarmModel Operation</seealso>
+        UpdateAlarmModelResponse UpdateAlarmModel(UpdateAlarmModelRequest request);
+
+
+
+        /// <summary>
+        /// Updates an alarm model. Any alarms that were created based on the previous version
+        /// are deleted and then created again as new data arrives.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlarmModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAlarmModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateAlarmModel">REST API Reference for UpdateAlarmModel Operation</seealso>
+        Task<UpdateAlarmModelResponse> UpdateAlarmModelAsync(UpdateAlarmModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -41,20 +41,20 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Level. 
         /// <para>
-        /// The severity level of the analysis result. Analysis results fall into three general
-        /// categories based on the severity level:
+        /// The severity level of the analysis result. Based on the severity level, analysis results
+        /// fall into three general categories:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INFO</code> - An information result informs you about a significant field in
+        ///  <code>INFO</code> - An information result tells you about a significant field in
         /// your detector model. This type of result usually doesn't require immediate action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WARNING</code> - A warning result draws special attention to fields that are
-        /// potentially damaging to your detector model. We recommend that you review warnings
-        /// and take necessary actions before you use your detetor model in production environments.
-        /// Otherwise, the detector model may not fully function as expected.
+        ///  <code>WARNING</code> - A warning result draws special attention to fields that might
+        /// cause issues for your detector model. We recommend that you review warnings and take
+        /// necessary actions before you use your detector model in production environments. Otherwise,
+        /// the detector model might not work as expected.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -125,8 +125,8 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>service-limits</code> - Resources or operations can't exceed service limits.
-        /// Update your detector model or request a limit adjust.
+        ///  <code>service-limits</code> - Resources or API operations can't exceed service quotas
+        /// (also known as limits). Update your detector model or request a quota increase.
         /// </para>
         ///  </li> <li> 
         /// <para>

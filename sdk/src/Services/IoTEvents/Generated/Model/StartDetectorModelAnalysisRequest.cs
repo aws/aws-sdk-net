@@ -30,8 +30,8 @@ namespace Amazon.IoTEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDetectorModelAnalysis operation.
-    /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
-    /// detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+    /// Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting
+    /// a detector model</a> in the <i>AWS IoT Events Developer Guide</i>.
     /// </summary>
     public partial class StartDetectorModelAnalysisRequest : AmazonIoTEventsRequest
     {

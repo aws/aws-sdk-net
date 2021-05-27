@@ -47,7 +47,7 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model .
+        ///  <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
         /// </para>
         ///  </li> <li> 
         /// <para>
