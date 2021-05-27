@@ -55,7 +55,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Documents. 
         /// <para>
-        /// One or more documents to add to the index. 
+        /// One or more documents to add to the index.
+        /// </para>
+        ///  
+        /// <para>
+        /// Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId'
+        /// are custom attributes that provide information on the synchronization of documents
+        /// running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom
+        /// attribute as Amazon Kendra will use the ID of a running sync job.
         /// </para>
         ///  
         /// <para>

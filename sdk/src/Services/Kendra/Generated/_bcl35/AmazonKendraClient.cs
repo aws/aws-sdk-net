@@ -406,6 +406,87 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  ClearQuerySuggestions
+
+        /// <summary>
+        /// Clears existing query suggestions from an index.
+        /// 
+        ///  
+        /// <para>
+        /// This deletes existing suggestions only, not the queries in the query log. After you
+        /// clear suggestions, Amazon Kendra learns new suggestions based on new queries added
+        /// to the query log from the time you cleared suggestions. If you do not see any new
+        /// suggestions, then please allow Amazon Kendra to collect enough queries to learn new
+        /// suggestions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ClearQuerySuggestions service method.</param>
+        /// 
+        /// <returns>The response from the ClearQuerySuggestions service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">REST API Reference for ClearQuerySuggestions Operation</seealso>
+        public virtual ClearQuerySuggestionsResponse ClearQuerySuggestions(ClearQuerySuggestionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClearQuerySuggestionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClearQuerySuggestionsResponseUnmarshaller.Instance;
+
+            return Invoke<ClearQuerySuggestionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ClearQuerySuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ClearQuerySuggestions operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndClearQuerySuggestions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">REST API Reference for ClearQuerySuggestions Operation</seealso>
+        public virtual IAsyncResult BeginClearQuerySuggestions(ClearQuerySuggestionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClearQuerySuggestionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClearQuerySuggestionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ClearQuerySuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginClearQuerySuggestions.</param>
+        /// 
+        /// <returns>Returns a  ClearQuerySuggestionsResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">REST API Reference for ClearQuerySuggestions Operation</seealso>
+        public virtual ClearQuerySuggestionsResponse EndClearQuerySuggestions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ClearQuerySuggestionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDataSource
 
         /// <summary>
@@ -651,6 +732,97 @@ namespace Amazon.Kendra
         public virtual CreateIndexResponse EndCreateIndex(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateIndexResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateQuerySuggestionsBlockList
+
+        /// <summary>
+        /// Creates a block list to exlcude certain queries from suggestions.
+        /// 
+        ///  
+        /// <para>
+        /// Any query that contains words or phrases specified in the block list is blocked or
+        /// filtered out from being shown as a suggestion.
+        /// </para>
+        ///  
+        /// <para>
+        /// You need to provide the file location of your block list text file in your S3 bucket.
+        /// In your text file, enter each block word or phrase on a separate line.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
+        /// for Amazon Kendra</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuerySuggestionsBlockList service method.</param>
+        /// 
+        /// <returns>The response from the CreateQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">REST API Reference for CreateQuerySuggestionsBlockList Operation</seealso>
+        public virtual CreateQuerySuggestionsBlockListResponse CreateQuerySuggestionsBlockList(CreateQuerySuggestionsBlockListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateQuerySuggestionsBlockListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQuerySuggestionsBlockListResponseUnmarshaller.Instance;
+
+            return Invoke<CreateQuerySuggestionsBlockListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateQuerySuggestionsBlockList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuerySuggestionsBlockList operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateQuerySuggestionsBlockList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">REST API Reference for CreateQuerySuggestionsBlockList Operation</seealso>
+        public virtual IAsyncResult BeginCreateQuerySuggestionsBlockList(CreateQuerySuggestionsBlockListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateQuerySuggestionsBlockListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQuerySuggestionsBlockListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateQuerySuggestionsBlockList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateQuerySuggestionsBlockList.</param>
+        /// 
+        /// <returns>Returns a  CreateQuerySuggestionsBlockListResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">REST API Reference for CreateQuerySuggestionsBlockList Operation</seealso>
+        public virtual CreateQuerySuggestionsBlockListResponse EndCreateQuerySuggestionsBlockList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateQuerySuggestionsBlockListResponse>(asyncResult);
         }
 
         #endregion
@@ -953,6 +1125,84 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  DeleteQuerySuggestionsBlockList
+
+        /// <summary>
+        /// Deletes a block list used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// A deleted block list might not take effect right away. Amazon Kendra needs to refresh
+        /// the entire suggestions list to add back the queries that were previously blocked.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuerySuggestionsBlockList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">REST API Reference for DeleteQuerySuggestionsBlockList Operation</seealso>
+        public virtual DeleteQuerySuggestionsBlockListResponse DeleteQuerySuggestionsBlockList(DeleteQuerySuggestionsBlockListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQuerySuggestionsBlockListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQuerySuggestionsBlockListResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQuerySuggestionsBlockListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteQuerySuggestionsBlockList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuerySuggestionsBlockList operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQuerySuggestionsBlockList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">REST API Reference for DeleteQuerySuggestionsBlockList Operation</seealso>
+        public virtual IAsyncResult BeginDeleteQuerySuggestionsBlockList(DeleteQuerySuggestionsBlockListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQuerySuggestionsBlockListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQuerySuggestionsBlockListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteQuerySuggestionsBlockList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteQuerySuggestionsBlockList.</param>
+        /// 
+        /// <returns>Returns a  DeleteQuerySuggestionsBlockListResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">REST API Reference for DeleteQuerySuggestionsBlockList Operation</seealso>
+        public virtual DeleteQuerySuggestionsBlockListResponse EndDeleteQuerySuggestionsBlockList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteQuerySuggestionsBlockListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteThesaurus
 
         /// <summary>
@@ -1232,6 +1482,154 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  DescribeQuerySuggestionsBlockList
+
+        /// <summary>
+        /// Describes a block list used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// This is used to check the current settings that are applied to a block list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsBlockList service method.</param>
+        /// 
+        /// <returns>The response from the DescribeQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">REST API Reference for DescribeQuerySuggestionsBlockList Operation</seealso>
+        public virtual DescribeQuerySuggestionsBlockListResponse DescribeQuerySuggestionsBlockList(DescribeQuerySuggestionsBlockListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQuerySuggestionsBlockListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQuerySuggestionsBlockListResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeQuerySuggestionsBlockListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeQuerySuggestionsBlockList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsBlockList operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeQuerySuggestionsBlockList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">REST API Reference for DescribeQuerySuggestionsBlockList Operation</seealso>
+        public virtual IAsyncResult BeginDescribeQuerySuggestionsBlockList(DescribeQuerySuggestionsBlockListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQuerySuggestionsBlockListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQuerySuggestionsBlockListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeQuerySuggestionsBlockList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeQuerySuggestionsBlockList.</param>
+        /// 
+        /// <returns>Returns a  DescribeQuerySuggestionsBlockListResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">REST API Reference for DescribeQuerySuggestionsBlockList Operation</seealso>
+        public virtual DescribeQuerySuggestionsBlockListResponse EndDescribeQuerySuggestionsBlockList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeQuerySuggestionsBlockListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeQuerySuggestionsConfig
+
+        /// <summary>
+        /// Describes the settings of query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// This is used to check the current settings applied to query suggestions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeQuerySuggestionsConfig service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">REST API Reference for DescribeQuerySuggestionsConfig Operation</seealso>
+        public virtual DescribeQuerySuggestionsConfigResponse DescribeQuerySuggestionsConfig(DescribeQuerySuggestionsConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQuerySuggestionsConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQuerySuggestionsConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeQuerySuggestionsConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeQuerySuggestionsConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsConfig operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeQuerySuggestionsConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">REST API Reference for DescribeQuerySuggestionsConfig Operation</seealso>
+        public virtual IAsyncResult BeginDescribeQuerySuggestionsConfig(DescribeQuerySuggestionsConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQuerySuggestionsConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQuerySuggestionsConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeQuerySuggestionsConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeQuerySuggestionsConfig.</param>
+        /// 
+        /// <returns>Returns a  DescribeQuerySuggestionsConfigResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">REST API Reference for DescribeQuerySuggestionsConfig Operation</seealso>
+        public virtual DescribeQuerySuggestionsConfigResponse EndDescribeQuerySuggestionsConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeQuerySuggestionsConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeThesaurus
 
         /// <summary>
@@ -1297,6 +1695,81 @@ namespace Amazon.Kendra
         public virtual DescribeThesaurusResponse EndDescribeThesaurus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeThesaurusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetQuerySuggestions
+
+        /// <summary>
+        /// Fetches the queries that are suggested to your users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuerySuggestions service method.</param>
+        /// 
+        /// <returns>The response from the GetQuerySuggestions service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">REST API Reference for GetQuerySuggestions Operation</seealso>
+        public virtual GetQuerySuggestionsResponse GetQuerySuggestions(GetQuerySuggestionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQuerySuggestionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQuerySuggestionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetQuerySuggestionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetQuerySuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetQuerySuggestions operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQuerySuggestions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">REST API Reference for GetQuerySuggestions Operation</seealso>
+        public virtual IAsyncResult BeginGetQuerySuggestions(GetQuerySuggestionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQuerySuggestionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQuerySuggestionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetQuerySuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetQuerySuggestions.</param>
+        /// 
+        /// <returns>Returns a  GetQuerySuggestionsResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">REST API Reference for GetQuerySuggestions Operation</seealso>
+        public virtual GetQuerySuggestionsResponse EndGetQuerySuggestions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetQuerySuggestionsResponse>(asyncResult);
         }
 
         #endregion
@@ -1573,6 +2046,81 @@ namespace Amazon.Kendra
         public virtual ListIndicesResponse EndListIndices(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIndicesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListQuerySuggestionsBlockLists
+
+        /// <summary>
+        /// Lists the block lists used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
+        /// for Amazon Kendra</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuerySuggestionsBlockLists service method.</param>
+        /// 
+        /// <returns>The response from the ListQuerySuggestionsBlockLists service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">REST API Reference for ListQuerySuggestionsBlockLists Operation</seealso>
+        public virtual ListQuerySuggestionsBlockListsResponse ListQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQuerySuggestionsBlockListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQuerySuggestionsBlockListsResponseUnmarshaller.Instance;
+
+            return Invoke<ListQuerySuggestionsBlockListsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListQuerySuggestionsBlockLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListQuerySuggestionsBlockLists operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQuerySuggestionsBlockLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">REST API Reference for ListQuerySuggestionsBlockLists Operation</seealso>
+        public virtual IAsyncResult BeginListQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQuerySuggestionsBlockListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQuerySuggestionsBlockListsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListQuerySuggestionsBlockLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListQuerySuggestionsBlockLists.</param>
+        /// 
+        /// <returns>Returns a  ListQuerySuggestionsBlockListsResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">REST API Reference for ListQuerySuggestionsBlockLists Operation</seealso>
+        public virtual ListQuerySuggestionsBlockListsResponse EndListQuerySuggestionsBlockLists(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListQuerySuggestionsBlockListsResponse>(asyncResult);
         }
 
         #endregion
@@ -2324,6 +2872,188 @@ namespace Amazon.Kendra
         public virtual UpdateIndexResponse EndUpdateIndex(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIndexResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateQuerySuggestionsBlockList
+
+        /// <summary>
+        /// Updates a block list used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// Updates to a block list might not take effect right away. Amazon Kendra needs to refresh
+        /// the entire suggestions list to apply any updates to the block list. Other changes
+        /// not related to the block list apply immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a block list is updating, then you need to wait for the first update to finish
+        /// before submitting another update.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Kendra supports partial updates, so you only need to provide the fields you
+        /// want to update.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsBlockList service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">REST API Reference for UpdateQuerySuggestionsBlockList Operation</seealso>
+        public virtual UpdateQuerySuggestionsBlockListResponse UpdateQuerySuggestionsBlockList(UpdateQuerySuggestionsBlockListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQuerySuggestionsBlockListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuerySuggestionsBlockListResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQuerySuggestionsBlockListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQuerySuggestionsBlockList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsBlockList operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQuerySuggestionsBlockList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">REST API Reference for UpdateQuerySuggestionsBlockList Operation</seealso>
+        public virtual IAsyncResult BeginUpdateQuerySuggestionsBlockList(UpdateQuerySuggestionsBlockListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQuerySuggestionsBlockListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuerySuggestionsBlockListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQuerySuggestionsBlockList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQuerySuggestionsBlockList.</param>
+        /// 
+        /// <returns>Returns a  UpdateQuerySuggestionsBlockListResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">REST API Reference for UpdateQuerySuggestionsBlockList Operation</seealso>
+        public virtual UpdateQuerySuggestionsBlockListResponse EndUpdateQuerySuggestionsBlockList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateQuerySuggestionsBlockListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateQuerySuggestionsConfig
+
+        /// <summary>
+        /// Updates the settings of query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Kendra supports partial updates, so you only need to provide the fields you
+        /// want to update.
+        /// </para>
+        ///  
+        /// <para>
+        /// If an update is currently processing (i.e. 'happening'), you need to wait for the
+        /// update to finish before making another update.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates to query suggestions settings might not take effect right away. The time for
+        /// your updated settings to take effect depends on the updates made and the number of
+        /// search queries in your index.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can still enable/disable query suggestions at any time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQuerySuggestionsConfig service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">REST API Reference for UpdateQuerySuggestionsConfig Operation</seealso>
+        public virtual UpdateQuerySuggestionsConfigResponse UpdateQuerySuggestionsConfig(UpdateQuerySuggestionsConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQuerySuggestionsConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuerySuggestionsConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQuerySuggestionsConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQuerySuggestionsConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsConfig operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQuerySuggestionsConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">REST API Reference for UpdateQuerySuggestionsConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateQuerySuggestionsConfig(UpdateQuerySuggestionsConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQuerySuggestionsConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuerySuggestionsConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQuerySuggestionsConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQuerySuggestionsConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateQuerySuggestionsConfigResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">REST API Reference for UpdateQuerySuggestionsConfig Operation</seealso>
+        public virtual UpdateQuerySuggestionsConfigResponse EndUpdateQuerySuggestionsConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateQuerySuggestionsConfigResponse>(asyncResult);
         }
 
         #endregion

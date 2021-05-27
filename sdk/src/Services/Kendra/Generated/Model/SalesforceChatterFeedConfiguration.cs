@@ -63,7 +63,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property DocumentTitleFieldName. 
         /// <para>
         /// The name of the column in the Salesforce FeedItem table that contains the title of
-        /// the document. This is typically the <code>Title</code> collumn.
+        /// the document. This is typically the <code>Title</code> column.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

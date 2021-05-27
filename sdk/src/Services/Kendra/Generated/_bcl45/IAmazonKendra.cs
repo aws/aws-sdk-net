@@ -220,6 +220,88 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  ClearQuerySuggestions
+
+
+        /// <summary>
+        /// Clears existing query suggestions from an index.
+        /// 
+        ///  
+        /// <para>
+        /// This deletes existing suggestions only, not the queries in the query log. After you
+        /// clear suggestions, Amazon Kendra learns new suggestions based on new queries added
+        /// to the query log from the time you cleared suggestions. If you do not see any new
+        /// suggestions, then please allow Amazon Kendra to collect enough queries to learn new
+        /// suggestions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ClearQuerySuggestions service method.</param>
+        /// 
+        /// <returns>The response from the ClearQuerySuggestions service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">REST API Reference for ClearQuerySuggestions Operation</seealso>
+        ClearQuerySuggestionsResponse ClearQuerySuggestions(ClearQuerySuggestionsRequest request);
+
+
+
+        /// <summary>
+        /// Clears existing query suggestions from an index.
+        /// 
+        ///  
+        /// <para>
+        /// This deletes existing suggestions only, not the queries in the query log. After you
+        /// clear suggestions, Amazon Kendra learns new suggestions based on new queries added
+        /// to the query log from the time you cleared suggestions. If you do not see any new
+        /// suggestions, then please allow Amazon Kendra to collect enough queries to learn new
+        /// suggestions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ClearQuerySuggestions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ClearQuerySuggestions service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">REST API Reference for ClearQuerySuggestions Operation</seealso>
+        Task<ClearQuerySuggestionsResponse> ClearQuerySuggestionsAsync(ClearQuerySuggestionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDataSource
 
 
@@ -475,6 +557,108 @@ namespace Amazon.Kendra
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateQuerySuggestionsBlockList
+
+
+        /// <summary>
+        /// Creates a block list to exlcude certain queries from suggestions.
+        /// 
+        ///  
+        /// <para>
+        /// Any query that contains words or phrases specified in the block list is blocked or
+        /// filtered out from being shown as a suggestion.
+        /// </para>
+        ///  
+        /// <para>
+        /// You need to provide the file location of your block list text file in your S3 bucket.
+        /// In your text file, enter each block word or phrase on a separate line.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
+        /// for Amazon Kendra</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuerySuggestionsBlockList service method.</param>
+        /// 
+        /// <returns>The response from the CreateQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">REST API Reference for CreateQuerySuggestionsBlockList Operation</seealso>
+        CreateQuerySuggestionsBlockListResponse CreateQuerySuggestionsBlockList(CreateQuerySuggestionsBlockListRequest request);
+
+
+
+        /// <summary>
+        /// Creates a block list to exlcude certain queries from suggestions.
+        /// 
+        ///  
+        /// <para>
+        /// Any query that contains words or phrases specified in the block list is blocked or
+        /// filtered out from being shown as a suggestion.
+        /// </para>
+        ///  
+        /// <para>
+        /// You need to provide the file location of your block list text file in your S3 bucket.
+        /// In your text file, enter each block word or phrase on a separate line.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
+        /// for Amazon Kendra</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuerySuggestionsBlockList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">REST API Reference for CreateQuerySuggestionsBlockList Operation</seealso>
+        Task<CreateQuerySuggestionsBlockListResponse> CreateQuerySuggestionsBlockListAsync(CreateQuerySuggestionsBlockListRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -754,6 +938,82 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  DeleteQuerySuggestionsBlockList
+
+
+        /// <summary>
+        /// Deletes a block list used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// A deleted block list might not take effect right away. Amazon Kendra needs to refresh
+        /// the entire suggestions list to add back the queries that were previously blocked.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuerySuggestionsBlockList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">REST API Reference for DeleteQuerySuggestionsBlockList Operation</seealso>
+        DeleteQuerySuggestionsBlockListResponse DeleteQuerySuggestionsBlockList(DeleteQuerySuggestionsBlockListRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a block list used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// A deleted block list might not take effect right away. Amazon Kendra needs to refresh
+        /// the entire suggestions list to add back the queries that were previously blocked.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuerySuggestionsBlockList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">REST API Reference for DeleteQuerySuggestionsBlockList Operation</seealso>
+        Task<DeleteQuerySuggestionsBlockListResponse> DeleteQuerySuggestionsBlockListAsync(DeleteQuerySuggestionsBlockListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteThesaurus
 
 
@@ -992,6 +1252,142 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  DescribeQuerySuggestionsBlockList
+
+
+        /// <summary>
+        /// Describes a block list used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// This is used to check the current settings that are applied to a block list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsBlockList service method.</param>
+        /// 
+        /// <returns>The response from the DescribeQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">REST API Reference for DescribeQuerySuggestionsBlockList Operation</seealso>
+        DescribeQuerySuggestionsBlockListResponse DescribeQuerySuggestionsBlockList(DescribeQuerySuggestionsBlockListRequest request);
+
+
+
+        /// <summary>
+        /// Describes a block list used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// This is used to check the current settings that are applied to a block list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsBlockList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">REST API Reference for DescribeQuerySuggestionsBlockList Operation</seealso>
+        Task<DescribeQuerySuggestionsBlockListResponse> DescribeQuerySuggestionsBlockListAsync(DescribeQuerySuggestionsBlockListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeQuerySuggestionsConfig
+
+
+        /// <summary>
+        /// Describes the settings of query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// This is used to check the current settings applied to query suggestions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeQuerySuggestionsConfig service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">REST API Reference for DescribeQuerySuggestionsConfig Operation</seealso>
+        DescribeQuerySuggestionsConfigResponse DescribeQuerySuggestionsConfig(DescribeQuerySuggestionsConfigRequest request);
+
+
+
+        /// <summary>
+        /// Describes the settings of query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// This is used to check the current settings applied to query suggestions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeQuerySuggestionsConfig service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">REST API Reference for DescribeQuerySuggestionsConfig Operation</seealso>
+        Task<DescribeQuerySuggestionsConfigResponse> DescribeQuerySuggestionsConfigAsync(DescribeQuerySuggestionsConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeThesaurus
 
 
@@ -1047,6 +1443,76 @@ namespace Amazon.Kendra
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">REST API Reference for DescribeThesaurus Operation</seealso>
         Task<DescribeThesaurusResponse> DescribeThesaurusAsync(DescribeThesaurusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetQuerySuggestions
+
+
+        /// <summary>
+        /// Fetches the queries that are suggested to your users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuerySuggestions service method.</param>
+        /// 
+        /// <returns>The response from the GetQuerySuggestions service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">REST API Reference for GetQuerySuggestions Operation</seealso>
+        GetQuerySuggestionsResponse GetQuerySuggestions(GetQuerySuggestionsRequest request);
+
+
+
+        /// <summary>
+        /// Fetches the queries that are suggested to your users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuerySuggestions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQuerySuggestions service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">REST API Reference for GetQuerySuggestions Operation</seealso>
+        Task<GetQuerySuggestionsResponse> GetQuerySuggestionsAsync(GetQuerySuggestionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1279,6 +1745,76 @@ namespace Amazon.Kendra
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">REST API Reference for ListIndices Operation</seealso>
         Task<ListIndicesResponse> ListIndicesAsync(ListIndicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListQuerySuggestionsBlockLists
+
+
+        /// <summary>
+        /// Lists the block lists used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
+        /// for Amazon Kendra</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuerySuggestionsBlockLists service method.</param>
+        /// 
+        /// <returns>The response from the ListQuerySuggestionsBlockLists service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">REST API Reference for ListQuerySuggestionsBlockLists Operation</seealso>
+        ListQuerySuggestionsBlockListsResponse ListQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the block lists used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
+        /// for Amazon Kendra</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuerySuggestionsBlockLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQuerySuggestionsBlockLists service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">REST API Reference for ListQuerySuggestionsBlockLists Operation</seealso>
+        Task<ListQuerySuggestionsBlockListsResponse> ListQuerySuggestionsBlockListsAsync(ListQuerySuggestionsBlockListsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1981,6 +2517,210 @@ namespace Amazon.Kendra
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
         Task<UpdateIndexResponse> UpdateIndexAsync(UpdateIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateQuerySuggestionsBlockList
+
+
+        /// <summary>
+        /// Updates a block list used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// Updates to a block list might not take effect right away. Amazon Kendra needs to refresh
+        /// the entire suggestions list to apply any updates to the block list. Other changes
+        /// not related to the block list apply immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a block list is updating, then you need to wait for the first update to finish
+        /// before submitting another update.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Kendra supports partial updates, so you only need to provide the fields you
+        /// want to update.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsBlockList service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">REST API Reference for UpdateQuerySuggestionsBlockList Operation</seealso>
+        UpdateQuerySuggestionsBlockListResponse UpdateQuerySuggestionsBlockList(UpdateQuerySuggestionsBlockListRequest request);
+
+
+
+        /// <summary>
+        /// Updates a block list used for query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// Updates to a block list might not take effect right away. Amazon Kendra needs to refresh
+        /// the entire suggestions list to apply any updates to the block list. Other changes
+        /// not related to the block list apply immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a block list is updating, then you need to wait for the first update to finish
+        /// before submitting another update.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Kendra supports partial updates, so you only need to provide the fields you
+        /// want to update.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsBlockList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQuerySuggestionsBlockList service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">REST API Reference for UpdateQuerySuggestionsBlockList Operation</seealso>
+        Task<UpdateQuerySuggestionsBlockListResponse> UpdateQuerySuggestionsBlockListAsync(UpdateQuerySuggestionsBlockListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateQuerySuggestionsConfig
+
+
+        /// <summary>
+        /// Updates the settings of query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Kendra supports partial updates, so you only need to provide the fields you
+        /// want to update.
+        /// </para>
+        ///  
+        /// <para>
+        /// If an update is currently processing (i.e. 'happening'), you need to wait for the
+        /// update to finish before making another update.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates to query suggestions settings might not take effect right away. The time for
+        /// your updated settings to take effect depends on the updates made and the number of
+        /// search queries in your index.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can still enable/disable query suggestions at any time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQuerySuggestionsConfig service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">REST API Reference for UpdateQuerySuggestionsConfig Operation</seealso>
+        UpdateQuerySuggestionsConfigResponse UpdateQuerySuggestionsConfig(UpdateQuerySuggestionsConfigRequest request);
+
+
+
+        /// <summary>
+        /// Updates the settings of query suggestions for an index.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Kendra supports partial updates, so you only need to provide the fields you
+        /// want to update.
+        /// </para>
+        ///  
+        /// <para>
+        /// If an update is currently processing (i.e. 'happening'), you need to wait for the
+        /// update to finish before making another update.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates to query suggestions settings might not take effect right away. The time for
+        /// your updated settings to take effect depends on the updates made and the number of
+        /// search queries in your index.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can still enable/disable query suggestions at any time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQuerySuggestionsConfig service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">REST API Reference for UpdateQuerySuggestionsConfig Operation</seealso>
+        Task<UpdateQuerySuggestionsConfigResponse> UpdateQuerySuggestionsConfigAsync(UpdateQuerySuggestionsConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

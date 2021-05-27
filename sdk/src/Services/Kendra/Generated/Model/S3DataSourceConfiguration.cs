@@ -104,9 +104,25 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-        /// (programming)</a> in <i>Wikipedia</i>.
+        /// Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+        /// are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files
+        /// with the extensions .png and .jpg).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>*internal*</i> will exclude all files in a directory that contain 'internal' in
+        /// the file name, such as 'internal', 'internal_only', 'company_internal'.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>**/*internal*</i> will exclude all internal-related files in a directory and its
+        /// subdirectories.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> ExclusionPatterns
@@ -129,9 +145,24 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-        /// (programming)</a> in <i>Wikipedia</i>.
+        /// Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+        /// are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>*.txt</i> will include all text files in a directory (files with the extension
+        /// .txt).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>**/*.txt</i> will include all text files in a directory and its subdirectories.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>*tax*</i> will include all files in a directory that contain 'tax' in the file
+        /// name, such as 'tax', 'taxes', 'income_tax'.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> InclusionPatterns
