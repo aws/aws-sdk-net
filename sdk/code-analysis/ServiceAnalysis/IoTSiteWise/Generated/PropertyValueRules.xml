@@ -193,6 +193,12 @@
     <pattern>\S{36,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreatePortalRequest.NotificationSenderEmail</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^@]+@[^@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.CreatePortalRequest.PortalContactEmail</property>
     <min>1</min>
     <max>255</max>
@@ -568,6 +574,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribePortalResponse.NotificationSenderEmail</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^@]+@[^@]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DescribePortalResponse.PortalArn</property>
@@ -1240,6 +1252,12 @@
     <pattern>\S{36,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.UpdatePortalRequest.NotificationSenderEmail</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^@]+@[^@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.UpdatePortalRequest.PortalContactEmail</property>
     <min>1</min>
     <max>255</max>
@@ -1298,6 +1316,18 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.Alarms.AlarmRoleArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.Alarms.NotificationLambdaArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.AssetCompositeModel.Description</property>

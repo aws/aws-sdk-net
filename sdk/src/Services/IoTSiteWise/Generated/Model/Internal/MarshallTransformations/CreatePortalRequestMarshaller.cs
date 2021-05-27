@@ -65,6 +65,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAlarms())
+                {
+                    context.Writer.WritePropertyName("alarms");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AlarmsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Alarms, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -76,6 +87,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetNotificationSenderEmail())
+                {
+                    context.Writer.WritePropertyName("notificationSenderEmail");
+                    context.Writer.Write(publicRequest.NotificationSenderEmail);
+                }
+
                 if(publicRequest.IsSetPortalAuthMode())
                 {
                     context.Writer.WritePropertyName("portalAuthMode");

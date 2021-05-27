@@ -33,6 +33,8 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class DescribePortalResponse : AmazonWebServiceResponse
     {
+        private Alarms _alarms;
+        private string _notificationSenderEmail;
         private string _portalArn;
         private AuthMode _portalAuthMode;
         private string _portalClientId;
@@ -46,6 +48,44 @@ namespace Amazon.IoTSiteWise.Model
         private string _portalStartUrl;
         private PortalStatus _portalStatus;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property Alarms. 
+        /// <para>
+        /// Contains the configuration information of an alarm created in a AWS IoT SiteWise Monitor
+        /// portal.
+        /// </para>
+        /// </summary>
+        public Alarms Alarms
+        {
+            get { return this._alarms; }
+            set { this._alarms = value; }
+        }
+
+        // Check to see if Alarms property is set
+        internal bool IsSetAlarms()
+        {
+            return this._alarms != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationSenderEmail. 
+        /// <para>
+        /// The email address that sends alarm notifications.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string NotificationSenderEmail
+        {
+            get { return this._notificationSenderEmail; }
+            set { this._notificationSenderEmail = value; }
+        }
+
+        // Check to see if NotificationSenderEmail property is set
+        internal bool IsSetNotificationSenderEmail()
+        {
+            return this._notificationSenderEmail != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PortalArn. 

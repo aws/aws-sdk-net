@@ -34,13 +34,36 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class UpdatePortalRequest : AmazonIoTSiteWiseRequest
     {
+        private Alarms _alarms;
         private string _clientToken;
+        private string _notificationSenderEmail;
         private string _portalContactEmail;
         private string _portalDescription;
         private string _portalId;
         private Image _portalLogoImage;
         private string _portalName;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property Alarms. 
+        /// <para>
+        /// Contains the configuration information of an alarm created in an AWS IoT SiteWise
+        /// Monitor portal. You can use the alarm to monitor an asset property and get notified
+        /// when the asset property value is outside a specified range. For more information,
+        /// see .
+        /// </para>
+        /// </summary>
+        public Alarms Alarms
+        {
+            get { return this._alarms; }
+            set { this._alarms = value; }
+        }
+
+        // Check to see if Alarms property is set
+        internal bool IsSetAlarms()
+        {
+            return this._alarms != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -60,6 +83,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationSenderEmail. 
+        /// <para>
+        /// The email address that sends alarm notifications.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string NotificationSenderEmail
+        {
+            get { return this._notificationSenderEmail; }
+            set { this._notificationSenderEmail = value; }
+        }
+
+        // Check to see if NotificationSenderEmail property is set
+        internal bool IsSetNotificationSenderEmail()
+        {
+            return this._notificationSenderEmail != null;
         }
 
         /// <summary>

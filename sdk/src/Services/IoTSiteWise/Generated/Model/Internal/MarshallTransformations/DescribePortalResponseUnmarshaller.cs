@@ -51,6 +51,18 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("alarms", targetDepth))
+                {
+                    var unmarshaller = AlarmsUnmarshaller.Instance;
+                    response.Alarms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("notificationSenderEmail", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NotificationSenderEmail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("portalArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
