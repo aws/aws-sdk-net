@@ -37,6 +37,7 @@ namespace Amazon.DeviceFarm.Model
         private string _description;
         private string _name;
         private string _projectArn;
+        private TestGridVpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -93,6 +94,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetProjectArn()
         {
             return this._projectArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// The VPC security groups and subnets that are attached to a project.
+        /// </para>
+        /// </summary>
+        public TestGridVpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

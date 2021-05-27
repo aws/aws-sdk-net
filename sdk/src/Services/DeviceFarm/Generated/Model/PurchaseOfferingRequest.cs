@@ -47,7 +47,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ID of the offering.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Required=true, Min=32)]
         public string OfferingId
         {
             get { return this._offeringId; }
@@ -85,6 +85,7 @@ namespace Amazon.DeviceFarm.Model
         /// The number of device slots to purchase in an offering request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

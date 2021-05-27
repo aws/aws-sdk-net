@@ -1273,6 +1273,12 @@
     <pattern>^arn:aws:devicefarm:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.TestGridVpcConfig.VpcId</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.TooManyTagsException.ResourceName</property>
     <min>32</min>
     <max>1011</max>

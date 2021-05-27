@@ -163,6 +163,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </dd> </dl>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeviceFilterAttribute Attribute
         {
             get { return this._attribute; }
@@ -182,6 +183,7 @@ namespace Amazon.DeviceFarm.Model
         /// descriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RuleOperator Operator
         {
             get { return this._operator; }
@@ -229,6 +231,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

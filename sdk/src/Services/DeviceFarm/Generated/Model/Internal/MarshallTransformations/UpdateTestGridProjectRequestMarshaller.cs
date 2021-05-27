@@ -85,6 +85,17 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProjectArn);
                 }
 
+                if(publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WritePropertyName("vpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TestGridVpcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

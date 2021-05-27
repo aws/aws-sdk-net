@@ -632,9 +632,15 @@ namespace Amazon.DeviceFarm
         /// <param name="request">Container for the necessary parameters to execute the CreateTestGridProject service method.</param>
         /// 
         /// <returns>The response from the CreateTestGridProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
         /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
         /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
         /// if you see this error.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject">REST API Reference for CreateTestGridProject Operation</seealso>
         public virtual CreateTestGridProjectResponse CreateTestGridProject(CreateTestGridProjectRequest request)
@@ -5500,6 +5506,9 @@ namespace Amazon.DeviceFarm
         /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
         /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
         /// if you see this error.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
         /// The specified entity was not found.

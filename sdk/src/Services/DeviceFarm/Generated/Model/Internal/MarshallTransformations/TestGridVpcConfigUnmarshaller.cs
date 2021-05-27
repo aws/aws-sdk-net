@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TestGridProject Object
+    /// Response Unmarshaller for TestGridVpcConfig Object
     /// </summary>  
-    public class TestGridProjectUnmarshaller : IUnmarshaller<TestGridProject, XmlUnmarshallerContext>, IUnmarshaller<TestGridProject, JsonUnmarshallerContext>
+    public class TestGridVpcConfigUnmarshaller : IUnmarshaller<TestGridVpcConfig, XmlUnmarshallerContext>, IUnmarshaller<TestGridVpcConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TestGridProject IUnmarshaller<TestGridProject, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TestGridVpcConfig IUnmarshaller<TestGridVpcConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TestGridProject Unmarshall(JsonUnmarshallerContext context)
+        public TestGridVpcConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TestGridProject unmarshalledObject = new TestGridProject();
+            TestGridVpcConfig unmarshalledObject = new TestGridVpcConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("securityGroupIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("subnetIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vpcId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("created", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Created = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("vpcConfig", targetDepth))
-                {
-                    var unmarshaller = TestGridVpcConfigUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         }
 
 
-        private static TestGridProjectUnmarshaller _instance = new TestGridProjectUnmarshaller();        
+        private static TestGridVpcConfigUnmarshaller _instance = new TestGridVpcConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TestGridProjectUnmarshaller Instance
+        public static TestGridVpcConfigUnmarshaller Instance
         {
             get
             {

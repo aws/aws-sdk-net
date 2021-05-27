@@ -46,7 +46,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ID of a request to renew an offering.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Required=true, Min=32)]
         public string OfferingId
         {
             get { return this._offeringId; }
@@ -65,6 +65,7 @@ namespace Amazon.DeviceFarm.Model
         /// The quantity requested in an offering renewal.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }
