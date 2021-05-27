@@ -1,3 +1,28 @@
+### 3.7.43.0 (2021-05-27 18:15 UTC)
+* DeviceFarm (3.7.1.0)
+	* Introduces support for using our desktop testing service with applications hosted within your Virtual Private Cloud (VPC).
+* FSx (3.7.2.0)
+	* This release adds LZ4 data compression support to FSx for Lustre to reduce storage consumption of both file system storage and file system backups.
+* IoTEvents (3.7.1.0)
+	* Releasing new APIs for AWS IoT Events Alarms
+* IoTEventsData (3.7.1.0)
+	* Releasing new APIs for AWS IoT Events Alarms
+* IoTSiteWise (3.7.2.0)
+	* IoT SiteWise Monitor Portal API updates to add alarms feature configuration.
+* Kendra (3.7.3.0)
+	* Amazon Kendra now suggests popular queries in order to help guide query typing and help overall accuracy.
+* Lightsail (3.7.1.22)
+	* Documentation updates for Lightsail
+* ResourceGroups (3.7.0.28)
+	* Documentation updates for Resource Groups.
+* SQS (3.7.0.29)
+	* Documentation updates for Amazon SQS for General Availability of high throughput for FIFO queues.
+* Core 3.7.0.29
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.42.0 (2021-05-26 22:23 UTC)
 * ACMPCA (3.7.2.0)
 	* This release enables customers to store CRLs in S3 buckets with Block Public Access enabled. The release adds the S3ObjectAcl parameter to the CreateCertificateAuthority and UpdateCertificateAuthority APIs to allow customers to choose whether their CRL will be publicly available.
