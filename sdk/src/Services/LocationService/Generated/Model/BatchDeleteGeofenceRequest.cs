@@ -34,7 +34,7 @@ namespace Amazon.LocationService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This action deletes the resource permanently. You can't undo this action.
+    /// This operation deletes the resource permanently.
     /// </para>
     ///  </note>
     /// </summary>

@@ -34,8 +34,8 @@ namespace Amazon.LocationService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This action deletes the resource permanently. You can't undo this action. If the geofence
-    /// collection is the target of a tracker resource, the devices will no longer be monitored.
+    /// This operation deletes the resource permanently. If the geofence collection is the
+    /// target of a tracker resource, the devices will no longer be monitored.
     /// </para>
     ///  </note>
     /// </summary>

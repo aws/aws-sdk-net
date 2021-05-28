@@ -63,6 +63,12 @@ namespace Amazon.LocationService.Model
         /// The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify
         /// a resource across all AWS.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1600)]
         public string TrackerArn

@@ -99,7 +99,7 @@ namespace Amazon.LocationService.Model
         /// geocoding request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=6)]
+        [AWSProperty(Min=4, Max=4)]
         public List<double> FilterBBox
         {
             get { return this._filterBBox; }
@@ -157,7 +157,7 @@ namespace Amazon.LocationService.Model
         /// by <code>FilterBBox</code>. A subset of bounding box specified using <code>FilterBBox</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=6)]
+        [AWSProperty(Min=4, Max=4)]
         public List<double> ResultBBox
         {
             get { return this._resultBBox; }

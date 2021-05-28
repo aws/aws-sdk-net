@@ -34,9 +34,9 @@ namespace Amazon.LocationService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This action deletes the resource permanently. You can't undo this action. If the tracker
-    /// resource is in use, you may encounter an error. Make sure that the target resource
-    /// is not a dependency for your applications.
+    /// This operation deletes the resource permanently. If the tracker resource is in use,
+    /// you may encounter an error. Make sure that the target resource isn't a dependency
+    /// for your applications.
     /// </para>
     ///  </note>
     /// </summary>

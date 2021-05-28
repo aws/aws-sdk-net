@@ -81,6 +81,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("LocationService")]
+        public void ListDevicePositionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDevicePositionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListDevicePositionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListDevicePositionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListDevicePositions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListDevicePositions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LocationService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListDevicePositionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDevicePositionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListDevicePositionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListDevicePositions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListDevicePositions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LocationService")]
         public void ListGeofenceCollectionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListGeofenceCollectionsRequest>();
@@ -225,6 +264,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListPlaceIndexes(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListPlaceIndexes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LocationService")]
+        public void ListRouteCalculatorsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListRouteCalculatorsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListRouteCalculatorsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListRouteCalculatorsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListRouteCalculators(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListRouteCalculators(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LocationService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListRouteCalculatorsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListRouteCalculatorsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListRouteCalculatorsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListRouteCalculators(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListRouteCalculators(request);
 
             // Should work the first time
             paginator.Responses.ToList();

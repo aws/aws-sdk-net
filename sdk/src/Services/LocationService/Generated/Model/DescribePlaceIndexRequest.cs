@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePlaceIndex operation.
-    /// Retrieves the Place index resource details.
+    /// Retrieves the place index resource details.
     /// </summary>
     public partial class DescribePlaceIndexRequest : AmazonLocationServiceRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The name of the Place index resource.
+        /// The name of the place index resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

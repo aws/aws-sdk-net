@@ -42,7 +42,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid styles: <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
+        /// Valid styles: <code>RasterEsriImagery</code>, <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
         /// <code>VectorEsriNavigation</code>, <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
         /// <code>VectorHereBerlin</code>.
         /// </para>
@@ -50,7 +50,7 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// When using HERE as your data provider, and selecting the Style <code>VectorHereBerlin</code>,
         /// you may not use HERE Maps for Asset Management. See the <a href="https://aws.amazon.com/service-terms/">AWS
-        /// Service Terms</a> for Amazon Location Service. 
+        /// Service Terms</a> for Amazon Location Service.
         /// </para>
         ///  </note>
         /// </summary>

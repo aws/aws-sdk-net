@@ -35,7 +35,7 @@ namespace Amazon.LocationService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Device positions are deleted after 1 year.
+    /// Device positions are deleted after 30 days.
     /// </para>
     ///  </note>
     /// </summary>

@@ -37,8 +37,10 @@ namespace Amazon.LocationService.Model
         private string _collectionName;
         private DateTime? _createTime;
         private string _description;
+        private string _kmsKeyId;
         private PricingPlan _pricingPlan;
         private string _pricingPlanDataSource;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updateTime;
 
         /// <summary>
@@ -47,6 +49,12 @@ namespace Amazon.LocationService.Model
         /// The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
         /// need to specify a resource across all AWS. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1600)]
         public string CollectionArn
@@ -120,6 +128,26 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+        /// KMS customer managed key</a> assigned to the Amazon Location resource
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
         /// The pricing plan selected for the specified geofence collection.
@@ -146,7 +174,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlanDataSource. 
         /// <para>
-        /// The data source selected for the geofence collection and associated pricing plan.
+        /// The specified data provider for the geofence collection.
         /// </para>
         /// </summary>
         public string PricingPlanDataSource
@@ -159,6 +187,25 @@ namespace Amazon.LocationService.Model
         internal bool IsSetPricingPlanDataSource()
         {
             return this._pricingPlanDataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Displays the key, value pairs of tags associated with this resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -30,11 +30,11 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePlaceIndex operation.
-    /// Deletes a Place index resource from your AWS account.
+    /// Deletes a place index resource from your AWS account.
     /// 
     ///  <note> 
     /// <para>
-    /// This action deletes the resource permanently. You cannot undo this action.
+    /// This operation deletes the resource permanently.
     /// </para>
     ///  </note>
     /// </summary>
@@ -45,7 +45,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The name of the Place index resource to be deleted.
+        /// The name of the place index resource to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

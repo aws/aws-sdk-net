@@ -37,8 +37,8 @@ namespace Amazon.LocationService.Model
     ///  <note> 
     /// <para>
     /// Only one position update is stored per sample time. Location data is sampled at a
-    /// fixed rate of one position per 30-second interval, and retained for one year before
-    /// it is deleted.
+    /// fixed rate of one position per 30-second interval and retained for 30 days before
+    /// it's deleted.
     /// </para>
     ///  </note>
     /// </summary>

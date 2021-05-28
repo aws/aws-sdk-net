@@ -31,6 +31,11 @@ namespace Amazon.LocationService.Model
         IGetDevicePositionHistoryPaginator GetDevicePositionHistory(GetDevicePositionHistoryRequest request);
 
         /// <summary>
+        /// Paginator for ListDevicePositions operation
+        ///</summary>
+        IListDevicePositionsPaginator ListDevicePositions(ListDevicePositionsRequest request);
+
+        /// <summary>
         /// Paginator for ListGeofenceCollections operation
         ///</summary>
         IListGeofenceCollectionsPaginator ListGeofenceCollections(ListGeofenceCollectionsRequest request);
@@ -49,6 +54,11 @@ namespace Amazon.LocationService.Model
         /// Paginator for ListPlaceIndexes operation
         ///</summary>
         IListPlaceIndexesPaginator ListPlaceIndexes(ListPlaceIndexesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRouteCalculators operation
+        ///</summary>
+        IListRouteCalculatorsPaginator ListRouteCalculators(ListRouteCalculatorsRequest request);
 
         /// <summary>
         /// Paginator for ListTrackerConsumers operation

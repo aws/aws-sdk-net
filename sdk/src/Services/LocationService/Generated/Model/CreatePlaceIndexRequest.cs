@@ -30,22 +30,8 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlaceIndex operation.
-    /// Creates a Place index resource in your AWS account, which supports Places functions
-    /// with geospatial data sourced from your chosen data provider.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// By using Places, you agree that AWS may transmit your API queries to your selected
-    /// third party provider for processing, which may be outside the AWS region you are currently
-    /// using. 
-    /// </para>
-    ///  
-    /// <para>
-    /// Because of licensing limitations, you may not use HERE to store results for locations
-    /// in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
-    /// Service Terms</a> for Amazon Location Service.
-    /// </para>
-    ///  </note>
+    /// Creates a place index resource in your AWS account, which supports functions with
+    /// geospatial data sourced from your chosen data provider.
     /// </summary>
     public partial class CreatePlaceIndexRequest : AmazonLocationServiceRequest
     {
@@ -54,6 +40,7 @@ namespace Amazon.LocationService.Model
         private string _description;
         private string _indexName;
         private PricingPlan _pricingPlan;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property DataSource. 
@@ -77,7 +64,13 @@ namespace Amazon.LocationService.Model
         /// <para>
         ///  <code>Here</code> 
         /// </para>
-        ///  </li> </ul> 
+        ///  <important> 
+        /// <para>
+        /// Place index resources using HERE as a data provider can't be used to <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
+        /// results for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
+        /// Service Terms</a> for Amazon Location Service.
+        /// </para>
+        ///  </important> </li> </ul> 
         /// <para>
         /// For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
         /// Location Service data providers page</a>.
@@ -117,7 +110,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The optional description for the Place index resource.
+        /// The optional description for the place index resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -136,7 +129,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The name of the Place index resource. 
+        /// The name of the place index resource. 
         /// </para>
         ///  
         /// <para>
@@ -144,12 +137,12 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and
+        /// Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and
         /// underscores (_).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be a unique Place index resource name.
+        /// Must be a unique place index resource name.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -173,7 +166,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Specifies the pricing plan for your Place index resource.
+        /// Specifies the pricing plan for your place index resource.
         /// </para>
         ///  
         /// <para>
@@ -192,6 +185,56 @@ namespace Amazon.LocationService.Model
         internal bool IsSetPricingPlan()
         {
             return this._pricingPlan != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Applies one or more tags to the place index resource. A tag is a key-value pair helps
+        /// manage, identify, search, and filter your resources by labelling them.
+        /// </para>
+        ///  
+        /// <para>
+        /// Format: <code>"key" : "value"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum 50 tags per resource
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each resource tag must be unique with a maximum of one value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum key length: 128 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum value length: 256 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+        /// = . _ : / @. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

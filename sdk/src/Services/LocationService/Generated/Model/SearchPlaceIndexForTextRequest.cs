@@ -43,19 +43,6 @@ namespace Amazon.LocationService.Model
     /// filter results within a bounding box using <code>FilterBBox</code>. Providing both
     /// parameters simultaneously returns an error.
     /// </para>
-    ///  </note> <note> 
-    /// <para>
-    /// By using Places, you agree that AWS may transmit your API queries to your selected
-    /// third party provider for processing, which may be outside the AWS region you are currently
-    /// using. 
-    /// </para>
-    ///  
-    /// <para>
-    /// Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset
-    /// Management, or (b) select the <code>Storage</code> option for the <code>IntendedUse</code>
-    /// parameter when requesting Places in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
-    /// Service Terms</a> for Amazon Location Service.
-    /// </para>
     ///  </note>
     /// </summary>
     public partial class SearchPlaceIndexForTextRequest : AmazonLocationServiceRequest
@@ -142,7 +129,7 @@ namespace Amazon.LocationService.Model
         /// For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=6)]
+        [AWSProperty(Min=4, Max=4)]
         public List<double> FilterBBox
         {
             get { return this._filterBBox; }
@@ -183,7 +170,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The name of the Place index resource you want to use for the search.
+        /// The name of the place index resource you want to use for the search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

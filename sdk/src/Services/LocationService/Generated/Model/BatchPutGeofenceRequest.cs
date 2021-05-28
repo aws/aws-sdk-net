@@ -30,7 +30,9 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchPutGeofence operation.
-    /// A batch request for storing geofence geometries into a given geofence collection.
+    /// A batch request for storing geofence geometries into a given geofence collection,
+    /// or updates the geometry of an existing geofence if a geofence ID is included in the
+    /// request.
     /// </summary>
     public partial class BatchPutGeofenceRequest : AmazonLocationServiceRequest
     {

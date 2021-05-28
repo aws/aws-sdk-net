@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// A Place index resource listed in your AWS account.
+    /// A place index resource listed in your AWS account.
     /// </summary>
     public partial class ListPlaceIndexesResponseEntry
     {
@@ -43,7 +43,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The timestamp for when the Place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
         /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
         /// </para>
         /// </summary>
@@ -67,11 +67,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Esri
+        ///  <code>Esri</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HERE
+        ///  <code>Here</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The optional description for the Place index resource.
+        /// The optional description for the place index resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
@@ -114,7 +114,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The name of the Place index resource.
+        /// The name of the place index resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -133,7 +133,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// The pricing plan for the specified Place index resource.
+        /// The pricing plan for the specified place index resource.
         /// </para>
         ///  
         /// <para>
@@ -157,7 +157,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        /// The timestamp for when the Place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
         /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
         /// </para>
         /// </summary>

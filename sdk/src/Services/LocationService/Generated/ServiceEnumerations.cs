@@ -91,6 +91,106 @@ namespace Amazon.LocationService
 
 
     /// <summary>
+    /// Constants used for properties of type DimensionUnit.
+    /// </summary>
+    public class DimensionUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Feet for DimensionUnit
+        /// </summary>
+        public static readonly DimensionUnit Feet = new DimensionUnit("Feet");
+        /// <summary>
+        /// Constant Meters for DimensionUnit
+        /// </summary>
+        public static readonly DimensionUnit Meters = new DimensionUnit("Meters");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DimensionUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DimensionUnit FindValue(string value)
+        {
+            return FindValue<DimensionUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DimensionUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DistanceUnit.
+    /// </summary>
+    public class DistanceUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Kilometers for DistanceUnit
+        /// </summary>
+        public static readonly DistanceUnit Kilometers = new DistanceUnit("Kilometers");
+        /// <summary>
+        /// Constant Miles for DistanceUnit
+        /// </summary>
+        public static readonly DistanceUnit Miles = new DistanceUnit("Miles");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DistanceUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DistanceUnit FindValue(string value)
+        {
+            return FindValue<DistanceUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DistanceUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IntendedUse.
     /// </summary>
     public class IntendedUse : ConstantClass
@@ -195,6 +295,60 @@ namespace Amazon.LocationService
 
 
     /// <summary>
+    /// Constants used for properties of type TravelMode.
+    /// </summary>
+    public class TravelMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Car for TravelMode
+        /// </summary>
+        public static readonly TravelMode Car = new TravelMode("Car");
+        /// <summary>
+        /// Constant Truck for TravelMode
+        /// </summary>
+        public static readonly TravelMode Truck = new TravelMode("Truck");
+        /// <summary>
+        /// Constant Walking for TravelMode
+        /// </summary>
+        public static readonly TravelMode Walking = new TravelMode("Walking");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TravelMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TravelMode FindValue(string value)
+        {
+            return FindValue<TravelMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TravelMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass
@@ -250,6 +404,56 @@ namespace Amazon.LocationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VehicleWeightUnit.
+    /// </summary>
+    public class VehicleWeightUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Kilograms for VehicleWeightUnit
+        /// </summary>
+        public static readonly VehicleWeightUnit Kilograms = new VehicleWeightUnit("Kilograms");
+        /// <summary>
+        /// Constant Pounds for VehicleWeightUnit
+        /// </summary>
+        public static readonly VehicleWeightUnit Pounds = new VehicleWeightUnit("Pounds");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VehicleWeightUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VehicleWeightUnit FindValue(string value)
+        {
+            return FindValue<VehicleWeightUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VehicleWeightUnit(string value)
         {
             return FindValue(value);
         }

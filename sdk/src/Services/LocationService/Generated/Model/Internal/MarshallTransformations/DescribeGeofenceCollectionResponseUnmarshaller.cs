@@ -75,6 +75,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PricingPlan", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -85,6 +91,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PricingPlanDataSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UpdateTime", targetDepth))

@@ -106,7 +106,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlanDataSource. 
         /// <para>
-        /// The data source selected for the tracker resource and associated pricing plan.
+        /// The specified data provider for the tracker resource.
         /// </para>
         /// </summary>
         public string PricingPlanDataSource

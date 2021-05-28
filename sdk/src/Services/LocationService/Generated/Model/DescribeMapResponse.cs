@@ -40,6 +40,7 @@ namespace Amazon.LocationService.Model
         private string _mapArn;
         private string _mapName;
         private PricingPlan _pricingPlan;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updateTime;
 
         /// <summary>
@@ -125,6 +126,11 @@ namespace Amazon.LocationService.Model
         /// The Amazon Resource Name (ARN) for the map resource. Used when you need to specify
         /// a resource across all AWS.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1600)]
         public string MapArn
@@ -178,6 +184,25 @@ namespace Amazon.LocationService.Model
         internal bool IsSetPricingPlan()
         {
             return this._pricingPlan != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags associated with the map resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

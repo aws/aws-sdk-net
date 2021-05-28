@@ -52,7 +52,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+        /// Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
         /// 
         /// </para>
         ///  </li> </ul>

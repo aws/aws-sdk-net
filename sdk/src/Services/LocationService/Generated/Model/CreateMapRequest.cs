@@ -32,15 +32,6 @@ namespace Amazon.LocationService.Model
     /// Container for the parameters to the CreateMap operation.
     /// Creates a map resource in your AWS account, which provides map tiles of different
     /// styles sourced from global location data providers.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// By using Maps, you agree that AWS may transmit your API queries to your selected third
-    /// party provider for processing, which may be outside the AWS region you are currently
-    /// using. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
-    /// Service Terms</a> for Amazon Location Service. 
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateMapRequest : AmazonLocationServiceRequest
     {
@@ -48,6 +39,7 @@ namespace Amazon.LocationService.Model
         private string _description;
         private string _mapName;
         private PricingPlan _pricingPlan;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -146,6 +138,56 @@ namespace Amazon.LocationService.Model
         internal bool IsSetPricingPlan()
         {
             return this._pricingPlan != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Applies one or more tags to the map resource. A tag is a key-value pair helps manage,
+        /// identify, search, and filter your resources by labelling them.
+        /// </para>
+        ///  
+        /// <para>
+        /// Format: <code>"key" : "value"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum 50 tags per resource
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each resource tag must be unique with a maximum of one value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum key length: 128 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum value length: 256 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+        /// = . _ : / @. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

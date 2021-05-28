@@ -71,6 +71,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+
                 if(publicRequest.IsSetPricingPlan())
                 {
                     context.Writer.WritePropertyName("PricingPlan");
@@ -81,6 +87,20 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("PricingPlanDataSource");
                     context.Writer.Write(publicRequest.PricingPlanDataSource);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTrackerName())

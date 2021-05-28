@@ -40,12 +40,13 @@ namespace Amazon.LocationService.Model
         private string _indexArn;
         private string _indexName;
         private PricingPlan _pricingPlan;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updateTime;
 
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The timestamp for when the Place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
         /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
         /// </para>
         /// </summary>
@@ -116,7 +117,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The optional description for the Place index resource.
+        /// The optional description for the place index resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
@@ -135,9 +136,15 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property IndexArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the Place index resource. Used when you need to
-        /// specify a resource across all AWS. 
+        /// The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
+        /// across all AWS. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1600)]
         public string IndexArn
@@ -155,7 +162,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The name of the Place index resource being described.
+        /// The name of the place index resource being described.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -174,7 +181,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// The pricing plan selected for the specified Place index resource.
+        /// The pricing plan selected for the specified place index resource.
         /// </para>
         ///  
         /// <para>
@@ -196,9 +203,28 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags associated with place index resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        /// The timestamp for when the Place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
         /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
         /// </para>
         /// </summary>

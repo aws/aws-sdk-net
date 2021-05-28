@@ -29,7 +29,7 @@ namespace Amazon.LocationService
     /// <summary>
     /// Interface for accessing LocationService
     ///
-    /// Suite of geospatial services including Maps, Places, Tracking, and Geofencing
+    /// Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
     /// </summary>
     public partial interface IAmazonLocationService : IAmazonService, IDisposable
     {
@@ -112,6 +112,63 @@ namespace Amazon.LocationService
 
         #endregion
         
+        #region  BatchDeleteDevicePositionHistory
+
+
+        /// <summary>
+        /// Deletes the position history of one or more devices from a tracker resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDevicePositionHistory service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteDevicePositionHistory service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied due to insufficient access or permission. Check with an administrator
+        /// to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchDeleteDevicePositionHistory">REST API Reference for BatchDeleteDevicePositionHistory Operation</seealso>
+        BatchDeleteDevicePositionHistoryResponse BatchDeleteDevicePositionHistory(BatchDeleteDevicePositionHistoryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteDevicePositionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDevicePositionHistory operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteDevicePositionHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchDeleteDevicePositionHistory">REST API Reference for BatchDeleteDevicePositionHistory Operation</seealso>
+        IAsyncResult BeginBatchDeleteDevicePositionHistory(BatchDeleteDevicePositionHistoryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteDevicePositionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteDevicePositionHistory.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteDevicePositionHistoryResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchDeleteDevicePositionHistory">REST API Reference for BatchDeleteDevicePositionHistory Operation</seealso>
+        BatchDeleteDevicePositionHistoryResponse EndBatchDeleteDevicePositionHistory(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchDeleteGeofence
 
 
@@ -120,7 +177,7 @@ namespace Amazon.LocationService
         /// 
         ///  <note> 
         /// <para>
-        /// This action deletes the resource permanently. You can't undo this action.
+        /// This operation deletes the resource permanently.
         /// </para>
         ///  </note>
         /// </summary>
@@ -302,7 +359,9 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// A batch request for storing geofence geometries into a given geofence collection.
+        /// A batch request for storing geofence geometries into a given geofence collection,
+        /// or updates the geometry of an existing geofence if a geofence ID is included in the
+        /// request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutGeofence service method.</param>
         /// 
@@ -366,8 +425,8 @@ namespace Amazon.LocationService
         ///  <note> 
         /// <para>
         /// Only one position update is stored per sample time. Location data is sampled at a
-        /// fixed rate of one position per 30-second interval, and retained for one year before
-        /// it is deleted.
+        /// fixed rate of one position per 30-second interval and retained for 30 days before
+        /// it's deleted.
         /// </para>
         ///  </note>
         /// </summary>
@@ -419,6 +478,98 @@ namespace Amazon.LocationService
         /// <returns>Returns a  BatchUpdateDevicePositionResult from LocationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePosition">REST API Reference for BatchUpdateDevicePosition Operation</seealso>
         BatchUpdateDevicePositionResponse EndBatchUpdateDevicePosition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CalculateRoute
+
+
+        /// <summary>
+        /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
+        /// a route</a> given the following required parameters: <code>DeparturePostiton</code>
+        /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
+        /// aroute calculator resource</a> 
+        /// 
+        ///  
+        /// <para>
+        /// By default, a request that doesn't specify a departure time uses the best time of
+        /// day to travel with the best traffic conditions when calculating the route.
+        /// </para>
+        ///  
+        /// <para>
+        /// Additional options include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#departure-time">Specifying
+        /// a departure time</a> using either <code>DepartureTime</code> or <code>DepartureNow</code>.
+        /// This calculates a route based on predictive traffic data at the given time. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in
+        /// a single request. Specifying both parameters returns an error message.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
+        /// a travel mode</a> using TravelMode. This lets you specify additional route preference
+        /// such as <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code>
+        /// if traveling by <code>Truck</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CalculateRoute service method.</param>
+        /// 
+        /// <returns>The response from the CalculateRoute service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied due to insufficient access or permission. Check with an administrator
+        /// to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRoute">REST API Reference for CalculateRoute Operation</seealso>
+        CalculateRouteResponse CalculateRoute(CalculateRouteRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CalculateRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CalculateRoute operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCalculateRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRoute">REST API Reference for CalculateRoute Operation</seealso>
+        IAsyncResult BeginCalculateRoute(CalculateRouteRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CalculateRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCalculateRoute.</param>
+        /// 
+        /// <returns>Returns a  CalculateRouteResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRoute">REST API Reference for CalculateRoute Operation</seealso>
+        CalculateRouteResponse EndCalculateRoute(IAsyncResult asyncResult);
 
         #endregion
         
@@ -485,15 +636,6 @@ namespace Amazon.LocationService
         /// <summary>
         /// Creates a map resource in your AWS account, which provides map tiles of different
         /// styles sourced from global location data providers.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// By using Maps, you agree that AWS may transmit your API queries to your selected third
-        /// party provider for processing, which may be outside the AWS region you are currently
-        /// using. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
-        /// Service Terms</a> for Amazon Location Service. 
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMap service method.</param>
         /// 
@@ -550,22 +692,8 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Creates a Place index resource in your AWS account, which supports Places functions
-        /// with geospatial data sourced from your chosen data provider.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// By using Places, you agree that AWS may transmit your API queries to your selected
-        /// third party provider for processing, which may be outside the AWS region you are currently
-        /// using. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Because of licensing limitations, you may not use HERE to store results for locations
-        /// in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
-        /// Service Terms</a> for Amazon Location Service.
-        /// </para>
-        ///  </note>
+        /// Creates a place index resource in your AWS account, which supports functions with
+        /// geospatial data sourced from your chosen data provider.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlaceIndex service method.</param>
         /// 
@@ -615,6 +743,70 @@ namespace Amazon.LocationService
         /// <returns>Returns a  CreatePlaceIndexResult from LocationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreatePlaceIndex">REST API Reference for CreatePlaceIndex Operation</seealso>
         CreatePlaceIndexResponse EndCreatePlaceIndex(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateRouteCalculator
+
+
+        /// <summary>
+        /// Creates a route calculator resource in your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// You can send requests to a route calculator resource to estimate travel time, distance,
+        /// and get directions. A route calculator sources traffic and road network data from
+        /// your chosen data provider.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteCalculator service method.</param>
+        /// 
+        /// <returns>The response from the CreateRouteCalculator service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied due to insufficient access or permission. Check with an administrator
+        /// to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ConflictException">
+        /// The request was unsuccessful due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateRouteCalculator">REST API Reference for CreateRouteCalculator Operation</seealso>
+        CreateRouteCalculatorResponse CreateRouteCalculator(CreateRouteCalculatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRouteCalculator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteCalculator operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRouteCalculator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateRouteCalculator">REST API Reference for CreateRouteCalculator Operation</seealso>
+        IAsyncResult BeginCreateRouteCalculator(CreateRouteCalculatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRouteCalculator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRouteCalculator.</param>
+        /// 
+        /// <returns>Returns a  CreateRouteCalculatorResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateRouteCalculator">REST API Reference for CreateRouteCalculator Operation</seealso>
+        CreateRouteCalculatorResponse EndCreateRouteCalculator(IAsyncResult asyncResult);
 
         #endregion
         
@@ -684,8 +876,8 @@ namespace Amazon.LocationService
         /// 
         ///  <note> 
         /// <para>
-        /// This action deletes the resource permanently. You can't undo this action. If the geofence
-        /// collection is the target of a tracker resource, the devices will no longer be monitored.
+        /// This operation deletes the resource permanently. If the geofence collection is the
+        /// target of a tracker resource, the devices will no longer be monitored.
         /// </para>
         ///  </note>
         /// </summary>
@@ -748,8 +940,8 @@ namespace Amazon.LocationService
         /// 
         ///  <note> 
         /// <para>
-        /// This action deletes the resource permanently. You cannot undo this action. If the
-        /// map is being used in an application, the map may not render.
+        /// This operation deletes the resource permanently. If the map is being used in an application,
+        /// the map may not render.
         /// </para>
         ///  </note>
         /// </summary>
@@ -808,11 +1000,11 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a Place index resource from your AWS account.
+        /// Deletes a place index resource from your AWS account.
         /// 
         ///  <note> 
         /// <para>
-        /// This action deletes the resource permanently. You cannot undo this action.
+        /// This operation deletes the resource permanently.
         /// </para>
         ///  </note>
         /// </summary>
@@ -867,6 +1059,69 @@ namespace Amazon.LocationService
 
         #endregion
         
+        #region  DeleteRouteCalculator
+
+
+        /// <summary>
+        /// Deletes a route calculator resource from your AWS account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation deletes the resource permanently.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteCalculator service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRouteCalculator service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied due to insufficient access or permission. Check with an administrator
+        /// to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteRouteCalculator">REST API Reference for DeleteRouteCalculator Operation</seealso>
+        DeleteRouteCalculatorResponse DeleteRouteCalculator(DeleteRouteCalculatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRouteCalculator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteCalculator operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRouteCalculator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteRouteCalculator">REST API Reference for DeleteRouteCalculator Operation</seealso>
+        IAsyncResult BeginDeleteRouteCalculator(DeleteRouteCalculatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRouteCalculator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRouteCalculator.</param>
+        /// 
+        /// <returns>Returns a  DeleteRouteCalculatorResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteRouteCalculator">REST API Reference for DeleteRouteCalculator Operation</seealso>
+        DeleteRouteCalculatorResponse EndDeleteRouteCalculator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteTracker
 
 
@@ -875,9 +1130,9 @@ namespace Amazon.LocationService
         /// 
         ///  <note> 
         /// <para>
-        /// This action deletes the resource permanently. You can't undo this action. If the tracker
-        /// resource is in use, you may encounter an error. Make sure that the target resource
-        /// is not a dependency for your applications.
+        /// This operation deletes the resource permanently. If the tracker resource is in use,
+        /// you may encounter an error. Make sure that the target resource isn't a dependency
+        /// for your applications.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1050,7 +1305,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Retrieves the Place index resource details.
+        /// Retrieves the place index resource details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlaceIndex service method.</param>
         /// 
@@ -1100,6 +1355,63 @@ namespace Amazon.LocationService
         /// <returns>Returns a  DescribePlaceIndexResult from LocationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribePlaceIndex">REST API Reference for DescribePlaceIndex Operation</seealso>
         DescribePlaceIndexResponse EndDescribePlaceIndex(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeRouteCalculator
+
+
+        /// <summary>
+        /// Retrieves the route calculator resource details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteCalculator service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRouteCalculator service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied due to insufficient access or permission. Check with an administrator
+        /// to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeRouteCalculator">REST API Reference for DescribeRouteCalculator Operation</seealso>
+        DescribeRouteCalculatorResponse DescribeRouteCalculator(DescribeRouteCalculatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRouteCalculator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteCalculator operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRouteCalculator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeRouteCalculator">REST API Reference for DescribeRouteCalculator Operation</seealso>
+        IAsyncResult BeginDescribeRouteCalculator(DescribeRouteCalculatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRouteCalculator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRouteCalculator.</param>
+        /// 
+        /// <returns>Returns a  DescribeRouteCalculatorResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeRouteCalculator">REST API Reference for DescribeRouteCalculator Operation</seealso>
+        DescribeRouteCalculatorResponse EndDescribeRouteCalculator(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1232,7 +1544,7 @@ namespace Amazon.LocationService
         /// 
         ///  <note> 
         /// <para>
-        /// Device positions are deleted after one year.
+        /// Device positions are deleted after 30 days.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1296,7 +1608,7 @@ namespace Amazon.LocationService
         /// 
         ///  <note> 
         /// <para>
-        /// Device positions are deleted after 1 year.
+        /// Device positions are deleted after 30 days.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1593,7 +1905,7 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Retrieves a vector data tile from the map resource. Map tiles are used by clients
-        /// to render a map. They are addressed using a grid arrangement with an X coordinate,
+        /// to render a map. they're addressed using a grid arrangement with an X coordinate,
         /// Y coordinate, and Z (zoom) level. 
         /// 
         ///  
@@ -1651,6 +1963,60 @@ namespace Amazon.LocationService
         /// <returns>Returns a  GetMapTileResult from LocationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetMapTile">REST API Reference for GetMapTile Operation</seealso>
         GetMapTileResponse EndGetMapTile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDevicePositions
+
+
+        /// <summary>
+        /// Lists the latest device positions for requested devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDevicePositions service method.</param>
+        /// 
+        /// <returns>The response from the ListDevicePositions service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied due to insufficient access or permission. Check with an administrator
+        /// to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions">REST API Reference for ListDevicePositions Operation</seealso>
+        ListDevicePositionsResponse ListDevicePositions(ListDevicePositionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDevicePositions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDevicePositions operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDevicePositions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions">REST API Reference for ListDevicePositions Operation</seealso>
+        IAsyncResult BeginListDevicePositions(ListDevicePositionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDevicePositions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDevicePositions.</param>
+        /// 
+        /// <returns>Returns a  ListDevicePositionsResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions">REST API Reference for ListDevicePositions Operation</seealso>
+        ListDevicePositionsResponse EndListDevicePositions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1823,7 +2189,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Lists Place index resources in your AWS account.
+        /// Lists place index resources in your AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlaceIndexes service method.</param>
         /// 
@@ -1870,6 +2236,117 @@ namespace Amazon.LocationService
         /// <returns>Returns a  ListPlaceIndexesResult from LocationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListPlaceIndexes">REST API Reference for ListPlaceIndexes Operation</seealso>
         ListPlaceIndexesResponse EndListPlaceIndexes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListRouteCalculators
+
+
+        /// <summary>
+        /// Lists route calculator resources in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRouteCalculators service method.</param>
+        /// 
+        /// <returns>The response from the ListRouteCalculators service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied due to insufficient access or permission. Check with an administrator
+        /// to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculators">REST API Reference for ListRouteCalculators Operation</seealso>
+        ListRouteCalculatorsResponse ListRouteCalculators(ListRouteCalculatorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRouteCalculators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRouteCalculators operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRouteCalculators
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculators">REST API Reference for ListRouteCalculators Operation</seealso>
+        IAsyncResult BeginListRouteCalculators(ListRouteCalculatorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRouteCalculators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRouteCalculators.</param>
+        /// 
+        /// <returns>Returns a  ListRouteCalculatorsResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculators">REST API Reference for ListRouteCalculators Operation</seealso>
+        ListRouteCalculatorsResponse EndListRouteCalculators(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns the tags for the specified Amazon Location Service resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied due to insufficient access or permission. Check with an administrator
+        /// to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2051,20 +2528,6 @@ namespace Amazon.LocationService
         /// <summary>
         /// Reverse geocodes a given coordinate and returns a legible address. Allows you to search
         /// for Places or points of interest near a given position.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// By using Places, you agree that AWS may transmit your API queries to your selected
-        /// third party provider for processing, which may be outside the AWS region you are currently
-        /// using. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Because of licensing limitations, you may not use HERE to store results for locations
-        /// in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
-        /// Service Terms</a> for Amazon Location Service.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForPosition service method.</param>
         /// 
@@ -2134,19 +2597,6 @@ namespace Amazon.LocationService
         /// filter results within a bounding box using <code>FilterBBox</code>. Providing both
         /// parameters simultaneously returns an error.
         /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// By using Places, you agree that AWS may transmit your API queries to your selected
-        /// third party provider for processing, which may be outside the AWS region you are currently
-        /// using. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset
-        /// Management, or (b) select the <code>Storage</code> option for the <code>IntendedUse</code>
-        /// parameter when requesting Places in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
-        /// Service Terms</a> for Amazon Location Service.
-        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForText service method.</param>
@@ -2197,6 +2647,132 @@ namespace Amazon.LocationService
         /// <returns>Returns a  SearchPlaceIndexForTextResult from LocationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForText">REST API Reference for SearchPlaceIndexForText Operation</seealso>
         SearchPlaceIndexForTextResponse EndSearchPlaceIndexForText(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Assigns one or more tags (key-value pairs) to the specified Amazon Location Service
+        /// resource.
+        /// 
+        ///  <pre><code> &lt;p&gt;Tags can help you organize and categorize your resources. You
+        /// can also use them to scope user permissions, by granting a user permission to access
+        /// or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;Tags don't have
+        /// any semantic meaning to AWS and are interpreted strictly as strings of characters.&lt;/p&gt;
+        /// &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt; action with an Amazon
+        /// Location Service resource that already has tags. If you specify a new tag key for
+        /// the resource, this tag is appended to the tags already associated with the resource.
+        /// If you specify a tag key that is already associated with the resource, the new tag
+        /// value that you specify replaces the previous value for that tag. &lt;/p&gt; &lt;p&gt;You
+        /// can associate as many as 50 tags with a resource.&lt;/p&gt; </code></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied due to insufficient access or permission. Check with an administrator
+        /// to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified Amazon Location Service resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied due to insufficient access or permission. Check with an administrator
+        /// to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         

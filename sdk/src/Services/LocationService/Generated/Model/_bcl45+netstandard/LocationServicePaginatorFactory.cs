@@ -44,6 +44,14 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Paginator for ListDevicePositions operation
+        ///</summary>
+        public IListDevicePositionsPaginator ListDevicePositions(ListDevicePositionsRequest request) 
+        {
+            return new ListDevicePositionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGeofenceCollections operation
         ///</summary>
         public IListGeofenceCollectionsPaginator ListGeofenceCollections(ListGeofenceCollectionsRequest request) 
@@ -73,6 +81,14 @@ namespace Amazon.LocationService.Model
         public IListPlaceIndexesPaginator ListPlaceIndexes(ListPlaceIndexesRequest request) 
         {
             return new ListPlaceIndexesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRouteCalculators operation
+        ///</summary>
+        public IListRouteCalculatorsPaginator ListRouteCalculators(ListRouteCalculatorsRequest request) 
+        {
+            return new ListRouteCalculatorsPaginator(this.client, request);
         }
 
         /// <summary>

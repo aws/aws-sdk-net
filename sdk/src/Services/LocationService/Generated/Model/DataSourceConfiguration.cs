@@ -30,21 +30,6 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Specifies the data storage option chosen for requesting Places.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// By using Places, you agree that AWS may transmit your API queries to your selected
-    /// third party provider for processing, which may be outside the AWS region you are currently
-    /// using. 
-    /// </para>
-    ///  
-    /// <para>
-    /// Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset
-    /// Management, or (b) select the <code>Storage</code> option for the <code>IntendedUse</code>
-    /// parameter when requesting Places in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
-    /// Service Terms</a> for Amazon Location Service.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DataSourceConfiguration
     {
@@ -67,7 +52,13 @@ namespace Amazon.LocationService.Model
         /// <para>
         ///  <code>Storage</code> specifies that the result can be cached or stored in a database.
         /// </para>
-        ///  </li> </ul> 
+        ///  <important> 
+        /// <para>
+        /// Place index resources using HERE as a data provider can't be configured to store results
+        /// for locations in Japan when choosing <code>Storage</code> for the <code>IntendedUse</code>
+        /// parameter.
+        /// </para>
+        ///  </important> </li> </ul> 
         /// <para>
         /// Default value: <code>SingleUse</code> 
         /// </para>

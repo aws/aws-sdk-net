@@ -35,8 +35,10 @@ namespace Amazon.LocationService.Model
     {
         private DateTime? _createTime;
         private string _description;
+        private string _kmsKeyId;
         private PricingPlan _pricingPlan;
         private string _pricingPlanDataSource;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _trackerArn;
         private string _trackerName;
         private DateTime? _updateTime;
@@ -81,6 +83,26 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+        /// KMS customer managed key</a> assigned to the Amazon Location resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
         /// The pricing plan selected for the specified tracker resource.
@@ -107,7 +129,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlanDataSource. 
         /// <para>
-        /// The data source selected for the tracker resource and associated pricing plan.
+        /// The specified data provider for the tracker resource.
         /// </para>
         /// </summary>
         public string PricingPlanDataSource
@@ -123,11 +145,36 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags associated with the tracker resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TrackerArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify
         /// a resource across all AWS.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1600)]
         public string TrackerArn

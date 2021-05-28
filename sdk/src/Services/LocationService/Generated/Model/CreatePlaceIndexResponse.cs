@@ -40,7 +40,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The timestamp for when the Place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
         /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
         /// </para>
         /// </summary>
@@ -60,9 +60,15 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property IndexArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the Place index resource. Used when you need to
-        /// specify a resource across all AWS. 
+        /// The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
+        /// across all AWS. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1600)]
         public string IndexArn
@@ -80,7 +86,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The name for the Place index resource.
+        /// The name for the place index resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

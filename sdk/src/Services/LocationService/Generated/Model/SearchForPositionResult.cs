@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Specifies a single point of interest, or Place as a result of a search query obtained
-    /// from a dataset configured in the Place index Resource.
+    /// from a dataset configured in the place index resource.
     /// </summary>
     public partial class SearchForPositionResult
     {

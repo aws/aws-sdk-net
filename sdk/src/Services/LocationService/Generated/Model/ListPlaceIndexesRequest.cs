@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPlaceIndexes operation.
-    /// Lists Place index resources in your AWS account.
+    /// Lists place index resources in your AWS account.
     /// </summary>
     public partial class ListPlaceIndexesRequest : AmazonLocationServiceRequest
     {
