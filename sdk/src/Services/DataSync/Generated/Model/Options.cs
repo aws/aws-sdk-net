@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents the options that are available to control the behavior of a <a>StartTaskExecution</a>
+    /// Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
     /// operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID),
     /// and file permissions, and also overwriting files in the destination, data integrity
     /// verification, and so on.
@@ -37,9 +37,9 @@ namespace Amazon.DataSync.Model
     ///  
     /// <para>
     /// A task has a set of default options associated with it. If you don't specify an option
-    /// in <a>StartTaskExecution</a>, the default value is used. You can override the defaults
-    /// options on each task execution by specifying an overriding <code>Options</code> value
-    /// to <a>StartTaskExecution</a>.
+    /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
+    /// the default value is used. You can override the defaults options on each task execution
+    /// by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
     /// </para>
     /// </summary>
     public partial class Options
@@ -53,6 +53,7 @@ namespace Amazon.DataSync.Model
         private PosixPermissions _posixPermissions;
         private PreserveDeletedFiles _preserveDeletedFiles;
         private PreserveDevices _preserveDevices;
+        private SmbSecurityDescriptorCopyFlags _securityDescriptorCopyFlags;
         private TaskQueueing _taskQueueing;
         private TransferMode _transferMode;
         private Uid _uid;
@@ -126,7 +127,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Gid. 
         /// <para>
-        /// The group ID (GID) of the file's owners. 
+        /// The POSIX group ID (GID) of the file's owners. This option should only be set for
+        /// NFS, EFS, and S3 locations. For more information about what metadata is copied by
+        /// DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+        /// Copied by DataSync</a>. 
         /// </para>
         ///  
         /// <para>
@@ -180,7 +184,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Mtime. 
         /// <para>
         /// A value that indicates the last time that a file was modified (that is, a file was
-        /// written to) before the PREPARING phase. 
+        /// written to) before the PREPARING phase. This option is required for cases when you
+        /// need to run the same task more than one time. 
         /// </para>
         ///  
         /// <para>
@@ -229,7 +234,8 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// Some storage classes have specific behaviors that can affect your S3 storage cost.
-        /// For detailed information, see <a>using-storage-classes</a> in the <i>AWS DataSync
+        /// For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+        /// when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync
         /// User Guide</i>.
         /// </para>
         /// </summary>
@@ -249,7 +255,10 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property PosixPermissions. 
         /// <para>
         /// A value that determines which users or groups can access a file for a specific purpose
-        /// such as reading, writing, or execution of the file. 
+        /// such as reading, writing, or execution of the file. This option should only be set
+        /// for NFS, EFS, and S3 locations. For more information about what metadata is copied
+        /// by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+        /// Copied by DataSync</a>. 
         /// </para>
         ///  
         /// <para>
@@ -287,8 +296,9 @@ namespace Amazon.DataSync.Model
         /// A value that specifies whether files in the destination that don't exist in the source
         /// file system should be preserved. This option can affect your storage cost. If your
         /// task deletes objects, you might incur minimum storage duration charges for certain
-        /// storage classes. For detailed information, see <a>using-storage-classes</a> in the
-        /// <i>AWS DataSync User Guide</i>.
+        /// storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+        /// when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -319,8 +329,9 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property PreserveDevices. 
         /// <para>
         /// A value that determines whether AWS DataSync should preserve the metadata of block
-        /// and character devices in the source file system, and recreate the files with that
-        /// device name and metadata on the destination.
+        /// and character devices in the source file system, and re-create the files with that
+        /// device name and metadata on the destination. DataSync does not copy the contents of
+        /// such devices, only the name and metadata. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -354,6 +365,84 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecurityDescriptorCopyFlags. 
+        /// <para>
+        /// A value that determines which components of the SMB security descriptor are copied
+        /// from source to destination objects. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is only used for transfers between SMB and Amazon FSx for Windows File
+        /// Server locations, or between two Amazon FSx for Windows File Server locations. For
+        /// more information about how DataSync handles metadata, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
+        /// DataSync Handles Metadata and Special Files</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: OWNER_DACL.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Object owner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NTFS discretionary access control lists (DACLs), which determine whether to grant
+        /// access to an object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When choosing this option, DataSync does NOT copy the NTFS system access control lists
+        /// (SACLs), which are used by administrators to log attempts to access a secured object.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Object owner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NTFS discretionary access control lists (DACLs), which determine whether to grant
+        /// access to an object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NTFS system access control lists (SACLs), which are used by administrators to log
+        /// attempts to access a secured object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Copying SACLs requires granting additional permissions to the Windows user that DataSync
+        /// uses to access your SMB location. For information about choosing a user that ensures
+        /// sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>NONE</b>: None of the SMB security descriptor components are copied. Destination
+        /// objects are owned by the user that was provided for accessing the destination location.
+        /// DACLs and SACLs are set based on the destination server’s configuration. 
+        /// </para>
+        /// </summary>
+        public SmbSecurityDescriptorCopyFlags SecurityDescriptorCopyFlags
+        {
+            get { return this._securityDescriptorCopyFlags; }
+            set { this._securityDescriptorCopyFlags = value; }
+        }
+
+        // Check to see if SecurityDescriptorCopyFlags property is set
+        internal bool IsSetSecurityDescriptorCopyFlags()
+        {
+            return this._securityDescriptorCopyFlags != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TaskQueueing. 
         /// <para>
         /// A value that determines whether tasks should be queued before executing the tasks.
@@ -362,7 +451,8 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// If you use the same agent to run multiple tasks, you can enable the tasks to run in
-        /// series. For more information, see <a>queue-task-execution</a>.
+        /// series. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
+        /// task executions</a>.
         /// </para>
         /// </summary>
         public TaskQueueing TaskQueueing
@@ -410,7 +500,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Uid. 
         /// <para>
-        /// The user ID (UID) of the file's owner. 
+        /// The POSIX user ID (UID) of the file's owner. This option should only be set for NFS,
+        /// EFS, and S3 locations. To learn more about what metadata is copied by DataSync, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+        /// Copied by DataSync</a>.
         /// </para>
         ///  
         /// <para>
@@ -442,7 +535,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// A value that determines whether a data integrity verification should be performed
         /// at the end of a task execution after all data and metadata have been transferred.
-        /// For more information, see <a>create-task</a> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure
+        /// task settings</a>. 
         /// </para>
         ///  
         /// <para>

@@ -32,7 +32,8 @@ namespace Amazon.DataSync.Model
     /// Container for the parameters to the UpdateLocationObjectStorage operation.
     /// Updates some of the parameters of a previously created location for self-managed object
     /// storage server access. For information about creating a self-managed object storage
-    /// location, see <a>create-object-location</a>.
+    /// location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+    /// a location for object storage</a>.
     /// </summary>
     public partial class UpdateLocationObjectStorageRequest : AmazonDataSyncRequest
     {

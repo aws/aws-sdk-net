@@ -100,7 +100,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LastConnectionTime. 
         /// <para>
-        /// The time that the agent last connected to DataSyc.
+        /// The time that the agent last connected to DataSync.
         /// </para>
         /// </summary>
         public DateTime LastConnectionTime

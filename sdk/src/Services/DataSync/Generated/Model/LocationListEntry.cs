@@ -30,8 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Represents a single entry in a list of locations. <code>LocationListEntry</code> returns
-    /// an array that contains a list of locations when the <a>ListLocations</a> operation
-    /// is called.
+    /// an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
+    /// operation is called.
     /// </summary>
     public partial class LocationListEntry
     {
@@ -63,7 +63,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property LocationUri. 
         /// <para>
         /// Represents a list of URLs of a location. <code>LocationUri</code> returns an array
-        /// that contains a list of locations when the <a>ListLocations</a> operation is called.
+        /// that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
+        /// operation is called.
         /// </para>
         ///  
         /// <para>

@@ -118,6 +118,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreserveDevices = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecurityDescriptorCopyFlags", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecurityDescriptorCopyFlags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TaskQueueing", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

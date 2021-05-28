@@ -32,7 +32,8 @@ namespace Amazon.DataSync.Model
     /// Container for the parameters to the UpdateLocationSmb operation.
     /// Updates some of the parameters of a previously created location for Server Message
     /// Block (SMB) file system access. For information about creating an SMB location, see
-    /// <a>create-smb-location</a>.
+    /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
+    /// a location for SMB</a>.
     /// </summary>
     public partial class UpdateLocationSmbRequest : AmazonDataSyncRequest
     {

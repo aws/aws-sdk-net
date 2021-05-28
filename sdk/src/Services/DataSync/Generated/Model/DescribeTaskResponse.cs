@@ -243,7 +243,8 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// For each individual task execution, you can override these options by specifying the
-        /// overriding <code>OverrideOptions</code> value to operation. 
+        /// overriding <code>OverrideOptions</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+        /// operation. 
         /// </para>
         /// </summary>
         public Options Options

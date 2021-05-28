@@ -45,7 +45,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the
         /// EC2 agents deployed on your Outpost. For more information about launching a DataSync
-        /// agent on an AWS Outpost, see <a>outposts-agent</a>.
+        /// agent on an AWS Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+        /// your DataSync agent on AWS Outposts</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -139,7 +140,8 @@ namespace Amazon.DataSync.Model
         /// is used as a task destination. For more information about S3 storage classes, see
         /// <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>.
         /// Some storage classes have behaviors that can affect your S3 storage cost. For detailed
-        /// information, see <a>using-storage-classes</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+        /// when working with S3 storage classes in DataSync</a>.
         /// </para>
         /// </summary>
         public S3StorageClass S3StorageClass

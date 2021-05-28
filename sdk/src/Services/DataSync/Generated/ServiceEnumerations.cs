@@ -955,6 +955,60 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type SmbSecurityDescriptorCopyFlags.
+    /// </summary>
+    public class SmbSecurityDescriptorCopyFlags : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for SmbSecurityDescriptorCopyFlags
+        /// </summary>
+        public static readonly SmbSecurityDescriptorCopyFlags NONE = new SmbSecurityDescriptorCopyFlags("NONE");
+        /// <summary>
+        /// Constant OWNER_DACL for SmbSecurityDescriptorCopyFlags
+        /// </summary>
+        public static readonly SmbSecurityDescriptorCopyFlags OWNER_DACL = new SmbSecurityDescriptorCopyFlags("OWNER_DACL");
+        /// <summary>
+        /// Constant OWNER_DACL_SACL for SmbSecurityDescriptorCopyFlags
+        /// </summary>
+        public static readonly SmbSecurityDescriptorCopyFlags OWNER_DACL_SACL = new SmbSecurityDescriptorCopyFlags("OWNER_DACL_SACL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SmbSecurityDescriptorCopyFlags(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SmbSecurityDescriptorCopyFlags FindValue(string value)
+        {
+            return FindValue<SmbSecurityDescriptorCopyFlags>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SmbSecurityDescriptorCopyFlags(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SmbVersion.
     /// </summary>
     public class SmbVersion : ConstantClass

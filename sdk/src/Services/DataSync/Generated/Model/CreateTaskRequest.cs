@@ -168,7 +168,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// For each individual task execution, you can override these options by specifying the
         /// <code>OverrideOptions</code> before starting the task execution. For more information,
-        /// see the operation. 
+        /// see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+        /// operation. 
         /// </para>
         /// </summary>
         public Options Options
@@ -188,7 +189,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies a schedule used to periodically transfer files from a source to a destination
         /// location. The schedule should be specified in UTC time. For more information, see
-        /// <a>task-scheduling</a>.
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+        /// your task</a>.
         /// </para>
         /// </summary>
         public TaskSchedule Schedule

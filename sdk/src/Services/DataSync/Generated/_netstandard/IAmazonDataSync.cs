@@ -212,7 +212,8 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates an endpoint for a self-managed object storage bucket. For more information
-        /// about self-managed object storage locations, see <a>create-object-location</a>.
+        /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+        /// a location for object storage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationObjectStorage service method.</param>
         /// <param name="cancellationToken">
@@ -518,7 +519,8 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Returns metadata about a self-managed object storage server location. For more information
-        /// about self-managed object storage locations, see <a>create-object-location</a>.
+        /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+        /// a location for object storage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationObjectStorage service method.</param>
         /// <param name="cancellationToken">
@@ -889,7 +891,8 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Updates some of the parameters of a previously created location for Network File System
-        /// (NFS) access. For information about creating an NFS location, see <a>create-nfs-location</a>.
+        /// (NFS) access. For information about creating an NFS location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating
+        /// a location for NFS</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationNfs service method.</param>
         /// <param name="cancellationToken">
@@ -915,7 +918,8 @@ namespace Amazon.DataSync
         /// <summary>
         /// Updates some of the parameters of a previously created location for self-managed object
         /// storage server access. For information about creating a self-managed object storage
-        /// location, see <a>create-object-location</a>.
+        /// location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+        /// a location for object storage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationObjectStorage service method.</param>
         /// <param name="cancellationToken">
@@ -941,7 +945,8 @@ namespace Amazon.DataSync
         /// <summary>
         /// Updates some of the parameters of a previously created location for Server Message
         /// Block (SMB) file system access. For information about creating an SMB location, see
-        /// <a>create-smb-location</a>.
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
+        /// a location for SMB</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationSmb service method.</param>
         /// <param name="cancellationToken">

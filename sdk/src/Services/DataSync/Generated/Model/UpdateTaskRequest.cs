@@ -126,7 +126,8 @@ namespace Amazon.DataSync.Model
         /// Specifies a schedule used to periodically transfer files from a source to a destination
         /// location. You can configure your task to execute hourly, daily, weekly or on specific
         /// days of the week. You control when in the day or hour you want the task to execute.
-        /// The time you specify is UTC time. For more information, see <a>task-scheduling</a>.
+        /// The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+        /// your task</a>.
         /// </para>
         /// </summary>
         public TaskSchedule Schedule

@@ -99,6 +99,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PreserveDevices);
             }
 
+            if(requestObject.IsSetSecurityDescriptorCopyFlags())
+            {
+                context.Writer.WritePropertyName("SecurityDescriptorCopyFlags");
+                context.Writer.Write(requestObject.SecurityDescriptorCopyFlags);
+            }
+
             if(requestObject.IsSetTaskQueueing())
             {
                 context.Writer.WritePropertyName("TaskQueueing");

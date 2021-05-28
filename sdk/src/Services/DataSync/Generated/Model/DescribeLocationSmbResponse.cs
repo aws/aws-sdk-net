@@ -119,7 +119,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URL of the source SBM location that was described.
+        /// The URL of the source SMB location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4356)]

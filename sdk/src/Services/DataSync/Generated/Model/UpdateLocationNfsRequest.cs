@@ -31,7 +31,8 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Container for the parameters to the UpdateLocationNfs operation.
     /// Updates some of the parameters of a previously created location for Network File System
-    /// (NFS) access. For information about creating an NFS location, see <a>create-nfs-location</a>.
+    /// (NFS) access. For information about creating an NFS location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating
+    /// a location for NFS</a>.
     /// </summary>
     public partial class UpdateLocationNfsRequest : AmazonDataSyncRequest
     {

@@ -31,7 +31,8 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Container for the parameters to the CreateLocationObjectStorage operation.
     /// Creates an endpoint for a self-managed object storage bucket. For more information
-    /// about self-managed object storage locations, see <a>create-object-location</a>.
+    /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+    /// a location for object storage</a>.
     /// </summary>
     public partial class CreateLocationObjectStorageRequest : AmazonDataSyncRequest
     {

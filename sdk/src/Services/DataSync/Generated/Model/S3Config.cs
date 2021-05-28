@@ -45,7 +45,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property BucketAccessRoleArn. 
         /// <para>
-        /// The Amazon S3 bucket to access. This bucket is used as a parameter in the <a>CreateLocationS3</a>
+        /// The Amazon S3 bucket to access. This bucket is used as a parameter in the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
         /// operation. 
         /// </para>
         /// </summary>

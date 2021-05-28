@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Specifies which files, folders and objects to include or exclude when transferring
+    /// Specifies which files, folders, and objects to include or exclude when transferring
     /// files from source to destination.
     /// </summary>
     public partial class FilterRule

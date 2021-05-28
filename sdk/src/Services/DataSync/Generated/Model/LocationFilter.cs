@@ -63,7 +63,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Operator. 
         /// <para>
         /// The operator that is used to compare filter values (for example, <code>Equals</code>
-        /// or <code>Contains</code>). For more about API filtering operators, see <a>query-resources</a>.
+        /// or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API
+        /// filters for ListTasks and ListLocations</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
