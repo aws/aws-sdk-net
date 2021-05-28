@@ -1,3 +1,16 @@
+### 3.7.44.0 (2021-05-28 18:26 UTC)
+* DataSync (3.7.1.0)
+	* Added SecurityDescriptorCopyFlags option that allows for control of which components of SMB security descriptors are copied from source to destination objects.
+* LocationService (3.7.2.0)
+	* Adds support for calculation of routes, resource tagging and customer provided KMS keys.
+* LookoutMetrics (3.7.3.0)
+	* Allowing dot(.) character in table name for RDS and Redshift as source connector.
+* Core 3.7.0.31
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.43.1 (2021-05-27 22:21 UTC)
 * S3 (3.7.0.31)
 	* Updated to use new Core, version 3.7.0.30
