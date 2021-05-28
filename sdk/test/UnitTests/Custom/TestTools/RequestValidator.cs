@@ -192,6 +192,24 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 }
                 else if (type.GetInterface("System.Collections.IDictionary") != null)
                 {
+                    // Include both key and value to the tcr if they aren't CLR types
+                    // to allow skipping of nested type
+                    var innerKeyType = type.GenericTypeArguments[0];
+                    if (null != innerKeyType && !innerKeyType.FullName.StartsWith("System."))
+                    {
+                        pushed = tcr.Push(innerKeyType);
+                        if (!pushed)
+                            return;
+                    }
+
+                    var innerValueType = type.GenericTypeArguments[1];
+                    if (null != innerValueType && !innerValueType.FullName.StartsWith("System."))
+                    {
+                        pushed = tcr.Push(innerValueType);
+                        if (!pushed)
+                            return;
+                    }
+
                     var map = value as IDictionary;
                     Assert.IsTrue(member.IsMap);
                     ValidateMap(map, member, marshalledData);
@@ -212,6 +230,19 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                             foreach (var childMember in member.Shape.ValueShape.Members)
                             {
                                 var property = properties.Single(p => childMember.PropertyName == p.Name);
+
+                                // Make sure we aren't encountering a recursive property
+                                if (tcr.Contains(property.PropertyType))
+                                    continue;
+
+                                // or a List of recursive properties
+                                if (typeof(ICollection).IsAssignableFrom(property.PropertyType) &&
+                                    property.PropertyType.IsGenericType &&
+                                    tcr.Contains(property.PropertyType.GenericTypeArguments[0]))
+                                {
+                                    continue;
+                                }
+
                                 var childValue = property.GetValue(mapValue);
                                 var childMarshalledData = GetMarshalledProperty(marshalledValue, childMember.MarshallName);
                                 Visit(childValue, childMember, childMarshalledData, tcr);
