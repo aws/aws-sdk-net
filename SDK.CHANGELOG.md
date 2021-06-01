@@ -1,3 +1,15 @@
+### 3.7.45.0 (2021-06-01 18:13 UTC)
+* EC2 (3.7.8.0)
+	* Added idempotency to CreateNetworkInterface using the ClientToken parameter.
+* IoTWireless (3.7.5.0)
+	* Added six new public customer logging APIs to allow customers to set/get/reset log levels at resource type and resource id level. The log level set from the APIs will be used to filter log messages that can be emitted to CloudWatch in customer accounts.
+* Polly (3.7.1.0)
+	* Amazon Polly adds new Canadian French voice - Gabrielle. Gabrielle is available as Neural voice only.
+* ServiceDiscovery (3.7.2.0)
+	* Bugfixes - The DiscoverInstances API operation now provides an option to return all instances for health-checked services when there are no healthy instances available.
+* SimpleNotificationService (3.7.2.0)
+	* This release adds SMS sandbox in Amazon SNS and the ability to view all configured origination numbers. The SMS sandbox provides a safe environment for sending SMS messages, without risking your reputation as an SMS sender.
+
 ### 3.7.44.0 (2021-05-28 18:26 UTC)
 * DataSync (3.7.1.0)
 	* Added SecurityDescriptorCopyFlags option that allows for control of which components of SMB security descriptors are copied from source to destination objects.

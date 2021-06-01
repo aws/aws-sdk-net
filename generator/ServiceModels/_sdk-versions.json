@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.44.0",
+    "ProductVersion" : "3.7.45.0",
     "CoreVersion"    : "3.7.0.31",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.7.3",
+            "Version" : "3.7.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -346,7 +346,7 @@
             "InPreview"               : false
         },
         "SimpleNotificationService" : {
-            "Version" : "3.7.1.15",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -626,7 +626,7 @@
             "InPreview"               : false
         },
         "Polly"                           : {
-            "Version" : "3.7.0.29",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -1026,7 +1026,7 @@
             "InPreview"               : false
         },
         "ServiceDiscovery"                : {
-            "Version" : "3.7.1.12",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -2018,7 +2018,7 @@
             "InPreview"               : false
         },
         "IoTWireless"                     : {
-            "Version" : "3.7.4.11",
+            "Version" : "3.7.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
