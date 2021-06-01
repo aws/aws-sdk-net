@@ -251,6 +251,10 @@ namespace Amazon.ServiceDiscovery
         /// </summary>
         public static readonly HealthStatusFilter HEALTHY = new HealthStatusFilter("HEALTHY");
         /// <summary>
+        /// Constant HEALTHY_OR_ELSE_ALL for HealthStatusFilter
+        /// </summary>
+        public static readonly HealthStatusFilter HEALTHY_OR_ELSE_ALL = new HealthStatusFilter("HEALTHY_OR_ELSE_ALL");
+        /// <summary>
         /// Constant UNHEALTHY for HealthStatusFilter
         /// </summary>
         public static readonly HealthStatusFilter UNHEALTHY = new HealthStatusFilter("UNHEALTHY");

@@ -149,14 +149,15 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can't use a health check that is defined by <code>HealthCheckConfig</code> because
+        /// You can't use a health check that's defined by <code>HealthCheckConfig</code> because
         /// the resource isn't available over the internet. For example, you can use a custom
         /// health check when the instance is in an Amazon VPC. (To check the health of resources
         /// in a VPC, the health checker must also be in the VPC.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You want to use a third-party health checker regardless of where your resources are.
+        /// You want to use a third-party health checker regardless of where your resources are
+        /// located.
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
@@ -200,8 +201,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property InstanceCount. 
         /// <para>
         /// The number of instances that are currently associated with the service. Instances
-        /// that were previously associated with the service but that have been deleted are not
-        /// included in the count. The count might not reflect pending registrations and deregistrations.
+        /// that were previously associated with the service but that are deleted aren't included
+        /// in the count. The count might not reflect pending registrations and deregistrations.
         /// </para>
         /// </summary>
         public int InstanceCount

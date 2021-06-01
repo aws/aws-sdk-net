@@ -52,7 +52,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// <para>
     /// If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code>
     /// records, AWS Cloud Map creates a health check that uses the IPv4 address to check
-    /// the health of the resource. If the endpoint that is specified by the IPv4 address
+    /// the health of the resource. If the endpoint tthat's specified by the IPv4 address
     /// is unhealthy, Route 53 considers both the <code>A</code> and <code>AAAA</code> records
     /// to be unhealthy. 
     /// </para>
@@ -64,16 +64,16 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  </dd> <dt>Request interval</dt> <dd> 
     /// <para>
-    /// A Route 53 health checker in each health-checking region sends a health check request
-    /// to an endpoint every 30 seconds. On average, your endpoint receives a health check
-    /// request about every two seconds. However, health checkers don't coordinate with one
-    /// another, so you'll sometimes see several requests per second followed by a few seconds
-    /// with no health checks at all.
+    /// A Route 53 health checker in each health-checking AWS Region sends a health check
+    /// request to an endpoint every 30 seconds. On average, your endpoint receives a health
+    /// check request about every two seconds. However, health checkers don't coordinate with
+    /// one another. Therefore, you might sometimes see several requests in one second that's
+    /// followed by a few seconds with no health checks at all.
     /// </para>
     ///  </dd> <dt>Health checking regions</dt> <dd> 
     /// <para>
-    /// Health checkers perform checks from all Route 53 health-checking regions. For a list
-    /// of the current regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.
+    /// Health checkers perform checks from all Route 53 health-checking Regions. For a list
+    /// of the current Regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.
     /// </para>
     ///  </dd> <dt>Alias records</dt> <dd> 
     /// <para>
@@ -133,8 +133,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property ResourcePath. 
         /// <para>
         /// The path that you want Route 53 to request when performing health checks. The path
-        /// can be any value for which your endpoint returns an HTTP status code of a 2xx or 3xx
-        /// format when the endpoint is healthy, such as the file <code>/docs/route53-health-check.html</code>.
+        /// can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format
+        /// for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>.
         /// Route 53 automatically adds the DNS name for the service. If you don't specify a value
         /// for <code>ResourcePath</code>, the default value is <code>/</code>.
         /// </para>

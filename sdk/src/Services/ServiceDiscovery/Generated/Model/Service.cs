@@ -92,7 +92,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// A unique string that identifies the request and that allows failed requests to be
         /// retried without the risk of running the operation twice. <code>CreatorRequestId</code>
-        /// can be any unique string, for example, a date/timestamp.
+        /// can be any unique string (for example, a date/timestamp).
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -218,8 +218,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property InstanceCount. 
         /// <para>
         /// The number of instances that are currently associated with the service. Instances
-        /// that were previously associated with the service but that have been deleted are not
-        /// included in the count. The count might not reflect pending registrations and deregistrations.
+        /// that were previously associated with the service but that are deleted aren't included
+        /// in the count. The count might not reflect pending registrations and deregistrations.
         /// </para>
         /// </summary>
         public int InstanceCount

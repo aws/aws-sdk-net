@@ -35,7 +35,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// 
     ///  <note> 
     /// <para>
-    /// There is a brief delay between when you register an instance and when the health status
+    /// There's a brief delay between when you register an instance and when the health status
     /// for the instance is available. 
     /// </para>
     ///  </note>

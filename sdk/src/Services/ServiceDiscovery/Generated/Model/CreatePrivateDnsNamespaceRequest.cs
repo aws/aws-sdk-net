@@ -33,10 +33,12 @@ namespace Amazon.ServiceDiscovery.Model
     /// Creates a private namespace based on DNS, which is visible only inside a specified
     /// Amazon VPC. The namespace defines your service naming scheme. For example, if you
     /// name your namespace <code>example.com</code> and name your service <code>backend</code>,
-    /// the resulting DNS name for the service is <code>backend.example.com</code>. For the
-    /// current quota on the number of namespaces that you can create using the same AWS account,
-    /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-    /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+    /// the resulting DNS name for the service is <code>backend.example.com</code>. Service
+    /// instances that are registered using a private DNS namespace can be discovered using
+    /// either a <code>DiscoverInstances</code> request or using DNS. For the current quota
+    /// on the number of namespaces that you can create using the same AWS account, see <a
+    /// href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud
+    /// Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
     /// </summary>
     public partial class CreatePrivateDnsNamespaceRequest : AmazonServiceDiscoveryRequest
     {
@@ -51,7 +53,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
         /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code>
-        /// can be any unique string, for example, a date/timestamp.
+        /// can be any unique string (for example, a date/timestamp).
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

@@ -44,7 +44,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The attributes that are associate with the instance. 
+        /// The attributes that are associated with the instance. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> 
         /// <para>
         /// For an alias record that routes traffic to an Elastic Load Balancing load balancer,
-        /// the DNS name that is associated with the load balancer. 
+        /// the DNS name that's associated with the load balancer. 
         /// </para>
         ///  </dd> <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> 
         /// <para>
@@ -75,17 +75,17 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> 
         /// <para>
         /// For a <code>CNAME</code> record, the domain name that Route 53 returns in response
-        /// to DNS queries, for example, <code>example.com</code>.
+        /// to DNS queries (for example, <code>example.com</code>).
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> 
         /// <para>
         /// For an <code>A</code> record, the IPv4 address that Route 53 returns in response to
-        /// DNS queries, for example, <code>192.0.2.44</code>.
+        /// DNS queries (for example, <code>192.0.2.44</code>).
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> 
         /// <para>
         /// For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response
-        /// to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+        /// to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> 
         /// <para>

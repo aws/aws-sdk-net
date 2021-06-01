@@ -105,7 +105,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code>
+        /// The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code>
         /// member of the <code>Properties</code> member of the namespace.
         /// </para>
         /// </summary>

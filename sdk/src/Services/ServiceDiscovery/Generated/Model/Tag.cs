@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A custom key-value pair associated with a resource.
+    /// A custom key-value pair that's associated with a resource.
     /// </summary>
     public partial class Tag
     {
@@ -58,8 +58,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The string value associated with the key of the tag. You can set the value of a tag
-        /// to an empty string, but you can't set the value of a tag to null.
+        /// The string value that's associated with the key of the tag. You can set the value
+        /// of a tag to an empty string, but you can't set the value of a tag to null.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

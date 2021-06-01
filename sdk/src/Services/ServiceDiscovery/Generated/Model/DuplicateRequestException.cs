@@ -126,7 +126,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DuplicateOperationId. 
         /// <para>
-        /// The ID of the operation that is already in progress.
+        /// The ID of the operation that's already in progress.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

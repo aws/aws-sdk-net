@@ -156,7 +156,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <dl> <dt>SUBMITTED</dt> <dd> 
         /// <para>
-        /// This is the initial state immediately after you submit a request.
+        /// This is the initial state that occurs immediately after you submit a request.
         /// </para>
         ///  </dd> <dt>PENDING</dt> <dd> 
         /// <para>
@@ -187,7 +187,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The name of the target entity that is associated with the operation:
+        /// The name of the target entity that's associated with the operation:
         /// </para>
         ///  <dl> <dt>NAMESPACE</dt> <dd> 
         /// <para>
@@ -218,7 +218,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The name of the operation that is associated with the specified ID.
+        /// The name of the operation that's associated with the specified ID.
         /// </para>
         /// </summary>
         public OperationType Type

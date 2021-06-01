@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A complex type that contains information that is specific to the namespace type.
+    /// A complex type that contains information that's specific to the namespace type.
     /// </summary>
     public partial class NamespaceProperties
     {

@@ -30,7 +30,7 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateService operation.
-    /// Creates a service, which defines the configuration for the following entities:
+    /// Creates a service. This action defines the configuration for the following entities:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// A unique string that identifies the request and that allows failed <code>CreateService</code>
         /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code>
-        /// can be any unique string, for example, a date/timestamp.
+        /// can be any unique string (for example, a date/timestamp).
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -226,12 +226,12 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </li> </ul> 
         /// <para>
         /// When you register an instance, AWS Cloud Map creates an <code>SRV</code> record and
-        /// assigns a name to the record by concatenating the service name and the namespace name,
-        /// for example:
+        /// assigns a name to the record by concatenating the service name and the namespace name
+        /// (for example,
         /// </para>
         ///  
         /// <para>
-        ///  <code>_exampleservice._tcp.example.com</code> 
+        ///  <code>_exampleservice._tcp.example.com</code>).
         /// </para>
         ///  <note> 
         /// <para>
@@ -302,8 +302,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
-        /// API operation. No DNS records will be registered for the service instances. The only
-        /// valid value is <code>HTTP</code>.
+        /// API operation. No DNS records is registered for the service instances. The only valid
+        /// value is <code>HTTP</code>.
         /// </para>
         /// </summary>
         public ServiceTypeOption Type
