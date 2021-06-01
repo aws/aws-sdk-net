@@ -299,6 +299,60 @@ namespace Amazon.IoTWireless
 
 
     /// <summary>
+    /// Constants used for properties of type LogLevel.
+    /// </summary>
+    public class LogLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for LogLevel
+        /// </summary>
+        public static readonly LogLevel DISABLED = new LogLevel("DISABLED");
+        /// <summary>
+        /// Constant ERROR for LogLevel
+        /// </summary>
+        public static readonly LogLevel ERROR = new LogLevel("ERROR");
+        /// <summary>
+        /// Constant INFO for LogLevel
+        /// </summary>
+        public static readonly LogLevel INFO = new LogLevel("INFO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogLevel FindValue(string value)
+        {
+            return FindValue<LogLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MessageType.
     /// </summary>
     public class MessageType : ConstantClass
@@ -453,6 +507,68 @@ namespace Amazon.IoTWireless
 
 
     /// <summary>
+    /// Constants used for properties of type WirelessDeviceEvent.
+    /// </summary>
+    public class WirelessDeviceEvent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Downlink_Data for WirelessDeviceEvent
+        /// </summary>
+        public static readonly WirelessDeviceEvent Downlink_Data = new WirelessDeviceEvent("Downlink_Data");
+        /// <summary>
+        /// Constant Join for WirelessDeviceEvent
+        /// </summary>
+        public static readonly WirelessDeviceEvent Join = new WirelessDeviceEvent("Join");
+        /// <summary>
+        /// Constant Registration for WirelessDeviceEvent
+        /// </summary>
+        public static readonly WirelessDeviceEvent Registration = new WirelessDeviceEvent("Registration");
+        /// <summary>
+        /// Constant Rejoin for WirelessDeviceEvent
+        /// </summary>
+        public static readonly WirelessDeviceEvent Rejoin = new WirelessDeviceEvent("Rejoin");
+        /// <summary>
+        /// Constant Uplink_Data for WirelessDeviceEvent
+        /// </summary>
+        public static readonly WirelessDeviceEvent Uplink_Data = new WirelessDeviceEvent("Uplink_Data");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WirelessDeviceEvent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WirelessDeviceEvent FindValue(string value)
+        {
+            return FindValue<WirelessDeviceEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WirelessDeviceEvent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WirelessDeviceIdType.
     /// </summary>
     public class WirelessDeviceIdType : ConstantClass
@@ -550,6 +666,56 @@ namespace Amazon.IoTWireless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WirelessDeviceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WirelessGatewayEvent.
+    /// </summary>
+    public class WirelessGatewayEvent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Certificate for WirelessGatewayEvent
+        /// </summary>
+        public static readonly WirelessGatewayEvent Certificate = new WirelessGatewayEvent("Certificate");
+        /// <summary>
+        /// Constant CUPS_Request for WirelessGatewayEvent
+        /// </summary>
+        public static readonly WirelessGatewayEvent CUPS_Request = new WirelessGatewayEvent("CUPS_Request");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WirelessGatewayEvent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WirelessGatewayEvent FindValue(string value)
+        {
+            return FindValue<WirelessGatewayEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WirelessGatewayEvent(string value)
         {
             return FindValue(value);
         }
@@ -766,6 +932,52 @@ namespace Amazon.IoTWireless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WirelessGatewayTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WirelessGatewayType.
+    /// </summary>
+    public class WirelessGatewayType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LoRaWAN for WirelessGatewayType
+        /// </summary>
+        public static readonly WirelessGatewayType LoRaWAN = new WirelessGatewayType("LoRaWAN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WirelessGatewayType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WirelessGatewayType FindValue(string value)
+        {
+            return FindValue<WirelessGatewayType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WirelessGatewayType(string value)
         {
             return FindValue(value);
         }

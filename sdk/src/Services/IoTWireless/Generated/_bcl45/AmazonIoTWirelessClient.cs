@@ -2036,6 +2036,79 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  GetLogLevelsByResourceTypes
+
+
+        /// <summary>
+        /// Returns current default log-levels, or log levels by resource types, could be for
+        /// wireless device log options or wireless gateway log options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLogLevelsByResourceTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetLogLevelsByResourceTypes service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">REST API Reference for GetLogLevelsByResourceTypes Operation</seealso>
+        public virtual GetLogLevelsByResourceTypesResponse GetLogLevelsByResourceTypes(GetLogLevelsByResourceTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLogLevelsByResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLogLevelsByResourceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<GetLogLevelsByResourceTypesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns current default log-levels, or log levels by resource types, could be for
+        /// wireless device log options or wireless gateway log options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLogLevelsByResourceTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLogLevelsByResourceTypes service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">REST API Reference for GetLogLevelsByResourceTypes Operation</seealso>
+        public virtual Task<GetLogLevelsByResourceTypesResponse> GetLogLevelsByResourceTypesAsync(GetLogLevelsByResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLogLevelsByResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLogLevelsByResourceTypesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLogLevelsByResourceTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPartnerAccount
 
 
@@ -2099,6 +2172,79 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = GetPartnerAccountResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetPartnerAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourceLogLevel
+
+
+        /// <summary>
+        /// Fetches the log-level override if any for a given resource-ID and resource-type, coulde
+        /// be a wireless device or a wireless gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceLogLevel service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceLogLevel service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">REST API Reference for GetResourceLogLevel Operation</seealso>
+        public virtual GetResourceLogLevelResponse GetResourceLogLevel(GetResourceLogLevelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceLogLevelResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceLogLevelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Fetches the log-level override if any for a given resource-ID and resource-type, coulde
+        /// be a wireless device or a wireless gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceLogLevel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceLogLevel service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">REST API Reference for GetResourceLogLevel Operation</seealso>
+        public virtual Task<GetResourceLogLevelResponse> GetResourceLogLevelAsync(GetResourceLogLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceLogLevelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResourceLogLevelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3335,6 +3481,225 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  PutResourceLogLevel
+
+
+        /// <summary>
+        /// Sets the log-level override for a resource-ID and resource-type, could be a wireless
+        /// gateway or a wireless device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourceLogLevel service method.</param>
+        /// 
+        /// <returns>The response from the PutResourceLogLevel service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">REST API Reference for PutResourceLogLevel Operation</seealso>
+        public virtual PutResourceLogLevelResponse PutResourceLogLevel(PutResourceLogLevelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourceLogLevelResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourceLogLevelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sets the log-level override for a resource-ID and resource-type, could be a wireless
+        /// gateway or a wireless device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourceLogLevel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourceLogLevel service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">REST API Reference for PutResourceLogLevel Operation</seealso>
+        public virtual Task<PutResourceLogLevelResponse> PutResourceLogLevelAsync(PutResourceLogLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourceLogLevelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutResourceLogLevelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResetAllResourceLogLevels
+
+
+        /// <summary>
+        /// Remove log-level overrides if any for all resources (both wireless devices and wireless
+        /// gateways).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetAllResourceLogLevels service method.</param>
+        /// 
+        /// <returns>The response from the ResetAllResourceLogLevels service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">REST API Reference for ResetAllResourceLogLevels Operation</seealso>
+        public virtual ResetAllResourceLogLevelsResponse ResetAllResourceLogLevels(ResetAllResourceLogLevelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetAllResourceLogLevelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetAllResourceLogLevelsResponseUnmarshaller.Instance;
+
+            return Invoke<ResetAllResourceLogLevelsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Remove log-level overrides if any for all resources (both wireless devices and wireless
+        /// gateways).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetAllResourceLogLevels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetAllResourceLogLevels service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">REST API Reference for ResetAllResourceLogLevels Operation</seealso>
+        public virtual Task<ResetAllResourceLogLevelsResponse> ResetAllResourceLogLevelsAsync(ResetAllResourceLogLevelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetAllResourceLogLevelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetAllResourceLogLevelsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ResetAllResourceLogLevelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResetResourceLogLevel
+
+
+        /// <summary>
+        /// Remove log-level override if any for a specific resource-ID and resource-type, could
+        /// be a wireless device or a wireless gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetResourceLogLevel service method.</param>
+        /// 
+        /// <returns>The response from the ResetResourceLogLevel service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">REST API Reference for ResetResourceLogLevel Operation</seealso>
+        public virtual ResetResourceLogLevelResponse ResetResourceLogLevel(ResetResourceLogLevelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetResourceLogLevelResponseUnmarshaller.Instance;
+
+            return Invoke<ResetResourceLogLevelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Remove log-level override if any for a specific resource-ID and resource-type, could
+        /// be a wireless device or a wireless gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetResourceLogLevel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetResourceLogLevel service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">REST API Reference for ResetResourceLogLevel Operation</seealso>
+        public virtual Task<ResetResourceLogLevelResponse> ResetResourceLogLevelAsync(ResetResourceLogLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetResourceLogLevelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ResetResourceLogLevelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendDataToWirelessDevice
 
 
@@ -3680,6 +4045,87 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = UpdateDestinationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLogLevelsByResourceTypes
+
+
+        /// <summary>
+        /// Set default log level, or log levels by resource types, could be for wireless device
+        /// log options or wireless gateways log options. This is to control the log messages
+        /// that will be displayed in CloudWatch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogLevelsByResourceTypes service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLogLevelsByResourceTypes service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">REST API Reference for UpdateLogLevelsByResourceTypes Operation</seealso>
+        public virtual UpdateLogLevelsByResourceTypesResponse UpdateLogLevelsByResourceTypes(UpdateLogLevelsByResourceTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLogLevelsByResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLogLevelsByResourceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLogLevelsByResourceTypesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Set default log level, or log levels by resource types, could be for wireless device
+        /// log options or wireless gateways log options. This is to control the log messages
+        /// that will be displayed in CloudWatch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogLevelsByResourceTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLogLevelsByResourceTypes service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">REST API Reference for UpdateLogLevelsByResourceTypes Operation</seealso>
+        public virtual Task<UpdateLogLevelsByResourceTypesResponse> UpdateLogLevelsByResourceTypesAsync(UpdateLogLevelsByResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLogLevelsByResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLogLevelsByResourceTypesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateLogLevelsByResourceTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion

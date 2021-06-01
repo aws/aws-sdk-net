@@ -1932,6 +1932,76 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  GetLogLevelsByResourceTypes
+
+        /// <summary>
+        /// Returns current default log-levels, or log levels by resource types, could be for
+        /// wireless device log options or wireless gateway log options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLogLevelsByResourceTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetLogLevelsByResourceTypes service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">REST API Reference for GetLogLevelsByResourceTypes Operation</seealso>
+        public virtual GetLogLevelsByResourceTypesResponse GetLogLevelsByResourceTypes(GetLogLevelsByResourceTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLogLevelsByResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLogLevelsByResourceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<GetLogLevelsByResourceTypesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLogLevelsByResourceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLogLevelsByResourceTypes operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLogLevelsByResourceTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">REST API Reference for GetLogLevelsByResourceTypes Operation</seealso>
+        public virtual IAsyncResult BeginGetLogLevelsByResourceTypes(GetLogLevelsByResourceTypesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLogLevelsByResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLogLevelsByResourceTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLogLevelsByResourceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLogLevelsByResourceTypes.</param>
+        /// 
+        /// <returns>Returns a  GetLogLevelsByResourceTypesResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">REST API Reference for GetLogLevelsByResourceTypes Operation</seealso>
+        public virtual GetLogLevelsByResourceTypesResponse EndGetLogLevelsByResourceTypes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetLogLevelsByResourceTypesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetPartnerAccount
 
         /// <summary>
@@ -1995,6 +2065,76 @@ namespace Amazon.IoTWireless
         public virtual GetPartnerAccountResponse EndGetPartnerAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPartnerAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetResourceLogLevel
+
+        /// <summary>
+        /// Fetches the log-level override if any for a given resource-ID and resource-type, coulde
+        /// be a wireless device or a wireless gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceLogLevel service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceLogLevel service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">REST API Reference for GetResourceLogLevel Operation</seealso>
+        public virtual GetResourceLogLevelResponse GetResourceLogLevel(GetResourceLogLevelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceLogLevelResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceLogLevelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceLogLevel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceLogLevel operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceLogLevel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">REST API Reference for GetResourceLogLevel Operation</seealso>
+        public virtual IAsyncResult BeginGetResourceLogLevel(GetResourceLogLevelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceLogLevelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceLogLevel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceLogLevel.</param>
+        /// 
+        /// <returns>Returns a  GetResourceLogLevelResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">REST API Reference for GetResourceLogLevel Operation</seealso>
+        public virtual GetResourceLogLevelResponse EndGetResourceLogLevel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourceLogLevelResponse>(asyncResult);
         }
 
         #endregion
@@ -3218,6 +3358,216 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  PutResourceLogLevel
+
+        /// <summary>
+        /// Sets the log-level override for a resource-ID and resource-type, could be a wireless
+        /// gateway or a wireless device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourceLogLevel service method.</param>
+        /// 
+        /// <returns>The response from the PutResourceLogLevel service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">REST API Reference for PutResourceLogLevel Operation</seealso>
+        public virtual PutResourceLogLevelResponse PutResourceLogLevel(PutResourceLogLevelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourceLogLevelResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourceLogLevelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourceLogLevel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourceLogLevel operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourceLogLevel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">REST API Reference for PutResourceLogLevel Operation</seealso>
+        public virtual IAsyncResult BeginPutResourceLogLevel(PutResourceLogLevelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourceLogLevelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourceLogLevel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourceLogLevel.</param>
+        /// 
+        /// <returns>Returns a  PutResourceLogLevelResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">REST API Reference for PutResourceLogLevel Operation</seealso>
+        public virtual PutResourceLogLevelResponse EndPutResourceLogLevel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutResourceLogLevelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ResetAllResourceLogLevels
+
+        /// <summary>
+        /// Remove log-level overrides if any for all resources (both wireless devices and wireless
+        /// gateways).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetAllResourceLogLevels service method.</param>
+        /// 
+        /// <returns>The response from the ResetAllResourceLogLevels service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">REST API Reference for ResetAllResourceLogLevels Operation</seealso>
+        public virtual ResetAllResourceLogLevelsResponse ResetAllResourceLogLevels(ResetAllResourceLogLevelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetAllResourceLogLevelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetAllResourceLogLevelsResponseUnmarshaller.Instance;
+
+            return Invoke<ResetAllResourceLogLevelsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetAllResourceLogLevels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetAllResourceLogLevels operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetAllResourceLogLevels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">REST API Reference for ResetAllResourceLogLevels Operation</seealso>
+        public virtual IAsyncResult BeginResetAllResourceLogLevels(ResetAllResourceLogLevelsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetAllResourceLogLevelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetAllResourceLogLevelsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetAllResourceLogLevels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetAllResourceLogLevels.</param>
+        /// 
+        /// <returns>Returns a  ResetAllResourceLogLevelsResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">REST API Reference for ResetAllResourceLogLevels Operation</seealso>
+        public virtual ResetAllResourceLogLevelsResponse EndResetAllResourceLogLevels(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResetAllResourceLogLevelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ResetResourceLogLevel
+
+        /// <summary>
+        /// Remove log-level override if any for a specific resource-ID and resource-type, could
+        /// be a wireless device or a wireless gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetResourceLogLevel service method.</param>
+        /// 
+        /// <returns>The response from the ResetResourceLogLevel service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">REST API Reference for ResetResourceLogLevel Operation</seealso>
+        public virtual ResetResourceLogLevelResponse ResetResourceLogLevel(ResetResourceLogLevelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetResourceLogLevelResponseUnmarshaller.Instance;
+
+            return Invoke<ResetResourceLogLevelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetResourceLogLevel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetResourceLogLevel operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetResourceLogLevel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">REST API Reference for ResetResourceLogLevel Operation</seealso>
+        public virtual IAsyncResult BeginResetResourceLogLevel(ResetResourceLogLevelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetResourceLogLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetResourceLogLevelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetResourceLogLevel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetResourceLogLevel.</param>
+        /// 
+        /// <returns>Returns a  ResetResourceLogLevelResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">REST API Reference for ResetResourceLogLevel Operation</seealso>
+        public virtual ResetResourceLogLevelResponse EndResetResourceLogLevel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResetResourceLogLevelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SendDataToWirelessDevice
 
         /// <summary>
@@ -3556,6 +3906,80 @@ namespace Amazon.IoTWireless
         public virtual UpdateDestinationResponse EndUpdateDestination(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateLogLevelsByResourceTypes
+
+        /// <summary>
+        /// Set default log level, or log levels by resource types, could be for wireless device
+        /// log options or wireless gateways log options. This is to control the log messages
+        /// that will be displayed in CloudWatch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogLevelsByResourceTypes service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLogLevelsByResourceTypes service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">REST API Reference for UpdateLogLevelsByResourceTypes Operation</seealso>
+        public virtual UpdateLogLevelsByResourceTypesResponse UpdateLogLevelsByResourceTypes(UpdateLogLevelsByResourceTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLogLevelsByResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLogLevelsByResourceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLogLevelsByResourceTypesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLogLevelsByResourceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogLevelsByResourceTypes operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLogLevelsByResourceTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">REST API Reference for UpdateLogLevelsByResourceTypes Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLogLevelsByResourceTypes(UpdateLogLevelsByResourceTypesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLogLevelsByResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLogLevelsByResourceTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLogLevelsByResourceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLogLevelsByResourceTypes.</param>
+        /// 
+        /// <returns>Returns a  UpdateLogLevelsByResourceTypesResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">REST API Reference for UpdateLogLevelsByResourceTypes Operation</seealso>
+        public virtual UpdateLogLevelsByResourceTypesResponse EndUpdateLogLevelsByResourceTypes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLogLevelsByResourceTypesResponse>(asyncResult);
         }
 
         #endregion

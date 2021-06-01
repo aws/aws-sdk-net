@@ -242,6 +242,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GetResourceLogLevelRequest.ResourceIdentifier</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.GetServiceEndpointResponse.ServerTrust</property>
     <min>1</min>
     <max>4096</max>
@@ -482,6 +486,14 @@
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.ListWirelessGatewayTaskDefinitionsResponse.NextToken</property>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.PutResourceLogLevelRequest.ResourceIdentifier</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.ResetResourceLogLevelRequest.ResourceIdentifier</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.SendDataToWirelessDeviceRequest.Id</property>
