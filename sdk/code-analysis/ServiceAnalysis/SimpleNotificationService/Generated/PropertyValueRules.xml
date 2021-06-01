@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.CreateSMSSandboxPhoneNumberRequest.PhoneNumber</property>
+    <max>20</max>
+    <pattern>^(\+[0-9]{8,}|[0-9]{0,9})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.DeleteSMSSandboxPhoneNumberRequest.PhoneNumber</property>
+    <max>20</max>
+    <pattern>^(\+[0-9]{8,}|[0-9]{0,9})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.ListOriginationNumbersRequest.MaxResults</property>
+    <min>1</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.ListSMSSandboxPhoneNumbersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleNotificationService.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
@@ -14,6 +34,27 @@
     <property>Amazon.SimpleNotificationService.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.VerifySMSSandboxPhoneNumberRequest.OneTimePassword</property>
+    <min>5</min>
+    <max>8</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.VerifySMSSandboxPhoneNumberRequest.PhoneNumber</property>
+    <max>20</max>
+    <pattern>^(\+[0-9]{8,}|[0-9]{0,9})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.PhoneNumberInformation.Iso2CountryCode</property>
+    <max>2</max>
+    <pattern>^[A-Za-z]{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.SMSSandboxPhoneNumber.PhoneNumber</property>
+    <max>20</max>
+    <pattern>^(\+[0-9]{8,}|[0-9]{0,9})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleNotificationService.Model.Tag.Key</property>

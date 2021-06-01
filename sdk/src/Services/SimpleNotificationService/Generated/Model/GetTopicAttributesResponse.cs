@@ -103,7 +103,7 @@ namespace Amazon.SimpleNotificationService.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-        /// FIFO topics. 
+        /// FIFO topics.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -120,7 +120,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// (Optional) To override the generated value, you can specify a value for the the <code>MessageDeduplicationId</code>
+        /// (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code>
         /// parameter for the <code>Publish</code> action.
         /// </para>
         ///  </li> </ul> </li> </ul>

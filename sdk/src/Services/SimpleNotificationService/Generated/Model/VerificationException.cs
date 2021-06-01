@@ -29,41 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Can’t perform the action on the specified resource. Make sure that the resource exists.
+    /// Indicates that the one-time password (OTP) used for verification is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ResourceNotFoundException : AmazonSimpleNotificationServiceException
+    public partial class VerificationException : AmazonSimpleNotificationServiceException
     {
+        private string _status;
 
         /// <summary>
-        /// Constructs a new ResourceNotFoundException with the specified error
+        /// Constructs a new VerificationException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ResourceNotFoundException(string message) 
+        public VerificationException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of VerificationException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ResourceNotFoundException(string message, Exception innerException) 
+        public VerificationException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of VerificationException
         /// </summary>
         /// <param name="innerException"></param>
-        public ResourceNotFoundException(Exception innerException) 
+        public VerificationException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of VerificationException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -71,32 +72,33 @@ namespace Amazon.SimpleNotificationService.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ResourceNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public VerificationException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of VerificationException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ResourceNotFoundException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public VerificationException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ResourceNotFoundException class with serialized data.
+        /// Constructs a new instance of the VerificationException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected VerificationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Status = (string)info.GetValue("Status", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +119,28 @@ namespace Amazon.SimpleNotificationService.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Status", this.Status);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the verification error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
 
     }
 }

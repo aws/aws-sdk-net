@@ -86,11 +86,12 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+        /// The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+        /// encryption</a>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK)
+        ///  <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK)
         /// for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
         /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
         /// in the <i>AWS Key Management Service API Reference</i>. 
@@ -107,7 +108,7 @@ namespace Amazon.SimpleNotificationService.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-        /// FIFO topics. 
+        /// FIFO topics.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -124,7 +125,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// (Optional) To override the generated value, you can specify a value for the the <code>MessageDeduplicationId</code>
+        /// (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code>
         /// parameter for the <code>Publish</code> action.
         /// </para>
         ///  </li> </ul> </li> </ul>

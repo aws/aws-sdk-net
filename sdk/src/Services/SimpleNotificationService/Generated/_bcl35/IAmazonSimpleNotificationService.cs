@@ -498,6 +498,78 @@ namespace Amazon.SimpleNotificationService
 
         #endregion
         
+        #region  CreateSMSSandboxPhoneNumber
+
+
+        /// <summary>
+        /// Adds a destination phone number to an AWS account in the SMS sandbox and sends a one-time
+        /// password (OTP) to that phone number.
+        /// 
+        ///  
+        /// <para>
+        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
+        /// features without risking your reputation as an SMS sender. While your account is in
+        /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+        /// SMS messages only to verified destination phone numbers. For more information, including
+        /// how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
+        /// sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSMSSandboxPhoneNumber service method.</param>
+        /// 
+        /// <returns>The response from the CreateSMSSandboxPhoneNumber service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.OptedOutException">
+        /// Indicates that the specified phone number opted out of receiving SMS messages from
+        /// your AWS account. You can't send SMS messages to phone numbers that opt out.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
+        /// Indicates that the rate at which requests have been submitted for this action exceeds
+        /// the limit for your account.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.UserErrorException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateSMSSandboxPhoneNumber">REST API Reference for CreateSMSSandboxPhoneNumber Operation</seealso>
+        CreateSMSSandboxPhoneNumberResponse CreateSMSSandboxPhoneNumber(CreateSMSSandboxPhoneNumberRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSMSSandboxPhoneNumber operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSMSSandboxPhoneNumber operation on AmazonSimpleNotificationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSMSSandboxPhoneNumber
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateSMSSandboxPhoneNumber">REST API Reference for CreateSMSSandboxPhoneNumber Operation</seealso>
+        IAsyncResult BeginCreateSMSSandboxPhoneNumber(CreateSMSSandboxPhoneNumberRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSMSSandboxPhoneNumber operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSMSSandboxPhoneNumber.</param>
+        /// 
+        /// <returns>Returns a  CreateSMSSandboxPhoneNumberResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateSMSSandboxPhoneNumber">REST API Reference for CreateSMSSandboxPhoneNumber Operation</seealso>
+        CreateSMSSandboxPhoneNumberResponse EndCreateSMSSandboxPhoneNumber(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateTopic
 
 
@@ -722,6 +794,76 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Returns a  DeletePlatformApplicationResult from SimpleNotificationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         DeletePlatformApplicationResponse EndDeletePlatformApplication(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteSMSSandboxPhoneNumber
+
+
+        /// <summary>
+        /// Deletes an AWS account's verified or pending phone number from the SMS sandbox.
+        /// 
+        ///  
+        /// <para>
+        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
+        /// features without risking your reputation as an SMS sender. While your account is in
+        /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+        /// SMS messages only to verified destination phone numbers. For more information, including
+        /// how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
+        /// sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSMSSandboxPhoneNumber service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSMSSandboxPhoneNumber service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ResourceNotFoundException">
+        /// Can’t perform the action on the specified resource. Make sure that the resource exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
+        /// Indicates that the rate at which requests have been submitted for this action exceeds
+        /// the limit for your account.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.UserErrorException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteSMSSandboxPhoneNumber">REST API Reference for DeleteSMSSandboxPhoneNumber Operation</seealso>
+        DeleteSMSSandboxPhoneNumberResponse DeleteSMSSandboxPhoneNumber(DeleteSMSSandboxPhoneNumberRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSMSSandboxPhoneNumber operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSMSSandboxPhoneNumber operation on AmazonSimpleNotificationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSMSSandboxPhoneNumber
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteSMSSandboxPhoneNumber">REST API Reference for DeleteSMSSandboxPhoneNumber Operation</seealso>
+        IAsyncResult BeginDeleteSMSSandboxPhoneNumber(DeleteSMSSandboxPhoneNumberRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSMSSandboxPhoneNumber operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSMSSandboxPhoneNumber.</param>
+        /// 
+        /// <returns>Returns a  DeleteSMSSandboxPhoneNumberResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteSMSSandboxPhoneNumber">REST API Reference for DeleteSMSSandboxPhoneNumber Operation</seealso>
+        DeleteSMSSandboxPhoneNumberResponse EndDeleteSMSSandboxPhoneNumber(IAsyncResult asyncResult);
 
         #endregion
         
@@ -994,6 +1136,67 @@ namespace Amazon.SimpleNotificationService
 
         #endregion
         
+        #region  GetSMSSandboxAccountStatus
+
+
+        /// <summary>
+        /// Retrieves the SMS sandbox status for the calling AWS account in the target AWS Region.
+        /// 
+        ///  
+        /// <para>
+        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
+        /// features without risking your reputation as an SMS sender. While your account is in
+        /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+        /// SMS messages only to verified destination phone numbers. For more information, including
+        /// how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
+        /// sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSMSSandboxAccountStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetSMSSandboxAccountStatus service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
+        /// Indicates that the rate at which requests have been submitted for this action exceeds
+        /// the limit for your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus">REST API Reference for GetSMSSandboxAccountStatus Operation</seealso>
+        GetSMSSandboxAccountStatusResponse GetSMSSandboxAccountStatus(GetSMSSandboxAccountStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSMSSandboxAccountStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSMSSandboxAccountStatus operation on AmazonSimpleNotificationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSMSSandboxAccountStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus">REST API Reference for GetSMSSandboxAccountStatus Operation</seealso>
+        IAsyncResult BeginGetSMSSandboxAccountStatus(GetSMSSandboxAccountStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSMSSandboxAccountStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSMSSandboxAccountStatus.</param>
+        /// 
+        /// <returns>Returns a  GetSMSSandboxAccountStatusResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus">REST API Reference for GetSMSSandboxAccountStatus Operation</seealso>
+        GetSMSSandboxAccountStatusResponse EndGetSMSSandboxAccountStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetSubscriptionAttributes
 
 
@@ -1214,6 +1417,64 @@ namespace Amazon.SimpleNotificationService
 
         #endregion
         
+        #region  ListOriginationNumbers
+
+
+        /// <summary>
+        /// Lists the calling AWS account's dedicated origination numbers and their metadata.
+        /// For more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination
+        /// numbers</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOriginationNumbers service method.</param>
+        /// 
+        /// <returns>The response from the ListOriginationNumbers service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
+        /// Indicates that the rate at which requests have been submitted for this action exceeds
+        /// the limit for your account.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
+        /// Indicates that a parameter in the request is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListOriginationNumbers">REST API Reference for ListOriginationNumbers Operation</seealso>
+        ListOriginationNumbersResponse ListOriginationNumbers(ListOriginationNumbersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOriginationNumbers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOriginationNumbers operation on AmazonSimpleNotificationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOriginationNumbers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListOriginationNumbers">REST API Reference for ListOriginationNumbers Operation</seealso>
+        IAsyncResult BeginListOriginationNumbers(ListOriginationNumbersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOriginationNumbers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOriginationNumbers.</param>
+        /// 
+        /// <returns>Returns a  ListOriginationNumbersResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListOriginationNumbers">REST API Reference for ListOriginationNumbers Operation</seealso>
+        ListOriginationNumbersResponse EndListOriginationNumbers(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPhoneNumbersOptedOut
 
 
@@ -1367,6 +1628,74 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Returns a  ListPlatformApplicationsResult from SimpleNotificationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         ListPlatformApplicationsResponse EndListPlatformApplications(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListSMSSandboxPhoneNumbers
+
+
+        /// <summary>
+        /// Lists the calling AWS account's current verified and pending destination phone numbers
+        /// in the SMS sandbox.
+        /// 
+        ///  
+        /// <para>
+        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
+        /// features without risking your reputation as an SMS sender. While your account is in
+        /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+        /// SMS messages only to verified destination phone numbers. For more information, including
+        /// how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
+        /// sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSMSSandboxPhoneNumbers service method.</param>
+        /// 
+        /// <returns>The response from the ListSMSSandboxPhoneNumbers service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ResourceNotFoundException">
+        /// Can’t perform the action on the specified resource. Make sure that the resource exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
+        /// Indicates that the rate at which requests have been submitted for this action exceeds
+        /// the limit for your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers">REST API Reference for ListSMSSandboxPhoneNumbers Operation</seealso>
+        ListSMSSandboxPhoneNumbersResponse ListSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSMSSandboxPhoneNumbers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSMSSandboxPhoneNumbers operation on AmazonSimpleNotificationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSMSSandboxPhoneNumbers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers">REST API Reference for ListSMSSandboxPhoneNumbers Operation</seealso>
+        IAsyncResult BeginListSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSMSSandboxPhoneNumbers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSMSSandboxPhoneNumbers.</param>
+        /// 
+        /// <returns>Returns a  ListSMSSandboxPhoneNumbersResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers">REST API Reference for ListSMSSandboxPhoneNumbers Operation</seealso>
+        ListSMSSandboxPhoneNumbersResponse EndListSMSSandboxPhoneNumbers(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1618,7 +1947,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ResourceNotFoundException">
-        /// Can't tag resource. Verify that the topic exists.
+        /// Can’t perform the action on the specified resource. Make sure that the resource exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.TagPolicyException">
         /// The request doesn't comply with the IAM tag policy. Correct your request and then
@@ -2461,7 +2790,7 @@ namespace Amazon.SimpleNotificationService
         /// Allows a topic owner to set an attribute of the topic to a new value.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic to modify.</param>
-        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API Reference</i>.  </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.  <ul> <li> By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action.  </li> <li> When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). (Optional) To override the generated value, you can specify a value for the the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action. </li> </ul> </li> </ul></param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API Reference</i>.  </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics. <ul> <li> By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action.  </li> <li> When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action. </li> </ul> </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute.</param>
         /// 
         /// <returns>The response from the SetTopicAttributes service method, as returned by SimpleNotificationService.</returns>
@@ -2708,7 +3037,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ResourceNotFoundException">
-        /// Can't tag resource. Verify that the topic exists.
+        /// Can’t perform the action on the specified resource. Make sure that the resource exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.StaleTagException">
         /// A tag has been added to a resource with the same ARN as a deleted resource. Wait a
@@ -2874,7 +3203,7 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ResourceNotFoundException">
-        /// Can't tag resource. Verify that the topic exists.
+        /// Can’t perform the action on the specified resource. Make sure that the resource exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.StaleTagException">
         /// A tag has been added to a resource with the same ARN as a deleted resource. Wait a
@@ -2915,6 +3244,77 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Returns a  UntagResourceResult from SimpleNotificationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  VerifySMSSandboxPhoneNumber
+
+
+        /// <summary>
+        /// Verifies a destination phone number with a one-time password (OTP) for the calling
+        /// AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS
+        /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
+        /// features without risking your reputation as an SMS sender. While your account is in
+        /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+        /// SMS messages only to verified destination phone numbers. For more information, including
+        /// how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
+        /// sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifySMSSandboxPhoneNumber service method.</param>
+        /// 
+        /// <returns>The response from the VerifySMSSandboxPhoneNumber service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ResourceNotFoundException">
+        /// Can’t perform the action on the specified resource. Make sure that the resource exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
+        /// Indicates that the rate at which requests have been submitted for this action exceeds
+        /// the limit for your account.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.VerificationException">
+        /// Indicates that the one-time password (OTP) used for verification is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/VerifySMSSandboxPhoneNumber">REST API Reference for VerifySMSSandboxPhoneNumber Operation</seealso>
+        VerifySMSSandboxPhoneNumberResponse VerifySMSSandboxPhoneNumber(VerifySMSSandboxPhoneNumberRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifySMSSandboxPhoneNumber operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the VerifySMSSandboxPhoneNumber operation on AmazonSimpleNotificationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifySMSSandboxPhoneNumber
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/VerifySMSSandboxPhoneNumber">REST API Reference for VerifySMSSandboxPhoneNumber Operation</seealso>
+        IAsyncResult BeginVerifySMSSandboxPhoneNumber(VerifySMSSandboxPhoneNumberRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  VerifySMSSandboxPhoneNumber operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifySMSSandboxPhoneNumber.</param>
+        /// 
+        /// <returns>Returns a  VerifySMSSandboxPhoneNumberResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/VerifySMSSandboxPhoneNumber">REST API Reference for VerifySMSSandboxPhoneNumber Operation</seealso>
+        VerifySMSSandboxPhoneNumberResponse EndVerifySMSSandboxPhoneNumber(IAsyncResult asyncResult);
 
         #endregion
         

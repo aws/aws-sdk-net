@@ -81,6 +81,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("SimpleNotificationService")]
+        public void ListOriginationNumbersTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListOriginationNumbersRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListOriginationNumbersResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListOriginationNumbersResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListOriginationNumbers(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListOriginationNumbers(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SimpleNotificationService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListOriginationNumbersTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListOriginationNumbersRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListOriginationNumbersResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListOriginationNumbers(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListOriginationNumbers(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SimpleNotificationService")]
         public void ListPlatformApplicationsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListPlatformApplicationsRequest>();
@@ -108,6 +147,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListPlatformApplications(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListPlatformApplications(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListSMSSandboxPhoneNumbersTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListSMSSandboxPhoneNumbers(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListSMSSandboxPhoneNumbers(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SimpleNotificationService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListSMSSandboxPhoneNumbersTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListSMSSandboxPhoneNumbers(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListSMSSandboxPhoneNumbers(request);
 
             // Should work the first time
             paginator.Responses.ToList();

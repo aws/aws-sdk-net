@@ -44,11 +44,27 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
+        /// Paginator for ListOriginationNumbers operation
+        ///</summary>
+        public IListOriginationNumbersPaginator ListOriginationNumbers(ListOriginationNumbersRequest request) 
+        {
+            return new ListOriginationNumbersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPlatformApplications operation
         ///</summary>
         public IListPlatformApplicationsPaginator ListPlatformApplications(ListPlatformApplicationsRequest request) 
         {
             return new ListPlatformApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSMSSandboxPhoneNumbers operation
+        ///</summary>
+        public IListSMSSandboxPhoneNumbersPaginator ListSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request) 
+        {
+            return new ListSMSSandboxPhoneNumbersPaginator(this.client, request);
         }
 
         /// <summary>

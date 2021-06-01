@@ -632,6 +632,166 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleNotificationService")]
+        public void CreateSMSSandboxPhoneNumberMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<CreateSMSSandboxPhoneNumberRequest>();
+            var marshaller = new CreateSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateSMSSandboxPhoneNumberResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateSMSSandboxPhoneNumberResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void CreateSMSSandboxPhoneNumber_AuthorizationErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<CreateSMSSandboxPhoneNumberRequest>();
+            var marshaller = new CreateSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthorizationErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void CreateSMSSandboxPhoneNumber_InternalErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<CreateSMSSandboxPhoneNumberRequest>();
+            var marshaller = new CreateSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void CreateSMSSandboxPhoneNumber_InvalidParameterExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<CreateSMSSandboxPhoneNumberRequest>();
+            var marshaller = new CreateSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void CreateSMSSandboxPhoneNumber_OptedOutExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<CreateSMSSandboxPhoneNumberRequest>();
+            var marshaller = new CreateSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OptedOutException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void CreateSMSSandboxPhoneNumber_ThrottledExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<CreateSMSSandboxPhoneNumberRequest>();
+            var marshaller = new CreateSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void CreateSMSSandboxPhoneNumber_UserErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<CreateSMSSandboxPhoneNumberRequest>();
+            var marshaller = new CreateSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UserErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
         public void CreateTopicMarshallTest()
         {
             var operation = service_model.FindOperation("CreateTopic");
@@ -1025,6 +1185,166 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DeletePlatformApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void DeleteSMSSandboxPhoneNumberMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSMSSandboxPhoneNumberRequest>();
+            var marshaller = new DeleteSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteSMSSandboxPhoneNumberResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteSMSSandboxPhoneNumberResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void DeleteSMSSandboxPhoneNumber_AuthorizationErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSMSSandboxPhoneNumberRequest>();
+            var marshaller = new DeleteSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthorizationErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void DeleteSMSSandboxPhoneNumber_InternalErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSMSSandboxPhoneNumberRequest>();
+            var marshaller = new DeleteSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void DeleteSMSSandboxPhoneNumber_InvalidParameterExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSMSSandboxPhoneNumberRequest>();
+            var marshaller = new DeleteSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void DeleteSMSSandboxPhoneNumber_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSMSSandboxPhoneNumberRequest>();
+            var marshaller = new DeleteSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void DeleteSMSSandboxPhoneNumber_ThrottledExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSMSSandboxPhoneNumberRequest>();
+            var marshaller = new DeleteSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void DeleteSMSSandboxPhoneNumber_UserErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSMSSandboxPhoneNumberRequest>();
+            var marshaller = new DeleteSMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UserErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteSMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1553,6 +1873,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleNotificationService")]
+        public void GetSMSSandboxAccountStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSMSSandboxAccountStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetSMSSandboxAccountStatusRequest>();
+            var marshaller = new GetSMSSandboxAccountStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetSMSSandboxAccountStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetSMSSandboxAccountStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void GetSMSSandboxAccountStatus_AuthorizationErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSMSSandboxAccountStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetSMSSandboxAccountStatusRequest>();
+            var marshaller = new GetSMSSandboxAccountStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthorizationErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetSMSSandboxAccountStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void GetSMSSandboxAccountStatus_InternalErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSMSSandboxAccountStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetSMSSandboxAccountStatusRequest>();
+            var marshaller = new GetSMSSandboxAccountStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetSMSSandboxAccountStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void GetSMSSandboxAccountStatus_ThrottledExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSMSSandboxAccountStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetSMSSandboxAccountStatusRequest>();
+            var marshaller = new GetSMSSandboxAccountStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetSMSSandboxAccountStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
         public void GetSubscriptionAttributesMarshallTest()
         {
             var operation = service_model.FindOperation("GetSubscriptionAttributes");
@@ -1918,6 +2329,143 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleNotificationService")]
+        public void ListOriginationNumbersMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOriginationNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListOriginationNumbersRequest>();
+            var marshaller = new ListOriginationNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListOriginationNumbersResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListOriginationNumbersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListOriginationNumbers_AuthorizationErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOriginationNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListOriginationNumbersRequest>();
+            var marshaller = new ListOriginationNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthorizationErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListOriginationNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListOriginationNumbers_InternalErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOriginationNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListOriginationNumbersRequest>();
+            var marshaller = new ListOriginationNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListOriginationNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListOriginationNumbers_InvalidParameterExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOriginationNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListOriginationNumbersRequest>();
+            var marshaller = new ListOriginationNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListOriginationNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListOriginationNumbers_ThrottledExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOriginationNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListOriginationNumbersRequest>();
+            var marshaller = new ListOriginationNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListOriginationNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListOriginationNumbers_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOriginationNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListOriginationNumbersRequest>();
+            var marshaller = new ListOriginationNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListOriginationNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
         public void ListPhoneNumbersOptedOutMarshallTest()
         {
             var operation = service_model.FindOperation("ListPhoneNumbersOptedOut");
@@ -2115,6 +2663,143 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ListPlatformApplicationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListSMSSandboxPhoneNumbersMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSMSSandboxPhoneNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersRequest>();
+            var marshaller = new ListSMSSandboxPhoneNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListSMSSandboxPhoneNumbersResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListSMSSandboxPhoneNumbersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListSMSSandboxPhoneNumbers_AuthorizationErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSMSSandboxPhoneNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersRequest>();
+            var marshaller = new ListSMSSandboxPhoneNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthorizationErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListSMSSandboxPhoneNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListSMSSandboxPhoneNumbers_InternalErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSMSSandboxPhoneNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersRequest>();
+            var marshaller = new ListSMSSandboxPhoneNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListSMSSandboxPhoneNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListSMSSandboxPhoneNumbers_InvalidParameterExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSMSSandboxPhoneNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersRequest>();
+            var marshaller = new ListSMSSandboxPhoneNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListSMSSandboxPhoneNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListSMSSandboxPhoneNumbers_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSMSSandboxPhoneNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersRequest>();
+            var marshaller = new ListSMSSandboxPhoneNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListSMSSandboxPhoneNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListSMSSandboxPhoneNumbers_ThrottledExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSMSSandboxPhoneNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListSMSSandboxPhoneNumbersRequest>();
+            var marshaller = new ListSMSSandboxPhoneNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListSMSSandboxPhoneNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4392,6 +5077,166 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = UntagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void VerifySMSSandboxPhoneNumberMarshallTest()
+        {
+            var operation = service_model.FindOperation("VerifySMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<VerifySMSSandboxPhoneNumberRequest>();
+            var marshaller = new VerifySMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = VerifySMSSandboxPhoneNumberResponseUnmarshaller.Instance.Unmarshall(context)
+                as VerifySMSSandboxPhoneNumberResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void VerifySMSSandboxPhoneNumber_AuthorizationErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("VerifySMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<VerifySMSSandboxPhoneNumberRequest>();
+            var marshaller = new VerifySMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AuthorizationErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = VerifySMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void VerifySMSSandboxPhoneNumber_InternalErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("VerifySMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<VerifySMSSandboxPhoneNumberRequest>();
+            var marshaller = new VerifySMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = VerifySMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void VerifySMSSandboxPhoneNumber_InvalidParameterExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("VerifySMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<VerifySMSSandboxPhoneNumberRequest>();
+            var marshaller = new VerifySMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = VerifySMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void VerifySMSSandboxPhoneNumber_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("VerifySMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<VerifySMSSandboxPhoneNumberRequest>();
+            var marshaller = new VerifySMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = VerifySMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void VerifySMSSandboxPhoneNumber_ThrottledExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("VerifySMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<VerifySMSSandboxPhoneNumberRequest>();
+            var marshaller = new VerifySMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = VerifySMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void VerifySMSSandboxPhoneNumber_VerificationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("VerifySMSSandboxPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<VerifySMSSandboxPhoneNumberRequest>();
+            var marshaller = new VerifySMSSandboxPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("VerificationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = VerifySMSSandboxPhoneNumberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

@@ -31,9 +31,19 @@ namespace Amazon.SimpleNotificationService.Model
         IListEndpointsByPlatformApplicationPaginator ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request);
 
         /// <summary>
+        /// Paginator for ListOriginationNumbers operation
+        ///</summary>
+        IListOriginationNumbersPaginator ListOriginationNumbers(ListOriginationNumbersRequest request);
+
+        /// <summary>
         /// Paginator for ListPlatformApplications operation
         ///</summary>
         IListPlatformApplicationsPaginator ListPlatformApplications(ListPlatformApplicationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSMSSandboxPhoneNumbers operation
+        ///</summary>
+        IListSMSSandboxPhoneNumbersPaginator ListSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request);
 
         /// <summary>
         /// Paginator for ListSubscriptions operation
