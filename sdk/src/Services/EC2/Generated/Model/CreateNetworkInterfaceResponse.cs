@@ -33,7 +33,27 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateNetworkInterfaceResponse : AmazonWebServiceResponse
     {
+        private string _clientToken;
         private NetworkInterface _networkInterface;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NetworkInterface. 
