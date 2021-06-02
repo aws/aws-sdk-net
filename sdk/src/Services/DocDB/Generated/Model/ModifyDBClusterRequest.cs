@@ -206,9 +206,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to which you want to upgrade. Changing this
-        /// parameter results in an outage. The change is applied during the next maintenance
-        /// window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>.
+        /// The version number of the database engine to which you want to upgrade. Modifying
+        /// engine version is not supported on Amazon DocumentDB.
         /// </para>
         /// </summary>
         public string EngineVersion

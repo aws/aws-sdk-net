@@ -432,6 +432,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("DocDB")]
+        public void DescribeGlobalClustersTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeGlobalClustersRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeGlobalClustersResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeGlobalClustersResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeGlobalClusters(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeGlobalClusters(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("DocDB")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeGlobalClustersTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeGlobalClustersRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeGlobalClustersResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeGlobalClusters(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeGlobalClusters(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("DocDB")]
         public void DescribeOrderableDBInstanceOptionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeOrderableDBInstanceOptionsRequest>();

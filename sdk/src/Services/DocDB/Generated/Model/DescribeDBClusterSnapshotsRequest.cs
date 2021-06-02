@@ -242,7 +242,7 @@ namespace Amazon.DocDB.Model
         /// If you don't specify a <code>SnapshotType</code> value, then both automated and manual
         /// cluster snapshots are returned. You can include shared cluster snapshots with these
         /// results by setting the <code>IncludeShared</code> parameter to <code>true</code>.
-        /// You can include public cluster snapshots with these results by setting the <code>IncludePublic</code>
+        /// You can include public cluster snapshots with these results by setting the<code>IncludePublic</code>
         /// parameter to <code>true</code>.
         /// </para>
         ///  

@@ -723,6 +723,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("DocDB")]
+        public void CreateDBCluster_GlobalClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterRequest>();
+            var marshaller = new CreateDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GlobalClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
         public void CreateDBCluster_InsufficientStorageClusterCapacityExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBCluster");
@@ -804,6 +827,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBSubnetGroupStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateDBCluster_InvalidGlobalClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterRequest>();
+            var marshaller = new CreateDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidGlobalClusterStateException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = CreateDBClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -1799,6 +1845,120 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("DocDB")]
+        public void CreateGlobalClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<CreateGlobalClusterRequest>();
+            var marshaller = new CreateGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateGlobalClusterResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateGlobalClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateGlobalCluster_DBClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<CreateGlobalClusterRequest>();
+            var marshaller = new CreateGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateGlobalCluster_GlobalClusterAlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<CreateGlobalClusterRequest>();
+            var marshaller = new CreateGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GlobalClusterAlreadyExistsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateGlobalCluster_GlobalClusterQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<CreateGlobalClusterRequest>();
+            var marshaller = new CreateGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GlobalClusterQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void CreateGlobalCluster_InvalidDBClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<CreateGlobalClusterRequest>();
+            var marshaller = new CreateGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
         public void DeleteDBClusterMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDBCluster");
@@ -2358,6 +2518,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("DocDB")]
+        public void DeleteGlobalClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGlobalClusterRequest>();
+            var marshaller = new DeleteGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteGlobalClusterResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteGlobalClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void DeleteGlobalCluster_GlobalClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGlobalClusterRequest>();
+            var marshaller = new DeleteGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GlobalClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void DeleteGlobalCluster_InvalidGlobalClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGlobalClusterRequest>();
+            var marshaller = new DeleteGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidGlobalClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
         public void DescribeCertificatesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeCertificates");
@@ -2843,6 +3071,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DescribeEventSubscriptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void DescribeGlobalClustersMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeGlobalClusters");
+
+            var request = InstantiateClassGenerator.Execute<DescribeGlobalClustersRequest>();
+            var marshaller = new DescribeGlobalClustersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeGlobalClustersResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeGlobalClustersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void DescribeGlobalClusters_GlobalClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeGlobalClusters");
+
+            var request = InstantiateClassGenerator.Execute<DescribeGlobalClustersRequest>();
+            var marshaller = new DescribeGlobalClustersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GlobalClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeGlobalClustersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4152,6 +4425,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("DocDB")]
+        public void ModifyGlobalClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<ModifyGlobalClusterRequest>();
+            var marshaller = new ModifyGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyGlobalClusterResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyGlobalClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void ModifyGlobalCluster_GlobalClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<ModifyGlobalClusterRequest>();
+            var marshaller = new ModifyGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GlobalClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void ModifyGlobalCluster_InvalidGlobalClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<ModifyGlobalClusterRequest>();
+            var marshaller = new ModifyGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidGlobalClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
         public void RebootDBInstanceMarshallTest()
         {
             var operation = service_model.FindOperation("RebootDBInstance");
@@ -4212,6 +4553,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RebootDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void RemoveFromGlobalClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveFromGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<RemoveFromGlobalClusterRequest>();
+            var marshaller = new RemoveFromGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RemoveFromGlobalClusterResponseUnmarshaller.Instance.Unmarshall(context)
+                as RemoveFromGlobalClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void RemoveFromGlobalCluster_DBClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveFromGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<RemoveFromGlobalClusterRequest>();
+            var marshaller = new RemoveFromGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveFromGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void RemoveFromGlobalCluster_GlobalClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveFromGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<RemoveFromGlobalClusterRequest>();
+            var marshaller = new RemoveFromGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GlobalClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveFromGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
+        public void RemoveFromGlobalCluster_InvalidGlobalClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveFromGlobalCluster");
+
+            var request = InstantiateClassGenerator.Execute<RemoveFromGlobalClusterRequest>();
+            var marshaller = new RemoveFromGlobalClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidGlobalClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveFromGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

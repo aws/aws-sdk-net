@@ -116,6 +116,14 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeGlobalClusters operation
+        ///</summary>
+        public IDescribeGlobalClustersPaginator DescribeGlobalClusters(DescribeGlobalClustersRequest request) 
+        {
+            return new DescribeGlobalClustersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeOrderableDBInstanceOptions operation
         ///</summary>
         public IDescribeOrderableDBInstanceOptionsPaginator DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request) 

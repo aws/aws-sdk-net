@@ -550,6 +550,9 @@ namespace Amazon.DocDB
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
         /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+        /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InsufficientStorageClusterCapacityException">
         /// There is not enough storage available for the current action. You might be able to
         /// resolve this error by updating your subnet group to use different Availability Zones
@@ -563,6 +566,9 @@ namespace Amazon.DocDB
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBSubnetGroupStateException">
         /// The subnet group can't be deleted because it's in use.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidGlobalClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or multiple subnets were requested that are not
@@ -922,6 +928,69 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  CreateGlobalCluster
+
+        internal virtual CreateGlobalClusterResponse CreateGlobalCluster(CreateGlobalClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlobalClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGlobalClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon DocumentDB global cluster that can span multiple multiple AWS Regions.
+        /// The global cluster contains one primary cluster with read-write capability, and up-to
+        /// give read-only secondary clusters. Global clusters uses storage-based fast replication
+        /// across regions with latencies less than one second, using dedicated infrastructure
+        /// with no impact to your workload’s performance.
+        /// 
+        ///   
+        /// <para>
+        /// You can create a global cluster that is initially empty, and then add a primary and
+        /// a secondary to it. Or you can specify an existing cluster during the create operation,
+        /// and this cluster becomes the primary of the global cluster. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action only applies to Amazon DocumentDB clusters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGlobalCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterAlreadyExistsException">
+        /// The <code>GlobalClusterIdentifier</code> already exists. Choose a new global cluster
+        /// identifier (unique name) to create a new global cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterQuotaExceededException">
+        /// The number of global clusters for this account is already at the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
+        /// The cluster isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster">REST API Reference for CreateGlobalCluster Operation</seealso>
+        public virtual Task<CreateGlobalClusterResponse> CreateGlobalClusterAsync(CreateGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlobalClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGlobalClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDBCluster
 
         internal virtual DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request)
@@ -1197,6 +1266,53 @@ namespace Amazon.DocDB
             options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEventSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteGlobalCluster
+
+        internal virtual DeleteGlobalClusterResponse DeleteGlobalCluster(DeleteGlobalClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlobalClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGlobalClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a global cluster. The primary and secondary clusters must already be detached
+        /// or deleted before attempting to delete a global cluster.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action only applies to Amazon DocumentDB clusters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGlobalCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidGlobalClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteGlobalCluster">REST API Reference for DeleteGlobalCluster Operation</seealso>
+        public virtual Task<DeleteGlobalClusterResponse> DeleteGlobalClusterAsync(DeleteGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlobalClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGlobalClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1697,6 +1813,49 @@ namespace Amazon.DocDB
             options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEventSubscriptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeGlobalClusters
+
+        internal virtual DescribeGlobalClustersResponse DescribeGlobalClusters(DescribeGlobalClustersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGlobalClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGlobalClustersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalClustersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about Amazon DocumentDB global clusters. This API supports pagination.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action only applies to Amazon DocumentDB clusters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalClusters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeGlobalClusters service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeGlobalClusters">REST API Reference for DescribeGlobalClusters Operation</seealso>
+        public virtual Task<DescribeGlobalClustersResponse> DescribeGlobalClustersAsync(DescribeGlobalClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGlobalClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGlobalClustersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGlobalClustersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2253,6 +2412,54 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  ModifyGlobalCluster
+
+        internal virtual ModifyGlobalClusterResponse ModifyGlobalCluster(ModifyGlobalClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyGlobalClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyGlobalClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modify a setting for an Amazon DocumentDB global cluster. You can change one or more
+        /// configuration parameters (for example: deletion protection), or the global cluster
+        /// identifier by specifying these parameters and the new values in the request.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action only applies to Amazon DocumentDB clusters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyGlobalCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidGlobalClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyGlobalCluster">REST API Reference for ModifyGlobalCluster Operation</seealso>
+        public virtual Task<ModifyGlobalClusterResponse> ModifyGlobalClusterAsync(ModifyGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyGlobalClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyGlobalClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RebootDBInstance
 
         internal virtual RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
@@ -2299,6 +2506,57 @@ namespace Amazon.DocDB
             options.ResponseUnmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RebootDBInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveFromGlobalCluster
+
+        internal virtual RemoveFromGlobalClusterResponse RemoveFromGlobalCluster(RemoveFromGlobalClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveFromGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveFromGlobalClusterResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveFromGlobalClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster
+        /// becomes a standalone cluster with read-write capability instead of being read-only
+        /// and receiving data from a primary in a different region. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action only applies to Amazon DocumentDB clusters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveFromGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveFromGlobalCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidGlobalClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveFromGlobalCluster">REST API Reference for RemoveFromGlobalCluster Operation</seealso>
+        public virtual Task<RemoveFromGlobalClusterResponse> RemoveFromGlobalClusterAsync(RemoveFromGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveFromGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveFromGlobalClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveFromGlobalClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -43,6 +43,7 @@ namespace Amazon.DocDB.Model
         private List<string> _enableCloudwatchLogsExports = new List<string>();
         private string _engine;
         private string _engineVersion;
+        private string _globalClusterIdentifier;
         private string _kmsKeyId;
         private string _masterUsername;
         private string _masterUserPassword;
@@ -275,6 +276,25 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GlobalClusterIdentifier. 
+        /// <para>
+        /// The cluster identifier of the new global cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlobalClusterIdentifier
+        {
+            get { return this._globalClusterIdentifier; }
+            set { this._globalClusterIdentifier = value; }
+        }
+
+        // Check to see if GlobalClusterIdentifier property is set
+        internal bool IsSetGlobalClusterIdentifier()
+        {
+            return this._globalClusterIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The AWS KMS key identifier for an encrypted cluster.
@@ -336,7 +356,6 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string MasterUsername
         {
             get { return this._masterUsername; }
@@ -360,7 +379,6 @@ namespace Amazon.DocDB.Model
         /// Constraints: Must contain from 8 to 100 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }

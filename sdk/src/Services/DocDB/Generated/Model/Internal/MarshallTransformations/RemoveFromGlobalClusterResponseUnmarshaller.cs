@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DocDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateDBCluster operation
+    /// Response Unmarshaller for RemoveFromGlobalCluster operation
     /// </summary>  
-    public class CreateDBClusterResponseUnmarshaller : XmlResponseUnmarshaller
+    public class RemoveFromGlobalClusterResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateDBClusterResponse response = new CreateDBClusterResponse();
+            RemoveFromGlobalClusterResponse response = new RemoveFromGlobalClusterResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("CreateDBClusterResult", 2))
+                    if(context.TestExpression("RemoveFromGlobalClusterResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateDBClusterResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, RemoveFromGlobalClusterResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,10 +81,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("DBCluster", targetDepth))
+                    if (context.TestExpression("GlobalCluster", targetDepth))
                     {
-                        var unmarshaller = DBClusterUnmarshaller.Instance;
-                        response.DBCluster = unmarshaller.Unmarshall(context);
+                        var unmarshaller = GlobalClusterUnmarshaller.Instance;
+                        response.GlobalCluster = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -112,80 +112,24 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterAlreadyExistsFault"))
-                {
-                    return DBClusterAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
                 {
                     return DBClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterParameterGroupNotFound"))
-                {
-                    return DBClusterParameterGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterQuotaExceededFault"))
-                {
-                    return DBClusterQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBInstanceNotFound"))
-                {
-                    return DBInstanceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBSubnetGroupDoesNotCoverEnoughAZs"))
-                {
-                    return DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBSubnetGroupNotFoundFault"))
-                {
-                    return DBSubnetGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("GlobalClusterNotFoundFault"))
                 {
                     return GlobalClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientStorageClusterCapacity"))
-                {
-                    return InsufficientStorageClusterCapacityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
-                {
-                    return InvalidDBClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceState"))
-                {
-                    return InvalidDBInstanceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBSubnetGroupStateFault"))
-                {
-                    return InvalidDBSubnetGroupStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGlobalClusterStateFault"))
                 {
                     return InvalidGlobalClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSubnet"))
-                {
-                    return InvalidSubnetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidVPCNetworkStateFault"))
-                {
-                    return InvalidVPCNetworkStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSKeyNotAccessibleFault"))
-                {
-                    return KMSKeyNotAccessibleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("StorageQuotaExceeded"))
-                {
-                    return StorageQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonDocDBException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static CreateDBClusterResponseUnmarshaller _instance = new CreateDBClusterResponseUnmarshaller();        
+        private static RemoveFromGlobalClusterResponseUnmarshaller _instance = new RemoveFromGlobalClusterResponseUnmarshaller();        
 
-        internal static CreateDBClusterResponseUnmarshaller GetInstance()
+        internal static RemoveFromGlobalClusterResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -193,7 +137,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDBClusterResponseUnmarshaller Instance
+        public static RemoveFromGlobalClusterResponseUnmarshaller Instance
         {
             get
             {
