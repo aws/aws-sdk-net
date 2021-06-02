@@ -170,7 +170,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Ec2InstanceId. 
         /// <para>
-        /// The EC2 instance ID of the container instance.
+        /// The ID of the container instance. For Amazon EC2 instances, this value is the Amazon
+        /// EC2 instance ID. For external instances, this value is the AWS Systems Manager managed
+        /// instance ID.
         /// </para>
         /// </summary>
         public string Ec2InstanceId

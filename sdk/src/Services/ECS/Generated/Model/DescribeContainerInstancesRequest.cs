@@ -30,8 +30,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeContainerInstances operation.
-    /// Describes Amazon Elastic Container Service container instances. Returns metadata about
-    /// registered and remaining resources on each container instance requested.
+    /// Describes one or more container instances. Returns metadata about each container instance
+    /// requested.
     /// </summary>
     public partial class DescribeContainerInstancesRequest : AmazonECSRequest
     {

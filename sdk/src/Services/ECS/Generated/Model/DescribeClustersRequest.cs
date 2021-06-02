@@ -59,8 +59,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Include. 
         /// <para>
-        /// Whether to include additional information about your clusters in the response. If
-        /// this field is omitted, the attachments, statistics, and tags are not included.
+        /// Whether to include additional information about the clusters in the response. If this
+        /// field is omitted, this information isn't included.
         /// </para>
         ///  
         /// <para>
@@ -73,42 +73,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>STATISTICS</code> is specified, the following additional information, separated
-        /// by launch type, is included:
+        /// If <code>STATISTICS</code> is specified, the task and service count is included, separated
+        /// by launch type.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// runningEC2TasksCount
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// runningFargateTasksCount
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// pendingEC2TasksCount
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// pendingFargateTasksCount
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// activeEC2ServiceCount
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// activeFargateServiceCount
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// drainingEC2ServiceCount
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// drainingFargateServiceCount
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// If <code>TAGS</code> is specified, the metadata tags associated with the cluster are
         /// included.

@@ -1284,8 +1284,8 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Describes Amazon Elastic Container Service container instances. Returns metadata about
-        /// registered and remaining resources on each container instance requested.
+        /// Describes one or more container instances. Returns metadata about each container instance
+        /// requested.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContainerInstances service method.</param>
         /// <param name="cancellationToken">
