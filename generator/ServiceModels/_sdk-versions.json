@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.45.0",
+    "ProductVersion" : "3.7.46.0",
     "CoreVersion"    : "3.7.0.31",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -14,7 +14,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.7.2.6",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -160,7 +160,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.7.2.2",
+            "Version" : "3.7.2.3",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -218,7 +218,7 @@
             "InPreview"               : false
         },
         "IdentityManagement"   : {
-            "Version" : "3.7.2.6",
+            "Version" : "3.7.2.7",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -618,7 +618,7 @@
             "InPreview"               : false
         },
         "Lightsail"                       : {
-            "Version" : "3.7.1.23",
+            "Version" : "3.7.1.24",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -1354,7 +1354,7 @@
             "InPreview"               : false
         },
         "DocDB"                           : {
-            "Version" : "3.7.1.27",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -1810,7 +1810,7 @@
             "InPreview"               : false
         },
         "Braket"                          : {
-            "Version" : "3.7.0.29",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"

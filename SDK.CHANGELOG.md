@@ -1,3 +1,17 @@
+### 3.7.46.0 (2021-06-02 18:14 UTC)
+* AutoScaling (3.7.3.0)
+	* You can now launch EC2 instances with GP3 volumes when using Auto Scaling groups with Launch Configurations
+* Braket (3.7.1.0)
+	* Introduction of a RETIRED status for devices.
+* DocDB (3.7.2.0)
+	* This SDK release adds support for DocDB global clusters.
+* ECS (3.7.2.3)
+	* Documentation updates for Amazon ECS.
+* IdentityManagement (3.7.2.7)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* Lightsail (3.7.1.24)
+	* Documentation updates for Lightsail
+
 ### 3.7.45.0 (2021-06-01 18:13 UTC)
 * EC2 (3.7.8.0)
 	* Added idempotency to CreateNetworkInterface using the ClientToken parameter.
