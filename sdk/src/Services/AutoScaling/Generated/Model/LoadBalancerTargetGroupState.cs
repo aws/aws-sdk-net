@@ -30,16 +30,6 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Describes the state of a target group.
-    /// 
-    ///  
-    /// <para>
-    /// If you attach a target group to an existing Auto Scaling group, the initial state
-    /// is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto
-    /// Scaling instances are registered with the target group. If Elastic Load Balancing
-    /// health checks are enabled, the state transitions to <code>InService</code> after at
-    /// least one Auto Scaling instance passes the health check. If EC2 health checks are
-    /// enabled instead, the target group remains in the <code>Added</code> state.
-    /// </para>
     /// </summary>
     public partial class LoadBalancerTargetGroupState
     {
@@ -81,8 +71,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InService</code> - At least one Auto Scaling instance passed an ELB health
-        /// check.
+        ///  <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code>
+        /// health check.
         /// </para>
         ///  </li> <li> 
         /// <para>

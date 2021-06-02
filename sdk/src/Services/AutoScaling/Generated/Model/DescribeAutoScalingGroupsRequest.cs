@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingGroups operation.
-    /// Describes one or more Auto Scaling groups.
+    /// Gets information about the Auto Scaling groups in the account and Region.
     /// 
     ///  
     /// <para>

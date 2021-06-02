@@ -30,9 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAdjustmentTypes operation.
-    /// Describes the available adjustment types for Amazon EC2 Auto Scaling scaling policies.
-    /// These settings apply to step scaling policies and simple scaling policies; they do
-    /// not apply to target tracking scaling policies.
+    /// Describes the available adjustment types for step scaling and simple scaling policies.
     /// 
     ///  
     /// <para>
@@ -40,15 +38,15 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// ChangeInCapacity
+    ///  <code>ChangeInCapacity</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// ExactCapacity
+    ///  <code>ExactCapacity</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// PercentChangeInCapacity
+    ///  <code>PercentChangeInCapacity</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

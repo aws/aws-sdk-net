@@ -41,8 +41,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxNumberOfAutoScalingGroups. 
         /// <para>
-        /// The maximum number of groups allowed for your AWS account. The default is 200 groups
-        /// per AWS Region.
+        /// The maximum number of groups allowed for your account. The default is 200 groups per
+        /// Region.
         /// </para>
         /// </summary>
         public int MaxNumberOfAutoScalingGroups
@@ -60,8 +60,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxNumberOfLaunchConfigurations. 
         /// <para>
-        /// The maximum number of launch configurations allowed for your AWS account. The default
-        /// is 200 launch configurations per AWS Region.
+        /// The maximum number of launch configurations allowed for your account. The default
+        /// is 200 launch configurations per Region.
         /// </para>
         /// </summary>
         public int MaxNumberOfLaunchConfigurations
@@ -79,7 +79,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NumberOfAutoScalingGroups. 
         /// <para>
-        /// The current number of groups for your AWS account.
+        /// The current number of groups for your account.
         /// </para>
         /// </summary>
         public int NumberOfAutoScalingGroups
@@ -97,7 +97,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NumberOfLaunchConfigurations. 
         /// <para>
-        /// The current number of launch configurations for your AWS account.
+        /// The current number of launch configurations for your account.
         /// </para>
         /// </summary>
         public int NumberOfLaunchConfigurations

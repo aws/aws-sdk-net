@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLifecycleHooks operation.
-    /// Describes the lifecycle hooks for the specified Auto Scaling group.
+    /// Gets information about the lifecycle hooks for the specified Auto Scaling group.
     /// </summary>
     public partial class DescribeLifecycleHooksRequest : AmazonAutoScalingRequest
     {

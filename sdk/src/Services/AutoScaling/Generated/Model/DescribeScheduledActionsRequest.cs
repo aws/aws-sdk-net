@@ -30,9 +30,14 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScheduledActions operation.
-    /// Describes the actions scheduled for your Auto Scaling group that haven't run or that
-    /// have not reached their end time. To describe the actions that have already run, call
+    /// Gets information about the scheduled actions that haven't run or that have not reached
+    /// their end time.
+    /// 
+    ///  
+    /// <para>
+    /// To describe the scaling activities for scheduled actions that have already run, call
     /// the <a>DescribeScalingActivities</a> API.
+    /// </para>
     /// </summary>
     public partial class DescribeScheduledActionsRequest : AmazonAutoScalingRequest
     {
@@ -122,9 +127,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledActionNames. 
         /// <para>
-        /// The names of one or more scheduled actions. You can specify up to 50 actions. If you
-        /// omit this parameter, all scheduled actions are described. If you specify an unknown
-        /// scheduled action, it is ignored with no error.
+        /// The names of one or more scheduled actions. If you omit this parameter, all scheduled
+        /// actions are described. If you specify an unknown scheduled action, it is ignored with
+        /// no error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Array Members: Maximum number of 50 actions.
         /// </para>
         /// </summary>
         public List<string> ScheduledActionNames

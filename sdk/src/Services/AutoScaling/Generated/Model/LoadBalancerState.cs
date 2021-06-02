@@ -30,21 +30,6 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Describes the state of a Classic Load Balancer.
-    /// 
-    ///  
-    /// <para>
-    /// If you specify a load balancer when creating the Auto Scaling group, the state of
-    /// the load balancer is <code>InService</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you attach a load balancer to an existing Auto Scaling group, the initial state
-    /// is <code>Adding</code>. The state transitions to <code>Added</code> after all instances
-    /// in the group are registered with the load balancer. If Elastic Load Balancing health
-    /// checks are enabled for the load balancer, the state transitions to <code>InService</code>
-    /// after at least one instance in the group passes the health check. If EC2 health checks
-    /// are enabled instead, the load balancer remains in the <code>Added</code> state.
-    /// </para>
     /// </summary>
     public partial class LoadBalancerState
     {
@@ -77,27 +62,27 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Adding</code> - The instances in the group are being registered with the load
+        ///  <code>Adding</code> - The Auto Scaling instances are being registered with the load
         /// balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Added</code> - All instances in the group are registered with the load balancer.
+        ///  <code>Added</code> - All Auto Scaling instances are registered with the load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InService</code> - At least one instance in the group passed an ELB health
-        /// check.
+        ///  <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code>
+        /// health check.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Removing</code> - The instances in the group are being deregistered from the
+        ///  <code>Removing</code> - The Auto Scaling instances are being deregistered from the
         /// load balancer. If connection draining is enabled, Elastic Load Balancing waits for
         /// in-flight requests to complete before deregistering the instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Removed</code> - All instances in the group are deregistered from the load
+        ///  <code>Removed</code> - All Auto Scaling instances are deregistered from the load
         /// balancer.
         /// </para>
         ///  </li> </ul>

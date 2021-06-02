@@ -38,6 +38,7 @@ namespace Amazon.AutoScaling.Model
         private bool? _encrypted;
         private int? _iops;
         private string _snapshotId;
+        private int? _throughput;
         private int? _volumeSize;
         private string _volumeType;
 
@@ -110,13 +111,34 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS) to provision for the volume. The maximum
-        /// ratio of IOPS to volume size (in GiB) is 50:1. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// The number of input/output (I/O) operations per second (IOPS) to provision for the
+        /// volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number
+        /// of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
+        /// the baseline performance of the volume and the rate at which the volume accumulates
+        /// I/O credits for bursting. 
         /// </para>
         ///  
         /// <para>
-        /// Required when the volume type is <code>io1</code>. (Not used with <code>standard</code>,
+        /// The following are the supported values for each volume type: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>gp3</code>: 3,000-16,000 IOPS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>io1</code>: 100-64,000 IOPS
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+        /// built on the Nitro System</a>. Other instance families guarantee performance up to
+        /// 32,000 IOPS. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code>
+        /// and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>,
         /// <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) 
         /// </para>
         /// </summary>
@@ -157,25 +179,53 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        /// The throughput to provision for a <code>gp3</code> volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 125. Maximum value of 1000.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=125, Max=1000)]
+        public int Throughput
+        {
+            get { return this._throughput.GetValueOrDefault(); }
+            set { this._throughput = value; }
+        }
+
+        // Check to see if Throughput property is set
+        internal bool IsSetThroughput()
+        {
+            return this._throughput.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property VolumeSize. 
         /// <para>
-        /// The volume size, in Gibibytes (GiB).
+        /// The volume size, in GiBs. The following are the supported volumes sizes for each volume
+        /// type: 
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>,
-        /// 1-16,384 for <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>.
-        /// If you specify a snapshot, the volume size must be equal to or larger than the snapshot
-        /// size.
+        ///  <code>gp2</code> and <code>gp3</code>: 1-16,384
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Default: If you create a volume from a snapshot and you don't specify a volume size,
-        /// the default is the snapshot size.
+        ///  <code>io1</code>: 4-16,384
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If
+        ///  <code>st1</code> and <code>sc1</code>: 125-16,384
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>standard</code>: 1-1,024
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If
         /// you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size
         /// must be equal or greater than the size of the snapshot.
         /// </para>
@@ -196,16 +246,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code>
-        /// for Provisioned IOPS SSD, <code>gp2</code> for General Purpose SSD, <code>st1</code>
-        /// for Throughput Optimized HDD, or <code>sc1</code> for Cold HDD. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
         /// EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  
         /// <para>
         /// Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code>
-        /// | <code>sc1</code> 
+        /// | <code>sc1</code> | <code>gp3</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

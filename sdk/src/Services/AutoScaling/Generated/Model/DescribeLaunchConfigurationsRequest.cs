@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLaunchConfigurations operation.
-    /// Describes one or more launch configurations.
+    /// Gets information about the launch configurations in the account and Region.
     /// </summary>
     public partial class DescribeLaunchConfigurationsRequest : AmazonAutoScalingRequest
     {
@@ -43,6 +43,10 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The launch configuration names. If you omit this parameter, all launch configurations
         /// are described.
+        /// </para>
+        ///  
+        /// <para>
+        /// Array Members: Maximum number of 50 items.
         /// </para>
         /// </summary>
         public List<string> LaunchConfigurationNames

@@ -79,7 +79,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The name of the group.
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string ResourceId

@@ -89,6 +89,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.Ebs.SnapshotId));
                             }
+                            if(publicRequestlistValue.Ebs.IsSetThroughput())
+                            {
+                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestlistValue.Ebs.Throughput));
+                            }
                             if(publicRequestlistValue.Ebs.IsSetVolumeSize())
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestlistValue.Ebs.VolumeSize));

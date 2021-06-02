@@ -30,11 +30,23 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceRefreshes operation.
-    /// Describes one or more instance refreshes.
+    /// Gets information about the instance refreshes for the specified Auto Scaling group.
     /// 
     ///  
     /// <para>
-    /// You can determine the status of a request by looking at the <code>Status</code> parameter.
+    /// This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance
+    /// refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in
+    /// your Auto Scaling group after you make configuration changes.
+    /// </para>
+    ///  
+    /// <para>
+    /// To help you determine the status of an instance refresh, this operation returns information
+    /// about the instance refreshes you previously initiated, including their status, end
+    /// time, the percentage of the instance refresh that is complete, and the number of instances
+    /// remaining to update before the instance refresh is complete.
+    /// </para>
+    ///  
+    /// <para>
     /// The following are the possible statuses: 
     /// </para>
     ///  <ul> <li> 
@@ -64,12 +76,7 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     ///  <code>Cancelled</code> - The operation is cancelled. 
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-    /// Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2 Auto
-    /// Scaling User Guide</i>.
-    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeInstanceRefreshesRequest : AmazonAutoScalingRequest
     {

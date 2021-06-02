@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingInstances operation.
-    /// Describes one or more Auto Scaling instances.
+    /// Gets information about the Auto Scaling instances in the account and Region.
     /// </summary>
     public partial class DescribeAutoScalingInstancesRequest : AmazonAutoScalingRequest
     {
@@ -41,9 +41,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you
-        /// omit this parameter, all Auto Scaling instances are described. If you specify an ID
-        /// that does not exist, it is ignored with no error.
+        /// The IDs of the instances. If you omit this parameter, all Auto Scaling instances are
+        /// described. If you specify an ID that does not exist, it is ignored with no error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Array Members: Maximum number of 50 items.
         /// </para>
         /// </summary>
         public List<string> InstanceIds

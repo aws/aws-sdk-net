@@ -240,9 +240,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HealthCheckType. 
         /// <para>
         /// The service to use for the health checks. The valid values are <code>EC2</code> and
-        /// <code>ELB</code>. If you configure an Auto Scaling group to use ELB health checks,
-        /// it considers the instance unhealthy if it fails either the EC2 status checks or the
-        /// load balancer health checks.
+        /// <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health
+        /// checks, it considers the instance unhealthy if it fails either the EC2 status checks
+        /// or the load balancer health checks.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -436,7 +436,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property ServiceLinkedRoleARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group
-        /// uses to call other AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+        /// uses to call other Amazon Web Services on your behalf. For more information, see <a
+        /// href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
         /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

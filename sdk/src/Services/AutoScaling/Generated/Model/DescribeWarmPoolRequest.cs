@@ -30,7 +30,13 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWarmPool operation.
-    /// Describes a warm pool and its instances.
+    /// Gets information about a warm pool and its instances.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm
+    /// pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeWarmPoolRequest : AmazonAutoScalingRequest
     {

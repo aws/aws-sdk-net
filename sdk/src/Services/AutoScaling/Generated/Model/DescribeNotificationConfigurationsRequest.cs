@@ -30,7 +30,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeNotificationConfigurations operation.
-    /// Describes the notification actions associated with the specified Auto Scaling group.
+    /// Gets information about the Amazon SNS notifications that are configured for one or
+    /// more Auto Scaling groups.
     /// </summary>
     public partial class DescribeNotificationConfigurationsRequest : AmazonAutoScalingRequest
     {
