@@ -164,7 +164,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AAA</code> 
+        ///  <code>AAAA</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
