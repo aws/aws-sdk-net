@@ -88,6 +88,10 @@ namespace Amazon.Braket
         /// Constant ONLINE for DeviceStatus
         /// </summary>
         public static readonly DeviceStatus ONLINE = new DeviceStatus("ONLINE");
+        /// <summary>
+        /// Constant RETIRED for DeviceStatus
+        /// </summary>
+        public static readonly DeviceStatus RETIRED = new DeviceStatus("RETIRED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -388,6 +388,12 @@ namespace Amazon.Braket
         /// <exception cref="Amazon.Braket.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.Braket.Model.DeviceOfflineException">
+        /// The specified device is currently offline.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.DeviceRetiredException">
+        /// The specified device has been retired.
+        /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>

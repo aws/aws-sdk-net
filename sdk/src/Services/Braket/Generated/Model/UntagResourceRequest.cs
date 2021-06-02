@@ -59,7 +59,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// pecify the keys for the tags to remove from the resource.
+        /// Specify the keys for the tags to remove from the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

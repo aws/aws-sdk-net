@@ -106,7 +106,7 @@ namespace Amazon.Braket.Model
         /// The parameters for the device to run the task on.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=48000)]
         public string DeviceParameters
         {
             get { return this._deviceParameters; }

@@ -28,7 +28,7 @@
   <property-value-rule>
     <property>Amazon.Braket.Model.CreateQuantumTaskRequest.DeviceParameters</property>
     <min>1</min>
-    <max>2048</max>
+    <max>48000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CreateQuantumTaskRequest.OutputS3Bucket</property>
