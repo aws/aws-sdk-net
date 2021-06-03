@@ -38,7 +38,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FirewallRuleGroupAssociation. 
         /// <para>
-        /// The association that you just created. The association has an Id that you can use
+        /// The association that you just created. The association has an ID that you can use
         /// to identify it in other requests, like update and delete.
         /// </para>
         /// </summary>

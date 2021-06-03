@@ -31,7 +31,7 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// Container for the parameters to the UpdateFirewallConfig operation.
     /// Updates the configuration of the firewall behavior provided by DNS Firewall for a
-    /// single Amazon virtual private cloud (VPC).
+    /// single VPC from Amazon Virtual Private Cloud (Amazon VPC).
     /// </summary>
     public partial class UpdateFirewallConfigRequest : AmazonRoute53ResolverRequest
     {
@@ -78,7 +78,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the Amazon virtual private cloud (VPC) that the configuration is for.
+        /// The ID of the VPC that the configuration is for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

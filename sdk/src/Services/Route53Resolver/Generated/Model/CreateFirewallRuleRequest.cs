@@ -58,7 +58,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALERT</code> - Permit the request and send metrics and log to Cloud Watch.
+        ///  <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -156,7 +156,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property BlockResponse. 
         /// <para>
-        /// The way that you want DNS Firewall to block the request, used with the rule aciton
+        /// The way that you want DNS Firewall to block the request, used with the rule action
         /// setting <code>BLOCK</code>. 
         /// </para>
         ///  <ul> <li> 
@@ -195,7 +195,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and that allows you to retry failed requests
-        /// without the risk of executing the operation twice. <code>CreatorRequestId</code> can
+        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can
         /// be any unique string, for example, a date/time stamp. 
         /// </para>
         /// </summary>

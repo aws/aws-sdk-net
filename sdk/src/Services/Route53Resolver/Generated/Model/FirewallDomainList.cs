@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// High level information about a list of firewall domains for use in a <a>FirewallRule</a>.
+    /// High-level information about a list of firewall domains for use in a <a>FirewallRule</a>.
     /// This is returned by <a>GetFirewallDomainList</a>.
     /// 
     ///  
@@ -93,8 +93,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string defined by you to identify the request. This allows you to retry failed
-        /// requests without the risk of executing the operation twice. This can be any unique
-        /// string, for example, a timestamp. 
+        /// requests without the risk of running the operation twice. This can be any unique string,
+        /// for example, a timestamp. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

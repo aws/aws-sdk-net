@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// An association between a firewall rul group and a VPC, which enables DNS filtering
+    /// An association between a firewall rule group and a VPC, which enables DNS filtering
     /// for the VPC.
     /// </summary>
     public partial class FirewallRuleGroupAssociation
@@ -91,8 +91,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string defined by you to identify the request. This allows you to retry failed
-        /// requests without the risk of executing the operation twice. This can be any unique
-        /// string, for example, a timestamp. 
+        /// requests without the risk of running the operation twice. This can be any unique string,
+        /// for example, a timestamp. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

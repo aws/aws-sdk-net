@@ -43,7 +43,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  
         /// <para>
-        /// This might be a parital list of the domains that you've defined in the domain list.
+        /// This might be a partial list of the domains that you've defined in the domain list.
         /// For information, see <code>MaxResults</code>. 
         /// </para>
         /// </summary>

@@ -63,7 +63,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property DomainFileUrl. 
         /// <para>
         /// The fully qualified URL or URI of the file stored in Amazon Simple Storage Service
-        /// (S3) that contains the list of domains to import.
+        /// (Amazon S3) that contains the list of domains to import.
         /// </para>
         ///  
         /// <para>

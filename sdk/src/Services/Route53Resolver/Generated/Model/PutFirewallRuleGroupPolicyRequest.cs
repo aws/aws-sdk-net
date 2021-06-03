@@ -32,7 +32,7 @@ namespace Amazon.Route53Resolver.Model
     /// Container for the parameters to the PutFirewallRuleGroupPolicy operation.
     /// Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule
     /// group. You can use the policy to share the rule group using AWS Resource Access Manager
-    /// (RAM).
+    /// (AWS RAM).
     /// </summary>
     public partial class PutFirewallRuleGroupPolicyRequest : AmazonRoute53ResolverRequest
     {

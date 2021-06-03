@@ -99,7 +99,7 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code>
         /// identifies the request and allows failed requests to be retried without the risk of
-        /// executing the operation twice. 
+        /// running the operation twice. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -274,7 +274,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ShareStatus. 
         /// <para>
-        /// Whether the rules is shared and, if so, whether the current account is sharing the
+        /// Whether the rule is shared and, if so, whether the current account is sharing the
         /// rule with another account, or another account is sharing the rule with the current
         /// account.
         /// </para>

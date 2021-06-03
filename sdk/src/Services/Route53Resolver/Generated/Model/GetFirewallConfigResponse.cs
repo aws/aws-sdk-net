@@ -38,8 +38,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FirewallConfig. 
         /// <para>
-        /// Configuration of the firewall behavior provided by DNS Firewall for a single Amazon
-        /// virtual private cloud (VPC). 
+        /// Configuration of the firewall behavior provided by DNS Firewall for a single VPC from
+        /// AmazonVPC. 
         /// </para>
         /// </summary>
         public FirewallConfig FirewallConfig

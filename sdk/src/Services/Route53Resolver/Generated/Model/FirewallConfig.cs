@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// Configuration of the firewall behavior provided by DNS Firewall for a single Amazon
-    /// virtual private cloud (VPC).
+    /// Configuration of the firewall behavior provided by DNS Firewall for a single VPC from
+    /// Amazon Virtual Private Cloud (Amazon VPC).
     /// </summary>
     public partial class FirewallConfig
     {
@@ -78,7 +78,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The Id of the firewall configuration.
+        /// The ID of the firewall configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

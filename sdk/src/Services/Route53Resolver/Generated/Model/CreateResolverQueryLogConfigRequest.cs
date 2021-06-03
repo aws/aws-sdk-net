@@ -59,7 +59,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and that allows failed requests to be
-        /// retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
+        /// retried without the risk of running the operation twice. <code>CreatorRequestId</code>
         /// can be any unique string, for example, a date/time stamp. 
         /// </para>
         /// </summary>
@@ -134,7 +134,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that you want to give the query logging configuration
+        /// The name that you want to give the query logging configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -41,7 +41,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The Id of the firewall domain list that DNS Firewall just updated.
+        /// The ID of the firewall domain list that DNS Firewall just updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

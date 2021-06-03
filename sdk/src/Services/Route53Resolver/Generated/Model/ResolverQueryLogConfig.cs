@@ -110,7 +110,7 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// A unique string that identifies the request that created the query logging configuration.
         /// The <code>CreatorRequestId</code> allows failed requests to be retried without the
-        /// risk of executing the operation twice.
+        /// risk of running the operation twice.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -102,7 +102,7 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// The setting that determines the processing order of the rule group among the rule
         /// groups that you associate with the specified VPC. DNS Firewall filters VPC traffic
-        /// starting from rule group with the lowest numeric priority setting. 
+        /// starting from the rule group with the lowest numeric priority setting. 
         /// </para>
         ///  
         /// <para>
