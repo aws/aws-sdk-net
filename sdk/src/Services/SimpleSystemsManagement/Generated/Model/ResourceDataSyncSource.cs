@@ -124,7 +124,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The type of data source for the resource data sync. <code>SourceType</code> is either
         /// <code>AwsOrganizations</code> (if an organization is present in AWS Organizations)
-        /// or <code>singleAccountMultiRegions</code>.
+        /// or <code>SingleAccountMultiRegions</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -123,7 +123,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     /// You can also use the <code>TargetType</code> AWS-provided key. For a list of valid
-    /// resource type values that can be used with this key, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+    /// resource type values that can be used with this key, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
     /// resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
     /// </para>
     ///  

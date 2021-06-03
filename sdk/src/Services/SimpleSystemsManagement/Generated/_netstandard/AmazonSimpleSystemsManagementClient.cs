@@ -463,7 +463,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// 
+        /// The specified command ID is not valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -513,7 +513,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// 
+        /// The specified command ID is not valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -564,7 +564,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// 
+        /// The specified command ID is not valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -4104,7 +4104,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// 
+        /// The specified command ID is not valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -5400,7 +5400,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// 
+        /// The specified command ID is not valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
         /// The specified key is not valid.
@@ -5453,7 +5453,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// 
+        /// The specified command ID is not valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
         /// The specified key is not valid.
@@ -5509,7 +5509,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// 
+        /// The specified command ID is not valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
         /// The specified key is not valid.
@@ -5578,7 +5578,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// 
+        /// The specified command ID is not valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
         /// The specified key is not valid.
@@ -5627,7 +5627,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// 
+        /// The specified command ID is not valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
         /// The specified key is not valid.
@@ -5679,7 +5679,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
-        /// 
+        /// The specified command ID is not valid. Verify the ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
         /// The specified key is not valid.
@@ -6679,9 +6679,9 @@ namespace Amazon.SimpleSystemsManagement
         /// This safeguard is to prevent parameter versions with mission critical labels assigned
         /// to them from being deleted. To continue creating new parameters, first move the label
         /// from the oldest version of the parameter to a newer one for use in your operations.
-        /// For information about moving parameter labels, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move
-        /// a parameter label (console)</a> or <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move
-        /// a parameter label (CLI) </a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// For information about moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move
+        /// a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move
+        /// a parameter label (CLI)</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterPatternMismatchException">

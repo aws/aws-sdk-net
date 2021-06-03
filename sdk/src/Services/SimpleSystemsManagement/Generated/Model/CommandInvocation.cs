@@ -92,7 +92,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CommandPlugins.
+        /// Gets and sets the property CommandPlugins. 
+        /// <para>
+        /// Plugins processed by the command.
+        /// </para>
         /// </summary>
         public List<CommandPlugin> CommandPlugins
         {

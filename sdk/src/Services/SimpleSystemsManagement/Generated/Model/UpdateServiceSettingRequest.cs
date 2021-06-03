@@ -72,6 +72,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>/ssm/documents/console/public-sharing-permission</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>/ssm/parameter-store/default-parameter-tier</code> 
         /// </para>
         ///  </li> <li> 
@@ -129,6 +133,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
         /// setting value can be the name of a CloudWatch Logs log group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
+        /// the setting value can be Enable or Disable.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]
