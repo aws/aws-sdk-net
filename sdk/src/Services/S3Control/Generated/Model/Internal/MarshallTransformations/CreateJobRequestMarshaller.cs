@@ -252,6 +252,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }            
                             xmlWriter.WriteEndElement();            
                         }
+                        if(publicRequest.Operation.S3PutObjectCopy.IsSetBucketKeyEnabled())
+                            xmlWriter.WriteElementString("BucketKeyEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.BucketKeyEnabled));                 
+        
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetCannedAccessControlList())
                             xmlWriter.WriteElementString("CannedAccessControlList", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.CannedAccessControlList));                 
         

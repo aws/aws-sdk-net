@@ -61,6 +61,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.AccessControlGrants.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+                    if (context.TestExpression("BucketKeyEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.BucketKeyEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CannedAccessControlList", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

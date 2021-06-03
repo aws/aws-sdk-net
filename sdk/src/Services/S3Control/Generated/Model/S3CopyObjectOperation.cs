@@ -37,6 +37,7 @@ namespace Amazon.S3Control.Model
     public partial class S3CopyObjectOperation
     {
         private List<S3Grant> _accessControlGrants = new List<S3Grant>();
+        private bool? _bucketKeyEnabled;
         private S3CannedAccessControlList _cannedAccessControlList;
         private S3MetadataDirective _metadataDirective;
         private DateTime? _modifiedSinceConstraint;
@@ -66,6 +67,31 @@ namespace Amazon.S3Control.Model
         internal bool IsSetAccessControlGrants()
         {
             return this._accessControlGrants != null && this._accessControlGrants.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketKeyEnabled. 
+        /// <para>
+        /// Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
+        /// server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code>
+        /// causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i>
+        /// settings for S3 Bucket Key.
+        /// </para>
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this._bucketKeyEnabled.GetValueOrDefault(); }
+            set { this._bucketKeyEnabled = value; }
+        }
+
+        // Check to see if BucketKeyEnabled property is set
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return this._bucketKeyEnabled.HasValue; 
         }
 
         /// <summary>
