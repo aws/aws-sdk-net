@@ -73,6 +73,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AlgorithmArn);
                 }
 
+                if(publicRequest.IsSetAutoMLOverrideStrategy())
+                {
+                    context.Writer.WritePropertyName("AutoMLOverrideStrategy");
+                    context.Writer.Write(publicRequest.AutoMLOverrideStrategy);
+                }
+
                 if(publicRequest.IsSetEncryptionConfig())
                 {
                     context.Writer.WritePropertyName("EncryptionConfig");

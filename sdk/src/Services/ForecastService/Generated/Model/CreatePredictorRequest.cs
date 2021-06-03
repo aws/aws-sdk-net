@@ -114,6 +114,7 @@ namespace Amazon.ForecastService.Model
     public partial class CreatePredictorRequest : AmazonForecastServiceRequest
     {
         private string _algorithmArn;
+        private AutoMLOverrideStrategy _autoMLOverrideStrategy;
         private EncryptionConfig _encryptionConfig;
         private EvaluationParameters _evaluationParameters;
         private FeaturizationConfig _featurizationConfig;
@@ -172,6 +173,29 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetAlgorithmArn()
         {
             return this._algorithmArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoMLOverrideStrategy. 
+        /// <para>
+        /// Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
+        /// To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is only valid for predictors trained using AutoML.
+        /// </para>
+        /// </summary>
+        public AutoMLOverrideStrategy AutoMLOverrideStrategy
+        {
+            get { return this._autoMLOverrideStrategy; }
+            set { this._autoMLOverrideStrategy = value; }
+        }
+
+        // Check to see if AutoMLOverrideStrategy property is set
+        internal bool IsSetAutoMLOverrideStrategy()
+        {
+            return this._autoMLOverrideStrategy != null;
         }
 
         /// <summary>

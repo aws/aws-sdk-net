@@ -51,6 +51,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoMLOverrideStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AutoMLOverrideStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PredictorEvaluationResults", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EvaluationResult, EvaluationResultUnmarshaller>(EvaluationResultUnmarshaller.Instance);

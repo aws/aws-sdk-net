@@ -33,7 +33,31 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class GetAccuracyMetricsResponse : AmazonWebServiceResponse
     {
+        private AutoMLOverrideStrategy _autoMLOverrideStrategy;
         private List<EvaluationResult> _predictorEvaluationResults = new List<EvaluationResult>();
+
+        /// <summary>
+        /// Gets and sets the property AutoMLOverrideStrategy. 
+        /// <para>
+        /// The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
+        /// is specified, the AutoML strategy optimizes predictor accuracy.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is only valid for predictors trained using AutoML.
+        /// </para>
+        /// </summary>
+        public AutoMLOverrideStrategy AutoMLOverrideStrategy
+        {
+            get { return this._autoMLOverrideStrategy; }
+            set { this._autoMLOverrideStrategy = value; }
+        }
+
+        // Check to see if AutoMLOverrideStrategy property is set
+        internal bool IsSetAutoMLOverrideStrategy()
+        {
+            return this._autoMLOverrideStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PredictorEvaluationResults. 

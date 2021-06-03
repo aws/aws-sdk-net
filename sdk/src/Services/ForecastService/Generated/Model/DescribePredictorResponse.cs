@@ -35,6 +35,7 @@ namespace Amazon.ForecastService.Model
     {
         private string _algorithmArn;
         private List<string> _autoMLAlgorithmArns = new List<string>();
+        private AutoMLOverrideStrategy _autoMLOverrideStrategy;
         private DateTime? _creationTime;
         private List<string> _datasetImportJobArns = new List<string>();
         private EncryptionConfig _encryptionConfig;
@@ -90,6 +91,29 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetAutoMLAlgorithmArns()
         {
             return this._autoMLAlgorithmArns != null && this._autoMLAlgorithmArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoMLOverrideStrategy. 
+        /// <para>
+        /// The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
+        /// is specified, the AutoML strategy optimizes predictor accuracy.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is only valid for predictors trained using AutoML.
+        /// </para>
+        /// </summary>
+        public AutoMLOverrideStrategy AutoMLOverrideStrategy
+        {
+            get { return this._autoMLOverrideStrategy; }
+            set { this._autoMLOverrideStrategy = value; }
+        }
+
+        // Check to see if AutoMLOverrideStrategy property is set
+        internal bool IsSetAutoMLOverrideStrategy()
+        {
+            return this._autoMLOverrideStrategy != null;
         }
 
         /// <summary>

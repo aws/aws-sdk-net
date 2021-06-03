@@ -63,6 +63,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.AutoMLAlgorithmArns = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutoMLOverrideStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AutoMLOverrideStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
