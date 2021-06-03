@@ -1323,6 +1323,11 @@ namespace Amazon.S3
         public static readonly InventoryOptionalField IntelligentTieringAccessTier = new InventoryOptionalField("IntelligentTieringAccessTier");
 
         /// <summary>
+        /// Constant BucketKeyStatus for InventoryOptionalField
+        /// </summary>
+        public static readonly InventoryOptionalField BucketKeyStatus = new InventoryOptionalField("BucketKeyStatus");
+
+        /// <summary>
         /// Construct instance of InventoryOptionalField.
         /// </summary>
         /// <param name="value"></param>
