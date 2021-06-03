@@ -1,3 +1,15 @@
+### 3.7.47.0 (2021-06-03 18:12 UTC)
+* ForecastService (3.7.4.0)
+	* Added optional field AutoMLOverrideStrategy to CreatePredictor API that allows users to customize AutoML strategy. If provided in CreatePredictor request, this field is visible in DescribePredictor and GetAccuracyMetrics responses.
+* Route53Resolver (3.7.1.24)
+	* Documentation updates for Route 53 Resolver
+* S3 (3.7.1.0)
+	* S3 Inventory now supports Bucket Key Status
+* S3Control (3.7.1.0)
+	* Amazon S3 Batch Operations now supports S3 Bucket Keys.
+* SimpleSystemsManagement (3.7.3.12)
+	* Documentation updates for ssm to fix customer reported issue
+
 ### 3.7.46.0 (2021-06-02 18:14 UTC)
 * AutoScaling (3.7.3.0)
 	* You can now launch EC2 instances with GP3 volumes when using Auto Scaling groups with Launch Configurations
