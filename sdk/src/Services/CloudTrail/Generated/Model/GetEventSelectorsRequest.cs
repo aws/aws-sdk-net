@@ -44,8 +44,8 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If your event selector includes data events, the Amazon S3 objects or AWS Lambda functions
-    /// that you are logging for data events.
+    /// If your event selector includes data events, the resources on which you are logging
+    /// data events.
     /// </para>
     ///  </li> </ul> 
     /// <para>

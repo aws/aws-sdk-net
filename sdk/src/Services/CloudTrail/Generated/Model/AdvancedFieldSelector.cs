@@ -117,9 +117,11 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         ///  <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code>
         /// can only use the <code>Equals</code> operator, and the value can be one of the following:
-        /// <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or <code>AWS::S3Outposts::Object</code>.
-        /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data events
-        /// on more than one resource type, add another selector.
+        /// <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+        /// <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>, or
+        /// <code>AWS::S3ObjectLambda::AccessPoint</code>. You can have only one <code>resources.type</code>
+        /// ﬁeld per selector. To log data events on more than one resource type, add another
+        /// selector.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -127,8 +129,13 @@ namespace Amazon.CloudTrail.Model
         /// but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly
         /// match the ARN of a valid resource of the type you've speciﬁed in the template as the
         /// value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>,
-        /// the ARN must be in one of the following formats. The trailing slash is intentional;
-        /// do not exclude it.
+        /// the ARN must be in one of the following formats. To log all data events for all objects
+        /// in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only
+        /// the bucket ARN as the matching value.
+        /// </para>
+        ///  
+        /// <para>
+        /// The trailing slash is intentional; do not exclude it.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -150,6 +157,16 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
+        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:partition:dynamodb:region:account_ID:table:table_name</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and
         /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
         /// be in the following format:
@@ -157,6 +174,27 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:partition:managedblockchain:region:account_ID:nodes/node_ID</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:partition:s3-object-lambda:region:account_ID:accesspoint/access_point_name</code>
+        /// 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

@@ -485,9 +485,9 @@ namespace Amazon.CloudTrail
         /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
-        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-        /// KMS key are not in the same region, or when the KMS key associated with the SNS topic
-        /// either does not exist or is not in the same region.
+        /// This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and
+        /// the AWS KMS key are not in the same region, or when the AWS KMS key associated with
+        /// the SNS topic either does not exist or is not in the same region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException">
         /// This exception is thrown when the maximum number of trails is reached.
@@ -837,8 +837,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your event selector includes data events, the Amazon S3 objects or AWS Lambda functions
-        /// that you are logging for data events.
+        /// If your event selector includes data events, the resources on which you are logging
+        /// data events.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2412,9 +2412,9 @@ namespace Amazon.CloudTrail
         /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
-        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-        /// KMS key are not in the same region, or when the KMS key associated with the SNS topic
-        /// either does not exist or is not in the same region.
+        /// This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and
+        /// the AWS KMS key are not in the same region, or when the AWS KMS key associated with
+        /// the SNS topic either does not exist or is not in the same region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the AWS account making the request to create or update

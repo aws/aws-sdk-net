@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors
-    /// for your trail to log data events. Data events provide information about the resource
-    /// operations performed on or within a resource itself. These are also known as data
-    /// plane operations. You can specify up to 250 data resources for a trail.
+    /// The Amazon S3 buckets, AWS Lambda functions, or Amazon DynamoDB tables that you specify
+    /// in your event selectors for your trail to log data events. Data events provide information
+    /// about the resource operations performed on or within a resource itself. These are
+    /// also known as data plane operations. You can specify up to 250 data resources for
+    /// a trail.
     /// 
     ///  <note> 
     /// <para>
@@ -106,13 +107,15 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>
-        /// or <code>AWS::Lambda::Function</code> resources.
+        /// The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>,
+        /// <code>AWS::Lambda::Function</code>, or <code>AWS::DynamoDB::Table</code> resources.
         /// </para>
         ///  
         /// <para>
-        /// The <code>AWS::S3Outposts::Object</code> resource type is not valid in basic event
-        /// selectors. To log data events on this resource type, use advanced event selectors.
+        /// The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+        /// and <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid in
+        /// basic event selectors. To log data events on these resource types, use advanced event
+        /// selectors.
         /// </para>
         /// </summary>
         public string Type
@@ -158,7 +161,8 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+        /// To log data events for all Lambda functions in your AWS account, specify the prefix
+        /// as <code>arn:aws:lambda</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -176,7 +180,12 @@ namespace Amazon.CloudTrail.Model
         /// data events will only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>.
         /// They will not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
         /// </para>
-        ///  </note> </li> </ul>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// To log data events for all DynamoDB tables in your AWS account, specify the prefix
+        /// as <code>arn:aws:dynamodb</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> Values
         {

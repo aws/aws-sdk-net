@@ -55,10 +55,11 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property DataResources. 
         /// <para>
-        /// CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions.
-        /// You can specify up to 250 resources for an individual event selector, but the total
-        /// number of data resources cannot exceed 250 across all event selectors in a trail.
-        /// This limit does not apply if you configure resource logging for all data events. 
+        /// CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions
+        /// with basic event selectors. You can specify up to 250 resources for an individual
+        /// event selector, but the total number of data resources cannot exceed 250 across all
+        /// event selectors in a trail. This limit does not apply if you configure resource logging
+        /// for all data events. 
         /// </para>
         ///  
         /// <para>
