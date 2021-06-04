@@ -181,11 +181,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        /// The throughput to provision for a <code>gp3</code> volume.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Range: Minimum value of 125. Maximum value of 1000.
+        /// The throughput (MiBps) to provision for a <code>gp3</code> volume.
         /// </para>
         /// </summary>
         [AWSProperty(Min=125, Max=1000)]
