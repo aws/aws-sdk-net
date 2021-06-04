@@ -432,8 +432,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
-        /// Instance Status</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing
+        /// DB instance status</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         public string DBInstanceStatus
