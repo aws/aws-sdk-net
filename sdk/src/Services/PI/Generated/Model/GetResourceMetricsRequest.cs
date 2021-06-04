@@ -89,7 +89,7 @@ namespace Amazon.PI.Model
         /// For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Identifier
         {
             get { return this._identifier; }
@@ -151,6 +151,7 @@ namespace Amazon.PI.Model
         /// by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

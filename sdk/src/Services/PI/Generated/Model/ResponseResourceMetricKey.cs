@@ -85,7 +85,7 @@ namespace Amazon.PI.Model
         /// only. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Metric
         {
             get { return this._metric; }

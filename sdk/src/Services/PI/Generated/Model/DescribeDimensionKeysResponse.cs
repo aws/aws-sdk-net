@@ -105,6 +105,7 @@ namespace Amazon.PI.Model
         /// by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

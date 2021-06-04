@@ -197,7 +197,7 @@ namespace Amazon.PI.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Group
         {
             get { return this._group; }

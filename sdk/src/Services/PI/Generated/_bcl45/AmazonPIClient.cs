@@ -344,6 +344,73 @@ namespace Amazon.PI
 
         #endregion
         
+        #region  GetDimensionKeyDetails
+
+
+        /// <summary>
+        /// Get the attributes of the specified dimension group for a DB instance or data source.
+        /// For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves
+        /// the full text of the dimension <code>db.sql.statement</code> associated with this
+        /// ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
+        /// don't support retrieval of large SQL statement text.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDimensionKeyDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetDimensionKeyDetails service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails">REST API Reference for GetDimensionKeyDetails Operation</seealso>
+        public virtual GetDimensionKeyDetailsResponse GetDimensionKeyDetails(GetDimensionKeyDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDimensionKeyDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDimensionKeyDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDimensionKeyDetailsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get the attributes of the specified dimension group for a DB instance or data source.
+        /// For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves
+        /// the full text of the dimension <code>db.sql.statement</code> associated with this
+        /// ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
+        /// don't support retrieval of large SQL statement text.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDimensionKeyDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDimensionKeyDetails service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails">REST API Reference for GetDimensionKeyDetails Operation</seealso>
+        public virtual Task<GetDimensionKeyDetailsResponse> GetDimensionKeyDetailsAsync(GetDimensionKeyDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDimensionKeyDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDimensionKeyDetailsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDimensionKeyDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetResourceMetrics
 
 
