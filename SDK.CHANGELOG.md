@@ -1,3 +1,17 @@
+### 3.7.48.0 (2021-06-04 18:14 UTC)
+* AutoScaling (3.7.3.1)
+	* Documentation updates for Amazon EC2 Auto Scaling
+* CloudTrail (3.7.0.30)
+	* AWS CloudTrail supports data events on new service resources, including Amazon DynamoDB tables and S3 Object Lambda access points.
+* MediaLive (3.7.3.0)
+	* Add support for automatically setting the H.264 adaptive quantization and GOP B-frame fields.
+* PI (3.7.1.0)
+	* The new GetDimensionKeyDetails action retrieves the attributes of the specified dimension group for a DB instance or data source.
+* QLDB (3.7.1.3)
+	* Documentation updates for Amazon QLDB
+* RDS (3.7.0.30)
+	* Documentation updates for RDS: fixing an outdated link to the RDS documentation in DBInstance$DBInstanceStatus
+
 ### 3.7.47.0 (2021-06-03 18:12 UTC)
 * ForecastService (3.7.4.0)
 	* Added optional field AutoMLOverrideStrategy to CreatePredictor API that allows users to customize AutoML strategy. If provided in CreatePredictor request, this field is visible in DescribePredictor and GetAccuracyMetrics responses.
