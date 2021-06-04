@@ -38,7 +38,8 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property ExportId. 
         /// <para>
-        /// The unique ID that QLDB assigns to each journal export job.
+        /// The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export
+        /// job.
         /// </para>
         ///  
         /// <para>

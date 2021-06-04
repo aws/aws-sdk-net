@@ -39,7 +39,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for which you want to list the tags. For example:
+        /// The Amazon Resource Name (ARN) for which to list the tags. For example:
         /// </para>
         ///  
         /// <para>

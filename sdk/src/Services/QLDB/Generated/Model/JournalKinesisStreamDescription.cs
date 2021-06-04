@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QLDB.Model
 {
     /// <summary>
-    /// The information about an Amazon QLDB journal stream, including the Amazon Resource
-    /// Name (ARN), stream name, creation time, current status, and the parameters of your
-    /// original stream creation request.
+    /// Information about an Amazon QLDB journal stream, including the Amazon Resource Name
+    /// (ARN), stream name, creation time, current status, and the parameters of the original
+    /// stream creation request.
     /// </summary>
     public partial class JournalKinesisStreamDescription
     {
@@ -145,8 +145,8 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property KinesisConfiguration. 
         /// <para>
-        /// The configuration settings of the Amazon Kinesis Data Streams destination for your
-        /// QLDB journal stream.
+        /// The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB
+        /// journal stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -223,7 +223,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property StreamId. 
         /// <para>
-        /// The unique ID that QLDB assigns to each QLDB journal stream.
+        /// The UUID (represented in Base62-encoded text) of the QLDB journal stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]

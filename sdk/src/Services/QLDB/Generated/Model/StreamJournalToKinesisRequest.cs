@@ -53,8 +53,7 @@ namespace Amazon.QLDB.Model
         ///  
         /// <para>
         /// The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-        /// and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-        /// 
+        /// and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
         /// </para>
         /// </summary>
         public DateTime ExclusiveEndTime
@@ -74,7 +73,7 @@ namespace Amazon.QLDB.Model
         /// <para>
         /// The inclusive start date and time from which to start streaming journal data. This
         /// parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated
-        /// Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> 
+        /// Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
         /// </para>
         ///  
         /// <para>

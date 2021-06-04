@@ -60,14 +60,12 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property ExclusiveEndTime. 
         /// <para>
-        /// The exclusive end date and time for the range of journal contents that you want to
-        /// export.
+        /// The exclusive end date and time for the range of journal contents to export.
         /// </para>
         ///  
         /// <para>
         /// The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-        /// and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-        /// 
+        /// and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
         /// </para>
         ///  
         /// <para>
@@ -91,14 +89,12 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property InclusiveStartTime. 
         /// <para>
-        /// The inclusive start date and time for the range of journal contents that you want
-        /// to export.
+        /// The inclusive start date and time for the range of journal contents to export.
         /// </para>
         ///  
         /// <para>
         /// The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
-        /// format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-        /// 
+        /// format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
         /// </para>
         ///  
         /// <para>

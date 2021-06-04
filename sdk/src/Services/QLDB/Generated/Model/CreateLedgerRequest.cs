@@ -30,7 +30,7 @@ namespace Amazon.QLDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLedger operation.
-    /// Creates a new ledger in your AWS account.
+    /// Creates a new ledger in your AWS account in the current Region.
     /// </summary>
     public partial class CreateLedgerRequest : AmazonQLDBRequest
     {
@@ -48,10 +48,8 @@ namespace Amazon.QLDB.Model
         ///  
         /// <para>
         /// If deletion protection is enabled, you must first disable it before you can delete
-        /// the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can
-        /// disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
-        /// The QLDB console disables deletion protection for you when you use it to delete a
-        /// ledger.
+        /// the ledger. You can disable it by calling the <code>UpdateLedger</code> operation
+        /// to set the flag to <code>false</code>.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -104,10 +102,10 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        /// This mode allows users who have <code>SendCommand</code> permissions for this ledger
-        /// to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified
-        /// ledger. This mode disregards any table-level or command-level IAM permissions policies
-        /// that you create for the ledger.
+        /// This mode allows users who have the <code>SendCommand</code> API permission for this
+        /// ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in
+        /// the specified ledger. This mode disregards any table-level or command-level IAM permissions
+        /// policies that you create for the ledger.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -118,8 +116,9 @@ namespace Amazon.QLDB.Model
         /// <para>
         /// By default, this mode denies all user requests to run any PartiQL commands on any
         /// tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions
-        /// policies for specific table resources and PartiQL actions, in addition to <code>SendCommand</code>
-        /// API permissions for the ledger.
+        /// policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code>
+        /// API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
+        /// started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

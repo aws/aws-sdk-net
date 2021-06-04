@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QLDB.Model
 {
     /// <summary>
-    /// The information about a journal export job, including the ledger name, export ID,
-    /// when it was created, current status, and its start and end time export parameters.
+    /// Information about a journal export job, including the ledger name, export ID, creation
+    /// time, current status, and the parameters of the original export creation request.
     /// </summary>
     public partial class JournalS3ExportDescription
     {
@@ -86,7 +86,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property ExportId. 
         /// <para>
-        /// The unique ID of the journal export job.
+        /// The UUID (represented in Base62-encoded text) of the journal export job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]

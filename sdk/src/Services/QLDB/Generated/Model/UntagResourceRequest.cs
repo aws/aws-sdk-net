@@ -41,7 +41,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) from which you want to remove the tags. For example:
+        /// The Amazon Resource Name (ARN) from which to remove the tags. For example:
         /// </para>
         ///  
         /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The list of tag keys that you want to remove.
+        /// The list of tag keys to remove.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

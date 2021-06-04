@@ -38,7 +38,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property StreamId. 
         /// <para>
-        /// The unique ID that QLDB assigns to each QLDB journal stream.
+        /// The UUID (Base62-encoded text) of the canceled QLDB journal stream.
         /// </para>
         /// </summary>
         [AWSProperty(Min=22, Max=22)]

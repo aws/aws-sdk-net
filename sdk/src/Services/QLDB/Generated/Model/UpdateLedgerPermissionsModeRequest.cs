@@ -31,6 +31,15 @@ namespace Amazon.QLDB.Model
     /// <summary>
     /// Container for the parameters to the UpdateLedgerPermissionsMode operation.
     /// Updates the permissions mode of a ledger.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Before you switch to the <code>STANDARD</code> permissions mode, you must first create
+    /// all required IAM policies and table tags to avoid disruption to your users. To learn
+    /// more, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating
+    /// to the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateLedgerPermissionsModeRequest : AmazonQLDBRequest
     {
@@ -69,10 +78,10 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        /// This mode allows users who have <code>SendCommand</code> permissions for this ledger
-        /// to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified
-        /// ledger. This mode disregards any table-level or command-level IAM permissions policies
-        /// that you create for the ledger.
+        /// This mode allows users who have the <code>SendCommand</code> API permission for this
+        /// ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in
+        /// the specified ledger. This mode disregards any table-level or command-level IAM permissions
+        /// policies that you create for the ledger.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -83,8 +92,9 @@ namespace Amazon.QLDB.Model
         /// <para>
         /// By default, this mode denies all user requests to run any PartiQL commands on any
         /// tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions
-        /// policies for specific table resources and PartiQL actions, in addition to <code>SendCommand</code>
-        /// API permissions for the ledger.
+        /// policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code>
+        /// API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
+        /// started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

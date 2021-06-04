@@ -32,7 +32,14 @@ namespace Amazon.QLDB.Model
     /// Container for the parameters to the DescribeJournalKinesisStream operation.
     /// Returns detailed information about a given Amazon QLDB journal stream. The output
     /// includes the Amazon Resource Name (ARN), stream name, current status, creation time,
-    /// and the parameters of your original stream creation request.
+    /// and the parameters of the original stream creation request.
+    /// 
+    ///  
+    /// <para>
+    /// This action does not return any expired journal streams. For more information, see
+    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration
+    /// for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeJournalKinesisStreamRequest : AmazonQLDBRequest
     {
@@ -61,7 +68,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property StreamId. 
         /// <para>
-        /// The unique ID that QLDB assigns to each QLDB journal stream.
+        /// The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]

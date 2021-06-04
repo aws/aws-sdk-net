@@ -49,7 +49,7 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        /// For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code> 
+        /// For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -73,7 +73,7 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        /// For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code> 
+        /// For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
         /// </para>
         /// </summary>
         public ValueHolder DigestTipAddress
@@ -91,7 +91,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property DocumentId. 
         /// <para>
-        /// The unique ID of the document to be verified.
+        /// The UUID (represented in Base62-encoded text) of the document to be verified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]
