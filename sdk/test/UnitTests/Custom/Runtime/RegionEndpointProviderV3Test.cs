@@ -230,7 +230,14 @@ namespace AWSSDK.UnitTests
         public void TestValidRegionFormat(string regionName, string displayName)
         {
             var regionEndpoint = RegionEndpoint.GetBySystemName(regionName);
-            Assert.AreEqual(displayName, regionEndpoint.DisplayName);
+            if(string.Equals("Unknown", displayName))
+            {
+                Assert.AreEqual("Unknown", regionEndpoint.DisplayName);
+            }
+            else
+            {
+                Assert.AreNotEqual("Unknown", regionEndpoint.DisplayName);
+            }
         }
 
         [DataTestMethod]

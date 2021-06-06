@@ -29,7 +29,7 @@ namespace Amazon.Util.Internal
     /// endpoints.json are used to find the region.
     /// If regular expressions also fail, then a default region is returned.
     /// </summary>
-    public class RegionFinder
+    public class RegionFinder : IDisposable
     {
         internal class EndpointSegment
         {
@@ -265,6 +265,7 @@ namespace Amazon.Util.Internal
         #endregion
 
         private static readonly RegionFinder _instance = new RegionFinder();
+        private bool disposedValue;
 
         /// <summary>
         /// Gets the singleton.
@@ -275,6 +276,28 @@ namespace Amazon.Util.Internal
             {
                 return _instance;
             }
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    if(_regionEndpointProviderV3 != null)
+                    {
+                        _regionEndpointProviderV3.Dispose();
+                    }
+                }
+
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }
