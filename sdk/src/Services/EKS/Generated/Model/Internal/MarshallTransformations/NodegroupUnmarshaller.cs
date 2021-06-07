@@ -190,6 +190,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Taints = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("updateConfig", targetDepth))
+                {
+                    var unmarshaller = NodegroupUpdateConfigUnmarshaller.Instance;
+                    unmarshalledObject.UpdateConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

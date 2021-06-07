@@ -953,6 +953,14 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType MaxSize = new UpdateParamType("MaxSize");
         /// <summary>
+        /// Constant MaxUnavailable for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType MaxUnavailable = new UpdateParamType("MaxUnavailable");
+        /// <summary>
+        /// Constant MaxUnavailablePercentage for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType MaxUnavailablePercentage = new UpdateParamType("MaxUnavailablePercentage");
+        /// <summary>
         /// Constant MinSize for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType MinSize = new UpdateParamType("MinSize");

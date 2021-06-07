@@ -115,6 +115,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetUpdateConfig())
+                {
+                    context.Writer.WritePropertyName("updateConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NodegroupUpdateConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpdateConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

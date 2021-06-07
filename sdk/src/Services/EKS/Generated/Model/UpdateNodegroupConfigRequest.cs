@@ -44,6 +44,7 @@ namespace Amazon.EKS.Model
         private string _nodegroupName;
         private NodegroupScalingConfig _scalingConfig;
         private UpdateTaintsPayload _taints;
+        private NodegroupUpdateConfig _updateConfig;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -154,6 +155,21 @@ namespace Amazon.EKS.Model
         internal bool IsSetTaints()
         {
             return this._taints != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateConfig.
+        /// </summary>
+        public NodegroupUpdateConfig UpdateConfig
+        {
+            get { return this._updateConfig; }
+            set { this._updateConfig = value; }
+        }
+
+        // Check to see if UpdateConfig property is set
+        internal bool IsSetUpdateConfig()
+        {
+            return this._updateConfig != null;
         }
 
     }
