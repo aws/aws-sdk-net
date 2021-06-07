@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.48.0",
+    "ProductVersion" : "3.7.49.0",
     "CoreVersion"    : "3.7.0.31",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -826,7 +826,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.7.2.15",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -946,7 +946,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.7.3.13",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -1138,7 +1138,7 @@
             "InPreview"               : false
         },
         "EKS"                             : {
-            "Version" : "3.7.3.6",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"
@@ -1442,7 +1442,7 @@
             "InPreview"               : false
         },
         "Personalize"                     : {
-            "Version" : "3.7.3.5",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.31"

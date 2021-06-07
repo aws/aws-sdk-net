@@ -1,3 +1,13 @@
+### 3.7.49.0 (2021-06-07 18:19 UTC)
+* EKS (3.7.4.0)
+	* Added updateConfig option that allows customers to control upgrade velocity in Managed Node Group.
+* Glue (3.7.3.0)
+	* Add SampleSize variable to S3Target to enable s3-sampling feature through API.
+* Personalize (3.7.4.0)
+	* Update regex validation in kmsKeyArn and s3 path API parameters for AWS Personalize APIs
+* SageMaker (3.7.4.0)
+	* AWS SageMaker - Releasing new APIs related to Callback steps in model building pipelines. Adds experiment integration to model building pipelines.
+
 ### 3.7.48.0 (2021-06-04 18:14 UTC)
 * AutoScaling (3.7.3.1)
 	* Documentation updates for Amazon EC2 Auto Scaling
