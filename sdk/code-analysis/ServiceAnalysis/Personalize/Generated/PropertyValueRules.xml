@@ -93,6 +93,10 @@
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateDatasetGroupRequest.KmsKeyArn</property>
+    <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.CreateDatasetGroupRequest.Name</property>
     <min>1</min>
     <max>63</max>
@@ -792,6 +796,10 @@
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetGroup.KmsKeyArn</property>
+    <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.DatasetGroup.Name</property>
     <min>1</min>
     <max>63</max>
@@ -909,6 +917,7 @@
   <property-value-rule>
     <property>Amazon.Personalize.Model.DataSource.DataLocation</property>
     <max>256</max>
+    <pattern>(s3|http|https)://.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.DefaultCategoricalHyperParameterRange.Name</property>
@@ -1123,8 +1132,13 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.S3DataConfig.KmsKeyArn</property>
+    <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.S3DataConfig.Path</property>
     <max>256</max>
+    <pattern>(s3|http|https)://.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.Solution.DatasetGroupArn</property>
