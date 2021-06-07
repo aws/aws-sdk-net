@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
         private string _connectionName;
         private List<string> _exclusions = new List<string>();
         private string _path;
+        private int? _sampleSize;
 
         /// <summary>
         /// Gets and sets the property ConnectionName. 
@@ -92,6 +93,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetPath()
         {
             return this._path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SampleSize. 
+        /// <para>
+        /// Sets the number of files in each leaf folder to be crawled when crawling sample files
+        /// in a dataset. If not set, all the files are crawled. A valid value is an integer between
+        /// 1 and 249.
+        /// </para>
+        /// </summary>
+        public int SampleSize
+        {
+            get { return this._sampleSize.GetValueOrDefault(); }
+            set { this._sampleSize = value; }
+        }
+
+        // Check to see if SampleSize property is set
+        internal bool IsSetSampleSize()
+        {
+            return this._sampleSize.HasValue; 
         }
 
     }

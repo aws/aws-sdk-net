@@ -68,6 +68,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Path);
             }
 
+            if(requestObject.IsSetSampleSize())
+            {
+                context.Writer.WritePropertyName("SampleSize");
+                context.Writer.Write(requestObject.SampleSize);
+            }
+
         }
 
         /// <summary>
