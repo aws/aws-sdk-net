@@ -132,11 +132,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("Enabled",
                         selectObjectContentRequest.RequestProgress.GetValueOrDefault(false).ToString()
                             .ToUpperInvariant());
+                    xmlWriter.WriteEndElement();
                     if (selectObjectContentRequest.IsSetScanRange())
                     {
                         selectObjectContentRequest.ScanRange.Marshall("ScanRange", xmlWriter);
                     }
-                    xmlWriter.WriteEndElement();
                     xmlWriter.WriteEndElement();
                 }
 

@@ -46,6 +46,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         // 1st line in input is considered as headers in CSVInput test configuration, hence not returned in output.
         private static readonly string TestCSVContent = "A,B\r\n1,2\r\n3,4\r\n";
         private static readonly string CSVVerificationContent = "1,2\n3,4\n";
+        private static readonly string CSVScanRangeVerificationContent = "3,4\n";
 
         private const string SelectQuery = "select * from S3Object s where s.LOCATIONID = 'VALE'";
 
@@ -177,6 +178,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsTrue(string.Equals(CSVVerificationContent, testContent));
         }
 
+        /// <summary>
+        /// Tests the Event-Driven method for checking an EventStream returned from SelectObjectContent based on ScanRange setting for CSV InputSerialization and OutputSerialization.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestCallScanRangeEvents()
+        {
+            string selectQuery = "select * from s3object";
+            InputSerialization inputSerialization = new InputSerialization()
+            {
+                CSV = new CSVInput()
+                {
+                    FileHeaderInfo = FileHeaderInfo.Use,
+                    RecordDelimiter = "\r\n"
+                }
+            };
+            OutputSerialization outputSerialization = new OutputSerialization()
+            {
+                CSV = new CSVOutput()
+                {
+                    RecordDelimiter = "\n"
+                }
+            };
+
+            var eventStream = GetSelectObjectContentEventStream(_bucketName, _csvKeyName, selectQuery, inputSerialization, outputSerialization, new ScanRange() { Start = 10, End = 20 });
+
+            var testContent = string.Empty;
+            var recordsEvents = new List<RecordsEvent>();
+
+            eventStream.RecordsEventReceived += (sender, args) => recordsEvents.Add(args.EventStreamEvent);
+            eventStream.StartProcessing();
+            SpinWait.SpinUntil(() => recordsEvents.Count > 0, TimeSpan.FromSeconds(5));
+
+            using (var streamReader = new StreamReader(recordsEvents[0].Payload, Encoding.UTF8))
+            {
+                testContent = streamReader.ReadToEnd();
+            }
+            eventStream.Dispose();
+
+            Assert.IsTrue(string.Equals(CSVScanRangeVerificationContent, testContent));
+        }
+
         private ISelectObjectContentEventStream GetSelectObjectContentEventStream(
             string bucketName, 
             string key, 
@@ -224,12 +267,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 OutputSerialization = new OutputSerialization()
                 {
                     JSON = new JSONOutput()
-                },
-                ScanRange = new ScanRange()
-                {
-                    End = 0,
-                    Start = 1
-                },
+                }
             }).Payload;
         }
 
