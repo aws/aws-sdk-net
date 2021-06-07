@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribePipelineExecution operation
+    /// Response Unmarshaller for SendPipelineExecutionStepSuccess operation
     /// </summary>  
-    public class DescribePipelineExecutionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class SendPipelineExecutionStepSuccessResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,76 +45,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribePipelineExecutionResponse response = new DescribePipelineExecutionResponse();
+            SendPipelineExecutionStepSuccessResponse response = new SendPipelineExecutionStepSuccessResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedBy", targetDepth))
-                {
-                    var unmarshaller = UserContextUnmarshaller.Instance;
-                    response.CreatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FailureReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureReason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastModifiedBy", targetDepth))
-                {
-                    var unmarshaller = UserContextUnmarshaller.Instance;
-                    response.LastModifiedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PipelineArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.PipelineArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("PipelineExecutionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PipelineExecutionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PipelineExecutionDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.PipelineExecutionDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PipelineExecutionDisplayName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.PipelineExecutionDisplayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PipelineExecutionStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.PipelineExecutionStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PipelineExperimentConfig", targetDepth))
-                {
-                    var unmarshaller = PipelineExperimentConfigUnmarshaller.Instance;
-                    response.PipelineExperimentConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -140,6 +80,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceeded"))
+                {
+                    return ResourceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -148,9 +92,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribePipelineExecutionResponseUnmarshaller _instance = new DescribePipelineExecutionResponseUnmarshaller();        
+        private static SendPipelineExecutionStepSuccessResponseUnmarshaller _instance = new SendPipelineExecutionStepSuccessResponseUnmarshaller();        
 
-        internal static DescribePipelineExecutionResponseUnmarshaller GetInstance()
+        internal static SendPipelineExecutionStepSuccessResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -158,7 +102,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribePipelineExecutionResponseUnmarshaller Instance
+        public static SendPipelineExecutionStepSuccessResponseUnmarshaller Instance
         {
             get
             {

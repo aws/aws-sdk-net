@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The specification of a Jupyter kernel.
+    /// Specifies the names of the experiment and trial created by a pipeline.
     /// </summary>
-    public partial class KernelSpec
+    public partial class PipelineExperimentConfig
     {
-        private string _displayName;
-        private string _name;
+        private string _experimentName;
+        private string _trialName;
 
         /// <summary>
-        /// Gets and sets the property DisplayName. 
+        /// Gets and sets the property ExperimentName. 
         /// <para>
-        /// The display name of the kernel.
+        /// The name of the experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
-        public string DisplayName
+        [AWSProperty(Min=1, Max=120)]
+        public string ExperimentName
         {
-            get { return this._displayName; }
-            set { this._displayName = value; }
+            get { return this._experimentName; }
+            set { this._experimentName = value; }
         }
 
-        // Check to see if DisplayName property is set
-        internal bool IsSetDisplayName()
+        // Check to see if ExperimentName property is set
+        internal bool IsSetExperimentName()
         {
-            return this._displayName != null;
+            return this._experimentName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property TrialName. 
         /// <para>
-        /// The name of the Jupyter kernel in the image. This value is case sensitive.
+        /// The name of the trial.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
-        public string Name
+        [AWSProperty(Min=1, Max=120)]
+        public string TrialName
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._trialName; }
+            set { this._trialName = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if TrialName property is set
+        internal bool IsSetTrialName()
         {
-            return this._name != null;
+            return this._trialName != null;
         }
 
     }

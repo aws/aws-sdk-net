@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Identifies a model that you want to host and the resources to deploy for hosting it.
-    /// If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic
-    /// among the models by specifying variant weights.
+    /// Identifies a model that you want to host and the resources chosen to deploy for hosting
+    /// it. If you are deploying multiple models, tell Amazon SageMaker how to distribute
+    /// traffic among the models by specifying variant weights.
     /// </summary>
     public partial class ProductionVariant
     {

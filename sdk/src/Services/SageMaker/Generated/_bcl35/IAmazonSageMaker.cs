@@ -9470,6 +9470,105 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  SendPipelineExecutionStepFailure
+
+
+        /// <summary>
+        /// Notifies the pipeline that the execution of a callback step failed, along with a message
+        /// describing why. When a callback step is run, the pipeline generates a callback token
+        /// and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendPipelineExecutionStepFailure service method.</param>
+        /// 
+        /// <returns>The response from the SendPipelineExecutionStepFailure service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure">REST API Reference for SendPipelineExecutionStepFailure Operation</seealso>
+        SendPipelineExecutionStepFailureResponse SendPipelineExecutionStepFailure(SendPipelineExecutionStepFailureRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendPipelineExecutionStepFailure operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendPipelineExecutionStepFailure operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendPipelineExecutionStepFailure
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure">REST API Reference for SendPipelineExecutionStepFailure Operation</seealso>
+        IAsyncResult BeginSendPipelineExecutionStepFailure(SendPipelineExecutionStepFailureRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendPipelineExecutionStepFailure operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendPipelineExecutionStepFailure.</param>
+        /// 
+        /// <returns>Returns a  SendPipelineExecutionStepFailureResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure">REST API Reference for SendPipelineExecutionStepFailure Operation</seealso>
+        SendPipelineExecutionStepFailureResponse EndSendPipelineExecutionStepFailure(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SendPipelineExecutionStepSuccess
+
+
+        /// <summary>
+        /// Notifies the pipeline that the execution of a callback step succeeded and provides
+        /// a list of the step's output parameters. When a callback step is run, the pipeline
+        /// generates a callback token and includes the token in a message sent to Amazon Simple
+        /// Queue Service (Amazon SQS).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendPipelineExecutionStepSuccess service method.</param>
+        /// 
+        /// <returns>The response from the SendPipelineExecutionStepSuccess service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess">REST API Reference for SendPipelineExecutionStepSuccess Operation</seealso>
+        SendPipelineExecutionStepSuccessResponse SendPipelineExecutionStepSuccess(SendPipelineExecutionStepSuccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendPipelineExecutionStepSuccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendPipelineExecutionStepSuccess operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendPipelineExecutionStepSuccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess">REST API Reference for SendPipelineExecutionStepSuccess Operation</seealso>
+        IAsyncResult BeginSendPipelineExecutionStepSuccess(SendPipelineExecutionStepSuccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendPipelineExecutionStepSuccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendPipelineExecutionStepSuccess.</param>
+        /// 
+        /// <returns>Returns a  SendPipelineExecutionStepSuccessResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess">REST API Reference for SendPipelineExecutionStepSuccess Operation</seealso>
+        SendPipelineExecutionStepSuccessResponse EndSendPipelineExecutionStepSuccess(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartMonitoringSchedule
 
 

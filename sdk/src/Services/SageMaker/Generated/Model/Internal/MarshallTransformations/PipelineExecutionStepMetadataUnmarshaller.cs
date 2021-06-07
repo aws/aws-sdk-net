@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Callback", targetDepth))
+                {
+                    var unmarshaller = CallbackStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Callback = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Condition", targetDepth))
                 {
                     var unmarshaller = ConditionStepMetadataUnmarshaller.Instance;

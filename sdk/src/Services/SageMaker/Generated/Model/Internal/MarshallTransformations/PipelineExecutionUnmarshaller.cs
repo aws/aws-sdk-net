@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FailureReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedBy", targetDepth))
                 {
                     var unmarshaller = UserContextUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineExecutionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PipelineExperimentConfig", targetDepth))
+                {
+                    var unmarshaller = PipelineExperimentConfigUnmarshaller.Instance;
+                    unmarshalledObject.PipelineExperimentConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PipelineParameters", targetDepth))

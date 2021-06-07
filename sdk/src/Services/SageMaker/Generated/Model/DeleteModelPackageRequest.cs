@@ -46,8 +46,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelPackageName. 
         /// <para>
-        /// The name of the model package. The name must have 1 to 63 characters. Valid characters
-        /// are a-z, A-Z, 0-9, and - (hyphen).
+        /// The name or Amazon Resource Name (ARN) of the model package to delete.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify a name, the name must have 1 to 63 characters. Valid characters are
+        /// a-z, A-Z, 0-9, and - (hyphen).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=176)]

@@ -29,56 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A tag object that consists of a key and an optional value, used to manage metadata
-    /// for Amazon SageMaker AWS resources.
-    /// 
-    ///  
-    /// <para>
-    /// You can add tags to notebook instances, training jobs, hyperparameter tuning jobs,
-    /// batch transform jobs, models, labeling jobs, work teams, endpoint configurations,
-    /// and endpoints. For more information on adding tags to Amazon SageMaker resources,
-    /// see <a>AddTags</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information on adding metadata to your AWS resources with tagging, see <a
-    /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-    /// resources</a>. For advice on best practices for managing AWS resources with tagging,
-    /// see <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
-    /// Best Practices: Implement an Effective AWS Resource Tagging Strategy</a>.
-    /// </para>
+    /// An output parameter of a pipeline step.
     /// </summary>
-    public partial class Tag
+    public partial class OutputParameter
     {
-        private string _key;
+        private string _name;
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The tag key. Tag keys must be unique per resource.
+        /// The name of the output parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        [AWSProperty(Required=true, Max=256)]
+        public string Name
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._key != null;
+            return this._name != null;
         }
 
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The tag value.
+        /// The value of the output parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Max=1024)]
         public string Value
         {
             get { return this._value; }

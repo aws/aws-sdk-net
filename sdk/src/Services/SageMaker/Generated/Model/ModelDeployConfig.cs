@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Set to <code>True</code> to automatically generate an endpoint name for a one-click
         /// Autopilot model deployment; set to <code>False</code> otherwise. The default value
-        /// is <code>True</code>.
+        /// is <code>False</code>.
         /// </para>
         ///  <note> 
         /// <para>

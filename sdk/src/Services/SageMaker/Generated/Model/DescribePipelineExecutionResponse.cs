@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private UserContext _createdBy;
         private DateTime? _creationTime;
+        private string _failureReason;
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
         private string _pipelineArn;
@@ -42,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private string _pipelineExecutionDescription;
         private string _pipelineExecutionDisplayName;
         private PipelineExecutionStatus _pipelineExecutionStatus;
+        private PipelineExperimentConfig _pipelineExperimentConfig;
 
         /// <summary>
         /// Gets and sets the property CreatedBy.
@@ -74,6 +76,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// If the execution failed, a message describing why.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1300)]
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>
@@ -201,6 +222,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineExecutionStatus()
         {
             return this._pipelineExecutionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineExperimentConfig.
+        /// </summary>
+        public PipelineExperimentConfig PipelineExperimentConfig
+        {
+            get { return this._pipelineExperimentConfig; }
+            set { this._pipelineExperimentConfig = value; }
+        }
+
+        // Check to see if PipelineExperimentConfig property is set
+        internal bool IsSetPipelineExperimentConfig()
+        {
+            return this._pipelineExperimentConfig != null;
         }
 
     }

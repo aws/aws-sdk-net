@@ -100,7 +100,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata for the step execution.
+        /// Metadata for the step execution.
         /// </para>
         /// </summary>
         public PipelineExecutionStepMetadata Metadata

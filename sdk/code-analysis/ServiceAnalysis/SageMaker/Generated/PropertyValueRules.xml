@@ -2251,6 +2251,11 @@
     <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline\/.*\/execution\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribePipelineExecutionResponse.FailureReason</property>
+    <max>1300</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribePipelineExecutionResponse.PipelineArn</property>
     <max>256</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
@@ -3846,6 +3851,42 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.SendPipelineExecutionStepFailureRequest.CallbackToken</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.SendPipelineExecutionStepFailureRequest.ClientRequestToken</property>
+    <min>32</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.SendPipelineExecutionStepFailureRequest.FailureReason</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.SendPipelineExecutionStepFailureResponse.PipelineExecutionArn</property>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline\/.*\/execution\/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.SendPipelineExecutionStepSuccessRequest.CallbackToken</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.SendPipelineExecutionStepSuccessRequest.ClientRequestToken</property>
+    <min>32</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.SendPipelineExecutionStepSuccessResponse.PipelineExecutionArn</property>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline\/.*\/execution\/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.StartMonitoringScheduleRequest.MonitoringScheduleName</property>
     <min>1</min>
     <max>63</max>
@@ -4645,6 +4686,16 @@
     <property>Amazon.SageMaker.Model.CacheHitResult.SourcePipelineExecutionArn</property>
     <max>256</max>
     <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline\/.*\/execution\/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CallbackStepMetadata.CallbackToken</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CallbackStepMetadata.SqsQueueUrl</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CandidateArtifactLocations.Explainability</property>
@@ -6449,6 +6500,14 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.OutputParameter.Name</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OutputParameter.Value</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.Parameter.Name</property>
     <min>1</min>
     <max>256</max>
@@ -6506,6 +6565,11 @@
     <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.PipelineExecution.FailureReason</property>
+    <max>1300</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.PipelineExecution.PipelineArn</property>
     <max>256</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
@@ -6552,6 +6616,18 @@
     <min>1</min>
     <max>82</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,81}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.PipelineExperimentConfig.ExperimentName</property>
+    <min>1</min>
+    <max>120</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,119}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.PipelineExperimentConfig.TrialName</property>
+    <min>1</min>
+    <max>120</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,119}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.PipelineSummary.PipelineArn</property>

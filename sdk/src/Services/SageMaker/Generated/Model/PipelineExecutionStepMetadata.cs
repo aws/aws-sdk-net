@@ -33,12 +33,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class PipelineExecutionStepMetadata
     {
+        private CallbackStepMetadata _callback;
         private ConditionStepMetadata _condition;
         private ModelStepMetadata _model;
         private ProcessingJobStepMetadata _processingJob;
         private RegisterModelStepMetadata _registerModel;
         private TrainingJobStepMetadata _trainingJob;
         private TransformJobStepMetadata _transformJob;
+
+        /// <summary>
+        /// Gets and sets the property Callback.
+        /// </summary>
+        public CallbackStepMetadata Callback
+        {
+            get { return this._callback; }
+            set { this._callback = value; }
+        }
+
+        // Check to see if Callback property is set
+        internal bool IsSetCallback()
+        {
+            return this._callback != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Condition. 

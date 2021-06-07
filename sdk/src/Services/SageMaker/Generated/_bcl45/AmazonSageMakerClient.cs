@@ -11485,6 +11485,126 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  SendPipelineExecutionStepFailure
+
+
+        /// <summary>
+        /// Notifies the pipeline that the execution of a callback step failed, along with a message
+        /// describing why. When a callback step is run, the pipeline generates a callback token
+        /// and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendPipelineExecutionStepFailure service method.</param>
+        /// 
+        /// <returns>The response from the SendPipelineExecutionStepFailure service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure">REST API Reference for SendPipelineExecutionStepFailure Operation</seealso>
+        public virtual SendPipelineExecutionStepFailureResponse SendPipelineExecutionStepFailure(SendPipelineExecutionStepFailureRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendPipelineExecutionStepFailureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendPipelineExecutionStepFailureResponseUnmarshaller.Instance;
+
+            return Invoke<SendPipelineExecutionStepFailureResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Notifies the pipeline that the execution of a callback step failed, along with a message
+        /// describing why. When a callback step is run, the pipeline generates a callback token
+        /// and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendPipelineExecutionStepFailure service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendPipelineExecutionStepFailure service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure">REST API Reference for SendPipelineExecutionStepFailure Operation</seealso>
+        public virtual Task<SendPipelineExecutionStepFailureResponse> SendPipelineExecutionStepFailureAsync(SendPipelineExecutionStepFailureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendPipelineExecutionStepFailureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendPipelineExecutionStepFailureResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendPipelineExecutionStepFailureResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendPipelineExecutionStepSuccess
+
+
+        /// <summary>
+        /// Notifies the pipeline that the execution of a callback step succeeded and provides
+        /// a list of the step's output parameters. When a callback step is run, the pipeline
+        /// generates a callback token and includes the token in a message sent to Amazon Simple
+        /// Queue Service (Amazon SQS).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendPipelineExecutionStepSuccess service method.</param>
+        /// 
+        /// <returns>The response from the SendPipelineExecutionStepSuccess service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess">REST API Reference for SendPipelineExecutionStepSuccess Operation</seealso>
+        public virtual SendPipelineExecutionStepSuccessResponse SendPipelineExecutionStepSuccess(SendPipelineExecutionStepSuccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendPipelineExecutionStepSuccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendPipelineExecutionStepSuccessResponseUnmarshaller.Instance;
+
+            return Invoke<SendPipelineExecutionStepSuccessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Notifies the pipeline that the execution of a callback step succeeded and provides
+        /// a list of the step's output parameters. When a callback step is run, the pipeline
+        /// generates a callback token and includes the token in a message sent to Amazon Simple
+        /// Queue Service (Amazon SQS).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendPipelineExecutionStepSuccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendPipelineExecutionStepSuccess service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess">REST API Reference for SendPipelineExecutionStepSuccess Operation</seealso>
+        public virtual Task<SendPipelineExecutionStepSuccessResponse> SendPipelineExecutionStepSuccessAsync(SendPipelineExecutionStepSuccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendPipelineExecutionStepSuccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendPipelineExecutionStepSuccessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendPipelineExecutionStepSuccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartMonitoringSchedule
 
 
