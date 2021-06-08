@@ -1,3 +1,13 @@
+### 3.7.50.0 (2021-06-08 18:14 UTC)
+* CognitoIdentityProvider (3.7.0.31)
+	* Documentation updates for cognito-idp
+* FSx (3.7.3.0)
+	* This release adds support for auditing end-user access to files, folders, and file shares using Windows event logs, enabling customers to meet their security and compliance needs.
+* Macie2 (3.7.3.0)
+	* This release of the Amazon Macie API introduces stricter validation of S3 object criteria for classification jobs.
+* ServiceCatalog (3.7.1.0)
+	* increase max pagesize for List/Search apis
+
 ### 3.7.49.0 (2021-06-07 18:19 UTC)
 * EKS (3.7.4.0)
 	* Added updateConfig option that allows customers to control upgrade velocity in Managed Node Group.
