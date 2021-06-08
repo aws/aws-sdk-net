@@ -276,8 +276,15 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     tokenValue = reader.Value;
                     if (token == JsonToken.ObjectStart)
                     {
-                        value = Activator.CreateInstance(valueType);
-                        Unmarshall(reader, valueType, value);
+                        if (valueType.IsGenericType && valueType.GetGenericTypeDefinition() == typeof(Dictionary<,>))
+                        {
+                            value = ParseMap(reader, valueType);
+                        }
+                        else
+                        {
+                            value = Activator.CreateInstance(valueType);
+                            Unmarshall(reader, valueType, value);
+                        }
                     }
                     else if (token == JsonToken.ArrayStart)
                     {
