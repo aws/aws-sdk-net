@@ -891,7 +891,7 @@
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListAcceptedPortfolioSharesRequest.PageSize</property>
     <min>0</min>
-    <max>20</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListAcceptedPortfolioSharesRequest.PageToken</property>
@@ -1047,7 +1047,7 @@
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListPortfoliosRequest.PageSize</property>
     <min>0</min>
-    <max>20</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListPortfoliosRequest.PageToken</property>
@@ -1066,7 +1066,7 @@
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListPortfoliosForProductRequest.PageSize</property>
     <min>0</min>
-    <max>20</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListPortfoliosForProductRequest.PageToken</property>
@@ -1386,7 +1386,7 @@
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.SearchProductsRequest.PageSize</property>
     <min>0</min>
-    <max>20</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.SearchProductsRequest.PageToken</property>
