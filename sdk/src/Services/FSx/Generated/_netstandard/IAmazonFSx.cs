@@ -1068,6 +1068,10 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// AuditLogConfiguration
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// AutomaticBackupRetentionDays
         /// </para>
         ///  </li> <li> 

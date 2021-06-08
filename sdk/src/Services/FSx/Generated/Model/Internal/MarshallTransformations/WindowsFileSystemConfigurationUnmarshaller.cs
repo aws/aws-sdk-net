@@ -76,6 +76,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.Aliases = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AuditLogConfiguration", targetDepth))
+                {
+                    var unmarshaller = WindowsAuditLogConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AuditLogConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

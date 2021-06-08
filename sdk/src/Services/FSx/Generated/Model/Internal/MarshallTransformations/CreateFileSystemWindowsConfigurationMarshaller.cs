@@ -62,6 +62,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetAuditLogConfiguration())
+            {
+                context.Writer.WritePropertyName("AuditLogConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WindowsAuditLogCreateConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuditLogConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");

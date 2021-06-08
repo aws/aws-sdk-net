@@ -35,6 +35,7 @@ namespace Amazon.FSx.Model
     {
         private string _activeDirectoryId;
         private List<Alias> _aliases = new List<Alias>();
+        private WindowsAuditLogConfiguration _auditLogConfiguration;
         private int? _automaticBackupRetentionDays;
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
@@ -81,6 +82,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetAliases()
         {
             return this._aliases != null && this._aliases.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuditLogConfiguration. 
+        /// <para>
+        /// The configuration that Amazon FSx for Windows File Server uses to audit and log user
+        /// accesses of files, folders, and file shares on the Amazon FSx for Windows File Server
+        /// file system.
+        /// </para>
+        /// </summary>
+        public WindowsAuditLogConfiguration AuditLogConfiguration
+        {
+            get { return this._auditLogConfiguration; }
+            set { this._auditLogConfiguration = value; }
+        }
+
+        // Check to see if AuditLogConfiguration property is set
+        internal bool IsSetAuditLogConfiguration()
+        {
+            return this._auditLogConfiguration != null;
         }
 
         /// <summary>
