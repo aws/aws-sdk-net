@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides details about the location of an occurrence of sensitive data in an Adobe
-    /// Portable Document Format file, Microsoft Word document, or non-binary text file.
+    /// Provides details about the location of an occurrence of sensitive data in a Microsoft
+    /// Word document or non-binary text file.
     /// </summary>
     public partial class Range
     {
@@ -41,24 +41,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property End. 
         /// <para>
-        /// Possible values are:
+        /// The number of lines from the beginning of the file to the end of the sensitive data.
         /// </para>
-        ///  <ul><li>
-        /// <para>
-        /// In an Occurrences.lineRanges array, the number of lines from the beginning of the
-        /// file to the end of the sensitive data.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// In an Occurrences.offsetRanges array, the number of characters from the beginning
-        /// of the file to the end of the sensitive data.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// In a Page object, the number of lines (lineRange) or characters (offsetRange) from
-        /// the beginning of the page to the end of the sensitive data.
-        /// </para>
-        /// </li></ul>
         /// </summary>
         public long End
         {
@@ -75,24 +59,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Start. 
         /// <para>
-        /// Possible values are:
+        /// The number of lines from the beginning of the file to the beginning of the sensitive
+        /// data.
         /// </para>
-        ///  <ul><li>
-        /// <para>
-        /// In an Occurrences.lineRanges array, the number of lines from the beginning of the
-        /// file to the beginning of the sensitive data.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// In an Occurrences.offsetRanges array, the number of characters from the beginning
-        /// of the file to the beginning of the sensitive data.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// In a Page object, the number of lines (lineRange) or characters (offsetRange) from
-        /// the beginning of the page to the beginning of the sensitive data.
-        /// </para>
-        /// </li></ul>
         /// </summary>
         public long Start
         {

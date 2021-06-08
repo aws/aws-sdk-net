@@ -30,9 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies a tag-based condition that determines whether an S3 object is included or
-    /// excluded from a classification job. Tag keys and values are case sensitive. Also,
-    /// Amazon Macie doesn't support use of partial values or wildcard characters in tag-based
-    /// conditions.
+    /// excluded from a classification job.
     /// </summary>
     public partial class TagScopeTerm
     {
@@ -44,7 +42,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Comparator. 
         /// <para>
-        /// The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
+        /// The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).
         /// </para>
         /// </summary>
         public JobComparator Comparator
@@ -62,7 +60,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The tag key to use in the condition.
+        /// The object property to use in the condition. The only valid value is TAG.
         /// </para>
         /// </summary>
         public string Key
@@ -80,7 +78,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property TagValues. 
         /// <para>
-        /// The tag keys or tag key and value pairs to use in the condition.
+        /// The tag keys or tag key and value pairs to use in the condition. To specify only tag
+        /// keys in a condition, specify the keys in this array and set the value for each associated
+        /// tag value to an empty string.
         /// </para>
         /// </summary>
         public List<TagValuePair> TagValues

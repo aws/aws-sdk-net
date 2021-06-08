@@ -39,9 +39,9 @@ namespace Amazon.Macie2.Model
         private long? _pageNumber;
 
         /// <summary>
-        /// Gets and sets the property LineRange. 
+        /// Gets and sets the property LineRange.  
         /// <para>
-        /// The line that contains the data, and the position of the data on that line.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public Range LineRange
@@ -57,9 +57,9 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OffsetRange. 
+        /// Gets and sets the property OffsetRange.  
         /// <para>
-        /// The position of the data on the page, relative to the beginning of the page.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public Range OffsetRange

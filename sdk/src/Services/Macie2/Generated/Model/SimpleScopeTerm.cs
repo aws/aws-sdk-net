@@ -41,8 +41,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Comparator. 
         /// <para>
-        /// The operator to use in the condition. Valid operators for each supported property
-        /// (key) are:
+        /// The operator to use in the condition. Valid values for each supported property (key)
+        /// are:
         /// </para>
         ///  <ul><li>
         /// <para>
@@ -59,10 +59,6 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// OBJECT_SIZE - Any operator except CONTAINS
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// TAG - EQ (equals) or NE (not equals)
         /// </para>
         /// </li></ul>
         /// </summary>
@@ -101,8 +97,8 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// An array that lists the values to use in the condition. If the value for the key property
         /// is OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon
-        /// Macie uses an OR operator to join the values. Otherwise, this array can specify only
-        /// one value.
+        /// Macie uses OR logic to join the values. Otherwise, this array can specify only one
+        /// value.
         /// </para>
         ///  
         /// <para>
@@ -127,12 +123,6 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// TAG - A string that represents a tag key for an object. For advanced options, use
-        /// a TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based condition
-        /// for the job.
         /// </para>
         /// </li></ul> 
         /// <para>

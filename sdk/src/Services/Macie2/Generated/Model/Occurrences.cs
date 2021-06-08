@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides the location of 1-15 occurrences of sensitive data that was detected by managed
-    /// data identifiers or a custom data identifier and produced a sensitive data finding.
+    /// Specifies the location of 1-15 occurrences of sensitive data that was detected by
+    /// managed data identifiers or a custom data identifier and produced a sensitive data
+    /// finding.
     /// </summary>
     public partial class Occurrences
     {
@@ -89,15 +90,9 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OffsetRanges. 
+        /// Gets and sets the property OffsetRanges.  
         /// <para>
-        /// An array of objects, one for each occurrence of sensitive data in a binary text file.
-        /// Each object specifies the position of the data relative to the beginning of the file.
-        /// </para>
-        ///  
-        /// <para>
-        /// This value is typically null. For binary text files, Amazon Macie adds location data
-        /// to a lineRanges.Range or Page object, depending on the file type.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public List<Range> OffsetRanges
@@ -116,8 +111,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Pages. 
         /// <para>
         /// An array of objects, one for each occurrence of sensitive data in an Adobe Portable
-        /// Document Format file. Each object specifies the page that contains the data, and the
-        /// position of the data on that page. This value is null for all other types of files.
+        /// Document Format file. Each object specifies the page that contains the data. This
+        /// value is null for all other types of files.
         /// </para>
         /// </summary>
         public List<Page> Pages

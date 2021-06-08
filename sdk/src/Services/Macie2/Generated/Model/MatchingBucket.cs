@@ -109,7 +109,7 @@ namespace Amazon.Macie2.Model
         /// the bucket. These objects use a supported storage class and have a file name extension
         /// for a supported file or storage format.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// If versioning is enabled for the bucket, Macie calculates this value based on the
         /// size of the latest version of each applicable object in the bucket. This value doesn't
@@ -190,7 +190,7 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The total storage size, in bytes, of the bucket.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// If versioning is enabled for the bucket, Amazon Macie calculates this value based
         /// on the size of the latest version of each object in the bucket. This value doesn't
@@ -215,7 +215,7 @@ namespace Amazon.Macie2.Model
         /// The total storage size, in bytes, of the objects that are compressed (.gz, .gzip,
         /// .zip) files in the bucket.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// If versioning is enabled for the bucket, Macie calculates this value based on the
         /// size of the latest version of each applicable object in the bucket. This value doesn't

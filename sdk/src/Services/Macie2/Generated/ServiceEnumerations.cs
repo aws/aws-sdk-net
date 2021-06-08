@@ -1449,10 +1449,6 @@ namespace Amazon.Macie2
     {
 
         /// <summary>
-        /// Constant BUCKET_CREATION_DATE for ScopeFilterKey
-        /// </summary>
-        public static readonly ScopeFilterKey BUCKET_CREATION_DATE = new ScopeFilterKey("BUCKET_CREATION_DATE");
-        /// <summary>
         /// Constant OBJECT_EXTENSION for ScopeFilterKey
         /// </summary>
         public static readonly ScopeFilterKey OBJECT_EXTENSION = new ScopeFilterKey("OBJECT_EXTENSION");
@@ -1468,10 +1464,6 @@ namespace Amazon.Macie2
         /// Constant OBJECT_SIZE for ScopeFilterKey
         /// </summary>
         public static readonly ScopeFilterKey OBJECT_SIZE = new ScopeFilterKey("OBJECT_SIZE");
-        /// <summary>
-        /// Constant TAG for ScopeFilterKey
-        /// </summary>
-        public static readonly ScopeFilterKey TAG = new ScopeFilterKey("TAG");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

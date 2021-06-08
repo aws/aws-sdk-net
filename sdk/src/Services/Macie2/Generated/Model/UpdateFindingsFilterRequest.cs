@@ -35,6 +35,7 @@ namespace Amazon.Macie2.Model
     public partial class UpdateFindingsFilterRequest : AmazonMacie2Request
     {
         private FindingsFilterAction _action;
+        private string _clientToken;
         private string _description;
         private FindingCriteria _findingCriteria;
         private string _id;
@@ -59,6 +60,24 @@ namespace Amazon.Macie2.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive token that you provide to ensure the idempotency of the request.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
         }
 
         /// <summary>

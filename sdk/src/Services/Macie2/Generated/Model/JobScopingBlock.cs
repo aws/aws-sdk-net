@@ -39,9 +39,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property And. 
         /// <para>
-        /// An array of conditions, one for each condition that determines which objects to include
-        /// or exclude from the job. If you specify more than one condition, Amazon Macie uses
-        /// AND logic to join the conditions.
+        /// An array of conditions, one for each property- or tag-based condition that determines
+        /// which objects to include or exclude from the job. If you specify more than one condition,
+        /// Amazon Macie uses AND logic to join the conditions.
         /// </para>
         /// </summary>
         public List<JobScopeTerm> And

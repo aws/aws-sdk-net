@@ -41,7 +41,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Excludes. 
         /// <para>
-        /// The property- or tag-based conditions that determine which objects to exclude from
+        /// The property- and tag-based conditions that determine which objects to exclude from
         /// the analysis.
         /// </para>
         /// </summary>
@@ -60,8 +60,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// The property- or tag-based conditions that determine which objects to include in the
-        /// analysis.
+        /// The property- and tag-based conditions that determine which objects to include in
+        /// the analysis.
         /// </para>
         /// </summary>
         public JobScopingBlock Includes
