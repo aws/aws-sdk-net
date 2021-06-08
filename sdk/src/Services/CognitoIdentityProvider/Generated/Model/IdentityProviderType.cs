@@ -224,10 +224,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// authorize_scopes
-        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// For SAML providers:
