@@ -1,3 +1,13 @@
+### 3.7.51.0 (2021-06-09 18:25 UTC)
+* Kendra (3.7.4.0)
+	* AWS Kendra now supports checking document status.
+* PersonalizeEvents (3.7.1.0)
+	* Support for unstructured text inputs in the items dataset to to automatically extract key information from product/content description as an input when creating solution versions.
+* Proton (3.7.0.0)
+	* This is the initial SDK release for AWS Proton
+* Transfer (3.7.1.4)
+	* Documentation updates for the AWS Transfer Family service.
+
 ### 3.7.50.0 (2021-06-08 18:14 UTC)
 * CognitoIdentityProvider (3.7.0.31)
 	* Documentation updates for cognito-idp
