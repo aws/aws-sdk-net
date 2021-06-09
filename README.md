@@ -491,6 +491,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* We launched new service, Price List Service.
 * [AWSSDK.PrometheusService](https://www.nuget.org/packages/AWSSDK.PrometheusService/)
 	* (New Service) Amazon Managed Service for Prometheus is a fully managed Prometheus-compatible monitoring service that makes it easy to monitor containerized applications securely and at scale.
+* [AWSSDK.Proton](https://www.nuget.org/packages/AWSSDK.Proton/)
+	* This is the initial SDK release for AWS Proton
 * [AWSSDK.QLDB](https://www.nuget.org/packages/AWSSDK.QLDB/)
 	* Introduces operations needed for managing Amazon QLDB ledgers. This includes the ability to create, delete, modify, and describe Amazon QLDB ledgers. This also includes the ability to cryptographically verify documents and export the journal in a ledger.
 * [AWSSDK.QLDBSession](https://www.nuget.org/packages/AWSSDK.QLDBSession/)

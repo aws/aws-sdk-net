@@ -864,6 +864,10 @@
       <Project>{45941DC4-E121-43D5-8A3D-B2A6D8429943}</Project>
       <Name>AWSSDK.PrometheusService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Proton/AWSSDK.Proton.CodeAnalysis.csproj">
+      <Project>{DAE004EE-07C5-4079-AA30-A1A4C990509B}</Project>
+      <Name>AWSSDK.Proton.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/QLDB/AWSSDK.QLDB.CodeAnalysis.csproj">
       <Project>{41DAC2D4-C9AE-4BFE-9F36-14E9F46D036C}</Project>
       <Name>AWSSDK.QLDB.CodeAnalysis</Name>
