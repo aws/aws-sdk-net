@@ -54,12 +54,12 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectory. 
         /// <para>
-        /// Specifies the landing directory (folder) for a user when they log in to the server
-        /// using their file transfer protocol client.
+        /// The landing directory (folder) for a user when they log in to the server using the
+        /// client.
         /// </para>
         ///  
         /// <para>
-        /// An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+        /// A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -148,12 +148,17 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// Allows you to supply a scope-down policy for your user so you can use the same IAM
-        /// role across multiple users. The policy scopes down user access to portions of your
-        /// Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
+        /// A scope-down policy for your user so that you can use the same IAM role across multiple
+        /// users. This policy scopes down user access to portions of their Amazon S3 bucket.
+        /// Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
         /// </para>
         ///  <note> 
+        /// <para>
+        /// This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not
+        /// use scope-down policies.
+        /// </para>
+        ///  
         /// <para>
         /// For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead
         /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob
@@ -210,9 +215,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The IAM role that controls your users' access to your Amazon S3 bucket. The policies
-        /// attached to this role determine the level of access you want to provide your users
-        /// when transferring files into and out of your S3 bucket or buckets. The IAM role should
+        /// Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users'
+        /// access to your Amazon S3 bucket or EFS file system. The policies attached to this
+        /// role determine the level of access that you want to provide your users when transferring
+        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should
         /// also contain a trust relationship that allows the server to access your resources
         /// when servicing your users' transfer requests.
         /// </para>

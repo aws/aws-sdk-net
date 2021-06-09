@@ -140,9 +140,9 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The type of landing directory (folder) you want your users' home directory to be when
         /// they log into the server. If you set it to <code>PATH</code>, the user will see the
-        /// absolute Amazon S3 bucket paths as is in their file transfer protocol clients. If
-        /// you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code>
-        /// for how you want to make Amazon S3 paths visible to your users.
+        /// absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
+        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code>
+        /// for how you want to make Amazon S3 or EFS paths visible to your users.
         /// </para>
         /// </summary>
         public HomeDirectoryType HomeDirectoryType
@@ -160,7 +160,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// A scope-down policy for your user so you can use the same IAM role across multiple
+        /// A scope-down policy for your user so that you can use the same IAM role across multiple
         /// users. This policy scopes down user access to portions of their Amazon S3 bucket.
         /// Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
@@ -225,12 +225,12 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// Specifies the IAM role that controls your users' access to your Amazon S3 bucket or
-        /// EFS file system. The policies attached to this role will determine the level of access
-        /// you want to provide your users when transferring files into and out of your Amazon
-        /// S3 bucket or EFS file system. The IAM role should also contain a trust relationship
-        /// that allows the server to access your resources when servicing your users' transfer
-        /// requests.
+        /// Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users'
+        /// access to your Amazon S3 bucket or EFS file system. The policies attached to this
+        /// role determine the level of access that you want to provide your users when transferring
+        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should
+        /// also contain a trust relationship that allows the server to access your resources
+        /// when servicing your users' transfer requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

@@ -50,7 +50,7 @@ namespace Amazon.Transfer.Model
         ///  
         /// <para>
         ///  <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties
-        /// * | Select SamaccountName,ObjectSid</code> 
+        /// * | Select SamAccountName,ObjectSid</code> 
         /// </para>
         ///  
         /// <para>
