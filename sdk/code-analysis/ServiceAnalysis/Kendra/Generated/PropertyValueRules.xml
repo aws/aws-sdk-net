@@ -7,6 +7,12 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.BatchGetDocumentStatusRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.BatchPutDocumentRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
@@ -870,6 +876,17 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.BatchGetDocumentStatusResponseError.DocumentId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.BatchGetDocumentStatusResponseError.ErrorMessage</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.BatchPutDocumentResponseFailedDocument.ErrorMessage</property>
     <min>1</min>
     <max>2048</max>
@@ -1090,6 +1107,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.DocumentAttributeValue.StringValue</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DocumentInfo.DocumentId</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
@@ -1421,6 +1443,21 @@
     <min>1</min>
     <max>200</max>
     <pattern>[a-zA-Z0-9_][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.Status.DocumentId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.Status.FailureCode</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.Status.FailureReason</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.Suggestion.Id</property>

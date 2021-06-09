@@ -122,6 +122,100 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  BatchGetDocumentStatus
+
+
+        /// <summary>
+        /// Returns the indexing status for one or more documents submitted with the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">
+        /// BatchPutDocument</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// When you use the <code>BatchPutDocument</code> operation, documents are indexed asynchronously.
+        /// You can use the <code>BatchGetDocumentStatus</code> operation to get the current status
+        /// of a list of documents so that you can determine if they have been successfully indexed.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use the <code>BatchGetDocumentStatus</code> operation to check the status
+        /// of the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html">
+        /// BatchDeleteDocument</a> operation. When a document is deleted from the index, Amazon
+        /// Kendra returns <code>NOT_FOUND</code> as the status.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDocumentStatus service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetDocumentStatus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">REST API Reference for BatchGetDocumentStatus Operation</seealso>
+        BatchGetDocumentStatusResponse BatchGetDocumentStatus(BatchGetDocumentStatusRequest request);
+
+
+
+        /// <summary>
+        /// Returns the indexing status for one or more documents submitted with the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">
+        /// BatchPutDocument</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// When you use the <code>BatchPutDocument</code> operation, documents are indexed asynchronously.
+        /// You can use the <code>BatchGetDocumentStatus</code> operation to get the current status
+        /// of a list of documents so that you can determine if they have been successfully indexed.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use the <code>BatchGetDocumentStatus</code> operation to check the status
+        /// of the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html">
+        /// BatchDeleteDocument</a> operation. When a document is deleted from the index, Amazon
+        /// Kendra returns <code>NOT_FOUND</code> as the status.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDocumentStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetDocumentStatus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">REST API Reference for BatchGetDocumentStatus Operation</seealso>
+        Task<BatchGetDocumentStatusResponse> BatchGetDocumentStatusAsync(BatchGetDocumentStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchPutDocument
 
 

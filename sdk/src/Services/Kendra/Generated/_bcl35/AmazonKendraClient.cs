@@ -317,6 +317,93 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  BatchGetDocumentStatus
+
+        /// <summary>
+        /// Returns the indexing status for one or more documents submitted with the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">
+        /// BatchPutDocument</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// When you use the <code>BatchPutDocument</code> operation, documents are indexed asynchronously.
+        /// You can use the <code>BatchGetDocumentStatus</code> operation to get the current status
+        /// of a list of documents so that you can determine if they have been successfully indexed.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use the <code>BatchGetDocumentStatus</code> operation to check the status
+        /// of the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html">
+        /// BatchDeleteDocument</a> operation. When a document is deleted from the index, Amazon
+        /// Kendra returns <code>NOT_FOUND</code> as the status.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDocumentStatus service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetDocumentStatus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">REST API Reference for BatchGetDocumentStatus Operation</seealso>
+        public virtual BatchGetDocumentStatusResponse BatchGetDocumentStatus(BatchGetDocumentStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetDocumentStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDocumentStatusResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetDocumentStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDocumentStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDocumentStatus operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetDocumentStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">REST API Reference for BatchGetDocumentStatus Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetDocumentStatus(BatchGetDocumentStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetDocumentStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDocumentStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetDocumentStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetDocumentStatus.</param>
+        /// 
+        /// <returns>Returns a  BatchGetDocumentStatusResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">REST API Reference for BatchGetDocumentStatus Operation</seealso>
+        public virtual BatchGetDocumentStatusResponse EndBatchGetDocumentStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetDocumentStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchPutDocument
 
         /// <summary>
