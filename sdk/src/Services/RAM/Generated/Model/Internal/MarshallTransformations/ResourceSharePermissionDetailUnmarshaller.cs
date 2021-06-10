@@ -82,6 +82,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isResourceTypeDefault", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsResourceTypeDefault = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

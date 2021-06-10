@@ -35,6 +35,7 @@ namespace Amazon.RAM.Model
     {
         private DateTime? _invitationTimestamp;
         private string _receiverAccountId;
+        private string _receiverArn;
         private string _resourceShareArn;
         private List<ResourceShareAssociation> _resourceShareAssociations = new List<ResourceShareAssociation>();
         private string _resourceShareInvitationArn;
@@ -76,6 +77,24 @@ namespace Amazon.RAM.Model
         internal bool IsSetReceiverAccountId()
         {
             return this._receiverAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReceiverArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+        /// </para>
+        /// </summary>
+        public string ReceiverArn
+        {
+            get { return this._receiverArn; }
+            set { this._receiverArn = value; }
+        }
+
+        // Check to see if ReceiverArn property is set
+        internal bool IsSetReceiverArn()
+        {
+            return this._receiverArn != null;
         }
 
         /// <summary>

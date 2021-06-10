@@ -877,6 +877,9 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
         /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
+        /// The requested state transition is not valid.
+        /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The format of an Amazon Resource Name (ARN) is not valid.
         /// </exception>
@@ -917,6 +920,9 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
+        /// The requested state transition is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The format of an Amazon Resource Name (ARN) is not valid.
@@ -1255,7 +1261,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the invitations for resource sharing that you've received.
+        /// Gets the invitations that you have received for resource shares.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareInvitations service method.</param>
         /// 
@@ -1296,7 +1302,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the invitations for resource sharing that you've received.
+        /// Gets the invitations that you have received for resource shares.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -1937,6 +1943,9 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
         /// The requested operation is not permitted.
         /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
+        /// The requested resource share exceeds the limit for your account.
+        /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
         /// </exception>
@@ -1994,6 +2003,9 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
         /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
+        /// The requested resource share exceeds the limit for your account.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
@@ -2149,6 +2161,9 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
         /// The specified tag is a reserved word and cannot be used.
         /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
@@ -2189,6 +2204,9 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
         /// The specified tag is a reserved word and cannot be used.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

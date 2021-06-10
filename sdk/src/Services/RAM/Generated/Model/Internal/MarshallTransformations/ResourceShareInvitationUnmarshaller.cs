@@ -76,6 +76,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReceiverAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("receiverArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReceiverArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceShareArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -97,6 +97,10 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 {
                     return TagPolicyViolationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnknownResourceException"))
+                {
+                    return UnknownResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonRAMException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

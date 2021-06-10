@@ -36,6 +36,7 @@ namespace Amazon.RAM.Model
         private string _arn;
         private DateTime? _creationTime;
         private bool? _defaultVersion;
+        private bool? _isResourceTypeDefault;
         private DateTime? _lastUpdatedTime;
         private string _name;
         private string _permission;
@@ -81,7 +82,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property DefaultVersion. 
         /// <para>
-        /// The identifier for the version of the permission that is set as the default version.
+        /// Specifies whether the version of the permission is set to the default version for
+        /// this permission.
         /// </para>
         /// </summary>
         public bool DefaultVersion
@@ -94,6 +96,25 @@ namespace Amazon.RAM.Model
         internal bool IsSetDefaultVersion()
         {
             return this._defaultVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsResourceTypeDefault. 
+        /// <para>
+        /// Specifies whether the version of the permission is set to the default version for
+        /// this resource type.
+        /// </para>
+        /// </summary>
+        public bool IsResourceTypeDefault
+        {
+            get { return this._isResourceTypeDefault.GetValueOrDefault(); }
+            set { this._isResourceTypeDefault = value; }
+        }
+
+        // Check to see if IsResourceTypeDefault property is set
+        internal bool IsSetIsResourceTypeDefault()
+        {
+            return this._isResourceTypeDefault.HasValue; 
         }
 
         /// <summary>

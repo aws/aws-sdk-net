@@ -36,6 +36,7 @@ namespace Amazon.RAM.Model
     {
         private string _clientToken;
         private string _permissionArn;
+        private int? _permissionVersion;
         private bool? _replace;
         private string _resourceShareArn;
 
@@ -61,7 +62,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property PermissionArn. 
         /// <para>
-        /// The ARN of the AWS RAM permission to associate with the resource share.
+        /// The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource
+        /// share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,6 +77,24 @@ namespace Amazon.RAM.Model
         internal bool IsSetPermissionArn()
         {
             return this._permissionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionVersion. 
+        /// <para>
+        /// The version of the AWS RAM permissions to associate with the resource share.
+        /// </para>
+        /// </summary>
+        public int PermissionVersion
+        {
+            get { return this._permissionVersion.GetValueOrDefault(); }
+            set { this._permissionVersion = value; }
+        }
+
+        // Check to see if PermissionVersion property is set
+        internal bool IsSetPermissionVersion()
+        {
+            return this._permissionVersion.HasValue; 
         }
 
         /// <summary>

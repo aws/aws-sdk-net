@@ -51,6 +51,11 @@ namespace Amazon.RAM.Model
         IListPendingInvitationResourcesPaginator ListPendingInvitationResources(ListPendingInvitationResourcesRequest request);
 
         /// <summary>
+        /// Paginator for ListPermissions operation
+        ///</summary>
+        IListPermissionsPaginator ListPermissions(ListPermissionsRequest request);
+
+        /// <summary>
         /// Paginator for ListPrincipals operation
         ///</summary>
         IListPrincipalsPaginator ListPrincipals(ListPrincipalsRequest request);
@@ -59,5 +64,15 @@ namespace Amazon.RAM.Model
         /// Paginator for ListResources operation
         ///</summary>
         IListResourcesPaginator ListResources(ListResourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourceSharePermissions operation
+        ///</summary>
+        IListResourceSharePermissionsPaginator ListResourceSharePermissions(ListResourceSharePermissionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourceTypes operation
+        ///</summary>
+        IListResourceTypesPaginator ListResourceTypes(ListResourceTypesRequest request);
     }
 }

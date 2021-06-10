@@ -38,6 +38,7 @@ namespace Amazon.RAM.Model
         private int? _maxResults;
         private string _name;
         private string _nextToken;
+        private string _permissionArn;
         private ResourceOwner _resourceOwner;
         private List<string> _resourceShareArns = new List<string>();
         private ResourceShareStatus _resourceShareStatus;
@@ -100,6 +101,25 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PermissionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the
+        /// resource share.
+        /// </para>
+        /// </summary>
+        public string PermissionArn
+        {
+            get { return this._permissionArn; }
+            set { this._permissionArn = value; }
+        }
+
+        // Check to see if PermissionArn property is set
+        internal bool IsSetPermissionArn()
+        {
+            return this._permissionArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceOwner. 
         /// <para>
         /// The type of owner.
@@ -121,7 +141,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArns. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the resource shares.
+        /// The ARNs of the resource shares.
         /// </para>
         /// </summary>
         public List<string> ResourceShareArns

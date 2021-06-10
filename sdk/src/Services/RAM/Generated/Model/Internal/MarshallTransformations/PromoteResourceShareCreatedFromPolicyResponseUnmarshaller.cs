@@ -96,6 +96,10 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 {
                     return OperationNotPermittedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceShareLimitExceededException"))
+                {
+                    return ResourceShareLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerInternalException"))
                 {
                     return ServerInternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
