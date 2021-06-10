@@ -268,6 +268,53 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         #endregion
 
 
+        #region  BatchGetRecord
+
+        internal virtual BatchGetRecordResponse BatchGetRecord(BatchGetRecordRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRecordResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetRecordResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetRecord service method, as returned by SageMakerFeatureStoreRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.AccessForbiddenException">
+        /// You do not have permission to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.InternalFailureException">
+        /// An internal failure occurred. Try your request again. If the problem persists, contact
+        /// AWS customer support.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ValidationErrorException">
+        /// There was an error validating your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord">REST API Reference for BatchGetRecord Operation</seealso>
+        public virtual Task<BatchGetRecordResponse> BatchGetRecordAsync(BatchGetRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRecordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetRecordResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRecord
 
         internal virtual DeleteRecordResponse DeleteRecord(DeleteRecordRequest request)

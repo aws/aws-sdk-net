@@ -66,6 +66,59 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 
 
         
+        #region  BatchGetRecord
+
+
+        /// <summary>
+        /// Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRecord service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetRecord service method, as returned by SageMakerFeatureStoreRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.AccessForbiddenException">
+        /// You do not have permission to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.InternalFailureException">
+        /// An internal failure occurred. Try your request again. If the problem persists, contact
+        /// AWS customer support.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ValidationErrorException">
+        /// There was an error validating your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord">REST API Reference for BatchGetRecord Operation</seealso>
+        BatchGetRecordResponse BatchGetRecord(BatchGetRecordRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetRecord operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRecord operation on AmazonSageMakerFeatureStoreRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetRecord
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord">REST API Reference for BatchGetRecord Operation</seealso>
+        IAsyncResult BeginBatchGetRecord(BatchGetRecordRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetRecord operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetRecord.</param>
+        /// 
+        /// <returns>Returns a  BatchGetRecordResult from SageMakerFeatureStoreRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord">REST API Reference for BatchGetRecord Operation</seealso>
+        BatchGetRecordResponse EndBatchGetRecord(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteRecord
 
 

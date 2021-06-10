@@ -34,6 +34,41 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordError.ErrorCode</property>
+    <max>358400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordError.ErrorMessage</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordError.FeatureGroupName</property>
+    <max>358400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordError.RecordIdentifierValueAsString</property>
+    <max>358400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordIdentifier.FeatureGroupName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordResultDetail.FeatureGroupName</property>
+    <max>358400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordResultDetail.RecordIdentifierValueAsString</property>
+    <max>358400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.FeatureValue.FeatureName</property>
     <min>1</min>
     <max>64</max>
