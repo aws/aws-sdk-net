@@ -207,7 +207,10 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Zendesk.
+        /// Gets and sets the property Zendesk. 
+        /// <para>
+        /// The properties required to query Zendesk.
+        /// </para>
         /// </summary>
         public ZendeskDestinationProperties Zendesk
         {

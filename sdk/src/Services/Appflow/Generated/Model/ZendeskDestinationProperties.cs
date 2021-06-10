@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// 
+    /// The properties that are applied when Zendesk is used as a destination.
     /// </summary>
     public partial class ZendeskDestinationProperties
     {
@@ -70,7 +70,10 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Object.
+        /// Gets and sets the property Object. 
+        /// <para>
+        /// The object specified in the Zendesk flow destination.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
         public string Object

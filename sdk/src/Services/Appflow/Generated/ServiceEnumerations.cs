@@ -1127,6 +1127,10 @@ namespace Amazon.Appflow
         /// </summary>
         public static readonly OperatorPropertiesKeys DESTINATION_DATA_TYPE = new OperatorPropertiesKeys("DESTINATION_DATA_TYPE");
         /// <summary>
+        /// Constant EXCLUDE_SOURCE_FIELDS_LIST for OperatorPropertiesKeys
+        /// </summary>
+        public static readonly OperatorPropertiesKeys EXCLUDE_SOURCE_FIELDS_LIST = new OperatorPropertiesKeys("EXCLUDE_SOURCE_FIELDS_LIST");
+        /// <summary>
         /// Constant LOWER_BOUND for OperatorPropertiesKeys
         /// </summary>
         public static readonly OperatorPropertiesKeys LOWER_BOUND = new OperatorPropertiesKeys("LOWER_BOUND");
@@ -1996,6 +2000,10 @@ namespace Amazon.Appflow
         /// Constant Map for TaskType
         /// </summary>
         public static readonly TaskType Map = new TaskType("Map");
+        /// <summary>
+        /// Constant Map_all for TaskType
+        /// </summary>
+        public static readonly TaskType Map_all = new TaskType("Map_all");
         /// <summary>
         /// Constant Mask for TaskType
         /// </summary>
