@@ -5191,6 +5191,11 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.EdgePresetDeploymentOutput.Artifact</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.Endpoint.EndpointArn</property>
     <min>20</min>
     <max>2048</max>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EdgeOutputConfig Object
+    /// Response Unmarshaller for EdgePresetDeploymentOutput Object
     /// </summary>  
-    public class EdgeOutputConfigUnmarshaller : IUnmarshaller<EdgeOutputConfig, XmlUnmarshallerContext>, IUnmarshaller<EdgeOutputConfig, JsonUnmarshallerContext>
+    public class EdgePresetDeploymentOutputUnmarshaller : IUnmarshaller<EdgePresetDeploymentOutput, XmlUnmarshallerContext>, IUnmarshaller<EdgePresetDeploymentOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EdgeOutputConfig IUnmarshaller<EdgeOutputConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EdgePresetDeploymentOutput IUnmarshaller<EdgePresetDeploymentOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EdgeOutputConfig Unmarshall(JsonUnmarshallerContext context)
+        public EdgePresetDeploymentOutput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EdgeOutputConfig unmarshalledObject = new EdgeOutputConfig();
+            EdgePresetDeploymentOutput unmarshalledObject = new EdgePresetDeploymentOutput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("KmsKeyId", targetDepth))
+                if (context.TestExpression("Artifact", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Artifact = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PresetDeploymentConfig", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PresetDeploymentConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PresetDeploymentType", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PresetDeploymentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3OutputLocation", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3OutputLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +94,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static EdgeOutputConfigUnmarshaller _instance = new EdgeOutputConfigUnmarshaller();        
+        private static EdgePresetDeploymentOutputUnmarshaller _instance = new EdgePresetDeploymentOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EdgeOutputConfigUnmarshaller Instance
+        public static EdgePresetDeploymentOutputUnmarshaller Instance
         {
             get
             {

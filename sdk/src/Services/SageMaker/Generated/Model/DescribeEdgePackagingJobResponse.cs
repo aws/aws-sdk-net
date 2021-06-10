@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private string _modelSignature;
         private string _modelVersion;
         private EdgeOutputConfig _outputConfig;
+        private EdgePresetDeploymentOutput _presetDeploymentOutput;
         private string _resourceKey;
         private string _roleArn;
 
@@ -270,6 +271,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOutputConfig()
         {
             return this._outputConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PresetDeploymentOutput. 
+        /// <para>
+        /// The output of a SageMaker Edge Manager deployable resource.
+        /// </para>
+        /// </summary>
+        public EdgePresetDeploymentOutput PresetDeploymentOutput
+        {
+            get { return this._presetDeploymentOutput; }
+            set { this._presetDeploymentOutput = value; }
+        }
+
+        // Check to see if PresetDeploymentOutput property is set
+        internal bool IsSetPresetDeploymentOutput()
+        {
+            return this._presetDeploymentOutput != null;
         }
 
         /// <summary>

@@ -2593,6 +2593,102 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type EdgePresetDeploymentStatus.
+    /// </summary>
+    public class EdgePresetDeploymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for EdgePresetDeploymentStatus
+        /// </summary>
+        public static readonly EdgePresetDeploymentStatus COMPLETED = new EdgePresetDeploymentStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for EdgePresetDeploymentStatus
+        /// </summary>
+        public static readonly EdgePresetDeploymentStatus FAILED = new EdgePresetDeploymentStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EdgePresetDeploymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EdgePresetDeploymentStatus FindValue(string value)
+        {
+            return FindValue<EdgePresetDeploymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EdgePresetDeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EdgePresetDeploymentType.
+    /// </summary>
+    public class EdgePresetDeploymentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GreengrassV2Component for EdgePresetDeploymentType
+        /// </summary>
+        public static readonly EdgePresetDeploymentType GreengrassV2Component = new EdgePresetDeploymentType("GreengrassV2Component");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EdgePresetDeploymentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EdgePresetDeploymentType FindValue(string value)
+        {
+            return FindValue<EdgePresetDeploymentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EdgePresetDeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EndpointConfigSortKey.
     /// </summary>
     public class EndpointConfigSortKey : ConstantClass

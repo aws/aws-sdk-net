@@ -123,6 +123,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.OutputConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PresetDeploymentOutput", targetDepth))
+                {
+                    var unmarshaller = EdgePresetDeploymentOutputUnmarshaller.Instance;
+                    response.PresetDeploymentOutput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

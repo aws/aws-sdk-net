@@ -51,6 +51,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.KmsKeyId);
             }
 
+            if(requestObject.IsSetPresetDeploymentConfig())
+            {
+                context.Writer.WritePropertyName("PresetDeploymentConfig");
+                context.Writer.Write(requestObject.PresetDeploymentConfig);
+            }
+
+            if(requestObject.IsSetPresetDeploymentType())
+            {
+                context.Writer.WritePropertyName("PresetDeploymentType");
+                context.Writer.Write(requestObject.PresetDeploymentType);
+            }
+
             if(requestObject.IsSetS3OutputLocation())
             {
                 context.Writer.WritePropertyName("S3OutputLocation");

@@ -79,6 +79,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeviceFleetName);
                 }
 
+                if(publicRequest.IsSetEnableIotRoleAlias())
+                {
+                    context.Writer.WritePropertyName("EnableIotRoleAlias");
+                    context.Writer.Write(publicRequest.EnableIotRoleAlias);
+                }
+
                 if(publicRequest.IsSetOutputConfig())
                 {
                     context.Writer.WritePropertyName("OutputConfig");

@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _description;
         private string _deviceFleetName;
+        private bool? _enableIotRoleAlias;
         private EdgeOutputConfig _outputConfig;
         private string _roleArn;
 
@@ -75,6 +76,30 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDeviceFleetName()
         {
             return this._deviceFleetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableIotRoleAlias. 
+        /// <para>
+        /// Whether to create an AWS IoT Role Alias during device fleet creation. The name of
+        /// the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if your device fleet is called "demo-fleet", the name of the role alias
+        /// will be "SageMakerEdge-demo-fleet".
+        /// </para>
+        /// </summary>
+        public bool EnableIotRoleAlias
+        {
+            get { return this._enableIotRoleAlias.GetValueOrDefault(); }
+            set { this._enableIotRoleAlias = value; }
+        }
+
+        // Check to see if EnableIotRoleAlias property is set
+        internal bool IsSetEnableIotRoleAlias()
+        {
+            return this._enableIotRoleAlias.HasValue; 
         }
 
         /// <summary>
