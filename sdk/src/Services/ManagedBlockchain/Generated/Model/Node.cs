@@ -39,6 +39,7 @@ namespace Amazon.ManagedBlockchain.Model
         private NodeFrameworkAttributes _frameworkAttributes;
         private string _id;
         private string _instanceType;
+        private string _kmsKeyArn;
         private NodeLogPublishingConfiguration _logPublishingConfiguration;
         private string _memberId;
         private string _networkId;
@@ -159,6 +160,31 @@ namespace Amazon.ManagedBlockchain.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service
+        /// (AWS KMS) that the node uses for encryption at rest. If the value of this parameter
+        /// is <code>"AWS Owned KMS Key"</code>, the node uses an AWS owned KMS key for encryption.
+        /// The node inherits this parameter from the member that it belongs to.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
+        /// </summary>
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogPublishingConfiguration. 
         /// <para>
         /// Configuration properties for logging events associated with a peer node on a Hyperledger
@@ -246,6 +272,57 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The status of the node.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATING</code> - The AWS account is in the process of creating a node.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AVAILABLE</code> - The node has been created and can participate in the network.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UNHEALTHY</code> - The node is impaired and might not function as expected.
+        /// Amazon Managed Blockchain automatically finds nodes in this state and tries to recover
+        /// them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it
+        /// moves to <code>FAILED</code> status.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation
+        /// failed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> - The node is in the process of being updated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code> - The node is in the process of being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> - The node can no longer participate on the network.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> - The node is no longer functional, cannot be recovered, and
+        /// must be deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function
+        /// as expected because it cannot access the specified customer managed key in AWS KMS
+        /// for encryption at rest. Either the KMS key was disabled or deleted, or the grants
+        /// on the key were revoked.
+        /// </para>
+        ///  
+        /// <para>
+        /// The effect of disabling or deleting a key, or revoking a grant is not immediate. The
+        /// node resource might take some time to find that the key is inaccessible. When a resource
+        /// is in this state, we recommend deleting and recreating the resource.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public NodeStatus Status
         {

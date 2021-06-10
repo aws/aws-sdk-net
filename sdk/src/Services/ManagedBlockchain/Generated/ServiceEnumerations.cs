@@ -213,6 +213,10 @@ namespace Amazon.ManagedBlockchain
         /// </summary>
         public static readonly MemberStatus DELETING = new MemberStatus("DELETING");
         /// <summary>
+        /// Constant INACCESSIBLE_ENCRYPTION_KEY for MemberStatus
+        /// </summary>
+        public static readonly MemberStatus INACCESSIBLE_ENCRYPTION_KEY = new MemberStatus("INACCESSIBLE_ENCRYPTION_KEY");
+        /// <summary>
         /// Constant UPDATING for MemberStatus
         /// </summary>
         public static readonly MemberStatus UPDATING = new MemberStatus("UPDATING");
@@ -344,6 +348,10 @@ namespace Amazon.ManagedBlockchain
         /// Constant FAILED for NodeStatus
         /// </summary>
         public static readonly NodeStatus FAILED = new NodeStatus("FAILED");
+        /// <summary>
+        /// Constant INACCESSIBLE_ENCRYPTION_KEY for NodeStatus
+        /// </summary>
+        public static readonly NodeStatus INACCESSIBLE_ENCRYPTION_KEY = new NodeStatus("INACCESSIBLE_ENCRYPTION_KEY");
         /// <summary>
         /// Constant UNHEALTHY for NodeStatus
         /// </summary>

@@ -43,6 +43,7 @@ namespace Amazon.ManagedBlockchain.Model
         private string _description;
         private MemberFrameworkAttributes _frameworkAttributes;
         private string _id;
+        private string _kmsKeyArn;
         private MemberLogPublishingConfiguration _logPublishingConfiguration;
         private string _name;
         private string _networkId;
@@ -146,6 +147,27 @@ namespace Amazon.ManagedBlockchain.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service
+        /// (AWS KMS) that the member uses for encryption at rest. If the value of this parameter
+        /// is <code>"AWS Owned KMS Key"</code>, the member uses an AWS owned KMS key for encryption.
+        /// This parameter is inherited by the nodes that this member owns.
+        /// </para>
+        /// </summary>
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogPublishingConfiguration. 
         /// <para>
         /// Configuration properties for logging events associated with a member.
@@ -221,6 +243,10 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>UPDATING</code> - The member is in the process of being updated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>DELETING</code> - The member and all associated resources are in the process
         /// of being deleted. Either the AWS account that owns the member deleted it, or the member
         /// is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to
@@ -232,6 +258,19 @@ namespace Amazon.ManagedBlockchain.Model
         /// associated resources are deleted. Either the AWS account that owns the member deleted
         /// it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code>
         /// to remove the member.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function
+        /// as expected because it cannot access the specified customer managed key in AWS KMS
+        /// for encryption at rest. Either the KMS key was disabled or deleted, or the grants
+        /// on the key were revoked.
+        /// </para>
+        ///  
+        /// <para>
+        /// The effect of disabling or deleting a key, or revoking a grant is not immediate. The
+        /// member resource might take some time to find that the key is inaccessible. When a
+        /// resource is in this state, we recommend deleting and recreating the resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

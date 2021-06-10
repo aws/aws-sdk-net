@@ -100,6 +100,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogPublishingConfiguration", targetDepth))
                 {
                     var unmarshaller = NodeLogPublishingConfigurationUnmarshaller.Instance;

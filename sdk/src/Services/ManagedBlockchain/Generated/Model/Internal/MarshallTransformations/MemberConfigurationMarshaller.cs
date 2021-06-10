@@ -62,6 +62,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("KmsKeyArn");
+                context.Writer.Write(requestObject.KmsKeyArn);
+            }
+
             if(requestObject.IsSetLogPublishingConfiguration())
             {
                 context.Writer.WritePropertyName("LogPublishingConfiguration");

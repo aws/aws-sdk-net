@@ -40,6 +40,7 @@ namespace Amazon.ManagedBlockchain.Model
     {
         private string _description;
         private MemberFrameworkConfiguration _frameworkConfiguration;
+        private string _kmsKeyArn;
         private MemberLogPublishingConfiguration _logPublishingConfiguration;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -80,6 +81,53 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetFrameworkConfiguration()
         {
             return this._frameworkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service
+        /// (AWS KMS) to use for encryption at rest in the member. This parameter is inherited
+        /// by any nodes that this member creates.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use one of the following options to specify this parameter:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption
+        /// by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>A valid symmetric customer managed KMS key</b> - The member uses the specified
+        /// key for encryption.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>
