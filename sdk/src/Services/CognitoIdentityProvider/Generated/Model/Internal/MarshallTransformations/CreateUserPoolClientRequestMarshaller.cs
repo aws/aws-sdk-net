@@ -135,6 +135,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DefaultRedirectURI);
                 }
 
+                if(publicRequest.IsSetEnableTokenRevocation())
+                {
+                    context.Writer.WritePropertyName("EnableTokenRevocation");
+                    context.Writer.Write(publicRequest.EnableTokenRevocation);
+                }
+
                 if(publicRequest.IsSetExplicitAuthFlows())
                 {
                     context.Writer.WritePropertyName("ExplicitAuthFlows");

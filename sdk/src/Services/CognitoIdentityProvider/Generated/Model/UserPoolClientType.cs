@@ -44,6 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _clientSecret;
         private DateTime? _creationDate;
         private string _defaultRedirectURI;
+        private bool? _enableTokenRevocation;
         private List<string> _explicitAuthFlows = new List<string>();
         private int? _idTokenValidity;
         private DateTime? _lastModifiedDate;
@@ -349,6 +350,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetDefaultRedirectURI()
         {
             return this._defaultRedirectURI != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableTokenRevocation. 
+        /// <para>
+        /// Indicates whether token revocation is enabled for the user pool client. When you create
+        /// a new user pool client, token revocation is enabled by default. For more information
+        /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
+        /// </para>
+        /// </summary>
+        public bool EnableTokenRevocation
+        {
+            get { return this._enableTokenRevocation.GetValueOrDefault(); }
+            set { this._enableTokenRevocation = value; }
+        }
+
+        // Check to see if EnableTokenRevocation property is set
+        internal bool IsSetEnableTokenRevocation()
+        {
+            return this._enableTokenRevocation.HasValue; 
         }
 
         /// <summary>

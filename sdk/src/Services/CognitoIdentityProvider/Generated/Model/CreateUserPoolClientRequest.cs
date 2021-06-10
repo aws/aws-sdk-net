@@ -31,6 +31,12 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the CreateUserPoolClient operation.
     /// Creates the user pool client.
+    /// 
+    ///  
+    /// <para>
+    /// When you create a new user pool client, token revocation is automatically enabled.
+    /// For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
+    /// </para>
     /// </summary>
     public partial class CreateUserPoolClientRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -42,6 +48,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private List<string> _callbackURLs = new List<string>();
         private string _clientName;
         private string _defaultRedirectURI;
+        private bool? _enableTokenRevocation;
         private List<string> _explicitAuthFlows = new List<string>();
         private bool? _generateSecret;
         private int? _idTokenValidity;
@@ -293,6 +300,30 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetDefaultRedirectURI()
         {
             return this._defaultRedirectURI != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableTokenRevocation. 
+        /// <para>
+        /// Enables or disables token revocation. For more information about revoking tokens,
+        /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't include this parameter, token revocation is automatically enabled for
+        /// the new user pool client.
+        /// </para>
+        /// </summary>
+        public bool EnableTokenRevocation
+        {
+            get { return this._enableTokenRevocation.GetValueOrDefault(); }
+            set { this._enableTokenRevocation = value; }
+        }
+
+        // Check to see if EnableTokenRevocation property is set
+        internal bool IsSetEnableTokenRevocation()
+        {
+            return this._enableTokenRevocation.HasValue; 
         }
 
         /// <summary>

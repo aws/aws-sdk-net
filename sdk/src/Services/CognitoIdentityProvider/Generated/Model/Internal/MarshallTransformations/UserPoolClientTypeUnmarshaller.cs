@@ -130,6 +130,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultRedirectURI = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnableTokenRevocation", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableTokenRevocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExplicitAuthFlows", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

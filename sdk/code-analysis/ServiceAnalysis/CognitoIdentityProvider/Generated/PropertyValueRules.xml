@@ -1178,6 +1178,22 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.RevokeTokenRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.RevokeTokenRequest.ClientSecret</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.RevokeTokenRequest.Token</property>
+    <pattern>[A-Za-z0-9-_=.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.SetRiskConfigurationRequest.ClientId</property>
     <min>1</min>
     <max>128</max>
