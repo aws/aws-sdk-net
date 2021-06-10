@@ -41,7 +41,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationId. 
         /// <para>
-        /// The allocation ID of the Elastic IP address that's associated with the NAT gateway.
+        /// [Public NAT gateway only] The allocation ID of the Elastic IP address that's associated
+        /// with the NAT gateway.
         /// </para>
         /// </summary>
         public string AllocationId
@@ -77,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIp. 
         /// <para>
-        /// The private IP address associated with the Elastic IP address.
+        /// The private IP address associated with the NAT gateway.
         /// </para>
         /// </summary>
         public string PrivateIp
@@ -95,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
-        /// The Elastic IP address associated with the NAT gateway.
+        /// [Public NAT gateway only] The Elastic IP address associated with the NAT gateway.
         /// </para>
         /// </summary>
         public string PublicIp

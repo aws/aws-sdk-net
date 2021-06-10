@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("connectivityType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ConnectivityType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("createTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

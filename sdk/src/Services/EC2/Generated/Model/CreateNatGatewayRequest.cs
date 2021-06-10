@@ -30,29 +30,45 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNatGateway operation.
-    /// Creates a NAT gateway in the specified public subnet. This action creates a network
-    /// interface in the specified subnet with a private IP address from the IP address range
-    /// of the subnet. Internet-bound traffic from a private subnet can be routed to the NAT
-    /// gateway, therefore enabling instances in the private subnet to connect to the internet.
+    /// Creates a NAT gateway in the specified subnet. This action creates a network interface
+    /// in the specified subnet with a private IP address from the IP address range of the
+    /// subnet. You can create either a public NAT gateway or a private NAT gateway.
+    /// 
+    ///  
+    /// <para>
+    /// With a public NAT gateway, internet-bound traffic from a private subnet can be routed
+    /// to the NAT gateway, so that instances in a private subnet can connect to the internet.
+    /// </para>
+    ///  
+    /// <para>
+    /// With a private NAT gateway, private communication is routed across VPCs and on-premises
+    /// networks through a transit gateway or virtual private gateway. Common use cases include
+    /// running large workloads behind a small pool of allowlisted IPv4 addresses, preserving
+    /// private IPv4 addresses, and communicating between overlapping networks.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
     /// Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateNatGatewayRequest : AmazonEC2Request
     {
         private string _allocationId;
         private string _clientToken;
+        private ConnectivityType _connectivityType;
         private string _subnetId;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Gets and sets the property AllocationId. 
         /// <para>
-        /// The allocation ID of an Elastic IP address to associate with the NAT gateway. If the
-        /// Elastic IP address is associated with another resource, you must first disassociate
-        /// it.
+        /// [Public NAT gateways only] The allocation ID of an Elastic IP address to associate
+        /// with the NAT gateway. You cannot specify an Elastic IP address with a private NAT
+        /// gateway. If the Elastic IP address is associated with another resource, you must first
+        /// disassociate it.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string AllocationId
         {
             get { return this._allocationId; }
@@ -87,6 +103,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectivityType. 
+        /// <para>
+        /// Indicates whether the NAT gateway supports public or private connectivity. The default
+        /// is public connectivity.
+        /// </para>
+        /// </summary>
+        public ConnectivityType ConnectivityType
+        {
+            get { return this._connectivityType; }
+            set { this._connectivityType = value; }
+        }
+
+        // Check to see if ConnectivityType property is set
+        internal bool IsSetConnectivityType()
+        {
+            return this._connectivityType != null;
         }
 
         /// <summary>

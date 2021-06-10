@@ -70,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+                if(publicRequest.IsSetConnectivityType())
+                {
+                    request.Parameters.Add("ConnectivityType", StringUtils.FromString(publicRequest.ConnectivityType));
+                }
                 if(publicRequest.IsSetSubnetId())
                 {
                     request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));

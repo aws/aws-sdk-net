@@ -30,9 +30,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNatGateway operation.
-    /// Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its Elastic
-    /// IP address, but does not release the address from your account. Deleting a NAT gateway
-    /// does not delete any NAT gateway routes in your route tables.
+    /// Deletes the specified NAT gateway. Deleting a public NAT gateway disassociates its
+    /// Elastic IP address, but does not release the address from your account. Deleting a
+    /// NAT gateway does not delete any NAT gateway routes in your route tables.
     /// </summary>
     public partial class DeleteNatGatewayRequest : AmazonEC2Request
     {

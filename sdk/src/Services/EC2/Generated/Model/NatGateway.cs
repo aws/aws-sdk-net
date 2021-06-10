@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NatGateway
     {
+        private ConnectivityType _connectivityType;
         private DateTime? _createTime;
         private DateTime? _deleteTime;
         private string _failureCode;
@@ -44,6 +45,24 @@ namespace Amazon.EC2.Model
         private string _subnetId;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property ConnectivityType. 
+        /// <para>
+        /// Indicates whether the NAT gateway supports public or private connectivity.
+        /// </para>
+        /// </summary>
+        public ConnectivityType ConnectivityType
+        {
+            get { return this._connectivityType; }
+            set { this._connectivityType = value; }
+        }
+
+        // Check to see if ConnectivityType property is set
+        internal bool IsSetConnectivityType()
+        {
+            return this._connectivityType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreateTime. 
