@@ -1,3 +1,25 @@
+### 3.7.52.0 (2021-06-10 18:23 UTC)
+* Appflow (3.7.2.0)
+	* Adding MAP_ALL task type support.
+* AppMesh (3.7.1.0)
+	* AppMesh now supports additional routing capabilities in match and rewrites for Gateway Routes and Routes. Additionally, App Mesh also supports specifying DNS Response Types in Virtual Nodes.
+* Chime (3.7.4.0)
+	* This SDK release adds support for UpdateAccount API to allow users to update their default license on Chime account.
+* CognitoIdentityProvider (3.7.1.0)
+	* Amazon Cognito now supports targeted sign out through refresh token revocation
+* EC2 (3.7.9.0)
+	* This release adds a new optional parameter connectivityType (public, private) for the CreateNatGateway API. Private NatGateway does not require customers to attach an InternetGateway to the VPC and can be used for communication with other VPCs and on-premise networks.
+* ManagedBlockchain (3.7.1.0)
+	* This release supports KMS customer-managed Customer Master Keys (CMKs) on member-specific Hyperledger Fabric resources.
+* RAM (3.7.1.0)
+	* AWS Resource Access Manager (RAM) is releasing new field isResourceTypeDefault in ListPermissions and GetPermission response, and adding permissionArn parameter to GetResourceShare request to filter by permission attached
+* Redshift (3.7.5.0)
+	* Added InvalidClusterStateFault to the ModifyAquaConfiguration API, thrown when calling the API on a non available cluster.
+* SageMaker (3.7.5.0)
+	* Using SageMaker Edge Manager with AWS IoT Greengrass v2 simplifies accessing, maintaining, and deploying models to your devices. You can now create deployable IoT Greengrass components during edge packaging jobs. You can choose to create a device fleet with or without creating an AWS IoT role alias.
+* SageMakerFeatureStoreRuntime (3.7.1.0)
+	* Release BatchGetRecord API for AWS SageMaker Feature Store Runtime.
+
 ### 3.7.51.0 (2021-06-09 18:25 UTC)
 * Kendra (3.7.4.0)
 	* AWS Kendra now supports checking document status.
