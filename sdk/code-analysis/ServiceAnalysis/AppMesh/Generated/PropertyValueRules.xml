@@ -562,6 +562,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteHostnameMatch.Exact</property>
+    <min>1</min>
+    <max>253</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteHostnameMatch.Suffix</property>
+    <min>1</min>
+    <max>253</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.GatewayRouteRef.GatewayRouteName</property>
     <min>1</min>
     <max>255</max>
@@ -587,7 +597,37 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteSpec.Priority</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.GatewayRouteVirtualService.VirtualServiceName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcGatewayRouteMetadata.Name</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcMetadataMatchMethod.Exact</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcMetadataMatchMethod.Prefix</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcMetadataMatchMethod.Regex</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcMetadataMatchMethod.Suffix</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -669,6 +709,31 @@
     <property>Amazon.AppMesh.Model.HealthCheckPolicy.UnhealthyThreshold</property>
     <min>2</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HttpGatewayRouteHeader.Name</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HttpGatewayRoutePathRewrite.Exact</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HttpGatewayRoutePrefixRewrite.Value</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HttpPathMatch.Exact</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HttpPathMatch.Regex</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.HttpRetryPolicy.MaxRetries</property>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents an AWS Certicate Manager (ACM) certificate.
+    /// An object that represents an Certificate Manager certificate.
     /// </summary>
     public partial class VirtualGatewayListenerTlsAcmCertificate
     {

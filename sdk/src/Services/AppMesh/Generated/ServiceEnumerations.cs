@@ -25,6 +25,106 @@ namespace Amazon.AppMesh
 {
 
     /// <summary>
+    /// Constants used for properties of type DefaultGatewayRouteRewrite.
+    /// </summary>
+    public class DefaultGatewayRouteRewrite : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DefaultGatewayRouteRewrite
+        /// </summary>
+        public static readonly DefaultGatewayRouteRewrite DISABLED = new DefaultGatewayRouteRewrite("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DefaultGatewayRouteRewrite
+        /// </summary>
+        public static readonly DefaultGatewayRouteRewrite ENABLED = new DefaultGatewayRouteRewrite("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultGatewayRouteRewrite(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultGatewayRouteRewrite FindValue(string value)
+        {
+            return FindValue<DefaultGatewayRouteRewrite>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultGatewayRouteRewrite(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DnsResponseType.
+    /// </summary>
+    public class DnsResponseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENDPOINTS for DnsResponseType
+        /// </summary>
+        public static readonly DnsResponseType ENDPOINTS = new DnsResponseType("ENDPOINTS");
+        /// <summary>
+        /// Constant LOADBALANCER for DnsResponseType
+        /// </summary>
+        public static readonly DnsResponseType LOADBALANCER = new DnsResponseType("LOADBALANCER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DnsResponseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DnsResponseType FindValue(string value)
+        {
+            return FindValue<DnsResponseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DnsResponseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DurationUnit.
     /// </summary>
     public class DurationUnit : ConstantClass

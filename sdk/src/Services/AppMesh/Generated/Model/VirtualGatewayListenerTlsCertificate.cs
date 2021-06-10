@@ -40,7 +40,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Acm. 
         /// <para>
-        /// A reference to an object that represents an AWS Certicate Manager (ACM) certificate.
+        /// A reference to an object that represents an Certificate Manager certificate.
         /// </para>
         /// </summary>
         public VirtualGatewayListenerTlsAcmCertificate Acm

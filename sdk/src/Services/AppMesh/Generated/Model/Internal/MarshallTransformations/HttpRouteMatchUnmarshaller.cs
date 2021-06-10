@@ -76,10 +76,22 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.Method = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("path", targetDepth))
+                {
+                    var unmarshaller = HttpPathMatchUnmarshaller.Instance;
+                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("queryParameters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HttpQueryParameter, HttpQueryParameterUnmarshaller>(HttpQueryParameterUnmarshaller.Instance);
+                    unmarshalledObject.QueryParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scheme", targetDepth))

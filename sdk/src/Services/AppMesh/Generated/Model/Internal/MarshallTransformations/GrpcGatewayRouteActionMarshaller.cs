@@ -45,6 +45,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GrpcGatewayRouteAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetRewrite())
+            {
+                context.Writer.WritePropertyName("rewrite");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GrpcGatewayRouteRewriteMarshaller.Instance;
+                marshaller.Marshall(requestObject.Rewrite, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTarget())
             {
                 context.Writer.WritePropertyName("target");

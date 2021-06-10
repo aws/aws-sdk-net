@@ -78,6 +78,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("priority");
+                context.Writer.Write(requestObject.Priority);
+            }
+
         }
 
         /// <summary>

@@ -33,7 +33,85 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class HttpGatewayRouteMatch
     {
+        private List<HttpGatewayRouteHeader> _headers = new List<HttpGatewayRouteHeader>();
+        private GatewayRouteHostnameMatch _hostname;
+        private HttpMethod _method;
+        private HttpPathMatch _path;
         private string _prefix;
+        private List<HttpQueryParameter> _queryParameters = new List<HttpQueryParameter>();
+
+        /// <summary>
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// The client request headers to match on.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<HttpGatewayRouteHeader> Headers
+        {
+            get { return this._headers; }
+            set { this._headers = value; }
+        }
+
+        // Check to see if Headers property is set
+        internal bool IsSetHeaders()
+        {
+            return this._headers != null && this._headers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Hostname. 
+        /// <para>
+        /// The host name to match on.
+        /// </para>
+        /// </summary>
+        public GatewayRouteHostnameMatch Hostname
+        {
+            get { return this._hostname; }
+            set { this._hostname = value; }
+        }
+
+        // Check to see if Hostname property is set
+        internal bool IsSetHostname()
+        {
+            return this._hostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Method. 
+        /// <para>
+        /// The method to match on.
+        /// </para>
+        /// </summary>
+        public HttpMethod Method
+        {
+            get { return this._method; }
+            set { this._method = value; }
+        }
+
+        // Check to see if Method property is set
+        internal bool IsSetMethod()
+        {
+            return this._method != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The path to match on.
+        /// </para>
+        /// </summary>
+        public HttpPathMatch Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Prefix. 
@@ -45,7 +123,6 @@ namespace Amazon.AppMesh.Model
         /// your prefix should be <code>/metrics</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Prefix
         {
             get { return this._prefix; }
@@ -56,6 +133,25 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetPrefix()
         {
             return this._prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryParameters. 
+        /// <para>
+        /// The query parameter to match on.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<HttpQueryParameter> QueryParameters
+        {
+            get { return this._queryParameters; }
+            set { this._queryParameters = value; }
+        }
+
+        // Check to see if QueryParameters property is set
+        internal bool IsSetQueryParameters()
+        {
+            return this._queryParameters != null && this._queryParameters.Count > 0; 
         }
 
     }

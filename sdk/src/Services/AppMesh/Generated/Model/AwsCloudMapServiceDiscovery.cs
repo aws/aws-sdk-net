@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents the AWS Cloud Map service discovery information for your
-    /// virtual node.
+    /// An object that represents the Cloud Map service discovery information for your virtual
+    /// node.
     /// 
     ///  <note> 
     /// <para>
-    /// AWS Cloud Map is not available in the eu-south-1 Region.
+    /// Cloud Map is not available in the eu-south-1 Region.
     /// </para>
     ///  </note>
     /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The name of the AWS Cloud Map namespace to use.
+        /// The name of the Cloud Map namespace to use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -86,7 +86,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS Cloud Map service to use.
+        /// The name of the Cloud Map service to use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

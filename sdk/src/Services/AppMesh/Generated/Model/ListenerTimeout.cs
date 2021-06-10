@@ -39,7 +39,10 @@ namespace Amazon.AppMesh.Model
         private TcpTimeout _tcp;
 
         /// <summary>
-        /// Gets and sets the property Grpc.
+        /// Gets and sets the property Grpc. 
+        /// <para>
+        /// An object that represents types of timeouts. 
+        /// </para>
         /// </summary>
         public GrpcTimeout Grpc
         {

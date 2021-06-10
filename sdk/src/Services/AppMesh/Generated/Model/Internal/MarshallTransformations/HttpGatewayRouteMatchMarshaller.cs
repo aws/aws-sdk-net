@@ -45,10 +45,70 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HttpGatewayRouteMatch requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetHeaders())
+            {
+                context.Writer.WritePropertyName("headers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHeadersListValue in requestObject.Headers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HttpGatewayRouteHeaderMarshaller.Instance;
+                    marshaller.Marshall(requestObjectHeadersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetHostname())
+            {
+                context.Writer.WritePropertyName("hostname");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GatewayRouteHostnameMatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.Hostname, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMethod())
+            {
+                context.Writer.WritePropertyName("method");
+                context.Writer.Write(requestObject.Method);
+            }
+
+            if(requestObject.IsSetPath())
+            {
+                context.Writer.WritePropertyName("path");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HttpPathMatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.Path, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("prefix");
                 context.Writer.Write(requestObject.Prefix);
+            }
+
+            if(requestObject.IsSetQueryParameters())
+            {
+                context.Writer.WritePropertyName("queryParameters");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectQueryParametersListValue in requestObject.QueryParameters)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HttpQueryParameterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectQueryParametersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

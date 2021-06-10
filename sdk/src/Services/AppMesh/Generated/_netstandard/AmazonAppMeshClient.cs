@@ -38,7 +38,7 @@ namespace Amazon.AppMesh
     /// <summary>
     /// Implementation for accessing AppMesh
     ///
-    /// AWS App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor
+    /// App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor
     /// and control microservices. App Mesh standardizes how your microservices communicate,
     /// giving you end-to-end visibility and helping to ensure high availability for your
     /// applications.
@@ -46,8 +46,8 @@ namespace Amazon.AppMesh
     ///  
     /// <para>
     /// App Mesh gives you consistent visibility and network traffic controls for every microservice
-    /// in an application. You can use App Mesh with AWS Fargate, Amazon ECS, Amazon EKS,
-    /// Kubernetes on AWS, and Amazon EC2.
+    /// in an application. You can use App Mesh with Amazon Web Services Fargate, Amazon ECS,
+    /// Amazon EKS, Kubernetes on Amazon Web Services, and Amazon EC2.
     /// </para>
     ///  <note> 
     /// <para>
@@ -618,16 +618,12 @@ namespace Amazon.AppMesh
         /// by setting the <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your
         /// own name.
         /// </para>
-        ///  
-        /// <para>
-        /// AWS Cloud Map is not available in the eu-south-1 Region.
-        /// </para>
         ///  </note> 
         /// <para>
         /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
         /// nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when
-        /// setting these variables. For more information about App Mesh Envoy variables, see
-        /// <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a>
+        /// setting these variables. For more information aboutApp Mesh Envoy variables, see <a
+        /// href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a>
         /// in the AWS App Mesh User Guide.
         /// </para>
         /// </summary>

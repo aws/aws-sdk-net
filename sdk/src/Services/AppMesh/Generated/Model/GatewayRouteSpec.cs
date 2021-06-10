@@ -37,6 +37,7 @@ namespace Amazon.AppMesh.Model
         private GrpcGatewayRoute _grpcRoute;
         private HttpGatewayRoute _http2Route;
         private HttpGatewayRoute _httpRoute;
+        private int? _priority;
 
         /// <summary>
         /// Gets and sets the property GrpcRoute. 
@@ -90,6 +91,25 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetHttpRoute()
         {
             return this._httpRoute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Priority. 
+        /// <para>
+        /// The ordering of the gateway routes spec.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public int Priority
+        {
+            get { return this._priority.GetValueOrDefault(); }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
         }
 
     }

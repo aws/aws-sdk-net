@@ -33,7 +33,46 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class GrpcGatewayRouteMatch
     {
+        private GatewayRouteHostnameMatch _hostname;
+        private List<GrpcGatewayRouteMetadata> _metadata = new List<GrpcGatewayRouteMetadata>();
         private string _serviceName;
+
+        /// <summary>
+        /// Gets and sets the property Hostname. 
+        /// <para>
+        /// The gateway route host name to be matched on.
+        /// </para>
+        /// </summary>
+        public GatewayRouteHostnameMatch Hostname
+        {
+            get { return this._hostname; }
+            set { this._hostname = value; }
+        }
+
+        // Check to see if Hostname property is set
+        internal bool IsSetHostname()
+        {
+            return this._hostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// The gateway route metadata to be matched on.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<GrpcGatewayRouteMetadata> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && this._metadata.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ServiceName. 

@@ -64,10 +64,40 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("headers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HttpGatewayRouteHeader, HttpGatewayRouteHeaderUnmarshaller>(HttpGatewayRouteHeaderUnmarshaller.Instance);
+                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hostname", targetDepth))
+                {
+                    var unmarshaller = GatewayRouteHostnameMatchUnmarshaller.Instance;
+                    unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("method", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Method = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("path", targetDepth))
+                {
+                    var unmarshaller = HttpPathMatchUnmarshaller.Instance;
+                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("queryParameters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HttpQueryParameter, HttpQueryParameterUnmarshaller>(HttpQueryParameterUnmarshaller.Instance);
+                    unmarshalledObject.QueryParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -36,13 +36,15 @@ namespace Amazon.AppMesh.Model
     {
         private List<HttpRouteHeader> _headers = new List<HttpRouteHeader>();
         private HttpMethod _method;
+        private HttpPathMatch _path;
         private string _prefix;
+        private List<HttpQueryParameter> _queryParameters = new List<HttpQueryParameter>();
         private HttpScheme _scheme;
 
         /// <summary>
         /// Gets and sets the property Headers. 
         /// <para>
-        /// An object that represents the client request headers to match on.
+        /// The client request headers to match on.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -77,6 +79,24 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The client request path to match on.
+        /// </para>
+        /// </summary>
+        public HttpPathMatch Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
         /// Specifies the path to match requests with. This parameter must always start with <code>/</code>,
@@ -86,7 +106,6 @@ namespace Amazon.AppMesh.Model
         /// your prefix should be <code>/metrics</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Prefix
         {
             get { return this._prefix; }
@@ -100,9 +119,29 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QueryParameters. 
+        /// <para>
+        /// The client request query parameters to match on.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<HttpQueryParameter> QueryParameters
+        {
+            get { return this._queryParameters; }
+            set { this._queryParameters = value; }
+        }
+
+        // Check to see if QueryParameters property is set
+        internal bool IsSetQueryParameters()
+        {
+            return this._queryParameters != null && this._queryParameters.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Scheme. 
         /// <para>
-        /// The client request scheme to match on. Specify only one.
+        /// The client request scheme to match on. Specify only one. Applicable only for HTTP2
+        /// routes.
         /// </para>
         /// </summary>
         public HttpScheme Scheme

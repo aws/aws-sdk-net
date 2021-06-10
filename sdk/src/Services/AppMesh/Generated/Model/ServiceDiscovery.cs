@@ -39,7 +39,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property AwsCloudMap. 
         /// <para>
-        /// Specifies any AWS Cloud Map information for the virtual node.
+        /// Specifies any Cloud Map information for the virtual node.
         /// </para>
         /// </summary>
         public AwsCloudMapServiceDiscovery AwsCloudMap

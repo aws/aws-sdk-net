@@ -45,6 +45,33 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GrpcGatewayRouteMatch requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetHostname())
+            {
+                context.Writer.WritePropertyName("hostname");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GatewayRouteHostnameMatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.Hostname, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMetadata())
+            {
+                context.Writer.WritePropertyName("metadata");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMetadataListValue in requestObject.Metadata)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GrpcGatewayRouteMetadataMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMetadataListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetServiceName())
             {
                 context.Writer.WritePropertyName("serviceName");

@@ -38,7 +38,11 @@ namespace Amazon.AppMesh.Model
         private VirtualGatewayTlsValidationContextSdsTrust _sds;
 
         /// <summary>
-        /// Gets and sets the property File.
+        /// Gets and sets the property File. 
+        /// <para>
+        /// An object that represents a Transport Layer Security (TLS) validation context trust
+        /// for a local file.
+        /// </para>
         /// </summary>
         public VirtualGatewayTlsValidationContextFileTrust File
         {

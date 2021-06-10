@@ -62,16 +62,12 @@ namespace Amazon.AppMesh.Model
     /// by setting the <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your
     /// own name.
     /// </para>
-    ///  
-    /// <para>
-    /// AWS Cloud Map is not available in the eu-south-1 Region.
-    /// </para>
     ///  </note> 
     /// <para>
     /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
     /// nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when
-    /// setting these variables. For more information about App Mesh Envoy variables, see
-    /// <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a>
+    /// setting these variables. For more information aboutApp Mesh Envoy variables, see <a
+    /// href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a>
     /// in the AWS App Mesh User Guide.
     /// </para>
     /// </summary>

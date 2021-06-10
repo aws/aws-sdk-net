@@ -64,6 +64,18 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("hostname", targetDepth))
+                {
+                    var unmarshaller = GatewayRouteHostnameMatchUnmarshaller.Instance;
+                    unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("metadata", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<GrpcGatewayRouteMetadata, GrpcGatewayRouteMetadataUnmarshaller>(GrpcGatewayRouteMetadataUnmarshaller.Instance);
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

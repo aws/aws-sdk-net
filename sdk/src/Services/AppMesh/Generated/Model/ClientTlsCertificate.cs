@@ -37,7 +37,13 @@ namespace Amazon.AppMesh.Model
         private ListenerTlsSdsCertificate _sds;
 
         /// <summary>
-        /// Gets and sets the property File.
+        /// Gets and sets the property File. 
+        /// <para>
+        /// An object that represents a local file certificate. The certificate must meet specific
+        /// requirements and you must have proxy authorization enabled. For more information,
+        /// see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">Transport
+        /// Layer Security (TLS)</a>.
+        /// </para>
         /// </summary>
         public ListenerTlsFileCertificate File
         {

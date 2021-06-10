@@ -33,7 +33,26 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class GrpcGatewayRouteAction
     {
+        private GrpcGatewayRouteRewrite _rewrite;
         private GatewayRouteTarget _target;
+
+        /// <summary>
+        /// Gets and sets the property Rewrite. 
+        /// <para>
+        /// The gateway route action to rewrite.
+        /// </para>
+        /// </summary>
+        public GrpcGatewayRouteRewrite Rewrite
+        {
+            get { return this._rewrite; }
+            set { this._rewrite = value; }
+        }
+
+        // Check to see if Rewrite property is set
+        internal bool IsSetRewrite()
+        {
+            return this._rewrite != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Target. 

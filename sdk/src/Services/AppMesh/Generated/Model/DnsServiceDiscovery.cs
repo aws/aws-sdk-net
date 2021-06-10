@@ -34,6 +34,7 @@ namespace Amazon.AppMesh.Model
     public partial class DnsServiceDiscovery
     {
         private string _hostname;
+        private DnsResponseType _responseType;
 
         /// <summary>
         /// Gets and sets the property Hostname. 
@@ -52,6 +53,24 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetHostname()
         {
             return this._hostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseType. 
+        /// <para>
+        /// Specifies the DNS response type for the virtual node.
+        /// </para>
+        /// </summary>
+        public DnsResponseType ResponseType
+        {
+            get { return this._responseType; }
+            set { this._responseType = value; }
+        }
+
+        // Check to see if ResponseType property is set
+        internal bool IsSetResponseType()
+        {
+            return this._responseType != null;
         }
 
     }
