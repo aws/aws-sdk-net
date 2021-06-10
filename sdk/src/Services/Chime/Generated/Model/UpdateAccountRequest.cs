@@ -31,11 +31,12 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the UpdateAccount operation.
     /// Updates account details for the specified Amazon Chime account. Currently, only account
-    /// name updates are supported for this action.
+    /// name and default license updates are supported for this action.
     /// </summary>
     public partial class UpdateAccountRequest : AmazonChimeRequest
     {
         private string _accountId;
+        private License _defaultLicense;
         private string _name;
 
         /// <summary>
@@ -55,6 +56,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultLicense. 
+        /// <para>
+        /// The default license applied when you add users to an Amazon Chime account.
+        /// </para>
+        /// </summary>
+        public License DefaultLicense
+        {
+            get { return this._defaultLicense; }
+            set { this._defaultLicense = value; }
+        }
+
+        // Check to see if DefaultLicense property is set
+        internal bool IsSetDefaultLicense()
+        {
+            return this._defaultLicense != null;
         }
 
         /// <summary>

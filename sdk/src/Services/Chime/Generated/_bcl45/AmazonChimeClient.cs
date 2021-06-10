@@ -1244,13 +1244,13 @@ namespace Amazon.Chime
         ///  
         /// <para>
         /// For toll-free numbers, you cannot use the Amazon Chime Business Calling product type.
-        /// For numbers outside the US, you must use the Amazon Chime SIP Media Application Dial-In
-        /// product type.
+        /// For numbers outside the U.S., you must use the Amazon Chime SIP Media Application
+        /// Dial-In product type.
         /// </para>
         ///  
         /// <para>
-        /// Updates to outbound calling names can take 72 hours to complete. Pending updates to
-        /// outbound calling names must be complete before you can request another update.
+        /// Updates to outbound calling names can take up to 72 hours to complete. Pending updates
+        /// to outbound calling names must be complete before you can request another update.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePhoneNumber service method.</param>
@@ -1296,13 +1296,13 @@ namespace Amazon.Chime
         ///  
         /// <para>
         /// For toll-free numbers, you cannot use the Amazon Chime Business Calling product type.
-        /// For numbers outside the US, you must use the Amazon Chime SIP Media Application Dial-In
-        /// product type.
+        /// For numbers outside the U.S., you must use the Amazon Chime SIP Media Application
+        /// Dial-In product type.
         /// </para>
         ///  
         /// <para>
-        /// Updates to outbound calling names can take 72 hours to complete. Pending updates to
-        /// outbound calling names must be complete before you can request another update.
+        /// Updates to outbound calling names can take up to 72 hours to complete. Pending updates
+        /// to outbound calling names must be complete before you can request another update.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePhoneNumber service method.</param>
@@ -1348,9 +1348,9 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20
-        /// users for the specified Amazon Chime account. Currently, only <code>LicenseType</code>
-        /// updates are supported for this action.
+        /// Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20 users
+        /// for the specified Amazon Chime account. Currently, only <code>LicenseType</code> updates
+        /// are supported for this action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateUser service method.</param>
         /// 
@@ -1388,9 +1388,9 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20
-        /// users for the specified Amazon Chime account. Currently, only <code>LicenseType</code>
-        /// updates are supported for this action.
+        /// Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20 users
+        /// for the specified Amazon Chime account. Currently, only <code>LicenseType</code> updates
+        /// are supported for this action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateUser service method.</param>
         /// <param name="cancellationToken">
@@ -2851,8 +2851,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot
-        /// use the Amazon Chime Business Calling product type. For numbers outside the US, you
-        /// must use the Amazon Chime SIP Media Application Dial-In product type.
+        /// use the Amazon Chime Business Calling product type. For numbers outside the U.S.,
+        /// you must use the Amazon Chime SIP Media Application Dial-In product type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePhoneNumberOrder service method.</param>
         /// 
@@ -2894,8 +2894,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot
-        /// use the Amazon Chime Business Calling product type. For numbers outside the US, you
-        /// must use the Amazon Chime SIP Media Application Dial-In product type.
+        /// use the Amazon Chime Business Calling product type. For numbers outside the U.S.,
+        /// you must use the Amazon Chime SIP Media Application Dial-In product type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePhoneNumberOrder service method.</param>
         /// <param name="cancellationToken">
@@ -14931,7 +14931,7 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Updates account details for the specified Amazon Chime account. Currently, only account
-        /// name updates are supported for this action.
+        /// name and default license updates are supported for this action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccount service method.</param>
         /// 
@@ -14970,7 +14970,7 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Updates account details for the specified Amazon Chime account. Currently, only account
-        /// name updates are supported for this action.
+        /// name and default license updates are supported for this action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccount service method.</param>
         /// <param name="cancellationToken">

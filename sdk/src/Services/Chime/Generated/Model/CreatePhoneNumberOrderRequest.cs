@@ -31,8 +31,8 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the CreatePhoneNumberOrder operation.
     /// Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot
-    /// use the Amazon Chime Business Calling product type. For numbers outside the US, you
-    /// must use the Amazon Chime SIP Media Application Dial-In product type.
+    /// use the Amazon Chime Business Calling product type. For numbers outside the U.S.,
+    /// you must use the Amazon Chime SIP Media Application Dial-In product type.
     /// </summary>
     public partial class CreatePhoneNumberOrderRequest : AmazonChimeRequest
     {

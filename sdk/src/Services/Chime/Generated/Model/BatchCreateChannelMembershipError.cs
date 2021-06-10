@@ -58,7 +58,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message. 
+        /// The error message.
         /// </para>
         /// </summary>
         public string ErrorMessage
