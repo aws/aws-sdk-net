@@ -97,6 +97,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetIncludeDeprecated())
+                {
+                    request.Parameters.Add("IncludeDeprecated", StringUtils.FromBool(publicRequest.IncludeDeprecated));
+                }
                 if(publicRequest.IsSetOwners())
                 {
                     int publicRequestlistValueIndex = 1;

@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// Recently deregistered images appear in the returned results for a short interval and
     /// then return empty results. After all instances that reference a deregistered AMI are
-    /// terminated, specifying the ID of the image results in an error indicating that the
-    /// AMI ID cannot be found.
+    /// terminated, specifying the ID of the image will eventually return an error indicating
+    /// that the AMI ID cannot be found.
     /// </para>
     /// </summary>
     public partial class DescribeImagesRequest : AmazonEC2Request
@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         private List<string> _executableUsers = new List<string>();
         private List<Filter> _filters = new List<Filter>();
         private List<string> _imageIds = new List<string>();
+        private bool? _includeDeprecated;
         private List<string> _owners = new List<string>();
 
         /// <summary>
@@ -260,6 +261,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetImageIds()
         {
             return this._imageIds != null && this._imageIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeDeprecated. 
+        /// <para>
+        /// If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>,
+        /// no deprecated AMIs are included in the response. If no value is specified, the default
+        /// value is <code>false</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are the AMI owner, all deprecated AMIs appear in the response regardless of
+        /// the value (<code>true</code> or <code>false</code>) that you set for this parameter.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool IncludeDeprecated
+        {
+            get { return this._includeDeprecated.GetValueOrDefault(); }
+            set { this._includeDeprecated = value; }
+        }
+
+        // Check to see if IncludeDeprecated property is set
+        internal bool IsSetIncludeDeprecated()
+        {
+            return this._includeDeprecated.HasValue; 
         }
 
         /// <summary>

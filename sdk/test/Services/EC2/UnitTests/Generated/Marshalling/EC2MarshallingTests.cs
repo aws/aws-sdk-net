@@ -6912,6 +6912,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableImageDeprecationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableImageDeprecation");
+
+            var request = InstantiateClassGenerator.Execute<DisableImageDeprecationRequest>();
+            var marshaller = new DisableImageDeprecationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableImageDeprecationResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableImageDeprecationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisableSerialConsoleAccessMarshallTest()
         {
             var operation = service_model.FindOperation("DisableSerialConsoleAccess");
@@ -7272,6 +7296,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = EnableFastSnapshotRestoresResponseUnmarshaller.Instance.Unmarshall(context)
                 as EnableFastSnapshotRestoresResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void EnableImageDeprecationMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableImageDeprecation");
+
+            var request = InstantiateClassGenerator.Execute<EnableImageDeprecationRequest>();
+            var marshaller = new EnableImageDeprecationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableImageDeprecationResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableImageDeprecationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

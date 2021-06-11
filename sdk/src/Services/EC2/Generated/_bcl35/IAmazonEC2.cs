@@ -10166,8 +10166,8 @@ namespace Amazon.EC2
         /// <para>
         /// Recently deregistered images appear in the returned results for a short interval and
         /// then return empty results. After all instances that reference a deregistered AMI are
-        /// terminated, specifying the ID of the image results in an error indicating that the
-        /// AMI ID cannot be found.
+        /// terminated, specifying the ID of the image will eventually return an error indicating
+        /// that the AMI ID cannot be found.
         /// </para>
         /// </summary>
         /// 
@@ -10188,8 +10188,8 @@ namespace Amazon.EC2
         /// <para>
         /// Recently deregistered images appear in the returned results for a short interval and
         /// then return empty results. After all instances that reference a deregistered AMI are
-        /// terminated, specifying the ID of the image results in an error indicating that the
-        /// AMI ID cannot be found.
+        /// terminated, specifying the ID of the image will eventually return an error indicating
+        /// that the AMI ID cannot be found.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
@@ -15004,6 +15004,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableImageDeprecation
+
+
+        /// <summary>
+        /// Cancels the deprecation of the specified AMI.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
+        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageDeprecation service method.</param>
+        /// 
+        /// <returns>The response from the DisableImageDeprecation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation">REST API Reference for DisableImageDeprecation Operation</seealso>
+        DisableImageDeprecationResponse DisableImageDeprecation(DisableImageDeprecationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableImageDeprecation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageDeprecation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableImageDeprecation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation">REST API Reference for DisableImageDeprecation Operation</seealso>
+        IAsyncResult BeginDisableImageDeprecation(DisableImageDeprecationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableImageDeprecation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableImageDeprecation.</param>
+        /// 
+        /// <returns>Returns a  DisableImageDeprecationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation">REST API Reference for DisableImageDeprecation Operation</seealso>
+        DisableImageDeprecationResponse EndDisableImageDeprecation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableSerialConsoleAccess
 
 
@@ -15753,6 +15799,52 @@ namespace Amazon.EC2
         /// <returns>Returns a  EnableFastSnapshotRestoresResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
         EnableFastSnapshotRestoresResponse EndEnableFastSnapshotRestores(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableImageDeprecation
+
+
+        /// <summary>
+        /// Enables deprecation of the specified AMI at the specified date and time.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
+        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageDeprecation service method.</param>
+        /// 
+        /// <returns>The response from the EnableImageDeprecation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation">REST API Reference for EnableImageDeprecation Operation</seealso>
+        EnableImageDeprecationResponse EnableImageDeprecation(EnableImageDeprecationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableImageDeprecation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageDeprecation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableImageDeprecation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation">REST API Reference for EnableImageDeprecation Operation</seealso>
+        IAsyncResult BeginEnableImageDeprecation(EnableImageDeprecationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableImageDeprecation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableImageDeprecation.</param>
+        /// 
+        /// <returns>Returns a  EnableImageDeprecationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation">REST API Reference for EnableImageDeprecation Operation</seealso>
+        EnableImageDeprecationResponse EndEnableImageDeprecation(IAsyncResult asyncResult);
 
         #endregion
         

@@ -79,6 +79,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("deprecationTime", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeprecationTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

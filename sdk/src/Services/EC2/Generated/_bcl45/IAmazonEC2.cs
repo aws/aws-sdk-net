@@ -9838,8 +9838,8 @@ namespace Amazon.EC2
         /// <para>
         /// Recently deregistered images appear in the returned results for a short interval and
         /// then return empty results. After all instances that reference a deregistered AMI are
-        /// terminated, specifying the ID of the image results in an error indicating that the
-        /// AMI ID cannot be found.
+        /// terminated, specifying the ID of the image will eventually return an error indicating
+        /// that the AMI ID cannot be found.
         /// </para>
         /// </summary>
         /// 
@@ -9861,8 +9861,8 @@ namespace Amazon.EC2
         /// <para>
         /// Recently deregistered images appear in the returned results for a short interval and
         /// then return empty results. After all instances that reference a deregistered AMI are
-        /// terminated, specifying the ID of the image results in an error indicating that the
-        /// AMI ID cannot be found.
+        /// terminated, specifying the ID of the image will eventually return an error indicating
+        /// that the AMI ID cannot be found.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
@@ -9885,8 +9885,8 @@ namespace Amazon.EC2
         /// <para>
         /// Recently deregistered images appear in the returned results for a short interval and
         /// then return empty results. After all instances that reference a deregistered AMI are
-        /// terminated, specifying the ID of the image results in an error indicating that the
-        /// AMI ID cannot be found.
+        /// terminated, specifying the ID of the image will eventually return an error indicating
+        /// that the AMI ID cannot be found.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -9912,8 +9912,8 @@ namespace Amazon.EC2
         /// <para>
         /// Recently deregistered images appear in the returned results for a short interval and
         /// then return empty results. After all instances that reference a deregistered AMI are
-        /// terminated, specifying the ID of the image results in an error indicating that the
-        /// AMI ID cannot be found.
+        /// terminated, specifying the ID of the image will eventually return an error indicating
+        /// that the AMI ID cannot be found.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
@@ -14881,6 +14881,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableImageDeprecation
+
+
+        /// <summary>
+        /// Cancels the deprecation of the specified AMI.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
+        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageDeprecation service method.</param>
+        /// 
+        /// <returns>The response from the DisableImageDeprecation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation">REST API Reference for DisableImageDeprecation Operation</seealso>
+        DisableImageDeprecationResponse DisableImageDeprecation(DisableImageDeprecationRequest request);
+
+
+
+        /// <summary>
+        /// Cancels the deprecation of the specified AMI.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
+        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageDeprecation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableImageDeprecation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation">REST API Reference for DisableImageDeprecation Operation</seealso>
+        Task<DisableImageDeprecationResponse> DisableImageDeprecationAsync(DisableImageDeprecationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableSerialConsoleAccess
 
 
@@ -15550,6 +15590,46 @@ namespace Amazon.EC2
         /// <returns>The response from the EnableFastSnapshotRestores service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
         Task<EnableFastSnapshotRestoresResponse> EnableFastSnapshotRestoresAsync(EnableFastSnapshotRestoresRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableImageDeprecation
+
+
+        /// <summary>
+        /// Enables deprecation of the specified AMI at the specified date and time.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
+        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageDeprecation service method.</param>
+        /// 
+        /// <returns>The response from the EnableImageDeprecation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation">REST API Reference for EnableImageDeprecation Operation</seealso>
+        EnableImageDeprecationResponse EnableImageDeprecation(EnableImageDeprecationRequest request);
+
+
+
+        /// <summary>
+        /// Enables deprecation of the specified AMI at the specified date and time.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
+        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageDeprecation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableImageDeprecation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation">REST API Reference for EnableImageDeprecation Operation</seealso>
+        Task<EnableImageDeprecationResponse> EnableImageDeprecationAsync(EnableImageDeprecationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
         private BootModeValues _bootMode;
         private string _creationDate;
+        private string _deprecationTime;
         private string _description;
         private bool? _enaSupport;
         private HypervisorType _hypervisor;
@@ -132,6 +133,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeprecationTime. 
+        /// <para>
+        /// The date and time to deprecate the AMI, in UTC, in the following format: <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z.
+        /// If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest
+        /// minute.
+        /// </para>
+        /// </summary>
+        public string DeprecationTime
+        {
+            get { return this._deprecationTime; }
+            set { this._deprecationTime = value; }
+        }
+
+        // Check to see if DeprecationTime property is set
+        internal bool IsSetDeprecationTime()
+        {
+            return this._deprecationTime != null;
         }
 
         /// <summary>
