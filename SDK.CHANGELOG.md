@@ -1,3 +1,16 @@
+### 3.7.53.0 (2021-06-11 18:19 UTC)
+* EC2 (3.7.10.0)
+	* Amazon EC2 adds new AMI property to flag outdated AMIs
+* MediaConnect (3.7.3.0)
+	* When you enable source failover, you can now designate one of two sources as the primary source. You can choose between two failover modes to prevent any disruption to the video stream. Merge combines the sources into a single stream. Failover allows switching between a primary and a backup stream.
+* MediaLive (3.7.4.0)
+	* AWS MediaLive now supports OCR-based conversion of DVB-Sub and SCTE-27 image-based source captions to WebVTT, and supports ingest of ad avail decorations in HLS input manifests.
+* Core 3.7.0.32
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.52.1 (2021-06-10 23:02 UTC)
 * S3 (3.7.1.1)
 	* Fixed an issue where ScanRange option for S3 Select is not working.
