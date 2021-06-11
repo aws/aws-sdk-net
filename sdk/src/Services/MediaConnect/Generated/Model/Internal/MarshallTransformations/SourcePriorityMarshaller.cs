@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FailoverConfig Marshaller
+    /// SourcePriority Marshaller
     /// </summary>       
-    public class FailoverConfigMarshaller : IRequestMarshaller<FailoverConfig, JsonMarshallerContext> 
+    public class SourcePriorityMarshaller : IRequestMarshaller<SourcePriority, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FailoverConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(SourcePriority requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFailoverMode())
+            if(requestObject.IsSetPrimarySource())
             {
-                context.Writer.WritePropertyName("failoverMode");
-                context.Writer.Write(requestObject.FailoverMode);
-            }
-
-            if(requestObject.IsSetRecoveryWindow())
-            {
-                context.Writer.WritePropertyName("recoveryWindow");
-                context.Writer.Write(requestObject.RecoveryWindow);
-            }
-
-            if(requestObject.IsSetSourcePriority())
-            {
-                context.Writer.WritePropertyName("sourcePriority");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SourcePriorityMarshaller.Instance;
-                marshaller.Marshall(requestObject.SourcePriority, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetState())
-            {
-                context.Writer.WritePropertyName("state");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WritePropertyName("primarySource");
+                context.Writer.Write(requestObject.PrimarySource);
             }
 
         }
@@ -79,7 +56,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static FailoverConfigMarshaller Instance = new FailoverConfigMarshaller();
+        public readonly static SourcePriorityMarshaller Instance = new SourcePriorityMarshaller();
 
     }
 }

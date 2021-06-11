@@ -33,8 +33,27 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class UpdateFailoverConfig
     {
+        private FailoverMode _failoverMode;
         private int? _recoveryWindow;
+        private SourcePriority _sourcePriority;
         private State _state;
+
+        /// <summary>
+        /// Gets and sets the property FailoverMode. The type of failover you choose for this
+        /// flow. MERGE combines the source streams into a single stream, allowing graceful recovery
+        /// from any single-source loss. FAILOVER allows switching between different streams.
+        /// </summary>
+        public FailoverMode FailoverMode
+        {
+            get { return this._failoverMode; }
+            set { this._failoverMode = value; }
+        }
+
+        // Check to see if FailoverMode property is set
+        internal bool IsSetFailoverMode()
+        {
+            return this._failoverMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RecoveryWindow. Recovery window time to look for dash-7
@@ -50,6 +69,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetRecoveryWindow()
         {
             return this._recoveryWindow.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourcePriority. The priority you want to assign to a source.
+        /// You can have a primary stream and a backup stream or two equally prioritized streams.
+        /// </summary>
+        public SourcePriority SourcePriority
+        {
+            get { return this._sourcePriority; }
+            set { this._sourcePriority = value; }
+        }
+
+        // Check to see if SourcePriority property is set
+        internal bool IsSetSourcePriority()
+        {
+            return this._sourcePriority != null;
         }
 
         /// <summary>

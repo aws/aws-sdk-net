@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FailoverConfig Object
+    /// Response Unmarshaller for SourcePriority Object
     /// </summary>  
-    public class FailoverConfigUnmarshaller : IUnmarshaller<FailoverConfig, XmlUnmarshallerContext>, IUnmarshaller<FailoverConfig, JsonUnmarshallerContext>
+    public class SourcePriorityUnmarshaller : IUnmarshaller<SourcePriority, XmlUnmarshallerContext>, IUnmarshaller<SourcePriority, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FailoverConfig IUnmarshaller<FailoverConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SourcePriority IUnmarshaller<SourcePriority, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FailoverConfig Unmarshall(JsonUnmarshallerContext context)
+        public SourcePriority Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FailoverConfig unmarshalledObject = new FailoverConfig();
+            SourcePriority unmarshalledObject = new SourcePriority();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("failoverMode", targetDepth))
+                if (context.TestExpression("primarySource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailoverMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recoveryWindow", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.RecoveryWindow = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourcePriority", targetDepth))
-                {
-                    var unmarshaller = SourcePriorityUnmarshaller.Instance;
-                    unmarshalledObject.SourcePriority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("state", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrimarySource = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static FailoverConfigUnmarshaller _instance = new FailoverConfigUnmarshaller();        
+        private static SourcePriorityUnmarshaller _instance = new SourcePriorityUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FailoverConfigUnmarshaller Instance
+        public static SourcePriorityUnmarshaller Instance
         {
             get
             {

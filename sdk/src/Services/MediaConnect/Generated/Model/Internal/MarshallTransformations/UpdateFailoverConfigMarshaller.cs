@@ -45,10 +45,27 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateFailoverConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFailoverMode())
+            {
+                context.Writer.WritePropertyName("failoverMode");
+                context.Writer.Write(requestObject.FailoverMode);
+            }
+
             if(requestObject.IsSetRecoveryWindow())
             {
                 context.Writer.WritePropertyName("recoveryWindow");
                 context.Writer.Write(requestObject.RecoveryWindow);
+            }
+
+            if(requestObject.IsSetSourcePriority())
+            {
+                context.Writer.WritePropertyName("sourcePriority");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SourcePriorityMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourcePriority, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetState())
