@@ -2529,6 +2529,72 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type DvbSubOcrLanguage.
+    /// </summary>
+    public class DvbSubOcrLanguage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEU for DvbSubOcrLanguage
+        /// </summary>
+        public static readonly DvbSubOcrLanguage DEU = new DvbSubOcrLanguage("DEU");
+        /// <summary>
+        /// Constant ENG for DvbSubOcrLanguage
+        /// </summary>
+        public static readonly DvbSubOcrLanguage ENG = new DvbSubOcrLanguage("ENG");
+        /// <summary>
+        /// Constant FRA for DvbSubOcrLanguage
+        /// </summary>
+        public static readonly DvbSubOcrLanguage FRA = new DvbSubOcrLanguage("FRA");
+        /// <summary>
+        /// Constant NLD for DvbSubOcrLanguage
+        /// </summary>
+        public static readonly DvbSubOcrLanguage NLD = new DvbSubOcrLanguage("NLD");
+        /// <summary>
+        /// Constant POR for DvbSubOcrLanguage
+        /// </summary>
+        public static readonly DvbSubOcrLanguage POR = new DvbSubOcrLanguage("POR");
+        /// <summary>
+        /// Constant SPA for DvbSubOcrLanguage
+        /// </summary>
+        public static readonly DvbSubOcrLanguage SPA = new DvbSubOcrLanguage("SPA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DvbSubOcrLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DvbSubOcrLanguage FindValue(string value)
+        {
+            return FindValue<DvbSubOcrLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DvbSubOcrLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Eac3AttenuationControl.
     /// </summary>
     public class Eac3AttenuationControl : ConstantClass
@@ -7071,6 +7137,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type HlsScte35SourceType.
+    /// </summary>
+    public class HlsScte35SourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANIFEST for HlsScte35SourceType
+        /// </summary>
+        public static readonly HlsScte35SourceType MANIFEST = new HlsScte35SourceType("MANIFEST");
+        /// <summary>
+        /// Constant SEGMENTS for HlsScte35SourceType
+        /// </summary>
+        public static readonly HlsScte35SourceType SEGMENTS = new HlsScte35SourceType("SEGMENTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsScte35SourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsScte35SourceType FindValue(string value)
+        {
+            return FindValue<HlsScte35SourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsScte35SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HlsSegmentationMode.
     /// </summary>
     public class HlsSegmentationMode : ConstantClass
@@ -11302,6 +11418,14 @@ namespace Amazon.MediaLive
         /// Constant AUDIO_NORMALIZATION for ReservationSpecialFeature
         /// </summary>
         public static readonly ReservationSpecialFeature AUDIO_NORMALIZATION = new ReservationSpecialFeature("AUDIO_NORMALIZATION");
+        /// <summary>
+        /// Constant MGHD for ReservationSpecialFeature
+        /// </summary>
+        public static readonly ReservationSpecialFeature MGHD = new ReservationSpecialFeature("MGHD");
+        /// <summary>
+        /// Constant MGUHD for ReservationSpecialFeature
+        /// </summary>
+        public static readonly ReservationSpecialFeature MGUHD = new ReservationSpecialFeature("MGUHD");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -11752,6 +11876,72 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Scte20Convert608To708(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Scte27OcrLanguage.
+    /// </summary>
+    public class Scte27OcrLanguage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEU for Scte27OcrLanguage
+        /// </summary>
+        public static readonly Scte27OcrLanguage DEU = new Scte27OcrLanguage("DEU");
+        /// <summary>
+        /// Constant ENG for Scte27OcrLanguage
+        /// </summary>
+        public static readonly Scte27OcrLanguage ENG = new Scte27OcrLanguage("ENG");
+        /// <summary>
+        /// Constant FRA for Scte27OcrLanguage
+        /// </summary>
+        public static readonly Scte27OcrLanguage FRA = new Scte27OcrLanguage("FRA");
+        /// <summary>
+        /// Constant NLD for Scte27OcrLanguage
+        /// </summary>
+        public static readonly Scte27OcrLanguage NLD = new Scte27OcrLanguage("NLD");
+        /// <summary>
+        /// Constant POR for Scte27OcrLanguage
+        /// </summary>
+        public static readonly Scte27OcrLanguage POR = new Scte27OcrLanguage("POR");
+        /// <summary>
+        /// Constant SPA for Scte27OcrLanguage
+        /// </summary>
+        public static readonly Scte27OcrLanguage SPA = new Scte27OcrLanguage("SPA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scte27OcrLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scte27OcrLanguage FindValue(string value)
+        {
+            return FindValue<Scte27OcrLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scte27OcrLanguage(string value)
         {
             return FindValue(value);
         }

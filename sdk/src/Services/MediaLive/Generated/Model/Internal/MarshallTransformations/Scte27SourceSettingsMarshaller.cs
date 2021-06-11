@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Scte27SourceSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetOcrLanguage())
+            {
+                context.Writer.WritePropertyName("ocrLanguage");
+                context.Writer.Write(requestObject.OcrLanguage);
+            }
+
             if(requestObject.IsSetPid())
             {
                 context.Writer.WritePropertyName("pid");

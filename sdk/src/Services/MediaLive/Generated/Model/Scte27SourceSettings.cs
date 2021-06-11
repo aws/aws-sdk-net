@@ -33,7 +33,25 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class Scte27SourceSettings
     {
+        private Scte27OcrLanguage _ocrLanguage;
         private int? _pid;
+
+        /// <summary>
+        /// Gets and sets the property OcrLanguage. If you will configure a WebVTT caption description
+        /// that references this caption selector, use this field toprovide the language to consider
+        /// when translating the image-based source to text.
+        /// </summary>
+        public Scte27OcrLanguage OcrLanguage
+        {
+            get { return this._ocrLanguage; }
+            set { this._ocrLanguage = value; }
+        }
+
+        // Check to see if OcrLanguage property is set
+        internal bool IsSetOcrLanguage()
+        {
+            return this._ocrLanguage != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Pid. The pid field is used in conjunction with the caption

@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private int? _bufferSegments;
         private int? _retries;
         private int? _retryInterval;
+        private HlsScte35SourceType _scte35Source;
 
         /// <summary>
         /// Gets and sets the property Bandwidth. When specified the HLS stream with the m3u8
@@ -108,6 +109,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRetryInterval()
         {
             return this._retryInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scte35Source. Identifies the source for the SCTE-35 messages
+        /// that MediaLive will ingest. Messages can be ingested from the content segments (in
+        /// the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35
+        /// information in the source that is not selected.
+        /// </summary>
+        public HlsScte35SourceType Scte35Source
+        {
+            get { return this._scte35Source; }
+            set { this._scte35Source = value; }
+        }
+
+        // Check to see if Scte35Source property is set
+        internal bool IsSetScte35Source()
+        {
+            return this._scte35Source != null;
         }
 
     }

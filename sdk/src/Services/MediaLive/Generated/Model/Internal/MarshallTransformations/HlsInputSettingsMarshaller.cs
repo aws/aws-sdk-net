@@ -69,6 +69,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RetryInterval);
             }
 
+            if(requestObject.IsSetScte35Source())
+            {
+                context.Writer.WritePropertyName("scte35Source");
+                context.Writer.Write(requestObject.Scte35Source);
+            }
+
         }
 
         /// <summary>

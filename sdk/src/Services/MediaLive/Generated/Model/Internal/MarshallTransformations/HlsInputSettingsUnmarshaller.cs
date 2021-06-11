@@ -88,6 +88,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.RetryInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scte35Source", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Scte35Source = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
