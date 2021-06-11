@@ -1,3 +1,7 @@
+### 3.7.52.1 (2021-06-10 23:02 UTC)
+* S3 (3.7.1.1)
+	* Fixed an issue where ScanRange option for S3 Select is not working.
+
 ### 3.7.52.0 (2021-06-10 18:23 UTC)
 * Appflow (3.7.2.0)
 	* Adding MAP_ALL task type support.
