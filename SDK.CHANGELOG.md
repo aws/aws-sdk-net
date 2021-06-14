@@ -1,3 +1,11 @@
+### 3.7.54.0 (2021-06-14 18:17 UTC)
+* GreengrassV2 (3.7.1.0)
+	* We have verified the APIs being released here and are ready to release
+* IoTAnalytics (3.7.1.0)
+	* Adds support for data store partitions.
+* LookoutMetrics (3.7.4.0)
+	* Added "LEARNING" status for anomaly detector and updated description for "Offset" parameter in MetricSet APIs.
+
 ### 3.7.53.0 (2021-06-11 18:19 UTC)
 * EC2 (3.7.10.0)
 	* Amazon EC2 adds new AMI property to flag outdated AMIs

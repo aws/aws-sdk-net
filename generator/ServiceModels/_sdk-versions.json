@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.53.0",
+    "ProductVersion" : "3.7.54.0",
     "CoreVersion"    : "3.7.0.32",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1090,7 +1090,7 @@
             "InPreview"               : false
         },
         "IoTAnalytics"                    : {
-            "Version" : "3.7.0.30",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.32"
@@ -2010,7 +2010,7 @@
             "InPreview"               : false
         },
         "GreengrassV2"                    : {
-            "Version" : "3.7.0.30",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.32"
@@ -2082,7 +2082,7 @@
             "InPreview"               : false
         },
         "LookoutMetrics"                  : {
-            "Version" : "3.7.3.1",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.32"
