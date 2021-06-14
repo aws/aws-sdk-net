@@ -29,34 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListComponentVersions operation.
-    /// Retrieves a paginated list of all versions for a component. Greater versions are listed
-    /// first.
+    /// Container for the parameters to the ListClientDevicesAssociatedWithCoreDevice operation.
+    /// Retrieves a paginated list of client devices that are associated with a core device.
     /// </summary>
-    public partial class ListComponentVersionsRequest : AmazonGreengrassV2Request
+    public partial class ListClientDevicesAssociatedWithCoreDeviceRequest : AmazonGreengrassV2Request
     {
-        private string _arn;
+        private string _coreDeviceThingName;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property CoreDeviceThingName. 
         /// <para>
-        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the component version.
+        /// The name of the core device. This is also the name of the AWS IoT thing.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Arn
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string CoreDeviceThingName
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._coreDeviceThingName; }
+            set { this._coreDeviceThingName = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if CoreDeviceThingName property is set
+        internal bool IsSetCoreDeviceThingName()
         {
-            return this._arn != null;
+            return this._coreDeviceThingName != null;
         }
 
         /// <summary>

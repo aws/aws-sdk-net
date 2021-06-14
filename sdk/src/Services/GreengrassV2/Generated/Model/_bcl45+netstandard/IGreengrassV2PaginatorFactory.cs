@@ -26,6 +26,11 @@ namespace Amazon.GreengrassV2.Model
     {
 
         /// <summary>
+        /// Paginator for ListClientDevicesAssociatedWithCoreDevice operation
+        ///</summary>
+        IListClientDevicesAssociatedWithCoreDevicePaginator ListClientDevicesAssociatedWithCoreDevice(ListClientDevicesAssociatedWithCoreDeviceRequest request);
+
+        /// <summary>
         /// Paginator for ListComponents operation
         ///</summary>
         IListComponentsPaginator ListComponents(ListComponentsRequest request);

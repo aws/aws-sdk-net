@@ -42,6 +42,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("GreengrassV2")]
+        public void ListClientDevicesAssociatedWithCoreDeviceTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListClientDevicesAssociatedWithCoreDeviceRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListClientDevicesAssociatedWithCoreDeviceResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListClientDevicesAssociatedWithCoreDeviceResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListClientDevicesAssociatedWithCoreDevice(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListClientDevicesAssociatedWithCoreDevice(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("GreengrassV2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListClientDevicesAssociatedWithCoreDeviceTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListClientDevicesAssociatedWithCoreDeviceRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListClientDevicesAssociatedWithCoreDeviceResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListClientDevicesAssociatedWithCoreDevice(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListClientDevicesAssociatedWithCoreDevice(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("GreengrassV2")]
         public void ListComponentsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListComponentsRequest>();

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.BatchAssociateClientDeviceWithCoreDeviceRequest.CoreDeviceThingName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.BatchDisassociateClientDeviceFromCoreDeviceRequest.CoreDeviceThingName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CancelDeploymentRequest.DeploymentId</property>
     <min>1</min>
   </property-value-rule>
@@ -135,6 +145,16 @@
     <pattern>arn:aws(-cn|-us-gov)?:iot:[^:]+:[0-9]+:(thing|thinggroup)/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.ListClientDevicesAssociatedWithCoreDeviceRequest.CoreDeviceThingName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.ListClientDevicesAssociatedWithCoreDeviceRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ListComponentsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -197,6 +217,29 @@
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.UntagResourceRequest.ResourceArn</property>
     <pattern>arn:aws(-cn|-us-gov)?:greengrass:[^:]+:(aws|[0-9]+):(components|deployments|coreDevices):.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.AssociateClientDeviceWithCoreDeviceEntry.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.AssociateClientDeviceWithCoreDeviceErrorEntry.Code</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.AssociateClientDeviceWithCoreDeviceErrorEntry.Message</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.AssociateClientDeviceWithCoreDeviceErrorEntry.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.AssociatedClientDevice.ThingName</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CloudComponentStatus.Message</property>
@@ -301,6 +344,24 @@
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.Deployment.TargetArn</property>
     <pattern>arn:aws(-cn|-us-gov)?:iot:[^:]+:[0-9]+:(thing|thinggroup)/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.DisassociateClientDeviceFromCoreDeviceEntry.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.DisassociateClientDeviceFromCoreDeviceErrorEntry.Code</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.DisassociateClientDeviceFromCoreDeviceErrorEntry.Message</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.DisassociateClientDeviceFromCoreDeviceErrorEntry.ThingName</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.EffectiveDeployment.Description</property>

@@ -29,59 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListComponentVersions operation.
-    /// Retrieves a paginated list of all versions for a component. Greater versions are listed
-    /// first.
+    /// This is the response object from the ListClientDevicesAssociatedWithCoreDevice operation.
     /// </summary>
-    public partial class ListComponentVersionsRequest : AmazonGreengrassV2Request
+    public partial class ListClientDevicesAssociatedWithCoreDeviceResponse : AmazonWebServiceResponse
     {
-        private string _arn;
-        private int? _maxResults;
+        private List<AssociatedClientDevice> _associatedClientDevices = new List<AssociatedClientDevice>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property AssociatedClientDevices. 
         /// <para>
-        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the component version.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to be returned per paginated request.
+        /// A list that describes the client devices that are associated with the core device.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public List<AssociatedClientDevice> AssociatedClientDevices
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._associatedClientDevices; }
+            set { this._associatedClientDevices = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if AssociatedClientDevices property is set
+        internal bool IsSetAssociatedClientDevices()
         {
-            return this._maxResults.HasValue; 
+            return this._associatedClientDevices != null && this._associatedClientDevices.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to be used for the next set of paginated results.
+        /// The token for the next set of results, or null if there are no additional results.
         /// </para>
         /// </summary>
         public string NextToken

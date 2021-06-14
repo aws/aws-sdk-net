@@ -63,6 +63,136 @@ namespace Amazon.GreengrassV2
 
 
         
+        #region  BatchAssociateClientDeviceWithCoreDevice
+
+
+        /// <summary>
+        /// Associate a list of client devices with a core device. Use this API operation to specify
+        /// which client devices can discover a core device through cloud discovery. With cloud
+        /// discovery, client devices connect to AWS IoT Greengrass to retrieve associated core
+        /// devices' connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+        /// cloud discovery</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Client devices are local IoT devices that connect to and communicate with an AWS IoT
+        /// Greengrass core device over MQTT. You can connect client devices to a core device
+        /// to sync MQTT messages and data to AWS IoT Core and interact with client devices in
+        /// AWS IoT Greengrass components. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
+        /// with local IoT devices</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateClientDeviceWithCoreDevice service method.</param>
+        /// 
+        /// <returns>The response from the BatchAssociateClientDeviceWithCoreDevice service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// AWS IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota. For example, you might have exceeded the
+        /// amount of times that you can retrieve device or deployment status per second.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice">REST API Reference for BatchAssociateClientDeviceWithCoreDevice Operation</seealso>
+        BatchAssociateClientDeviceWithCoreDeviceResponse BatchAssociateClientDeviceWithCoreDevice(BatchAssociateClientDeviceWithCoreDeviceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAssociateClientDeviceWithCoreDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateClientDeviceWithCoreDevice operation on AmazonGreengrassV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchAssociateClientDeviceWithCoreDevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice">REST API Reference for BatchAssociateClientDeviceWithCoreDevice Operation</seealso>
+        IAsyncResult BeginBatchAssociateClientDeviceWithCoreDevice(BatchAssociateClientDeviceWithCoreDeviceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchAssociateClientDeviceWithCoreDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchAssociateClientDeviceWithCoreDevice.</param>
+        /// 
+        /// <returns>Returns a  BatchAssociateClientDeviceWithCoreDeviceResult from GreengrassV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice">REST API Reference for BatchAssociateClientDeviceWithCoreDevice Operation</seealso>
+        BatchAssociateClientDeviceWithCoreDeviceResponse EndBatchAssociateClientDeviceWithCoreDevice(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchDisassociateClientDeviceFromCoreDevice
+
+
+        /// <summary>
+        /// Disassociate a list of client devices from a core device. After you disassociate a
+        /// client device from a core device, the client device won't be able to use cloud discovery
+        /// to retrieve the core device's connectivity information and certificates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateClientDeviceFromCoreDevice service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisassociateClientDeviceFromCoreDevice service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// AWS IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota. For example, you might have exceeded the
+        /// amount of times that you can retrieve device or deployment status per second.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchDisassociateClientDeviceFromCoreDevice">REST API Reference for BatchDisassociateClientDeviceFromCoreDevice Operation</seealso>
+        BatchDisassociateClientDeviceFromCoreDeviceResponse BatchDisassociateClientDeviceFromCoreDevice(BatchDisassociateClientDeviceFromCoreDeviceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDisassociateClientDeviceFromCoreDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateClientDeviceFromCoreDevice operation on AmazonGreengrassV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDisassociateClientDeviceFromCoreDevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchDisassociateClientDeviceFromCoreDevice">REST API Reference for BatchDisassociateClientDeviceFromCoreDevice Operation</seealso>
+        IAsyncResult BeginBatchDisassociateClientDeviceFromCoreDevice(BatchDisassociateClientDeviceFromCoreDeviceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDisassociateClientDeviceFromCoreDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDisassociateClientDeviceFromCoreDevice.</param>
+        /// 
+        /// <returns>Returns a  BatchDisassociateClientDeviceFromCoreDeviceResult from GreengrassV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchDisassociateClientDeviceFromCoreDevice">REST API Reference for BatchDisassociateClientDeviceFromCoreDevice Operation</seealso>
+        BatchDisassociateClientDeviceFromCoreDeviceResponse EndBatchDisassociateClientDeviceFromCoreDevice(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelDeployment
 
 
@@ -760,6 +890,63 @@ namespace Amazon.GreengrassV2
 
         #endregion
         
+        #region  ListClientDevicesAssociatedWithCoreDevice
+
+
+        /// <summary>
+        /// Retrieves a paginated list of client devices that are associated with a core device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClientDevicesAssociatedWithCoreDevice service method.</param>
+        /// 
+        /// <returns>The response from the ListClientDevicesAssociatedWithCoreDevice service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// AWS IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota. For example, you might have exceeded the
+        /// amount of times that you can retrieve device or deployment status per second.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListClientDevicesAssociatedWithCoreDevice">REST API Reference for ListClientDevicesAssociatedWithCoreDevice Operation</seealso>
+        ListClientDevicesAssociatedWithCoreDeviceResponse ListClientDevicesAssociatedWithCoreDevice(ListClientDevicesAssociatedWithCoreDeviceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClientDevicesAssociatedWithCoreDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClientDevicesAssociatedWithCoreDevice operation on AmazonGreengrassV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClientDevicesAssociatedWithCoreDevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListClientDevicesAssociatedWithCoreDevice">REST API Reference for ListClientDevicesAssociatedWithCoreDevice Operation</seealso>
+        IAsyncResult BeginListClientDevicesAssociatedWithCoreDevice(ListClientDevicesAssociatedWithCoreDeviceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClientDevicesAssociatedWithCoreDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClientDevicesAssociatedWithCoreDevice.</param>
+        /// 
+        /// <returns>Returns a  ListClientDevicesAssociatedWithCoreDeviceResult from GreengrassV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListClientDevicesAssociatedWithCoreDevice">REST API Reference for ListClientDevicesAssociatedWithCoreDevice Operation</seealso>
+        ListClientDevicesAssociatedWithCoreDeviceResponse EndListClientDevicesAssociatedWithCoreDevice(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListComponents
 
 
@@ -819,7 +1006,8 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Retrieves a paginated list of all versions for a component.
+        /// Retrieves a paginated list of all versions for a component. Greater versions are listed
+        /// first.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponentVersions service method.</param>
         /// 
