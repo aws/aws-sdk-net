@@ -29,32 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Information needed to define a schema.
+    /// Contains information about partitions in a data store.
     /// </summary>
-    public partial class SchemaDefinition
+    public partial class DatastorePartitions
     {
-        private List<Column> _columns = new List<Column>();
+        private List<DatastorePartition> _partitions = new List<DatastorePartition>();
 
         /// <summary>
-        /// Gets and sets the property Columns. 
+        /// Gets and sets the property Partitions. 
         /// <para>
-        /// Specifies one or more columns that store your data.
-        /// </para>
-        ///  
-        /// <para>
-        /// Each schema can have up to 100 columns. Each column can have up to 100 nested types.
+        ///  A list of partitions in a data store. 
         /// </para>
         /// </summary>
-        public List<Column> Columns
+        [AWSProperty(Min=0, Max=25)]
+        public List<DatastorePartition> Partitions
         {
-            get { return this._columns; }
-            set { this._columns = value; }
+            get { return this._partitions; }
+            set { this._partitions = value; }
         }
 
-        // Check to see if Columns property is set
-        internal bool IsSetColumns()
+        // Check to see if Partitions property is set
+        internal bool IsSetPartitions()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._partitions != null && this._partitions.Count > 0; 
         }
 
     }

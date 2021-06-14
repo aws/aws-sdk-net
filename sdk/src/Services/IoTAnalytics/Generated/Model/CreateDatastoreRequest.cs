@@ -30,11 +30,13 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDatastore operation.
-    /// Creates a data store, which is a repository for messages.
+    /// Creates a data store, which is a repository for messages. Only data stores that are
+    /// used to save pipeline data can be configured with <code>ParquetConfiguration</code>.
     /// </summary>
     public partial class CreateDatastoreRequest : AmazonIoTAnalyticsRequest
     {
         private string _datastoreName;
+        private DatastorePartitions _datastorePartitions;
         private DatastoreStorage _datastoreStorage;
         private FileFormatConfiguration _fileFormatConfiguration;
         private RetentionPeriod _retentionPeriod;
@@ -57,6 +59,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatastoreName()
         {
             return this._datastoreName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatastorePartitions. 
+        /// <para>
+        ///  Contains information about the partitions in a data store. 
+        /// </para>
+        /// </summary>
+        public DatastorePartitions DatastorePartitions
+        {
+            get { return this._datastorePartitions; }
+            set { this._datastorePartitions = value; }
+        }
+
+        // Check to see if DatastorePartitions property is set
+        internal bool IsSetDatastorePartitions()
+        {
+            return this._datastorePartitions != null;
         }
 
         /// <summary>

@@ -41,6 +41,15 @@ namespace Amazon.IoTAnalytics.Model
         /// Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon
         /// S3) objects that save your channel messages.
         /// </para>
+        ///  
+        /// <para>
+        /// You must use the full path for the key.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> S3Paths

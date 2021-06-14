@@ -76,6 +76,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("datastorePartitions", targetDepth))
+                {
+                    var unmarshaller = DatastorePartitionsUnmarshaller.Instance;
+                    unmarshalledObject.DatastorePartitions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fileFormatConfiguration", targetDepth))
                 {
                     var unmarshaller = FileFormatConfigurationUnmarshaller.Instance;

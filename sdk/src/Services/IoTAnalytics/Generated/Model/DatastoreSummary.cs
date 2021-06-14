@@ -35,6 +35,7 @@ namespace Amazon.IoTAnalytics.Model
     {
         private DateTime? _creationTime;
         private string _datastoreName;
+        private DatastorePartitions _datastorePartitions;
         private DatastoreStorageSummary _datastoreStorage;
         private FileFormatType _fileFormatType;
         private DateTime? _lastMessageArrivalTime;
@@ -76,6 +77,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatastoreName()
         {
             return this._datastoreName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatastorePartitions. 
+        /// <para>
+        ///  Contains information about the partitions in a data store. 
+        /// </para>
+        /// </summary>
+        public DatastorePartitions DatastorePartitions
+        {
+            get { return this._datastorePartitions; }
+            set { this._datastorePartitions = value; }
+        }
+
+        // Check to see if DatastorePartitions property is set
+        internal bool IsSetDatastorePartitions()
+        {
+            return this._datastorePartitions != null;
         }
 
         /// <summary>

@@ -575,6 +575,12 @@
     <pattern>[\w\.-]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.Partition.AttributeName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.Pipeline.Name</property>
     <min>1</min>
     <max>128</max>
@@ -641,6 +647,18 @@
     <property>Amazon.IoTAnalytics.Model.Tag.Value</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.TimestampPartition.AttributeName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.TimestampPartition.TimestampFormat</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[a-zA-Z0-9\s\[\]_,.'/:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.TriggeringDataset.Name</property>

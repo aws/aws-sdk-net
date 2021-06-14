@@ -71,6 +71,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatastoreName);
                 }
 
+                if(publicRequest.IsSetDatastorePartitions())
+                {
+                    context.Writer.WritePropertyName("datastorePartitions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DatastorePartitionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DatastorePartitions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDatastoreStorage())
                 {
                     context.Writer.WritePropertyName("datastoreStorage");

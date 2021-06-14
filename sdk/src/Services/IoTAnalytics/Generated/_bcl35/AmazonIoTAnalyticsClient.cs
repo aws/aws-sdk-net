@@ -623,7 +623,8 @@ namespace Amazon.IoTAnalytics
         #region  CreateDatastore
 
         /// <summary>
-        /// Creates a data store, which is a repository for messages.
+        /// Creates a data store, which is a repository for messages. Only data stores that are
+        /// used to save pipeline data can be configured with <code>ParquetConfiguration</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatastore service method.</param>
         /// 
