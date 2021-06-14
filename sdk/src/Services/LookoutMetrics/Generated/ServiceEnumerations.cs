@@ -274,6 +274,10 @@ namespace Amazon.LookoutMetrics
         /// Constant INACTIVE for AnomalyDetectorStatus
         /// </summary>
         public static readonly AnomalyDetectorStatus INACTIVE = new AnomalyDetectorStatus("INACTIVE");
+        /// <summary>
+        /// Constant LEARNING for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus LEARNING = new AnomalyDetectorStatus("LEARNING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

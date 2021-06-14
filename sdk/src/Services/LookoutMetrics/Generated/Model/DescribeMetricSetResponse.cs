@@ -236,7 +236,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property Offset. 
         /// <para>
-        /// The offset for the dataset.
+        /// The offset in seconds. Only supported for S3 and Redshift datasources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=432000)]
