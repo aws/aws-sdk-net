@@ -374,6 +374,101 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateBot
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex or
+        /// Amazon Lex V2 bot.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateBot service method.</param>
+        /// 
+        /// <returns>The response from the AssociateBot service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateBot">REST API Reference for AssociateBot Operation</seealso>
+        public virtual AssociateBotResponse AssociateBot(AssociateBotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateBotResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateBotResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex or
+        /// Amazon Lex V2 bot.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateBot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateBot service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateBot">REST API Reference for AssociateBot Operation</seealso>
+        public virtual Task<AssociateBotResponse> AssociateBotAsync(AssociateBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateBotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateBotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateInstanceStorageConfig
 
 
@@ -3121,6 +3216,83 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateBot
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Revokes authorization from the specified instance to access the specified Amazon Lex
+        /// or Amazon Lex V2 bot. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateBot service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateBot service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateBot">REST API Reference for DisassociateBot Operation</seealso>
+        public virtual DisassociateBotResponse DisassociateBot(DisassociateBotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateBotResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateBotResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Revokes authorization from the specified instance to access the specified Amazon Lex
+        /// or Amazon Lex V2 bot. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateBot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateBot service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateBot">REST API Reference for DisassociateBot Operation</seealso>
+        public virtual Task<DisassociateBotResponse> DisassociateBotAsync(DisassociateBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateBotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateBotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateInstanceStorageConfig
 
 
@@ -4006,6 +4178,83 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListApprovedOriginsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListApprovedOriginsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBots
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// For the specified version of Amazon Lex, returns a paginated list of all the Amazon
+        /// Lex bots currently associated with the instance. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBots service method.</param>
+        /// 
+        /// <returns>The response from the ListBots service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListBots">REST API Reference for ListBots Operation</seealso>
+        public virtual ListBotsResponse ListBots(ListBotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// For the specified version of Amazon Lex, returns a paginated list of all the Amazon
+        /// Lex bots currently associated with the instance. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBots service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBots service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListBots">REST API Reference for ListBots Operation</seealso>
+        public virtual Task<ListBotsResponse> ListBotsAsync(ListBotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListBotsResponse>(request, options, cancellationToken);
         }
 
         #endregion

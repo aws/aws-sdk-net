@@ -10,6 +10,11 @@
     <max>267</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateBotRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateInstanceStorageConfigRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -316,6 +321,11 @@
     <max>267</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateBotRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateInstanceStorageConfigRequest.AssociationId</property>
     <min>1</min>
     <max>100</max>
@@ -410,6 +420,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListApprovedOriginsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListBotsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListBotsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
   </property-value-rule>
@@ -1059,6 +1079,11 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.LexBot.Name</property>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.LexV2Bot.AliasArn</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.MediaConcurrency.Concurrency</property>

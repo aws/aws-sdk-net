@@ -895,6 +895,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type LexVersion.
+    /// </summary>
+    public class LexVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V1 for LexVersion
+        /// </summary>
+        public static readonly LexVersion V1 = new LexVersion("V1");
+        /// <summary>
+        /// Constant V2 for LexVersion
+        /// </summary>
+        public static readonly LexVersion V2 = new LexVersion("V2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LexVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LexVersion FindValue(string value)
+        {
+            return FindValue<LexVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LexVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PhoneNumberCountryCode.
     /// </summary>
     public class PhoneNumberCountryCode : ConstantClass

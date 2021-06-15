@@ -134,7 +134,12 @@ namespace Amazon.Connect.Model
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
         /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
-        ///  <dl> <dt>ABANDON_TIME</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        /// This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING
+        /// metric missing from the documented list). 
+        /// </para>
+        ///  </note> <dl> <dt>ABANDON_TIME</dt> <dd> 
         /// <para>
         /// Unit: SECONDS
         /// </para>
@@ -362,7 +367,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance.
+        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
+        /// ARN of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

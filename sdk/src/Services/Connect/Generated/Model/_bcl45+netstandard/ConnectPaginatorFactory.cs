@@ -60,6 +60,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListBots operation
+        ///</summary>
+        public IListBotsPaginator ListBots(ListBotsRequest request) 
+        {
+            return new ListBotsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContactFlows operation
         ///</summary>
         public IListContactFlowsPaginator ListContactFlows(ListContactFlowsRequest request) 

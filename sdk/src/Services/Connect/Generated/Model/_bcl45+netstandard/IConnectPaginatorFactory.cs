@@ -41,6 +41,11 @@ namespace Amazon.Connect.Model
         IListApprovedOriginsPaginator ListApprovedOrigins(ListApprovedOriginsRequest request);
 
         /// <summary>
+        /// Paginator for ListBots operation
+        ///</summary>
+        IListBotsPaginator ListBots(ListBotsRequest request);
+
+        /// <summary>
         /// Paginator for ListContactFlows operation
         ///</summary>
         IListContactFlowsPaginator ListContactFlows(ListContactFlowsRequest request);

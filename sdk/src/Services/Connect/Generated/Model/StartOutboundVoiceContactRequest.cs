@@ -93,8 +93,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
         /// the request. The token is valid for 7 days after creation. If a contact is already
-        /// started, the contact ID is returned. If the contact is disconnected, a new contact
-        /// is started.
+        /// started, the contact ID is returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -160,7 +159,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance.
+        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
+        /// ARN of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
