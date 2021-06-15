@@ -36,6 +36,14 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.SqlParameter.Name</property>
+    <pattern>^[0-9a-zA-Z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.SqlParameter.Value</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.StatementData.StatementName</property>
     <min>0</min>
     <max>500</max>

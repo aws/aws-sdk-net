@@ -99,6 +99,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QueryParameters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SqlParameter, SqlParameterUnmarshaller>(SqlParameterUnmarshaller.Instance);
+                    response.QueryParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("QueryString", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

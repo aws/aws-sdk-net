@@ -41,6 +41,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _error;
         private bool? _hasResultSet;
         private string _id;
+        private List<SqlParameter> _queryParameters = new List<SqlParameter>();
         private string _queryString;
         private long? _redshiftPid;
         private long? _redshiftQueryId;
@@ -196,6 +197,25 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryParameters. 
+        /// <para>
+        /// The parameters for the SQL statement.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<SqlParameter> QueryParameters
+        {
+            get { return this._queryParameters; }
+            set { this._queryParameters = value; }
+        }
+
+        // Check to see if QueryParameters property is set
+        internal bool IsSetQueryParameters()
+        {
+            return this._queryParameters != null && this._queryParameters.Count > 0; 
         }
 
         /// <summary>

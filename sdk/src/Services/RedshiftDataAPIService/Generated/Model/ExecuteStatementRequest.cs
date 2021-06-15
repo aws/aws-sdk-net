@@ -52,6 +52,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _clusterIdentifier;
         private string _database;
         private string _dbUser;
+        private List<SqlParameter> _parameters = new List<SqlParameter>();
         private string _secretArn;
         private string _sql;
         private string _statementName;
@@ -113,6 +114,25 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetDbUser()
         {
             return this._dbUser != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The parameters for the SQL statement.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<SqlParameter> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
         /// <summary>
