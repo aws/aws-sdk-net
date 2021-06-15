@@ -93,6 +93,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.LocaleId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("multipleValuesSetting", targetDepth))
+                {
+                    var unmarshaller = MultipleValuesSettingUnmarshaller.Instance;
+                    response.MultipleValuesSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("obfuscationSetting", targetDepth))
                 {
                     var unmarshaller = ObfuscationSettingUnmarshaller.Instance;

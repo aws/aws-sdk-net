@@ -36,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     /// 
     ///  
     /// <para>
-    /// You can create a resource policy statement that allows cross-account access.
+    /// You can't create a resource policy statement that allows cross-account access.
     /// </para>
     /// </summary>
     public partial class CreateResourcePolicyStatementRequest : AmazonLexModelsV2Request

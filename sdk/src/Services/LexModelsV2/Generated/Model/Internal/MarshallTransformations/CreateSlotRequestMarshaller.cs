@@ -83,6 +83,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetMultipleValuesSetting())
+                {
+                    context.Writer.WritePropertyName("multipleValuesSetting");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MultipleValuesSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MultipleValuesSetting, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetObfuscationSetting())
                 {
                     context.Writer.WritePropertyName("obfuscationSetting");

@@ -718,7 +718,7 @@ namespace Amazon.LexModelsV2
         /// 
         ///  
         /// <para>
-        /// You can create a resource policy statement that allows cross-account access.
+        /// You can't create a resource policy statement that allows cross-account access.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourcePolicyStatement service method.</param>
@@ -757,7 +757,7 @@ namespace Amazon.LexModelsV2
         /// 
         ///  
         /// <para>
-        /// You can create a resource policy statement that allows cross-account access.
+        /// You can't create a resource policy statement that allows cross-account access.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourcePolicyStatement service method.</param>
@@ -3320,7 +3320,14 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Updates the password used to encrypt an export zip archive.
+        /// Updates the password used to protect an export zip archive.
+        /// 
+        ///  
+        /// <para>
+        /// The password is not required. If you don't supply a password, Amazon Lex generates
+        /// a zip file that is not protected by a password. This is the archive that is available
+        /// at the pre-signed S3 URL provided by the operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateExport service method.</param>
         /// 
@@ -3349,7 +3356,14 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Updates the password used to encrypt an export zip archive.
+        /// Updates the password used to protect an export zip archive.
+        /// 
+        ///  
+        /// <para>
+        /// The password is not required. If you don't supply a password, Amazon Lex generates
+        /// a zip file that is not protected by a password. This is the archive that is available
+        /// at the pre-signed S3 URL provided by the operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateExport service method.</param>
         /// <param name="cancellationToken">

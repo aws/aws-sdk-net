@@ -40,6 +40,7 @@ namespace Amazon.LexModelsV2.Model
         private string _intentId;
         private DateTime? _lastUpdatedDateTime;
         private string _localeId;
+        private MultipleValuesSetting _multipleValuesSetting;
         private ObfuscationSetting _obfuscationSetting;
         private string _slotId;
         private string _slotName;
@@ -174,6 +175,28 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetLocaleId()
         {
             return this._localeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultipleValuesSetting. 
+        /// <para>
+        /// Indicates whether the slot accepts multiple values in a single utterance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public MultipleValuesSetting MultipleValuesSetting
+        {
+            get { return this._multipleValuesSetting; }
+            set { this._multipleValuesSetting = value; }
+        }
+
+        // Check to see if MultipleValuesSetting property is set
+        internal bool IsSetMultipleValuesSetting()
+        {
+            return this._multipleValuesSetting != null;
         }
 
         /// <summary>
