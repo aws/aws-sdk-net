@@ -6435,6 +6435,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M5dnLarge = new InstanceType("m5dn.large");
         /// <summary>
+        /// Constant M5dnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dnMetal = new InstanceType("m5dn.metal");
+        /// <summary>
         /// Constant M5dnXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M5dnXlarge = new InstanceType("m5dn.xlarge");
@@ -6478,6 +6482,10 @@ namespace Amazon.EC2
         /// Constant M5nLarge for InstanceType
         /// </summary>
         public static readonly InstanceType M5nLarge = new InstanceType("m5n.large");
+        /// <summary>
+        /// Constant M5nMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5nMetal = new InstanceType("m5n.metal");
         /// <summary>
         /// Constant M5nXlarge for InstanceType
         /// </summary>
@@ -6851,6 +6859,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R5dnLarge = new InstanceType("r5dn.large");
         /// <summary>
+        /// Constant R5dnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dnMetal = new InstanceType("r5dn.metal");
+        /// <summary>
         /// Constant R5dnXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5dnXlarge = new InstanceType("r5dn.xlarge");
@@ -6894,6 +6906,10 @@ namespace Amazon.EC2
         /// Constant R5nLarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5nLarge = new InstanceType("r5n.large");
+        /// <summary>
+        /// Constant R5nMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5nMetal = new InstanceType("r5n.metal");
         /// <summary>
         /// Constant R5nXlarge for InstanceType
         /// </summary>
