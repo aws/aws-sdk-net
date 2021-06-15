@@ -58,7 +58,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value returned to Amazon Lex when a user chooses the button.
+        /// The value returned to Amazon Lex V2 when a user chooses the button.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

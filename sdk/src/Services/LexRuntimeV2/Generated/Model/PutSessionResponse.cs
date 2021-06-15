@@ -103,9 +103,9 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property RequestAttributes. 
         /// <para>
-        /// Request-specific information passed between the client application and Amazon Lex.
-        /// These are the same as the <code>requestAttribute</code> parameter in the call to the
-        /// <code>PutSession</code> operation.
+        /// Request-specific information passed between the client application and Amazon Lex
+        /// V2. These are the same as the <code>requestAttribute</code> parameter in the call
+        /// to the <code>PutSession</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

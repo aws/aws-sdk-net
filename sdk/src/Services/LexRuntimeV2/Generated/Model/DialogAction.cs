@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
-    /// The next action that Amazon Lex should take.
+    /// The next action that Amazon Lex V2 should take.
     /// </summary>
     public partial class DialogAction
     {
@@ -73,7 +73,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Delegate</code> - The next action is determined by Amazon Lex.
+        ///  <code>Delegate</code> - The next action is determined by Amazon Lex V2.
         /// </para>
         ///  </li> <li> 
         /// <para>

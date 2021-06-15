@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
-    /// An intent that Amazon Lex determined might satisfy the user's utterance. The intents
+    /// An intent that Amazon Lex V2 determined might satisfy the user's utterance. The intents
     /// are ordered by the confidence score.
     /// </summary>
     public partial class Interpretation
@@ -60,7 +60,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property NluConfidence. 
         /// <para>
-        /// Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>,
+        /// Determines the threshold where Amazon Lex V2 will insert the <code>AMAZON.FallbackIntent</code>,
         /// <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents
         /// in a response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code>
         /// are only inserted if they are configured for the bot.

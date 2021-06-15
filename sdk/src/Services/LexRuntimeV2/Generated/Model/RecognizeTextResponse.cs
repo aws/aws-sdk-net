@@ -42,12 +42,13 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property Interpretations. 
         /// <para>
-        /// A list of intents that Amazon Lex determined might satisfy the user's utterance. 
+        /// A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.
+        /// 
         /// </para>
         ///  
         /// <para>
         /// Each interpretation includes the intent, a score that indicates now confident Amazon
-        /// Lex is that the interpretation is the correct one, and an optional sentiment response
+        /// Lex V2 is that the interpretation is the correct one, and an optional sentiment response
         /// that indicates the sentiment expressed in the utterance.
         /// </para>
         /// </summary>

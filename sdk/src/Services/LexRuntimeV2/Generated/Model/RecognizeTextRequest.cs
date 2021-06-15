@@ -30,13 +30,13 @@ namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
     /// Container for the parameters to the RecognizeText operation.
-    /// Sends user input to Amazon Lex. Client applications use this API to send requests
-    /// to Amazon Lex at runtime. Amazon Lex then interprets the user input using the machine
-    /// learning model that it build for the bot.
+    /// Sends user input to Amazon Lex V2. Client applications use this API to send requests
+    /// to Amazon Lex V2 at runtime. Amazon Lex V2 then interprets the user input using the
+    /// machine learning model that it build for the bot.
     /// 
     ///  
     /// <para>
-    /// In response, Amazon Lex returns the next message to convey to the user and an optional
+    /// In response, Amazon Lex V2 returns the next message to convey to the user and an optional
     /// response card to display.
     /// </para>
     /// </summary>
@@ -111,7 +111,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// Gets and sets the property RequestAttributes. 
         /// <para>
         /// Request-specific information passed between the client application and Amazon Lex
-        /// 
+        /// V2 
         /// </para>
         ///  
         /// <para>
@@ -171,7 +171,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The text that the user entered. Amazon Lex interprets this text.
+        /// The text that the user entered. Amazon Lex V2 interprets this text.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

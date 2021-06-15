@@ -29,11 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
-    /// A value that Amazon Lex uses to fulfill an intent.
+    /// A value that Amazon Lex V2 uses to fulfill an intent.
     /// </summary>
     public partial class Slot
     {
+        private Shape _shape;
         private Value _value;
+        private List<Slot> _values = new List<Slot>();
+
+        /// <summary>
+        /// Gets and sets the property Shape. 
+        /// <para>
+        /// When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code>
+        /// field contains a list of slot values. When the value is <code>Scalar</code>, it indicates
+        /// that the <code>value</code> field contains a single value.
+        /// </para>
+        /// </summary>
+        public Shape Shape
+        {
+            get { return this._shape; }
+            set { this._shape = value; }
+        }
+
+        // Check to see if Shape property is set
+        internal bool IsSetShape()
+        {
+            return this._shape != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Value. 
@@ -51,6 +73,26 @@ namespace Amazon.LexRuntimeV2.Model
         internal bool IsSetValue()
         {
             return this._value != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// A list of one or more values that the user provided for the slot. For example, if
+        /// a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."
+        /// 
+        /// </para>
+        /// </summary>
+        public List<Slot> Values
+        {
+            get { return this._values; }
+            set { this._values = value; }
+        }
+
+        // Check to see if Values property is set
+        internal bool IsSetValues()
+        {
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

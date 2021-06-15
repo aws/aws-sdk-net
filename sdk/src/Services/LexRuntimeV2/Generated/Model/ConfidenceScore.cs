@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
-    /// Provides a score that indicates the confidence that Amazon Lex has that an intent
+    /// Provides a score that indicates the confidence that Amazon Lex V2 has that an intent
     /// is the one that satisfies the user's intent.
     /// </summary>
     public partial class ConfidenceScore
@@ -39,8 +39,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// A score that indicates how confident Amazon Lex is that an intent satisfies the user's
-        /// intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.
+        /// A score that indicates how confident Amazon Lex V2 is that an intent satisfies the
+        /// user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.
         /// </para>
         /// </summary>
         public double Score

@@ -30,15 +30,15 @@ namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
     /// Contains information about the contexts that a user is using in a session. You can
-    /// configure Amazon Lex to set a context when an intent is fulfilled, or you can set
+    /// configure Amazon Lex V2 to set a context when an intent is fulfilled, or you can set
     /// a context using the , , or operations.
     /// 
     ///  
     /// <para>
-    /// Use a context to indicate to Amazon Lex intents that should be used as follow-up intents.
-    /// For example, if the active context is <code>order-fulfilled</code>, only intents that
-    /// have <code>order-fulfilled</code> configured as a trigger are considered for follow
-    /// up.
+    /// Use a context to indicate to Amazon Lex V2 intents that should be used as follow-up
+    /// intents. For example, if the active context is <code>order-fulfilled</code>, only
+    /// intents that have <code>order-fulfilled</code> configured as a trigger are considered
+    /// for follow up.
     /// </para>
     /// </summary>
     public partial class ActiveContext
@@ -60,7 +60,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public Dictionary<string, string> ContextAttributes
         {
             get { return this._contextAttributes; }

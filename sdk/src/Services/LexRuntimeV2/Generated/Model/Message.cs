@@ -62,6 +62,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// Indicates the type of response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MessageContentType ContentType
         {
             get { return this._contentType; }

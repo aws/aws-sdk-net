@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
-    /// The state of the user's session with Amazon Lex.
+    /// The state of the user's session with Amazon Lex V2.
     /// </summary>
     public partial class SessionState
     {
@@ -42,9 +42,9 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property ActiveContexts. 
         /// <para>
-        /// One or more contexts that indicate to Amazon Lex the context of a request. When a
-        /// context is active, Amazon Lex considers intents with the matching context as a trigger
-        /// as the next intent in a session.
+        /// One or more contexts that indicate to Amazon Lex V2 the context of a request. When
+        /// a context is active, Amazon Lex V2 considers intents with the matching context as
+        /// a trigger as the next intent in a session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -63,7 +63,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property DialogAction. 
         /// <para>
-        /// The next step that Amazon Lex should take in the conversation with a user.
+        /// The next step that Amazon Lex V2 should take in the conversation with a user.
         /// </para>
         /// </summary>
         public DialogAction DialogAction
@@ -81,7 +81,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property Intent. 
         /// <para>
-        /// The active intent that Amazon Lex is processing.
+        /// The active intent that Amazon Lex V2 is processing.
         /// </para>
         /// </summary>
         public Intent Intent
@@ -116,7 +116,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// Gets and sets the property SessionAttributes. 
         /// <para>
         /// Map of key/value pairs representing session-specific context information. It contains
-        /// application information passed between Amazon Lex and a client application.
+        /// application information passed between Amazon Lex V2 and a client application.
         /// </para>
         /// </summary>
         public Dictionary<string, string> SessionAttributes

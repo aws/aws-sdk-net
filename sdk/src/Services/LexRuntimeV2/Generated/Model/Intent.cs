@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
-    /// The current intent that Amazon Lex is attempting to fulfill.
+    /// The current intent that Amazon Lex V2 is attempting to fulfill.
     /// </summary>
     public partial class Intent
     {

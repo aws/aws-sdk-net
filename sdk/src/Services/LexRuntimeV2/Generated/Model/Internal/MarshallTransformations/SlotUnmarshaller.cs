@@ -64,10 +64,22 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("shape", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Shape = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = ValueUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("values", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Slot, SlotUnmarshaller>(SlotUnmarshaller.Instance);
+                    unmarshalledObject.Values = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

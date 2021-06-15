@@ -337,7 +337,7 @@ namespace Amazon.LexRuntimeV2
         /// </para>
         ///  
         /// <para>
-        /// If the bot, alias, or session identifier doesn't exist, Amazon Lex returns a <code>BadRequestException</code>.
+        /// If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <code>BadRequestException</code>.
         /// If the locale doesn't exist or is not enabled for the alias, you receive a <code>BadRequestException</code>.
         /// </para>
         /// </summary>
@@ -388,7 +388,7 @@ namespace Amazon.LexRuntimeV2
 
 
         /// <summary>
-        /// Creates a new session or modifies an existing session with an Amazon Lex bot. Use
+        /// Creates a new session or modifies an existing session with an Amazon Lex V2 bot. Use
         /// this operation to enable your application to set the state of the bot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSession service method.</param>
@@ -447,13 +447,13 @@ namespace Amazon.LexRuntimeV2
 
 
         /// <summary>
-        /// Sends user input to Amazon Lex. Client applications use this API to send requests
-        /// to Amazon Lex at runtime. Amazon Lex then interprets the user input using the machine
-        /// learning model that it build for the bot.
+        /// Sends user input to Amazon Lex V2. Client applications use this API to send requests
+        /// to Amazon Lex V2 at runtime. Amazon Lex V2 then interprets the user input using the
+        /// machine learning model that it build for the bot.
         /// 
         ///  
         /// <para>
-        /// In response, Amazon Lex returns the next message to convey to the user and an optional
+        /// In response, Amazon Lex V2 returns the next message to convey to the user and an optional
         /// response card to display.
         /// </para>
         /// </summary>
@@ -513,9 +513,55 @@ namespace Amazon.LexRuntimeV2
 
 
         /// <summary>
-        /// Sends user input to Amazon Lex. You can send text or speech. Clients use this API
-        /// to send text and audio requests to Amazon Lex at runtime. Amazon Lex interprets the
-        /// user input using the machine learning model built for the bot.
+        /// Sends user input to Amazon Lex V2. You can send text or speech. Clients use this API
+        /// to send text and audio requests to Amazon Lex V2 at runtime. Amazon Lex V2 interprets
+        /// the user input using the machine learning model built for the bot.
+        /// 
+        ///  
+        /// <para>
+        /// The following request fields must be compressed with gzip and then base64 encoded
+        /// before you send them to Amazon Lex V2. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// requestAttributes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// sessionState
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following response fields are compressed using gzip and then base64 encoded by
+        /// Amazon Lex V2. Before you can use these fields, you must decode and decompress them.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// inputTranscript
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// interpretations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// messages
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// requestAttributes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// sessionState
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The example contains a Java application that compresses and encodes a Java object
+        /// to send to Amazon Lex V2, and a second that decodes and decompresses a response from
+        /// Amazon Lex V2.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RecognizeUtterance service method.</param>
         /// <param name="cancellationToken">

@@ -45,6 +45,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Slot requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetShape())
+            {
+                context.Writer.WritePropertyName("shape");
+                context.Writer.Write(requestObject.Shape);
+            }
+
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
@@ -54,6 +60,22 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Value, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetValues())
+            {
+                context.Writer.WritePropertyName("values");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectValuesListValue in requestObject.Values)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SlotMarshaller.Instance;
+                    marshaller.Marshall(requestObjectValuesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

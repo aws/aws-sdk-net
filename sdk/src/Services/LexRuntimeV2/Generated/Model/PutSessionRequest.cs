@@ -30,7 +30,7 @@ namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
     /// Container for the parameters to the PutSession operation.
-    /// Creates a new session or modifies an existing session with an Amazon Lex bot. Use
+    /// Creates a new session or modifies an existing session with an Amazon Lex V2 bot. Use
     /// this operation to enable your application to set the state of the bot.
     /// </summary>
     public partial class PutSessionRequest : AmazonLexRuntimeV2Request
@@ -124,7 +124,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property RequestAttributes. 
         /// <para>
-        /// Request-specific information passed between Amazon Lex and the client application.
+        /// Request-specific information passed between Amazon Lex V2 and the client application.
         /// </para>
         ///  
         /// <para>
@@ -147,13 +147,13 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property ResponseContentType. 
         /// <para>
-        /// The message that Amazon Lex returns in the response can be either text or speech depending
-        /// on the value of this parameter. 
+        /// The message that Amazon Lex V2 returns in the response can be either text or speech
+        /// depending on the value of this parameter. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in
-        /// the response.
+        /// If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text
+        /// in the response.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -194,7 +194,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <para>
         /// Sets the state of the session with the user. You can use this to set the current intent,
         /// attributes, context, and dialog action. Use the dialog action to determine the next
-        /// step that Amazon Lex should use in the conversation with the user.
+        /// step that Amazon Lex V2 should use in the conversation with the user.
         /// </para>
         /// </summary>
         public SessionState SessionStateValue

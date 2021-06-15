@@ -39,7 +39,7 @@ namespace Amazon.LexRuntimeV2.Model
     /// </para>
     ///  
     /// <para>
-    /// If the bot, alias, or session identifier doesn't exist, Amazon Lex returns a <code>BadRequestException</code>.
+    /// If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <code>BadRequestException</code>.
     /// If the locale doesn't exist or is not enabled for the alias, you receive a <code>BadRequestException</code>.
     /// </para>
     /// </summary>
