@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeCustomKeyStores operation
+    /// Response Unmarshaller for UpdatePrimaryRegion operation
     /// </summary>  
-    public class DescribeCustomKeyStoresResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdatePrimaryRegionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,31 +45,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeCustomKeyStoresResponse response = new DescribeCustomKeyStoresResponse();
+            UpdatePrimaryRegionResponse response = new UpdatePrimaryRegionResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("CustomKeyStores", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CustomKeyStoresListEntry, CustomKeyStoresListEntryUnmarshaller>(CustomKeyStoresListEntryUnmarshaller.Instance);
-                    response.CustomKeyStores = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextMarker", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextMarker = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Truncated", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.Truncated = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -92,25 +69,37 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("CustomKeyStoreNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledException"))
                 {
-                    return CustomKeyStoreNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMarkerException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArnException"))
                 {
-                    return InvalidMarkerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInternalException"))
                 {
                     return KMSInternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInvalidStateException"))
+                {
+                    return KMSInvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
+                {
+                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
+                {
+                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonKeyManagementServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeCustomKeyStoresResponseUnmarshaller _instance = new DescribeCustomKeyStoresResponseUnmarshaller();        
+        private static UpdatePrimaryRegionResponseUnmarshaller _instance = new UpdatePrimaryRegionResponseUnmarshaller();        
 
-        internal static DescribeCustomKeyStoresResponseUnmarshaller GetInstance()
+        internal static UpdatePrimaryRegionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +107,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeCustomKeyStoresResponseUnmarshaller Instance
+        public static UpdatePrimaryRegionResponseUnmarshaller Instance
         {
             get
             {

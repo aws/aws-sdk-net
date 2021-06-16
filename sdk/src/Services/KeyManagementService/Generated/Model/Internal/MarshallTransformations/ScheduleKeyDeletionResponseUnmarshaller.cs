@@ -63,6 +63,18 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     response.KeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KeyState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KeyState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PendingWindowInDays", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.PendingWindowInDays = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateKey Request Marshaller
+    /// ReplicateKey Request Marshaller
     /// </summary>       
-    public class CreateKeyRequestMarshaller : IMarshaller<IRequest, CreateKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ReplicateKeyRequestMarshaller : IMarshaller<IRequest, ReplicateKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateKeyRequest)input);
+            return this.Marshall((ReplicateKeyRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateKeyRequest publicRequest)
+        public IRequest Marshall(ReplicateKeyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KeyManagementService");
-            string target = "TrentService.CreateKey";
+            string target = "TrentService.ReplicateKey";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-01";            
@@ -73,46 +73,28 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BypassPolicyLockoutSafetyCheck);
                 }
 
-                if(publicRequest.IsSetCustomerMasterKeySpec())
-                {
-                    context.Writer.WritePropertyName("CustomerMasterKeySpec");
-                    context.Writer.Write(publicRequest.CustomerMasterKeySpec);
-                }
-
-                if(publicRequest.IsSetCustomKeyStoreId())
-                {
-                    context.Writer.WritePropertyName("CustomKeyStoreId");
-                    context.Writer.Write(publicRequest.CustomKeyStoreId);
-                }
-
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
                 }
 
-                if(publicRequest.IsSetKeyUsage())
+                if(publicRequest.IsSetKeyId())
                 {
-                    context.Writer.WritePropertyName("KeyUsage");
-                    context.Writer.Write(publicRequest.KeyUsage);
-                }
-
-                if(publicRequest.IsSetMultiRegion())
-                {
-                    context.Writer.WritePropertyName("MultiRegion");
-                    context.Writer.Write(publicRequest.MultiRegion);
-                }
-
-                if(publicRequest.IsSetOrigin())
-                {
-                    context.Writer.WritePropertyName("Origin");
-                    context.Writer.Write(publicRequest.Origin);
+                    context.Writer.WritePropertyName("KeyId");
+                    context.Writer.Write(publicRequest.KeyId);
                 }
 
                 if(publicRequest.IsSetPolicy())
                 {
                     context.Writer.WritePropertyName("Policy");
                     context.Writer.Write(publicRequest.Policy);
+                }
+
+                if(publicRequest.IsSetReplicaRegion())
+                {
+                    context.Writer.WritePropertyName("ReplicaRegion");
+                    context.Writer.Write(publicRequest.ReplicaRegion);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -140,9 +122,9 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateKeyRequestMarshaller _instance = new CreateKeyRequestMarshaller();        
+        private static ReplicateKeyRequestMarshaller _instance = new ReplicateKeyRequestMarshaller();        
 
-        internal static CreateKeyRequestMarshaller GetInstance()
+        internal static ReplicateKeyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -150,7 +132,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateKeyRequestMarshaller Instance
+        public static ReplicateKeyRequestMarshaller Instance
         {
             get
             {

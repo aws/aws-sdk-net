@@ -55,6 +55,14 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <a>CreateKey</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ReplicateKey</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>TagResource</a> 
     /// </para>
     ///  </li> <li> 
@@ -72,11 +80,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the customer master key (CMK).
+        /// Gets tags on the specified customer master key (CMK).
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+        /// Specify the key ID or key ARN of the CMK.
         /// </para>
         ///  
         /// <para>

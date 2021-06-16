@@ -60,9 +60,8 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-    /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
-    /// Developer Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -102,7 +101,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+        /// Specify the key ID or key ARN of the CMK.
         /// </para>
         ///  
         /// <para>

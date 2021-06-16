@@ -35,11 +35,18 @@ namespace Amazon.KeyManagementService.Model
     {
         private DateTime? _deletionDate;
         private string _keyId;
+        private KeyState _keyState;
+        private int? _pendingWindowInDays;
 
         /// <summary>
         /// Gets and sets the property DeletionDate. 
         /// <para>
         /// The date and time after which AWS KMS deletes the customer master key (CMK).
+        /// </para>
+        ///  
+        /// <para>
+        /// If the CMK is a multi-Region primary key with replica keys, this field does not appear.
+        /// The deletion date for the primary key isn't known until its last replica key is deleted.
         /// </para>
         /// </summary>
         public DateTime DeletionDate
@@ -72,6 +79,54 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetKeyId()
         {
             return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyState. 
+        /// <para>
+        /// The current status of the CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public KeyState KeyState
+        {
+            get { return this._keyState; }
+            set { this._keyState = value; }
+        }
+
+        // Check to see if KeyState property is set
+        internal bool IsSetKeyState()
+        {
+            return this._keyState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingWindowInDays. 
+        /// <para>
+        /// The waiting period before the CMK is deleted. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the CMK is a multi-Region primary key with replicas, the waiting period begins
+        /// when the last of its replica keys is deleted. Otherwise, the waiting period begins
+        /// immediately.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=365)]
+        public int PendingWindowInDays
+        {
+            get { return this._pendingWindowInDays.GetValueOrDefault(); }
+            set { this._pendingWindowInDays = value; }
+        }
+
+        // Check to see if PendingWindowInDays property is set
+        internal bool IsSetPendingWindowInDays()
+        {
+            return this._pendingWindowInDays.HasValue; 
         }
 
     }

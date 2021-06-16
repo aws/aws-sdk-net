@@ -33,36 +33,43 @@ namespace Amazon.KeyManagementService.Model
     /// Adds or edits tags on a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
     /// managed CMK</a>.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC
+    /// in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Each tag consists of a tag key and a tag value, both of which are case-sensitive strings.
-    /// The tag value can be an empty (null) string. 
-    /// </para>
-    ///  
-    /// <para>
-    /// To add a tag, specify a new tag key and a tag value. To edit a tag, specify an existing
-    /// tag key and a new tag value.
+    /// The tag value can be an empty (null) string. To add a tag, specify a new tag key and
+    /// a tag value. To edit a tag, specify an existing tag key and a new tag value.
     /// </para>
     ///  
     /// <para>
     /// You can use this operation to tag a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
     /// managed CMK</a>, but you cannot tag an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
     /// managed CMK</a>, an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">AWS
-    /// owned CMK</a>, or an alias.
+    /// owned CMK</a>, a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#keystore-concept">custom
+    /// key store</a>, or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#alias-concept">alias</a>.
     /// </para>
     ///  
     /// <para>
-    /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS resources</a> in the <i>Amazon Web Services General Reference</i>. For information
-    /// about using tags in AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
-    /// keys</a>.
+    /// You can also add tags to a CMK while creating it (<a>CreateKey</a>) or replicating
+    /// it (<a>ReplicateKey</a>).
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about using tags in AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+    /// keys</a>. For general information about tags, including the format and syntax, see
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+    /// resources</a> in the <i>Amazon Web Services General Reference</i>. 
     /// </para>
     ///  
     /// <para>
     /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-    /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
-    /// Developer Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -80,11 +87,19 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>UntagResource</a> 
+    ///  <a>CreateKey</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>ListResourceTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ReplicateKey</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UntagResource</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -100,7 +115,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+        /// Specify the key ID or key ARN of the CMK.
         /// </para>
         ///  
         /// <para>

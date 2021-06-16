@@ -30,21 +30,28 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAlias operation.
-    /// Creates a friendly name for a customer master key (CMK). You can use an alias to identify
-    /// a CMK in the AWS KMS console, in the <a>DescribeKey</a> operation and in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-    /// operations</a>, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. 
+    /// Creates a friendly name for a customer master key (CMK). 
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// You can also change the CMK that's associated with the alias (<a>UpdateAlias</a>)
-    /// or delete the alias (<a>DeleteAlias</a>) at any time. These operations don't affect
-    /// the underlying CMK. 
+    /// Adding, deleting, or updating an alias can allow or deny permission to the CMK. For
+    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
+    /// ABAC in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// You can use an alias to identify a CMK in the AWS KMS console, in the <a>DescribeKey</a>
+    /// operation and in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+    /// operations</a>, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. You can also change
+    /// the CMK that's associated with the alias (<a>UpdateAlias</a>) or delete the alias
+    /// (<a>DeleteAlias</a>) at any time. These operations don't affect the underlying CMK.
+    /// 
     /// </para>
     ///  
     /// <para>
     /// You can associate the alias with any customer managed CMK in the same AWS Region.
-    /// Each alias is associated with only on CMK at a time, but a CMK can have multiple aliases.
-    /// A valid CMK is required. You can't create an alias without a CMK.
+    /// Each alias is associated with only one CMK at a time, but a CMK can have multiple
+    /// aliases. A valid CMK is required. You can't create an alias without a CMK.
     /// </para>
     ///  
     /// <para>
@@ -61,9 +68,8 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-    /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
-    /// Developer Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -158,7 +164,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+        /// Specify the key ID or key ARN of the CMK.
         /// </para>
         ///  
         /// <para>

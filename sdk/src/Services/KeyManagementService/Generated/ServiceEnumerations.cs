@@ -671,6 +671,10 @@ namespace Amazon.KeyManagementService
     {
 
         /// <summary>
+        /// Constant Creating for KeyState
+        /// </summary>
+        public static readonly KeyState Creating = new KeyState("Creating");
+        /// <summary>
         /// Constant Disabled for KeyState
         /// </summary>
         public static readonly KeyState Disabled = new KeyState("Disabled");
@@ -687,9 +691,17 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly KeyState PendingImport = new KeyState("PendingImport");
         /// <summary>
+        /// Constant PendingReplicaDeletion for KeyState
+        /// </summary>
+        public static readonly KeyState PendingReplicaDeletion = new KeyState("PendingReplicaDeletion");
+        /// <summary>
         /// Constant Unavailable for KeyState
         /// </summary>
         public static readonly KeyState Unavailable = new KeyState("Unavailable");
+        /// <summary>
+        /// Constant Updating for KeyState
+        /// </summary>
+        public static readonly KeyState Updating = new KeyState("Updating");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -820,6 +832,56 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MultiRegionKeyType.
+    /// </summary>
+    public class MultiRegionKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIMARY for MultiRegionKeyType
+        /// </summary>
+        public static readonly MultiRegionKeyType PRIMARY = new MultiRegionKeyType("PRIMARY");
+        /// <summary>
+        /// Constant REPLICA for MultiRegionKeyType
+        /// </summary>
+        public static readonly MultiRegionKeyType REPLICA = new MultiRegionKeyType("REPLICA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MultiRegionKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiRegionKeyType FindValue(string value)
+        {
+            return FindValue<MultiRegionKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiRegionKeyType(string value)
         {
             return FindValue(value);
         }

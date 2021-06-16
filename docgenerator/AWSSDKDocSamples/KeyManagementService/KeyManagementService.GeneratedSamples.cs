@@ -123,7 +123,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceDescribeKey()
         {
-            #region to-obtain-information-about-a-cmk-1478565820907
+            #region get-key-details-1478565820907
 
             var response = client.DescribeKey(new DescribeKeyRequest 
             {

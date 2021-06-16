@@ -577,6 +577,34 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ReplicateKeyRequest.Description</property>
+    <min>0</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ReplicateKeyRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ReplicateKeyRequest.Policy</property>
+    <min>1</min>
+    <max>131072</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ReplicateKeyRequest.ReplicaRegion</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([a-z]+-){2,3}\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ReplicateKeyResponse.ReplicaPolicy</property>
+    <min>1</min>
+    <max>131072</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.RetireGrantRequest.GrantId</property>
     <min>1</min>
     <max>128</max>
@@ -615,6 +643,11 @@
     <property>Amazon.KeyManagementService.Model.ScheduleKeyDeletionResponse.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ScheduleKeyDeletionResponse.PendingWindowInDays</property>
+    <min>1</min>
+    <max>365</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.SignRequest.KeyId</property>
@@ -686,6 +719,17 @@
     <property>Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.UpdatePrimaryRegionRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.UpdatePrimaryRegionRequest.PrimaryRegion</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([a-z]+-){2,3}\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.VerifyRequest.KeyId</property>
@@ -811,6 +855,22 @@
     <property>Amazon.KeyManagementService.Model.KeyMetadata.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.KeyMetadata.PendingDeletionWindowInDays</property>
+    <min>1</min>
+    <max>365</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.MultiRegionKey.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.MultiRegionKey.Region</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([a-z]+-){2,3}\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.Tag.TagKey</property>

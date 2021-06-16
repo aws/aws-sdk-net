@@ -66,6 +66,13 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// A list of tags. Each tag consists of a tag key and a tag value.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC
+        /// in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Tag> Tags
         {

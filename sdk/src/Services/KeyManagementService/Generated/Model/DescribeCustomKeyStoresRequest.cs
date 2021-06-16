@@ -31,7 +31,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the DescribeCustomKeyStores operation.
     /// Gets information about <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-    /// key stores</a> in the account and region.
+    /// key stores</a> in the account and Region.
     /// 
     ///  
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// By default, this operation returns information about all custom key stores in the
-    /// account and region. To get only information about a particular custom key store, use
+    /// account and Region. To get only information about a particular custom key store, use
     /// either the <code>CustomKeyStoreName</code> or <code>CustomKeyStoreId</code> parameter
     /// (but not both).
     /// </para>
@@ -118,7 +118,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// By default, this operation gets information about all custom key stores in the account
-        /// and region. To limit the output to a particular custom key store, you can use either
+        /// and Region. To limit the output to a particular custom key store, you can use either
         /// the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
         /// not both.
         /// </para>
@@ -145,7 +145,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// By default, this operation gets information about all custom key stores in the account
-        /// and region. To limit the output to a particular custom key store, you can use either
+        /// and Region. To limit the output to a particular custom key store, you can use either
         /// the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
         /// not both.
         /// </para>

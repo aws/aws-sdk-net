@@ -54,7 +54,10 @@ namespace Amazon.KeyManagementService.Model
         private KeyManagerType _keyManager;
         private KeyState _keyState;
         private KeyUsageType _keyUsage;
+        private bool? _multiRegion;
+        private MultiRegionConfiguration _multiRegionConfiguration;
         private OriginType _origin;
+        private int? _pendingDeletionWindowInDays;
         private List<string> _signingAlgorithms = new List<string>();
         private DateTime? _validTo;
 
@@ -180,8 +183,16 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DeletionDate. 
         /// <para>
-        /// The date and time after which AWS KMS deletes the CMK. This value is present only
-        /// when <code>KeyState</code> is <code>PendingDeletion</code>.
+        /// The date and time after which AWS KMS deletes this CMK. This value is present only
+        /// when the CMK is scheduled for deletion, that is, when its <code>KeyState</code> is
+        /// <code>PendingDeletion</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the primary key in a multi-Region key is scheduled for deletion but still has
+        /// replica keys, its key state is <code>PendingReplicaDeletion</code> and the length
+        /// of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code>
+        /// field.
         /// </para>
         /// </summary>
         public DateTime DeletionDate
@@ -242,7 +253,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+        /// This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
         /// </para>
         /// </summary>
         public List<string> EncryptionAlgorithms
@@ -358,6 +369,70 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MultiRegion. 
+        /// <para>
+        /// Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>)
+        /// key. This value is <code>True</code> for multi-Region primary and replica CMKs and
+        /// <code>False</code> for regional CMKs.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+        /// multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool MultiRegion
+        {
+            get { return this._multiRegion.GetValueOrDefault(); }
+            set { this._multiRegion = value; }
+        }
+
+        // Check to see if MultiRegion property is set
+        internal bool IsSetMultiRegion()
+        {
+            return this._multiRegion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionConfiguration. 
+        /// <para>
+        /// Lists the primary and replica CMKs in same multi-Region CMK. This field is present
+        /// only when the value of the <code>MultiRegion</code> field is <code>True</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about any listed CMK, use the <a>DescribeKey</a> operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code>
+        /// or <code>REPLICA</code> key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This
+        /// field displays the current CMK if it is the primary key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This
+        /// field includes the current CMK if it is a replica key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public MultiRegionConfiguration MultiRegionConfiguration
+        {
+            get { return this._multiRegionConfiguration; }
+            set { this._multiRegionConfiguration = value; }
+        }
+
+        // Check to see if MultiRegionConfiguration property is set
+        internal bool IsSetMultiRegionConfiguration()
+        {
+            return this._multiRegionConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
         /// The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS
@@ -377,6 +452,40 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetOrigin()
         {
             return this._origin != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingDeletionWindowInDays. 
+        /// <para>
+        /// The waiting period before the primary key in a multi-Region key is deleted. This waiting
+        /// period begins when the last of its replica keys is deleted. This value is present
+        /// only when the <code>KeyState</code> of the CMK is <code>PendingReplicaDeletion</code>.
+        /// That indicates that the CMK is the primary key in a multi-Region key, it is scheduled
+        /// for deletion, and it still has existing replica keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a regional CMK or a replica key in a multi-Region key is scheduled for deletion,
+        /// its deletion date is displayed in the <code>DeletionDate</code> field. However, when
+        /// the primary key in a multi-Region key is scheduled for deletion, its waiting period
+        /// doesn't begin until all of its replica keys are deleted. This value displays that
+        /// waiting period. When the last replica key in the multi-Region key is deleted, the
+        /// <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code>
+        /// to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code>
+        /// field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=365)]
+        public int PendingDeletionWindowInDays
+        {
+            get { return this._pendingDeletionWindowInDays.GetValueOrDefault(); }
+            set { this._pendingDeletionWindowInDays = value; }
+        }
+
+        // Check to see if PendingDeletionWindowInDays property is set
+        internal bool IsSetPendingDeletionWindowInDays()
+        {
+            return this._pendingDeletionWindowInDays.HasValue; 
         }
 
         /// <summary>

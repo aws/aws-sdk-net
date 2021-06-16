@@ -143,12 +143,12 @@
         <value>
             <example>
                 <para>
-                    The following example returns information (metadata) about the specified CMK.
+                    The following example gets metadata about a symmetric CMK.
                 </para>
                 <code
-                    title="To obtain information about a customer master key (CMK)"
+                    title="To get details about a customer master key (CMK)"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-obtain-information-about-a-cmk-1478565820907" />
+                    region="get-key-details-1478565820907" />
             </example>
         </value>
     </doc>

@@ -133,8 +133,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK
-        /// in a different AWS account, you must use the key ARN.
+        /// Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account,
+        /// you must use the key ARN.
         /// </para>
         ///  
         /// <para>

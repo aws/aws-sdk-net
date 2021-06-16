@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeCustomKeyStores operation
+    /// Response Unmarshaller for ReplicateKey operation
     /// </summary>  
-    public class DescribeCustomKeyStoresResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ReplicateKeyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,28 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeCustomKeyStoresResponse response = new DescribeCustomKeyStoresResponse();
+            ReplicateKeyResponse response = new ReplicateKeyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CustomKeyStores", targetDepth))
+                if (context.TestExpression("ReplicaKeyMetadata", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CustomKeyStoresListEntry, CustomKeyStoresListEntryUnmarshaller>(CustomKeyStoresListEntryUnmarshaller.Instance);
-                    response.CustomKeyStores = unmarshaller.Unmarshall(context);
+                    var unmarshaller = KeyMetadataUnmarshaller.Instance;
+                    response.ReplicaKeyMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NextMarker", targetDepth))
+                if (context.TestExpression("ReplicaPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextMarker = unmarshaller.Unmarshall(context);
+                    response.ReplicaPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Truncated", targetDepth))
+                if (context.TestExpression("ReplicaTags", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.Truncated = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.ReplicaTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,25 +92,53 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("CustomKeyStoreNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AlreadyExistsException"))
                 {
-                    return CustomKeyStoreNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMarkerException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledException"))
                 {
-                    return InvalidMarkerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArnException"))
+                {
+                    return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInternalException"))
                 {
                     return KMSInternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInvalidStateException"))
+                {
+                    return KMSInvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                {
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedPolicyDocumentException"))
+                {
+                    return MalformedPolicyDocumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
+                {
+                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TagException"))
+                {
+                    return TagExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
+                {
+                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonKeyManagementServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeCustomKeyStoresResponseUnmarshaller _instance = new DescribeCustomKeyStoresResponseUnmarshaller();        
+        private static ReplicateKeyResponseUnmarshaller _instance = new ReplicateKeyResponseUnmarshaller();        
 
-        internal static DescribeCustomKeyStoresResponseUnmarshaller GetInstance()
+        internal static ReplicateKeyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +146,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeCustomKeyStoresResponseUnmarshaller Instance
+        public static ReplicateKeyResponseUnmarshaller Instance
         {
             get
             {

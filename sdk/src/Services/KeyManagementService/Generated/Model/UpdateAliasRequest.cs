@@ -32,9 +32,15 @@ namespace Amazon.KeyManagementService.Model
     /// Container for the parameters to the UpdateAlias operation.
     /// Associates an existing AWS KMS alias with a different customer master key (CMK). Each
     /// alias is associated with only one CMK at a time, although a CMK can have multiple
-    /// aliases. The alias and the CMK must be in the same AWS account and region.
+    /// aliases. The alias and the CMK must be in the same AWS account and Region.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Adding, deleting, or updating an alias can allow or deny permission to the CMK. For
+    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
+    /// ABAC in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The current and new CMK must be the same type (both symmetric or both asymmetric),
     /// and they must have the same key usage (<code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>).
@@ -58,9 +64,8 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-    /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
-    /// Developer Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -151,7 +156,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+        /// Specify the key ID or key ARN of the CMK.
         /// </para>
         ///  
         /// <para>

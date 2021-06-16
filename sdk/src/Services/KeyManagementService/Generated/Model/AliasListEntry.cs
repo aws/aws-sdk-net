@@ -78,7 +78,11 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate.
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// Date and time that the alias was most recently created in the account and Region.
+        /// Formatted as Unix time.
+        /// </para>
         /// </summary>
         public DateTime CreationDate
         {
@@ -93,7 +97,11 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdatedDate.
+        /// Gets and sets the property LastUpdatedDate. 
+        /// <para>
+        /// Date and time that the alias was most recently associated with a CMK in the account
+        /// and Region. Formatted as Unix time.
+        /// </para>
         /// </summary>
         public DateTime LastUpdatedDate
         {
@@ -110,7 +118,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property TargetKeyId. 
         /// <para>
-        /// String that contains the key identifier referred to by the alias.
+        /// String that contains the key identifier of the CMK associated with the alias.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

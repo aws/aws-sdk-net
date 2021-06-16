@@ -154,10 +154,28 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyUsage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MultiRegion", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.MultiRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MultiRegionConfiguration", targetDepth))
+                {
+                    var unmarshaller = MultiRegionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MultiRegionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Origin", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Origin = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PendingDeletionWindowInDays", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PendingDeletionWindowInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SigningAlgorithms", targetDepth))
