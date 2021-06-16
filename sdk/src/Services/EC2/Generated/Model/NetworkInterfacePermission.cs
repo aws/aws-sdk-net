@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID.
+        /// The account ID.
         /// </para>
         /// </summary>
         public string AwsAccountId
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AwsService. 
         /// <para>
-        /// The AWS service.
+        /// The Amazon Web Service.
         /// </para>
         /// </summary>
         public string AwsService

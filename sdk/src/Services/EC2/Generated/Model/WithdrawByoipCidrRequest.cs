@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// It can take a few minutes before traffic to the specified addresses stops routing
-    /// to AWS because of BGP propagation delays.
+    /// to Amazon Web Services because of BGP propagation delays.
     /// </para>
     /// </summary>
     public partial class WithdrawByoipCidrRequest : AmazonEC2Request

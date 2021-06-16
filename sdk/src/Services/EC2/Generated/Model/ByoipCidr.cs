@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Information about an address range that is provisioned for use with your AWS resources
-    /// through bring your own IP addresses (BYOIP).
+    /// Information about an address range that is provisioned for use with your Amazon Web
+    /// Services resources through bring your own IP addresses (BYOIP).
     /// </summary>
     public partial class ByoipCidr
     {

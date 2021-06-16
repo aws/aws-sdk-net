@@ -30,8 +30,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePrefixLists operation.
-    /// Describes available AWS services in a prefix list format, which includes the prefix
-    /// list name and prefix list ID of the service and the IP address range for the service.
+    /// Describes available Amazon Web Services services in a prefix list format, which includes
+    /// the prefix list name and prefix list ID of the service and the IP address range for
+    /// the service.
     /// 
     ///  
     /// <para>

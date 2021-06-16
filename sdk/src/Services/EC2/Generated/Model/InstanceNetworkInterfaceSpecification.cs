@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// You can only assign a carrier IP address to a network interface that is in a subnet
         /// in a Wavelength Zone. For more information about carrier IP addresses, see Carrier
-        /// IP addresses in the AWS Wavelength Developer Guide.
+        /// IP addresses in the Amazon Web Services Wavelength Developer Guide.
         /// </para>
         /// </summary>
         public bool AssociateCarrierIpAddress
@@ -187,10 +187,6 @@ namespace Amazon.EC2.Model
         /// To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
         /// Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
         /// </para>
         ///  
         /// <para>

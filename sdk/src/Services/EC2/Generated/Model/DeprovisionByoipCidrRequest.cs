@@ -30,9 +30,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeprovisionByoipCidr operation.
-    /// Releases the specified address range that you provisioned for use with your AWS resources
-    /// through bring your own IP addresses (BYOIP) and deletes the corresponding address
-    /// pool.
+    /// Releases the specified address range that you provisioned for use with your Amazon
+    /// Web Services resources through bring your own IP addresses (BYOIP) and deletes the
+    /// corresponding address pool.
     /// 
     ///  
     /// <para>

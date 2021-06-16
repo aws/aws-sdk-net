@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes prefixes for AWS services.
+    /// Describes prefixes for Amazon Web Services services.
     /// </summary>
     public partial class PrefixList
     {
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Cidrs. 
         /// <para>
-        /// The IP address range of the AWS service.
+        /// The IP address range of the Amazon Web Service.
         /// </para>
         /// </summary>
         public List<string> Cidrs

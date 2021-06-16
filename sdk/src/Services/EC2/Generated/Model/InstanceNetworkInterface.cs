@@ -129,7 +129,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>interface</code> | <code>efa</code> 
+        /// Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> 
         /// </para>
         /// </summary>
         public string InterfaceType
@@ -201,7 +201,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The ID of the AWS account that created the network interface.
+        /// The ID of the account that created the network interface.
         /// </para>
         /// </summary>
         public string OwnerId

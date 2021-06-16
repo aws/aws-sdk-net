@@ -552,8 +552,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS
-        /// resources through bring your own IP addresses (BYOIP).
+        /// Advertises an IPv4 or IPv6 address range that is provisioned for use with your Amazon
+        /// Web Services resources through bring your own IP addresses (BYOIP).
         /// 
         ///  
         /// <para>
@@ -563,14 +563,15 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// We recommend that you stop advertising the BYOIP CIDR from other locations when you
-        /// advertise it from AWS. To minimize down time, you can configure your AWS resources
-        /// to use an address from a BYOIP CIDR before it is advertised, and then simultaneously
-        /// stop advertising it from the current location and start advertising it through AWS.
+        /// advertise it from Amazon Web Services. To minimize down time, you can configure your
+        /// Amazon Web Services resources to use an address from a BYOIP CIDR before it is advertised,
+        /// and then simultaneously stop advertising it from the current location and start advertising
+        /// it through Amazon Web Services.
         /// </para>
         ///  
         /// <para>
         /// It can take a few minutes before traffic to the specified addresses starts routing
-        /// to AWS because of BGP propagation delays.
+        /// to Amazon Web Services because of BGP propagation delays.
         /// </para>
         ///  
         /// <para>
@@ -612,25 +613,25 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates an Elastic IP address to your AWS account. After you allocate the Elastic
-        /// IP address you can associate it with an instance or network interface. After you release
+        /// Allocates an Elastic IP address to your account. After you allocate the Elastic IP
+        /// address you can associate it with an instance or network interface. After you release
         /// an Elastic IP address, it is released to the IP address pool and can be allocated
-        /// to a different AWS account.
+        /// to a different account.
         /// 
         ///  
         /// <para>
-        /// You can allocate an Elastic IP address from an address pool owned by AWS or from an
-        /// address pool created from a public IPv4 address range that you have brought to AWS
-        /// for use with your AWS resources using bring your own IP addresses (BYOIP). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// You can allocate an Elastic IP address from an address pool owned by Amazon Web Services
+        /// or from an address pool created from a public IPv4 address range that you have brought
+        /// to Amazon Web Services for use with your Amazon Web Services resources using bring
+        /// your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
         /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
         /// cannot recover an Elastic IP address that you released after it is allocated to another
-        /// AWS account. You cannot recover an Elastic IP address for EC2-Classic. To attempt
-        /// to recover an Elastic IP address that you released, specify it in this operation.
+        /// account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to recover
+        /// an Elastic IP address that you released, specify it in this operation.
         /// </para>
         ///  
         /// <para>
@@ -664,25 +665,25 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates an Elastic IP address to your AWS account. After you allocate the Elastic
-        /// IP address you can associate it with an instance or network interface. After you release
+        /// Allocates an Elastic IP address to your account. After you allocate the Elastic IP
+        /// address you can associate it with an instance or network interface. After you release
         /// an Elastic IP address, it is released to the IP address pool and can be allocated
-        /// to a different AWS account.
+        /// to a different account.
         /// 
         ///  
         /// <para>
-        /// You can allocate an Elastic IP address from an address pool owned by AWS or from an
-        /// address pool created from a public IPv4 address range that you have brought to AWS
-        /// for use with your AWS resources using bring your own IP addresses (BYOIP). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// You can allocate an Elastic IP address from an address pool owned by Amazon Web Services
+        /// or from an address pool created from a public IPv4 address range that you have brought
+        /// to Amazon Web Services for use with your Amazon Web Services resources using bring
+        /// your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
         /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
         /// cannot recover an Elastic IP address that you released after it is allocated to another
-        /// AWS account. You cannot recover an Elastic IP address for EC2-Classic. To attempt
-        /// to recover an Elastic IP address that you released, specify it in this operation.
+        /// account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to recover
+        /// an Elastic IP address that you released, specify it in this operation.
         /// </para>
         ///  
         /// <para>
@@ -1310,6 +1311,53 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = AssociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateTransitGatewayRouteTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateTrunkInterface
+
+        internal virtual AssociateTrunkInterfaceResponse AssociateTrunkInterface(AssociateTrunkInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTrunkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTrunkInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateTrunkInterfaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a branch network interface with a trunk network interface.
+        /// 
+        ///  
+        /// <para>
+        /// Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
+        /// command and set <code>--interface-type</code> to <code>trunk</code>. You must also
+        /// create a network interface for each branch network interface that you want to associate
+        /// with the trunk network interface.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
+        /// Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTrunkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateTrunkInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTrunkInterface">REST API Reference for AssociateTrunkInterface Operation</seealso>
+        public virtual Task<AssociateTrunkInterfaceResponse> AssociateTrunkInterfaceAsync(AssociateTrunkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTrunkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTrunkInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateTrunkInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3569,12 +3617,12 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Grants an AWS-authorized account permission to attach the specified network interface
-        /// to an instance in their account.
+        /// Grants an Amazon Web Services-authorized account permission to attach the specified
+        /// network interface to an instance in their account.
         /// 
         ///  
         /// <para>
-        /// You can grant permission to a single AWS account only, and only one account at a time.
+        /// You can grant permission to a single account only, and only one account at a time.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterfacePermission service method.</param>
@@ -7421,9 +7469,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Releases the specified address range that you provisioned for use with your AWS resources
-        /// through bring your own IP addresses (BYOIP) and deletes the corresponding address
-        /// pool.
+        /// Releases the specified address range that you provisioned for use with your Amazon
+        /// Web Services resources through bring your own IP addresses (BYOIP) and deletes the
+        /// corresponding address pool.
         /// 
         ///  
         /// <para>
@@ -10322,7 +10370,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes your managed prefix lists and any AWS-managed prefix lists.
+        /// Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
         /// 
         ///  
         /// <para>
@@ -10742,8 +10790,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes available AWS services in a prefix list format, which includes the prefix
-        /// list name and prefix list ID of the service and the IP address range for the service.
+        /// Describes available Amazon Web Services services in a prefix list format, which includes
+        /// the prefix list name and prefix list ID of the service and the IP address range for
+        /// the service.
         /// 
         ///  
         /// <para>
@@ -12742,6 +12791,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTrunkInterfaceAssociations
+
+        internal virtual DescribeTrunkInterfaceAssociationsResponse DescribeTrunkInterfaceAssociations(DescribeTrunkInterfaceAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrunkInterfaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrunkInterfaceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrunkInterfaceAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more network interface trunk associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrunkInterfaceAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrunkInterfaceAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations">REST API Reference for DescribeTrunkInterfaceAssociations Operation</seealso>
+        public virtual Task<DescribeTrunkInterfaceAssociationsResponse> DescribeTrunkInterfaceAssociationsAsync(DescribeTrunkInterfaceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrunkInterfaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrunkInterfaceAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTrunkInterfaceAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVolumeAttribute
 
         internal virtual DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
@@ -14444,6 +14527,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DisassociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateTransitGatewayRouteTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateTrunkInterface
+
+        internal virtual DisassociateTrunkInterfaceResponse DisassociateTrunkInterface(DisassociateTrunkInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTrunkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTrunkInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateTrunkInterfaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes an association between a branch network interface with a trunk network interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTrunkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateTrunkInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface">REST API Reference for DisassociateTrunkInterface Operation</seealso>
+        public virtual Task<DisassociateTrunkInterfaceResponse> DisassociateTrunkInterfaceAsync(DisassociateTrunkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTrunkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTrunkInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateTrunkInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -18325,17 +18442,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Provisions an IPv4 or IPv6 address range for use with your AWS resources through bring
-        /// your own IP addresses (BYOIP) and creates a corresponding address pool. After the
-        /// address range is provisioned, it is ready to be advertised using <a>AdvertiseByoipCidr</a>.
+        /// Provisions an IPv4 or IPv6 address range for use with your Amazon Web Services resources
+        /// through bring your own IP addresses (BYOIP) and creates a corresponding address pool.
+        /// After the address range is provisioned, it is ready to be advertised using <a>AdvertiseByoipCidr</a>.
         /// 
         ///  
         /// <para>
-        /// AWS verifies that you own the address range and are authorized to advertise it. You
-        /// must ensure that the address range is registered to you and that you created an RPKI
-        /// ROA to authorize Amazon ASNs 16509 and 14618 to advertise the address range. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Amazon Web Services verifies that you own the address range and are authorized to
+        /// advertise it. You must ensure that the address range is registered to you and that
+        /// you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise the
+        /// address range. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// your own IP addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -19000,7 +19117,7 @@ namespace Amazon.EC2
         /// to update your DNS records and any servers or devices that communicate with the address.
         /// If you attempt to release an Elastic IP address that you already released, you'll
         /// get an <code>AuthFailure</code> error if the address is already allocated to another
-        /// AWS account.
+        /// account.
         /// </para>
         ///  
         /// <para>
@@ -20833,7 +20950,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// It can take a few minutes before traffic to the specified addresses stops routing
-        /// to AWS because of BGP propagation delays.
+        /// to Amazon Web Services because of BGP propagation delays.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the WithdrawByoipCidr service method.</param>

@@ -30,12 +30,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNetworkInterfacePermission operation.
-    /// Grants an AWS-authorized account permission to attach the specified network interface
-    /// to an instance in their account.
+    /// Grants an Amazon Web Services-authorized account permission to attach the specified
+    /// network interface to an instance in their account.
     /// 
     ///  
     /// <para>
-    /// You can grant permission to a single AWS account only, and only one account at a time.
+    /// You can grant permission to a single account only, and only one account at a time.
     /// </para>
     /// </summary>
     public partial class CreateNetworkInterfacePermissionRequest : AmazonEC2Request
@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID.
+        /// The account ID.
         /// </para>
         /// </summary>
         public string AwsAccountId
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AwsService. 
         /// <para>
-        /// The AWS service. Currently not supported.
+        /// The Amazon Web Service. Currently not supported.
         /// </para>
         /// </summary>
         public string AwsService

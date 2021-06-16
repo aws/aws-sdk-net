@@ -29,20 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeManagedPrefixLists operation.
-    /// Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
-    /// 
-    ///  
-    /// <para>
-    /// To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
-    /// </para>
+    /// Container for the parameters to the DescribeTrunkInterfaceAssociations operation.
+    /// Describes one or more network interface trunk associations.
     /// </summary>
-    public partial class DescribeManagedPrefixListsRequest : AmazonEC2Request
+    public partial class DescribeTrunkInterfaceAssociationsRequest : AmazonEC2Request
     {
+        private List<string> _associationIds = new List<string>();
         private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _prefixListIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AssociationIds. 
+        /// <para>
+        /// The IDs of the associations.
+        /// </para>
+        /// </summary>
+        public List<string> AssociationIds
+        {
+            get { return this._associationIds; }
+            set { this._associationIds = value; }
+        }
+
+        // Check to see if AssociationIds property is set
+        internal bool IsSetAssociationIds()
+        {
+            return this._associationIds != null && this._associationIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -51,15 +64,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The ID of the prefix list owner.
+        ///  <code>gre-key</code> - The ID of a trunk interface association.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>prefix-list-id</code> - The ID of the prefix list.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>prefix-list-name</code> - The name of the prefix list.
+        ///  <code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code>
+        /// and <code>GRE</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -82,7 +92,7 @@ namespace Amazon.EC2.Model
         /// results, make another call with the returned <code>nextToken</code> value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=5, Max=255)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -111,24 +121,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PrefixListIds. 
-        /// <para>
-        /// One or more prefix list IDs.
-        /// </para>
-        /// </summary>
-        public List<string> PrefixListIds
-        {
-            get { return this._prefixListIds; }
-            set { this._prefixListIds = value; }
-        }
-
-        // Check to see if PrefixListIds property is set
-        internal bool IsSetPrefixListIds()
-        {
-            return this._prefixListIds != null && this._prefixListIds.Count > 0; 
         }
 
     }

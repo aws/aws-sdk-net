@@ -7375,6 +7375,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type InterfaceProtocolType.
+    /// </summary>
+    public class InterfaceProtocolType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GRE for InterfaceProtocolType
+        /// </summary>
+        public static readonly InterfaceProtocolType GRE = new InterfaceProtocolType("GRE");
+        /// <summary>
+        /// Constant VLAN for InterfaceProtocolType
+        /// </summary>
+        public static readonly InterfaceProtocolType VLAN = new InterfaceProtocolType("VLAN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InterfaceProtocolType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InterfaceProtocolType FindValue(string value)
+        {
+            return FindValue<InterfaceProtocolType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InterfaceProtocolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Ipv6SupportValue.
     /// </summary>
     public class Ipv6SupportValue : ConstantClass
@@ -8403,9 +8453,17 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Branch for NetworkInterfaceCreationType
+        /// </summary>
+        public static readonly NetworkInterfaceCreationType Branch = new NetworkInterfaceCreationType("branch");
+        /// <summary>
         /// Constant Efa for NetworkInterfaceCreationType
         /// </summary>
         public static readonly NetworkInterfaceCreationType Efa = new NetworkInterfaceCreationType("efa");
+        /// <summary>
+        /// Constant Trunk for NetworkInterfaceCreationType
+        /// </summary>
+        public static readonly NetworkInterfaceCreationType Trunk = new NetworkInterfaceCreationType("trunk");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -8580,6 +8638,10 @@ namespace Amazon.EC2
         /// Constant NatGateway for NetworkInterfaceType
         /// </summary>
         public static readonly NetworkInterfaceType NatGateway = new NetworkInterfaceType("natGateway");
+        /// <summary>
+        /// Constant Trunk for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Trunk = new NetworkInterfaceType("trunk");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

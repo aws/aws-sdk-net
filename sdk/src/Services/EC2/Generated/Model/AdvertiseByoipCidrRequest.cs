@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AdvertiseByoipCidr operation.
-    /// Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS
-    /// resources through bring your own IP addresses (BYOIP).
+    /// Advertises an IPv4 or IPv6 address range that is provisioned for use with your Amazon
+    /// Web Services resources through bring your own IP addresses (BYOIP).
     /// 
     ///  
     /// <para>
@@ -41,14 +41,15 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// We recommend that you stop advertising the BYOIP CIDR from other locations when you
-    /// advertise it from AWS. To minimize down time, you can configure your AWS resources
-    /// to use an address from a BYOIP CIDR before it is advertised, and then simultaneously
-    /// stop advertising it from the current location and start advertising it through AWS.
+    /// advertise it from Amazon Web Services. To minimize down time, you can configure your
+    /// Amazon Web Services resources to use an address from a BYOIP CIDR before it is advertised,
+    /// and then simultaneously stop advertising it from the current location and start advertising
+    /// it through Amazon Web Services.
     /// </para>
     ///  
     /// <para>
     /// It can take a few minutes before traffic to the specified addresses starts routing
-    /// to AWS because of BGP propagation delays.
+    /// to Amazon Web Services because of BGP propagation delays.
     /// </para>
     ///  
     /// <para>

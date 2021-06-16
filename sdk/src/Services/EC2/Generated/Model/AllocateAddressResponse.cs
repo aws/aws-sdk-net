@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationId. 
         /// <para>
-        /// [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address
-        /// for use with instances in a VPC.
+        /// [EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the
+        /// Elastic IP address for use with instances in a VPC.
         /// </para>
         /// </summary>
         public string AllocationId

@@ -63,8 +63,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property NetworkBorderGroup. 
         /// <para>
         /// The name of the location from which the address pool is advertised. A network border
-        /// group is a unique set of Availability Zones or Local Zones from where AWS advertises
-        /// public IP addresses.
+        /// group is a unique set of Availability Zones or Local Zones from where Amazon Web Services
+        /// advertises public IP addresses.
         /// </para>
         /// </summary>
         public string NetworkBorderGroup

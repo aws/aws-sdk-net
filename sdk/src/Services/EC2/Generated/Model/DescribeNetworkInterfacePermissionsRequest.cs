@@ -56,11 +56,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface-permission.aws-account-id</code> - The AWS account ID.
+        ///  <code>network-interface-permission.aws-account-id</code> - The account ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface-permission.aws-service</code> - The AWS service.
+        ///  <code>network-interface-permission.aws-service</code> - The Amazon Web Service.
         /// </para>
         ///  </li> <li> 
         /// <para>
