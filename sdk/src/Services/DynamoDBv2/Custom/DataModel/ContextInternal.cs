@@ -124,17 +124,48 @@ namespace Amazon.DynamoDBv2.DataModel
         internal Table GetUnconfiguredTable(string tableName)
         {
             Table table;
-            lock (tablesMapLock)
+            
+            try
             {
-                if (!tablesMap.TryGetValue(tableName, out table))
+                _readerWriterLockSlim.EnterReadLock();
+
+                if (tablesMap.TryGetValue(tableName, out table))
                 {
-                    var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
-                        storeAsEpoch: null, isEmptyStringValueEnabled: false);
-                    table = Table.LoadTable(Client, emptyConfig);
-                    tablesMap[tableName] = table;
+                    return table;
                 }
             }
-            return table;
+            finally
+            {
+                if(_readerWriterLockSlim.IsReadLockHeld)
+                {
+                    _readerWriterLockSlim.ExitReadLock();
+                }
+            }
+
+            try
+            {
+                _readerWriterLockSlim.EnterWriteLock();
+                
+                // Check to see if another thread go the write lock before this thread and filled the cache.
+                if (tablesMap.TryGetValue(tableName, out table))
+                {
+                    return table;
+                }
+
+                var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
+                    storeAsEpoch: null, isEmptyStringValueEnabled: false);
+                table = Table.LoadTable(Client, emptyConfig);
+                tablesMap[tableName] = table;
+
+                return table;
+            }
+            finally
+            {
+                if(_readerWriterLockSlim.IsWriteLockHeld)
+                {
+                    _readerWriterLockSlim.ExitWriteLock();
+                }
+            }
         }
 
         internal static string GetTableName(string baseTableName, DynamoDBFlatConfig flatConfig)

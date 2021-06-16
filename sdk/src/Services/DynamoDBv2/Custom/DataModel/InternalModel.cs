@@ -22,7 +22,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-
+using System.Threading;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
@@ -571,7 +571,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Cache of ItemStorageConfig objects
     /// </summary>
-    internal class ItemStorageConfigCache
+    internal class ItemStorageConfigCache : IDisposable
     {
         // Cache of ItemStorageConfig objects per table and the
         // base, table-less ItemStorageConfig
@@ -591,6 +591,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private Dictionary<Type, ConfigTableCache> Cache;
         private DynamoDBContext Context;
+        private bool disposedValue;
+        private readonly ReaderWriterLockSlim _readerWriterLockSlim = new ReaderWriterLockSlim();
 
         public ItemStorageConfigCache(DynamoDBContext context)
         {
@@ -605,29 +607,81 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         public ItemStorageConfig GetConfig(Type type, DynamoDBFlatConfig flatConfig, bool conversionOnly = false)
         {
-            lock (Cache)
-            {                
-                ConfigTableCache tableCache;
-                if (!Cache.TryGetValue(type, out tableCache))
+            ConfigTableCache tableCache = null;
+            ItemStorageConfig config;
+            
+            string actualTableName = null;
+
+            try
+            {
+                _readerWriterLockSlim.EnterReadLock();
+
+                Cache.TryGetValue(type, out tableCache);
+                if(tableCache != null)
                 {
-                    var baseStorageConfig = CreateStorageConfig(type, actualTableName: null);
-                    tableCache = new ConfigTableCache(baseStorageConfig);
-                    Cache[type] = tableCache;
+                    // If this type is only used for conversion, do not attempt to populate the config from the table
+                    if (conversionOnly)
+                        return tableCache.BaseTypeConfig;
+
+                    actualTableName = DynamoDBContext.GetTableName(tableCache.BaseTableName, flatConfig);
+
+                    if (tableCache.Cache.TryGetValue(actualTableName, out config))
+                    {
+                        return config;
+                    }
+                }
+            }
+            finally
+            {
+                if(_readerWriterLockSlim.IsReadLockHeld)
+                {
+                    _readerWriterLockSlim.ExitReadLock();
+                }
+            }
+
+            try
+            {
+                _readerWriterLockSlim.EnterWriteLock();
+
+                if (tableCache == null)
+                {
+                    // Check to see if another thread go the write lock before this thread and filled the cache.
+                    Cache.TryGetValue(type, out tableCache);
+
+                    if (tableCache == null)
+                    {
+                        var baseStorageConfig = CreateStorageConfig(type, actualTableName: null);
+                        tableCache = new ConfigTableCache(baseStorageConfig);
+                        Cache[type] = tableCache;
+                    }
                 }
 
                 // If this type is only used for conversion, do not attempt to populate the config from the table
                 if (conversionOnly)
                     return tableCache.BaseTypeConfig;
 
-                string actualTableName = DynamoDBContext.GetTableName(tableCache.BaseTableName, flatConfig);
-
-                ItemStorageConfig config;
-                if (!tableCache.Cache.TryGetValue(actualTableName, out config))
+                if (actualTableName == null)
                 {
-                    config = CreateStorageConfig(type, actualTableName);
-                    tableCache.Cache[actualTableName] = config;
+                    actualTableName = DynamoDBContext.GetTableName(tableCache.BaseTableName, flatConfig);
                 }
+
+                // Check to see if another thread go the write lock before this thread and filled the cache.
+                if (tableCache.Cache.TryGetValue(actualTableName, out config))
+                {
+                    return config;
+                }
+
+                config = CreateStorageConfig(type, actualTableName);
+                tableCache.Cache[actualTableName] = config;
+
                 return config;
+            }
+            finally
+            {
+                if(_readerWriterLockSlim.IsWriteLockHeld)
+                {
+                    _readerWriterLockSlim.ExitWriteLock();
+                }
             }
         }
 
@@ -893,6 +947,26 @@ namespace Amazon.DynamoDBv2.DataModel
                 sb.AppendFormat(CultureInfo.InvariantCulture, messageFormat, args);
                 throw new InvalidOperationException(sb.ToString());
             }
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    _readerWriterLockSlim.Dispose();
+                }
+
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }

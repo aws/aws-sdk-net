@@ -36,7 +36,9 @@ namespace Amazon.DynamoDBv2.DataModel
         private bool ownClient;
         internal IAmazonDynamoDB Client { get; private set; }
         private Dictionary<string, Table> tablesMap;
-        private readonly object tablesMapLock = new object();
+
+        private readonly ReaderWriterLockSlim _readerWriterLockSlim = new ReaderWriterLockSlim();
+
         internal DynamoDBContextConfig Config { get; private set; }
         internal ItemStorageConfigCache StorageConfigCache { get; private set; }
 
@@ -135,6 +137,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     if (ownClient)
                     {
+                        StorageConfigCache.Dispose();
                         Client.Dispose();
                     }
                     Client = null;
