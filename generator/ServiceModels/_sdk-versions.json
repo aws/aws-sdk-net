@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.55.0",
+    "ProductVersion" : "3.7.56.0",
     "CoreVersion"    : "3.7.0.33",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.11.0",
+            "Version" : "3.7.12.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.33"
@@ -250,7 +250,7 @@
             "InPreview"               : false
         },
         "KeyManagementService" : {
-            "Version" : "3.7.0.31",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.33"
@@ -282,7 +282,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.7.0.32",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.33"
@@ -1130,7 +1130,7 @@
             "InPreview"               : false
         },
         "MediaTailor"                     : {
-            "Version" : "3.7.0.31",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.33"
