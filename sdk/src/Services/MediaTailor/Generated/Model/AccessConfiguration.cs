@@ -34,6 +34,7 @@ namespace Amazon.MediaTailor.Model
     public partial class AccessConfiguration
     {
         private AccessType _accessType;
+        private SecretsManagerAccessTokenConfiguration _secretsManagerAccessTokenConfiguration;
 
         /// <summary>
         /// Gets and sets the property AccessType. 
@@ -80,6 +81,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetAccessType()
         {
             return this._accessType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerAccessTokenConfiguration. 
+        /// <para>
+        /// AWS Secrets Manager access token configuration parameters.
+        /// </para>
+        /// </summary>
+        public SecretsManagerAccessTokenConfiguration SecretsManagerAccessTokenConfiguration
+        {
+            get { return this._secretsManagerAccessTokenConfiguration; }
+            set { this._secretsManagerAccessTokenConfiguration = value; }
+        }
+
+        // Check to see if SecretsManagerAccessTokenConfiguration property is set
+        internal bool IsSetSecretsManagerAccessTokenConfiguration()
+        {
+            return this._secretsManagerAccessTokenConfiguration != null;
         }
 
     }

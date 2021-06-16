@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AccessConfiguration Marshaller
+    /// SecretsManagerAccessTokenConfiguration Marshaller
     /// </summary>       
-    public class AccessConfigurationMarshaller : IRequestMarshaller<AccessConfiguration, JsonMarshallerContext> 
+    public class SecretsManagerAccessTokenConfigurationMarshaller : IRequestMarshaller<SecretsManagerAccessTokenConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,24 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AccessConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SecretsManagerAccessTokenConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAccessType())
+            if(requestObject.IsSetHeaderName())
             {
-                context.Writer.WritePropertyName("AccessType");
-                context.Writer.Write(requestObject.AccessType);
+                context.Writer.WritePropertyName("HeaderName");
+                context.Writer.Write(requestObject.HeaderName);
             }
 
-            if(requestObject.IsSetSecretsManagerAccessTokenConfiguration())
+            if(requestObject.IsSetSecretArn())
             {
-                context.Writer.WritePropertyName("SecretsManagerAccessTokenConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("SecretArn");
+                context.Writer.Write(requestObject.SecretArn);
+            }
 
-                var marshaller = SecretsManagerAccessTokenConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecretsManagerAccessTokenConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetSecretStringKey())
+            {
+                context.Writer.WritePropertyName("SecretStringKey");
+                context.Writer.Write(requestObject.SecretStringKey);
             }
 
         }
@@ -67,7 +68,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AccessConfigurationMarshaller Instance = new AccessConfigurationMarshaller();
+        public readonly static SecretsManagerAccessTokenConfigurationMarshaller Instance = new SecretsManagerAccessTokenConfigurationMarshaller();
 
     }
 }

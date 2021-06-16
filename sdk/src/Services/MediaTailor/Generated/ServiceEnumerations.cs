@@ -34,6 +34,10 @@ namespace Amazon.MediaTailor
         /// Constant S3_SIGV4 for AccessType
         /// </summary>
         public static readonly AccessType S3_SIGV4 = new AccessType("S3_SIGV4");
+        /// <summary>
+        /// Constant SECRETS_MANAGER_ACCESS_TOKEN for AccessType
+        /// </summary>
+        public static readonly AccessType SECRETS_MANAGER_ACCESS_TOKEN = new AccessType("SECRETS_MANAGER_ACCESS_TOKEN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AccessConfiguration Object
+    /// Response Unmarshaller for SecretsManagerAccessTokenConfiguration Object
     /// </summary>  
-    public class AccessConfigurationUnmarshaller : IUnmarshaller<AccessConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AccessConfiguration, JsonUnmarshallerContext>
+    public class SecretsManagerAccessTokenConfigurationUnmarshaller : IUnmarshaller<SecretsManagerAccessTokenConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SecretsManagerAccessTokenConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AccessConfiguration IUnmarshaller<AccessConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SecretsManagerAccessTokenConfiguration IUnmarshaller<SecretsManagerAccessTokenConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AccessConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SecretsManagerAccessTokenConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AccessConfiguration unmarshalledObject = new AccessConfiguration();
+            SecretsManagerAccessTokenConfiguration unmarshalledObject = new SecretsManagerAccessTokenConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AccessType", targetDepth))
+                if (context.TestExpression("HeaderName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HeaderName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SecretsManagerAccessTokenConfiguration", targetDepth))
+                if (context.TestExpression("SecretArn", targetDepth))
                 {
-                    var unmarshaller = SecretsManagerAccessTokenConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SecretsManagerAccessTokenConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretStringKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretStringKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static AccessConfigurationUnmarshaller _instance = new AccessConfigurationUnmarshaller();        
+        private static SecretsManagerAccessTokenConfigurationUnmarshaller _instance = new SecretsManagerAccessTokenConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AccessConfigurationUnmarshaller Instance
+        public static SecretsManagerAccessTokenConfigurationUnmarshaller Instance
         {
             get
             {
