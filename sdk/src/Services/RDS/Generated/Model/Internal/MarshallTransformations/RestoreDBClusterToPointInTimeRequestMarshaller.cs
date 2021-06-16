@@ -103,6 +103,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnableIAMDatabaseAuthentication", StringUtils.FromBool(publicRequest.EnableIAMDatabaseAuthentication));
                 }
+                if(publicRequest.IsSetEngineMode())
+                {
+                    request.Parameters.Add("EngineMode", StringUtils.FromString(publicRequest.EngineMode));
+                }
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
@@ -122,6 +126,29 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRestoreType())
                 {
                     request.Parameters.Add("RestoreType", StringUtils.FromString(publicRequest.RestoreType));
+                }
+                if(publicRequest.IsSetScalingConfiguration())
+                {
+                    if(publicRequest.ScalingConfiguration.IsSetAutoPause())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "AutoPause", StringUtils.FromBool(publicRequest.ScalingConfiguration.AutoPause));
+                    }
+                    if(publicRequest.ScalingConfiguration.IsSetMaxCapacity())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "MaxCapacity", StringUtils.FromInt(publicRequest.ScalingConfiguration.MaxCapacity));
+                    }
+                    if(publicRequest.ScalingConfiguration.IsSetMinCapacity())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "MinCapacity", StringUtils.FromInt(publicRequest.ScalingConfiguration.MinCapacity));
+                    }
+                    if(publicRequest.ScalingConfiguration.IsSetSecondsUntilAutoPause())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "SecondsUntilAutoPause", StringUtils.FromInt(publicRequest.ScalingConfiguration.SecondsUntilAutoPause));
+                    }
+                    if(publicRequest.ScalingConfiguration.IsSetTimeoutAction())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "TimeoutAction", StringUtils.FromString(publicRequest.ScalingConfiguration.TimeoutAction));
+                    }
                 }
                 if(publicRequest.IsSetSourceDBClusterIdentifier())
                 {
