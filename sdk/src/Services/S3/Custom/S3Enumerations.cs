@@ -267,105 +267,17 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3Region US = new S3Region("");
         /// <summary>
-        /// Specifies that the S3 Bucket should use US-EAST-2 locality.
-        /// </summary>
-        public static readonly S3Region USE2 = new S3Region("us-east-2");
-        /// <summary>
         /// Specifies that the S3 Bucket should use EU locality which defaults to EU-WEST-1
         /// </summary>
         public static readonly S3Region EU = new S3Region("EU");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the EU-NORTH-1 locality.
-        /// </summary>
-        public static readonly S3Region EUN1 = new S3Region("eu-north-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the EU-WEST-1 locality.
-        /// </summary>
-        public static readonly S3Region EUW1 = new S3Region("eu-west-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the EU-WEST-2 locality.
-        /// </summary>
-        public static readonly S3Region EUW2 = new S3Region("eu-west-2");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the EU-WEST-3 locality.
-        /// </summary>
-        public static readonly S3Region EUW3 = new S3Region("eu-west-3");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the EU-CENTRAL-1 locality.
-        /// </summary>
-        public static readonly S3Region EUC1 = new S3Region("eu-central-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the EU-SOUTH-1 locality.
-        /// </summary>
-        public static readonly S3Region EUS1 = new S3Region("eu-south-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use US-WEST-1 locality.
-        /// </summary>
-        public static readonly S3Region USW1 = new S3Region("us-west-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use US-WEST-2 locality.
-        /// </summary>
-        public static readonly S3Region USW2 = new S3Region("us-west-2");
-		/// <summary>
-        /// Specifies that the S3 Bucket should use US-GOV-EAST-1 locality.
-        /// </summary>
-        public static readonly S3Region GOVE1 = new S3Region("us-gov-east-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
-        /// </summary>
-        public static readonly S3Region GOVW1 = new S3Region("us-gov-west-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the AP-EAST-1 locality.
-        /// </summary>
-        public static readonly S3Region APE1 = new S3Region("ap-east-1"); 
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the AP-SOUTHEAST-1 locality.
-        /// </summary>
-        public static readonly S3Region APS1 = new S3Region("ap-southeast-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the AP-SOUTHEAST-2 locality.
-        /// </summary>
-        public static readonly S3Region APS2 = new S3Region("ap-southeast-2");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the AP-NORTHEAST-1 locality.
-        /// </summary>
-        public static readonly S3Region APN1 = new S3Region("ap-northeast-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the AP-NORTHEAST-2 locality.
-        /// </summary>
-        public static readonly S3Region APN2 = new S3Region("ap-northeast-2");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the AP-NORTHEAST-3 locality.
-        /// </summary>
-        public static readonly S3Region APN3 = new S3Region("ap-northeast-3");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the AP-SOUTH-1 locality.
-        /// </summary>
-        public static readonly S3Region APS3 = new S3Region("ap-south-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the SA-EAST-1 locality.
-        /// </summary>
-        public static readonly S3Region SAE1 = new S3Region("sa-east-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
-        /// </summary>
-        public static readonly S3Region CN1 = new S3Region("cn-north-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use CN-NORTHWEST-1 locality.
-        /// </summary>
-        public static readonly S3Region CNW1 = new S3Region("cn-northwest-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use CA-CENTRAL-1 locality.
-        /// </summary>
-        public static readonly S3Region CAN1 = new S3Region("ca-central-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use ME-SOUTH-1 locality.
-        /// </summary>
-        public static readonly S3Region MES1 = new S3Region("me-south-1");
-        /// <summary>
-        /// Specifies that the S3 Bucket should use AF-SOUTH-1 locality.
-        /// </summary>
-        public static readonly S3Region AFS1 = new S3Region("af-south-1");
+        
+        // wrong values, remove? backward compatibility concern!
+        // public static readonly S3Region APS1 = new S3Region("ap-southeast-1");
+        // public static readonly S3Region APS2 = new S3Region("ap-southeast-2");
+        // public static readonly S3Region APN1 = new S3Region("ap-northeast-1");
+        // public static readonly S3Region APN2 = new S3Region("ap-northeast-2");
+        // public static readonly S3Region APN3 = new S3Region("ap-northeast-3");
+        // public static readonly S3Region APS3 = new S3Region("ap-south-1");
 
         /// <summary>
         /// Specifies that the S3 Bucket should use US-WEST-1 locality.

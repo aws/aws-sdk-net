@@ -140,6 +140,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Generators\SourceFiles\S3EnumerationsGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>S3EnumerationsGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\SourceFiles\ServiceMetadata.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -425,6 +430,10 @@
     <None Update="Generators\SourceFiles\AssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\S3EnumerationsGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>S3EnumerationsGenerator.cs</LastGenOutput>
     </None>
     <None Update="Generators\SourceFiles\ServiceMetadata.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
