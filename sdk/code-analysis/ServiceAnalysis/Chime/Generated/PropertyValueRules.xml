@@ -1817,6 +1817,14 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateSipMediaApplicationCallRequest.SipMediaApplicationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateSipMediaApplicationCallRequest.TransactionId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.UpdateSipRuleRequest.Name</property>
     <min>1</min>
     <max>256</max>

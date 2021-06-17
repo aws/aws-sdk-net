@@ -29,31 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetVoiceConnectorGroup operation.
-    /// Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name,
-    /// and associated <code>VoiceConnectorItems</code>.
+    /// This is the response object from the UpdateSipMediaApplicationCall operation.
     /// </summary>
-    public partial class GetVoiceConnectorGroupRequest : AmazonChimeRequest
+    public partial class UpdateSipMediaApplicationCallResponse : AmazonWebServiceResponse
     {
-        private string _voiceConnectorGroupId;
+        private SipMediaApplicationCall _sipMediaApplicationCall;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorGroupId. 
-        /// <para>
-        /// The Amazon Chime Voice Connector group ID.
-        /// </para>
+        /// Gets and sets the property SipMediaApplicationCall.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string VoiceConnectorGroupId
+        public SipMediaApplicationCall SipMediaApplicationCall
         {
-            get { return this._voiceConnectorGroupId; }
-            set { this._voiceConnectorGroupId = value; }
+            get { return this._sipMediaApplicationCall; }
+            set { this._sipMediaApplicationCall = value; }
         }
 
-        // Check to see if VoiceConnectorGroupId property is set
-        internal bool IsSetVoiceConnectorGroupId()
+        // Check to see if SipMediaApplicationCall property is set
+        internal bool IsSetSipMediaApplicationCall()
         {
-            return this._voiceConnectorGroupId != null;
+            return this._sipMediaApplicationCall != null;
         }
 
     }

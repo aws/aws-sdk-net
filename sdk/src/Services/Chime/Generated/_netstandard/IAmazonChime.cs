@@ -4391,7 +4391,7 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name,
-        /// and associated <code>VoiceConnectorItems</code> .
+        /// and associated <code>VoiceConnectorItems</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorGroup service method.</param>
         /// <param name="cancellationToken">
@@ -5302,7 +5302,7 @@ namespace Amazon.Chime
         /// <summary>
         /// Lists up to 100 active Amazon Chime SDK meetings. For more information about the
         /// Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMeetings service method.</param>
         /// <param name="cancellationToken">
@@ -6037,14 +6037,14 @@ namespace Amazon.Chime
         /// using AWS CloudTrail to monitor usage of this API for your account. For more information,
         /// see <a href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging
         /// Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime Administration
-        /// Guide</i> . 
+        /// Guide</i>.
         /// 
         ///  
         /// <para>
         ///  To turn off existing retention settings, remove the number of days from the corresponding
         /// <b>RetentionDays</b> field in the <b>RetentionSettings</b> object. For more information
         /// about retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-        /// Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> . 
+        /// Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRetentionSettings service method.</param>
@@ -7634,6 +7634,49 @@ namespace Amazon.Chime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplication">REST API Reference for UpdateSipMediaApplication Operation</seealso>
         Task<UpdateSipMediaApplicationResponse> UpdateSipMediaApplicationAsync(UpdateSipMediaApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSipMediaApplicationCall
+
+
+
+        /// <summary>
+        /// Allows you to trigger a Lambda function at any time while a call is active, and replace
+        /// the current actions with new actions returned by the invocation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSipMediaApplicationCall service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSipMediaApplicationCall service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplicationCall">REST API Reference for UpdateSipMediaApplicationCall Operation</seealso>
+        Task<UpdateSipMediaApplicationCallResponse> UpdateSipMediaApplicationCallAsync(UpdateSipMediaApplicationCallRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
