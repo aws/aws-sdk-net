@@ -1,3 +1,18 @@
+### 3.7.57.0 (2021-06-17 18:29 UTC)
+* Chime (3.7.5.0)
+	* This release adds a new API UpdateSipMediaApplicationCall, to update an in-progress call for SipMediaApplication.
+* Kendra (3.7.5.0)
+	* Amazon Kendra now supports the indexing of web documents for search through the web crawler.
+* RDS (3.7.2.0)
+	* This release enables Database Activity Streams for RDS Oracle
+* SageMaker (3.7.6.0)
+	* Enable ml.g4dn instance types for SageMaker Batch Transform and SageMaker Processing
+* Core 3.7.0.34
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.56.0 (2021-06-16 18:13 UTC)
 * EC2 (3.7.12.0)
 	* This release adds support for VLAN-tagged network traffic over an Elastic Network Interface (ENI). This feature is in limited Preview for this release. Contact your account manager if you are interested in this feature.
