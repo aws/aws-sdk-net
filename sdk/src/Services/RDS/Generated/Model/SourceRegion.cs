@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains an AWS Region name as the result of a successful call to the <code>DescribeSourceRegions</code>
-    /// action.
+    /// Contains an Amazon Web Services Region name as the result of a successful call to
+    /// the <code>DescribeSourceRegions</code> action.
     /// </summary>
     public partial class SourceRegion
     {
@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The endpoint for the source AWS Region endpoint.
+        /// The endpoint for the source Amazon Web Services Region endpoint.
         /// </para>
         /// </summary>
         public string Endpoint
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The name of the source AWS Region.
+        /// The name of the source Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string RegionName
@@ -78,7 +78,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the source AWS Region.
+        /// The status of the source Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string Status
@@ -96,8 +96,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsDBInstanceAutomatedBackupsReplication. 
         /// <para>
-        /// Whether the source AWS Region supports replicating automated backups to the current
-        /// AWS Region.
+        /// Whether the source Amazon Web Services Region supports replicating automated backups
+        /// to the current Amazon Web Services Region.
         /// </para>
         /// </summary>
         public bool SupportsDBInstanceAutomatedBackupsReplication

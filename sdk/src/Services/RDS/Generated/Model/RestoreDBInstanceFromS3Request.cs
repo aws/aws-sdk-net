@@ -131,13 +131,14 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone that the DB instance is created in. For information about AWS
-        /// Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+        /// The Availability Zone that the DB instance is created in. For information about Amazon
+        /// Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
         /// and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
-        /// Default: A random, system-chosen Availability Zone in the endpoint's AWS Region. 
+        /// Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+        /// Region. 
         /// </para>
         ///  
         /// <para>
@@ -147,7 +148,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the
         /// DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the
-        /// same AWS Region as the current endpoint. 
+        /// same Amazon Web Services Region as the current endpoint. 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -205,9 +206,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions, or for all database
-        /// engines. For the full list of DB instance classes, and availability for your engine,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for
+        /// all database engines. For the full list of DB instance classes, and availability for
+        /// your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
         /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
@@ -394,8 +395,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
+        /// Access Management (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>
@@ -508,20 +509,21 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for an encrypted DB instance. 
+        /// The Amazon Web Services KMS key identifier for an encrypted DB instance. 
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK). To use a CMK in a different AWS account, specify
-        /// the key ARN or alias ARN.
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK). To use a CMK in a
+        /// different Amazon Web Services account, specify the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
         /// If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify
         /// a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-        /// CMK. There is a default CMK for your AWS account. Your AWS account has a different
-        /// default CMK for each AWS Region. 
+        /// CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web
+        /// Services account has a different default CMK for each Amazon Web Services Region.
+        /// 
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -739,18 +741,20 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of Performance Insights data.
+        /// The Amazon Web Services KMS key identifier for encryption of Performance Insights
+        /// data.
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK).
         /// </para>
         ///  
         /// <para>
         /// If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
-        /// RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
-        /// has a different default CMK for each AWS Region.
+        /// RDS uses your default CMK. There is a default CMK for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -976,8 +980,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property S3IngestionRoleArn. 
         /// <para>
-        /// An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your
-        /// Amazon S3 bucket. 
+        /// An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS
+        /// to access your Amazon S3 bucket. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

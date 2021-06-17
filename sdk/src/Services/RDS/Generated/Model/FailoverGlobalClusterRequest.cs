@@ -96,8 +96,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Identifier of the secondary Aurora DB cluster that you want to promote to primary
         /// for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon Resource Name
-        /// (ARN) for the identifier so that Aurora can locate the cluster in its AWS Region.
-        /// 
+        /// (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services
+        /// Region. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

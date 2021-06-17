@@ -56,6 +56,7 @@ namespace Amazon.RDS.Model
         private bool? _outpostCapable;
         private bool? _readReplicaCapable;
         private string _storageType;
+        private List<string> _supportedActivityStreamModes = new List<string>();
         private List<string> _supportedEngineModes = new List<string>();
         private bool? _supportsEnhancedMonitoring;
         private bool? _supportsGlobalDatabases;
@@ -327,7 +328,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-        /// RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> 
+        /// RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         public bool OutpostCapable
@@ -376,6 +377,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedActivityStreamModes. 
+        /// <para>
+        /// The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns
+        /// the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code>
+        /// only. If Database Activity Streams isn't supported, the return value is an empty list.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedActivityStreamModes
+        {
+            get { return this._supportedActivityStreamModes; }
+            set { this._supportedActivityStreamModes = value; }
+        }
+
+        // Check to see if SupportedActivityStreamModes property is set
+        internal bool IsSetSupportedActivityStreamModes()
+        {
+            return this._supportedActivityStreamModes != null && this._supportedActivityStreamModes.Count > 0; 
         }
 
         /// <summary>

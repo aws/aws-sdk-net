@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Your AWS account already has the maximum number of proxies in the specified AWS Region.
+    /// Your Amazon Web Services account already has the maximum number of proxies in the
+    /// specified Amazon Web Services Region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

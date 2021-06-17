@@ -48,7 +48,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CustomerAwsId. 
         /// <para>
-        /// The AWS customer account associated with the RDS event notification subscription.
+        /// The Amazon Web Services customer account associated with the RDS event notification
+        /// subscription.
         /// </para>
         /// </summary>
         public string CustomerAwsId

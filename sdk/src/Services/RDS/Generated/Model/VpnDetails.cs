@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Information about the virtual private network (VPN) between the VMware vSphere cluster
-    /// and the AWS website.
+    /// and the Amazon Web Services website.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpnGatewayIp. 
         /// <para>
-        /// The IP address of network traffic from AWS to your on-premises data center.
+        /// The IP address of network traffic from Amazon Web Services to your on-premises data
+        /// center.
         /// </para>
         /// </summary>
         public string VpnGatewayIp

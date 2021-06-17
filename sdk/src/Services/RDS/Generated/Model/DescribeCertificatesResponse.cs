@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The list of <code>Certificate</code> objects for the AWS account.
+        /// The list of <code>Certificate</code> objects for the Amazon Web Services account.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates

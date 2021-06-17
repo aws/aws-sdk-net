@@ -68,9 +68,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBProxyName. 
         /// <para>
         /// The identifier for the proxy. This name must be unique for all proxies owned by your
-        /// AWS account in the specified AWS Region. An identifier must begin with a letter and
-        /// must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or
-        /// contain two consecutive hyphens.
+        /// Amazon Web Services account in the specified Amazon Web Services Region. An identifier
+        /// must begin with a letter and must contain only ASCII letters, digits, and hyphens;
+        /// it can't end with a hyphen or contain two consecutive hyphens.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -175,7 +175,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets
-        /// in AWS Secrets Manager.
+        /// in Amazon Web Services Secrets Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

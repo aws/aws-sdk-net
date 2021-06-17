@@ -107,7 +107,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property VpnDetails. 
         /// <para>
         /// Information about the virtual private network (VPN) between the VMware vSphere cluster
-        /// and the AWS website.
+        /// and the Amazon Web Services website.
         /// </para>
         /// </summary>
         public VpnDetails VpnDetails

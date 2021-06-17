@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the CreateDBSubnetGroup operation.
     /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet in
-    /// at least two AZs in the AWS Region.
+    /// at least two AZs in the Amazon Web Services Region.
     /// </summary>
     public partial class CreateDBSubnetGroupRequest : AmazonRDSRequest
     {

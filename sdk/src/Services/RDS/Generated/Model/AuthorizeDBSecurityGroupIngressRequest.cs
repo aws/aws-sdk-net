@@ -39,9 +39,9 @@ namespace Amazon.RDS.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can't authorize ingress from an EC2 security group in one AWS Region to an Amazon
-    /// RDS DB instance in another. You can't authorize ingress from a VPC security group
-    /// in one VPC to an Amazon RDS DB instance in another.
+    /// You can't authorize ingress from an EC2 security group in one Amazon Web Services
+    /// Region to an Amazon RDS DB instance in another. You can't authorize ingress from a
+    /// VPC security group in one VPC to an Amazon RDS DB instance in another.
     /// </para>
     ///  </note> 
     /// <para>
@@ -151,11 +151,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        ///  AWS account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
-        /// parameter. The AWS access key ID isn't an acceptable value. For VPC DB security groups,
-        /// <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code>
-        /// and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must
-        /// be provided. 
+        ///  Amazon Web Services account number of the owner of the EC2 security group specified
+        /// in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access
+        /// key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
+        /// must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code>
+        /// or <code>EC2SecurityGroupId</code> must be provided. 
         /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId

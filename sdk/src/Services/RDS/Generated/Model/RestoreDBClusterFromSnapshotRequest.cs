@@ -370,8 +370,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
+        /// Access Management (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>
@@ -514,14 +514,14 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB
-        /// snapshot or DB cluster snapshot.
+        /// The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster
+        /// from a DB snapshot or DB cluster snapshot.
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK). To use a CMK in a different AWS account, specify
-        /// the key ARN or alias ARN.
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK). To use a CMK in a
+        /// different Amazon Web Services account, specify the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
@@ -531,8 +531,8 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted,
-        /// then the restored DB cluster is encrypted using the AWS KMS CMK that was used to encrypt
-        /// the DB snapshot or DB cluster snapshot.
+        /// then the restored DB cluster is encrypted using the Amazon Web Services KMS CMK that
+        /// was used to encrypt the DB snapshot or DB cluster snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>

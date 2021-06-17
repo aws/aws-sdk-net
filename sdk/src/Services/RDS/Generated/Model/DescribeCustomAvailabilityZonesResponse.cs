@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CustomAvailabilityZones. 
         /// <para>
-        /// The list of <a>CustomAvailabilityZone</a> objects for the AWS account.
+        /// The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.
         /// </para>
         /// </summary>
         public List<CustomAvailabilityZone> CustomAvailabilityZones

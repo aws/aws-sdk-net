@@ -140,7 +140,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// Provides the AWS ID of the owner of a specific DB security group.
+        /// Provides the Amazon Web Services ID of the owner of a specific DB security group.
         /// </para>
         /// </summary>
         public string OwnerId

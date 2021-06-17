@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// You can't associate any more AWS Identity and Access Management (IAM) roles with the
-    /// DB instance because the quota has been reached.
+    /// You can't associate any more Amazon Web Services Identity and Access Management (IAM)
+    /// roles with the DB instance because the quota has been reached.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

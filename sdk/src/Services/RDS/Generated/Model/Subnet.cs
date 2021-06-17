@@ -80,7 +80,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-        /// RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> 
+        /// RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         public Outpost SubnetOutpost

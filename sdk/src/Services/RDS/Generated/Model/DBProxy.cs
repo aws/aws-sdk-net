@@ -114,7 +114,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBProxyName. 
         /// <para>
         /// The identifier for the proxy. This name must be unique for all proxies owned by your
-        /// AWS account in the specified AWS Region.
+        /// Amazon Web Services account in the specified Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string DBProxyName

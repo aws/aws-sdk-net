@@ -30,13 +30,13 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDBInstanceAutomatedBackupsReplication operation.
-    /// Enables replication of automated backups to a different AWS Region.
+    /// Enables replication of automated backups to a different Amazon Web Services Region.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
-    /// Replicating Automated Backups to Another AWS Region</a> in the <i>Amazon RDS User
-    /// Guide.</i> 
+    /// Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon
+    /// RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class StartDBInstanceAutomatedBackupsReplicationRequest : AmazonRDSRequest
@@ -67,9 +67,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of the replicated automated backups. The
-        /// KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption key in the destination
-        /// AWS Region, for example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
+        /// The Amazon Web Services KMS key identifier for encryption of the replicated automated
+        /// backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption key
+        /// in the destination Amazon Web Services Region, for example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -88,9 +88,10 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreSignedUrl. 
         /// <para>
         /// A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication
-        /// action to be called in the AWS Region of the source DB instance. The presigned URL
-        /// must be a valid request for the StartDBInstanceAutomatedBackupsReplication API action
-        /// that can be executed in the AWS Region that contains the source DB instance.
+        /// action to be called in the Amazon Web Services Region of the source DB instance. The
+        /// presigned URL must be a valid request for the StartDBInstanceAutomatedBackupsReplication
+        /// API action that can be executed in the Amazon Web Services Region that contains the
+        /// source DB instance.
         /// </para>
         /// </summary>
         public string PreSignedUrl

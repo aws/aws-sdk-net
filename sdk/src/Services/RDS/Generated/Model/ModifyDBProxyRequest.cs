@@ -167,7 +167,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets
-        /// in AWS Secrets Manager.
+        /// in Amazon Web Services Secrets Manager.
         /// </para>
         /// </summary>
         public string RoleArn

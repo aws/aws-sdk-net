@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDBInstance operation.
-    /// Starts an Amazon RDS DB instance that was stopped using the AWS console, the stop-db-instance
-    /// AWS CLI command, or the StopDBInstance action. 
+    /// Starts an Amazon RDS DB instance that was stopped using the Amazon Web Services console,
+    /// the stop-db-instance CLI command, or the StopDBInstance action. 
     /// 
     ///  
     /// <para>

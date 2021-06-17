@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned
-    /// by your AWS account in the specified AWS Region.
+    /// by your Amazon Web Services account in the specified Amazon Web Services Region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

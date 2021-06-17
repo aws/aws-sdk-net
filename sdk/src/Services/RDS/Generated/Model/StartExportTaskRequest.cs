@@ -125,11 +125,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported
-        /// to Amazon S3. The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the AWS KMS customer master key (CMK). The caller of this operation must
-        /// be authorized to execute the following operations. These can be set in the AWS KMS
-        /// key policy: 
+        /// The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt
+        /// the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is
+        /// the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer
+        /// master key (CMK). The caller of this operation must be authorized to execute the following
+        /// operations. These can be set in the Amazon Web Services KMS key policy: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

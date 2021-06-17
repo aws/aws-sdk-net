@@ -48,13 +48,13 @@ namespace Amazon.RDS.Model
     /// <para>
     /// You already migrated your applications to support the latest certificate authority
     /// (CA) certificate, but the new CA certificate is not yet the RDS default CA certificate
-    /// for the specified AWS Region.
+    /// for the specified Amazon Web Services Region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// RDS has already moved to a new default CA certificate for the specified AWS Region,
-    /// but you are still in the process of supporting the new CA certificate. In this case,
-    /// you temporarily need additional time to finish your application changes.
+    /// RDS has already moved to a new default CA certificate for the specified Amazon Web
+    /// Services Region, but you are still in the process of supporting the new CA certificate.
+    /// In this case, you temporarily need additional time to finish your application changes.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -81,8 +81,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To determine the valid values, use the <code>describe-certificates</code> AWS CLI
-        /// command or the <code>DescribeCertificates</code> API operation.
+        /// To determine the valid values, use the <code>describe-certificates</code> CLI command
+        /// or the <code>DescribeCertificates</code> API operation.
         /// </para>
         /// </summary>
         public string CertificateIdentifier

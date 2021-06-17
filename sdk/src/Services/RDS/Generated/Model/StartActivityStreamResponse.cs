@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
     public partial class StartActivityStreamResponse : AmazonWebServiceResponse
     {
         private bool? _applyImmediately;
+        private bool? _engineNativeAuditFieldsIncluded;
         private string _kinesisStreamName;
         private string _kmsKeyId;
         private ActivityStreamMode _mode;
@@ -59,6 +60,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineNativeAuditFieldsIncluded. 
+        /// <para>
+        /// Indicates whether engine-native audit fields are included in the database activity
+        /// stream.
+        /// </para>
+        /// </summary>
+        public bool EngineNativeAuditFieldsIncluded
+        {
+            get { return this._engineNativeAuditFieldsIncluded.GetValueOrDefault(); }
+            set { this._engineNativeAuditFieldsIncluded = value; }
+        }
+
+        // Check to see if EngineNativeAuditFieldsIncluded property is set
+        internal bool IsSetEngineNativeAuditFieldsIncluded()
+        {
+            return this._engineNativeAuditFieldsIncluded.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KinesisStreamName. 
         /// <para>
         /// The name of the Amazon Kinesis data stream to be used for the database activity stream.
@@ -79,7 +99,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of messages in the database activity stream.
+        /// The Amazon Web Services KMS key identifier for encryption of messages in the database
+        /// activity stream.
         /// </para>
         /// </summary>
         public string KmsKeyId

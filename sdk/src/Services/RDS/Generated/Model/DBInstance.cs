@@ -39,6 +39,11 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBInstance
     {
+        private bool? _activityStreamEngineNativeAuditFieldsIncluded;
+        private string _activityStreamKinesisStreamName;
+        private string _activityStreamKmsKeyId;
+        private ActivityStreamMode _activityStreamMode;
+        private ActivityStreamStatus _activityStreamStatus;
         private int? _allocatedStorage;
         private List<DBInstanceRole> _associatedRoles = new List<DBInstanceRole>();
         private bool? _autoMinorVersionUpgrade;
@@ -105,6 +110,100 @@ namespace Amazon.RDS.Model
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
+        /// Gets and sets the property ActivityStreamEngineNativeAuditFieldsIncluded. 
+        /// <para>
+        /// Indicates whether engine-native audit fields are included in the database activity
+        /// stream.
+        /// </para>
+        /// </summary>
+        public bool ActivityStreamEngineNativeAuditFieldsIncluded
+        {
+            get { return this._activityStreamEngineNativeAuditFieldsIncluded.GetValueOrDefault(); }
+            set { this._activityStreamEngineNativeAuditFieldsIncluded = value; }
+        }
+
+        // Check to see if ActivityStreamEngineNativeAuditFieldsIncluded property is set
+        internal bool IsSetActivityStreamEngineNativeAuditFieldsIncluded()
+        {
+            return this._activityStreamEngineNativeAuditFieldsIncluded.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActivityStreamKinesisStreamName. 
+        /// <para>
+        /// The name of the Amazon Kinesis data stream used for the database activity stream.
+        /// </para>
+        /// </summary>
+        public string ActivityStreamKinesisStreamName
+        {
+            get { return this._activityStreamKinesisStreamName; }
+            set { this._activityStreamKinesisStreamName = value; }
+        }
+
+        // Check to see if ActivityStreamKinesisStreamName property is set
+        internal bool IsSetActivityStreamKinesisStreamName()
+        {
+            return this._activityStreamKinesisStreamName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActivityStreamKmsKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier used for encrypting messages in the database
+        /// activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID,
+        /// alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+        /// </para>
+        /// </summary>
+        public string ActivityStreamKmsKeyId
+        {
+            get { return this._activityStreamKmsKeyId; }
+            set { this._activityStreamKmsKeyId = value; }
+        }
+
+        // Check to see if ActivityStreamKmsKeyId property is set
+        internal bool IsSetActivityStreamKmsKeyId()
+        {
+            return this._activityStreamKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActivityStreamMode. 
+        /// <para>
+        /// The mode of the database activity stream. Database events such as a change or access
+        /// generate an activity stream event. RDS for Oracle always handles these events asynchronously.
+        /// </para>
+        /// </summary>
+        public ActivityStreamMode ActivityStreamMode
+        {
+            get { return this._activityStreamMode; }
+            set { this._activityStreamMode = value; }
+        }
+
+        // Check to see if ActivityStreamMode property is set
+        internal bool IsSetActivityStreamMode()
+        {
+            return this._activityStreamMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActivityStreamStatus. 
+        /// <para>
+        /// The status of the database activity stream.
+        /// </para>
+        /// </summary>
+        public ActivityStreamStatus ActivityStreamStatus
+        {
+            get { return this._activityStreamStatus; }
+            set { this._activityStreamStatus = value; }
+        }
+
+        // Check to see if ActivityStreamStatus property is set
+        internal bool IsSetActivityStreamStatus()
+        {
+            return this._activityStreamStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
         /// Specifies the allocated storage size specified in gibibytes.
@@ -125,8 +224,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AssociatedRoles. 
         /// <para>
-        ///  The AWS Identity and Access Management (IAM) roles associated with the DB instance.
-        /// 
+        ///  The Amazon Web Services Identity and Access Management (IAM) roles associated with
+        /// the DB instance. 
         /// </para>
         /// </summary>
         public List<DBInstanceRole> AssociatedRoles
@@ -180,7 +279,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AwsBackupRecoveryPointArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+        /// The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
         /// </para>
         /// </summary>
         public string AwsBackupRecoveryPointArn
@@ -294,12 +393,12 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-        /// with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+        /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-        /// IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+        /// IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
         /// </para>
         /// </summary>
         public bool CustomerOwnedIpEnabled
@@ -432,8 +531,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
-        /// Instance Status</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing
+        /// DB instance status</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         public string DBInstanceStatus
@@ -451,9 +550,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DbiResourceId. 
         /// <para>
-        /// The AWS Region-unique, immutable identifier for the DB instance. This identifier is
-        /// found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK)
-        /// for the DB instance is accessed.
+        /// The Amazon Web Services Region-unique, immutable identifier for the DB instance. This
+        /// identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon
+        /// Web Services KMS customer master key (CMK) for the DB instance is accessed.
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -703,8 +802,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled, and otherwise false.
+        /// True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+        /// to database accounts is enabled, and otherwise false.
         /// </para>
         ///  
         /// <para>
@@ -776,13 +875,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
-        /// DB instance. 
+        ///  If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier
+        /// for the encrypted DB instance. 
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -1022,12 +1121,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of Performance Insights data.
+        /// The Amazon Web Services KMS key identifier for encryption of Performance Insights
+        /// data.
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId

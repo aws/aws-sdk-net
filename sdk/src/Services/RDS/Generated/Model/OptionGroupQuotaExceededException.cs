@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The quota of 20 option groups was exceeded for this AWS account.
+    /// The quota of 20 option groups was exceeded for this Amazon Web Services account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
         /// The Availability Zone that the automated backup was created in. For information on
-        /// AWS Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+        /// Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
         /// and Availability Zones</a>.
         /// </para>
         /// </summary>
@@ -157,7 +157,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceAutomatedBackupsReplications. 
         /// <para>
-        /// The list of replications to different AWS Regions associated with the automated backup.
+        /// The list of replications to different Amazon Web Services Regions associated with
+        /// the automated backup.
         /// </para>
         /// </summary>
         public List<DBInstanceAutomatedBackupsReplication> DBInstanceAutomatedBackupsReplications
@@ -195,7 +196,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DbiResourceId. 
         /// <para>
         /// The identifier for the source DB instance, which can't be changed and which is unique
-        /// to an AWS Region.
+        /// to an Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -267,8 +268,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled, and otherwise false.
+        /// True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+        /// to database accounts is enabled, and otherwise false.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -322,12 +323,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key ID for an automated backup.
+        /// The Amazon Web Services KMS key ID for an automated backup.
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -426,7 +427,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region associated with the automated backup.
+        /// The Amazon Web Services Region associated with the automated backup.
         /// </para>
         /// </summary>
         public string Region

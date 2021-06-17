@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The specified proxy name must be unique for all proxies owned by your AWS account
-    /// in the specified AWS Region.
+    /// The specified proxy name must be unique for all proxies owned by your Amazon Web Services
+    /// account in the specified Amazon Web Services Region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Describes a quota for an AWS account.
+    /// Describes a quota for an Amazon Web Services account.
     /// 
     ///  
     /// <para>
@@ -62,10 +62,10 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DBClusterRoles</code> - The number of associated AWS Identity and Access Management
-    /// (IAM) roles per DB cluster. The used value is the highest number of associated IAM
-    /// roles for a DB cluster in the account. Other DB clusters in the account might have
-    /// a lower number of associated IAM roles.
+    ///  <code>DBClusterRoles</code> - The number of associated Amazon Web Services Identity
+    /// and Access Management (IAM) roles per DB cluster. The used value is the highest number
+    /// of associated IAM roles for a DB cluster in the account. Other DB clusters in the
+    /// account might have a lower number of associated IAM roles.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -160,7 +160,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AccountQuotaName. 
         /// <para>
-        /// The name of the Amazon RDS quota for this AWS account.
+        /// The name of the Amazon RDS quota for this Amazon Web Services account.
         /// </para>
         /// </summary>
         public string AccountQuotaName

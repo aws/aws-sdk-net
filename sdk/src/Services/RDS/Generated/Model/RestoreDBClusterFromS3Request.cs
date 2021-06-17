@@ -414,8 +414,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
+        /// Access Management (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>
@@ -527,20 +527,20 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for an encrypted DB cluster.
+        /// The Amazon Web Services KMS key identifier for an encrypted DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK). To use a CMK in a different AWS account, specify
-        /// the key ARN or alias ARN.
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK). To use a CMK in a
+        /// different Amazon Web Services account, specify the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
         /// If the StorageEncrypted parameter is enabled, and you do not specify a value for the
         /// <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There
-        /// is a default CMK for your AWS account. Your AWS account has a different default CMK
-        /// for each AWS Region.
+        /// is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+        /// has a different default CMK for each Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -670,7 +670,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+        /// for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
         /// Backup window</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
         ///  
@@ -720,8 +720,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region, occurring on a random day of the week. To see the time blocks
-        /// available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+        /// for each Amazon Web Services Region, occurring on a random day of the week. To see
+        /// the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
         /// 
         /// </para>
@@ -769,8 +769,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property S3IngestionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management
+        /// (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DbiResourceId. 
         /// <para>
         /// The identifier for the source DB instance, which can't be changed and which is unique
-        /// to an AWS Region.
+        /// to an Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string DbiResourceId

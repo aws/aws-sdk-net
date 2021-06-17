@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBProxyName. 
         /// <para>
         /// The name of the DB proxy. If you omit this parameter, the output includes information
-        /// about all DB proxies owned by your AWS account ID.
+        /// about all DB proxies owned by your Amazon Web Services account ID.
         /// </para>
         /// </summary>
         public string DBProxyName

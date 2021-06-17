@@ -52,7 +52,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Omit this parameter to show the available offerings in the specified AWS Region.
+        /// Omit this parameter to show the available offerings in the specified Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         public string AvailabilityZoneGroup
@@ -121,15 +122,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>oracle-ee-cdb</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>oracle-se2</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se1</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>oracle-se</code> 
+        ///  <code>oracle-se2-cdb</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

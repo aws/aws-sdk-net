@@ -120,7 +120,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS Support might request the lease ID for an issue related to a reserved DB instance.
+        /// Amazon Web Services Support might request the lease ID for an issue related to a reserved
+        /// DB instance.
         /// </para>
         ///  </note>
         /// </summary>

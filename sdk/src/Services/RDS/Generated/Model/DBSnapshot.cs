@@ -129,7 +129,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DbiResourceId. 
         /// <para>
         /// The identifier for the source DB instance, which can't be changed and which is unique
-        /// to an AWS Region.
+        /// to an Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -237,8 +237,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled, and otherwise false.
+        /// True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+        /// to database accounts is enabled, and otherwise false.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -294,13 +294,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB
-        /// snapshot. 
+        ///  If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for
+        /// the encrypted DB snapshot. 
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -482,7 +482,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
-        /// The AWS Region that the DB snapshot was created in or copied from.
+        /// The Amazon Web Services Region that the DB snapshot was created in or copied from.
         /// </para>
         /// </summary>
         public string SourceRegion

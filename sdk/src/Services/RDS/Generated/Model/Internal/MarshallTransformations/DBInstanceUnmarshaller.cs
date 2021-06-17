@@ -54,6 +54,36 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ActivityStreamEngineNativeAuditFieldsIncluded", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ActivityStreamEngineNativeAuditFieldsIncluded = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ActivityStreamKinesisStreamName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActivityStreamKinesisStreamName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ActivityStreamKmsKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActivityStreamKmsKeyId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ActivityStreamMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActivityStreamMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ActivityStreamStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActivityStreamStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AllocatedStorage", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

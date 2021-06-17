@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
     public partial class StartActivityStreamRequest : AmazonRDSRequest
     {
         private bool? _applyImmediately;
+        private bool? _engineNativeAuditFieldsIncluded;
         private string _kmsKeyId;
         private ActivityStreamMode _mode;
         private string _resourceArn;
@@ -61,11 +62,31 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineNativeAuditFieldsIncluded. 
+        /// <para>
+        /// Specifies whether the database activity stream includes engine-native audit fields.
+        /// This option only applies to an Oracle DB instance. By default, no engine-native audit
+        /// fields are included.
+        /// </para>
+        /// </summary>
+        public bool EngineNativeAuditFieldsIncluded
+        {
+            get { return this._engineNativeAuditFieldsIncluded.GetValueOrDefault(); }
+            set { this._engineNativeAuditFieldsIncluded = value; }
+        }
+
+        // Check to see if EngineNativeAuditFieldsIncluded property is set
+        internal bool IsSetEngineNativeAuditFieldsIncluded()
+        {
+            return this._engineNativeAuditFieldsIncluded.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encrypting messages in the database activity stream.
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier for encrypting messages in the database
+        /// activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID,
+        /// alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

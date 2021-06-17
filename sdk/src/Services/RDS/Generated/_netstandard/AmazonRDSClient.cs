@@ -353,8 +353,8 @@ namespace Amazon.RDS
         /// <summary>
         /// Associates an Identity and Access Management (IAM) role from an Amazon Aurora DB cluster.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
-        /// Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon
-        /// Aurora User Guide</i>.
+        /// Amazon Aurora MySQL to Access Other Amazon Web Services Services on Your Behalf</a>
+        /// in the <i>Amazon Aurora User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -408,7 +408,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+        /// Associates an Amazon Web Services Identity and Access Management (IAM) role with a
+        /// DB instance.
         /// 
         ///  <note> 
         /// <para>
@@ -430,8 +431,8 @@ namespace Amazon.RDS
         /// with the DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceRoleQuotaExceededException">
-        /// You can't associate any more AWS Identity and Access Management (IAM) roles with the
-        /// DB instance because the quota has been reached.
+        /// You can't associate any more Amazon Web Services Identity and Access Management (IAM)
+        /// roles with the DB instance because the quota has been reached.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -525,12 +526,12 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
-        /// The specified target group isn't available for a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified target group isn't available for a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
@@ -613,9 +614,9 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
-        /// You can't authorize ingress from an EC2 security group in one AWS Region to an Amazon
-        /// RDS DB instance in another. You can't authorize ingress from a VPC security group
-        /// in one VPC to an Amazon RDS DB instance in another.
+        /// You can't authorize ingress from an EC2 security group in one Amazon Web Services
+        /// Region to an Amazon RDS DB instance in another. You can't authorize ingress from a
+        /// VPC security group in one VPC to an Amazon RDS DB instance in another.
         /// </para>
         ///  </note> 
         /// <para>
@@ -819,25 +820,26 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// You can copy an encrypted DB cluster snapshot from another AWS Region. In that case,
-        /// the AWS Region where you call the <code>CopyDBClusterSnapshot</code> action is the
-        /// destination AWS Region for the encrypted DB cluster snapshot to be copied to. To copy
-        /// an encrypted DB cluster snapshot from another AWS Region, you must provide the following
-        /// values:
+        /// You can copy an encrypted DB cluster snapshot from another Amazon Web Services Region.
+        /// In that case, the Amazon Web Services Region where you call the <code>CopyDBClusterSnapshot</code>
+        /// action is the destination Amazon Web Services Region for the encrypted DB cluster
+        /// snapshot to be copied to. To copy an encrypted DB cluster snapshot from another Amazon
+        /// Web Services Region, you must provide the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for
-        /// the key to use to encrypt the copy of the DB cluster snapshot in the destination AWS
-        /// Region.
+        ///  <code>KmsKeyId</code> - The Amazon Web Services Key Management System (Amazon Web
+        /// Services KMS) key identifier for the key to use to encrypt the copy of the DB cluster
+        /// snapshot in the destination Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request
-        /// for the <code>CopyDBClusterSnapshot</code> action to be called in the source AWS Region
-        /// where the DB cluster snapshot is copied from. The pre-signed URL must be a valid request
-        /// for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the
-        /// source AWS Region that contains the encrypted DB cluster snapshot to be copied.
+        /// for the <code>CopyDBClusterSnapshot</code> action to be called in the source Amazon
+        /// Web Services Region where the DB cluster snapshot is copied from. The pre-signed URL
+        /// must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that
+        /// can be executed in the source Amazon Web Services Region that contains the encrypted
+        /// DB cluster snapshot to be copied.
         /// </para>
         ///  
         /// <para>
@@ -845,50 +847,52 @@ namespace Amazon.RDS
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK)
-        /// to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
-        /// This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action
-        /// that is called in the destination AWS Region, and the action contained in the pre-signed
-        /// URL.
+        ///  <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer
+        /// master key (CMK) to use to encrypt the copy of the DB cluster snapshot in the destination
+        /// Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
+        /// action that is called in the destination Amazon Web Services Region, and the action
+        /// contained in the pre-signed URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot
-        /// is to be created in.
+        ///  <code>DestinationRegion</code> - The name of the Amazon Web Services Region that
+        /// the DB cluster snapshot is to be created in.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
-        /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are
-        /// copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
-        /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
+        /// Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example,
+        /// if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web
+        /// Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like
+        /// the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-        /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+        /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version
+        /// 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
         /// Signature Version 4 Signing Process</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code>
-        /// (or <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code>
+        /// If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code>
+        /// (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code>
         /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
-        /// is a valid request for the operation that can be executed in the source AWS Region.
+        /// is a valid request for the operation that can be executed in the source Amazon Web
+        /// Services Region.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
         ///  <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
-        /// of the DB cluster snapshot in the destination AWS Region.
+        /// of the DB cluster snapshot in the destination Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
-        /// ARN format for the source AWS Region and is the same value as the <code>SourceDBClusterSnapshotIdentifier</code>
-        /// in the pre-signed URL. 
+        /// ARN format for the source Amazon Web Services Region and is the same value as the
+        /// <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -898,8 +902,8 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// For more information on copying encrypted DB cluster snapshots from one AWS Region
-        /// to another, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html">
+        /// For more information on copying encrypted DB cluster snapshots from one Amazon Web
+        /// Services Region to another, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html">
         /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
         ///  
@@ -933,7 +937,7 @@ namespace Amazon.RDS
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
@@ -1013,9 +1017,9 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// You can copy a snapshot from one AWS Region to another. In that case, the AWS Region
-        /// where you call the <code>CopyDBSnapshot</code> action is the destination AWS Region
-        /// for the DB snapshot copy. 
+        /// You can copy a snapshot from one Amazon Web Services Region to another. In that case,
+        /// the Amazon Web Services Region where you call the <code>CopyDBSnapshot</code> action
+        /// is the destination Amazon Web Services Region for the DB snapshot copy. 
         /// </para>
         ///  
         /// <para>
@@ -1043,7 +1047,7 @@ namespace Amazon.RDS
         /// The state of the DB snapshot doesn't allow deletion.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
@@ -1089,7 +1093,7 @@ namespace Amazon.RDS
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupQuotaExceededException">
-        /// The quota of 20 option groups was exceeded for this AWS account.
+        /// The quota of 20 option groups was exceeded for this Amazon Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup">REST API Reference for CopyOptionGroup Operation</seealso>
         public virtual Task<CopyOptionGroupResponse> CopyOptionGroupAsync(CopyOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1143,7 +1147,7 @@ namespace Amazon.RDS
         /// You have exceeded the maximum number of custom Availability Zones.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone">REST API Reference for CreateCustomAvailabilityZone Operation</seealso>
         public virtual Task<CreateCustomAvailabilityZoneResponse> CreateCustomAvailabilityZoneAsync(CreateCustomAvailabilityZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1176,8 +1180,8 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-        /// cluster as a read replica of another DB cluster or Amazon RDS MySQL DB instance. For
-        /// cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
+        /// cluster as a read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL
+        /// DB instance. For cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
         /// is encrypted, you must also specify the <code>PreSignedUrl</code> parameter.
         /// </para>
         ///  
@@ -1254,7 +1258,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
@@ -1541,7 +1545,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -1659,7 +1663,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -1775,11 +1779,12 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the CreateDBProxy service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyAlreadyExistsException">
-        /// The specified proxy name must be unique for all proxies owned by your AWS account
-        /// in the specified AWS Region.
+        /// The specified proxy name must be unique for all proxies owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyQuotaExceededException">
-        /// Your AWS account already has the maximum number of proxies in the specified AWS Region.
+        /// Your Amazon Web Services account already has the maximum number of proxies in the
+        /// specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
@@ -1824,14 +1829,14 @@ namespace Amazon.RDS
         /// <returns>The response from the CreateDBProxyEndpoint service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyEndpointAlreadyExistsException">
         /// The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned
-        /// by your AWS account in the specified AWS Region.
+        /// by your Amazon Web Services account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyEndpointQuotaExceededException">
         /// The DB proxy already has the maximum number of endpoints.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
         /// The requested operation can't be performed while the proxy is in this state.
@@ -1965,7 +1970,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet in
-        /// at least two AZs in the AWS Region.
+        /// at least two AZs in the Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSubnetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2102,10 +2107,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates an Aurora global database spread across multiple AWS Regions. The global
-        /// database contains a single primary cluster with read-write capability, and a read-only
-        /// secondary cluster that receives data from the primary cluster through high-speed replication
-        /// performed by the Aurora storage subsystem. 
+        /// Creates an Aurora global database spread across multiple Amazon Web Services Regions.
+        /// The global database contains a single primary cluster with read-write capability,
+        /// and a read-only secondary cluster that receives data from the primary cluster through
+        /// high-speed replication performed by the Aurora storage subsystem. 
         /// 
         ///  
         /// <para>
@@ -2178,7 +2183,7 @@ namespace Amazon.RDS
         /// The option group you are trying to create already exists.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupQuotaExceededException">
-        /// The quota of 20 option groups was exceeded for this AWS account.
+        /// The quota of 20 option groups was exceeded for this Amazon Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">REST API Reference for CreateOptionGroup Operation</seealso>
         public virtual Task<CreateOptionGroupResponse> CreateOptionGroupAsync(CreateOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2229,7 +2234,7 @@ namespace Amazon.RDS
         /// Zone identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone">REST API Reference for DeleteCustomAvailabilityZone Operation</seealso>
         public virtual Task<DeleteCustomAvailabilityZoneResponse> DeleteCustomAvailabilityZoneAsync(DeleteCustomAvailabilityZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2666,8 +2671,8 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteDBProxy service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
         /// The requested operation can't be performed while the proxy is in this state.
@@ -3059,16 +3064,16 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeregisterDBProxyTargets service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
-        /// The specified target group isn't available for a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified target group isn't available for a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
         /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
-        /// by your AWS account in the specified AWS Region.
+        /// by your Amazon Web Services account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
         /// The requested operation can't be performed while the proxy is in this state.
@@ -3168,7 +3173,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Lists the set of CA certificates provided by Amazon RDS for this AWS account.
+        /// Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -3499,17 +3505,18 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// When sharing snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code>
-        /// returns the <code>restore</code> attribute and a list of IDs for the AWS accounts
-        /// that are authorized to copy or restore the manual DB cluster snapshot. If <code>all</code>
-        /// is included in the list of values for the <code>restore</code> attribute, then the
-        /// manual DB cluster snapshot is public and can be copied or restored by all AWS accounts.
+        /// When sharing snapshots with other Amazon Web Services accounts, <code>DescribeDBClusterSnapshotAttributes</code>
+        /// returns the <code>restore</code> attribute and a list of IDs for the Amazon Web Services
+        /// accounts that are authorized to copy or restore the manual DB cluster snapshot. If
+        /// <code>all</code> is included in the list of values for the <code>restore</code> attribute,
+        /// then the manual DB cluster snapshot is public and can be copied or restored by all
+        /// Amazon Web Services accounts.
         /// </para>
         ///  
         /// <para>
-        /// To add or remove access for an AWS account to copy or restore a manual DB cluster
-        /// snapshot, or to make the manual DB cluster snapshot public or private, use the <code>ModifyDBClusterSnapshotAttribute</code>
-        /// API action.
+        /// To add or remove access for an Amazon Web Services account to copy or restore a manual
+        /// DB cluster snapshot, or to make the manual DB cluster snapshot public or private,
+        /// use the <code>ModifyDBClusterSnapshotAttribute</code> API action.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3919,8 +3926,8 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBProxies service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
         public virtual Task<DescribeDBProxiesResponse> DescribeDBProxiesAsync(DescribeDBProxiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3960,8 +3967,8 @@ namespace Amazon.RDS
         /// The DB proxy endpoint doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints">REST API Reference for DescribeDBProxyEndpoints Operation</seealso>
         public virtual Task<DescribeDBProxyEndpointsResponse> DescribeDBProxyEndpointsAsync(DescribeDBProxyEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3999,12 +4006,12 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBProxyTargetGroups service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
-        /// The specified target group isn't available for a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified target group isn't available for a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
         /// The requested operation can't be performed while the proxy is in this state.
@@ -4044,16 +4051,16 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBProxyTargets service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
-        /// The specified target group isn't available for a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified target group isn't available for a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
         /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
-        /// by your AWS account in the specified AWS Region.
+        /// by your Amazon Web Services account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
         /// The requested operation can't be performed while the proxy is in this state.
@@ -4151,16 +4158,17 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// When sharing snapshots with other AWS accounts, <code>DescribeDBSnapshotAttributes</code>
-        /// returns the <code>restore</code> attribute and a list of IDs for the AWS accounts
-        /// that are authorized to copy or restore the manual DB snapshot. If <code>all</code>
+        /// When sharing snapshots with other Amazon Web Services accounts, <code>DescribeDBSnapshotAttributes</code>
+        /// returns the <code>restore</code> attribute and a list of IDs for the Amazon Web Services
+        /// accounts that are authorized to copy or restore the manual DB snapshot. If <code>all</code>
         /// is included in the list of values for the <code>restore</code> attribute, then the
-        /// manual DB snapshot is public and can be copied or restored by all AWS accounts.
+        /// manual DB snapshot is public and can be copied or restored by all Amazon Web Services
+        /// accounts.
         /// </para>
         ///  
         /// <para>
-        /// To add or remove access for an AWS account to copy or restore a manual DB snapshot,
-        /// or to make the manual DB snapshot public or private, use the <code>ModifyDBSnapshotAttribute</code>
+        /// To add or remove access for an Amazon Web Services account to copy or restore a manual
+        /// DB snapshot, or to make the manual DB snapshot public or private, use the <code>ModifyDBSnapshotAttribute</code>
         /// API action.
         /// </para>
         /// </summary>
@@ -5023,9 +5031,9 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns a list of the source AWS Regions where the current AWS Region can create a
-        /// read replica, copy a DB snapshot from, or replicate automated backups from. This API
-        /// action supports pagination.
+        /// Returns a list of the source Amazon Web Services Regions where the current Amazon
+        /// Web Services Region can create a read replica, copy a DB snapshot from, or replicate
+        /// automated backups from. This API action supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
         /// <param name="cancellationToken">
@@ -5340,12 +5348,12 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
-        /// The specified target group isn't available for a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified target group isn't available for a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
@@ -5394,13 +5402,13 @@ namespace Amazon.RDS
         /// <para>
         /// You already migrated your applications to support the latest certificate authority
         /// (CA) certificate, but the new CA certificate is not yet the RDS default CA certificate
-        /// for the specified AWS Region.
+        /// for the specified Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS has already moved to a new default CA certificate for the specified AWS Region,
-        /// but you are still in the process of supporting the new CA certificate. In this case,
-        /// you temporarily need additional time to finish your application changes.
+        /// RDS has already moved to a new default CA certificate for the specified Amazon Web
+        /// Services Region, but you are still in the process of supporting the new CA certificate.
+        /// In this case, you temporarily need additional time to finish your application changes.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5675,13 +5683,7 @@ namespace Amazon.RDS
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
         /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Changes to dynamic parameters are applied immediately. Changes to static parameters
-        /// require a reboot without failover to the DB cluster associated with the parameter
-        /// group before the change can take effect.
-        /// </para>
-        ///  </note> <important> 
+        ///  <important> 
         /// <para>
         /// After you create a DB cluster parameter group, you should wait at least 5 minutes
         /// before creating your first DB cluster that uses that DB cluster parameter group as
@@ -5751,28 +5753,30 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code>
-        /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
-        /// add a list of IDs of the AWS accounts that are authorized to restore the manual DB
-        /// cluster snapshot. Use the value <code>all</code> to make the manual DB cluster snapshot
-        /// public, which means that it can be copied or restored by all AWS accounts.
+        /// To share a manual DB cluster snapshot with other Amazon Web Services accounts, specify
+        /// <code>restore</code> as the <code>AttributeName</code> and use the <code>ValuesToAdd</code>
+        /// parameter to add a list of IDs of the Amazon Web Services accounts that are authorized
+        /// to restore the manual DB cluster snapshot. Use the value <code>all</code> to make
+        /// the manual DB cluster snapshot public, which means that it can be copied or restored
+        /// by all Amazon Web Services accounts.
         /// </para>
         ///  <note> 
         /// <para>
         /// Don't add the <code>all</code> value for any manual DB cluster snapshots that contain
-        /// private information that you don't want available to all AWS accounts.
+        /// private information that you don't want available to all Amazon Web Services accounts.
         /// </para>
         ///  </note> 
         /// <para>
         /// If a manual DB cluster snapshot is encrypted, it can be shared, but only by specifying
-        /// a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
-        /// can't use <code>all</code> as a value for that parameter in this case.
+        /// a list of authorized Amazon Web Services account IDs for the <code>ValuesToAdd</code>
+        /// parameter. You can't use <code>all</code> as a value for that parameter in this case.
         /// </para>
         ///  
         /// <para>
-        /// To view which AWS accounts have access to copy or restore a manual DB cluster snapshot,
-        /// or whether a manual DB cluster snapshot is public or private, use the <a>DescribeDBClusterSnapshotAttributes</a>
-        /// API action. The accounts are returned as values for the <code>restore</code> attribute.
+        /// To view which Amazon Web Services accounts have access to copy or restore a manual
+        /// DB cluster snapshot, or whether a manual DB cluster snapshot is public or private,
+        /// use the <a>DescribeDBClusterSnapshotAttributes</a> API action. The accounts are returned
+        /// as values for the <code>restore</code> attribute.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5884,7 +5888,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -5931,13 +5935,7 @@ namespace Amazon.RDS
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
         /// request. 
         /// 
-        ///  <note> 
-        /// <para>
-        /// Changes to dynamic parameters are applied immediately. Changes to static parameters
-        /// require a reboot without failover to the DB instance associated with the parameter
-        /// group before the change can take effect.
-        /// </para>
-        ///  </note> <important> 
+        ///  <important> 
         /// <para>
         /// After you modify a DB parameter group, you should wait at least 5 minutes before creating
         /// your first DB instance that uses that DB parameter group as the default parameter
@@ -6000,12 +5998,12 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBProxy service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyAlreadyExistsException">
-        /// The specified proxy name must be unique for all proxies owned by your AWS account
-        /// in the specified AWS Region.
+        /// The specified proxy name must be unique for all proxies owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
         /// The requested operation can't be performed while the proxy is in this state.
@@ -6046,7 +6044,7 @@ namespace Amazon.RDS
         /// <returns>The response from the ModifyDBProxyEndpoint service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyEndpointAlreadyExistsException">
         /// The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned
-        /// by your AWS account in the specified AWS Region.
+        /// by your Amazon Web Services account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
         /// The DB proxy endpoint doesn't exist.
@@ -6092,12 +6090,12 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBProxyTargetGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
-        /// The specified target group isn't available for a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified target group isn't available for a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
         /// The requested operation can't be performed while the proxy is in this state.
@@ -6176,27 +6174,27 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// To share a manual DB snapshot with other AWS accounts, specify <code>restore</code>
+        /// To share a manual DB snapshot with other Amazon Web Services accounts, specify <code>restore</code>
         /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
-        /// add a list of IDs of the AWS accounts that are authorized to restore the manual DB
-        /// snapshot. Uses the value <code>all</code> to make the manual DB snapshot public, which
-        /// means it can be copied or restored by all AWS accounts.
+        /// add a list of IDs of the Amazon Web Services accounts that are authorized to restore
+        /// the manual DB snapshot. Uses the value <code>all</code> to make the manual DB snapshot
+        /// public, which means it can be copied or restored by all Amazon Web Services accounts.
         /// </para>
         ///  <note> 
         /// <para>
         /// Don't add the <code>all</code> value for any manual DB snapshots that contain private
-        /// information that you don't want available to all AWS accounts.
+        /// information that you don't want available to all Amazon Web Services accounts.
         /// </para>
         ///  </note> 
         /// <para>
         /// If the manual DB snapshot is encrypted, it can be shared, but only by specifying a
-        /// list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
-        /// can't use <code>all</code> as a value for that parameter in this case.
+        /// list of authorized Amazon Web Services account IDs for the <code>ValuesToAdd</code>
+        /// parameter. You can't use <code>all</code> as a value for that parameter in this case.
         /// </para>
         ///  
         /// <para>
-        /// To view which AWS accounts have access to copy or restore a manual DB snapshot, or
-        /// whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
+        /// To view which Amazon Web Services accounts have access to copy or restore a manual
+        /// DB snapshot, or whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
         /// API action. The accounts are returned as values for the <code>restore</code> attribute.
         /// </para>
         /// </summary>
@@ -6243,7 +6241,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet
-        /// in at least two AZs in the AWS Region.
+        /// in at least two AZs in the Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSubnetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -6668,15 +6666,15 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetAlreadyRegisteredException">
         /// The proxy is already associated with the specified RDS DB instance or Aurora DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
-        /// The specified target group isn't available for a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified target group isn't available for a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientAvailableIPsInSubnetException">
         /// The requested operation can't be performed because there aren't enough available IP
@@ -6770,10 +6768,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora
-        /// DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
-        /// Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon
-        /// Aurora User Guide</i>.
+        /// Disassociates an Amazon Web Services Identity and Access Management (IAM) role from
+        /// an Amazon Aurora DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
+        /// Amazon Aurora MySQL to Access Other Amazon Web Services Services on Your Behalf </a>
+        /// in the <i>Amazon Aurora User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -6823,7 +6821,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+        /// Disassociates an Amazon Web Services Identity and Access Management (IAM) role from
+        /// a DB instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBInstance service method.</param>
         /// <param name="cancellationToken">
@@ -6928,12 +6927,12 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
-        /// The specified target group isn't available for a proxy owned by your AWS account in
-        /// the specified AWS Region.
+        /// The specified target group isn't available for a proxy owned by your Amazon Web Services
+        /// account in the specified Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
@@ -7153,7 +7152,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
@@ -7269,7 +7268,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -7388,7 +7387,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -7513,7 +7512,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -7615,7 +7614,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -7741,7 +7740,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -7861,7 +7860,7 @@ namespace Amazon.RDS
         /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
         /// The specified resource ID was not found.
@@ -7892,8 +7891,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster
-        /// AWS CLI command, or the StopDBCluster action.
+        /// Starts an Amazon Aurora DB cluster that was stopped using the Amazon Web Services
+        /// console, the stop-db-cluster CLI command, or the StopDBCluster action.
         /// 
         ///  
         /// <para>
@@ -7948,8 +7947,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Starts an Amazon RDS DB instance that was stopped using the AWS console, the stop-db-instance
-        /// AWS CLI command, or the StopDBInstance action. 
+        /// Starts an Amazon RDS DB instance that was stopped using the Amazon Web Services console,
+        /// the stop-db-instance CLI command, or the StopDBInstance action. 
         /// 
         ///  
         /// <para>
@@ -8010,7 +8009,7 @@ namespace Amazon.RDS
         /// of users' change.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
         public virtual Task<StartDBInstanceResponse> StartDBInstanceAsync(StartDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8038,13 +8037,13 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Enables replication of automated backups to a different AWS Region.
+        /// Enables replication of automated backups to a different Amazon Web Services Region.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
-        /// Replicating Automated Backups to Another AWS Region</a> in the <i>Amazon RDS User
-        /// Guide.</i> 
+        /// Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon
+        /// RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDBInstanceAutomatedBackupsReplication service method.</param>
@@ -8065,7 +8064,7 @@ namespace Amazon.RDS
         /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// Storage of the <code>StorageType</code> specified can't be associated with the DB
@@ -8134,7 +8133,7 @@ namespace Amazon.RDS
         /// <b>S3IngestionRoleArn</b> values and try again.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an AWS KMS key.
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         public virtual Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8162,8 +8161,9 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Stops a database activity stream that was started using the AWS console, the <code>start-activity-stream</code>
-        /// AWS CLI command, or the <code>StartActivityStream</code> action.
+        /// Stops a database activity stream that was started using the Amazon Web Services console,
+        /// the <code>start-activity-stream</code> CLI command, or the <code>StartActivityStream</code>
+        /// action.
         /// 
         ///  
         /// <para>
@@ -8345,8 +8345,8 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
-        /// Replicating Automated Backups to Another AWS Region</a> in the <i>Amazon RDS User
-        /// Guide.</i> 
+        /// Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon
+        /// RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDBInstanceAutomatedBackupsReplication service method.</param>

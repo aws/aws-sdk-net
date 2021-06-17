@@ -161,8 +161,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IncludePublic. 
         /// <para>
         /// A value that indicates whether to include manual DB cluster snapshots that are public
-        /// and can be copied or restored by any AWS account. By default, the public snapshots
-        /// are not included.
+        /// and can be copied or restored by any Amazon Web Services account. By default, the
+        /// public snapshots are not included.
         /// </para>
         ///  
         /// <para>
@@ -186,13 +186,14 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IncludeShared. 
         /// <para>
         /// A value that indicates whether to include shared manual DB cluster snapshots from
-        /// other AWS accounts that this AWS account has been given permission to copy or restore.
-        /// By default, these snapshots are not included.
+        /// other Amazon Web Services accounts that this Amazon Web Services account has been
+        /// given permission to copy or restore. By default, these snapshots are not included.
         /// </para>
         ///  
         /// <para>
-        /// You can give an AWS account permission to restore a manual DB cluster snapshot from
-        /// another AWS account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
+        /// You can give an Amazon Web Services account permission to restore a manual DB cluster
+        /// snapshot from another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code>
+        /// API action.
         /// </para>
         /// </summary>
         public bool IncludeShared
@@ -264,17 +265,17 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>automated</code> - Return all DB cluster snapshots that have been automatically
-        /// taken by Amazon RDS for my AWS account.
+        /// taken by Amazon RDS for my Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>manual</code> - Return all DB cluster snapshots that have been taken by my
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>shared</code> - Return all manual DB cluster snapshots that have been shared
-        /// to my AWS account.
+        /// to my Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>

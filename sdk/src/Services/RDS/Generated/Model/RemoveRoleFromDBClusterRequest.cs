@@ -30,10 +30,10 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveRoleFromDBCluster operation.
-    /// Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora
-    /// DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
-    /// Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon
-    /// Aurora User Guide</i>.
+    /// Disassociates an Amazon Web Services Identity and Access Management (IAM) role from
+    /// an Amazon Aurora DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
+    /// Amazon Aurora MySQL to Access Other Amazon Web Services Services on Your Behalf </a>
+    /// in the <i>Amazon Aurora User Guide</i>.
     /// 
     ///  <note> 
     /// <para>

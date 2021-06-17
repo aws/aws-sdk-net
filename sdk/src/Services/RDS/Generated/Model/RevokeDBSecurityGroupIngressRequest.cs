@@ -140,11 +140,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        ///  The AWS account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
-        /// parameter. The AWS access key ID isn't an acceptable value. For VPC DB security groups,
-        /// <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId
-        /// and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must
-        /// be provided. 
+        ///  The Amazon Web Services account number of the owner of the EC2 security group specified
+        /// in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access
+        /// key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
+        /// must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+        /// or <code>EC2SecurityGroupId</code> must be provided. 
         /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId

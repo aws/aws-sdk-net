@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// An error occurred accessing an AWS KMS key.
+    /// An error occurred accessing an Amazon Web Services KMS key.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

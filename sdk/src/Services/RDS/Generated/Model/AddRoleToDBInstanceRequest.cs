@@ -30,7 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the AddRoleToDBInstance operation.
-    /// Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+    /// Associates an Amazon Web Services Identity and Access Management (IAM) role with a
+    /// DB instance.
     /// 
     ///  <note> 
     /// <para>

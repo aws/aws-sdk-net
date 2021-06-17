@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the ModifyDBSubnetGroup operation.
     /// Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet
-    /// in at least two AZs in the AWS Region.
+    /// in at least two AZs in the Amazon Web Services Region.
     /// </summary>
     public partial class ModifyDBSubnetGroupRequest : AmazonRDSRequest
     {

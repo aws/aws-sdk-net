@@ -168,7 +168,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property TargetGroupName. 
         /// <para>
         /// The identifier for the target group. This name must be unique for all target groups
-        /// owned by your AWS account in the specified AWS Region.
+        /// owned by your Amazon Web Services account in the specified Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string TargetGroupName

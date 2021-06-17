@@ -197,9 +197,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterResourceId. 
         /// <para>
-        ///  The AWS Region-unique, immutable identifier for the global database cluster. This
-        /// identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master
-        /// key (CMK) for the DB cluster is accessed. 
+        ///  The Amazon Web Services Region-unique, immutable identifier for the global database
+        /// cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever
+        /// the Amazon Web Services KMS customer master key (CMK) for the DB cluster is accessed.
+        /// 
         /// </para>
         /// </summary>
         public string GlobalClusterResourceId

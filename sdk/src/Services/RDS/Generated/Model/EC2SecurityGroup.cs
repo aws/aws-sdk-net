@@ -96,8 +96,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        ///  Specifies the AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
-        /// field. 
+        ///  Specifies the Amazon Web Services ID of the owner of the EC2 security group specified
+        /// in the <code>EC2SecurityGroupName</code> field. 
         /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId

@@ -30,7 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveRoleFromDBInstance operation.
-    /// Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+    /// Disassociates an Amazon Web Services Identity and Access Management (IAM) role from
+    /// a DB instance.
     /// </summary>
     public partial class RemoveRoleFromDBInstanceRequest : AmazonRDSRequest
     {

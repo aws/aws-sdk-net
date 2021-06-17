@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Describes an AWS Identity and Access Management (IAM) role that is associated with
-    /// a DB instance.
+    /// Describes an Amazon Web Services Identity and Access Management (IAM) role that is
+    /// associated with a DB instance.
     /// </summary>
     public partial class DBInstanceRole
     {
@@ -41,8 +41,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FeatureName. 
         /// <para>
-        /// The name of the feature associated with the AWS Identity and Access Management (IAM)
-        /// role. For the list of supported feature names, see <code>DBEngineVersion</code>. 
+        /// The name of the feature associated with the Amazon Web Services Identity and Access
+        /// Management (IAM) role. For the list of supported feature names, see <code>DBEngineVersion</code>.
+        /// 
         /// </para>
         /// </summary>
         public string FeatureName
@@ -84,7 +85,7 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can
-        /// be used to access other AWS services on your behalf.
+        /// be used to access other Amazon Web Services services on your behalf.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -93,8 +94,8 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the
-        /// DB instance is unable to assume the IAM role in order to access other AWS services
-        /// on your behalf.
+        /// DB instance is unable to assume the IAM role in order to access other Amazon Web Services
+        /// services on your behalf.
         /// </para>
         ///  </li> </ul>
         /// </summary>

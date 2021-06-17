@@ -113,7 +113,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IncludeShared. 
         /// <para>
         /// Optional Boolean parameter that specifies whether the output includes information
-        /// about clusters shared from other AWS accounts.
+        /// about clusters shared from other Amazon Web Services accounts.
         /// </para>
         /// </summary>
         public bool IncludeShared

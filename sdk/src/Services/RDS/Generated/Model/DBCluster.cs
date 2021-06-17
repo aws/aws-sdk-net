@@ -117,12 +117,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ActivityStreamKmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier used for encrypting messages in the database activity stream.
+        /// The Amazon Web Services KMS key identifier used for encrypting messages in the database
+        /// activity stream.
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string ActivityStreamKmsKeyId
@@ -199,9 +200,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AssociatedRoles. 
         /// <para>
-        /// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated
-        /// with the DB cluster. IAM roles that are associated with a DB cluster grant permission
-        /// for the DB cluster to access other AWS services on your behalf.
+        /// Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles
+        /// that are associated with the DB cluster. IAM roles that are associated with a DB cluster
+        /// grant permission for the DB cluster to access other Amazon Web Services on your behalf.
         /// </para>
         /// </summary>
         public List<DBClusterRole> AssociatedRoles
@@ -391,8 +392,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CrossAccountClone. 
         /// <para>
-        /// Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS
-        /// account.
+        /// Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon
+        /// Web Services account.
         /// </para>
         /// </summary>
         public bool CrossAccountClone
@@ -539,9 +540,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// The AWS Region-unique, immutable identifier for the DB cluster. This identifier is
-        /// found in AWS CloudTrail log entries whenever the AWS KMS CMK for the DB cluster is
-        /// accessed.
+        /// The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This
+        /// identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon
+        /// Web Services KMS CMK for the DB cluster is accessed.
         /// </para>
         /// </summary>
         public string DbClusterResourceId
@@ -841,8 +842,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// A value that indicates whether the mapping of AWS Identity and Access Management (IAM)
-        /// accounts to database accounts is enabled.
+        /// A value that indicates whether the mapping of Amazon Web Services Identity and Access
+        /// Management (IAM) accounts to database accounts is enabled.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -860,13 +861,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted
-        /// DB cluster.
+        /// If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier
+        /// for the encrypted DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string KmsKeyId

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// A CA certificate for an AWS account.
+    /// A CA certificate for an Amazon Web Services account.
     /// </summary>
     public partial class Certificate
     {

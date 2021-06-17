@@ -62,6 +62,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
+                if(publicRequest.IsSetEngineNativeAuditFieldsIncluded())
+                {
+                    request.Parameters.Add("EngineNativeAuditFieldsIncluded", StringUtils.FromBool(publicRequest.EngineNativeAuditFieldsIncluded));
+                }
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));

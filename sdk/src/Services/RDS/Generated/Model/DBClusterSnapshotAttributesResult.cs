@@ -34,9 +34,9 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// Manual DB cluster snapshot attributes are used to authorize other AWS accounts to
-    /// copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code>
-    /// API action.
+    /// Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services
+    /// accounts to copy or restore a manual DB cluster snapshot. For more information, see
+    /// the <code>ModifyDBClusterSnapshotAttribute</code> API action.
     /// </para>
     /// </summary>
     public partial class DBClusterSnapshotAttributesResult

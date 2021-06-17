@@ -158,6 +158,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SupportedActivityStreamModes/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedActivityStreamModes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("SupportedEngineModes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

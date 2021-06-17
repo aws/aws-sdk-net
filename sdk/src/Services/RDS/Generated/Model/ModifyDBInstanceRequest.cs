@@ -208,7 +208,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AwsBackupRecoveryPointArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+        /// The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
         /// </para>
         /// </summary>
         [AWSProperty(Min=43, Max=350)]
@@ -412,9 +412,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions, or for all database
-        /// engines. For the full list of DB instance classes, and availability for your engine,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for
+        /// all database engines. For the full list of DB instance classes, and availability for
+        /// your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
         /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
@@ -748,12 +748,12 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-        /// with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+        /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-        /// IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+        /// IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
         /// </para>
         /// </summary>
         public bool EnableCustomerOwnedIp
@@ -771,13 +771,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
+        /// Access Management (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database
-        /// accounts is managed by the DB cluster.
+        /// This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts
+        /// to database accounts is managed by the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -1191,18 +1191,20 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of Performance Insights data.
+        /// The Amazon Web Services KMS key identifier for encryption of Performance Insights
+        /// data.
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-        /// AWS KMS customer master key (CMK).
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the Amazon Web Services KMS customer master key (CMK).
         /// </para>
         ///  
         /// <para>
         /// If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
-        /// RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
-        /// has a different default CMK for each AWS Region.
+        /// RDS uses your default CMK. There is a default CMK for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1243,7 +1245,8 @@ namespace Amazon.RDS.Model
         /// are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing
         /// this parameter doesn't result in an outage and the change is asynchronously applied
         /// as soon as possible. The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+        /// 8-hour block of time for each Amazon Web Services Region. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
         /// window</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  

@@ -79,8 +79,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// A value that indicates whether mapping of AWS Identity and Access Management (IAM)
-        /// accounts to database accounts is enabled.
+        /// A value that indicates whether mapping of Amazon Web Services Identity and Access
+        /// Management (IAM) accounts to database accounts is enabled.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
