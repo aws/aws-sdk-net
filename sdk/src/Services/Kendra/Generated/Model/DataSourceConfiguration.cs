@@ -41,6 +41,7 @@ namespace Amazon.Kendra.Model
         private SalesforceConfiguration _salesforceConfiguration;
         private ServiceNowConfiguration _serviceNowConfiguration;
         private SharePointConfiguration _sharePointConfiguration;
+        private WebCrawlerConfiguration _webCrawlerConfiguration;
 
         /// <summary>
         /// Gets and sets the property ConfluenceConfiguration. 
@@ -186,6 +187,21 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSharePointConfiguration()
         {
             return this._sharePointConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebCrawlerConfiguration.
+        /// </summary>
+        public WebCrawlerConfiguration WebCrawlerConfiguration
+        {
+            get { return this._webCrawlerConfiguration; }
+            set { this._webCrawlerConfiguration = value; }
+        }
+
+        // Check to see if WebCrawlerConfiguration property is set
+        internal bool IsSetWebCrawlerConfiguration()
+        {
+            return this._webCrawlerConfiguration != null;
         }
 
     }

@@ -112,6 +112,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.SharePointConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WebCrawlerConfiguration", targetDepth))
+                {
+                    var unmarshaller = WebCrawlerConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.WebCrawlerConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

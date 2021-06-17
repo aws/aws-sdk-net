@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies capacity units configured for your index. You can add and remove capacity
-    /// units to tune an index to your requirements.
+    /// Specifies capacity units configured for your enterprise edition index. You can add
+    /// and remove capacity units to tune an index to your requirements.
     /// </summary>
     public partial class CapacityUnitsConfiguration
     {
@@ -40,8 +40,21 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property QueryCapacityUnits. 
         /// <para>
-        /// The amount of extra query capacity for an index. Each capacity unit provides 0.5 queries
-        /// per second and 40,000 queries per day.
+        /// The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a>
+        /// capacity.
+        /// </para>
+        ///  
+        /// <para>
+        /// A single extra capacity unit for an index provides 0.5 queries per second or approximately
+        /// 40,000 queries per day.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query capacity
+        /// for an index. For example, the base capacity for an index is 0.5 queries per second,
+        /// so GetQuerySuggestions capacity is 2.5 calls per second. If adding another 0.5 queries
+        /// per second to total 1 queries per second for an index, the <code>GetQuerySuggestions</code>
+        /// capacity is 5 calls per second.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -60,8 +73,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StorageCapacityUnits. 
         /// <para>
-        /// The amount of extra storage capacity for an index. Each capacity unit provides 150
-        /// Gb of storage space or 500,000 documents, whichever is reached first.
+        /// The amount of extra storage capacity for an index. A single capacity unit for an index
+        /// provides 150 GB of storage space or 500,000 documents, whichever is reached first.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

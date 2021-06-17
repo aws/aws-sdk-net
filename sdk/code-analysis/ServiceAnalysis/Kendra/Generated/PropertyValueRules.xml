@@ -865,6 +865,23 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.BasicAuthenticationConfiguration.Credentials</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.BasicAuthenticationConfiguration.Host</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.BasicAuthenticationConfiguration.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.BatchDeleteDocumentResponseFailedDocument.ErrorMessage</property>
     <min>1</min>
     <max>2048</max>
@@ -1241,6 +1258,23 @@
     <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.ProxyConfiguration.Credentials</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ProxyConfiguration.Host</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ProxyConfiguration.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.QueryResultItem.DocumentId</property>
     <min>1</min>
     <max>2048</max>
@@ -1509,5 +1543,24 @@
     <min>1</min>
     <max>100000</max>
     <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.WebCrawlerConfiguration.CrawlDepth</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.WebCrawlerConfiguration.MaxContentSizePerPageInMegaBytes</property>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.WebCrawlerConfiguration.MaxLinksPerPage</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.WebCrawlerConfiguration.MaxUrlsPerMinuteCrawlRate</property>
+    <min>1</min>
+    <max>300</max>
   </property-value-rule>
 </property-value-rules>
