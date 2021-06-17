@@ -6439,6 +6439,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProcessingInstanceType MlC5Xlarge = new ProcessingInstanceType("ml.c5.xlarge");
         /// <summary>
+        /// Constant MlG4dn12xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG4dn12xlarge = new ProcessingInstanceType("ml.g4dn.12xlarge");
+        /// <summary>
+        /// Constant MlG4dn16xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG4dn16xlarge = new ProcessingInstanceType("ml.g4dn.16xlarge");
+        /// <summary>
+        /// Constant MlG4dn2xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG4dn2xlarge = new ProcessingInstanceType("ml.g4dn.2xlarge");
+        /// <summary>
+        /// Constant MlG4dn4xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG4dn4xlarge = new ProcessingInstanceType("ml.g4dn.4xlarge");
+        /// <summary>
+        /// Constant MlG4dn8xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG4dn8xlarge = new ProcessingInstanceType("ml.g4dn.8xlarge");
+        /// <summary>
+        /// Constant MlG4dnXlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG4dnXlarge = new ProcessingInstanceType("ml.g4dn.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for ProcessingInstanceType
         /// </summary>
         public static readonly ProcessingInstanceType MlM410xlarge = new ProcessingInstanceType("ml.m4.10xlarge");
@@ -9842,6 +9866,30 @@ namespace Amazon.SageMaker
         /// Constant MlC5Xlarge for TransformInstanceType
         /// </summary>
         public static readonly TransformInstanceType MlC5Xlarge = new TransformInstanceType("ml.c5.xlarge");
+        /// <summary>
+        /// Constant MlG4dn12xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG4dn12xlarge = new TransformInstanceType("ml.g4dn.12xlarge");
+        /// <summary>
+        /// Constant MlG4dn16xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG4dn16xlarge = new TransformInstanceType("ml.g4dn.16xlarge");
+        /// <summary>
+        /// Constant MlG4dn2xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG4dn2xlarge = new TransformInstanceType("ml.g4dn.2xlarge");
+        /// <summary>
+        /// Constant MlG4dn4xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG4dn4xlarge = new TransformInstanceType("ml.g4dn.4xlarge");
+        /// <summary>
+        /// Constant MlG4dn8xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG4dn8xlarge = new TransformInstanceType("ml.g4dn.8xlarge");
+        /// <summary>
+        /// Constant MlG4dnXlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG4dnXlarge = new TransformInstanceType("ml.g4dn.xlarge");
         /// <summary>
         /// Constant MlM410xlarge for TransformInstanceType
         /// </summary>
