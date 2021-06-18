@@ -83,17 +83,5 @@ namespace ServiceClientGeneratorTests
             Assert.Equal(GeneratorDriver.ConstructEndpointName(regionCode), expectedName);
         }
 
-        [Theory]
-        [InlineData("eu-north-1", "EUN1")]
-        [InlineData("us-gov-east-1", "GOVE1")]
-        [InlineData("ap-southeast-1", "APSE1")]
-        [InlineData("cn-north-1", "CN1")]
-        [InlineData("ca-central-1", "CAN1")]
-        [InlineData("us-isob-east-1", "USISOBE1")]
-        public void TestS3EnumNameConstruction(string regionCode, string expectedName)
-        {
-            Assert.Equal(GeneratorDriver.ConstructS3EnumName(regionCode), expectedName);
-        }
-
     }
 }

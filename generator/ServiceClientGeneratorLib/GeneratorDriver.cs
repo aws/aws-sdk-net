@@ -1389,68 +1389,6 @@ namespace ServiceClientGenerator
             WriteFile(endpointsFilesRoot, null, fileName, text);
         }
 
-        /// <summary>
-        /// Constructs S3 enumeration constant names from a region code
-        /// e.g. eu-north-1 -> EUN1
-        /// </summary>
-        public static string ConstructS3EnumName(string regionCode)
-        {
-            var parts = regionCode.Split('-');
-            var name = parts[0].ToUpper();
-            var start = 1;
-            
-            if (regionCode.StartsWith("us-gov"))
-            {
-                name = "GOV";
-                start++;
-            }
-            if (regionCode.StartsWith("cn-"))
-            {
-                name = "C";
-            }
-            if (regionCode.StartsWith("ca-central"))
-            {
-                name = "CAN";
-                start++;
-            }
-
-            for (int i = start; i < parts.Length; i++)
-            {
-                string part;
-
-                switch (parts[i])
-                {
-                    case "northwest":
-                        part = "NW";
-                        break;
-                    case "northeast":
-                        part = "NE";
-                        break;
-                    case "southwest":
-                        part = "SW";
-                        break;
-                    case "southeast":
-                        part = "SE";
-                        break;
-
-                    default:
-
-                        if (parts[i].StartsWith("iso"))
-                        {
-                            part = parts[i].ToUpper();
-                            break;
-                        }
-
-                        part = parts[i].Substring(0, 1).ToUpper();
-                        break;
-                }
-                
-                name += part;
-            }
-
-            return name;
-        }
-
         public static void GenerateS3Enumerations(GeneratorOptions options)
         {
             Console.WriteLine("Generating S3 enumerations constants...");
@@ -1460,7 +1398,7 @@ namespace ServiceClientGenerator
             var generatedFileRoot = Path.Combine(srcFilesRoot, "Services", "S3", "Custom");
             const string fileName = "S3Enumerations.generated.cs";
 
-            var endpoints = ExtractEndpoints(options, ConstructS3EnumName);
+            var endpoints = ExtractEndpoints(options, ConstructEndpointName);
 
             var generator = new S3EnumerationsGenerator()
             {
