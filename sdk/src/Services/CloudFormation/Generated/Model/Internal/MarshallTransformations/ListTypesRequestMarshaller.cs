@@ -62,6 +62,21 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeprecatedStatus", StringUtils.FromString(publicRequest.DeprecatedStatus));
                 }
+                if(publicRequest.IsSetFilters())
+                {
+                    if(publicRequest.Filters.IsSetCategory())
+                    {
+                        request.Parameters.Add("Filters" + "." + "Category", StringUtils.FromString(publicRequest.Filters.Category));
+                    }
+                    if(publicRequest.Filters.IsSetPublisherId())
+                    {
+                        request.Parameters.Add("Filters" + "." + "PublisherId", StringUtils.FromString(publicRequest.Filters.PublisherId));
+                    }
+                    if(publicRequest.Filters.IsSetTypeNamePrefix())
+                    {
+                        request.Parameters.Add("Filters" + "." + "TypeNamePrefix", StringUtils.FromString(publicRequest.Filters.TypeNamePrefix));
+                    }
+                }
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));

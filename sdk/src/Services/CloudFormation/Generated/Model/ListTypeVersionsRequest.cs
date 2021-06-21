@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
         private DeprecatedStatus _deprecatedStatus;
         private int? _maxResults;
         private string _nextToken;
+        private string _publisherId;
         private RegistryType _type;
         private string _typeName;
 
@@ -146,6 +147,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublisherId. 
+        /// <para>
+        /// The publisher ID of the extension publisher.
+        /// </para>
+        ///  
+        /// <para>
+        /// Extensions published by Amazon are not assigned a publisher ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=40)]
+        public string PublisherId
+        {
+            get { return this._publisherId; }
+            set { this._publisherId = value; }
+        }
+
+        // Check to see if PublisherId property is set
+        internal bool IsSetPublisherId()
+        {
+            return this._publisherId != null;
         }
 
         /// <summary>

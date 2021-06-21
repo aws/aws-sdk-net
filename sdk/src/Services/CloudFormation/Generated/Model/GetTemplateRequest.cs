@@ -113,8 +113,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If the template doesn't include transforms, <code>Original</code> and <code>Processed</code>
-        /// return the same template. By default, AWS CloudFormation specifies <code>Original</code>.
-        /// 
+        /// return the same template. By default, AWS CloudFormation specifies <code>Processed</code>.
         /// </para>
         /// </summary>
         public TemplateStage TemplateStage

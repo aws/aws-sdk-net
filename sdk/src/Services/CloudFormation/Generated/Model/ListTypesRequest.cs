@@ -35,6 +35,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListTypesRequest : AmazonCloudFormationRequest
     {
         private DeprecatedStatus _deprecatedStatus;
+        private TypeFilters _filters;
         private int? _maxResults;
         private string _nextToken;
         private ProvisioningType _provisioningType;
@@ -71,6 +72,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDeprecatedStatus()
         {
             return this._deprecatedStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// Filter criteria to use in determining which extensions to return.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a filter, CloudFormation ignores any specified <code>Visibility</code>
+        /// value when returning the list of types.
+        /// </para>
+        /// </summary>
+        public TypeFilters Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null;
         }
 
         /// <summary>
@@ -121,9 +145,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ProvisioningType. 
         /// <para>
-        /// The provisioning behavior of the type. AWS CloudFormation determines the provisioning
-        /// type during registration, based on the types of handlers in the schema handler package
-        /// submitted.
+        /// For resource types, the provisioning behavior of the resource type. AWS CloudFormation
+        /// determines the provisioning type during registration, based on the types of handlers
+        /// in the schema handler package submitted.
         /// </para>
         ///  
         /// <para>
@@ -131,20 +155,23 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates
-        /// to the extension during stack update operations.
+        ///  <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process
+        /// updates to the type during stack update operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMMUTABLE</code>: The extension does not include an update handler, so the
-        /// extension cannot be updated and must instead be replaced during stack update operations.
+        ///  <code>IMMUTABLE</code>: The resource type does not include an update handler, so
+        /// the type cannot be updated and must instead be replaced during stack update operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and
-        /// delete handlers, and therefore cannot actually be provisioned.
+        ///  <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
+        /// and delete handlers, and therefore cannot actually be provisioned.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The default is <code>FULLY_MUTABLE</code>.
+        /// </para>
         /// </summary>
         public ProvisioningType ProvisioningType
         {
@@ -179,7 +206,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// The scope at which the extension is visible and usable in CloudFormation operations.
+        /// The scope at which the extensions are visible and usable in CloudFormation operations.
         /// </para>
         ///  
         /// <para>
@@ -187,14 +214,22 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PRIVATE</code>: The extension is only visible and usable within the account
-        /// in which it is registered. Currently, AWS CloudFormation marks any extension you create
-        /// as <code>PRIVATE</code>.
+        ///  <code>PRIVATE</code>: Extensions that are visible and usable within this account
+        /// and region. This includes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Private extensions you have registered in this account and region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon
-        /// account.
+        /// Public extensions that you have activated in this account and region.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated
+        /// within any Amazon account. This includes extensions from Amazon, as well as third-party
+        /// publishers.
         /// </para>
         ///  </li> </ul> 
         /// <para>

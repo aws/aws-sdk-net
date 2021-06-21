@@ -183,6 +183,64 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type Category.
+    /// </summary>
+    public class Category : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATED for Category
+        /// </summary>
+        public static readonly Category ACTIVATED = new Category("ACTIVATED");
+        /// <summary>
+        /// Constant AWS_TYPES for Category
+        /// </summary>
+        public static readonly Category AWS_TYPES = new Category("AWS_TYPES");
+        /// <summary>
+        /// Constant REGISTERED for Category
+        /// </summary>
+        public static readonly Category REGISTERED = new Category("REGISTERED");
+        /// <summary>
+        /// Constant THIRD_PARTY for Category
+        /// </summary>
+        public static readonly Category THIRD_PARTY = new Category("THIRD_PARTY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Category(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Category FindValue(string value)
+        {
+            return FindValue<Category>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Category(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeAction.
     /// </summary>
     public class ChangeAction : ConstantClass
@@ -731,6 +789,10 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly HandlerErrorCode InvalidRequest = new HandlerErrorCode("InvalidRequest");
         /// <summary>
+        /// Constant InvalidTypeConfiguration for HandlerErrorCode
+        /// </summary>
+        public static readonly HandlerErrorCode InvalidTypeConfiguration = new HandlerErrorCode("InvalidTypeConfiguration");
+        /// <summary>
         /// Constant NetworkFailure for HandlerErrorCode
         /// </summary>
         public static readonly HandlerErrorCode NetworkFailure = new HandlerErrorCode("NetworkFailure");
@@ -792,6 +854,60 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HandlerErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdentityProvider.
+    /// </summary>
+    public class IdentityProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_Marketplace for IdentityProvider
+        /// </summary>
+        public static readonly IdentityProvider AWS_Marketplace = new IdentityProvider("AWS_Marketplace");
+        /// <summary>
+        /// Constant Bitbucket for IdentityProvider
+        /// </summary>
+        public static readonly IdentityProvider Bitbucket = new IdentityProvider("Bitbucket");
+        /// <summary>
+        /// Constant GitHub for IdentityProvider
+        /// </summary>
+        public static readonly IdentityProvider GitHub = new IdentityProvider("GitHub");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdentityProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentityProvider FindValue(string value)
+        {
+            return FindValue<IdentityProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentityProvider(string value)
         {
             return FindValue(value);
         }
@@ -1008,6 +1124,56 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProvisioningType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PublisherStatus.
+    /// </summary>
+    public class PublisherStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UNVERIFIED for PublisherStatus
+        /// </summary>
+        public static readonly PublisherStatus UNVERIFIED = new PublisherStatus("UNVERIFIED");
+        /// <summary>
+        /// Constant VERIFIED for PublisherStatus
+        /// </summary>
+        public static readonly PublisherStatus VERIFIED = new PublisherStatus("VERIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PublisherStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PublisherStatus FindValue(string value)
+        {
+            return FindValue<PublisherStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PublisherStatus(string value)
         {
             return FindValue(value);
         }
@@ -2360,6 +2526,164 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TemplateStage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThirdPartyType.
+    /// </summary>
+    public class ThirdPartyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MODULE for ThirdPartyType
+        /// </summary>
+        public static readonly ThirdPartyType MODULE = new ThirdPartyType("MODULE");
+        /// <summary>
+        /// Constant RESOURCE for ThirdPartyType
+        /// </summary>
+        public static readonly ThirdPartyType RESOURCE = new ThirdPartyType("RESOURCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThirdPartyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThirdPartyType FindValue(string value)
+        {
+            return FindValue<ThirdPartyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThirdPartyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TypeTestsStatus.
+    /// </summary>
+    public class TypeTestsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for TypeTestsStatus
+        /// </summary>
+        public static readonly TypeTestsStatus FAILED = new TypeTestsStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for TypeTestsStatus
+        /// </summary>
+        public static readonly TypeTestsStatus IN_PROGRESS = new TypeTestsStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_TESTED for TypeTestsStatus
+        /// </summary>
+        public static readonly TypeTestsStatus NOT_TESTED = new TypeTestsStatus("NOT_TESTED");
+        /// <summary>
+        /// Constant PASSED for TypeTestsStatus
+        /// </summary>
+        public static readonly TypeTestsStatus PASSED = new TypeTestsStatus("PASSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TypeTestsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TypeTestsStatus FindValue(string value)
+        {
+            return FindValue<TypeTestsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TypeTestsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VersionBump.
+    /// </summary>
+    public class VersionBump : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAJOR for VersionBump
+        /// </summary>
+        public static readonly VersionBump MAJOR = new VersionBump("MAJOR");
+        /// <summary>
+        /// Constant MINOR for VersionBump
+        /// </summary>
+        public static readonly VersionBump MINOR = new VersionBump("MINOR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VersionBump(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VersionBump FindValue(string value)
+        {
+            return FindValue<VersionBump>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VersionBump(string value)
         {
             return FindValue(value);
         }

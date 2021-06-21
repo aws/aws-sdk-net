@@ -66,10 +66,52 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IsActivated", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsActivated = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LastUpdated", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LatestPublicVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LatestPublicVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("OriginalTypeName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OriginalTypeName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PublicVersionNumber", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicVersionNumber = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PublisherId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublisherId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PublisherIdentity", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublisherIdentity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PublisherName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublisherName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Type", targetDepth))

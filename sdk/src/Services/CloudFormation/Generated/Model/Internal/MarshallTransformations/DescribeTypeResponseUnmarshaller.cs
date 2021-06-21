@@ -87,6 +87,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AutoUpdate", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.AutoUpdate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ConfigurationSchema", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ConfigurationSchema = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DefaultVersionId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -117,6 +129,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.ExecutionRoleArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IsActivated", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.IsActivated = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IsDefaultVersion", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -129,16 +147,53 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.LastUpdated = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LatestPublicVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.LatestPublicVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LoggingConfig", targetDepth))
                     {
                         var unmarshaller = LoggingConfigUnmarshaller.Instance;
                         response.LoggingConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OriginalTypeArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.OriginalTypeArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("OriginalTypeName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.OriginalTypeName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ProvisioningType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.ProvisioningType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PublicVersionNumber", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.PublicVersionNumber = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PublisherId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.PublisherId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RequiredActivatedTypes/member", targetDepth))
+                    {
+                        var unmarshaller = RequiredActivatedTypeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.RequiredActivatedTypes.Add(item);
                         continue;
                     }
                     if (context.TestExpression("Schema", targetDepth))
@@ -169,6 +224,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.TypeName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TypeTestsStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.TypeTestsStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TypeTestsStatusDescription", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.TypeTestsStatusDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Visibility", targetDepth))

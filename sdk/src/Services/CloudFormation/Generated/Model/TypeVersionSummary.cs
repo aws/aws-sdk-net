@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Contains summary information about a specific version of a CloudFormation type.
+    /// Contains summary information about a specific version of a CloudFormation extension.
     /// </summary>
     public partial class TypeVersionSummary
     {
         private string _arn;
         private string _description;
         private bool? _isDefaultVersion;
+        private string _publicVersionNumber;
         private DateTime? _timeCreated;
         private RegistryType _type;
         private string _typeName;
@@ -44,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the type version.
+        /// The Amazon Resource Name (ARN) of the extension version.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -63,7 +64,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the type version.
+        /// The description of the extension version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -82,7 +83,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property IsDefaultVersion. 
         /// <para>
-        /// Whether the specified type version is set as the default version.
+        /// Whether the specified extension version is set as the default version.
+        /// </para>
+        ///  
+        /// <para>
+        /// This applies only to private extensions you have registered in your account, and extensions
+        /// published by Amazon. For public third-party extensions, whether or not they are activated
+        /// in your account, CloudFormation returns <code>null</code>.
         /// </para>
         /// </summary>
         public bool IsDefaultVersion
@@ -95,6 +102,36 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetIsDefaultVersion()
         {
             return this._isDefaultVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicVersionNumber. 
+        /// <para>
+        /// For public extensions that have been activated for this account and region, the version
+        /// of the public extension to be used for CloudFormation operations in this account and
+        /// region. For any extensions other than activated third-arty extensions, CloudFormation
+        /// returns <code>null</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// How you specified <code>AutoUpdate</code> when enabling the extension affects whether
+        /// CloudFormation automatically updates the extention in this account and region when
+        /// a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
+        /// CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5)]
+        public string PublicVersionNumber
+        {
+            get { return this._publicVersionNumber; }
+            set { this._publicVersionNumber = value; }
+        }
+
+        // Check to see if PublicVersionNumber property is set
+        internal bool IsSetPublicVersionNumber()
+        {
+            return this._publicVersionNumber != null;
         }
 
         /// <summary>
@@ -118,7 +155,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The kind of type.
+        /// The kind of extension.
         /// </para>
         /// </summary>
         public RegistryType Type
@@ -136,7 +173,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the type.
+        /// The name of the extension.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]
@@ -155,8 +192,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The ID of a specific version of the type. The version ID is the value at the end of
-        /// the Amazon Resource Name (ARN) assigned to the type version when it is registered.
+        /// The ID of a specific version of the extension. The version ID is the value at the
+        /// end of the Amazon Resource Name (ARN) assigned to the extension version when it is
+        /// registered.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

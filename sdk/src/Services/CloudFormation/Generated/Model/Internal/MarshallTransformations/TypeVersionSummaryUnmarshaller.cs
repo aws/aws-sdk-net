@@ -72,6 +72,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.IsDefaultVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PublicVersionNumber", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicVersionNumber = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TimeCreated", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

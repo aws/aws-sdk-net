@@ -34,20 +34,31 @@ namespace Amazon.CloudFormation.Model
     public partial class DescribeTypeResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private bool? _autoUpdate;
+        private string _configurationSchema;
         private string _defaultVersionId;
         private DeprecatedStatus _deprecatedStatus;
         private string _description;
         private string _documentationUrl;
         private string _executionRoleArn;
+        private bool? _isActivated;
         private bool? _isDefaultVersion;
         private DateTime? _lastUpdated;
+        private string _latestPublicVersion;
         private LoggingConfig _loggingConfig;
+        private string _originalTypeArn;
+        private string _originalTypeName;
         private ProvisioningType _provisioningType;
+        private string _publicVersionNumber;
+        private string _publisherId;
+        private List<RequiredActivatedType> _requiredActivatedTypes = new List<RequiredActivatedType>();
         private string _schema;
         private string _sourceUrl;
         private DateTime? _timeCreated;
         private RegistryType _type;
         private string _typeName;
+        private TypeTestsStatus _typeTestsStatus;
+        private string _typeTestsStatusDescription;
         private Visibility _visibility;
 
         /// <summary>
@@ -70,10 +81,63 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoUpdate. 
+        /// <para>
+        /// Whether CloudFormation automatically updates the extension in this account and region
+        /// when a new <i>minor</i> version is published by the extension publisher. Major versions
+        /// released by the publisher must be manually updated. For more information, see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating
+        /// public extensions for use in your account</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool AutoUpdate
+        {
+            get { return this._autoUpdate.GetValueOrDefault(); }
+            set { this._autoUpdate = value; }
+        }
+
+        // Check to see if AutoUpdate property is set
+        internal bool IsSetAutoUpdate()
+        {
+            return this._autoUpdate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSchema. 
+        /// <para>
+        /// A JSON string that represent the current configuration data for the extension in this
+        /// account and region.
+        /// </para>
+        ///  
+        /// <para>
+        /// To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=60000)]
+        public string ConfigurationSchema
+        {
+            get { return this._configurationSchema; }
+            set { this._configurationSchema = value; }
+        }
+
+        // Check to see if ConfigurationSchema property is set
+        internal bool IsSetConfigurationSchema()
+        {
+            return this._configurationSchema != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DefaultVersionId. 
         /// <para>
         /// The ID of the default version of the extension. The default version is used when the
         /// extension version is not specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// This applies only to private extensions you have registered in your account. For public
+        /// extensions, both those provided by Amazon and published by third parties, CloudFormation
+        /// returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         ///  
         /// <para>
@@ -105,15 +169,18 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LIVE</code>: The extension is registered and can be used in CloudFormation
+        ///  <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation
         /// operations, dependent on its provisioning behavior and visibility scope.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEPRECATED</code>: The extension has been deregistered and can no longer be
-        /// used in CloudFormation operations. 
+        ///  <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can
+        /// no longer be used in CloudFormation operations. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For public third-party extensions, CloudFormation returns <code>null</code>.
+        /// </para>
         /// </summary>
         public DeprecatedStatus DeprecatedStatus
         {
@@ -130,7 +197,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the registered extension.
+        /// The description of the extension.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -169,11 +236,15 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM execution role used to register the extension.
-        /// If your resource type calls AWS APIs in any of its handlers, you must create an <i>
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution
-        /// role</a> </i> that includes the necessary permissions to call those AWS APIs, and
-        /// provision that execution role in your account. CloudFormation then assumes that execution
-        /// role to provide your extension with the appropriate credentials.
+        /// This applies only to private extensions you have registered in your account. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+        /// </para>
+        ///   
+        /// <para>
+        /// If the registered extension calls any AWS APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// execution role</a> </i> that includes the necessary permissions to call those AWS
+        /// APIs, and provision that execution role in your account. CloudFormation then assumes
+        /// that execution role to provide your extension with the appropriate credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -190,9 +261,38 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsActivated. 
+        /// <para>
+        /// Whether or not the extension is activated in the account and region.
+        /// </para>
+        ///  
+        /// <para>
+        /// This only applies to public third-party extensions. For all other extensions, CloudFormation
+        /// returns <code>null</code>.
+        /// </para>
+        /// </summary>
+        public bool IsActivated
+        {
+            get { return this._isActivated.GetValueOrDefault(); }
+            set { this._isActivated = value; }
+        }
+
+        // Check to see if IsActivated property is set
+        internal bool IsSetIsActivated()
+        {
+            return this._isActivated.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IsDefaultVersion. 
         /// <para>
         /// Whether the specified extension version is set as the default version.
+        /// </para>
+        ///  
+        /// <para>
+        /// This applies only to private extensions you have registered in your account, and extensions
+        /// published by Amazon. For public third-party extensions, whether or not they are activated
+        /// in your account, CloudFormation returns <code>null</code>.
         /// </para>
         /// </summary>
         public bool IsDefaultVersion
@@ -210,8 +310,19 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// When the specified extension version was registered.
+        /// When the specified extension version was registered. This applies only to:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Private extensions you have registered in your account. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Public extensions you have activated in your account with auto-update specified. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DateTime LastUpdated
         {
@@ -226,9 +337,36 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LatestPublicVersion. 
+        /// <para>
+        /// The latest version of a public extension <i>that is available</i> for use.
+        /// </para>
+        ///  
+        /// <para>
+        /// This only applies if you specify a public extension, and you do not specify a version.
+        /// For all other requests, CloudFormation returns <code>null</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5)]
+        public string LatestPublicVersion
+        {
+            get { return this._latestPublicVersion; }
+            set { this._latestPublicVersion = value; }
+        }
+
+        // Check to see if LatestPublicVersion property is set
+        internal bool IsSetLatestPublicVersion()
+        {
+            return this._latestPublicVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LoggingConfig. 
         /// <para>
-        /// Contains logging configuration information for an extension.
+        /// Contains logging configuration information for private extensions. This applies only
+        /// to private extensions you have registered in your account. For public extensions,
+        /// both those provided by Amazon and published by third parties, CloudFormation returns
+        /// <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         /// </summary>
         public LoggingConfig LoggingConfig
@@ -244,11 +382,59 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OriginalTypeArn. 
+        /// <para>
+        /// For public extensions that have been activated for this account and region, the Amazon
+        /// Resource Name (ARN) of the public extension.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string OriginalTypeArn
+        {
+            get { return this._originalTypeArn; }
+            set { this._originalTypeArn = value; }
+        }
+
+        // Check to see if OriginalTypeArn property is set
+        internal bool IsSetOriginalTypeArn()
+        {
+            return this._originalTypeArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginalTypeName. 
+        /// <para>
+        /// For public extensions that have been activated for this account and region, the type
+        /// name of the public extension.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specified a <code>TypeNameAlias</code> when enabling the extension in this
+        /// account and region, CloudFormation treats that alias as the extension's type name
+        /// within the account and region, not the type name of the public extension. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
+        /// aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=204)]
+        public string OriginalTypeName
+        {
+            get { return this._originalTypeName; }
+            set { this._originalTypeName = value; }
+        }
+
+        // Check to see if OriginalTypeName property is set
+        internal bool IsSetOriginalTypeName()
+        {
+            return this._originalTypeName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProvisioningType. 
         /// <para>
-        /// The provisioning behavior of the extension. AWS CloudFormation determines the provisioning
-        /// type during registration, based on the types of handlers in the schema handler package
-        /// submitted.
+        /// For resource type extensions, the provisioning behavior of the resource type. AWS
+        /// CloudFormation determines the provisioning type during registration, based on the
+        /// types of handlers in the schema handler package submitted.
         /// </para>
         ///  
         /// <para>
@@ -256,17 +442,17 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates
-        /// to the extension during stack update operations.
+        ///  <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process
+        /// updates to the type during stack update operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMMUTABLE</code>: The extension does not include an update handler, so the
-        /// extension cannot be updated and must instead be replaced during stack update operations.
+        ///  <code>IMMUTABLE</code>: The resource type does not include an update handler, so
+        /// the type cannot be updated and must instead be replaced during stack update operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_PROVISIONABLE</code>: The extension does not include all of the following
+        ///  <code>NON_PROVISIONABLE</code>: The resource type does not include all of the following
         /// handlers, and therefore cannot actually be provisioned.
         /// </para>
         ///  <ul> <li> 
@@ -293,6 +479,74 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetProvisioningType()
         {
             return this._provisioningType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicVersionNumber. 
+        /// <para>
+        /// The version number of a public third-party extension.
+        /// </para>
+        ///  
+        /// <para>
+        /// This applies only if you specify a public extension you have activated in your account,
+        /// or specify a public extension without specifying a version. For all other extensions,
+        /// CloudFormation returns <code>null</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5)]
+        public string PublicVersionNumber
+        {
+            get { return this._publicVersionNumber; }
+            set { this._publicVersionNumber = value; }
+        }
+
+        // Check to see if PublicVersionNumber property is set
+        internal bool IsSetPublicVersionNumber()
+        {
+            return this._publicVersionNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublisherId. 
+        /// <para>
+        /// The publisher ID of the extension publisher.
+        /// </para>
+        ///  
+        /// <para>
+        /// This applies only to public third-party extensions. For private registered extensions,
+        /// and extensions provided by Amazon, CloudFormation returns <code>null</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=40)]
+        public string PublisherId
+        {
+            get { return this._publisherId; }
+            set { this._publisherId = value; }
+        }
+
+        // Check to see if PublisherId property is set
+        internal bool IsSetPublisherId()
+        {
+            return this._publisherId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequiredActivatedTypes. 
+        /// <para>
+        /// For extensions that are modules, the public third-party extensions that must be activated
+        /// in your account in order for the module itself to be activated.
+        /// </para>
+        /// </summary>
+        public List<RequiredActivatedType> RequiredActivatedTypes
+        {
+            get { return this._requiredActivatedTypes; }
+            set { this._requiredActivatedTypes = value; }
+        }
+
+        // Check to see if RequiredActivatedTypes property is set
+        internal bool IsSetRequiredActivatedTypes()
+        {
+            return this._requiredActivatedTypes != null && this._requiredActivatedTypes.Count > 0; 
         }
 
         /// <summary>
@@ -341,7 +595,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TimeCreated. 
         /// <para>
-        /// When the specified extension version was registered.
+        /// When the specified private extension version was registered or activated in your account.
+        /// 
         /// </para>
         /// </summary>
         public DateTime TimeCreated
@@ -377,7 +632,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the registered extension.
+        /// The name of the extension.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the extension is a public third-party type you have activated with a type name
+        /// alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]
@@ -394,6 +654,82 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TypeTestsStatus. 
+        /// <para>
+        /// The contract test status of the registered extension version. To return the extension
+        /// test status of a specifc extension version, you must specify <code>VersionId</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This applies only to registered private extension versions. CloudFormation does not
+        /// return this information for public extensions, whether or not they are activated in
+        /// your account.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PASSED</code>: The extension has passed all its contract tests.
+        /// </para>
+        ///  
+        /// <para>
+        /// An extension must have a test status of <code>PASSED</code> before it can be published.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
+        /// extensions to make them available for public use</a> in the <i>CloudFormation Command
+        /// Line Interface User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code>: The extension has failed one or more contract tests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NOT_TESTED</code>: Contract tests have not been performed on the extension.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TypeTestsStatus TypeTestsStatus
+        {
+            get { return this._typeTestsStatus; }
+            set { this._typeTestsStatus = value; }
+        }
+
+        // Check to see if TypeTestsStatus property is set
+        internal bool IsSetTypeTestsStatus()
+        {
+            return this._typeTestsStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TypeTestsStatusDescription. 
+        /// <para>
+        /// The description of the test status. To return the extension test status of a specifc
+        /// extension version, you must specify <code>VersionId</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This applies only to registered private extension versions. CloudFormation does not
+        /// return this information for public extensions, whether or not they are activated in
+        /// your account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string TypeTestsStatusDescription
+        {
+            get { return this._typeTestsStatusDescription; }
+            set { this._typeTestsStatusDescription = value; }
+        }
+
+        // Check to see if TypeTestsStatusDescription property is set
+        internal bool IsSetTypeTestsStatusDescription()
+        {
+            return this._typeTestsStatusDescription != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
         /// The scope at which the extension is visible and usable in CloudFormation operations.
@@ -405,8 +741,8 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>PRIVATE</code>: The extension is only visible and usable within the account
-        /// in which it is registered. Currently, AWS CloudFormation marks any types you register
-        /// as <code>PRIVATE</code>.
+        /// in which it is registered. AWS CloudFormation marks any extensions you register as
+        /// <code>PRIVATE</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

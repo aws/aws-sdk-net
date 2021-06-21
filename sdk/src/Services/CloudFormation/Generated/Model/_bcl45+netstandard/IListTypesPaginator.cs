@@ -29,5 +29,10 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListTypesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the TypeSummaries
+        /// </summary>
+        IPaginatedEnumerable<TypeSummary> TypeSummaries { get; }
     }
 }

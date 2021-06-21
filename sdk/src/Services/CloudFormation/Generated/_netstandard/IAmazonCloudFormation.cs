@@ -68,6 +68,72 @@ namespace Amazon.CloudFormation
         ICloudFormationPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  ActivateType
+
+
+
+        /// <summary>
+        /// Activates a public third-party extension, making it available for use in stack templates.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
+        /// public extensions</a> in the <i>CloudFormation User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Once you have activated a public third-party extension in your account and region,
+        /// use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+        /// to specify configuration properties for the extension. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ActivateType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ActivateType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified extension does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">REST API Reference for ActivateType Operation</seealso>
+        Task<ActivateTypeResponse> ActivateTypeAsync(ActivateTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchDescribeTypeConfigurations
+
+
+
+        /// <summary>
+        /// Returns configuration data for the specified CloudFormation extensions, from the CloudFormation
+        /// registry for the account and region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeTypeConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDescribeTypeConfigurations service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeConfigurationNotFoundException">
+        /// The specified extension configuration cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations">REST API Reference for BatchDescribeTypeConfigurations Operation</seealso>
+        Task<BatchDescribeTypeConfigurationsResponse> BatchDescribeTypeConfigurationsAsync(BatchDescribeTypeConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CancelUpdateStack
 
 
@@ -315,6 +381,38 @@ namespace Amazon.CloudFormation
 
         #endregion
                 
+        #region  DeactivateType
+
+
+
+        /// <summary>
+        /// Deactivates a public extension that was previously activated in this account and region.
+        /// 
+        ///  
+        /// <para>
+        /// Once deactivated, an extension cannot be used in any CloudFormation operation. This
+        /// includes stack update operations where the stack template includes the extension,
+        /// even if no updates are being made to the extension. In addition, deactivated extensions
+        /// are not automatically updated if a new version of the extension is released.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeactivateType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified extension does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType">REST API Reference for DeactivateType Operation</seealso>
+        Task<DeactivateTypeResponse> DeactivateTypeAsync(DeactivateTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteChangeSet
 
 
@@ -474,7 +572,7 @@ namespace Amazon.CloudFormation
         /// An error occurred during a CloudFormation registry operation.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
-        /// The specified type does not exist in the CloudFormation registry.
+        /// The specified extension does not exist in the CloudFormation registry.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">REST API Reference for DeregisterType Operation</seealso>
         Task<DeregisterTypeResponse> DeregisterTypeAsync(DeregisterTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -523,6 +621,50 @@ namespace Amazon.CloudFormation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
         Task<DescribeChangeSetResponse> DescribeChangeSetAsync(DescribeChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribePublisher
+
+
+
+        /// <summary>
+        /// Returns information about a CloudFormation extension publisher.
+        /// 
+        ///  
+        /// <para>
+        /// If you do not supply a <code>PublisherId</code>, and you have registered as an extension
+        /// publisher, <code>DescribePublisher</code> returns information about your own publisher
+        /// account. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on registering as a publisher, see:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+        /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
+        /// User Guide</i> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePublisher service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePublisher service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher">REST API Reference for DescribePublisher Operation</seealso>
+        Task<DescribePublisherResponse> DescribePublisherAsync(DescribePublisherRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -834,7 +976,7 @@ namespace Amazon.CloudFormation
         /// An error occurred during a CloudFormation registry operation.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
-        /// The specified type does not exist in the CloudFormation registry.
+        /// The specified extension does not exist in the CloudFormation registry.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">REST API Reference for DescribeType Operation</seealso>
         Task<DescribeTypeResponse> DescribeTypeAsync(DescribeTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1504,6 +1646,40 @@ namespace Amazon.CloudFormation
 
         #endregion
                 
+        #region  PublishType
+
+
+
+        /// <summary>
+        /// Publishes the specified extension to the CloudFormation registry as a public extension
+        /// in this region. Public extensions are available for use by all CloudFormation users.
+        /// For more information on publishing extensions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+        /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
+        /// User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// To publish an extension, you must be registered as a publisher with CloudFormation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PublishType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified extension does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">REST API Reference for PublishType Operation</seealso>
+        Task<PublishTypeResponse> PublishTypeAsync(PublishTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RecordHandlerProgress
 
 
@@ -1533,6 +1709,37 @@ namespace Amazon.CloudFormation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RecordHandlerProgress">REST API Reference for RecordHandlerProgress Operation</seealso>
         Task<RecordHandlerProgressResponse> RecordHandlerProgressAsync(RecordHandlerProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RegisterPublisher
+
+
+
+        /// <summary>
+        /// Registers your account as a publisher of public extensions in the CloudFormation registry.
+        /// Public extensions are available for use by all CloudFormation users. This publisher
+        /// ID applies to your account in all AWS regions.
+        /// 
+        ///  
+        /// <para>
+        /// For information on requirements for registering as a public extension publisher, see
+        /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
+        /// your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPublisher service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterPublisher service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher">REST API Reference for RegisterPublisher Operation</seealso>
+        Task<RegisterPublisherResponse> RegisterPublisherAsync(RegisterPublisherRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1574,6 +1781,13 @@ namespace Amazon.CloudFormation
         /// you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
         /// of the registration request.
         /// </para>
+        ///  
+        /// <para>
+        /// Once you have registered a private extension in your account and region, use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+        /// to specify configuration properties for the extension. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterType service method.</param>
         /// <param name="cancellationToken">
@@ -1607,6 +1821,47 @@ namespace Amazon.CloudFormation
 
         #endregion
                 
+        #region  SetTypeConfiguration
+
+
+
+        /// <summary>
+        /// Specifies the configuration data for a registered CloudFormation extension, in the
+        /// given account and region.
+        /// 
+        ///  
+        /// <para>
+        /// To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code>
+        /// element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// It is strongly recommended that you use dynamic references to restrict sensitive configuration
+        /// definitions, such as third-party credentials. For more details on dynamic references,
+        /// see <a href="https://docs.aws.amazon.com/">Using dynamic references to specify template
+        /// values</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetTypeConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SetTypeConfiguration service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified extension does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration">REST API Reference for SetTypeConfiguration Operation</seealso>
+        Task<SetTypeConfigurationResponse> SetTypeConfigurationAsync(SetTypeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SetTypeDefaultVersion
 
 
@@ -1625,7 +1880,7 @@ namespace Amazon.CloudFormation
         /// An error occurred during a CloudFormation registry operation.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
-        /// The specified type does not exist in the CloudFormation registry.
+        /// The specified extension does not exist in the CloudFormation registry.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">REST API Reference for SetTypeDefaultVersion Operation</seealso>
         Task<SetTypeDefaultVersionResponse> SetTypeDefaultVersionAsync(SetTypeDefaultVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1679,6 +1934,68 @@ namespace Amazon.CloudFormation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">REST API Reference for StopStackSetOperation Operation</seealso>
         Task<StopStackSetOperationResponse> StopStackSetOperationAsync(StopStackSetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TestType
+
+
+
+        /// <summary>
+        /// Tests a registered extension to make sure it meets all necessary requirements for
+        /// being published in the CloudFormation registry.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For resource types, this includes passing all contracts tests defined for the type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For modules, this includes determining if the module's model meets all necessary requirements.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing
+        /// your public extension prior to publishing</a> in the <i>CloudFormation CLI User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a version, CloudFormation uses the default version of the extension
+        /// in your account and region for testing.
+        /// </para>
+        ///  
+        /// <para>
+        /// To perform testing, CloudFormation assumes the execution role specified when the test
+        /// was registered. For more information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once you've initiated testing on an extension using <code>TestType</code>, you can
+        /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+        /// to monitor the current test status and test status description for the extension.
+        /// </para>
+        ///  
+        /// <para>
+        /// An extension must have a test status of <code>PASSED</code> before it can be published.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
+        /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified extension does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType">REST API Reference for TestType Operation</seealso>
+        Task<TestTypeResponse> TestTypeAsync(TestTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

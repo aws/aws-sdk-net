@@ -63,6 +63,13 @@ namespace Amazon.CloudFormation.Model
     /// you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
     /// of the registration request.
     /// </para>
+    ///  
+    /// <para>
+    /// Once you have registered a private extension in your account and region, use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+    /// to specify configuration properties for the extension. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+    /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class RegisterTypeRequest : AmazonCloudFormationRequest
     {
@@ -99,13 +106,24 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking
-        /// the extension. If your extension calls AWS APIs in any of its handlers, you must create
-        /// an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
-        /// execution role</a> </i> that includes the necessary permissions to call those AWS
-        /// APIs, and provision that execution role in your account. When CloudFormation needs
-        /// to invoke the extension handler, CloudFormation assumes this execution role to create
-        /// a temporary session token, which it then passes to the extension handler, thereby
-        /// supplying your extension with the appropriate credentials.
+        /// the extension.
+        /// </para>
+        ///  
+        /// <para>
+        /// For CloudFormation to assume the specified execution role, the role must contain a
+        /// trust relationship with the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>).
+        /// For more information on adding trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+        /// a role trust policy</a> in the <i>AWS Identity and Access Management User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your extension calls AWS APIs in any of its handlers, you must create an <i> <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution
+        /// role</a> </i> that includes the necessary permissions to call those AWS APIs, and
+        /// provision that execution role in your account. When CloudFormation needs to invoke
+        /// the resource type handler, CloudFormation assumes this execution role to create a
+        /// temporary session token, which it then passes to the resource type handler, thereby
+        /// supplying your resource type with the appropriate credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -199,9 +217,17 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// We recommend that extension names adhere to the following pattern: <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
+        /// We recommend that extension names adhere to the following patterns: 
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
+        /// <para>
+        /// For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// The following organization namespaces are reserved and cannot be used in your extension
         /// names:

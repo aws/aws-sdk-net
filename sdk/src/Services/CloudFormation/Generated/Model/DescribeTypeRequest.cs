@@ -42,6 +42,8 @@ namespace Amazon.CloudFormation.Model
     public partial class DescribeTypeRequest : AmazonCloudFormationRequest
     {
         private string _arn;
+        private string _publicVersionNumber;
+        private string _publisherId;
         private RegistryType _type;
         private string _typeName;
         private string _versionId;
@@ -68,6 +70,48 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicVersionNumber. 
+        /// <para>
+        /// The version number of a public third-party extension.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5)]
+        public string PublicVersionNumber
+        {
+            get { return this._publicVersionNumber; }
+            set { this._publicVersionNumber = value; }
+        }
+
+        // Check to see if PublicVersionNumber property is set
+        internal bool IsSetPublicVersionNumber()
+        {
+            return this._publicVersionNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublisherId. 
+        /// <para>
+        /// The publisher ID of the extension publisher.
+        /// </para>
+        ///  
+        /// <para>
+        /// Extensions provided by Amazon are not assigned a publisher ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=40)]
+        public string PublisherId
+        {
+            get { return this._publisherId; }
+            set { this._publisherId = value; }
+        }
+
+        // Check to see if PublisherId property is set
+        internal bool IsSetPublisherId()
+        {
+            return this._publisherId != null;
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Contains logging configuration information for a type.
+    /// Contains logging configuration information for an extension.
     /// </summary>
     public partial class LoggingConfig
     {
@@ -40,7 +40,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property LogGroupName. 
         /// <para>
         /// The Amazon CloudWatch log group to which CloudFormation sends error logging information
-        /// when invoking the type's handlers.
+        /// when invoking the extension's handlers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

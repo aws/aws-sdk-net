@@ -271,6 +271,144 @@ namespace Amazon.CloudFormation
         #endregion
 
 
+        #region  ActivateType
+
+        /// <summary>
+        /// Activates a public third-party extension, making it available for use in stack templates.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
+        /// public extensions</a> in the <i>CloudFormation User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Once you have activated a public third-party extension in your account and region,
+        /// use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+        /// to specify configuration properties for the extension. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ActivateType service method.</param>
+        /// 
+        /// <returns>The response from the ActivateType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified extension does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">REST API Reference for ActivateType Operation</seealso>
+        public virtual ActivateTypeResponse ActivateType(ActivateTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ActivateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ActivateTypeResponseUnmarshaller.Instance;
+
+            return Invoke<ActivateTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ActivateType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ActivateType operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndActivateType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">REST API Reference for ActivateType Operation</seealso>
+        public virtual IAsyncResult BeginActivateType(ActivateTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ActivateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ActivateTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ActivateType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginActivateType.</param>
+        /// 
+        /// <returns>Returns a  ActivateTypeResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">REST API Reference for ActivateType Operation</seealso>
+        public virtual ActivateTypeResponse EndActivateType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ActivateTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDescribeTypeConfigurations
+
+        /// <summary>
+        /// Returns configuration data for the specified CloudFormation extensions, from the CloudFormation
+        /// registry for the account and region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeTypeConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the BatchDescribeTypeConfigurations service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeConfigurationNotFoundException">
+        /// The specified extension configuration cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations">REST API Reference for BatchDescribeTypeConfigurations Operation</seealso>
+        public virtual BatchDescribeTypeConfigurationsResponse BatchDescribeTypeConfigurations(BatchDescribeTypeConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeTypeConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeTypeConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDescribeTypeConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDescribeTypeConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeTypeConfigurations operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDescribeTypeConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations">REST API Reference for BatchDescribeTypeConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginBatchDescribeTypeConfigurations(BatchDescribeTypeConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeTypeConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeTypeConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDescribeTypeConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDescribeTypeConfigurations.</param>
+        /// 
+        /// <returns>Returns a  BatchDescribeTypeConfigurationsResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations">REST API Reference for BatchDescribeTypeConfigurations Operation</seealso>
+        public virtual BatchDescribeTypeConfigurationsResponse EndBatchDescribeTypeConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDescribeTypeConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelUpdateStack
 
         /// <summary>
@@ -734,6 +872,74 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DeactivateType
+
+        /// <summary>
+        /// Deactivates a public extension that was previously activated in this account and region.
+        /// 
+        ///  
+        /// <para>
+        /// Once deactivated, an extension cannot be used in any CloudFormation operation. This
+        /// includes stack update operations where the stack template includes the extension,
+        /// even if no updates are being made to the extension. In addition, deactivated extensions
+        /// are not automatically updated if a new version of the extension is released.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateType service method.</param>
+        /// 
+        /// <returns>The response from the DeactivateType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified extension does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType">REST API Reference for DeactivateType Operation</seealso>
+        public virtual DeactivateTypeResponse DeactivateType(DeactivateTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeactivateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeactivateTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeactivateTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeactivateType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateType operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeactivateType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType">REST API Reference for DeactivateType Operation</seealso>
+        public virtual IAsyncResult BeginDeactivateType(DeactivateTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeactivateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeactivateTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeactivateType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeactivateType.</param>
+        /// 
+        /// <returns>Returns a  DeactivateTypeResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType">REST API Reference for DeactivateType Operation</seealso>
+        public virtual DeactivateTypeResponse EndDeactivateType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeactivateTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteChangeSet
 
         /// <summary>
@@ -1032,7 +1238,7 @@ namespace Amazon.CloudFormation
         /// An error occurred during a CloudFormation registry operation.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
-        /// The specified type does not exist in the CloudFormation registry.
+        /// The specified extension does not exist in the CloudFormation registry.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">REST API Reference for DeregisterType Operation</seealso>
         public virtual DeregisterTypeResponse DeregisterType(DeregisterTypeRequest request)
@@ -1193,6 +1399,86 @@ namespace Amazon.CloudFormation
         public virtual DescribeChangeSetResponse EndDescribeChangeSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeChangeSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribePublisher
+
+        /// <summary>
+        /// Returns information about a CloudFormation extension publisher.
+        /// 
+        ///  
+        /// <para>
+        /// If you do not supply a <code>PublisherId</code>, and you have registered as an extension
+        /// publisher, <code>DescribePublisher</code> returns information about your own publisher
+        /// account. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on registering as a publisher, see:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+        /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
+        /// User Guide</i> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePublisher service method.</param>
+        /// 
+        /// <returns>The response from the DescribePublisher service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher">REST API Reference for DescribePublisher Operation</seealso>
+        public virtual DescribePublisherResponse DescribePublisher(DescribePublisherRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePublisherResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePublisher operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePublisher operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePublisher
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher">REST API Reference for DescribePublisher Operation</seealso>
+        public virtual IAsyncResult BeginDescribePublisher(DescribePublisherRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePublisherResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePublisher operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePublisher.</param>
+        /// 
+        /// <returns>Returns a  DescribePublisherResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher">REST API Reference for DescribePublisher Operation</seealso>
+        public virtual DescribePublisherResponse EndDescribePublisher(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePublisherResponse>(asyncResult);
         }
 
         #endregion
@@ -1823,7 +2109,7 @@ namespace Amazon.CloudFormation
         /// An error occurred during a CloudFormation registry operation.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
-        /// The specified type does not exist in the CloudFormation registry.
+        /// The specified extension does not exist in the CloudFormation registry.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">REST API Reference for DescribeType Operation</seealso>
         public virtual DescribeTypeResponse DescribeType(DescribeTypeRequest request)
@@ -3289,6 +3575,76 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  PublishType
+
+        /// <summary>
+        /// Publishes the specified extension to the CloudFormation registry as a public extension
+        /// in this region. Public extensions are available for use by all CloudFormation users.
+        /// For more information on publishing extensions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+        /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
+        /// User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// To publish an extension, you must be registered as a publisher with CloudFormation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishType service method.</param>
+        /// 
+        /// <returns>The response from the PublishType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified extension does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">REST API Reference for PublishType Operation</seealso>
+        public virtual PublishTypeResponse PublishType(PublishTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishTypeResponseUnmarshaller.Instance;
+
+            return Invoke<PublishTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishType operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">REST API Reference for PublishType Operation</seealso>
+        public virtual IAsyncResult BeginPublishType(PublishTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PublishType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublishType.</param>
+        /// 
+        /// <returns>Returns a  PublishTypeResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">REST API Reference for PublishType Operation</seealso>
+        public virtual PublishTypeResponse EndPublishType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PublishTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RecordHandlerProgress
 
         /// <summary>
@@ -3357,6 +3713,73 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  RegisterPublisher
+
+        /// <summary>
+        /// Registers your account as a publisher of public extensions in the CloudFormation registry.
+        /// Public extensions are available for use by all CloudFormation users. This publisher
+        /// ID applies to your account in all AWS regions.
+        /// 
+        ///  
+        /// <para>
+        /// For information on requirements for registering as a public extension publisher, see
+        /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
+        /// your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPublisher service method.</param>
+        /// 
+        /// <returns>The response from the RegisterPublisher service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher">REST API Reference for RegisterPublisher Operation</seealso>
+        public virtual RegisterPublisherResponse RegisterPublisher(RegisterPublisherRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterPublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterPublisherResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterPublisherResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterPublisher operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPublisher operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterPublisher
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher">REST API Reference for RegisterPublisher Operation</seealso>
+        public virtual IAsyncResult BeginRegisterPublisher(RegisterPublisherRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterPublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterPublisherResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterPublisher operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterPublisher.</param>
+        /// 
+        /// <returns>Returns a  RegisterPublisherResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher">REST API Reference for RegisterPublisher Operation</seealso>
+        public virtual RegisterPublisherResponse EndRegisterPublisher(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterPublisherResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RegisterType
 
         /// <summary>
@@ -3392,6 +3815,13 @@ namespace Amazon.CloudFormation
         /// Once you have initiated a registration request using <code> <a>RegisterType</a> </code>,
         /// you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
         /// of the registration request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once you have registered a private extension in your account and region, use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+        /// to specify configuration properties for the extension. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterType service method.</param>
@@ -3500,6 +3930,83 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  SetTypeConfiguration
+
+        /// <summary>
+        /// Specifies the configuration data for a registered CloudFormation extension, in the
+        /// given account and region.
+        /// 
+        ///  
+        /// <para>
+        /// To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code>
+        /// element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// It is strongly recommended that you use dynamic references to restrict sensitive configuration
+        /// definitions, such as third-party credentials. For more details on dynamic references,
+        /// see <a href="https://docs.aws.amazon.com/">Using dynamic references to specify template
+        /// values</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetTypeConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the SetTypeConfiguration service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified extension does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration">REST API Reference for SetTypeConfiguration Operation</seealso>
+        public virtual SetTypeConfigurationResponse SetTypeConfiguration(SetTypeConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetTypeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetTypeConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<SetTypeConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetTypeConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetTypeConfiguration operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetTypeConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration">REST API Reference for SetTypeConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginSetTypeConfiguration(SetTypeConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetTypeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetTypeConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetTypeConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTypeConfiguration.</param>
+        /// 
+        /// <returns>Returns a  SetTypeConfigurationResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration">REST API Reference for SetTypeConfiguration Operation</seealso>
+        public virtual SetTypeConfigurationResponse EndSetTypeConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SetTypeConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SetTypeDefaultVersion
 
         /// <summary>
@@ -3513,7 +4020,7 @@ namespace Amazon.CloudFormation
         /// An error occurred during a CloudFormation registry operation.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
-        /// The specified type does not exist in the CloudFormation registry.
+        /// The specified extension does not exist in the CloudFormation registry.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">REST API Reference for SetTypeDefaultVersion Operation</seealso>
         public virtual SetTypeDefaultVersionResponse SetTypeDefaultVersion(SetTypeDefaultVersionRequest request)
@@ -3679,6 +4186,104 @@ namespace Amazon.CloudFormation
         public virtual StopStackSetOperationResponse EndStopStackSetOperation(IAsyncResult asyncResult)
         {
             return EndInvoke<StopStackSetOperationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TestType
+
+        /// <summary>
+        /// Tests a registered extension to make sure it meets all necessary requirements for
+        /// being published in the CloudFormation registry.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For resource types, this includes passing all contracts tests defined for the type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For modules, this includes determining if the module's model meets all necessary requirements.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing
+        /// your public extension prior to publishing</a> in the <i>CloudFormation CLI User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a version, CloudFormation uses the default version of the extension
+        /// in your account and region for testing.
+        /// </para>
+        ///  
+        /// <para>
+        /// To perform testing, CloudFormation assumes the execution role specified when the test
+        /// was registered. For more information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once you've initiated testing on an extension using <code>TestType</code>, you can
+        /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+        /// to monitor the current test status and test status description for the extension.
+        /// </para>
+        ///  
+        /// <para>
+        /// An extension must have a test status of <code>PASSED</code> before it can be published.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
+        /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestType service method.</param>
+        /// 
+        /// <returns>The response from the TestType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified extension does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType">REST API Reference for TestType Operation</seealso>
+        public virtual TestTypeResponse TestType(TestTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestTypeResponseUnmarshaller.Instance;
+
+            return Invoke<TestTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestType operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType">REST API Reference for TestType Operation</seealso>
+        public virtual IAsyncResult BeginTestType(TestTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestType.</param>
+        /// 
+        /// <returns>Returns a  TestTypeResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType">REST API Reference for TestType Operation</seealso>
+        public virtual TestTypeResponse EndTestType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TestTypeResponse>(asyncResult);
         }
 
         #endregion

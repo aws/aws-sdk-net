@@ -74,6 +74,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+                if(publicRequest.IsSetPublisherId())
+                {
+                    request.Parameters.Add("PublisherId", StringUtils.FromString(publicRequest.PublisherId));
+                }
                 if(publicRequest.IsSetType())
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
