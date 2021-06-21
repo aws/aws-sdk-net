@@ -1,3 +1,12 @@
+### 3.7.58.0 (2021-06-21 18:35 UTC)
+* CloudFormation (3.7.3.0)
+	* CloudFormation registry service now supports 3rd party public type sharing
+* Core 3.7.0.35
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.57.0 (2021-06-17 18:29 UTC)
 * Chime (3.7.5.0)
 	* This release adds a new API UpdateSipMediaApplicationCall, to update an in-progress call for SipMediaApplication.
