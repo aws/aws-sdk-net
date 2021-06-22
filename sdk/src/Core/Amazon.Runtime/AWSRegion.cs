@@ -135,7 +135,9 @@ namespace Amazon.Runtime
         /// <param name="source">The ICredentialProfileSource to read the profile from.</param>
         public ProfileAWSRegion(ICredentialProfileSource source)
         {
-            var profileName = Environment.GetEnvironmentVariable(FallbackCredentialsFactory.AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            var profileName = AWSConfigs.AWSProfileName;
+            if (string.IsNullOrEmpty(profileName)) // RootConfig chooses empty string for null values.
+                profileName = Environment.GetEnvironmentVariable(FallbackCredentialsFactory.AWS_PROFILE_ENVIRONMENT_VARIABLE);
             if (profileName == null)
                 profileName = FallbackCredentialsFactory.DefaultProfileName;
             Setup(source, profileName);
