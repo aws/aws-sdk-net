@@ -108,6 +108,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Status);
                 }
 
+                if(publicRequest.IsSetStatusReason())
+                {
+                    context.Writer.WritePropertyName("StatusReason");
+                    context.Writer.Write(publicRequest.StatusReason);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

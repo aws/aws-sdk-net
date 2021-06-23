@@ -53,7 +53,7 @@ namespace Amazon.LicenseManager.Model
         /// Idempotency token, valid for 10 minutes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=60)]
+        [AWSProperty(Required=true, Max=2048)]
         public string ClientToken
         {
             get { return this._clientToken; }

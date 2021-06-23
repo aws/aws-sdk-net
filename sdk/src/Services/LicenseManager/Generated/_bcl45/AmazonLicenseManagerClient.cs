@@ -346,6 +346,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
         /// There was a conflict processing the request. Try your request again.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
         /// Too many requests have been submitted. Try again after a brief wait.
         /// </exception>
@@ -387,6 +390,9 @@ namespace Amazon.LicenseManager
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
         /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
         /// Too many requests have been submitted. Try again after a brief wait.
@@ -430,6 +436,9 @@ namespace Amazon.LicenseManager
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.EntitlementNotAllowedException">
         /// The entitlement is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.NoEntitlementsAllowedException">
         /// There are no entitlements found for this license, or the entitlement maximum count
@@ -483,6 +492,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.EntitlementNotAllowedException">
         /// The entitlement is not allowed.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.NoEntitlementsAllowedException">
         /// There are no entitlements found for this license, or the entitlement maximum count
         /// is reached.
@@ -533,6 +545,9 @@ namespace Amazon.LicenseManager
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.NoEntitlementsAllowedException">
         /// There are no entitlements found for this license, or the entitlement maximum count
         /// is reached.
@@ -581,6 +596,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.NoEntitlementsAllowedException">
         /// There are no entitlements found for this license, or the entitlement maximum count

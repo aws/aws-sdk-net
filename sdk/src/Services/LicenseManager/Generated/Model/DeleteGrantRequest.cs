@@ -35,6 +35,7 @@ namespace Amazon.LicenseManager.Model
     public partial class DeleteGrantRequest : AmazonLicenseManagerRequest
     {
         private string _grantArn;
+        private string _statusReason;
         private string _version;
 
         /// <summary>
@@ -54,6 +55,22 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetGrantArn()
         {
             return this._grantArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason.
+        /// </summary>
+        [AWSProperty(Max=400)]
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>

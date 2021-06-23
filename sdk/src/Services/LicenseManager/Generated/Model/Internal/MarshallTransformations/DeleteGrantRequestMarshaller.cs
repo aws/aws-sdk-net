@@ -73,6 +73,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GrantArn);
                 }
 
+                if(publicRequest.IsSetStatusReason())
+                {
+                    context.Writer.WritePropertyName("StatusReason");
+                    context.Writer.Write(publicRequest.StatusReason);
+                }
+
                 if(publicRequest.IsSetVersion())
                 {
                     context.Writer.WritePropertyName("Version");

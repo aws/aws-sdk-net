@@ -12,8 +12,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.CheckoutBorrowLicenseRequest.ClientToken</property>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <max>2048</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.CheckoutBorrowLicenseRequest.LicenseArn</property>
@@ -41,8 +41,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.CheckoutLicenseRequest.ClientToken</property>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <max>2048</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.CheckoutLicenseResponse.Expiration</property>
@@ -59,6 +59,11 @@
     <min>4096</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateGrantRequest.ClientToken</property>
+    <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManager.Model.CreateGrantRequest.LicenseArn</property>
     <max>2048</max>
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
@@ -69,14 +74,29 @@
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateGrantVersionRequest.ClientToken</property>
+    <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManager.Model.CreateGrantVersionRequest.GrantArn</property>
     <max>2048</max>
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateGrantVersionRequest.StatusReason</property>
+    <max>400</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManager.Model.CreateGrantVersionResponse.GrantArn</property>
     <max>2048</max>
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateLicenseRequest.ClientToken</property>
+    <max>2048</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.CreateLicenseResponse.LicenseArn</property>
@@ -94,6 +114,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateLicenseVersionRequest.ClientToken</property>
+    <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManager.Model.CreateLicenseVersionRequest.LicenseArn</property>
     <max>2048</max>
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
@@ -105,7 +130,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.CreateTokenRequest.ClientToken</property>
-    <max>60</max>
+    <max>2048</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -122,6 +147,11 @@
     <property>Amazon.LicenseManager.Model.DeleteGrantRequest.GrantArn</property>
     <max>2048</max>
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.DeleteGrantRequest.StatusReason</property>
+    <max>400</max>
+    <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.DeleteGrantResponse.GrantArn</property>
@@ -259,6 +289,11 @@
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LicenseManager.Model.Grant.StatusReason</property>
+    <max>400</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManager.Model.GrantedLicense.CreateTime</property>
     <max>50</max>
     <pattern>^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[ 0-3]|[0-1][0-9]):[0-5][0-9])+$</pattern>
@@ -277,6 +312,11 @@
     <property>Amazon.LicenseManager.Model.License.LicenseArn</property>
     <max>2048</max>
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.ReceivedMetadata.ReceivedStatusReason</property>
+    <max>400</max>
+    <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.TokenData.ExpirationTime</property>

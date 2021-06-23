@@ -202,6 +202,7 @@ namespace Amazon.LicenseManager.Model
         /// Grant status reason.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=400)]
         public string StatusReason
         {
             get { return this._statusReason; }

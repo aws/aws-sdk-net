@@ -81,6 +81,10 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+                {
+                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RateLimitExceededException"))
                 {
                     return RateLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

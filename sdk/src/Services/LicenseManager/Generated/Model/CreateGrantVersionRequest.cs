@@ -40,6 +40,7 @@ namespace Amazon.LicenseManager.Model
         private string _grantName;
         private string _sourceVersion;
         private GrantStatus _status;
+        private string _statusReason;
 
         /// <summary>
         /// Gets and sets the property AllowedOperations. 
@@ -67,7 +68,7 @@ namespace Amazon.LicenseManager.Model
         /// request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2048)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -151,6 +152,22 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason.
+        /// </summary>
+        [AWSProperty(Max=400)]
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
     }

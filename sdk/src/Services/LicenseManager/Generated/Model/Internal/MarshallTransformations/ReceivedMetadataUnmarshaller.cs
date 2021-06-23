@@ -76,6 +76,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReceivedStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReceivedStatusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReceivedStatusReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

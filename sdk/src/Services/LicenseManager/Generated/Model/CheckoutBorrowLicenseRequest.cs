@@ -66,7 +66,7 @@ namespace Amazon.LicenseManager.Model
         /// request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
+        [AWSProperty(Required=true, Max=2048)]
         public string ClientToken
         {
             get { return this._clientToken; }

@@ -524,6 +524,10 @@ namespace Amazon.LicenseManager
         /// Constant REJECTED for GrantStatus
         /// </summary>
         public static readonly GrantStatus REJECTED = new GrantStatus("REJECTED");
+        /// <summary>
+        /// Constant WORKFLOW_COMPLETED for GrantStatus
+        /// </summary>
+        public static readonly GrantStatus WORKFLOW_COMPLETED = new GrantStatus("WORKFLOW_COMPLETED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -880,6 +884,10 @@ namespace Amazon.LicenseManager
         /// Constant REJECTED for ReceivedStatus
         /// </summary>
         public static readonly ReceivedStatus REJECTED = new ReceivedStatus("REJECTED");
+        /// <summary>
+        /// Constant WORKFLOW_COMPLETED for ReceivedStatus
+        /// </summary>
+        public static readonly ReceivedStatus WORKFLOW_COMPLETED = new ReceivedStatus("WORKFLOW_COMPLETED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -35,6 +35,7 @@ namespace Amazon.LicenseManager.Model
     {
         private List<string> _allowedOperations = new List<string>();
         private ReceivedStatus _receivedStatus;
+        private string _receivedStatusReason;
 
         /// <summary>
         /// Gets and sets the property AllowedOperations. 
@@ -71,6 +72,22 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetReceivedStatus()
         {
             return this._receivedStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReceivedStatusReason.
+        /// </summary>
+        [AWSProperty(Max=400)]
+        public string ReceivedStatusReason
+        {
+            get { return this._receivedStatusReason; }
+            set { this._receivedStatusReason = value; }
+        }
+
+        // Check to see if ReceivedStatusReason property is set
+        internal bool IsSetReceivedStatusReason()
+        {
+            return this._receivedStatusReason != null;
         }
 
     }
