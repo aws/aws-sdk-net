@@ -459,6 +459,22 @@ namespace Amazon.CloudSearch
         /// </summary>
         public static readonly PartitionInstanceType SearchMedium = new PartitionInstanceType("search.medium");
         /// <summary>
+        /// Constant SearchPreviousgeneration2xlarge for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchPreviousgeneration2xlarge = new PartitionInstanceType("search.previousgeneration.2xlarge");
+        /// <summary>
+        /// Constant SearchPreviousgenerationLarge for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchPreviousgenerationLarge = new PartitionInstanceType("search.previousgeneration.large");
+        /// <summary>
+        /// Constant SearchPreviousgenerationSmall for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchPreviousgenerationSmall = new PartitionInstanceType("search.previousgeneration.small");
+        /// <summary>
+        /// Constant SearchPreviousgenerationXlarge for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchPreviousgenerationXlarge = new PartitionInstanceType("search.previousgeneration.xlarge");
+        /// <summary>
         /// Constant SearchSmall for PartitionInstanceType
         /// </summary>
         public static readonly PartitionInstanceType SearchSmall = new PartitionInstanceType("search.small");

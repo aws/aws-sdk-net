@@ -335,6 +335,12 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
         /// The request was rejected because a resource limit has already been met.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
