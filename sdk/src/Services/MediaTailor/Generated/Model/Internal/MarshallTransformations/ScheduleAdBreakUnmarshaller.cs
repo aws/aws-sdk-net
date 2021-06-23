@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ScheduleEntry Object
+    /// Response Unmarshaller for ScheduleAdBreak Object
     /// </summary>  
-    public class ScheduleEntryUnmarshaller : IUnmarshaller<ScheduleEntry, XmlUnmarshallerContext>, IUnmarshaller<ScheduleEntry, JsonUnmarshallerContext>
+    public class ScheduleAdBreakUnmarshaller : IUnmarshaller<ScheduleAdBreak, XmlUnmarshallerContext>, IUnmarshaller<ScheduleAdBreak, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ScheduleEntry IUnmarshaller<ScheduleEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ScheduleAdBreak IUnmarshaller<ScheduleAdBreak, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ScheduleEntry Unmarshall(JsonUnmarshallerContext context)
+        public ScheduleAdBreak Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ScheduleEntry unmarshalledObject = new ScheduleEntry();
+            ScheduleAdBreak unmarshalledObject = new ScheduleAdBreak();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -74,30 +74,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.ApproximateStartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ChannelName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProgramName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProgramName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ScheduleAdBreaks", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ScheduleAdBreak, ScheduleAdBreakUnmarshaller>(ScheduleAdBreakUnmarshaller.Instance);
-                    unmarshalledObject.ScheduleAdBreaks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SourceLocationName", targetDepth))
@@ -118,12 +94,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static ScheduleEntryUnmarshaller _instance = new ScheduleEntryUnmarshaller();        
+        private static ScheduleAdBreakUnmarshaller _instance = new ScheduleAdBreakUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduleEntryUnmarshaller Instance
+        public static ScheduleAdBreakUnmarshaller Instance
         {
             get
             {

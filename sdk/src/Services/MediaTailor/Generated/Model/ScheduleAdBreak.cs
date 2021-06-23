@@ -29,23 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// The properties for a schedule.
+    /// The schedule's ad break properties.
     /// </summary>
-    public partial class ScheduleEntry
+    public partial class ScheduleAdBreak
     {
         private long? _approximateDurationSeconds;
         private DateTime? _approximateStartTime;
-        private string _arn;
-        private string _channelName;
-        private string _programName;
-        private List<ScheduleAdBreak> _scheduleAdBreaks = new List<ScheduleAdBreak>();
         private string _sourceLocationName;
         private string _vodSourceName;
 
         /// <summary>
         /// Gets and sets the property ApproximateDurationSeconds. 
         /// <para>
-        /// The approximate duration of this program, in seconds.
+        /// The approximate duration of the ad break, in seconds.
         /// </para>
         /// </summary>
         public long ApproximateDurationSeconds
@@ -63,7 +59,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ApproximateStartTime. 
         /// <para>
-        /// The approximate time that the program will start playing.
+        /// The approximate time that the ad will start playing.
         /// </para>
         /// </summary>
         public DateTime ApproximateStartTime
@@ -79,87 +75,11 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The ARN of the program.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ChannelName. 
-        /// <para>
-        /// The name of the channel that uses this schedule.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ChannelName
-        {
-            get { return this._channelName; }
-            set { this._channelName = value; }
-        }
-
-        // Check to see if ChannelName property is set
-        internal bool IsSetChannelName()
-        {
-            return this._channelName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProgramName. 
-        /// <para>
-        /// The name of the program.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ProgramName
-        {
-            get { return this._programName; }
-            set { this._programName = value; }
-        }
-
-        // Check to see if ProgramName property is set
-        internal bool IsSetProgramName()
-        {
-            return this._programName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ScheduleAdBreaks. 
-        /// <para>
-        /// The schedule's ad break properties.
-        /// </para>
-        /// </summary>
-        public List<ScheduleAdBreak> ScheduleAdBreaks
-        {
-            get { return this._scheduleAdBreaks; }
-            set { this._scheduleAdBreaks = value; }
-        }
-
-        // Check to see if ScheduleAdBreaks property is set
-        internal bool IsSetScheduleAdBreaks()
-        {
-            return this._scheduleAdBreaks != null && this._scheduleAdBreaks.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The name of the source location.
+        /// The name of the source location containing the VOD source used for the ad break.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceLocationName
         {
             get { return this._sourceLocationName; }
@@ -175,10 +95,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property VodSourceName. 
         /// <para>
-        /// The name of the VOD source.
+        /// The name of the VOD source used for the ad break.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string VodSourceName
         {
             get { return this._vodSourceName; }
