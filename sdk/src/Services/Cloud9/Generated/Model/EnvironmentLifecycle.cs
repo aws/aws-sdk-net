@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Cloud9.Model
 {
     /// <summary>
-    /// Information about the current creation or deletion lifecycle state of an AWS Cloud9
-    /// development environment.
+    /// Information about the current creation or deletion lifecycle state of an Cloud9 development
+    /// environment.
     /// </summary>
     public partial class EnvironmentLifecycle
     {
@@ -42,7 +42,7 @@ namespace Amazon.Cloud9.Model
         /// Gets and sets the property FailureResource. 
         /// <para>
         /// If the environment failed to delete, the Amazon Resource Name (ARN) of the related
-        /// AWS resource.
+        /// Amazon Web Services resource.
         /// </para>
         /// </summary>
         public string FailureResource

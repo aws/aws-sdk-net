@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Cloud9.Model
 {
     /// <summary>
-    /// Information about an environment member for an AWS Cloud9 development environment.
+    /// Information about an environment member for an Cloud9 development environment.
     /// </summary>
     public partial class EnvironmentMember
     {
@@ -132,7 +132,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.
+        /// The user ID in Identity and Access Management (IAM) of the environment member.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

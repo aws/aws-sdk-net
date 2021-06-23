@@ -30,7 +30,7 @@ namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEnvironment operation.
-    /// Changes the settings of an existing AWS Cloud9 development environment.
+    /// Changes the settings of an existing Cloud9 development environment.
     /// </summary>
     public partial class UpdateEnvironmentRequest : AmazonCloud9Request
     {

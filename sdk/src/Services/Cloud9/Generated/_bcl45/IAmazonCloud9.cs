@@ -31,24 +31,24 @@ namespace Amazon.Cloud9
     /// <summary>
     /// Interface for accessing Cloud9
     ///
-    /// AWS Cloud9 
+    /// Cloud9 
     /// <para>
-    /// AWS Cloud9 is a collection of tools that you can use to code, build, run, test, debug,
+    /// Cloud9 is a collection of tools that you can use to code, build, run, test, debug,
     /// and release software in the cloud.
     /// </para>
     ///  
     /// <para>
-    /// For more information about AWS Cloud9, see the <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide">AWS
-    /// Cloud9 User Guide</a>.
+    /// For more information about Cloud9, see the <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide">Cloud9
+    /// User Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// AWS Cloud9 supports these operations:
+    /// Cloud9 supports these operations:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CreateEnvironmentEC2</code>: Creates an AWS Cloud9 development environment,
-    /// launches an Amazon EC2 instance, and then connects from the instance to the environment.
+    ///  <code>CreateEnvironmentEC2</code>: Creates an Cloud9 development environment, launches
+    /// an Amazon EC2 instance, and then connects from the instance to the environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -116,8 +116,8 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute
-        /// Cloud (Amazon EC2) instance, and then connects from the instance to the environment.
+        /// Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud
+        /// (Amazon EC2) instance, and then connects from the instance to the environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentEC2 service method.</param>
         /// 
@@ -149,8 +149,8 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute
-        /// Cloud (Amazon EC2) instance, and then connects from the instance to the environment.
+        /// Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud
+        /// (Amazon EC2) instance, and then connects from the instance to the environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentEC2 service method.</param>
         /// <param name="cancellationToken">
@@ -188,7 +188,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Adds an environment member to an AWS Cloud9 development environment.
+        /// Adds an environment member to an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentMembership service method.</param>
         /// 
@@ -220,7 +220,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Adds an environment member to an AWS Cloud9 development environment.
+        /// Adds an environment member to an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentMembership service method.</param>
         /// <param name="cancellationToken">
@@ -258,7 +258,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected
+        /// Deletes an Cloud9 development environment. If an Amazon EC2 instance is connected
         /// to the environment, also terminates the instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
@@ -291,7 +291,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected
+        /// Deletes an Cloud9 development environment. If an Amazon EC2 instance is connected
         /// to the environment, also terminates the instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
@@ -330,7 +330,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Deletes an environment member from an AWS Cloud9 development environment.
+        /// Deletes an environment member from an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentMembership service method.</param>
         /// 
@@ -362,7 +362,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Deletes an environment member from an AWS Cloud9 development environment.
+        /// Deletes an environment member from an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentMembership service method.</param>
         /// <param name="cancellationToken">
@@ -400,7 +400,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Gets information about environment members for an AWS Cloud9 development environment.
+        /// Gets information about environment members for an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentMemberships service method.</param>
         /// 
@@ -432,7 +432,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Gets information about environment members for an AWS Cloud9 development environment.
+        /// Gets information about environment members for an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentMemberships service method.</param>
         /// <param name="cancellationToken">
@@ -470,7 +470,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Gets information about AWS Cloud9 development environments.
+        /// Gets information about Cloud9 development environments.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironments service method.</param>
         /// 
@@ -502,7 +502,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Gets information about AWS Cloud9 development environments.
+        /// Gets information about Cloud9 development environments.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironments service method.</param>
         /// <param name="cancellationToken">
@@ -540,7 +540,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Gets status information for an AWS Cloud9 development environment.
+        /// Gets status information for an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentStatus service method.</param>
         /// 
@@ -572,7 +572,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Gets status information for an AWS Cloud9 development environment.
+        /// Gets status information for an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -610,7 +610,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Gets a list of AWS Cloud9 development environment identifiers.
+        /// Gets a list of Cloud9 development environment identifiers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironments service method.</param>
         /// 
@@ -642,7 +642,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Gets a list of AWS Cloud9 development environment identifiers.
+        /// Gets a list of Cloud9 development environment identifiers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironments service method.</param>
         /// <param name="cancellationToken">
@@ -680,7 +680,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Gets a list of the tags associated with an AWS Cloud9 development environment.
+        /// Gets a list of the tags associated with an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -700,7 +700,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Gets a list of the tags associated with an AWS Cloud9 development environment.
+        /// Gets a list of the tags associated with an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -726,11 +726,11 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Adds tags to an AWS Cloud9 development environment.
+        /// Adds tags to an Cloud9 development environment.
         /// 
         ///  <important> 
         /// <para>
-        /// Tags that you add to an AWS Cloud9 environment by using this method will NOT be automatically
+        /// Tags that you add to an Cloud9 environment by using this method will NOT be automatically
         /// propagated to underlying resources.
         /// </para>
         ///  </important>
@@ -756,11 +756,11 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Adds tags to an AWS Cloud9 development environment.
+        /// Adds tags to an Cloud9 development environment.
         /// 
         ///  <important> 
         /// <para>
-        /// Tags that you add to an AWS Cloud9 environment by using this method will NOT be automatically
+        /// Tags that you add to an Cloud9 environment by using this method will NOT be automatically
         /// propagated to underlying resources.
         /// </para>
         ///  </important>
@@ -792,7 +792,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Removes tags from an AWS Cloud9 development environment.
+        /// Removes tags from an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -815,7 +815,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Removes tags from an AWS Cloud9 development environment.
+        /// Removes tags from an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -844,7 +844,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Changes the settings of an existing AWS Cloud9 development environment.
+        /// Changes the settings of an existing Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method.</param>
         /// 
@@ -876,7 +876,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Changes the settings of an existing AWS Cloud9 development environment.
+        /// Changes the settings of an existing Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -914,8 +914,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Changes the settings of an existing environment member for an AWS Cloud9 development
-        /// environment.
+        /// Changes the settings of an existing environment member for an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentMembership service method.</param>
         /// 
@@ -947,8 +946,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Changes the settings of an existing environment member for an AWS Cloud9 development
-        /// environment.
+        /// Changes the settings of an existing environment member for an Cloud9 development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentMembership service method.</param>
         /// <param name="cancellationToken">

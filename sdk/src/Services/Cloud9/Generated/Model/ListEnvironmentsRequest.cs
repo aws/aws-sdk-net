@@ -30,7 +30,7 @@ namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEnvironments operation.
-    /// Gets a list of AWS Cloud9 development environment identifiers.
+    /// Gets a list of Cloud9 development environment identifiers.
     /// </summary>
     public partial class ListEnvironmentsRequest : AmazonCloud9Request
     {

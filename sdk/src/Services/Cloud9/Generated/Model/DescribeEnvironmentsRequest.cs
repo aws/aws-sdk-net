@@ -30,7 +30,7 @@ namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEnvironments operation.
-    /// Gets information about AWS Cloud9 development environments.
+    /// Gets information about Cloud9 development environments.
     /// </summary>
     public partial class DescribeEnvironmentsRequest : AmazonCloud9Request
     {

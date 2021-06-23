@@ -30,8 +30,8 @@ namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironmentEC2 operation.
-    /// Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute
-    /// Cloud (Amazon EC2) instance, and then connects from the instance to the environment.
+    /// Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud
+    /// (Amazon EC2) instance, and then connects from the instance to the environment.
     /// </summary>
     public partial class CreateEnvironmentEC2Request : AmazonCloud9Request
     {
@@ -69,12 +69,12 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes
+        /// A unique, case-sensitive string that helps Cloud9 to ensure this operation completes
         /// no more than one time.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client
         /// Tokens</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -95,12 +95,13 @@ namespace Amazon.Cloud9.Model
         /// <para>
         /// The connection type used for connecting to an Amazon EC2 environment. Valid values
         /// are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through
-        /// AWS Systems Manager).
+        /// Amazon EC2 Systems Manager).
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
-        /// no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+        /// no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public ConnectionType ConnectionType
@@ -138,13 +139,14 @@ namespace Amazon.Cloud9.Model
         /// Gets and sets the property ImageId. 
         /// <para>
         /// The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance.
-        /// To choose an AMI for the instance, you must specify a valid AMI alias or a valid AWS
-        /// Systems Manager (SSM) path.
+        /// To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon
+        /// EC2 Systems Manager (SSM) path.
         /// </para>
         ///  
         /// <para>
         /// The default AMI is used if the parameter isn't explicitly assigned a value in the
-        /// request. 
+        /// request. Because Amazon Linux AMI has ended standard support as of December 31, 2020,
+        /// we recommend you choose Amazon Linux 2, which includes long term support through 2023.
         /// </para>
         ///  
         /// <para>
@@ -222,7 +224,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  
         /// <para>
-        /// This name is visible to other AWS IAM users in the same AWS account.
+        /// This name is visible to other IAM users in the same Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60)]
@@ -242,7 +244,7 @@ namespace Amazon.Cloud9.Model
         /// Gets and sets the property OwnerArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of
-        /// any AWS IAM principal. If this value is not specified, the ARN defaults to this environment's
+        /// any IAM principal. If this value is not specified, the ARN defaults to this environment's
         /// creator.
         /// </para>
         /// </summary>
@@ -261,8 +263,8 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the
-        /// Amazon EC2 instance.
+        /// The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon
+        /// EC2 instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=24)]
@@ -281,7 +283,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs that will be associated with the new AWS Cloud9 development
+        /// An array of key-value pairs that will be associated with the new Cloud9 development
         /// environment.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Cloud9.Model
 {
     /// <summary>
-    /// Information about an AWS Cloud9 development environment.
+    /// Information about an Cloud9 development environment.
     /// </summary>
     public partial class Environment
     {
@@ -139,8 +139,8 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property ManagedCredentialsStatus. 
         /// <para>
-        /// Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment.
-        /// Available values are:
+        /// Describes the status of Amazon Web Services managed temporary credentials for the
+        /// Cloud9 environment. Available values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -30,7 +30,7 @@ namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes tags from an AWS Cloud9 development environment.
+    /// Removes tags from an Cloud9 development environment.
     /// </summary>
     public partial class UntagResourceRequest : AmazonCloud9Request
     {
@@ -40,8 +40,8 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to remove
-        /// tags from.
+        /// The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags
+        /// from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The tag names of the tags to remove from the given AWS Cloud9 development environment.
+        /// The tag names of the tags to remove from the given Cloud9 development environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

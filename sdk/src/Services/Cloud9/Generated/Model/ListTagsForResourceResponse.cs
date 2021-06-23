@@ -38,7 +38,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags associated with the AWS Cloud9 development environment.
+        /// The list of tags associated with the Cloud9 development environment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

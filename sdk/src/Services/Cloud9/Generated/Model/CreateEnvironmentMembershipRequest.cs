@@ -30,7 +30,7 @@ namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironmentMembership operation.
-    /// Adds an environment member to an AWS Cloud9 development environment.
+    /// Adds an environment member to an Cloud9 development environment.
     /// </summary>
     public partial class CreateEnvironmentMembershipRequest : AmazonCloud9Request
     {

@@ -30,11 +30,11 @@ namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds tags to an AWS Cloud9 development environment.
+    /// Adds tags to an Cloud9 development environment.
     /// 
     ///  <important> 
     /// <para>
-    /// Tags that you add to an AWS Cloud9 environment by using this method will NOT be automatically
+    /// Tags that you add to an Cloud9 environment by using this method will NOT be automatically
     /// propagated to underlying resources.
     /// </para>
     ///  </important>
@@ -47,8 +47,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to add tags
-        /// to.
+        /// The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,7 +66,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags to add to the given AWS Cloud9 development environment.
+        /// The list of tags to add to the given Cloud9 development environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

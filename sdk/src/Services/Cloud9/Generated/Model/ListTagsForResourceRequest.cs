@@ -30,7 +30,7 @@ namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Gets a list of the tags associated with an AWS Cloud9 development environment.
+    /// Gets a list of the tags associated with an Cloud9 development environment.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonCloud9Request
     {
@@ -39,8 +39,8 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to get the
-        /// tags for.
+        /// The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
