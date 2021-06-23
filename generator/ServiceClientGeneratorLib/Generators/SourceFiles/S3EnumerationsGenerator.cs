@@ -74,7 +74,7 @@ namespace Amazon.S3
             this.Write(" = new S3Region(\"");
             
             #line 32 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionCode));
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.ConvertedRegionCode));
             
             #line default
             #line hidden

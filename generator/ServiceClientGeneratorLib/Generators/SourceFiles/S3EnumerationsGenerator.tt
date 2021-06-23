@@ -29,7 +29,7 @@ namespace Amazon.S3
         /// <summary>
         /// Specifies that the S3 Bucket should use the <#= endpoint.RegionCode #> locality.
         /// </summary>
-        public static readonly S3Region <#= endpoint.Name #> = new S3Region("<#= endpoint.RegionCode #>");
+        public static readonly S3Region <#= endpoint.Name #> = new S3Region("<#= endpoint.ConvertedRegionCode #>");
 
 <# } #>
     }
