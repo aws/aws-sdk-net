@@ -1045,6 +1045,98 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type FolderFilterAttribute.
+    /// </summary>
+    public class FolderFilterAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PARENT_FOLDER_ARN for FolderFilterAttribute
+        /// </summary>
+        public static readonly FolderFilterAttribute PARENT_FOLDER_ARN = new FolderFilterAttribute("PARENT_FOLDER_ARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FolderFilterAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FolderFilterAttribute FindValue(string value)
+        {
+            return FindValue<FolderFilterAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FolderFilterAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FolderType.
+    /// </summary>
+    public class FolderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHARED for FolderType
+        /// </summary>
+        public static readonly FolderType SHARED = new FolderType("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FolderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FolderType FindValue(string value)
+        {
+            return FindValue<FolderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FolderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GeoSpatialCountryCode.
     /// </summary>
     public class GeoSpatialCountryCode : ConstantClass
@@ -1754,6 +1846,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JoinType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MemberType.
+    /// </summary>
+    public class MemberType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANALYSIS for MemberType
+        /// </summary>
+        public static readonly MemberType ANALYSIS = new MemberType("ANALYSIS");
+        /// <summary>
+        /// Constant DASHBOARD for MemberType
+        /// </summary>
+        public static readonly MemberType DASHBOARD = new MemberType("DASHBOARD");
+        /// <summary>
+        /// Constant DATASET for MemberType
+        /// </summary>
+        public static readonly MemberType DATASET = new MemberType("DATASET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemberType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemberType FindValue(string value)
+        {
+            return FindValue<MemberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemberType(string value)
         {
             return FindValue(value);
         }

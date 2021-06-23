@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A physical table type for as S3 data source.
+    /// A physical table type for an S3 data source.
     /// </summary>
     public partial class S3Source
     {
@@ -59,8 +59,13 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property InputColumns. 
         /// <para>
-        /// A physical table type for as S3 data source.
+        /// A physical table type for an S3 data source.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For non-JSON files, only <code>STRING</code> data types are supported in input columns.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public List<InputColumn> InputColumns

@@ -114,6 +114,47 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateFolderRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateFolderRequest.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateFolderRequest.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateFolderResponse.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateFolderMembershipRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateFolderMembershipRequest.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateFolderMembershipRequest.MemberId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateGroupRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -384,6 +425,42 @@
     <min>12</min>
     <max>12</max>
     <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteFolderRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteFolderRequest.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteFolderResponse.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteFolderMembershipRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteFolderMembershipRequest.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteFolderMembershipRequest.MemberId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteGroupRequest.AwsAccountId</property>
@@ -709,6 +786,54 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderRequest.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderPermissionsRequest.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderPermissionsResponse.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderResolvedPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderResolvedPermissionsRequest.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderResolvedPermissionsResponse.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeGroupRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -989,6 +1114,34 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListDataSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListFolderMembersRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListFolderMembersRequest.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListFolderMembersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListFoldersRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListFoldersRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -1284,6 +1437,17 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchFoldersRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchFoldersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateAccountCustomizationRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1458,6 +1622,47 @@
     <min>12</min>
     <max>12</max>
     <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateFolderRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateFolderRequest.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateFolderRequest.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateFolderResponse.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateFolderPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateFolderPermissionsRequest.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateFolderPermissionsResponse.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateGroupRequest.AwsAccountId</property>
@@ -1888,6 +2093,34 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.Folder.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.Folder.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FolderMember.MemberId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FolderSummary.FolderId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FolderSummary.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.GeoSpatialColumnGroup.Name</property>
     <min>1</min>
     <max>64</max>
@@ -1996,6 +2229,12 @@
     <property>Amazon.QuickSight.Model.MariaDbParameters.Port</property>
     <min>1</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.MemberIdArnPair.MemberId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.MySqlParameters.Database</property>
