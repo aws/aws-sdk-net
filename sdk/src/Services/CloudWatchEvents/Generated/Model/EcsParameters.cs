@@ -33,12 +33,87 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class EcsParameters
     {
+        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
+        private bool? _enableECSManagedTags;
+        private bool? _enableExecuteCommand;
         private string _group;
         private LaunchType _launchType;
         private NetworkConfiguration _networkConfiguration;
+        private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
+        private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _platformVersion;
+        private PropagateTags _propagateTags;
+        private string _referenceId;
+        private List<Tag> _tags = new List<Tag>();
         private int? _taskCount;
         private string _taskDefinitionArn;
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderStrategy. 
+        /// <para>
+        /// The capacity provider strategy to use for the task.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType
+        /// is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is
+        /// used. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=6)]
+        public List<CapacityProviderStrategyItem> CapacityProviderStrategy
+        {
+            get { return this._capacityProviderStrategy; }
+            set { this._capacityProviderStrategy = value; }
+        }
+
+        // Check to see if CapacityProviderStrategy property is set
+        internal bool IsSetCapacityProviderStrategy()
+        {
+            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableECSManagedTags. 
+        /// <para>
+        /// Specifies whether to enable Amazon ECS managed tags for the task. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+        /// Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool EnableECSManagedTags
+        {
+            get { return this._enableECSManagedTags.GetValueOrDefault(); }
+            set { this._enableECSManagedTags = value; }
+        }
+
+        // Check to see if EnableECSManagedTags property is set
+        internal bool IsSetEnableECSManagedTags()
+        {
+            return this._enableECSManagedTags.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableExecuteCommand. 
+        /// <para>
+        /// Whether or not to enable the execute command functionality for the containers in this
+        /// task. If true, this enables execute command functionality on all containers in the
+        /// task.
+        /// </para>
+        /// </summary>
+        public bool EnableExecuteCommand
+        {
+            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            set { this._enableExecuteCommand = value; }
+        }
+
+        // Check to see if EnableExecuteCommand property is set
+        internal bool IsSetEnableExecuteCommand()
+        {
+            return this._enableExecuteCommand.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Group. 
@@ -108,6 +183,47 @@ namespace Amazon.CloudWatchEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlacementConstraints. 
+        /// <para>
+        /// An array of placement constraint objects to use for the task. You can specify up to
+        /// 10 constraints per task (including constraints in the task definition and those specified
+        /// at runtime).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<PlacementConstraint> PlacementConstraints
+        {
+            get { return this._placementConstraints; }
+            set { this._placementConstraints = value; }
+        }
+
+        // Check to see if PlacementConstraints property is set
+        internal bool IsSetPlacementConstraints()
+        {
+            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementStrategy. 
+        /// <para>
+        /// The placement strategy objects to use for the task. You can specify a maximum of five
+        /// strategy rules per task. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=5)]
+        public List<PlacementStrategy> PlacementStrategy
+        {
+            get { return this._placementStrategy; }
+            set { this._placementStrategy = value; }
+        }
+
+        // Check to see if PlacementStrategy property is set
+        internal bool IsSetPlacementStrategy()
+        {
+            return this._placementStrategy != null && this._placementStrategy.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
         /// Specifies the platform version for the task. Specify only the numeric portion of the
@@ -131,6 +247,67 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetPlatformVersion()
         {
             return this._platformVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// Specifies whether to propagate the tags from the task definition to the task. If no
+        /// value is specified, the tags are not propagated. Tags can only be propagated to the
+        /// task during task creation. To add tags to a task after task creation, use the TagResource
+        /// API action. 
+        /// </para>
+        /// </summary>
+        public PropagateTags PropagateTags
+        {
+            get { return this._propagateTags; }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReferenceId. 
+        /// <para>
+        /// The reference ID to use for the task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string ReferenceId
+        {
+            get { return this._referenceId; }
+            set { this._referenceId = value; }
+        }
+
+        // Check to see if ReferenceId property is set
+        internal bool IsSetReferenceId()
+        {
+            return this._referenceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the task to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define. To learn
+        /// more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a>
+        /// in the Amazon ECS API Reference.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
