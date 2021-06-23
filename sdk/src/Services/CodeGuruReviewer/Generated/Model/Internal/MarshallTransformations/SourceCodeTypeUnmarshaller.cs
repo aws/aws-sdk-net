@@ -64,6 +64,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BranchDiff", targetDepth))
+                {
+                    var unmarshaller = BranchDiffSourceCodeTypeUnmarshaller.Instance;
+                    unmarshalledObject.BranchDiff = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CommitDiff", targetDepth))
                 {
                     var unmarshaller = CommitDiffSourceCodeTypeUnmarshaller.Instance;
@@ -74,6 +80,18 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RepositoryHeadSourceCodeTypeUnmarshaller.Instance;
                     unmarshalledObject.RepositoryHead = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RequestMetadata", targetDepth))
+                {
+                    var unmarshaller = RequestMetadataUnmarshaller.Instance;
+                    unmarshalledObject.RequestMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3BucketRepository", targetDepth))
+                {
+                    var unmarshaller = S3BucketRepositoryUnmarshaller.Instance;
+                    unmarshalledObject.S3BucketRepository = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

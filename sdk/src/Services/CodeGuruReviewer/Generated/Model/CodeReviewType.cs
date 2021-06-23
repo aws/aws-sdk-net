@@ -34,9 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model
     ///  <ul> <li> 
     /// <para>
     ///  <code>PullRequest</code> - A code review that is automatically triggered by a pull
-    /// request on an associated repository. Because this type of code review is automatically
-    /// generated, you cannot specify this code review type using <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-    /// <code>CreateCodeReview</code> </a>. 
+    /// request on an associated repository. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -49,7 +47,27 @@ namespace Amazon.CodeGuruReviewer.Model
     /// </summary>
     public partial class CodeReviewType
     {
+        private List<string> _analysisTypes = new List<string>();
         private RepositoryAnalysis _repositoryAnalysis;
+
+        /// <summary>
+        /// Gets and sets the property AnalysisTypes. 
+        /// <para>
+        /// They types of analysis performed during a repository analysis or a pull request review.
+        /// You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.
+        /// </para>
+        /// </summary>
+        public List<string> AnalysisTypes
+        {
+            get { return this._analysisTypes; }
+            set { this._analysisTypes = value; }
+        }
+
+        // Check to see if AnalysisTypes property is set
+        internal bool IsSetAnalysisTypes()
+        {
+            return this._analysisTypes != null && this._analysisTypes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property RepositoryAnalysis. 

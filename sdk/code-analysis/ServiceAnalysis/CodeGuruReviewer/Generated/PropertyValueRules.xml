@@ -160,6 +160,28 @@
     <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:association:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.BranchDiffSourceCodeType.DestinationBranchName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.BranchDiffSourceCodeType.SourceBranchName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeArtifacts.BuildArtifactsObjectKey</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeArtifacts.SourceCodeArtifactsObjectKey</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.CodeCommitRepository.Name</property>
     <min>1</min>
     <max>100</max>
@@ -240,9 +262,26 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CommitDiffSourceCodeType.MergeBaseCommit</property>
+    <min>6</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.CommitDiffSourceCodeType.SourceCommit</property>
     <min>6</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.EventInfo.Name</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[ \-A-Z_a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.EventInfo.State</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[ \-A-Z_a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.KMSKeyDetails.KMSKeyId</property>
@@ -358,6 +397,41 @@
     <property>Amazon.CodeGuruReviewer.Model.RepositoryHeadSourceCodeType.BranchName</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RequestMetadata.Requester</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RequestMetadata.RequestId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.S3BucketRepository.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.S3Repository.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.S3Repository.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.S3RepositoryDetails.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^\S(.*\S)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.ThirdPartySourceRepository.ConnectionArn</property>

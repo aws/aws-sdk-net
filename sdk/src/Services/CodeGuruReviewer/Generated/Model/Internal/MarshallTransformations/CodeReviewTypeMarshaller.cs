@@ -45,6 +45,17 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeReviewType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAnalysisTypes())
+            {
+                context.Writer.WritePropertyName("AnalysisTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAnalysisTypesListValue in requestObject.AnalysisTypes)
+                {
+                        context.Writer.Write(requestObjectAnalysisTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetRepositoryAnalysis())
             {
                 context.Writer.WritePropertyName("RepositoryAnalysis");

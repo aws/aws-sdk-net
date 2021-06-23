@@ -38,6 +38,7 @@ namespace Amazon.CodeGuruReviewer.Model
         private ThirdPartySourceRepository _bitbucket;
         private CodeCommitRepository _codeCommit;
         private ThirdPartySourceRepository _gitHubEnterpriseServer;
+        private S3Repository _s3Bucket;
 
         /// <summary>
         /// Gets and sets the property Bitbucket. 
@@ -91,6 +92,21 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetGitHubEnterpriseServer()
         {
             return this._gitHubEnterpriseServer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Bucket.
+        /// </summary>
+        public S3Repository S3Bucket
+        {
+            get { return this._s3Bucket; }
+            set { this._s3Bucket = value; }
+        }
+
+        // Check to see if S3Bucket property is set
+        internal bool IsSetS3Bucket()
+        {
+            return this._s3Bucket != null;
         }
 
     }

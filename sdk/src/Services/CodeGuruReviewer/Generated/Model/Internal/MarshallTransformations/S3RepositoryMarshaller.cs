@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RepositoryAnalysis Marshaller
+    /// S3Repository Marshaller
     /// </summary>       
-    public class RepositoryAnalysisMarshaller : IRequestMarshaller<RepositoryAnalysis, JsonMarshallerContext> 
+    public class S3RepositoryMarshaller : IRequestMarshaller<S3Repository, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RepositoryAnalysis requestObject, JsonMarshallerContext context)
+        public void Marshall(S3Repository requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetRepositoryHead())
+            if(requestObject.IsSetBucketName())
             {
-                context.Writer.WritePropertyName("RepositoryHead");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RepositoryHeadSourceCodeTypeMarshaller.Instance;
-                marshaller.Marshall(requestObject.RepositoryHead, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("BucketName");
+                context.Writer.Write(requestObject.BucketName);
             }
 
-            if(requestObject.IsSetSourceCodeType())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("SourceCodeType");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SourceCodeTypeMarshaller.Instance;
-                marshaller.Marshall(requestObject.SourceCodeType, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RepositoryAnalysisMarshaller Instance = new RepositoryAnalysisMarshaller();
+        public readonly static S3RepositoryMarshaller Instance = new S3RepositoryMarshaller();
 
     }
 }

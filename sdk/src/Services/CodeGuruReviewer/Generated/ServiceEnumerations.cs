@@ -25,6 +25,56 @@ namespace Amazon.CodeGuruReviewer
 {
 
     /// <summary>
+    /// Constants used for properties of type AnalysisType.
+    /// </summary>
+    public class AnalysisType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CodeQuality for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType CodeQuality = new AnalysisType("CodeQuality");
+        /// <summary>
+        /// Constant Security for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType Security = new AnalysisType("Security");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisType FindValue(string value)
+        {
+            return FindValue<AnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncryptionOption.
     /// </summary>
     public class EncryptionOption : ConstantClass
@@ -154,6 +204,10 @@ namespace Amazon.CodeGuruReviewer
         /// Constant GitHubEnterpriseServer for ProviderType
         /// </summary>
         public static readonly ProviderType GitHubEnterpriseServer = new ProviderType("GitHubEnterpriseServer");
+        /// <summary>
+        /// Constant S3Bucket for ProviderType
+        /// </summary>
+        public static readonly ProviderType S3Bucket = new ProviderType("S3Bucket");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -234,6 +288,88 @@ namespace Amazon.CodeGuruReviewer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Reaction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationCategory.
+    /// </summary>
+    public class RecommendationCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSBestPractices for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory AWSBestPractices = new RecommendationCategory("AWSBestPractices");
+        /// <summary>
+        /// Constant AWSCloudFormationIssues for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory AWSCloudFormationIssues = new RecommendationCategory("AWSCloudFormationIssues");
+        /// <summary>
+        /// Constant CodeMaintenanceIssues for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory CodeMaintenanceIssues = new RecommendationCategory("CodeMaintenanceIssues");
+        /// <summary>
+        /// Constant ConcurrencyIssues for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory ConcurrencyIssues = new RecommendationCategory("ConcurrencyIssues");
+        /// <summary>
+        /// Constant DuplicateCode for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory DuplicateCode = new RecommendationCategory("DuplicateCode");
+        /// <summary>
+        /// Constant InputValidations for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory InputValidations = new RecommendationCategory("InputValidations");
+        /// <summary>
+        /// Constant JavaBestPractices for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory JavaBestPractices = new RecommendationCategory("JavaBestPractices");
+        /// <summary>
+        /// Constant PythonBestPractices for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory PythonBestPractices = new RecommendationCategory("PythonBestPractices");
+        /// <summary>
+        /// Constant ResourceLeaks for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory ResourceLeaks = new RecommendationCategory("ResourceLeaks");
+        /// <summary>
+        /// Constant SecurityIssues for RecommendationCategory
+        /// </summary>
+        public static readonly RecommendationCategory SecurityIssues = new RecommendationCategory("SecurityIssues");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationCategory FindValue(string value)
+        {
+            return FindValue<RecommendationCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationCategory(string value)
         {
             return FindValue(value);
         }
@@ -346,6 +482,60 @@ namespace Amazon.CodeGuruReviewer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Type(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VendorName.
+    /// </summary>
+    public class VendorName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GitHub for VendorName
+        /// </summary>
+        public static readonly VendorName GitHub = new VendorName("GitHub");
+        /// <summary>
+        /// Constant GitLab for VendorName
+        /// </summary>
+        public static readonly VendorName GitLab = new VendorName("GitLab");
+        /// <summary>
+        /// Constant NativeS3 for VendorName
+        /// </summary>
+        public static readonly VendorName NativeS3 = new VendorName("NativeS3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VendorName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VendorName FindValue(string value)
+        {
+            return FindValue<VendorName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VendorName(string value)
         {
             return FindValue(value);
         }

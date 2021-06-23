@@ -42,6 +42,7 @@ namespace Amazon.CodeGuruReviewer.Model
         private ProviderType _providerType;
         private string _pullRequestId;
         private string _repositoryName;
+        private SourceCodeType _sourceCodeType;
         private JobState _state;
         private Type _type;
 
@@ -145,6 +146,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// The owner of the repository. For an AWS CodeCommit repository, this is the AWS account
         /// ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server,
         /// or Bitbucket repository, this is the username for the account that owns the repository.
+        /// For an S3 repository, it can be the username or AWS account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -214,6 +216,21 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetRepositoryName()
         {
             return this._repositoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceCodeType.
+        /// </summary>
+        public SourceCodeType SourceCodeType
+        {
+            get { return this._sourceCodeType; }
+            set { this._sourceCodeType = value; }
+        }
+
+        // Check to see if SourceCodeType property is set
+        internal bool IsSetSourceCodeType()
+        {
+            return this._sourceCodeType != null;
         }
 
         /// <summary>

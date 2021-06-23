@@ -118,6 +118,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                     unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceCodeType", targetDepth))
+                {
+                    var unmarshaller = SourceCodeTypeUnmarshaller.Instance;
+                    unmarshalledObject.SourceCodeType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

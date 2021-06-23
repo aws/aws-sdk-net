@@ -34,6 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model
     /// </summary>
     public partial class CodeReview
     {
+        private List<string> _analysisTypes = new List<string>();
         private string _associationArn;
         private string _codeReviewArn;
         private DateTime? _createdTimeStamp;
@@ -48,6 +49,25 @@ namespace Amazon.CodeGuruReviewer.Model
         private JobState _state;
         private string _stateReason;
         private Type _type;
+
+        /// <summary>
+        /// Gets and sets the property AnalysisTypes. 
+        /// <para>
+        /// They types of analysis performed during a repository analysis or a pull request review.
+        /// You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.
+        /// </para>
+        /// </summary>
+        public List<string> AnalysisTypes
+        {
+            get { return this._analysisTypes; }
+            set { this._analysisTypes = value; }
+        }
+
+        // Check to see if AnalysisTypes property is set
+        internal bool IsSetAnalysisTypes()
+        {
+            return this._analysisTypes != null && this._analysisTypes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AssociationArn. 
@@ -171,6 +191,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// The owner of the repository. For an AWS CodeCommit repository, this is the AWS account
         /// ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server,
         /// or Bitbucket repository, this is the username for the account that owns the repository.
+        /// For an S3 repository, it can be the username or AWS account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

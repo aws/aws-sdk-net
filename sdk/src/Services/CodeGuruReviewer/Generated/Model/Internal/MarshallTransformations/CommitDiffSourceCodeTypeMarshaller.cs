@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RepositoryAnalysis Marshaller
+    /// CommitDiffSourceCodeType Marshaller
     /// </summary>       
-    public class RepositoryAnalysisMarshaller : IRequestMarshaller<RepositoryAnalysis, JsonMarshallerContext> 
+    public class CommitDiffSourceCodeTypeMarshaller : IRequestMarshaller<CommitDiffSourceCodeType, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,24 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RepositoryAnalysis requestObject, JsonMarshallerContext context)
+        public void Marshall(CommitDiffSourceCodeType requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetRepositoryHead())
+            if(requestObject.IsSetDestinationCommit())
             {
-                context.Writer.WritePropertyName("RepositoryHead");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RepositoryHeadSourceCodeTypeMarshaller.Instance;
-                marshaller.Marshall(requestObject.RepositoryHead, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("DestinationCommit");
+                context.Writer.Write(requestObject.DestinationCommit);
             }
 
-            if(requestObject.IsSetSourceCodeType())
+            if(requestObject.IsSetMergeBaseCommit())
             {
-                context.Writer.WritePropertyName("SourceCodeType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("MergeBaseCommit");
+                context.Writer.Write(requestObject.MergeBaseCommit);
+            }
 
-                var marshaller = SourceCodeTypeMarshaller.Instance;
-                marshaller.Marshall(requestObject.SourceCodeType, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetSourceCommit())
+            {
+                context.Writer.WritePropertyName("SourceCommit");
+                context.Writer.Write(requestObject.SourceCommit);
             }
 
         }
@@ -72,7 +68,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RepositoryAnalysisMarshaller Instance = new RepositoryAnalysisMarshaller();
+        public readonly static CommitDiffSourceCodeTypeMarshaller Instance = new CommitDiffSourceCodeTypeMarshaller();
 
     }
 }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommendationSummary Object
+    /// Response Unmarshaller for BranchDiffSourceCodeType Object
     /// </summary>  
-    public class RecommendationSummaryUnmarshaller : IUnmarshaller<RecommendationSummary, XmlUnmarshallerContext>, IUnmarshaller<RecommendationSummary, JsonUnmarshallerContext>
+    public class BranchDiffSourceCodeTypeUnmarshaller : IUnmarshaller<BranchDiffSourceCodeType, XmlUnmarshallerContext>, IUnmarshaller<BranchDiffSourceCodeType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecommendationSummary IUnmarshaller<RecommendationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BranchDiffSourceCodeType IUnmarshaller<BranchDiffSourceCodeType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecommendationSummary Unmarshall(JsonUnmarshallerContext context)
+        public BranchDiffSourceCodeType Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationSummary unmarshalledObject = new RecommendationSummary();
+            BranchDiffSourceCodeType unmarshalledObject = new BranchDiffSourceCodeType();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("DestinationBranchName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationBranchName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndLine", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.EndLine = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FilePath", targetDepth))
+                if (context.TestExpression("SourceBranchName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilePath = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RecommendationCategory", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationCategory = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RecommendationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartLine", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.StartLine = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceBranchName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommendationSummaryUnmarshaller _instance = new RecommendationSummaryUnmarshaller();        
+        private static BranchDiffSourceCodeTypeUnmarshaller _instance = new BranchDiffSourceCodeTypeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommendationSummaryUnmarshaller Instance
+        public static BranchDiffSourceCodeTypeUnmarshaller Instance
         {
             get
             {

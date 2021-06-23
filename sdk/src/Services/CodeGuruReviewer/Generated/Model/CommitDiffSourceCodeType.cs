@@ -31,17 +31,20 @@ namespace Amazon.CodeGuruReviewer.Model
     /// <summary>
     /// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
     /// <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request
-    /// on an associated repository.
+    /// on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code>
+    /// fields are required to do a pull request code review.
     /// </summary>
     public partial class CommitDiffSourceCodeType
     {
         private string _destinationCommit;
+        private string _mergeBaseCommit;
         private string _sourceCommit;
 
         /// <summary>
         /// Gets and sets the property DestinationCommit. 
         /// <para>
-        ///  The SHA of the destination commit used to generate a commit diff. 
+        ///  The SHA of the destination commit used to generate a commit diff. This field is required
+        /// for a pull request code review. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]
@@ -58,9 +61,29 @@ namespace Amazon.CodeGuruReviewer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MergeBaseCommit. 
+        /// <para>
+        /// The SHA of the merge base of a commit.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=6, Max=64)]
+        public string MergeBaseCommit
+        {
+            get { return this._mergeBaseCommit; }
+            set { this._mergeBaseCommit = value; }
+        }
+
+        // Check to see if MergeBaseCommit property is set
+        internal bool IsSetMergeBaseCommit()
+        {
+            return this._mergeBaseCommit != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceCommit. 
         /// <para>
-        ///  The SHA of the source commit used to generate a commit diff. 
+        ///  The SHA of the source commit used to generate a commit diff. This field is required
+        /// for a pull request code review. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]

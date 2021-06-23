@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Repository Marshaller
+    /// SourceCodeType Marshaller
     /// </summary>       
-    public class RepositoryMarshaller : IRequestMarshaller<Repository, JsonMarshallerContext> 
+    public class SourceCodeTypeMarshaller : IRequestMarshaller<SourceCodeType, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,48 +43,59 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Repository requestObject, JsonMarshallerContext context)
+        public void Marshall(SourceCodeType requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBitbucket())
+            if(requestObject.IsSetBranchDiff())
             {
-                context.Writer.WritePropertyName("Bitbucket");
+                context.Writer.WritePropertyName("BranchDiff");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ThirdPartySourceRepositoryMarshaller.Instance;
-                marshaller.Marshall(requestObject.Bitbucket, context);
+                var marshaller = BranchDiffSourceCodeTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.BranchDiff, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetCodeCommit())
+            if(requestObject.IsSetCommitDiff())
             {
-                context.Writer.WritePropertyName("CodeCommit");
+                context.Writer.WritePropertyName("CommitDiff");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = CodeCommitRepositoryMarshaller.Instance;
-                marshaller.Marshall(requestObject.CodeCommit, context);
+                var marshaller = CommitDiffSourceCodeTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.CommitDiff, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetGitHubEnterpriseServer())
+            if(requestObject.IsSetRepositoryHead())
             {
-                context.Writer.WritePropertyName("GitHubEnterpriseServer");
+                context.Writer.WritePropertyName("RepositoryHead");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ThirdPartySourceRepositoryMarshaller.Instance;
-                marshaller.Marshall(requestObject.GitHubEnterpriseServer, context);
+                var marshaller = RepositoryHeadSourceCodeTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.RepositoryHead, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetS3Bucket())
+            if(requestObject.IsSetRequestMetadata())
             {
-                context.Writer.WritePropertyName("S3Bucket");
+                context.Writer.WritePropertyName("RequestMetadata");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = S3RepositoryMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3Bucket, context);
+                var marshaller = RequestMetadataMarshaller.Instance;
+                marshaller.Marshall(requestObject.RequestMetadata, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3BucketRepository())
+            {
+                context.Writer.WritePropertyName("S3BucketRepository");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3BucketRepositoryMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3BucketRepository, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -94,7 +105,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RepositoryMarshaller Instance = new RepositoryMarshaller();
+        public readonly static SourceCodeTypeMarshaller Instance = new SourceCodeTypeMarshaller();
 
     }
 }

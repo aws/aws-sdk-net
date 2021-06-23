@@ -31,8 +31,8 @@ namespace Amazon.CodeGuruReviewer
     ///
     /// This section provides documentation for the Amazon CodeGuru Reviewer API operations.
     /// CodeGuru Reviewer is a service that uses program analysis and machine learning to
-    /// detect potential defects that are difficult for developers to find and recommendations
-    /// to address them in your Java and Python code.
+    /// detect potential defects that are difficult for developers to find and recommends
+    /// fixes in your Java and Python code.
     /// 
     ///  
     /// <para>
@@ -78,8 +78,8 @@ namespace Amazon.CodeGuruReviewer
         /// 
         ///  
         /// <para>
-        /// If you associate a CodeCommit repository, it must be in the same AWS Region and AWS
-        /// account where its CodeGuru Reviewer code reviews are configured.
+        /// If you associate a CodeCommit or S3 repository, it must be in the same AWS Region
+        /// and AWS account where its CodeGuru Reviewer code reviews are configured.
         /// </para>
         ///  
         /// <para>
@@ -153,8 +153,7 @@ namespace Amazon.CodeGuruReviewer
         /// Use to create a code review with a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
         /// <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of
         /// code review analyzes all code under a specified branch in an associated repository.
-        /// <code>PullRequest</code> code reviews are automatically triggered by a pull request
-        /// so cannot be created using this method.
+        /// <code>PullRequest</code> code reviews are automatically triggered by a pull request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCodeReview service method.</param>
         /// 

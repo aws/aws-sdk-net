@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Repository Marshaller
+    /// RequestMetadata Marshaller
     /// </summary>       
-    public class RepositoryMarshaller : IRequestMarshaller<Repository, JsonMarshallerContext> 
+    public class RequestMetadataMarshaller : IRequestMarshaller<RequestMetadata, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,50 +43,35 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Repository requestObject, JsonMarshallerContext context)
+        public void Marshall(RequestMetadata requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBitbucket())
+            if(requestObject.IsSetEventInfo())
             {
-                context.Writer.WritePropertyName("Bitbucket");
+                context.Writer.WritePropertyName("EventInfo");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ThirdPartySourceRepositoryMarshaller.Instance;
-                marshaller.Marshall(requestObject.Bitbucket, context);
+                var marshaller = EventInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventInfo, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetCodeCommit())
+            if(requestObject.IsSetRequester())
             {
-                context.Writer.WritePropertyName("CodeCommit");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CodeCommitRepositoryMarshaller.Instance;
-                marshaller.Marshall(requestObject.CodeCommit, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Requester");
+                context.Writer.Write(requestObject.Requester);
             }
 
-            if(requestObject.IsSetGitHubEnterpriseServer())
+            if(requestObject.IsSetRequestId())
             {
-                context.Writer.WritePropertyName("GitHubEnterpriseServer");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ThirdPartySourceRepositoryMarshaller.Instance;
-                marshaller.Marshall(requestObject.GitHubEnterpriseServer, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("RequestId");
+                context.Writer.Write(requestObject.RequestId);
             }
 
-            if(requestObject.IsSetS3Bucket())
+            if(requestObject.IsSetVendorName())
             {
-                context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3RepositoryMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3Bucket, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("VendorName");
+                context.Writer.Write(requestObject.VendorName);
             }
 
         }
@@ -94,7 +79,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RepositoryMarshaller Instance = new RepositoryMarshaller();
+        public readonly static RequestMetadataMarshaller Instance = new RequestMetadataMarshaller();
 
     }
 }

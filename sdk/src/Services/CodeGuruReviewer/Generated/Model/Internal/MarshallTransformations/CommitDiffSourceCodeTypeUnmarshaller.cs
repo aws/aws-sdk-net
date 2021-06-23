@@ -70,6 +70,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                     unmarshalledObject.DestinationCommit = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MergeBaseCommit", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MergeBaseCommit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceCommit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -36,6 +36,7 @@ namespace Amazon.CodeGuruReviewer.Model
         private string _description;
         private int? _endLine;
         private string _filePath;
+        private RecommendationCategory _recommendationCategory;
         private string _recommendationId;
         private int? _startLine;
 
@@ -95,6 +96,24 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetFilePath()
         {
             return this._filePath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationCategory. 
+        /// <para>
+        /// The type of a recommendation.
+        /// </para>
+        /// </summary>
+        public RecommendationCategory RecommendationCategory
+        {
+            get { return this._recommendationCategory; }
+            set { this._recommendationCategory = value; }
+        }
+
+        // Check to see if RecommendationCategory property is set
+        internal bool IsSetRecommendationCategory()
+        {
+            return this._recommendationCategory != null;
         }
 
         /// <summary>

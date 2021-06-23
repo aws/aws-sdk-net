@@ -44,6 +44,7 @@ namespace Amazon.CodeGuruReviewer.Model
         private string _name;
         private string _owner;
         private ProviderType _providerType;
+        private S3RepositoryDetails _s3RepositoryDetails;
         private RepositoryAssociationState _state;
         private string _stateReason;
 
@@ -198,6 +199,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// The owner of the repository. For an AWS CodeCommit repository, this is the AWS account
         /// ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server,
         /// or Bitbucket repository, this is the username for the account that owns the repository.
+        /// For an S3 repository, it can be the username or AWS account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -229,6 +231,21 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetProviderType()
         {
             return this._providerType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3RepositoryDetails.
+        /// </summary>
+        public S3RepositoryDetails S3RepositoryDetails
+        {
+            get { return this._s3RepositoryDetails; }
+            set { this._s3RepositoryDetails = value; }
+        }
+
+        // Check to see if S3RepositoryDetails property is set
+        internal bool IsSetS3RepositoryDetails()
+        {
+            return this._s3RepositoryDetails != null;
         }
 
         /// <summary>

@@ -29,14 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Specifies the source code that is analyzed in a code review. A code review can analyze
-    /// the source code that is specified using a pull request diff or a branch in an associated
-    /// repository.
+    /// Specifies the source code that is analyzed in a code review.
     /// </summary>
     public partial class SourceCodeType
     {
+        private BranchDiffSourceCodeType _branchDiff;
         private CommitDiffSourceCodeType _commitDiff;
         private RepositoryHeadSourceCodeType _repositoryHead;
+        private RequestMetadata _requestMetadata;
+        private S3BucketRepository _s3BucketRepository;
+
+        /// <summary>
+        /// Gets and sets the property BranchDiff. 
+        /// <para>
+        ///  A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+        /// <code>SourceCodeType</code> </a> that specifies a source branch name and a destination
+        /// branch name in an associated repository. 
+        /// </para>
+        /// </summary>
+        public BranchDiffSourceCodeType BranchDiff
+        {
+            get { return this._branchDiff; }
+            set { this._branchDiff = value; }
+        }
+
+        // Check to see if BranchDiff property is set
+        internal bool IsSetBranchDiff()
+        {
+            return this._branchDiff != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CommitDiff. 
@@ -71,6 +92,51 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetRepositoryHead()
         {
             return this._repositoryHead != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestMetadata. 
+        /// <para>
+        /// Metadata that is associated with a code review. This applies to any type of code review
+        /// supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any
+        /// event metadata. For example, it might capture metadata associated with an event trigger,
+        /// such as a push or a pull request. 
+        /// </para>
+        /// </summary>
+        public RequestMetadata RequestMetadata
+        {
+            get { return this._requestMetadata; }
+            set { this._requestMetadata = value; }
+        }
+
+        // Check to see if RequestMetadata property is set
+        internal bool IsSetRequestMetadata()
+        {
+            return this._requestMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketRepository. 
+        /// <para>
+        ///  Information about an associated repository in an S3 bucket that includes its name
+        /// and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code>
+        /// object includes the name of an S3 bucket, an S3 key for a source code .zip file, and
+        /// an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required
+        /// in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+        /// <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews.
+        /// 
+        /// </para>
+        /// </summary>
+        public S3BucketRepository S3BucketRepository
+        {
+            get { return this._s3BucketRepository; }
+            set { this._s3BucketRepository = value; }
+        }
+
+        // Check to see if S3BucketRepository property is set
+        internal bool IsSetS3BucketRepository()
+        {
+            return this._s3BucketRepository != null;
         }
 
     }

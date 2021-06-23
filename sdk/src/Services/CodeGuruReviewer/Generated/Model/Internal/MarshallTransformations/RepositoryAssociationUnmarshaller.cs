@@ -118,6 +118,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3RepositoryDetails", targetDepth))
+                {
+                    var unmarshaller = S3RepositoryDetailsUnmarshaller.Instance;
+                    unmarshalledObject.S3RepositoryDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -37,6 +37,7 @@ namespace Amazon.CodeGuruReviewer.Model
     public partial class RepositoryAnalysis
     {
         private RepositoryHeadSourceCodeType _repositoryHead;
+        private SourceCodeType _sourceCodeType;
 
         /// <summary>
         /// Gets and sets the property RepositoryHead. 
@@ -46,7 +47,6 @@ namespace Amazon.CodeGuruReviewer.Model
         /// repository. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public RepositoryHeadSourceCodeType RepositoryHead
         {
             get { return this._repositoryHead; }
@@ -57,6 +57,21 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetRepositoryHead()
         {
             return this._repositoryHead != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceCodeType.
+        /// </summary>
+        public SourceCodeType SourceCodeType
+        {
+            get { return this._sourceCodeType; }
+            set { this._sourceCodeType = value; }
+        }
+
+        // Check to see if SourceCodeType property is set
+        internal bool IsSetSourceCodeType()
+        {
+            return this._sourceCodeType != null;
         }
 
     }

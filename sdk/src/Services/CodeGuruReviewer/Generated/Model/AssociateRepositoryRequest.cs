@@ -40,8 +40,8 @@ namespace Amazon.CodeGuruReviewer.Model
     /// 
     ///  
     /// <para>
-    /// If you associate a CodeCommit repository, it must be in the same AWS Region and AWS
-    /// account where its CodeGuru Reviewer code reviews are configured.
+    /// If you associate a CodeCommit or S3 repository, it must be in the same AWS Region
+    /// and AWS account where its CodeGuru Reviewer code reviews are configured.
     /// </para>
     ///  
     /// <para>
