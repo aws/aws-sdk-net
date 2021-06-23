@@ -958,6 +958,21 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.CapacityProviderStrategyItem.Base</property>
+    <min>0</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CapacityProviderStrategyItem.CapacityProvider</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CapacityProviderStrategyItem.Weight</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.Connection.ConnectionArn</property>
     <min>1</min>
     <max>1600</max>
@@ -1066,6 +1081,10 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.EcsParameters.ReferenceId</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.EcsParameters.TaskCount</property>
     <min>1</min>
   </property-value-rule>
@@ -1088,6 +1107,14 @@
     <min>12</min>
     <max>12</max>
     <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.PlacementConstraint.Expression</property>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.PlacementStrategy.Field</property>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.PutEventsRequestEntry.EventBusName</property>

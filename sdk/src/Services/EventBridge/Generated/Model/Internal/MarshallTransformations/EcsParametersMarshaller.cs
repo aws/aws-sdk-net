@@ -45,6 +45,34 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EcsParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCapacityProviderStrategy())
+            {
+                context.Writer.WritePropertyName("CapacityProviderStrategy");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCapacityProviderStrategyListValue in requestObject.CapacityProviderStrategy)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CapacityProviderStrategyItemMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCapacityProviderStrategyListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetEnableECSManagedTags())
+            {
+                context.Writer.WritePropertyName("EnableECSManagedTags");
+                context.Writer.Write(requestObject.EnableECSManagedTags);
+            }
+
+            if(requestObject.IsSetEnableExecuteCommand())
+            {
+                context.Writer.WritePropertyName("EnableExecuteCommand");
+                context.Writer.Write(requestObject.EnableExecuteCommand);
+            }
+
             if(requestObject.IsSetGroup())
             {
                 context.Writer.WritePropertyName("Group");
@@ -68,10 +96,70 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPlacementConstraints())
+            {
+                context.Writer.WritePropertyName("PlacementConstraints");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPlacementConstraintsListValue in requestObject.PlacementConstraints)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PlacementConstraintMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPlacementConstraintsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetPlacementStrategy())
+            {
+                context.Writer.WritePropertyName("PlacementStrategy");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPlacementStrategyListValue in requestObject.PlacementStrategy)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PlacementStrategyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPlacementStrategyListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPlatformVersion())
             {
                 context.Writer.WritePropertyName("PlatformVersion");
                 context.Writer.Write(requestObject.PlatformVersion);
+            }
+
+            if(requestObject.IsSetPropagateTags())
+            {
+                context.Writer.WritePropertyName("PropagateTags");
+                context.Writer.Write(requestObject.PropagateTags);
+            }
+
+            if(requestObject.IsSetReferenceId())
+            {
+                context.Writer.WritePropertyName("ReferenceId");
+                context.Writer.Write(requestObject.ReferenceId);
+            }
+
+            if(requestObject.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTagsListValue in requestObject.Tags)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTagsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetTaskCount())

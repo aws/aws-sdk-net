@@ -43,6 +43,12 @@ namespace Amazon.EventBridge.Model
     /// </para>
     ///  
     /// <para>
+    /// If you call delete rule multiple times for the same rule, all calls will succeed.
+    /// When you call delete rule for a non-existent custom eventbus, <code>ResourceNotFoundException</code>
+    /// is returned.
+    /// </para>
+    ///  
+    /// <para>
     /// Managed rules are rules created and managed by another AWS service on your behalf.
     /// These rules are created by those other AWS services to support functionality in those
     /// services. You can delete these rules using the <code>Force</code> option, but you

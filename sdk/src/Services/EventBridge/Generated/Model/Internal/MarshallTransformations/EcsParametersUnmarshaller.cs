@@ -64,6 +64,24 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CapacityProviderStrategy", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CapacityProviderStrategyItem, CapacityProviderStrategyItemUnmarshaller>(CapacityProviderStrategyItemUnmarshaller.Instance);
+                    unmarshalledObject.CapacityProviderStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EnableECSManagedTags", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableECSManagedTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EnableExecuteCommand", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableExecuteCommand = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Group", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -82,10 +100,40 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlacementConstraints", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PlacementConstraint, PlacementConstraintUnmarshaller>(PlacementConstraintUnmarshaller.Instance);
+                    unmarshalledObject.PlacementConstraints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PlacementStrategy", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PlacementStrategy, PlacementStrategyUnmarshaller>(PlacementStrategyUnmarshaller.Instance);
+                    unmarshalledObject.PlacementStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PlatformVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PropagateTags", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReferenceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReferenceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TaskCount", targetDepth))
