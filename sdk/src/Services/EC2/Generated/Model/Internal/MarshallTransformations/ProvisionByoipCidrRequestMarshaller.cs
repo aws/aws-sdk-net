@@ -77,6 +77,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetMultiRegion())
+                {
+                    request.Parameters.Add("MultiRegion", StringUtils.FromBool(publicRequest.MultiRegion));
+                }
                 if(publicRequest.IsSetPoolTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;

@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         private string _cidr;
         private CidrAuthorizationContext _cidrAuthorizationContext;
         private string _description;
+        private bool? _multiRegion;
         private List<TagSpecification> _poolTagSpecifications = new List<TagSpecification>();
         private bool? _publiclyAdvertisable;
 
@@ -116,6 +117,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegion. <para>Reserved.</para>
+        /// </summary>
+        public bool MultiRegion
+        {
+            get { return this._multiRegion.GetValueOrDefault(); }
+            set { this._multiRegion = value; }
+        }
+
+        // Check to see if MultiRegion property is set
+        internal bool IsSetMultiRegion()
+        {
+            return this._multiRegion.HasValue; 
         }
 
         /// <summary>
