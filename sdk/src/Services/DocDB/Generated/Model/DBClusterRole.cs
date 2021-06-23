@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Describes an AWS Identity and Access Management (IAM) role that is associated with
-    /// a cluster.
+    /// Describes an Identity and Access Management (IAM) role that is associated with a cluster.
     /// </summary>
     public partial class DBClusterRole
     {
@@ -40,7 +39,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.
+        /// The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -58,22 +57,22 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes the state of association between the IAM role and the cluster. The <code>Status</code>
+        /// Describes the state of association between the IAMrole and the cluster. The <code>Status</code>
         /// property returns one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The IAM role ARN is associated with the cluster and can be
-        /// used to access other AWS services on your behalf.
+        ///  <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used
+        /// to access other Amazon Web Services services on your behalf.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - The IAM role ARN is being associated with the DB cluster.
+        ///  <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVALID</code> - The IAM role ARN is associated with the cluster, but the cluster
-        /// cannot assume the IAM role to access other AWS services on your behalf.
+        ///  <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster
+        /// cannot assume the IAMrole to access other Amazon Web Services services on your behalf.
         /// </para>
         ///  </li> </ul>
         /// </summary>

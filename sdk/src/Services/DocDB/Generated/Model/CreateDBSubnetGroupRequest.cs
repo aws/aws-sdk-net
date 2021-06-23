@@ -31,7 +31,7 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Container for the parameters to the CreateDBSubnetGroup operation.
     /// Creates a new subnet group. subnet groups must contain at least one subnet in at least
-    /// two Availability Zones in the AWS Region.
+    /// two Availability Zones in the Region.
     /// </summary>
     public partial class CreateDBSubnetGroupRequest : AmazonDocDBRequest
     {

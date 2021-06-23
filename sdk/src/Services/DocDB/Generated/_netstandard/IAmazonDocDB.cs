@@ -72,9 +72,9 @@ namespace Amazon.DocDB
 
         /// <summary>
         /// Adds metadata tags to an Amazon DocumentDB resource. You can use these tags with cost
-        /// allocation reporting to track costs that are associated with Amazon DocumentDB resources.
-        /// or in a <code>Condition</code> statement in an AWS Identity and Access Management
-        /// (IAM) policy for Amazon DocumentDB.
+        /// allocation reporting to track costs that are associated with Amazon DocumentDB resources
+        /// or in a <code>Condition</code> statement in an Identity and Access Management (IAM)
+        /// policy for Amazon DocumentDB.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// <param name="cancellationToken">
@@ -162,7 +162,7 @@ namespace Amazon.DocDB
         /// <para>
         /// To copy a cluster snapshot from a shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
         /// must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can only
-        /// copy a shared DB cluster snapshot, whether encrypted or not, in the same AWS Region.
+        /// copy a shared DB cluster snapshot, whether encrypted or not, in the same Region.
         /// </para>
         ///  
         /// <para>
@@ -190,7 +190,7 @@ namespace Amazon.DocDB
         /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
-        /// An error occurred when accessing an AWS KMS key.
+        /// An error occurred when accessing an KMS key.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.SnapshotQuotaExceededException">
         /// The request would cause you to exceed the allowed number of snapshots.
@@ -266,7 +266,7 @@ namespace Amazon.DocDB
         /// of changes that were made.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
-        /// An error occurred when accessing an AWS KMS key.
+        /// An error occurred when accessing an KMS key.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
@@ -413,7 +413,7 @@ namespace Amazon.DocDB
         /// of changes that were made.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
-        /// An error occurred when accessing an AWS KMS key.
+        /// An error occurred when accessing an KMS key.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
@@ -434,7 +434,7 @@ namespace Amazon.DocDB
 
         /// <summary>
         /// Creates a new subnet group. subnet groups must contain at least one subnet in at least
-        /// two Availability Zones in the AWS Region.
+        /// two Availability Zones in the Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSubnetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -533,7 +533,7 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Creates an Amazon DocumentDB global cluster that can span multiple multiple AWS Regions.
+        /// Creates an Amazon DocumentDB global cluster that can span multiple multiple Regions.
         /// The global cluster contains one primary cluster with read-write capability, and up-to
         /// give read-only secondary clusters. Global clusters uses storage-based fast replication
         /// across regions with latencies less than one second, using dedicated infrastructure
@@ -795,7 +795,7 @@ namespace Amazon.DocDB
 
         /// <summary>
         /// Returns a list of certificate authority (CA) certificates provided by Amazon DocumentDB
-        /// for this AWS account.
+        /// for this account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -890,11 +890,11 @@ namespace Amazon.DocDB
         /// 
         ///  
         /// <para>
-        /// When you share snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code>
-        /// returns the <code>restore</code> attribute and a list of IDs for the AWS accounts
-        /// that are authorized to copy or restore the manual cluster snapshot. If <code>all</code>
+        /// When you share snapshots with other accounts, <code>DescribeDBClusterSnapshotAttributes</code>
+        /// returns the <code>restore</code> attribute and a list of IDs for the accounts that
+        /// are authorized to copy or restore the manual cluster snapshot. If <code>all</code>
         /// is included in the list of values for the <code>restore</code> attribute, then the
-        /// manual cluster snapshot is public and can be copied or restored by all AWS accounts.
+        /// manual cluster snapshot is public and can be copied or restored by all accounts.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshotAttributes service method.</param>
@@ -1323,20 +1323,19 @@ namespace Amazon.DocDB
 
         /// <summary>
         /// Adds an attribute and values to, or removes an attribute and values from, a manual
-        /// DB cluster snapshot.
+        /// cluster snapshot.
         /// 
         ///  
         /// <para>
-        /// To share a manual cluster snapshot with other AWS accounts, specify <code>restore</code>
+        /// To share a manual cluster snapshot with other accounts, specify <code>restore</code>
         /// as the <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter
-        /// to add a list of IDs of the AWS accounts that are authorized to restore the manual
-        /// cluster snapshot. Use the value <code>all</code> to make the manual cluster snapshot
-        /// public, which means that it can be copied or restored by all AWS accounts. Do not
-        /// add the <code>all</code> value for any manual DB cluster snapshots that contain private
-        /// information that you don't want available to all AWS accounts. If a manual cluster
-        /// snapshot is encrypted, it can be shared, but only by specifying a list of authorized
-        /// AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code>
-        /// as a value for that parameter in this case.
+        /// to add a list of IDs of the accounts that are authorized to restore the manual cluster
+        /// snapshot. Use the value <code>all</code> to make the manual cluster snapshot public,
+        /// which means that it can be copied or restored by all accounts. Do not add the <code>all</code>
+        /// value for any manual cluster snapshots that contain private information that you don't
+        /// want available to all accounts. If a manual cluster snapshot is encrypted, it can
+        /// be shared, but only by specifying a list of authorized account IDs for the <code>ValuesToAdd</code>
+        /// parameter. You can't use <code>all</code> as a value for that parameter in this case.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterSnapshotAttribute service method.</param>
@@ -1434,7 +1433,7 @@ namespace Amazon.DocDB
 
         /// <summary>
         /// Modifies an existing subnet group. subnet groups must contain at least one subnet
-        /// in at least two Availability Zones in the AWS Region.
+        /// in at least two Availability Zones in the Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSubnetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1757,7 +1756,7 @@ namespace Amazon.DocDB
         /// of changes that were made.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
-        /// An error occurred when accessing an AWS KMS key.
+        /// An error occurred when accessing an KMS key.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
@@ -1830,7 +1829,7 @@ namespace Amazon.DocDB
         /// of changes that were made.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
-        /// An error occurred when accessing an AWS KMS key.
+        /// An error occurred when accessing an KMS key.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across

@@ -31,20 +31,19 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Container for the parameters to the ModifyDBClusterSnapshotAttribute operation.
     /// Adds an attribute and values to, or removes an attribute and values from, a manual
-    /// DB cluster snapshot.
+    /// cluster snapshot.
     /// 
     ///  
     /// <para>
-    /// To share a manual cluster snapshot with other AWS accounts, specify <code>restore</code>
+    /// To share a manual cluster snapshot with other accounts, specify <code>restore</code>
     /// as the <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter
-    /// to add a list of IDs of the AWS accounts that are authorized to restore the manual
-    /// cluster snapshot. Use the value <code>all</code> to make the manual cluster snapshot
-    /// public, which means that it can be copied or restored by all AWS accounts. Do not
-    /// add the <code>all</code> value for any manual DB cluster snapshots that contain private
-    /// information that you don't want available to all AWS accounts. If a manual cluster
-    /// snapshot is encrypted, it can be shared, but only by specifying a list of authorized
-    /// AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code>
-    /// as a value for that parameter in this case.
+    /// to add a list of IDs of the accounts that are authorized to restore the manual cluster
+    /// snapshot. Use the value <code>all</code> to make the manual cluster snapshot public,
+    /// which means that it can be copied or restored by all accounts. Do not add the <code>all</code>
+    /// value for any manual cluster snapshots that contain private information that you don't
+    /// want available to all accounts. If a manual cluster snapshot is encrypted, it can
+    /// be shared, but only by specifying a list of authorized account IDs for the <code>ValuesToAdd</code>
+    /// parameter. You can't use <code>all</code> as a value for that parameter in this case.
     /// </para>
     /// </summary>
     public partial class ModifyDBClusterSnapshotAttributeRequest : AmazonDocDBRequest
@@ -61,8 +60,8 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// To manage authorization for other AWS accounts to copy or restore a manual cluster
-        /// snapshot, set this value to <code>restore</code>.
+        /// To manage authorization for other accounts to copy or restore a manual cluster snapshot,
+        /// set this value to <code>restore</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,11 +103,11 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// To authorize other AWS accounts to copy or restore a manual cluster snapshot, set
-        /// this list to include one or more AWS account IDs. To make the manual cluster snapshot
-        /// restorable by any AWS account, set it to <code>all</code>. Do not add the <code>all</code>
-        /// value for any manual cluster snapshots that contain private information that you don't
-        /// want to be available to all AWS accounts.
+        /// To authorize other accounts to copy or restore a manual cluster snapshot, set this
+        /// list to include one or more account IDs. To make the manual cluster snapshot restorable
+        /// by any account, set it to <code>all</code>. Do not add the <code>all</code> value
+        /// for any manual cluster snapshots that contain private information that you don't want
+        /// to be available to all accounts.
         /// </para>
         /// </summary>
         public List<string> ValuesToAdd
@@ -130,12 +129,11 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// To remove authorization for other AWS accounts to copy or restore a manual cluster
-        /// snapshot, set this list to include one or more AWS account identifiers. To remove
-        /// authorization for any AWS account to copy or restore the cluster snapshot, set it
-        /// to <code>all</code> . If you specify <code>all</code>, an AWS account whose account
-        /// ID is explicitly added to the <code>restore</code> attribute can still copy or restore
-        /// a manual cluster snapshot.
+        /// To remove authorization for other accounts to copy or restore a manual cluster snapshot,
+        /// set this list to include one or more account identifiers. To remove authorization
+        /// for any account to copy or restore the cluster snapshot, set it to <code>all</code>
+        /// . If you specify <code>all</code>, an account whose account ID is explicitly added
+        /// to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.
         /// </para>
         /// </summary>
         public List<string> ValuesToRemove

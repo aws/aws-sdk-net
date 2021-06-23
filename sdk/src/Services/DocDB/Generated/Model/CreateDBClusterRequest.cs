@@ -258,9 +258,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to use. The --engine-version will default
-        /// to the latest major engine version. For production workloads, we recommend explicitly
-        /// declaring this parameter with the intended major engine version.
+        /// The version number of the database engine to use. The <code>--engine-version</code>
+        /// will default to the latest major engine version. For production workloads, we recommend
+        /// explicitly declaring this parameter with the intended major engine version.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -297,14 +297,14 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for an encrypted cluster.
+        /// The KMS key identifier for an encrypted cluster.
         /// </para>
         ///  
         /// <para>
-        /// The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption
-        /// key. If you are creating a cluster using the same AWS account that owns the AWS KMS
-        /// encryption key that is used to encrypt the new cluster, you can use the AWS KMS key
-        /// alias instead of the ARN for the AWS KMS encryption key.
+        /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
+        /// If you are creating a cluster using the same account that owns the KMS encryption
+        /// key that is used to encrypt the new cluster, you can use the KMS key alias instead
+        /// of the ARN for the KMS encryption key.
         /// </para>
         ///  
         /// <para>
@@ -317,8 +317,8 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// AWS KMS creates the default encryption key for your AWS account. Your AWS account
-        /// has a different default encryption key for each AWS Region.
+        /// KMS creates the default encryption key for your account. Your account has a different
+        /// default encryption key for each Regions.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -418,7 +418,7 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. 
+        /// for each Region. 
         /// </para>
         ///  
         /// <para>
@@ -467,7 +467,7 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region, occurring on a random day of the week.
+        /// for each Region, occurring on a random day of the week.
         /// </para>
         ///  
         /// <para>

@@ -36,7 +36,7 @@ namespace Amazon.DocDB.Model
     /// <para>
     /// To copy a cluster snapshot from a shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
     /// must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can only
-    /// copy a shared DB cluster snapshot, whether encrypted or not, in the same AWS Region.
+    /// copy a shared DB cluster snapshot, whether encrypted or not, in the same Region.
     /// </para>
     ///  
     /// <para>
@@ -76,30 +76,27 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key ID for an encrypted cluster snapshot. The AWS KMS key ID is the Amazon
-        /// Resource Name (ARN), AWS KMS key identifier, or the AWS KMS key alias for the AWS
-        /// KMS encryption key. 
+        /// The KMS key ID for an encrypted cluster snapshot. The KMS key ID is the Amazon Resource
+        /// Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. 
         /// </para>
         ///  
         /// <para>
-        /// If you copy an encrypted cluster snapshot from your AWS account, you can specify a
-        /// value for <code>KmsKeyId</code> to encrypt the copy with a new AWS KMS encryption
-        /// key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the
-        /// cluster snapshot is encrypted with the same AWS KMS key as the source cluster snapshot.
-        /// 
+        /// If you copy an encrypted cluster snapshot from your account, you can specify a value
+        /// for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
+        /// don't specify a value for <code>KmsKeyId</code>, then the copy of the cluster snapshot
+        /// is encrypted with the same KMS key as the source cluster snapshot.
         /// </para>
         ///  
         /// <para>
-        /// If you copy an encrypted cluster snapshot that is shared from another AWS account,
-        /// then you must specify a value for <code>KmsKeyId</code>.
+        /// If you copy an encrypted cluster snapshot that is shared from another account, then
+        /// you must specify a value for <code>KmsKeyId</code>.
         /// </para>
         ///  
         /// <para>
-        /// To copy an encrypted cluster snapshot to another AWS Region, set <code>KmsKeyId</code>
-        /// to the AWS KMS key ID that you want to use to encrypt the copy of the cluster snapshot
-        /// in the destination Region. AWS KMS encryption keys are specific to the AWS Region
-        /// that they are created in, and you can't use encryption keys from one AWS Region in
-        /// another AWS Region.
+        /// To copy an encrypted cluster snapshot to another Region, set <code>KmsKeyId</code>
+        /// to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot
+        /// in the destination Region. KMS encryption keys are specific to the Region that they
+        /// are created in, and you can't use encryption keys from one Region in another Region.
         /// </para>
         ///  
         /// <para>
@@ -122,24 +119,23 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property PreSignedUrl. 
         /// <para>
-        /// The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code>
-        /// API action in the AWS Region that contains the source cluster snapshot to copy. You
-        /// must use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from
-        /// another AWS Region.
+        /// The URL that contains a Signature Version 4 signed request for the<code>CopyDBClusterSnapshot</code>
+        /// API action in the Region that contains the source cluster snapshot to copy. You must
+        /// use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from another
+        /// Region.
         /// </para>
         ///  
         /// <para>
-        /// If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code>
-        /// (or <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code>
+        /// If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code>
+        /// (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code>
         /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
-        /// is a valid request for the operation that can be executed in the source AWS Region.
+        /// is a valid request for the operation that can be executed in the source Region.
         /// </para>
         ///  
         /// <para>
         /// The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code>
-        /// API action that can be executed in the source AWS Region that contains the cluster
-        /// snapshot to be copied. The presigned URL request must contain the following parameter
-        /// values:
+        /// API action that can be executed in the source Region that contains the cluster snapshot
+        /// to be copied. The presigned URL request must contain the following parameter values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -150,8 +146,8 @@ namespace Amazon.DocDB.Model
         /// <para>
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted
         /// cluster snapshot to be copied. This identifier must be in the Amazon Resource Name
-        /// (ARN) format for the source AWS Region. For example, if you are copying an encrypted
-        /// cluster snapshot from the us-east-1 AWS Region, then your <code>SourceDBClusterSnapshotIdentifier</code>
+        /// (ARN) format for the source Region. For example, if you are copying an encrypted cluster
+        /// snapshot from the us-east-1 Region, then your <code>SourceDBClusterSnapshotIdentifier</code>
         /// looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.
         /// </para>
         ///  </li> <li> 
@@ -188,13 +184,13 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source snapshot is in the same AWS Region as the copy, specify a valid snapshot
+        /// If the source snapshot is in the same Region as the copy, specify a valid snapshot
         /// identifier.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source snapshot is in a different AWS Region than the copy, specify a valid
-        /// cluster snapshot ARN.
+        /// If the source snapshot is in a different Region than the copy, specify a valid cluster
+        /// snapshot ARN.
         /// </para>
         ///  </li> </ul> 
         /// <para>

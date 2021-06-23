@@ -63,7 +63,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Indicates that minor version patches are applied automatically.
+        /// Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB
+        /// does not perform minor version upgrades regardless of the value set.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -227,8 +228,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DbiResourceId. 
         /// <para>
-        /// The AWS Region-unique, immutable identifier for the instance. This identifier is found
-        /// in AWS CloudTrail log entries whenever the AWS KMS key for the instance is accessed.
+        /// The Region-unique, immutable identifier for the instance. This identifier is found
+        /// in CloudTrail log entries whenever the KMS key for the instance is accessed.
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -265,8 +266,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EnabledCloudwatchLogsExports. 
         /// <para>
-        /// A list of log types that this instance is configured to export to Amazon CloudWatch
-        /// Logs.
+        /// A list of log types that this instance is configured to export to CloudWatch Logs.
         /// </para>
         /// </summary>
         public List<string> EnabledCloudwatchLogsExports
@@ -356,8 +356,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier
-        /// for the encrypted instance. 
+        ///  If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
+        /// the encrypted instance. 
         /// </para>
         /// </summary>
         public string KmsKeyId

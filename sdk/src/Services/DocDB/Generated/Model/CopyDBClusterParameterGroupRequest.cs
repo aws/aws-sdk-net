@@ -54,14 +54,14 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source cluster parameter group is in the same AWS Region as the copy, specify
-        /// a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>,
+        /// If the source cluster parameter group is in the same Region as the copy, specify a
+        /// valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>,
         /// or a valid ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source parameter group is in a different AWS Region than the copy, specify
-        /// a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.
+        /// If the source parameter group is in a different Region than the copy, specify a valid
+        /// cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

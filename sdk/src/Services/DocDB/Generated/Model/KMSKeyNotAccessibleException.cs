@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// An error occurred when accessing an AWS KMS key.
+    /// An error occurred when accessing an KMS key.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

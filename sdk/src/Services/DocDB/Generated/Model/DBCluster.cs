@@ -68,9 +68,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AssociatedRoles. 
         /// <para>
-        /// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated
-        /// with the cluster. IAM roles that are associated with a cluster grant permission for
-        /// the cluster to access other AWS services on your behalf.
+        /// Provides a list of the Identity and Access Management (IAM) roles that are associated
+        /// with the cluster. (IAM) roles that are associated with a cluster grant permission
+        /// for the cluster to access other Amazon Web Services services on your behalf.
         /// </para>
         /// </summary>
         public List<DBClusterRole> AssociatedRoles
@@ -216,8 +216,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// The AWS Region-unique, immutable identifier for the cluster. This identifier is found
-        /// in AWS CloudTrail log entries whenever the AWS KMS key for the cluster is accessed.
+        /// The Region-unique, immutable identifier for the cluster. This identifier is found
+        /// in CloudTrail log entries whenever the KMS key for the cluster is accessed.
         /// </para>
         /// </summary>
         public string DbClusterResourceId
@@ -384,8 +384,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier
-        /// for the encrypted cluster.
+        /// If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
+        /// the encrypted cluster.
         /// </para>
         /// </summary>
         public string KmsKeyId

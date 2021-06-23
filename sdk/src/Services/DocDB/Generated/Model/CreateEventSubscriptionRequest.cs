@@ -183,8 +183,7 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// Valid values: <code>db-instance</code>, <code>db-cluster</code>, <code>db-parameter-group</code>,
-        /// <code>db-security-group</code>, <code>db-snapshot</code>, <code>db-cluster-snapshot</code>
-        /// 
+        /// <code>db-security-group</code>, <code>db-cluster-snapshot</code> 
         /// </para>
         /// </summary>
         public string SourceType

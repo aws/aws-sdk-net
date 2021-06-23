@@ -128,7 +128,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property IncludePublic. 
         /// <para>
         /// Set to <code>true</code> to include manual cluster snapshots that are public and can
-        /// be copied or restored by any AWS account, and otherwise <code>false</code>. The default
+        /// be copied or restored by any account, and otherwise <code>false</code>. The default
         /// is <code>false</code>.
         /// </para>
         /// </summary>
@@ -147,9 +147,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property IncludeShared. 
         /// <para>
-        /// Set to <code>true</code> to include shared manual cluster snapshots from other AWS
-        /// accounts that this AWS account has been given permission to copy or restore, and otherwise
-        /// <code>false</code>. The default is <code>false</code>.
+        /// Set to <code>true</code> to include shared manual cluster snapshots from other accounts
+        /// that this account has been given permission to copy or restore, and otherwise <code>false</code>.
+        /// The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool IncludeShared
@@ -221,17 +221,17 @@ namespace Amazon.DocDB.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has
-        /// automatically created for your AWS account.
+        /// automatically created for your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>manual</code> - Return all cluster snapshots that you have manually created
-        /// for your AWS account.
+        /// for your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>shared</code> - Return all manual cluster snapshots that have been shared to
-        /// your AWS account.
+        /// your account.
         /// </para>
         ///  </li> <li> 
         /// <para>

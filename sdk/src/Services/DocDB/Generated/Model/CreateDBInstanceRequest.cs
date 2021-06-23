@@ -47,12 +47,12 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Indicates that minor engine upgrades are applied automatically to the instance during
-        /// the maintenance window.
+        /// This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform
+        /// minor version upgrades regardless of the value set.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -74,7 +74,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+        /// Default: A random, system-chosen Availability Zone in the endpoint's Region.
         /// </para>
         ///  
         /// <para>
@@ -207,7 +207,7 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region, occurring on a random day of the week. 
+        /// for each Region, occurring on a random day of the week. 
         /// </para>
         ///  
         /// <para>

@@ -39,7 +39,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// A list of certificates for this AWS account.
+        /// A list of certificates for this account.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates

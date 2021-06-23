@@ -47,8 +47,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property CustomerAwsId. 
         /// <para>
-        /// The AWS customer account that is associated with the Amazon DocumentDB event notification
-        /// subscription.
+        /// The Amazon Web Services customer account that is associated with the Amazon DocumentDB
+        /// event notification subscription.
         /// </para>
         /// </summary>
         public string CustomerAwsId

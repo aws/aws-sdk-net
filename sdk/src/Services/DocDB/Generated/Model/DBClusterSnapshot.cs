@@ -182,8 +182,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier
-        /// for the encrypted cluster snapshot.
+        /// If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
+        /// the encrypted cluster snapshot.
         /// </para>
         /// </summary>
         public string KmsKeyId
