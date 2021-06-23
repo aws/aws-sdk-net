@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.58.0",
+    "ProductVersion" : "3.7.59.0",
     "CoreVersion"    : "3.7.0.35",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -38,7 +38,7 @@
             "InPreview"               : false
         },
         "CloudFront"     : {
-            "Version" : "3.7.1.17",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3.4.0",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"
@@ -46,7 +46,7 @@
             "InPreview"               : false
         },
         "CloudSearch"    : {
-            "Version" : "3.7.0.33",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.12.2",
+            "Version" : "3.7.13.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"
@@ -498,7 +498,7 @@
             "InPreview"               : false
         },
         "CloudWatchEvents"                : {
-            "Version" : "3.7.2.12",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"
@@ -1018,7 +1018,7 @@
             "InPreview"               : false
         },
         "Cloud9"                          : {
-            "Version" : "3.7.1.30",
+            "Version" : "3.7.1.31",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"
@@ -1130,7 +1130,7 @@
             "InPreview"               : false
         },
         "MediaTailor"                     : {
-            "Version" : "3.7.1.2",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"
@@ -1226,7 +1226,7 @@
             "InPreview"               : false
         },
         "QuickSight"                      : {
-            "Version" : "3.7.2.7",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"
@@ -1314,7 +1314,7 @@
             "InPreview"               : false
         },
         "LicenseManager"                  : {
-            "Version" : "3.7.1.12",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"
@@ -1354,7 +1354,7 @@
             "InPreview"               : false
         },
         "DocDB"                           : {
-            "Version" : "3.7.2.4",
+            "Version" : "3.7.2.5",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"
@@ -1482,7 +1482,7 @@
             "InPreview"               : false
         },
         "EventBridge"                     : {
-            "Version" : "3.7.2.12",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"
@@ -1698,7 +1698,7 @@
             "InPreview"               : false
         },
         "CodeGuruReviewer"                : {
-            "Version" : "3.7.1.19",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.0.35"

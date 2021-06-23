@@ -1,3 +1,27 @@
+### 3.7.59.0 (2021-06-23 18:25 UTC)
+* Cloud9 (3.7.1.31)
+	* Updated documentation for CreateEnvironmentEC2 to explain that because Amazon Linux AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2--which includes long term support through 2023--for new AWS Cloud9 environments.
+* CloudFront (3.7.2.0)
+	* Amazon CloudFront adds support for a new security policy, TLSv1.2_2021.
+* CloudSearch (3.7.1.0)
+	* This release replaces previous generation CloudSearch instances with equivalent new instances that provide better stability at the same price.
+* CloudWatchEvents (3.7.3.0)
+	* Added the following parameters to ECS targets: CapacityProviderStrategy, EnableECSManagedTags, EnableExecuteCommand, PlacementConstraints, PlacementStrategy, PropagateTags, ReferenceId, and Tags
+* CodeGuruReviewer (3.7.2.0)
+	* Adds support for S3 based full repository analysis and changed lines scan.
+* DocDB (3.7.2.5)
+	* DocumentDB documentation-only edits
+* EC2 (3.7.13.0)
+	* This release adds support for provisioning your own IP (BYOIP) range in multiple regions. This feature is in limited Preview for this release. Contact your account manager if you are interested in this feature.
+* EventBridge (3.7.3.0)
+	* Added the following parameters to ECS targets: CapacityProviderStrategy, EnableECSManagedTags, EnableExecuteCommand, PlacementConstraints, PlacementStrategy, PropagateTags, ReferenceId, and Tags
+* LicenseManager (3.7.2.0)
+	* AWS License Manager now allows license administrators and end users to communicate to each other by setting custom status reasons when updating the status on a granted license.
+* MediaTailor (3.7.2.0)
+	* Update GetChannelSchedule to return information on ad breaks.
+* QuickSight (3.7.3.0)
+	* Releasing new APIs for AWS QuickSight Folders
+
 ### 3.7.58.0 (2021-06-21 18:35 UTC)
 * CloudFormation (3.7.3.0)
 	* CloudFormation registry service now supports 3rd party public type sharing
