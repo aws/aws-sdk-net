@@ -35,8 +35,8 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
-    /// to the web request at all.
+    /// If the specified header isn't present in the request, WAF doesn't apply the rule to
+    /// the web request at all.
     /// </para>
     ///  </note> 
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// AWS WAF only evaluates the first IP address found in the specified HTTP header. 
+    /// WAF only evaluates the first IP address found in the specified HTTP header. 
     /// </para>
     /// </summary>
     public partial class ForwardedIPConfig
@@ -61,8 +61,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
-        /// to the web request at all.
+        /// If the specified header isn't present in the request, WAF doesn't apply the rule to
+        /// the web request at all.
         /// </para>
         ///  </note> 
         /// <para>
@@ -70,8 +70,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF
-        /// applies the rule action to the request.
+        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies
+        /// the rule action to the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -100,8 +100,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
-        /// to the web request at all.
+        /// If the specified header isn't present in the request, WAF doesn't apply the rule to
+        /// the web request at all.
         /// </para>
         ///  </note>
         /// </summary>

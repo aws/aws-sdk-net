@@ -39,7 +39,7 @@ namespace Amazon.WAFV2.Model
     /// been added to the web request. Fully qualified labels have a prefix, optional namespaces,
     /// and label name. The prefix identifies the rule group or web ACL context of the rule
     /// that added the label. If you do not provide the fully qualified name in your label
-    /// match string, AWS WAF performs the search for labels that were added in the same context
+    /// match string, WAF performs the search for labels that were added in the same context
     /// as the label match statement. 
     /// </para>
     /// </summary>
@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The string to match against. The setting you provide for this depends on the match
-        /// statement's <code>Scope</code> settings: 
+        /// statement's <code>Scope</code> setting: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

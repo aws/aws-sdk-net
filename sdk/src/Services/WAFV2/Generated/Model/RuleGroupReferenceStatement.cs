@@ -67,8 +67,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ExcludedRules. 
         /// <para>
-        /// The names of rules that are in the referenced rule group, but that you want AWS WAF
-        /// to exclude from processing for this rule statement. 
+        /// The names of rules that are in the referenced rule group, but that you want WAF to
+        /// exclude from processing for this rule statement. 
         /// </para>
         /// </summary>
         public List<ExcludedRule> ExcludedRules

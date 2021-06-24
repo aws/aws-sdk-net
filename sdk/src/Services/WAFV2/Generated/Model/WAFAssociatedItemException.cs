@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// AWS WAF couldn’t perform the operation because your resource is being used by another
+    /// WAF couldn’t perform the operation because your resource is being used by another
     /// resource or it’s associated with another resource.
     /// </summary>
     #if !NETSTANDARD

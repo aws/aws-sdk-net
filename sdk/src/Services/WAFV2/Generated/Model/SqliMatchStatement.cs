@@ -33,9 +33,8 @@ namespace Amazon.WAFV2.Model
     /// data from your database. To allow or block web requests that appear to contain malicious
     /// SQL code, create one or more SQL injection match conditions. An SQL injection match
     /// condition identifies the part of web requests, such as the URI or the query string,
-    /// that you want AWS WAF to inspect. Later in the process, when you create a web ACL,
-    /// you specify whether to allow or block requests that appear to contain malicious SQL
-    /// code.
+    /// that you want WAF to inspect. Later in the process, when you create a web ACL, you
+    /// specify whether to allow or block requests that appear to contain malicious SQL code.
     /// </summary>
     public partial class SqliMatchStatement
     {
@@ -45,8 +44,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// The part of a web request that you want AWS WAF to inspect. For more information,
-        /// see <a>FieldToMatch</a>. 
+        /// The part of a web request that you want WAF to inspect. For more information, see
+        /// <a>FieldToMatch</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,7 +66,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
         /// web requests in an effort to bypass detection. If you specify one or more transformations
-        /// in a rule statement, AWS WAF performs all transformations on the content of the request
+        /// in a rule statement, WAF performs all transformations on the content of the request
         /// component identified by <code>FieldToMatch</code>, starting from the lowest priority
         /// setting, before inspecting the content for a match.
         /// </para>

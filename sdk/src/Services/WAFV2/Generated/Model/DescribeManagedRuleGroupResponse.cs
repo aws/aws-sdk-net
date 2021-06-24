@@ -42,8 +42,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property AvailableLabels. 
         /// <para>
-        /// The labels that one or more rules in this rule group add to matching web ACLs. These
-        /// labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.
+        /// The labels that one or more rules in this rule group add to matching web requests.
+        /// These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.
         /// </para>
         /// </summary>
         public List<LabelSummary> AvailableLabels
@@ -61,12 +61,12 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Capacity. 
         /// <para>
-        /// The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses web ACL
-        /// capacity units (WCU) to calculate and control the operating resources that are used
-        /// to run your rules, rule groups, and web ACLs. AWS WAF calculates capacity differently
-        /// for each rule type, to reflect each rule's relative cost. Rule group capacity is fixed
-        /// at creation, so users can plan their web ACL WCU usage when they use a rule group.
-        /// The WCU limit for web ACLs is 1,500. 
+        /// The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity
+        /// units (WCU) to calculate and control the operating resources that are used to run
+        /// your rules, rule groups, and web ACLs. WAF calculates capacity differently for each
+        /// rule type, to reflect each rule's relative cost. Rule group capacity is fixed at creation,
+        /// so users can plan their web ACL WCU usage when they use a rule group. The WCU limit
+        /// for web ACLs is 1,500. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -119,7 +119,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When a rule with a label matches a web request, AWS WAF adds the fully qualified label
+        /// When a rule with a label matches a web request, WAF adds the fully qualified label
         /// to the request. A fully qualified label is made up of the label namespace from the
         /// rule group or web ACL where the rule is defined and the label from the rule, separated
         /// by a colon: 

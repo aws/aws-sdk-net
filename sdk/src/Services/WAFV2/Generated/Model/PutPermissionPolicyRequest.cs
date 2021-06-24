@@ -48,7 +48,7 @@ namespace Amazon.WAFV2.Model
     ///  </li> <li> 
     /// <para>
     /// The ARN in the request must be a valid WAF <a>RuleGroup</a> ARN and the rule group
-    /// must exist in the same region.
+    /// must exist in the same Region.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,7 +86,7 @@ namespace Amazon.WAFV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>,
-        /// and <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra actions
+        /// and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions
         /// or wildcard actions in the policy.
         /// </para>
         ///  </li> <li> 

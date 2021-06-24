@@ -41,7 +41,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier for the Web ACL. This ID is returned in the responses to create
+        /// The unique identifier for the web ACL. This ID is returned in the responses to create
         /// and list commands. You provide it to operations like update and delete.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Web ACL. You cannot change the name of a Web ACL after you create
+        /// The name of the web ACL. You cannot change the name of a web ACL after you create
         /// it.
         /// </para>
         /// </summary>
@@ -81,9 +81,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Specifies whether this is for an AWS CloudFront distribution or for a regional application.
-        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
-        /// API, or an AppSync GraphQL API. 
+        /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
+        /// application. A regional application can be an Application Load Balancer (ALB), an
+        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
         /// </para>
         ///  
         /// <para>

@@ -31,73 +31,73 @@ namespace Amazon.WAFV2
     /// <summary>
     /// Interface for accessing WAFV2
     ///
-    /// <note> 
+    /// WAF <note> 
     /// <para>
-    /// This is the latest version of the <b>AWS WAF</b> API, released in November, 2019.
-    /// The names of the entities that you use to access this API, like endpoints and namespaces,
+    /// This is the latest version of the <b>WAF</b> API, released in November, 2019. The
+    /// names of the entities that you use to access this API, like endpoints and namespaces,
     /// all have the versioning information added, like "V2" or "v2", to distinguish from
     /// the prior version. We recommend migrating your resources to this version, because
     /// it has a number of significant improvements.
     /// </para>
     ///  
     /// <para>
-    /// If you used AWS WAF prior to this release, you can't use this AWS WAFV2 API to access
-    /// any AWS WAF resources that you created before. You can access your old rules, web
-    /// ACLs, and other AWS WAF resources only through the AWS WAF Classic APIs. The AWS WAF
-    /// Classic APIs have retained the prior names, endpoints, and namespaces. 
+    /// If you used WAF prior to this release, you can't use this WAFV2 API to access any
+    /// WAF resources that you created before. You can access your old rules, web ACLs, and
+    /// other WAF resources only through the WAF Classic APIs. The WAF Classic APIs have retained
+    /// the prior names, endpoints, and namespaces. 
     /// </para>
     ///  
     /// <para>
-    /// For information, including how to migrate your AWS WAF resources to this version,
-    /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
+    /// For information, including how to migrate your WAF resources to this version, see
+    /// the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+    /// Developer Guide</a>. 
     /// </para>
     ///  </note> 
     /// <para>
-    /// AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
+    /// WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
     /// that are forwarded to Amazon CloudFront, an Amazon API Gateway REST API, an Application
-    /// Load Balancer, or an AWS AppSync GraphQL API. AWS WAF also lets you control access
-    /// to your content. Based on conditions that you specify, such as the IP addresses that
-    /// requests originate from or the values of query strings, the API Gateway REST API,
-    /// CloudFront distribution, the Application Load Balancer, or the AWS AppSync GraphQL
-    /// API responds to requests either with the requested content or with an HTTP 403 status
-    /// code (Forbidden). You also can configure CloudFront to return a custom error page
-    /// when a request is blocked.
+    /// Load Balancer, or an AppSync GraphQL API. WAF also lets you control access to your
+    /// content. Based on conditions that you specify, such as the IP addresses that requests
+    /// originate from or the values of query strings, the Amazon API Gateway REST API, CloudFront
+    /// distribution, the Application Load Balancer, or the AppSync GraphQL API responds to
+    /// requests either with the requested content or with an HTTP 403 status code (Forbidden).
+    /// You also can configure CloudFront to return a custom error page when a request is
+    /// blocked.
     /// </para>
     ///  
     /// <para>
-    /// This API guide is for developers who need detailed information about AWS WAF API actions,
-    /// data types, and errors. For detailed information about AWS WAF features and an overview
-    /// of how to use AWS WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
-    /// WAF Developer Guide</a>.
+    /// This API guide is for developers who need detailed information about WAF API actions,
+    /// data types, and errors. For detailed information about WAF features and an overview
+    /// of how to use WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF
+    /// Developer Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// You can make calls using the endpoints listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">AWS
-    /// Service Endpoints for AWS WAF</a>. 
+    /// You can make calls using the endpoints listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">Amazon
+    /// Web Services Service Endpoints for WAF</a>. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// For regional applications, you can use any of the endpoints in the list. A regional
-    /// application can be an Application Load Balancer (ALB), an API Gateway REST API, or
-    /// an AppSync GraphQL API. 
+    /// application can be an Application Load Balancer (ALB), an Amazon API Gateway REST
+    /// API, or an AppSync GraphQL API. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For AWS CloudFront applications, you must use the API endpoint listed for US East
+    /// For Amazon CloudFront applications, you must use the API endpoint listed for US East
     /// (N. Virginia): us-east-1.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Alternatively, you can use one of the AWS SDKs to access an API that's tailored to
-    /// the programming language or platform that you're using. For more information, see
-    /// <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
+    /// Alternatively, you can use one of the Amazon Web Services SDKs to access an API that's
+    /// tailored to the programming language or platform that you're using. For more information,
+    /// see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.
     /// </para>
     ///  
     /// <para>
-    /// We currently provide two versions of the AWS WAF API: this API and the prior versions,
-    /// the classic AWS WAF APIs. This new API provides the same functionality as the older
-    /// versions, with the following major improvements:
+    /// We currently provide two versions of the WAF API: this API and the prior versions,
+    /// the classic WAF APIs. This new API provides the same functionality as the older versions,
+    /// with the following major improvements:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -107,13 +107,13 @@ namespace Amazon.WAFV2
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You can define a Web ACL or rule group with a single call, and update it with a single
+    /// You can define a web ACL or rule group with a single call, and update it with a single
     /// call. You define all rule specifications in JSON format, and pass them to your rule
-    /// group or Web ACL calls.
+    /// group or web ACL calls.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The limits AWS WAF places on the use of rules more closely reflects the cost of running
+    /// The limits WAF places on the use of rules more closely reflects the cost of running
     /// each type of rule. Rule groups include capacity settings, so you know the maximum
     /// cost of a rule group when you use it.
     /// </para>
@@ -128,15 +128,15 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Associates a Web ACL with a regional application resource, to protect the resource.
-        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
-        /// API, or an AppSync GraphQL API. 
+        /// Associates a web ACL with a regional application resource, to protect the resource.
+        /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
+        /// REST API, or an AppSync GraphQL API. 
         /// 
         ///  
         /// <para>
-        /// For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution
-        /// configuration. To associate a Web ACL, in the CloudFront call <code>UpdateDistribution</code>,
-        /// set the web ACL ID to the Amazon Resource Name (ARN) of the Web ACL. For information,
+        /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
+        /// configuration. To associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>,
+        /// set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information,
         /// see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
         /// </para>
         /// </summary>
@@ -144,19 +144,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the AssociateWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -171,15 +171,15 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">REST API Reference for AssociateWebACL Operation</seealso>
         AssociateWebACLResponse AssociateWebACL(AssociateWebACLRequest request);
@@ -187,15 +187,15 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Associates a Web ACL with a regional application resource, to protect the resource.
-        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
-        /// API, or an AppSync GraphQL API. 
+        /// Associates a web ACL with a regional application resource, to protect the resource.
+        /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
+        /// REST API, or an AppSync GraphQL API. 
         /// 
         ///  
         /// <para>
-        /// For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution
-        /// configuration. To associate a Web ACL, in the CloudFront call <code>UpdateDistribution</code>,
-        /// set the web ACL ID to the Amazon Resource Name (ARN) of the Web ACL. For information,
+        /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
+        /// configuration. To associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>,
+        /// set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information,
         /// see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
         /// </para>
         /// </summary>
@@ -206,19 +206,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the AssociateWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -233,15 +233,15 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">REST API Reference for AssociateWebACL Operation</seealso>
         Task<AssociateWebACLResponse> AssociateWebACLAsync(AssociateWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -258,28 +258,28 @@ namespace Amazon.WAFV2
         /// 
         ///  
         /// <para>
-        /// AWS WAF uses WCUs to calculate and control the operating resources that are used to
-        /// run your rules, rule groups, and web ACLs. AWS WAF calculates capacity differently
-        /// for each rule type, to reflect the relative cost of each rule. Simple rules that cost
-        /// little to run use fewer WCUs than more complex rules that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their web ACL WCU
-        /// usage when they use a rule group. The WCU limit for web ACLs is 1,500. 
+        /// WAF uses WCUs to calculate and control the operating resources that are used to run
+        /// your rules, rule groups, and web ACLs. WAF calculates capacity differently for each
+        /// rule type, to reflect the relative cost of each rule. Simple rules that cost little
+        /// to run use fewer WCUs than more complex rules that use more processing power. Rule
+        /// group capacity is fixed at creation, which helps users plan their web ACL WCU usage
+        /// when they use a rule group. The WCU limit for web ACLs is 1,500. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CheckCapacity service method.</param>
         /// 
         /// <returns>The response from the CheckCapacity service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -294,29 +294,29 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
-        /// AWS WAF couldn’t perform the operation because the resource that you requested isn’t
-        /// valid. Check the resource, and try again.
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
         /// You tried to use a managed rule group that's available by subscription, but you aren't
         /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity">REST API Reference for CheckCapacity Operation</seealso>
         CheckCapacityResponse CheckCapacity(CheckCapacityRequest request);
@@ -330,12 +330,12 @@ namespace Amazon.WAFV2
         /// 
         ///  
         /// <para>
-        /// AWS WAF uses WCUs to calculate and control the operating resources that are used to
-        /// run your rules, rule groups, and web ACLs. AWS WAF calculates capacity differently
-        /// for each rule type, to reflect the relative cost of each rule. Simple rules that cost
-        /// little to run use fewer WCUs than more complex rules that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their web ACL WCU
-        /// usage when they use a rule group. The WCU limit for web ACLs is 1,500. 
+        /// WAF uses WCUs to calculate and control the operating resources that are used to run
+        /// your rules, rule groups, and web ACLs. WAF calculates capacity differently for each
+        /// rule type, to reflect the relative cost of each rule. Simple rules that cost little
+        /// to run use fewer WCUs than more complex rules that use more processing power. Rule
+        /// group capacity is fixed at creation, which helps users plan their web ACL WCU usage
+        /// when they use a rule group. The WCU limit for web ACLs is 1,500. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CheckCapacity service method.</param>
@@ -345,16 +345,16 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the CheckCapacity service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -369,29 +369,29 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
-        /// AWS WAF couldn’t perform the operation because the resource that you requested isn’t
-        /// valid. Check the resource, and try again.
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
         /// You tried to use a managed rule group that's available by subscription, but you aren't
         /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity">REST API Reference for CheckCapacity Operation</seealso>
         Task<CheckCapacityResponse> CheckCapacityAsync(CheckCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -404,30 +404,30 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Creates an <a>IPSet</a>, which you use to identify web requests that originate from
         /// specific IP addresses or ranges of IP addresses. For example, if you're receiving
-        /// a lot of requests from a ranges of IP addresses, you can configure AWS WAF to block
-        /// them using an IPSet that lists those IP addresses.
+        /// a lot of requests from a ranges of IP addresses, you can configure WAF to block them
+        /// using an IPSet that lists those IP addresses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIPSet service method.</param>
         /// 
         /// <returns>The response from the CreateIPSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -442,27 +442,27 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         CreateIPSetResponse CreateIPSet(CreateIPSetRequest request);
@@ -472,8 +472,8 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Creates an <a>IPSet</a>, which you use to identify web requests that originate from
         /// specific IP addresses or ranges of IP addresses. For example, if you're receiving
-        /// a lot of requests from a ranges of IP addresses, you can configure AWS WAF to block
-        /// them using an IPSet that lists those IP addresses.
+        /// a lot of requests from a ranges of IP addresses, you can configure WAF to block them
+        /// using an IPSet that lists those IP addresses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIPSet service method.</param>
         /// <param name="cancellationToken">
@@ -482,23 +482,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the CreateIPSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -513,27 +513,27 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         Task<CreateIPSetResponse> CreateIPSetAsync(CreateIPSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -545,29 +545,29 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>,
-        /// to have AWS WAF inspect a web request component for the specified patterns.
+        /// to have WAF inspect a web request component for the specified patterns.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRegexPatternSet service method.</param>
         /// 
         /// <returns>The response from the CreateRegexPatternSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -582,27 +582,27 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
         CreateRegexPatternSetResponse CreateRegexPatternSet(CreateRegexPatternSetRequest request);
@@ -611,7 +611,7 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>,
-        /// to have AWS WAF inspect a web request component for the specified patterns.
+        /// to have WAF inspect a web request component for the specified patterns.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRegexPatternSet service method.</param>
         /// <param name="cancellationToken">
@@ -620,23 +620,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the CreateRegexPatternSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -651,27 +651,27 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
         Task<CreateRegexPatternSetResponse> CreateRegexPatternSetAsync(CreateRegexPatternSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -697,23 +697,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the CreateRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -728,22 +728,22 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
@@ -754,11 +754,11 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         CreateRuleGroupResponse CreateRuleGroup(CreateRuleGroupRequest request);
@@ -784,23 +784,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the CreateRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -815,22 +815,22 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
@@ -841,11 +841,11 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         Task<CreateRuleGroupResponse> CreateRuleGroupAsync(CreateRuleGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -860,37 +860,37 @@ namespace Amazon.WAFV2
         /// 
         ///  
         /// <para>
-        ///  A Web ACL defines a collection of rules to use to inspect and control web requests.
+        ///  A web ACL defines a collection of rules to use to inspect and control web requests.
         /// Each rule has an action defined (allow, block, or count) for requests that match the
-        /// statement of the rule. In the Web ACL, you assign a default action to take (allow,
-        /// block) for any request that does not match any of the rules. The rules in a Web ACL
+        /// statement of the rule. In the web ACL, you assign a default action to take (allow,
+        /// block) for any request that does not match any of the rules. The rules in a web ACL
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
-        /// group. You can associate a Web ACL with one or more AWS resources to protect. The
-        /// resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application
-        /// Load Balancer, or an AWS AppSync GraphQL API. 
+        /// group. You can associate a web ACL with one or more Amazon Web Services resources
+        /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
+        /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
         /// 
         /// <returns>The response from the CreateWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -905,26 +905,26 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
-        /// AWS WAF couldn’t perform the operation because the resource that you requested isn’t
-        /// valid. Check the resource, and try again.
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
@@ -935,11 +935,11 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         CreateWebACLResponse CreateWebACL(CreateWebACLRequest request);
@@ -951,14 +951,14 @@ namespace Amazon.WAFV2
         /// 
         ///  
         /// <para>
-        ///  A Web ACL defines a collection of rules to use to inspect and control web requests.
+        ///  A web ACL defines a collection of rules to use to inspect and control web requests.
         /// Each rule has an action defined (allow, block, or count) for requests that match the
-        /// statement of the rule. In the Web ACL, you assign a default action to take (allow,
-        /// block) for any request that does not match any of the rules. The rules in a Web ACL
+        /// statement of the rule. In the web ACL, you assign a default action to take (allow,
+        /// block) for any request that does not match any of the rules. The rules in a web ACL
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
-        /// group. You can associate a Web ACL with one or more AWS resources to protect. The
-        /// resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application
-        /// Load Balancer, or an AWS AppSync GraphQL API. 
+        /// group. You can associate a web ACL with one or more Amazon Web Services resources
+        /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
+        /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -968,23 +968,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the CreateWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -999,26 +999,26 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
-        /// AWS WAF couldn’t perform the operation because the resource that you requested isn’t
-        /// valid. Check the resource, and try again.
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
@@ -1029,11 +1029,11 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         Task<CreateWebACLResponse> CreateWebACLAsync(CreateWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1044,8 +1044,8 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Deletes all rule groups that are managed by AWS Firewall Manager for the specified
-        /// web ACL. 
+        /// Deletes all rule groups that are managed by Firewall Manager for the specified web
+        /// ACL. 
         /// 
         ///  
         /// <para>
@@ -1057,19 +1057,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteFirewallManagerRuleGroups service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1084,16 +1084,16 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteFirewallManagerRuleGroups">REST API Reference for DeleteFirewallManagerRuleGroups Operation</seealso>
@@ -1102,8 +1102,8 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Deletes all rule groups that are managed by AWS Firewall Manager for the specified
-        /// web ACL. 
+        /// Deletes all rule groups that are managed by Firewall Manager for the specified web
+        /// ACL. 
         /// 
         ///  
         /// <para>
@@ -1118,19 +1118,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteFirewallManagerRuleGroups service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1145,16 +1145,16 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteFirewallManagerRuleGroups">REST API Reference for DeleteFirewallManagerRuleGroups Operation</seealso>
@@ -1172,23 +1172,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteIPSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
-        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// WAF couldn’t perform the operation because your resource is being used by another
         /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1203,24 +1203,24 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         DeleteIPSetResponse DeleteIPSet(DeleteIPSetRequest request);
@@ -1237,23 +1237,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteIPSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
-        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// WAF couldn’t perform the operation because your resource is being used by another
         /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1268,24 +1268,24 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         Task<DeleteIPSetResponse> DeleteIPSetAsync(DeleteIPSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1302,19 +1302,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteLoggingConfiguration service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1329,16 +1329,16 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
@@ -1356,19 +1356,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteLoggingConfiguration service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1383,16 +1383,16 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
@@ -1415,16 +1415,16 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeletePermissionPolicy service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1439,12 +1439,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
         DeletePermissionPolicyResponse DeletePermissionPolicy(DeletePermissionPolicyRequest request);
@@ -1466,16 +1466,16 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeletePermissionPolicy service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1490,12 +1490,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
         Task<DeletePermissionPolicyResponse> DeletePermissionPolicyAsync(DeletePermissionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1512,23 +1512,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteRegexPatternSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
-        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// WAF couldn’t perform the operation because your resource is being used by another
         /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1543,24 +1543,24 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
         DeleteRegexPatternSetResponse DeleteRegexPatternSet(DeleteRegexPatternSetRequest request);
@@ -1577,23 +1577,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteRegexPatternSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
-        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// WAF couldn’t perform the operation because your resource is being used by another
         /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1608,24 +1608,24 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
         Task<DeleteRegexPatternSetResponse> DeleteRegexPatternSetAsync(DeleteRegexPatternSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1642,23 +1642,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
-        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// WAF couldn’t perform the operation because your resource is being used by another
         /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1673,24 +1673,24 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         DeleteRuleGroupResponse DeleteRuleGroup(DeleteRuleGroupRequest request);
@@ -1707,23 +1707,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
-        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// WAF couldn’t perform the operation because your resource is being used by another
         /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1738,24 +1738,24 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         Task<DeleteRuleGroupResponse> DeleteRuleGroupAsync(DeleteRuleGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1778,23 +1778,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
-        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// WAF couldn’t perform the operation because your resource is being used by another
         /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1809,24 +1809,24 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         DeleteWebACLResponse DeleteWebACL(DeleteWebACLRequest request);
@@ -1849,23 +1849,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DeleteWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
-        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// WAF couldn’t perform the operation because your resource is being used by another
         /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1880,24 +1880,24 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         Task<DeleteWebACLResponse> DeleteWebACLAsync(DeleteWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1915,19 +1915,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DescribeManagedRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1942,16 +1942,16 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
-        /// AWS WAF couldn’t perform the operation because the resource that you requested isn’t
-        /// valid. Check the resource, and try again.
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedRuleGroup">REST API Reference for DescribeManagedRuleGroup Operation</seealso>
         DescribeManagedRuleGroupResponse DescribeManagedRuleGroup(DescribeManagedRuleGroupRequest request);
@@ -1969,19 +1969,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DescribeManagedRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1996,16 +1996,16 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
-        /// AWS WAF couldn’t perform the operation because the resource that you requested isn’t
-        /// valid. Check the resource, and try again.
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedRuleGroup">REST API Reference for DescribeManagedRuleGroup Operation</seealso>
         Task<DescribeManagedRuleGroupResponse> DescribeManagedRuleGroupAsync(DescribeManagedRuleGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2016,14 +2016,14 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Disassociates a Web ACL from a regional application resource. A regional application
-        /// can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync
+        /// Disassociates a web ACL from a regional application resource. A regional application
+        /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
         /// GraphQL API. 
         /// 
         ///  
         /// <para>
-        /// For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution
-        /// configuration. To disassociate a Web ACL, provide an empty web ACL ID in the CloudFront
+        /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
+        /// configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront
         /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
         /// </para>
         /// </summary>
@@ -2031,19 +2031,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DisassociateWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2058,12 +2058,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">REST API Reference for DisassociateWebACL Operation</seealso>
         DisassociateWebACLResponse DisassociateWebACL(DisassociateWebACLRequest request);
@@ -2071,14 +2071,14 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Disassociates a Web ACL from a regional application resource. A regional application
-        /// can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync
+        /// Disassociates a web ACL from a regional application resource. A regional application
+        /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
         /// GraphQL API. 
         /// 
         ///  
         /// <para>
-        /// For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution
-        /// configuration. To disassociate a Web ACL, provide an empty web ACL ID in the CloudFront
+        /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
+        /// configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront
         /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
         /// </para>
         /// </summary>
@@ -2089,19 +2089,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the DisassociateWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2116,12 +2116,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">REST API Reference for DisassociateWebACL Operation</seealso>
         Task<DisassociateWebACLResponse> DisassociateWebACLAsync(DisassociateWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2138,19 +2138,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetIPSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2165,12 +2165,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         GetIPSetResponse GetIPSet(GetIPSetRequest request);
@@ -2187,19 +2187,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetIPSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2214,12 +2214,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         Task<GetIPSetResponse> GetIPSetAsync(GetIPSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2236,19 +2236,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetLoggingConfiguration service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2263,12 +2263,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
         GetLoggingConfigurationResponse GetLoggingConfiguration(GetLoggingConfigurationRequest request);
@@ -2285,19 +2285,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetLoggingConfiguration service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2312,12 +2312,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
         Task<GetLoggingConfigurationResponse> GetLoggingConfigurationAsync(GetLoggingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2339,16 +2339,16 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetPermissionPolicy service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2363,12 +2363,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
         GetPermissionPolicyResponse GetPermissionPolicy(GetPermissionPolicyRequest request);
@@ -2390,16 +2390,16 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetPermissionPolicy service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2414,12 +2414,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
         Task<GetPermissionPolicyResponse> GetPermissionPolicyAsync(GetPermissionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2438,19 +2438,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetRateBasedStatementManagedKeys service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2465,12 +2465,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">REST API Reference for GetRateBasedStatementManagedKeys Operation</seealso>
         GetRateBasedStatementManagedKeysResponse GetRateBasedStatementManagedKeys(GetRateBasedStatementManagedKeysRequest request);
@@ -2489,19 +2489,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetRateBasedStatementManagedKeys service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2516,12 +2516,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">REST API Reference for GetRateBasedStatementManagedKeys Operation</seealso>
         Task<GetRateBasedStatementManagedKeysResponse> GetRateBasedStatementManagedKeysAsync(GetRateBasedStatementManagedKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2538,19 +2538,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetRegexPatternSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2565,12 +2565,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRegexPatternSet">REST API Reference for GetRegexPatternSet Operation</seealso>
         GetRegexPatternSetResponse GetRegexPatternSet(GetRegexPatternSetRequest request);
@@ -2587,19 +2587,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetRegexPatternSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2614,12 +2614,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRegexPatternSet">REST API Reference for GetRegexPatternSet Operation</seealso>
         Task<GetRegexPatternSetResponse> GetRegexPatternSetAsync(GetRegexPatternSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2636,19 +2636,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2663,12 +2663,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRuleGroup">REST API Reference for GetRuleGroup Operation</seealso>
         GetRuleGroupResponse GetRuleGroup(GetRuleGroupRequest request);
@@ -2685,19 +2685,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2712,12 +2712,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRuleGroup">REST API Reference for GetRuleGroup Operation</seealso>
         Task<GetRuleGroupResponse> GetRuleGroupAsync(GetRuleGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2728,10 +2728,10 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Gets detailed information about a specified number of requests--a sample--that AWS
-        /// WAF randomly selects from among the first 5,000 requests that your AWS resource received
-        /// during a time range that you choose. You can specify a sample size of up to 500 requests,
-        /// and you can specify any time range in the previous three hours.
+        /// Gets detailed information about a specified number of requests--a sample--that WAF
+        /// randomly selects from among the first 5,000 requests that your Amazon Web Services
+        /// resource received during a time range that you choose. You can specify a sample size
+        /// of up to 500 requests, and you can specify any time range in the previous three hours.
         /// 
         ///  
         /// <para>
@@ -2739,23 +2739,23 @@ namespace Amazon.WAFV2
         /// that you specified. However, if your resource (such as a CloudFront distribution)
         /// received 5,000 requests before the specified time range elapsed, <code>GetSampledRequests</code>
         /// returns an updated time range. This new time range indicates the actual period during
-        /// which AWS WAF selected the requests in the sample.
+        /// which WAF selected the requests in the sample.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSampledRequests service method.</param>
         /// 
         /// <returns>The response from the GetSampledRequests service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2770,12 +2770,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
         GetSampledRequestsResponse GetSampledRequests(GetSampledRequestsRequest request);
@@ -2783,10 +2783,10 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Gets detailed information about a specified number of requests--a sample--that AWS
-        /// WAF randomly selects from among the first 5,000 requests that your AWS resource received
-        /// during a time range that you choose. You can specify a sample size of up to 500 requests,
-        /// and you can specify any time range in the previous three hours.
+        /// Gets detailed information about a specified number of requests--a sample--that WAF
+        /// randomly selects from among the first 5,000 requests that your Amazon Web Services
+        /// resource received during a time range that you choose. You can specify a sample size
+        /// of up to 500 requests, and you can specify any time range in the previous three hours.
         /// 
         ///  
         /// <para>
@@ -2794,7 +2794,7 @@ namespace Amazon.WAFV2
         /// that you specified. However, if your resource (such as a CloudFront distribution)
         /// received 5,000 requests before the specified time range elapsed, <code>GetSampledRequests</code>
         /// returns an updated time range. This new time range indicates the actual period during
-        /// which AWS WAF selected the requests in the sample.
+        /// which WAF selected the requests in the sample.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSampledRequests service method.</param>
@@ -2804,16 +2804,16 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetSampledRequests service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2828,12 +2828,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
         Task<GetSampledRequestsResponse> GetSampledRequestsAsync(GetSampledRequestsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2850,19 +2850,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2877,12 +2877,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         GetWebACLResponse GetWebACL(GetWebACLRequest request);
@@ -2899,19 +2899,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2926,12 +2926,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         Task<GetWebACLResponse> GetWebACLAsync(GetWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2948,19 +2948,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetWebACLForResource service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2975,15 +2975,15 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACLForResource">REST API Reference for GetWebACLForResource Operation</seealso>
         GetWebACLForResourceResponse GetWebACLForResource(GetWebACLForResourceRequest request);
@@ -3000,19 +3000,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the GetWebACLForResource service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3027,15 +3027,15 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACLForResource">REST API Reference for GetWebACLForResource Operation</seealso>
         Task<GetWebACLForResourceResponse> GetWebACLForResourceAsync(GetWebACLForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3047,26 +3047,26 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Retrieves an array of managed rule groups that are available for you to use. This
-        /// list includes all AWS Managed Rules rule groups and the AWS Marketplace managed rule
-        /// groups that you're subscribed to.
+        /// list includes all Amazon Web Services Managed Rules rule groups and the Marketplace
+        /// managed rule groups that you're subscribed to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagedRuleGroups service method.</param>
         /// 
         /// <returns>The response from the ListAvailableManagedRuleGroups service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3081,7 +3081,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3092,8 +3092,8 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Retrieves an array of managed rule groups that are available for you to use. This
-        /// list includes all AWS Managed Rules rule groups and the AWS Marketplace managed rule
-        /// groups that you're subscribed to.
+        /// list includes all Amazon Web Services Managed Rules rule groups and the Marketplace
+        /// managed rule groups that you're subscribed to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagedRuleGroups service method.</param>
         /// <param name="cancellationToken">
@@ -3102,19 +3102,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListAvailableManagedRuleGroups service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3129,7 +3129,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3148,19 +3148,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListIPSets service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3175,7 +3175,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3194,19 +3194,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListIPSets service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3221,7 +3221,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3240,19 +3240,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListLoggingConfigurations service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3267,7 +3267,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3286,19 +3286,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListLoggingConfigurations service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3313,7 +3313,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3333,19 +3333,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListRegexPatternSets service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3360,7 +3360,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3380,19 +3380,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListRegexPatternSets service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3407,7 +3407,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3421,26 +3421,26 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources
-        /// that are associated with the specified web ACL. If you want the list of AWS CloudFront
-        /// resources, use the AWS CloudFront call <code>ListDistributionsByWebACLId</code>.
+        /// that are associated with the specified web ACL. If you want the list of Amazon CloudFront
+        /// resources, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourcesForWebACL service method.</param>
         /// 
         /// <returns>The response from the ListResourcesForWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3455,12 +3455,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListResourcesForWebACL">REST API Reference for ListResourcesForWebACL Operation</seealso>
         ListResourcesForWebACLResponse ListResourcesForWebACL(ListResourcesForWebACLRequest request);
@@ -3469,8 +3469,8 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources
-        /// that are associated with the specified web ACL. If you want the list of AWS CloudFront
-        /// resources, use the AWS CloudFront call <code>ListDistributionsByWebACLId</code>.
+        /// that are associated with the specified web ACL. If you want the list of Amazon CloudFront
+        /// resources, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourcesForWebACL service method.</param>
         /// <param name="cancellationToken">
@@ -3479,19 +3479,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListResourcesForWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3506,12 +3506,12 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListResourcesForWebACL">REST API Reference for ListResourcesForWebACL Operation</seealso>
         Task<ListResourcesForWebACLResponse> ListResourcesForWebACLAsync(ListResourcesForWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3529,19 +3529,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListRuleGroups service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3556,7 +3556,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3576,19 +3576,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListRuleGroups service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3603,7 +3603,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3619,33 +3619,33 @@ namespace Amazon.WAFV2
         /// Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value
         /// pairs that you can use to categorize and manage your resources, for purposes like
         /// billing. For example, you might set the tag key to "customer" and the value to the
-        /// customer name or ID. You can specify one or more tags to add to each AWS resource,
-        /// up to 50 tags for a resource.
+        /// customer name or ID. You can specify one or more tags to add to each Amazon Web Services
+        /// resource, up to 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups,
-        /// IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF
-        /// console. 
+        /// You can tag the Amazon Web Services resources that you manage through WAF: web ACLs,
+        /// rule groups, IP sets, and regex pattern sets. You can't manage or view tags through
+        /// the WAF console. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3660,19 +3660,19 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -3683,14 +3683,14 @@ namespace Amazon.WAFV2
         /// Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value
         /// pairs that you can use to categorize and manage your resources, for purposes like
         /// billing. For example, you might set the tag key to "customer" and the value to the
-        /// customer name or ID. You can specify one or more tags to add to each AWS resource,
-        /// up to 50 tags for a resource.
+        /// customer name or ID. You can specify one or more tags to add to each Amazon Web Services
+        /// resource, up to 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups,
-        /// IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF
-        /// console. 
+        /// You can tag the Amazon Web Services resources that you manage through WAF: web ACLs,
+        /// rule groups, IP sets, and regex pattern sets. You can't manage or view tags through
+        /// the WAF console. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -3700,19 +3700,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3727,19 +3727,19 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3756,19 +3756,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListWebACLs service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3783,7 +3783,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3802,19 +3802,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the ListWebACLs service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3829,7 +3829,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3847,7 +3847,7 @@ namespace Amazon.WAFV2
         /// 
         ///  
         /// <para>
-        /// You can access information about all traffic that AWS WAF inspects using the following
+        /// You can access information about all traffic that WAF inspects using the following
         /// steps:
         /// </para>
         ///  <ol> <li> 
@@ -3877,28 +3877,37 @@ namespace Amazon.WAFV2
         ///  </li> </ol> 
         /// <para>
         /// When you successfully enable logging using a <code>PutLoggingConfiguration</code>
-        /// request, AWS WAF will create a service linked role with the necessary permissions
-        /// to write logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
-        /// Web ACL Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
+        /// request, WAF will create a service linked role with the necessary permissions to write
+        /// logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+        /// Web ACL Traffic Information</a> in the <i>WAF Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the logging configuration with the ones that you provide to this call. To modify
+        /// the logging configuration, retrieve it by calling <a>GetLoggingConfiguration</a>,
+        /// update the settings as needed, and then provide the complete logging configuration
+        /// specification to this call.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLoggingConfiguration service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3913,26 +3922,26 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFServiceLinkedRoleErrorException">
-        /// AWS WAF is not able to access the service linked role. This can be caused by a previous
+        /// WAF is not able to access the service linked role. This can be caused by a previous
         /// <code>PutLoggingConfiguration</code> request, which can lock the service linked role
         /// for about 20 seconds. Please try your request again. The service linked role can also
         /// be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock
@@ -3951,7 +3960,7 @@ namespace Amazon.WAFV2
         /// 
         ///  
         /// <para>
-        /// You can access information about all traffic that AWS WAF inspects using the following
+        /// You can access information about all traffic that WAF inspects using the following
         /// steps:
         /// </para>
         ///  <ol> <li> 
@@ -3981,10 +3990,19 @@ namespace Amazon.WAFV2
         ///  </li> </ol> 
         /// <para>
         /// When you successfully enable logging using a <code>PutLoggingConfiguration</code>
-        /// request, AWS WAF will create a service linked role with the necessary permissions
-        /// to write logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
-        /// Web ACL Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
+        /// request, WAF will create a service linked role with the necessary permissions to write
+        /// logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+        /// Web ACL Traffic Information</a> in the <i>WAF Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the logging configuration with the ones that you provide to this call. To modify
+        /// the logging configuration, retrieve it by calling <a>GetLoggingConfiguration</a>,
+        /// update the settings as needed, and then provide the complete logging configuration
+        /// specification to this call.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -3993,19 +4011,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the PutLoggingConfiguration service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4020,26 +4038,26 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFServiceLinkedRoleErrorException">
-        /// AWS WAF is not able to access the service linked role. This can be caused by a previous
+        /// WAF is not able to access the service linked role. This can be caused by a previous
         /// <code>PutLoggingConfiguration</code> request, which can lock the service linked role
         /// for about 20 seconds. Please try your request again. The service linked role can also
         /// be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock
@@ -4074,7 +4092,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// The ARN in the request must be a valid WAF <a>RuleGroup</a> ARN and the rule group
-        /// must exist in the same region.
+        /// must exist in the same Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4086,16 +4104,16 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the PutPermissionPolicy service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4110,7 +4128,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4137,7 +4155,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         ///  <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>,
-        /// and <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra actions
+        /// and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions
         /// or wildcard actions in the policy.
         /// </para>
         ///  </li> <li> 
@@ -4151,7 +4169,7 @@ namespace Amazon.WAFV2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
         PutPermissionPolicyResponse PutPermissionPolicy(PutPermissionPolicyRequest request);
@@ -4177,7 +4195,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// The ARN in the request must be a valid WAF <a>RuleGroup</a> ARN and the rule group
-        /// must exist in the same region.
+        /// must exist in the same Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4192,16 +4210,16 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the PutPermissionPolicy service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4216,7 +4234,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4243,7 +4261,7 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         ///  <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>,
-        /// and <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra actions
+        /// and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions
         /// or wildcard actions in the policy.
         /// </para>
         ///  </li> <li> 
@@ -4257,7 +4275,7 @@ namespace Amazon.WAFV2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
         Task<PutPermissionPolicyResponse> PutPermissionPolicyAsync(PutPermissionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4268,36 +4286,36 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Associates tags with the specified AWS resource. Tags are key:value pairs that you
-        /// can use to categorize and manage your resources, for purposes like billing. For example,
-        /// you might set the tag key to "customer" and the value to the customer name or ID.
-        /// You can specify one or more tags to add to each AWS resource, up to 50 tags for a
-        /// resource.
+        /// Associates tags with the specified Amazon Web Services resource. Tags are key:value
+        /// pairs that you can use to categorize and manage your resources, for purposes like
+        /// billing. For example, you might set the tag key to "customer" and the value to the
+        /// customer name or ID. You can specify one or more tags to add to each Amazon Web Services
+        /// resource, up to 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups,
-        /// IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF
-        /// console. 
+        /// You can tag the Amazon Web Services resources that you manage through WAF: web ACLs,
+        /// rule groups, IP sets, and regex pattern sets. You can't manage or view tags through
+        /// the WAF console. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4312,25 +4330,25 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -4338,17 +4356,17 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Associates tags with the specified AWS resource. Tags are key:value pairs that you
-        /// can use to categorize and manage your resources, for purposes like billing. For example,
-        /// you might set the tag key to "customer" and the value to the customer name or ID.
-        /// You can specify one or more tags to add to each AWS resource, up to 50 tags for a
-        /// resource.
+        /// Associates tags with the specified Amazon Web Services resource. Tags are key:value
+        /// pairs that you can use to categorize and manage your resources, for purposes like
+        /// billing. For example, you might set the tag key to "customer" and the value to the
+        /// customer name or ID. You can specify one or more tags to add to each Amazon Web Services
+        /// resource, up to 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups,
-        /// IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF
-        /// console. 
+        /// You can tag the Amazon Web Services resources that you manage through WAF: web ACLs,
+        /// rule groups, IP sets, and regex pattern sets. You can't manage or view tags through
+        /// the WAF console. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -4358,19 +4376,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the TagResource service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4385,25 +4403,25 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4414,28 +4432,29 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Disassociates tags from an AWS resource. Tags are key:value pairs that you can associate
-        /// with AWS resources. For example, the tag key might be "customer" and the tag value
-        /// might be "companyA." You can specify one or more tags to add to each container. You
-        /// can add up to 50 tags to each AWS resource.
+        /// Disassociates tags from an Amazon Web Services resource. Tags are key:value pairs
+        /// that you can associate with Amazon Web Services resources. For example, the tag key
+        /// might be "customer" and the tag value might be "companyA." You can specify one or
+        /// more tags to add to each container. You can add up to 50 tags to each Amazon Web Services
+        /// resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4450,19 +4469,19 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -4470,10 +4489,11 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Disassociates tags from an AWS resource. Tags are key:value pairs that you can associate
-        /// with AWS resources. For example, the tag key might be "customer" and the tag value
-        /// might be "companyA." You can specify one or more tags to add to each container. You
-        /// can add up to 50 tags to each AWS resource.
+        /// Disassociates tags from an Amazon Web Services resource. Tags are key:value pairs
+        /// that you can associate with Amazon Web Services resources. For example, the tag key
+        /// might be "customer" and the tag value might be "companyA." You can specify one or
+        /// more tags to add to each container. You can add up to 50 tags to each Amazon Web Services
+        /// resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -4482,19 +4502,19 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the UntagResource service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4509,19 +4529,19 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-        /// your request.
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+        /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4536,11 +4556,10 @@ namespace Amazon.WAFV2
         /// 
         ///  <note> 
         /// <para>
-        /// This operation completely replaces any IP address specifications that you already
-        /// have in the IP set with the ones that you provide to this call. If you want to add
-        /// to or modify the addresses that are already in the IP set, retrieve those by calling
-        /// <a>GetIPSet</a>, update them, and provide the complete updated array of IP addresses
-        /// to this call.
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the IP set with the ones that you provide to this call. To modify the IP set,
+        /// retrieve it by calling <a>GetIPSet</a>, update the settings as needed, and then provide
+        /// the complete IP set specification to this call.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4548,23 +4567,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the UpdateIPSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4579,22 +4598,22 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
@@ -4607,11 +4626,10 @@ namespace Amazon.WAFV2
         /// 
         ///  <note> 
         /// <para>
-        /// This operation completely replaces any IP address specifications that you already
-        /// have in the IP set with the ones that you provide to this call. If you want to add
-        /// to or modify the addresses that are already in the IP set, retrieve those by calling
-        /// <a>GetIPSet</a>, update them, and provide the complete updated array of IP addresses
-        /// to this call.
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the IP set with the ones that you provide to this call. To modify the IP set,
+        /// retrieve it by calling <a>GetIPSet</a>, update the settings as needed, and then provide
+        /// the complete IP set specification to this call.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4622,23 +4640,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the UpdateIPSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4653,22 +4671,22 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
@@ -4681,28 +4699,37 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Updates the specified <a>RegexPatternSet</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the regex pattern set with the ones that you provide to this call. To modify the
+        /// regex pattern set, retrieve it by calling <a>GetRegexPatternSet</a>, update the settings
+        /// as needed, and then provide the complete regex pattern set specification to this call.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegexPatternSet service method.</param>
         /// 
         /// <returns>The response from the UpdateRegexPatternSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4717,22 +4744,22 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRegexPatternSet">REST API Reference for UpdateRegexPatternSet Operation</seealso>
@@ -4742,6 +4769,15 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Updates the specified <a>RegexPatternSet</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the regex pattern set with the ones that you provide to this call. To modify the
+        /// regex pattern set, retrieve it by calling <a>GetRegexPatternSet</a>, update the settings
+        /// as needed, and then provide the complete regex pattern set specification to this call.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegexPatternSet service method.</param>
         /// <param name="cancellationToken">
@@ -4750,23 +4786,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the UpdateRegexPatternSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4781,22 +4817,22 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRegexPatternSet">REST API Reference for UpdateRegexPatternSet Operation</seealso>
@@ -4810,7 +4846,14 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Updates the specified <a>RuleGroup</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the rule group with the ones that you provide to this call. To modify the rule
+        /// group, retrieve it by calling <a>GetRuleGroup</a>, update the settings as needed,
+        /// and then provide the complete rule group specification to this call.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  A rule group defines a collection of rules to inspect and control web requests that
         /// you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable
@@ -4823,23 +4866,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the UpdateRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4854,22 +4897,22 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
@@ -4877,7 +4920,7 @@ namespace Amazon.WAFV2
         /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         UpdateRuleGroupResponse UpdateRuleGroup(UpdateRuleGroupRequest request);
@@ -4887,7 +4930,14 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Updates the specified <a>RuleGroup</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the rule group with the ones that you provide to this call. To modify the rule
+        /// group, retrieve it by calling <a>GetRuleGroup</a>, update the settings as needed,
+        /// and then provide the complete rule group specification to this call.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  A rule group defines a collection of rules to inspect and control web requests that
         /// you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable
@@ -4903,23 +4953,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the UpdateRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4934,22 +4984,22 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
@@ -4957,7 +5007,7 @@ namespace Amazon.WAFV2
         /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         Task<UpdateRuleGroupResponse> UpdateRuleGroupAsync(UpdateRuleGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4970,39 +5020,46 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Updates the specified <a>WebACL</a>.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        ///  A Web ACL defines a collection of rules to use to inspect and control web requests.
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the web ACL with the ones that you provide to this call. To modify the web ACL,
+        /// retrieve it by calling <a>GetWebACL</a>, update the settings as needed, and then provide
+        /// the complete web ACL specification to this call.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  A web ACL defines a collection of rules to use to inspect and control web requests.
         /// Each rule has an action defined (allow, block, or count) for requests that match the
-        /// statement of the rule. In the Web ACL, you assign a default action to take (allow,
-        /// block) for any request that does not match any of the rules. The rules in a Web ACL
+        /// statement of the rule. In the web ACL, you assign a default action to take (allow,
+        /// block) for any request that does not match any of the rules. The rules in a web ACL
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
-        /// group. You can associate a Web ACL with one or more AWS resources to protect. The
-        /// resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application
-        /// Load Balancer, or an AWS AppSync GraphQL API. 
+        /// group. You can associate a web ACL with one or more Amazon Web Services resources
+        /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
+        /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>
         /// 
         /// <returns>The response from the UpdateWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5017,26 +5074,26 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
-        /// AWS WAF couldn’t perform the operation because the resource that you requested isn’t
-        /// valid. Check the resource, and try again.
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
@@ -5044,7 +5101,7 @@ namespace Amazon.WAFV2
         /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         UpdateWebACLResponse UpdateWebACL(UpdateWebACLRequest request);
@@ -5054,16 +5111,23 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Updates the specified <a>WebACL</a>.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        ///  A Web ACL defines a collection of rules to use to inspect and control web requests.
+        /// This operation completely replaces the mutable specifications that you already have
+        /// for the web ACL with the ones that you provide to this call. To modify the web ACL,
+        /// retrieve it by calling <a>GetWebACL</a>, update the settings as needed, and then provide
+        /// the complete web ACL specification to this call.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  A web ACL defines a collection of rules to use to inspect and control web requests.
         /// Each rule has an action defined (allow, block, or count) for requests that match the
-        /// statement of the rule. In the Web ACL, you assign a default action to take (allow,
-        /// block) for any request that does not match any of the rules. The rules in a Web ACL
+        /// statement of the rule. In the web ACL, you assign a default action to take (allow,
+        /// block) for any request that does not match any of the rules. The rules in a web ACL
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
-        /// group. You can associate a Web ACL with one or more AWS resources to protect. The
-        /// resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application
-        /// Load Balancer, or an AWS AppSync GraphQL API. 
+        /// group. You can associate a web ACL with one or more Amazon Web Services resources
+        /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
+        /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>
@@ -5073,23 +5137,23 @@ namespace Amazon.WAFV2
         /// 
         /// <returns>The response from the UpdateWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
-        /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-        /// is a duplicate of an existing one.
+        /// WAF couldn’t perform the operation because the resource that you tried to save is
+        /// a duplicate of an existing one.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
-        /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
-        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-        /// For example: 
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You specified an invalid parameter name or value.
+        /// You specified a parameter name or value that isn't valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5104,26 +5168,26 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// Your request references an ARN that is malformed, or corresponds to a resource with
-        /// which a Web ACL cannot be associated.
+        /// which a web ACL can't be associated.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
-        /// AWS WAF couldn’t perform the operation because the resource that you requested isn’t
-        /// valid. Check the resource, and try again.
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
-        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-        /// example, the maximum number of <code>WebACL</code> objects that you can create for
-        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-        /// in the <i>AWS WAF Developer Guide</i>.
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
-        /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
-        /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-        /// that has changed since you last retrieved it. Get the resource again, make any changes
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
@@ -5131,7 +5195,7 @@ namespace Amazon.WAFV2
         /// subscribed to it yet.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
-        /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+        /// WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         Task<UpdateWebACLResponse> UpdateWebACLAsync(UpdateWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));

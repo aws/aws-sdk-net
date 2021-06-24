@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies that AWS WAF should count the request. Optionally defines additional custom
+    /// Specifies that WAF should count the request. Optionally defines additional custom
     /// handling for the request.
     /// 
     ///  
@@ -50,8 +50,8 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-        /// web requests and responses in AWS WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-        /// WAF Developer Guide</a>. 
+        /// web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         /// </summary>
         public CustomRequestHandling CustomRequestHandling

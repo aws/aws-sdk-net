@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// In a <a>WebACL</a>, this is the action that you want AWS WAF to perform when a web
-    /// request doesn't match any of the rules in the <code>WebACL</code>. The default action
-    /// must be a terminating action, so you can't use count.
+    /// In a <a>WebACL</a>, this is the action that you want WAF to perform when a web request
+    /// doesn't match any of the rules in the <code>WebACL</code>. The default action must
+    /// be a terminating action, so you can't use count.
     /// </summary>
     public partial class DefaultAction
     {
@@ -41,7 +41,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Allow. 
         /// <para>
-        /// Specifies that AWS WAF should allow requests by default.
+        /// Specifies that WAF should allow requests by default.
         /// </para>
         /// </summary>
         public AllowAction Allow
@@ -59,7 +59,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Block. 
         /// <para>
-        /// Specifies that AWS WAF should block requests by default. 
+        /// Specifies that WAF should block requests by default. 
         /// </para>
         /// </summary>
         public BlockAction Block

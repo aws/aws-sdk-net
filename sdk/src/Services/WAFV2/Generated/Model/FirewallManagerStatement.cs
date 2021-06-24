@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The processing guidance for an AWS Firewall Manager rule. This is like a regular rule
+    /// The processing guidance for an Firewall Manager rule. This is like a regular rule
     /// <a>Statement</a>, but it can only contain a rule group reference.
     /// </summary>
     public partial class FirewallManagerStatement
@@ -38,7 +38,18 @@ namespace Amazon.WAFV2.Model
         private RuleGroupReferenceStatement _ruleGroupReferenceStatement;
 
         /// <summary>
-        /// Gets and sets the property ManagedRuleGroupStatement.
+        /// Gets and sets the property ManagedRuleGroupStatement. 
+        /// <para>
+        /// A rule statement used to run the rules that are defined in a managed rule group. To
+        /// use this, provide the vendor name and the name of the rule group in this statement.
+        /// You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside
+        /// a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
+        /// as a top-level statement within a rule.
+        /// </para>
         /// </summary>
         public ManagedRuleGroupStatement ManagedRuleGroupStatement
         {
@@ -53,7 +64,18 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RuleGroupReferenceStatement.
+        /// Gets and sets the property RuleGroupReferenceStatement. 
+        /// <para>
+        /// A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To
+        /// use this, create a rule group with your rules, then provide the ARN of the rule group
+        /// in this statement.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside
+        /// a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
+        /// as a top-level statement within a rule.
+        /// </para>
         /// </summary>
         public RuleGroupReferenceStatement RuleGroupReferenceStatement
         {

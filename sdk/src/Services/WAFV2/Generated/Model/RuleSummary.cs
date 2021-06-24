@@ -40,7 +40,11 @@ namespace Amazon.WAFV2.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Action.
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// The action that WAF should take on a web request when it matches a rule's statement.
+        /// Settings at the web ACL level can override the rule action setting. 
+        /// </para>
         /// </summary>
         public RuleAction Action
         {

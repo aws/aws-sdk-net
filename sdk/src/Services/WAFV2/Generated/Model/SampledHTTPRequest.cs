@@ -67,10 +67,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Labels. 
         /// <para>
-        /// Labels applied to the web request by matching rules. AWS WAF applies fully qualified
-        /// labels to matching web requests. A fully qualified label is the concatenation of a
-        /// label namespace and a rule label. The rule's rule group or web ACL defines the label
-        /// namespace. 
+        /// Labels applied to the web request by matching rules. WAF applies fully qualified labels
+        /// to matching web requests. A fully qualified label is the concatenation of a label
+        /// namespace and a rule label. The rule's rule group or web ACL defines the label namespace.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -112,8 +112,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property RequestHeadersInserted. 
         /// <para>
-        /// Custom request headers inserted by AWS WAF into the request, according to the custom
-        /// request configuration for the matching rule action.
+        /// Custom request headers inserted by WAF into the request, according to the custom request
+        /// configuration for the matching rule action.
         /// </para>
         /// </summary>
         public List<HTTPHeader> RequestHeadersInserted
@@ -173,8 +173,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The time at which AWS WAF received the request from your AWS resource, in Unix time
-        /// format (in seconds).
+        /// The time at which WAF received the request from your Amazon Web Services resource,
+        /// in Unix time format (in seconds).
         /// </para>
         /// </summary>
         public DateTime Timestamp

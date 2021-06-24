@@ -65,8 +65,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
-        /// to the web request at all.
+        /// If the specified header isn't present in the request, WAF doesn't apply the rule to
+        /// the web request at all.
         /// </para>
         ///  </note>
         /// </summary>

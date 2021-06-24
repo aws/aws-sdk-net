@@ -35,7 +35,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside
+    /// You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside
     /// a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
     /// as a top-level statement within a rule.
     /// </para>
@@ -88,7 +88,14 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScopeDownStatement.
+        /// Gets and sets the property ScopeDownStatement. 
+        /// <para>
+        /// An optional nested statement that narrows the scope of the web requests that are evaluated
+        /// by the managed rule group. Requests are only evaluated by the rule group if they match
+        /// the scope-down statement. You can use any nestable <a>Statement</a> in the scope-down
+        /// statement, and you can nest statements at any level, the same as you can for a rule
+        /// statement. 
+        /// </para>
         /// </summary>
         public Statement ScopeDownStatement
         {

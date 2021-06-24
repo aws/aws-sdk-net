@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes
+    /// WAF couldn’t save your changes because you tried to update or delete a resource that
+    /// has changed since you last retrieved it. Get the resource again, make any changes
     /// you need to make to the new copy, and retry your operation.
     /// </summary>
     #if !NETSTANDARD

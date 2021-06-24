@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// A Web ACL defines a collection of rules to use to inspect and control web requests.
+    /// A web ACL defines a collection of rules to use to inspect and control web requests.
     /// Each rule has an action defined (allow, block, or count) for requests that match the
-    /// statement of the rule. In the Web ACL, you assign a default action to take (allow,
-    /// block) for any request that does not match any of the rules. The rules in a Web ACL
+    /// statement of the rule. In the web ACL, you assign a default action to take (allow,
+    /// block) for any request that does not match any of the rules. The rules in a web ACL
     /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
-    /// group. You can associate a Web ACL with one or more AWS resources to protect. The
-    /// resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application
-    /// Load Balancer, or an AWS AppSync GraphQL API.
+    /// group. You can associate a web ACL with one or more Amazon Web Services resources
+    /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
+    /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.
     /// </summary>
     public partial class WebACL
     {
@@ -57,7 +57,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the
+        /// The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
         /// resource.
         /// </para>
         /// </summary>
@@ -81,12 +81,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS WAF uses WCUs to calculate and control the operating resources that are used to
-        /// run your rules, rule groups, and web ACLs. AWS WAF calculates capacity differently
-        /// for each rule type, to reflect the relative cost of each rule. Simple rules that cost
-        /// little to run use fewer WCUs than more complex rules that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their web ACL WCU
-        /// usage when they use a rule group. The WCU limit for web ACLs is 1,500. 
+        /// WAF uses WCUs to calculate and control the operating resources that are used to run
+        /// your rules, rule groups, and web ACLs. WAF calculates capacity differently for each
+        /// rule type, to reflect the relative cost of each rule. Simple rules that cost little
+        /// to run use fewer WCUs than more complex rules that use more processing power. Rule
+        /// group capacity is fixed at creation, which helps users plan their web ACL WCU usage
+        /// when they use a rule group. The WCU limit for web ACLs is 1,500. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -113,15 +113,15 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-        /// web requests and responses in AWS WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-        /// WAF Developer Guide</a>. 
+        /// web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         ///  
         /// <para>
         /// For information about the limits on count and size for custom request and response
-        /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS
-        /// WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-        /// WAF Developer Guide</a>. 
+        /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -160,7 +160,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the Web ACL that helps with identification. 
+        /// A description of the web ACL that helps with identification. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -213,7 +213,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When a rule with a label matches a web request, AWS WAF adds the fully qualified label
+        /// When a rule with a label matches a web request, WAF adds the fully qualified label
         /// to the request. A fully qualified label is made up of the label namespace from the
         /// rule group or web ACL where the rule is defined and the label from the rule, separated
         /// by a colon: 
@@ -240,9 +240,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ManagedByFirewallManager. 
         /// <para>
-        /// Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only
-        /// AWS Firewall Manager can delete the web ACL or any Firewall Manager rule groups in
-        /// the web ACL. 
+        /// Indicates whether this web ACL is managed by Firewall Manager. If true, then only
+        /// Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the
+        /// web ACL. 
         /// </para>
         /// </summary>
         public bool ManagedByFirewallManager
@@ -260,7 +260,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Web ACL. You cannot change the name of a Web ACL after you create
+        /// The name of the web ACL. You cannot change the name of a web ACL after you create
         /// it.
         /// </para>
         /// </summary>
@@ -280,10 +280,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property PostProcessFirewallManagerRuleGroups. 
         /// <para>
-        /// The last set of rules for AWS WAF to process in the web ACL. This is defined in an
-        /// AWS Firewall Manager WAF policy and contains only rule group references. You can't
-        /// alter these. Any rules and rule groups that you define for the web ACL are prioritized
-        /// before these. 
+        /// The last set of rules for WAF to process in the web ACL. This is defined in an Firewall
+        /// Manager WAF policy and contains only rule group references. You can't alter these.
+        /// Any rules and rule groups that you define for the web ACL are prioritized before these.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -308,10 +308,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property PreProcessFirewallManagerRuleGroups. 
         /// <para>
-        /// The first set of rules for AWS WAF to process in the web ACL. This is defined in an
-        /// AWS Firewall Manager WAF policy and contains only rule group references. You can't
-        /// alter these. Any rules and rule groups that you define for the web ACL are prioritized
-        /// after these. 
+        /// The first set of rules for WAF to process in the web ACL. This is defined in an Firewall
+        /// Manager WAF policy and contains only rule group references. You can't alter these.
+        /// Any rules and rule groups that you define for the web ACL are prioritized after these.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -337,8 +337,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Rules. 
         /// <para>
         /// The <a>Rule</a> statements used to identify the web requests that you want to allow,
-        /// block, or count. Each rule includes one top-level statement that AWS WAF uses to identify
-        /// matching web requests, and parameters that govern how AWS WAF handles them. 
+        /// block, or count. Each rule includes one top-level statement that WAF uses to identify
+        /// matching web requests, and parameters that govern how WAF handles them. 
         /// </para>
         /// </summary>
         public List<Rule> Rules

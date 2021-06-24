@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+    /// WAF couldn’t perform the operation because your resource doesn’t exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

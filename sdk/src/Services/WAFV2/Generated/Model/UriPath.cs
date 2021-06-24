@@ -30,12 +30,12 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// The path component of the URI of a web request. This is the part of a web request
-    /// that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.
+    /// that identifies a resource. For example, <code>/images/daily-ad.jpg</code>.
     /// 
     ///  
     /// <para>
-    /// This is used only to indicate the web request component for AWS WAF to inspect, in
-    /// the <a>FieldToMatch</a> specification. 
+    /// This is used only to indicate the web request component for WAF to inspect, in the
+    /// <a>FieldToMatch</a> specification. 
     /// </para>
     /// </summary>
     public partial class UriPath

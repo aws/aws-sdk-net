@@ -44,10 +44,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For custom request header insertion, when AWS WAF inserts the header into the request,
+        /// For custom request header insertion, when WAF inserts the header into the request,
         /// it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers
         /// that are already in the request. For example, for the header name <code>sample</code>,
-        /// AWS WAF inserts the header <code>x-amzn-waf-sample</code>.
+        /// WAF inserts the header <code>x-amzn-waf-sample</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

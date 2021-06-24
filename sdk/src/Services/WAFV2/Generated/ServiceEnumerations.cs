@@ -2125,6 +2125,14 @@ namespace Amazon.WAFV2
     {
 
         /// <summary>
+        /// Constant BASE64_DECODE for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType BASE64_DECODE = new TextTransformationType("BASE64_DECODE");
+        /// <summary>
+        /// Constant BASE64_DECODE_EXT for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType BASE64_DECODE_EXT = new TextTransformationType("BASE64_DECODE_EXT");
+        /// <summary>
         /// Constant CMD_LINE for TextTransformationType
         /// </summary>
         public static readonly TextTransformationType CMD_LINE = new TextTransformationType("CMD_LINE");
@@ -2133,21 +2141,73 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly TextTransformationType COMPRESS_WHITE_SPACE = new TextTransformationType("COMPRESS_WHITE_SPACE");
         /// <summary>
+        /// Constant CSS_DECODE for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType CSS_DECODE = new TextTransformationType("CSS_DECODE");
+        /// <summary>
+        /// Constant ESCAPE_SEQ_DECODE for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType ESCAPE_SEQ_DECODE = new TextTransformationType("ESCAPE_SEQ_DECODE");
+        /// <summary>
+        /// Constant HEX_DECODE for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType HEX_DECODE = new TextTransformationType("HEX_DECODE");
+        /// <summary>
         /// Constant HTML_ENTITY_DECODE for TextTransformationType
         /// </summary>
         public static readonly TextTransformationType HTML_ENTITY_DECODE = new TextTransformationType("HTML_ENTITY_DECODE");
+        /// <summary>
+        /// Constant JS_DECODE for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType JS_DECODE = new TextTransformationType("JS_DECODE");
         /// <summary>
         /// Constant LOWERCASE for TextTransformationType
         /// </summary>
         public static readonly TextTransformationType LOWERCASE = new TextTransformationType("LOWERCASE");
         /// <summary>
+        /// Constant MD5 for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType MD5 = new TextTransformationType("MD5");
+        /// <summary>
         /// Constant NONE for TextTransformationType
         /// </summary>
         public static readonly TextTransformationType NONE = new TextTransformationType("NONE");
         /// <summary>
+        /// Constant NORMALIZE_PATH for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType NORMALIZE_PATH = new TextTransformationType("NORMALIZE_PATH");
+        /// <summary>
+        /// Constant NORMALIZE_PATH_WIN for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType NORMALIZE_PATH_WIN = new TextTransformationType("NORMALIZE_PATH_WIN");
+        /// <summary>
+        /// Constant REMOVE_NULLS for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType REMOVE_NULLS = new TextTransformationType("REMOVE_NULLS");
+        /// <summary>
+        /// Constant REPLACE_COMMENTS for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType REPLACE_COMMENTS = new TextTransformationType("REPLACE_COMMENTS");
+        /// <summary>
+        /// Constant REPLACE_NULLS for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType REPLACE_NULLS = new TextTransformationType("REPLACE_NULLS");
+        /// <summary>
+        /// Constant SQL_HEX_DECODE for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType SQL_HEX_DECODE = new TextTransformationType("SQL_HEX_DECODE");
+        /// <summary>
         /// Constant URL_DECODE for TextTransformationType
         /// </summary>
         public static readonly TextTransformationType URL_DECODE = new TextTransformationType("URL_DECODE");
+        /// <summary>
+        /// Constant URL_DECODE_UNI for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType URL_DECODE_UNI = new TextTransformationType("URL_DECODE_UNI");
+        /// <summary>
+        /// Constant UTF8_TO_UNICODE for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType UTF8_TO_UNICODE = new TextTransformationType("UTF8_TO_UNICODE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

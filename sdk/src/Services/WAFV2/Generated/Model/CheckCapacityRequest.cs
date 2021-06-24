@@ -36,12 +36,12 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// AWS WAF uses WCUs to calculate and control the operating resources that are used to
-    /// run your rules, rule groups, and web ACLs. AWS WAF calculates capacity differently
-    /// for each rule type, to reflect the relative cost of each rule. Simple rules that cost
-    /// little to run use fewer WCUs than more complex rules that use more processing power.
-    /// Rule group capacity is fixed at creation, which helps users plan their web ACL WCU
-    /// usage when they use a rule group. The WCU limit for web ACLs is 1,500. 
+    /// WAF uses WCUs to calculate and control the operating resources that are used to run
+    /// your rules, rule groups, and web ACLs. WAF calculates capacity differently for each
+    /// rule type, to reflect the relative cost of each rule. Simple rules that cost little
+    /// to run use fewer WCUs than more complex rules that use more processing power. Rule
+    /// group capacity is fixed at creation, which helps users plan their web ACL WCU usage
+    /// when they use a rule group. The WCU limit for web ACLs is 1,500. 
     /// </para>
     /// </summary>
     public partial class CheckCapacityRequest : AmazonWAFV2Request
@@ -72,9 +72,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Specifies whether this is for an AWS CloudFront distribution or for a regional application.
-        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
-        /// API, or an AppSync GraphQL API. 
+        /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
+        /// application. A regional application can be an Application Load Balancer (ALB), an
+        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
         /// </para>
         ///  
         /// <para>

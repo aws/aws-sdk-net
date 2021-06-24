@@ -35,7 +35,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// You can access information about all traffic that AWS WAF inspects using the following
+    /// You can access information about all traffic that WAF inspects using the following
     /// steps:
     /// </para>
     ///  <ol> <li> 
@@ -65,10 +65,19 @@ namespace Amazon.WAFV2.Model
     ///  </li> </ol> 
     /// <para>
     /// When you successfully enable logging using a <code>PutLoggingConfiguration</code>
-    /// request, AWS WAF will create a service linked role with the necessary permissions
-    /// to write logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
-    /// Web ACL Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
+    /// request, WAF will create a service linked role with the necessary permissions to write
+    /// logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+    /// Web ACL Traffic Information</a> in the <i>WAF Developer Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This operation completely replaces the mutable specifications that you already have
+    /// for the logging configuration with the ones that you provide to this call. To modify
+    /// the logging configuration, retrieve it by calling <a>GetLoggingConfiguration</a>,
+    /// update the settings as needed, and then provide the complete logging configuration
+    /// specification to this call.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutLoggingConfigurationRequest : AmazonWAFV2Request
     {

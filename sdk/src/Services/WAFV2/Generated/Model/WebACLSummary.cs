@@ -63,7 +63,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the Web ACL that helps with identification. 
+        /// A description of the web ACL that helps with identification. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -82,7 +82,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier for the Web ACL. This ID is returned in the responses to create
+        /// The unique identifier for the web ACL. This ID is returned in the responses to create
         /// and list commands. You provide it to operations like update and delete.
         /// </para>
         /// </summary>
@@ -102,13 +102,13 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LockToken. 
         /// <para>
-        /// A token used for optimistic locking. AWS WAF returns a token to your get and list
-        /// requests, to mark the state of the entity at the time of the request. To make changes
-        /// to the entity associated with the token, you provide the token to operations like
-        /// update and delete. AWS WAF uses the token to ensure that no changes have been made
-        /// to the entity since you last retrieved it. If a change has been made, the update fails
-        /// with a <code>WAFOptimisticLockException</code>. If this happens, perform another get,
-        /// and use the new token returned by that operation. 
+        /// A token used for optimistic locking. WAF returns a token to your get and list requests,
+        /// to mark the state of the entity at the time of the request. To make changes to the
+        /// entity associated with the token, you provide the token to operations like update
+        /// and delete. WAF uses the token to ensure that no changes have been made to the entity
+        /// since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>.
+        /// If this happens, perform another get, and use the new token returned by that operation.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -127,7 +127,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Web ACL. You cannot change the name of a Web ACL after you create
+        /// The name of the web ACL. You cannot change the name of a web ACL after you create
         /// it.
         /// </para>
         /// </summary>

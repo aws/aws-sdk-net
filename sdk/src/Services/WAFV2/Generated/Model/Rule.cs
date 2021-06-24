@@ -31,8 +31,8 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify
     /// web requests that you want to allow, block, or count. Each rule includes one top-level
-    /// <a>Statement</a> that AWS WAF uses to identify matching web requests, and parameters
-    /// that govern how AWS WAF handles them.
+    /// <a>Statement</a> that WAF uses to identify matching web requests, and parameters that
+    /// govern how WAF handles them.
     /// </summary>
     public partial class Rule
     {
@@ -47,7 +47,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that AWS WAF should take on a web request when it matches the rule statement.
+        /// The action that WAF should take on a web request when it matches the rule statement.
         /// Settings at the web ACL level can override the rule action setting. 
         /// </para>
         ///  
@@ -149,10 +149,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS WAF evaluates
+        /// If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates
         /// each request against the <code>Rules</code> in order based on the value of <code>Priority</code>.
-        /// AWS WAF processes rules with lower priority first. The priorities don't need to be
-        /// consecutive, but they must all be different.
+        /// WAF processes rules with lower priority first. The priorities don't need to be consecutive,
+        /// but they must all be different.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -171,8 +171,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property RuleLabels. 
         /// <para>
-        /// Labels to apply to web requests that match the rule match statement. AWS WAF applies
-        /// fully qualified labels to matching web requests. A fully qualified label is the concatenation
+        /// Labels to apply to web requests that match the rule match statement. WAF applies fully
+        /// qualified labels to matching web requests. A fully qualified label is the concatenation
         /// of a label namespace and a rule label. The rule's rule group or web ACL defines the
         /// label namespace. 
         /// </para>
@@ -225,8 +225,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Statement. 
         /// <para>
-        /// The AWS WAF processing statement for the rule, for example <a>ByteMatchStatement</a>
-        /// or <a>SizeConstraintStatement</a>. 
+        /// The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
+        /// <a>SizeConstraintStatement</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

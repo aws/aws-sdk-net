@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern
+    /// The patterns to look for in the JSON body. WAF inspects the results of these pattern
     /// matches against the rule inspection criteria. This is used with the <a>FieldToMatch</a>
     /// option <code>JsonBody</code>.
     /// </summary>

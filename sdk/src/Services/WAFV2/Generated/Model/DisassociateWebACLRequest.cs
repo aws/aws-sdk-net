@@ -30,14 +30,14 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateWebACL operation.
-    /// Disassociates a Web ACL from a regional application resource. A regional application
-    /// can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync
+    /// Disassociates a web ACL from a regional application resource. A regional application
+    /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
     /// GraphQL API. 
     /// 
     ///  
     /// <para>
-    /// For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution
-    /// configuration. To disassociate a Web ACL, provide an empty web ACL ID in the CloudFront
+    /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
+    /// configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront
     /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
     /// </para>
     /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+        /// For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
         /// </code> 
         /// </para>
         ///  </li> <li> 

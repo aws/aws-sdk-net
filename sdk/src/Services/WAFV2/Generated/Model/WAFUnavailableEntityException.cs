@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+    /// WAF couldn’t retrieve the resource that you requested. Retry your request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

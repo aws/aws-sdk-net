@@ -67,6 +67,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetARN())
+                {
+                    context.Writer.WritePropertyName("ARN");
+                    context.Writer.Write(publicRequest.ARN);
+                }
+
                 if(publicRequest.IsSetId())
                 {
                     context.Writer.WritePropertyName("Id");

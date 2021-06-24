@@ -34,9 +34,29 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class GetRuleGroupRequest : AmazonWAFV2Request
     {
+        private string _arn;
         private string _id;
         private string _name;
         private Scope _scope;
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the entity.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -45,7 +65,7 @@ namespace Amazon.WAFV2.Model
         /// and list commands. You provide it to operations like update and delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -65,7 +85,7 @@ namespace Amazon.WAFV2.Model
         /// it.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -81,9 +101,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Specifies whether this is for an AWS CloudFront distribution or for a regional application.
-        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
-        /// API, or an AppSync GraphQL API. 
+        /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
+        /// application. A regional application can be an Application Load Balancer (ALB), an
+        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
         /// </para>
         ///  
         /// <para>
@@ -101,7 +121,6 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Scope Scope
         {
             get { return this._scope; }

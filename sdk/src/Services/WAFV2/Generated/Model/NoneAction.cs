@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies that AWS WAF should do nothing. This is generally used to try out a rule
-    /// without performing any actions. You set the <code>OverrideAction</code> on the <a>Rule</a>.
+    /// Specifies that WAF should do nothing. This is generally used to try out a rule without
+    /// performing any actions. You set the <code>OverrideAction</code> on the <a>Rule</a>.
     /// 
     /// 
     ///  

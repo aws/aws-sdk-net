@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// AWS WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.
+    /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
+    /// request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for
-    /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
-    /// in the <i>AWS WAF Developer Guide</i>.
+    /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+    /// the maximum number of <code>WebACL</code> objects that you can create for an account.
+    /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+    /// in the <i>WAF Developer Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

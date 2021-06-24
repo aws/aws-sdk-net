@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// A rule group that's defined for an AWS Firewall Manager WAF policy.
+    /// A rule group that's defined for an Firewall Manager WAF policy.
     /// </summary>
     public partial class FirewallManagerRuleGroup
     {
@@ -42,7 +42,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FirewallManagerStatement. 
         /// <para>
-        /// The processing guidance for an AWS Firewall Manager rule. This is like a regular rule
+        /// The processing guidance for an Firewall Manager rule. This is like a regular rule
         /// <a>Statement</a>, but it can only contain a rule group reference.
         /// </para>
         /// </summary>
@@ -80,7 +80,33 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OverrideAction.
+        /// Gets and sets the property OverrideAction. 
+        /// <para>
+        /// The override action to apply to the rules in a rule group. Used only for rule statements
+        /// that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Set the override action to none to leave the rule actions in effect. Set it to count
+        /// to only count matches, regardless of the rule action settings. 
+        /// </para>
+        ///  
+        /// <para>
+        /// In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting
+        /// or the rule <code>Action</code> setting, but not both:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the rule statement references a rule group, use this override action setting and
+        /// not the action setting. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the rule statement does not reference a rule group, use the rule action setting
+        /// and not this rule override action setting. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public OverrideAction OverrideAction
@@ -99,9 +125,9 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Priority. 
         /// <para>
         /// If you define more than one rule group in the first or last Firewall Manager rule
-        /// groups, AWS WAF evaluates each request against the rule groups in order, starting
-        /// from the lowest priority setting. The priorities don't need to be consecutive, but
-        /// they must all be different.
+        /// groups, WAF evaluates each request against the rule groups in order, starting from
+        /// the lowest priority setting. The priorities don't need to be consecutive, but they
+        /// must all be different.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -118,7 +144,10 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VisibilityConfig.
+        /// Gets and sets the property VisibilityConfig. 
+        /// <para>
+        /// Defines and enables Amazon CloudWatch metrics and web request sample collection. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public VisibilityConfig VisibilityConfig

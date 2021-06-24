@@ -31,6 +31,15 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// Container for the parameters to the UpdateRegexPatternSet operation.
     /// Updates the specified <a>RegexPatternSet</a>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation completely replaces the mutable specifications that you already have
+    /// for the regex pattern set with the ones that you provide to this call. To modify the
+    /// regex pattern set, retrieve it by calling <a>GetRegexPatternSet</a>, update the settings
+    /// as needed, and then provide the complete regex pattern set specification to this call.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateRegexPatternSetRequest : AmazonWAFV2Request
     {
@@ -83,13 +92,13 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LockToken. 
         /// <para>
-        /// A token used for optimistic locking. AWS WAF returns a token to your get and list
-        /// requests, to mark the state of the entity at the time of the request. To make changes
-        /// to the entity associated with the token, you provide the token to operations like
-        /// update and delete. AWS WAF uses the token to ensure that no changes have been made
-        /// to the entity since you last retrieved it. If a change has been made, the update fails
-        /// with a <code>WAFOptimisticLockException</code>. If this happens, perform another get,
-        /// and use the new token returned by that operation. 
+        /// A token used for optimistic locking. WAF returns a token to your get and list requests,
+        /// to mark the state of the entity at the time of the request. To make changes to the
+        /// entity associated with the token, you provide the token to operations like update
+        /// and delete. WAF uses the token to ensure that no changes have been made to the entity
+        /// since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>.
+        /// If this happens, perform another get, and use the new token returned by that operation.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
@@ -143,9 +152,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Specifies whether this is for an AWS CloudFront distribution or for a regional application.
-        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
-        /// API, or an AppSync GraphQL API. 
+        /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
+        /// application. A regional application can be an Application Load Balancer (ALB), an
+        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
         /// </para>
         ///  
         /// <para>

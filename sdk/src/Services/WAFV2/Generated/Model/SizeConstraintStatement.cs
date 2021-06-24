@@ -36,8 +36,8 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first
-    /// 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes,
+    /// If you configure WAF to inspect the request body, WAF inspects only the first 8192
+    /// bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes,
     /// you can create a size constraint condition and block requests that have a request
     /// body greater than 8192 bytes.
     /// </para>
@@ -77,8 +77,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// The part of a web request that you want AWS WAF to inspect. For more information,
-        /// see <a>FieldToMatch</a>. 
+        /// The part of a web request that you want WAF to inspect. For more information, see
+        /// <a>FieldToMatch</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,7 +118,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
         /// web requests in an effort to bypass detection. If you specify one or more transformations
-        /// in a rule statement, AWS WAF performs all transformations on the content of the request
+        /// in a rule statement, WAF performs all transformations on the content of the request
         /// component identified by <code>FieldToMatch</code>, starting from the lowest priority
         /// setting, before inspecting the content for a match.
         /// </para>

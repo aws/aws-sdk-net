@@ -36,7 +36,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// When the rule action triggers, AWS WAF blocks additional requests from the IP address
+    /// When the rule action triggers, WAF blocks additional requests from the IP address
     /// until the request rate falls below the limit.
     /// </para>
     ///  
@@ -116,8 +116,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
-        /// to the web request at all.
+        /// If the specified header isn't present in the request, WAF doesn't apply the rule to
+        /// the web request at all.
         /// </para>
         ///  </note> 
         /// <para>
@@ -160,9 +160,11 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ScopeDownStatement. 
         /// <para>
-        /// An optional nested statement that narrows the scope of the rate-based statement to
-        /// matching web requests. This can be any nestable statement, and you can nest statements
-        /// at any level below this scope-down statement.
+        /// An optional nested statement that narrows the scope of the web requests that are evaluated
+        /// by the rate-based statement. Requests are only tracked by the rate-based statement
+        /// if they match the scope-down statement. You can use any nestable <a>Statement</a>
+        /// in the scope-down statement, and you can nest statements at any level, the same as
+        /// you can for a rule statement. 
         /// </para>
         /// </summary>
         public Statement ScopeDownStatement

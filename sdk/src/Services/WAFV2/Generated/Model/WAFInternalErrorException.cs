@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
+    /// Your request is valid, but WAF couldn’t perform the operation because of a system
     /// problem. Retry your request.
     /// </summary>
     #if !NETSTANDARD

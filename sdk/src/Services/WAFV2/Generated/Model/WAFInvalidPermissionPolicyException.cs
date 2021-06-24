@@ -51,7 +51,7 @@ namespace Amazon.WAFV2.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>,
-    /// and <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra actions
+    /// and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions
     /// or wildcard actions in the policy.
     /// </para>
     ///  </li> <li> 

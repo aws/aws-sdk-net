@@ -30,10 +30,10 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSampledRequests operation.
-    /// Gets detailed information about a specified number of requests--a sample--that AWS
-    /// WAF randomly selects from among the first 5,000 requests that your AWS resource received
-    /// during a time range that you choose. You can specify a sample size of up to 500 requests,
-    /// and you can specify any time range in the previous three hours.
+    /// Gets detailed information about a specified number of requests--a sample--that WAF
+    /// randomly selects from among the first 5,000 requests that your Amazon Web Services
+    /// resource received during a time range that you choose. You can specify a sample size
+    /// of up to 500 requests, and you can specify any time range in the previous three hours.
     /// 
     ///  
     /// <para>
@@ -41,7 +41,7 @@ namespace Amazon.WAFV2.Model
     /// that you specified. However, if your resource (such as a CloudFront distribution)
     /// received 5,000 requests before the specified time range elapsed, <code>GetSampledRequests</code>
     /// returns an updated time range. This new time range indicates the actual period during
-    /// which AWS WAF selected the requests in the sample.
+    /// which WAF selected the requests in the sample.
     /// </para>
     /// </summary>
     public partial class GetSampledRequestsRequest : AmazonWAFV2Request
@@ -55,9 +55,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The number of requests that you want AWS WAF to return from among the first 5,000
-        /// requests that your AWS resource received during the time range. If your resource received
-        /// fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
+        /// The number of requests that you want WAF to return from among the first 5,000 requests
+        /// that your Amazon Web Services resource received during the time range. If your resource
+        /// received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
         /// returns information about all of them. 
         /// </para>
         /// </summary>
@@ -97,9 +97,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Specifies whether this is for an AWS CloudFront distribution or for a regional application.
-        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
-        /// API, or an AppSync GraphQL API. 
+        /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
+        /// application. A regional application can be an Application Load Balancer (ALB), an
+        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
         /// </para>
         ///  
         /// <para>
@@ -138,7 +138,7 @@ namespace Amazon.WAFV2.Model
         /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
         /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can
         /// specify any time range in the previous three hours. If you specify a start time that's
-        /// earlier than three hours ago, AWS WAF sets it to three hours ago.
+        /// earlier than three hours ago, WAF sets it to three hours ago.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

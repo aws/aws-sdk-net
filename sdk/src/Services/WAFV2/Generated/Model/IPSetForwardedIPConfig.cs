@@ -35,8 +35,8 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
-    /// to the web request at all.
+    /// If the specified header isn't present in the request, WAF doesn't apply the rule to
+    /// the web request at all.
     /// </para>
     ///  </note> 
     /// <para>
@@ -58,8 +58,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
-        /// to the web request at all.
+        /// If the specified header isn't present in the request, WAF doesn't apply the rule to
+        /// the web request at all.
         /// </para>
         ///  </note> 
         /// <para>
@@ -67,8 +67,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF
-        /// applies the rule action to the request.
+        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies
+        /// the rule action to the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -97,8 +97,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
-        /// to the web request at all.
+        /// If the specified header isn't present in the request, WAF doesn't apply the rule to
+        /// the web request at all.
         /// </para>
         ///  </note>
         /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.WAFV2.Model
         ///  </li> <li> 
         /// <para>
         /// ANY - Inspect all IP addresses in the header for a match. If the header contains more
-        /// than 10 IP addresses, AWS WAF inspects the last 10.
+        /// than 10 IP addresses, WAF inspects the last 10.
         /// </para>
         ///  </li> </ul>
         /// </summary>

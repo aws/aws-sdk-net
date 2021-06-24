@@ -31,8 +31,8 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// Container for the parameters to the ListAvailableManagedRuleGroups operation.
     /// Retrieves an array of managed rule groups that are available for you to use. This
-    /// list includes all AWS Managed Rules rule groups and the AWS Marketplace managed rule
-    /// groups that you're subscribed to.
+    /// list includes all Amazon Web Services Managed Rules rule groups and the Marketplace
+    /// managed rule groups that you're subscribed to.
     /// </summary>
     public partial class ListAvailableManagedRuleGroupsRequest : AmazonWAFV2Request
     {
@@ -43,9 +43,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of objects that you want AWS WAF to return for this request. If
-        /// more objects are available, in the response, AWS WAF provides a <code>NextMarker</code>
-        /// value that you can use in a subsequent call to get the next batch of objects.
+        /// The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a <code>NextMarker</code> value
+        /// that you can use in a subsequent call to get the next batch of objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -65,8 +65,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// When you request a list of objects with a <code>Limit</code> setting, if the number
-        /// of objects that are still available for retrieval exceeds the limit, AWS WAF returns
-        /// a <code>NextMarker</code> value in the response. To retrieve the next batch of objects,
+        /// of objects that are still available for retrieval exceeds the limit, WAF returns a
+        /// <code>NextMarker</code> value in the response. To retrieve the next batch of objects,
         /// provide the marker from the prior call in your next request.
         /// </para>
         /// </summary>
@@ -86,9 +86,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Specifies whether this is for an AWS CloudFront distribution or for a regional application.
-        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
-        /// API, or an AppSync GraphQL API. 
+        /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
+        /// application. A regional application can be an Application Load Balancer (ALB), an
+        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
         /// </para>
         ///  
         /// <para>

@@ -35,8 +35,8 @@ namespace Amazon.WAFV2.Model
     ///  
     /// <para>
     /// Use the specifications in this object to indicate which parts of the JSON body to
-    /// inspect using the rule's inspection criteria. AWS WAF inspects only the parts of the
-    /// JSON that result from the matches that you indicate. 
+    /// inspect using the rule's inspection criteria. WAF inspects only the parts of the JSON
+    /// that result from the matches that you indicate. 
     /// </para>
     /// </summary>
     public partial class JsonBody
@@ -48,19 +48,19 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property InvalidFallbackBehavior. 
         /// <para>
-        /// What AWS WAF should do if it fails to completely parse the JSON body. The options
-        /// are the following:
+        /// What WAF should do if it fails to completely parse the JSON body. The options are
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies
-        /// the text transformations and inspection criteria that you defined for the JSON inspection
+        ///  <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the
+        /// text transformations and inspection criteria that you defined for the JSON inspection
         /// to the body text string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF
-        /// applies the rule action to the request.
+        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies
+        /// the rule action to the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -68,18 +68,18 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't provide this setting, AWS WAF parses and evaluates the content only up
-        /// to the first parsing failure that it encounters. 
+        /// If you don't provide this setting, WAF parses and evaluates the content only up to
+        /// the first parsing failure that it encounters. 
         /// </para>
         ///  
         /// <para>
-        /// AWS WAF does its best to parse the entire JSON body, but might be forced to stop for
-        /// reasons such as invalid characters, duplicate keys, truncation, and any content whose
-        /// root node isn't an object or an array. 
+        /// WAF does its best to parse the entire JSON body, but might be forced to stop for reasons
+        /// such as characters that aren't valid, duplicate keys, truncation, and any content
+        /// whose root node isn't an object or an array. 
         /// </para>
         ///  
         /// <para>
-        /// AWS WAF parses the JSON in the following examples as two valid key, value pairs: 
+        /// WAF parses the JSON in the following examples as two valid key, value pairs: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -110,7 +110,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property MatchPattern. 
         /// <para>
-        /// The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern
+        /// The patterns to look for in the JSON body. WAF inspects the results of these pattern
         /// matches against the rule inspection criteria. 
         /// </para>
         /// </summary>
@@ -131,7 +131,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property MatchScope. 
         /// <para>
         /// The parts of the JSON to match against using the <code>MatchPattern</code>. If you
-        /// specify <code>All</code>, AWS WAF matches against keys and values. 
+        /// specify <code>All</code>, WAF matches against keys and values. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

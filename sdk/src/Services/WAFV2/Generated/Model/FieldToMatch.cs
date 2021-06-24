@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The part of a web request that you want AWS WAF to inspect. Include the single <code>FieldToMatch</code>
+    /// The part of a web request that you want WAF to inspect. Include the single <code>FieldToMatch</code>
     /// type that you want to inspect, with additional specifications as needed, according
     /// to the type. You specify a single request component in <code>FieldToMatch</code> for
     /// each rule statement that requires it. To inspect more than one component of a web
@@ -74,13 +74,13 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS
-        /// WAF for inspection by the underlying host service. If you don't need to inspect more
-        /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining
-        /// a statement that inspects the body of the web request, such as <a>ByteMatchStatement</a>
-        /// or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
-        /// that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support
-        /// inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
+        /// Note that only the first 8 KB (8192 bytes) of the request body are forwarded to WAF
+        /// for inspection by the underlying host service. If you don't need to inspect more than
+        /// 8 KB, you can guarantee that you don't allow additional bytes in by combining a statement
+        /// that inspects the body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
+        /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body
+        /// of the request. WAF doesn't support inspecting the entire contents of web requests
+        /// whose bodies exceed the 8 KB limit.
         /// </para>
         /// </summary>
         public Body Body
@@ -105,13 +105,13 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS
-        /// WAF for inspection by the underlying host service. If you don't need to inspect more
-        /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining
-        /// a statement that inspects the body of the web request, such as <a>ByteMatchStatement</a>
-        /// or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
-        /// that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support
-        /// inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
+        /// Note that only the first 8 KB (8192 bytes) of the request body are forwarded to WAF
+        /// for inspection by the underlying host service. If you don't need to inspect more than
+        /// 8 KB, you can guarantee that you don't allow additional bytes in by combining a statement
+        /// that inspects the body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
+        /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body
+        /// of the request. WAF doesn't support inspecting the entire contents of web requests
+        /// whose bodies exceed the 8 KB limit.
         /// </para>
         /// </summary>
         public JsonBody JsonBody
@@ -196,8 +196,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// This is used only to indicate the web request component for AWS WAF to inspect, in
-        /// the <a>FieldToMatch</a> specification. 
+        /// This is used only to indicate the web request component for WAF to inspect, in the
+        /// <a>FieldToMatch</a> specification. 
         /// </para>
         ///  
         /// <para>

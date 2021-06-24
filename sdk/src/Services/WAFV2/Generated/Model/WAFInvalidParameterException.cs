@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The operation failed because AWS WAF didn't recognize a parameter in the request.
-    /// For example: 
+    /// The operation failed because WAF didn't recognize a parameter in the request. For
+    /// example: 
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// You specified an invalid parameter name or value.
+    /// You specified a parameter name or value that isn't valid.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.WAFV2.Model
     ///  </li> <li> 
     /// <para>
     /// Your request references an ARN that is malformed, or corresponds to a resource with
-    /// which a Web ACL cannot be associated.
+    /// which a web ACL can't be associated.
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -30,14 +30,14 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Contains one or more IP addresses or blocks of IP addresses specified in Classless
-    /// Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges
-    /// except for /0. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+    /// Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except
+    /// for /0. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
     /// Inter-Domain Routing</a>. 
     /// 
     ///  
     /// <para>
-    /// AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set
-    /// in a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>.
+    /// WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in
+    /// a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>.
     /// 
     /// </para>
     /// </summary>
@@ -54,8 +54,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Addresses. 
         /// <para>
         /// Contains an array of strings that specify one or more IP addresses or blocks of IP
-        /// addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports all
-        /// IPv4 and IPv6 CIDR ranges except for /0. 
+        /// addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4
+        /// and IPv6 CIDR ranges except for /0. 
         /// </para>
         ///  
         /// <para>
@@ -63,22 +63,22 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To configure AWS WAF to allow, block, or count requests that originated from the IP
-        /// address 192.0.2.44, specify <code>192.0.2.44/32</code>.
+        /// To configure WAF to allow, block, or count requests that originated from the IP address
+        /// 192.0.2.44, specify <code>192.0.2.44/32</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+        /// To configure WAF to allow, block, or count requests that originated from IP addresses
         /// from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To configure AWS WAF to allow, block, or count requests that originated from the IP
-        /// address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+        /// To configure WAF to allow, block, or count requests that originated from the IP address
+        /// 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+        /// To configure WAF to allow, block, or count requests that originated from IP addresses
         /// 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff,
         /// specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
         /// </para>

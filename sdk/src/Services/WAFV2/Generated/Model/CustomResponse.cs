@@ -35,8 +35,8 @@ namespace Amazon.WAFV2.Model
     ///  
     /// <para>
     /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-    /// web requests and responses in AWS WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
+    /// web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+    /// Developer Guide</a>. 
     /// </para>
     /// </summary>
     public partial class CustomResponse
@@ -48,7 +48,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property CustomResponseBodyKey. 
         /// <para>
-        /// References the response body that you want AWS WAF to return to the web request client.
+        /// References the response body that you want WAF to return to the web request client.
         /// You can define a custom response for a rule action or a default web ACL action that
         /// is set to block. To do this, you first define the response body key and value in the
         /// <code>CustomResponseBodies</code> setting for the <a>WebACL</a> or <a>RuleGroup</a>
@@ -77,8 +77,8 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-        /// status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-        /// WAF Developer Guide</a>. 
+        /// status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=200, Max=600)]
@@ -102,9 +102,9 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// For information about the limits on count and size for custom request and response
-        /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS
-        /// WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-        /// WAF Developer Guide</a>. 
+        /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

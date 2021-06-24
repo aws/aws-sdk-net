@@ -31,8 +31,8 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// Container for the parameters to the ListResourcesForWebACL operation.
     /// Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources
-    /// that are associated with the specified web ACL. If you want the list of AWS CloudFront
-    /// resources, use the AWS CloudFront call <code>ListDistributionsByWebACLId</code>.
+    /// that are associated with the specified web ACL. If you want the list of Amazon CloudFront
+    /// resources, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
     /// </summary>
     public partial class ListResourcesForWebACLRequest : AmazonWAFV2Request
     {
@@ -43,7 +43,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// Used for web ACLs that are scoped for regional applications. A regional application
-        /// can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync
+        /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
         /// GraphQL API. 
         /// </para>
         /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property WebACLArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Web ACL.
+        /// The Amazon Resource Name (ARN) of the web ACL.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

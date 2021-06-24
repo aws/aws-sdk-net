@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// AWS WAF couldn’t perform the operation because the resource that you requested isn’t
-    /// valid. Check the resource, and try again.
+    /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+    /// Check the resource, and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

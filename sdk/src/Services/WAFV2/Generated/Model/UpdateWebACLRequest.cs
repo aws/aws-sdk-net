@@ -32,16 +32,23 @@ namespace Amazon.WAFV2.Model
     /// Container for the parameters to the UpdateWebACL operation.
     /// Updates the specified <a>WebACL</a>.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    ///  A Web ACL defines a collection of rules to use to inspect and control web requests.
+    /// This operation completely replaces the mutable specifications that you already have
+    /// for the web ACL with the ones that you provide to this call. To modify the web ACL,
+    /// retrieve it by calling <a>GetWebACL</a>, update the settings as needed, and then provide
+    /// the complete web ACL specification to this call.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  A web ACL defines a collection of rules to use to inspect and control web requests.
     /// Each rule has an action defined (allow, block, or count) for requests that match the
-    /// statement of the rule. In the Web ACL, you assign a default action to take (allow,
-    /// block) for any request that does not match any of the rules. The rules in a Web ACL
+    /// statement of the rule. In the web ACL, you assign a default action to take (allow,
+    /// block) for any request that does not match any of the rules. The rules in a web ACL
     /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
-    /// group. You can associate a Web ACL with one or more AWS resources to protect. The
-    /// resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application
-    /// Load Balancer, or an AWS AppSync GraphQL API. 
+    /// group. You can associate a web ACL with one or more Amazon Web Services resources
+    /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
+    /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. 
     /// </para>
     /// </summary>
     public partial class UpdateWebACLRequest : AmazonWAFV2Request
@@ -67,15 +74,15 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-        /// web requests and responses in AWS WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-        /// WAF Developer Guide</a>. 
+        /// web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         ///  
         /// <para>
         /// For information about the limits on count and size for custom request and response
-        /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS
-        /// WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-        /// WAF Developer Guide</a>. 
+        /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -114,7 +121,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the Web ACL that helps with identification. 
+        /// A description of the web ACL that helps with identification. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -133,7 +140,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier for the Web ACL. This ID is returned in the responses to create
+        /// The unique identifier for the web ACL. This ID is returned in the responses to create
         /// and list commands. You provide it to operations like update and delete.
         /// </para>
         /// </summary>
@@ -153,13 +160,13 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LockToken. 
         /// <para>
-        /// A token used for optimistic locking. AWS WAF returns a token to your get and list
-        /// requests, to mark the state of the entity at the time of the request. To make changes
-        /// to the entity associated with the token, you provide the token to operations like
-        /// update and delete. AWS WAF uses the token to ensure that no changes have been made
-        /// to the entity since you last retrieved it. If a change has been made, the update fails
-        /// with a <code>WAFOptimisticLockException</code>. If this happens, perform another get,
-        /// and use the new token returned by that operation. 
+        /// A token used for optimistic locking. WAF returns a token to your get and list requests,
+        /// to mark the state of the entity at the time of the request. To make changes to the
+        /// entity associated with the token, you provide the token to operations like update
+        /// and delete. WAF uses the token to ensure that no changes have been made to the entity
+        /// since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>.
+        /// If this happens, perform another get, and use the new token returned by that operation.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
@@ -178,7 +185,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Web ACL. You cannot change the name of a Web ACL after you create
+        /// The name of the web ACL. You cannot change the name of a web ACL after you create
         /// it.
         /// </para>
         /// </summary>
@@ -199,8 +206,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Rules. 
         /// <para>
         /// The <a>Rule</a> statements used to identify the web requests that you want to allow,
-        /// block, or count. Each rule includes one top-level statement that AWS WAF uses to identify
-        /// matching web requests, and parameters that govern how AWS WAF handles them. 
+        /// block, or count. Each rule includes one top-level statement that WAF uses to identify
+        /// matching web requests, and parameters that govern how WAF handles them. 
         /// </para>
         /// </summary>
         public List<Rule> Rules
@@ -218,9 +225,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Specifies whether this is for an AWS CloudFront distribution or for a regional application.
-        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
-        /// API, or an AppSync GraphQL API. 
+        /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
+        /// application. A regional application can be an Application Load Balancer (ALB), an
+        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
         /// </para>
         ///  
         /// <para>

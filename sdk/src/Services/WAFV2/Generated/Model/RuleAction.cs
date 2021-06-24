@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The action that AWS WAF should take on a web request when it matches a rule's statement.
+    /// The action that WAF should take on a web request when it matches a rule's statement.
     /// Settings at the web ACL level can override the rule action setting.
     /// </summary>
     public partial class RuleAction
@@ -41,7 +41,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Allow. 
         /// <para>
-        /// Instructs AWS WAF to allow the web request.
+        /// Instructs WAF to allow the web request.
         /// </para>
         /// </summary>
         public AllowAction Allow
@@ -59,7 +59,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Block. 
         /// <para>
-        /// Instructs AWS WAF to block the web request.
+        /// Instructs WAF to block the web request.
         /// </para>
         /// </summary>
         public BlockAction Block
@@ -77,7 +77,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// Instructs AWS WAF to count the web request and allow it.
+        /// Instructs WAF to count the web request and allow it.
         /// </para>
         /// </summary>
         public CountAction Count

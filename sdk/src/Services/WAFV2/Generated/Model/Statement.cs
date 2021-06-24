@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The processing guidance for a <a>Rule</a>, used by AWS WAF to determine whether a
-    /// web request matches the rule.
+    /// The processing guidance for a <a>Rule</a>, used by WAF to determine whether a web
+    /// request matches the rule.
     /// </summary>
     public partial class Statement
     {
@@ -71,10 +71,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ByteMatchStatement. 
         /// <para>
-        /// A rule statement that defines a string match search for AWS WAF to apply to web requests.
+        /// A rule statement that defines a string match search for WAF to apply to web requests.
         /// The byte match statement provides the bytes to search for, the location in requests
-        /// that you want AWS WAF to search, and other settings. The bytes to search for are typically
-        /// a string that corresponds with ASCII characters. In the AWS WAF console and the developer
+        /// that you want WAF to search, and other settings. The bytes to search for are typically
+        /// a string that corresponds with ASCII characters. In the WAF console and the developer
         /// guide, this is refered to as a string match statement.
         /// </para>
         /// </summary>
@@ -120,7 +120,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Each IP set rule statement references an IP set. You create and maintain the set independent
         /// of your rules. This allows you to use the single set in multiple rules. When you update
-        /// the referenced set, AWS WAF automatically updates all rules that reference it.
+        /// the referenced set, WAF automatically updates all rules that reference it.
         /// </para>
         /// </summary>
         public IPSetReferenceStatement IPSetReferenceStatement
@@ -148,7 +148,7 @@ namespace Amazon.WAFV2.Model
         /// been added to the web request. Fully qualified labels have a prefix, optional namespaces,
         /// and label name. The prefix identifies the rule group or web ACL context of the rule
         /// that added the label. If you do not provide the fully qualified name in your label
-        /// match string, AWS WAF performs the search for labels that were added in the same context
+        /// match string, WAF performs the search for labels that were added in the same context
         /// as the label match statement. 
         /// </para>
         /// </summary>
@@ -173,7 +173,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside
+        /// You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside
         /// a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
         /// as a top-level statement within a rule.
         /// </para>
@@ -238,7 +238,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// When the rule action triggers, AWS WAF blocks additional requests from the IP address
+        /// When the rule action triggers, WAF blocks additional requests from the IP address
         /// until the request rate falls below the limit.
         /// </para>
         ///  
@@ -297,8 +297,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Each regex pattern set rule statement references a regex pattern set. You create and
         /// maintain the set independent of your rules. This allows you to use the single set
-        /// in multiple rules. When you update the referenced set, AWS WAF automatically updates
-        /// all rules that reference it.
+        /// in multiple rules. When you update the referenced set, WAF automatically updates all
+        /// rules that reference it.
         /// </para>
         /// </summary>
         public RegexPatternSetReferenceStatement RegexPatternSetReferenceStatement
@@ -349,8 +349,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first
-        /// 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes,
+        /// If you configure WAF to inspect the request body, WAF inspects only the first 8192
+        /// bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes,
         /// you can create a size constraint condition and block requests that have a request
         /// body greater than 8192 bytes.
         /// </para>
@@ -380,9 +380,8 @@ namespace Amazon.WAFV2.Model
         /// data from your database. To allow or block web requests that appear to contain malicious
         /// SQL code, create one or more SQL injection match conditions. An SQL injection match
         /// condition identifies the part of web requests, such as the URI or the query string,
-        /// that you want AWS WAF to inspect. Later in the process, when you create a web ACL,
-        /// you specify whether to allow or block requests that appear to contain malicious SQL
-        /// code.
+        /// that you want WAF to inspect. Later in the process, when you create a web ACL, you
+        /// specify whether to allow or block requests that appear to contain malicious SQL code.
         /// </para>
         /// </summary>
         public SqliMatchStatement SqliMatchStatement
@@ -400,13 +399,12 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property XssMatchStatement. 
         /// <para>
-        /// A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF
-        /// to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities
+        /// A rule statement that defines a cross-site scripting (XSS) match search for WAF to
+        /// apply to web requests. XSS attacks are those where the attacker uses vulnerabilities
         /// in a benign website as a vehicle to inject malicious client-site scripts into other
         /// legitimate web browsers. The XSS match statement provides the location in requests
-        /// that you want AWS WAF to search and text transformations to use on the search area
-        /// before AWS WAF searches for character sequences that are likely to be malicious strings.
-        /// 
+        /// that you want WAF to search and text transformations to use on the search area before
+        /// WAF searches for character sequences that are likely to be malicious strings. 
         /// </para>
         /// </summary>
         public XssMatchStatement XssMatchStatement

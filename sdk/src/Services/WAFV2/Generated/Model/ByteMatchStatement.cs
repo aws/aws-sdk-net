@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// A rule statement that defines a string match search for AWS WAF to apply to web requests.
+    /// A rule statement that defines a string match search for WAF to apply to web requests.
     /// The byte match statement provides the bytes to search for, the location in requests
-    /// that you want AWS WAF to search, and other settings. The bytes to search for are typically
-    /// a string that corresponds with ASCII characters. In the AWS WAF console and the developer
+    /// that you want WAF to search, and other settings. The bytes to search for are typically
+    /// a string that corresponds with ASCII characters. In the WAF console and the developer
     /// guide, this is refered to as a string match statement.
     /// </summary>
     public partial class ByteMatchStatement
@@ -45,8 +45,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// The part of a web request that you want AWS WAF to inspect. For more information,
-        /// see <a>FieldToMatch</a>. 
+        /// The part of a web request that you want WAF to inspect. For more information, see
+        /// <a>FieldToMatch</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property PositionalConstraint. 
         /// <para>
-        /// The area within the portion of a web request that you want AWS WAF to search for <code>SearchString</code>.
+        /// The area within the portion of a web request that you want WAF to search for <code>SearchString</code>.
         /// Valid values include the following:
         /// </para>
         ///  
@@ -144,9 +144,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property SearchString. 
         /// <para>
-        /// A string value that you want AWS WAF to search for. AWS WAF searches only in the part
-        /// of web requests that you designate for inspection in <a>FieldToMatch</a>. The maximum
-        /// length of the value is 50 bytes.
+        /// A string value that you want WAF to search for. WAF searches only in the part of web
+        /// requests that you designate for inspection in <a>FieldToMatch</a>. The maximum length
+        /// of the value is 50 bytes.
         /// </para>
         ///  
         /// <para>
@@ -154,12 +154,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Method</code>: The HTTP method that you want AWS WAF to search for. This indicates
+        ///  <code>Method</code>: The HTTP method that you want WAF to search for. This indicates
         /// the type of operation specified in the request. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UriPath</code>: The value that you want AWS WAF to search for in the URI path,
+        ///  <code>UriPath</code>: The value that you want WAF to search for in the URI path,
         /// for example, <code>/images/daily-ad.jpg</code>. 
         /// </para>
         ///  </li> </ul> 
@@ -169,7 +169,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>If you're using the AWS WAF API</b> 
+        ///  <b>If you're using the WAF API</b> 
         /// </para>
         ///  
         /// <para>
@@ -186,12 +186,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>If you're using the AWS CLI or one of the AWS SDKs</b> 
+        ///  <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> 
         /// </para>
         ///  
         /// <para>
-        /// The value that you want AWS WAF to search for. The SDK automatically base64 encodes
-        /// the value.
+        /// The value that you want WAF to search for. The SDK automatically base64 encodes the
+        /// value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -212,7 +212,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
         /// web requests in an effort to bypass detection. If you specify one or more transformations
-        /// in a rule statement, AWS WAF performs all transformations on the content of the request
+        /// in a rule statement, WAF performs all transformations on the content of the request
         /// component identified by <code>FieldToMatch</code>, starting from the lowest priority
         /// setting, before inspecting the content for a match.
         /// </para>

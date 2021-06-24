@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// AWS WAF couldn’t perform the operation because the resource that you tried to save
-    /// is a duplicate of an existing one.
+    /// WAF couldn’t perform the operation because the resource that you tried to save is
+    /// a duplicate of an existing one.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

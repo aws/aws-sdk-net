@@ -38,8 +38,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property WebACL. 
         /// <para>
-        /// The Web ACL that is associated with the resource. If there is no associated resource,
-        /// AWS WAF returns a null Web ACL.
+        /// The web ACL that is associated with the resource. If there is no associated resource,
+        /// WAF returns a null web ACL.
         /// </para>
         /// </summary>
         public WebACL WebACL
