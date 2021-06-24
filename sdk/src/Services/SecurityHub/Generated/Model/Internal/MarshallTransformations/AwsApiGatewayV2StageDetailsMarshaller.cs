@@ -68,6 +68,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AutoDeploy);
             }
 
+            if(requestObject.IsSetClientCertificateId())
+            {
+                context.Writer.WritePropertyName("ClientCertificateId");
+                context.Writer.Write(requestObject.ClientCertificateId);
+            }
+
             if(requestObject.IsSetCreatedDate())
             {
                 context.Writer.WritePropertyName("CreatedDate");

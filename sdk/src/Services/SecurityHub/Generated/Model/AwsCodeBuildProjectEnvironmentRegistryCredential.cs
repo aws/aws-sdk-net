@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Credential. 
         /// <para>
-        /// The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager.
+        /// The ARN or name of credentials created using AWS Secrets Manager.
         /// </para>
         ///  <note> 
         /// <para>

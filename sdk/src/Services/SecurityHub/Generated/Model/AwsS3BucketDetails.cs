@@ -33,11 +33,30 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsS3BucketDetails
     {
+        private AwsS3BucketBucketLifecycleConfigurationDetails _bucketLifecycleConfiguration;
         private string _createdAt;
         private string _ownerId;
         private string _ownerName;
         private AwsS3AccountPublicAccessBlockDetails _publicAccessBlockConfiguration;
         private AwsS3BucketServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property BucketLifecycleConfiguration. 
+        /// <para>
+        /// The lifecycle configuration for objects in the S3 bucket.
+        /// </para>
+        /// </summary>
+        public AwsS3BucketBucketLifecycleConfigurationDetails BucketLifecycleConfiguration
+        {
+            get { return this._bucketLifecycleConfiguration; }
+            set { this._bucketLifecycleConfiguration = value; }
+        }
+
+        // Check to see if BucketLifecycleConfiguration property is set
+        internal bool IsSetBucketLifecycleConfiguration()
+        {
+            return this._bucketLifecycleConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

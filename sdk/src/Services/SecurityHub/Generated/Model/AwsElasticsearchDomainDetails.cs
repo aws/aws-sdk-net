@@ -41,7 +41,9 @@ namespace Amazon.SecurityHub.Model
         private AwsElasticsearchDomainEncryptionAtRestOptions _encryptionAtRestOptions;
         private string _endpoint;
         private Dictionary<string, string> _endpoints = new Dictionary<string, string>();
+        private AwsElasticsearchDomainLogPublishingOptions _logPublishingOptions;
         private AwsElasticsearchDomainNodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
+        private AwsElasticsearchDomainServiceSoftwareOptions _serviceSoftwareOptions;
         private AwsElasticsearchDomainVPCOptions _vpcOptions;
 
         /// <summary>
@@ -207,6 +209,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogPublishingOptions. 
+        /// <para>
+        /// Configures the CloudWatch Logs to publish for the Elasticsearch domain.
+        /// </para>
+        /// </summary>
+        public AwsElasticsearchDomainLogPublishingOptions LogPublishingOptions
+        {
+            get { return this._logPublishingOptions; }
+            set { this._logPublishingOptions = value; }
+        }
+
+        // Check to see if LogPublishingOptions property is set
+        internal bool IsSetLogPublishingOptions()
+        {
+            return this._logPublishingOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NodeToNodeEncryptionOptions. 
         /// <para>
         /// Details about the configuration for node-to-node encryption.
@@ -222,6 +242,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetNodeToNodeEncryptionOptions()
         {
             return this._nodeToNodeEncryptionOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceSoftwareOptions. 
+        /// <para>
+        /// Information about the status of a domain relative to the latest service software.
+        /// </para>
+        /// </summary>
+        public AwsElasticsearchDomainServiceSoftwareOptions ServiceSoftwareOptions
+        {
+            get { return this._serviceSoftwareOptions; }
+            set { this._serviceSoftwareOptions = value; }
+        }
+
+        // Check to see if ServiceSoftwareOptions property is set
+        internal bool IsSetServiceSoftwareOptions()
+        {
+            return this._serviceSoftwareOptions != null;
         }
 
         /// <summary>

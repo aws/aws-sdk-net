@@ -82,6 +82,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoDeploy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClientCertificateId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClientCertificateId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

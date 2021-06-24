@@ -64,6 +64,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BucketLifecycleConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3BucketBucketLifecycleConfigurationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.BucketLifecycleConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

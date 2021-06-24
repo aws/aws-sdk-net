@@ -48,8 +48,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify either the Amazon Resource Name (ARN) of the CMK or, if available,
-        /// the CMK alias (using the format alias/alias-name). 
+        /// You can specify either the ARN of the CMK or, if available, the CMK alias (using the
+        /// format alias/alias-name). 
         /// </para>
         /// </summary>
         public string EncryptionKey

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The VPC security groups and subnets that are attached to a Lambda function. For more
-    /// information, see VPC Settings.
+    /// The VPC security groups and subnets that are attached to a Lambda function.
     /// </summary>
     public partial class AwsLambdaFunctionVpcConfig
     {

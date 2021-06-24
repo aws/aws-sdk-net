@@ -172,6 +172,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsEc2Vpc = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsEcsCluster", targetDepth))
+                {
+                    var unmarshaller = AwsEcsClusterDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEcsCluster = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsEcsTaskDefinition", targetDepth))
+                {
+                    var unmarshaller = AwsEcsTaskDefinitionDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEcsTaskDefinition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsElasticBeanstalkEnvironment", targetDepth))
                 {
                     var unmarshaller = AwsElasticBeanstalkEnvironmentDetailsUnmarshaller.Instance;

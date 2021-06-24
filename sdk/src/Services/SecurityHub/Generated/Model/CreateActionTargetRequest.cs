@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID for the custom action target.
+        /// The ID for the custom action target. Can contain up to 20 alphanumeric characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +85,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the custom action target.
+        /// The name of the custom action target. Can contain up to 20 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

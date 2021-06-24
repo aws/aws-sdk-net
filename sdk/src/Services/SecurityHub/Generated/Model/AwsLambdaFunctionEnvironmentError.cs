@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Error messages for environment variables that couldn't be applied.
+    /// Error messages for environment variables that could not be applied.
     /// </summary>
     public partial class AwsLambdaFunctionEnvironmentError
     {

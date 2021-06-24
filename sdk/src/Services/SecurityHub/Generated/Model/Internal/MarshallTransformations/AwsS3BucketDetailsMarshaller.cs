@@ -45,6 +45,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsS3BucketDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBucketLifecycleConfiguration())
+            {
+                context.Writer.WritePropertyName("BucketLifecycleConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3BucketBucketLifecycleConfigurationDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.BucketLifecycleConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("CreatedAt");

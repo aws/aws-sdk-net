@@ -36,6 +36,7 @@ namespace Amazon.SecurityHub.Model
         private AwsApiGatewayAccessLogSettings _accessLogSettings;
         private bool? _apiGatewayManaged;
         private bool? _autoDeploy;
+        private string _clientCertificateId;
         private string _createdDate;
         private AwsApiGatewayV2RouteSettings _defaultRouteSettings;
         private string _deploymentId;
@@ -98,6 +99,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAutoDeploy()
         {
             return this._autoDeploy.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientCertificateId. 
+        /// <para>
+        /// The identifier of a client certificate for a stage. Supported only for WebSocket API
+        /// calls.
+        /// </para>
+        /// </summary>
+        public string ClientCertificateId
+        {
+            get { return this._clientCertificateId; }
+            set { this._clientCertificateId = value; }
+        }
+
+        // Check to see if ClientCertificateId property is set
+        internal bool IsSetClientCertificateId()
+        {
+            return this._clientCertificateId != null;
         }
 
         /// <summary>

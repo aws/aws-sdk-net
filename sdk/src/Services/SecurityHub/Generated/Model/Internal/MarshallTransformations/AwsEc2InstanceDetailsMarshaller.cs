@@ -91,6 +91,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LaunchedAt);
             }
 
+            if(requestObject.IsSetNetworkInterfaces())
+            {
+                context.Writer.WritePropertyName("NetworkInterfaces");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNetworkInterfacesListValue in requestObject.NetworkInterfaces)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsEc2InstanceNetworkInterfacesDetailsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNetworkInterfacesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSubnetId())
             {
                 context.Writer.WritePropertyName("SubnetId");

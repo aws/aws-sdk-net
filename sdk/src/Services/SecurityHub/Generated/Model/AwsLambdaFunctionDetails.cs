@@ -242,7 +242,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The memory that's allocated to the function.
+        /// The memory that is allocated to the function.
         /// </para>
         /// </summary>
         public int MemorySize

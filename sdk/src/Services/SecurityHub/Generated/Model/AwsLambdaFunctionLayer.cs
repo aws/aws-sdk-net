@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the function layer.
+        /// The ARN of the function layer.
         /// </para>
         /// </summary>
         public string Arn

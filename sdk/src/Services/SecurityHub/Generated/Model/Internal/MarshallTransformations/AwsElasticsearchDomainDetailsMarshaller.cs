@@ -111,6 +111,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLogPublishingOptions())
+            {
+                context.Writer.WritePropertyName("LogPublishingOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsElasticsearchDomainLogPublishingOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogPublishingOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNodeToNodeEncryptionOptions())
             {
                 context.Writer.WritePropertyName("NodeToNodeEncryptionOptions");
@@ -118,6 +129,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsElasticsearchDomainNodeToNodeEncryptionOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.NodeToNodeEncryptionOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetServiceSoftwareOptions())
+            {
+                context.Writer.WritePropertyName("ServiceSoftwareOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsElasticsearchDomainServiceSoftwareOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServiceSoftwareOptions, context);
 
                 context.Writer.WriteObjectEnd();
             }

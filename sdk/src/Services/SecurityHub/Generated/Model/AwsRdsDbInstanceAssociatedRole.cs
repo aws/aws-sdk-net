@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that is associated with the DB instance.
+        /// The ARN of the IAM role that is associated with the DB instance.
         /// </para>
         /// </summary>
         public string RoleArn

@@ -243,6 +243,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsEcsCluster())
+            {
+                context.Writer.WritePropertyName("AwsEcsCluster");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEcsClusterDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEcsCluster, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEcsTaskDefinition())
+            {
+                context.Writer.WritePropertyName("AwsEcsTaskDefinition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEcsTaskDefinitionDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEcsTaskDefinition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsElasticBeanstalkEnvironment())
             {
                 context.Writer.WritePropertyName("AwsElasticBeanstalkEnvironment");

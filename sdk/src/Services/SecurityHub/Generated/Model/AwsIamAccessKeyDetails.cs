@@ -205,7 +205,7 @@ namespace Amazon.SecurityHub.Model
         /// users.
         /// </para>
         /// </summary>
-        [Obsolete("This field is deprecated, use PrincipalName instead.")]
+        [Obsolete("This filter is deprecated. Instead, use PrincipalName.")]
         public string UserName
         {
             get { return this._userName; }

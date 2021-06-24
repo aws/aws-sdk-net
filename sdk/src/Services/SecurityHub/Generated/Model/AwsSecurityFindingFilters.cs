@@ -482,6 +482,7 @@ namespace Amazon.SecurityHub.Model
         /// A keyword for a finding.
         /// </para>
         /// </summary>
+        [Obsolete("The Keyword property is deprecated.")]
         public List<KeywordFilter> Keyword
         {
             get { return this._keyword; }

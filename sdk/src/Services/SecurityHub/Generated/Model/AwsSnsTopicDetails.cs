@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A wrapper type for the topic's Amazon Resource Name (ARN).
+    /// A wrapper type for the topic's ARN.
     /// </summary>
     public partial class AwsSnsTopicDetails
     {

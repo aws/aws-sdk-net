@@ -68,6 +68,8 @@ namespace Amazon.SecurityHub.Model
         private AwsEc2SubnetDetails _awsEc2Subnet;
         private AwsEc2VolumeDetails _awsEc2Volume;
         private AwsEc2VpcDetails _awsEc2Vpc;
+        private AwsEcsClusterDetails _awsEcsCluster;
+        private AwsEcsTaskDefinitionDetails _awsEcsTaskDefinition;
         private AwsElasticBeanstalkEnvironmentDetails _awsElasticBeanstalkEnvironment;
         private AwsElasticsearchDomainDetails _awsElasticsearchDomain;
         private AwsElbLoadBalancerDetails _awsElbLoadBalancer;
@@ -297,7 +299,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsEc2Instance. 
         /// <para>
-        /// Details about an Amazon EC2 instance related to a finding.
+        /// Details about an EC2 instance related to a finding.
         /// </para>
         /// </summary>
         public AwsEc2InstanceDetails AwsEc2Instance
@@ -418,6 +420,43 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEc2Vpc()
         {
             return this._awsEc2Vpc != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEcsCluster. 
+        /// <para>
+        /// Details about an ECS cluster.
+        /// </para>
+        /// </summary>
+        public AwsEcsClusterDetails AwsEcsCluster
+        {
+            get { return this._awsEcsCluster; }
+            set { this._awsEcsCluster = value; }
+        }
+
+        // Check to see if AwsEcsCluster property is set
+        internal bool IsSetAwsEcsCluster()
+        {
+            return this._awsEcsCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEcsTaskDefinition. 
+        /// <para>
+        /// Details about a task definition. A task definition describes the container and volume
+        /// definitions of an Amazon Elastic Container Service task.
+        /// </para>
+        /// </summary>
+        public AwsEcsTaskDefinitionDetails AwsEcsTaskDefinition
+        {
+            get { return this._awsEcsTaskDefinition; }
+            set { this._awsEcsTaskDefinition = value; }
+        }
+
+        // Check to see if AwsEcsTaskDefinition property is set
+        internal bool IsSetAwsEcsTaskDefinition()
+        {
+            return this._awsEcsTaskDefinition != null;
         }
 
         /// <summary>

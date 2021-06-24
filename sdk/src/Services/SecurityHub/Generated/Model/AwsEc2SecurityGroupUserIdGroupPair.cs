@@ -108,7 +108,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// [EC2-Classic] Required when adding or removing rules that reference a security group
-        /// in another AWS. 
+        /// in another VPC. 
         /// </para>
         /// </summary>
         public string UserId

@@ -112,10 +112,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogPublishingOptions", targetDepth))
+                {
+                    var unmarshaller = AwsElasticsearchDomainLogPublishingOptionsUnmarshaller.Instance;
+                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NodeToNodeEncryptionOptions", targetDepth))
                 {
                     var unmarshaller = AwsElasticsearchDomainNodeToNodeEncryptionOptionsUnmarshaller.Instance;
                     unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceSoftwareOptions", targetDepth))
+                {
+                    var unmarshaller = AwsElasticsearchDomainServiceSoftwareOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ServiceSoftwareOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VPCOptions", targetDepth))

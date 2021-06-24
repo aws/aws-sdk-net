@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The details of an Amazon EC2 instance.
+    /// The details of an EC2 instance.
     /// </summary>
     public partial class AwsEc2InstanceDetails
     {
@@ -39,6 +39,7 @@ namespace Amazon.SecurityHub.Model
         private List<string> _ipV6Addresses = new List<string>();
         private string _keyName;
         private string _launchedAt;
+        private List<AwsEc2InstanceNetworkInterfacesDetails> _networkInterfaces = new List<AwsEc2InstanceNetworkInterfacesDetails>();
         private string _subnetId;
         private string _type;
         private string _vpcId;
@@ -155,6 +156,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetLaunchedAt()
         {
             return this._launchedAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
+        /// The identifiers of the network interfaces for the EC2 instance. The details for each
+        /// network interface are in a corresponding <code>AwsEc2NetworkInterfacesDetails</code>
+        /// object.
+        /// </para>
+        /// </summary>
+        public List<AwsEc2InstanceNetworkInterfacesDetails> NetworkInterfaces
+        {
+            get { return this._networkInterfaces; }
+            set { this._networkInterfaces = value; }
+        }
+
+        // Check to see if NetworkInterfaces property is set
+        internal bool IsSetNetworkInterfaces()
+        {
+            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
         }
 
         /// <summary>
