@@ -113,6 +113,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SharePointVersion);
             }
 
+            if(requestObject.IsSetSslCertificateS3Path())
+            {
+                context.Writer.WritePropertyName("SslCertificateS3Path");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3PathMarshaller.Instance;
+                marshaller.Marshall(requestObject.SslCertificateS3Path, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUrls())
             {
                 context.Writer.WritePropertyName("Urls");

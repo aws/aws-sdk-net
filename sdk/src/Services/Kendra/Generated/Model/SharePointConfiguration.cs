@@ -41,6 +41,7 @@ namespace Amazon.Kendra.Model
         private List<string> _inclusionPatterns = new List<string>();
         private string _secretArn;
         private SharePointVersion _sharePointVersion;
+        private S3Path _sslCertificateS3Path;
         private List<string> _urls = new List<string>();
         private bool? _useChangeLog;
         private DataSourceVpcConfiguration _vpcConfiguration;
@@ -181,7 +182,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials
-        /// should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+        /// should be a user/password pair. If you use SharePoint Sever, you also need to provide
+        /// the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
         /// a Microsoft SharePoint Data Source</a>. For more information about AWS Secrets Manager,
         /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
         /// What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user guide.
@@ -217,6 +219,21 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSharePointVersion()
         {
             return this._sharePointVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SslCertificateS3Path.
+        /// </summary>
+        public S3Path SslCertificateS3Path
+        {
+            get { return this._sslCertificateS3Path; }
+            set { this._sslCertificateS3Path = value; }
+        }
+
+        // Check to see if SslCertificateS3Path property is set
+        internal bool IsSetSslCertificateS3Path()
+        {
+            return this._sslCertificateS3Path != null;
         }
 
         /// <summary>

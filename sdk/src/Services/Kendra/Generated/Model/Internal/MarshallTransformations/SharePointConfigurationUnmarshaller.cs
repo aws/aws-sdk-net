@@ -112,6 +112,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.SharePointVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SslCertificateS3Path", targetDepth))
+                {
+                    var unmarshaller = S3PathUnmarshaller.Instance;
+                    unmarshalledObject.SslCertificateS3Path = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Urls", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
