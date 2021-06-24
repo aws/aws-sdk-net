@@ -36,6 +36,7 @@ namespace Amazon.Chime.Model
     {
         private string _audioFallbackUrl;
         private string _audioHostUrl;
+        private string _eventIngestionUrl;
         private string _screenDataUrl;
         private string _screenSharingUrl;
         private string _screenViewingUrl;
@@ -78,6 +79,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetAudioHostUrl()
         {
             return this._audioHostUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventIngestionUrl. 
+        /// <para>
+        /// The event ingestion URL.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=4096)]
+        public string EventIngestionUrl
+        {
+            get { return this._eventIngestionUrl; }
+            set { this._eventIngestionUrl = value; }
+        }
+
+        // Check to see if EventIngestionUrl property is set
+        internal bool IsSetEventIngestionUrl()
+        {
+            return this._eventIngestionUrl != null;
         }
 
         /// <summary>

@@ -76,6 +76,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioHostUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EventIngestionUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventIngestionUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScreenDataUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

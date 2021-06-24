@@ -2130,6 +2130,10 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.MediaPlacement.EventIngestionUrl</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.MediaPlacement.ScreenDataUrl</property>
     <max>4096</max>
   </property-value-rule>
