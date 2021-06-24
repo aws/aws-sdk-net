@@ -1,3 +1,28 @@
+### 3.7.60.0 (2021-06-24 18:25 UTC)
+* Chime (3.7.6.0)
+	* Adds EventIngestionUrl field to MediaPlacement
+* Cloud9 (3.7.1.32)
+	* Minor update to AWS Cloud9 documentation to allow correct parsing of outputted text
+* CodeBuild (3.7.2.0)
+	* BucketOwnerAccess is currently not supported
+* Connect (3.7.3.3)
+	* Released Amazon Connect quick connects management API for general availability (GA). For more information, see https://docs.aws.amazon.com/connect/latest/APIReference/Welcome.html
+* DAX (3.7.1.0)
+	* Add support for encryption in transit to DAX clusters.
+* Kendra (3.7.6.0)
+	* Amazon Kendra now supports SharePoint 2013 and SharePoint 2016 when using a SharePoint data source.
+* SecurityHub (3.7.3.0)
+	* Added new resource details for ECS clusters and ECS task definitions. Added additional information for S3 buckets, Elasticsearch domains, and API Gateway V2 stages.
+* Transfer (3.7.2.0)
+	* Customers can successfully use legacy clients with Transfer Family endpoints enabled for FTPS and FTP behind routers, firewalls, and load balancers by providing a Custom IP address used for data channel communication.
+* WAFV2 (3.7.3.0)
+	* Added support for 15 new text transformation.
+* Core 3.7.0.36
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.59.0 (2021-06-23 18:25 UTC)
 * Cloud9 (3.7.1.31)
 	* Updated documentation for CreateEnvironmentEC2 to explain that because Amazon Linux AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2--which includes long term support through 2023--for new AWS Cloud9 environments.
