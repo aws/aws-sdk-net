@@ -43,7 +43,7 @@ namespace Amazon.CodeBuild.Model
     ///  </li> </ul> 
     /// <para>
     ///  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private
-    /// Registry with AWS Secrets Manager Sample for AWS CodeBuild</a>. 
+    /// Registry with Secrets Manager Sample for CodeBuild</a>. 
     /// </para>
     /// </summary>
     public partial class RegistryCredential
@@ -54,13 +54,13 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Credential. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager.
+        ///  The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.
         /// 
         /// </para>
         ///  <note> 
         /// <para>
         ///  The <code>credential</code> can use the name of the credentials only if they exist
-        /// in your current AWS Region. 
+        /// in your current Region. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property CredentialProvider. 
         /// <para>
         ///  The service that created the credentials to access a private Docker registry. The
-        /// valid value, SECRETS_MANAGER, is for AWS Secrets Manager. 
+        /// valid value, SECRETS_MANAGER, is for Secrets Manager. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

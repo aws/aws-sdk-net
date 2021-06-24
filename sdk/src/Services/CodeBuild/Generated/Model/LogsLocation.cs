@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about build logs in Amazon CloudWatch Logs.
+    /// Information about build logs in CloudWatch Logs.
     /// </summary>
     public partial class LogsLocation
     {
@@ -45,7 +45,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogs. 
         /// <para>
-        ///  Information about Amazon CloudWatch Logs for a build project. 
+        ///  Information about CloudWatch Logs for a build project. 
         /// </para>
         /// </summary>
         public CloudWatchLogsConfig CloudWatchLogs
@@ -63,9 +63,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogsArn. 
         /// <para>
-        ///  The ARN of Amazon CloudWatch Logs for a build project. Its format is <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+        ///  The ARN of CloudWatch Logs for a build project. Its format is <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-        /// Defined by Amazon CloudWatch Logs</a>. 
+        /// Defined by CloudWatch Logs</a>. 
         /// </para>
         /// </summary>
         public string CloudWatchLogsArn
@@ -83,7 +83,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property DeepLink. 
         /// <para>
-        /// The URL to an individual build log in Amazon CloudWatch Logs.
+        /// The URL to an individual build log in CloudWatch Logs.
         /// </para>
         /// </summary>
         public string DeepLink
@@ -101,7 +101,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the Amazon CloudWatch Logs group for the build logs.
+        /// The name of the CloudWatch Logs group for the build logs.
         /// </para>
         /// </summary>
         public string GroupName
@@ -175,7 +175,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the Amazon CloudWatch Logs stream for the build logs.
+        /// The name of the CloudWatch Logs stream for the build logs.
         /// </para>
         /// </summary>
         public string StreamName

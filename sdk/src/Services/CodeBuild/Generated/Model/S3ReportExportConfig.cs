@@ -62,9 +62,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BucketOwner. 
         /// <para>
-        /// The AWS account identifier of the owner of the Amazon S3 bucket. This allows report
-        /// data to be exported to an Amazon S3 bucket that is owned by an account other than
-        /// the account running the build.
+        /// The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This
+        /// allows report data to be exported to an Amazon S3 bucket that is owned by an account
+        /// other than the account running the build.
         /// </para>
         /// </summary>
         public string BucketOwner
@@ -123,13 +123,13 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code>: AWS CodeBuild creates the raw data in the output bucket. This
-        /// is the default if packaging is not specified. 
+        ///  <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the
+        /// default if packaging is not specified. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ZIP</code>: AWS CodeBuild creates a ZIP file with the raw data in the output
-        /// bucket. 
+        ///  <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

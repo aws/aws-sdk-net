@@ -34,7 +34,6 @@ namespace Amazon.CodeBuild.Model
     public partial class ProjectArtifacts
     {
         private string _artifactIdentifier;
-        private BucketOwnerAccess _bucketOwnerAccess;
         private bool? _encryptionDisabled;
         private string _location;
         private string _name;
@@ -60,21 +59,6 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArtifactIdentifier()
         {
             return this._artifactIdentifier != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property BucketOwnerAccess.
-        /// </summary>
-        public BucketOwnerAccess BucketOwnerAccess
-        {
-            get { return this._bucketOwnerAccess; }
-            set { this._bucketOwnerAccess = value; }
-        }
-
-        // Check to see if BucketOwnerAccess property is set
-        internal bool IsSetBucketOwnerAccess()
-        {
-            return this._bucketOwnerAccess != null;
         }
 
         /// <summary>
@@ -104,9 +88,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores
-        /// this value if specified. This is because AWS CodePipeline manages its build output
-        /// locations instead of AWS CodeBuild.
+        /// If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this
+        /// value if specified. This is because CodePipeline manages its build output locations
+        /// instead of CodeBuild.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -134,14 +118,14 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS
-        /// CodeBuild uses to name and store the output artifact:
+        /// Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild
+        /// uses to name and store the output artifact:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores
-        /// this value if specified. This is because AWS CodePipeline manages its build output
-        /// names instead of AWS CodeBuild.
+        /// If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this
+        /// value if specified. This is because CodePipeline manages its build output names instead
+        /// of CodeBuild.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -194,14 +178,14 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property NamespaceType. 
         /// <para>
-        /// Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild
-        /// uses to determine the name and location to store the output artifact:
+        /// Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses
+        /// to determine the name and location to store the output artifact:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores
-        /// this value if specified. This is because AWS CodePipeline manages its build output
-        /// names instead of AWS CodeBuild.
+        /// If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this
+        /// value if specified. This is because CodePipeline manages its build output names instead
+        /// of CodeBuild.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -268,9 +252,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores
-        /// this value if specified. This is because AWS CodePipeline manages its build output
-        /// artifacts instead of AWS CodeBuild.
+        /// If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this
+        /// value if specified. This is because CodePipeline manages its build output artifacts
+        /// instead of CodeBuild.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -283,12 +267,12 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains
+        ///  <code>NONE</code>: CodeBuild creates in the output bucket a folder that contains
         /// the build output. This is the default if <code>packaging</code> is not specified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains
+        ///  <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains
         /// the build output.
         /// </para>
         ///  </li> </ul> </li> </ul>
@@ -308,14 +292,14 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS
-        /// CodeBuild uses to name and store the output artifact:
+        /// Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild
+        /// uses to name and store the output artifact:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores
-        /// this value if specified. This is because AWS CodePipeline manages its build output
-        /// names instead of AWS CodeBuild.
+        /// If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this
+        /// value if specified. This is because CodePipeline manages its build output names instead
+        /// of CodeBuild.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -353,8 +337,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CODEPIPELINE</code>: The build project has build output generated through AWS
-        /// CodePipeline. 
+        ///  <code>CODEPIPELINE</code>: The build project has build output generated through CodePipeline.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>

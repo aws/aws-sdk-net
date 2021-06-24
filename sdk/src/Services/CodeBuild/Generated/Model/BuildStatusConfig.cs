@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Contains information that defines how the AWS CodeBuild build project reports the
-    /// build status to the source provider.
+    /// Contains information that defines how the CodeBuild build project reports the build
+    /// status to the source provider.
     /// </summary>
     public partial class BuildStatusConfig
     {

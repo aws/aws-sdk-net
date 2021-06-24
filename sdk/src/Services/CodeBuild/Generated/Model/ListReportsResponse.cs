@@ -62,7 +62,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Reports. 
         /// <para>
-        ///  The list of returned ARNs for the reports in the current AWS account. 
+        ///  The list of returned ARNs for the reports in the current Amazon Web Services account.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

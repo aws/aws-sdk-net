@@ -30,8 +30,8 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportSourceCredentials operation.
-    /// Imports the source repository credentials for an AWS CodeBuild project that has its
-    /// source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+    /// Imports the source repository credentials for an CodeBuild project that has its source
+    /// code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
     /// </summary>
     public partial class ImportSourceCredentialsRequest : AmazonCodeBuildRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket
         /// repository. An OAUTH connection is not supported by the API and must be created using
-        /// the AWS CodeBuild console. 
+        /// the CodeBuild console. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

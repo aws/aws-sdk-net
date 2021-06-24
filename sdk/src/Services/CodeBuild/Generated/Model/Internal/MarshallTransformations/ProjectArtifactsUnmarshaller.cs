@@ -70,12 +70,6 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArtifactIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("bucketOwnerAccess", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketOwnerAccess = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("encryptionDisabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

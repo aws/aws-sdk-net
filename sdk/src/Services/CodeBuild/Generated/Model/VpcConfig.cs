@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about the VPC configuration that AWS CodeBuild accesses.
+    /// Information about the VPC configuration that CodeBuild accesses.
     /// </summary>
     public partial class VpcConfig
     {

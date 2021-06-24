@@ -34,7 +34,6 @@ namespace Amazon.CodeBuild.Model
     public partial class BuildArtifacts
     {
         private string _artifactIdentifier;
-        private BucketOwnerAccess _bucketOwnerAccess;
         private bool? _encryptionDisabled;
         private string _location;
         private string _md5sum;
@@ -57,21 +56,6 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArtifactIdentifier()
         {
             return this._artifactIdentifier != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property BucketOwnerAccess.
-        /// </summary>
-        public BucketOwnerAccess BucketOwnerAccess
-        {
-            get { return this._bucketOwnerAccess; }
-            set { this._bucketOwnerAccess = value; }
-        }
-
-        // Check to see if BucketOwnerAccess property is set
-        internal bool IsSetBucketOwnerAccess()
-        {
-            return this._bucketOwnerAccess != null;
         }
 
         /// <summary>

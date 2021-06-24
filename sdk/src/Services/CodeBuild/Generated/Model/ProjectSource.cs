@@ -47,13 +47,13 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Auth. 
         /// <para>
-        /// Information about the authorization settings for AWS CodeBuild to access the source
-        /// code to be built.
+        /// Information about the authorization settings for CodeBuild to access the source code
+        /// to be built.
         /// </para>
         ///  
         /// <para>
-        /// This information is for the AWS CodeBuild console's use only. Your code should not
-        /// get or set this information directly.
+        /// This information is for the CodeBuild console's use only. Your code should not get
+        /// or set this information directly.
         /// </para>
         /// </summary>
         public SourceAuth Auth
@@ -78,7 +78,7 @@ namespace Amazon.CodeBuild.Model
         ///  If this value is set, it can be either an inline buildspec definition, the path to
         /// an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
         /// environment variable, or the path to an S3 bucket. The bucket must be in the same
-        /// AWS Region as the build project. Specify the buildspec file using its ARN (for example,
+        /// Region as the build project. Specify the buildspec file using its ARN (for example,
         /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
         /// provided or is set to an empty string, the source code must contain a buildspec file
         /// in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
@@ -180,13 +180,13 @@ namespace Amazon.CodeBuild.Model
         ///  <ul> <li> 
         /// <para>
         /// For source code settings that are specified in the source action of a pipeline in
-        /// AWS CodePipeline, <code>location</code> should not be specified. If it is specified,
-        /// AWS CodePipeline ignores it. This is because AWS CodePipeline uses the settings in
-        /// a pipeline's source action instead of this value.
+        /// CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline
+        /// ignores it. This is because CodePipeline uses the settings in a pipeline's source
+        /// action instead of this value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository
+        /// For source code in an CodeCommit repository, the HTTPS clone URL to the repository
         /// that contains the source code and the buildspec file (for example, <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
         /// </para>
         ///  </li> <li> 
@@ -206,29 +206,34 @@ namespace Amazon.CodeBuild.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// For source code in a GitHub repository, the HTTPS clone URL to the repository that
-        /// contains the source and the buildspec file. You must connect your AWS account to your
-        /// GitHub account. Use the AWS CodeBuild console to start creating a build project. When
+        /// contains the source and the buildspec file. You must connect your account to your
+        /// GitHub account. Use the CodeBuild console to start creating a build project. When
         /// you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize
         /// application</b> page, for <b>Organization access</b>, choose <b>Request access</b>
-        /// next to each repository you want to allow AWS CodeBuild to have access to, and then
-        /// choose <b>Authorize application</b>. (After you have connected to your GitHub account,
-        /// you do not need to finish creating the build project. You can leave the AWS CodeBuild
-        /// console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code>
-        /// object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+        /// next to each repository you want to allow CodeBuild to have access to, and then choose
+        /// <b>Authorize application</b>. (After you have connected to your GitHub account, you
+        /// do not need to finish creating the build project. You can leave the CodeBuild console.)
+        /// To instruct CodeBuild to use this connection, in the <code>source</code> object, set
+        /// the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For source code in a Bitbucket repository, the HTTPS clone URL to the repository that
-        /// contains the source and the buildspec file. You must connect your AWS account to your
-        /// Bitbucket account. Use the AWS CodeBuild console to start creating a build project.
-        /// When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket
-        /// <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you
-        /// have connected to your Bitbucket account, you do not need to finish creating the build
-        /// project. You can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use
-        /// this connection, in the <code>source</code> object, set the <code>auth</code> object's
-        /// <code>type</code> value to <code>OAUTH</code>.
+        /// contains the source and the buildspec file. You must connect your Amazon Web Services
+        /// account to your Bitbucket account. Use the CodeBuild console to start creating a build
+        /// project. When you use the console to connect (or reconnect) with Bitbucket, on the
+        /// Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>.
+        /// (After you have connected to your Bitbucket account, you do not need to finish creating
+        /// the build project. You can leave the CodeBuild console.) To instruct CodeBuild to
+        /// use this connection, in the <code>source</code> object, set the <code>auth</code>
+        /// object's <code>type</code> value to <code>OAUTH</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't
+        /// specify this property. For all of the other types, you must specify <code>Location</code>.
+        /// 
+        /// </para>
         /// </summary>
         public string Location
         {
@@ -256,7 +261,7 @@ namespace Amazon.CodeBuild.Model
         /// with the source provider must have write access to the repo. If the user does not
         /// have write access, the build status cannot be updated. For more information, see <a
         /// href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
-        /// provider access</a> in the <i>AWS CodeBuild User Guide</i>.
+        /// provider access</a> in the <i>CodeBuild User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -307,12 +312,12 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.
+        ///  <code>CODECOMMIT</code>: The source code is in an CodeCommit repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>CODEPIPELINE</code>: The source code settings are specified in the source action
-        /// of a pipeline in AWS CodePipeline.
+        /// of a pipeline in CodePipeline.
         /// </para>
         ///  </li> <li> 
         /// <para>

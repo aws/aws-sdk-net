@@ -51,12 +51,6 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ArtifactIdentifier);
             }
 
-            if(requestObject.IsSetBucketOwnerAccess())
-            {
-                context.Writer.WritePropertyName("bucketOwnerAccess");
-                context.Writer.Write(requestObject.BucketOwnerAccess);
-            }
-
             if(requestObject.IsSetEncryptionDisabled())
             {
                 context.Writer.WritePropertyName("encryptionDisabled");

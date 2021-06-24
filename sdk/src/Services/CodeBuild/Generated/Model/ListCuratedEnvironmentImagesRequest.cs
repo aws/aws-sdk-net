@@ -30,7 +30,7 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCuratedEnvironmentImages operation.
-    /// Gets information about Docker images that are managed by AWS CodeBuild.
+    /// Gets information about Docker images that are managed by CodeBuild.
     /// </summary>
     public partial class ListCuratedEnvironmentImagesRequest : AmazonCodeBuildRequest
     {

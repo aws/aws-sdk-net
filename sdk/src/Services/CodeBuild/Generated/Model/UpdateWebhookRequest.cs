@@ -30,7 +30,7 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWebhook operation.
-    /// Updates the webhook associated with an AWS CodeBuild build project. 
+    /// Updates the webhook associated with an CodeBuild build project. 
     /// 
     ///  <note> 
     /// <para>
@@ -113,7 +113,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
-        /// The name of the AWS CodeBuild project.
+        /// The name of the CodeBuild project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=255)]

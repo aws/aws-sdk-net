@@ -30,7 +30,7 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Information about a webhook that connects repository events to a build project in
-    /// AWS CodeBuild.
+    /// CodeBuild.
     /// </summary>
     public partial class Webhook
     {
@@ -133,7 +133,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property PayloadUrl. 
         /// <para>
-        /// The AWS CodeBuild endpoint where webhook events are sent.
+        /// The CodeBuild endpoint where webhook events are sent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

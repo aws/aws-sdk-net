@@ -30,9 +30,9 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteWebhook operation.
-    /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
-    /// or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every
-    /// time a code change is pushed to the repository.
+    /// For an existing CodeBuild build project that has its source code stored in a GitHub
+    /// or Bitbucket repository, stops CodeBuild from rebuilding the source code every time
+    /// a code change is pushed to the repository.
     /// </summary>
     public partial class DeleteWebhookRequest : AmazonCodeBuildRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
-        /// The name of the AWS CodeBuild project.
+        /// The name of the CodeBuild project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=255)]

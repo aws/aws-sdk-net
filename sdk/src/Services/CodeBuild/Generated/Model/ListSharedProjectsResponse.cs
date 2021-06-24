@@ -62,8 +62,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Projects. 
         /// <para>
-        ///  The list of ARNs for the build projects shared with the current AWS account or user.
-        /// 
+        ///  The list of ARNs for the build projects shared with the current Amazon Web Services
+        /// account or user. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

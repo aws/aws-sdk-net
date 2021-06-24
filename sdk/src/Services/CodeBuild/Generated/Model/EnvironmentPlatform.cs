@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// A set of Docker images that are related by platform and are managed by AWS CodeBuild.
+    /// A set of Docker images that are related by platform and are managed by CodeBuild.
     /// </summary>
     public partial class EnvironmentPlatform
     {

@@ -260,8 +260,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for
-        /// encrypting the build output artifacts.
+        /// The Key Management Service customer master key (CMK) to be used for encrypting the
+        /// build output artifacts.
         /// </para>
         ///  <note> 
         /// <para>
@@ -330,10 +330,10 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  
         /// <para>
-        /// Exported environment variables are used in conjunction with AWS CodePipeline to export
+        /// Exported environment variables are used in conjunction with CodePipeline to export
         /// environment variables from the current build stage to subsequent stages in the pipeline.
         /// For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
-        /// with variables</a> in the <i>AWS CodePipeline User Guide</i>.
+        /// with variables</a> in the <i>CodePipeline User Guide</i>.
         /// </para>
         /// </summary>
         public List<ExportedEnvironmentVariable> ExportedEnvironmentVariables
@@ -395,16 +395,16 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If AWS CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).
+        /// If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If an AWS Identity and Access Management (IAM) user started the build, the user's
-        /// name (for example, <code>MyUserName</code>).
+        /// If an Identity and Access Management user started the build, the user's name (for
+        /// example, <code>MyUserName</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the Jenkins plugin for AWS CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.
+        /// If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -423,7 +423,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Logs. 
         /// <para>
-        /// Information about the build's logs in Amazon CloudWatch Logs.
+        /// Information about the build's logs in CloudWatch Logs.
         /// </para>
         /// </summary>
         public LogsLocation Logs
@@ -478,7 +478,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
-        /// The name of the AWS CodeBuild project.
+        /// The name of the CodeBuild project.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -537,11 +537,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID. 
+        ///  For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For AWS CodePipeline, the source revision provided by AWS CodePipeline. 
+        ///  For CodePipeline, the source revision provided by CodePipeline. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -608,7 +608,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+        /// For CodeCommit: the commit ID, branch, or Git tag to use.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -691,7 +691,7 @@ namespace Amazon.CodeBuild.Model
         ///  
         /// <para>
         ///  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-        /// Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. 
+        /// Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -728,8 +728,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// How long, in minutes, for AWS CodeBuild to wait before timing out this build if it
-        /// does not get marked as completed.
+        /// How long, in minutes, for CodeBuild to wait before timing out this build if it does
+        /// not get marked as completed.
         /// </para>
         /// </summary>
         public int TimeoutInMinutes
@@ -747,10 +747,10 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this
-        /// parameter that identifies the VPC ID and the list of security group IDs and subnet
-        /// IDs. The security groups and subnets must belong to the same VPC. You must provide
-        /// at least one security group and one subnet ID.
+        /// If your CodeBuild project accesses resources in an Amazon VPC, you provide this parameter
+        /// that identifies the VPC ID and the list of security group IDs and subnet IDs. The
+        /// security groups and subnets must belong to the same VPC. You must provide at least
+        /// one security group and one subnet ID.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

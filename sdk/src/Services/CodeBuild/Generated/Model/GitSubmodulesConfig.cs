@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about the Git submodules configuration for an AWS CodeBuild build project.
+    /// Information about the Git submodules configuration for an CodeBuild build project.
     /// </summary>
     public partial class GitSubmodulesConfig
     {
@@ -38,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property FetchSubmodules. 
         /// <para>
-        ///  Set to true to fetch Git submodules for your AWS CodeBuild build project. 
+        ///  Set to true to fetch Git submodules for your CodeBuild build project. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,8 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSharedProjects operation.
-    /// Gets a list of projects that are shared with other AWS accounts or users.
+    /// Gets a list of projects that are shared with other Amazon Web Services accounts or
+    /// users.
     /// </summary>
     public partial class ListSharedProjectsRequest : AmazonCodeBuildRequest
     {
@@ -87,8 +88,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        ///  The criterion to be used to list build projects shared with the current AWS account
-        /// or user. Valid values include: 
+        ///  The criterion to be used to list build projects shared with the current Amazon Web
+        /// Services account or user. Valid values include: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

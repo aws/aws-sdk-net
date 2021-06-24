@@ -115,7 +115,7 @@ namespace Amazon.CodeBuild.Model
         /// If this value is set, it can be either an inline buildspec definition, the path to
         /// an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
         /// environment variable, or the path to an S3 bucket. The bucket must be in the same
-        /// AWS Region as the build project. Specify the buildspec file using its ARN (for example,
+        /// Region as the build project. Specify the buildspec file using its ARN (for example,
         /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
         /// provided or is set to an empty string, the source code must contain a buildspec file
         /// in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
@@ -233,9 +233,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property EncryptionKeyOverride. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides
-        /// the one specified in the batch build project. The CMK key encrypts the build output
-        /// artifacts.
+        /// The Key Management Service customer master key (CMK) that overrides the one specified
+        /// in the batch build project. The CMK key encrypts the build output artifacts.
         /// </para>
         ///  <note> 
         /// <para>
@@ -344,8 +343,7 @@ namespace Amazon.CodeBuild.Model
         /// A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code>
         /// request. The token is included in the <code>StartBuildBatch</code> request and is
         /// valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with
-        /// the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch
-        /// error.
+        /// the same token, but change a parameter, CodeBuild returns a parameter mismatch error.
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -383,22 +381,22 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ImagePullCredentialsTypeOverride. 
         /// <para>
-        /// The type of credentials AWS CodeBuild uses to pull images in your batch build. There
-        /// are two valid values: 
+        /// The type of credentials CodeBuild uses to pull images in your batch build. There are
+        /// two valid values: 
         /// </para>
         ///  <dl> <dt>CODEBUILD</dt> <dd> 
         /// <para>
-        /// Specifies that AWS CodeBuild uses its own credentials. This requires that you modify
-        /// your ECR repository policy to trust AWS CodeBuild's service principal.
+        /// Specifies that CodeBuild uses its own credentials. This requires that you modify your
+        /// ECR repository policy to trust CodeBuild's service principal.
         /// </para>
         ///  </dd> <dt>SERVICE_ROLE</dt> <dd> 
         /// <para>
-        /// Specifies that AWS CodeBuild uses your build project's service role. 
+        /// Specifies that CodeBuild uses your build project's service role. 
         /// </para>
         ///  </dd> </dl> 
         /// <para>
         /// When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code>
-        /// credentials. When using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
+        /// credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code>
         /// credentials. 
         /// </para>
         /// </summary>
@@ -699,7 +697,7 @@ namespace Amazon.CodeBuild.Model
         /// The version of the batch build input to be built, for this build only. If not specified,
         /// the latest version is used. If specified, the contents depends on the source provider:
         /// </para>
-        ///  <dl> <dt>AWS CodeCommit</dt> <dd> 
+        ///  <dl> <dt>CodeCommit</dt> <dd> 
         /// <para>
         /// The commit ID, branch, or Git tag to use.
         /// </para>
@@ -729,7 +727,7 @@ namespace Amazon.CodeBuild.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-        /// Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. 
+        /// Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. 
         /// </para>
         /// </summary>
         public string SourceVersion

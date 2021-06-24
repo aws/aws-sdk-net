@@ -33,7 +33,8 @@ namespace Amazon.CodeBuild.Model
     /// 
     ///  
     /// <para>
-    /// This tag is available for use by AWS services that support tags in AWS CodeBuild.
+    /// This tag is available for use by Amazon Web Services services that support tags in
+    /// CodeBuild.
     /// </para>
     /// </summary>
     public partial class Tag

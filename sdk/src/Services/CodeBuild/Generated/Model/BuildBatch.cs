@@ -269,8 +269,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for
-        /// encrypting the batch build output artifacts.
+        /// The Key Management Service customer master key (CMK) to be used for encrypting the
+        /// batch build output artifacts.
         /// </para>
         ///  <note> 
         /// <para>
@@ -376,16 +376,15 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If AWS CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).
+        /// If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If an AWS Identity and Access Management (IAM) user started the build, the user's
-        /// name.
+        /// If an Identity and Access Management user started the build, the user's name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the Jenkins plugin for AWS CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.
+        /// If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -480,11 +479,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+        /// For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For AWS CodePipeline, the source revision provided by AWS CodePipeline.
+        /// For CodePipeline, the source revision provided by CodePipeline.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -553,7 +552,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+        /// For CodeCommit: the commit ID, branch, or Git tag to use.
         /// </para>
         ///  </li> <li> 
         /// <para>

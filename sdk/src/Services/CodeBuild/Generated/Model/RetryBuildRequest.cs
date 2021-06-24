@@ -62,7 +62,7 @@ namespace Amazon.CodeBuild.Model
         /// A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code>
         /// request. The token is included in the <code>RetryBuild</code> request and is valid
         /// for five minutes. If you repeat the <code>RetryBuild</code> request with the same
-        /// token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+        /// token, but change a parameter, CodeBuild returns a parameter mismatch error.
         /// </para>
         /// </summary>
         public string IdempotencyToken
