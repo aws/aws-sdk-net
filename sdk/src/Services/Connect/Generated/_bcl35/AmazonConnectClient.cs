@@ -1217,12 +1217,7 @@ namespace Amazon.Connect
         #region  CreateQuickConnect
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates a quick connect for the specified Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQuickConnect service method.</param>
         /// 
@@ -1741,12 +1736,7 @@ namespace Amazon.Connect
         #region  DeleteQuickConnect
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Deletes a quick connect.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQuickConnect service method.</param>
         /// 
@@ -2481,12 +2471,7 @@ namespace Amazon.Connect
         #region  DescribeQuickConnect
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes the quick connect.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQuickConnect service method.</param>
         /// 
@@ -4754,13 +4739,7 @@ namespace Amazon.Connect
         #region  ListQuickConnects
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Provides information about the quick connects for the specified Amazon Connect instance.
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQuickConnects service method.</param>
         /// 
@@ -6968,12 +6947,7 @@ namespace Amazon.Connect
         #region  UpdateQuickConnectConfig
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the configuration settings for the specified quick connect.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQuickConnectConfig service method.</param>
         /// 
@@ -7042,14 +7016,9 @@ namespace Amazon.Connect
         #region  UpdateQuickConnectName
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the name and description of a quick connect. The request accepts the following
         /// data in JSON format. At least <code>Name</code> or <code>Description</code> must be
         /// provided.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQuickConnectName service method.</param>
         /// 

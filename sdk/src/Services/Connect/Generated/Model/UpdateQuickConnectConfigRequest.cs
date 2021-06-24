@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateQuickConnectConfig operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Updates the configuration settings for the specified quick connect.
-    /// </para>
     /// </summary>
     public partial class UpdateQuickConnectConfigRequest : AmazonConnectRequest
     {

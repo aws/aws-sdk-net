@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeQuickConnect operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Describes the quick connect.
-    /// </para>
     /// </summary>
     public partial class DescribeQuickConnectRequest : AmazonConnectRequest
     {

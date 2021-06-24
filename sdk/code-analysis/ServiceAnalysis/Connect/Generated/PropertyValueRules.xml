@@ -140,7 +140,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateQuickConnectRequest.Description</property>
-    <min>0</min>
+    <min>1</min>
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
@@ -1144,7 +1144,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.QuickConnect.Description</property>
-    <min>0</min>
+    <min>1</min>
     <max>250</max>
   </property-value-rule>
   <property-value-rule>

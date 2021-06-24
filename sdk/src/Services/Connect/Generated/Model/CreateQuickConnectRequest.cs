@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateQuickConnect operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Creates a quick connect for the specified Amazon Connect instance.
-    /// </para>
     /// </summary>
     public partial class CreateQuickConnectRequest : AmazonConnectRequest
     {
@@ -51,7 +46,7 @@ namespace Amazon.Connect.Model
         /// The description of the quick connect.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=250)]
+        [AWSProperty(Min=1, Max=250)]
         public string Description
         {
             get { return this._description; }

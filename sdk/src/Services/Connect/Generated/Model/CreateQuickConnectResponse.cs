@@ -57,7 +57,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property QuickConnectId. 
         /// <para>
-        /// The identifier for the quick connect.
+        /// The identifier for the quick connect. 
         /// </para>
         /// </summary>
         public string QuickConnectId

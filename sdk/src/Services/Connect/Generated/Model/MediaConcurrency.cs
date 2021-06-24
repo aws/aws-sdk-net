@@ -67,7 +67,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+        /// Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.
         /// </para>
         ///  
         /// <para>
