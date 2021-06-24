@@ -287,6 +287,11 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceQuotaExceededException">
+        /// You have reached the maximum number of x509 certificates that can be created for encrypted
+        /// clusters in a 30 day period. Contact AWS customer support to discuss options for continuing
+        /// to create encrypted clusters.
+        /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
         /// The requested subnet group name does not refer to an existing subnet group.
         /// </exception>

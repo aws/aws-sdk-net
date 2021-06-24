@@ -58,7 +58,9 @@ namespace Amazon.DAX.Model
         /// <summary>
         /// Gets and sets the property TopicStatus. 
         /// <para>
-        /// The current state of the topic.
+        /// The current state of the topic. A value of “active” means that notifications will
+        /// be sent to the topic. A value of “inactive” means that notifications will not be sent
+        /// to the topic.
         /// </para>
         /// </summary>
         public string TopicStatus

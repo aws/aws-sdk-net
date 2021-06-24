@@ -78,6 +78,12 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetClusterEndpointEncryptionType())
+                {
+                    context.Writer.WritePropertyName("ClusterEndpointEncryptionType");
+                    context.Writer.Write(publicRequest.ClusterEndpointEncryptionType);
+                }
+
                 if(publicRequest.IsSetClusterName())
                 {
                     context.Writer.WritePropertyName("ClusterName");

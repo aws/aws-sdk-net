@@ -34,66 +34,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DAX.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Endpoint Object
+    /// Response Unmarshaller for ServiceQuotaExceededException Object
     /// </summary>  
-    public class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext>, IUnmarshaller<Endpoint, JsonUnmarshallerContext>
+    public class ServiceQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceQuotaExceededException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Endpoint IUnmarshaller<Endpoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public Endpoint Unmarshall(JsonUnmarshallerContext context)
+        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            Endpoint unmarshalledObject = new Endpoint();
+            ServiceQuotaExceededException unmarshalledObject = new ServiceQuotaExceededException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Address", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Address = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Port", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("URL", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.URL = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
-
-        private static EndpointUnmarshaller _instance = new EndpointUnmarshaller();        
+        private static ServiceQuotaExceededExceptionUnmarshaller _instance = new ServiceQuotaExceededExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EndpointUnmarshaller Instance
+        public static ServiceQuotaExceededExceptionUnmarshaller Instance
         {
             get
             {

@@ -82,6 +82,12 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterDiscoveryEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClusterEndpointEncryptionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterEndpointEncryptionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ClusterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DAX.Model
 {
     /// <summary>
-    /// Represents the information required for client programs to connect to the configuration
-    /// endpoint for a DAX cluster, or to an individual node within the cluster.
+    /// Represents the information required for client programs to connect to the endpoint
+    /// for a DAX cluster.
     /// </summary>
     public partial class Endpoint
     {
         private string _address;
         private int? _port;
+        private string _url;
 
         /// <summary>
         /// Gets and sets the property Address. 
@@ -71,6 +72,25 @@ namespace Amazon.DAX.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property URL. 
+        /// <para>
+        /// The URL that applications should use to connect to the endpoint. The default ports
+        /// are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.
+        /// </para>
+        /// </summary>
+        public string URL
+        {
+            get { return this._url; }
+            set { this._url = value; }
+        }
+
+        // Check to see if URL property is set
+        internal bool IsSetURL()
+        {
+            return this._url != null;
         }
 
     }

@@ -63,6 +63,13 @@ namespace Amazon.DAX.Model
         /// An array of name-value pairs for the parameters in the group. Each element in the
         /// array represents a single parameter.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported
+        /// parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring
+        /// TTL Settings</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ParameterNameValue> ParameterNameValues

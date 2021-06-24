@@ -36,6 +36,7 @@ namespace Amazon.DAX.Model
         private int? _activeNodes;
         private string _clusterArn;
         private Endpoint _clusterDiscoveryEndpoint;
+        private ClusterEndpointEncryptionType _clusterEndpointEncryptionType;
         private string _clusterName;
         private string _description;
         private string _iamRoleArn;
@@ -90,10 +91,8 @@ namespace Amazon.DAX.Model
         /// <summary>
         /// Gets and sets the property ClusterDiscoveryEndpoint. 
         /// <para>
-        /// The configuration endpoint for this DAX cluster, consisting of a DNS name and a port
-        /// number. Client applications can specify this endpoint, rather than an individual node
-        /// endpoint, and allow the DAX client software to intelligently route requests and responses
-        /// to nodes in the DAX cluster.
+        /// The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a
+        /// URL. Applications should use the URL to configure the DAX client to find their cluster.
         /// </para>
         /// </summary>
         public Endpoint ClusterDiscoveryEndpoint
@@ -106,6 +105,33 @@ namespace Amazon.DAX.Model
         internal bool IsSetClusterDiscoveryEndpoint()
         {
             return this._clusterDiscoveryEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterEndpointEncryptionType. 
+        /// <para>
+        /// The type of encryption supported by the cluster's endpoint. Values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NONE</code> for no encryption
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>TLS</code> for Transport Layer Security
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ClusterEndpointEncryptionType ClusterEndpointEncryptionType
+        {
+            get { return this._clusterEndpointEncryptionType; }
+            set { this._clusterEndpointEncryptionType = value; }
+        }
+
+        // Check to see if ClusterEndpointEncryptionType property is set
+        internal bool IsSetClusterEndpointEncryptionType()
+        {
+            return this._clusterEndpointEncryptionType != null;
         }
 
         /// <summary>

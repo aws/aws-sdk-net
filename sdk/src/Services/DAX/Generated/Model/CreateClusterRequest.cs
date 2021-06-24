@@ -35,6 +35,7 @@ namespace Amazon.DAX.Model
     public partial class CreateClusterRequest : AmazonDAXRequest
     {
         private List<string> _availabilityZones = new List<string>();
+        private ClusterEndpointEncryptionType _clusterEndpointEncryptionType;
         private string _clusterName;
         private string _description;
         private string _iamRoleArn;
@@ -67,6 +68,33 @@ namespace Amazon.DAX.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterEndpointEncryptionType. 
+        /// <para>
+        /// The type of encryption the cluster's endpoint should support. Values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NONE</code> for no encryption
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TLS</code> for Transport Layer Security
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ClusterEndpointEncryptionType ClusterEndpointEncryptionType
+        {
+            get { return this._clusterEndpointEncryptionType; }
+            set { this._clusterEndpointEncryptionType = value; }
+        }
+
+        // Check to see if ClusterEndpointEncryptionType property is set
+        internal bool IsSetClusterEndpointEncryptionType()
+        {
+            return this._clusterEndpointEncryptionType != null;
         }
 
         /// <summary>
