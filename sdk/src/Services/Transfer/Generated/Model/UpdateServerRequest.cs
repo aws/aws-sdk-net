@@ -47,6 +47,7 @@ namespace Amazon.Transfer.Model
         private string _hostKey;
         private IdentityProviderDetails _identityProviderDetails;
         private string _loggingRole;
+        private ProtocolDetails _protocolDetails;
         private List<string> _protocols = new List<string>();
         private string _securityPolicyName;
         private string _serverId;
@@ -54,24 +55,24 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required
-        /// when <code>Protocols</code> is set to <code>FTPS</code>.
+        /// The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM)
+        /// certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.
         /// </para>
         ///  
         /// <para>
         /// To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-        /// a public certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+        /// a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-        /// certificates into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+        /// certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// To request a private certificate to use FTPS through private IP addresses, see <a
         /// href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-        /// a private certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+        /// a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -121,9 +122,10 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property EndpointDetails. 
         /// <para>
         /// The virtual private cloud (VPC) endpoint settings that are configured for your server.
-        /// With a VPC endpoint, you can restrict access to your server to resources only within
-        /// your VPC. To control incoming internet traffic, you will need to associate one or
-        /// more Elastic IP addresses with your server's endpoint.
+        /// When you host your endpoint within your VPC, you can make it accessible only to resources
+        /// within your VPC, or you can attach Elastic IP addresses and make it accessible to
+        /// clients over the internet. Your VPC's default security groups are automatically assigned
+        /// to your endpoint.
         /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
@@ -150,10 +152,10 @@ namespace Amazon.Transfer.Model
         ///  <note> 
         /// <para>
         ///  After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code>
-        /// in your AWS account if your account hasn't already done so before May 19, 2021. If
-        /// you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your
-        /// AWS account on or before May 19, 2021, you will not be affected. After this date,
-        /// use <code>EndpointType</code>=<code>VPC</code>.
+        /// in your Amazon Web Servicesaccount if your account hasn't already done so before May
+        /// 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code>
+        /// in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected.
+        /// After this date, use <code>EndpointType</code>=<code>VPC</code>.
         /// </para>
         ///  
         /// <para>
@@ -195,7 +197,8 @@ namespace Amazon.Transfer.Model
         ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-        /// the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+        /// the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer
+        /// Family User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -233,8 +236,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or
-        /// Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or off.
+        /// Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+        /// Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for
+        /// Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch
+        /// logs.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -248,6 +253,30 @@ namespace Amazon.Transfer.Model
         internal bool IsSetLoggingRole()
         {
             return this._loggingRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtocolDetails. 
+        /// <para>
+        ///  The protocol settings that are configured for your server. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+        /// protocols). Enter a single dotted-quad IPv4 address, such as the external IP address
+        /// of a firewall, router, or load balancer. 
+        /// </para>
+        /// </summary>
+        public ProtocolDetails ProtocolDetails
+        {
+            get { return this._protocolDetails; }
+            set { this._protocolDetails = value; }
+        }
+
+        // Check to see if ProtocolDetails property is set
+        internal bool IsSetProtocolDetails()
+        {
+            return this._protocolDetails != null;
         }
 
         /// <summary>
@@ -270,9 +299,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate
-        /// Manager (ACM) which will be used to identify your server when clients connect to it
-        /// over FTPS.
+        /// If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
+        /// ServicesCertificate Manager (ACM) which will be used to identify your server when
+        /// clients connect to it over FTPS.
         /// </para>
         ///  
         /// <para>

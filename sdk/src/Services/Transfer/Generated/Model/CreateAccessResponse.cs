@@ -40,7 +40,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property ExternalId. 
         /// <para>
         /// The external ID of the group whose users have access to your Amazon S3 or Amazon EFS
-        /// resources over the enabled protocols using AWS Transfer Family.
+        /// resources over the enabled protocols using Amazon Web Services Transfer Family.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

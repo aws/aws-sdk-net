@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// The request has failed because the AWS Transfer Family service is not available.
+    /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+    /// available.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

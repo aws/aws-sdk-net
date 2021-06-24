@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+    /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+    /// Family service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -34,9 +34,9 @@ namespace Amazon.Transfer.Model
     /// server. You can only create and associate users with servers that have the <code>IdentityProviderType</code>
     /// set to <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>,
     /// you can specify the user name, set the home directory, store the user's public key,
-    /// and assign the user's AWS Identity and Access Management (IAM) role. You can also
-    /// optionally add a scope-down policy, and assign metadata with tags that can be used
-    /// to group and search for users.
+    /// and assign the user's Amazon Web Services Identity and Access Management (IAM) role.
+    /// You can also optionally add a scope-down policy, and assign metadata with tags that
+    /// can be used to group and search for users.
     /// </summary>
     public partial class CreateUserRequest : AmazonTransferRequest
     {
@@ -78,13 +78,14 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectoryMappings. 
         /// <para>
-        /// Logical directory mappings that specify what Amazon S3 or EFS paths and keys should
-        /// be visible to your user and how you want to make them visible. You will need to specify
+        /// Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys
+        /// should be visible to your user and how you want to make them visible. You must specify
         /// the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows
-        /// how the path is made visible and <code>Target</code> is the actual Amazon S3 or EFS
-        /// path. If you only specify a target, it will be displayed as is. You will need to also
-        /// make sure that your IAM role provides access to paths in <code>Target</code>. This
-        /// value can only be set when <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.
+        /// how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon
+        /// EFS path. If you only specify a target, it is displayed as is. You also must ensure
+        /// that your Amazon Web Services Identity and Access Management (IAM) role provides access
+        /// to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code>
+        /// is set to <i>LOGICAL</i>.
         /// </para>
         ///  
         /// <para>
@@ -108,17 +109,17 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> 
+        ///  <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> 
         /// </para>
         ///  <note> 
         /// <para>
         /// If the target of a logical directory entry does not exist in Amazon S3 or EFS, the
-        /// entry will be ignored. As a workaround, you can use the Amazon S3 API or EFS API to
-        /// create 0 byte objects as place holders for your directory. If using the CLI, use the
-        /// <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code>
-        /// so you can use the put-object operation. For example, you use the following: <code>aws
-        /// s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that
-        /// the end of the key name ends in a <code>/</code> for it to be considered a folder.
+        /// entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create
+        /// 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code>
+        /// or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you
+        /// can use the put-object operation. For example, you use the following: <code>aws s3api
+        /// put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end
+        /// of the key name ends in a <code>/</code> for it to be considered a folder.
         /// </para>
         ///  </note>
         /// </summary>
@@ -171,9 +172,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead
-        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob
-        /// and pass it in the <code>Policy</code> argument.
+        /// For scope-down policies, Amazon Web Services Transfer Family stores the policy as
+        /// a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
+        /// policy as a JSON blob and pass it in the <code>Policy</code> argument.
         /// </para>
         ///  
         /// <para>
@@ -183,7 +184,7 @@ namespace Amazon.Transfer.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
-        /// in the <i>AWS Security Token Service API Reference</i>.
+        /// in the <i>Amazon Web Services Security Token Service API Reference</i>.
         /// </para>
         ///  </note>
         /// </summary>

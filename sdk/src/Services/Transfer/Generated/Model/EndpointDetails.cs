@@ -38,10 +38,10 @@ namespace Amazon.Transfer.Model
     ///  <note> 
     /// <para>
     ///  After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code>
-    /// in your AWS account if your account hasn't already done so before May 19, 2021. If
-    /// you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your
-    /// AWS account on or before May 19, 2021, you will not be affected. After this date,
-    /// use <code>EndpointType</code>=<code>VPC</code>.
+    /// in your Amazon Web Servicesaccount if your account hasn't already done so before May
+    /// 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code>
+    /// in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected.
+    /// After this date, use <code>EndpointType</code>=<code>VPC</code>.
     /// </para>
     ///  
     /// <para>

@@ -101,9 +101,24 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
-        /// Specifies the authentication method used to validate a user for a server that was
-        /// specified. This can include Secure Shell (SSH), Active Directory groups, user name
-        /// and password combinations, or your own custom authentication method. 
+        /// Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+        /// which allows you to store and access user credentials within the Amazon Web Services
+        /// Transfer Family service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+        /// in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
+        /// on-premises environment or in Amazon Web Services using AD Connectors. This option
+        /// also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your
+        /// choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway
+        /// endpoint URL to call for authentication using the <code>IdentityProviderDetails</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public IdentityProviderType IdentityProviderType
@@ -121,8 +136,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// Specifies the AWS Identity and Access Management (IAM) role that allows a server to
-        /// turn on Amazon CloudWatch logging.
+        /// Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+        /// Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for
+        /// Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch
+        /// logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

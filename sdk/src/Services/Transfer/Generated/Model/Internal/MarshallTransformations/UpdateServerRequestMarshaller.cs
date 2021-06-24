@@ -113,6 +113,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LoggingRole);
                 }
 
+                if(publicRequest.IsSetProtocolDetails())
+                {
+                    context.Writer.WritePropertyName("ProtocolDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProtocolDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProtocolDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetProtocols())
                 {
                     context.Writer.WritePropertyName("Protocols");

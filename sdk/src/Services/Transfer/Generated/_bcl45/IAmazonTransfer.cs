@@ -31,14 +31,15 @@ namespace Amazon.Transfer
     /// <summary>
     /// Interface for accessing Transfer
     ///
-    /// AWS Transfer Family is a fully managed service that enables the transfer of files
-    /// over the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS), or
-    /// Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and out of Amazon Simple
-    /// Storage Service (Amazon S3). AWS helps you seamlessly migrate your file transfer workflows
-    /// to AWS Transfer Family by integrating with existing authentication systems, and providing
-    /// DNS routing with Amazon Route 53 so nothing changes for your customers and partners,
-    /// or their applications. With your data in Amazon S3, you can use it with AWS services
-    /// for processing, analytics, machine learning, and archiving. Getting started with AWS
+    /// Amazon Web Services Transfer Family is a fully managed service that enables the transfer
+    /// of files over the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS),
+    /// or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and out of Amazon
+    /// Simple Storage Service (Amazon S3). Amazon Web Services helps you seamlessly migrate
+    /// your file transfer workflows to Amazon Web Services Transfer Family by integrating
+    /// with existing authentication systems, and providing DNS routing with Amazon Route
+    /// 53 so nothing changes for your customers and partners, or their applications. With
+    /// your data in Amazon S3, you can use it with Amazon Web Services services for processing,
+    /// analytics, machine learning, and archiving. Getting started with Amazon Web Services
     /// Transfer Family is easy since there is no infrastructure to buy and set up.
     /// </summary>
     public partial interface IAmazonTransfer : IAmazonService, IDisposable
@@ -55,17 +56,18 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Used by administrators to choose which groups in the directory should have access
-        /// to upload and download files over the enabled protocols using AWS Transfer Family.
-        /// For example, a Microsoft Active Directory might contain 50,000 users, but only a small
-        /// fraction might need the ability to transfer files to the server. An administrator
-        /// can use <code>CreateAccess</code> to limit the access to the correct set of users
-        /// who need this ability.
+        /// to upload and download files over the enabled protocols using Amazon Web Services
+        /// Transfer Family. For example, a Microsoft Active Directory might contain 50,000 users,
+        /// but only a small fraction might need the ability to transfer files to the server.
+        /// An administrator can use <code>CreateAccess</code> to limit the access to the correct
+        /// set of users who need this ability.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccess service method.</param>
         /// 
         /// <returns>The response from the CreateAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -74,10 +76,12 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess">REST API Reference for CreateAccess Operation</seealso>
         CreateAccessResponse CreateAccess(CreateAccessRequest request);
@@ -86,11 +90,11 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Used by administrators to choose which groups in the directory should have access
-        /// to upload and download files over the enabled protocols using AWS Transfer Family.
-        /// For example, a Microsoft Active Directory might contain 50,000 users, but only a small
-        /// fraction might need the ability to transfer files to the server. An administrator
-        /// can use <code>CreateAccess</code> to limit the access to the correct set of users
-        /// who need this ability.
+        /// to upload and download files over the enabled protocols using Amazon Web Services
+        /// Transfer Family. For example, a Microsoft Active Directory might contain 50,000 users,
+        /// but only a small fraction might need the ability to transfer files to the server.
+        /// An administrator can use <code>CreateAccess</code> to limit the access to the correct
+        /// set of users who need this ability.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccess service method.</param>
         /// <param name="cancellationToken">
@@ -99,7 +103,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the CreateAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -108,10 +113,12 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess">REST API Reference for CreateAccess Operation</seealso>
         Task<CreateAccessResponse> CreateAccessAsync(CreateAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -123,9 +130,9 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Instantiates an auto-scaling virtual server based on the selected file transfer protocol
-        /// in AWS. When you make updates to your file transfer protocol-enabled server or when
-        /// you work with users, use the service-generated <code>ServerId</code> property that
-        /// is assigned to the newly created server.
+        /// in Amazon Web Services. When you make updates to your file transfer protocol-enabled
+        /// server or when you work with users, use the service-generated <code>ServerId</code>
+        /// property that is assigned to the newly created server.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServer service method.</param>
         /// 
@@ -134,7 +141,8 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -143,7 +151,8 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -160,9 +169,9 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Instantiates an auto-scaling virtual server based on the selected file transfer protocol
-        /// in AWS. When you make updates to your file transfer protocol-enabled server or when
-        /// you work with users, use the service-generated <code>ServerId</code> property that
-        /// is assigned to the newly created server.
+        /// in Amazon Web Services. When you make updates to your file transfer protocol-enabled
+        /// server or when you work with users, use the service-generated <code>ServerId</code>
+        /// property that is assigned to the newly created server.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServer service method.</param>
         /// <param name="cancellationToken">
@@ -174,7 +183,8 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -183,7 +193,8 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -206,15 +217,16 @@ namespace Amazon.Transfer
         /// server. You can only create and associate users with servers that have the <code>IdentityProviderType</code>
         /// set to <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>,
         /// you can specify the user name, set the home directory, store the user's public key,
-        /// and assign the user's AWS Identity and Access Management (IAM) role. You can also
-        /// optionally add a scope-down policy, and assign metadata with tags that can be used
-        /// to group and search for users.
+        /// and assign the user's Amazon Web Services Identity and Access Management (IAM) role.
+        /// You can also optionally add a scope-down policy, and assign metadata with tags that
+        /// can be used to group and search for users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 
         /// <returns>The response from the CreateUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -223,10 +235,12 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateUser">REST API Reference for CreateUser Operation</seealso>
         CreateUserResponse CreateUser(CreateUserRequest request);
@@ -238,9 +252,9 @@ namespace Amazon.Transfer
         /// server. You can only create and associate users with servers that have the <code>IdentityProviderType</code>
         /// set to <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>,
         /// you can specify the user name, set the home directory, store the user's public key,
-        /// and assign the user's AWS Identity and Access Management (IAM) role. You can also
-        /// optionally add a scope-down policy, and assign metadata with tags that can be used
-        /// to group and search for users.
+        /// and assign the user's Amazon Web Services Identity and Access Management (IAM) role.
+        /// You can also optionally add a scope-down policy, and assign metadata with tags that
+        /// can be used to group and search for users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// <param name="cancellationToken">
@@ -249,7 +263,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the CreateUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -258,10 +273,12 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateUser">REST API Reference for CreateUser Operation</seealso>
         Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -279,16 +296,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess">REST API Reference for DeleteAccess Operation</seealso>
         DeleteAccessResponse DeleteAccess(DeleteAccessRequest request);
@@ -306,16 +326,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess">REST API Reference for DeleteAccess Operation</seealso>
         Task<DeleteAccessResponse> DeleteAccessAsync(DeleteAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -340,16 +363,19 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
         DeleteServerResponse DeleteServer(DeleteServerRequest request);
@@ -374,16 +400,19 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
         Task<DeleteServerResponse> DeleteServerAsync(DeleteServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -405,16 +434,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteSshPublicKey service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -444,16 +476,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteSshPublicKey service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -488,16 +523,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         DeleteUserResponse DeleteUser(DeleteUserRequest request);
@@ -524,16 +562,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -557,16 +598,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess">REST API Reference for DescribeAccess Operation</seealso>
         DescribeAccessResponse DescribeAccess(DescribeAccessRequest request);
@@ -590,16 +634,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess">REST API Reference for DescribeAccess Operation</seealso>
         Task<DescribeAccessResponse> DescribeAccessAsync(DescribeAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -619,16 +666,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeSecurityPolicy service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">REST API Reference for DescribeSecurityPolicy Operation</seealso>
         DescribeSecurityPolicyResponse DescribeSecurityPolicy(DescribeSecurityPolicyRequest request);
@@ -648,16 +698,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeSecurityPolicy service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">REST API Reference for DescribeSecurityPolicy Operation</seealso>
         Task<DescribeSecurityPolicyResponse> DescribeSecurityPolicyAsync(DescribeSecurityPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -681,16 +734,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeServer service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">REST API Reference for DescribeServer Operation</seealso>
         DescribeServerResponse DescribeServer(DescribeServerRequest request);
@@ -714,16 +770,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeServer service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">REST API Reference for DescribeServer Operation</seealso>
         Task<DescribeServerResponse> DescribeServerAsync(DescribeServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -747,16 +806,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         DescribeUserResponse DescribeUser(DescribeUserRequest request);
@@ -780,16 +842,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -814,7 +879,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ImportSshPublicKey service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -823,10 +889,12 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -859,7 +927,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ImportSshPublicKey service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -868,10 +937,12 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -896,7 +967,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListAccesses service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -905,10 +977,12 @@ namespace Amazon.Transfer
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses">REST API Reference for ListAccesses Operation</seealso>
         ListAccessesResponse ListAccesses(ListAccessesRequest request);
@@ -925,7 +999,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListAccesses service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -934,10 +1009,12 @@ namespace Amazon.Transfer
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses">REST API Reference for ListAccesses Operation</seealso>
         Task<ListAccessesResponse> ListAccessesAsync(ListAccessesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -955,7 +1032,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListSecurityPolicies service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -964,7 +1042,8 @@ namespace Amazon.Transfer
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">REST API Reference for ListSecurityPolicies Operation</seealso>
         ListSecurityPoliciesResponse ListSecurityPolicies(ListSecurityPoliciesRequest request);
@@ -982,7 +1061,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListSecurityPolicies service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -991,7 +1071,8 @@ namespace Amazon.Transfer
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">REST API Reference for ListSecurityPolicies Operation</seealso>
         Task<ListSecurityPoliciesResponse> ListSecurityPoliciesAsync(ListSecurityPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1002,14 +1083,15 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists the file transfer protocol-enabled servers that are associated with your AWS
-        /// account.
+        /// Lists the file transfer protocol-enabled servers that are associated with your Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServers service method.</param>
         /// 
         /// <returns>The response from the ListServers service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -1018,7 +1100,8 @@ namespace Amazon.Transfer
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">REST API Reference for ListServers Operation</seealso>
         ListServersResponse ListServers(ListServersRequest request);
@@ -1026,8 +1109,8 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists the file transfer protocol-enabled servers that are associated with your AWS
-        /// account.
+        /// Lists the file transfer protocol-enabled servers that are associated with your Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServers service method.</param>
         /// <param name="cancellationToken">
@@ -1036,7 +1119,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListServers service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -1045,7 +1129,8 @@ namespace Amazon.Transfer
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">REST API Reference for ListServers Operation</seealso>
         Task<ListServersResponse> ListServersAsync(ListServersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1063,7 +1148,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -1072,7 +1158,8 @@ namespace Amazon.Transfer
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1090,7 +1177,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -1099,7 +1187,8 @@ namespace Amazon.Transfer
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1117,7 +1206,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListUsers service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -1126,10 +1216,12 @@ namespace Amazon.Transfer
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers">REST API Reference for ListUsers Operation</seealso>
         ListUsersResponse ListUsers(ListUsersRequest request);
@@ -1147,7 +1239,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListUsers service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -1156,10 +1249,12 @@ namespace Amazon.Transfer
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers">REST API Reference for ListUsers Operation</seealso>
         Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1189,16 +1284,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the StartServer service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1236,16 +1334,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the StartServer service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1289,16 +1390,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the StopServer service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1342,16 +1446,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the StopServer service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1382,16 +1489,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the TagResource service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -1414,16 +1524,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the TagResource service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1445,16 +1558,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the TestIdentityProvider service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider">REST API Reference for TestIdentityProvider Operation</seealso>
         TestIdentityProviderResponse TestIdentityProvider(TestIdentityProviderRequest request);
@@ -1476,16 +1592,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the TestIdentityProvider service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider">REST API Reference for TestIdentityProvider Operation</seealso>
         Task<TestIdentityProviderResponse> TestIdentityProviderAsync(TestIdentityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1508,16 +1627,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -1540,16 +1662,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1567,7 +1692,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1576,10 +1702,12 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess">REST API Reference for UpdateAccess Operation</seealso>
         UpdateAccessResponse UpdateAccess(UpdateAccessRequest request);
@@ -1597,7 +1725,8 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1606,10 +1735,12 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess">REST API Reference for UpdateAccess Operation</seealso>
         Task<UpdateAccessResponse> UpdateAccessAsync(UpdateAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1641,7 +1772,8 @@ namespace Amazon.Transfer
         /// is not in the available state.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1650,10 +1782,12 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1693,7 +1827,8 @@ namespace Amazon.Transfer
         /// is not in the available state.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1702,10 +1837,12 @@ namespace Amazon.Transfer
         /// The requested resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1738,16 +1875,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1780,16 +1920,19 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
-        /// The request has failed because the AWS Transfer Family service is not available.
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.

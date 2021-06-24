@@ -31,9 +31,9 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the CreateServer operation.
     /// Instantiates an auto-scaling virtual server based on the selected file transfer protocol
-    /// in AWS. When you make updates to your file transfer protocol-enabled server or when
-    /// you work with users, use the service-generated <code>ServerId</code> property that
-    /// is assigned to the newly created server.
+    /// in Amazon Web Services. When you make updates to your file transfer protocol-enabled
+    /// server or when you work with users, use the service-generated <code>ServerId</code>
+    /// property that is assigned to the newly created server.
     /// </summary>
     public partial class CreateServerRequest : AmazonTransferRequest
     {
@@ -52,24 +52,26 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required
-        /// when <code>Protocols</code> is set to <code>FTPS</code>.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM)
+        /// certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.
         /// </para>
         ///  
         /// <para>
         /// To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-        /// a public certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+        /// a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-        /// certificates into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+        /// certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// To request a private certificate to use FTPS through private IP addresses, see <a
         /// href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-        /// a private certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+        /// a private certificate</a> in the <i> Amazon Web Services Certificate Manager User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -174,10 +176,10 @@ namespace Amazon.Transfer.Model
         ///  <note> 
         /// <para>
         ///  After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code>
-        /// in your AWS account if your account hasn't already done so before May 19, 2021. If
-        /// you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your
-        /// AWS account on or before May 19, 2021, you will not be affected. After this date,
-        /// use <code>EndpointType</code>=<code>VPC</code>.
+        /// in your Amazon Web Services account if your account hasn't already done so before
+        /// May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code>
+        /// in your Amazon Web Services account on or before May 19, 2021, you will not be affected.
+        /// After this date, use <code>EndpointType</code>=<code>VPC</code>.
         /// </para>
         ///  
         /// <para>
@@ -220,7 +222,8 @@ namespace Amazon.Transfer.Model
         ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-        /// the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+        /// the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
+        /// Family User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -262,14 +265,23 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
         /// Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-        /// which allows you to store and access user credentials within the AWS Transfer Family
-        /// service. Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory
-        /// groups in AWS Managed Active Directory or Microsoft Active Directory in your on-premises
-        /// environment or in AWS using AD Connectors. This option also requires you to provide
-        /// a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the <code>API_GATEWAY</code>
-        /// value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code>
-        /// setting requires you to provide an API Gateway endpoint URL to call for authentication
-        /// using the <code>IdentityProviderDetails</code> parameter.
+        /// which allows you to store and access user credentials within the Amazon Web Services
+        /// Transfer Family service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+        /// in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
+        /// on-premises environment or in Amazon Web Services using AD Connectors. This option
+        /// also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your
+        /// choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway
+        /// endpoint URL to call for authentication using the <code>IdentityProviderDetails</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public IdentityProviderType IdentityProviderType
@@ -287,8 +299,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// Allows the service to write your users' activity to your Amazon CloudWatch logs for
-        /// monitoring and auditing purposes.
+        /// Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+        /// Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for
+        /// Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch
+        /// logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -325,9 +339,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate
-        /// Manager (ACM) which will be used to identify your server when clients connect to it
-        /// over FTPS.
+        /// If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
+        /// Services Certificate Manager (ACM) which is used to identify your server when clients
+        /// connect to it over FTPS.
         /// </para>
         ///  
         /// <para>

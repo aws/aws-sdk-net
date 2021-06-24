@@ -118,6 +118,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoggingRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProtocolDetails", targetDepth))
+                {
+                    var unmarshaller = ProtocolDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ProtocolDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Protocols", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

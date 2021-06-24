@@ -91,13 +91,14 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectoryMappings. 
         /// <para>
-        /// Specifies the logical directory mappings that specify what Amazon S3 or EFS paths
-        /// and keys should be visible to your user and how you want to make them visible. You
-        /// will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
-        /// <code>Entry</code> shows how the path is made visible and <code>Target</code> is the
-        /// actual Amazon S3 or EFS path. If you only specify a target, it will be displayed as
-        /// is. You will need to also make sure that your AWS Identity and Access Management (IAM)
-        /// role provides access to paths in <code>Target</code>.
+        /// Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys
+        /// should be visible to your user and how you want to make them visible. You must specify
+        /// the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows
+        /// how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon
+        /// EFS path. If you only specify a target, it is displayed as is. You also must ensure
+        /// that your Amazon Web Services Identity and Access Management (IAM) role provides access
+        /// to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code>
+        /// is set to <i>LOGICAL</i>.
         /// </para>
         ///  
         /// <para>

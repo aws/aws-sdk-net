@@ -30,8 +30,8 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServers operation.
-    /// Lists the file transfer protocol-enabled servers that are associated with your AWS
-    /// account.
+    /// Lists the file transfer protocol-enabled servers that are associated with your Amazon
+    /// Web Services account.
     /// </summary>
     public partial class ListServersRequest : AmazonTransferRequest
     {
