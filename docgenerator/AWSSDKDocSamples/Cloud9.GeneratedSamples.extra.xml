@@ -86,7 +86,7 @@
         <value>
             <example>
                 <para>
-                    The following example gets information about all of the environment members for the specified &AWS; Cloud9 development environment.
+                    The following example gets information about all of the environment members for the specified development environment.
                 </para>
                 <code
                     title="DescribeEnvironmentMemberships1"
@@ -105,7 +105,7 @@
         <value>
             <example>
                 <para>
-                    The following example gets information about the owner of the specified &AWS; Cloud9 development environment.
+                    The following example gets information about the owner of the specified development environment.
                 </para>
                 <code
                     title="DescribeEnvironmentMemberships2"
@@ -124,7 +124,7 @@
         <value>
             <example>
                 <para>
-                    The following example gets &AWS; Cloud9 development environment membership information for the specified user.
+                    The following example gets development environment membership information for the specified user.
                 </para>
                 <code
                     title="DescribeEnvironmentMemberships3"
