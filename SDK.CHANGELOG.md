@@ -1,3 +1,16 @@
+### 3.7.61.0 (2021-06-25 18:17 UTC)
+* AmplifyBackend (3.7.1.0)
+	* Imports an existing backend authentication resource.
+* Proton (3.7.1.0)
+	* Added waiters for template registration, service operations, and environment deployments.
+* Snowball (3.7.2.0)
+	* AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices. AWS Snowball Edge Storage Optimized customers can now import and export their data using NFS.
+* Core 3.7.0.37
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.60.0 (2021-06-24 18:25 UTC)
 * Chime (3.7.6.0)
 	* Adds EventIngestionUrl field to MediaPlacement
