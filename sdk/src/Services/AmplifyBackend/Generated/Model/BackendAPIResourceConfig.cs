@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// The resource configuration for the data model, configured as a part of the Amplify
-    /// project.
+    /// The resource config for the data model, configured as a part of the Amplify project.
     /// </summary>
     public partial class BackendAPIResourceConfig
     {
@@ -62,7 +61,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ApiName. 
         /// <para>
-        /// The API name used to interact with the data model, configured as a part of the Amplify
+        /// The API name used to interact with the data model, configured as a part of the amplify
         /// project.
         /// </para>
         /// </summary>

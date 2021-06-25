@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// The password policy configuration for the backend of your Amplify project.
+    /// The password policy configuration for the backend to your Amplify project.
     /// </summary>
     public partial class CreateBackendAuthPasswordPolicyConfig
     {

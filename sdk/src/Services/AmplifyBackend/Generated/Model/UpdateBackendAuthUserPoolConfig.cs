@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// Describes the Amazon Cognito user pool configuration to configure the authorization
-    /// resource for your Amplify project on an update.
+    /// Describes the Amazon Cognito user pool configuration for the authorization resource
+    /// to be configured for your Amplify project on an update.
     /// </summary>
     public partial class UpdateBackendAuthUserPoolConfig
     {
@@ -61,8 +61,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property Mfa. 
         /// <para>
-        /// Describes whether to apply multi-factor authentication (MFA) policies for your Amazon
-        /// Cognito user pool that's configured as a part of your Amplify project.
+        /// Describes whether multi-factor authentication policies should be applied for your
+        /// Amazon Cognito user pool configured as a part of your Amplify project.
         /// </para>
         /// </summary>
         public UpdateBackendAuthMFAConfig Mfa

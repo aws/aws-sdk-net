@@ -40,7 +40,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property IdentityPoolName. 
         /// <para>
-        /// Name of the identity pool used for authorization.
+        /// Name of the Amazon Cognito identity pool used for authorization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

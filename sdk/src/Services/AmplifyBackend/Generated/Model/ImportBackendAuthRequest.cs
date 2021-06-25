@@ -29,16 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// This is the response object from the CreateBackendAPI operation.
+    /// Container for the parameters to the ImportBackendAuth operation.
+    /// Imports an existing backend authentication resource.
     /// </summary>
-    public partial class CreateBackendAPIResponse : AmazonWebServiceResponse
+    public partial class ImportBackendAuthRequest : AmazonAmplifyBackendRequest
     {
         private string _appId;
         private string _backendEnvironmentName;
-        private string _error;
-        private string _jobId;
-        private string _operation;
-        private string _status;
+        private string _identityPoolId;
+        private string _nativeClientId;
+        private string _userPoolId;
+        private string _webClientId;
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -46,6 +47,7 @@ namespace Amazon.AmplifyBackend.Model
         /// The app ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AppId
         {
             get { return this._appId; }
@@ -64,6 +66,7 @@ namespace Amazon.AmplifyBackend.Model
         /// The name of the backend environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackendEnvironmentName
         {
             get { return this._backendEnvironmentName; }
@@ -77,75 +80,78 @@ namespace Amazon.AmplifyBackend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Error. 
+        /// Gets and sets the property IdentityPoolId. 
         /// <para>
-        /// If the request fails, this error is returned.
+        /// The ID of the Amazon Cognito identity pool.
         /// </para>
         /// </summary>
-        public string Error
+        public string IdentityPoolId
         {
-            get { return this._error; }
-            set { this._error = value; }
+            get { return this._identityPoolId; }
+            set { this._identityPoolId = value; }
         }
 
-        // Check to see if Error property is set
-        internal bool IsSetError()
+        // Check to see if IdentityPoolId property is set
+        internal bool IsSetIdentityPoolId()
         {
-            return this._error != null;
+            return this._identityPoolId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property NativeClientId. 
         /// <para>
-        /// The ID for the job.
+        /// The ID of the Amazon Cognito native client.
         /// </para>
         /// </summary>
-        public string JobId
+        [AWSProperty(Required=true)]
+        public string NativeClientId
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._nativeClientId; }
+            set { this._nativeClientId = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if NativeClientId property is set
+        internal bool IsSetNativeClientId()
         {
-            return this._jobId != null;
+            return this._nativeClientId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Operation. 
+        /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The name of the operation.
+        /// The ID of the Amazon Cognito user pool.
         /// </para>
         /// </summary>
-        public string Operation
+        [AWSProperty(Required=true)]
+        public string UserPoolId
         {
-            get { return this._operation; }
-            set { this._operation = value; }
+            get { return this._userPoolId; }
+            set { this._userPoolId = value; }
         }
 
-        // Check to see if Operation property is set
-        internal bool IsSetOperation()
+        // Check to see if UserPoolId property is set
+        internal bool IsSetUserPoolId()
         {
-            return this._operation != null;
+            return this._userPoolId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property WebClientId. 
         /// <para>
-        /// The current status of the request.
+        /// The ID of the Amazon Cognito web client.
         /// </para>
         /// </summary>
-        public string Status
+        [AWSProperty(Required=true)]
+        public string WebClientId
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._webClientId; }
+            set { this._webClientId = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if WebClientId property is set
+        internal bool IsSetWebClientId()
         {
-            return this._status != null;
+            return this._webClientId != null;
         }
 
     }

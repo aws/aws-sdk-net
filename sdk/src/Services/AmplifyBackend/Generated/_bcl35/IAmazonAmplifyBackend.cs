@@ -63,7 +63,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CloneBackend">REST API Reference for CloneBackend Operation</seealso>
         CloneBackendResponse CloneBackend(CloneBackendRequest request);
@@ -116,7 +116,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackend">REST API Reference for CreateBackend Operation</seealso>
         CreateBackendResponse CreateBackend(CreateBackendRequest request);
@@ -168,7 +168,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAPI">REST API Reference for CreateBackendAPI Operation</seealso>
         CreateBackendAPIResponse CreateBackendAPI(CreateBackendAPIRequest request);
@@ -220,7 +220,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuth">REST API Reference for CreateBackendAuth Operation</seealso>
         CreateBackendAuthResponse CreateBackendAuth(CreateBackendAuthRequest request);
@@ -272,7 +272,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendConfig">REST API Reference for CreateBackendConfig Operation</seealso>
         CreateBackendConfigResponse CreateBackendConfig(CreateBackendConfigRequest request);
@@ -325,7 +325,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateToken">REST API Reference for CreateToken Operation</seealso>
         CreateTokenResponse CreateToken(CreateTokenRequest request);
@@ -377,7 +377,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackend">REST API Reference for DeleteBackend Operation</seealso>
         DeleteBackendResponse DeleteBackend(DeleteBackendRequest request);
@@ -429,7 +429,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendAPI">REST API Reference for DeleteBackendAPI Operation</seealso>
         DeleteBackendAPIResponse DeleteBackendAPI(DeleteBackendAPIRequest request);
@@ -481,7 +481,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendAuth">REST API Reference for DeleteBackendAuth Operation</seealso>
         DeleteBackendAuthResponse DeleteBackendAuth(DeleteBackendAuthRequest request);
@@ -533,7 +533,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteToken">REST API Reference for DeleteToken Operation</seealso>
         DeleteTokenResponse DeleteToken(DeleteTokenRequest request);
@@ -585,7 +585,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GenerateBackendAPIModels">REST API Reference for GenerateBackendAPIModels Operation</seealso>
         GenerateBackendAPIModelsResponse GenerateBackendAPIModels(GenerateBackendAPIModelsRequest request);
@@ -637,7 +637,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackend">REST API Reference for GetBackend Operation</seealso>
         GetBackendResponse GetBackend(GetBackendRequest request);
@@ -689,7 +689,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPI">REST API Reference for GetBackendAPI Operation</seealso>
         GetBackendAPIResponse GetBackendAPI(GetBackendAPIRequest request);
@@ -741,7 +741,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPIModels">REST API Reference for GetBackendAPIModels Operation</seealso>
         GetBackendAPIModelsResponse GetBackendAPIModels(GetBackendAPIModelsRequest request);
@@ -778,7 +778,7 @@ namespace Amazon.AmplifyBackend
 
 
         /// <summary>
-        /// Gets backend auth details.
+        /// Gets a backend auth details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackendAuth service method.</param>
         /// 
@@ -793,7 +793,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">REST API Reference for GetBackendAuth Operation</seealso>
         GetBackendAuthResponse GetBackendAuth(GetBackendAuthRequest request);
@@ -845,7 +845,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendJob">REST API Reference for GetBackendJob Operation</seealso>
         GetBackendJobResponse GetBackendJob(GetBackendJobRequest request);
@@ -897,7 +897,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetToken">REST API Reference for GetToken Operation</seealso>
         GetTokenResponse GetToken(GetTokenRequest request);
@@ -930,6 +930,58 @@ namespace Amazon.AmplifyBackend
 
         #endregion
         
+        #region  ImportBackendAuth
+
+
+        /// <summary>
+        /// Imports an existing backend authentication resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportBackendAuth service method.</param>
+        /// 
+        /// <returns>The response from the ImportBackendAuth service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth">REST API Reference for ImportBackendAuth Operation</seealso>
+        ImportBackendAuthResponse ImportBackendAuth(ImportBackendAuthRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportBackendAuth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportBackendAuth operation on AmazonAmplifyBackendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportBackendAuth
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth">REST API Reference for ImportBackendAuth Operation</seealso>
+        IAsyncResult BeginImportBackendAuth(ImportBackendAuthRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportBackendAuth operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportBackendAuth.</param>
+        /// 
+        /// <returns>Returns a  ImportBackendAuthResult from AmplifyBackend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth">REST API Reference for ImportBackendAuth Operation</seealso>
+        ImportBackendAuthResponse EndImportBackendAuth(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListBackendJobs
 
 
@@ -949,7 +1001,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListBackendJobs">REST API Reference for ListBackendJobs Operation</seealso>
         ListBackendJobsResponse ListBackendJobs(ListBackendJobsRequest request);
@@ -1001,7 +1053,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveAllBackends">REST API Reference for RemoveAllBackends Operation</seealso>
         RemoveAllBackendsResponse RemoveAllBackends(RemoveAllBackendsRequest request);
@@ -1038,7 +1090,7 @@ namespace Amazon.AmplifyBackend
 
 
         /// <summary>
-        /// Removes the AWS resources that are required to access the Amplify Admin UI.
+        /// Removes the AWS resources required to access the Amplify Admin UI.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveBackendConfig service method.</param>
         /// 
@@ -1053,7 +1105,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">REST API Reference for RemoveBackendConfig Operation</seealso>
         RemoveBackendConfigResponse RemoveBackendConfig(RemoveBackendConfigRequest request);
@@ -1105,7 +1157,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAPI">REST API Reference for UpdateBackendAPI Operation</seealso>
         UpdateBackendAPIResponse UpdateBackendAPI(UpdateBackendAPIRequest request);
@@ -1157,7 +1209,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuth">REST API Reference for UpdateBackendAuth Operation</seealso>
         UpdateBackendAuthResponse UpdateBackendAuth(UpdateBackendAuthRequest request);
@@ -1194,7 +1246,7 @@ namespace Amazon.AmplifyBackend
 
 
         /// <summary>
-        /// Updates the AWS resources that are required to access the Amplify Admin UI.
+        /// Updates the AWS resources required to access the Amplify Admin UI.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBackendConfig service method.</param>
         /// 
@@ -1209,7 +1261,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">REST API Reference for UpdateBackendConfig Operation</seealso>
         UpdateBackendConfigResponse UpdateBackendConfig(UpdateBackendConfigRequest request);
@@ -1261,7 +1313,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendJob">REST API Reference for UpdateBackendJob Operation</seealso>
         UpdateBackendJobResponse UpdateBackendJob(UpdateBackendJobRequest request);

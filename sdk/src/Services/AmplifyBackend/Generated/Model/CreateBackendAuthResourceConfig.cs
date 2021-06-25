@@ -63,7 +63,7 @@ namespace Amazon.AmplifyBackend.Model
         /// Gets and sets the property IdentityPoolConfigs. 
         /// <para>
         /// Describes the authorization configuration for the Amazon Cognito identity pool, provisioned
-        /// as a part of the auth resource in your Amplify project.
+        /// as a part of your auth resource in the Amplify project.
         /// </para>
         /// </summary>
         public CreateBackendAuthIdentityPoolConfig IdentityPoolConfigs
@@ -101,8 +101,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property UserPoolConfigs. 
         /// <para>
-        /// Describes the authentication configuration for the Amazon Cognito user pool, provisioned
-        /// as a part of the auth resource in your Amplify project.
+        /// Describes authentication configuration for the Amazon Cognito user pool, provisioned
+        /// as a part of your auth resource in the Amplify project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

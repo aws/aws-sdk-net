@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// Describes the conflict resolution configuration for the data model configured in your
-    /// Amplify project.
+    /// Describes the conflict resolution configuration for your data model configured in
+    /// your Amplify project.
     /// </summary>
     public partial class BackendAPIConflictResolution
     {

@@ -98,7 +98,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property RedirectSignInURIs. 
         /// <para>
-        /// Redirect URLs that OAuth uses when a user signs in to an Amplify app.
+        /// Redirect URLs used by OAuth when a user signs in to an Amplify app.
         /// </para>
         /// </summary>
         public List<string> RedirectSignInURIs
@@ -116,7 +116,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property RedirectSignOutURIs. 
         /// <para>
-        /// Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+        /// Redirect URLs used by OAuth when a user signs out of an Amplify app.
         /// </para>
         /// </summary>
         public List<string> RedirectSignOutURIs

@@ -40,7 +40,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// Describes the client_id that can be obtained from the third-party social federation
+        /// Describes the client_id which can be obtained from the third-party social federation
         /// provider.
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ClientSecret. 
         /// <para>
-        /// Describes the client_secret that can be obtained from third-party social federation
+        /// Describes the client_secret which can be obtained from third-party social federation
         /// providers.
         /// </para>
         /// </summary>

@@ -126,7 +126,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource that wasn't found.
+        /// The type of resource that is not found.
         /// </para>
         /// </summary>
         public string ResourceType

@@ -81,8 +81,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property OAuthScopes. 
         /// <para>
-        /// List of OAuth-related flows that allow your app users to authenticate from your Amplify
-        /// app.
+        /// List of OAuth-related flows used to allow your app users to authenticate from your
+        /// Amplify app.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,7 +120,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property RedirectSignOutURIs. 
         /// <para>
-        /// Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+        /// Redirect URLs used by OAuth when a user signs out of an Amplify app.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -139,7 +139,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property SocialProviderSettings. 
         /// <para>
-        /// The settings for using social identity providers for access to your Amplify app.
+        /// The settings for using social providers to access your Amplify app.
         /// </para>
         /// </summary>
         public SocialProviderSettings SocialProviderSettings

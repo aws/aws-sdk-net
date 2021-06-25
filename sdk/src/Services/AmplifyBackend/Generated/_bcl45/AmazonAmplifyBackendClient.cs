@@ -273,7 +273,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CloneBackend">REST API Reference for CloneBackend Operation</seealso>
         public virtual CloneBackendResponse CloneBackend(CloneBackendRequest request)
@@ -305,7 +305,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CloneBackend">REST API Reference for CloneBackend Operation</seealso>
         public virtual Task<CloneBackendResponse> CloneBackendAsync(CloneBackendRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -339,7 +339,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackend">REST API Reference for CreateBackend Operation</seealso>
         public virtual CreateBackendResponse CreateBackend(CreateBackendRequest request)
@@ -372,7 +372,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackend">REST API Reference for CreateBackend Operation</seealso>
         public virtual Task<CreateBackendResponse> CreateBackendAsync(CreateBackendRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -405,7 +405,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAPI">REST API Reference for CreateBackendAPI Operation</seealso>
         public virtual CreateBackendAPIResponse CreateBackendAPI(CreateBackendAPIRequest request)
@@ -437,7 +437,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAPI">REST API Reference for CreateBackendAPI Operation</seealso>
         public virtual Task<CreateBackendAPIResponse> CreateBackendAPIAsync(CreateBackendAPIRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -470,7 +470,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuth">REST API Reference for CreateBackendAuth Operation</seealso>
         public virtual CreateBackendAuthResponse CreateBackendAuth(CreateBackendAuthRequest request)
@@ -502,7 +502,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuth">REST API Reference for CreateBackendAuth Operation</seealso>
         public virtual Task<CreateBackendAuthResponse> CreateBackendAuthAsync(CreateBackendAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -535,7 +535,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendConfig">REST API Reference for CreateBackendConfig Operation</seealso>
         public virtual CreateBackendConfigResponse CreateBackendConfig(CreateBackendConfigRequest request)
@@ -567,7 +567,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendConfig">REST API Reference for CreateBackendConfig Operation</seealso>
         public virtual Task<CreateBackendConfigResponse> CreateBackendConfigAsync(CreateBackendConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -601,7 +601,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateToken">REST API Reference for CreateToken Operation</seealso>
         public virtual CreateTokenResponse CreateToken(CreateTokenRequest request)
@@ -634,7 +634,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateToken">REST API Reference for CreateToken Operation</seealso>
         public virtual Task<CreateTokenResponse> CreateTokenAsync(CreateTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -667,7 +667,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackend">REST API Reference for DeleteBackend Operation</seealso>
         public virtual DeleteBackendResponse DeleteBackend(DeleteBackendRequest request)
@@ -699,7 +699,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackend">REST API Reference for DeleteBackend Operation</seealso>
         public virtual Task<DeleteBackendResponse> DeleteBackendAsync(DeleteBackendRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -732,7 +732,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendAPI">REST API Reference for DeleteBackendAPI Operation</seealso>
         public virtual DeleteBackendAPIResponse DeleteBackendAPI(DeleteBackendAPIRequest request)
@@ -764,7 +764,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendAPI">REST API Reference for DeleteBackendAPI Operation</seealso>
         public virtual Task<DeleteBackendAPIResponse> DeleteBackendAPIAsync(DeleteBackendAPIRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -797,7 +797,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendAuth">REST API Reference for DeleteBackendAuth Operation</seealso>
         public virtual DeleteBackendAuthResponse DeleteBackendAuth(DeleteBackendAuthRequest request)
@@ -829,7 +829,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendAuth">REST API Reference for DeleteBackendAuth Operation</seealso>
         public virtual Task<DeleteBackendAuthResponse> DeleteBackendAuthAsync(DeleteBackendAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -862,7 +862,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteToken">REST API Reference for DeleteToken Operation</seealso>
         public virtual DeleteTokenResponse DeleteToken(DeleteTokenRequest request)
@@ -894,7 +894,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteToken">REST API Reference for DeleteToken Operation</seealso>
         public virtual Task<DeleteTokenResponse> DeleteTokenAsync(DeleteTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -927,7 +927,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GenerateBackendAPIModels">REST API Reference for GenerateBackendAPIModels Operation</seealso>
         public virtual GenerateBackendAPIModelsResponse GenerateBackendAPIModels(GenerateBackendAPIModelsRequest request)
@@ -959,7 +959,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GenerateBackendAPIModels">REST API Reference for GenerateBackendAPIModels Operation</seealso>
         public virtual Task<GenerateBackendAPIModelsResponse> GenerateBackendAPIModelsAsync(GenerateBackendAPIModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -992,7 +992,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackend">REST API Reference for GetBackend Operation</seealso>
         public virtual GetBackendResponse GetBackend(GetBackendRequest request)
@@ -1024,7 +1024,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackend">REST API Reference for GetBackend Operation</seealso>
         public virtual Task<GetBackendResponse> GetBackendAsync(GetBackendRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1057,7 +1057,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPI">REST API Reference for GetBackendAPI Operation</seealso>
         public virtual GetBackendAPIResponse GetBackendAPI(GetBackendAPIRequest request)
@@ -1089,7 +1089,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPI">REST API Reference for GetBackendAPI Operation</seealso>
         public virtual Task<GetBackendAPIResponse> GetBackendAPIAsync(GetBackendAPIRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1122,7 +1122,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPIModels">REST API Reference for GetBackendAPIModels Operation</seealso>
         public virtual GetBackendAPIModelsResponse GetBackendAPIModels(GetBackendAPIModelsRequest request)
@@ -1154,7 +1154,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPIModels">REST API Reference for GetBackendAPIModels Operation</seealso>
         public virtual Task<GetBackendAPIModelsResponse> GetBackendAPIModelsAsync(GetBackendAPIModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1172,7 +1172,7 @@ namespace Amazon.AmplifyBackend
 
 
         /// <summary>
-        /// Gets backend auth details.
+        /// Gets a backend auth details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackendAuth service method.</param>
         /// 
@@ -1187,7 +1187,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">REST API Reference for GetBackendAuth Operation</seealso>
         public virtual GetBackendAuthResponse GetBackendAuth(GetBackendAuthRequest request)
@@ -1201,7 +1201,7 @@ namespace Amazon.AmplifyBackend
 
 
         /// <summary>
-        /// Gets backend auth details.
+        /// Gets a backend auth details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackendAuth service method.</param>
         /// <param name="cancellationToken">
@@ -1219,7 +1219,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">REST API Reference for GetBackendAuth Operation</seealso>
         public virtual Task<GetBackendAuthResponse> GetBackendAuthAsync(GetBackendAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1252,7 +1252,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendJob">REST API Reference for GetBackendJob Operation</seealso>
         public virtual GetBackendJobResponse GetBackendJob(GetBackendJobRequest request)
@@ -1284,7 +1284,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendJob">REST API Reference for GetBackendJob Operation</seealso>
         public virtual Task<GetBackendJobResponse> GetBackendJobAsync(GetBackendJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1317,7 +1317,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetToken">REST API Reference for GetToken Operation</seealso>
         public virtual GetTokenResponse GetToken(GetTokenRequest request)
@@ -1349,7 +1349,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetToken">REST API Reference for GetToken Operation</seealso>
         public virtual Task<GetTokenResponse> GetTokenAsync(GetTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1359,6 +1359,71 @@ namespace Amazon.AmplifyBackend
             options.ResponseUnmarshaller = GetTokenResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetTokenResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportBackendAuth
+
+
+        /// <summary>
+        /// Imports an existing backend authentication resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportBackendAuth service method.</param>
+        /// 
+        /// <returns>The response from the ImportBackendAuth service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth">REST API Reference for ImportBackendAuth Operation</seealso>
+        public virtual ImportBackendAuthResponse ImportBackendAuth(ImportBackendAuthRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportBackendAuthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportBackendAuthResponseUnmarshaller.Instance;
+
+            return Invoke<ImportBackendAuthResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Imports an existing backend authentication resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportBackendAuth service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportBackendAuth service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth">REST API Reference for ImportBackendAuth Operation</seealso>
+        public virtual Task<ImportBackendAuthResponse> ImportBackendAuthAsync(ImportBackendAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportBackendAuthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportBackendAuthResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportBackendAuthResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1382,7 +1447,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListBackendJobs">REST API Reference for ListBackendJobs Operation</seealso>
         public virtual ListBackendJobsResponse ListBackendJobs(ListBackendJobsRequest request)
@@ -1414,7 +1479,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListBackendJobs">REST API Reference for ListBackendJobs Operation</seealso>
         public virtual Task<ListBackendJobsResponse> ListBackendJobsAsync(ListBackendJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1447,7 +1512,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveAllBackends">REST API Reference for RemoveAllBackends Operation</seealso>
         public virtual RemoveAllBackendsResponse RemoveAllBackends(RemoveAllBackendsRequest request)
@@ -1479,7 +1544,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveAllBackends">REST API Reference for RemoveAllBackends Operation</seealso>
         public virtual Task<RemoveAllBackendsResponse> RemoveAllBackendsAsync(RemoveAllBackendsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1497,7 +1562,7 @@ namespace Amazon.AmplifyBackend
 
 
         /// <summary>
-        /// Removes the AWS resources that are required to access the Amplify Admin UI.
+        /// Removes the AWS resources required to access the Amplify Admin UI.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveBackendConfig service method.</param>
         /// 
@@ -1512,7 +1577,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">REST API Reference for RemoveBackendConfig Operation</seealso>
         public virtual RemoveBackendConfigResponse RemoveBackendConfig(RemoveBackendConfigRequest request)
@@ -1526,7 +1591,7 @@ namespace Amazon.AmplifyBackend
 
 
         /// <summary>
-        /// Removes the AWS resources that are required to access the Amplify Admin UI.
+        /// Removes the AWS resources required to access the Amplify Admin UI.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveBackendConfig service method.</param>
         /// <param name="cancellationToken">
@@ -1544,7 +1609,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">REST API Reference for RemoveBackendConfig Operation</seealso>
         public virtual Task<RemoveBackendConfigResponse> RemoveBackendConfigAsync(RemoveBackendConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1577,7 +1642,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAPI">REST API Reference for UpdateBackendAPI Operation</seealso>
         public virtual UpdateBackendAPIResponse UpdateBackendAPI(UpdateBackendAPIRequest request)
@@ -1609,7 +1674,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAPI">REST API Reference for UpdateBackendAPI Operation</seealso>
         public virtual Task<UpdateBackendAPIResponse> UpdateBackendAPIAsync(UpdateBackendAPIRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1642,7 +1707,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuth">REST API Reference for UpdateBackendAuth Operation</seealso>
         public virtual UpdateBackendAuthResponse UpdateBackendAuth(UpdateBackendAuthRequest request)
@@ -1674,7 +1739,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuth">REST API Reference for UpdateBackendAuth Operation</seealso>
         public virtual Task<UpdateBackendAuthResponse> UpdateBackendAuthAsync(UpdateBackendAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1692,7 +1757,7 @@ namespace Amazon.AmplifyBackend
 
 
         /// <summary>
-        /// Updates the AWS resources that are required to access the Amplify Admin UI.
+        /// Updates the AWS resources required to access the Amplify Admin UI.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBackendConfig service method.</param>
         /// 
@@ -1707,7 +1772,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">REST API Reference for UpdateBackendConfig Operation</seealso>
         public virtual UpdateBackendConfigResponse UpdateBackendConfig(UpdateBackendConfigRequest request)
@@ -1721,7 +1786,7 @@ namespace Amazon.AmplifyBackend
 
 
         /// <summary>
-        /// Updates the AWS resources that are required to access the Amplify Admin UI.
+        /// Updates the AWS resources required to access the Amplify Admin UI.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBackendConfig service method.</param>
         /// <param name="cancellationToken">
@@ -1739,7 +1804,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">REST API Reference for UpdateBackendConfig Operation</seealso>
         public virtual Task<UpdateBackendConfigResponse> UpdateBackendConfigAsync(UpdateBackendConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1772,7 +1837,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendJob">REST API Reference for UpdateBackendJob Operation</seealso>
         public virtual UpdateBackendJobResponse UpdateBackendJob(UpdateBackendJobRequest request)
@@ -1804,7 +1869,7 @@ namespace Amazon.AmplifyBackend
         /// An error returned when a specific resource type is not found.
         /// </exception>
         /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
-        /// An error that is returned when a limit of a specific type is exceeded.
+        /// An error that is returned when a limit of a specific type has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendJob">REST API Reference for UpdateBackendJob Operation</seealso>
         public virtual Task<UpdateBackendJobResponse> UpdateBackendJobAsync(UpdateBackendJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

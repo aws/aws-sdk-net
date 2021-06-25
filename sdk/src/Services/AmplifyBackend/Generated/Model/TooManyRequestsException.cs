@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// An error that is returned when a limit of a specific type is exceeded.
+    /// An error that is returned when a limit of a specific type has been exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

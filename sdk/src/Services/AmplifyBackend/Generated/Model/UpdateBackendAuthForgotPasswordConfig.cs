@@ -40,7 +40,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property DeliveryMethod. 
         /// <para>
-        /// Describes which method to use (either SMS or email) to deliver messages to app users
+        /// Describes which mode to use (either SMS or email) to deliver messages to app users
         /// that want to recover their password.
         /// </para>
         /// </summary>

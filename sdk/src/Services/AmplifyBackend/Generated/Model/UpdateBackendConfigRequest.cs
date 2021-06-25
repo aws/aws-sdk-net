@@ -30,7 +30,7 @@ namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateBackendConfig operation.
-    /// Updates the AWS resources that are required to access the Amplify Admin UI.
+    /// Updates the AWS resources required to access the Amplify Admin UI.
     /// </summary>
     public partial class UpdateBackendConfigRequest : AmazonAmplifyBackendRequest
     {

@@ -100,7 +100,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// Filters the list of response objects to include only those with the specified operation
+        /// Filters the list of response objects to only include those with the specified operation
         /// name.
         /// </para>
         /// </summary>

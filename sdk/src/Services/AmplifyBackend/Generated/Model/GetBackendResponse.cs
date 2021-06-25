@@ -43,7 +43,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property AmplifyMetaConfig. 
         /// <para>
-        /// A stringified version of the current configurations for your Amplify project.
+        /// A stringified version of the current configs for your Amplify project.
         /// </para>
         /// </summary>
         public string AmplifyMetaConfig

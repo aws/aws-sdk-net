@@ -46,7 +46,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property CognitoUserPoolId. 
         /// <para>
-        /// The Amazon Cognito user pool ID, if Amazon Cognito is used as an authentication setting
+        /// The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting
         /// to access your data models.
         /// </para>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The API key description for API_KEY, if it is used as an authentication mechanism
+        /// The API key description for API_KEY, if it was used as an authentication mechanism
         /// to access your data models.
         /// </para>
         /// </summary>
@@ -84,7 +84,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ExpirationTime. 
         /// <para>
-        /// The API key expiration time for API_KEY, if it is used as an authentication mechanism
+        /// The API key expiration time for API_KEY, if it was used as an authentication mechanism
         /// to access your data models.
         /// </para>
         /// </summary>
@@ -121,7 +121,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property OpenIDClientId. 
         /// <para>
-        /// The clientID for openID, if openID is used as an authentication setting to access
+        /// The clientID for openID, if openID was used as an authentication setting to access
         /// your data models.
         /// </para>
         /// </summary>
@@ -158,7 +158,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property OpenIDIssueURL. 
         /// <para>
-        /// The openID issuer URL, if openID is used as an authentication setting to access your
+        /// The openID issuer URL, if openID was used as an authentication setting to access your
         /// data models.
         /// </para>
         /// </summary>
@@ -177,7 +177,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property OpenIDProviderName. 
         /// <para>
-        /// The openID provider name, if openID is used as an authentication mechanism to access
+        /// The OpenID provider name, if OpenID was used as an authentication mechanism to access
         /// your data models.
         /// </para>
         /// </summary>

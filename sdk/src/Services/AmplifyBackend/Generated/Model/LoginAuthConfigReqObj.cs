@@ -41,7 +41,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property AwsCognitoIdentityPoolId. 
         /// <para>
-        /// The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
+        /// The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.
         /// </para>
         /// </summary>
         public string AwsCognitoIdentityPoolId

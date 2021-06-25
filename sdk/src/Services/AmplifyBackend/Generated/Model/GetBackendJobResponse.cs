@@ -99,7 +99,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// If the request failed, this is the returned error.
+        /// If the request fails, this error is returned.
         /// </para>
         /// </summary>
         public string Error

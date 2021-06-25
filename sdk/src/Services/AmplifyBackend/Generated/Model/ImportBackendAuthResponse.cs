@@ -29,14 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateBackendConfig operation.
+    /// This is the response object from the ImportBackendAuth operation.
     /// </summary>
-    public partial class UpdateBackendConfigResponse : AmazonWebServiceResponse
+    public partial class ImportBackendAuthResponse : AmazonWebServiceResponse
     {
         private string _appId;
-        private string _backendManagerAppId;
+        private string _backendEnvironmentName;
         private string _error;
-        private LoginAuthConfigReqObj _loginAuthConfig;
+        private string _jobId;
+        private string _operation;
+        private string _status;
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -57,21 +59,21 @@ namespace Amazon.AmplifyBackend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BackendManagerAppId. 
+        /// Gets and sets the property BackendEnvironmentName. 
         /// <para>
-        /// The app ID for the backend manager.
+        /// The name of the backend environment.
         /// </para>
         /// </summary>
-        public string BackendManagerAppId
+        public string BackendEnvironmentName
         {
-            get { return this._backendManagerAppId; }
-            set { this._backendManagerAppId = value; }
+            get { return this._backendEnvironmentName; }
+            set { this._backendEnvironmentName = value; }
         }
 
-        // Check to see if BackendManagerAppId property is set
-        internal bool IsSetBackendManagerAppId()
+        // Check to see if BackendEnvironmentName property is set
+        internal bool IsSetBackendEnvironmentName()
         {
-            return this._backendManagerAppId != null;
+            return this._backendEnvironmentName != null;
         }
 
         /// <summary>
@@ -93,22 +95,57 @@ namespace Amazon.AmplifyBackend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoginAuthConfig. 
+        /// Gets and sets the property JobId. 
         /// <para>
-        /// Describes the Amazon Cognito configurations for the Admin UI auth resource to log
-        /// in with.
+        /// The ID for the job.
         /// </para>
         /// </summary>
-        public LoginAuthConfigReqObj LoginAuthConfig
+        public string JobId
         {
-            get { return this._loginAuthConfig; }
-            set { this._loginAuthConfig = value; }
+            get { return this._jobId; }
+            set { this._jobId = value; }
         }
 
-        // Check to see if LoginAuthConfig property is set
-        internal bool IsSetLoginAuthConfig()
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
         {
-            return this._loginAuthConfig != null;
+            return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operation. 
+        /// <para>
+        /// The name of the operation.
+        /// </para>
+        /// </summary>
+        public string Operation
+        {
+            get { return this._operation; }
+            set { this._operation = value; }
+        }
+
+        // Check to see if Operation property is set
+        internal bool IsSetOperation()
+        {
+            return this._operation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the request.
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

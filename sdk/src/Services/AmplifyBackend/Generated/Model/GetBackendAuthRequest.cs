@@ -30,7 +30,7 @@ namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBackendAuth operation.
-    /// Gets backend auth details.
+    /// Gets a backend auth details.
     /// </summary>
     public partial class GetBackendAuthRequest : AmazonAmplifyBackendRequest
     {

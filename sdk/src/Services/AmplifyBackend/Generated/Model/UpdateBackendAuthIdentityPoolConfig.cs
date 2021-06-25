@@ -39,7 +39,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property UnauthenticatedLogin. 
         /// <para>
-        /// A Boolean value that you can set to allow or disallow guest-level authorization into
+        /// A boolean value which can be set to allow or disallow guest-level authorization into
         /// your Amplify app.
         /// </para>
         /// </summary>

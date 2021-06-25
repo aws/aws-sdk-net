@@ -64,8 +64,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property Mfa. 
         /// <para>
-        /// Describes whether to apply multi-factor authentication (MFA) policies for your Amazon
-        /// Cognito user pool that's configured as a part of your Amplify project.
+        /// Describes whether multi-factor authentication policies should be applied for your
+        /// Amazon Cognito user pool configured as a part of your Amplify project.
         /// </para>
         /// </summary>
         public CreateBackendAuthMFAConfig Mfa
@@ -121,7 +121,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property RequiredSignUpAttributes. 
         /// <para>
-        /// The required attributes to sign up new users in the Amazon Cognito user pool.
+        /// The required attributes to sign up new users in the user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,8 +140,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property SignInMethod. 
         /// <para>
-        /// Describes the sign-in methods that your Amplify app users to log in using the Amazon
-        /// Cognito user pool that's configured as a part of your Amplify project.
+        /// Describes the sign-in methods that your Amplify app users use to log in using the
+        /// Amazon Cognito user pool, configured as a part of your Amplify project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

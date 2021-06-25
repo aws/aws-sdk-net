@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// Describes the password policy for your Amazon Cognito user pool that's configured
-    /// as a part of your Amplify project.
+    /// Describes the password policy for your Amazon Cognito user pool configured as a part
+    /// of your Amplify project.
     /// </summary>
     public partial class UpdateBackendAuthPasswordPolicyConfig
     {
@@ -40,8 +40,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property AdditionalConstraints. 
         /// <para>
-        /// Describes additional constrains on the password requirements to sign in to the auth
-        /// resource, configured as a part of your Amplify project.
+        /// Describes additional constraints on password requirements to sign in to the auth resource,
+        /// configured as a part of your Amplify project.
         /// </para>
         /// </summary>
         public List<string> AdditionalConstraints
