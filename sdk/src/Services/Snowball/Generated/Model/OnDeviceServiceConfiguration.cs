@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// This is the response object from the CreateLongTermPricing operation.
+    /// An object that represents metadata and configuration settings for services on an AWS
+    /// Snow Family device.
     /// </summary>
-    public partial class CreateLongTermPricingResponse : AmazonWebServiceResponse
+    public partial class OnDeviceServiceConfiguration
     {
-        private string _longTermPricingId;
+        private NFSOnDeviceServiceConfiguration _nfsOnDeviceService;
 
         /// <summary>
-        /// Gets and sets the property LongTermPricingId. 
+        /// Gets and sets the property NFSOnDeviceService. 
         /// <para>
-        /// The ID of the long-term pricing type for the device.
+        /// Represents the NFS service on a Snow Family device.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=41, Max=41)]
-        public string LongTermPricingId
+        public NFSOnDeviceServiceConfiguration NFSOnDeviceService
         {
-            get { return this._longTermPricingId; }
-            set { this._longTermPricingId = value; }
+            get { return this._nfsOnDeviceService; }
+            set { this._nfsOnDeviceService = value; }
         }
 
-        // Check to see if LongTermPricingId property is set
-        internal bool IsSetLongTermPricingId()
+        // Check to see if NFSOnDeviceService property is set
+        internal bool IsSetNFSOnDeviceService()
         {
-            return this._longTermPricingId != null;
+            return this._nfsOnDeviceService != null;
         }
 
     }

@@ -42,6 +42,7 @@ namespace Amazon.Snowball.Model
         private JobType _jobType;
         private string _kmsKeyARN;
         private Notification _notification;
+        private OnDeviceServiceConfiguration _onDeviceServiceConfiguration;
         private JobResource _resources;
         private string _roleARN;
         private ShippingOption _shippingOption;
@@ -218,6 +219,25 @@ namespace Amazon.Snowball.Model
         internal bool IsSetNotification()
         {
             return this._notification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDeviceServiceConfiguration. 
+        /// <para>
+        /// Represents metadata and configuration settings for services on an AWS Snow Family
+        /// device.
+        /// </para>
+        /// </summary>
+        public OnDeviceServiceConfiguration OnDeviceServiceConfiguration
+        {
+            get { return this._onDeviceServiceConfiguration; }
+            set { this._onDeviceServiceConfiguration = value; }
+        }
+
+        // Check to see if OnDeviceServiceConfiguration property is set
+        internal bool IsSetOnDeviceServiceConfiguration()
+        {
+            return this._onDeviceServiceConfiguration != null;
         }
 
         /// <summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3Resource Object
+    /// Response Unmarshaller for NFSOnDeviceServiceConfiguration Object
     /// </summary>  
-    public class S3ResourceUnmarshaller : IUnmarshaller<S3Resource, XmlUnmarshallerContext>, IUnmarshaller<S3Resource, JsonUnmarshallerContext>
+    public class NFSOnDeviceServiceConfigurationUnmarshaller : IUnmarshaller<NFSOnDeviceServiceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NFSOnDeviceServiceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3Resource IUnmarshaller<S3Resource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NFSOnDeviceServiceConfiguration IUnmarshaller<NFSOnDeviceServiceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3Resource Unmarshall(JsonUnmarshallerContext context)
+        public NFSOnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3Resource unmarshalledObject = new S3Resource();
+            NFSOnDeviceServiceConfiguration unmarshalledObject = new NFSOnDeviceServiceConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BucketArn", targetDepth))
+                if (context.TestExpression("StorageLimit", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StorageLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StorageUnit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KeyRange", targetDepth))
-                {
-                    var unmarshaller = KeyRangeUnmarshaller.Instance;
-                    unmarshalledObject.KeyRange = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetOnDeviceServices", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<TargetOnDeviceService, TargetOnDeviceServiceUnmarshaller>(TargetOnDeviceServiceUnmarshaller.Instance);
-                    unmarshalledObject.TargetOnDeviceServices = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageUnit = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3ResourceUnmarshaller _instance = new S3ResourceUnmarshaller();        
+        private static NFSOnDeviceServiceConfigurationUnmarshaller _instance = new NFSOnDeviceServiceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3ResourceUnmarshaller Instance
+        public static NFSOnDeviceServiceConfigurationUnmarshaller Instance
         {
             get
             {

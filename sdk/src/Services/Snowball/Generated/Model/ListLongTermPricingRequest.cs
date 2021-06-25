@@ -30,7 +30,7 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLongTermPricing operation.
-    /// Lists all long term pricing types.
+    /// Lists all long-term pricing types.
     /// </summary>
     public partial class ListLongTermPricingRequest : AmazonSnowballRequest
     {

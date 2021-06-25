@@ -102,6 +102,17 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOnDeviceServiceConfiguration())
+                {
+                    context.Writer.WritePropertyName("OnDeviceServiceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OnDeviceServiceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OnDeviceServiceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetResources())
                 {
                     context.Writer.WritePropertyName("Resources");

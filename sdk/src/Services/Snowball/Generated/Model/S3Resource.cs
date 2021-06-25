@@ -39,6 +39,7 @@ namespace Amazon.Snowball.Model
     {
         private string _bucketArn;
         private KeyRange _keyRange;
+        private List<TargetOnDeviceService> _targetOnDeviceServices = new List<TargetOnDeviceService>();
 
         /// <summary>
         /// Gets and sets the property BucketArn. 
@@ -78,6 +79,26 @@ namespace Amazon.Snowball.Model
         internal bool IsSetKeyRange()
         {
             return this._keyRange != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetOnDeviceServices. 
+        /// <para>
+        /// Specifies the service or services on the Snow Family device that your transferred
+        /// data will be exported from or imported into. AWS Snow Family supports Amazon S3 and
+        /// NFS (Network File System).
+        /// </para>
+        /// </summary>
+        public List<TargetOnDeviceService> TargetOnDeviceServices
+        {
+            get { return this._targetOnDeviceServices; }
+            set { this._targetOnDeviceServices = value; }
+        }
+
+        // Check to see if TargetOnDeviceServices property is set
+        internal bool IsSetTargetOnDeviceServices()
+        {
+            return this._targetOnDeviceServices != null && this._targetOnDeviceServices.Count > 0; 
         }
 
     }

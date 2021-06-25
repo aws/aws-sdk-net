@@ -1,0 +1,82 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the snowball-2016-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Snowball.Model
+{
+    /// <summary>
+    /// An object that represents metadata and configuration settings for NFS service on an
+    /// AWS Snow Family device.
+    /// </summary>
+    public partial class NFSOnDeviceServiceConfiguration
+    {
+        private int? _storageLimit;
+        private StorageUnit _storageUnit;
+
+        /// <summary>
+        /// Gets and sets the property StorageLimit. 
+        /// <para>
+        /// The maximum NFS storage for one Snowball Family device.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int StorageLimit
+        {
+            get { return this._storageLimit.GetValueOrDefault(); }
+            set { this._storageLimit = value; }
+        }
+
+        // Check to see if StorageLimit property is set
+        internal bool IsSetStorageLimit()
+        {
+            return this._storageLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageUnit. 
+        /// <para>
+        /// The scale unit of the NFS storage on the device.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: TB.
+        /// </para>
+        /// </summary>
+        public StorageUnit StorageUnit
+        {
+            get { return this._storageUnit; }
+            set { this._storageUnit = value; }
+        }
+
+        // Check to see if StorageUnit property is set
+        internal bool IsSetStorageUnit()
+        {
+            return this._storageUnit != null;
+        }
+
+    }
+}

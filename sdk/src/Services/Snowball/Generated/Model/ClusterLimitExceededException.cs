@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Job creation failed. Currently, clusters support five nodes. If you have less than
+    /// Job creation failed. Currently, clusters support five nodes. If you have fewer than
     /// five nodes for your cluster and you have more nodes to create for this cluster, try
-    /// again and create jobs until your cluster has exactly five notes.
+    /// again and create jobs until your cluster has exactly five nodes.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

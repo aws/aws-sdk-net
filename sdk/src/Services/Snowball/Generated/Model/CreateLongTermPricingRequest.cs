@@ -30,9 +30,9 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLongTermPricing operation.
-    /// Creates a job with long term usage option for a device. The long term usage is a one
-    /// year or three year long term pricing type for the device. You are billed upfront and
-    /// AWS give discounts for long term pricing. For detailed information see XXXXXXXX
+    /// Creates a job with the long-term usage option for a device. The long-term usage is
+    /// a 1-year or 3-year long-term pricing type for the device. You are billed upfront,
+    /// and AWS provides discounts for long-term pricing.
     /// </summary>
     public partial class CreateLongTermPricingRequest : AmazonSnowballRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property IsLongTermPricingAutoRenew. 
         /// <para>
-        /// Specifies whether the current long term pricing type for the device should be renewed.
+        /// Specifies whether the current long-term pricing type for the device should be renewed.
         /// </para>
         /// </summary>
         public bool IsLongTermPricingAutoRenew
@@ -61,8 +61,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property LongTermPricingType. 
         /// <para>
-        /// The type of long term pricing option you want for the device - one year or three year
-        /// long term pricing.
+        /// The type of long-term pricing option you want for the device, either 1-year or 3-year
+        /// long-term pricing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +81,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snow Family device to use for the long term pricing job.
+        /// The type of AWS Snow Family device to use for the long-term pricing job.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

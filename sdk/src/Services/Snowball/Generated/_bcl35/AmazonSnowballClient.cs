@@ -539,7 +539,7 @@ namespace Amazon.Snowball
         /// </para>
         ///  
         /// <para>
-        /// Availability of device types differ by AWS Region. For more information about region
+        /// Availability of device types differ by AWS Region. For more information about Region
         /// availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
         /// Regional Services</a>.
         /// </para>
@@ -658,9 +658,9 @@ namespace Amazon.Snowball
         /// 
         /// <returns>The response from the CreateJob service method, as returned by Snowball.</returns>
         /// <exception cref="Amazon.Snowball.Model.ClusterLimitExceededException">
-        /// Job creation failed. Currently, clusters support five nodes. If you have less than
+        /// Job creation failed. Currently, clusters support five nodes. If you have fewer than
         /// five nodes for your cluster and you have more nodes to create for this cluster, try
-        /// again and create jobs until your cluster has exactly five notes.
+        /// again and create jobs until your cluster has exactly five nodes.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
         /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
@@ -728,9 +728,9 @@ namespace Amazon.Snowball
         #region  CreateLongTermPricing
 
         /// <summary>
-        /// Creates a job with long term usage option for a device. The long term usage is a one
-        /// year or three year long term pricing type for the device. You are billed upfront and
-        /// AWS give discounts for long term pricing. For detailed information see XXXXXXXX
+        /// Creates a job with the long-term usage option for a device. The long-term usage is
+        /// a 1-year or 3-year long-term pricing type for the device. You are billed upfront,
+        /// and AWS provides discounts for long-term pricing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLongTermPricing service method.</param>
         /// 
@@ -1717,7 +1717,7 @@ namespace Amazon.Snowball
         #region  ListLongTermPricing
 
         /// <summary>
-        /// Lists all long term pricing types.
+        /// Lists all long-term pricing types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLongTermPricing service method.</param>
         /// 
@@ -1867,9 +1867,9 @@ namespace Amazon.Snowball
         /// 
         /// <returns>The response from the UpdateJob service method, as returned by Snowball.</returns>
         /// <exception cref="Amazon.Snowball.Model.ClusterLimitExceededException">
-        /// Job creation failed. Currently, clusters support five nodes. If you have less than
+        /// Job creation failed. Currently, clusters support five nodes. If you have fewer than
         /// five nodes for your cluster and you have more nodes to create for this cluster, try
-        /// again and create jobs until your cluster has exactly five notes.
+        /// again and create jobs until your cluster has exactly five nodes.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
         /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
@@ -1941,7 +1941,7 @@ namespace Amazon.Snowball
         #region  UpdateJobShipmentState
 
         /// <summary>
-        /// Updates the state when a the shipment states changes to a different state.
+        /// Updates the state when a shipment state changes to a different state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobShipmentState service method.</param>
         /// 
@@ -2003,7 +2003,7 @@ namespace Amazon.Snowball
         #region  UpdateLongTermPricing
 
         /// <summary>
-        /// Updates the long term pricing type.
+        /// Updates the long-term pricing type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLongTermPricing service method.</param>
         /// 

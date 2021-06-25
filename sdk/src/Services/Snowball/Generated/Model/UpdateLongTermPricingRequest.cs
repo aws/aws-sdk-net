@@ -30,7 +30,7 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLongTermPricing operation.
-    /// Updates the long term pricing type.
+    /// Updates the long-term pricing type.
     /// </summary>
     public partial class UpdateLongTermPricingRequest : AmazonSnowballRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property IsLongTermPricingAutoRenew. 
         /// <para>
-        /// If set to <code>true</code>, specifies that the current long term pricing type for
-        /// the device should be automatically renewed before the long term pricing contract expires.
+        /// If set to <code>true</code>, specifies that the current long-term pricing type for
+        /// the device should be automatically renewed before the long-term pricing contract expires.
         /// </para>
         /// </summary>
         public bool IsLongTermPricingAutoRenew
@@ -60,7 +60,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property LongTermPricingId. 
         /// <para>
-        /// The ID of the long term pricing type for the device.
+        /// The ID of the long-term pricing type for the device.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=41, Max=41)]
@@ -79,7 +79,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property ReplacementJob. 
         /// <para>
-        /// Specifies that a device that is ordered with long term pricing should be replaced
+        /// Specifies that a device that is ordered with long-term pricing should be replaced
         /// with a new device.
         /// </para>
         /// </summary>

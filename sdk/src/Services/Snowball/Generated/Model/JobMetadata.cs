@@ -49,6 +49,8 @@ namespace Amazon.Snowball.Model
         private string _kmsKeyARN;
         private string _longTermPricingId;
         private Notification _notification;
+        private OnDeviceServiceConfiguration _onDeviceServiceConfiguration;
+        private RemoteManagement _remoteManagement;
         private JobResource _resources;
         private string _roleARN;
         private ShippingDetails _shippingDetails;
@@ -286,7 +288,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property LongTermPricingId. 
         /// <para>
-        /// The ID of the long term pricing type for the device.
+        /// The ID of the long-term pricing type for the device.
         /// </para>
         /// </summary>
         [AWSProperty(Min=41, Max=41)]
@@ -321,6 +323,46 @@ namespace Amazon.Snowball.Model
         internal bool IsSetNotification()
         {
             return this._notification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDeviceServiceConfiguration. 
+        /// <para>
+        /// Represents metadata and configuration settings for services on an AWS Snow Family
+        /// device.
+        /// </para>
+        /// </summary>
+        public OnDeviceServiceConfiguration OnDeviceServiceConfiguration
+        {
+            get { return this._onDeviceServiceConfiguration; }
+            set { this._onDeviceServiceConfiguration = value; }
+        }
+
+        // Check to see if OnDeviceServiceConfiguration property is set
+        internal bool IsSetOnDeviceServiceConfiguration()
+        {
+            return this._onDeviceServiceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteManagement. 
+        /// <para>
+        /// Allows you to securely operate and manage Snowcone devices remotely from outside of
+        /// your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management
+        /// will automatically be available when the device arrives at your location. Otherwise,
+        /// you need to use the Snowball Client to manage the device.
+        /// </para>
+        /// </summary>
+        public RemoteManagement RemoteManagement
+        {
+            get { return this._remoteManagement; }
+            set { this._remoteManagement = value; }
+        }
+
+        // Check to see if RemoteManagement property is set
+        internal bool IsSetRemoteManagement()
+        {
+            return this._remoteManagement != null;
         }
 
         /// <summary>

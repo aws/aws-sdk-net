@@ -42,6 +42,8 @@ namespace Amazon.Snowball.Model
         private JobType _jobType;
         private string _kmsKeyARN;
         private Notification _notification;
+        private OnDeviceServiceConfiguration _onDeviceServiceConfiguration;
+        private RemoteManagement _remoteManagement;
         private JobResource _resources;
         private string _roleARN;
         private ShippingOption _shippingOption;
@@ -173,6 +175,47 @@ namespace Amazon.Snowball.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnDeviceServiceConfiguration. 
+        /// <para>
+        /// Specifies the service or services on the Snow Family device that your transferred
+        /// data will be exported from or imported into. AWS Snow Family supports Amazon S3 and
+        /// NFS (Network File System).
+        /// </para>
+        /// </summary>
+        public OnDeviceServiceConfiguration OnDeviceServiceConfiguration
+        {
+            get { return this._onDeviceServiceConfiguration; }
+            set { this._onDeviceServiceConfiguration = value; }
+        }
+
+        // Check to see if OnDeviceServiceConfiguration property is set
+        internal bool IsSetOnDeviceServiceConfiguration()
+        {
+            return this._onDeviceServiceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteManagement. 
+        /// <para>
+        /// Allows you to securely operate and manage Snow devices in a cluster remotely from
+        /// outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote
+        /// management will automatically be available when the device arrives at your location.
+        /// Otherwise, you need to use the Snowball Client to manage the device.
+        /// </para>
+        /// </summary>
+        public RemoteManagement RemoteManagement
+        {
+            get { return this._remoteManagement; }
+            set { this._remoteManagement = value; }
+        }
+
+        // Check to see if RemoteManagement property is set
+        internal bool IsSetRemoteManagement()
+        {
+            return this._remoteManagement != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
         /// The resources associated with the cluster job. These resources include Amazon S3 buckets
@@ -234,7 +277,7 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In India, Snow device are delivered in one to seven days.
+        /// In India, Snow devices are delivered in one to seven days.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -254,7 +297,7 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In India, Snow device are delivered in one to seven days.
+        /// In India, Snow devices are delivered in one to seven days.
         /// </para>
         ///  </li> <li> 
         /// <para>

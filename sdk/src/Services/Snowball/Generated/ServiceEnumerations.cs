@@ -87,6 +87,56 @@ namespace Amazon.Snowball
 
 
     /// <summary>
+    /// Constants used for properties of type DeviceServiceName.
+    /// </summary>
+    public class DeviceServiceName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NFS_ON_DEVICE_SERVICE for DeviceServiceName
+        /// </summary>
+        public static readonly DeviceServiceName NFS_ON_DEVICE_SERVICE = new DeviceServiceName("NFS_ON_DEVICE_SERVICE");
+        /// <summary>
+        /// Constant S3_ON_DEVICE_SERVICE for DeviceServiceName
+        /// </summary>
+        public static readonly DeviceServiceName S3_ON_DEVICE_SERVICE = new DeviceServiceName("S3_ON_DEVICE_SERVICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceServiceName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceServiceName FindValue(string value)
+        {
+            return FindValue<DeviceServiceName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceServiceName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobState.
     /// </summary>
     public class JobState : ConstantClass
@@ -278,6 +328,56 @@ namespace Amazon.Snowball
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LongTermPricingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RemoteManagement.
+    /// </summary>
+    public class RemoteManagement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSTALLED_AUTOSTART for RemoteManagement
+        /// </summary>
+        public static readonly RemoteManagement INSTALLED_AUTOSTART = new RemoteManagement("INSTALLED_AUTOSTART");
+        /// <summary>
+        /// Constant INSTALLED_ONLY for RemoteManagement
+        /// </summary>
+        public static readonly RemoteManagement INSTALLED_ONLY = new RemoteManagement("INSTALLED_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RemoteManagement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemoteManagement FindValue(string value)
+        {
+            return FindValue<RemoteManagement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemoteManagement(string value)
         {
             return FindValue(value);
         }
@@ -588,6 +688,106 @@ namespace Amazon.Snowball
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SnowballType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageUnit.
+    /// </summary>
+    public class StorageUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TB for StorageUnit
+        /// </summary>
+        public static readonly StorageUnit TB = new StorageUnit("TB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageUnit FindValue(string value)
+        {
+            return FindValue<StorageUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransferOption.
+    /// </summary>
+    public class TransferOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXPORT for TransferOption
+        /// </summary>
+        public static readonly TransferOption EXPORT = new TransferOption("EXPORT");
+        /// <summary>
+        /// Constant IMPORT for TransferOption
+        /// </summary>
+        public static readonly TransferOption IMPORT = new TransferOption("IMPORT");
+        /// <summary>
+        /// Constant LOCAL_USE for TransferOption
+        /// </summary>
+        public static readonly TransferOption LOCAL_USE = new TransferOption("LOCAL_USE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransferOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransferOption FindValue(string value)
+        {
+            return FindValue<TransferOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransferOption(string value)
         {
             return FindValue(value);
         }

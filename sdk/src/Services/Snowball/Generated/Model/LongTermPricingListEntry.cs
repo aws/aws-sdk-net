@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Each <code>LongTermPricingListEntry</code> object contains information about a long
-    /// term pricing type.
+    /// Each <code>LongTermPricingListEntry</code> object contains information about a long-term
+    /// pricing type.
     /// </summary>
     public partial class LongTermPricingListEntry
     {
@@ -48,7 +48,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property CurrentActiveJob. 
         /// <para>
-        /// The current active jobs on the device the long term pricing type.
+        /// The current active jobs on the device the long-term pricing type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=39, Max=39)]
@@ -67,8 +67,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property IsLongTermPricingAutoRenew. 
         /// <para>
-        /// If set to <code>true</code>, specifies that the current long term pricing type for
-        /// the device should be automatically renewed before the long term pricing contract expires.
+        /// If set to <code>true</code>, specifies that the current long-term pricing type for
+        /// the device should be automatically renewed before the long-term pricing contract expires.
         /// </para>
         /// </summary>
         public bool IsLongTermPricingAutoRenew
@@ -86,7 +86,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobIds. 
         /// <para>
-        /// The IDs of the jobs that are associated with a long term pricing type.
+        /// The IDs of the jobs that are associated with a long-term pricing type.
         /// </para>
         /// </summary>
         public List<string> JobIds
@@ -104,7 +104,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property LongTermPricingEndDate. 
         /// <para>
-        /// The end date the long term pricing contract.
+        /// The end date the long-term pricing contract.
         /// </para>
         /// </summary>
         public DateTime LongTermPricingEndDate
@@ -122,7 +122,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property LongTermPricingId. 
         /// <para>
-        /// The ID of the long term pricing type for the device.
+        /// The ID of the long-term pricing type for the device.
         /// </para>
         /// </summary>
         [AWSProperty(Min=41, Max=41)]
@@ -141,7 +141,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property LongTermPricingStartDate. 
         /// <para>
-        /// The start date of the long term pricing contract.
+        /// The start date of the long-term pricing contract.
         /// </para>
         /// </summary>
         public DateTime LongTermPricingStartDate
@@ -159,7 +159,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property LongTermPricingStatus. 
         /// <para>
-        /// The status of the long term pricing type.
+        /// The status of the long-term pricing type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -178,7 +178,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property LongTermPricingType. 
         /// <para>
-        /// The type of long term pricing that was selected for the device.
+        /// The type of long-term pricing that was selected for the device.
         /// </para>
         /// </summary>
         public LongTermPricingType LongTermPricingType
@@ -196,7 +196,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property ReplacementJob. 
         /// <para>
-        /// A new device that replaces a device that is ordered with long term pricing.
+        /// A new device that replaces a device that is ordered with long-term pricing.
         /// </para>
         /// </summary>
         [AWSProperty(Min=39, Max=39)]
@@ -215,7 +215,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snow Family device associated with this long term pricing job.
+        /// The type of AWS Snow Family device associated with this long-term pricing job.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

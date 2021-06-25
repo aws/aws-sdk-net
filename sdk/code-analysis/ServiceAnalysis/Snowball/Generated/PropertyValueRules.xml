@@ -589,6 +589,10 @@
     <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.NFSOnDeviceServiceConfiguration.StorageLimit</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.Notification.SnsTopicARN</property>
     <max>255</max>
     <pattern>arn:aws.*:sns:.*:[0-9]{12}:.*</pattern>

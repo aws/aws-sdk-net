@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3Resource Marshaller
+    /// NFSOnDeviceServiceConfiguration Marshaller
     /// </summary>       
-    public class S3ResourceMarshaller : IRequestMarshaller<S3Resource, JsonMarshallerContext> 
+    public class NFSOnDeviceServiceConfigurationMarshaller : IRequestMarshaller<NFSOnDeviceServiceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,18 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3Resource requestObject, JsonMarshallerContext context)
+        public void Marshall(NFSOnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBucketArn())
+            if(requestObject.IsSetStorageLimit())
             {
-                context.Writer.WritePropertyName("BucketArn");
-                context.Writer.Write(requestObject.BucketArn);
+                context.Writer.WritePropertyName("StorageLimit");
+                context.Writer.Write(requestObject.StorageLimit);
             }
 
-            if(requestObject.IsSetKeyRange())
+            if(requestObject.IsSetStorageUnit())
             {
-                context.Writer.WritePropertyName("KeyRange");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = KeyRangeMarshaller.Instance;
-                marshaller.Marshall(requestObject.KeyRange, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTargetOnDeviceServices())
-            {
-                context.Writer.WritePropertyName("TargetOnDeviceServices");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectTargetOnDeviceServicesListValue in requestObject.TargetOnDeviceServices)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetOnDeviceServiceMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTargetOnDeviceServicesListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("StorageUnit");
+                context.Writer.Write(requestObject.StorageUnit);
             }
 
         }
@@ -83,7 +62,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static S3ResourceMarshaller Instance = new S3ResourceMarshaller();
+        public readonly static NFSOnDeviceServiceConfigurationMarshaller Instance = new NFSOnDeviceServiceConfigurationMarshaller();
 
     }
 }

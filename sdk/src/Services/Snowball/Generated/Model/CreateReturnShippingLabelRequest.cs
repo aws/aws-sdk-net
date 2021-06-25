@@ -40,7 +40,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The ID for a job that you want to create the return shipping label for. For example
+        /// The ID for a job that you want to create the return shipping label for; for example,
         /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>

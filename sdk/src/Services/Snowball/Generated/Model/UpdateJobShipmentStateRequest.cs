@@ -30,7 +30,7 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateJobShipmentState operation.
-    /// Updates the state when a the shipment states changes to a different state.
+    /// Updates the state when a shipment state changes to a different state.
     /// </summary>
     public partial class UpdateJobShipmentStateRequest : AmazonSnowballRequest
     {

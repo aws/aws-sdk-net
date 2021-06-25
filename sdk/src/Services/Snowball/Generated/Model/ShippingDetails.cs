@@ -96,7 +96,7 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In India, Snow device are delivered in one to seven days.
+        /// In India, Snow devices are delivered in one to seven days.
         /// </para>
         ///  </li> <li> 
         /// <para>
