@@ -4453,6 +4453,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging">REST API Reference for DisableLogging Operation</seealso>
         public virtual Task<DisableLoggingResponse> DisableLoggingAsync(DisableLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
