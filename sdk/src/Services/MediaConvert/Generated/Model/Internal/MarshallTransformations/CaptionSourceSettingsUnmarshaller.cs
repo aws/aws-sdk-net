@@ -106,6 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrackSourceSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("webvttHlsSourceSettings", targetDepth))
+                {
+                    var unmarshaller = WebvttHlsSourceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.WebvttHlsSourceSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

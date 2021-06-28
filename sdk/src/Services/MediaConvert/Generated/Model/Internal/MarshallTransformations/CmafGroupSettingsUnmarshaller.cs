@@ -112,6 +112,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.FragmentLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageBasedTrickPlay", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageBasedTrickPlay = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manifestCompression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

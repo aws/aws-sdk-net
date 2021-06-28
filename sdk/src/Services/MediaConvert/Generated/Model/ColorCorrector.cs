@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private int? _contrast;
         private Hdr10Metadata _hdr10Metadata;
         private int? _hue;
+        private SampleRangeConversion _sampleRangeConversion;
         private int? _saturation;
 
         /// <summary>
@@ -131,6 +132,30 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetHue()
         {
             return this._hue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SampleRangeConversion. Specify the video color sample range
+        /// for this output. To create a full range output, you must start with a full range YUV
+        /// input and keep the default value, None (NONE). To create a limited range output from
+        /// a full range input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs,
+        /// your output is always limited range, regardless of your choice here. When you create
+        /// a limited range output from a full range input, MediaConvert limits the active pixel
+        /// values in a way that depends on the output's bit depth: 8-bit outputs contain only
+        /// values from 16 through 235 and 10-bit outputs contain only values from 64 through
+        /// 940. With this conversion, MediaConvert also changes the output metadata to note the
+        /// limited range.
+        /// </summary>
+        public SampleRangeConversion SampleRangeConversion
+        {
+            get { return this._sampleRangeConversion; }
+            set { this._sampleRangeConversion = value; }
+        }
+
+        // Check to see if SampleRangeConversion property is set
+        internal bool IsSetSampleRangeConversion()
+        {
+            return this._sampleRangeConversion != null;
         }
 
         /// <summary>

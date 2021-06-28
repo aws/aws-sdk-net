@@ -112,6 +112,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.HbbtvCompliance = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageBasedTrickPlay", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageBasedTrickPlay = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("minBufferTime", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

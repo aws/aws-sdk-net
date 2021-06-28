@@ -82,6 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExternalAudioFileInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hlsRenditionGroupSettings", targetDepth))
+                {
+                    var unmarshaller = HlsRenditionGroupSettingsUnmarshaller.Instance;
+                    unmarshalledObject.HlsRenditionGroupSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("languageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

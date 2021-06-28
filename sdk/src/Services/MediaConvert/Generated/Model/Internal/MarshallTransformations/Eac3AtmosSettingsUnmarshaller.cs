@@ -88,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.DialogueIntelligence = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("downmixControl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DownmixControl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dynamicRangeCompressionLine", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DynamicRangeCompressionRf = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dynamicRangeControl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DynamicRangeControl = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("loRoCenterMixLevel", targetDepth))

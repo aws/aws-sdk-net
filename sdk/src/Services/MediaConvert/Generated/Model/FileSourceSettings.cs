@@ -82,8 +82,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property SourceFile. External caption file used for loading captions.
-        /// Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', and
-        /// 'vtt'.
+        /// Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt',
+        /// and 'vtt'.
         /// </summary>
         [AWSProperty(Min=14)]
         public string SourceFile

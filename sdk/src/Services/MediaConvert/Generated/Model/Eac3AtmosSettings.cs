@@ -38,8 +38,10 @@ namespace Amazon.MediaConvert.Model
         private Eac3AtmosBitstreamMode _bitstreamMode;
         private Eac3AtmosCodingMode _codingMode;
         private Eac3AtmosDialogueIntelligence _dialogueIntelligence;
+        private Eac3AtmosDownmixControl _downmixControl;
         private Eac3AtmosDynamicRangeCompressionLine _dynamicRangeCompressionLine;
         private Eac3AtmosDynamicRangeCompressionRf _dynamicRangeCompressionRf;
+        private Eac3AtmosDynamicRangeControl _dynamicRangeControl;
         private double? _loRoCenterMixLevel;
         private double? _loRoSurroundMixLevel;
         private double? _ltRtCenterMixLevel;
@@ -51,10 +53,13 @@ namespace Amazon.MediaConvert.Model
         private Eac3AtmosSurroundExMode _surroundExMode;
 
         /// <summary>
-        /// Gets and sets the property Bitrate. Specify the average bitrate in bits per second.Valid
-        /// values: 384k, 448k, 640k, 768k
+        /// Gets and sets the property Bitrate. Specify the average bitrate for this output in
+        /// bits per second. Valid values: 384k, 448k, 576k, 640k, 768k, 1024k Default value:
+        /// 448k Note that MediaConvert supports 384k only with channel-based immersive (CBI)
+        /// 7.1.4 and 5.1.4 inputs. For CBI 9.1.6 and other input types, MediaConvert automatically
+        /// increases your output bitrate to 448k.
         /// </summary>
-        [AWSProperty(Min=384000, Max=768000)]
+        [AWSProperty(Min=384000, Max=1024000)]
         public int Bitrate
         {
             get { return this._bitrate.GetValueOrDefault(); }
@@ -86,7 +91,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property CodingMode. The coding mode for Dolby Digital Plus JOC
-        /// (Atmos) is always 9.1.6 (CODING_MODE_9_1_6).
+        /// (Atmos).
         /// </summary>
         public Eac3AtmosCodingMode CodingMode
         {
@@ -117,8 +122,38 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DynamicRangeCompressionLine. Specify the absolute peak
-        /// level for a signal with dynamic range compression.
+        /// Gets and sets the property DownmixControl. Specify whether MediaConvert should use
+        /// any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED)
+        /// to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE)
+        /// to use the metadata from your input. Related settings--Use these settings to specify
+        /// your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right
+        /// total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel),
+        /// Left only/Right only center (LoRoCenterMixLevel),  and Stereo downmix (StereoDownmix).
+        /// When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't
+        /// specify values for the related settings, MediaConvert uses default values for those
+        /// settings.
+        /// </summary>
+        public Eac3AtmosDownmixControl DownmixControl
+        {
+            get { return this._downmixControl; }
+            set { this._downmixControl = value; }
+        }
+
+        // Check to see if DownmixControl property is set
+        internal bool IsSetDownmixControl()
+        {
+            return this._downmixControl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamicRangeCompressionLine. Choose the Dolby dynamic range
+        /// control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby
+        /// stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT)
+        /// Related setting: To have MediaConvert use the value you specify here, keep the default
+        /// value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl).
+        /// Otherwise, MediaConvert ignores Dynamic range compression line (DynamicRangeCompressionLine).
+        /// For information about the Dolby DRC operating modes and profiles, see the Dynamic
+        /// Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
         /// </summary>
         public Eac3AtmosDynamicRangeCompressionLine DynamicRangeCompressionLine
         {
@@ -133,8 +168,14 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DynamicRangeCompressionRf. Specify how the service limits
-        /// the audio dynamic range when compressing the audio.
+        /// Gets and sets the property DynamicRangeCompressionRf. Choose the Dolby dynamic range
+        /// control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby
+        /// stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT)
+        /// Related setting: To have MediaConvert use the value you specify here, keep the default
+        /// value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl).
+        /// Otherwise, MediaConvert ignores Dynamic range compression RF (DynamicRangeCompressionRf).
+        /// For information about the Dolby DRC operating modes and profiles, see the Dynamic
+        /// Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
         /// </summary>
         public Eac3AtmosDynamicRangeCompressionRf DynamicRangeCompressionRf
         {
@@ -149,11 +190,37 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DynamicRangeControl. Specify whether MediaConvert should
+        /// use any dynamic range control metadata from your input file. Keep the default value,
+        /// Custom (SPECIFIED), to provide dynamic range control values in your job settings.
+        /// Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input.
+        /// Related settings--Use these settings to specify your dynamic range control values:
+        /// Dynamic range compression line (DynamicRangeCompressionLine) and Dynamic range compression
+        /// RF (DynamicRangeCompressionRf). When you keep the value Custom (SPECIFIED) for Dynamic
+        /// range control (DynamicRangeControl) and you don't specify values for the related settings,
+        /// MediaConvert uses default values for those settings.
+        /// </summary>
+        public Eac3AtmosDynamicRangeControl DynamicRangeControl
+        {
+            get { return this._dynamicRangeControl; }
+            set { this._dynamicRangeControl = value; }
+        }
+
+        // Check to see if DynamicRangeControl property is set
+        internal bool IsSetDynamicRangeControl()
+        {
+            return this._dynamicRangeControl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LoRoCenterMixLevel. Specify a value for the following Dolby
-        /// Atmos setting: Left only/Right only center mix(Lo/Ro center). MediaConvert uses this
-        /// value for downmixing. How the service uses thisvalue depends on the value that you
-        /// choose for Stereo downmix (Eac3AtmosStereoDownmix).Valid values: 3.0, 1.5, 0.0, -1.5,
-        /// -3.0, -4.5, and -6.0.
+        /// Atmos setting: Left only/Right only center mix (Lo/Ro center). MediaConvert uses this
+        /// value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB).
+        /// Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the
+        /// service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix).
+        /// Related setting: To have MediaConvert use this value, keep the default value, Custom
+        /// (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert
+        /// ignores Left only/Right only center (LoRoCenterMixLevel).
         /// </summary>
         public double LoRoCenterMixLevel
         {
@@ -170,9 +237,12 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property LoRoSurroundMixLevel. Specify a value for the following
         /// Dolby Atmos setting: Left only/Right only (Lo/Ro surround). MediaConvert uses this
-        /// value for downmixing. How the service uses this value depends on the value that you
-        /// choose for Stereo downmix (Eac3AtmosStereoDownmix). Valid values: -1.5, -3.0, -4.5,
-        /// -6.0, and -60. The value -60 mutes the channel.
+        /// value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB).
+        /// Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related
+        /// setting: How the service uses this value depends on the value that you choose for
+        /// Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use
+        /// this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control
+        /// (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only surround (LoRoSurroundMixLevel).
         /// </summary>
         public double LoRoSurroundMixLevel
         {
@@ -189,9 +259,12 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property LtRtCenterMixLevel. Specify a value for the following Dolby
         /// Atmos setting: Left total/Right total center mix (Lt/Rt center). MediaConvert uses
-        /// this value for downmixing. How the service uses this value depends on the value that
-        /// you choose for Stereo downmix (Eac3AtmosStereoDownmix). Valid values: 3.0, 1.5, 0.0,
-        /// -1.5, -3.0, -4.5, and -6.0.
+        /// this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB)
+        /// Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the
+        /// service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix).
+        /// Related setting: To have MediaConvert use this value, keep the default value, Custom
+        /// (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert
+        /// ignores Left total/Right total center (LtRtCenterMixLevel).
         /// </summary>
         public double LtRtCenterMixLevel
         {
@@ -208,9 +281,12 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property LtRtSurroundMixLevel. Specify a value for the following
         /// Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt surround). MediaConvert
-        /// uses this value for downmixing. How the service uses this value depends on the value
-        /// that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Valid values: -1.5, -3.0,
-        /// -4.5, -6.0, and -60. The value -60 mutes the channel.
+        /// uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB)
+        /// Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related
+        /// setting: How the service uses this value depends on the value that you choose for
+        /// Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use
+        /// this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control
+        /// (DownmixControl). Otherwise, the service ignores Left total/Right total surround (LtRtSurroundMixLevel).
         /// </summary>
         public double LtRtSurroundMixLevel
         {
@@ -258,11 +334,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpeechThreshold. Specify the percentage of audio content
-        /// that must be speech before the encoder uses the measured speech loudness as the overall
-        /// program loudness.
+        /// Gets and sets the property SpeechThreshold. Specify the percentage of audio content,
+        /// from 0% to 100%, that must be speech in order for the encoder to use the measured
+        /// speech loudness as the overall program loudness. Default value: 15%
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public int SpeechThreshold
         {
             get { return this._speechThreshold.GetValueOrDefault(); }
@@ -277,6 +353,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property StereoDownmix. Choose how the service does stereo downmixing.
+        /// Default value: Not indicated (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting:
+        /// To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for
+        /// the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo
+        /// downmix (StereoDownmix).
         /// </summary>
         public Eac3AtmosStereoDownmix StereoDownmix
         {

@@ -34,6 +34,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class ProresSettings
     {
+        private ProresChromaSampling _chromaSampling;
         private ProresCodecProfile _codecProfile;
         private ProresFramerateControl _framerateControl;
         private ProresFramerateConversionAlgorithm _framerateConversionAlgorithm;
@@ -46,6 +47,33 @@ namespace Amazon.MediaConvert.Model
         private ProresScanTypeConversionMode _scanTypeConversionMode;
         private ProresSlowPal _slowPal;
         private ProresTelecine _telecine;
+
+        /// <summary>
+        /// Gets and sets the property ChromaSampling. This setting applies only to ProRes 4444
+        /// and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling.
+        /// Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4
+        /// chroma sampling. You must specify a value for this setting when your output codec
+        /// profile supports 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling
+        /// to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec
+        /// profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile)
+        /// support 4:4:4 chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes
+        /// 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to Preserve 4:4:4 sampling,
+        /// you must disable all video preprocessors except for Nexguard file marker (PartnerWatermarking).
+        /// When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion,
+        /// you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop
+        /// duplicate (DUPLICATE_DROP).
+        /// </summary>
+        public ProresChromaSampling ChromaSampling
+        {
+            get { return this._chromaSampling; }
+            set { this._chromaSampling = value; }
+        }
+
+        // Check to see if ChromaSampling property is set
+        internal bool IsSetChromaSampling()
+        {
+            return this._chromaSampling != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CodecProfile. Use Profile (ProResCodecProfile) to specify

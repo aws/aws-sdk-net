@@ -1681,6 +1681,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant HLS_RENDITION_GROUP for AudioSelectorType
+        /// </summary>
+        public static readonly AudioSelectorType HLS_RENDITION_GROUP = new AudioSelectorType("HLS_RENDITION_GROUP");
+        /// <summary>
         /// Constant LANGUAGE_CODE for AudioSelectorType
         /// </summary>
         public static readonly AudioSelectorType LANGUAGE_CODE = new AudioSelectorType("LANGUAGE_CODE");
@@ -3205,6 +3209,60 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmafImageBasedTrickPlay.
+    /// </summary>
+    public class CmafImageBasedTrickPlay : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for CmafImageBasedTrickPlay
+        /// </summary>
+        public static readonly CmafImageBasedTrickPlay NONE = new CmafImageBasedTrickPlay("NONE");
+        /// <summary>
+        /// Constant THUMBNAIL for CmafImageBasedTrickPlay
+        /// </summary>
+        public static readonly CmafImageBasedTrickPlay THUMBNAIL = new CmafImageBasedTrickPlay("THUMBNAIL");
+        /// <summary>
+        /// Constant THUMBNAIL_AND_FULLFRAME for CmafImageBasedTrickPlay
+        /// </summary>
+        public static readonly CmafImageBasedTrickPlay THUMBNAIL_AND_FULLFRAME = new CmafImageBasedTrickPlay("THUMBNAIL_AND_FULLFRAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafImageBasedTrickPlay(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafImageBasedTrickPlay FindValue(string value)
+        {
+            return FindValue<CmafImageBasedTrickPlay>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafImageBasedTrickPlay(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmafInitializationVectorInManifest.
     /// </summary>
     public class CmafInitializationVectorInManifest : ConstantClass
@@ -4515,6 +4573,60 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type DashIsoImageBasedTrickPlay.
+    /// </summary>
+    public class DashIsoImageBasedTrickPlay : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for DashIsoImageBasedTrickPlay
+        /// </summary>
+        public static readonly DashIsoImageBasedTrickPlay NONE = new DashIsoImageBasedTrickPlay("NONE");
+        /// <summary>
+        /// Constant THUMBNAIL for DashIsoImageBasedTrickPlay
+        /// </summary>
+        public static readonly DashIsoImageBasedTrickPlay THUMBNAIL = new DashIsoImageBasedTrickPlay("THUMBNAIL");
+        /// <summary>
+        /// Constant THUMBNAIL_AND_FULLFRAME for DashIsoImageBasedTrickPlay
+        /// </summary>
+        public static readonly DashIsoImageBasedTrickPlay THUMBNAIL_AND_FULLFRAME = new DashIsoImageBasedTrickPlay("THUMBNAIL_AND_FULLFRAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashIsoImageBasedTrickPlay(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashIsoImageBasedTrickPlay FindValue(string value)
+        {
+            return FindValue<DashIsoImageBasedTrickPlay>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashIsoImageBasedTrickPlay(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DashIsoMpdProfile.
     /// </summary>
     public class DashIsoMpdProfile : ConstantClass
@@ -5677,9 +5789,21 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant CODING_MODE_5_1_4 for Eac3AtmosCodingMode
+        /// </summary>
+        public static readonly Eac3AtmosCodingMode CODING_MODE_5_1_4 = new Eac3AtmosCodingMode("CODING_MODE_5_1_4");
+        /// <summary>
+        /// Constant CODING_MODE_7_1_4 for Eac3AtmosCodingMode
+        /// </summary>
+        public static readonly Eac3AtmosCodingMode CODING_MODE_7_1_4 = new Eac3AtmosCodingMode("CODING_MODE_7_1_4");
+        /// <summary>
         /// Constant CODING_MODE_9_1_6 for Eac3AtmosCodingMode
         /// </summary>
         public static readonly Eac3AtmosCodingMode CODING_MODE_9_1_6 = new Eac3AtmosCodingMode("CODING_MODE_9_1_6");
+        /// <summary>
+        /// Constant CODING_MODE_AUTO for Eac3AtmosCodingMode
+        /// </summary>
+        public static readonly Eac3AtmosCodingMode CODING_MODE_AUTO = new Eac3AtmosCodingMode("CODING_MODE_AUTO");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5760,6 +5884,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Eac3AtmosDialogueIntelligence(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosDownmixControl.
+    /// </summary>
+    public class Eac3AtmosDownmixControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_SOURCE for Eac3AtmosDownmixControl
+        /// </summary>
+        public static readonly Eac3AtmosDownmixControl INITIALIZE_FROM_SOURCE = new Eac3AtmosDownmixControl("INITIALIZE_FROM_SOURCE");
+        /// <summary>
+        /// Constant SPECIFIED for Eac3AtmosDownmixControl
+        /// </summary>
+        public static readonly Eac3AtmosDownmixControl SPECIFIED = new Eac3AtmosDownmixControl("SPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosDownmixControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosDownmixControl FindValue(string value)
+        {
+            return FindValue<Eac3AtmosDownmixControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosDownmixControl(string value)
         {
             return FindValue(value);
         }
@@ -5892,6 +6066,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Eac3AtmosDynamicRangeCompressionRf(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosDynamicRangeControl.
+    /// </summary>
+    public class Eac3AtmosDynamicRangeControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_SOURCE for Eac3AtmosDynamicRangeControl
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeControl INITIALIZE_FROM_SOURCE = new Eac3AtmosDynamicRangeControl("INITIALIZE_FROM_SOURCE");
+        /// <summary>
+        /// Constant SPECIFIED for Eac3AtmosDynamicRangeControl
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeControl SPECIFIED = new Eac3AtmosDynamicRangeControl("SPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosDynamicRangeControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosDynamicRangeControl FindValue(string value)
+        {
+            return FindValue<Eac3AtmosDynamicRangeControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosDynamicRangeControl(string value)
         {
             return FindValue(value);
         }
@@ -10348,6 +10572,60 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsIFrameOnlyManifest(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsImageBasedTrickPlay.
+    /// </summary>
+    public class HlsImageBasedTrickPlay : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for HlsImageBasedTrickPlay
+        /// </summary>
+        public static readonly HlsImageBasedTrickPlay NONE = new HlsImageBasedTrickPlay("NONE");
+        /// <summary>
+        /// Constant THUMBNAIL for HlsImageBasedTrickPlay
+        /// </summary>
+        public static readonly HlsImageBasedTrickPlay THUMBNAIL = new HlsImageBasedTrickPlay("THUMBNAIL");
+        /// <summary>
+        /// Constant THUMBNAIL_AND_FULLFRAME for HlsImageBasedTrickPlay
+        /// </summary>
+        public static readonly HlsImageBasedTrickPlay THUMBNAIL_AND_FULLFRAME = new HlsImageBasedTrickPlay("THUMBNAIL_AND_FULLFRAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsImageBasedTrickPlay(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsImageBasedTrickPlay FindValue(string value)
+        {
+            return FindValue<HlsImageBasedTrickPlay>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsImageBasedTrickPlay(string value)
         {
             return FindValue(value);
         }
@@ -15141,6 +15419,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly MxfProfile OP1A = new MxfProfile("OP1A");
         /// <summary>
+        /// Constant XAVC for MxfProfile
+        /// </summary>
+        public static readonly MxfProfile XAVC = new MxfProfile("XAVC");
+        /// <summary>
         /// Constant XDCAM for MxfProfile
         /// </summary>
         public static readonly MxfProfile XDCAM = new MxfProfile("XDCAM");
@@ -15174,6 +15456,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MxfProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MxfXavcDurationMode.
+    /// </summary>
+    public class MxfXavcDurationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW_ANY_DURATION for MxfXavcDurationMode
+        /// </summary>
+        public static readonly MxfXavcDurationMode ALLOW_ANY_DURATION = new MxfXavcDurationMode("ALLOW_ANY_DURATION");
+        /// <summary>
+        /// Constant DROP_FRAMES_FOR_COMPLIANCE for MxfXavcDurationMode
+        /// </summary>
+        public static readonly MxfXavcDurationMode DROP_FRAMES_FOR_COMPLIANCE = new MxfXavcDurationMode("DROP_FRAMES_FOR_COMPLIANCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MxfXavcDurationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MxfXavcDurationMode FindValue(string value)
+        {
+            return FindValue<MxfXavcDurationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MxfXavcDurationMode(string value)
         {
             return FindValue(value);
         }
@@ -15737,6 +16069,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type ProresChromaSampling.
+    /// </summary>
+    public class ProresChromaSampling : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRESERVE_444_SAMPLING for ProresChromaSampling
+        /// </summary>
+        public static readonly ProresChromaSampling PRESERVE_444_SAMPLING = new ProresChromaSampling("PRESERVE_444_SAMPLING");
+        /// <summary>
+        /// Constant SUBSAMPLE_TO_422 for ProresChromaSampling
+        /// </summary>
+        public static readonly ProresChromaSampling SUBSAMPLE_TO_422 = new ProresChromaSampling("SUBSAMPLE_TO_422");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProresChromaSampling(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProresChromaSampling FindValue(string value)
+        {
+            return FindValue<ProresChromaSampling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProresChromaSampling(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProresCodecProfile.
     /// </summary>
     public class ProresCodecProfile : ConstantClass
@@ -15758,6 +16140,14 @@ namespace Amazon.MediaConvert
         /// Constant APPLE_PRORES_422_PROXY for ProresCodecProfile
         /// </summary>
         public static readonly ProresCodecProfile APPLE_PRORES_422_PROXY = new ProresCodecProfile("APPLE_PRORES_422_PROXY");
+        /// <summary>
+        /// Constant APPLE_PRORES_4444 for ProresCodecProfile
+        /// </summary>
+        public static readonly ProresCodecProfile APPLE_PRORES_4444 = new ProresCodecProfile("APPLE_PRORES_4444");
+        /// <summary>
+        /// Constant APPLE_PRORES_4444_XQ for ProresCodecProfile
+        /// </summary>
+        public static readonly ProresCodecProfile APPLE_PRORES_4444_XQ = new ProresCodecProfile("APPLE_PRORES_4444_XQ");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -16516,6 +16906,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator S3ServerSideEncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SampleRangeConversion.
+    /// </summary>
+    public class SampleRangeConversion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LIMITED_RANGE_SQUEEZE for SampleRangeConversion
+        /// </summary>
+        public static readonly SampleRangeConversion LIMITED_RANGE_SQUEEZE = new SampleRangeConversion("LIMITED_RANGE_SQUEEZE");
+        /// <summary>
+        /// Constant NONE for SampleRangeConversion
+        /// </summary>
+        public static readonly SampleRangeConversion NONE = new SampleRangeConversion("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SampleRangeConversion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SampleRangeConversion FindValue(string value)
+        {
+            return FindValue<SampleRangeConversion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SampleRangeConversion(string value)
         {
             return FindValue(value);
         }
@@ -17534,6 +17974,10 @@ namespace Amazon.MediaConvert
         /// Constant VP9 for VideoCodec
         /// </summary>
         public static readonly VideoCodec VP9 = new VideoCodec("VP9");
+        /// <summary>
+        /// Constant XAVC for VideoCodec
+        /// </summary>
+        public static readonly VideoCodec XAVC = new VideoCodec("XAVC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -18276,6 +18720,1086 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WebvttStylePassthrough(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Xavc4kIntraCbgProfileClass.
+    /// </summary>
+    public class Xavc4kIntraCbgProfileClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASS_100 for Xavc4kIntraCbgProfileClass
+        /// </summary>
+        public static readonly Xavc4kIntraCbgProfileClass CLASS_100 = new Xavc4kIntraCbgProfileClass("CLASS_100");
+        /// <summary>
+        /// Constant CLASS_300 for Xavc4kIntraCbgProfileClass
+        /// </summary>
+        public static readonly Xavc4kIntraCbgProfileClass CLASS_300 = new Xavc4kIntraCbgProfileClass("CLASS_300");
+        /// <summary>
+        /// Constant CLASS_480 for Xavc4kIntraCbgProfileClass
+        /// </summary>
+        public static readonly Xavc4kIntraCbgProfileClass CLASS_480 = new Xavc4kIntraCbgProfileClass("CLASS_480");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Xavc4kIntraCbgProfileClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Xavc4kIntraCbgProfileClass FindValue(string value)
+        {
+            return FindValue<Xavc4kIntraCbgProfileClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Xavc4kIntraCbgProfileClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Xavc4kIntraVbrProfileClass.
+    /// </summary>
+    public class Xavc4kIntraVbrProfileClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASS_100 for Xavc4kIntraVbrProfileClass
+        /// </summary>
+        public static readonly Xavc4kIntraVbrProfileClass CLASS_100 = new Xavc4kIntraVbrProfileClass("CLASS_100");
+        /// <summary>
+        /// Constant CLASS_300 for Xavc4kIntraVbrProfileClass
+        /// </summary>
+        public static readonly Xavc4kIntraVbrProfileClass CLASS_300 = new Xavc4kIntraVbrProfileClass("CLASS_300");
+        /// <summary>
+        /// Constant CLASS_480 for Xavc4kIntraVbrProfileClass
+        /// </summary>
+        public static readonly Xavc4kIntraVbrProfileClass CLASS_480 = new Xavc4kIntraVbrProfileClass("CLASS_480");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Xavc4kIntraVbrProfileClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Xavc4kIntraVbrProfileClass FindValue(string value)
+        {
+            return FindValue<Xavc4kIntraVbrProfileClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Xavc4kIntraVbrProfileClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Xavc4kProfileBitrateClass.
+    /// </summary>
+    public class Xavc4kProfileBitrateClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BITRATE_CLASS_100 for Xavc4kProfileBitrateClass
+        /// </summary>
+        public static readonly Xavc4kProfileBitrateClass BITRATE_CLASS_100 = new Xavc4kProfileBitrateClass("BITRATE_CLASS_100");
+        /// <summary>
+        /// Constant BITRATE_CLASS_140 for Xavc4kProfileBitrateClass
+        /// </summary>
+        public static readonly Xavc4kProfileBitrateClass BITRATE_CLASS_140 = new Xavc4kProfileBitrateClass("BITRATE_CLASS_140");
+        /// <summary>
+        /// Constant BITRATE_CLASS_200 for Xavc4kProfileBitrateClass
+        /// </summary>
+        public static readonly Xavc4kProfileBitrateClass BITRATE_CLASS_200 = new Xavc4kProfileBitrateClass("BITRATE_CLASS_200");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Xavc4kProfileBitrateClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Xavc4kProfileBitrateClass FindValue(string value)
+        {
+            return FindValue<Xavc4kProfileBitrateClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Xavc4kProfileBitrateClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Xavc4kProfileCodecProfile.
+    /// </summary>
+    public class Xavc4kProfileCodecProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for Xavc4kProfileCodecProfile
+        /// </summary>
+        public static readonly Xavc4kProfileCodecProfile HIGH = new Xavc4kProfileCodecProfile("HIGH");
+        /// <summary>
+        /// Constant HIGH_422 for Xavc4kProfileCodecProfile
+        /// </summary>
+        public static readonly Xavc4kProfileCodecProfile HIGH_422 = new Xavc4kProfileCodecProfile("HIGH_422");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Xavc4kProfileCodecProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Xavc4kProfileCodecProfile FindValue(string value)
+        {
+            return FindValue<Xavc4kProfileCodecProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Xavc4kProfileCodecProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Xavc4kProfileQualityTuningLevel.
+    /// </summary>
+    public class Xavc4kProfileQualityTuningLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTI_PASS_HQ for Xavc4kProfileQualityTuningLevel
+        /// </summary>
+        public static readonly Xavc4kProfileQualityTuningLevel MULTI_PASS_HQ = new Xavc4kProfileQualityTuningLevel("MULTI_PASS_HQ");
+        /// <summary>
+        /// Constant SINGLE_PASS for Xavc4kProfileQualityTuningLevel
+        /// </summary>
+        public static readonly Xavc4kProfileQualityTuningLevel SINGLE_PASS = new Xavc4kProfileQualityTuningLevel("SINGLE_PASS");
+        /// <summary>
+        /// Constant SINGLE_PASS_HQ for Xavc4kProfileQualityTuningLevel
+        /// </summary>
+        public static readonly Xavc4kProfileQualityTuningLevel SINGLE_PASS_HQ = new Xavc4kProfileQualityTuningLevel("SINGLE_PASS_HQ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Xavc4kProfileQualityTuningLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Xavc4kProfileQualityTuningLevel FindValue(string value)
+        {
+            return FindValue<Xavc4kProfileQualityTuningLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Xavc4kProfileQualityTuningLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcAdaptiveQuantization.
+    /// </summary>
+    public class XavcAdaptiveQuantization : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for XavcAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcAdaptiveQuantization AUTO = new XavcAdaptiveQuantization("AUTO");
+        /// <summary>
+        /// Constant HIGH for XavcAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcAdaptiveQuantization HIGH = new XavcAdaptiveQuantization("HIGH");
+        /// <summary>
+        /// Constant HIGHER for XavcAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcAdaptiveQuantization HIGHER = new XavcAdaptiveQuantization("HIGHER");
+        /// <summary>
+        /// Constant LOW for XavcAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcAdaptiveQuantization LOW = new XavcAdaptiveQuantization("LOW");
+        /// <summary>
+        /// Constant MAX for XavcAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcAdaptiveQuantization MAX = new XavcAdaptiveQuantization("MAX");
+        /// <summary>
+        /// Constant MEDIUM for XavcAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcAdaptiveQuantization MEDIUM = new XavcAdaptiveQuantization("MEDIUM");
+        /// <summary>
+        /// Constant OFF for XavcAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcAdaptiveQuantization OFF = new XavcAdaptiveQuantization("OFF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcAdaptiveQuantization(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcAdaptiveQuantization FindValue(string value)
+        {
+            return FindValue<XavcAdaptiveQuantization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcAdaptiveQuantization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcEntropyEncoding.
+    /// </summary>
+    public class XavcEntropyEncoding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for XavcEntropyEncoding
+        /// </summary>
+        public static readonly XavcEntropyEncoding AUTO = new XavcEntropyEncoding("AUTO");
+        /// <summary>
+        /// Constant CABAC for XavcEntropyEncoding
+        /// </summary>
+        public static readonly XavcEntropyEncoding CABAC = new XavcEntropyEncoding("CABAC");
+        /// <summary>
+        /// Constant CAVLC for XavcEntropyEncoding
+        /// </summary>
+        public static readonly XavcEntropyEncoding CAVLC = new XavcEntropyEncoding("CAVLC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcEntropyEncoding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcEntropyEncoding FindValue(string value)
+        {
+            return FindValue<XavcEntropyEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcEntropyEncoding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcFlickerAdaptiveQuantization.
+    /// </summary>
+    public class XavcFlickerAdaptiveQuantization : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for XavcFlickerAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcFlickerAdaptiveQuantization DISABLED = new XavcFlickerAdaptiveQuantization("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for XavcFlickerAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcFlickerAdaptiveQuantization ENABLED = new XavcFlickerAdaptiveQuantization("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcFlickerAdaptiveQuantization(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcFlickerAdaptiveQuantization FindValue(string value)
+        {
+            return FindValue<XavcFlickerAdaptiveQuantization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcFlickerAdaptiveQuantization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcFramerateControl.
+    /// </summary>
+    public class XavcFramerateControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_SOURCE for XavcFramerateControl
+        /// </summary>
+        public static readonly XavcFramerateControl INITIALIZE_FROM_SOURCE = new XavcFramerateControl("INITIALIZE_FROM_SOURCE");
+        /// <summary>
+        /// Constant SPECIFIED for XavcFramerateControl
+        /// </summary>
+        public static readonly XavcFramerateControl SPECIFIED = new XavcFramerateControl("SPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcFramerateControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcFramerateControl FindValue(string value)
+        {
+            return FindValue<XavcFramerateControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcFramerateControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcFramerateConversionAlgorithm.
+    /// </summary>
+    public class XavcFramerateConversionAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUPLICATE_DROP for XavcFramerateConversionAlgorithm
+        /// </summary>
+        public static readonly XavcFramerateConversionAlgorithm DUPLICATE_DROP = new XavcFramerateConversionAlgorithm("DUPLICATE_DROP");
+        /// <summary>
+        /// Constant FRAMEFORMER for XavcFramerateConversionAlgorithm
+        /// </summary>
+        public static readonly XavcFramerateConversionAlgorithm FRAMEFORMER = new XavcFramerateConversionAlgorithm("FRAMEFORMER");
+        /// <summary>
+        /// Constant INTERPOLATE for XavcFramerateConversionAlgorithm
+        /// </summary>
+        public static readonly XavcFramerateConversionAlgorithm INTERPOLATE = new XavcFramerateConversionAlgorithm("INTERPOLATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcFramerateConversionAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcFramerateConversionAlgorithm FindValue(string value)
+        {
+            return FindValue<XavcFramerateConversionAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcFramerateConversionAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcGopBReference.
+    /// </summary>
+    public class XavcGopBReference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for XavcGopBReference
+        /// </summary>
+        public static readonly XavcGopBReference DISABLED = new XavcGopBReference("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for XavcGopBReference
+        /// </summary>
+        public static readonly XavcGopBReference ENABLED = new XavcGopBReference("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcGopBReference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcGopBReference FindValue(string value)
+        {
+            return FindValue<XavcGopBReference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcGopBReference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcHdIntraCbgProfileClass.
+    /// </summary>
+    public class XavcHdIntraCbgProfileClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASS_100 for XavcHdIntraCbgProfileClass
+        /// </summary>
+        public static readonly XavcHdIntraCbgProfileClass CLASS_100 = new XavcHdIntraCbgProfileClass("CLASS_100");
+        /// <summary>
+        /// Constant CLASS_200 for XavcHdIntraCbgProfileClass
+        /// </summary>
+        public static readonly XavcHdIntraCbgProfileClass CLASS_200 = new XavcHdIntraCbgProfileClass("CLASS_200");
+        /// <summary>
+        /// Constant CLASS_50 for XavcHdIntraCbgProfileClass
+        /// </summary>
+        public static readonly XavcHdIntraCbgProfileClass CLASS_50 = new XavcHdIntraCbgProfileClass("CLASS_50");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcHdIntraCbgProfileClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcHdIntraCbgProfileClass FindValue(string value)
+        {
+            return FindValue<XavcHdIntraCbgProfileClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcHdIntraCbgProfileClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcHdProfileBitrateClass.
+    /// </summary>
+    public class XavcHdProfileBitrateClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BITRATE_CLASS_25 for XavcHdProfileBitrateClass
+        /// </summary>
+        public static readonly XavcHdProfileBitrateClass BITRATE_CLASS_25 = new XavcHdProfileBitrateClass("BITRATE_CLASS_25");
+        /// <summary>
+        /// Constant BITRATE_CLASS_35 for XavcHdProfileBitrateClass
+        /// </summary>
+        public static readonly XavcHdProfileBitrateClass BITRATE_CLASS_35 = new XavcHdProfileBitrateClass("BITRATE_CLASS_35");
+        /// <summary>
+        /// Constant BITRATE_CLASS_50 for XavcHdProfileBitrateClass
+        /// </summary>
+        public static readonly XavcHdProfileBitrateClass BITRATE_CLASS_50 = new XavcHdProfileBitrateClass("BITRATE_CLASS_50");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcHdProfileBitrateClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcHdProfileBitrateClass FindValue(string value)
+        {
+            return FindValue<XavcHdProfileBitrateClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcHdProfileBitrateClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcHdProfileQualityTuningLevel.
+    /// </summary>
+    public class XavcHdProfileQualityTuningLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTI_PASS_HQ for XavcHdProfileQualityTuningLevel
+        /// </summary>
+        public static readonly XavcHdProfileQualityTuningLevel MULTI_PASS_HQ = new XavcHdProfileQualityTuningLevel("MULTI_PASS_HQ");
+        /// <summary>
+        /// Constant SINGLE_PASS for XavcHdProfileQualityTuningLevel
+        /// </summary>
+        public static readonly XavcHdProfileQualityTuningLevel SINGLE_PASS = new XavcHdProfileQualityTuningLevel("SINGLE_PASS");
+        /// <summary>
+        /// Constant SINGLE_PASS_HQ for XavcHdProfileQualityTuningLevel
+        /// </summary>
+        public static readonly XavcHdProfileQualityTuningLevel SINGLE_PASS_HQ = new XavcHdProfileQualityTuningLevel("SINGLE_PASS_HQ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcHdProfileQualityTuningLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcHdProfileQualityTuningLevel FindValue(string value)
+        {
+            return FindValue<XavcHdProfileQualityTuningLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcHdProfileQualityTuningLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcHdProfileTelecine.
+    /// </summary>
+    public class XavcHdProfileTelecine : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HARD for XavcHdProfileTelecine
+        /// </summary>
+        public static readonly XavcHdProfileTelecine HARD = new XavcHdProfileTelecine("HARD");
+        /// <summary>
+        /// Constant NONE for XavcHdProfileTelecine
+        /// </summary>
+        public static readonly XavcHdProfileTelecine NONE = new XavcHdProfileTelecine("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcHdProfileTelecine(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcHdProfileTelecine FindValue(string value)
+        {
+            return FindValue<XavcHdProfileTelecine>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcHdProfileTelecine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcInterlaceMode.
+    /// </summary>
+    public class XavcInterlaceMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOTTOM_FIELD for XavcInterlaceMode
+        /// </summary>
+        public static readonly XavcInterlaceMode BOTTOM_FIELD = new XavcInterlaceMode("BOTTOM_FIELD");
+        /// <summary>
+        /// Constant FOLLOW_BOTTOM_FIELD for XavcInterlaceMode
+        /// </summary>
+        public static readonly XavcInterlaceMode FOLLOW_BOTTOM_FIELD = new XavcInterlaceMode("FOLLOW_BOTTOM_FIELD");
+        /// <summary>
+        /// Constant FOLLOW_TOP_FIELD for XavcInterlaceMode
+        /// </summary>
+        public static readonly XavcInterlaceMode FOLLOW_TOP_FIELD = new XavcInterlaceMode("FOLLOW_TOP_FIELD");
+        /// <summary>
+        /// Constant PROGRESSIVE for XavcInterlaceMode
+        /// </summary>
+        public static readonly XavcInterlaceMode PROGRESSIVE = new XavcInterlaceMode("PROGRESSIVE");
+        /// <summary>
+        /// Constant TOP_FIELD for XavcInterlaceMode
+        /// </summary>
+        public static readonly XavcInterlaceMode TOP_FIELD = new XavcInterlaceMode("TOP_FIELD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcInterlaceMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcInterlaceMode FindValue(string value)
+        {
+            return FindValue<XavcInterlaceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcInterlaceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcProfile.
+    /// </summary>
+    public class XavcProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant XAVC_4K for XavcProfile
+        /// </summary>
+        public static readonly XavcProfile XAVC_4K = new XavcProfile("XAVC_4K");
+        /// <summary>
+        /// Constant XAVC_4K_INTRA_CBG for XavcProfile
+        /// </summary>
+        public static readonly XavcProfile XAVC_4K_INTRA_CBG = new XavcProfile("XAVC_4K_INTRA_CBG");
+        /// <summary>
+        /// Constant XAVC_4K_INTRA_VBR for XavcProfile
+        /// </summary>
+        public static readonly XavcProfile XAVC_4K_INTRA_VBR = new XavcProfile("XAVC_4K_INTRA_VBR");
+        /// <summary>
+        /// Constant XAVC_HD for XavcProfile
+        /// </summary>
+        public static readonly XavcProfile XAVC_HD = new XavcProfile("XAVC_HD");
+        /// <summary>
+        /// Constant XAVC_HD_INTRA_CBG for XavcProfile
+        /// </summary>
+        public static readonly XavcProfile XAVC_HD_INTRA_CBG = new XavcProfile("XAVC_HD_INTRA_CBG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcProfile FindValue(string value)
+        {
+            return FindValue<XavcProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcSlowPal.
+    /// </summary>
+    public class XavcSlowPal : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for XavcSlowPal
+        /// </summary>
+        public static readonly XavcSlowPal DISABLED = new XavcSlowPal("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for XavcSlowPal
+        /// </summary>
+        public static readonly XavcSlowPal ENABLED = new XavcSlowPal("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcSlowPal(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcSlowPal FindValue(string value)
+        {
+            return FindValue<XavcSlowPal>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcSlowPal(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcSpatialAdaptiveQuantization.
+    /// </summary>
+    public class XavcSpatialAdaptiveQuantization : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for XavcSpatialAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcSpatialAdaptiveQuantization DISABLED = new XavcSpatialAdaptiveQuantization("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for XavcSpatialAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcSpatialAdaptiveQuantization ENABLED = new XavcSpatialAdaptiveQuantization("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcSpatialAdaptiveQuantization(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcSpatialAdaptiveQuantization FindValue(string value)
+        {
+            return FindValue<XavcSpatialAdaptiveQuantization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcSpatialAdaptiveQuantization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XavcTemporalAdaptiveQuantization.
+    /// </summary>
+    public class XavcTemporalAdaptiveQuantization : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for XavcTemporalAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcTemporalAdaptiveQuantization DISABLED = new XavcTemporalAdaptiveQuantization("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for XavcTemporalAdaptiveQuantization
+        /// </summary>
+        public static readonly XavcTemporalAdaptiveQuantization ENABLED = new XavcTemporalAdaptiveQuantization("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XavcTemporalAdaptiveQuantization(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XavcTemporalAdaptiveQuantization FindValue(string value)
+        {
+            return FindValue<XavcTemporalAdaptiveQuantization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XavcTemporalAdaptiveQuantization(string value)
         {
             return FindValue(value);
         }

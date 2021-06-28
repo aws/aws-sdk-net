@@ -45,6 +45,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProresSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetChromaSampling())
+            {
+                context.Writer.WritePropertyName("chromaSampling");
+                context.Writer.Write(requestObject.ChromaSampling);
+            }
+
             if(requestObject.IsSetCodecProfile())
             {
                 context.Writer.WritePropertyName("codecProfile");

@@ -161,6 +161,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetXavcSettings())
+            {
+                context.Writer.WritePropertyName("xavcSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = XavcSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.XavcSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

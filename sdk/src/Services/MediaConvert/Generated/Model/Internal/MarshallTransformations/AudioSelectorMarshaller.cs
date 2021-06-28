@@ -63,6 +63,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ExternalAudioFileInput);
             }
 
+            if(requestObject.IsSetHlsRenditionGroupSettings())
+            {
+                context.Writer.WritePropertyName("hlsRenditionGroupSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HlsRenditionGroupSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.HlsRenditionGroupSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("languageCode");

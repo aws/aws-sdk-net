@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     {
         private MxfAfdSignaling _afdSignaling;
         private MxfProfile _profile;
+        private MxfXavcProfileSettings _xavcProfileSettings;
 
         /// <summary>
         /// Gets and sets the property AfdSignaling. Optional. When you have AFD signaling set
@@ -74,6 +75,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetProfile()
         {
             return this._profile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XavcProfileSettings. Specify the XAVC profile settings
+        /// for MXF outputs when you set your MXF profile to XAVC.
+        /// </summary>
+        public MxfXavcProfileSettings XavcProfileSettings
+        {
+            get { return this._xavcProfileSettings; }
+            set { this._xavcProfileSettings = value; }
+        }
+
+        // Check to see if XavcProfileSettings property is set
+        internal bool IsSetXavcProfileSettings()
+        {
+            return this._xavcProfileSettings != null;
         }
 
     }

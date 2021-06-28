@@ -69,6 +69,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DialogueIntelligence);
             }
 
+            if(requestObject.IsSetDownmixControl())
+            {
+                context.Writer.WritePropertyName("downmixControl");
+                context.Writer.Write(requestObject.DownmixControl);
+            }
+
             if(requestObject.IsSetDynamicRangeCompressionLine())
             {
                 context.Writer.WritePropertyName("dynamicRangeCompressionLine");
@@ -79,6 +85,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("dynamicRangeCompressionRf");
                 context.Writer.Write(requestObject.DynamicRangeCompressionRf);
+            }
+
+            if(requestObject.IsSetDynamicRangeControl())
+            {
+                context.Writer.WritePropertyName("dynamicRangeControl");
+                context.Writer.Write(requestObject.DynamicRangeControl);
             }
 
             if(requestObject.IsSetLoRoCenterMixLevel())

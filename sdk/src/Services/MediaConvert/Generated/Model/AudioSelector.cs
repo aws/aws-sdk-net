@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private string _customLanguageCode;
         private AudioDefaultSelection _defaultSelection;
         private string _externalAudioFileInput;
+        private HlsRenditionGroupSettings _hlsRenditionGroupSettings;
         private LanguageCode _languageCode;
         private int? _offset;
         private List<int> _pids = new List<int>();
@@ -95,6 +96,28 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetExternalAudioFileInput()
         {
             return this._externalAudioFileInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HlsRenditionGroupSettings. Settings specific to audio sources
+        /// in an HLS alternate rendition group. Specify the properties (renditionGroupId, renditionName
+        /// or renditionLanguageCode) to identify the unique audio track among the alternative
+        /// rendition groups present in the HLS manifest. If no unique track is found, or multiple
+        /// tracks match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings
+        /// are specified, the default audio track within the video segment is chosen. If there
+        /// is no audio within video segment, the alternative audio with DEFAULT=YES is chosen
+        /// instead.
+        /// </summary>
+        public HlsRenditionGroupSettings HlsRenditionGroupSettings
+        {
+            get { return this._hlsRenditionGroupSettings; }
+            set { this._hlsRenditionGroupSettings = value; }
+        }
+
+        // Check to see if HlsRenditionGroupSettings property is set
+        internal bool IsSetHlsRenditionGroupSettings()
+        {
+            return this._hlsRenditionGroupSettings != null;
         }
 
         /// <summary>

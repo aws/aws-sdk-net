@@ -113,6 +113,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HbbtvCompliance);
             }
 
+            if(requestObject.IsSetImageBasedTrickPlay())
+            {
+                context.Writer.WritePropertyName("imageBasedTrickPlay");
+                context.Writer.Write(requestObject.ImageBasedTrickPlay);
+            }
+
             if(requestObject.IsSetMinBufferTime())
             {
                 context.Writer.WritePropertyName("minBufferTime");

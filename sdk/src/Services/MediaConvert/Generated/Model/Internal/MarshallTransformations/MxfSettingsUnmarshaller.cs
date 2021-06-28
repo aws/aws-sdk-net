@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("xavcProfileSettings", targetDepth))
+                {
+                    var unmarshaller = MxfXavcProfileSettingsUnmarshaller.Instance;
+                    unmarshalledObject.XavcProfileSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

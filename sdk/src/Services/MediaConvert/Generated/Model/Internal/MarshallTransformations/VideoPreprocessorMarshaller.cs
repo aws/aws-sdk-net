@@ -78,6 +78,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHdr10Plus())
+            {
+                context.Writer.WritePropertyName("hdr10Plus");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Hdr10PlusMarshaller.Instance;
+                marshaller.Marshall(requestObject.Hdr10Plus, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetImageInserter())
             {
                 context.Writer.WritePropertyName("imageInserter");

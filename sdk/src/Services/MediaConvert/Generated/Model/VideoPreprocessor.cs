@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private ColorCorrector _colorCorrector;
         private Deinterlacer _deinterlacer;
         private DolbyVision _dolbyVision;
+        private Hdr10Plus _hdr10Plus;
         private ImageInserter _imageInserter;
         private NoiseReducer _noiseReducer;
         private PartnerWatermarking _partnerWatermarking;
@@ -89,6 +90,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDolbyVision()
         {
             return this._dolbyVision != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Hdr10Plus. Enable HDR10+ analyis and metadata injection.
+        /// Compatible with HEVC only.
+        /// </summary>
+        public Hdr10Plus Hdr10Plus
+        {
+            get { return this._hdr10Plus; }
+            set { this._hdr10Plus = value; }
+        }
+
+        // Check to see if Hdr10Plus property is set
+        internal bool IsSetHdr10Plus()
+        {
+            return this._hdr10Plus != null;
         }
 
         /// <summary>

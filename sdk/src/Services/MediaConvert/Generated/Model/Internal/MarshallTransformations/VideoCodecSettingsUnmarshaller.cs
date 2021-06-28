@@ -130,6 +130,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Vp9Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("xavcSettings", targetDepth))
+                {
+                    var unmarshaller = XavcSettingsUnmarshaller.Instance;
+                    unmarshalledObject.XavcSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -42,6 +42,7 @@ namespace Amazon.MediaConvert.Model
         private CaptionSourceType _sourceType;
         private TeletextSourceSettings _teletextSourceSettings;
         private TrackSourceSettings _trackSourceSettings;
+        private WebvttHlsSourceSettings _webvttHlsSourceSettings;
 
         /// <summary>
         /// Gets and sets the property AncillarySourceSettings. Settings for ancillary captions
@@ -156,6 +157,28 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTrackSourceSettings()
         {
             return this._trackSourceSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebvttHlsSourceSettings. Settings specific to WebVTT sources
+        /// in HLS alternative rendition group. Specify the properties (renditionGroupId, renditionName
+        /// or renditionLanguageCode) to identify the unique subtitle track among the alternative
+        /// rendition groups present in the HLS manifest. If no unique track is found, or multiple
+        /// tracks match the specified properties, the job fails. If there is only one subtitle
+        /// track in the rendition group, the settings can be left empty and the default subtitle
+        /// track will be chosen. If your caption source is a sidecar file, use FileSourceSettings
+        /// instead of WebvttHlsSourceSettings.
+        /// </summary>
+        public WebvttHlsSourceSettings WebvttHlsSourceSettings
+        {
+            get { return this._webvttHlsSourceSettings; }
+            set { this._webvttHlsSourceSettings = value; }
+        }
+
+        // Check to see if WebvttHlsSourceSettings property is set
+        internal bool IsSetWebvttHlsSourceSettings()
+        {
+            return this._webvttHlsSourceSettings != null;
         }
 
     }

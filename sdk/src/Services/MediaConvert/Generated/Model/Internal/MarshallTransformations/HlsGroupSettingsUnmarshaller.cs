@@ -136,6 +136,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageBasedTrickPlay", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageBasedTrickPlay = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manifestCompression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

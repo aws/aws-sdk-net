@@ -117,6 +117,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetWebvttHlsSourceSettings())
+            {
+                context.Writer.WritePropertyName("webvttHlsSourceSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WebvttHlsSourceSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.WebvttHlsSourceSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

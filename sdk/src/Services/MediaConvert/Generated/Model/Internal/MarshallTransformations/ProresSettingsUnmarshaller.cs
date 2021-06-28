@@ -64,6 +64,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("chromaSampling", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChromaSampling = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("codecProfile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

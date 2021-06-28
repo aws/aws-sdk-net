@@ -80,6 +80,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Hue);
             }
 
+            if(requestObject.IsSetSampleRangeConversion())
+            {
+                context.Writer.WritePropertyName("sampleRangeConversion");
+                context.Writer.Write(requestObject.SampleRangeConversion);
+            }
+
             if(requestObject.IsSetSaturation())
             {
                 context.Writer.WritePropertyName("saturation");

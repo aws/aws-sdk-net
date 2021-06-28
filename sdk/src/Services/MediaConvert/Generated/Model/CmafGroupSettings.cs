@@ -43,6 +43,7 @@ namespace Amazon.MediaConvert.Model
         private DestinationSettings _destinationSettings;
         private CmafEncryptionSettings _encryption;
         private int? _fragmentLength;
+        private CmafImageBasedTrickPlay _imageBasedTrickPlay;
         private CmafManifestCompression _manifestCompression;
         private CmafManifestDurationFormat _manifestDurationFormat;
         private int? _minBufferTime;
@@ -196,6 +197,31 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFragmentLength()
         {
             return this._fragmentLength.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageBasedTrickPlay. Specify whether MediaConvert generates
+        /// images for trick play. Keep the default value, None (NONE), to not generate any images.
+        /// Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
+        /// frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images
+        /// of single frames. When you enable Write HLS manifest (WriteHlsManifest), MediaConvert
+        /// creates a child manifest for each set of images that you generate and adds corresponding
+        /// entries to the parent manifest. When you enable Write DASH manifest (WriteDashManifest),
+        /// MediaConvert adds an entry in the .mpd manifest for each set of images that you generate.
+        /// A common application for these images is Roku trick mode. The thumbnails and full-frame
+        /// images that MediaConvert creates with this feature are compatible with this Roku specification:
+        /// https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+        /// </summary>
+        public CmafImageBasedTrickPlay ImageBasedTrickPlay
+        {
+            get { return this._imageBasedTrickPlay; }
+            set { this._imageBasedTrickPlay = value; }
+        }
+
+        // Check to see if ImageBasedTrickPlay property is set
+        internal bool IsSetImageBasedTrickPlay()
+        {
+            return this._imageBasedTrickPlay != null;
         }
 
         /// <summary>

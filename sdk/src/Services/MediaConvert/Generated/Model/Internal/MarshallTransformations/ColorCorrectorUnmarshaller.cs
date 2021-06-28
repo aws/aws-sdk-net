@@ -94,6 +94,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sampleRangeConversion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SampleRangeConversion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("saturation", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
