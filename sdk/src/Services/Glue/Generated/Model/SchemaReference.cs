@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// An object that references a schema stored in the AWS Glue Schema Registry.
+    /// An object that references a schema stored in the Glue Schema Registry.
     /// </summary>
     public partial class SchemaReference
     {

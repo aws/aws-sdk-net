@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The database and table in the AWS Glue Data Catalog that is used for input or output
-    /// data.
+    /// The database and table in the Glue Data Catalog that is used for input or output data.
     /// </summary>
     public partial class GlueTable
     {
@@ -42,7 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// A unique identifier for the AWS Glue Data Catalog.
+        /// A unique identifier for the Glue Data Catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -61,7 +60,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ConnectionName. 
         /// <para>
-        /// The name of the connection to the AWS Glue Data Catalog.
+        /// The name of the connection to the Glue Data Catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -80,7 +79,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// A database name in the AWS Glue Data Catalog.
+        /// A database name in the Glue Data Catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -99,7 +98,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// A table name in the AWS Glue Data Catalog.
+        /// A table name in the Glue Data Catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

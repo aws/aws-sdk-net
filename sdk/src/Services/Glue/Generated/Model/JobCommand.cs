@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies code executed when a job is run.
+    /// Specifies code that runs when a job is run.
     /// </summary>
     public partial class JobCommand
     {
@@ -60,8 +60,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PythonVersion. 
         /// <para>
-        /// The Python version being used to execute a Python shell job. Allowed values are 2
-        /// or 3.
+        /// The Python version being used to run a Python shell job. Allowed values are 2 or 3.
         /// </para>
         /// </summary>
         public string PythonVersion
@@ -79,7 +78,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ScriptLocation. 
         /// <para>
-        /// Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes
+        /// Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs
         /// a job.
         /// </para>
         /// </summary>

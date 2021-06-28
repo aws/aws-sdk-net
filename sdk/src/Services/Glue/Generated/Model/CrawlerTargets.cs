@@ -42,7 +42,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CatalogTargets. 
         /// <para>
-        /// Specifies AWS Glue Data Catalog targets.
+        /// Specifies Glue Data Catalog targets.
         /// </para>
         /// </summary>
         public List<CatalogTarget> CatalogTargets

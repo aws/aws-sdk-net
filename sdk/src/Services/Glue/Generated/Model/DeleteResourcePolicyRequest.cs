@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the AWS Glue resource for the resource policy to be deleted.
+        /// The ARN of the Glue resource for the resource policy to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10240)]

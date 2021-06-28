@@ -35,8 +35,8 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue will
-    /// have generated a "labeling set" or a set of questions for humans to answer.
+    /// When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will have
+    /// generated a "labeling set" or a set of questions for humans to answer.
     /// </para>
     ///  
     /// <para>

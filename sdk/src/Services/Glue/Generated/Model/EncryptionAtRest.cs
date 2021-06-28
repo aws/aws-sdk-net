@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SseAwsKmsKeyId. 
         /// <para>
-        /// The ID of the AWS KMS key to use for encryption at rest.
+        /// The ID of the KMS key to use for encryption at rest.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

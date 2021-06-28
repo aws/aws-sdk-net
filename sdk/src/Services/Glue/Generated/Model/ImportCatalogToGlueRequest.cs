@@ -30,7 +30,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportCatalogToGlue operation.
-    /// Imports an existing Amazon Athena Data Catalog to AWS Glue
+    /// Imports an existing Amazon Athena Data Catalog to Glue.
     /// </summary>
     public partial class ImportCatalogToGlueRequest : AmazonGlueRequest
     {
@@ -39,7 +39,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The ID of the catalog to import. Currently, this should be the AWS account ID.
+        /// The ID of the catalog to import. Currently, this should be the Amazon Web Services
+        /// account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

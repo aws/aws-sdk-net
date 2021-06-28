@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue machine
+    /// After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue machine
     /// learning will have generated a series of questions for humans to answer. (Answering
     /// these questions is often called 'labeling' in the machine learning workflows). In
     /// the case of the <code>FindMatches</code> transform, these questions are of the form,

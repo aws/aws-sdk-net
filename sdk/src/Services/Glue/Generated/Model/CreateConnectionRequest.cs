@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property CatalogId. 
         /// <para>
         /// The ID of the Data Catalog in which to create the connection. If none is provided,
-        /// the AWS account ID is used by default.
+        /// the Amazon Web Services account ID is used by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

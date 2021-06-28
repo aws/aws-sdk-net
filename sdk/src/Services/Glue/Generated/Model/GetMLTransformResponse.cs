@@ -111,10 +111,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property GlueVersion. 
         /// <para>
-        /// This value determines which version of AWS Glue this machine learning transform is
-        /// compatible with. Glue 1.0 is recommended for most customers. If the value is not set,
-        /// the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-        /// Glue Versions</a> in the developer guide.
+        /// This value determines which version of Glue this machine learning transform is compatible
+        /// with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue
+        /// compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+        /// Versions</a> in the developer guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -133,7 +133,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property InputRecordTables. 
         /// <para>
-        /// A list of AWS Glue table definitions used by the transform.
+        /// A list of Glue table definitions used by the transform.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -188,11 +188,11 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The number of AWS Glue data processing units (DPUs) that are allocated to task runs
-        /// for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU
-        /// is a relative measure of processing power that consists of 4 vCPUs of compute capacity
-        /// and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
-        /// Glue pricing page</a>. 
+        /// The number of Glue data processing units (DPUs) that are allocated to task runs for
+        /// this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a
+        /// relative measure of processing power that consists of 4 vCPUs of compute capacity
+        /// and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+        /// pricing page</a>. 
         /// </para>
         ///  
         /// <para>

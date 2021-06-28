@@ -113,7 +113,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The AWS Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
+        /// The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -284,8 +284,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags to use with this crawler request. You may use tags to limit access to the
-        /// crawler. For more information about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
-        /// Tags in AWS Glue</a> in the developer guide.
+        /// crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon
+        /// Web Services Tags in Glue</a> in the developer guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

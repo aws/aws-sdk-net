@@ -82,10 +82,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property GlueVersion. 
         /// <para>
-        /// This value determines which version of AWS Glue this machine learning transform is
-        /// compatible with. Glue 1.0 is recommended for most customers. If the value is not set,
-        /// the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
-        /// Glue Versions</a> in the developer guide.
+        /// This value determines which version of Glue this machine learning transform is compatible
+        /// with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue
+        /// compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
+        /// Versions</a> in the developer guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

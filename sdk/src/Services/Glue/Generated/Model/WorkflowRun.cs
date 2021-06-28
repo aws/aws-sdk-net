@@ -84,8 +84,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Graph. 
         /// <para>
-        /// The graph representing all the AWS Glue components that belong to the workflow as
-        /// nodes and directed connections between them as edges.
+        /// The graph representing all the Glue components that belong to the workflow as nodes
+        /// and directed connections between them as edges.
         /// </para>
         /// </summary>
         public WorkflowGraph Graph
@@ -103,7 +103,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the workflow that was executed.
+        /// Name of the workflow that was run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

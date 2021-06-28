@@ -49,19 +49,19 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// You can specify arguments here that your own job-execution script consumes, as well
-        /// as arguments that AWS Glue itself consumes.
+        /// as arguments that Glue itself consumes.
         /// </para>
         ///  
         /// <para>
         /// For information about how to specify and consume your own Job arguments, see the <a
         /// href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-        /// AWS Glue APIs in Python</a> topic in the developer guide.
+        /// Glue APIs in Python</a> topic in the developer guide.
         /// </para>
         ///  
         /// <para>
-        /// For information about the key-value pairs that AWS Glue consumes to set up your job,
-        /// see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-        /// Parameters Used by AWS Glue</a> topic in the developer guide.
+        /// For information about the key-value pairs that Glue consumes to set up your job, see
+        /// the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+        /// Parameters Used by Glue</a> topic in the developer guide.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Arguments
@@ -98,7 +98,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of a job to be executed.
+        /// The name of a job to be run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

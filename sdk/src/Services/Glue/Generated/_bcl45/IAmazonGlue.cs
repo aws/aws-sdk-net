@@ -31,9 +31,9 @@ namespace Amazon.Glue
     /// <summary>
     /// Interface for accessing Glue
     ///
-    /// AWS Glue 
+    /// Glue 
     /// <para>
-    /// Defines the public endpoint for the AWS Glue service.
+    /// Defines the public endpoint for the Glue service.
     /// </para>
     /// </summary>
     public partial interface IAmazonGlue : IAmazonService, IDisposable
@@ -216,7 +216,7 @@ namespace Amazon.Glue
         ///  <note> 
         /// <para>
         /// After completing this operation, you no longer have access to the table versions and
-        /// partitions that belong to the deleted table. AWS Glue deletes these "orphaned" resources
+        /// partitions that belong to the deleted table. Glue deletes these "orphaned" resources
         /// asynchronously in a timely manner, at the discretion of the service.
         /// </para>
         ///  
@@ -253,7 +253,7 @@ namespace Amazon.Glue
         ///  <note> 
         /// <para>
         /// After completing this operation, you no longer have access to the table versions and
-        /// partitions that belong to the deleted table. AWS Glue deletes these "orphaned" resources
+        /// partitions that belong to the deleted table. Glue deletes these "orphaned" resources
         /// asynchronously in a timely manner, at the discretion of the service.
         /// </para>
         ///  
@@ -766,9 +766,9 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that
-        /// AWS Glue runs on your behalf as part of various machine learning workflows. You can
-        /// cancel a machine learning task run at any time by calling <code>CancelMLTaskRun</code>
-        /// with a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>.
+        /// Glue runs on your behalf as part of various machine learning workflows. You can cancel
+        /// a machine learning task run at any time by calling <code>CancelMLTaskRun</code> with
+        /// a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelMLTaskRun service method.</param>
         /// 
@@ -792,9 +792,9 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that
-        /// AWS Glue runs on your behalf as part of various machine learning workflows. You can
-        /// cancel a machine learning task run at any time by calling <code>CancelMLTaskRun</code>
-        /// with a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>.
+        /// Glue runs on your behalf as part of various machine learning workflows. You can cancel
+        /// a machine learning task run at any time by calling <code>CancelMLTaskRun</code> with
+        /// a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelMLTaskRun service method.</param>
         /// <param name="cancellationToken">
@@ -1247,8 +1247,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Creates an AWS Glue machine learning transform. This operation creates the transform
-        /// and all the necessary parameters to train it.
+        /// Creates an Glue machine learning transform. This operation creates the transform and
+        /// all the necessary parameters to train it.
         /// 
         ///  
         /// <para>
@@ -1259,9 +1259,9 @@ namespace Amazon.Glue
         /// </para>
         ///  
         /// <para>
-        /// You must also specify certain parameters for the tasks that AWS Glue runs on your
-        /// behalf as part of learning from your data and creating a high-quality machine learning
-        /// transform. These parameters include <code>Role</code>, and optionally, <code>AllocatedCapacity</code>,
+        /// You must also specify certain parameters for the tasks that Glue runs on your behalf
+        /// as part of learning from your data and creating a high-quality machine learning transform.
+        /// These parameters include <code>Role</code>, and optionally, <code>AllocatedCapacity</code>,
         /// <code>Timeout</code>, and <code>MaxRetries</code>. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.
         /// </para>
         /// </summary>
@@ -1295,8 +1295,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Creates an AWS Glue machine learning transform. This operation creates the transform
-        /// and all the necessary parameters to train it.
+        /// Creates an Glue machine learning transform. This operation creates the transform and
+        /// all the necessary parameters to train it.
         /// 
         ///  
         /// <para>
@@ -1307,9 +1307,9 @@ namespace Amazon.Glue
         /// </para>
         ///  
         /// <para>
-        /// You must also specify certain parameters for the tasks that AWS Glue runs on your
-        /// behalf as part of learning from your data and creating a high-quality machine learning
-        /// transform. These parameters include <code>Role</code>, and optionally, <code>AllocatedCapacity</code>,
+        /// You must also specify certain parameters for the tasks that Glue runs on your behalf
+        /// as part of learning from your data and creating a high-quality machine learning transform.
+        /// These parameters include <code>Role</code>, and optionally, <code>AllocatedCapacity</code>,
         /// <code>Timeout</code>, and <code>MaxRetries</code>. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.
         /// </para>
         /// </summary>
@@ -1688,9 +1688,9 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Creates a new security configuration. A security configuration is a set of security
-        /// properties that can be used by AWS Glue. You can use a security configuration to encrypt
-        /// data at rest. For information about using security configurations in AWS Glue, see
-        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
+        /// properties that can be used by Glue. You can use a security configuration to encrypt
+        /// data at rest. For information about using security configurations in Glue, see <a
+        /// href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
         /// Data Written by Crawlers, Jobs, and Development Endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration service method.</param>
@@ -1718,9 +1718,9 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Creates a new security configuration. A security configuration is a set of security
-        /// properties that can be used by AWS Glue. You can use a security configuration to encrypt
-        /// data at rest. For information about using security configurations in AWS Glue, see
-        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
+        /// properties that can be used by Glue. You can use a security configuration to encrypt
+        /// data at rest. For information about using security configurations in Glue, see <a
+        /// href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
         /// Data Written by Crawlers, Jobs, and Development Endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration service method.</param>
@@ -2253,8 +2253,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Removes a specified crawler from the AWS Glue Data Catalog, unless the crawler state
-        /// is <code>RUNNING</code>.
+        /// Removes a specified crawler from the Glue Data Catalog, unless the crawler state is
+        /// <code>RUNNING</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCrawler service method.</param>
         /// 
@@ -2277,8 +2277,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Removes a specified crawler from the AWS Glue Data Catalog, unless the crawler state
-        /// is <code>RUNNING</code>.
+        /// Removes a specified crawler from the Glue Data Catalog, unless the crawler state is
+        /// <code>RUNNING</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCrawler service method.</param>
         /// <param name="cancellationToken">
@@ -2313,7 +2313,7 @@ namespace Amazon.Glue
         /// <para>
         /// After completing this operation, you no longer have access to the tables (and all
         /// table versions and partitions that might belong to the tables) and the user-defined
-        /// functions in the deleted database. AWS Glue deletes these "orphaned" resources asynchronously
+        /// functions in the deleted database. Glue deletes these "orphaned" resources asynchronously
         /// in a timely manner, at the discretion of the service.
         /// </para>
         ///  
@@ -2353,7 +2353,7 @@ namespace Amazon.Glue
         /// <para>
         /// After completing this operation, you no longer have access to the tables (and all
         /// table versions and partitions that might belong to the tables) and the user-defined
-        /// functions in the deleted database. AWS Glue deletes these "orphaned" resources asynchronously
+        /// functions in the deleted database. Glue deletes these "orphaned" resources asynchronously
         /// in a timely manner, at the discretion of the service.
         /// </para>
         ///  
@@ -2493,12 +2493,12 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Deletes an AWS Glue machine learning transform. Machine learning transforms are a
-        /// special type of transform that use machine learning to learn the details of the transformation
+        /// Deletes an Glue machine learning transform. Machine learning transforms are a special
+        /// type of transform that use machine learning to learn the details of the transformation
         /// to be performed by learning from examples provided by humans. These transformations
-        /// are then saved by AWS Glue. If you no longer need a transform, you can delete it by
-        /// calling <code>DeleteMLTransforms</code>. However, any AWS Glue jobs that still reference
-        /// the deleted transform will no longer succeed.
+        /// are then saved by Glue. If you no longer need a transform, you can delete it by calling
+        /// <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted
+        /// transform will no longer succeed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMLTransform service method.</param>
         /// 
@@ -2521,12 +2521,12 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Deletes an AWS Glue machine learning transform. Machine learning transforms are a
-        /// special type of transform that use machine learning to learn the details of the transformation
+        /// Deletes an Glue machine learning transform. Machine learning transforms are a special
+        /// type of transform that use machine learning to learn the details of the transformation
         /// to be performed by learning from examples provided by humans. These transformations
-        /// are then saved by AWS Glue. If you no longer need a transform, you can delete it by
-        /// calling <code>DeleteMLTransforms</code>. However, any AWS Glue jobs that still reference
-        /// the deleted transform will no longer succeed.
+        /// are then saved by Glue. If you no longer need a transform, you can delete it by calling
+        /// <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted
+        /// transform will no longer succeed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMLTransform service method.</param>
         /// <param name="cancellationToken">
@@ -2673,7 +2673,7 @@ namespace Amazon.Glue
         /// <summary>
         /// Delete the entire registry including schema and all of its versions. To get the status
         /// of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous
-        /// call. Deleting a registry will disable all online operations for the registry such
+        /// call. Deleting a registry will deactivate all online operations for the registry such
         /// as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>,
         /// and <code>RegisterSchemaVersion</code> APIs.
         /// </summary>
@@ -2700,7 +2700,7 @@ namespace Amazon.Glue
         /// <summary>
         /// Delete the entire registry including schema and all of its versions. To get the status
         /// of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous
-        /// call. Deleting a registry will disable all online operations for the registry such
+        /// call. Deleting a registry will deactivate all online operations for the registry such
         /// as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>,
         /// and <code>RegisterSchemaVersion</code> APIs.
         /// </summary>
@@ -2791,7 +2791,7 @@ namespace Amazon.Glue
         /// <summary>
         /// Deletes the entire schema set, including the schema set and all of its versions. To
         /// get the status of the delete operation, you can call <code>GetSchema</code> API after
-        /// the asynchronous call. Deleting a registry will disable all online operations for
+        /// the asynchronous call. Deleting a registry will deactivate all online operations for
         /// the schema, such as the <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code>
         /// APIs.
         /// </summary>
@@ -2818,7 +2818,7 @@ namespace Amazon.Glue
         /// <summary>
         /// Deletes the entire schema set, including the schema set and all of its versions. To
         /// get the status of the delete operation, you can call <code>GetSchema</code> API after
-        /// the asynchronous call. Deleting a registry will disable all online operations for
+        /// the asynchronous call. Deleting a registry will deactivate all online operations for
         /// the schema, such as the <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code>
         /// APIs.
         /// </summary>
@@ -3002,7 +3002,7 @@ namespace Amazon.Glue
         ///  <note> 
         /// <para>
         /// After completing this operation, you no longer have access to the table versions and
-        /// partitions that belong to the deleted table. AWS Glue deletes these "orphaned" resources
+        /// partitions that belong to the deleted table. Glue deletes these "orphaned" resources
         /// asynchronously in a timely manner, at the discretion of the service.
         /// </para>
         ///  
@@ -3039,7 +3039,7 @@ namespace Amazon.Glue
         ///  <note> 
         /// <para>
         /// After completing this operation, you no longer have access to the table versions and
-        /// partitions that belong to the deleted table. AWS Glue deletes these "orphaned" resources
+        /// partitions that belong to the deleted table. Glue deletes these "orphaned" resources
         /// asynchronously in a timely manner, at the discretion of the service.
         /// </para>
         ///  
@@ -3957,10 +3957,9 @@ namespace Amazon.Glue
         /// 
         ///  <note> 
         /// <para>
-        /// When you create a development endpoint in a virtual private cloud (VPC), AWS Glue
-        /// returns only a private IP address, and the public IP address field is not populated.
-        /// When you create a non-VPC development endpoint, AWS Glue returns only a public IP
-        /// address.
+        /// When you create a development endpoint in a virtual private cloud (VPC), Glue returns
+        /// only a private IP address, and the public IP address field is not populated. When
+        /// you create a non-VPC development endpoint, Glue returns only a public IP address.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3989,10 +3988,9 @@ namespace Amazon.Glue
         /// 
         ///  <note> 
         /// <para>
-        /// When you create a development endpoint in a virtual private cloud (VPC), AWS Glue
-        /// returns only a private IP address, and the public IP address field is not populated.
-        /// When you create a non-VPC development endpoint, AWS Glue returns only a public IP
-        /// address.
+        /// When you create a development endpoint in a virtual private cloud (VPC), Glue returns
+        /// only a private IP address, and the public IP address field is not populated. When
+        /// you create a non-VPC development endpoint, Glue returns only a public IP address.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4027,10 +4025,9 @@ namespace Amazon.Glue
         /// 
         ///  <note> 
         /// <para>
-        /// When you create a development endpoint in a virtual private cloud (VPC), AWS Glue
-        /// returns only a private IP address and the public IP address field is not populated.
-        /// When you create a non-VPC development endpoint, AWS Glue returns only a public IP
-        /// address.
+        /// When you create a development endpoint in a virtual private cloud (VPC), Glue returns
+        /// only a private IP address and the public IP address field is not populated. When you
+        /// create a non-VPC development endpoint, Glue returns only a public IP address.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4059,10 +4056,9 @@ namespace Amazon.Glue
         /// 
         ///  <note> 
         /// <para>
-        /// When you create a development endpoint in a virtual private cloud (VPC), AWS Glue
-        /// returns only a private IP address and the public IP address field is not populated.
-        /// When you create a non-VPC development endpoint, AWS Glue returns only a public IP
-        /// address.
+        /// When you create a development endpoint in a virtual private cloud (VPC), Glue returns
+        /// only a private IP address and the public IP address field is not populated. When you
+        /// create a non-VPC development endpoint, Glue returns only a public IP address.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4412,7 +4408,7 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Gets details for a specific task run on a machine learning transform. Machine learning
-        /// task runs are asynchronous tasks that AWS Glue runs on your behalf as part of various
+        /// task runs are asynchronous tasks that Glue runs on your behalf as part of various
         /// machine learning workflows. You can check the stats of any task run by calling <code>GetMLTaskRun</code>
         /// with the <code>TaskRunID</code> and its parent transform's <code>TransformID</code>.
         /// </summary>
@@ -4438,7 +4434,7 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Gets details for a specific task run on a machine learning transform. Machine learning
-        /// task runs are asynchronous tasks that AWS Glue runs on your behalf as part of various
+        /// task runs are asynchronous tasks that Glue runs on your behalf as part of various
         /// machine learning workflows. You can check the stats of any task run by calling <code>GetMLTaskRun</code>
         /// with the <code>TaskRunID</code> and its parent transform's <code>TransformID</code>.
         /// </summary>
@@ -4470,7 +4466,7 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Gets a list of runs for a machine learning transform. Machine learning task runs are
-        /// asynchronous tasks that AWS Glue runs on your behalf as part of various machine learning
+        /// asynchronous tasks that Glue runs on your behalf as part of various machine learning
         /// workflows. You can get a sortable, filterable list of machine learning task runs by
         /// calling <code>GetMLTaskRuns</code> with their parent transform's <code>TransformID</code>
         /// and other optional parameters as documented in this section.
@@ -4502,7 +4498,7 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Gets a list of runs for a machine learning transform. Machine learning task runs are
-        /// asynchronous tasks that AWS Glue runs on your behalf as part of various machine learning
+        /// asynchronous tasks that Glue runs on your behalf as part of various machine learning
         /// workflows. You can get a sortable, filterable list of machine learning task runs by
         /// calling <code>GetMLTaskRuns</code> with their parent transform's <code>TransformID</code>
         /// and other optional parameters as documented in this section.
@@ -4539,10 +4535,10 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Gets an AWS Glue machine learning transform artifact and all its corresponding metadata.
+        /// Gets an Glue machine learning transform artifact and all its corresponding metadata.
         /// Machine learning transforms are a special type of transform that use machine learning
         /// to learn the details of the transformation to be performed by learning from examples
-        /// provided by humans. These transformations are then saved by AWS Glue. You can retrieve
+        /// provided by humans. These transformations are then saved by Glue. You can retrieve
         /// their metadata by calling <code>GetMLTransform</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMLTransform service method.</param>
@@ -4566,10 +4562,10 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Gets an AWS Glue machine learning transform artifact and all its corresponding metadata.
+        /// Gets an Glue machine learning transform artifact and all its corresponding metadata.
         /// Machine learning transforms are a special type of transform that use machine learning
         /// to learn the details of the transformation to be performed by learning from examples
-        /// provided by humans. These transformations are then saved by AWS Glue. You can retrieve
+        /// provided by humans. These transformations are then saved by Glue. You can retrieve
         /// their metadata by calling <code>GetMLTransform</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMLTransform service method.</param>
@@ -4599,11 +4595,11 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Gets a sortable, filterable list of existing AWS Glue machine learning transforms.
-        /// Machine learning transforms are a special type of transform that use machine learning
-        /// to learn the details of the transformation to be performed by learning from examples
-        /// provided by humans. These transformations are then saved by AWS Glue, and you can
-        /// retrieve their metadata by calling <code>GetMLTransforms</code>.
+        /// Gets a sortable, filterable list of existing Glue machine learning transforms. Machine
+        /// learning transforms are a special type of transform that use machine learning to learn
+        /// the details of the transformation to be performed by learning from examples provided
+        /// by humans. These transformations are then saved by Glue, and you can retrieve their
+        /// metadata by calling <code>GetMLTransforms</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMLTransforms service method.</param>
         /// 
@@ -4626,11 +4622,11 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Gets a sortable, filterable list of existing AWS Glue machine learning transforms.
-        /// Machine learning transforms are a special type of transform that use machine learning
-        /// to learn the details of the transformation to be performed by learning from examples
-        /// provided by humans. These transformations are then saved by AWS Glue, and you can
-        /// retrieve their metadata by calling <code>GetMLTransforms</code>.
+        /// Gets a sortable, filterable list of existing Glue machine learning transforms. Machine
+        /// learning transforms are a special type of transform that use machine learning to learn
+        /// the details of the transformation to be performed by learning from examples provided
+        /// by humans. These transformations are then saved by Glue, and you can retrieve their
+        /// metadata by calling <code>GetMLTransforms</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMLTransforms service method.</param>
         /// <param name="cancellationToken">
@@ -4931,14 +4927,13 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the resource policies set on individual resources by AWS Resource Access
-        /// Manager during cross-account permission grants. Also retrieves the Data Catalog resource
-        /// policy.
+        /// Retrieves the resource policies set on individual resources by Resource Access Manager
+        /// during cross-account permission grants. Also retrieves the Data Catalog resource policy.
         /// 
         ///  
         /// <para>
         /// If you enabled metadata encryption in Data Catalog settings, and you do not have permission
-        /// on the AWS KMS key, the operation can't return the Data Catalog resource policy.
+        /// on the KMS key, the operation can't return the Data Catalog resource policy.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
@@ -4962,14 +4957,13 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the resource policies set on individual resources by AWS Resource Access
-        /// Manager during cross-account permission grants. Also retrieves the Data Catalog resource
-        /// policy.
+        /// Retrieves the resource policies set on individual resources by Resource Access Manager
+        /// during cross-account permission grants. Also retrieves the Data Catalog resource policy.
         /// 
         ///  
         /// <para>
         /// If you enabled metadata encryption in Data Catalog settings, and you do not have permission
-        /// on the AWS KMS key, the operation can't return the Data Catalog resource policy.
+        /// on the KMS key, the operation can't return the Data Catalog resource policy.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
@@ -6103,7 +6097,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Imports an existing Amazon Athena Data Catalog to AWS Glue
+        /// Imports an existing Amazon Athena Data Catalog to Glue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportCatalogToGlue service method.</param>
         /// 
@@ -6120,7 +6114,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Imports an existing Amazon Athena Data Catalog to AWS Glue
+        /// Imports an existing Amazon Athena Data Catalog to Glue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportCatalogToGlue service method.</param>
         /// <param name="cancellationToken">
@@ -6143,9 +6137,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the names of all crawler resources in this AWS account, or the resources
-        /// with the specified tag. This operation allows you to see which resources are available
-        /// in your account, and their names.
+        /// Retrieves the names of all crawler resources in this Amazon Web Services account,
+        /// or the resources with the specified tag. This operation allows you to see which resources
+        /// are available in your account, and their names.
         /// 
         ///  
         /// <para>
@@ -6166,9 +6160,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the names of all crawler resources in this AWS account, or the resources
-        /// with the specified tag. This operation allows you to see which resources are available
-        /// in your account, and their names.
+        /// Retrieves the names of all crawler resources in this Amazon Web Services account,
+        /// or the resources with the specified tag. This operation allows you to see which resources
+        /// are available in your account, and their names.
         /// 
         ///  
         /// <para>
@@ -6195,9 +6189,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the names of all <code>DevEndpoint</code> resources in this AWS account,
-        /// or the resources with the specified tag. This operation allows you to see which resources
-        /// are available in your account, and their names.
+        /// Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services
+        /// account, or the resources with the specified tag. This operation allows you to see
+        /// which resources are available in your account, and their names.
         /// 
         ///  
         /// <para>
@@ -6227,9 +6221,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the names of all <code>DevEndpoint</code> resources in this AWS account,
-        /// or the resources with the specified tag. This operation allows you to see which resources
-        /// are available in your account, and their names.
+        /// Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services
+        /// account, or the resources with the specified tag. This operation allows you to see
+        /// which resources are available in your account, and their names.
         /// 
         ///  
         /// <para>
@@ -6265,9 +6259,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the names of all job resources in this AWS account, or the resources with
-        /// the specified tag. This operation allows you to see which resources are available
-        /// in your account, and their names.
+        /// Retrieves the names of all job resources in this Amazon Web Services account, or the
+        /// resources with the specified tag. This operation allows you to see which resources
+        /// are available in your account, and their names.
         /// 
         ///  
         /// <para>
@@ -6297,9 +6291,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the names of all job resources in this AWS account, or the resources with
-        /// the specified tag. This operation allows you to see which resources are available
-        /// in your account, and their names.
+        /// Retrieves the names of all job resources in this Amazon Web Services account, or the
+        /// resources with the specified tag. This operation allows you to see which resources
+        /// are available in your account, and their names.
         /// 
         ///  
         /// <para>
@@ -6335,11 +6329,11 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves a sortable, filterable list of existing AWS Glue machine learning transforms
-        /// in this AWS account, or the resources with the specified tag. This operation takes
-        /// the optional <code>Tags</code> field, which you can use as a filter of the responses
-        /// so that tagged resources can be retrieved as a group. If you choose to use tag filtering,
-        /// only resources with the tags are retrieved.
+        /// Retrieves a sortable, filterable list of existing Glue machine learning transforms
+        /// in this Amazon Web Services account, or the resources with the specified tag. This
+        /// operation takes the optional <code>Tags</code> field, which you can use as a filter
+        /// of the responses so that tagged resources can be retrieved as a group. If you choose
+        /// to use tag filtering, only resources with the tags are retrieved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMLTransforms service method.</param>
         /// 
@@ -6362,11 +6356,11 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves a sortable, filterable list of existing AWS Glue machine learning transforms
-        /// in this AWS account, or the resources with the specified tag. This operation takes
-        /// the optional <code>Tags</code> field, which you can use as a filter of the responses
-        /// so that tagged resources can be retrieved as a group. If you choose to use tag filtering,
-        /// only resources with the tags are retrieved.
+        /// Retrieves a sortable, filterable list of existing Glue machine learning transforms
+        /// in this Amazon Web Services account, or the resources with the specified tag. This
+        /// operation takes the optional <code>Tags</code> field, which you can use as a filter
+        /// of the responses so that tagged resources can be retrieved as a group. If you choose
+        /// to use tag filtering, only resources with the tags are retrieved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMLTransforms service method.</param>
         /// <param name="cancellationToken">
@@ -6569,9 +6563,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the names of all trigger resources in this AWS account, or the resources
-        /// with the specified tag. This operation allows you to see which resources are available
-        /// in your account, and their names.
+        /// Retrieves the names of all trigger resources in this Amazon Web Services account,
+        /// or the resources with the specified tag. This operation allows you to see which resources
+        /// are available in your account, and their names.
         /// 
         ///  
         /// <para>
@@ -6601,9 +6595,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the names of all trigger resources in this AWS account, or the resources
-        /// with the specified tag. This operation allows you to see which resources are available
-        /// in your account, and their names.
+        /// Retrieves the names of all trigger resources in this Amazon Web Services account,
+        /// or the resources with the specified tag. This operation allows you to see which resources
+        /// are available in your account, and their names.
         /// 
         ///  
         /// <para>
@@ -7491,7 +7485,7 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue machine
+        /// After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue machine
         /// learning will have generated a series of questions for humans to answer. (Answering
         /// these questions is often called 'labeling' in the machine learning workflows). In
         /// the case of the <code>FindMatches</code> transform, these questions are of the form,
@@ -7549,7 +7543,7 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue machine
+        /// After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue machine
         /// learning will have generated a series of questions for humans to answer. (Answering
         /// these questions is often called 'labeling' in the machine learning workflows). In
         /// the case of the <code>FindMatches</code> transform, these questions are of the form,
@@ -7673,7 +7667,7 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// When you provide label sets as examples of truth, AWS Glue machine learning uses some
+        /// When you provide label sets as examples of truth, Glue machine learning uses some
         /// of those examples to learn from them. The rest of the labels are used as a test to
         /// estimate quality.
         /// </para>
@@ -7714,7 +7708,7 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// When you provide label sets as examples of truth, AWS Glue machine learning uses some
+        /// When you provide label sets as examples of truth, Glue machine learning uses some
         /// of those examples to learn from them. The rest of the labels are used as a test to
         /// estimate quality.
         /// </para>
@@ -7762,8 +7756,8 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue will
-        /// have generated a "labeling set" or a set of questions for humans to answer.
+        /// When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will have
+        /// generated a "labeling set" or a set of questions for humans to answer.
         /// </para>
         ///  
         /// <para>
@@ -7808,8 +7802,8 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue will
-        /// have generated a "labeling set" or a set of questions for humans to answer.
+        /// When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will have
+        /// generated a "labeling set" or a set of questions for humans to answer.
         /// </para>
         ///  
         /// <para>
@@ -8207,10 +8201,10 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS
-        /// Glue, you can tag only certain resources. For information about what resources you
-        /// can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
-        /// Tags in AWS Glue</a>.
+        /// Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services
+        /// resource. In Glue, you can tag only certain resources. For information about what
+        /// resources you can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon
+        /// Web Services Tags in Glue</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -8233,10 +8227,10 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS
-        /// Glue, you can tag only certain resources. For information about what resources you
-        /// can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
-        /// Tags in AWS Glue</a>.
+        /// Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services
+        /// resource. In Glue, you can tag only certain resources. For information about what
+        /// resources you can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon
+        /// Web Services Tags in Glue</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">

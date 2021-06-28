@@ -43,7 +43,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property CatalogId. 
         /// <para>
         /// The ID of the Data Catalog where the function to be updated is located. If none is
-        /// provided, the AWS account ID is used by default.
+        /// provided, the Amazon Web Services account ID is used by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

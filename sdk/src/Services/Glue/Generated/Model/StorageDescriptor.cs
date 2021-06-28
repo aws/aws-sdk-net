@@ -203,7 +203,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaReference. 
         /// <para>
-        /// An object that references a schema stored in the AWS Glue Schema Registry.
+        /// An object that references a schema stored in the Glue Schema Registry.
         /// </para>
         ///  
         /// <para>

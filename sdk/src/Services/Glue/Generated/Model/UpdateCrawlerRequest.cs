@@ -111,7 +111,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The AWS Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
+        /// The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
         /// </para>
         /// </summary>
         public string DatabaseName

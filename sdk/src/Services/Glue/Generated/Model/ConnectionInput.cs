@@ -85,13 +85,13 @@ namespace Amazon.Glue.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased
-        /// from AWS Marketplace to read from and write to data stores that are not natively supported
-        /// by AWS Glue.
+        /// from Marketplace to read from and write to data stores that are not natively supported
+        /// by Glue.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>CUSTOM</code> - Uses configuration settings contained in a custom connector
-        /// to read from and write to data stores that are not natively supported by AWS Glue.
+        /// to read from and write to data stores that are not natively supported by Glue.
         /// </para>
         ///  </li> </ul> 
         /// <para>

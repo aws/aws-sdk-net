@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The AWS Lake Formation principal.
+    /// The Lake Formation principal.
     /// </summary>
     public partial class DataLakePrincipal
     {
@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DataLakePrincipalIdentifier. 
         /// <para>
-        /// An identifier for the AWS Lake Formation principal.
+        /// An identifier for the Lake Formation principal.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

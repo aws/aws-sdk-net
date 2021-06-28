@@ -42,8 +42,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The ID of the Data Catalog where the table resides. If none is provided, the AWS account
-        /// ID is used by default.
+        /// The ID of the Data Catalog where the table resides. If none is provided, the Amazon
+        /// Web Services account ID is used by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -30,10 +30,10 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS
-    /// Glue, you can tag only certain resources. For information about what resources you
-    /// can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
-    /// Tags in AWS Glue</a>.
+    /// Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services
+    /// resource. In Glue, you can tag only certain resources. For information about what
+    /// resources you can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon
+    /// Web Services Tags in Glue</a>.
     /// </summary>
     public partial class TagResourceRequest : AmazonGlueRequest
     {
@@ -43,9 +43,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the AWS Glue resource to which to add the tags. For more information about
-        /// AWS Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-        /// Glue ARN string pattern</a>.
+        /// The ARN of the Glue resource to which to add the tags. For more information about
+        /// Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+        /// ARN string pattern</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10240)]

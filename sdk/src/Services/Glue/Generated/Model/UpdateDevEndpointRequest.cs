@@ -56,14 +56,6 @@ namespace Amazon.Glue.Model
         /// <para>
         ///  <code>"--enable-glue-datacatalog": ""</code> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>"GLUE_PYTHON_VERSION": "3"</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>"GLUE_PYTHON_VERSION": "2"</code> 
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// You can specify a version of Python support for development endpoints by using the

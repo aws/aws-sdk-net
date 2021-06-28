@@ -63,11 +63,10 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// The number of AWS Glue data processing units (DPUs) allocated to this JobRun. From
-        /// 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-        /// pricing page</a>.
+        /// The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to
+        /// 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing
+        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
+        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use MaxCapacity instead.")]
@@ -92,19 +91,19 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// You can specify arguments here that your own job-execution script consumes, as well
-        /// as arguments that AWS Glue itself consumes.
+        /// as arguments that Glue itself consumes.
         /// </para>
         ///  
         /// <para>
         /// For information about how to specify and consume your own job arguments, see the <a
         /// href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-        /// AWS Glue APIs in Python</a> topic in the developer guide.
+        /// Glue APIs in Python</a> topic in the developer guide.
         /// </para>
         ///  
         /// <para>
-        /// For information about the key-value pairs that AWS Glue consumes to set up your job,
-        /// see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-        /// Parameters Used by AWS Glue</a> topic in the developer guide.
+        /// For information about the key-value pairs that Glue consumes to set up your job, see
+        /// the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+        /// Parameters Used by Glue</a> topic in the developer guide.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Arguments
@@ -194,13 +193,13 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property GlueVersion. 
         /// <para>
-        /// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+        /// Glue version determines the versions of Apache Spark and Python that Glue supports.
         /// The Python version indicates the version supported for jobs of type Spark. 
         /// </para>
         ///  
         /// <para>
-        /// For more information about the available AWS Glue versions and corresponding Spark
-        /// and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue
+        /// For more information about the available Glue versions and corresponding Spark and
+        /// Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue
         /// version</a> in the developer guide.
         /// </para>
         ///  
@@ -263,8 +262,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property JobRunState. 
         /// <para>
         /// The current state of the job run. For more information about the statuses of jobs
-        /// that have terminated abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS
-        /// Glue Job Run Statuses</a>.
+        /// that have terminated abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue
+        /// Job Run Statuses</a>.
         /// </para>
         /// </summary>
         public JobRunState JobRunState
@@ -301,9 +300,9 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property LogGroupName. 
         /// <para>
         /// The name of the log group for secure logging that can be server-side encrypted in
-        /// Amazon CloudWatch using AWS KMS. This name can be <code>/aws-glue/jobs/</code>, in
-        /// which case the default encryption is <code>NONE</code>. If you add a role name and
-        /// <code>SecurityConfiguration</code> name (in other words, <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>),
+        /// Amazon CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which
+        /// case the default encryption is <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
+        /// name (in other words, <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>),
         /// then that security configuration is used to encrypt the log group.
         /// </para>
         /// </summary>
@@ -322,10 +321,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The number of AWS Glue data processing units (DPUs) that can be allocated when this
-        /// job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs
-        /// of compute capacity and 16 GB of memory. For more information, see the <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS
-        /// Glue pricing page</a>.
+        /// The number of Glue data processing units (DPUs) that can be allocated when this job
+        /// runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of
+        /// compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+        /// pricing page</a>.
         /// </para>
         ///  
         /// <para>

@@ -81,8 +81,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// AWS tags that contain a key value pair and may be searched by console, command line,
-        /// or API.
+        /// Amazon Web Services tags that contain a key value pair and may be searched by console,
+        /// command line, or API.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

@@ -132,7 +132,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DataFormat. 
         /// <para>
-        /// The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+        /// The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code>
+        /// are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -230,8 +231,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// AWS tags that contain a key value pair and may be searched by console, command line,
-        /// or API. If specified, follows the AWS tags-on-create pattern.
+        /// Amazon Web Services tags that contain a key value pair and may be searched by console,
+        /// command line, or API. If specified, follows the Amazon Web Services tags-on-create
+        /// pattern.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

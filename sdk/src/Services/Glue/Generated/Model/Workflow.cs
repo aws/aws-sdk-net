@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A workflow represents a flow in which AWS Glue components should be executed to complete
-    /// a logical task.
+    /// A workflow represents a flow in which Glue components should be run to complete a
+    /// logical task.
     /// </summary>
     public partial class Workflow
     {
@@ -100,8 +100,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Graph. 
         /// <para>
-        /// The graph representing all the AWS Glue components that belong to the workflow as
-        /// nodes and directed connections between them as edges.
+        /// The graph representing all the Glue components that belong to the workflow as nodes
+        /// and directed connections between them as edges.
         /// </para>
         /// </summary>
         public WorkflowGraph Graph

@@ -47,7 +47,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property CatalogId. 
         /// <para>
         /// The ID of the Data Catalog where the partitions in question reside. If none is provided,
-        /// the AWS account ID is used by default.
+        /// the Amazon Web Services account ID is used by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -217,7 +217,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If an invalid type is encountered, an exception is thrown. 
+        /// If an type is encountered that is not valid, an exception is thrown. 
         /// </para>
         ///  
         /// <para>

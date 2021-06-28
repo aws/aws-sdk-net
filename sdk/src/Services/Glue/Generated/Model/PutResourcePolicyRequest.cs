@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// By using the <b>Grant permissions</b> command on the AWS Management Console.
+        /// By using the <b>Grant permissions</b> command on the Management Console.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -30,7 +30,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Defines a non-overlapping region of a table's partitions, allowing multiple requests
-    /// to be executed in parallel.
+    /// to be run in parallel.
     /// </summary>
     public partial class Segment
     {

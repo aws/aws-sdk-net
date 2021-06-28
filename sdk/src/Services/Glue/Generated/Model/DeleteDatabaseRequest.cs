@@ -36,7 +36,7 @@ namespace Amazon.Glue.Model
     /// <para>
     /// After completing this operation, you no longer have access to the tables (and all
     /// table versions and partitions that might belong to the tables) and the user-defined
-    /// functions in the deleted database. AWS Glue deletes these "orphaned" resources asynchronously
+    /// functions in the deleted database. Glue deletes these "orphaned" resources asynchronously
     /// in a timely manner, at the discretion of the service.
     /// </para>
     ///  
@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property CatalogId. 
         /// <para>
         /// The ID of the Data Catalog in which the database resides. If none is provided, the
-        /// AWS account ID is used by default.
+        /// Amazon Web Services account ID is used by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

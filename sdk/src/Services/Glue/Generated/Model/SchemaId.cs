@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The unique ID of the schema in the AWS Glue schema registry.
+    /// The unique ID of the schema in the Glue schema registry.
     /// </summary>
     public partial class SchemaId
     {

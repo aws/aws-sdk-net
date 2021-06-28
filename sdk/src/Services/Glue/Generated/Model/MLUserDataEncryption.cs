@@ -66,8 +66,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for
-        /// user data stored in Amazon S3.
+        /// SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user
+        /// data stored in Amazon S3.
         /// </para>
         ///  </li> </ul>
         /// </summary>

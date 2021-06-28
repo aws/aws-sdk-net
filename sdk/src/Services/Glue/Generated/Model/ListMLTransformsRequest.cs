@@ -30,11 +30,11 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMLTransforms operation.
-    /// Retrieves a sortable, filterable list of existing AWS Glue machine learning transforms
-    /// in this AWS account, or the resources with the specified tag. This operation takes
-    /// the optional <code>Tags</code> field, which you can use as a filter of the responses
-    /// so that tagged resources can be retrieved as a group. If you choose to use tag filtering,
-    /// only resources with the tags are retrieved.
+    /// Retrieves a sortable, filterable list of existing Glue machine learning transforms
+    /// in this Amazon Web Services account, or the resources with the specified tag. This
+    /// operation takes the optional <code>Tags</code> field, which you can use as a filter
+    /// of the responses so that tagged resources can be retrieved as a group. If you choose
+    /// to use tag filtering, only resources with the tags are retrieved.
     /// </summary>
     public partial class ListMLTransformsRequest : AmazonGlueRequest
     {

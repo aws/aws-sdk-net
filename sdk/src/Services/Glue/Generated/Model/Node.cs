@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A node represents an AWS Glue component such as a trigger, or job, etc., that is part
+    /// A node represents an Glue component such as a trigger, or job, etc., that is part
     /// of a workflow.
     /// </summary>
     public partial class Node
@@ -80,7 +80,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the AWS Glue component represented by the node.
+        /// The name of the Glue component represented by the node.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -117,7 +117,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of AWS Glue component represented by the node.
+        /// The type of Glue component represented by the node.
         /// </para>
         /// </summary>
         public NodeType Type

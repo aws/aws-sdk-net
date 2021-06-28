@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies an AWS Glue Data Catalog target.
+    /// Specifies an Glue Data Catalog target.
     /// </summary>
     public partial class CatalogTarget
     {

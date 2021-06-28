@@ -39,10 +39,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the AWS Glue resource for which to retrieve the resource policy. If not
-        /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
+        /// The ARN of the Glue resource for which to retrieve the resource policy. If not supplied,
+        /// the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
         /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying
-        /// AWS Glue Resource ARNs</a>. 
+        /// Glue Resource ARNs</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10240)]

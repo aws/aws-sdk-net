@@ -137,14 +137,14 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property GlueVersion. 
         /// <para>
-        /// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+        /// Glue version determines the versions of Apache Spark and Python that Glue supports.
         /// The Python version indicates the version supported for running your ETL scripts on
         /// development endpoints. 
         /// </para>
         ///  
         /// <para>
-        /// For more information about the available AWS Glue versions and corresponding Spark
-        /// and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue
+        /// For more information about the available Glue versions and corresponding Spark and
+        /// Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue
         /// version</a> in the developer guide.
         /// </para>
         ///  
@@ -175,7 +175,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The number of AWS Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
+        /// The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public int NumberOfNodes
@@ -342,8 +342,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint.
-        /// For more information about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
-        /// Tags in AWS Glue</a> in the developer guide.
+        /// For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon
+        /// Web Services Tags in Glue</a> in the developer guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

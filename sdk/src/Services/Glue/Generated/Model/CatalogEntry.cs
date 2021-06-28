@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a table definition in the AWS Glue Data Catalog.
+    /// Specifies a table definition in the Glue Data Catalog.
     /// </summary>
     public partial class CatalogEntry
     {

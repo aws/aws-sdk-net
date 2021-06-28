@@ -854,6 +854,10 @@ namespace Amazon.Glue
         /// Constant AVRO for DataFormat
         /// </summary>
         public static readonly DataFormat AVRO = new DataFormat("AVRO");
+        /// <summary>
+        /// Constant JSON for DataFormat
+        /// </summary>
+        public static readonly DataFormat JSON = new DataFormat("JSON");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -66,14 +66,6 @@ namespace Amazon.Glue.Model
         /// <para>
         ///  <code>"--enable-glue-datacatalog": ""</code> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>"GLUE_PYTHON_VERSION": "3"</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>"GLUE_PYTHON_VERSION": "2"</code> 
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// You can specify a version of Python support for development endpoints by using the
@@ -207,9 +199,15 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property GlueVersion. 
         /// <para>
-        /// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+        /// Glue version determines the versions of Apache Spark and Python that Glue supports.
         /// The Python version indicates the version supported for running your ETL scripts on
         /// development endpoints. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the available Glue versions and corresponding Spark and
+        /// Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue
+        /// version</a> in the developer guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -228,7 +226,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
+        /// The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
         /// </para>
         /// </summary>
         public int NumberOfNodes

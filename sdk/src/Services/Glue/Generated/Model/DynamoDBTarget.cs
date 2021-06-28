@@ -82,9 +82,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ScanRate. 
         /// <para>
-        /// The percentage of the configured read capacity units to use by the AWS Glue crawler.
-        /// Read capacity units is a term defined by DynamoDB, and is a numeric value that acts
-        /// as rate limiter for the number of reads that can be performed on that table per second.
+        /// The percentage of the configured read capacity units to use by the Glue crawler. Read
+        /// capacity units is a term defined by DynamoDB, and is a numeric value that acts as
+        /// rate limiter for the number of reads that can be performed on that table per second.
         /// </para>
         ///  
         /// <para>

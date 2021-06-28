@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A workflow graph represents the complete workflow containing all the AWS Glue components
+    /// A workflow graph represents the complete workflow containing all the Glue components
     /// present in the workflow and all the directed connections between them.
     /// </summary>
     public partial class WorkflowGraph
@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Nodes. 
         /// <para>
-        /// A list of the the AWS Glue components belong to the workflow represented as nodes.
+        /// A list of the the Glue components belong to the workflow represented as nodes.
         /// </para>
         /// </summary>
         public List<Node> Nodes

@@ -151,7 +151,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property IsRegisteredWithLakeFormation. 
         /// <para>
-        /// Indicates whether the table has been registered with AWS Lake Formation.
+        /// Indicates whether the table has been registered with Lake Formation.
         /// </para>
         /// </summary>
         public bool IsRegisteredWithLakeFormation
