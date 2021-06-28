@@ -83,6 +83,7 @@ namespace Amazon.SageMaker.Model
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
         private List<Tag> _tags = new List<Tag>();
+        private NeoVpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property CompilationJobName. 
@@ -232,6 +233,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job
+        /// to connect to. Control access to your models by configuring the VPC. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+        /// Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.
+        /// </para>
+        /// </summary>
+        public NeoVpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

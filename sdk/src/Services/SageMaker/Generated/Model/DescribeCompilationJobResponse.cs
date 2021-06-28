@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _compilationStartTime;
         private DateTime? _creationTime;
         private string _failureReason;
+        private string _inferenceImage;
         private InputConfig _inputConfig;
         private DateTime? _lastModifiedTime;
         private ModelArtifacts _modelArtifacts;
@@ -47,6 +48,7 @@ namespace Amazon.SageMaker.Model
         private OutputConfig _outputConfig;
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
+        private NeoVpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property CompilationEndTime. 
@@ -190,6 +192,22 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InferenceImage.
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string InferenceImage
+        {
+            get { return this._inferenceImage; }
+            set { this._inferenceImage = value; }
+        }
+
+        // Check to see if InferenceImage property is set
+        internal bool IsSetInferenceImage()
+        {
+            return this._inferenceImage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputConfig. 
         /// <para>
         /// Information about the location in Amazon S3 of the input model artifacts, the name
@@ -326,6 +344,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStoppingCondition()
         {
             return this._stoppingCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job
+        /// to connect to. Control access to your models by configuring the VPC. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+        /// Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.
+        /// </para>
+        /// </summary>
+        public NeoVpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

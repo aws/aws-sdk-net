@@ -93,6 +93,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InferenceImage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InferenceImage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputConfig", targetDepth))
                 {
                     var unmarshaller = InputConfigUnmarshaller.Instance;
@@ -133,6 +139,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StoppingConditionUnmarshaller.Instance;
                     response.StoppingCondition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcConfig", targetDepth))
+                {
+                    var unmarshaller = NeoVpcConfigUnmarshaller.Instance;
+                    response.VpcConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

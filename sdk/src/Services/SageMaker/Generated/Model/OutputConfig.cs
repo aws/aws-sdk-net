@@ -202,9 +202,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt
-        /// data on the storage volume after compilation job. If you don't provide a KMS key ID,
-        /// Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account
+        /// The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that
+        /// Amazon SageMaker uses to encrypt your output models with Amazon S3 server-side encryption
+        /// after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+        /// default KMS key for Amazon S3 for your role's account. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+        /// Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> 
         /// </para>
         ///  
         /// <para>

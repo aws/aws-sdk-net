@@ -9047,6 +9047,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TargetDevice Amba_cv22 = new TargetDevice("amba_cv22");
         /// <summary>
+        /// Constant Amba_cv25 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Amba_cv25 = new TargetDevice("amba_cv25");
+        /// <summary>
         /// Constant Coreml for TargetDevice
         /// </summary>
         public static readonly TargetDevice Coreml = new TargetDevice("coreml");
