@@ -1,3 +1,13 @@
+### 3.7.62.0 (2021-06-28 18:14 UTC)
+* Glue (3.7.4.0)
+	* Add JSON Support for Glue Schema Registry
+* MediaConvert (3.7.3.0)
+	* MediaConvert adds support for HDR10+, ProRes 4444,  and XAVC outputs, ADM/DAMF support for Dolby Atmos ingest, and alternative audio and WebVTT caption ingest via HLS inputs. MediaConvert also now supports creating trickplay outputs for Roku devices for HLS, CMAF, and DASH output groups.
+* Redshift (3.7.6.0)
+	* Added InvalidClusterStateFault to the DisableLogging API, thrown when calling the API on a non available cluster.
+* SageMaker (3.7.7.0)
+	* Sagemaker Neo now supports running compilation jobs using customer's Amazon VPC
+
 ### 3.7.61.0 (2021-06-25 18:17 UTC)
 * AmplifyBackend (3.7.1.0)
 	* Imports an existing backend authentication resource.
