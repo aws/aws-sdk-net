@@ -265,12 +265,13 @@ namespace Amazon.S3
         /// Specifies that the S3 Bucket should use US locality.
         /// This is the default value.
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the USEast1 constant")]
         public static readonly S3Region US = new S3Region("");
         /// <summary>
         /// Specifies that the S3 Bucket should use EU locality which defaults to EU-WEST-1
         /// </summary>
+        [Obsolete("This constant is obsolete. Usage of this property should be migrated to the EUWest1 constant")]
         public static readonly S3Region EU = new S3Region("EU");
-
         /// <summary>
         /// Specifies that the S3 Bucket should use US-EAST-2 locality.
         /// </summary>
