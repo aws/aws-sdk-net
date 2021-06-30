@@ -75,6 +75,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CapacityRebalance", StringUtils.FromBool(publicRequest.CapacityRebalance));
                 }
+                if(publicRequest.IsSetContext())
+                {
+                    request.Parameters.Add("Context", StringUtils.FromString(publicRequest.Context));
+                }
                 if(publicRequest.IsSetDefaultCooldown())
                 {
                     request.Parameters.Add("DefaultCooldown", StringUtils.FromInt(publicRequest.DefaultCooldown));

@@ -79,6 +79,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.CapacityRebalance = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Context", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Context = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CreatedTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

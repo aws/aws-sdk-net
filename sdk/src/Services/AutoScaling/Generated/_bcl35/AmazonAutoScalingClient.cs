@@ -1612,7 +1612,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// When you establish an account, the account has initial quotas on the maximum number
+        /// of Auto Scaling groups and launch configurations that you can create in a given Region.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
         /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -1633,7 +1635,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// When you establish an account, the account has initial quotas on the maximum number
+        /// of Auto Scaling groups and launch configurations that you can create in a given Region.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
         /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
