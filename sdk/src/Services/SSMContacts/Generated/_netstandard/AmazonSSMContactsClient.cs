@@ -1203,6 +1203,9 @@ namespace Amazon.SSMContacts
         /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1409,6 +1412,9 @@ namespace Amazon.SSMContacts
         /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
         /// Request references a resource that doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
@@ -1510,6 +1516,9 @@ namespace Amazon.SSMContacts
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

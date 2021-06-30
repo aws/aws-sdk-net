@@ -44,9 +44,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.CreateContactRequest.DisplayName</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.CreateContactRequest.IdempotencyToken</property>
@@ -74,7 +74,7 @@
     <property>Amazon.SSMContacts.Model.CreateContactChannelRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.CreateContactChannelResponse.ContactChannelArn</property>
@@ -230,9 +230,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.GetContactResponse.DisplayName</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.GetContactChannelRequest.ContactChannelId</property>
@@ -256,7 +256,7 @@
     <property>Amazon.SSMContacts.Model.GetContactChannelResponse.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.GetContactPolicyRequest.ContactArn</property>
@@ -504,9 +504,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.UpdateContactRequest.DisplayName</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.UpdateContactChannelRequest.ContactChannelId</property>
@@ -518,7 +518,7 @@
     <property>Amazon.SSMContacts.Model.UpdateContactChannelRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.ChannelTargetInfo.ContactChannelId</property>
@@ -545,9 +545,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.Contact.DisplayName</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.ContactChannel.ContactArn</property>
@@ -565,7 +565,7 @@
     <property>Amazon.SSMContacts.Model.ContactChannel.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-\s\.]*$</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.ContactChannelAddress.SimpleAddress</property>
@@ -648,13 +648,13 @@
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.Tag.Key</property>
     <min>1</min>
-    <max>255</max>
+    <max>128</max>
     <pattern>^[\\\/a-zA-Z0-9_+=\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMContacts.Model.Tag.Value</property>
     <min>1</min>
-    <max>255</max>
+    <max>256</max>
     <pattern>^[\p{L}\p{Z}\p{N}_.:\/=+\-@]*$</pattern>
   </property-value-rule>
 </property-value-rules>

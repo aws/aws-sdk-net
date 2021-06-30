@@ -42,7 +42,7 @@ namespace Amazon.SSMContacts.Model
         /// Name of the object key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -61,7 +61,7 @@ namespace Amazon.SSMContacts.Model
         /// Value of the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }

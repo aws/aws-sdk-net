@@ -1165,6 +1165,9 @@ namespace Amazon.SSMContacts
         /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
@@ -1190,6 +1193,9 @@ namespace Amazon.SSMContacts
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1419,6 +1425,9 @@ namespace Amazon.SSMContacts
         /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
         /// Request references a resource that doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
@@ -1445,6 +1454,9 @@ namespace Amazon.SSMContacts
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
         /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an AWS service.
@@ -1541,6 +1553,9 @@ namespace Amazon.SSMContacts
         /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
@@ -1566,6 +1581,9 @@ namespace Amazon.SSMContacts
         /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));

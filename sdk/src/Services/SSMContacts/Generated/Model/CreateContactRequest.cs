@@ -69,7 +69,7 @@ namespace Amazon.SSMContacts.Model
         /// The full name of the contact or escalation plan. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string DisplayName
         {
             get { return this._displayName; }
